@@ -1,0 +1,5 @@
+{
+  "error": "[Errno 2] No such file or directory: '/Users/htr365/Documents/PhD/21_automatisation/gpt_eval/data/exam_approach/test_results/21417_0/test_submission.json'",
+  "overall_score": 0,
+  "pass_fail": "FAIL"
+}

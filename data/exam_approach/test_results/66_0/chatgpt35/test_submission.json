@@ -1,0 +1,28 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "section1": {
+        "question1": "Your answer as text - name the department",
+        "question2": "Your answer as a percentage with 1 decimal place (e.g., 12.5%)",
+        "question3": "Your answer as department name and percentage with 1 decimal place (e.g., 'Department Name - 25.3%')"
+    },
+    "section2": {
+        "question1": "Your answer as product category name followed by description of pattern",
+        "question2": "Your answer as a number with 2 decimal places",
+        "question3": "Your answer as month name and reasoning in 1-3 sentences"
+    },
+    "section3": {
+        "question1": "Your answer as name of economic indicator and brief explanation",
+        "question2": "Your answer as expected impact (positive/negative) with estimated percentage change",
+        "question3": "Your answer as department name with 1-2 sentence explanation"
+    },
+    "section4": {
+        "question1": "Your answer as a list with each product and weeks of supply with 1 decimal place (e.g., 'Product A: 8.2 weeks')",
+        "question2": "Your answer as product name and specific timing in weeks",
+        "question3": "Your answer as number of units for each product in format 'Product A: X units, Product B: Y units, etc.' with budget allocation explanation"
+    },
+    "section5": {
+        "question1": "Your answer as dollar amount with no decimal places (e.g., $312000)",
+        "question2": "Your answer indicating direction (up/down) and percentage with 1 decimal place",
+        "question3": "Your answer as dollar amount with no decimal places and brief explanation"
+    }
+}

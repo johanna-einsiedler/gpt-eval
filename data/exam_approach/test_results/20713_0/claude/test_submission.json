@@ -1,0 +1,67 @@
+{
+    "candidate_id": "Claude-3-Sonnet",
+    "section1": {
+        "q1": {
+            "answer": "$77.78",
+            "reasoning": "If retail price (R) includes 55% markup, then cost is 45% of retail. So $35 = 0.45R, therefore R = $35/0.45 = $77.78"
+        },
+        "q2": {
+            "answer": "$100.80",
+            "reasoning": "Retail price = 2.4 × cost = 2.4 × $42 = $100.80"
+        },
+        "q3": {
+            "answer": "$143.55",
+            "reasoning": "If selling price (S) includes 38% profit margin, then cost is 62% of selling price. So $89 = 0.62S, therefore S = $89/0.62 = $143.55"
+        }
+    },
+    "section2": {
+        "q1": {
+            "answer": "25.0%",
+            "reasoning": "Minimum selling price with 25% margin on cost = $48 × 1.25 = $60. Markdown amount = $79.99 - $60 = $19.99, which is 25.0% of original price"
+        },
+        "q2": {
+            "answer": {
+                "price": "$90.99",
+                "margin": "20.9%"
+            },
+            "reasoning": "New price after 30% markdown = $129.99 × 0.7 = $90.99. Margin = ($90.99 - $72)/$90.99 = 20.9%"
+        },
+        "q3": {
+            "answer": "29.4%",
+            "reasoning": "With 15% margin on selling price, minimum total revenue needed = $46,800/0.85 = $55,059. Required markdown = $78,000 - $55,059 = $22,941, which is 29.4% of original retail value"
+        }
+    },
+    "section3": {
+        "q1": {
+            "answer": "Yes, $105.77",
+            "reasoning": "Minimum selling price with 22% margin = $82.50/(1-0.22) = $105.77. Since this is below competitor's $129.99, we can match their price while maintaining required margin"
+        },
+        "q2": {
+            "answer": "No, $63.18-$74.99",
+            "reasoning": "Standard price with 45% markup = $34.75/(1-0.45) = $63.18, which falls within competitor range of $59.99-$74.99, so no adjustment needed"
+        }
+    },
+    "section4": {
+        "q1": {
+            "answer": "$16.13",
+            "reasoning": "For break-even: 70% sold at full price + 30% at 25% of full price must equal cost. If R = retail price, then 0.7R + 0.3(0.25R) = $12.50, solving for R = $16.13"
+        },
+        "q2": {
+            "answer": {
+                "current_margin": "43.7%",
+                "recommended_markup": "48.7%"
+            },
+            "reasoning": "Actual revenue = 75% at full price + 25% at 60% of full price = $80,460. Current margin = ($80,460-$45,300)/$80,460 = 43.7%. To improve by 5 points, new markup should be 48.7%"
+        }
+    },
+    "section5": {
+        "q1": {
+            "answer": "Option B, $8396 vs $8855",
+            "reasoning": "Option A: 150 units at $29.99 generates $1,798 additional profit. Option B: 100 units at $34.99 + 80 units at $24.99 generates $2,258 additional profit. Adding to initial profit of $6,597, Option B maximizes total profit"
+        },
+        "q2": {
+            "answer": "Vendor B",
+            "reasoning": "Despite slightly higher total cost ($35,640 vs $33,750), Vendor B offers better inventory management with smaller minimum order (500 vs 1000), better cash flow with 60-day terms, and flexibility with reorders. These benefits outweigh the modest cost difference."
+        }
+    }
+}

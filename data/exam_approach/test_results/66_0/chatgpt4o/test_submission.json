@@ -1,0 +1,34 @@
+{
+    "candidate_id": "GPT-4o",
+    "section1": {
+        "question1": "Men's Casual",
+        "question2": "12.2%",
+        "question3": "Accessories - 85.3%"
+    },
+    "section2": {
+        "question1": "Electronics - Strong increase in sales during the holiday season (Nov-Dec)",
+        "question2": "1990.00",
+        "question3": "May - Sales have been increasing steadily, indicating a potential peak in demand"
+    },
+    "section3": {
+        "question1": "Consumer Confidence Index - Higher confidence often correlates with increased spending",
+        "question2": "Positive impact with an estimated 3.0% increase",
+        "question3": "Women's Casual - Higher sensitivity to economic changes due to discretionary nature"
+    },
+    "section4": {
+        "question1": [
+            "Product A: 12.0 weeks",
+            "Product B: 6.7 weeks",
+            "Product C: 20.0 weeks",
+            "Product D: 5.6 weeks",
+            "Product E: 8.7 weeks"
+        ],
+        "question2": "Product D - Place order in 1 week",
+        "question3": "Product A: 300 units, Product B: 200 units, Product C: 100 units, Product D: 150 units, Product E: 100 units - Allocated based on sales velocity and lead time"
+    },
+    "section5": {
+        "question1": "$312000",
+        "question2": "Up by 5.0%",
+        "question3": "$124800 - To maintain a turnover rate of 2.5 times, ensuring sufficient stock for increased demand"
+    }
+}

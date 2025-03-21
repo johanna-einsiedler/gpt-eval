@@ -1,0 +1,67 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "section1": {
+        "q1": {
+            "answer": "$77.78",
+            "reasoning": "Initial markup of 55% on retail price means cost is 45% of retail. $35 / 0.45 = $77.78."
+        },
+        "q2": {
+            "answer": "$100.80",
+            "reasoning": "Markup is 2.4 times cost. $42 * 2.4 = $100.80."
+        },
+        "q3": {
+            "answer": "$143.55",
+            "reasoning": "Profit margin is 38% of selling price, so cost is 62% of selling price. $89 / 0.62 = $143.55."
+        }
+    },
+    "section2": {
+        "q1": {
+            "answer": "39.9%",
+            "reasoning": "Final margin of 25% on cost means selling price must be at least $60. ($48 * 1.25). Markdown from $79.99 to $60 is 25%."
+        },
+        "q2": {
+            "answer": {
+                "price": "$90.99",
+                "margin": "26.4%"
+            },
+            "reasoning": "30% markdown on $129.99 is $90.99. Margin is ($90.99 - $72) / $90.99 = 20.8%."
+        },
+        "q3": {
+            "answer": "40.0%",
+            "reasoning": "To clear 75% of $78,000 inventory, target revenue is $58,500. Maintain 15% margin, so cost is 85% of revenue. $46,800 / 0.85 = $55,058.82. Markdown from $78,000 to $55,058.82 is 29.4%."
+        }
+    },
+    "section3": {
+        "q1": {
+            "answer": "No, $105.77",
+            "reasoning": "Minimum margin of 22% on selling price means cost is 78% of selling price. $82.50 / 0.78 = $105.77."
+        },
+        "q2": {
+            "answer": "Yes, $59.99-$74.99",
+            "reasoning": "Standard markup of 45% on selling price means cost is 55% of selling price. $34.75 / 0.55 = $63.18. Adjust to match competitor range."
+        }
+    },
+    "section4": {
+        "q1": {
+            "answer": "$31.25",
+            "reasoning": "Initial markup of 60% on retail means cost is 40% of retail. $12.50 / 0.40 = $31.25. 30% sold at $31.25 and 70% at 75% markdown ($7.81) averages to break even."
+        },
+        "q2": {
+            "answer": {
+                "current_margin": "49.3%",
+                "recommended_markup": "54.3%"
+            },
+            "reasoning": "Current margin is ($89,400 - $45,300) / $89,400 = 49.3%. To improve by 5 percentage points, recommend initial markup of 54.3%."
+        }
+    },
+    "section5": {
+        "q1": {
+            "answer": "Option A, $8,998 vs $8,499",
+            "reasoning": "Option A: 300 units at $39.99 and 150 at $29.99. Total profit = $8,998. Option B: 300 at $39.99, 100 at $34.99, and 80 at $24.99. Total profit = $8,499."
+        },
+        "q2": {
+            "answer": "Vendor B",
+            "reasoning": "Vendor B offers better cash flow with 60-day terms and 6% discount on reorders. Total cost is lower considering discount and inventory management is more flexible with smaller minimum order."
+        }
+    }
+}

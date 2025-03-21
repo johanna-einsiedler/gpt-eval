@@ -1,0 +1,39 @@
+{
+    "candidate_id": "GPT-4o",
+    "exam_date": "2023-10-15",
+    "answers": {
+        "q1": [
+            "A",
+            "B",
+            "C"
+        ],
+        "q2": 3,
+        "q3": [
+            "Performance statistics",
+            "Professional photos",
+            "Social media engagement metrics",
+            "Previous endorsement history",
+            "Personal story/background"
+        ],
+        "q4": {
+            "A": "1",
+            "B": "2",
+            "C": "3",
+            "D": "4"
+        },
+        "q5": [
+            "A",
+            "C",
+            "E"
+        ],
+        "q6": "MP3",
+        "q7": 10,
+        "q8": [
+            "A",
+            "B",
+            "E"
+        ],
+        "q9": 5,
+        "q10": "C"
+    }
+}
