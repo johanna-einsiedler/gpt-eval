@@ -1,0 +1,93 @@
+{
+    "candidate_id": "GPT-4o",
+    "section1": {
+        "q1": {
+            "average_consumption": {
+                "printer_paper": 150,
+                "ink_cartridges": 46,
+                "staplers": 11.67,
+                "pens": 35
+            },
+            "strongest_upward_trend": "printer_paper",
+            "justification": "Printer paper shows consistent month-over-month increases (120→150→180), representing a 50% increase from January to March."
+        },
+        "q2": {
+            "percentage_changes": {
+                "engineering": 28.13,
+                "administration": -2.78,
+                "operations": 14.81
+            },
+            "priority_department": "engineering",
+            "justification": "Engineering shows the highest percentage increase in expenses from Q1 to Q4, indicating a need for cost review."
+        },
+        "q3": {
+            "predicted_replacement": "safety_glasses",
+            "calculation": "Safety glasses will need replacement in 1.8 months (30 units / (200 uses/month / 12 months lifespan)).",
+            "justification": "Safety glasses have the highest usage frequency relative to their lifespan and current inventory, leading to the earliest replacement need."
+        }
+    },
+    "section2": {
+        "q4": {
+            "items_needing_reorder": [
+                "clipboards"
+            ],
+            "optimal_quantities": {
+                "clipboards": 30
+            },
+            "justification": "Clipboards are below the minimum level (15 < 20). Optimal order quantity is 75% of maximum level (40 * 0.75 = 30)."
+        },
+        "q5": {
+            "turnover_rates": {
+                "paper_products": 8.0,
+                "writing_instruments": 5.0,
+                "filing_supplies": 3.0,
+                "technology_accessories": 3.5
+            },
+            "healthiest_category": "paper_products",
+            "justification": "Paper products have the highest turnover rate (8.0), indicating efficient inventory management and faster sales cycles."
+        },
+        "q6": {
+            "service_levels": {
+                "whiteboard_markers": 90.0,
+                "copy_paper": 92.5,
+                "staples": 95.0,
+                "highlighters": 83.33
+            },
+            "urgent_improvement_needed": "highlighters",
+            "justification": "Highlighters have the lowest service level (83.33%) due to frequent stockouts (5 times last year)."
+        }
+    },
+    "section3": {
+        "q7": {
+            "potential_monthly_savings": 318.0,
+            "department_priority_order": [
+                "marketing",
+                "finance",
+                "customer_service"
+            ],
+            "justification": "Marketing has the highest per-employee supply cost. Implementing controls could save 20% of total monthly costs ($1,590 * 0.20 = $318)."
+        },
+        "q8": {
+            "supplier_scores": {
+                "supplier_a": 85.5,
+                "supplier_b": 80.5,
+                "supplier_c": 89.5,
+                "supplier_d": 77.5
+            },
+            "recommended_supplier": "supplier_c",
+            "justification": "Supplier C has the highest score (89.5) due to excellent delivery time and quality, despite a higher price."
+        },
+        "q9": {
+            "projected_annual_consumption": 1815,
+            "budgeted_expenditure": 24206.25,
+            "optimal_purchasing_frequency": 4,
+            "justification": "Annual consumption is projected at 1815 units (1650 * 1.10). Budgeted expenditure accounts for 3% price increase. Optimal frequency is quarterly to balance ordering and holding costs."
+        },
+        "q10": {
+            "current_monthly_processing_cost": 3946.25,
+            "potential_savings": 1183.88,
+            "optimal_approval_threshold": 2800.0,
+            "justification": "Current cost is $3,946.25. Savings of 30% would be $1,183.88. The optimal approval threshold is $2,800, capturing 80% of PO value while reviewing 20% of orders."
+        }
+    }
+}

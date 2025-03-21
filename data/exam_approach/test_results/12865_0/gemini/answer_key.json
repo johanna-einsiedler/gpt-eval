@@ -1,0 +1,64 @@
+{
+    "question1_1": [
+        "A"
+    ],
+    "question1_2": {
+        "A": false,
+        "B": true,
+        "C": true,
+        "D": true,
+        "E": false
+    },
+    "question2_1": [
+        "C",
+        "B",
+        "A",
+        "D",
+        "E"
+    ],
+    "question2_2": {
+        "Scenario 1": "A",
+        "Scenario 2": "B",
+        "Scenario 3": "C",
+        "Scenario 4": "D"
+    },
+    "question3_1": {
+        "Client A": 8500,
+        "Client B": 6750,
+        "Client C": 24000,
+        "Client D": 23000
+    },
+    "question3_2": {
+        "Digital": 4500,
+        "Physical": 4200,
+        "Sync": 13000,
+        "Publishing": 0,
+        "Total": 21700
+    },
+    "question4_1": {
+        "A": 2,
+        "B": 4,
+        "C": 1,
+        "D": 5,
+        "E": 3
+    },
+    "question4_2": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "G"
+    ],
+    "question5_1": [
+        "C",
+        "D",
+        "F"
+    ],
+    "question5_2": {
+        "Scenario 1": "appropriate",
+        "Scenario 2": "inappropriate",
+        "Scenario 3": "appropriate",
+        "Scenario 4": "appropriate",
+        "Scenario 5": "appropriate"
+    }
+}

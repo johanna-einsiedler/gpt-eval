@@ -1,0 +1,73 @@
+{
+    "candidateID": "EXAMINER",
+    "section1": {
+        "q1": {
+            "a": "A type of purchase order that establishes terms, conditions, and pricing for multiple transactions over a specified period with a specific vendor, without specifying exact quantities upfront.",
+            "b": "A formal document requesting vendors to submit detailed proposals including pricing, methods, qualifications, and solutions for complex products or services.",
+            "c": "The legal provisions in a purchase agreement that define the rights, obligations, and rules governing the transaction between buyer and seller.",
+            "d": "A shipping term that determines when ownership and liability transfer from seller to buyer and which party is responsible for shipping costs and freight damages.",
+            "e": "A payment term indicating that full payment is due 30 days after goods are delivered or services are rendered."
+        },
+        "q2": "b",
+        "q3": "c",
+        "q4": true,
+        "q5": "c"
+    },
+    "section2": {
+        "q1": [
+            "Vendor information",
+            "Delivery date/terms",
+            "Item description and quantities",
+            "Pricing/payment terms",
+            "Purchase order number/authorization"
+        ],
+        "q2": {
+            "a": 3750.0,
+            "b": 187.5,
+            "c": 3712.5
+        },
+        "q3": {
+            "a": "header",
+            "b": "line item",
+            "c": "footer",
+            "d": "header",
+            "e": "line item"
+        },
+        "q4": 14650,
+        "q5": "a"
+    },
+    "section3": {
+        "q1": [
+            "Scope of work/specifications",
+            "Evaluation criteria",
+            "Timeline/submission requirements",
+            "Terms and conditions"
+        ],
+        "q2": {
+            "selectedVendor": "C",
+            "justification": "Vendor C offers the longest warranty period (3 years), which is the primary selection criterion. Although it has the highest price and longest delivery time, warranty length takes precedence in our evaluation criteria."
+        },
+        "q3": "d",
+        "q4": false,
+        "q5": [
+            "Previous experience with similar projects",
+            "Professional certifications or licenses",
+            "Financial stability/bonding capacity"
+        ]
+    },
+    "section4": {
+        "q1": [
+            "Budget availability",
+            "Proper authorization/approvals",
+            "Completeness of specifications",
+            "Business justification/necessity"
+        ],
+        "q2": "c",
+        "q3": {
+            "isCorrect": false,
+            "correctTotal": 912.5
+        },
+        "q4": "c",
+        "q5": false
+    }
+}

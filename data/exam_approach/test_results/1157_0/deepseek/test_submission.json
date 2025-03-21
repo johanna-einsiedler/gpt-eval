@@ -1,0 +1,130 @@
+{
+    "candidate_id": "GPT-4o",
+    "1.1": {
+        "performance_specification": "Specifies required operational outcomes without dictating design or method.",
+        "design_specification": "Details exact materials, dimensions, and construction methods for a product.",
+        "brand_name_or_equal": "Specifies a brand/model or allows equivalent products meeting defined criteria."
+    },
+    "1.2": {
+        "pressure_washer": {
+            "type": "performance",
+            "justification": "Focus is on cleaning performance rather than specific design features."
+        },
+        "laboratory_equipment": {
+            "type": "design",
+            "justification": "Custom equipment requires specific design to meet unique research needs."
+        },
+        "office_chairs": {
+            "type": "brand-name-or-equal",
+            "justification": "Standard chairs can be sourced from multiple brands meeting basic ergonomic standards."
+        }
+    },
+    "1.3": {
+        "Technical_Requirements": "c",
+        "Delivery_Terms": "d",
+        "Quality_Assurance_Provisions": "b",
+        "Payment_Terms": "a"
+    },
+    "2.1": [
+        "Title",
+        "Scope",
+        "Classification",
+        "References",
+        "Requirements",
+        "Quality Assurance Provisions",
+        "Notes"
+    ],
+    "2.2": [
+        {
+            "component": "Functional Requirements",
+            "importance": "Defines what the product must do to meet user needs."
+        },
+        {
+            "component": "Technical Specifications",
+            "importance": "Details the technical parameters the product must meet."
+        },
+        {
+            "component": "Compliance Standards",
+            "importance": "Ensures the product meets regulatory and safety standards."
+        }
+    ],
+    "2.3": [
+        {
+            "error": "Informal language ('I think')",
+            "correction": "Replace with precise, confident language."
+        },
+        {
+            "error": "Lack of structured sections",
+            "correction": "Organize into clear sections like Requirements, Quality Assurance, etc."
+        },
+        {
+            "error": "Unprofessional tone ('ASAP!')",
+            "correction": "Use formal language and specify exact deadlines."
+        }
+    ],
+    "3.1": [
+        "Temperature range",
+        "Temperature uniformity",
+        "Storage capacity",
+        "Energy efficiency rating",
+        "Compliance with medical standards"
+    ],
+    "3.2": {
+        "problem_explanation": "'Room temperature' is vague and varies; medical storage requires precise temperature control.",
+        "proper_specification": "Maintains 2°C to 8°C with ±0.5°C accuracy."
+    },
+    "3.3": {
+        "energy_efficiency": "Energy Star certified with annual energy consumption ≤ 500 kWh.",
+        "storage_space": "Minimum internal volume of 300 liters with adjustable shelving.",
+        "noise_level": "Operates at ≤ 40 dB(A) at 1 meter distance."
+    },
+    "4.1": [
+        {
+            "standard": "ANSI/ISEA 105",
+            "purpose": "Measures cut resistance and durability of gloves."
+        },
+        {
+            "standard": "EN 388",
+            "purpose": "European standard for mechanical risks like abrasion and puncture."
+        },
+        {
+            "standard": "ASTM F2412",
+            "purpose": "Certifies protection against specific hazards like impact and compression."
+        }
+    ],
+    "4.2": [
+        "Desks must be free of scratches, dents, and finish imperfections.",
+        "All moving parts (drawers, adjustable components) must operate smoothly without sticking.",
+        "Dimensions must match specified measurements within ±2 mm tolerance."
+    ],
+    "4.3": "Please specify which industry standards your product meets or exceeds, including any relevant certification numbers or compliance documents, to ensure precise evaluation against our requirements.",
+    "5.1": [
+        {
+            "error": "Storage capacity is listed as 500MB",
+            "correction": "Should be 500GB or 512GB SSD."
+        },
+        {
+            "error": "Display resolution is low for HD",
+            "correction": "Specify at least 1920 x 1080 for HD."
+        },
+        {
+            "error": "Battery life is vague",
+            "correction": "Specify battery life under standard usage conditions."
+        }
+    ],
+    "5.2": [
+        {
+            "ambiguous_item": "Clean all floors regularly",
+            "rewritten_specification": "Vacuum and mop all floors daily, with spot cleaning as needed."
+        },
+        {
+            "ambiguous_item": "Ensure bathrooms are well-stocked",
+            "rewritten_specification": "Restock toilet paper, soap, and paper towels to full capacity each morning and after lunch."
+        },
+        {
+            "ambiguous_item": "Empty trash as needed",
+            "rewritten_specification": "Empty all trash bins when they reach 75% capacity, at minimum once per day."
+        }
+    ],
+    "5.3": "b"
+}

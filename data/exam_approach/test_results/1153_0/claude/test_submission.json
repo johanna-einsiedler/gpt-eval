@@ -1,0 +1,95 @@
+{
+    "candidate_id": "GPT-4o",
+    "section1": {
+        "q1": {
+            "average_consumption": {
+                "printer_paper": 150,
+                "ink_cartridges": 46,
+                "staplers": 11.67,
+                "pens": 35
+            },
+            "strongest_upward_trend": "printer_paper",
+            "justification": "Printer paper shows consistent month-over-month increases (120→150→180), representing a 50% increase from January to March."
+        },
+        "q2": {
+            "percentage_changes": {
+                "engineering": 28.13,
+                "administration": -2.78,
+                "operations": 14.81
+            },
+            "priority_department": "engineering",
+            "justification": "Engineering shows the highest percentage increase in expenses from Q1 to Q4 (28.13%), indicating potential inefficiencies or changing needs that require immediate cost review."
+        },
+        "q3": {
+            "predicted_replacement": "safety_glasses",
+            "calculation": "Replacement need = (Frequency × Months until replacement) / (Current inventory × Lifespan). Safety glasses: (200 × 1.8) / (30 × 12) = 1.8 months",
+            "justification": "Safety glasses will need replacement first at 1.8 months, compared to power drills (2.67 months), hand saws (9.6 months), and wrenches (10 months), based on usage rate relative to inventory and lifespan."
+        }
+    },
+    "section2": {
+        "q4": {
+            "items_needing_reorder": [
+                "clipboards",
+                "toner"
+            ],
+            "optimal_quantities": {
+                "clipboards": 30,
+                "toner": 22
+            },
+            "justification": "Clipboards are below minimum level (15 < 20) and toner is close to minimum (12 vs 10). Optimal order quantities are calculated as 75% of maximum level minus current level (clipboards: 30-15=15, toner: 22-12=10)."
+        },
+        "q5": {
+            "turnover_rates": {
+                "paper_products": 8.0,
+                "writing_instruments": 5.0,
+                "filing_supplies": 3.0,
+                "technology_accessories": 3.5
+            },
+            "healthiest_category": "paper_products",
+            "justification": "Paper products has the highest turnover rate (8.0), indicating inventory is moving efficiently through the system with minimal excess stock. Higher turnover generally indicates better inventory management with less capital tied up in inventory."
+        },
+        "q6": {
+            "service_levels": {
+                "whiteboard_markers": 96.72,
+                "copy_paper": 98.36,
+                "staples": 99.45,
+                "highlighters": 97.26
+            },
+            "urgent_improvement_needed": "whiteboard_markers",
+            "justification": "Whiteboard markers have the lowest service level (96.72%) and highest stockout frequency (3 times). While highlighters had more stockout incidents (5), the total days out of stock for markers was higher (12 vs 10), making them the priority for improvement."
+        }
+    },
+    "section3": {
+        "q7": {
+            "potential_monthly_savings": 336.0,
+            "department_priority_order": [
+                "marketing",
+                "customer_service",
+                "finance"
+            ],
+            "justification": "Marketing has the highest per-employee cost ($45), followed by Finance ($35) and Customer Service ($30). However, total potential savings prioritizes Marketing ($108), then Customer Service ($120), then Finance ($56), based on employee count and potential 20% reduction."
+        },
+        "q8": {
+            "supplier_scores": {
+                "supplier_a": 69.38,
+                "supplier_b": 67.25,
+                "supplier_c": 77.5,
+                "supplier_d": 63.25
+            },
+            "recommended_supplier": "supplier_c",
+            "justification": "Using normalized scores (10-point scale) with weights: Price (40%): C=7.5, Delivery (25%): C=10, Quality (25%): C=10, Terms (10%): C=5. Supplier C scores highest at 77.5 points, offering the best balance of quality, delivery speed, and reasonable pricing."
+        },
+        "q9": {
+            "projected_annual_consumption": 1815,
+            "budgeted_expenditure": 24642.38,
+            "optimal_purchasing_frequency": 6,
+            "justification": "Annual consumption: 1650 × 1.1 = 1815 units. Budgeted expenditure: 1815 × $13.19 × 1.03 = $24,642.38. EOQ calculation yields optimal order quantity of 303 units, suggesting 6 orders per year (1815/303) to balance ordering and holding costs."
+        },
+        "q10": {
+            "current_monthly_processing_cost": 3937.5,
+            "potential_savings": 1181.25,
+            "optimal_approval_threshold": 2800.0,
+            "justification": "Current cost: (45×1.5 + 28×1.0 + 15×2.0) × $35 = $3,937.50. 30% reduction saves $1,181.25 monthly. The 80/20 rule suggests focusing on the 20% of POs with highest value, making $2,800 (Production's average PO value) the appropriate threshold for management review."
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "section1": {
+        "q1": "c",
+        "q2": "b",
+        "q3": "The missing information includes: price per bushel, total transaction value/amount, and delivery/storage location.",
+        "q4": "1) Missing quantity of soybeans purchased, 2) Missing quality/grade specification, 3) Missing payment terms",
+        "q5": [
+            "b",
+            "c",
+            "f",
+            "g"
+        ]
+    },
+    "section2": {
+        "q1": "c",
+        "q2": "1) FIFO (First-In-First-Out): Advantage - matches physical flow of agricultural products that spoil. 2) LIFO (Last-In-First-Out): Advantage - better matches current replacement costs during inflation. 3) Weighted Average Cost: Advantage - simplifies tracking when products from different purchases are commingled.",
+        "q3": "c",
+        "q4": {
+            "value_per_unit": "12.30",
+            "total_inventory_value": "4920.00"
+        },
+        "q5": "c"
+    },
+    "section3": {
+        "q1": "b",
+        "q2": "Country of origin, variety/cultivar, producer information, quantity, import permit number, phytosanitary certification details, customs entry number, and applicable tariff codes.",
+        "q3": "Raw milk purchases must be reported to the USDA Agricultural Marketing Service and state department of agriculture. Reports typically include volume purchased, price paid, butterfat content, and quality/safety testing results. Reporting deadlines vary by state but are generally required monthly, with submissions due by the 10th of the following month.",
+        "q4": "a",
+        "q5": {
+            "1": "a",
+            "2": "c",
+            "3": "d",
+            "4": "e",
+            "5": "b"
+        }
+    },
+    "section4": {
+        "q1": {
+            "total_quantity": "7900.00",
+            "total_cost": "5737.00",
+            "average_price": "0.73"
+        },
+        "q2": {
+            "variance_percentage": "6.25",
+            "possible_causes": [
+                "Weight loss due to moisture evaporation/dehydration",
+                "Inventory shrinkage due to theft or pilferage",
+                "Counting or recording errors in physical inventory"
+            ]
+        },
+        "q3": {
+            "expected_inventory": "14700.00",
+            "acceptable_minimum": "14406.00",
+            "acceptable_maximum": "14994.00"
+        },
+        "q4": {
+            "causes": [
+                "Outstanding credit memos not recorded in accounts payable",
+                "Invoices recorded but not yet received from suppliers",
+                "Timing differences between company records and supplier statements"
+            ],
+            "reconciliation_methods": [
+                "Review credit memo documentation and update accounting records",
+                "Contact suppliers to request copies of missing invoices and reconcile",
+                "Adjust timing of record entry to match supplier reporting periods"
+            ]
+        },
+        "q5": {
+            "is_correct": false,
+            "correct_deduction": "607.50",
+            "correct_payment": "42392.50"
+        }
+    },
+    "section5": {
+        "q1": "c",
+        "q2": [
+            "Product identification and traceability records",
+            "Supplier verification documentation",
+            "Temperature and storage condition monitoring records",
+            "Testing and quality assurance records"
+        ],
+        "q3": "For organic soybean purchases, you must collect and maintain: 1) Valid organic certificates from suppliers showing certification under NOP standards, 2) Transaction certificates for each purchase confirming organic status, 3) Detailed receiving records including lot numbers and quantities, 4) Clean transport affidavits confirming no contamination during shipping, 5) Pesticide residue test results if applicable, and 6) Documentation of segregation practices preventing commingling with conventional products.",
+        "q4": "c",
+        "q5": "Immediately contact the seller to obtain their licensing information and add it to the transaction record. Create an addendum to the original purchase documentation that includes the missing information with date of correction noted. Implement a transaction documentation checklist that must be completed before finalizing purchases. Update the purchasing system to make licensing information a required field. Conduct staff training on complete documentation requirements for agricultural purchases."
+    }
+}

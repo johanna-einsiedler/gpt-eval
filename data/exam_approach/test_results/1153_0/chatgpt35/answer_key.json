@@ -1,0 +1,95 @@
+{
+    "candidate_id": "EVALUATOR_VERSION",
+    "section1": {
+        "q1": {
+            "average_consumption": {
+                "printer_paper": 150,
+                "ink_cartridges": 46,
+                "staplers": 11.67,
+                "pens": 35
+            },
+            "strongest_upward_trend": "printer_paper",
+            "justification": "Printer paper shows consistent month-over-month increases (120→150→180), representing a 50% increase from January to March."
+        },
+        "q2": {
+            "percentage_changes": {
+                "engineering": 28.13,
+                "administration": -2.78,
+                "operations": 14.81
+            },
+            "priority_department": "engineering",
+            "justification": "Engineering shows the highest percentage increase in expenses from Q1 to Q4 (28.13%), indicating potential inefficiency or changing needs that require review."
+        },
+        "q3": {
+            "predicted_replacement": "safety_glasses",
+            "calculation": "Replacement time = (Current inventory × Lifespan) ÷ Frequency of use = (30 × 12) ÷ 200 = 1.8 months",
+            "justification": "Safety glasses will need replacement first at approximately 1.8 months, compared to power drills (2.67 months), hand saws (9.6 months), and wrenches (12.5 months)."
+        }
+    },
+    "section2": {
+        "q4": {
+            "items_needing_reorder": [
+                "clipboards",
+                "toner"
+            ],
+            "optimal_quantities": {
+                "clipboards": 30,
+                "toner": 22.5
+            },
+            "justification": "Clipboards are below minimum level (15 < 20). Toner is close to minimum (12 vs 10) with a long lead time. Order quantities are calculated as 75% of maximum level."
+        },
+        "q5": {
+            "turnover_rates": {
+                "paper_products": 8.0,
+                "writing_instruments": 5.0,
+                "filing_supplies": 3.0,
+                "technology_accessories": 3.5
+            },
+            "healthiest_category": "paper_products",
+            "justification": "Paper products has the highest turnover rate (8.0), indicating efficient inventory management with lower carrying costs while maintaining adequate stock levels."
+        },
+        "q6": {
+            "service_levels": {
+                "whiteboard_markers": 96.7,
+                "copy_paper": 98.36,
+                "staples": 99.45,
+                "highlighters": 97.26
+            },
+            "urgent_improvement_needed": "whiteboard_markers",
+            "justification": "Whiteboard markers have the lowest service level (96.70%) and highest stockout frequency (3 times) with the longest average stockout duration (4 days)."
+        }
+    },
+    "section3": {
+        "q7": {
+            "potential_monthly_savings": 320.0,
+            "department_priority_order": [
+                "marketing",
+                "customer_service",
+                "finance"
+            ],
+            "justification": "Priority based on total potential savings: Marketing ($108), Customer Service ($120), Finance ($56). However, Marketing has highest per-employee cost, suggesting greatest inefficiency."
+        },
+        "q8": {
+            "supplier_scores": {
+                "supplier_a": 75.0,
+                "supplier_b": 71.25,
+                "supplier_c": 83.75,
+                "supplier_d": 66.75
+            },
+            "recommended_supplier": "supplier_c",
+            "justification": "Supplier C scores highest (83.75) with the best quality (lowest defect rate), fastest delivery, and reasonable payment terms, despite not having the lowest price."
+        },
+        "q9": {
+            "projected_annual_consumption": 1815,
+            "budgeted_expenditure": 24381.3,
+            "optimal_purchasing_frequency": 6,
+            "justification": "Annual consumption of 1650 units with 10% growth gives 1815 units. With 3% price increase to $14.68, total cost is $24,381.30. EOQ calculation yields approximately 166 units per order, suggesting 6 orders annually."
+        },
+        "q10": {
+            "current_monthly_processing_cost": 3937.5,
+            "potential_savings": 1181.25,
+            "optimal_approval_threshold": 2800.0,
+            "justification": "Current processing cost: (45×1.5 + 28×1.0 + 15×2.0) × $35 = $3,937.50. 30% reduction saves $1,181.25. Using 80/20 rule, approvals should focus on POs ≥ $2,800 (Production and IT departments)."
+        }
+    }
+}

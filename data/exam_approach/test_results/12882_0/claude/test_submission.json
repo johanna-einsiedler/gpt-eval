@@ -1,0 +1,98 @@
+{
+    "candidate_id": "GPT-4o",
+    "question1": {
+        "requiredProducts": [
+            {
+                "product": "Red Delicious apples",
+                "quantity": 203,
+                "unit": "cases"
+            },
+            {
+                "product": "Gala apples",
+                "quantity": 172,
+                "unit": "cases"
+            },
+            {
+                "product": "Granny Smith apples",
+                "quantity": 140,
+                "unit": "cases"
+            }
+        ],
+        "reasoning": "I calculated the number of cases by dividing the requested weight by the case weight and rounding up to ensure we meet minimum requirements. Red Delicious: 8,500 ÷ 42 = 202.38 → 203 cases. Gala: 7,200 ÷ 42 = 171.43 → 172 cases. Granny Smith: 5,300 ÷ 38 = 139.47 → 140 cases.",
+        "additionalNotes": "This order will result in a small excess: Red Delicious (26 lbs), Gala (24 lbs), and Granny Smith (20 lbs). This minimal overage is unavoidable since suppliers require full case orders."
+    },
+    "question2": {
+        "requiredProducts": [
+            {
+                "product": "Roma tomatoes from Supplier A",
+                "quantity": 12000,
+                "unit": "lbs"
+            },
+            {
+                "product": "Roma tomatoes from Supplier B",
+                "quantity": 6500,
+                "unit": "lbs"
+            }
+        ],
+        "reasoning": "I first eliminated Supplier C as their tomatoes don't meet the minimum 6.2% solids requirement. To minimize cost while meeting the 18,500 lb requirement, I ordered the maximum available from Supplier B (9,000 lbs) at $0.78/lb, then the remaining 9,500 lbs from Supplier A at $0.82/lb.",
+        "additionalNotes": "After recalculating, I realized we only need 6,500 lbs from Supplier B to reach 18,500 lbs total when combined with Supplier A's 12,000 lbs. This reduces costs while still meeting quality standards."
+    },
+    "question3": {
+        "requiredProducts": [
+            {
+                "product": "Organic corn feed from primary supplier",
+                "quantity": 40,
+                "unit": "tons"
+            },
+            {
+                "product": "Organic corn feed from secondary supplier",
+                "quantity": 25,
+                "unit": "tons"
+            }
+        ],
+        "reasoning": "Total customer demand is 79 tons (28+16+35). With 14 tons in inventory, we need 65 additional tons. I ordered the maximum 40 tons from the primary supplier due to faster delivery time (2 weeks), and the remaining 25 tons from the secondary supplier (3 weeks notice).",
+        "additionalNotes": "This procurement strategy ensures all orders can be fulfilled on time. The primary supplier's shorter lead time is prioritized to maximize flexibility in delivery scheduling."
+    },
+    "question4": {
+        "requiredProducts": [
+            {
+                "product": "Strawberry flats",
+                "quantity": 53,
+                "unit": "8-lb flats"
+            },
+            {
+                "product": "Blueberry containers",
+                "quantity": 56,
+                "unit": "5-lb containers"
+            },
+            {
+                "product": "Raspberry containers",
+                "quantity": 40,
+                "unit": "4-lb containers"
+            }
+        ],
+        "reasoning": "Weekly requirements were divided by container sizes and rounded up to whole containers. Strawberries: 420 ÷ 8 = 52.5 → 53 flats. Blueberries: 280 ÷ 5 = 56 containers. Raspberries: 160 ÷ 4 = 40 containers. Each delivery must provide the full weekly requirement due to the 7-day shelf life.",
+        "additionalNotes": "The weekly delivery schedule aligns perfectly with the 7-day shelf life of the berries. The slight excess from rounding up (4 lbs of strawberries) provides a small buffer against potential quality issues or damage."
+    },
+    "question5": {
+        "requiredProducts": [
+            {
+                "product": "Extra Virgin olive oil",
+                "quantity": 16,
+                "unit": "55-gallon drums"
+            },
+            {
+                "product": "Virgin olive oil",
+                "quantity": 15,
+                "unit": "35-gallon drums"
+            },
+            {
+                "product": "Pure olive oil",
+                "quantity": 9,
+                "unit": "35-gallon drums"
+            }
+        ],
+        "reasoning": "I optimized container selection to minimize total containers while meeting volume requirements. Extra Virgin: 860 gallons requires 16 55-gallon drums (880 gallons). Virgin: 520 gallons requires 15 35-gallon drums (525 gallons). Pure: 340 gallons requires 9 35-gallon drums (315 gallons) plus 5 5-gallon containers (25 gallons).",
+        "additionalNotes": "This configuration uses exactly 40 containers: 16 large drums, 24 medium drums, and 5 small containers. The small excess capacity provides flexibility for minor demand fluctuations."
+    }
+}

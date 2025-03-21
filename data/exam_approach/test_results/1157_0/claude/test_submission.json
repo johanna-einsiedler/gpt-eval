@@ -1,0 +1,130 @@
+{
+    "candidate_id": "GPT-4o",
+    "1.1": {
+        "performance_specification": "Defines what the product must accomplish or how it must perform, without dictating specific design or construction methods.",
+        "design_specification": "Details exact physical characteristics, materials, dimensions, and construction methods that must be used to create the product.",
+        "brand_name_or_equal": "Identifies a specific manufacturer's product as the standard, while allowing equivalent products that meet the same specifications."
+    },
+    "1.2": {
+        "pressure_washer": {
+            "type": "performance",
+            "justification": "Performance specifications allow focus on required cleaning capability and pressure ratings without limiting design options."
+        },
+        "laboratory_equipment": {
+            "type": "design",
+            "justification": "Custom laboratory equipment requires precise design specifications to ensure it meets exact research requirements and compatibility needs."
+        },
+        "office_chairs": {
+            "type": "brand-name-or-equal",
+            "justification": "Standard office furniture can be specified using established brands as benchmarks while allowing competitive equivalent options."
+        }
+    },
+    "1.3": {
+        "Technical_Requirements": "c",
+        "Delivery_Terms": "d",
+        "Quality_Assurance_Provisions": "b",
+        "Payment_Terms": "a"
+    },
+    "2.1": [
+        "Title",
+        "Scope",
+        "Classification",
+        "References",
+        "Requirements",
+        "Quality Assurance Provisions",
+        "Notes"
+    ],
+    "2.2": [
+        {
+            "component": "Physical dimensions",
+            "importance": "Ensures the product will physically fit and integrate with existing systems or spaces."
+        },
+        {
+            "component": "Material specifications",
+            "importance": "Defines durability, safety, and performance characteristics essential for the product's intended use."
+        },
+        {
+            "component": "Performance parameters",
+            "importance": "Establishes measurable criteria for evaluating whether the product functions as required."
+        }
+    ],
+    "2.3": [
+        {
+            "error": "Subjective terminology ('comfortable')",
+            "correction": "Replace with measurable criteria such as 'Seat padding minimum 2 inches thick with ergonomic lumbar support.'"
+        },
+        {
+            "error": "Inconsistent formatting and structure",
+            "correction": "Use consistent numbering/bullet system and organize all requirements under properly labeled sections."
+        },
+        {
+            "error": "Inclusion of non-specification elements ('We need these ASAP!')",
+            "correction": "Remove conversational language and include specific delivery timeframe requirements in a dedicated Delivery Terms section."
+        }
+    ],
+    "3.1": [
+        "Temperature range and stability (±0.5°C)",
+        "Alarm system specifications",
+        "Interior capacity (cubic feet/liters)",
+        "Power backup requirements",
+        "Temperature monitoring/logging capabilities"
+    ],
+    "3.2": {
+        "problem_explanation": "'Room temperature' is ambiguous, varies by facility, and lacks the precision needed for medication storage where even small temperature variations can affect efficacy.",
+        "proper_specification": "Temperature maintained at 20°C ± 1°C (68°F ± 1.8°F) with continuous monitoring and recording capability."
+    },
+    "3.3": {
+        "energy_efficiency": "Energy Star certified with maximum power consumption of 5.5 kWh/day and Energy Efficiency Ratio (EER) of at least 12.0.",
+        "storage_space": "Minimum 20 cubic feet (566 liters) of usable interior storage with adjustable shelving capable of supporting 50 lbs per shelf.",
+        "noise_level": "Maximum operational noise level of 45 dBA measured at 1 meter from the unit during normal operation."
+    },
+    "4.1": [
+        {
+            "standard": "EN 388",
+            "purpose": "Measures and certifies protection levels against mechanical risks including abrasion, cut, tear, and puncture resistance."
+        },
+        {
+            "standard": "ANSI/ISEA 105",
+            "purpose": "Establishes performance classifications for hand protection related to mechanical protection, chemical resistance, and heat/flame resistance."
+        },
+        {
+            "standard": "EN 420",
+            "purpose": "Defines general requirements for glove design, construction, safety, comfort, efficiency, marking, and information provided by the manufacturer."
+        }
+    ],
+    "4.2": [
+        "Desk surfaces must support a minimum of 200 pounds (90.7 kg) of evenly distributed weight without visible deflection greater than 0.25 inches.",
+        "All desk drawers must open and close smoothly with no binding, with drawer slides rated for a minimum of 50,000 cycles.",
+        "Desk finish must be uniform in color and texture with no visible scratches, dents, or other imperfections when inspected from a distance of 3 feet under normal office lighting."
+    ],
+    "4.3": "Please provide specific industry standards and certifications that your product complies with, including the exact standard numbers, versions/years, and certification bodies. Additionally, include test reports or certification documentation that will be provided upon delivery to verify compliance with these standards.",
+    "5.1": [
+        {
+            "error": "Storage capacity listed as 500MB",
+            "correction": "Should be 500GB or 1TB SSD, as 500MB is insufficient for modern computing needs."
+        },
+        {
+            "error": "HD display with 1366 x 768 resolution",
+            "correction": "For a 15\" display, HD should be at least Full HD (1920 x 1080) resolution to meet current standards."
+        },
+        {
+            "error": "Inconsistency between minimum and preferred RAM",
+            "correction": "Specify either a firm minimum (e.g., 'RAM: 16GB required') or a clear acceptable range (e.g., 'RAM: 8GB minimum, 16GB preferred, DDR4-3200 or faster')."
+        }
+    ],
+    "5.2": [
+        {
+            "ambiguous_item": "Clean all floors regularly",
+            "rewritten_specification": "Vacuum all carpeted areas and wet-mop all hard surface floors daily, with strip and wax treatment of vinyl floors quarterly."
+        },
+        {
+            "ambiguous_item": "Ensure bathrooms are well-stocked",
+            "rewritten_specification": "Inspect and restock bathroom paper products, hand soap, and sanitizer twice daily, maintaining minimum 25% capacity at all times."
+        },
+        {
+            "ambiguous_item": "Empty trash as needed",
+            "rewritten_specification": "Empty and replace liners in all trash receptacles daily, and immediately when containers reach 75% capacity."
+        }
+    ],
+    "5.3": "b"
+}

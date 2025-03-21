@@ -1,0 +1,73 @@
+{
+    "candidateID": "GPT-4o",
+    "section1": {
+        "q1": {
+            "a": "A Blanket Purchase Order is a long-term agreement with a vendor to supply goods or services at predetermined prices for a specified period, allowing multiple releases without issuing separate purchase orders each time.",
+            "b": "A Request for Proposal (RFP) is a formal document soliciting proposals from potential suppliers for goods or services, outlining requirements and evaluation criteria to facilitate competitive bidding.",
+            "c": "Terms and Conditions are the contractual provisions that define the rights, obligations, and limitations of both parties in a purchasing agreement, including payment terms, warranties, and legal remedies.",
+            "d": "FOB (Free on Board) designates when liability, ownership, and responsibility for goods transfers from seller to buyer during shipping, specifying which party covers freight costs and bears risk during transport.",
+            "e": "Net 30 is a payment term indicating that full payment is due 30 days after the invoice date or receipt of goods/services, with no discount for early payment."
+        },
+        "q2": "b",
+        "q3": "c",
+        "q4": true,
+        "q5": "c"
+    },
+    "section2": {
+        "q1": [
+            "Vendor information",
+            "Item description and quantity",
+            "Price and payment terms",
+            "Delivery date and location",
+            "Purchase order number and date"
+        ],
+        "q2": {
+            "a": 3750,
+            "b": 187.5,
+            "c": 3712.5
+        },
+        "q3": {
+            "a": "header",
+            "b": "line item",
+            "c": "footer",
+            "d": "header",
+            "e": "line item"
+        },
+        "q4": 14650,
+        "q5": "a"
+    },
+    "section3": {
+        "q1": [
+            "Scope of work or specifications",
+            "Evaluation criteria and selection process",
+            "Timeline and submission requirements",
+            "Terms and conditions including contract requirements"
+        ],
+        "q2": {
+            "selectedVendor": "C",
+            "justification": "Vendor C offers the longest warranty period (3 years), which is our primary criterion. While the price is highest and delivery time longest, the warranty length takes precedence according to our prioritized criteria."
+        },
+        "q3": "d",
+        "q4": false,
+        "q5": [
+            "Previous experience with similar renovation projects",
+            "Proper licensing and insurance coverage",
+            "Availability of qualified personnel and resources"
+        ]
+    },
+    "section4": {
+        "q1": [
+            "Budget availability and authorization",
+            "Accuracy and completeness of specifications",
+            "Business justification for the purchase",
+            "Appropriate approvals from authorized personnel"
+        ],
+        "q2": "c",
+        "q3": {
+            "isCorrect": false,
+            "correctTotal": 912.5
+        },
+        "q4": "c",
+        "q5": false
+    }
+}

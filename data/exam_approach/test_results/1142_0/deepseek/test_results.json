@@ -1,0 +1,121 @@
+{
+  "candidate_id": "GPT-4o",
+  "candidate_name": "OpenAI GPT-4o",
+  "exam_date": "2023-10-15",
+  "evaluation_date": "2025-03-21",
+  "question_results": [
+    {
+      "question_number": 1,
+      "correct_option": "c",
+      "submitted_option": "b",
+      "is_correct": false,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 0,
+      "feedback": "Incorrect option. The correct option is c. While Supplier C has the highest unit price ($2.65), it offers the fastest delivery (15 days) and the longest warranty (3 years). For critical components, the combination of quick delivery and extended warranty creates the best overall value, especially when the price differential is relatively small ($0.35 more than Supplier B)."
+    },
+    {
+      "question_number": 2,
+      "correct_option": "b",
+      "submitted_option": "a",
+      "is_correct": false,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 0,
+      "feedback": "Incorrect option. The correct option is b. The shipment has mixed quality indicators: functional pass rate is high (98.5%), but MTBF is slightly below industry standard (9,800 vs 10,000 hours). Since the components meet minimum lifespan requirements and functional standards with only minor cosmetic issues, requesting a 5% discount acknowledges the slight quality deficit while still accepting usable components."
+    },
+    {
+      "question_number": 3,
+      "correct_option": "b",
+      "submitted_option": "b",
+      "is_correct": true,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 1,
+      "feedback": "Correct! Your justification demonstrates good understanding."
+    },
+    {
+      "question_number": 4,
+      "correct_option": "b",
+      "submitted_option": "a",
+      "is_correct": false,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 0,
+      "feedback": "Incorrect option. The correct option is b. Supplier Y has the best on-time delivery rate (99%) with good quality compliance (96%) and the highest financial stability (A-). For critical components where reliable delivery is paramount, Supplier Y's exceptional delivery performance justifies the higher price index (110), making them the most suitable choice."
+    },
+    {
+      "question_number": 5,
+      "correct_option": "c",
+      "submitted_option": "c",
+      "is_correct": true,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 1,
+      "feedback": "Correct! Your justification demonstrates good understanding."
+    },
+    {
+      "question_number": 6,
+      "correct_option": "b",
+      "submitted_option": "b",
+      "is_correct": true,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 1,
+      "feedback": "Correct! Your justification demonstrates good understanding."
+    },
+    {
+      "question_number": 7,
+      "correct_option": "a",
+      "submitted_option": "a",
+      "is_correct": true,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 1,
+      "feedback": "Correct! Your justification demonstrates good understanding."
+    },
+    {
+      "question_number": 8,
+      "correct_option": "c",
+      "submitted_option": "c",
+      "is_correct": true,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 1,
+      "feedback": "Correct! Your justification demonstrates good understanding."
+    },
+    {
+      "question_number": 9,
+      "correct_option": "b",
+      "submitted_option": "b",
+      "is_correct": true,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 1,
+      "feedback": "Correct! Your justification demonstrates good understanding."
+    },
+    {
+      "question_number": 10,
+      "correct_option": "b",
+      "submitted_option": "b",
+      "is_correct": true,
+      "justification_valid": true,
+      "partial_credit": 0,
+      "points_earned": 1,
+      "feedback": "Correct! Your justification demonstrates good understanding."
+    }
+  ],
+  "core_competency_results": {
+    "price_cost_analysis": true,
+    "quality_assessment": false,
+    "supply_inventory_management": true,
+    "supplier_evaluation": false,
+    "ethics_compliance": true,
+    "risk_management": true
+  },
+  "total_correct": 7,
+  "total_questions": 10,
+  "passing_threshold": 7,
+  "overall_score": 70.0,
+  "passed": false
+}

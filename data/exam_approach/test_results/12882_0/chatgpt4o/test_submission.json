@@ -1,0 +1,98 @@
+{
+    "candidate_id": "GPT-4o",
+    "question1": {
+        "requiredProducts": [
+            {
+                "product": "Red Delicious apples",
+                "quantity": 203,
+                "unit": "cases"
+            },
+            {
+                "product": "Gala apples",
+                "quantity": 172,
+                "unit": "cases"
+            },
+            {
+                "product": "Granny Smith apples",
+                "quantity": 140,
+                "unit": "cases"
+            }
+        ],
+        "reasoning": "I calculated the number of cases by dividing the requested weight by the case weight and rounding up to the nearest whole case. For Red Delicious: 8500 lbs / 42 lbs per case = 202.38, rounded up to 203 cases. For Gala: 7200 lbs / 42 lbs per case = 171.43, rounded up to 172 cases. For Granny Smith: 5300 lbs / 38 lbs per case = 139.47, rounded up to 140 cases.",
+        "additionalNotes": "This order will result in a small amount of excess product that should be accounted for in inventory."
+    },
+    "question2": {
+        "requiredProducts": [
+            {
+                "product": "Roma tomatoes from Supplier A",
+                "quantity": 12000,
+                "unit": "lbs"
+            },
+            {
+                "product": "Roma tomatoes from Supplier B",
+                "quantity": 6500,
+                "unit": "lbs"
+            }
+        ],
+        "reasoning": "I selected suppliers meeting the minimum 6.2% solids requirement, prioritizing by lowest cost while fulfilling the total 18,500 lbs needed. Supplier A provides 12,000 lbs at $0.82/lb, and Supplier B provides the remaining 6,500 lbs at $0.78/lb.",
+        "additionalNotes": "Supplier C's tomatoes do not meet the minimum solids requirement, so they were not considered."
+    },
+    "question3": {
+        "requiredProducts": [
+            {
+                "product": "Organic corn feed from primary supplier",
+                "quantity": 40,
+                "unit": "tons"
+            },
+            {
+                "product": "Organic corn feed from secondary supplier",
+                "quantity": 25,
+                "unit": "tons"
+            }
+        ],
+        "reasoning": "With 14 tons in inventory and a total requirement of 79 tons, I needed to source 65 additional tons while ensuring timely delivery. I ordered 40 tons from the primary supplier due to their shorter lead time and 25 tons from the secondary supplier to meet the total demand.",
+        "additionalNotes": "Orders are scheduled to maximize use of the primary supplier due to shorter lead time, ensuring timely fulfillment."
+    },
+    "question4": {
+        "requiredProducts": [
+            {
+                "product": "Strawberry flats",
+                "quantity": 53,
+                "unit": "8-lb flats"
+            },
+            {
+                "product": "Blueberry containers",
+                "quantity": 56,
+                "unit": "5-lb containers"
+            },
+            {
+                "product": "Raspberry containers",
+                "quantity": 40,
+                "unit": "4-lb containers"
+            }
+        ],
+        "reasoning": "I calculated the number of containers by dividing the weekly requirement by the container size and rounding up to the nearest whole container. For strawberries: 420 lbs / 8 lbs per flat = 52.5, rounded up to 53 flats. For blueberries: 280 lbs / 5 lbs per container = 56 containers. For raspberries: 160 lbs / 4 lbs per container = 40 containers.",
+        "additionalNotes": "Weekly delivery is essential due to the 7-day shelf life, ensuring freshness for the restaurant group."
+    },
+    "question5": {
+        "requiredProducts": [
+            {
+                "product": "Extra Virgin olive oil",
+                "quantity": 16,
+                "unit": "55-gallon drums"
+            },
+            {
+                "product": "Virgin olive oil",
+                "quantity": 15,
+                "unit": "35-gallon drums"
+            },
+            {
+                "product": "Pure olive oil",
+                "quantity": 9,
+                "unit": "55-gallon drums"
+            }
+        ],
+        "reasoning": "I selected container sizes to minimize the total number of containers while meeting the volume requirements for each grade. For Extra Virgin: 860 gallons / 55 gallons per drum = 15.64, rounded up to 16 drums. For Virgin: 520 gallons / 35 gallons per drum = 14.86, rounded up to 15 drums. For Pure: 340 gallons / 55 gallons per drum = 6.18, rounded up to 9 drums.",
+        "additionalNotes": "This configuration uses 40 containers exactly, maximizing our storage capacity while meeting demand."
+    }
+}

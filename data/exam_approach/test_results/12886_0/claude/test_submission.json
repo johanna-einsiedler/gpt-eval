@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "question1": {
+        "answer": "The standard quota calculation formula is Q = P × AF × RF, where Q is the quota allocation in bushels, P is the production volume in bushels, AF represents the adjustment factor based on crop type, and RF represents regional factors or conservation practice adjustments."
+    },
+    "question2": {
+        "answer": {
+            "part_a": {
+                "wheat": 6000,
+                "corn": 2400
+            },
+            "part_b": 8400
+        }
+    },
+    "question3": {
+        "answer": 8635
+    },
+    "question4": {
+        "answer": 13080
+    },
+    "question5": {
+        "answer": {
+            "incorrect_farms": [
+                "B-456",
+                "C-789",
+                "E-345"
+            ],
+            "correct_values": {
+                "B-456": 13387.5,
+                "C-789": 28050,
+                "E-345": 6800
+            }
+        }
+    }
+}

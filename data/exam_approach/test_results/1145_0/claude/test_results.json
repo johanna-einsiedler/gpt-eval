@@ -1,0 +1,121 @@
+{
+  "candidate_id": "GPT-4o",
+  "total_score": 15,
+  "max_score": 15,
+  "section_scores": {
+    "section1": {
+      "score": 3,
+      "max_score": 3,
+      "percentage": 100.0
+    },
+    "section2": {
+      "score": 3,
+      "max_score": 3,
+      "percentage": 100.0
+    },
+    "section3": {
+      "score": 3,
+      "max_score": 3,
+      "percentage": 100.0
+    },
+    "section4": {
+      "score": 3,
+      "max_score": 3,
+      "percentage": 100.0
+    },
+    "section5": {
+      "score": 3,
+      "max_score": 3,
+      "percentage": 100.0
+    }
+  },
+  "question_results": {
+    "section1": {
+      "question1": {
+        "correct": true,
+        "candidate_answer": "62500, 58750, 66250",
+        "expected_answer": "62500, 58750, 66250"
+      },
+      "question2": {
+        "correct": true,
+        "candidate_answer": "12.15, 11.75, 12.60",
+        "expected_answer": "12.15, 11.75, 12.60"
+      },
+      "question3": {
+        "correct": true,
+        "candidate_answer": "12.88, 12.10, 13.65",
+        "expected_answer": "12.88, 12.10, 13.65"
+      }
+    },
+    "section2": {
+      "question1": {
+        "correct": true,
+        "candidate_answer": "7196",
+        "expected_answer": "7196"
+      },
+      "question2": {
+        "correct": true,
+        "candidate_answer": "7070",
+        "expected_answer": "7070"
+      },
+      "question3": {
+        "correct": true,
+        "candidate_answer": "40",
+        "expected_answer": "40"
+      }
+    },
+    "section3": {
+      "question1": {
+        "correct": true,
+        "candidate_answer": "2.77",
+        "expected_answer": "2.77"
+      },
+      "question2": {
+        "correct": true,
+        "candidate_answer": "468000",
+        "expected_answer": "468000"
+      },
+      "question3": {
+        "correct": true,
+        "candidate_answer": "26.5",
+        "expected_answer": "26.5"
+      }
+    },
+    "section4": {
+      "question1": {
+        "correct": true,
+        "candidate_answer": "2077.47",
+        "expected_answer": "2077.47"
+      },
+      "question2": {
+        "correct": true,
+        "candidate_answer": "15.4",
+        "expected_answer": "15.4"
+      },
+      "question3": {
+        "correct": true,
+        "candidate_answer": "1860",
+        "expected_answer": "1860"
+      }
+    },
+    "section5": {
+      "question1": {
+        "correct": true,
+        "candidate_answer": "465.83",
+        "expected_answer": "465.83"
+      },
+      "question2": {
+        "correct": true,
+        "candidate_answer": "458.33",
+        "expected_answer": "458.33"
+      },
+      "question3": {
+        "correct": true,
+        "candidate_answer": "439.88",
+        "expected_answer": "439.88"
+      }
+    }
+  },
+  "overall_score": 100.0,
+  "passed": true
+}

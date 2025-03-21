@@ -1,0 +1,154 @@
+{
+  "candidate_id": "Claude-3-Sonnet",
+  "overall_score": 70.0,
+  "passed": false,
+  "total_points": {
+    "earned": 28.0,
+    "possible": 40,
+    "percentage": 70.0
+  },
+  "section_scores": {
+    "section1": {
+      "earned": 9.0,
+      "possible": 10,
+      "percentage": 90.0,
+      "passed": true,
+      "details": {
+        "question1": {
+          "points_earned": 1,
+          "points_possible": 2,
+          "comment": "Correctly identified at least 2 indicators"
+        },
+        "question2": {
+          "points_earned": 3,
+          "points_possible": 3,
+          "comment": "Correct direction with complete evidence"
+        },
+        "question3": {
+          "points_earned": 2,
+          "points_possible": 2,
+          "comment": "Provided complete interpretation"
+        },
+        "question4_action1": {
+          "points_earned": 1.5,
+          "points_possible": 1.5,
+          "comment": "Valid action proposed"
+        },
+        "question4_action2": {
+          "points_earned": 1.5,
+          "points_possible": 1.5,
+          "comment": "Valid action proposed"
+        }
+      }
+    },
+    "section2": {
+      "earned": 4,
+      "possible": 10,
+      "percentage": 40.0,
+      "passed": false,
+      "details": {
+        "question1_2021": {
+          "points_earned": 1,
+          "points_possible": 1,
+          "comment": "Correct average calculation"
+        },
+        "question1_2022": {
+          "points_earned": 0,
+          "points_possible": 1,
+          "comment": "Incorrect average calculation"
+        },
+        "question1_2023": {
+          "points_earned": 0,
+          "points_possible": 1,
+          "comment": "Incorrect average calculation"
+        },
+        "question2": {
+          "points_earned": 1,
+          "points_possible": 2,
+          "comment": "Correctly identified month but incorrect volatility"
+        },
+        "question3": {
+          "points_earned": 0,
+          "points_possible": 2,
+          "comment": "Incorrect percentage calculation"
+        },
+        "question4_range": {
+          "points_earned": 1,
+          "points_possible": 1,
+          "comment": "Price range acceptable"
+        },
+        "question4_justification": {
+          "points_earned": 1,
+          "points_possible": 2,
+          "comment": "Justification partial"
+        }
+      }
+    },
+    "section3": {
+      "earned": 7,
+      "possible": 10,
+      "percentage": 70.0,
+      "passed": true,
+      "details": {
+        "question1_inventory": {
+          "points_earned": 0,
+          "points_possible": 1,
+          "comment": "Failed to rank low inventory in top 3 concerns"
+        },
+        "question1": {
+          "points_earned": 2,
+          "points_possible": 3,
+          "comment": "Ranked 2 out of 3 factors correctly"
+        },
+        "question2": {
+          "points_earned": 0,
+          "points_possible": 2,
+          "comment": "Incorrect calculation of additional inventory"
+        },
+        "question3": {
+          "points_earned": 2,
+          "points_possible": 2,
+          "comment": "Identified 2 out of 2 required data point categories"
+        },
+        "question4_range": {
+          "points_earned": 1,
+          "points_possible": 1,
+          "comment": "Price impact range acceptable"
+        },
+        "question4_rationale": {
+          "points_earned": 2,
+          "points_possible": 2,
+          "comment": "Rationale complete"
+        }
+      }
+    },
+    "section4": {
+      "earned": 8,
+      "possible": 10,
+      "percentage": 80.0,
+      "passed": true,
+      "details": {
+        "question1": {
+          "points_earned": 2,
+          "points_possible": 3,
+          "comment": "Market structure identification correct with good explanation"
+        },
+        "question2": {
+          "points_earned": 2,
+          "points_possible": 2,
+          "comment": "Correct percentage calculation"
+        },
+        "question3": {
+          "points_earned": 2,
+          "points_possible": 2,
+          "comment": "Interpretation complete"
+        },
+        "question4": {
+          "points_earned": 2,
+          "points_possible": 3,
+          "comment": "Strategy recommendation partial"
+        }
+      }
+    }
+  }
+}

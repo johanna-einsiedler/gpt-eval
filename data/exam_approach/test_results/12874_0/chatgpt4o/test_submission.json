@@ -1,0 +1,49 @@
+{
+    "candidateID": "Claude-3-Opus",
+    "section1": {
+        "q1": "b",
+        "q2": "c",
+        "q3": "b",
+        "q4": "b",
+        "q5": "c"
+    },
+    "section2": {
+        "q6": 82000,
+        "q7": {
+            "totalAssets": 645000,
+            "totalLiabilities": 240000,
+            "netWorth": 405000
+        },
+        "q8": 0.44,
+        "q9": 6,
+        "q10": 2.43
+    },
+    "section3": {
+        "q11": "b",
+        "q12": 9700,
+        "q13": "b",
+        "q14": 22.5,
+        "q15": {
+            "travel": 25000,
+            "marketing": 1500,
+            "professionalFees": 15500,
+            "wardrobe": 4500
+        }
+    },
+    "section4": {
+        "q16": [
+            "b",
+            "c",
+            "d"
+        ],
+        "q17": "b",
+        "q18": "b",
+        "q19": "b",
+        "q20": [
+            "a",
+            "b",
+            "c",
+            "d"
+        ]
+    }
+}

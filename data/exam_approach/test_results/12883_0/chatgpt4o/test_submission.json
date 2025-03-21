@@ -1,0 +1,89 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "section1": {
+        "q1": "c",
+        "q2": "b",
+        "q3": "The missing information includes: purchase price, total transaction value, and delivery location.",
+        "q4": "The record is missing: 1) quantity of soybeans purchased, 2) product specifications, 3) payment terms.",
+        "q5": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "f",
+            "g"
+        ]
+    },
+    "section2": {
+        "q1": "b",
+        "q2": "FIFO: Reduces holding costs by selling older inventory first. LIFO: Can reduce tax liability during inflation. Weighted Average: Simplifies accounting by averaging costs.",
+        "q3": "c",
+        "q4": {
+            "value_per_unit": 12.4,
+            "total_inventory_value": 3720.0
+        },
+        "q5": "c"
+    },
+    "section3": {
+        "q1": "b",
+        "q2": "The report must include the country of origin, quantity, type of citrus, and the importer's details.",
+        "q3": "Report to the USDA and FDA, including quantity, source, and quality details, by the 15th of the following month.",
+        "q4": "a",
+        "q5": {
+            "1": "a",
+            "2": "c",
+            "3": "b",
+            "4": "e",
+            "5": "b"
+        }
+    },
+    "section4": {
+        "q1": {
+            "total_quantity": 7900,
+            "total_cost": 5185.0,
+            "average_price": 0.66
+        },
+        "q2": {
+            "variance_percentage": 6.25,
+            "possible_causes": [
+                "Theft or pilferage",
+                "Recording errors",
+                "Spoilage or shrinkage"
+            ]
+        },
+        "q3": {
+            "expected_inventory": 14700,
+            "acceptable_minimum": 14400,
+            "acceptable_maximum": 15000
+        },
+        "q4": {
+            "causes": [
+                "Duplicate invoice entry",
+                "Unrecorded credit note",
+                "Payment not yet processed"
+            ],
+            "reconciliation_methods": [
+                "Verify invoice entries",
+                "Check for credit notes",
+                "Confirm payment status with suppliers"
+            ]
+        },
+        "q5": {
+            "is_correct": false,
+            "correct_deduction": 675.0,
+            "correct_payment": 42750.0
+        }
+    },
+    "section5": {
+        "q1": "c",
+        "q2": [
+            "Supplier's name and contact information",
+            "Product traceability records",
+            "Compliance with safety standards",
+            "Corrective actions taken for non-compliance"
+        ],
+        "q3": "Collect organic certification documents, transaction certificates, and maintain records of purchase and sales.",
+        "q4": "c",
+        "q5": "Contact the seller to obtain the missing licensing information, update the records, and implement a checklist for future transactions to ensure all required documentation is collected."
+    }
+}

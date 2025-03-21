@@ -1,0 +1,177 @@
+{
+  "candidateID": "GPT-4o",
+  "section1": {
+    "total_points": 25,
+    "points_earned": 23,
+    "questions": {
+      "q1": {
+        "possible": 10,
+        "earned": 8,
+        "feedback": {
+          "a": "Correct",
+          "b": "Missing key concepts: detailed proposals for complex requirements",
+          "c": "Correct",
+          "d": "Correct",
+          "e": "Correct"
+        }
+      },
+      "q2": {
+        "possible": 3,
+        "earned": 3,
+        "feedback": "Correct"
+      },
+      "q3": {
+        "possible": 3,
+        "earned": 3,
+        "feedback": "Correct"
+      },
+      "q4": {
+        "possible": 3,
+        "earned": 3,
+        "feedback": "Correct"
+      },
+      "q5": {
+        "possible": 6,
+        "earned": 6,
+        "feedback": "Correct"
+      }
+    }
+  },
+  "section2": {
+    "total_points": 25,
+    "points_earned": 22,
+    "questions": {
+      "q1": {
+        "possible": 5,
+        "earned": 2,
+        "feedback": "Identified 2 out of 5 required elements"
+      },
+      "q2": {
+        "possible": 6,
+        "earned": 6,
+        "feedback": {
+          "a": "Correct",
+          "b": "Correct",
+          "c": "Correct"
+        }
+      },
+      "q3": {
+        "possible": 5,
+        "earned": 5,
+        "feedback": {
+          "a": "Correct",
+          "b": "Correct",
+          "c": "Correct",
+          "d": "Correct",
+          "e": "Correct"
+        }
+      },
+      "q4": {
+        "possible": 5,
+        "earned": 5,
+        "feedback": "Correct"
+      },
+      "q5": {
+        "possible": 4,
+        "earned": 4,
+        "feedback": "Correct"
+      }
+    }
+  },
+  "section3": {
+    "total_points": 25,
+    "points_earned": 23,
+    "questions": {
+      "q1": {
+        "possible": 4,
+        "earned": 4,
+        "feedback": "All components correctly identified"
+      },
+      "q2": {
+        "possible": 7,
+        "earned": 7,
+        "feedback": {
+          "selectedVendor": "Correct",
+          "justification": "Excellent justification"
+        }
+      },
+      "q3": {
+        "possible": 3,
+        "earned": 3,
+        "feedback": "Correct"
+      },
+      "q4": {
+        "possible": 4,
+        "earned": 4,
+        "feedback": "Correct"
+      },
+      "q5": {
+        "possible": 7,
+        "earned": 5,
+        "feedback": "Identified 2 out of 3 required criteria"
+      }
+    }
+  },
+  "section4": {
+    "total_points": 25,
+    "points_earned": 25,
+    "questions": {
+      "q1": {
+        "possible": 8,
+        "earned": 8,
+        "feedback": "All elements correctly identified"
+      },
+      "q2": {
+        "possible": 5,
+        "earned": 5,
+        "feedback": "Correct"
+      },
+      "q3": {
+        "possible": 5,
+        "earned": 5,
+        "feedback": {
+          "isCorrect": "Correct",
+          "correctTotal": "Correct"
+        }
+      },
+      "q4": {
+        "possible": 4,
+        "earned": 4,
+        "feedback": "Correct"
+      },
+      "q5": {
+        "possible": 3,
+        "earned": 3,
+        "feedback": "Correct"
+      }
+    }
+  },
+  "overall_score": 93.0,
+  "passed": true,
+  "section_summary": {
+    "section1": {
+      "name": "Knowledge Assessment",
+      "score": 23,
+      "possible": 25,
+      "percentage": 92.0
+    },
+    "section2": {
+      "name": "Purchase Order Preparation",
+      "score": 22,
+      "possible": 25,
+      "percentage": 88.0
+    },
+    "section3": {
+      "name": "Bid Solicitation",
+      "score": 23,
+      "possible": 25,
+      "percentage": 92.0
+    },
+    "section4": {
+      "name": "Requisition Review",
+      "score": 25,
+      "possible": 25,
+      "percentage": 100.0
+    }
+  }
+}

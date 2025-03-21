@@ -1,0 +1,88 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "section1": {
+        "q1": "c",
+        "q2": "b",
+        "q3": "The missing information includes: price per bushel, total purchase amount, delivery location, and buyer identification/purchase order number.",
+        "q4": "1) Missing quantity of soybeans purchased (bushels/tons), 2) Missing quality specifications or grade, 3) Missing payment terms or method of payment.",
+        "q5": [
+            "a",
+            "b",
+            "c",
+            "f",
+            "g"
+        ]
+    },
+    "section2": {
+        "q1": "a",
+        "q2": "1) FIFO (First-In-First-Out): Advantage - Reflects current market value more accurately for agricultural commodities with price fluctuations. 2) LIFO (Last-In-First-Out): Advantage - Can reduce taxable income during periods of inflation by matching current costs against current revenues. 3) Weighted Average Cost: Advantage - Simplifies record keeping by averaging costs across all similar inventory items, reducing complexity for seasonal purchases.",
+        "q3": "c",
+        "q4": {
+            "value_per_unit": 12.35,
+            "total_inventory_value": 4940.0
+        },
+        "q5": "c"
+    },
+    "section3": {
+        "q1": "b",
+        "q2": "Country of origin, product classification code, quantity, value, phytosanitary certification number, import permit number, packaging details, treatment information (if applicable), producer/exporter identification, and customs entry number.",
+        "q3": "Raw milk purchases must be reported to the USDA Agricultural Marketing Service and state department of agriculture. Reports typically include volume purchased, price paid, butterfat content, and quality testing results. Most states require monthly reporting by the 10th day of the following month. Some states may require additional reporting to state dairy boards or milk marketing orders.",
+        "q4": "a",
+        "q5": {
+            "1": "a",
+            "2": "c",
+            "3": "d",
+            "4": "e",
+            "5": "b"
+        }
+    },
+    "section4": {
+        "q1": {
+            "total_quantity": 7900.0,
+            "total_cost": 5667.0,
+            "average_price": 0.72
+        },
+        "q2": {
+            "variance_percentage": 6.25,
+            "possible_causes": [
+                "Natural weight loss due to moisture evaporation during storage",
+                "Inventory counting errors during physical count",
+                "Unrecorded sales or transfers of product"
+            ]
+        },
+        "q3": {
+            "expected_inventory": 14700.0,
+            "acceptable_minimum": 14406.0,
+            "acceptable_maximum": 14994.0
+        },
+        "q4": {
+            "causes": [
+                "Timing differences between when invoices were recorded in AP and when they were received from suppliers",
+                "Disputed charges that have been adjusted by suppliers but not yet in AP system",
+                "Invoices in transit that have been recorded by suppliers but not yet received by accounting"
+            ],
+            "reconciliation_methods": [
+                "Perform invoice matching to identify specific discrepancies between recorded amounts and supplier statements",
+                "Contact suppliers to request detailed aging reports to compare with internal records",
+                "Review recent credit memos or adjustments that may not have been applied to the accounts"
+            ]
+        },
+        "q5": {
+            "is_correct": false,
+            "correct_deduction": 2025.0,
+            "correct_payment": 42975.0
+        }
+    },
+    "section5": {
+        "q1": "c",
+        "q2": [
+            "Supplier verification records",
+            "Receiving records with food safety inspections",
+            "Temperature control monitoring during transport",
+            "Traceability documentation (one step forward, one step back)"
+        ],
+        "q3": "For organic soybean purchases, you must collect and maintain: 1) Valid organic certificate from the supplier showing certification under USDA NOP standards, 2) Transaction certificates for each purchase verifying organic status, 3) Detailed purchase records including lot numbers and quantities, 4) Clean transport affidavits confirming no commingling with conventional products, 5) Pest management records for storage facilities, and 6) Documentation of procedures preventing commingling with conventional soybeans. These records must be maintained for at least 5 years and be available for inspection during organic certification audits.",
+        "q4": "c",
+        "q5": "First, contact the seller immediately to obtain the missing licensing information and update the purchase record. Document the correction with date and name of person making the change. Second, verify all other wheat purchase transactions to ensure they contain complete documentation. Third, implement a purchase documentation checklist that must be completed before finalizing transactions. Finally, provide additional training to purchasing staff on documentation requirements and establish a regular audit process to catch documentation issues before they become compliance problems."
+    }
+}

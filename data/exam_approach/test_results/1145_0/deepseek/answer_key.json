@@ -1,0 +1,28 @@
+{
+    "candidate_id": "EXAMINER",
+    "section1": {
+        "question1": "62500, 58750, 66250",
+        "question2": "12.15, 11.75, 12.60",
+        "question3": "12.88, 12.10, 13.65"
+    },
+    "section2": {
+        "question1": "7196",
+        "question2": "7070",
+        "question3": "40"
+    },
+    "section3": {
+        "question1": "2.77",
+        "question2": "468000",
+        "question3": "26.5"
+    },
+    "section4": {
+        "question1": "2077.47",
+        "question2": "15.4",
+        "question3": "1860"
+    },
+    "section5": {
+        "question1": "465.83",
+        "question2": "458.33",
+        "question3": "439.88"
+    }
+}
