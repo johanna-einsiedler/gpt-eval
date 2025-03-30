@@ -145,7 +145,7 @@ def get_labels(df, folder_path):
 
                 print('Reading:', file_path)
                 labels = pd.read_csv(file_path)
-
+        
                 # Merge label data into the main DataFrame
                 df = df.merge(labels[['task_id', f'label_{labeler_name}']], how='left', on='task_id')
 
@@ -174,19 +174,24 @@ if __name__ == "__main__":
     print("There are ", df.shape[0], " tasks within ", occupation_group)
     df.to_csv(f'../data/task_lists/{occupation_group.replace(" ", "_").lower()}.csv')
 
-    # read in labels & filter exposure
-    folder_path ='../data/manual_automation_labels/'
-    df = get_labels(df, folder_path)
-    df = filter_dataframe(df, label_dict, condition_type)
-    print("There are ", df.shape[0]," tasks with the desired exposure scores within ", occupation_group)
-
+    core_label = 'CORE' if core_only else ''
     # filter core vs. supplemental
     if core_only:
         df=df[df['task_type'] =='Core']
         print("There are ", df.shape[0]," CORE tasks with the desired exposure scores within ", occupation_group)
 
-    core_label = 'CORE' if core_only else ''
-    # # Save the filtered DataFrame as CSV
     save_path = f'../data/task_lists/{occupation_group.replace(" ", "_").lower()}_{core_label}.csv'
+    df.to_csv(save_path, index=False)
+
+
+    # # read in labels & filter exposure
+    folder_path ='../data/manual_automation_labels/'
+    df = get_labels(df, folder_path)
+    df = filter_dataframe(df, label_dict, condition_type)
+    print("There are ", df.shape[0]," tasks with the desired exposure scores within ", occupation_group)
+
+
+    # # Save the filtered DataFrame as CSV
+    save_path = f'../data/task_lists/{occupation_group.replace(" ", "_").lower()}_{core_label}_automatable.csv'
     df.to_csv(save_path, index=False)
     print(f"Saved to {save_path}")
