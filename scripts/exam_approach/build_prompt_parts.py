@@ -5,7 +5,9 @@ from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
 import anthropic
 import regex as re
-
+from query_agents import query_agent
+import sys
+import ast
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
@@ -17,17 +19,22 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 # client = OpenAI(
 #     api_key=OPENAI_API_KEY
 # )
-
+ # practical tests 
+ # if not possible -> say no 
 
 system_prompt_template = '''
-You are an excellent examiner of {occupation} capabilities. Design a remote, practical exam to verify whether a {occupation} can {task_description}. This exam will have two parts (basic and advanced). Your current task is **only** to design the basic exam.
+You are an excellent examiner of {occupation} capabilities. Design a remote, **practical** exam to verify whether a {occupation} can {task_description}.
+ This exam will have two parts (basic and advanced). Your current task is **only** to design the basic exam.
 
 ### Context
 {tools_instructions}
 {materials_instructions}
-- Design a test that can be completed remotely using only these tools.
+- Design a **practical** exam that can be completed remotely using only these tools. A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
 - To simplify evaluation, the candidate should submit answers to questions in a structured JSON format. The JSON file should have the name "test_submission.json".
 '''
+
+
+
 
 prompt_overview ='''
 
@@ -70,8 +77,8 @@ Here is brief explanation of the exam's purpose and structure intended for the e
 Here are the instructions for the candidate: <instructions> {answer_instructions} </instructions>
 Here are the materials provided to the candidate: <materials> {answer_materials} </materials>
 
-## Your assingment
-Based on the given information, pecify exactly what the candidate needs to submit, including:
+## Your assignment
+Based on the given information, specify exactly what the candidate needs to submit, including:
 - Required JSON answer format with question IDs
 - The exact format of answers (numbers, text, specific units, decimal places)
 - Any supplementary files if necessary
@@ -110,136 +117,225 @@ In addition to the detailed test results, 'test_results.json' should include one
 """
 
 
+def custom_join_or(lst):
+    """
+    Joins a list of strings with commas and the word 'or' before the last item.
+
+    Args:
+        lst (list): A list of strings to join.
+
+    Returns:
+        str: A string with the list items joined by commas and 'or', or an empty string if the list is empty.
+    
+    Examples:
+        custom_join_or(['apple', 'banana', 'cherry']) -> "apple, banana or cherry"
+        custom_join_or(['apple']) -> "apple"
+        custom_join_or([]) -> ""
+    """
+    if len(lst) > 1:
+        return ", ".join(lst[:-1]) + " or " + lst[-1]
+    elif lst:
+        return lst[0]
+    else:
+        return ""  # If the list is empty
+
+def custom_join_and(lst):
+    """
+    Joins a list of strings with commas and the word 'and' before the last item.
+
+    Args:
+        lst (list): A list of strings to join.
+
+    Returns:
+        str: A string with the list items joined by commas and 'and', or an empty string if the list is empty.
+    
+    Examples:
+        custom_join_and(['apple', 'banana', 'cherry']) -> "apple, banana and cherry"
+        custom_join_and(['apple']) -> "apple"
+        custom_join_and([]) -> ""
+    """
+    if len(lst) > 1:
+        return ", ".join(lst[:-1]) + " and " + lst[-1]
+    elif lst:
+        return lst[0]
+    else:
+        return ""  # If the list is empty
 
 
+def build_system_prompt(row, system_prompt_template, standard=True):
+    """
+    Builds a system prompt for designing a practical exam based on the given row of data.
 
+    Args:
+        row (pd.Series): A row of data containing information about the task, including required tools, materials, 
+                         occupation, and task description.
+        system_prompt_template (str): A template string for the system prompt with placeholders for dynamic content.
+        standard (bool): A flag indicating whether to use the standard tools and materials fields 
+                         (default is True). If False, non-standard fields are used.
 
+    Returns:
+        str: A formatted system prompt string with the provided task details.
 
+    Example:
+        row = {
+            'occupation': 'data scientist',
+            'task_description': 'analyze a dataset',
+            'task_id': '123',
+            'required_tools_standard': "['Python', 'Jupyter Notebook']",
+            'required_materials_standard': "['sample_dataset.csv']"
+        }
+        system_prompt_template = "You are an examiner of {occupation} capabilities. {tools_instructions} {materials_instructions}"
+        build_system_prompt(row, system_prompt_template)
 
+        Output:
+        "You are an examiner of data scientist capabilities. - The candidate has access to a computer with the following tools: Python and Jupyter Notebook. - The candidate can also be given digital materials such as sample_dataset.csv that must be used for the test."
+    """
+    if standard:
+        required_tools = ast.literal_eval(row['required_tools_standard'])
+        required_materials = ast.literal_eval(row['required_materials_standard'])
+    else:
+        required_tools = ast.literal_eval(row['required_tools'])
+        required_materials = ast.literal_eval(row['required_materials'])
 
-def build_system_prompt(row, system_prompt_template):
-
-    if isinstance(row['required_tools'],(tuple, list)):
-        tools_instructions = """- The candidate has access to a computer with the following tools:""" + ", ".join(row['required_tools'])
+    if isinstance(required_tools, (tuple, list)):
+        tools_instructions = """- The candidate has access to a computer with the following tools: """ + custom_join_and(required_tools)
     else: 
-        tools_instructions = """- The candidate does not have access to a computer."""
+        tools_instructions = """- The candidate does not have access to any special tools."""
 
-    if isinstance(row['required_materials'],(tuple, list)):
-        materials_instructions = """- The candidate can also be given digital materials such as""" +\
-             + ", ".join(row['required_tools']) + """that must be used for the test."""
+    if isinstance(required_materials, (tuple, list)):
+        materials_instructions = """- The candidate can also be given digital materials such as """ + \
+            custom_join_or(required_materials) + """ that must be used for the test."""
     else:
         materials_instructions = """- The candidate does not have access to any additional digital materials."""
-
 
     system_prompt = system_prompt_template.format(
         occupation=row['occupation'],
         task_description=row['task_description'],
         task_id=row['task_id'],
-        tools_instructions= tools_instructions,
-        materials_instructions= materials_instructions
-        #submission_files=", ".join(row['required_submission']) if isinstance(row['required_submission'],(tuple, list)) else 'None'
+        tools_instructions=tools_instructions,
+        materials_instructions=materials_instructions
     )
+    print(system_prompt)
     return system_prompt
 
-def build_instructions_prompt(row, prompt_template_instructions):
-    prompt_instructions = prompt_template_instructions.format(
-        answer_overview = row['answer_overview']
-        )
-    return prompt_instructions
-
-def build_materials_prompt(row, prompt_template_materials):
-    prompt_materials = prompt_template_materials.format(
-    answer_overview = row['answer_overview'],
-    answer_instructions = row['answer_instructions']
-    )
-    return prompt_materials
 
 def build_prompts(row, prompt_template):
+    """
+    Builds a formatted prompt by replacing placeholders in the template with values from the given row.
+
+    Args:
+        row (pd.Series): A row of data containing key-value pairs where keys correspond to placeholders 
+                         in the prompt template.
+        prompt_template (str): A string template containing placeholders in the format {placeholder_name}.
+
+    Returns:
+        str: A formatted string where placeholders in the template are replaced with corresponding values 
+             from the row.
+
+    Example:
+        row = {
+            'answer_overview': 'This is an overview.',
+            'answer_instructions': 'These are instructions.'
+        }
+        prompt_template = "Overview: {answer_overview}, Instructions: {answer_instructions}"
+        build_prompts(row, prompt_template)
+
+        Output:
+        "Overview: This is an overview., Instructions: These are instructions."
+    """
     placeholders = re.findall(r'\{(.*?)\}', prompt_template)
     prompt = prompt_template.format(**{ph: row[ph] for ph in placeholders})
-
-    # prompt = prompt_template.format(
-    # answer_overview = row['answer_overview'],
-    # answer_instructions = row['answer_instructions'] if row['answer_instructions'] else None,
-    # answer_materials = row['answer_materials'] if row['answer_materials'] else None,
-    # answer_submission = row['answer_submission'] if row['answer_submission'] else None,
-    # answer_evaluation = row['answer_evaluation'] if row['answer_evaluation'] else None
-    # )
     return prompt
 
 
-
-def query_LLM(row,  col):
-    client = anthropic.Anthropic(
-    # defaults to os.environ.get("ANTHROPIC_API_KEY")
-    api_key=ANTHROPIC_API_KEY
-    )
-    message = client.messages.create(
-        model="claude-3-7-sonnet-20250219",
-        max_tokens=8192,
-        system = row['system_prompt'],
-        messages=[
-            {"role": "user", "content": row[col]}
-        ]
-    )
-    out = message.content[0].text
-    return out
-
-
-
-
+def run_query(row, prompt, model):
+    response = query_agent(row['system_prompt'], row[prompt], model)
+    return response
 
 if __name__ == "__main__":
-    path_to_data = '../../data/exam_approach/material_lists/materials_business_and_financial_operations_occupations.csv'
-    file_name = '_'.join(path_to_data.split('/')[-1].split('_')[1:])
-    df = pd.read_csv(path_to_data)
-    print('Overall ', df.shape[0], ' tasks in the data')
-
-    overwrite = False
-    if ~overwrite:
-        existing_df = pd.read_csv('../../data/exam_approach/task_prompts/task_prompts_'+file_name)
-        df = df[~df['task_id'].isin(existing_df['task_id'])]
-        print('Processing ', df.shape[0], ' new tasks.')
-
-    df["system_prompt"] = df.apply(build_system_prompt, axis=1, args=(system_prompt_template,))
-
-    # # get 1. OVERVIEW
-    print('Generating overview')
-    df["prompt_overview"] = prompt_overview
-    df["answer_overview"] = df.apply(query_LLM, axis=1, args=('prompt_overview',))
 
 
-    # # get 2. INSTRUCTIONS
-    print('Generating instructions')
-    df['prompt_instructions'] = df.apply(build_prompts, axis=1, args=(prompt_template_instructions,))
-    df['answer_instructions'] = df.apply(query_LLM, axis=1, args=('prompt_instructions',))
 
-
-    # get 3. MATERIALS
-    print('Generating materials')
-    df['prompt_materials'] = df.apply(build_prompts, axis=1, args=(prompt_template_materials,))
-    df['answer_materials'] = df.apply(query_LLM, axis=1, args=('prompt_materials',))
-
-
-    # 4. SUBMISSION
-    print('Generating submission requirements')
-    df['prompt_submission'] = df.apply(build_prompts, axis=1, args=(prompt_template_submission,))
-    df['answer_submission'] = df.apply(query_LLM, axis=1, args=('prompt_submission',))
-
-
-    # 4. EVALUATION
-    print('Generating evaluation guide')
-    df['prompt_evaluation'] = df.apply(build_prompts, axis=1, args=(prompt_template_evaluation,))
-    df['answer_evaluation'] = df.apply(query_LLM, axis=1, args=('prompt_evaluation',))
-
-    # 5. GRADING
-    print('Generating grading script')
-    df['prompt_grading'] = df.apply(build_prompts, axis=1, args=(prompt_template_grading,))
-    df['answer_grading'] = df.apply(query_LLM, axis=1, args=('prompt_grading',))
-
-    if ~overwrite:
-        pd.concat([existing_df,df]).to_csv('../../data/exam_approach/task_prompts/task_prompts_'+file_name)
+    if len(sys.argv) >1:
+        path_to_data = sys.argv[1]
     else:
-        df.to_csv('../../data/exam_approach/task_prompts/task_prompts_'+file_name)
+        #path_to_data = '../../data/exam_approach/material_lists/'
+        path_to_data = '../../data/exam_approach/exams/'
 
-    print('Finished! Processed '+str(df.shape[0]) +' tasks!')
+    if len(sys.argv)>2:
+        overwrite = sys.argv[3]
+    else:
+        overwrite = True
+
+
+
+    # read in list of task ids to be excluded
+    exclusion_list = pd.read_csv('../../data/exam_approach/exclusion_lists/presention_image_audio_video_virtual_all.csv',index_col=0).rename(columns={'0':'task_id'})
+    
+  for root, dirs, files in os.walk(path_to_data):
+    # Iterate over models (subdirectories) in the current root directory
+    for model in dirs:
+        print('Generating exams using', model)
+
+        # Create the output directory for the current model if it does not exist
+        output_dir = f'../../data/exam_approach/exams/{model}/'
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        # Process files in the model's directory
+        model_path = os.path.join(root, model)  # Construct the full path to the model directory
+        for file in os.listdir(model_path):  # Use os.listdir instead of os.walk for files in the model
+            file_path = os.path.join(model_path, file)  # Full path to the file
+
+            # Only process CSV files
+            if file.endswith('.csv') and os.path.isfile(file_path):
+                print(f"Processing file: {file_path}")
+                df = pd.read_csv(file_path)
+                print(f"Overall {df.shape[0]} tasks in the data\n")
+                if overwrite == False:
+                    existing_df = pd.read_csv(f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
+                    df = df[~df['task_id'].isin(existing_df['task_id'])]
+                print('Processing ', df.shape[0], ' new tasks.')
+                df = df[~df['task_id'].isin(exclusion_list['task_id'])]
+                print('After applying tools and materials exclusion criteria there are ', df.shape[0], ' tasks left.')
+                df["system_prompt"] = df.apply(build_system_prompt, axis=1, args=(system_prompt_template,))
+                
+                # get 1. OVERVIEW
+                print('Generating overview')
+                df["prompt_overview"] = prompt_overview
+                df["answer_overview"] = df.apply(run_query, axis=1, args=('prompt_overview',model,))
+
+                # get 2. INSTRUCTIONS
+                print('Generating instructions')
+                df['prompt_instructions'] = df.apply(build_prompts, axis=1, args=(prompt_template_instructions,))
+                df['answer_instructions'] = df.apply(run_query, axis=1, args=('prompt_instructions',model, ))
+
+
+                get 3. MATERIALS
+                print('Generating materials')
+                df['prompt_materials'] = df.apply(build_prompts, axis=1, args=(prompt_template_materials,))
+                df['answer_materials'] = df.apply(run_query, axis=1, args=('prompt_materials',model,))
+
+
+                4. SUBMISSION
+                print('Generating submission requirements')
+                df['prompt_submission'] = df.apply(build_prompts, axis=1, args=(prompt_template_submission,))
+                df['answer_submission'] = df.apply(run_query, axis=1, args=('prompt_submission',model,))
+
+
+                4. EVALUATION
+                print('Generating evaluation guide')
+                df['prompt_evaluation'] = df.apply(build_prompts, axis=1, args=(prompt_template_evaluation,))
+                df['answer_evaluation'] = df.apply(run_query, axis=1, args=('prompt_evaluation',model,))
+
+                # 5. GRADING
+                print('Generating grading script')
+                df['prompt_grading'] = df.apply(build_prompts, axis=1, args=(prompt_template_grading,))
+                df['answer_grading'] = df.apply(run_query, axis=1, args=('prompt_grading',model,))
+            
+                if overwrite == False:
+                    pd.concat([existing_df,df]).to_csv(f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
+                else:
+                    df.to_csv(f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
+                    print('saved to ', f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
+        print('Finished! Processed '+str(df.shape[0]) +' tasks!')

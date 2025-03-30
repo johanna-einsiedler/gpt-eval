@@ -51,6 +51,43 @@ Saves the output (tools, materials, and feasibility assessments) in structured C
 Results are saved in ../../data/exam_approach/material_lists/{model}/.
 
 
+### Exclude tasks that do require specific materials or tools
+filter_tools_materials.py
+
+Default: exclude presentation software, image generation, images, audio files, video files and virtual labs or sandboxes
+
+It excludes tasks that involve certain tools (e.g., presentation software, image generators) or materials (e.g., images, audio, video, virtual labs).
+
+The script walks through a directory containing CSV files, reads each file, and checks the tasks for any that meet the exclusion criteria. It aggregates all the excluded tasks across different models and identifies the tasks that are excluded in every model. Finally, the script saves the list of these universally excluded tasks into a CSV file for further analysis or reporting.
+
+Saves a list of ids of excluded tasks to the folder exclusion_lists.
+
+### Build prompt parts
+build_prompt_parts.py
+
+
+- The script reads the list of tasks (CSV files) from a specified directory.
+
+- It checks for tasks that need to be excluded based on certain criteria (like tools and materials).
+
+- For each task, it generates prompts for various aspects of the exam, including:
+
+    - Overview of the exam
+
+    - Instructions for the candidate
+
+    - Required materials for the exam
+
+    - Submission requirements
+
+    - Evaluation guide
+
+    - Grading criteria
+
+The results from the prompts are saved back into CSV files, where each file corresponds to a model and contains the details of the generated exam.
+
+Result Storage: The generated exam details (prompts, answers, etc.) are saved in directories corresponding to different models (e.g., GPT-4, Claude-3_7-Sonnet). If the overwrite flag is set to False, the script ensures new tasks are appended to existing files rather than overwriting them.
+
 
 
 
