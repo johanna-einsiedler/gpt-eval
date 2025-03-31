@@ -1,5 +1,5 @@
-,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,row,prompt,task_id,occupation,task_description,can_be_performed_remotely,feasiblity_practical,chain_of_thought,tools.Coding,tools.Spreadsheets,tools.Text editor,tools.PDF viewer,tools.Presentation software,tools.Web Browser,tools.Image Generator,tools.Other.name,tools.Other.classification,materials.Text,materials.Data,materials.Images,materials.Audio files,materials.Video files,materials.Virtual labs or sandbox environments,materials.Other.name,materials.Other.classification,required_tools,required_materials,required_tools_standard,required_materials_standard,system_prompt,prompt_overview,answer_overview,prompt_instructions,answer_instructions,prompt_materials,answer_materials,prompt_submission,answer_submission,prompt_evaluation,answer_evaluation,prompt_grading,answer_grading,test_answers_gemini,test_answers_claude,test_answers_chatgpt4o,test_answers_chatgpt35,test_answers_deepseek
-0,0,0,0,0,0,0,0,0,"
+,Unnamed: 0.7,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,row,prompt,task_id,occupation,task_description,can_be_performed_remotely,feasiblity_practical,chain_of_thought,tools.Coding,tools.Spreadsheets,tools.Text editor,tools.PDF viewer,tools.Presentation software,tools.Web Browser,tools.Image Generator,tools.Other.name,tools.Other.classification,materials.Text,materials.Data,materials.Images,materials.Audio files,materials.Video files,materials.Virtual labs or sandbox environments,materials.Other.name,materials.Other.classification,required_tools,required_materials,required_tools_standard,required_materials_standard,system_prompt,prompt_overview,answer_overview,prompt_instructions,answer_instructions,prompt_materials,answer_materials,prompt_submission,answer_submission,prompt_evaluation,answer_evaluation,prompt_grading,answer_grading,test_answers_gemini,test_answers_claude,test_answers_chatgpt4o,test_answers_chatgpt35,test_answers_deepseek,answer_valid_chatgpt4o,answer_valid_chatgpt35,answer_valid_deepseek,answer_valid_claude,answer_valid_gemini
+0,0,0,0,0,0,0,0,0,0,"
 Task ID: 12865.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -1326,8 +1326,8 @@ Here's an example of how your JSON submission should be structured:
    - Columns: Payment Date, Amount, Status (Matched/Unmatched), Notes.  
 
 ---  
-This submission demonstrates the ability to interpret contract terms, calculate fees accurately, and track payments with discrepancy resolution. Let me know if you'd like adjustments or additional details!"
-1,1,1,1,1,1,2,2,2,"
+This submission demonstrates the ability to interpret contract terms, calculate fees accurately, and track payments with discrepancy resolution. Let me know if you'd like adjustments or additional details!",False,True,True,False,True
+1,1,1,1,1,1,1,2,2,2,"
 Task ID: 12870.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -2603,8 +2603,8 @@ By following these steps, you should be able to complete the tasks effectively. 
     }
   ]
 }
-```"
-2,2,2,2,2,2,3,3,3,"
+```",True,True,True,True,True
+2,2,2,2,2,2,2,3,3,3,"
 Task ID: 12883.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -4051,8 +4051,8 @@ By following these steps, you will demonstrate your ability to maintain records 
 - **updated_transactions_inventory.xlsx**: Contains the updated inventory levels and calculations.
 - **inventory_report.pdf**: The final report in PDF format. 
 
-Both files are included in the submission package."
-3,3,3,3,3,3,4,4,4,"
+Both files are included in the submission package.",True,True,True,True,True
+3,3,3,3,3,3,3,4,4,4,"
 Task ID: 12882.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -5284,8 +5284,8 @@ Explanation:
 2. For Task 2 (Demand Forecasting), I adjusted these quantities based on hypothetical forecast data (e.g., increasing apples by 20%, decreasing wheat by 6.25%, and increasing dairy by 18.75%).
 3. The candidate_id identifies the AI model generating this response.
 
-Note: In a real test, these numbers would be calculated from the actual provided data files. The exact product names and quantities would match those in the order_data.xlsx and demand_forecast.pdf files."
-4,4,4,4,4,4,5,5,5,"
+Note: In a real test, these numbers would be calculated from the actual provided data files. The exact product names and quantities would match those in the order_data.xlsx and demand_forecast.pdf files.",False,False,True,True,True
+4,4,4,4,4,4,4,5,5,5,"
 Task ID: 20713.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -6528,8 +6528,8 @@ Explanation:
 3. The candidate_id field identifies the AI model generating this response.
 4. All values follow the specified format with up to two decimal places.
 
-Note: In a real exam scenario, these values would be calculated based on the actual data provided in the spreadsheets. This example simply demonstrates the required JSON structure and formatting."
-5,5,5,5,5,5,6,6,6,"
+Note: In a real exam scenario, these values would be calculated based on the actual data provided in the spreadsheets. This example simply demonstrates the required JSON structure and formatting.",True,False,True,True,True
+5,5,5,5,5,5,5,6,6,6,"
 Task ID: 66.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -7668,8 +7668,8 @@ Note: In a real exam situation, the candidate would:
 2. Conduct real internet research on current economic conditions
 3. Base all answers specifically on that data and research
 
-This example demonstrates the required format and type of analysis expected, but with actual data, the specific products, months, and economic analysis would differ."
-6,6,6,6,6,6,7,7,7,"
+This example demonstrates the required format and type of analysis expected, but with actual data, the specific products, months, and economic analysis would differ.",False,True,True,True,True
+6,6,6,6,6,6,6,7,7,7,"
 Task ID: 1146.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -9015,8 +9015,8 @@ This script provides a structured way to evaluate the candidate's performance ba
     ]
   }
 }
-```"
-7,7,7,7,7,7,8,8,8,"
+```",True,True,True,True,True
+7,7,7,7,7,7,7,8,8,8,"
 Task ID: 1143.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -9991,8 +9991,8 @@ Here's my JSON submission:
   ""rfp_text"": ""Request for Proposal (RFP) for Office Cleaning Services\n\nDescription:\nWe are seeking proposals from qualified vendors to provide office cleaning services for a 10,000 sq ft facility. The services required include daily cleaning of offices, restrooms, common areas, and periodic deep cleaning as needed.\n\nEvaluation Criteria:\n1. Cost: Competitive pricing for the services offered.\n2. Experience: Proven track record in providing cleaning services for similar facilities.\n3. Service Quality: Ability to meet high standards of cleanliness and hygiene.\n4. References: Positive feedback from current or past clients.\n\nSubmission Guidelines:\n1. Deadline: Proposals must be submitted by October 31, 2024.\n2. Format: Proposals should be in PDF format and include a detailed breakdown of services and costs.\n3. Contact: Submit proposals via email to procurement@example.com with the subject line 'Office Cleaning Services RFP'.\n\nWe look forward to your proposals and thank you for your interest in working with us."",
   ""requisition_review_summary"": ""Review of requisition forms revealed the following discrepancies:\n1. Requisition Form #001: Missing quantity for 'Desk Chairs'.\n2. Requisition Form #002: Incorrect item description for 'Monitor Stands' listed as 'Monitor Stans'.\n3. Requisition Form #003: Incomplete 'Department Approval' section with no signature.\n4. Requisition Form #004: Unit price missing for 'Wireless Keyboards'.\n\nAll other fields across the forms were correctly filled out. Please address the noted issues for processing.""
 }
-```"
-8,8,8,8,8,8,9,9,9,"
+```",True,True,True,True,True
+8,8,8,8,8,8,8,9,9,9,"
 Task ID: 1142.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -11348,8 +11348,8 @@ Explanation:
 
 2. For Task 2 (Budget Allocation), I allocated quantities and costs that would stay within a hypothetical budget while maximizing quality and quantity. The total cost of $3,450 would presumably be under the budget limit specified in the hypothetical PDF.
 
-Note: In a real exam, these selections would be based on actual data from the provided spreadsheet and PDF documents. The quantities and costs would be calculated precisely to maximize value within the given budget constraints."
-9,9,9,9,9,9,10,10,10,"
+Note: In a real exam, these selections would be based on actual data from the provided spreadsheet and PDF documents. The quantities and costs would be calculated precisely to maximize value within the given budget constraints.",False,False,True,True,True
+9,9,9,9,9,9,9,10,10,10,"
 Task ID: 1145.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -12459,8 +12459,8 @@ Explanation:
    - Analysis of hypothetical trends (material cost increases, seasonal sales)
    - Pricing strategy recommendation that considers both costs and market conditions
 
-This response follows the required JSON structure with numerical values formatted to two decimal places and clear text descriptions for the analysis and recommendations."
-10,10,10,10,10,10,11,11,11,"
+This response follows the required JSON structure with numerical values formatted to two decimal places and clear text descriptions for the analysis and recommendations.",True,True,True,True,True
+10,10,10,10,10,10,10,11,11,11,"
 Task ID: 1159.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -13615,8 +13615,8 @@ This script assumes that the candidate's answers are expected to match the answe
 3. **Procedure Development**: Steps are logically sequenced, from solicitation to contract closure, with clear descriptions.
 4. **JSON Format**: The submission adheres strictly to the required structure and syntax.  
 
-This submission is ready for evaluation. Let me know if you'd like any adjustments!"
-11,11,11,11,11,11,12,12,12,"
+This submission is ready for evaluation. Let me know if you'd like any adjustments!",True,True,True,True,True
+11,11,11,11,11,11,11,12,12,12,"
 Task ID: 1151.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -14915,8 +14915,8 @@ This submission demonstrates:
 3. Proper formatting according to the specified requirements
 4. Clear, concise communication within the word limits
 
-The hypothetical values show understanding of typical purchasing metrics while the analysis demonstrates critical thinking about supply chain management challenges."
-12,12,12,12,12,12,13,13,13,"
+The hypothetical values show understanding of typical purchasing metrics while the analysis demonstrates critical thinking about supply chain management challenges.",False,True,True,True,True
+12,12,12,12,12,12,12,13,13,13,"
 Task ID: 1144.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -16578,8 +16578,8 @@ Key points about this submission:
 
 The scores (92 and 78) and rankings (1 and 2) are hypothetical and would normally be based on a specific scoring rubric if one had been provided. The research fields contain the type of information a purchasing agent would typically gather when evaluating suppliers.
 
-This example demonstrates how to structure the submission when actual supplier data isn't provided, showing the expected format and level of detail for each field."
-13,13,13,13,13,13,14,14,14,"
+This example demonstrates how to structure the submission when actual supplier data isn't provided, showing the expected format and level of detail for each field.",False,False,True,True,True
+13,13,13,13,13,13,13,14,14,14,"
 Task ID: 1153.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -17812,8 +17812,8 @@ Note: In a real test scenario, you would:
 5. Align recommendations with the specific company policies provided
 6. Ensure all calculations are mathematically accurate based on the given data
 
-This example demonstrates the required JSON structure and the type of analysis expected, but with actual data you would provide specific, data-driven results."
-14,14,14,14,14,14,15,15,15,"
+This example demonstrates the required JSON structure and the type of analysis expected, but with actual data you would provide specific, data-driven results.",False,False,True,True,True
+14,14,14,14,14,14,14,15,15,15,"
 Task ID: 1157.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -19018,8 +19018,8 @@ This sample demonstrates how I would approach the tasks with hypothetical conten
 1. **Task 1**: Hypothetical specifications for an LED light panel were created, covering all required sections (features, quality, dimensions, materials, and additional info).
 2. **Task 2**: Three common issues in sample specifications were identified (missing tolerances, vague standards, and omitted packaging), with explanations and actionable suggestions.
 
-The JSON adheres to the submission format and includes a placeholder `candidate_id` as instructed. If actual materials were provided, the responses would be tailored to their content."
-15,15,15,15,15,15,16,16,16,"
+The JSON adheres to the submission format and includes a placeholder `candidate_id` as instructed. If actual materials were provided, the responses would be tailored to their content.",True,True,True,True,True
+15,15,15,15,15,15,15,16,16,16,"
 Task ID: 1152.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -20207,8 +20207,8 @@ Here's my completed test submission:
 }
 ```
 
-Note: In a real exam situation, the answers would be based on the actual provided materials (catalogs, periodicals) and thorough internet research. The above is a simulated response showing the proper JSON format and the type of information that would be expected. The prices and suppliers listed are representative examples that might be found in typical office supply catalogs or periodicals."
-16,16,16,16,16,16,17,17,17,"
+Note: In a real exam situation, the answers would be based on the actual provided materials (catalogs, periodicals) and thorough internet research. The above is a simulated response showing the proper JSON format and the type of information that would be expected. The prices and suppliers listed are representative examples that might be found in typical office supply catalogs or periodicals.",True,True,True,True,True
+16,16,16,16,16,16,16,17,17,17,"
 Task ID: 1158.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -21332,8 +21332,8 @@ By following these steps, you'll be able to complete the tasks and prepare your 
    - Save the JSON file as `test_submission.json`.
    - Submit both the JSON file and the image file together.
 
-Let me know if you'd like help refining the analysis or report further!"
-17,17,17,17,17,17,18,18,18,"
+Let me know if you'd like help refining the analysis or report further!",True,True,True,True,True
+17,17,17,17,17,17,17,18,18,18,"
 Task ID: 1155.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -22387,8 +22387,8 @@ Without the actual data, I've provided a template that follows the required form
 
 The JSON is properly formatted and includes all required fields. The candidate ID is set to ""GPT-4-turbo"" as an example. 
 
-Note: If actual materials were provided, the calculations would be based on the given data. This submission is a placeholder for the expected format."
-18,18,18,18,18,18,19,19,19,"
+Note: If actual materials were provided, the calculations would be based on the given data. This submission is a placeholder for the expected format.",False,False,True,True,True
+18,18,18,18,18,18,18,19,19,19,"
 Task ID: 21417.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -23685,8 +23685,8 @@ This script assumes that the `test_submission.json` and `answer_key.json` files 
     ""explanation"": ""The claim is covered because it involves a vehicle accident, which is listed as a covered incident under the policy. The claim amount of $5,000 is within the maximum claim amount of $10,000. The policy number in the claims data matches the correct policy number (ABCD-5678), and there are no exclusions mentioned that would apply to this incident.""
   }
 }
-```"
-19,19,19,19,19,19,21,21,21,"
+```",True,True,True,True,True
+19,19,19,19,19,19,19,21,21,21,"
 Task ID: 21426.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -24984,8 +24984,8 @@ Notes about this sample submission:
 6. All monetary values are formatted to two decimal places
 7. Justifications reference policy limits and documentation quality
 
-Without actual claim documents, this demonstrates the required format and type of analysis that would be performed with real claims data. In a real exam, specific details from the provided materials would populate these fields."
-20,20,20,20,20,20,23,23,23,"
+Without actual claim documents, this demonstrates the required format and type of analysis that would be performed with real claims data. In a real exam, specific details from the provided materials would populate these fields.",True,False,True,False,True
+20,20,20,20,20,20,20,23,23,23,"
 Task ID: 21428.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -26258,8 +26258,8 @@ This sample submission:
 4. Follows the exact JSON structure specified in the instructions
 5. Demonstrates the type of issues and analysis a claims adjuster would typically perform
 
-In a real exam situation, the candidate would populate this template with actual findings from the provided dataset and guidelines."
-21,21,21,21,21,21,26,26,26,"
+In a real exam situation, the candidate would populate this template with actual findings from the provided dataset and guidelines.",False,False,True,True,True
+21,21,21,21,21,21,21,26,26,26,"
 Task ID: 21425.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -27765,8 +27765,8 @@ Note: This response demonstrates my approach to claims handling but is not based
 }
 ```
 
-Note: In a real exam situation, the responses would be based on the actual claim scenarios provided in the materials. This sample demonstrates the required JSON structure and the type of analysis expected for each task. The prioritization in Task 1 follows typical claim handling priorities where life/safety issues take precedence over property damage, and severe injuries are prioritized over minor ones. The Task 2 response shows a comprehensive approach to a complex claim with multiple considerations and proactive solutions to anticipated challenges."
-22,22,22,22,22,22,27,27,27,"
+Note: In a real exam situation, the responses would be based on the actual claim scenarios provided in the materials. This sample demonstrates the required JSON structure and the type of analysis expected for each task. The prioritization in Task 1 follows typical claim handling priorities where life/safety issues take precedence over property damage, and severe injuries are prioritized over minor ones. The Task 2 response shows a comprehensive approach to a complex claim with multiple considerations and proactive solutions to anticipated challenges.",False,False,True,True,True
+22,22,22,22,22,22,22,27,27,27,"
 Task ID: 21424.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -29334,8 +29334,8 @@ Now, I'll prepare the JSON submission:
     ""justifications"": ""For claim C004 (Health), the reserve is recommended to be increased to $22,000 due to potential future medical expenses, despite meeting the 80% policy threshold. For claim C005 (Auto), the reserve is maintained at 90% of the claim amount as per policy, as no additional liabilities are anticipated beyond the standard adjustment.""
   }
 }
-```"
-23,23,23,23,23,23,29,29,29,"
+```",True,True,True,True,True
+23,23,23,23,23,23,23,29,29,29,"
 Task ID: 21434.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -30541,8 +30541,8 @@ To properly complete this test, I would need access to the `settled_claims.xlsx`
 4. **Discrepancies**: 
    - Two discrepancies flagged for claims `C125` (date inconsistency) and `C123` (missing policy number).
 
-This submission adheres to the required JSON structure and includes all requested fields. If actual data files were provided, the values would be derived from them."
-24,24,24,24,24,24,30,30,30,"
+This submission adheres to the required JSON structure and includes all requested fields. If actual data files were provided, the values would be derived from them.",True,True,True,True,True
+24,24,24,24,24,24,24,30,30,30,"
 Task ID: 21430.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -31697,8 +31697,8 @@ The claims selected represent common red flags:
 - Frequent claim patterns
 - Inconsistent documentation
 
-The referral report provides actionable information for investigators to pursue."
-25,25,25,25,25,25,31,31,31,"
+The referral report provides actionable information for investigators to pursue.",True,True,True,True,True
+25,25,25,25,25,25,25,31,31,31,"
 Task ID: 21439.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -33007,4 +33007,4 @@ By following these steps, you should be able to complete the task effectively. I
    - Claim ID `1003` is an irregularity (paid status with $0 paid).
 3. **Summary**: Counts the total irregularities by category.
 
-If you provide the actual dataset (""claims_data.xlsx""), I can analyze it and generate a precise report. Let me know how you'd like to proceed!"
+If you provide the actual dataset (""claims_data.xlsx""), I can analyze it and generate a precise report. Let me know how you'd like to proceed!",True,True,True,False,True

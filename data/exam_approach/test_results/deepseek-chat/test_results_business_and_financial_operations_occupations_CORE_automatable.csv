@@ -1,5 +1,5 @@
-,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,row,prompt,task_id,occupation,task_description,can_be_performed_remotely,feasiblity_practical,chain_of_thought,tools.Coding,tools.Spreadsheets,tools.Text editor,tools.PDF viewer,tools.Presentation software,tools.Web Browser,tools.Image Generator,tools.Other.name,tools.Other.classification,materials.Text,materials.Data,materials.Images,materials.Audio files,materials.Video files,materials.Virtual labs or sandbox environments,materials.Other.name,materials.Other.classification,required_tools,required_materials,required_tools_standard,required_materials_standard,system_prompt,prompt_overview,answer_overview,prompt_instructions,answer_instructions,prompt_materials,answer_materials,prompt_submission,answer_submission,prompt_evaluation,answer_evaluation,prompt_grading,answer_grading,test_answers_gemini,test_answers_claude,test_answers_chatgpt4o,test_answers_chatgpt35,test_answers_deepseek
-0,0,0,0,0,0,0,0,0,"
+,Unnamed: 0.7,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,row,prompt,task_id,occupation,task_description,can_be_performed_remotely,feasiblity_practical,chain_of_thought,tools.Coding,tools.Spreadsheets,tools.Text editor,tools.PDF viewer,tools.Presentation software,tools.Web Browser,tools.Image Generator,tools.Other.name,tools.Other.classification,materials.Text,materials.Data,materials.Images,materials.Audio files,materials.Video files,materials.Virtual labs or sandbox environments,materials.Other.name,materials.Other.classification,required_tools,required_materials,required_tools_standard,required_materials_standard,system_prompt,prompt_overview,answer_overview,prompt_instructions,answer_instructions,prompt_materials,answer_materials,prompt_submission,answer_submission,prompt_evaluation,answer_evaluation,prompt_grading,answer_grading,test_answers_gemini,test_answers_claude,test_answers_chatgpt4o,test_answers_chatgpt35,test_answers_deepseek,answer_valid_chatgpt4o,answer_valid_chatgpt35,answer_valid_deepseek,answer_valid_claude,answer_valid_gemini
+0,0,0,0,0,0,0,0,0,0,"
 Task ID: 12865.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -2559,8 +2559,8 @@ Here's my final submission:
 2. **Task 2**: Calculated the expected commission for each transaction by multiplying the revenue by the commission rate (20%). Compared this to the actual payment received to find discrepancies. The total discrepancies sum to $1100.00.
 3. **Task 3**: Checked if payments were made on time by comparing the payment date to the invoice date plus 15 days. Calculated penalties for late payments using the 1.5% monthly penalty rate, prorated for the number of days late. The total penalties sum to $32.70.
 
-The submission adheres to the specified format and rules, including exact wording from the contract, precise calculations, and correct JSON structure."
-1,1,1,1,1,1,2,2,2,"
+The submission adheres to the specified format and rules, including exact wording from the contract, precise calculations, and correct JSON structure.",True,True,True,True,True
+1,1,1,1,1,1,1,2,2,2,"
 Task ID: 12870.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -4703,8 +4703,8 @@ This submission follows the required format, extracts information directly from 
     }
   ]
 }
-```"
-2,2,2,2,2,2,3,3,3,"
+```",True,True,True,True,True
+2,2,2,2,2,2,2,3,3,3,"
 Task ID: 12883.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -7289,8 +7289,8 @@ Now I'll complete each task:
    - Corn: Only one transaction, so total sales = 120.00
    - Soybeans: Only one transaction, so total sales = 120.00
 
-All values are formatted according to the instructions, with monetary values rounded to 2 decimal places and quantities as whole numbers. The product and buyer names are exact and case-sensitive as provided in the materials."
-3,3,3,3,3,3,4,4,4,"
+All values are formatted according to the instructions, with monetary values rounded to 2 decimal places and quantities as whole numbers. The product and buyer names are exact and case-sensitive as provided in the materials.",True,True,True,True,True
+3,3,3,3,3,3,3,4,4,4,"
 Task ID: 12882.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -9109,8 +9109,8 @@ Here's my submission:
 
 3. **Clarity**: Each `reason` field explicitly references the data (e.g., stock levels, demand notes).  
 
-This submission adheres strictly to the instructions and expected format. Let me know if you need further adjustments!"
-4,4,4,4,4,4,5,5,5,"
+This submission adheres strictly to the instructions and expected format. Let me know if you need further adjustments!",True,True,True,True,True
+4,4,4,4,4,4,4,5,5,5,"
 Task ID: 20713.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -10685,8 +10685,8 @@ Now I'll format these answers according to the required JSON structure:
     ""reason_for_mark_down"": ""The mark-down is necessary to clear slow-moving inventory and make room for new seasonal products.""
   }
 }
-```"
-5,5,5,5,5,5,6,6,6,"
+```",True,True,True,True,True
+5,5,5,5,5,5,5,6,6,6,"
 Task ID: 66.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -12132,8 +12132,8 @@ Here's my completed test submission:
     ""impact_on_demand"": ""This trend is likely to sustain or increase demand for Home Appliances, particularly energy-efficient models, while Electronics may continue to see reduced demand unless innovation drives new interest.""
   }
 }
-```"
-6,6,6,6,6,6,7,7,7,"
+```",True,True,True,True,True
+6,6,6,6,6,6,6,7,7,7,"
 Task ID: 1146.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -13973,8 +13973,8 @@ The script handles potential errors like missing files or invalid JSON and provi
     ]
   }
 }
-```"
-7,7,7,7,7,7,8,8,8,"
+```",True,True,True,True,True
+7,7,7,7,7,7,7,8,8,8,"
 Task ID: 1143.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -16168,8 +16168,8 @@ The correct total is $195.00, not $235.00 as shown in the example. Let me provid
     ""reason"": ""Supplier_B offers the lowest total cost ($120.00) compared to Supplier_A ($150.00) and Supplier_C ($140.00). The delivery time of 2 weeks is acceptable, and the payment terms of Net 30 are favorable compared to Supplier_A's Net 15 and Supplier_C's Net 60.""
   }
 }
-```"
-8,8,8,8,8,8,9,9,9,"
+```",True,True,True,True,True
+8,8,8,8,8,8,8,9,9,9,"
 Task ID: 1142.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -18012,8 +18012,8 @@ Here's my completed test submission:
     ""reasoning"": ""March demand is 1700 units; current stock is 600, requiring 1100 plus buffer.""
   }
 }
-```"
-9,9,9,9,9,9,10,10,10,"
+```",True,True,True,True,True
+9,9,9,9,9,9,9,10,10,10,"
 Task ID: 1145.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -19652,8 +19652,8 @@ Here's my submission:
     ""reasoning"": ""Budget allows only 8%, and competitors average 5%. A 15% increase exceeds market benchmarks.""
   }
 }
-```"
-10,10,10,10,10,10,11,11,11,"
+```",True,True,True,True,False
+10,10,10,10,10,10,10,11,11,11,"
 Task ID: 1159.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -21306,8 +21306,8 @@ Here's my submission in the required JSON format:
     ""delivery_and_inspection"": ""Upon delivery, the biomedical engineering team will inspect the equipment to ensure it meets the specified standards and is free from defects. A delivery acceptance report must be signed before payment is processed. All inspection records will be archived.""
   }
 }
-```"
-11,11,11,11,11,11,12,12,12,"
+```",True,True,True,True,True
+11,11,11,11,11,11,11,12,12,12,"
 Task ID: 1151.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -24171,8 +24171,8 @@ Here's my completed submission:
    - Calculated the average cost per order as `(600 + 255 + 1500 + 366 + 1800) / 5 = 904.20`.
    - Listed `ORD-203` and `ORD-205` as late deliveries (actual delivery date > expected date).
 
-The submission adheres strictly to the provided JSON structure and instructions."
-12,12,12,12,12,12,13,13,13,"
+The submission adheres strictly to the provided JSON structure and instructions.",True,True,True,True,True
+12,12,12,12,12,12,12,13,13,13,"
 Task ID: 1144.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -26617,8 +26617,8 @@ Based on the materials provided, here's my completed test submission in the requ
     ]
   }
 }
-```"
-13,13,13,13,13,13,14,14,14,"
+```",True,True,True,True,True
+13,13,13,13,13,13,13,14,14,14,"
 Task ID: 1153.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -28019,8 +28019,8 @@ Based on this analysis, here's my JSON submission:
   ""purchase_priority"": [""P-205"", ""P-100""],
   ""justification"": ""P-205 has a longer lead time (14 days) and higher weekly sales (25 units) compared to P-100 (7-day lead time, 15 units/week), making it more urgent to reorder.""
 }
-```"
-14,14,14,14,14,14,15,15,15,"
+```",True,True,True,True,True
+14,14,14,14,14,14,14,15,15,15,"
 Task ID: 1157.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -29891,8 +29891,8 @@ The output `test_results.json` will clearly show where the candidate met require
     }
   }
 }
-```"
-15,15,15,15,15,15,16,16,16,"
+```",True,True,True,True,True
+15,15,15,15,15,15,15,16,16,16,"
 Task ID: 1152.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -32715,8 +32715,8 @@ Based on the materials provided, here's my completed test submission:
     ""reason"": ""Offers double the storage (2TB vs. 1TB) and additional compliance certifications for sensitive data, fitting within the budget of $20/month.""
   }
 }
-```"
-16,16,16,16,16,16,17,17,17,"
+```",True,True,True,True,True
+16,16,16,16,16,16,16,17,17,17,"
 Task ID: 1158.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -34687,8 +34687,8 @@ Here's my JSON submission:
     ""trend_analysis"": ""Buying opportunity due to recovery from mid-year dip.""
   }
 }
-```"
-17,17,17,17,17,17,18,18,18,"
+```",True,True,True,True,True
+17,17,17,17,17,17,17,18,18,18,"
 Task ID: 1155.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -36524,8 +36524,8 @@ Here's my submission:
     ""required_documents"": [""Bill of Lading"", ""Commercial Invoice""]
   }
 }
-```"
-18,18,18,18,18,18,19,19,19,"
+```",True,True,True,True,True
+18,18,18,18,18,18,18,19,19,19,"
 Task ID: 21417.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -38817,8 +38817,8 @@ The output `test_results.json` will include detailed information about which par
 2. **Damage Covered**: The policy covers water damage if sudden/accidental (e.g., roof leakage), and the incident report confirms no flood involvement.  
 3. **Exclusions Not Applicable**: The claimed damages do not fall under the listed exclusions (flood, earthquake, intentional acts).  
 
-The submission adheres strictly to the provided document wording, formats, and JSON structure."
-19,19,19,19,19,19,21,21,21,"
+The submission adheres strictly to the provided document wording, formats, and JSON structure.",True,True,True,True,True
+19,19,19,19,19,19,19,21,21,21,"
 Task ID: 21426.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -41176,8 +41176,8 @@ For Task 3, I recommend escalation due to the conflicting witness statements tha
     ""justification"": ""Conflicting witness statements.""
   }
 }
-```"
-20,20,20,20,20,20,23,23,23,"
+```",True,True,True,True,True
+20,20,20,20,20,20,20,23,23,23,"
 Task ID: 21428.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -43378,8 +43378,8 @@ My analysis:
     ""reason"": ""Claim exceeds $10,000 threshold; requires manager review.""
   }
 }
-```"
-21,21,21,21,21,21,26,26,26,"
+```",True,True,True,True,True
+21,21,21,21,21,21,21,26,26,26,"
 Task ID: 21425.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -45695,8 +45695,8 @@ Based on the provided materials, here's my submission:
     ""email_response"": ""Dear Mr. Smith,\n\nWe sincerely apologize for the delay in processing your claim (CL789012). We understand your frustration and appreciate your patience during this time.\n\nThe delay has been caused by pending contractor estimates for your roof damage, which we require to properly assess your claim. We expect to receive all necessary documentation within the next 5 business days, at which point we'll be able to provide you with a final resolution.\n\nWe assure you that we're working diligently to resolve your claim as quickly as possible. A claims representative will contact you directly once we have completed our review.\n\nThank you for your understanding. Please don't hesitate to contact us if you have any further questions.\n\nSincerely,\n[Adjuster Name]\nClaims Department""
   }
 }
-```"
-22,22,22,22,22,22,27,27,27,"
+```",True,True,True,True,True
+22,22,22,22,22,22,22,27,27,27,"
 Task ID: 21424.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -47196,8 +47196,8 @@ Here's my submission:
   ""policy_reference"": ""Section 4.2 - Medical Reserve Adjustments"",
   ""supporting_data"": [""medical_report.pdf"", ""claim_history.xlsx""]
 }
-```"
-23,23,23,23,23,23,29,29,29,"
+```",True,True,True,True,True
+23,23,23,23,23,23,23,29,29,29,"
 Task ID: 21434.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -48869,8 +48869,8 @@ Here's my submission in the required JSON format:
    - The total settled amount is the sum of the valid settlement amounts (5000 + 7500 + 6000 = 18500).
    - The average settlement days is calculated by averaging the days between the reported and resolved dates for the settled claims (A100: 36 days, B200: 43 days, H800: 49 days → (36 + 43 + 49) / 3 = 43 days).
 
-The submission adheres strictly to the required JSON format and includes all necessary fields with accurate data."
-24,24,24,24,24,24,30,30,30,"
+The submission adheres strictly to the required JSON format and includes all necessary fields with accurate data.",True,True,True,True,True
+24,24,24,24,24,24,24,30,30,30,"
 Task ID: 21430.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -50563,8 +50563,8 @@ The script handles up to 2 red flags per case (as required) but will properly sc
    - **Referral Reason**: The timing of the policy increase and the circumstances of the fire (no forced entry, stove left on while away) suggest possible arson.
    - **Recommended Action**: An **investigator** is required to determine if the fire was intentionally set. 
 
-Both cases exhibit clear red flags that warrant further investigation by a specialized fraud investigator."
-25,25,25,25,25,25,31,31,31,"
+Both cases exhibit clear red flags that warrant further investigation by a specialized fraud investigator.",True,True,True,True,True
+25,25,25,25,25,25,25,31,31,31,"
 Task ID: 21439.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -52602,4 +52602,4 @@ This report identifies:
 5. **Structure:**  
    - Follows the required JSON schema without extra fields.  
 
-This submission adheres strictly to the instructions and expected output. Let me know if you need any adjustments!"
+This submission adheres strictly to the instructions and expected output. Let me know if you need any adjustments!",True,True,True,True,True

@@ -1,5 +1,5 @@
-,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,row,prompt,task_id,occupation,task_description,can_be_performed_remotely,feasiblity_practical,chain_of_thought,tools.Coding,tools.Spreadsheets,tools.Text editor,tools.PDF viewer,tools.Presentation software,tools.Web Browser,tools.Image Generator,tools.Other.name,tools.Other.classification,materials.Text,materials.Data,materials.Images,materials.Audio files,materials.Video files,materials.Virtual labs or sandbox environments,materials.Other.name,materials.Other.classification,required_tools,required_materials,required_tools_standard,required_materials_standard,system_prompt,prompt_overview,answer_overview,prompt_instructions,answer_instructions,prompt_materials,answer_materials,prompt_submission,answer_submission,prompt_evaluation,answer_evaluation,prompt_grading,answer_grading,test_answers_gemini,test_answers_claude,test_answers_chatgpt4o,test_answers_chatgpt35,test_answers_deepseek
-0,0,0,0,0,0,0,0,0,"
+,Unnamed: 0.7,Unnamed: 0.6,Unnamed: 0.5,Unnamed: 0.4,Unnamed: 0.3,Unnamed: 0.2,Unnamed: 0.1,Unnamed: 0,row,prompt,task_id,occupation,task_description,can_be_performed_remotely,feasiblity_practical,chain_of_thought,tools.Coding,tools.Spreadsheets,tools.Text editor,tools.PDF viewer,tools.Presentation software,tools.Web Browser,tools.Image Generator,tools.Other.name,tools.Other.classification,materials.Text,materials.Data,materials.Images,materials.Audio files,materials.Video files,materials.Virtual labs or sandbox environments,materials.Other.name,materials.Other.classification,required_tools,required_materials,required_tools_standard,required_materials_standard,system_prompt,prompt_overview,answer_overview,prompt_instructions,answer_instructions,prompt_materials,answer_materials,prompt_submission,answer_submission,prompt_evaluation,answer_evaluation,prompt_grading,answer_grading,test_answers_gemini,test_answers_claude,test_answers_chatgpt4o,test_answers_chatgpt35,test_answers_deepseek,answer_valid_chatgpt4o,answer_valid_chatgpt35,answer_valid_deepseek,answer_valid_claude,answer_valid_gemini
+0,0,0,0,0,0,0,0,0,0,"
 Task ID: 12865.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -2281,8 +2281,8 @@ Please ensure that the `test_submission.json` file is valid JSON and submit it a
      - Partial Payment: $500.00 (as provided in the instructions)
      - Remaining Balance: $1545.00 - $500.00 = $1045.00
 
-The JSON file is structured correctly and includes all required fields, including the candidate ID and model version. The answers are consistent with the provided materials and instructions."
-1,1,1,1,1,1,2,2,2,"
+The JSON file is structured correctly and includes all required fields, including the candidate ID and model version. The answers are consistent with the provided materials and instructions.",True,False,True,True,False
+1,1,1,1,1,1,1,2,2,2,"
 Task ID: 12870.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -4224,8 +4224,8 @@ Make sure to replace placeholders with actual data you find during your research
 1. For Task 1, I identified two current trends in the pop music industry: the dominance of TikTok for music discovery and the growth of direct-to-fan monetization. Each trend includes a description, impact, and reputable source.
 2. For Task 2, I found a recent record deal involving Ice Spice, though specific terms were not publicly disclosed.
 3. The JSON structure follows the required format, including candidate ID, model version, and name fields.
-4. All source URLs are from reputable music industry publications (Billboard, Rolling Stone, Complex)."
-2,2,2,2,2,2,3,3,3,"
+4. All source URLs are from reputable music industry publications (Billboard, Rolling Stone, Complex).",True,False,True,True,True
+2,2,2,2,2,2,2,3,3,3,"
 Task ID: 12883.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -6405,8 +6405,8 @@ Submit only the `test_submission.json` file as instructed.",,"```json
     }
   ]
 }
-```"
-3,3,3,3,3,3,4,4,4,"
+```",True,False,True,True,True
+3,3,3,3,3,3,3,4,4,4,"
 Task ID: 12882.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -8362,8 +8362,8 @@ This JSON file is structured according to the requirements and includes all nece
 
 The JSON file is correctly formatted and includes all required fields with accurate calculations and categorizations. 
 
-**Model Version**: GPT-4-turbo"
-4,4,4,4,4,4,5,5,5,"
+**Model Version**: GPT-4-turbo",True,False,True,True,True
+4,4,4,4,4,4,4,5,5,5,"
 Task ID: 20713.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -10254,8 +10254,8 @@ Here's my JSON submission:
   ""justification_q5"": ""Priced below competition to attract customers while maintaining a reasonable margin close to the desired 40%. The calculated price for 40% margin is $3.33, which is competitive against $3.50."",
   ""candidate_id"": ""GPT-4-turbo""
 }
-```"
-5,5,5,5,5,5,6,6,6,"
+```",True,False,True,True,True
+5,5,5,5,5,5,5,6,6,6,"
 Task ID: 66.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -12107,8 +12107,8 @@ Note: In a real exam situation, you would:
 3. Research the current Consumer Confidence Index for Question 4a
 4. Replace all placeholder values with your actual findings
 
-The placeholder values above demonstrate the required format but would need to be replaced with accurate data from the provided materials and research."
-6,6,6,6,6,6,7,7,7,"
+The placeholder values above demonstrate the required format but would need to be replaced with accurate data from the provided materials and research.",False,False,True,True,True
+6,6,6,6,6,6,6,7,7,7,"
 Task ID: 1146.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -13646,8 +13646,8 @@ Make sure to replace `""YOUR_ID_HERE""` and `""MODEL_VERSION_HERE""` with your a
   ""3"": ""Labor laws are relevant in supplier selection to ensure ethical sourcing and avoid legal risks. One specific area to consider is 'child labor laws,' as suppliers must comply with regulations prohibiting the exploitation of minors in their workforce."",
   ""4"": ""Step 1: I would search for '[country name] customs import regulations' on a search engine to find official government sources or trade portals. Step 2: I would visit the official website of the country's customs or trade authority to review their import/export guidelines and any required documentation or restrictions.""
 }
-```"
-7,7,7,7,7,7,8,8,8,"
+```",True,False,True,False,True
+7,7,7,7,7,7,7,8,8,8,"
 Task ID: 1143.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -16702,8 +16702,8 @@ Requisition for Website Maintenance - Issues:
 }
 ```
 
-All files are complete and ready for submission according to the instructions. The purchase order includes researched prices for common office supplies, the RFQ contains all required sections with clear instructions, and the requisition review identifies specific issues with each requisition."
-8,8,8,8,8,8,9,9,9,"
+All files are complete and ready for submission according to the instructions. The purchase order includes researched prices for common office supplies, the RFQ contains all required sections with clear instructions, and the requisition review identifies specific issues with each requisition.",True,False,True,True,True
+8,8,8,8,8,8,8,9,9,9,"
 Task ID: 1142.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -18617,8 +18617,8 @@ Make sure to replace the placeholder values with actual data you find during you
 4. **Supplier Selection (Question 4):** 
    - Chose Amazon due to the lowest total cost ($159.80) and meeting quality criteria (92 brightness, 20lb weight). Also considered Amazon's reliable shipping.
 
-This submission adheres to the JSON structure and requirements specified in the instructions."
-9,9,9,9,9,9,10,10,10,"
+This submission adheres to the JSON structure and requirements specified in the instructions.",True,False,True,True,True
+9,9,9,9,9,9,9,10,10,10,"
 Task ID: 1145.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -21918,8 +21918,8 @@ This JSON file contains all the required information structured according to the
     ]
   }
 }
-```"
-10,10,10,10,10,10,11,11,11,"
+```",True,False,True,True,True
+10,10,10,10,10,10,10,11,11,11,"
 Task ID: 1159.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -23504,8 +23504,8 @@ This JSON file includes a comprehensive procedure document and concise answers t
   ""answer_q2"": ""Key information includes: department name, requester details, item description and specifications, quantity needed, justification for purchase, and estimated budget (if known)."",
   ""answer_q3"": ""Potential challenge: Resistance from departments used to making independent purchases. Mitigation strategy: Conduct training sessions to explain the benefits of the new procedure and provide clear documentation and support during the transition period.""
 }
-```"
-11,11,11,11,11,11,12,12,12,"
+```",True,False,True,False,True
+11,11,11,11,11,11,11,12,12,12,"
 Task ID: 1151.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -25297,8 +25297,8 @@ Candidate ID: AI_CANDIDATE_001
 Model Version: GPT-4
 ```
 
-All files are prepared according to the submission instructions and ready for evaluation. The calculations and identifications match the expected answers provided in the materials."
-12,12,12,12,12,12,13,13,13,"
+All files are prepared according to the submission instructions and ready for evaluation. The calculations and identifications match the expected answers provided in the materials.",True,False,True,True,True
+12,12,12,12,12,12,12,13,13,13,"
 Task ID: 1144.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -27310,8 +27310,8 @@ Here's my JSON submission:
     ""justification"": ""Lenovo offers the best combination of price, availability, and reputation among the three suppliers. At $800 per laptop, it is the most cost-effective option, with potential bulk discounts further reducing costs. The availability is excellent, with in-stock status and a delivery estimate of 5-7 business days, which is faster than both Dell and HP. Lenovo also has a strong reputation, with excellent customer testimonials highlighting durability and performance. While Dell and HP are also reputable, Lenovo's lower price and faster delivery make it the best choice for Tech Solutions Inc.'s needs.""
   }
 }
-```"
-13,13,13,13,13,13,14,14,14,"
+```",False,False,True,True,True
+13,13,13,13,13,13,13,14,14,14,"
 Task ID: 1153.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -29814,8 +29814,8 @@ After running, a `test_results.json` file will be created in the same folder con
 
   ""employee_access_strategy"": ""The purchasing plan ensures adequate stock of high-demand items (Black Pens, A4 Paper) while reducing overstock of underutilized items (Staplers). By maintaining appropriate inventory levels and reorder points, employees will have consistent access to essential supplies without unnecessary stockpiling. Monthly reviews allow for adjustments based on changing usage patterns.""
 }
-```"
-14,14,14,14,14,14,15,15,15,"
+```",False,False,True,True,True
+14,14,14,14,14,14,14,15,15,15,"
 Task ID: 1157.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -32054,8 +32054,8 @@ The specifications use clear, unambiguous language with specific measurements an
   ],
   ""part2_revised_specification"": ""Product Specification: Basic Office Stapler - Revised\n\n1. **Type:** Desktop, manual stapler\n2. **Stapling Capacity:** Minimum 20 sheets of 80gsm paper\n3. **Staple Compatibility:** Must accept standard 26/6 and 24/6 staples\n4. **Body Material:** High-impact ABS plastic, minimum 2mm wall thickness\n5. **Mechanism:** Zinc alloy stapling mechanism with spring-loaded anvil\n6. **Base:** Non-slip rubberized base covering ≥80% of bottom surface\n7. **Throat Depth:** Minimum 50mm for edge stapling\n8. **Durability:** Minimum 10,000 staples without mechanism failure\n9. **Color Options:** Black (RAL 9005) or Dark Gray (RAL 7021)\n10. **Packaging:** Individual plastic blister packs, 10 units per corrugated shipping box\n11. **Quality Standards:** Compliant with EN 16654:2015 for office staplers\n12. **Warranty:** 2-year manufacturer warranty against defects""
 }
-```"
-15,15,15,15,15,15,16,16,16,"
+```",False,False,True,True,True
+15,15,15,15,15,15,15,16,16,16,"
 Task ID: 1152.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -33817,8 +33817,8 @@ Here's my completed test submission:
   },
   ""general_notes"": ""The Supplier Catalog Excerpts.pdf was very useful for finding exact matches or close alternatives. The Industry Directory was helpful for identifying additional suppliers when exact matches were not found in the catalog. For Item 2, the color specification was slightly off with Supplier B, but it may still meet the company's needs.""
 }
-```"
-16,16,16,16,16,16,17,17,17,"
+```",False,False,True,True,True
+16,16,16,16,16,16,16,17,17,17,"
 Task ID: 1158.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -36360,8 +36360,8 @@ After running the script, a file named `test_results.json` will be created in th
     ""answer11_market_assessment"": ""The market for Commodity X is facing multiple supply-side challenges (weather delays, transportation costs, inspection delays, geopolitical risks) while demand remains strong (industrial growth, new battery applications). Historical data shows a clear upward price trend. Purchasing agents should be concerned about both price volatility and supply disruptions in the near future and consider securing volumes in advance to mitigate risks.""
   }
 }
-```"
-17,17,17,17,17,17,18,18,18,"
+```",False,False,True,False,True
+17,17,17,17,17,17,17,18,18,18,"
 Task ID: 1155.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -38440,8 +38440,8 @@ Here's my completed test submission:
     ]
   }
 }
-```"
-18,18,18,18,18,18,19,19,19,"
+```",False,False,True,True,True
+18,18,18,18,18,18,18,19,19,19,"
 Task ID: 21417.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -40374,8 +40374,8 @@ Remember that in an actual exam, you would need to:
 2. Base your answers strictly on the information contained in those documents
 3. Follow the exact JSON format specified
 4. Replace the candidate_id with your actual identifier
-5. Use the current date for submission_date"
-19,19,19,19,19,19,21,21,21,"
+5. Use the current date for submission_date",False,False,True,False,True
+19,19,19,19,19,19,19,21,21,21,"
 Task ID: 21426.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -42768,8 +42768,8 @@ After running the script, a file named `test_results.json` will be created in th
     ""5a"": ""The next steps are to: 1. Document the claim details, coverage verification, and payment calculation in the claims management system. 2. Contact the claimant to confirm the details and inform them of the approved payment amount. 3. Prepare and issue the payment to the claimant.""
   }
 }
-```"
-20,20,20,20,20,20,23,23,23,"
+```",False,False,True,False,True
+20,20,20,20,20,20,20,23,23,23,"
 Task ID: 21428.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -45440,8 +45440,8 @@ if __name__ == ""__main__"":
 
 ### Submission Note:
 - **Candidate ID:** `GPT-4-turbo`  
-- The JSON file is valid and adheres to the required structure."
-21,21,21,21,21,21,26,26,26,"
+- The JSON file is valid and adheres to the required structure.",False,False,True,False,True
+21,21,21,21,21,21,21,26,26,26,"
 Task ID: 21425.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -47974,8 +47974,8 @@ After running the script, a file named `test_results.json` will be created in th
     ""service_orientation_importance"": ""Maintaining clear, empathetic communication and promptly addressing the claimant's concerns to ensure trust and satisfaction throughout the claims process.""
   }
 }
-```"
-22,22,22,22,22,22,27,27,27,"
+```",False,False,True,False,True
+22,22,22,22,22,22,22,27,27,27,"
 Task ID: 21424.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -50253,8 +50253,8 @@ if __name__ == ""__main__"":
   ""total_recommended_reserve"": 2300.00,
   ""overall_justification"": ""Initial reserves have been set in accordance with Acme Insurance's Basic Reserve Policy. The property damage reserve reflects the initial estimate, no bodily injury reserve is needed due to no reported injuries, and the standard claim expense reserve is applied. The total recommended reserve is the sum of applicable reserves.""
 }
-```"
-23,23,23,23,23,23,29,29,29,"
+```",False,False,True,False,True
+23,23,23,23,23,23,23,29,29,29,"
 Task ID: 21434.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -51885,8 +51885,8 @@ if __name__ == ""__main__"":
     }
   ]
 }
-```"
-24,24,24,24,24,24,30,30,30,"
+```",False,False,True,False,True
+24,24,24,24,24,24,24,30,30,30,"
 Task ID: 21430.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -53687,8 +53687,8 @@ if __name__ == ""__main__"":
     }
   ]
 }
-```"
-25,25,25,25,25,25,31,31,31,"
+```",False,False,True,False,True
+25,25,25,25,25,25,25,31,31,31,"
 Task ID: 21439.0
 
 Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
@@ -55754,4 +55754,4 @@ After running the script, a file named `test_results.json` will be created in th
     }
   ]
 }
-```"
+```",False,False,True,False,True
