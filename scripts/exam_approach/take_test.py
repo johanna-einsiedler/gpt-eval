@@ -28,6 +28,25 @@ system_prompt_template = """You are an expert worker within the domain of {occup
 
 
 def save_answer_json(row, path, model):
+    """
+    Saves a test answer from a DataFrame row as a JSON file in a structured directory.
+
+    Args:
+        row (pd.Series): A row from a DataFrame containing the test answers.
+        path (str): The base directory where the JSON file should be saved.
+        model (str): The model name used to fetch the test answer from the row.
+
+    Returns:
+        bool: True if the JSON file was successfully saved, False otherwise.
+
+    Process:
+        1. Creates a folder structure based on the `task_id` from the row.
+        2. Extracts the test answer JSON from the column `test_answers_<model>`.
+           - If the answer is formatted within triple backticks (```json ... ```), it extracts the JSON content using regex.
+           - If the direct value is a valid JSON string, it loads it directly.
+           - If both attempts fail, it defaults to an empty JSON object (`{}`) and returns False.
+        3. Saves the parsed JSON file in a subdirectory named after the model.
+    """
     folder = os.path.join(path, str(row['task_id']).replace(".", "_"))
     try:
         answer_file = json.loads(re.search(r'```json(.*?)```', row['test_answers_'+model], re.DOTALL).group(1).strip())
@@ -46,6 +65,22 @@ def save_answer_json(row, path, model):
     return True
 
 def save_evaluation(row, path):
+        """
+    Extracts and saves Python evaluation code from a DataFrame row to a file.
+
+    Args:
+        row (pd.Series): A row from a DataFrame containing `task_id` and `answer_grading`.
+        path (str): The base directory where the evaluation file should be saved.
+
+    Returns:
+        bool: True if the file was successfully saved, False otherwise.
+
+    Process:
+        1. Creates a directory named after the `task_id`, replacing problematic characters (e.g., "." and "/").
+        2. Extracts Python code enclosed in triple backticks (` ```python ... ``` `) from the `answer_grading` column.
+        3. If no Python code is found, prints a warning and returns False.
+        4. Writes the extracted code to a file named `task_evaluation.py` inside the task directory.
+    """
     folder = os.path.join(path, str(row['task_id']).replace(".", "_").replace("/", "_"))
     
     # Extract Python code from answer_grading
@@ -72,6 +107,25 @@ def save_evaluation(row, path):
 
 
 def save_answer_key(row, path):
+        """
+    Extracts and saves the answer key from a DataFrame row to a JSON file.
+
+    Args:
+        row (pd.Series): A row from a DataFrame containing `task_id` and `answer_evaluation`.
+        path (str): The base directory where the answer key should be saved.
+
+    Returns:
+        bool: True if the answer key was successfully saved, False otherwise.
+
+    Process:
+        1. Extracts the JSON-formatted answer key from the `answer_evaluation` column.
+           - Attempts to extract JSON data enclosed in triple backticks (```json ... ```).
+           - If extraction fails, attempts to load `answer_evaluation` as raw JSON.
+           - If both methods fail, defaults to an empty dictionary (`{}`) and returns False.
+        2. Creates a directory named after the `task_id`, replacing problematic characters.
+        3. Saves the extracted JSON data as `answer_key.json` in the task directory.
+    """
+
     folder = os.path.join(path, str(row['task_id']).replace(".", "_"))
     try:
         answer_file = json.loads(re.search(r'```json(.*?)```', row['answer_evaluation'], re.DOTALL).group(1).strip())
@@ -92,6 +146,34 @@ def save_answer_key(row, path):
 
 
 def run_evaluation(row,path, model):
+    """
+    Executes the evaluation script for a given task and captures any errors.
+
+    Args:
+        row (pd.Series): A row from a DataFrame containing `task_id`, `answer_key_json`, and `evaluation_python`.
+        path (str): The base directory where the evaluation script is located.
+        model (str): The model name used to specify the subdirectory.
+
+    Returns:
+        list: A list of error messages encountered during execution, or [None] if the script runs successfully.
+              If `answer_key_json` or `evaluation_python` is missing, returns a string message.
+
+    Process:
+        1. Constructs the folder path using `task_id`, replacing problematic characters.
+        2. Checks if both `answer_key_json` and `evaluation_python` exist.
+        3. Attempts to run `task_evaluation.py` in the appropriate directory.
+        4. Captures standard error output if the script fails.
+        5. Handles different types of errors:
+           - `CalledProcessError`: If the script execution fails.
+           - `FileNotFoundError`: If the script or directory is missing.
+           - General exceptions for unexpected errors.
+        6. Returns a list of error messages or confirmation of successful execution.
+
+    Notes:
+        - Uses `subprocess.run()` to execute the Python script.
+        - `cwd` ensures execution in the correct directory.
+        - Captures both `stderr` and `stdout` for debugging purposes.
+    """
     folder = os.path.join(path, str(row['task_id']).replace('.','_'))
     if row['answer_key_json']* row['evaluation_python']:
         errors =[]
@@ -128,6 +210,33 @@ def run_evaluation(row,path, model):
 
 
 def copy_answer_key(row,folder):
+        """
+    Copies the answer key JSON file to all subdirectories within the task-specific folder.
+
+    Args:
+        row (pd.Series): A row from a DataFrame containing `task_id`, which is used to determine the folder structure.
+        folder (str): The parent directory where task-specific folders are stored.
+
+    Process:
+        1. Constructs the path to the task-specific folder using `task_id`, replacing problematic characters.
+        2. Identifies the source file (`answer_key.json`) within this folder.
+        3. Iterates over all subdirectories within the task folder.
+        4. Copies `answer_key.json` into each subdirectory.
+
+    Returns:
+        None
+
+    Notes:
+        - Uses `os.walk()` to retrieve subdirectory names at the first level.
+        - Assumes `answer_key.json` exists in the task-specific folder.
+        - Prints confirmation for each copied file.
+
+    Example:
+        If `folder = "/data/tasks"` and `task_id = 123.4`, the function will:
+        - Look for `/data/tasks/123_4/answer_key.json`
+        - Copy it into all subdirectories inside `/data/tasks/123_4/`
+    """
+
     parent_directory = folder+'/'+str(row['task_id']).replace(".", "_")
     source_file = parent_directory+'/answer_key.json'
     # Iterate over all subdirectories
@@ -141,6 +250,35 @@ def copy_answer_key(row,folder):
 
 
 def collect_overall_scores(row,parent_directory):
+        """
+    Collects the 'overall_score' from test result JSON files across subdirectories within a task-specific folder.
+
+    Args:
+        row (pd.Series): A row from a DataFrame containing `task_id`, which is used to determine the folder structure.
+        parent_directory (str): The base directory where task-specific folders are stored.
+
+    Process:
+        1. Constructs the path to the task-specific folder using `task_id`, replacing problematic characters.
+        2. Iterates over all subdirectories within the task folder.
+        3. Checks for the existence of `test_results.json` in each subdirectory.
+        4. Reads and parses the JSON file, extracting the 'overall_score' if present.
+        5. Stores scores in a dictionary where keys are subfolder names and values are corresponding scores.
+
+    Returns:
+        dict: A dictionary mapping each subfolder to its corresponding 'overall_score' value.
+
+    Notes:
+        - Handles JSON files containing either a dictionary or a list of dictionaries.
+        - Prints warnings if files are missing, have unexpected formats, or lack the 'overall_score' field.
+        - Catches JSON parsing errors and other unexpected exceptions.
+
+    Example:
+        If `parent_directory = "/data/tasks"` and `task_id = 123.4`, the function will:
+        - Look in `/data/tasks/123_4/` for subdirectories.
+        - Check for `test_results.json` in each subdirectory.
+        - Extract and store the 'overall_score' values in a dictionary.
+
+    """
     scores_dict = {}  # Dictionary to store scores with subfolder names as keys
     parent_directory = parent_directory+str(row['task_id']).replace(".", "_")
     # Iterate over each subfolder in the parent directory

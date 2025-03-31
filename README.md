@@ -76,13 +76,6 @@ The results from the prompts are saved back into CSV files, where each file corr
 
 Result Storage: The generated exam details (prompts, answers, etc.) are saved in directories corresponding to different models (e.g., GPT-4, Claude-3_7-Sonnet). If the overwrite flag is set to False, the script ensures new tasks are appended to existing files rather than overwriting them.
 
-
-
-
-
-
-
-
-
-
-
+### Taking and Evaluation of Tests
+take_test.py
+This script automates the process of evaluating AI models on exam-style questions across different occupational domains. It starts by loading test data (CSV files) for various models, generating test responses using multiple AI models (such as ChatGPT, Claude, Gemini, and DeepSeek), and saving the responses as structured JSON files. The script then extracts and saves evaluation scripts and answer keys, copies them into relevant directories, and executes evaluation scripts to assess the AI-generated answers. Finally, it collects overall scores from the test results, compiles them into a structured format, and saves the results for further analysis.
