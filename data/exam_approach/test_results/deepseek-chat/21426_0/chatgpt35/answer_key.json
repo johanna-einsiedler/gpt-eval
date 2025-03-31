@@ -1,0 +1,21 @@
+{
+    "answer_key": {
+        "task_1": {
+            "claim_covered": "Yes",
+            "coverage_limit": "$10000",
+            "deductible": "$500",
+            "within_authority": "No"
+        },
+        "task_2": {
+            "total_claim_amount": "$6000.00",
+            "deductible_applied": "$500.00",
+            "depreciation_applied": "$160.00",
+            "final_payable_amount": "$5340.00",
+            "within_authority": "No"
+        },
+        "task_3": {
+            "decision": "Escalate",
+            "justification": "Conflicting witness statements."
+        }
+    }
+}

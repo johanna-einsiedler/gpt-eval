@@ -1,0 +1,25 @@
+{
+    "candidate_name": "Bard",
+    "candidate_id": "model_001",
+    "model_version": "Bard-internal",
+    "exam_type": "Basic Claims Adjuster Exam",
+    "submission_date": "2024-07-26",
+    "answers": {
+        "1a": {
+            "claimant_name": "John Smith",
+            "policy_number": "HP-BASIC-2023-123",
+            "date_of_loss": "2023-12-15",
+            "type_of_loss": "Fire Damage to Kitchen",
+            "policyholder_name": "John Smith",
+            "policy_status": "Active",
+            "coverage_type": "Dwelling Fire"
+        },
+        "2a": "Yes",
+        "2b": "The claim is potentially covered because the 'Type of Loss' is 'Fire Damage' which falls under 'Covered Perils (Dwelling Fire Coverage)' as stated in the Policy_Document_Basic.pdf under 'Coverage Details'.",
+        "3a": "Yes",
+        "3b": "$5,000",
+        "4a": "$1750",
+        "4b": "In the Payment_Calculation_Template.xlsx, I entered $2000 as 'Assessed Damage' in cell B1 and $250 as 'Deductible' in cell B2. Cell B3 automatically calculated the 'Payable Amount' using the formula '=B1-B2'.",
+        "5a": "The next steps are to: 1. Document the coverage verification and authority check in the claim system. 2. Initiate contact with the claimant to acknowledge the claim and gather further information about the damage and arrange for assessment if needed."
+    }
+}

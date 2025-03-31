@@ -1,0 +1,70 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "examination_date": "2023-10-15",
+    "claim_analysis": {
+        "key_facts": [
+            "Michael Wilson was driving north on Main Street with a green light.",
+            "Sarah Johnson was driving east on Oak Avenue and claims the light was yellow.",
+            "Robert Martinez was a pedestrian crossing with the walk signal."
+        ],
+        "discrepancies": [
+            "Conflicting statements about the traffic light status.",
+            "Witnesses disagree on which vehicle had the green light."
+        ],
+        "additional_information_needed": [
+            "Traffic camera footage (if available).",
+            "Further expert analysis of the accident scene."
+        ],
+        "potential_coverage_issues": [
+            "No apparent exclusions affecting coverage."
+        ]
+    },
+    "coverage_determination": {
+        "is_covered": true,
+        "applicable_provisions": [
+            "Bodily Injury Liability",
+            "Property Damage Liability"
+        ],
+        "exclusions_limitations": [],
+        "determination_rationale": "The policy covers bodily injury and property damage liability, which applies to this accident."
+    },
+    "liability_assessment": {
+        "insured_liability_percentage": 50,
+        "claimant_liability_percentage": 50,
+        "third_party_liability_percentage": 0,
+        "liability_rationale": "Based on conflicting witness statements and lack of clear evidence, liability is shared equally."
+    },
+    "damages_evaluation": {
+        "economic_damages": {
+            "medical_expenses": 230825.0,
+            "wage_loss": 11950.0,
+            "property_damage": 32000.0,
+            "other_economic": 5000.0
+        },
+        "non_economic_damages": {
+            "pain_suffering": 50000.0,
+            "other_non_economic": 10000.0
+        },
+        "future_damages": 53400.0,
+        "total_damages": 340175.0,
+        "recommended_reserves": 350000.0,
+        "evaluation_rationale": "Calculated based on medical records, projected future expenses, and standard pain and suffering estimates."
+    },
+    "resolution_strategy": {
+        "settlement_authority": 350000.0,
+        "negotiation_approach": "Aim for a settlement within policy limits, considering shared liability.",
+        "potential_barriers": [
+            "Disputed liability.",
+            "High demands from claimants."
+        ],
+        "proposed_timeline": "Aim to resolve within 3-6 months."
+    },
+    "communications": {
+        "insured_update": "Dear Mr. Wilson, we are currently reviewing the details of your claim and will keep you updated on any developments.",
+        "claimant_attorney_request": "Dear Attorney, please provide any additional medical records or evidence supporting your client's claims.",
+        "file_note": "Reviewed all evidence and determined shared liability. Recommended reserves set at $350,000."
+    },
+    "additional_observations": [
+        "Consider potential subrogation against QuickShip Delivery if their truck contributed to the accident."
+    ]
+}

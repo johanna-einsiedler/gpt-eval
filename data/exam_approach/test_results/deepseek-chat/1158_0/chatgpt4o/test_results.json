@@ -1,0 +1,16 @@
+{
+  "overall_score": 100,
+  "task_1": {
+    "score": 4.0,
+    "max_score": 4,
+    "errors": [],
+    "passed": true
+  },
+  "task_2": {
+    "score": 5,
+    "max_score": 5,
+    "errors": [],
+    "passed": true
+  },
+  "passed": true
+}

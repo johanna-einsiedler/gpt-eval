@@ -1,0 +1,38 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "supplier_analysis": [
+        {
+            "supplier_name": "Staples",
+            "website_url": "https://www.staples.com",
+            "price_per_ream": 8.99,
+            "paper_brand": "Staples",
+            "paper_specifications": "Brightness: 92, Weight: 20lb",
+            "total_cost_for_month": 179.8
+        },
+        {
+            "supplier_name": "Office Depot",
+            "website_url": "https://www.officedepot.com",
+            "price_per_ream": 9.49,
+            "paper_brand": "Office Depot",
+            "paper_specifications": "Brightness: 92, Weight: 20lb",
+            "total_cost_for_month": 189.8
+        },
+        {
+            "supplier_name": "Amazon",
+            "website_url": "https://www.amazon.com",
+            "price_per_ream": 7.99,
+            "paper_brand": "Hammermill",
+            "paper_specifications": "Brightness: 92, Weight: 20lb",
+            "total_cost_for_month": 159.8
+        }
+    ],
+    "quantity_calculation": {
+        "weekly_usage_reams": 5,
+        "weeks_in_month": 4,
+        "total_reams_needed": 20
+    },
+    "supplier_selection": {
+        "chosen_supplier_name": "Amazon",
+        "justification": "Amazon offers the best price per ream at $7.99, which results in the lowest total cost for the month. The paper meets the required specifications of 92 brightness and 20lb weight. Additionally, Amazon provides reliable and fast shipping, ensuring timely delivery."
+    }
+}

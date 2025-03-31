@@ -1,0 +1,24 @@
+{
+    "candidate_id": "AI_AGENT_001",
+    "model_version": "GPT-4o",
+    "candidate_name": "AI Music Industry Expert",
+    "task1_trends": [
+        {
+            "trend_number": 1,
+            "trend_description": "AI integration in music production and creation is revolutionizing how pop music is made. Artists and producers are increasingly using AI tools to generate melodies, write lyrics, master tracks, and even create complete songs.",
+            "impact": "This trend is democratizing music production by giving independent artists access to sophisticated production capabilities without requiring extensive technical knowledge or expensive equipment. However, it's also raising questions about creativity and authenticity. Established artists are using AI to experiment with new sounds and streamline their workflow, while record labels are leveraging AI for talent discovery and marketing optimization.",
+            "source_url": "https://www.billboard.com/pro/artificial-intelligence-music-industry-impact-future/"
+        },
+        {
+            "trend_number": 2,
+            "trend_description": "TikTok and short-form content have become central to pop music marketing and discovery. The platform's algorithm and user behavior have changed how songs become hits, with brief, catchy sections of songs often driving viral success.",
+            "impact": "Artists are now creating music with 'TikTok moments' in mind - crafting songs with sections specifically designed to be used in short videos. This has altered song structures, with hooks appearing earlier and being more prominent. Record labels are prioritizing TikTok promotion in marketing campaigns, and artists who effectively leverage the platform can rapidly build audiences and streaming numbers. This trend has also shortened the typical hit cycle, with songs rising and falling in popularity more quickly than in previous eras.",
+            "source_url": "https://www.rollingstone.com/pro/features/tiktok-music-industry-marketing-strategy-1348/amp/"
+        }
+    ],
+    "task2_deal": {
+        "deal_summary": "In 2023, pop artist Sabrina Carpenter signed a record deal with Island Records (under Universal Music Group) after leaving her previous label. This deal came before her massive success with hits like 'Espresso' and 'Please Please Please', which have established her as one of pop music's biggest breakout stars of 2024.",
+        "key_terms": "Not Publicly Available",
+        "source_url": "https://variety.com/2023/music/news/sabrina-carpenter-island-records-deal-1235642037/"
+    }
+}

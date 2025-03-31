@@ -1,0 +1,31 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "scenario_responses": [
+        {
+            "scenario_id": "Scenario_1",
+            "identified_red_flags": [
+                "Police report notes a faint odor of alcohol on the driver's breath but no field sobriety test was administered.",
+                "Discrepancy between claimant's statement (deer caused the accident) and police report (no mention of deer).",
+                "Claimant is self-employed and claims lost wages but provides no documentation of income."
+            ],
+            "justification_for_referral": "The odor of alcohol and lack of a sobriety test raise concerns about potential impairment. The discrepancy about the deer suggests possible misrepresentation of the accident. The lack of income documentation for lost wages is suspicious and warrants verification.",
+            "referral_decision": {
+                "refer": true,
+                "refer_to": "Investigator"
+            }
+        },
+        {
+            "scenario_id": "Scenario_2",
+            "identified_red_flags": [
+                "Jewelry coverage limit was increased from $2,000 to $7,000 just two months prior to the reported loss.",
+                "Social media post shows claimant at a casino during the time she claimed to be visiting her sister.",
+                "Minimal visible signs of forced entry and no photos of interior damage or ransacking provided."
+            ],
+            "justification_for_referral": "The timing of the jewelry coverage increase is highly suspicious. The social media post contradicts the claimant's statement about her whereabouts, indicating potential fraud. The lack of evidence of forced entry or interior damage further undermines the credibility of the burglary claim.",
+            "referral_decision": {
+                "refer": true,
+                "refer_to": "Investigator"
+            }
+        }
+    ]
+}

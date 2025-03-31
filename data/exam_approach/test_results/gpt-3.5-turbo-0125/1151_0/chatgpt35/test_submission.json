@@ -1,0 +1,16 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "summary_table": {
+            "total_costs": "12345.67",
+            "average_delivery_time": "5.3"
+        }
+    },
+    "task_2": {
+        "analysis": {
+            "trends": "Sales of product X have been increasing steadily over the past quarter, indicating a growing demand.",
+            "issues": "There have been frequent stockouts of product Y, which could lead to lost sales opportunities.",
+            "recommendations": "Consider increasing the order quantity for product Y to prevent stockouts and meet customer demand."
+        }
+    }
+}

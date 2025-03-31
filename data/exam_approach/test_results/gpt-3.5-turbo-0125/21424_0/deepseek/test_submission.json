@@ -1,0 +1,38 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "adjusted_reserves": [
+        {
+            "claim_id": "C001",
+            "adjusted_reserve": 9000
+        },
+        {
+            "claim_id": "C002",
+            "adjusted_reserve": 12750
+        },
+        {
+            "claim_id": "C003",
+            "adjusted_reserve": 18000
+        },
+        {
+            "claim_id": "C004",
+            "adjusted_reserve": 20000
+        },
+        {
+            "claim_id": "C005",
+            "adjusted_reserve": 27000
+        }
+    ],
+    "reserve_recommendation_report": {
+        "recommendations": [
+            {
+                "claim_id": "C004",
+                "recommended_reserve": 22000
+            },
+            {
+                "claim_id": "C005",
+                "recommended_reserve": 27000
+            }
+        ],
+        "justifications": "For claim C004 (Health), the reserve is recommended to be increased to $22,000 due to potential future medical expenses, despite meeting the 80% policy threshold. For claim C005 (Auto), the reserve is maintained at 90% of the claim amount as per policy, as no additional liabilities are anticipated beyond the standard adjustment."
+    }
+}

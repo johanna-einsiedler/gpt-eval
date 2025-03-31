@@ -1,0 +1,12 @@
+{
+    "candidate_id": "MODEL_VERSION_HERE",
+    "task_1": {
+        "discrepancies": [
+            "The policy number is incorrect. It should be ABCD-5678."
+        ]
+    },
+    "task_2": {
+        "coverage_determination": "Covered",
+        "explanation": "The claim is covered because it involves a vehicle accident, which is listed as a covered incident under the policy. The claim amount of $5,000 is within the maximum claim amount of $10,000."
+    }
+}

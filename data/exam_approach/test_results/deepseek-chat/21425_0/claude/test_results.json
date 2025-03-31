@@ -1,0 +1,84 @@
+{
+  "overall_score": 90,
+  "max_score": 100,
+  "detailed_results": {
+    "task_1": {
+      "score": 30,
+      "max_score": 30,
+      "details": {
+        "policyholder_name": {
+          "correct": true,
+          "expected": "John Doe"
+        },
+        "policy_number": {
+          "correct": true,
+          "expected": "PL123456"
+        },
+        "coverage_limit": {
+          "correct": true,
+          "expected": "$50,000"
+        },
+        "deductible": {
+          "correct": true,
+          "expected": "$1,000"
+        },
+        "coverage_determination": {
+          "correct": true,
+          "expected": "Covered"
+        },
+        "justification": {
+          "correct": false,
+          "note": "Justification should mention pipe bursts",
+          "provided": "The policy explicitly covers water damage from sudden/accidental sources such as burst pipes."
+        }
+      }
+    },
+    "task_2": {
+      "score": 20,
+      "max_score": 30,
+      "details": {
+        "at_fault_party": {
+          "correct": true,
+          "expected": "Driver B"
+        },
+        "liability_percentage": {
+          "correct": false,
+          "expected": "60%, 70%, or 80%",
+          "provided": "100%"
+        },
+        "next_steps": {
+          "correct": true,
+          "note": "Mentioned subrogation"
+        }
+      }
+    },
+    "task_3": {
+      "score": 40,
+      "max_score": 40,
+      "details": {
+        "keywords": {
+          "apologize": {
+            "found": true
+          },
+          "delay": {
+            "found": true
+          },
+          "contractor estimates": {
+            "found": true
+          },
+          "5 business days": {
+            "found": true
+          }
+        },
+        "word_count": {
+          "correct": false,
+          "count": 133,
+          "required_range": [
+            150,
+            200
+          ]
+        }
+      }
+    }
+  }
+}

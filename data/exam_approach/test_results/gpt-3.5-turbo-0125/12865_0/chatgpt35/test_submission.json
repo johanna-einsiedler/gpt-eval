@@ -1,0 +1,27 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "calculated_fees": 1500.0,
+        "summary": "Calculated 10% commission on $15,000 earnings."
+    },
+    "task_2": {
+        "payment_matching_results": [
+            {
+                "payment_date": "2023-10-01",
+                "amount": 500.0,
+                "status": "matched"
+            },
+            {
+                "payment_date": "2023-10-05",
+                "amount": 200.0,
+                "status": "unmatched"
+            }
+        ],
+        "discrepancies": [
+            {
+                "issue": "Payment of $200 missing for October 5th.",
+                "amount": 200.0
+            }
+        ]
+    }
+}

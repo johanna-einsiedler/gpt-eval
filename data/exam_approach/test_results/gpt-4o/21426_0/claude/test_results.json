@@ -1,0 +1,30 @@
+{
+    "document_issues": [
+        "Missing invoice for Claim Document 3",
+        "Incorrect policy number on Claim Document 2",
+        "Missing signature on Claim Document 1"
+    ],
+    "claim_decisions": [
+        {
+            "claim_id": "1001",
+            "payable_amount": 1500,
+            "decision": "approve",
+            "justification": "Claim amount is within policy limits and authority level."
+        },
+        {
+            "claim_id": "1002",
+            "payable_amount": 0,
+            "decision": "deny",
+            "justification": "Claim amount exceeds policy limits."
+        },
+        {
+            "claim_id": "1003",
+            "payable_amount": 500,
+            "decision": "approve",
+            "justification": "Claim amount is within policy limits and authority level."
+        }
+    ],
+    "overall_score": 100.0,
+    "document_issues_score": 50.0,
+    "claim_decisions_score": 50.0
+}

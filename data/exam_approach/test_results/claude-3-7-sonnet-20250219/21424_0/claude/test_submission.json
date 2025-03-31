@@ -1,0 +1,66 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "exam_date": "2023-07-15",
+    "scenario_1": {
+        "bodily_injury_reserve": 42600.0,
+        "bodily_injury_code": "AL-BI-02",
+        "property_damage_reserve": 10120.0,
+        "property_damage_code": "AL-PD-01",
+        "medical_expense_reserve": 6300.0,
+        "medical_expense_code": "AL-ME-02",
+        "total_reserve": 59020.0,
+        "policy_sections_referenced": [
+            "2.1",
+            "2.2",
+            "2.3",
+            "1.2"
+        ],
+        "justification": "The bodily injury reserve accounts for current medical expenses ($2,800), anticipated future treatment ($3,500), lost wages ($3,200), and pain and suffering using a 3x multiplier per section 2.1.1 for moderate injuries with longer recovery. Attorney involvement factor of 1.5x was applied per section 2.1. Property damage reserve includes repair costs ($8,750), rental expenses ($450), and a 10% contingency ($920) as required by section 2.2. Medical expense reserve covers current and anticipated treatment costs within policy limits per section 2.3. All calculations follow the adequacy standards in section 1.2, ensuring reserves are based on available facts, consistent with policy terms, and properly documented."
+    },
+    "scenario_2": {
+        "previous_total_reserve": 20500.0,
+        "indemnity_reserve": 14741.1,
+        "indemnity_code": "WC-IN-03",
+        "medical_reserve": 35400.0,
+        "medical_code": "WC-ME-03",
+        "rehabilitation_reserve": 9000.0,
+        "rehabilitation_code": "WC-RH-02",
+        "total_reserve": 59141.1,
+        "net_change": 38641.1,
+        "policy_sections_referenced": [
+            "3.1",
+            "3.2",
+            "3.3",
+            "3.4",
+            "5.3"
+        ],
+        "justification": "Reserve adjustment is triggered by new MRI results showing a herniated disc requiring surgery, which constitutes a significant change in medical status per section 3.4. The indemnity reserve was calculated using the compensation rate of $633.33 (2/3 of AWW) for an extended 12-week recovery period, plus a 7.5% PPD rating valued at $695.78 per point, with a 15% contingency per section 3.1. Medical reserves include $25,000 for surgery and $4,500 for post-surgical PT, with a 20% contingency for complications as required by section 3.2. Rehabilitation reserves of $9,000 were established based on potential vocational needs due to permanent restrictions, calculated at the standard rate of $4,500 per month for 2 months per section 3.3. This significant reserve increase of $38,641.10 is fully documented as required by section 5.3."
+    },
+    "scenario_3": {
+        "exposures": [
+            {
+                "exposure_type": "Property Damage - Store 1",
+                "reserve_amount": 46920.0,
+                "reserve_code": "GL-PD-02"
+            },
+            {
+                "exposure_type": "Property Damage - Store 2",
+                "reserve_amount": 62790.0,
+                "reserve_code": "GL-PD-02"
+            },
+            {
+                "exposure_type": "Business Interruption",
+                "reserve_amount": 34100.0,
+                "reserve_code": "GL-BI-01"
+            }
+        ],
+        "total_reserve": 143810.0,
+        "policy_sections_referenced": [
+            "4.1",
+            "4.2",
+            "4.3",
+            "5.1"
+        ],
+        "justification": "Following section 4.3, I identified multiple distinct exposures requiring separate reserves. For property damage to stores, I applied section 4.1 guidelines, calculating reserves based on documented repair costs and inventory damage with the required 15% contingency. Store 1 damage totals $46,920 and Store 2 damage totals $62,790, representing the highest exposure values. Business interruption reserves of $34,100 were calculated per section 4.2 using documented daily revenue losses for all three stores with a 10% contingency. These three exposures represent the most significant financial impacts. All calculations follow section 5.1 documentation requirements with detailed breakdowns of components and supporting evidence. The total reserve of $143,810 appropriately accounts for the claim's complexity while remaining within policy limits."
+    }
+}

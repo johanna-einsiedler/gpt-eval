@@ -1,0 +1,138 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "exercise1": {
+        "product_markup_rates": [
+            {
+                "product_id": "KA001",
+                "product_name": "Stand Mixer",
+                "recommended_markup_rate": 50.0,
+                "initial_markup": 50.2,
+                "maintained_markup": 42.8,
+                "justification": "The Stand Mixer is positioned as a premium product, allowing for a higher markup. The recommended rate balances the target margin and competitive pricing."
+            },
+            {
+                "product_id": "KA002",
+                "product_name": "Blender",
+                "recommended_markup_rate": 40.0,
+                "initial_markup": 40.0,
+                "maintained_markup": 35.7,
+                "justification": "The Blender is positioned mid-tier, aligning with industry standards. The markup ensures competitiveness while meeting margin requirements."
+            },
+            {
+                "product_id": "KA003",
+                "product_name": "Coffee Maker",
+                "recommended_markup_rate": 45.0,
+                "initial_markup": 45.4,
+                "maintained_markup": 38.5,
+                "justification": "High competition necessitates a competitive price. The markup is slightly above the target margin to maintain profitability."
+            },
+            {
+                "product_id": "KA004",
+                "product_name": "Toaster Oven",
+                "recommended_markup_rate": 42.0,
+                "initial_markup": 42.1,
+                "maintained_markup": 36.4,
+                "justification": "New technology features justify a markup at the industry average, balancing innovation with competitive pricing."
+            },
+            {
+                "product_id": "KA005",
+                "product_name": "Food Processor",
+                "recommended_markup_rate": 48.0,
+                "initial_markup": 48.4,
+                "maintained_markup": 41.1,
+                "justification": "Limited competition allows for a higher markup, aligning with the target margin and industry standards."
+            }
+        ]
+    },
+    "exercise2": {
+        "markdown_schedule": [
+            {
+                "week": 1,
+                "start_date": "2023-08-01",
+                "markdown_percentage": 20,
+                "projected_units_sold": 250,
+                "projected_revenue": 12000
+            },
+            {
+                "week": 2,
+                "start_date": "2023-08-08",
+                "markdown_percentage": 30,
+                "projected_units_sold": 300,
+                "projected_revenue": 15000
+            },
+            {
+                "week": 3,
+                "start_date": "2023-08-15",
+                "markdown_percentage": 40,
+                "projected_units_sold": 350,
+                "projected_revenue": 17000
+            },
+            {
+                "week": 4,
+                "start_date": "2023-08-22",
+                "markdown_percentage": 50,
+                "projected_units_sold": 400,
+                "projected_revenue": 18000
+            },
+            {
+                "week": 5,
+                "start_date": "2023-08-29",
+                "markdown_percentage": 60,
+                "projected_units_sold": 450,
+                "projected_revenue": 19000
+            },
+            {
+                "week": 6,
+                "start_date": "2023-09-05",
+                "markdown_percentage": 70,
+                "projected_units_sold": 500,
+                "projected_revenue": 20000
+            }
+        ],
+        "strategy_explanation": "The markdown strategy begins with a moderate 20% reduction to stimulate early sales, increasing weekly to clear inventory by the deadline. The schedule considers decreasing store traffic and leverages the Labor Day weekend for increased sales. The strategy aims to maximize revenue while ensuring all inventory is sold by September 15."
+    },
+    "exercise3": {
+        "product_pricing": [
+            {
+                "product_id": "E001",
+                "product_name": "Wireless Headphones",
+                "wholesale_cost": 45.0,
+                "recommended_price": 89.99,
+                "implied_markup_rate": 100.0,
+                "positioning_strategy": "Priced to appeal to tech-savvy young adults, balancing quality and value."
+            },
+            {
+                "product_id": "E002",
+                "product_name": "Bluetooth Speaker",
+                "wholesale_cost": 35.0,
+                "recommended_price": 79.99,
+                "implied_markup_rate": 128.5,
+                "positioning_strategy": "Targets general consumers with a focus on value and quality."
+            },
+            {
+                "product_id": "E003",
+                "product_name": "Fitness Tracker",
+                "wholesale_cost": 60.0,
+                "recommended_price": 119.99,
+                "implied_markup_rate": 100.0,
+                "positioning_strategy": "Appeals to health-conscious adults, offering premium features at a competitive price."
+            },
+            {
+                "product_id": "E004",
+                "product_name": "Power Bank",
+                "wholesale_cost": 25.0,
+                "recommended_price": 49.99,
+                "implied_markup_rate": 100.0,
+                "positioning_strategy": "Designed for travelers, offering reliability and value."
+            },
+            {
+                "product_id": "E005",
+                "product_name": "Smart Watch",
+                "wholesale_cost": 85.0,
+                "recommended_price": 159.99,
+                "implied_markup_rate": 88.2,
+                "positioning_strategy": "Targets professionals, balancing premium features with affordability."
+            }
+        ]
+    }
+}

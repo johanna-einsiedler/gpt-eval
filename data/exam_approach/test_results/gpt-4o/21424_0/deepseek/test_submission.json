@@ -1,0 +1,22 @@
+{
+    "CandidateID": "GPT-4-turbo",
+    "AdjustedReserves": [
+        {
+            "ClaimID": "C1001",
+            "AdjustedReserve": 12500.0
+        },
+        {
+            "ClaimID": "C1002",
+            "AdjustedReserve": 8500.0
+        },
+        {
+            "ClaimID": "C1003",
+            "AdjustedReserve": 22000.0
+        }
+    ],
+    "ReserveRecommendation": {
+        "ScenarioID": "Scenario1",
+        "Recommendation": "Increase reserve to 15000.00 due to potential litigation costs.",
+        "Justification": "Based on corporate policy section 3.2, potential litigation requires reserve adjustment to account for legal fees and settlement risks."
+    }
+}

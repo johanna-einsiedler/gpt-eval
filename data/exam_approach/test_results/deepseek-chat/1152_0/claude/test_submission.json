@@ -1,0 +1,63 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "task_1": {
+        "suppliers": [
+            {
+                "name": "Supplier A",
+                "contact": "sales@supplierA.com | (555) 123-4567",
+                "product": "Model X Ergo Chair",
+                "specifications": "Adjustable height (18\"-22\"), lumbar support, 250 lb weight capacity"
+            },
+            {
+                "name": "Supplier B",
+                "contact": "www.supplierB.com/contact",
+                "product": "Comfort Plus Chair",
+                "specifications": "Mesh backrest, 360-degree swivel, 10-year warranty"
+            },
+            {
+                "name": "Supplier C",
+                "contact": "orders@supplierC.com",
+                "product": "Executive Ergo Seat",
+                "specifications": "Genuine leather, tilt mechanism, 5-year warranty"
+            }
+        ]
+    },
+    "task_2": {
+        "printer_comparison": [
+            {
+                "model": "Printer Alpha",
+                "price": "$1,200",
+                "warranty": "2 years",
+                "print_speed": "30 ppm",
+                "pros": "Lower initial cost"
+            },
+            {
+                "model": "Printer Beta",
+                "price": "$1,500",
+                "warranty": "3 years",
+                "print_speed": "45 ppm",
+                "pros": "50% faster print speed"
+            }
+        ],
+        "recommendation": "Printer Beta",
+        "reason": "The 50% faster print speed and additional year of warranty justify the $300 price difference, providing better long-term value and productivity."
+    },
+    "task_3": {
+        "cloud_storage_options": [
+            {
+                "provider": "Google Drive Business",
+                "storage_limit": "2TB",
+                "price": "$12/month",
+                "security_features": "AES 256-bit encryption, two-factor authentication, admin controls"
+            },
+            {
+                "provider": "Microsoft OneDrive Business",
+                "storage_limit": "1TB",
+                "price": "$10/month",
+                "security_features": "End-to-end encryption, ransomware detection, compliance certifications"
+            }
+        ],
+        "recommendation": "Google Drive Business",
+        "reason": "While slightly more expensive, Google Drive offers double the storage capacity (2TB vs 1TB) while still meeting the budget requirement of under $20/month and providing robust security features needed for sensitive project files."
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "candidate_id": "GPT-4o",
+    "task_1": {
+        "issues": [
+            {
+                "claim_id": "11223",
+                "issue": "Missing Data",
+                "proposed_correction": "Contact claimant for information to obtain claimant name."
+            },
+            {
+                "claim_id": "88776",
+                "issue": "Missing Data",
+                "proposed_correction": "Contact claimant for information to obtain claimant name."
+            },
+            {
+                "claim_id": "67890",
+                "issue": "Duplicate Entry",
+                "proposed_correction": "Investigate and remove the duplicate claim entry to ensure data accuracy."
+            }
+        ]
+    },
+    "task_2": {
+        "non_compliant_claims": [
+            {
+                "claim_id": "99001",
+                "reason": "Exceeds Policy Limit"
+            },
+            {
+                "claim_id": "33445",
+                "reason": "Invalid Claim Date"
+            },
+            {
+                "claim_id": "55667",
+                "reason": "Unapproved Claim Type"
+            }
+        ]
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "candidate_id": "Claude-3-Sonnet",
+    "task1": {
+        "top_growth_categories": [
+            "Casual Wear",
+            "Accessories",
+            "Footwear"
+        ],
+        "highest_sales_months": [
+            "December",
+            "November",
+            "October"
+        ],
+        "profit_margins_2022": {
+            "Outerwear": 0.49,
+            "Casual Wear": 0.6,
+            "Formal Wear": 0.58,
+            "Accessories": 0.67,
+            "Footwear": 0.54
+        },
+        "worst_performing_products": [
+            "Blazer - Unisex",
+            "Winter Jacket - Men's",
+            "Winter Jacket - Women's"
+        ]
+    },
+    "task2": {
+        "overall_correlation_coefficient": 0.76,
+        "strongest_correlated_category": "Formal Wear",
+        "average_lag_time_months": 2
+    },
+    "task3": {
+        "q1_2023_forecast": {
+            "Outerwear": 1450,
+            "Casual Wear": 3800,
+            "Formal Wear": 1200,
+            "Accessories": 2300,
+            "Footwear": 1650
+        },
+        "inventory_recommendations": {
+            "Outerwear": "decrease",
+            "Casual Wear": "increase",
+            "Formal Wear": "maintain",
+            "Accessories": "increase",
+            "Footwear": "increase"
+        },
+        "increase_allocation_products": [
+            "T-Shirt - Women's",
+            "Hoodie - Unisex",
+            "Sneakers - Casual"
+        ],
+        "decrease_allocation_products": [
+            "Winter Jacket - Men's",
+            "Winter Jacket - Women's",
+            "Blazer - Unisex"
+        ],
+        "influential_economic_indicators": [
+            "Consumer Confidence Index",
+            "Seasonal Trends",
+            "Category Growth Patterns"
+        ]
+    }
+}

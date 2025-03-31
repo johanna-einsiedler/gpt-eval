@@ -1,0 +1,112 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "model_version": "GPT-4o",
+    "task1": {
+        "top_platforms": [
+            {
+                "name": "Spotify",
+                "market_share": "XX%",
+                "recent_change": "Description of change"
+            },
+            {
+                "name": "Apple Music",
+                "market_share": "XX%",
+                "recent_change": "Description of change"
+            },
+            {
+                "name": "Amazon Music",
+                "market_share": "XX%",
+                "recent_change": "Description of change"
+            }
+        ],
+        "impact_analysis": "Your explanation of how these changes affect artists"
+    },
+    "task2": {
+        "deal_details": {
+            "talent_name": "Full name of talent",
+            "company_or_team": "Name of company or team",
+            "deal_type": "Type of deal (e.g., contract, endorsement)",
+            "approximate_value": "Value in USD if available, or 'Undisclosed'",
+            "announcement_date": "YYYY-MM-DD format"
+        },
+        "significance": "Explanation of why this deal is notable or trend-setting",
+        "negotiation_lessons": "Explanation of applicable lessons for client negotiations"
+    },
+    "task3": {
+        "publications": [
+            {
+                "publication_name": "Billboard",
+                "trending_topic": "Topic being discussed",
+                "article_url": "Full URL to specific article",
+                "key_points": "Summary of relevant points for talent representation"
+            },
+            {
+                "publication_name": "Variety",
+                "trending_topic": "Topic being discussed",
+                "article_url": "Full URL to specific article",
+                "key_points": "Summary of relevant points for talent representation"
+            },
+            {
+                "publication_name": "The Hollywood Reporter",
+                "trending_topic": "Topic being discussed",
+                "article_url": "Full URL to specific article",
+                "key_points": "Summary of relevant points for talent representation"
+            }
+        ]
+    },
+    "task4": {
+        "emerging_opportunities": [
+            {
+                "name": "Name of revenue stream/platform",
+                "description": "Brief description",
+                "evidence_of_growth": "Statistics or notable adoptions",
+                "client_advice": "How you would advise clients to leverage this"
+            },
+            {
+                "name": "Name of revenue stream/platform",
+                "description": "Brief description",
+                "evidence_of_growth": "Statistics or notable adoptions",
+                "client_advice": "How you would advise clients to leverage this"
+            }
+        ]
+    },
+    "task5": {
+        "industry_events": [
+            {
+                "event_name": "Full name of event",
+                "date": "YYYY-MM-DD format or date range",
+                "location": "City, Country",
+                "industry_significance": "Why this event matters",
+                "relevant_client_types": "Types of clients who should attend"
+            },
+            {
+                "event_name": "Full name of event",
+                "date": "YYYY-MM-DD format or date range",
+                "location": "City, Country",
+                "industry_significance": "Why this event matters",
+                "relevant_client_types": "Types of clients who should attend"
+            },
+            {
+                "event_name": "Full name of event",
+                "date": "YYYY-MM-DD format or date range",
+                "location": "City, Country",
+                "industry_significance": "Why this event matters",
+                "relevant_client_types": "Types of clients who should attend"
+            },
+            {
+                "event_name": "Full name of event",
+                "date": "YYYY-MM-DD format or date range",
+                "location": "City, Country",
+                "industry_significance": "Why this event matters",
+                "relevant_client_types": "Types of clients who should attend"
+            },
+            {
+                "event_name": "Full name of event",
+                "date": "YYYY-MM-DD format or date range",
+                "location": "City, Country",
+                "industry_significance": "Why this event matters",
+                "relevant_client_types": "Types of clients who should attend"
+            }
+        ]
+    }
+}

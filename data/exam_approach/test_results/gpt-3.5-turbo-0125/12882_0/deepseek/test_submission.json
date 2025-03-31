@@ -1,0 +1,25 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "apples": {
+            "total_quantity": 1500
+        },
+        "wheat": {
+            "total_quantity": 3200
+        },
+        "dairy": {
+            "total_quantity": 800
+        }
+    },
+    "task_2": {
+        "apples": {
+            "adjusted_quantity": 1800
+        },
+        "wheat": {
+            "adjusted_quantity": 3000
+        },
+        "dairy": {
+            "adjusted_quantity": 950
+        }
+    }
+}

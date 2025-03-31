@@ -1,0 +1,49 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "updated_suppliers": [
+        {
+            "supplier_id": "001",
+            "name": "Global Electronics Inc.",
+            "reputation": "Excellent",
+            "history": "Founded in 2005, specializes in consumer electronics",
+            "reviews": "4.7/5 stars",
+            "additional_info": "ISO 9001 certified, winner of 2023 Supplier Excellence Award"
+        },
+        {
+            "supplier_id": "002",
+            "name": "Premium Components LLC",
+            "reputation": "Good",
+            "history": "Family-owned business since 1998",
+            "reviews": "4.2/5 stars",
+            "additional_info": "Specializes in custom components, lead time 2-4 weeks"
+        },
+        {
+            "supplier_id": "003",
+            "name": "Value Parts Co.",
+            "reputation": "Average",
+            "history": "Established 2010, rapid growth company",
+            "reviews": "3.8/5 stars",
+            "additional_info": "Budget-friendly options, some quality control complaints"
+        }
+    ],
+    "evaluated_suppliers": [
+        {
+            "supplier_id": "001",
+            "name": "Global Electronics Inc.",
+            "score": 95,
+            "rank": 1
+        },
+        {
+            "supplier_id": "002",
+            "name": "Premium Components LLC",
+            "score": 85,
+            "rank": 2
+        },
+        {
+            "supplier_id": "003",
+            "name": "Value Parts Co.",
+            "score": 72,
+            "rank": 3
+        }
+    ]
+}

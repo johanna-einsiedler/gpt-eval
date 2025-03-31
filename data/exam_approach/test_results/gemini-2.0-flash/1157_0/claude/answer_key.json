@@ -1,0 +1,29 @@
+{
+    "candidate_id": "ANSWER_KEY",
+    "model_version": "N/A",
+    "candidate_name": "Answer Key",
+    "part1_specification": "Product Specification: Standard Ballpoint Pen\n\n1. **Ink Color:** Black. Must be consistent and true black as per Pantone Black C or equivalent.\n2. **Writing Point Size:** 1.0mm (Medium point). Tolerance +/- 0.1mm.\n3. **Ink Type:** Oil-based, quick-drying, and smudge-resistant on 80gsm office paper. Ink must conform to ISO 12757-2 standard for document use.\n4. **Barrel Material:**  Non-toxic, durable plastic (e.g., ABS or Polypropylene).  Must be comfortable to hold and free from sharp edges.\n5. **Writing Length:** Minimum average writing length of 1500 meters per pen, tested according to ISO 12757-1 standards.\n6. **Cap:**  Vented cap to prevent ink drying and for safety. Cap must post securely on the barrel.\n7. **Packaging:**  Supplied in boxes of 12 pens. Each box clearly labeled with product name, specification, and batch number. Boxes must be suitable for stacking and prevent damage during transit.",
+    "part2_review_comments": [
+        {
+            "weakness_number": 1,
+            "description": "The 'Capacity' specification is vague, stating only 'Standard office stapling capacity'.",
+            "impact": "This is subjective and open to interpretation by suppliers.  'Standard' is not defined, leading to potential inconsistencies in the stapling capacity offered. We might receive staplers that cannot handle the typical document thickness in our office, leading to user frustration and ineffective stapling."
+        },
+        {
+            "weakness_number": 2,
+            "description": "The 'Material' specification is too generic, stating 'Durable material'.",
+            "impact": " 'Durable' is subjective and doesn't guarantee quality. Suppliers might use low-grade or brittle materials to reduce costs, resulting in staplers that are prone to breakage, have a short lifespan, or feel flimsy. This could increase replacement costs and negatively impact user experience."
+        },
+        {
+            "weakness_number": 3,
+            "description": "The specification lacks any mention of staple type compatibility.",
+            "impact": "Without specifying the staple type, we risk procuring staplers that are incompatible with our existing staple inventory or require less common, potentially more expensive, or harder-to-source staples. This can lead to operational inefficiencies and increased supply costs."
+        },
+        {
+            "weakness_number": 4,
+            "description": "The 'Color' specification 'Black or Grey' is broad and offers limited control over aesthetics.",
+            "impact": "While functional, allowing 'Black or Grey' gives us less control over office aesthetics and standardization.  If office branding or a consistent look is desired, this vague color specification is insufficient. It might lead to a mix of black and grey staplers, which may not be ideal for a uniform office environment."
+        }
+    ],
+    "part2_revised_specification": "Product Specification: Basic Office Stapler - Revised\n\n1. **Purpose:** General office stapling of up to 20 sheets of 80gsm paper.\n2. **Type:** Desktop, manual stapler with a top-loading mechanism.\n3. **Material - Body:** High-impact ABS plastic, minimum 2mm thickness.  Must be robust and resistant to cracking under normal office use.\n4. **Material - Internal Mechanism:**  Steel mechanism for stapling and staple loading.  Must be corrosion-resistant.\n5. **Stapling Capacity:**  Minimum 20 sheets of 80gsm paper using standard 24/6 or 26/6 staples.\n6. **Staple Compatibility:** Compatible with standard 24/6 and 26/6 staples (ISO 8610).\n7. **Throat Depth:** Minimum 50mm.\n8. **Base:**  Non-slip rubber base to prevent movement during stapling and protect desk surfaces.\n9. **Color:**  Black. Pantone code [Specify Pantone code if needed for exact match].\n10. **Packaging:** Individually boxed in plain cardboard boxes. 10 staplers per master carton. Each box and carton clearly labeled with product name, specification, staple compatibility, and batch number."
+}

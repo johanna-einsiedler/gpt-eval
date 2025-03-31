@@ -1,0 +1,48 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "scenario_1": {
+        "claim_covered": true,
+        "payment_amount": 6455.0,
+        "deductible_applied": 500.0,
+        "decision_rationale": "This auto collision claim is covered under John Smith's policy #123456 which includes collision coverage with a $50,000 limit and $500 deductible. The accident occurred on 03/15/2023 when another vehicle ran a red light and struck the insured's 2020 Toyota Camry. The damage is documented in the police report (PD-2023-0456) and repair estimate. The total repair cost is $6,955.00, which includes parts ($4,200), labor ($2,150), and other charges ($605). After applying the $500 collision deductible, the payable amount is $6,455.00. This amount is within policy limits and my authority level.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "Claim is supported by police report, detailed repair estimate, and photos confirming damage consistent with reported accident. Vehicle is properly listed on policy. Recommend subrogation against at-fault driver James Wilson."
+    },
+    "scenario_2": {
+        "claim_covered": true,
+        "payment_amount": 18030.0,
+        "deductible_applied": 1000.0,
+        "decision_rationale": "This water damage claim is covered under Robert Johnson's homeowner's policy #789012. The damage resulted from a burst pipe during freezing weather, which is specifically listed as a covered peril ('Freezing of plumbing, heating, air conditioning'). The policy includes dwelling coverage of $350,000 and the damage estimate of $19,030 is well within this limit. The damage occurred on 02/10/2023 and was promptly reported on 02/11/2023. The standard deductible of $1,000 applies. The water damage exclusions do not apply as this was not a flood, sewer backup, groundwater, or continuous seepage issue.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "Contractor estimate appears reasonable for the scope of damage. Photos confirm burst pipe in upstairs bathroom with resulting water damage to multiple areas. Damage is consistent with a sudden pipe freeze during documented cold weather."
+    },
+    "scenario_3": {
+        "claim_covered": true,
+        "payment_amount": 11885.0,
+        "deductible_applied": 1500.0,
+        "decision_rationale": "This medical expense claim for Emily Davis (policy #345678) is covered under her health insurance policy. The claim involves treatment for a fractured right ankle sustained while hiking. All providers are in-network, so the 80/20 coinsurance applies after the $1,500 deductible. Total billed amount is $15,220.00. Patient already paid $335.00 in copays ($250 ER, $50 specialist, $35 prescription). The ER visit copay applies instead of deductible. For remaining charges of $14,970.00, after applying the $1,500 deductible, the insurer pays 80% of $13,470.00 = $10,776.00. Adding the $1,109.00 for copay-based services equals a total payment of $11,885.00.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "All services are medically necessary and appropriately documented in treatment records. Diagnosis and procedures are consistent. Physical therapy was limited to 10 sessions with documented improvement. Prior authorization was obtained for the MRI and surgery."
+    },
+    "scenario_4": {
+        "claim_covered": true,
+        "payment_amount": 46070.0,
+        "deductible_applied": 0.0,
+        "decision_rationale": "This business interruption claim for Green Valley Restaurant (policy #901234) is covered as it resulted from a fire, which is a covered peril. The policy provides Business Income coverage on an Actual Loss Sustained basis with a 72-hour waiting period. The interruption period is 77 days (05/15/2023 to 07/31/2023), approximately 2.5 months. Monthly net income is $13,508 × 2.5 = $33,770. Continuing expenses are $33,200 × 2.5 = $83,000. Extra expenses total $12,300. Saved expenses are $40,000 × 2.5 = $100,000. The calculation is: ($33,770 + $83,000 + $12,300) - $100,000 = $29,070 + $17,000 (1/3 monthly limit for first month) = $46,070.",
+        "exceeds_authority": true,
+        "fraud_indicators": [],
+        "documentation_notes": "Claim exceeds my authority level of $25,000. Fire was accidental (electrical malfunction) per fire department report FD-2023-0515. Business financials show consistent revenue patterns. Restoration timeline of 2.5 months appears reasonable given the extent of damage."
+    },
+    "scenario_5": {
+        "claim_covered": true,
+        "payment_amount": 7720.0,
+        "deductible_applied": 500.0,
+        "decision_rationale": "This theft claim is covered under Michael Chen's renters policy #567890. The policy provides replacement cost coverage for personal property with a $50,000 limit and $500 deductible. The theft occurred on 06/20/2023 and shows clear evidence of forced entry through the sliding glass door, as documented in police report #2023-06789. The stolen items total $8,220.00 (MacBook $2,499, iPad $1,299, Sony camera $1,998, PS5 $499.99, Bose headphones $329, Citizen watch $395, silver necklace $150, gold ring $550). After applying the $500 deductible, the payment amount is $7,720.00.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "All stolen items are documented with receipts, photos, or credit card statements. Police report confirms forced entry. Claim amount is within policy limits and special limits for jewelry ($1,500) are not exceeded by the claimed items ($1,095 total for jewelry)."
+    }
+}

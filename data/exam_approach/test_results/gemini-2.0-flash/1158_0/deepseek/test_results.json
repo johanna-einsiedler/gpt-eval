@@ -1,0 +1,76 @@
+{
+    "candidate_id": "candidate123",
+    "model_version": "GPT-4-turbo",
+    "part1_market_report_analysis_results": {
+        "question1": {
+            "correct": false,
+            "candidate_answer": "1. Weather-Related Production Delays: Unusually heavy rainfall in key producing regions has delayed harvesting and processing, reducing immediate supply. 2. Increased Transportation Costs: Global shipping costs have risen due to port congestion and fuel price increases, making imported Commodity X more expensive.",
+            "correct_answer": "1. Weather-Related Production Delays: Heavy rainfall in key producing regions has delayed harvesting and processing, reducing immediate supply and impacting output for 1-2 months.\n2. Increased Transportation Costs: Rising global shipping costs due to port congestion and fuel price increases are making imported Commodity X more expensive and limiting overall supply."
+        },
+        "question2": {
+            "correct": false,
+            "candidate_answer": "Growing Industrial Applications: Commodity X is a key component in manufacturing several industrial products, and the industrial sector's moderate growth is driving consistent demand.",
+            "correct_answer": "Growing Industrial Applications:  The industrial sector's moderate growth and its use of Commodity X in manufacturing are driving consistent demand."
+        },
+        "question3": {
+            "correct": false,
+            "candidate_answer": "Increasing",
+            "correct_answer": "Slightly Increasing"
+        },
+        "question4": {
+            "correct": false,
+            "candidate_answer": "",
+            "correct_answer": ""
+        }
+    },
+    "part2_price_trend_analysis_results": {
+        "question5": {
+            "correct": true,
+            "candidate_answer": "Generally Increasing",
+            "correct_answer": "Generally Increasing"
+        },
+        "question6": {
+            "correct": false,
+            "candidate_answer": "December",
+            "correct_answer": "December-2023"
+        },
+        "question7": {
+            "correct": false,
+            "candidate_answer": "January",
+            "correct_answer": "January-2023"
+        },
+        "question8": {
+            "correct": false,
+            "candidate_answer": "",
+            "correct_answer": ""
+        }
+    },
+    "part3_supply_demand_factors_results": {
+        "question9": {
+            "correct": true,
+            "candidate_answer": "",
+            "correct_answer": ""
+        },
+        "question10": {
+            "correct": false,
+            "candidate_answer": "Breakthrough in Battery Technology: A major tech company's announcement of a battery technology breakthrough using Commodity X could substantially increase demand from the battery manufacturing sector.",
+            "correct_answer": "Breakthrough in Battery Technology: A new battery technology using Commodity X could significantly increase demand from the battery manufacturing sector."
+        },
+        "question11": {
+            "correct": false,
+            "candidate_answer": "",
+            "correct_answer": ""
+        }
+    },
+    "overall_score": 18.18,
+    "scores_per_part": {
+        "part1_score": 0,
+        "part1_max_score": 4,
+        "part2_score": 1,
+        "part2_max_score": 4,
+        "part3_score": 1,
+        "part3_max_score": 3
+    },
+    "total_score": 2,
+    "total_max_score": 11
+}

@@ -1,0 +1,18 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "questionable_claims": [
+        {
+            "claim_id": "CL-2023-001",
+            "explanation": "Claimant reported a minor fender bender but submitted a claim amount exceeding typical repair costs for such incidents."
+        },
+        {
+            "claim_id": "CL-2023-045",
+            "explanation": "Inconsistent incident description: claimant initially described a theft but later mentioned accidental damage."
+        },
+        {
+            "claim_id": "CL-2023-112",
+            "explanation": "Claimant has filed three similar claims within six months, suggesting potential fraud."
+        }
+    ],
+    "referral_email": "Dear Investigator,\n\nI am referring claim ID CL-2023-001 for further review. The claimant reported a minor fender bender but submitted a repair estimate of $12,000, which is significantly higher than the average cost for such incidents. Additionally, the claimant's vehicle is an older model with a market value below the claimed amount.\n\nPlease investigate for possible exaggeration or misrepresentation of damages. Attached are the claim form, photos, and repair estimate for your review.\n\nThank you,\n[Your Name]\nClaims Adjuster"
+}

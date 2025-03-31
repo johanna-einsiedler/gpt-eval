@@ -1,0 +1,12 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "claim_id": "CL-2023-001",
+    "current_reserve": 10000,
+    "recommended_reserve": 13000,
+    "adjustment_reason": "Future PT costs ($3,000) + 10% buffer ($300) for delayed diagnosis, per policy section 4.2.",
+    "policy_reference": "Section 4.2 - Medical Reserve Adjustments",
+    "supporting_data": [
+        "medical_report.pdf",
+        "claim_history.xlsx"
+    ]
+}

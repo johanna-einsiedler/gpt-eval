@@ -1,0 +1,66 @@
+{
+    "answer_key": {
+        "scenario_responses": [
+            {
+                "scenario_id": "Scenario_1",
+                "expected_red_flags": [
+                    "Accident time is 3:00 AM on a Sunday, statistically higher risk time for impaired driving.",
+                    "Remote location with no witnesses, increasing the possibility of a staged or misrepresented accident.",
+                    "Police officer noted 'faint odor of alcohol' but no DUI test was performed, suggesting potential impairment not fully investigated.",
+                    "Claimant's description mentions swerving to avoid a deer, but the police report does not mention a deer, creating inconsistency.",
+                    "Minor vehicle damage reported, yet claimant is claiming significant whiplash and lost wages, potentially exaggerating injuries.",
+                    "Claimant is self-employed and claiming lost wages without providing initial income documentation, making verification difficult."
+                ],
+                "justification_explanation": "The combination of early morning accident, remote location, possible alcohol involvement not fully investigated, inconsistency in accident description (deer), minor damage with major injury claim, and lack of income proof for lost wages raises concerns about the claim's legitimacy. These flags suggest potential misrepresentation of the accident circumstances or exaggeration of injuries and losses.",
+                "expected_referral_decision": {
+                    "refer": true,
+                    "refer_to": "Investigator"
+                }
+            },
+            {
+                "scenario_id": "Scenario_2",
+                "expected_red_flags": [
+                    "Reported loss timeframe is broad (Friday evening to Sunday morning), giving ample time for staging.",
+                    "Minimal signs of forced entry (slightly ajar window) for a reported burglary, suggesting potential staging.",
+                    "No photos of ransacked interior are provided, which is unusual for a burglary claim and could indicate no actual ransacking occurred.",
+                    "High-value jewelry and electronics claimed stolen, common items in fraudulent burglary claims.",
+                    "Receipts provided are photocopies and lack detail, making verification difficult and raising suspicion of alteration or fabrication.",
+                    "Jewelry coverage limit increased significantly (from $2,000 to $7,000) just two months before the reported loss, suggesting premeditation.",
+                    "Claimant's social media post contradicts her statement of being out of town, indicating potential dishonesty about her whereabouts during the alleged burglary."
+                ],
+                "justification_explanation": "The broad timeframe, minimal forced entry, lack of ransacking evidence, high-value items claimed, questionable receipts, recent increase in jewelry coverage, and contradictory social media post collectively paint a picture of a potentially staged burglary. These flags strongly suggest the claimant may be misrepresenting the loss for personal gain.",
+                "expected_referral_decision": {
+                    "refer": true,
+                    "refer_to": "Investigator"
+                }
+            }
+        ]
+    },
+    "answer_explanation": {
+        "scenario_1": {
+            "correct_red_flags_explanation": "Scenario 1 presents a single-vehicle accident with several indicators of a potentially questionable claim. The early morning accident time, remote location, and officer's note of alcohol odor without further investigation are initial red flags suggesting possible impaired driving that the claimant might be downplaying. The discrepancy between the claimant's deer story and the police report's lack of deer mention is a significant inconsistency. Furthermore, the minor vehicle damage is disproportionate to the claimed whiplash and lost wages, raising concerns about injury exaggeration. Finally, claiming lost wages as a self-employed individual without initial income documentation is a common tactic in fraudulent claims to inflate losses. Individually, some of these might be explainable, but collectively, they warrant further scrutiny.",
+            "correct_referral_justification_explanation": "Given the accumulation of red flags – time of accident, location, potential alcohol involvement, inconsistent accident description, minor damage vs. major claim, and lack of income proof – referring this claim is necessary.  An Investigator is the appropriate referral because the red flags suggest potential fraud or misrepresentation of the accident circumstances and injuries, requiring a deeper investigation beyond routine claims handling.  A Senior Claims Adjuster might be consulted later, but the initial need is to investigate the veracity of the claim itself.",
+            "incorrect_referral_justification_explanation": "Not referring this claim or referring it only to a Senior Claims Adjuster would be insufficient at this stage. Ignoring these red flags could lead to paying out a potentially fraudulent or inflated claim.  Referring only to a Senior Claims Adjuster might delay a necessary investigation if the Senior Adjuster also misses the significance of these combined red flags.  The nature of the red flags points towards potential misrepresentation requiring investigative expertise."
+        },
+        "scenario_2": {
+            "correct_red_flags_explanation": "Scenario 2 involves a home burglary claim loaded with red flags indicative of potential staging. The broad timeframe of the alleged burglary and minimal forced entry (slightly ajar window) are classic signs of staged burglaries. The absence of photos showing interior ransacking is highly suspicious. The claimed stolen items – jewelry, electronics, and cash – are typical targets in fraudulent property claims. The photocopied receipts, especially for high-value items, are easily manipulated and raise concerns about authenticity. The recent, significant increase in jewelry coverage just before the loss is a strong indicator of premeditation to defraud the insurer.  The claimant's social media post directly contradicts her alibi of being out of town, demonstrating clear dishonesty and undermining her entire claim.",
+            "correct_referral_justification_explanation": "The sheer number and severity of red flags in Scenario 2 overwhelmingly point to a potentially fraudulent claim. The inconsistencies and suspicious circumstances necessitate a referral to an Investigator. The red flags strongly suggest a staged burglary and intentional misrepresentation of the loss. An Investigator is needed to verify the claimant's statements, investigate the circumstances of the alleged burglary, and assess the authenticity of the provided documentation and social media evidence.  A Senior Claims Adjuster review alone would likely be insufficient to uncover the potential fraud without a dedicated investigation.",
+            "incorrect_referral_justification_explanation": "Failing to refer this claim or referring it only to a Senior Claims Adjuster would be a significant oversight. The red flags are numerous and compelling, strongly suggesting fraud.  Ignoring these flags would risk paying a substantial fraudulent claim.  While a Senior Claims Adjuster might review for policy coverage and general claim handling, the depth of investigation required to uncover the potential fraud in this scenario necessitates the expertise of an Investigator."
+        }
+    },
+    "passing_criteria": {
+        "minimum_red_flags_scenario_1": 3,
+        "minimum_red_flags_scenario_2": 3,
+        "correct_referral_decision_scenario_1": true,
+        "correct_referral_decision_scenario_2": true,
+        "referral_to_scenario_1": "Investigator",
+        "referral_to_scenario_2": "Investigator",
+        "overall_pass_condition": "To pass the basic exam, the candidate must identify at least 3 relevant red flags for each scenario, provide reasonable justifications for referral based on the identified red flags, and make the correct referral decision (Refer to Investigator) for both scenarios."
+    },
+    "validation_method": {
+        "red_flags_validation": "For each scenario, the identified red flags will be evaluated based on relevance and similarity to the 'expected_red_flags' list. Exact wording is not required, but the identified red flags should capture the same underlying concerns.  Keywords or concepts related to the expected red flags will be used for matching (e.g., for Scenario 1: 'time', 'AM', 'alcohol', 'odor', 'deer', 'police report', 'inconsistent', 'minor damage', 'whiplash', 'lost wages', 'self-employed', 'income proof').  A minimum of 3 relevant and distinct red flags per scenario is required.",
+        "justification_validation": "The justification for referral will be evaluated for logical coherence and alignment with the identified red flags and the overall scenario. The justification should explain *why* the identified red flags are concerning and support the referral decision.  It should demonstrate an understanding of claims handling principles and fraud awareness. Keyword matching related to the 'justification_explanation' in the answer key will be used to assess the relevance and completeness of the candidate's justification.",
+        "referral_decision_validation": "The 'referral_decision.refer' and 'referral_decision.refer_to' fields will be evaluated for exact match with the 'expected_referral_decision' for each scenario.  Scenario 1 and Scenario 2 should both have 'refer: true' and 'refer_to: Investigator'.",
+        "overall_validation_formula": "Pass if (Scenario 1 Red Flags Validated >= 3) AND (Scenario 2 Red Flags Validated >= 3) AND (Scenario 1 Justification Validated) AND (Scenario 2 Justification Validated) AND (Scenario 1 Referral Decision Correct) AND (Scenario 2 Referral Decision Correct)"
+    }
+}

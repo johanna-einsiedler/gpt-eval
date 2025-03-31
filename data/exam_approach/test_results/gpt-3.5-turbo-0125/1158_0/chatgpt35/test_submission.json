@@ -1,0 +1,14 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "Task1": {
+        "graph_image": "price_trend_graph.png",
+        "analysis": "Your written analysis here."
+    },
+    "Task2": {
+        "sources": [
+            "URL1",
+            "URL2"
+        ],
+        "report": "Your summary report here."
+    }
+}

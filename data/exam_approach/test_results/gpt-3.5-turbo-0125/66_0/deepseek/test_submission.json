@@ -1,0 +1,16 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "top_3_products": [
+            "Wireless Earbuds Pro",
+            "Organic Cotton T-Shirts",
+            "Stainless Steel Water Bottles"
+        ],
+        "highest_sales_month": "December",
+        "analysis": "The peak in December sales is likely due to holiday shopping trends, with consumers purchasing gifts for Christmas and New Year. The top products reflect popular gift items - tech accessories (earbuds), sustainable fashion (organic cotton), and reusable drinkware (water bottles) which align with current consumer preferences."
+    },
+    "task_2": {
+        "economic_conditions": "Current economic indicators show moderate inflation (3.2% annual rate), stable unemployment at 3.8%, but declining consumer confidence due to economic uncertainty. Retail sales have been mixed, with essential goods performing well while discretionary spending shows some softening.",
+        "predicted_impact": "In the next quarter, we can expect consumers to prioritize essential purchases and value-oriented products. Demand may decrease for premium discretionary items. Sustainable and durable goods (like the top-selling products) may maintain popularity as consumers look for long-term value. Promotional periods may become more important for driving sales."
+    }
+}

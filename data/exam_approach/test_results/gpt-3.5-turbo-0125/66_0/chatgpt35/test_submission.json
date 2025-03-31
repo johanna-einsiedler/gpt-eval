@@ -1,0 +1,16 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "task_1": {
+        "top_3_products": [
+            "Product A",
+            "Product B",
+            "Product C"
+        ],
+        "highest_sales_month": "Month",
+        "analysis": "Brief analysis of reasons for peak sales."
+    },
+    "task_2": {
+        "economic_conditions": "Summary of current economic conditions.",
+        "predicted_impact": "Predicted impact on consumer buying patterns."
+    }
+}

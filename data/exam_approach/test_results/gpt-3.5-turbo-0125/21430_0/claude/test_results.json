@@ -1,0 +1,35 @@
+{
+    "questionable_claims_correct": 0,
+    "referral_report_correct": false,
+    "details": {
+        "questionable_claims": [
+            {
+                "claim_id": "CL-2023-4872",
+                "correct": false,
+                "reason": "Unusually high claim amount ($12,500) for a minor fender bender with no reported injuries."
+            },
+            {
+                "claim_id": "CL-2023-5136",
+                "correct": false,
+                "reason": "Third property damage claim filed by this policyholder within 6 months, all with similar circumstances."
+            },
+            {
+                "claim_id": "CL-2023-4991",
+                "correct": false,
+                "reason": "Vague incident description lacking specific details; claim filed exactly one day before policy expiration."
+            },
+            {
+                "claim_id": "CL-2023-5204",
+                "correct": false,
+                "reason": "Claimed items' value significantly exceeds documented proof of purchase; inconsistencies in theft report timing."
+            }
+        ],
+        "referral_report": {
+            "claim_id": "CL-2023-5136",
+            "correct": false,
+            "summary": "This claim represents the third property damage claim filed by the same policyholder within a 6-month period, all with remarkably similar circumstances and damage descriptions.",
+            "additional_information": "Policyholder has filed claims on 02/15/2023, 04/22/2023, and now 07/18/2023, each involving reported damage to external property structures during nighttime hours with no witnesses. Total claimed amount across all three incidents is $27,450. Recommend reviewing previous claim documentation and photographs for pattern analysis and conducting an in-person interview with the claimant to clarify circumstances."
+        }
+    },
+    "overall_score": 0.0
+}

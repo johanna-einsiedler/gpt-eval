@@ -1,0 +1,57 @@
+{
+  "task1": {
+    "score": 14,
+    "max_score": 20,
+    "percentage": 70.0,
+    "feedback": [
+      "Platform identification: 6/6 points",
+      "Impact analysis: 8/8 points"
+    ]
+  },
+  "task2": {
+    "score": 13,
+    "max_score": 20,
+    "percentage": 65.0,
+    "feedback": [
+      "Deal identification and recency: 3/5 points",
+      "Significance analysis: 5/5 points",
+      "Negotiation lessons: 5/5 points"
+    ]
+  },
+  "task3": {
+    "score": 19.5,
+    "max_score": 20,
+    "percentage": 97.5,
+    "feedback": [
+      "Publication selection: 3/3 points",
+      "URL validation: 3/3 points",
+      "Trending topic identification: 6/6 points",
+      "Key points analysis: 7.5/8 points"
+    ]
+  },
+  "task4": {
+    "score": 20,
+    "max_score": 20,
+    "percentage": 100.0,
+    "feedback": [
+      "Opportunity identification: 6/6 points",
+      "Growth evidence: 6/6 points",
+      "Client advice: 8/8 points"
+    ]
+  },
+  "task5": {
+    "score": 18,
+    "max_score": 20,
+    "percentage": 90.0,
+    "feedback": [
+      "Event selection: 5/5 points",
+      "Date validation: 3/5 points",
+      "Industry significance: 5/5 points",
+      "Client type matching: 5/5 points"
+    ]
+  },
+  "overall_score": 84.5,
+  "total_points": 84.5,
+  "max_points": 100,
+  "pass_fail": "PASS"
+}

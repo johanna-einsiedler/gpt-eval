@@ -1,0 +1,31 @@
+{
+    "task_1_results": [
+        {
+            "name": "Export Administration Regulations (EAR)",
+            "correct": false
+        },
+        {
+            "name": "Restriction of Hazardous Substances Directive (RoHS)",
+            "correct": false
+        },
+        {
+            "name": "Product Safety Standards - IEC 60950-1 (or relevant IEC standards for electronic components)",
+            "correct": false
+        }
+    ],
+    "task_2_results": [
+        {
+            "item": "Determine if the electronic components or related technology are subject to U.S. Export Administration Regulations (EAR) based on origin, supplier location, and company location. If applicable, verify the Export Control Classification Number (ECCN) and ensure compliance with licensing requirements or exemptions.",
+            "correct": false
+        },
+        {
+            "item": "Request and review RoHS compliance documentation from the international supplier to ensure that the electronic components do not contain restricted hazardous substances above permitted levels. Consider conducting independent testing to verify RoHS compliance, especially for critical components or new suppliers.",
+            "correct": false
+        },
+        {
+            "item": "Obtain compliance certificates or test reports from the international supplier demonstrating adherence to relevant product safety standards such as IEC 60950-1 (or other applicable IEC standards like IEC 62368-1 or component-specific standards). Verify that the components meet the safety requirements for their intended application and target markets.",
+            "correct": false
+        }
+    ],
+    "overall_score": 0.0
+}

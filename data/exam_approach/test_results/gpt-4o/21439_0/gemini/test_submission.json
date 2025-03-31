@@ -1,0 +1,45 @@
+{
+    "Candidate ID": "gpt-4-turbo-preview",
+    "Discrepancies": [
+        {
+            "Claim ID": "1",
+            "Discrepancy Type": "Overpayment",
+            "Explanation": "Paid amount ($1200) exceeds claimed amount ($1000) by $200."
+        },
+        {
+            "Claim ID": "2",
+            "Discrepancy Type": "Underpayment",
+            "Explanation": "Paid amount ($450) is less than claimed amount ($500) by $50."
+        },
+        {
+            "Claim ID": "4",
+            "Discrepancy Type": "Other Irregularity",
+            "Explanation": "Notes indicate potential duplicate claim with Claim ID 5."
+        },
+        {
+            "Claim ID": "5",
+            "Discrepancy Type": "Other Irregularity",
+            "Explanation": "Notes indicate possible duplicate of Claim ID 4."
+        },
+        {
+            "Claim ID": "6",
+            "Discrepancy Type": "Overpayment",
+            "Explanation": "Paid amount ($800) exceeds claimed amount ($750) by $50, potentially due to additional expenses as noted."
+        },
+        {
+            "Claim ID": "7",
+            "Discrepancy Type": "Underpayment",
+            "Explanation": "Paid amount ($850) is less than claimed amount ($900) by $50, potentially due to deductible applied as noted."
+        },
+        {
+            "Claim ID": "9",
+            "Discrepancy Type": "Overpayment",
+            "Explanation": "Paid amount ($650) exceeds claimed amount ($600) by $50."
+        },
+        {
+            "Claim ID": "10",
+            "Discrepancy Type": "Underpayment",
+            "Explanation": "Paid amount ($350) is less than claimed amount ($400) by $50."
+        }
+    ]
+}

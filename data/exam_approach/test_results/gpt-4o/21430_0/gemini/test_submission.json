@@ -1,0 +1,14 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "questionable_claims": [
+        {
+            "claim_id": "24680",
+            "explanation": "Claim reported as theft of jewelry with no signs of forced entry, which is unusual and may indicate an inside job or false claim."
+        },
+        {
+            "claim_id": "44556",
+            "explanation": "Claim amount of $75,000 for hitting a deer seems excessively high. This could suggest inflated repair costs, exaggerated injuries, or misrepresentation of the incident."
+        }
+    ],
+    "referral_email": "Subject: Referral for Investigation - Claim ID 24680\n\nDear Investigator,\n\nThis email is to formally refer claim ID 24680 for further investigation.\n\nClaimant Name: Mary Brown\nClaim Amount: 2000\nClaim Type: Home\nIncident Description: Theft of jewelry, no forced entry\n\nReason for Referral: Claim reported as theft of jewelry with no signs of forced entry. This is inconsistent with typical theft scenarios and raises concerns about the validity of the claim. Further investigation is needed to determine if the loss occurred as reported and to rule out potential fraud or misrepresentation.\n\nPlease review the claim details and conduct a thorough investigation as per the standard operating procedure.\n\nSincerely,\n\nClaims Adjuster"
+}

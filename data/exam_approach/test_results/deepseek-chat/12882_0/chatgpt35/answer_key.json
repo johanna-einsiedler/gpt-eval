@@ -1,0 +1,24 @@
+{
+    "expected_answers": [
+        {
+            "product_name": "Apples",
+            "quantity_needed_lbs": 250,
+            "reason_validation_regex": "500.*300.*50|10%"
+        },
+        {
+            "product_name": "Potatoes",
+            "quantity_needed_lbs": 50,
+            "reason_validation_regex": "200.*150"
+        },
+        {
+            "product_name": "Carrots",
+            "quantity_needed_lbs": 350,
+            "reason_validation_regex": "1000.*600.*50|5%"
+        },
+        {
+            "product_name": "Onions",
+            "quantity_needed_lbs": 0,
+            "reason_validation_regex": "300.*400.*excess|50"
+        }
+    ]
+}

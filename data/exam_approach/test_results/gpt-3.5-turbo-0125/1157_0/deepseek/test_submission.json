@@ -1,0 +1,27 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "product_features": "The product is a high-efficiency LED light panel intended for office use. Features include adjustable brightness (3000K-6000K), dimmable functionality, energy-saving mode, and a lifespan of 50,000 hours.",
+        "quality_standards": "Must comply with ISO 9001 for quality management and IEC 60598 for safety standards. ROHS compliance is required for environmental safety.",
+        "dimensions": "60cm x 60cm x 2cm (L x W x H), with a mounting thickness of 1.5cm.",
+        "materials": "Aluminum alloy frame, polycarbonate diffuser, and high-lumen LED chips.",
+        "additional_information": "Warranty period of 5 years. Must include installation manual and certification documents."
+    },
+    "task_2": [
+        {
+            "issue": "Missing tolerance specifications for dimensions.",
+            "explanation": "The sample specification does not specify acceptable tolerances (e.g., ±0.5cm), which could lead to inconsistencies in product delivery.",
+            "suggestion": "Add a tolerance range for all dimensions (e.g., 'Dimensions: 60cm ±0.5cm x 60cm ±0.5cm x 2cm ±0.2cm')."
+        },
+        {
+            "issue": "Ambiguous quality standard reference.",
+            "explanation": "The specification mentions 'compliance with industry standards' without specifying which standards.",
+            "suggestion": "Replace with explicit standards (e.g., 'ISO 9001 and IEC 60598 compliance required')."
+        },
+        {
+            "issue": "No packaging requirements.",
+            "explanation": "The sample lacks details on packaging materials or methods, risking damage during transit.",
+            "suggestion": "Add a section for packaging (e.g., 'Packaging: Corrugated cardboard box with foam padding, minimum drop-test rating of 1.2 meters')."
+        }
+    ]
+}

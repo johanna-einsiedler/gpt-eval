@@ -1,0 +1,32 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": [
+        {
+            "product_name": "Ergonomic Office Chair",
+            "description": "A high-quality ergonomic office chair designed to provide maximum comfort and support during long working hours. Features adjustable lumbar support, armrests, and seat height.",
+            "supplier_contact": "Office Comfort Solutions, contact@officecomfort.com, (555) 123-4567"
+        },
+        {
+            "product_name": "Wireless Keyboard and Mouse Combo",
+            "description": "A sleek wireless keyboard and mouse combo with a 2.4GHz USB receiver, offering a reliable connection up to 10 meters. The keyboard features quiet keys and the mouse has a precision optical sensor.",
+            "supplier_contact": "Tech Gadgets Inc., sales@techgadgets.com, (555) 987-6543"
+        },
+        {
+            "product_name": "Multi-Function Printer",
+            "description": "An all-in-one printer that prints, scans, copies, and faxes. Features include wireless connectivity, duplex printing, and a high-capacity paper tray.",
+            "supplier_contact": "PrintMaster Solutions, info@printmaster.com, (555) 456-7890"
+        }
+    ],
+    "task2": [
+        {
+            "article_title": "The Future of Office Supplies: Trends to Watch in 2023",
+            "summary": "This article discusses emerging trends in office supplies, including the rise of eco-friendly products, the integration of smart technology in office equipment, and the increasing demand for ergonomic furniture. It highlights how companies are adapting to hybrid work models by investing in versatile and sustainable office solutions.",
+            "source": "https://www.officeproductnews.com/future-office-supplies-trends-2023"
+        },
+        {
+            "article_title": "How IT Services Are Evolving to Meet Remote Work Demands",
+            "summary": "The article explores how IT service providers are shifting their offerings to support remote and hybrid work environments. Key points include the growing importance of cloud-based solutions, cybersecurity measures for remote teams, and the role of AI in streamlining IT support services.",
+            "source": "https://www.techindustryjournal.com/it-services-remote-work-2023"
+        }
+    ]
+}

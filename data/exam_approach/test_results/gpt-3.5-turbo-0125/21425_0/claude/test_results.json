@@ -1,0 +1,109 @@
+{
+    "task_1": {
+        "correct_prioritizations": 5,
+        "details": [
+            {
+                "claim_id": "1",
+                "submitted_priority": 1,
+                "correct_priority": 1,
+                "is_correct": true,
+                "submitted_explanation": "This claim involves severe bodily injury with potential for high medical costs and litigation, requiring immediate attention to mitigate exposure and ensure proper care for the claimant.",
+                "correct_explanation": "This claim involves a severe injury with potential long-term disability, requiring immediate attention."
+            },
+            {
+                "claim_id": "2",
+                "submitted_priority": 2,
+                "correct_priority": 2,
+                "is_correct": true,
+                "submitted_explanation": "This claim involves multiple parties with potential coverage disputes that could escalate if not addressed promptly, requiring early intervention to clarify liability and coverage positions.",
+                "correct_explanation": "This claim involves significant property damage affecting multiple parties, necessitating prompt resolution."
+            },
+            {
+                "claim_id": "3",
+                "submitted_priority": 3,
+                "correct_priority": 3,
+                "is_correct": true,
+                "submitted_explanation": "This property damage claim has significant financial impact but no immediate safety concerns, requiring timely but not urgent response to prevent further damage and begin restoration.",
+                "correct_explanation": "This claim involves a moderate injury with ongoing medical treatment, requiring timely follow-up."
+            },
+            {
+                "claim_id": "4",
+                "submitted_priority": 4,
+                "correct_priority": 4,
+                "is_correct": true,
+                "submitted_explanation": "This claim involves moderate damages with clear liability, presenting an opportunity for early resolution before costs escalate.",
+                "correct_explanation": "This claim involves minor property damage with no immediate risk, allowing for a less urgent response."
+            },
+            {
+                "claim_id": "5",
+                "submitted_priority": 5,
+                "correct_priority": 5,
+                "is_correct": true,
+                "submitted_explanation": "This minor claim has limited exposure and straightforward facts, allowing for routine handling with standard procedures.",
+                "correct_explanation": "This claim involves a minor injury with resolved medical treatment, making it the least urgent."
+            }
+        ]
+    },
+    "task_2": {
+        "is_correct": true,
+        "details": {
+            "steps": {
+                "submitted": [
+                    "Step 1: Conduct thorough initial investigation including recorded statements from all involved parties, scene investigation, and document collection to establish facts and coverage.",
+                    "Step 2: Engage appropriate experts early (medical specialists, engineers, accident reconstructionists) to evaluate damages and liability aspects.",
+                    "Step 3: Develop comprehensive reserve strategy based on worst reasonable outcome and implement regular reserve reviews as new information emerges.",
+                    "Step 4: Create proactive communication plan with insured, claimants, and internal stakeholders with scheduled updates and clear documentation.",
+                    "Step 5: Identify settlement opportunities through early evaluation of liability and damages, considering structured settlements for catastrophic claims."
+                ],
+                "required": [
+                    "Step 1: Review all claim documents and verify the accuracy of the information provided.",
+                    "Step 2: Contact all involved parties to gather additional statements and evidence.",
+                    "Step 3: Assess the extent of damages and potential liabilities.",
+                    "Step 4: Develop a settlement proposal that addresses all parties' concerns.",
+                    "Step 5: Negotiate with involved parties to reach a mutually agreeable resolution."
+                ],
+                "is_correct": true
+            },
+            "considerations": {
+                "submitted": [
+                    "Consideration 1: Regulatory compliance requirements including timely communications, fair claims practices, and privacy regulations.",
+                    "Consideration 2: Subrogation and contribution opportunities must be identified early and preserved through proper notices.",
+                    "Consideration 3: Litigation management strategy should be developed early, including selection of appropriate defense counsel and development of defense themes."
+                ],
+                "required": [
+                    "Consideration 1: Ensure compliance with legal and regulatory requirements.",
+                    "Consideration 2: Maintain clear and open communication with all parties involved."
+                ],
+                "is_correct": true
+            },
+            "challenges_and_solutions": {
+                "submitted": [
+                    {
+                        "challenge": "Multiple claimants with aggregate demands exceeding policy limits creating potential bad faith exposure.",
+                        "solution": "Implement interpleader action or structured settlement negotiations with all parties, documenting all settlement attempts and maintaining transparent communication with the insured about potential excess exposure."
+                    },
+                    {
+                        "challenge": "Causation disputes regarding pre-existing conditions versus accident-related injuries.",
+                        "solution": "Obtain complete pre-accident medical records, engage medical experts for causation analysis, and consider independent medical examinations to establish objective baseline."
+                    },
+                    {
+                        "challenge": "Coverage questions regarding policy exclusions and limitations.",
+                        "solution": "Issue timely reservation of rights letter, consider declaratory judgment action if necessary, and maintain separate coverage and liability investigations."
+                    }
+                ],
+                "required": [
+                    {
+                        "challenge": "Discrepancies in witness statements.",
+                        "solution": "Cross-reference statements with available evidence and seek additional clarification from witnesses."
+                    },
+                    {
+                        "challenge": "Delays in obtaining necessary documentation.",
+                        "solution": "Prioritize follow-ups and utilize digital tools to expedite document sharing."
+                    }
+                ],
+                "is_correct": true
+            }
+        }
+    },
+    "overall_score": 100.0
+}

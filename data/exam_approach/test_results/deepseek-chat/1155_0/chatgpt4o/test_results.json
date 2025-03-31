@@ -1,0 +1,26 @@
+{
+  "overall_score": 10.0,
+  "total_score": 10,
+  "max_score": 100,
+  "details": {
+    "task_1": {
+      "points": 0,
+      "max_points": 50,
+      "errors": [
+        "Missing required field: 'task_1'"
+      ]
+    },
+    "task_2": {
+      "points": 0,
+      "max_points": 50,
+      "errors": [
+        "Missing required field: 'task_2'"
+      ]
+    },
+    "formatting": {
+      "points": 10,
+      "max_points": 10,
+      "errors": []
+    }
+  }
+}

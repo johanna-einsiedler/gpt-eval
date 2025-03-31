@@ -1,0 +1,41 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "suppliers": [
+        {
+            "name": "Global Industrial Solutions",
+            "research": {
+                "price": "Competitive pricing with volume discounts available",
+                "quality": "ISO 9001 certified, high-quality materials",
+                "selection": "Wide range of industrial components and materials",
+                "service": "24/7 customer service with dedicated account managers",
+                "support": "Technical support team available, online knowledge base",
+                "availability": "95% in-stock rate, 2-day shipping on most items",
+                "reliability": "99.8% on-time delivery rate over past 12 months",
+                "production_and_distribution": "Multiple manufacturing facilities worldwide, robust logistics network",
+                "reputation_and_history": "Established 1985, positive industry reviews, few BBB complaints"
+            },
+            "evaluation": {
+                "score": 92,
+                "rank": 1
+            }
+        },
+        {
+            "name": "Metro Parts Supply Co.",
+            "research": {
+                "price": "Lower base prices but fewer discount options",
+                "quality": "Good quality but not certified, some variability reported",
+                "selection": "Limited to common industrial parts, no specialty items",
+                "service": "Business hours support only, slower response times",
+                "support": "Basic technical documentation available",
+                "availability": "85% in-stock rate, 3-5 day standard shipping",
+                "reliability": "97.5% on-time delivery rate, occasional delays",
+                "production_and_distribution": "Single manufacturing location, regional distribution",
+                "reputation_and_history": "Founded 2005, mixed customer feedback, some shipping complaints"
+            },
+            "evaluation": {
+                "score": 78,
+                "rank": 2
+            }
+        }
+    ]
+}

@@ -1,0 +1,111 @@
+{
+    "answer_key": {
+        "supplier_data": [
+            {
+                "supplier_name": "Supplier Alpha",
+                "pens_unit_price": "1.10",
+                "paper_unit_price": "5.50",
+                "staplers_unit_price": "3.00",
+                "delivery_lead_time": "7"
+            },
+            {
+                "supplier_name": "Supplier Beta",
+                "pens_unit_price": "1.00",
+                "paper_unit_price": "5.00",
+                "staplers_unit_price": "2.80",
+                "delivery_lead_time": "10"
+            },
+            {
+                "supplier_name": "Supplier Gamma",
+                "pens_unit_price": "1.15",
+                "paper_unit_price": "5.75",
+                "staplers_unit_price": "3.20",
+                "delivery_lead_time": "5"
+            }
+        ],
+        "analysis_section_2": {
+            "price_comparison_table": [
+                {
+                    "item": "Pens",
+                    "supplier_alpha_price": "1.10",
+                    "supplier_beta_price": "1.00",
+                    "supplier_gamma_price": "1.15",
+                    "average_market_price": "1.05",
+                    "percentage_diff_alpha": "4.76",
+                    "percentage_diff_beta": "-4.76",
+                    "percentage_diff_gamma": "9.52"
+                },
+                {
+                    "item": "Paper",
+                    "supplier_alpha_price": "5.50",
+                    "supplier_beta_price": "5.00",
+                    "supplier_gamma_price": "5.75",
+                    "average_market_price": "5.25",
+                    "percentage_diff_alpha": "4.76",
+                    "percentage_diff_beta": "-4.76",
+                    "percentage_diff_gamma": "9.52"
+                },
+                {
+                    "item": "Staplers",
+                    "supplier_alpha_price": "3.00",
+                    "supplier_beta_price": "2.80",
+                    "supplier_gamma_price": "3.20",
+                    "average_market_price": "3.10",
+                    "percentage_diff_alpha": "-3.23",
+                    "percentage_diff_beta": "-9.68",
+                    "percentage_diff_gamma": "3.23"
+                }
+            ],
+            "lowest_price_per_item": {
+                "pens": "Supplier Beta",
+                "paper": "Supplier Beta",
+                "staplers": "Supplier Beta"
+            }
+        },
+        "recommendation_section_3": {
+            "price_based_recommendation": "Supplier Beta",
+            "price_justification": "Supplier Beta offers the lowest price for all three items individually and has the lowest total proposal value ($1530.00) compared to Supplier Alpha ($1675.00) and Supplier Gamma ($1757.50).  Therefore, based solely on price, Supplier Beta is the most cost-effective option.",
+            "other_factors_consideration": [
+                {
+                    "factor": "Delivery Lead Time",
+                    "explanation": "Supplier Gamma offers the shortest delivery lead time (5 days), which might be preferable if Acme Corp. needs the stationery urgently, even though their prices are higher. Supplier Beta has the longest lead time (10 days)."
+                },
+                {
+                    "factor": "Payment Terms",
+                    "explanation": "Supplier Gamma offers the most favorable payment terms (Net 45 days), which provides Acme Corp. with a longer payment period and potentially better cash flow management compared to Supplier Alpha and Supplier Beta (Net 30 days)."
+                },
+                {
+                    "factor": "Item Specifications Compliance",
+                    "explanation": "It is crucial to verify if all suppliers fully comply with the item specifications outlined in 'item_specifications.txt'.  Non-compliance, even with a lower price, could lead to unusable or substandard products."
+                }
+            ]
+        }
+    },
+    "explanation": {
+        "section1": {
+            "q1": "Question 1 requires extracting data directly from the 'price_proposals.pdf' file. The candidate needs to open the PDF, locate the relevant information for each supplier (Supplier Name, Unit Prices for Pens, Paper, and Staplers, and Delivery Lead Time), and then correctly transcribe these values into the JSON structure under 'supplier_data'. Accuracy in data extraction is key here."
+        },
+        "section2": {
+            "q2": "Question 2 involves quantitative analysis using spreadsheet software and the 'market_price_data.csv' file. First, the candidate needs to import the CSV into a spreadsheet. Then, for each item and supplier, they must calculate the percentage difference between the supplier's proposed price (extracted in Q1) and the 'Average Market Price' from the CSV. The formula provided `((Supplier Price - Average Market Price) / Average Market Price) * 100` should be applied correctly. The results should be formatted as numbers with two decimal places and presented in a table within the JSON under 'analysis_section_2' and 'price_comparison_table'.",
+            "q3": "Question 3 is a direct follow-up to Q2. Based on the calculated percentage differences and the prices themselves, the candidate needs to identify the supplier offering the lowest price for each item *compared to the market average*.  This means identifying the supplier with the lowest proposed price for each item, not necessarily the most negative percentage difference (although in this case, it aligns). The answers should be supplier names listed under 'lowest_price_per_item' in the JSON."
+        },
+        "section3": {
+            "q4": "Question 4 requires the candidate to make a recommendation based solely on price.  They should analyze the price comparison table from Q2 and determine which supplier offers the most cost-effective option overall.  In this scenario, Supplier Beta offers the lowest price for all items and the lowest total cost. The justification should clearly state why Supplier Beta is recommended based on price, referencing the lower prices and/or total proposal value. A 2-3 sentence paragraph is expected.",
+            "q5": "Question 5 moves beyond price and asks the candidate to consider other relevant factors.  They need to re-examine 'price_proposals.pdf' and 'item_specifications.txt' to identify at least two non-price factors that could influence the purchasing decision. Examples include delivery lead time, payment terms, and compliance with item specifications. For each factor, a brief explanation of its relevance to Acme Corp.'s decision is required.  The answers should be structured as a list of factors with explanations under 'other_factors_consideration' in the JSON."
+        }
+    },
+    "passing_criteria": {
+        "overall_passing_score": "70%",
+        "section_passing_criteria": {
+            "section1": "All answers in Section 1 must be correct for full marks in this section. Minor errors in data extraction may be acceptable at evaluator discretion, but significant omissions or inaccuracies should be penalized.",
+            "section2": "For Section 2, at least 2 out of 3 items in the 'price_comparison_table' should have correct percentage difference calculations (within a reasonable margin of error due to rounding if manual calculation is suspected). 'lowest_price_per_item' must be completely correct.",
+            "section3": "For Section 3, the 'price_based_recommendation' must be 'Supplier Beta'. The 'price_justification' should logically support the recommendation and mention lower prices or total cost. For 'other_factors_consideration', at least two relevant factors must be identified with reasonable explanations. The factors listed in the answer key are examples; other valid factors related to purchasing decisions (e.g., supplier reputation, quality, order quantity flexibility if mentioned in proposals - though not present in this simplified example) could be accepted at the evaluator's discretion."
+        },
+        "minimum_correct_questions": "To achieve a 70% passing score, a candidate should aim to correctly answer all of Section 1, substantially correct answers in Section 2 (as per section criteria), and a reasonable recommendation and justification in Section 3, including identifying at least two relevant other factors."
+    },
+    "validation_guidance": {
+        "q2_percentage_difference_validation": "For Question 2, percentage difference calculations should be validated numerically. Allow for minor rounding differences (e.g., +/- 0.01%) due to spreadsheet software precision or manual calculation. A script can be used to recalculate the percentage differences based on the extracted supplier prices and market prices and compare them to the candidate's submission.",
+        "q4_price_justification_validation": "For Question 4's 'price_justification', keyword analysis can be used. The justification should contain keywords like 'lowest price', 'cost-effective', 'Supplier Beta', and reference the comparison made in Section 2.  The justification should logically connect the recommendation to the price analysis.",
+        "q5_other_factors_validation": "For Question 5's 'other_factors_consideration', the factors and explanations should be evaluated for relevance to a purchasing decision. The factors listed in the answer key are good examples, but other reasonable factors related to supplier selection can be accepted. The explanations should demonstrate an understanding of why these factors are important in a purchasing context. Evaluators should use their judgment to assess the validity and relevance of the factors and explanations provided."
+    }
+}

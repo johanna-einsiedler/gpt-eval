@@ -1,0 +1,267 @@
+{
+    "candidateId": "GPT-4-turbo",
+    "exercise1": {
+        "totalItems": 17,
+        "totalValue": 18487.79,
+        "reorderCount": 5,
+        "mostExpensiveItem": {
+            "productCode": "EF-5023",
+            "unitCost": 356.8
+        },
+        "updatedRecords": [
+            {
+                "productCode": "AB-1001",
+                "quantity": 45,
+                "unitCost": 189.99,
+                "totalValue": 8549.55,
+                "status": "OK"
+            },
+            {
+                "productCode": "AB-1002",
+                "quantity": 12,
+                "unitCost": 245.5,
+                "totalValue": 2946.0,
+                "status": "REORDER"
+            },
+            {
+                "productCode": "TU-6543",
+                "quantity": 28,
+                "unitCost": 78.25,
+                "totalValue": 2191.0,
+                "status": "OK"
+            },
+            {
+                "productCode": "CD-3045",
+                "quantity": 8,
+                "unitCost": 112.75,
+                "totalValue": 902.0,
+                "status": "REORDER"
+            },
+            {
+                "productCode": "EF-5023",
+                "quantity": 31,
+                "unitCost": 356.8,
+                "totalValue": 11060.8,
+                "status": "OK"
+            },
+            {
+                "productCode": "GH-7891",
+                "quantity": 52,
+                "unitCost": 67.5,
+                "totalValue": 3510.0,
+                "status": "OK"
+            },
+            {
+                "productCode": "IJ-2234",
+                "quantity": 19,
+                "unitCost": 95.3,
+                "totalValue": 1810.7,
+                "status": "REORDER"
+            },
+            {
+                "productCode": "RS-4321",
+                "quantity": 5,
+                "unitCost": 124.6,
+                "totalValue": 623.0,
+                "status": "REORDER"
+            },
+            {
+                "productCode": "KL-4567",
+                "quantity": 120,
+                "unitCost": 12.99,
+                "totalValue": 1558.8,
+                "status": "OK"
+            },
+            {
+                "productCode": "MN-6789",
+                "quantity": 22,
+                "unitCost": 43.75,
+                "totalValue": 962.5,
+                "status": "OK"
+            },
+            {
+                "productCode": "OP-8901",
+                "quantity": 14,
+                "unitCost": 28.5,
+                "totalValue": 399.0,
+                "status": "REORDER"
+            },
+            {
+                "productCode": "QR-1122",
+                "quantity": 37,
+                "unitCost": 18.25,
+                "totalValue": 675.25,
+                "status": "OK"
+            },
+            {
+                "productCode": "VW-8765",
+                "quantity": 9,
+                "unitCost": 86.4,
+                "totalValue": 777.6,
+                "status": "REORDER"
+            },
+            {
+                "productCode": "ST-3344",
+                "quantity": 63,
+                "unitCost": 8.75,
+                "totalValue": 551.25,
+                "status": "OK"
+            },
+            {
+                "productCode": "UV-5566",
+                "quantity": 42,
+                "unitCost": 22.99,
+                "totalValue": 965.58,
+                "status": "OK"
+            },
+            {
+                "productCode": "WX-7788",
+                "quantity": 16,
+                "unitCost": 54.3,
+                "totalValue": 868.8,
+                "status": "OK"
+            },
+            {
+                "productCode": "YZ-9900",
+                "quantity": 27,
+                "unitCost": 15.8,
+                "totalValue": 426.6,
+                "status": "OK"
+            }
+        ]
+    },
+    "exercise2": {
+        "totalOrders": 15,
+        "lateDeliveryPercentage": 33.33,
+        "fastestSupplier": {
+            "supplierName": "Acme Industrial",
+            "avgDeliveryDays": 9.8
+        },
+        "totalPriceVariance": 12.65,
+        "orderAnalysis": [
+            {
+                "poNumber": "PO-2023-001",
+                "deliveryStatus": "on-time",
+                "deliveryDays": 9,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-002",
+                "deliveryStatus": "late",
+                "deliveryDays": 18,
+                "priceVariance": 36.5
+            },
+            {
+                "poNumber": "PO-2023-003",
+                "deliveryStatus": "late",
+                "deliveryDays": 13,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-004",
+                "deliveryStatus": "on-time",
+                "deliveryDays": 14,
+                "priceVariance": -67.5
+            },
+            {
+                "poNumber": "PO-2023-005",
+                "deliveryStatus": "late",
+                "deliveryDays": 18,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-006",
+                "deliveryStatus": "on-time",
+                "deliveryDays": 9,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-007",
+                "deliveryStatus": "late",
+                "deliveryDays": 19,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-008",
+                "deliveryStatus": "on-time",
+                "deliveryDays": 9,
+                "priceVariance": -19.5
+            },
+            {
+                "poNumber": "PO-2023-009",
+                "deliveryStatus": "on-time",
+                "deliveryDays": 14,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-010",
+                "deliveryStatus": "late",
+                "deliveryDays": 19,
+                "priceVariance": 8.7
+            },
+            {
+                "poNumber": "PO-2023-011",
+                "deliveryStatus": "on-time",
+                "deliveryDays": 13,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-012",
+                "deliveryStatus": "on-time",
+                "deliveryDays": 14,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-013",
+                "deliveryStatus": "on-time",
+                "deliveryDays": 9,
+                "priceVariance": 0.0
+            },
+            {
+                "poNumber": "PO-2023-014",
+                "deliveryStatus": "late",
+                "deliveryDays": 18,
+                "priceVariance": 12.5
+            },
+            {
+                "poNumber": "PO-2023-015",
+                "deliveryStatus": "late",
+                "deliveryDays": 20,
+                "priceVariance": 0.0
+            }
+        ]
+    },
+    "exercise3": {
+        "lowestDefectProduct": {
+            "productCode": "AB-1002",
+            "defectRate": 0.0
+        },
+        "highestDefectProduct": {
+            "productCode": "WX-7788",
+            "defectRate": 0.16
+        },
+        "avgSupplierQuality": 4.6,
+        "qualityReviewProducts": [
+            {
+                "productCode": "IJ-2234",
+                "defectRate": 0.12,
+                "supplier": "ElectroTech"
+            },
+            {
+                "productCode": "RS-4321",
+                "defectRate": 0.2,
+                "supplier": "ElectroTech"
+            },
+            {
+                "productCode": "WX-7788",
+                "defectRate": 0.16,
+                "supplier": "Precision Parts"
+            },
+            {
+                "productCode": "VW-8765",
+                "defectRate": 0.11,
+                "supplier": "TechSupply Inc"
+            }
+        ]
+    }
+}

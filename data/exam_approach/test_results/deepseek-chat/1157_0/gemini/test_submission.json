@@ -1,0 +1,27 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "product_name": "Industrial Safety Gloves",
+        "key_attributes": {
+            "dimensions": "Size range: S, M, L, XL, XXL (refer to manufacturer size chart for exact measurements)",
+            "materials": "Outer layer: Nitrile-coated polyester; Inner lining: Cotton knit",
+            "performance": "Cut resistance: Level 4 (EN 388); Puncture resistance: Level 4 (EN 388); Abrasion resistance: Level 3 (EN 388); Tear resistance: Level 2 (EN 388); Chemical splash protection: Type B (EN 374) - against Sodium Hydroxide (40%) and Sulfuric Acid (96%) for at least 30 minutes",
+            "temperature_range": "Operational temperature range: -20°C to +50°C",
+            "standards": "Certified to EN 388:2016+A1:2018 (Protective gloves against mechanical risks) and EN ISO 374-1:2016+A1:2018 (Protective gloves against dangerous chemicals and micro-organisms) - Type B"
+        },
+        "additional_requirements": "Warranty: 12 months from delivery date against manufacturing defects; Color: High-visibility orange; Delivery: DDP [Specify Warehouse Address] as per Incoterms 2020; Minimum order quantity: 100 pairs"
+    },
+    "task_2": {
+        "errors_found": [
+            "Error 1: 'Easy to use' is a subjective and non-quantifiable requirement. It lacks specific criteria for usability testing or feature specifications that contribute to ease of use.",
+            "Error 2: The specification lacks details on the type of user licenses required (e.g., named user, concurrent user) and the number of licenses needed for 50 users.",
+            "Error 3: 'Vendor must provide support' is vague. It does not specify the type of support, availability (e.g., business hours, 24/7), or response time expectations (SLA)."
+        ],
+        "corrected_spec": {
+            "license_type": "50 concurrent user licenses",
+            "support": "24/7 technical support via phone and email with a guaranteed response time of 2 hours for critical issues and 4 hours for non-critical issues (measured as SLA).",
+            "usability_features": "Software must include features such as: intuitive drag-and-drop interface for task management, customizable dashboards, and in-app tutorials. Vendor to provide user documentation and training materials.",
+            "security_compliance": "Must comply with GDPR and be SOC 2 Type 2 certified. Vendor to provide documentation of compliance upon request."
+        }
+    }
+}

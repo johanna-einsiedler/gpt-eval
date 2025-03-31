@@ -1,0 +1,20 @@
+{
+    "candidate_id": "MODEL_ANSWER_KEY",
+    "exam_type": "Basic Claims Coverage Exam",
+    "submission_date": "2024-07-26",
+    "scenario_1": {
+        "question_1": "Yes, potential coverage exists because Section 2 - Coverage C, 'Accidental Discharge of Water' in the policy excerpt covers sudden and accidental water discharge from plumbing systems.",
+        "question_2": "The two most relevant pieces of information are 'Cause of Damage: Burst Pipe' and 'Location of Loss: Bathroom'.",
+        "question_3": "Details about the maintenance and condition of the pipe that burst are crucial to confirm coverage, as neglect or wear and tear might be excluded."
+    },
+    "scenario_2": {
+        "question_1": "Yes, Part A - Liability Coverage, 'Insuring Agreement' in the policy excerpt states coverage for property damage for which an insured becomes legally responsible due to an auto accident.",
+        "question_2": "Peter Jones is reported to be at fault for the accident.",
+        "question_3": "Part A - Liability Coverage"
+    },
+    "scenario_3": {
+        "question_1": "Yes, the 'Business Interruption Coverage' section in the policy excerpt indicates coverage for business income loss due to suspension of operations caused by direct physical loss from 'Covered Causes of Loss' which includes Fire.",
+        "question_2": "Fire is the reported cause of the business interruption.",
+        "question_3": "Yes"
+    }
+}

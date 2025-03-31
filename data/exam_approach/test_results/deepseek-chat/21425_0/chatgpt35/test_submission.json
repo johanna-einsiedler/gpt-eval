@@ -1,0 +1,19 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "policyholder_name": "John Doe",
+        "policy_number": "PL123456",
+        "coverage_limit": "$50,000",
+        "deductible": "$1,000",
+        "coverage_determination": "Covered",
+        "justification": "The policy covers water damage from sudden pipe bursts."
+    },
+    "task_2": {
+        "at_fault_party": "Driver B",
+        "liability_percentage": "70%",
+        "next_steps": "Approve payout to Driver A and initiate subrogation against Driver B’s insurer."
+    },
+    "task_3": {
+        "email_response": "Dear Mr. Smith, We apologize for the delay in processing your claim. The delay is due to pending contractor estimates for your roof damage. We are actively working to expedite this process and expect to have a final decision within 5 business days. We appreciate your patience and understanding during this time. Please feel free to reach out if you have any further questions or need additional assistance. Sincerely, [Adjuster Name]"
+    }
+}

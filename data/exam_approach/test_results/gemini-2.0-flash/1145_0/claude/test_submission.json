@@ -1,0 +1,78 @@
+{
+    "supplier_data": [
+        {
+            "supplier_name": "Supplier Alpha",
+            "pens_unit_price": "1.10",
+            "paper_unit_price": "5.50",
+            "staplers_unit_price": "3.00",
+            "delivery_lead_time": "7"
+        },
+        {
+            "supplier_name": "Supplier Beta",
+            "pens_unit_price": "1.00",
+            "paper_unit_price": "5.00",
+            "staplers_unit_price": "2.80",
+            "delivery_lead_time": "10"
+        },
+        {
+            "supplier_name": "Supplier Gamma",
+            "pens_unit_price": "1.15",
+            "paper_unit_price": "5.75",
+            "staplers_unit_price": "3.20",
+            "delivery_lead_time": "5"
+        }
+    ],
+    "analysis_section_2": {
+        "price_comparison_table": [
+            {
+                "item": "Pens",
+                "supplier_alpha_price": "1.10",
+                "supplier_beta_price": "1.00",
+                "supplier_gamma_price": "1.15",
+                "average_market_price": "1.05",
+                "percentage_diff_alpha": "4.76",
+                "percentage_diff_beta": "-4.76",
+                "percentage_diff_gamma": "9.52"
+            },
+            {
+                "item": "Paper",
+                "supplier_alpha_price": "5.50",
+                "supplier_beta_price": "5.00",
+                "supplier_gamma_price": "5.75",
+                "average_market_price": "5.25",
+                "percentage_diff_alpha": "4.76",
+                "percentage_diff_beta": "-4.76",
+                "percentage_diff_gamma": "9.52"
+            },
+            {
+                "item": "Staplers",
+                "supplier_alpha_price": "3.00",
+                "supplier_beta_price": "2.80",
+                "supplier_gamma_price": "3.20",
+                "average_market_price": "3.10",
+                "percentage_diff_alpha": "-3.23",
+                "percentage_diff_beta": "-9.68",
+                "percentage_diff_gamma": "3.23"
+            }
+        ],
+        "lowest_price_per_item": {
+            "pens": "Supplier Beta",
+            "paper": "Supplier Beta",
+            "staplers": "Supplier Beta"
+        }
+    },
+    "recommendation_section_3": {
+        "price_based_recommendation": "Supplier Beta",
+        "price_justification": "Supplier Beta offers the lowest price for all three items (pens, paper, and staplers), with each item priced below the market average. The total proposal value of $1530.00 is significantly lower than both Supplier Alpha ($1675.00) and Supplier Gamma ($1757.50), representing a cost savings of approximately 9% and 13% respectively.",
+        "other_factors_consideration": [
+            {
+                "factor": "Delivery Lead Time",
+                "explanation": "Supplier Beta has the longest delivery lead time (10 days) compared to Supplier Alpha (7 days) and Supplier Gamma (5 days). If Acme Corp requires the stationery items urgently, the additional 3-5 days of waiting might outweigh the cost savings, especially if operations are impacted by the delay."
+            },
+            {
+                "factor": "Payment Terms",
+                "explanation": "Supplier Gamma offers Net 45 payment terms compared to Net 30 from the other suppliers. This extended payment period provides Acme Corp with better cash flow management, potentially offsetting the higher prices if cash flow is a priority for the company."
+            }
+        ]
+    }
+}

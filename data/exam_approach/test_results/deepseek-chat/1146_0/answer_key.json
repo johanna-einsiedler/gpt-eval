@@ -1,0 +1,66 @@
+{
+    "answer_key": {
+        "task_1": {
+            "applicable_laws": [
+                "Regulation AB-2020"
+            ],
+            "justification": "Anti-bribery certification required for contracts over $10,000 (Section 1 of regulations.pdf)."
+        },
+        "task_2": {
+            "non_compliant_terms": [
+                "Payment terms 'Net 45' violate Regulation PT-2019 (max 30 days).",
+                "$100 holiday gift violates Clause 2.1 (no pre-approval for gifts >$50).",
+                "Blank Material Origin violates Regulation ES-2021 (requires disclosure)."
+            ],
+            "corrective_action": [
+                "Revise payment terms to 'Net 30'.",
+                "Remove gift or seek Legal pre-approval.",
+                "Add country of origin for all materials."
+            ]
+        },
+        "task_3": {
+            "legal_risks": [
+                "Clause 4.2: Ambiguous delivery timelines may lead to vendor delays.",
+                "Clause 7.1: Indefinite confidentiality is unenforceable in most jurisdictions."
+            ],
+            "mitigation_strategy": [
+                "Specify exact delivery deadlines in Clause 4.2.",
+                "Limit confidentiality to 5 years in Clause 7.1."
+            ]
+        }
+    },
+    "acceptable_variations": {
+        "task_1": {
+            "applicable_laws": [
+                "Regulation AB-2020",
+                "Clause 2.1"
+            ],
+            "justification": [
+                "must contain 'contracts over $10,000'",
+                "must reference Section 1"
+            ]
+        },
+        "task_2": {
+            "non_compliant_terms": {
+                "required_keywords": [
+                    "Net 45",
+                    "PT-2019",
+                    "$100",
+                    "Clause 2.1",
+                    "Material Origin",
+                    "ES-2021"
+                ],
+                "minimum_matches": 3
+            }
+        },
+        "task_3": {
+            "legal_risks": {
+                "required_concepts": [
+                    "delivery timelines",
+                    "indefinite confidentiality"
+                ],
+                "minimum_matches": 2
+            }
+        }
+    }
+}

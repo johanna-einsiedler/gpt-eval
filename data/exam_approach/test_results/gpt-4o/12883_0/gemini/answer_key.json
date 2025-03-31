@@ -1,0 +1,9 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "updated_csv": "path/to/updated_transactions.csv"
+    },
+    "task_2": {
+        "report_pdf": "path/to/completed_report.pdf"
+    }
+}

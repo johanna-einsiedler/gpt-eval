@@ -1,0 +1,52 @@
+{
+    "candidate_id": "GPT-4o",
+    "task_1": {
+        "prioritization": [
+            {
+                "claim_id": "3",
+                "priority": 1,
+                "justification": "This claim involves severe bodily injury with potential for permanent disability and high medical costs exceeding policy limits. The claimant's attorney is demanding immediate response, indicating litigation risk. Immediate action is required to mitigate exposure and establish reserves."
+            },
+            {
+                "claim_id": "5",
+                "priority": 2,
+                "justification": "This multi-vehicle commercial accident involves fatality and multiple injured parties. The media attention increases reputational risk, and the commercial policy has complex coverage implications. Early intervention is critical for evidence preservation and witness statements."
+            },
+            {
+                "claim_id": "1",
+                "priority": 3,
+                "justification": "Property damage claim with business interruption component affecting insured's operations. While the monetary exposure is significant, there is no bodily injury component. Prompt action needed to assess damages and initiate mitigation efforts to reduce business interruption losses."
+            },
+            {
+                "claim_id": "4",
+                "priority": 4,
+                "justification": "Workers' compensation claim with moderate injury requiring surgery. While serious, the claim appears within policy limits and standard protocols can be followed. Medical case management should be implemented promptly to ensure appropriate treatment and return-to-work planning."
+            },
+            {
+                "claim_id": "2",
+                "priority": 5,
+                "justification": "Standard auto liability claim with minor injuries. Damages appear within policy limits and liability is relatively clear. While requiring timely handling, this claim presents lower exposure and complexity compared to others in the queue."
+            }
+        ]
+    },
+    "task_2": {
+        "resolution_strategy": {
+            "claim_id": "X",
+            "steps": [
+                "Step 1: Review policy details to confirm coverage, limits, and exclusions applicable to this incident.",
+                "Step 2: Establish appropriate reserves based on initial assessment of liability and damages.",
+                "Step 3: Conduct thorough investigation including scene inspection, witness interviews, and collection of all relevant documentation (police reports, medical records, etc.).",
+                "Step 4: Engage appropriate experts (accident reconstructionist, medical specialist, etc.) to evaluate technical aspects of the claim.",
+                "Step 5: Analyze liability based on investigation findings and applicable law.",
+                "Step 6: Develop comprehensive evaluation of damages including medical expenses, lost wages, pain and suffering, and potential future costs.",
+                "Step 7: Consult with legal counsel regarding litigation strategy if lawsuit is filed or imminent.",
+                "Step 8: Prepare settlement authority request with detailed analysis of exposure and recommended resolution approach.",
+                "Step 9: Initiate settlement discussions or respond to settlement demands with well-documented positions.",
+                "Step 10: Document all claim activities, decisions, and communications thoroughly in the claim file."
+            ],
+            "communication_strategy": "Maintain regular contact with all stakeholders including the insured, claimant/attorney, and internal team members. Provide weekly updates to the insured regarding claim status and strategy. Document all communications in the claim file. Ensure all written communications are reviewed for accuracy and appropriate tone. For sensitive discussions, coordinate with legal counsel and consider joint communications. Establish clear expectations regarding response times and maintain transparency about the claims process while being careful not to make premature commitments regarding coverage or liability.",
+            "resource_allocation": "Assign a senior adjuster with experience in high-exposure claims as primary handler. Engage specialized resources including: medical case manager to monitor treatment and review medical documentation; accident reconstruction expert to analyze liability factors; economic expert to evaluate wage loss and future care needs; and defense counsel with expertise in this specific claim type. Allocate budget for comprehensive investigation and expert analysis. Schedule regular claim reviews with management to ensure appropriate resources remain available as the claim develops.",
+            "potential_challenges": "Anticipated challenges include: disputed liability requiring extensive investigation and expert analysis; potentially excessive treatment and medical costs requiring careful review and possible IME; high settlement expectations from claimant's counsel necessitating thorough damages evaluation and negotiation strategy; possible coverage questions requiring detailed policy analysis; and potential for litigation with associated discovery demands and timeline pressures. To address these challenges, we will: document the investigation thoroughly; engage appropriate experts early; maintain regular communication with all parties; consult with coverage counsel if needed; and develop a litigation management plan in coordination with defense counsel."
+        }
+    }
+}

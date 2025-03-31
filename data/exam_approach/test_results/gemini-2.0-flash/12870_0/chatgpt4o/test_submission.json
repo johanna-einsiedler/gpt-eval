@@ -1,0 +1,24 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "model_version": "MODEL_VERSION_USED",
+    "candidate_name": "Your Name",
+    "task1_trends": [
+        {
+            "trend_number": 1,
+            "trend_description": "The rise of streaming platforms like Spotify, Apple Music, and YouTube has transformed how music is consumed, with streaming becoming the primary revenue source for the music industry.",
+            "impact": "Music artists are focusing more on digital releases and optimizing their presence on streaming platforms to reach wider audiences and increase their revenue. This trend also influences how artists release music, often opting for singles over albums to maintain listener engagement.",
+            "source_url": "URL for Trend 1"
+        },
+        {
+            "trend_number": 2,
+            "trend_description": "Social media platforms like TikTok and Instagram have become crucial for music promotion, with viral trends and challenges helping songs gain popularity quickly.",
+            "impact": "Artists are leveraging social media to engage directly with fans and create viral content that can lead to increased streams and visibility. This trend has democratized music promotion, allowing independent artists to compete with major labels.",
+            "source_url": "URL for Trend 2"
+        }
+    ],
+    "task2_deal": {
+        "deal_summary": "Recently, a major record label signed a new artist to a multi-album deal, highlighting the label's commitment to investing in emerging talent.",
+        "key_terms": "Not Publicly Available",
+        "source_url": "URL for Deal Information"
+    }
+}

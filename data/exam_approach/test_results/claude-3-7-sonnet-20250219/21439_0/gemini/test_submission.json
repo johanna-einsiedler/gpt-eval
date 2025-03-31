@@ -1,0 +1,71 @@
+{
+    "candidate_id": "GPT-4o",
+    "scenario_1": {
+        "irregularities_identified": [
+            {
+                "type": "OVP",
+                "description": "Additional repair payment to ABC Auto Body (TX-001237) of $500.00 was made without prior authorization in the claim file. The claim file only authorized $3,850.00 for repair after deductible.",
+                "amount": 500.0,
+                "calculation_method": "Payment TX-001237 amount ($500.00) minus authorized additional repair amount ($0.00) = $500.00"
+            },
+            {
+                "type": "OVP",
+                "description": "Extended rental car payment to Enterprise (TX-001238) of $90.00 for 3 additional days was made without authorization. The claim file only authorized 7 days of rental car coverage for $210.00.",
+                "amount": 90.0,
+                "calculation_method": "Payment TX-001238 amount ($90.00) minus authorized additional rental amount ($0.00) = $90.00"
+            }
+        ],
+        "total_discrepancy_amount": 590.0,
+        "recommended_actions": [
+            "Code A1: Contact service provider to request refund for unauthorized additional repair payment.",
+            "Code A1: Contact service provider to request refund for unauthorized extended rental payment.",
+            "Code C3: Update claim notes to prevent future errors related to payment authorizations."
+        ],
+        "reporting_priority": "medium",
+        "justification": "Total discrepancy amount is $590.00, which falls within the medium priority range ($250-$1,000) as per reporting guidelines."
+    },
+    "scenario_2": {
+        "irregularities_identified": [
+            {
+                "type": "DUP",
+                "description": "Duplicate payment of $440.00 to Citywide Medical Center (MED-TX-5681). Payment TX-5678 for $440.00 was already made for 'Office visit and diagnostics' which matches the authorized payment amount and services described in the claim file. Payment TX-5681 also for $440.00 is a duplicate.",
+                "amount": 440.0,
+                "calculation_method": "Payment TX-5681 amount ($440.00) is a duplicate of the initial authorized payment already made in TX-5678 ($440.00)."
+            },
+            {
+                "type": "OVP",
+                "description": "Overpayment for itemized services. In addition to the initial $440.00 payment (TX-5678), separate payments were made for X-Ray (TX-5679 - $220.00) and Lab (TX-5680 - $105.00), totaling $325.00 in overpayments for these services as they should have been covered under the initial $440.00 payment.",
+                "amount": 325.0,
+                "calculation_method": "Sum of itemized payments (TX-5679: $220.00 + TX-5680: $105.00) = $325.00. These payments are over and above the authorized $440.00 payment for all services."
+            }
+        ],
+        "total_discrepancy_amount": 765.0,
+        "recommended_actions": [
+            "Code A1: Contact service provider to request refund for duplicate payment of $440.00 (TX-5681).",
+            "Code A1: Contact service provider to request refund for overpayment of itemized services totaling $325.00 (TX-5679 and TX-5680).",
+            "Code C3: Update claim notes to prevent future errors related to duplicate and itemized payments.",
+            "Code C4: Review similar claims for pattern of errors with this provider."
+        ],
+        "reporting_priority": "medium",
+        "justification": "Total discrepancy amount is $765.00, which falls within the medium priority range ($250-$1,000) as per reporting guidelines."
+    },
+    "scenario_3": {
+        "irregularities_identified": [
+            {
+                "type": "NCS",
+                "description": "Payment for bathroom renovation to Luxury Bath Solutions (PROP-009) of $5,200.00 is for a non-covered service. The policy exclusions state 'Bathroom renovations unless directly damaged by covered peril' are not covered. The claim file indicates water damage to kitchen, living room, and basement, but not the bathroom.",
+                "amount": 5200.0,
+                "calculation_method": "Payment PROP-009 amount ($5,200.00) for bathroom renovation is deemed non-covered based on policy exclusions and claim details."
+            }
+        ],
+        "total_discrepancy_amount": 5200.0,
+        "recommended_actions": [
+            "Code C1: Contact insured to explain policy coverage limitations regarding bathroom renovations.",
+            "Code C2: Request refund from Luxury Bath Solutions for non-covered bathroom renovation payment.",
+            "Code C3: Update claim notes to prevent future errors related to non-covered services.",
+            "Code C4: Review similar claims for pattern of errors related to coverage analysis."
+        ],
+        "reporting_priority": "high",
+        "justification": "The non-covered service payment is $5,200.00, exceeding $1,000 and therefore classified as high priority according to reporting guidelines."
+    }
+}

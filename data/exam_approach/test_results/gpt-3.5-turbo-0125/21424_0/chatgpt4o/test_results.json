@@ -1,0 +1,38 @@
+{
+    "adjusted_reserves": [
+        {
+            "claim_id": "C001",
+            "correct": true
+        },
+        {
+            "claim_id": "C002",
+            "correct": true
+        },
+        {
+            "claim_id": "C003",
+            "correct": true
+        },
+        {
+            "claim_id": "C004",
+            "correct": true
+        },
+        {
+            "claim_id": "C005",
+            "correct": true
+        }
+    ],
+    "reserve_recommendation_report": {
+        "recommendations": [
+            {
+                "claim_id": "C004",
+                "correct": true
+            },
+            {
+                "claim_id": "C005",
+                "correct": true
+            }
+        ],
+        "justifications": "Correct"
+    },
+    "overall_score": 100.0
+}

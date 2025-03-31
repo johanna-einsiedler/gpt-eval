@@ -1,0 +1,40 @@
+{
+    "task_1_results": [
+        {
+            "claim_id": "12345",
+            "correct": false,
+            "issue": "Missing Data",
+            "proposed_correction": "Contact claimant to obtain missing name"
+        },
+        {
+            "claim_id": "67890",
+            "correct": false,
+            "issue": "Incorrect Data",
+            "proposed_correction": "Verify and correct the claim amount with supporting documentation"
+        },
+        {
+            "claim_id": "11223",
+            "correct": false,
+            "issue": "Duplicate Entry",
+            "proposed_correction": "Merge or remove the duplicate claim entry after verification"
+        }
+    ],
+    "task_2_results": [
+        {
+            "claim_id": "67890",
+            "correct": false,
+            "reason": "Exceeds Policy Limit"
+        },
+        {
+            "claim_id": "33445",
+            "correct": false,
+            "reason": "Invalid Claim Date"
+        },
+        {
+            "claim_id": "55667",
+            "correct": false,
+            "reason": "Unapproved Claim Type"
+        }
+    ],
+    "overall_score": 0.0
+}

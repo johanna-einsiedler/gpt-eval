@@ -1,0 +1,38 @@
+{
+    "candidate_id": "GPT-4o",
+    "adjusted_reserves": [
+        {
+            "claim_id": "C001",
+            "adjusted_reserve": 9000
+        },
+        {
+            "claim_id": "C002",
+            "adjusted_reserve": 12750
+        },
+        {
+            "claim_id": "C003",
+            "adjusted_reserve": 18000
+        },
+        {
+            "claim_id": "C004",
+            "adjusted_reserve": 20000
+        },
+        {
+            "claim_id": "C005",
+            "adjusted_reserve": 27000
+        }
+    ],
+    "reserve_recommendation_report": {
+        "recommendations": [
+            {
+                "claim_id": "C004",
+                "recommended_reserve": 22000
+            },
+            {
+                "claim_id": "C005",
+                "recommended_reserve": 27000
+            }
+        ],
+        "justifications": "For claim C004 (Health), while the current reserve of $20,000 meets the 80% policy requirement, I recommend increasing it to $22,000 due to potential future medical expenses as noted in the example scenario. For claim C005 (Auto), the reserve has been adjusted to $27,000 (90% of claim amount) in accordance with the auto claims policy. Given the high claim amount of $30,000, this reserve level is appropriate to cover potential liabilities."
+    }
+}

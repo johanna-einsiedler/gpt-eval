@@ -1,0 +1,61 @@
+{
+    "product_categories": [
+        {
+            "product_name": "Apples",
+            "category": "Fruit"
+        },
+        {
+            "product_name": "Carrots",
+            "category": "Vegetable"
+        },
+        {
+            "product_name": "Wheat",
+            "category": "Grain"
+        },
+        {
+            "product_name": "Potatoes",
+            "category": "Vegetable"
+        },
+        {
+            "product_name": "Bananas",
+            "category": "Fruit"
+        }
+    ],
+    "demand_sufficiency_analysis": [
+        {
+            "product_name": "Apples",
+            "total_ordered_quantity": "1500 kg",
+            "demand_quantity": "2000 kg",
+            "demand_status": "Insufficient",
+            "additional_quantity_needed": "500 kg"
+        },
+        {
+            "product_name": "Carrots",
+            "total_ordered_quantity": "7000 kg",
+            "demand_quantity": "6000 kg",
+            "demand_status": "Sufficient",
+            "additional_quantity_needed": "0 kg"
+        },
+        {
+            "product_name": "Wheat",
+            "total_ordered_quantity": "100 tons",
+            "demand_quantity": "150 tons",
+            "demand_status": "Insufficient",
+            "additional_quantity_needed": "50 tons"
+        },
+        {
+            "product_name": "Potatoes",
+            "total_ordered_quantity": "2000 kg",
+            "demand_quantity": "1500 kg",
+            "demand_status": "Sufficient",
+            "additional_quantity_needed": "0 kg"
+        },
+        {
+            "product_name": "Bananas",
+            "total_ordered_quantity": "1500 kg",
+            "demand_quantity": "1000 kg",
+            "demand_status": "Sufficient",
+            "additional_quantity_needed": "0 kg"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+  "overall_score": "0.0%",
+  "score": "0/8",
+  "feedback": {
+    "task_1.eligibility_criteria": {
+      "status": "FAIL",
+      "missing_keywords": [
+        "compliance"
+      ]
+    },
+    "task_1.submission_requirements": {
+      "status": "FAIL",
+      "missing_keywords": [
+        "documents"
+      ]
+    },
+    "task_1.evaluation_criteria": {
+      "status": "FAIL",
+      "reason": "Word count too low (18/20)"
+    },
+    "task_1.conflict_of_interest_guidelines": {
+      "status": "FAIL",
+      "missing_keywords": [
+        "family",
+        "NDA",
+        "penalties"
+      ]
+    },
+    "task_2.needs_assessment": {
+      "status": "FAIL",
+      "missing_keywords": [
+        "requisition"
+      ]
+    },
+    "task_2.vendor_selection": {
+      "status": "FAIL",
+      "missing_keywords": [
+        "bids",
+        "evaluation",
+        "shortlist",
+        "criteria"
+      ]
+    },
+    "task_2.purchase_approval": {
+      "status": "FAIL",
+      "missing_keywords": [
+        "authority",
+        "threshold",
+        "documentation",
+        "review"
+      ]
+    },
+    "task_2.delivery_and_inspection": {
+      "status": "FAIL",
+      "missing_keywords": [
+        "record",
+        "QA"
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+    "candidate_id": "EXAMPLE_ID",
+    "document_review": [
+        {
+            "claim_id": "12345",
+            "discrepancies": [
+                "Missing signature",
+                "Incorrect policy number"
+            ],
+            "missing_information": [
+                "Proof of purchase"
+            ]
+        },
+        {
+            "claim_id": "67890",
+            "discrepancies": [],
+            "missing_information": [
+                "Medical report"
+            ]
+        }
+    ],
+    "claim_decisions": [
+        {
+            "claim_id": "12345",
+            "calculated_payable_amount": 5000.0,
+            "decision": "approve",
+            "justification": "Claim amount within policy limit and authority level"
+        },
+        {
+            "claim_id": "67890",
+            "calculated_payable_amount": 0.0,
+            "decision": "deny",
+            "justification": "Missing required medical report"
+        }
+    ]
+}

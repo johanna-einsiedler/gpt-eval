@@ -1,0 +1,94 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "transaction_summary": {
+        "total_transactions": 30,
+        "total_purchase_amount": 123456.78,
+        "transactions_with_issues": 3,
+        "issue_details": [
+            {
+                "transaction_id": "TR-10028",
+                "issue_type": "missing_data",
+                "description": "Missing origin code"
+            },
+            {
+                "transaction_id": "TR-10029",
+                "issue_type": "missing_data",
+                "description": "Missing certification"
+            },
+            {
+                "transaction_id": "TR-10030",
+                "issue_type": "missing_data",
+                "description": "Missing unit price"
+            }
+        ]
+    },
+    "inventory_analysis": {
+        "total_inventory_value": 98765.43,
+        "product_categories": {
+            "Fresh Fruits": {
+                "total_quantity": 5000,
+                "average_price": 3.5,
+                "total_value": 17500.0
+            },
+            "Dairy Products": {
+                "total_quantity": 2000,
+                "average_price": 5.0,
+                "total_value": 10000.0
+            },
+            "Grains": {
+                "total_quantity": 7000,
+                "average_price": 0.6,
+                "total_value": 4200.0
+            },
+            "Poultry Products": {
+                "total_quantity": 1500,
+                "average_price": 4.0,
+                "total_value": 6000.0
+            }
+        },
+        "top_volume_products": [
+            "P-3001",
+            "P-3002",
+            "P-1001"
+        ],
+        "top_cost_products": [
+            "P-2002",
+            "P-1005",
+            "P-4001"
+        ]
+    },
+    "monthly_summary": {
+        "January": {
+            "total_purchases": 30000.0,
+            "largest_category": "Fresh Fruits",
+            "largest_category_value": 15000.0
+        },
+        "February": {
+            "total_purchases": 40000.0,
+            "largest_category": "Dairy Products",
+            "largest_category_value": 20000.0
+        },
+        "March": {
+            "total_purchases": 50000.0,
+            "largest_category": "Grains",
+            "largest_category_value": 25000.0
+        }
+    },
+    "compliance_report": {
+        "regulated_products_total": 10,
+        "origin_tracking_complete": false,
+        "certification_documentation_complete": false,
+        "reporting_issues": [
+            {
+                "product_code": "P-1004",
+                "transaction_id": "TR-10028",
+                "issue_type": "missing_origin"
+            },
+            {
+                "product_code": "P-4001",
+                "transaction_id": "TR-10029",
+                "issue_type": "missing_certification"
+            }
+        ]
+    }
+}

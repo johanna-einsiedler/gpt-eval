@@ -1,0 +1,129 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "exercise1_results": {
+    "score": 12,
+    "max_score": 25,
+    "details": {
+      "imu_calculation": {
+        "score": 0,
+        "max_score": 5,
+        "comments": [
+          "KA001: Expected IMU around 50.0%, got 57.1%",
+          "KA002: Expected IMU around 43.8%, got 40.0%",
+          "KA003: Expected IMU around 45.8%, got 38.0%",
+          "KA004: Expected IMU around 46.7%, got 40.0%",
+          "KA005: Expected IMU around 47.1%, got 42.3%"
+        ]
+      },
+      "mmu_calculation": {
+        "score": 0,
+        "max_score": 5,
+        "comments": [
+          "KA001: Expected MMU around 100.0%, got 133.3%",
+          "KA002: Expected MMU around 77.8%, got 66.7%",
+          "KA003: Expected MMU around 84.6%, got 61.5%",
+          "KA004: Expected MMU around 87.5%, got 62.5%",
+          "KA005: Expected MMU around 89.0%, got 63.2%"
+        ]
+      },
+      "target_margins": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "competitive_positioning": {
+        "score": 2,
+        "max_score": 5,
+        "comments": [
+          "KA001: Markup deviates from industry average but may be justified",
+          "KA002: Markup deviates from industry average but may be justified",
+          "KA003: Markup deviates from industry average but may be justified",
+          "KA004: Markup deviates from industry average but may be justified",
+          "KA005: Markup deviates from industry average but may be justified"
+        ]
+      },
+      "justification_quality": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      }
+    }
+  },
+  "exercise2_results": {
+    "score": 19,
+    "max_score": 25,
+    "details": {
+      "progressive_schedule": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "projected_units": {
+        "score": 2,
+        "max_score": 5,
+        "comments": [
+          "Week 1: Expected around 132 units, got 234",
+          "Week 2: Expected around 158 units, got 243",
+          "Week 5: Expected around 249 units, got 156",
+          "Week 6: Expected around 264 units, got 100"
+        ]
+      },
+      "projected_revenue": {
+        "score": 2,
+        "max_score": 5,
+        "comments": [
+          "Week 1: Expected around $5148, got $9357",
+          "Week 2: Expected around $5530, got $8502",
+          "Week 5: Expected around $4980, got $3119",
+          "Week 6: Expected around $3960, got $1500"
+        ]
+      },
+      "special_events": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "strategy_explanation": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      }
+    }
+  },
+  "exercise3_results": {
+    "score": 22,
+    "max_score": 25,
+    "details": {
+      "minimum_markup": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "implied_markup_calculation": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "competitor_positioning": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "price_sensitivity": {
+        "score": 3,
+        "max_score": 5,
+        "comments": [
+          "E002: Price doesn't appear to consider sensitivity rating of 8/10",
+          "E004: Price doesn't appear to consider sensitivity rating of 9/10"
+        ]
+      },
+      "positioning_strategy": {
+        "score": 4,
+        "max_score": 5,
+        "comments": []
+      }
+    }
+  },
+  "overall_score": 70.7,
+  "passed": true
+}

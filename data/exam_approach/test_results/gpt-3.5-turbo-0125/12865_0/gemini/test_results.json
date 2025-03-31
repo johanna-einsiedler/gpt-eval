@@ -1,0 +1,13 @@
+{
+    "task_1_score": 0,
+    "task_1_details": {
+        "calculated_fees": "Expected 1500.0, got 1500.00",
+        "summary": "Expected 'Calculated 10% commission on $15,000 earnings.', got 'Calculated a 10% commission on hypothetical artist earnings of $15,000. The calculation was performed in 'fee_calculations.xlsx' (not submitted), which hypothetically includes columns for 'Description' (e.g., 'Earnings'), 'Amount' (e.g., '15000.00'), 'Commission Rate' (e.g., '10%'), and 'Commission Amount' (e.g., '1500.00'), resulting in a 'Total Commission Due' of $1500.00.'"
+    },
+    "task_2_score": 0,
+    "task_2_details": {
+        "payment_matching_results": "Payment matching results do not match the expected results.",
+        "discrepancies": "Discrepancies do not match the expected results."
+    },
+    "overall_score": 0.0
+}

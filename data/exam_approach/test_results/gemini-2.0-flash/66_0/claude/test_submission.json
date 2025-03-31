@@ -1,0 +1,19 @@
+{
+    "Question 1": {
+        "a": "1,245,680",
+        "b": "325",
+        "c": "Electronics"
+    },
+    "Question 2": {
+        "a_trend_description": "Electronics sales show a clear seasonal trend with peaks during November and December (holiday season), as well as a smaller peak in July-August (back-to-school period). The lowest sales occur in February and September.",
+        "b_chart_trend_description": "The revenue for Product ID P201 shows an upward trend throughout 2023, with significant spikes in April and November. There was a notable dip in August before recovering strongly in the fourth quarter."
+    },
+    "Question 3": {
+        "a_forecast_july_vs_june": "Higher",
+        "b_inventory_level_P105": "390"
+    },
+    "Question 4": {
+        "a_cci_value": "102.5",
+        "b_cci_impact_explanation": "A decrease in the Consumer Confidence Index typically indicates consumers are less optimistic about their financial future, leading to reduced spending on non-essential retail products like Electronics and Apparel. Consumers tend to postpone larger purchases, prioritize necessities, and seek more value-oriented options when confidence declines."
+    }
+}

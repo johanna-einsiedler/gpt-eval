@@ -1,0 +1,86 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "product_identification": {
+            "name": "Ergonomic High-Back Office Chair",
+            "category": "Office Furniture",
+            "intended_use": "Designed for office environments to provide ergonomic support for prolonged sitting."
+        },
+        "technical_requirements": {
+            "dimensions": "Seat Height: 16-21 inches (40.6-53.3 cm), Seat Width: 18 inches (45.7 cm), Seat Depth: 15-18 inches (38.1-45.7 cm), Backrest Height: 20 inches (50.8 cm)",
+            "weight_capacity": "250 lbs (113.4 kg)",
+            "materials": [
+                "Mesh Backrest: Minimum tensile strength of 200 lbs",
+                "Seat Cushion: Foam Density of 1.8 lb/ft³",
+                "Base: 5-star configuration with minimum 26-inch diameter",
+                "Casters: Dual-wheel design suitable for carpeted floors"
+            ]
+        },
+        "performance_requirements": {
+            "adjustability_features": [
+                "Seat Height: Adjustable from 16 to 21 inches",
+                "Armrests: Adjustable in height (7-10.5 inches), width, and pivot",
+                "Backrest: Recline capability from 95 to 120 degrees",
+                "Lumbar Support: Adjustable in height and depth"
+            ],
+            "ergonomic_standards": [
+                "ANSI/BIFMA X5.1-2017",
+                "ANSI/BIFMA G1-2013"
+            ]
+        },
+        "quality_standards": {
+            "certifications": [
+                "Greenguard Gold Certification",
+                "California TB 117-2013"
+            ],
+            "testing_requirements": [
+                "ANSI/BIFMA X5.1-2017 load testing",
+                "Durability testing for 100,000 cycles"
+            ]
+        },
+        "compliance_requirements": {
+            "safety_standards": [
+                "ANSI/BIFMA X5.1-2017",
+                "California TB 117-2013"
+            ],
+            "environmental_considerations": [
+                "Minimum 30% recycled content",
+                "VOC emissions compliant with ANSI/BIFMA X7.1-2011"
+            ]
+        }
+    },
+    "task2": {
+        "identified_issues": [
+            {
+                "issue_number": 1,
+                "issue_description": "Screen size is described as 'approximately 24\"' which is vague.",
+                "location_in_document": "Section 2, Screen Size",
+                "correction": "Specify exact screen size: 23.8 inches (60.5 cm) diagonal."
+            },
+            {
+                "issue_number": 2,
+                "issue_description": "Resolution is described as 'good quality' which is ambiguous.",
+                "location_in_document": "Section 2, Resolution",
+                "correction": "Specify resolution: 1920x1080 pixels (Full HD)."
+            },
+            {
+                "issue_number": 3,
+                "issue_description": "Response time is described as 'fast' which lacks specificity.",
+                "location_in_document": "Section 2, Response Time",
+                "correction": "Specify response time: 5ms (milliseconds)."
+            },
+            {
+                "issue_number": 4,
+                "issue_description": "Connectivity is described as 'multiple ports' without details.",
+                "location_in_document": "Section 2, Connectivity",
+                "correction": "Specify ports: 1 x HDMI, 1 x DisplayPort, 1 x VGA, 2 x USB 3.0."
+            },
+            {
+                "issue_number": 5,
+                "issue_description": "Power is described as 'standard' which is non-specific.",
+                "location_in_document": "Section 2, Power",
+                "correction": "Specify power requirements: 100-240V AC, 50/60Hz, 30W."
+            }
+        ]
+    }
+}

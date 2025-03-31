@@ -1,0 +1,48 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "scenario_1": {
+        "claim_covered": true,
+        "payment_amount": 6455.0,
+        "deductible_applied": 500.0,
+        "decision_rationale": "The claim is covered under the collision coverage of the auto policy, which has a $50,000 limit. The total repair estimate is $6,955.00, and after applying the $500 collision deductible, the payment amount is $6,455.00. The accident occurred within the policy territory and there are no exclusions applicable.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "Photos and police report support the claim details. No injuries reported."
+    },
+    "scenario_2": {
+        "claim_covered": true,
+        "payment_amount": 18030.0,
+        "deductible_applied": 1000.0,
+        "decision_rationale": "The water damage is covered under the accidental discharge or overflow of water from plumbing. The total estimate for repairs is $19,030.00. After applying the standard deductible of $1,000, the payment amount is $18,030.00. The damage was sudden and accidental, fitting the policy's covered perils.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "Photos and contractor estimate support the extent of damage. No prior issues reported."
+    },
+    "scenario_3": {
+        "claim_covered": true,
+        "payment_amount": 10876.0,
+        "deductible_applied": 1500.0,
+        "decision_rationale": "The medical expenses are covered under the PPO plan. The total billed amount is $15,220.00. After applying the $1,500 deductible, the plan covers 80% of the remaining in-network expenses, resulting in a payment of $10,876.00. All services were in-network and medically necessary.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "All services were pre-authorized and within network. No exclusions apply."
+    },
+    "scenario_4": {
+        "claim_covered": true,
+        "payment_amount": 33770.0,
+        "deductible_applied": 0.0,
+        "decision_rationale": "The business interruption claim is covered under the policy's business income coverage. The average monthly net income is $13,508.00, and the interruption period is 2.5 months, resulting in a total loss of $33,770.00. The policy covers actual loss sustained with no deductible for business income.",
+        "exceeds_authority": true,
+        "fraud_indicators": [],
+        "documentation_notes": "Fire department report confirms cause of loss. Business was compliant with all regulations."
+    },
+    "scenario_5": {
+        "claim_covered": true,
+        "payment_amount": 10020.0,
+        "deductible_applied": 500.0,
+        "decision_rationale": "The theft is covered under the policy's personal property coverage with replacement cost. The total value of stolen items is $10,520.00. After applying the $500 deductible, the payment amount is $10,020.00. The theft involved forced entry, satisfying policy conditions.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "Police report and inventory list support the claim. All items have proof of ownership."
+    }
+}

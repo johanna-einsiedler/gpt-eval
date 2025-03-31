@@ -1,0 +1,197 @@
+{
+  "candidateId": "GPT-4o",
+  "exercise1": {
+    "score": 6.99,
+    "max_score": 10,
+    "details": [
+      {
+        "candidateProvision": {
+          "farReference": "FAR 9.405",
+          "title": "Effect of Listing",
+          "applicationToScenario": "This provision applies because two potential suppliers are proposed for debarment, which means they are excluded from receiving contracts unless a compelling reason is determined by the agency head."
+        },
+        "matchScore": 0.91,
+        "points": 2.33,
+        "matchedKeyProvision": {
+          "farReference": "FAR 9.405",
+          "title": "Effect of Listing",
+          "applicationToScenario": "Two potential suppliers are proposed for debarment. This provision prohibits soliciting offers from or awarding contracts to debarred, suspended, or proposed for debarment contractors unless there's a compelling reason determined by the agency head. These suppliers must be excluded from consideration in the office equipment purchase."
+        }
+      },
+      {
+        "candidateProvision": {
+          "farReference": "FAR 19.502-2",
+          "title": "Total Small Business Set-Asides",
+          "applicationToScenario": "The procurement must be set aside for small businesses as the value exceeds the micro-purchase threshold but not the simplified acquisition threshold, and there are at least five small businesses capable of providing the equipment."
+        },
+        "matchScore": 0.93,
+        "points": 2.33,
+        "matchedKeyProvision": {
+          "farReference": "FAR 19.502-2",
+          "title": "Total Small Business Set-Asides",
+          "applicationToScenario": "With an estimated value of $145,000, this procurement exceeds the micro-purchase threshold but is below the simplified acquisition threshold. Since market research indicates at least five capable small businesses, this procurement must be set aside exclusively for small businesses, especially given the agency's previous non-compliance with small business utilization requirements."
+        }
+      },
+      {
+        "candidateProvision": {
+          "farReference": "FAR 23.103",
+          "title": "Sustainable Acquisition Policy",
+          "applicationToScenario": "The agency's sustainability initiative requires that the office equipment, such as computers and printers, be ENERGY STAR certified, aligning with the sustainable acquisition policy."
+        },
+        "matchScore": 0.92,
+        "points": 2.33,
+        "matchedKeyProvision": {
+          "farReference": "FAR 23.103",
+          "title": "Sustainable Acquisition Policy",
+          "applicationToScenario": "The agency's sustainability initiative aligns with this provision requiring federal agencies to advance sustainable acquisition. The computers and printers must be ENERGY STAR certified, meeting the requirement that products be energy-efficient. This provision mandates that 95% of new contract actions require products with specific environmental attributes."
+        }
+      }
+    ]
+  },
+  "exercise2": {
+    "score": 0,
+    "max_score": 10,
+    "details": [
+      {
+        "candidateIssue": {
+          "issueDescription": "No formal supplier qualification process.",
+          "regulationViolated": "FDA 21 CFR 820.50",
+          "correctiveAction": "Establish a documented supplier qualification process to ensure all suppliers meet quality standards and are checked against government exclusion lists."
+        },
+        "matchScore": 0,
+        "points": 0,
+        "matchedKeyIssue": null
+      },
+      {
+        "candidateIssue": {
+          "issueDescription": "Verbal communication of quality requirements.",
+          "regulationViolated": "FDA 21 CFR 820.40",
+          "correctiveAction": "Implement written documentation for quality requirements communicated to suppliers to ensure compliance and traceability."
+        },
+        "matchScore": 0,
+        "points": 0,
+        "matchedKeyIssue": null
+      },
+      {
+        "candidateIssue": {
+          "issueDescription": "Undisclosed conflict of interest.",
+          "regulationViolated": "Federal Anti-Kickback Statute",
+          "correctiveAction": "Develop a formal conflict of interest policy and require disclosure of any personal relationships with suppliers to prevent biased decision-making."
+        },
+        "matchScore": 0,
+        "points": 0,
+        "matchedKeyIssue": null
+      }
+    ]
+  },
+  "exercise3": {
+    "score": 3.95,
+    "max_score": 10,
+    "details": [
+      {
+        "scenarioNumber": 1,
+        "candidateScenario": {
+          "scenarioNumber": 1,
+          "isCompliant": false,
+          "applicableRegulations": [
+            "ISO 13485:2016 Section 7.4.1"
+          ],
+          "correctAction": "Verify the supplier's certification through the industry database or obtain updated certification before proceeding with the purchase to ensure compliance with supplier qualification standards."
+        },
+        "keyScenario": {
+          "scenarioNumber": 1,
+          "isCompliant": false,
+          "applicableRegulations": [
+            "ISO 9001:2015 Section 8.4.1",
+            "21 CFR 820.50 (for medical devices)",
+            "FAR 52.209-6 (for government contracts)"
+          ],
+          "correctAction": "Do not proceed with this supplier until proper verification of certifications is completed. Request on-site audit or third-party certification verification. Implement a formal supplier qualification process that includes verification of all certifications through official databases. Consider alternative suppliers with verified certifications even if costs are higher to ensure regulatory compliance."
+        },
+        "isCompliantCorrect": true,
+        "regulationMatchScore": 0.23,
+        "actionSimilarity": 0.08,
+        "points": 0.93
+      },
+      {
+        "scenarioNumber": 2,
+        "candidateScenario": {
+          "scenarioNumber": 2,
+          "isCompliant": false,
+          "applicableRegulations": [
+            "Dodd-Frank Act Section 1502"
+          ],
+          "correctAction": "Require detailed documentation of the supply chain to verify the 'conflict-free' status of minerals and ensure compliance with SEC reporting requirements."
+        },
+        "keyScenario": {
+          "scenarioNumber": 2,
+          "isCompliant": false,
+          "applicableRegulations": [
+            "Dodd-Frank Act Section 1502",
+            "SEC Rule 13p-1",
+            "OECD Due Diligence Guidance"
+          ],
+          "correctAction": "Delay purchase until supplier provides detailed documentation of their supply chain. Request a Conflict Minerals Reporting Template (CMRT) from the supplier. Implement a conflict minerals due diligence program that includes supplier verification. Consider engaging a third-party auditor to verify supplier claims. Ensure compliance with SEC reporting requirements for conflict minerals."
+        },
+        "isCompliantCorrect": true,
+        "regulationMatchScore": 0.33,
+        "actionSimilarity": 0.25,
+        "points": 1.0
+      },
+      {
+        "scenarioNumber": 3,
+        "candidateScenario": {
+          "scenarioNumber": 3,
+          "isCompliant": false,
+          "applicableRegulations": [
+            "TSCA",
+            "OSHA Hazard Communication Standard"
+          ],
+          "correctAction": "Request updated SDS in the GHS format to ensure compliance with current hazardous materials documentation requirements before purchasing."
+        },
+        "keyScenario": {
+          "scenarioNumber": 3,
+          "isCompliant": false,
+          "applicableRegulations": [
+            "OSHA Hazard Communication Standard (29 CFR 1910.1200)",
+            "Toxic Substances Control Act (TSCA)",
+            "EPA 40 CFR Part 704"
+          ],
+          "correctAction": "Do not purchase materials with outdated SDS. Request current GHS-compliant SDS from the supplier. If supplier cannot provide updated documentation, seek alternative suppliers. Implement a procedure to verify SDS compliance before purchasing hazardous materials. Ensure all hazardous materials have current SDS documentation that meets GHS requirements."
+        },
+        "isCompliantCorrect": true,
+        "regulationMatchScore": 0.23,
+        "actionSimilarity": 0.19,
+        "points": 0.93
+      },
+      {
+        "scenarioNumber": 4,
+        "candidateScenario": {
+          "scenarioNumber": 4,
+          "isCompliant": false,
+          "applicableRegulations": [
+            "FAR 19.502-2",
+            "FAR 52.219-6"
+          ],
+          "correctAction": "Consider the qualified small business to meet small business subcontracting goals, ensuring compliance with federal contract requirements for small business utilization."
+        },
+        "keyScenario": {
+          "scenarioNumber": 4,
+          "isCompliant": false,
+          "applicableRegulations": [
+            "FAR 19.702",
+            "FAR 52.219-8",
+            "Small Business Act (15 U.S.C. 637(d))"
+          ],
+          "correctAction": "Award the subcontract to the qualified small business to meet federal contract small business subcontracting goals. Develop a mentor-prot\u00e9g\u00e9 relationship between your company and the small business to address experience concerns. Document the selection process and small business utilization in your subcontracting plan. Provide appropriate support to ensure successful performance by the small business."
+        },
+        "isCompliantCorrect": true,
+        "regulationMatchScore": 0.47,
+        "actionSimilarity": 0.28,
+        "points": 1.1
+      }
+    ]
+  },
+  "overall_score": 36.47,
+  "passed": false
+}

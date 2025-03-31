@@ -1,0 +1,34 @@
+{
+    "task_1_results": [
+        {
+            "name": "International Traffic in Arms Regulations (ITAR)",
+            "correct": true,
+            "description_correct": false,
+            "application_correct": false
+        },
+        {
+            "name": "Restriction of Hazardous Substances (RoHS) Directive",
+            "correct": false
+        },
+        {
+            "name": "Customs Modernization Act (Mod Act)",
+            "correct": false
+        }
+    ],
+    "task_2_results": [
+        {
+            "item": "Verify if the electronic components are subject to ITAR controls and obtain necessary export licenses from the supplier.",
+            "correct": true,
+            "law_or_regulation_correct": true
+        },
+        {
+            "item": "Request RoHS compliance certificates or test reports from the supplier to confirm the absence of restricted hazardous substances.",
+            "correct": false
+        },
+        {
+            "item": "Ensure accurate Harmonized Tariff Schedule (HTS) classification and valuation of the components for customs declaration.",
+            "correct": false
+        }
+    ],
+    "overall_score": 33.33333333333333
+}

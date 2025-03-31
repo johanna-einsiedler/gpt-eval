@@ -1,0 +1,6 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "purchase_order_link": "https://example.com/your_purchase_order",
+    "rfp_text": "Office Cleaning Services for a 10,000 sq ft facility. We are seeking proposals for comprehensive cleaning services, including daily cleaning, waste management, and periodic deep cleaning. Evaluation criteria include cost, experience, service quality, and references. Proposals should be submitted in PDF format by MM/DD/YYYY. Please include a detailed breakdown of services offered and pricing.",
+    "requisition_review_summary": "Requisition form 1 is missing the quantity for item A. Form 2 has an incorrect item description for item B. Form 3 is missing the approval signature. Additionally, form 4 lacks the department code, and form 5 has a discrepancy in the unit price for item C."
+}

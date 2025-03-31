@@ -1,0 +1,24 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "commodity_1": {
+            "name": "Copper",
+            "current_price": "$3.85/pound",
+            "trend": "rising",
+            "influencing_factor": "Increased demand for renewable energy infrastructure"
+        },
+        "commodity_2": {
+            "name": "Crude Oil",
+            "current_price": "$78/barrel",
+            "trend": "falling",
+            "influencing_factor": "Increased production and reduced demand forecasts"
+        }
+    },
+    "task_2": {
+        "average_price": "$1,210",
+        "highest_price": "$1,320",
+        "lowest_price": "$1,050",
+        "price_change_percentage": "+10%",
+        "trend_analysis": "Buying opportunity due to recovery from mid-year dip."
+    }
+}

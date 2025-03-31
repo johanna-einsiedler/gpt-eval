@@ -1,0 +1,23 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "discrepancies": [
+            {
+                "field_name": "Policy Number",
+                "issue": "The policy number provided does not match the claimant's name in our records."
+            },
+            {
+                "field_name": "Address",
+                "issue": "The address is missing the postal code."
+            },
+            {
+                "field_name": "Contact Number",
+                "issue": "The contact number format is incorrect; it should be in the format (XXX) XXX-XXXX."
+            }
+        ]
+    },
+    "task_2": {
+        "is_covered": true,
+        "justification": "The claim is covered because: 1) The incident type 'Theft' is explicitly listed under 'Covered Incidents' in the policy terms; 2) The theft occurred at the residence, which is not excluded; 3) The claimed amount of $2,500 is below the $5,000 threshold requiring prior approval; 4) The incident was reported on 2023-09-15, which is within the 30-day reporting requirement (incident occurred on 2023-09-10); 5) The incident occurred during the policy coverage period (2023-01-01 to 2023-12-31); and 6) The policy number and claimant name match between the claim details and policy terms."
+    }
+}

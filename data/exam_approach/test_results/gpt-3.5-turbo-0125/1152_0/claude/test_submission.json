@@ -1,0 +1,61 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "task_1": {
+        "items": [
+            {
+                "name": "Staples Premium Sticky Notes Assorted Pack",
+                "price": "$12.99",
+                "supplier": "Staples Office Supplies",
+                "source": "Catalog"
+            },
+            {
+                "name": "HP LaserJet Toner Cartridge - Black",
+                "price": "$89.99",
+                "supplier": "HP Office Products",
+                "source": "Catalog"
+            },
+            {
+                "name": "Logitech MX Master 3 Wireless Mouse",
+                "price": "$99.99",
+                "supplier": "Logitech",
+                "source": "Periodical"
+            },
+            {
+                "name": "Moleskine Classic Notebook - Medium",
+                "price": "$19.95",
+                "supplier": "Moleskine",
+                "source": "Catalog"
+            },
+            {
+                "name": "3M Privacy Filter for 24\" Monitor",
+                "price": "$79.99",
+                "supplier": "3M Office Products",
+                "source": "Periodical"
+            }
+        ]
+    },
+    "task_2": {
+        "suppliers": [
+            {
+                "name": "Herman Miller",
+                "url": "https://www.hermanmiller.com/products/seating/office-chairs/",
+                "contact_info": "888-443-4357 or sales@hermanmiller.com"
+            },
+            {
+                "name": "Steelcase",
+                "url": "https://www.steelcase.com/products/office-chairs/",
+                "contact_info": "800-333-9939 or info@steelcase.com"
+            },
+            {
+                "name": "Autonomous",
+                "url": "https://www.autonomous.ai/office-chairs",
+                "contact_info": "support@autonomous.ai"
+            },
+            {
+                "name": "Office Depot",
+                "url": "https://www.officedepot.com/a/browse/ergonomic-chairs/N=5+593065/",
+                "contact_info": "800-463-3768"
+            }
+        ]
+    }
+}

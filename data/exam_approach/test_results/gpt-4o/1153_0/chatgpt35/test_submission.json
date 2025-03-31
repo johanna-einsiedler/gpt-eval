@@ -1,0 +1,26 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "task_1": {
+        "high_demand_products": [
+            "ProductA",
+            "ProductB"
+        ],
+        "seasonal_variations": {
+            "ProductA": [
+                "June",
+                "July"
+            ],
+            "ProductB": [
+                "December"
+            ]
+        },
+        "inventory_turnover_rates": {
+            "ProductA": "3.50",
+            "ProductB": "2.75"
+        },
+        "potential_issues": [
+            "ProductC has declining sales",
+            "ProductD frequently out of stock"
+        ]
+    }
+}

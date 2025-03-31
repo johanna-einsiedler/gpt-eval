@@ -1,0 +1,59 @@
+{
+  "candidate_id": "GPT-4o",
+  "evaluation_date": "2025-03-30 23:14:20",
+  "task_results": {
+    "task1": {
+      "max_points": 5,
+      "points_earned": 5.0,
+      "feedback": {
+        "calculatedDuty": "Correct",
+        "mpf": "Correct",
+        "hmf": "Correct",
+        "totalDutyAndFees": "Correct"
+      }
+    },
+    "task2": {
+      "max_points": 4,
+      "points_earned": 3,
+      "feedback": {
+        "entryNumber": "Incorrect format. Should be 280-XXXXXXX-X",
+        "bondType": "Valid bond type selected",
+        "paymentMethod": "Correct payment method",
+        "justification": "Adequate justification provided"
+      }
+    },
+    "task3": {
+      "max_points": 3,
+      "points_earned": 0,
+      "feedback": {
+        "responsibleParty": "Incorrect. Expected: Buyer",
+        "correctAmount": "Incorrect. Expected: 4125.0",
+        "documentationRequired": "Insufficient valid documentation listed"
+      }
+    },
+    "task4": {
+      "max_points": 5,
+      "points_earned": 3.4375,
+      "feedback": {
+        "freightCharges": "Within 10% of correct value",
+        "insuranceCost": "Correct",
+        "landedCost": "Within 5% of correct value",
+        "paymentDueDate": "Correct"
+      }
+    },
+    "task5": {
+      "max_points": 3,
+      "points_earned": 0,
+      "feedback": {
+        "selectedOption": "Invalid option selected",
+        "reasonCode": "Invalid reason code",
+        "estimatedResolutionTime": "Cannot evaluate resolution time for invalid reason code"
+      }
+    }
+  },
+  "total_points": 11.4375,
+  "max_points": 20,
+  "overall_score": 57.19,
+  "passed": false,
+  "overall_feedback": "You must score points in every task to pass the exam."
+}

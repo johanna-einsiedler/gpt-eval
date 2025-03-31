@@ -1,0 +1,19 @@
+{
+    "Question 1": {
+        "a": "75000",
+        "b": "60",
+        "c": "Electronics"
+    },
+    "Question 2": {
+        "a_trend_description": "Electronics category shows a seasonal trend with peak sales in December and generally lower sales in the middle of the year. Sales tend to increase towards the end of the year, suggesting a holiday shopping season effect.",
+        "b_chart_trend_description": "The monthly revenue for Product ID: P201 in 2023 shows an increasing trend from January to December, with consistent growth throughout the year. There is a noticeable peak in revenue in December."
+    },
+    "Question 3": {
+        "a_forecast_july_vs_june": "Lower",
+        "b_inventory_level_P105": "72"
+    },
+    "Question 4": {
+        "a_cci_value": "102.0",
+        "b_cci_impact_explanation": "A decrease in the Consumer Confidence Index signals reduced consumer optimism about the economy, which typically leads to decreased spending on non-essential retail products as consumers become more cautious and prioritize essential goods and saving."
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "items": [
+            {
+                "name": "Stapler",
+                "price": "$12.99",
+                "supplier": "OfficeMax",
+                "source": "Catalog"
+            },
+            {
+                "name": "Wireless Mouse",
+                "price": "$24.95",
+                "supplier": "Logitech",
+                "source": "Catalog"
+            },
+            {
+                "name": "Desk Organizer",
+                "price": "$19.99",
+                "supplier": "3M",
+                "source": "Periodical"
+            },
+            {
+                "name": "Notebook Set",
+                "price": "$8.50",
+                "supplier": "Mead",
+                "source": "Periodical"
+            }
+        ]
+    },
+    "task_2": {
+        "suppliers": [
+            {
+                "name": "Herman Miller",
+                "url": "https://www.hermanmiller.com",
+                "contact_info": "1-888-443-4357"
+            },
+            {
+                "name": "Steelcase",
+                "url": "https://www.steelcase.com",
+                "contact_info": "1-800-333-9939"
+            }
+        ]
+    }
+}

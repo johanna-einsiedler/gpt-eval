@@ -1,0 +1,40 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "industry_trends": [
+        {
+            "title": "Streaming Services Dominate Music Industry Revenue",
+            "source": "Billboard",
+            "summary": "Streaming platforms continue to be the primary revenue source for the music industry, accounting for over 80% of total revenue in 2023."
+        },
+        {
+            "title": "Esports Viewership Surges Globally",
+            "source": "ESPN",
+            "summary": "The global audience for esports has grown significantly, with major tournaments attracting millions of viewers, highlighting the increasing popularity of competitive gaming."
+        },
+        {
+            "title": "Sustainability in Fashion Shows Gains Momentum",
+            "source": "Vogue",
+            "summary": "Fashion shows are increasingly focusing on sustainability, with designers using eco-friendly materials and practices to reduce environmental impact."
+        }
+    ],
+    "recent_deals": [
+        {
+            "deal_title": "Netflix Signs Multi-Year Deal with Top Director",
+            "parties_involved": "Netflix, Christopher Nolan",
+            "date": "2023-08-10",
+            "deal_summary": "Netflix has secured a multi-year deal with acclaimed director Christopher Nolan to produce exclusive films for the streaming platform."
+        },
+        {
+            "deal_title": "Nike Extends Sponsorship with Star Athlete",
+            "parties_involved": "Nike, Serena Williams",
+            "date": "2023-07-22",
+            "deal_summary": "Nike has extended its sponsorship deal with tennis legend Serena Williams, continuing their partnership for another five years."
+        },
+        {
+            "deal_title": "Universal Music Group Acquires Independent Label",
+            "parties_involved": "Universal Music Group, AWAL",
+            "date": "2023-09-05",
+            "deal_summary": "Universal Music Group has acquired AWAL, an independent music label, to expand its reach in the indie music scene."
+        }
+    ]
+}

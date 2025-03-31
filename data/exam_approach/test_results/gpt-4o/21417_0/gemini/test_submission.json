@@ -1,0 +1,23 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "discrepancies": [
+            {
+                "field_name": "Policy Number",
+                "issue": "The policy number provided does not match the claimant's name in our records."
+            },
+            {
+                "field_name": "Address",
+                "issue": "The address is missing the postal code."
+            },
+            {
+                "field_name": "Contact Number",
+                "issue": "The contact number format is incorrect; it should be in the format (XXX) XXX-XXXX."
+            }
+        ]
+    },
+    "task_2": {
+        "is_covered": true,
+        "justification": "The claim is covered under the policy terms. The incident type is 'Theft', which is listed as a covered incident. The amount claimed is $2,500, which is less than the exclusion limit of $5,000. The claim was reported on 2023-09-15, which is within 30 days of the incident date of 2023-09-10, fulfilling the reporting timeframe requirement. The policy is active between 2023-01-01 and 2023-12-31, and the incident date falls within this period."
+    }
+}

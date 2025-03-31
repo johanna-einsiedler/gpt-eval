@@ -1,0 +1,31 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "regulations": [
+            {
+                "name": "Federal Acquisition Regulation (FAR)",
+                "description": "The primary regulation for use by all federal executive agencies in their acquisition of supplies and services with appropriated funds.",
+                "application": "Ensures that the purchasing process for electronic components follows federal procurement standards, including fair competition and ethical sourcing."
+            },
+            {
+                "name": "International Traffic in Arms Regulations (ITAR)",
+                "description": "U.S. regulations that control the export and import of defense-related articles and services on the United States Munitions List (USML).",
+                "application": "If the electronic components are dual-use (civilian and military applications), ITAR compliance is necessary to avoid unauthorized export of sensitive technology."
+            },
+            {
+                "name": "Restriction of Hazardous Substances (RoHS) Directive",
+                "description": "An EU directive that restricts the use of specific hazardous materials found in electrical and electronic products.",
+                "application": "Ensures that the purchased electronic components do not contain prohibited substances like lead, mercury, or cadmium, which could pose environmental or health risks."
+            }
+        ]
+    },
+    "task_2": {
+        "compliance_checklist": [
+            "Step 1: Verify that the supplier is registered and compliant with FAR requirements if using federal funds.",
+            "Step 2: Conduct a risk assessment to determine if the electronic components fall under ITAR regulations and obtain necessary export licenses if required.",
+            "Step 3: Request RoHS compliance certificates from the supplier to ensure the components meet hazardous substance restrictions.",
+            "Step 4: Document all due diligence steps, including supplier audits and compliance verifications, for record-keeping and potential audits.",
+            "Step 5: Include compliance clauses in the purchase contract, specifying adherence to FAR, ITAR, and RoHS regulations."
+        ]
+    }
+}

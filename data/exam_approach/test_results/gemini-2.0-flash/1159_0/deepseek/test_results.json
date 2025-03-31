@@ -1,0 +1,26 @@
+{
+    "candidate_id": "Candidate123",
+    "model_version": "GPT-4-turbo",
+    "procedure_document_evaluation": {
+        "keyword_points": 4,
+        "max_keyword_points": 9,
+        "found_keywords": [
+            "Equipment Request Form",
+            "Department Head Approval",
+            "Procurement Officer",
+            "Office Equipment Procurement"
+        ],
+        "logical_flow_manual_check_required": true,
+        "comment": "Manual review needed for logical flow and overall procedure quality."
+    },
+    "short_answer_evaluation": {
+        "q1_correct": false,
+        "q2_correct": false,
+        "q3_correct": false,
+        "short_answer_points": 0,
+        "max_short_answer_points": 3
+    },
+    "overall_score": 33.33,
+    "total_points_achieved": 4,
+    "max_possible_points": 12
+}

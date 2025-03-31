@@ -1,0 +1,37 @@
+{
+    "task_1": {
+        "issues": [
+            {
+                "claim_id": "10001",
+                "issue": "Missing Data",
+                "proposed_correction": "Contact claimant for missing policy number"
+            },
+            {
+                "claim_id": "10002",
+                "issue": "Incorrect Data",
+                "proposed_correction": "Verify claim amount with policy details"
+            },
+            {
+                "claim_id": "10003",
+                "issue": "Duplicate Entry",
+                "proposed_correction": "Remove duplicate entry"
+            }
+        ]
+    },
+    "task_2": {
+        "non_compliant_claims": [
+            {
+                "claim_id": "10004",
+                "reason": "Exceeds Policy Limit"
+            },
+            {
+                "claim_id": "10005",
+                "reason": "Invalid Claim Date"
+            },
+            {
+                "claim_id": "10006",
+                "reason": "Unapproved Claim Type"
+            }
+        ]
+    }
+}

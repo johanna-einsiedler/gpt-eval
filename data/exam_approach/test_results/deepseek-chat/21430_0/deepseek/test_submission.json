@@ -1,0 +1,19 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "case_1": {
+        "red_flags": [
+            "Witness 1 Statement: 'Saw blue car run red light and hit claimant’s car'",
+            "Witness 2 Statement: 'Claimant’s car was stationary when hit by speeding vehicle'"
+        ],
+        "referral_reason": "Conflicting witness statements (running red light vs. stationary vehicle) and the accident occurring at 2:30 AM with no traffic cameras suggest potential fraud.",
+        "recommended_action": "investigator"
+    },
+    "case_2": {
+        "red_flags": [
+            "POLICY: Increased coverage from $200k to $500k (2 weeks before fire)",
+            "NEIGHBOR STATEMENT: 'Jane left town yesterday. Saw her packing suitcases in her car.'"
+        ],
+        "referral_reason": "Recent policy increase and the fire starting in the kitchen (gas stove left on) while the claimant was out of town raise suspicions of arson.",
+        "recommended_action": "investigator"
+    }
+}

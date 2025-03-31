@@ -1,0 +1,23 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "discrepancies": [
+            {
+                "field_name": "Policy Number",
+                "issue": "The policy number provided does not match the claimant's name in our records."
+            },
+            {
+                "field_name": "Address",
+                "issue": "The address is missing the postal code."
+            },
+            {
+                "field_name": "Contact Number",
+                "issue": "The contact number format is incorrect; it should be in the format (XXX) XXX-XXXX."
+            }
+        ]
+    },
+    "task_2": {
+        "is_covered": true,
+        "justification": "The claim is covered because the incident type 'Theft' is included in the covered incidents, the amount claimed is within the policy limit, and the claim was reported within 30 days of the incident."
+    }
+}

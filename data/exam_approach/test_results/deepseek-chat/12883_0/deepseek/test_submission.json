@@ -1,0 +1,57 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": [
+        {
+            "date": "2023-10-01",
+            "product": "Wheat",
+            "quantity": 500,
+            "price_per_kg": 0.5,
+            "buyer": "ABC Grain Co.",
+            "total_value": 250.0
+        },
+        {
+            "date": "2023-10-02",
+            "product": "Corn",
+            "quantity": 300,
+            "price_per_kg": 0.4,
+            "buyer": "XYZ Feeds",
+            "total_value": 120.0
+        },
+        {
+            "date": "2023-10-03",
+            "product": "Soybeans",
+            "quantity": 200,
+            "price_per_kg": 0.6,
+            "buyer": "Global Ag",
+            "total_value": 120.0
+        }
+    ],
+    "task_2": [
+        {
+            "product": "Wheat",
+            "updated_stock": 500
+        },
+        {
+            "product": "Corn",
+            "updated_stock": 500
+        },
+        {
+            "product": "Soybeans",
+            "updated_stock": 300
+        }
+    ],
+    "task_3": [
+        {
+            "product": "Wheat",
+            "total_sales": 250.0
+        },
+        {
+            "product": "Corn",
+            "total_sales": 120.0
+        },
+        {
+            "product": "Soybeans",
+            "total_sales": 120.0
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+{
+    "answer_key": {
+        "Question 1": {
+            "a": 62000,
+            "b": 101.25,
+            "c": "Electronics"
+        },
+        "Question 2": {
+            "a_trend_description": "Yes, there is a seasonal trend for Electronics. Sales tend to be lower in the first half of the year (January to June) and peak in the second half, especially in December, likely due to holiday season.",
+            "b_chart_trend_description": "The revenue for Product ID P201 in 2023 shows a generally increasing trend throughout the year, with a significant peak in December. There might be slight dips in some months, but overall, the revenue grows month by month."
+        },
+        "Question 3": {
+            "a_forecast_july_vs_june": "Higher",
+            "b_inventory_level_P105": 122
+        },
+        "Question 4": {
+            "a_cci_value": "[Insert the actual CCI value for the most recent month for the United States here. Example: 102.0]",
+            "b_cci_impact_explanation": "A decrease in the Consumer Confidence Index suggests consumers are less optimistic about the economy. This could lead to reduced spending on non-essential retail products as consumers become more cautious and prioritize essential goods and saving."
+        }
+    },
+    "answer_explanation": {
+        "Question 1": {
+            "a": "To calculate the total revenue for 2023, filter the sales data for the year 2023 and sum the 'Revenue' column. Using spreadsheet software, you can use the SUMIF function or filter the data and then use the SUM function on the 'Revenue' column.",
+            "b": "To calculate the average units sold per month for 'Product ID: P105', filter the data for 'Product ID: P105' and then calculate the average of the 'Units Sold' column. Using spreadsheet software, you can use the AVERAGEIF function or filter the data and then use the AVERAGE function on the 'Units Sold' column.",
+            "c": "To find the Product Category with the highest total revenue in December 2023, filter the data for 'Month: December' and 'Year: 2023'. Then, use a pivot table or group by 'Product Category' and sum the 'Revenue'. Identify the Product Category with the maximum sum of revenue. Alternatively, you can use functions like SUMIFS to calculate total revenue per category for December 2023 and then find the maximum."
+        },
+        "Question 2": {
+            "a_trend_description": "To identify the seasonal trend for 'Product Category: Electronics', filter the data for 'Product Category: Electronics' and analyze the 'Units Sold' for each month across the available years (if multiple years were provided in a real exam). Observe if there's a pattern of higher or lower sales in specific months or seasons.  In the sample data, Electronics sales are lower in the first half of the year and higher in the second half, peaking in December.",
+            "b_chart_trend_description": "Create a line or bar chart with 'Month' on the X-axis and 'Revenue' on the Y-axis, filtering data for 'Product ID: P201' and 'Year: 2023'. Observe the visual trend in the chart. The description should reflect the general direction and any significant peaks or dips. In the sample data, the chart shows an upward trend with a December peak."
+        },
+        "Question 3": {
+            "a_forecast_july_vs_june": "Based on the seasonal trend identified in 2(a) for Electronics (peak season in the second half of the year), July falls after June and is expected to be in the rising trend towards the peak. Therefore, sales in July are expected to be higher than in June.",
+            "b_inventory_level_P105": "First, calculate the average units sold per month for 'Product ID: P105' (already done in 1(b)). Then, calculate 20% of this average as the safety stock. Add the safety stock to the average monthly demand to get the recommended inventory level. Formula: Inventory Level = Average Monthly Units Sold * (1 + Safety Stock Percentage). In this case: 101.25 * (1 + 0.20) = 121.5. Round to the nearest whole number: 122."
+        },
+        "Question 4": {
+            "a_cci_value": "Candidate needs to use a web browser to search for 'Consumer Confidence Index United States' and find the most recent value. The answer key needs to be updated with the actual current value at the time of evaluation. [Example: If the CCI value is found to be 102.0, then the answer is 102.0]. Sources like the Conference Board or reputable financial news websites should be used.",
+            "b_cci_impact_explanation": "A lower CCI indicates reduced consumer optimism.  This pessimism translates to decreased willingness to spend on discretionary items (non-essentials).  Therefore, sales of products like electronics and apparel are likely to decline as consumers cut back on non-essential purchases."
+        }
+    },
+    "passing_criteria": {
+        "minimum_correct_answers": 7,
+        "description": "To pass the basic exam, candidates must achieve a minimum of 7 correctly answered questions. This ensures a foundational understanding of data analysis, trend identification, basic forecasting, and economic awareness. Correct answers are determined by exact numerical matches for quantitative questions and reasonable alignment with the expected descriptions for qualitative questions (trend descriptions and economic impact explanation). For Question 4a, the CCI value should be reasonably close to the current value, allowing for minor variations depending on the source and update timing."
+    },
+    "validation_guidelines": {
+        "Question 1": {
+            "type": "exact_numerical_match",
+            "validation_method": "Compare candidate's numerical answer to the answer key value. Accept if they are identical."
+        },
+        "Question 2": {
+            "a_trend_description": {
+                "type": "keyword_and_concept_match",
+                "validation_method": "Evaluate if the description includes keywords related to seasonality (e.g., 'seasonal', 'peak', 'low', 'higher', 'lower', 'months', 'year') and correctly identifies the general trend (e.g., higher sales in the second half of the year, peak in December for Electronics).  Manual review is required to assess the reasonableness of the description."
+            },
+            "b_chart_trend_description": {
+                "type": "keyword_and_concept_match",
+                "validation_method": "Evaluate if the description includes keywords related to trends (e.g., 'increasing', 'decreasing', 'upward', 'downward', 'peak', 'growth', 'decline', 'monthly') and correctly identifies the general trend (e.g., increasing revenue throughout the year with a December peak for P201). Manual review is required to assess the reasonableness of the description."
+            }
+        },
+        "Question 3": {
+            "a_forecast_july_vs_june": {
+                "type": "exact_text_match",
+                "validation_method": "Compare candidate's answer to 'Higher'. Accept if they are identical."
+            },
+            "b_inventory_level_P105": {
+                "type": "numerical_range_match",
+                "validation_method": "Check if the candidate's answer is within a reasonable range of the answer key value (e.g., +/- 1 due to rounding differences). For strict automated checking, exact match to the rounded integer is preferred."
+            }
+        },
+        "Question 4": {
+            "a_cci_value": {
+                "type": "numerical_range_match",
+                "validation_method": "Compare candidate's numerical answer to the answer key value. Accept if it is within a reasonable range (e.g., +/- 2 points) to account for potential data source differences or slight delays in reporting.  For more robust validation, specify a data source and acceptable date range for the CCI value."
+            },
+            "b_cci_impact_explanation": {
+                "type": "concept_match",
+                "validation_method": "Evaluate if the explanation correctly links a decrease in CCI to reduced consumer spending on non-essential items. Look for keywords like 'decreased spending', 'less optimistic', 'non-essential', 'discretionary purchases', 'economic uncertainty'. Manual review is required to assess the conceptual correctness of the explanation."
+            }
+        }
+    }
+}

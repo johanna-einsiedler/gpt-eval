@@ -1,0 +1,32 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1_specification": {
+        "product_name": "Industrial-Grade Safety Gloves",
+        "dimensions": "Length: 12 inches, Width: 4 inches (adjustable wrist strap)",
+        "materials": "Nitrile-coated polyester, reinforced fingertips, breathable fabric",
+        "performance_criteria": "Must meet ANSI/ISEA 105-2016 Cut Level A4, puncture resistance of 50 Newtons, chemical resistance to common industrial solvents",
+        "additional_requirements": "Must be ambidextrous, have textured grip pattern, and include conductive fingertips for touchscreen compatibility. Packaging must include individual polybags with lot numbering for traceability."
+    },
+    "task_2_review": [
+        {
+            "issue_description": "Material specification lists 'high-quality steel' without defining alloy composition or hardness requirements",
+            "suggested_correction": "Specify exact alloy grade (e.g., AISI 304 stainless steel) and Rockwell hardness range (e.g., HRC 45-50)"
+        },
+        {
+            "issue_description": "Dimensional tolerances are missing for critical components",
+            "suggested_correction": "Add ±0.5mm tolerance for all machined surfaces and ±1° for angular measurements"
+        },
+        {
+            "issue_description": "Performance testing section references outdated standard (ASTM F1234-2010)",
+            "suggested_correction": "Update to current ASTM F1234-2023 standard and specify required testing laboratory accreditation"
+        },
+        {
+            "issue_description": "Packaging requirements omit important details about moisture protection",
+            "suggested_correction": "Add requirement for vacuum-sealed packaging with desiccant packets for moisture-sensitive components"
+        },
+        {
+            "issue_description": "No provision for quality documentation submission",
+            "suggested_correction": "Require submission of material certificates, first article inspection reports, and full QC documentation with each shipment"
+        }
+    ]
+}

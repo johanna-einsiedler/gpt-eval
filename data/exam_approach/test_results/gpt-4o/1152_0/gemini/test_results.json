@@ -1,0 +1,27 @@
+{
+    "task1_results": [
+        {
+            "product_name": "Ergonomic Office Chair",
+            "is_correct": false
+        },
+        {
+            "product_name": "Premium Laser Printer",
+            "is_correct": false
+        },
+        {
+            "product_name": "Cloud Backup Solutions",
+            "is_correct": false
+        }
+    ],
+    "task2_results": [
+        {
+            "article_title": "5 Office Supply Trends to Watch in 2024",
+            "is_correct": false
+        },
+        {
+            "article_title": "Top Cybersecurity Trends In IT Services For 2024",
+            "is_correct": false
+        }
+    ],
+    "overall_score": 0.0
+}

@@ -1,0 +1,23 @@
+{
+  "candidate_id": "PurchasingAgentExpert001",
+  "model_version": "GPT-4-turbo",
+  "question_results": {
+    "1": {
+      "score": 1,
+      "feedback": "Correct regulation name and valid URL provided."
+    },
+    "2": {
+      "score": 1,
+      "feedback": "Correct answer - contains most key concepts."
+    },
+    "3": {
+      "score": 0.5,
+      "feedback": "Partially correct - mentions some key concepts but missing others."
+    },
+    "4": {
+      "score": 0.5,
+      "feedback": "Partially correct - Step 1 (general search) is well described, but Step 2 is weaker."
+    }
+  },
+  "overall_score": 75.0
+}

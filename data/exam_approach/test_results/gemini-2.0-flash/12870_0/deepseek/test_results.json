@@ -1,0 +1,38 @@
+{
+    "candidate_id": "candidate123",
+    "candidate_name": "Jane Doe",
+    "model_version": "GPT-4",
+    "overall_score": 30.0,
+    "detailed_results": {
+        "task1": [
+            {
+                "trend_number": 1,
+                "points": 2,
+                "feedback": [
+                    "Trend 1: Source domain NOT ACCEPTABLE (www.billboard.com). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com']",
+                    "Trend 1: Description relevant (keywords matched: 2)",
+                    "Trend 1: Impact keywords insufficient (0 matched, need >= 1)"
+                ]
+            },
+            {
+                "trend_number": 2,
+                "points": 0,
+                "feedback": [
+                    "Trend 2: Source domain NOT ACCEPTABLE (www.rollingstone.com). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com', 'techcrunch.com', 'theverge.com']",
+                    "Trend 2: Description keywords insufficient (0 matched, need >= 1)",
+                    "Trend 2: Impact keywords insufficient (0 matched, need >= 1)"
+                ]
+            }
+        ],
+        "task2": {
+            "points": 1,
+            "feedback": [
+                "Deal: Source domain NOT ACCEPTABLE (www.complex.com). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com', 'prnewswire.com', 'businesswire.com']",
+                "Deal: Summary keywords insufficient (0 matched, need >= 1)",
+                "Deal: Key terms correctly stated as 'Not Publicly Available'"
+            ]
+        }
+    },
+    "total_points": 3,
+    "max_points": 10
+}

@@ -1,0 +1,43 @@
+{
+    "answer_key": {
+        "policy_details": {
+            "policy_number": "PL123456",
+            "coverage_type": "Homeowners",
+            "effective_date": "2023-01-01",
+            "expiration_date": "2024-01-01",
+            "coverage_limits": {
+                "dwelling": "$300,000",
+                "personal_property": "$100,000",
+                "liability": "$500,000"
+            },
+            "exclusions": [
+                "Flood damage",
+                "Earthquake",
+                "Intentional acts"
+            ]
+        },
+        "claim_details": {
+            "claimant_name": "John Doe",
+            "incident_date": "2023-11-15",
+            "claimed_damages": [
+                "Roof repair",
+                "Flooring replacement",
+                "Furniture damage"
+            ],
+            "estimated_loss": "$25,000"
+        },
+        "coverage_determination": {
+            "within_policy_period": true,
+            "damage_covered": true,
+            "exclusions_applicable": false,
+            "notes": "Water damage from roof leakage is covered as it was sudden/accidental and not caused by flood."
+        }
+    },
+    "acceptable_variations": {
+        "notes": [
+            "Water damage is covered per policy as it resulted from sudden roof leakage, not flood.",
+            "Damage is covered because it was caused by rainfall (not excluded flood damage).",
+            "Covered: incident was sudden/accidental water damage, not excluded peril."
+        ]
+    }
+}

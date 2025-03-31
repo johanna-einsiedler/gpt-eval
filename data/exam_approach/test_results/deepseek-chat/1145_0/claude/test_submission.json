@@ -1,0 +1,11 @@
+{
+    "part1": {
+        "lowest_price_supplier": "Supplier C",
+        "average_price_product_y": 46.5,
+        "supplier_with_price_increase": "None"
+    },
+    "part2": {
+        "price_increase_justified": false,
+        "reasoning": "Budget allows only 8%, and competitors average 5%. A 15% increase exceeds market benchmarks."
+    }
+}

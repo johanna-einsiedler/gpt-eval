@@ -1,0 +1,56 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "model_version": "MODEL_VERSION_HERE",
+    "settled_claims_record": [
+        {
+            "Claim ID": "CLAIM001",
+            "Policy Holder Name": "Alice Smith",
+            "Claim Amount": 2500,
+            "Settlement Date": "2023-10-26"
+        },
+        {
+            "Claim ID": "CLAIM004",
+            "Policy Holder Name": "Diana Lee",
+            "Claim Amount": 4800,
+            "Settlement Date": "2023-11-15"
+        },
+        {
+            "Claim ID": "CLAIM007",
+            "Policy Holder Name": "George White",
+            "Claim Amount": 6000,
+            "Settlement Date": "2023-12-01"
+        },
+        {
+            "Claim ID": "CLAIM010",
+            "Policy Holder Name": "Jack Red",
+            "Claim Amount": 1000,
+            "Settlement Date": "2024-01-10"
+        }
+    ],
+    "detailed_analysis_inventory": [
+        {
+            "Claim ID": "CLAIM002",
+            "Claim Type": "Property",
+            "Claim Amount": 12000,
+            "Reason for Detailed Analysis": "Claim Amount greater than $5,000"
+        },
+        {
+            "Claim ID": "CLAIM003",
+            "Claim Type": "Liability",
+            "Claim Amount": 7000,
+            "Reason for Detailed Analysis": "Claim Amount greater than $5,000"
+        },
+        {
+            "Claim ID": "CLAIM006",
+            "Claim Type": "Complex",
+            "Claim Amount": 9000,
+            "Reason for Detailed Analysis": "Claim Type is Complex"
+        },
+        {
+            "Claim ID": "CLAIM009",
+            "Claim Type": "Property",
+            "Claim Amount": 5500,
+            "Reason for Detailed Analysis": "Claim Amount greater than $5,000"
+        }
+    ]
+}

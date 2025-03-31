@@ -1,0 +1,63 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "task1": {
+        "top_growth_categories": [
+            "Category1",
+            "Category2",
+            "Category3"
+        ],
+        "highest_sales_months": [
+            "Month1",
+            "Month2",
+            "Month3"
+        ],
+        "profit_margins_2022": {
+            "Outerwear": 0.0,
+            "Casual Wear": 0.0,
+            "Formal Wear": 0.0,
+            "Accessories": 0.0,
+            "Footwear": 0.0
+        },
+        "worst_performing_products": [
+            "Product1",
+            "Product2",
+            "Product3"
+        ]
+    },
+    "task2": {
+        "overall_correlation_coefficient": 0.0,
+        "strongest_correlated_category": "CategoryName",
+        "average_lag_time_months": 0
+    },
+    "task3": {
+        "q1_2023_forecast": {
+            "Outerwear": 0,
+            "Casual Wear": 0,
+            "Formal Wear": 0,
+            "Accessories": 0,
+            "Footwear": 0
+        },
+        "inventory_recommendations": {
+            "Outerwear": "increase/decrease/maintain",
+            "Casual Wear": "increase/decrease/maintain",
+            "Formal Wear": "increase/decrease/maintain",
+            "Accessories": "increase/decrease/maintain",
+            "Footwear": "increase/decrease/maintain"
+        },
+        "increase_allocation_products": [
+            "Product1",
+            "Product2",
+            "Product3"
+        ],
+        "decrease_allocation_products": [
+            "Product1",
+            "Product2",
+            "Product3"
+        ],
+        "influential_economic_indicators": [
+            "Indicator1",
+            "Indicator2",
+            "Indicator3"
+        ]
+    }
+}

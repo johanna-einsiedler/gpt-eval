@@ -1,0 +1,38 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "candidate_name": "Your Name",
+    "model_version": "MODEL_VERSION_USED",
+    "overall_score": 80.0,
+    "detailed_results": {
+        "task1": [
+            {
+                "trend_number": 1,
+                "points": 3,
+                "feedback": [
+                    "Trend 1: Source domain NOT ACCEPTABLE (). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com']",
+                    "Trend 1: Description keywords insufficient (0 matched, need >= 1)",
+                    "Trend 1: Impact relevant (keywords matched: 1)"
+                ]
+            },
+            {
+                "trend_number": 2,
+                "points": 2,
+                "feedback": [
+                    "Trend 2: Source domain NOT ACCEPTABLE (). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com', 'techcrunch.com', 'theverge.com']",
+                    "Trend 2: Description relevant (keywords matched: 1)",
+                    "Trend 2: Impact keywords insufficient (0 matched, need >= 1)"
+                ]
+            }
+        ],
+        "task2": {
+            "points": 3,
+            "feedback": [
+                "Deal: Source domain NOT ACCEPTABLE (). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com', 'prnewswire.com', 'businesswire.com']",
+                "Deal: Summary relevant (keywords matched: 2)",
+                "Deal: Key terms correctly stated as 'Not Publicly Available'"
+            ]
+        }
+    },
+    "total_points": 8,
+    "max_points": 10
+}

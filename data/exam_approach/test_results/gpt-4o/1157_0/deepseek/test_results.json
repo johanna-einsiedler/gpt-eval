@@ -1,0 +1,32 @@
+{
+    "task_1_score": 0,
+    "task_1_max_score": 5,
+    "task_1_feedback": {
+        "product_name": "Expected: High-Performance Laptop, Found: Industrial-Grade Safety Gloves",
+        "dimensions": "Expected: 35.8x24.6x1.8 cm, Found: Length: 12 inches, Width: 4 inches (adjustable wrist strap)",
+        "materials": "Expected: Aluminum, Plastic, Found: Nitrile-coated polyester, reinforced fingertips, breathable fabric",
+        "performance_criteria": "Expected: Intel i7 processor, 16GB RAM, 512GB SSD, 15.6-inch display, Found: Must meet ANSI/ISEA 105-2016 Cut Level A4, puncture resistance of 50 Newtons, chemical resistance to common industrial solvents",
+        "additional_requirements": "Expected: Must include a backlit keyboard, Wi-Fi 6 support, and a minimum battery life of 10 hours., Found: Must be ambidextrous, have textured grip pattern, and include conductive fingertips for touchscreen compatibility. Packaging must include individual polybags with lot numbering for traceability."
+    },
+    "task_2_score": 0,
+    "task_2_max_score": 4,
+    "task_2_feedback": [
+        {
+            "issue_description": "Expected: The dimensions are missing units., Found: Material specification lists 'high-quality steel' without defining alloy composition or hardness requirements",
+            "suggested_correction": "Expected: Add 'cm' to the dimensions to specify the units., Found: Specify exact alloy grade (e.g., AISI 304 stainless steel) and Rockwell hardness range (e.g., HRC 45-50)"
+        },
+        {
+            "issue_description": "Expected: The material list is incomplete., Found: Dimensional tolerances are missing for critical components",
+            "suggested_correction": "Expected: Include all materials such as 'Aluminum, Plastic, Glass'., Found: Add \u00b10.5mm tolerance for all machined surfaces and \u00b11\u00b0 for angular measurements"
+        },
+        {
+            "issue_description": "Expected: Performance criteria lack specific processor model., Found: Performance testing section references outdated standard (ASTM F1234-2010)",
+            "suggested_correction": "Expected: Specify the processor model, e.g., 'Intel i7-1165G7'., Found: Update to current ASTM F1234-2023 standard and specify required testing laboratory accreditation"
+        },
+        {
+            "issue_description": "Expected: Additional requirements do not mention operating system compatibility., Found: Packaging requirements omit important details about moisture protection",
+            "suggested_correction": "Expected: Add 'Must be compatible with Windows 10 and Linux'., Found: Add requirement for vacuum-sealed packaging with desiccant packets for moisture-sensitive components"
+        }
+    ],
+    "overall_score": 0.0
+}

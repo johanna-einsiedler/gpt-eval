@@ -1,0 +1,10 @@
+{
+    "task_1_score": 2,
+    "task_1_details": {},
+    "task_2_score": 0,
+    "task_2_details": {
+        "payment_matching_results": "Payment matching results do not match the expected results.",
+        "discrepancies": "Discrepancies do not match the expected results."
+    },
+    "overall_score": 50.0
+}

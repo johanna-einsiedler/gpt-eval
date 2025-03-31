@@ -1,0 +1,27 @@
+{
+  "task_1": {
+    "sales_trend_analysis": {
+      "keywords_found": true,
+      "metrics_found": false,
+      "passed": false
+    },
+    "inventory_recommendation": {
+      "keywords_found": true,
+      "metrics_found": true,
+      "passed": true
+    }
+  },
+  "task_2": {
+    "market_trend_research": {
+      "keywords_found": false,
+      "no_banned_keywords": true,
+      "passed": false
+    },
+    "impact_on_demand": {
+      "keywords_found": false,
+      "no_banned_keywords": true,
+      "passed": false
+    }
+  },
+  "overall_score": 25.0
+}

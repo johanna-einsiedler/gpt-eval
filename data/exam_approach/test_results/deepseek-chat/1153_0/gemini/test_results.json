@@ -1,0 +1,7 @@
+{
+  "low_stock_items_correct": true,
+  "reorder_quantities_correct": true,
+  "purchase_priority_correct": true,
+  "justification_correct": false,
+  "overall_score": 50
+}

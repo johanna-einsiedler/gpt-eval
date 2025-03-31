@@ -1,0 +1,13 @@
+{
+    "answer_key": {
+        "task_1": {
+            "mark_up_rate_percentage": 66.67,
+            "selling_price": 83.33,
+            "pricing_justification": "Any reasonable justification (e.g., competitive pricing, target margin)."
+        },
+        "task_2": {
+            "mark_down_rate_percentage": 25.0,
+            "reason_for_mark_down": "Any valid reason (e.g., overstock, seasonal clearance)."
+        }
+    }
+}

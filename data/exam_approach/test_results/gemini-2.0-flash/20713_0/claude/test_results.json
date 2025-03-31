@@ -1,0 +1,13 @@
+{
+  "results": {
+    "markup_rate_q1": "incorrect",
+    "markdown_rate_q2": "correct",
+    "selling_price_q3": "correct",
+    "selling_price_q4": "correct",
+    "justification_q5": "justification_reasonable",
+    "selling_price_q5": "correct"
+  },
+  "correct_count": 4,
+  "passed": true,
+  "overall_score": 80.0
+}

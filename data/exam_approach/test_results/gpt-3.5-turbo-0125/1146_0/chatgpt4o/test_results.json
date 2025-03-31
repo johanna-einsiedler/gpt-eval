@@ -1,0 +1,37 @@
+{
+    "task_1_results": [
+        {
+            "name": "International Traffic in Arms Regulations (ITAR)",
+            "correct": true,
+            "description_correct": false,
+            "application_correct": false
+        },
+        {
+            "name": "Restriction of Hazardous Substances Directive (RoHS)",
+            "correct": false
+        },
+        {
+            "name": "Consumer Product Safety Improvement Act (CPSIA)",
+            "correct": true,
+            "description_correct": false,
+            "application_correct": false
+        }
+    ],
+    "task_2_results": [
+        {
+            "item": "Verify that the supplier complies with ITAR regulations for any components with potential military applications.",
+            "correct": true,
+            "law_or_regulation_correct": true
+        },
+        {
+            "item": "Ensure that all electronic components meet RoHS standards by checking for certification or testing reports.",
+            "correct": false
+        },
+        {
+            "item": "Confirm that the electronic components adhere to CPSIA safety standards by reviewing product safety documentation.",
+            "correct": true,
+            "law_or_regulation_correct": true
+        }
+    ],
+    "overall_score": 66.66666666666666
+}

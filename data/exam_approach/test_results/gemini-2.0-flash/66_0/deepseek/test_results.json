@@ -1,0 +1,56 @@
+{
+  "Question 1": {
+    "a": {
+      "candidate_answer": "250000",
+      "correct_answer": 62000,
+      "is_correct": false
+    },
+    "b": {
+      "candidate_answer": "150",
+      "correct_answer": 101.25,
+      "is_correct": false
+    },
+    "c": {
+      "candidate_answer": "Electronics",
+      "correct_answer": "Electronics",
+      "is_correct": false
+    }
+  },
+  "Question 2": {
+    "a_trend_description": {
+      "candidate_answer": "Electronics sales show a seasonal trend with peak sales in November and December (holiday season) and lower sales in January and February. There's also a moderate increase during summer months.",
+      "correct_answer": "Yes, there is a seasonal trend for Electronics. Sales tend to be lower in the first half of the year (January to June) and peak in the second half, especially in December, likely due to holiday season.",
+      "is_correct": false
+    },
+    "b_chart_trend_description": {
+      "candidate_answer": "The revenue for Product ID: P201 shows a steady increase from January to April, peaks in May, then gradually declines through the rest of 2023 with a small uptick in December.",
+      "correct_answer": "The revenue for Product ID P201 in 2023 shows a generally increasing trend throughout the year, with a significant peak in December. There might be slight dips in some months, but overall, the revenue grows month by month.",
+      "is_correct": false
+    }
+  },
+  "Question 3": {
+    "a_forecast_july_vs_june": {
+      "candidate_answer": "Higher",
+      "correct_answer": "Higher",
+      "is_correct": true
+    },
+    "b_inventory_level_P105": {
+      "candidate_answer": "180",
+      "correct_answer": 122,
+      "is_correct": false
+    }
+  },
+  "Question 4": {
+    "a_cci_value": {
+      "candidate_answer": "102.5",
+      "correct_answer": "[Insert the actual CCI value for the most recent month for the United States here. Example: 102.0]",
+      "is_correct": false
+    },
+    "b_cci_impact_explanation": {
+      "candidate_answer": "A decrease in the Consumer Confidence Index suggests consumers are less optimistic about the economy, which typically leads to reduced spending on non-essential retail products as people prioritize necessities.",
+      "correct_answer": "A decrease in the Consumer Confidence Index suggests consumers are less optimistic about the economy. This could lead to reduced spending on non-essential retail products as consumers become more cautious and prioritize essential goods and saving.",
+      "is_correct": true
+    }
+  },
+  "overall_score": 22.22
+}

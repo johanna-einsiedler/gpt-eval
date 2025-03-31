@@ -1,0 +1,21 @@
+{
+    "task_1_results": {
+        "total_items_correct": true,
+        "total_cost_correct": true,
+        "earliest_date_correct": true,
+        "latest_date_correct": true,
+        "task_1_score": 100.0
+    },
+    "task_2_results": [
+        {
+            "product_name": "Product A",
+            "correct": true
+        },
+        {
+            "product_name": "Product B",
+            "correct": true
+        }
+    ],
+    "overall_pass": true,
+    "overall_score": 100.0
+}

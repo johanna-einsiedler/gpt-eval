@@ -1,0 +1,16 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "selected_supplier": "Supplier E",
+        "justification": "Supplier E offers the lowest price at $12.00 while meeting the minimum quality rating of 4 and maximum lead time of 14 days."
+    },
+    "task_2": {
+        "target_price": "$11.00",
+        "negotiation_strategy": "Negotiate a target price of $11.00 to match Competitor 1's price, leveraging market prices to request a discount from Supplier A.",
+        "potential_savings": "$1500.00"
+    },
+    "task_3": {
+        "order_quantity": "1700 units",
+        "reasoning": "Order quantity of 1700 units is based on the forecasted demand for March to prevent potential stockouts."
+    }
+}

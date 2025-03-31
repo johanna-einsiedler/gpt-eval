@@ -1,0 +1,13 @@
+{
+    "claimant_information_consistency": "Consistent",
+    "policy_coverage_verification": "Covered under Section 3 - Vehicle Collision Coverage",
+    "open_claim_count": 11,
+    "average_closed_claim_payment": "1674.77",
+    "top_claim_types": {
+        "Vehicle Collision": 8,
+        "Property Damage": 8,
+        "Minor Injury": 4
+    },
+    "supervisor_approval_required": "Yes",
+    "approval_reasoning": "According to Section 2.1 of the Claims Handling Procedure, for Vehicle Collision Claims, adjusters have settlement authority up to $3,000.  As per Section 2.2, settlements exceeding this limit require supervisor approval, and the proposed settlement of $6,500 exceeds the adjuster's authority."
+}

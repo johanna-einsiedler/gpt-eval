@@ -1,0 +1,62 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "exam_date": "2023-10-15",
+    "scenario_1": {
+        "bodily_injury_reserve": 27000.0,
+        "bodily_injury_code": "AL-BI-02",
+        "property_damage_reserve": 13237.5,
+        "property_damage_code": "AL-PD-01",
+        "medical_expense_reserve": 10000.0,
+        "medical_expense_code": "AL-ME-02",
+        "total_reserve": 50237.5,
+        "policy_sections_referenced": [
+            "2.1",
+            "2.2",
+            "2.3"
+        ],
+        "justification": "The bodily injury reserve is calculated using the total medical expenses ($2,800 ER + $2,000 PT + $1,500 injections) and lost wages ($3,200), with a pain and suffering multiplier of 3x due to moderate injury, jurisdiction factor of 1.0, and attorney factor of 1.5. Property damage reserve includes repair costs ($8,750), rental expenses ($450), and a 10% contingency. Medical expenses are capped at policy limits due to potential future treatments."
+    },
+    "scenario_2": {
+        "previous_total_reserve": 20500.0,
+        "indemnity_reserve": 18000.0,
+        "indemnity_code": "WC-IN-01",
+        "medical_reserve": 39600.0,
+        "medical_code": "WC-ME-03",
+        "rehabilitation_reserve": 13500.0,
+        "rehabilitation_code": "WC-RH-02",
+        "total_reserve": 71100.0,
+        "net_change": 50600.0,
+        "policy_sections_referenced": [
+            "3.1",
+            "3.2",
+            "3.3"
+        ],
+        "justification": "Indemnity reserve is based on 12 weeks of TTD at $633.33/week plus a 15% contingency. Medical reserve includes surgery ($25,000), PT ($4,500), and a 20% contingency. Rehabilitation reserve is set for 3 months of vocational services at $4,500/month. Adjustments are due to new medical information and potential permanent disability."
+    },
+    "scenario_3": {
+        "exposures": [
+            {
+                "exposure_type": "Property Damage - Store 1",
+                "reserve_amount": 46050.0,
+                "reserve_code": "GL-PD-02"
+            },
+            {
+                "exposure_type": "Business Interruption - Store 2",
+                "reserve_amount": 33000.0,
+                "reserve_code": "GL-BI-01"
+            },
+            {
+                "exposure_type": "Emergency Response Costs",
+                "reserve_amount": 11000.0,
+                "reserve_code": "GL-ER-01"
+            }
+        ],
+        "total_reserve": 90050.0,
+        "policy_sections_referenced": [
+            "4.1",
+            "4.2",
+            "4.3"
+        ],
+        "justification": "Reserves for Store 1 include inventory and structural damage with a 15% contingency. Store 2's business interruption reserve covers 5 days of lost revenue plus a 10% contingency. Emergency response costs are estimated with a 10% contingency. Each exposure is separately evaluated per policy guidelines."
+    }
+}

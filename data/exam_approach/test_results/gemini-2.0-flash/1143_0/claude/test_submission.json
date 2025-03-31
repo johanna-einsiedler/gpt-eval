@@ -1,0 +1,7 @@
+{
+    "candidate_id": "Claude-3-Opus-20240229",
+    "candidate_name": "Claude",
+    "part1_purchase_order_filename": "purchase_order.txt",
+    "part2_rfq_filename": "rfq_cleaning_services.txt",
+    "part3_requisition_review_filename": "requisition_review.txt"
+}

@@ -1,0 +1,28 @@
+{
+    "candidate_id": "EXAMPLE_ID",
+    "task1": {
+        "inventory_turnover": {
+            "product_1": "5.00",
+            "product_2": "3.50"
+        },
+        "average_sales": {
+            "product_1": "200.00",
+            "product_2": "150.00"
+        },
+        "current_inventory": {
+            "product_1": "100",
+            "product_2": "200"
+        },
+        "trends": "Product 1 shows a higher turnover rate indicating faster sales, while Product 2 has a slower turnover and higher current inventory, suggesting potential overstock."
+    },
+    "task2": {
+        "purchasing_plan": {
+            "objective_alignment": "The plan aligns with company objectives by ensuring high-demand products are restocked promptly while managing overstock for slower-moving items.",
+            "recommendations": [
+                "Increase order frequency for Product 1 to prevent stockouts.",
+                "Reduce order quantity for Product 2 to manage excess inventory.",
+                "Implement a review system to adjust purchasing based on sales trends."
+            ]
+        }
+    }
+}

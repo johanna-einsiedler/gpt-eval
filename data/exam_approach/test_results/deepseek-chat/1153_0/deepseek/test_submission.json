@@ -1,0 +1,16 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "low_stock_items": [
+        "P-100",
+        "P-205"
+    ],
+    "reorder_quantities": {
+        "P-100": 30,
+        "P-205": 30
+    },
+    "purchase_priority": [
+        "P-205",
+        "P-100"
+    ],
+    "justification": "P-205 has a longer lead time (14 days) and higher weekly sales (25 units) compared to P-100 (7-day lead time, 15 units/week), making it more urgent to reorder."
+}

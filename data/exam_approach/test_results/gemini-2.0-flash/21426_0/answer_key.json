@@ -1,0 +1,88 @@
+{
+    "answer_key": {
+        "candidate_name": "Answer Key",
+        "candidate_id": "N/A",
+        "model_version": "N/A",
+        "exam_type": "Basic Claims Adjuster Exam",
+        "submission_date": "2024-07-26",
+        "answers": {
+            "1a": {
+                "claimant_name": "John Smith",
+                "policy_number": "HP-BASIC-2023-123",
+                "date_of_loss": "2023-12-15",
+                "type_of_loss": "Fire Damage to Kitchen",
+                "policyholder_name": "John Smith",
+                "policy_status": "Active",
+                "coverage_type": "Dwelling Fire"
+            },
+            "2a": "Yes",
+            "2b": "The claim is potentially covered because the 'Type of Loss' is 'Fire Damage' which falls under 'Covered Perils (Dwelling Fire Coverage)' as stated in the Policy_Document_Basic.pdf under 'Coverage Details'.",
+            "3a": "Yes",
+            "3b": "$5,000",
+            "4a": "$1750",
+            "4b": "In the Payment_Calculation_Template.xlsx, $2000 was entered as 'Assessed Damage' in cell B1 and $250 as 'Deductible' in cell B2. Cell B3 automatically calculated the 'Payable Amount' using the formula '=B1-B2'.",
+            "5a": "The next steps are to: 1. Document the coverage verification and authority check in the claim system. 2. Initiate contact with the claimant to acknowledge the claim and gather further information about the damage and arrange for assessment if needed."
+        }
+    },
+    "answer_explanations": {
+        "1a": {
+            "explanation": "This question tests the candidate's ability to extract key information from the Claim Notification and verify policy details from the Policy Document.",
+            "derivation": "All the required information is directly available in 'Claim_Notification_Basic.pdf' and 'Policy_Document_Basic.pdf'. The candidate needs to open both PDFs, locate the specified fields, and copy the values. For policy verification, the Policy Number from the claim notification is used to find the corresponding policy in 'Policy_Document_Basic.pdf' and verify the details."
+        },
+        "2a": {
+            "explanation": "This question assesses the candidate's understanding of basic coverage determination based on the provided documents.",
+            "derivation": "By comparing the 'Type of Loss' from 'Claim_Notification_Basic.pdf' ('Fire Damage to Kitchen') with the 'Covered Perils (Dwelling Fire Coverage)' in 'Policy_Document_Basic.pdf' (which includes 'Fire'), the candidate should determine that the loss is potentially covered. Therefore, the answer is 'Yes'."
+        },
+        "2b": {
+            "explanation": "This question evaluates the candidate's ability to justify their coverage determination by referencing the policy document.",
+            "derivation": "The justification should explicitly mention that 'Fire' is listed as a 'Covered Peril' under 'Dwelling Fire Coverage' in the 'Policy_Document_Basic.pdf'.  A good answer will directly quote or accurately paraphrase the relevant section from the policy document."
+        },
+        "3a": {
+            "explanation": "This question checks the candidate's ability to determine if a claim falls within their authority level based on the claim type and authority limits.",
+            "derivation": "The 'Type of Loss' is 'Dwelling Fire'.  'Authority_Levels_Basic.pdf' shows that a 'Basic Claims Adjuster' has an authority limit of $5,000 for 'Dwelling Fire' claims.  Since the question states to assume the estimated claim amount is within $5,000, the claim is within the Basic Adjuster's authority. Therefore, the answer is 'Yes'."
+        },
+        "3b": {
+            "explanation": "This question tests the candidate's ability to identify and state the authority limit for the relevant claim type from the authority levels document.",
+            "derivation": "By looking at 'Authority_Levels_Basic.pdf' under 'Authority Limits' for 'Dwelling Fire', the candidate should find the limit of '$5,000'. The answer should be this value."
+        },
+        "4a": {
+            "explanation": "This question assesses the candidate's ability to perform a simple payment calculation using a provided spreadsheet template and applying a deductible.",
+            "derivation": "The question provides the 'Assessed Damage' ($2,000) and 'Deductible' ($250).  In 'Payment_Calculation_Template.xlsx', the candidate needs to enter $2000 in cell B1 and $250 in cell B2. Cell B3 is pre-programmed with the formula `=B1-B2`, which will automatically calculate $2000 - $250 = $1750. The answer should be the numerical value 1750 (or $1750 if currency symbol is required)."
+        },
+        "4b": {
+            "explanation": "This question evaluates the candidate's understanding of the payment calculation process performed in the spreadsheet.",
+            "derivation": "The explanation should describe the steps taken in the spreadsheet, specifically mentioning entering the 'Assessed Damage' and 'Deductible' values and that the 'Payable Amount' was calculated using the subtraction formula in cell B3.  Mentioning the formula `=B1-B2` is a good indicator of understanding."
+        },
+        "5a": {
+            "explanation": "This question assesses the candidate's understanding of the next steps in basic claim processing after coverage and authority are confirmed.",
+            "derivation": "The next logical steps after confirming coverage and authority for a basic claim are typically related to documentation and further claim handling.  Acceptable answers should include steps like: documenting the findings in the claim system, contacting the claimant to acknowledge the claim and gather more details, arranging for damage assessment (if needed), and potentially initiating payment processing in the next steps (though focusing on immediate next steps is preferred for this question). The provided example answer focuses on initial actions like documentation and claimant contact, which are appropriate for a 'Basic Adjuster' at this stage."
+        }
+    },
+    "passing_criteria": {
+        "minimum_correct_answers": 7,
+        "total_questions": 8,
+        "description": "To pass the Basic Claims Adjuster Practical Exam, candidates must correctly answer at least 7 out of the 8 questions.  Questions 1a, 2a, 3a, and 4a are considered core questions and must be answered correctly for a passing score.  Partial credit may be considered for questions 2b, 3b, 4b, and 5a based on the completeness and accuracy of the justification, explanation, and next steps, but correct answers for 1a, 2a, 3a, and 4a are mandatory for passing."
+    },
+    "validation_guidance": {
+        "automated_validation": {
+            "type": "JSON Comparison",
+            "instructions": "Use a JSON parsing library to load both the candidate's 'test_submission.json' and the 'answer_key.json'.  Compare the values for each answer field. ",
+            "specific_validation": {
+                "1a": "Exact string comparison for all sub-fields (claimant_name, policy_number, etc.).",
+                "2a": "Case-insensitive string comparison for 'Yes' or 'No'.",
+                "2b": "Keyword/phrase matching for justification. Look for keywords like 'Covered Perils', 'Dwelling Fire Coverage', 'Fire', 'Policy_Document_Basic.pdf'. Exact wording is not required, but the justification should be relevant and accurate.",
+                "3a": "Case-insensitive string comparison for 'Yes' or 'No'.",
+                "3b": "String comparison for authority limit. Ensure it includes '$' and '5,000'.",
+                "4a": "Numerical comparison after removing currency symbols and commas. Compare as integer 1750.",
+                "4b": "Keyword/phrase matching for explanation. Look for keywords like 'Payment_Calculation_Template.xlsx', 'B1', 'B2', 'B3', 'Assessed Damage', 'Deductible', 'Payable Amount', 'formula', 'subtraction'.  The explanation should describe the process of using the spreadsheet.",
+                "5a": "Keyword/concept matching for next steps. Look for concepts like 'document claim system', 'contact claimant', 'gather information', 'damage assessment', 'acknowledge claim'. The steps should be logical and relevant to basic claim processing."
+            }
+        },
+        "manual_review_required_for": [
+            "2b",
+            "4b",
+            "5a"
+        ],
+        "manual_review_guidance": "For questions 2b, 4b, and 5a, if automated validation fails or for borderline cases, perform a manual review to assess the candidate's understanding and reasoning even if the exact wording differs from the answer key. Focus on whether the justification, explanation, and next steps are logically sound and demonstrate the required skills."
+    }
+}

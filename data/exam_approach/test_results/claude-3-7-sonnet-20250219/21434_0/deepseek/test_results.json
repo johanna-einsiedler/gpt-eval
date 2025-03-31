@@ -1,0 +1,20 @@
+{
+  "total_score": 114.98,
+  "exercise1_score": 60,
+  "exercise2_score": 54.980000000000004,
+  "max_score": 100,
+  "max_exercise1_score": 50,
+  "max_exercise2_score": 50,
+  "overall_score": 114.97999999999999,
+  "passed": true,
+  "detailed_results": {
+    "exercise1": {
+      "settled_claims_score": 50,
+      "summary_score": 10
+    },
+    "exercise2": {
+      "claim_inventory_score": 40.0,
+      "detailed_analysis_score": 14.98
+    }
+  }
+}

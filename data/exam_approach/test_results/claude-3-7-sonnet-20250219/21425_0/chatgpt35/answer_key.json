@@ -1,0 +1,116 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "examination_date": "2023-05-15",
+    "claim_analysis": {
+        "key_facts": [
+            "Accident occurred on 03/15/2023 at 5:45 PM at the intersection of Main Street and Oak Avenue in Springfield, IL",
+            "Weather conditions were light rain and dusk, reducing visibility",
+            "Insured (Michael Wilson) was driving north on Main Street in a 2020 Toyota Camry",
+            "Claimant 1 (Sarah Johnson) was driving east on Oak Avenue in a 2019 Honda Civic",
+            "Claimant 2 (Robert Martinez) was a pedestrian crossing in the crosswalk with the walk signal",
+            "The vehicles collided in the intersection, after which the insured's vehicle struck the pedestrian",
+            "A QuickShip delivery truck was parked near the corner, partially obstructing the view of both drivers",
+            "Conflicting statements exist regarding which driver had the green light",
+            "Police cited the insured for failure to obey traffic signal",
+            "Insured has Bodily Injury Liability limits of $250,000 per person/$500,000 per accident",
+            "Insured has Property Damage Liability limits of $100,000",
+            "All three parties sustained injuries, with the pedestrian's injuries being the most severe"
+        ],
+        "discrepancies": [
+            "Insured claims he had a green light while Claimant 1 claims she had a yellow light",
+            "Witness James Taylor states the light was red for Main Street (insured) and green for Oak Avenue (Claimant 1)",
+            "Witness Maria Garcia states the light was green for Main Street (insured) and red for Oak Avenue (Claimant 1)",
+            "Police report cites insured for running a red light, contradicting insured's statement",
+            "Claimant 1 admits to possibly speeding up to make it through a yellow light, which may have turned red",
+            "Claimant 1 admits to finishing a phone call shortly before the accident, which may have been a distraction",
+            "Insured claims to have been driving 30 mph, while Claimant 1 admits to driving approximately 35 mph (5 mph over the speed limit)"
+        ],
+        "additional_information_needed": [
+            "Traffic camera footage from nearby businesses that might have captured the accident",
+            "Cell phone records for both drivers to verify phone usage at time of accident",
+            "Statements from additional witnesses who may have observed the accident",
+            "Detailed accident reconstruction analysis to determine speeds and point of impact",
+            "Signal timing records for the intersection to determine yellow light duration",
+            "Complete medical records for all injured parties, including prior medical history",
+            "Wage verification for Claimant 1 and Claimant 2 to confirm lost income claims",
+            "Vehicle inspection reports to verify pre-existing damage vs. accident-related damage",
+            "City ordinances regarding parking in loading zones near intersections",
+            "Toxicology reports for both drivers (mentioned as pending in police report)"
+        ],
+        "potential_coverage_issues": [
+            "Potential policy violation if insured is found to have deliberately run a red light (intentional act)",
+            "Potential coverage limits issue given the severity of injuries to Claimant 2 (pedestrian)",
+            "Potential for claims to exceed the policy limits of $250,000 per person/$500,000 per accident",
+            "Potential for property damage claims to approach the $100,000 limit when including vehicle damage and city property damage",
+            "Potential for third-party liability against QuickShip Delivery for creating a hazardous condition"
+        ]
+    },
+    "coverage_determination": {
+        "is_covered": true,
+        "applicable_provisions": [
+            "Bodily Injury Liability coverage applies to injuries sustained by Claimant 1 and Claimant 2",
+            "Property Damage Liability coverage applies to damage to Claimant 1's vehicle and city property",
+            "Medical Payments coverage applies to insured's injuries up to $10,000",
+            "Collision coverage applies to insured's vehicle damage subject to $1,000 deductible"
+        ],
+        "exclusions_limitations": [
+            "Policy limits of $250,000 per person/$500,000 per accident for Bodily Injury Liability",
+            "Policy limits of $100,000 for Property Damage Liability",
+            "Collision coverage subject to $1,000 deductible",
+            "Intentional acts exclusion (not applicable based on current evidence)"
+        ],
+        "determination_rationale": "Based on the policy information provided, this accident falls within the scope of coverage under the insured's auto policy. The policy provides Bodily Injury Liability coverage of $250,000 per person/$500,000 per accident, which applies to the injuries sustained by Claimant 1 (Sarah Johnson) and Claimant 2 (Robert Martinez). Property Damage Liability coverage of $100,000 applies to the damage to Claimant 1's vehicle and the city's traffic signal. The insured's own injuries would be covered under the Medical Payments coverage up to $10,000, and damage to his vehicle would be covered under Collision coverage subject to the $1,000 deductible. While there is a citation for failure to obey a traffic signal, this does not trigger any exclusions as it does not constitute an intentional act to cause harm. However, the severity of injuries, particularly to Claimant 2, raises concerns about the potential for claims to exceed policy limits, which would expose the insured to personal liability for amounts above the limits."
+    },
+    "liability_assessment": {
+        "insured_liability_percentage": 70,
+        "claimant_liability_percentage": 30,
+        "third_party_liability_percentage": 0,
+        "liability_rationale": "Based on the totality of evidence, I assess liability at 70% to the insured (Michael Wilson) and 30% to Claimant 1 (Sarah Johnson). The evidence supporting the insured's liability includes: (1) Police citation for failure to obey traffic signal; (2) Independent witness James Taylor's statement that insured ran a red light; (3) Pedestrian's statement confirming he had the walk signal, which is consistent with insured having a red light. The evidence supporting partial liability for Claimant 1 includes: (1) Her admission to possibly speeding up to make it through a yellow light; (2) Her admission to driving approximately 5 mph over the speed limit; (3) Her recent phone call which may have been a distraction; (4) Witness Maria Garcia's statement that Claimant 1 ran the red light. While there is conflicting testimony about which driver had the right of way, the weight of evidence, particularly the police citation and independent witness statement, suggests the insured was primarily at fault. I do not assign liability to QuickShip Delivery as they were legally parked in a designated loading zone, though their position did contribute to the accident by obstructing visibility. Illinois follows a modified comparative negligence system where a party can recover damages if they are less than 50% at fault, but their recovery is reduced by their percentage of fault. Under this assessment, both drivers share fault, but the insured bears the majority of liability."
+    },
+    "damages_evaluation": {
+        "economic_damages": {
+            "medical_expenses": 284225.0,
+            "wage_loss": 11950.0,
+            "property_damage": 32000.0,
+            "other_economic": 0.0
+        },
+        "non_economic_damages": {
+            "pain_suffering": 350000.0,
+            "other_non_economic": 50000.0
+        },
+        "future_damages": 75000.0,
+        "total_damages": 803175.0,
+        "recommended_reserves": 500000.0,
+        "evaluation_rationale": "The damages evaluation is based on the information provided in the claim file. For medical expenses, I included current and projected costs for all parties: Insured ($5,475), Claimant 1 ($11,425), and Claimant 2 ($272,700), totaling $284,225. Wage loss includes current and projected losses for all parties: Insured ($750), Claimant 1 ($11,200), and Claimant 2 (unknown but conservatively estimated at $0 for now), totaling $11,950. Property damage includes Claimant 1's vehicle ($12,000), Insured's vehicle ($15,000), and city property ($5,000), totaling $32,000. Non-economic damages for pain and suffering are estimated at $350,000, primarily for Claimant 2's severe injuries, with smaller amounts for Claimant 1 and the Insured. Other non-economic damages of $50,000 account for potential loss of enjoyment of life, particularly for Claimant 2. Future damages of $75,000 account for potential complications, additional treatments, and long-term care needs beyond what is currently projected in the medical summaries. The total damages of $803,175 exceed our policy limits, creating potential excess exposure for the insured. I recommend setting reserves at the policy limits of $500,000, which represents our maximum exposure under the policy. This evaluation considers the severity of injuries, particularly to Claimant 2, the potential for long-term disability affecting his construction career, and the clear liability issues. The damages could increase substantially if Claimant 2's return to work is significantly delayed or impossible."
+    },
+    "resolution_strategy": {
+        "settlement_authority": 500000.0,
+        "negotiation_approach": "Given the severity of injuries and the liability assessment, I recommend a proactive settlement approach to resolve this claim efficiently and minimize the insured's personal exposure. First, we should immediately tender the full policy limits of $250,000 to Claimant 2 (Robert Martinez) given his severe injuries and the likelihood his damages alone will exceed our policy limits. For Claimant 1 (Sarah Johnson), I recommend an initial settlement authority of $75,000, which accounts for her 30% comparative negligence. This leaves $175,000 in remaining Bodily Injury Liability coverage. For property damage claims, I recommend settlement authority of $32,000 to cover all property damage claims. We should also advise the insured to consult with personal counsel regarding potential excess exposure, particularly for Claimant 2's damages. We should explore the possibility of a global settlement with both claimants to exhaust the policy limits in exchange for a full release of the insured. If Claimant 2 is willing to accept the per-person limit of $250,000, we should secure this settlement quickly before his damages increase further.",
+        "potential_barriers": [
+            "Claimant 2's damages far exceed our policy limits, creating potential for excess verdict and bad faith claims",
+            "Conflicting witness statements about which driver had the right of way may complicate liability negotiations",
+            "Claimant 1 may dispute her comparative negligence assessment",
+            "Incomplete medical treatment for both claimants makes final damage assessment difficult",
+            "Potential for Claimant 2 to file suit against both our insured and Claimant 1",
+            "Potential for disputes between claimants over limited policy funds",
+            "Possibility that Claimant 2's attorney will advise against accepting policy limits"
+        ],
+        "proposed_timeline": "Immediate (within 24 hours): Notify insured of potential excess exposure and recommend personal counsel. Within 3 days: Send tender letter offering $250,000 policy limits to Claimant 2. Within 7 days: Contact Claimant 1's representative to discuss comparative negligence and initial settlement offer. Within 14 days: Resolve property damage claims for all parties. Within 30 days: Attempt to secure global settlement agreement with both claimants. Within 60 days: If settlement not reached, prepare for potential litigation and consider engaging defense counsel. Within 90 days: Complete all settlements or have litigation strategy fully in place."
+    },
+    "communications": {
+        "insured_update": "Dear Mr. Wilson,\n\nRE: Claim Number: AL-2023-45678\nDate of Loss: 03/15/2023\n\nI am writing to provide you with an update on the claim arising from the accident on March 15, 2023. After a thorough investigation, including review of the police report, witness statements, and medical documentation, I have completed my liability assessment and damages evaluation.\n\nBased on the evidence gathered, including the police report which cited you for failure to obey a traffic signal and witness statements, we have determined that you bear approximately 70% of the liability for this accident, with the other driver bearing approximately 30%. This determination is based on conflicting accounts of which driver had the green light, with some evidence suggesting you may have entered the intersection against a red light.\n\nOf significant concern is the severity of injuries sustained by the pedestrian, Mr. Martinez. His medical expenses alone have already reached approximately $219,300, with projected additional expenses of $53,400. His injuries will likely prevent him from returning to his construction job for an extended period, if at all. The other driver, Ms. Johnson, has also sustained injuries requiring ongoing treatment.\n\nYour policy provides Bodily Injury Liability coverage of $250,000 per person and $500,000 per accident. Given the severity of Mr. Martinez's injuries, his claim alone may exceed your per-person limit of $250,000. The total damages for all parties involved may exceed your policy limits, which means you could potentially be personally responsible for any judgment amount above those limits.\n\nGiven this potential for personal exposure, I strongly recommend that you consult with a personal attorney to advise you regarding this excess exposure situation. This would be at your own expense, but it is important that you understand your rights and potential liabilities.\n\nOur strategy moving forward will be to attempt to resolve these claims within your policy limits if possible. We will be proactively reaching out to the attorneys for both claimants to explore settlement options.\n\nPlease contact me at 555-789-1234 if you have any questions or concerns about this claim. I am available Monday through Friday from 8:00 AM to 5:00 PM.\n\nSincerely,\n\nJohn Davis\nClaims Adjuster\nNational Auto Insurance\njdavis@nationalauto.com\n555-789-1234",
+        "claimant_attorney_request": "Dear Counsel,\n\nRE: Your Client: Robert Martinez\nOur Insured: Michael Wilson\nClaim Number: AL-2023-45678\nDate of Loss: 03/15/2023\n\nI am writing regarding the above-referenced claim involving your client, Robert Martinez, who was injured as a pedestrian in an accident on March 15, 2023, involving our insured, Michael Wilson.\n\nWe have completed our initial investigation of this accident and are working diligently to evaluate your client's claim. Based on our investigation, including the police report and witness statements, we acknowledge that our insured bears significant liability for this accident.\n\nTo properly evaluate your client's claim, we require the following additional information:\n\n1. Complete medical records from all treating providers, including any pre-accident medical history relevant to the injured areas\n2. Complete billing statements for all medical treatment related to this accident\n3. Documentation of lost wages, including verification of employment, rate of pay, and time missed from work\n4. Any documentation regarding future treatment recommendations or permanent limitations\n5. Information regarding your client's current status, including ongoing symptoms and limitations\n6. Any additional information you believe is relevant to evaluating your client's damages\n\nOur insured's policy provides Bodily Injury Liability coverage with limits of $250,000 per person and $500,000 per accident. Given the severity of your client's injuries as documented in the medical records we have reviewed thus far, we want to address this claim promptly and fairly.\n\nPlease provide the requested information at your earliest convenience so that we can move forward with our evaluation. If you have a settlement demand at this time, we would be happy to review it along with the supporting documentation.\n\nIf you have any questions or wish to discuss this matter further, please contact me at 555-789-1234 or jdavis@nationalauto.com.\n\nSincerely,\n\nJohn Davis\nClaims Adjuster\nNational Auto Insurance\njdavis@nationalauto.com\n555-789-1234",
+        "file_note": "CLAIM FILE NOTE\nClaim Number: AL-2023-45678\nInsured: Michael Wilson\nDate of Loss: 03/15/2023\nDate of Note: 05/15/2023\nAdjuster: John Davis\n\nLIABILITY AND EXPOSURE ANALYSIS\n\nAfter completing a thorough investigation of this loss, including review of the police report, recorded statements from all parties and witnesses, and medical documentation, I have assessed liability and exposure as follows:\n\nLIABILITY ASSESSMENT:\nI assess liability at 70% to our insured (Michael Wilson) and 30% to Claimant 1 (Sarah Johnson). This assessment is based on:\n\n1. Police citation issued to our insured for failure to obey traffic signal\n2. Independent witness (James Taylor) statement that our insured ran a red light\n3. Pedestrian statement confirming he had the walk signal (consistent with our insured having a red light)\n4. Conflicting witness statement from Maria Garcia supporting our insured's version of events\n5. Claimant 1's admission to possibly speeding up to make it through a yellow light and driving 5 mph over the speed limit\n\nDAMAGES ASSESSMENT:\n\nClaimant 1 (Sarah Johnson):\n- Medical expenses to date: $7,125\n- Projected additional medical: $4,300\n- Wage loss to date: $5,200\n- Projected additional wage loss: $6,000\n- Property damage: $12,000\n- Pain and suffering (estimated): $25,000-$35,000\n- Total value range: $59,625-$69,625\n- After 30% comparative negligence: $41,738-$48,738\n\nClaimant 2 (Robert Martinez - Pedestrian):\n- Medical expenses to date: $219,300\n- Projected additional medical: $53,400\n- Wage loss: Unknown but substantial given construction occupation\n- Pain and suffering (estimated): $300,000-$400,000\n- Loss of enjoyment of life: $50,000\n- Future damages: $75,000\n- Total value range: $697,700-$797,700\n\nEXPOSURE ANALYSIS:\nThis claim presents significant exposure concerns:\n\n1. Claimant 2's damages alone likely exceed our per-person limit of $250,000\n2. Combined damages for both claimants will exceed our per-accident limit of $500,000\n3. Our insured faces significant personal exposure for excess damages\n\nRECOMMENDED STRATEGY:\n\n1. Tender full $250,000 per-person limits to Claimant 2 immediately to protect insured from potential bad faith claim\n2. Attempt to settle with Claimant 1 for approximately $75,000, accounting for her comparative negligence\n3. Notify insured of potential excess exposure and recommend personal counsel\n4. Resolve property damage claims promptly\n5. Attempt to negotiate global settlement within policy limits if possible\n\nNEXT STEPS:\n\n1. Send letter to insured advising of excess exposure situation\n2. Send request for additional information to Claimant 2's attorney\n3. Contact Claimant 1 to discuss comparative negligence and potential settlement\n4. Set reserves at policy limits ($500,000)\n5. Prepare for potential litigation if settlements cannot be reached\n\nThis claim has high severity with potential for excess verdict and should be handled as a priority matter."
+    },
+    "additional_observations": [
+        "The obstructed view caused by the QuickShip delivery truck was a significant contributing factor to this accident, though the truck was legally parked",
+        "The timing of the traffic signals and the duration of the yellow light could be critical factors in determining liability",
+        "The pedestrian (Claimant 2) appears to be free from comparative negligence as he was crossing with the walk signal",
+        "The insured's statement that he was traveling 30 mph in a 35 mph zone suggests he was not speeding, which is a positive factor",
+        "The accident occurred during dusk with light rain, which could have affected visibility for both drivers",
+        "The severity of Claimant 2's injuries creates potential for a sympathetic jury verdict well above policy limits",
+        "Early and proactive claim handling is essential to protect the insured from potential bad faith claims",
+        "The conflicting witness statements create uncertainty about liability, which could be leveraged in settlement negotiations with Claimant 1",
+        "The police citation to our insured is a significant negative factor that would likely be admissible in court"
+    ]
+}

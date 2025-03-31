@@ -1,0 +1,27 @@
+{
+    "task1_results": [
+        {
+            "product_name": "Product A",
+            "is_correct": false
+        },
+        {
+            "product_name": "Product B",
+            "is_correct": false
+        },
+        {
+            "product_name": "Product C",
+            "is_correct": false
+        }
+    ],
+    "task2_results": [
+        {
+            "article_title": "The Future of Office Supplies: Sustainability Trends",
+            "is_correct": false
+        },
+        {
+            "article_title": "Advancements in IT Services for Small Businesses",
+            "is_correct": false
+        }
+    ],
+    "overall_score": 0.0
+}

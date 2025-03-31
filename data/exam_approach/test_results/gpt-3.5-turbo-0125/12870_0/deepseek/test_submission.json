@@ -1,0 +1,40 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "industry_trends": [
+        {
+            "title": "The Metaverse and Music: How Virtual Worlds Are Changing the Industry",
+            "source": "Billboard",
+            "summary": "Artists are increasingly leveraging the metaverse for virtual performances and fan interactions, creating new revenue streams and engagement opportunities."
+        },
+        {
+            "title": "The Growth of NIL Deals in College Sports",
+            "source": "ESPN",
+            "summary": "Name, Image, and Likeness (NIL) deals have exploded in college sports, allowing student-athletes to monetize their personal brands while still in school."
+        },
+        {
+            "title": "Streaming Platforms Invest in Live Events",
+            "source": "Variety",
+            "summary": "Major streaming platforms like Netflix and Amazon Prime are investing heavily in live events, including concerts and sports, to attract and retain subscribers."
+        }
+    ],
+    "recent_deals": [
+        {
+            "deal_title": "Taylor Swift Signs New Record Deal with Universal Music Group",
+            "parties_involved": "Taylor Swift, Universal Music Group",
+            "date": "2023-11-10",
+            "deal_summary": "Taylor Swift signed a groundbreaking new record deal with Universal Music Group, including ownership of her master recordings."
+        },
+        {
+            "deal_title": "Lionel Messi Joins Inter Miami CF",
+            "parties_involved": "Lionel Messi, Inter Miami CF",
+            "date": "2023-06-07",
+            "deal_summary": "Lionel Messi signed a multi-year contract with Inter Miami CF, marking his move to Major League Soccer after leaving Paris Saint-Germain."
+        },
+        {
+            "deal_title": "Netflix Secures Exclusive Rights to WWE Raw",
+            "parties_involved": "Netflix, WWE",
+            "date": "2024-01-23",
+            "deal_summary": "Netflix acquired the exclusive streaming rights to WWE Raw in a 10-year deal worth over $5 billion, marking a major shift in sports entertainment distribution."
+        }
+    ]
+}

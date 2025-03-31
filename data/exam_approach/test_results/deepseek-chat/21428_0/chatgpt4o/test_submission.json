@@ -1,0 +1,29 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "model_version": "GPT-4-turbo",
+    "task_1": {
+        "covered_damages": [
+            "Rear bumper repair",
+            "Whiplash injury treatment"
+        ],
+        "non_covered_damages": [
+            "Lost wages"
+        ],
+        "missing_info": [
+            "Police report number"
+        ]
+    },
+    "task_2": {
+        "fraud_flags": [
+            "C-102",
+            "C-104"
+        ],
+        "high_value_claims": [
+            "C-103"
+        ]
+    },
+    "task_3": {
+        "decision": "escalated",
+        "reason": "Claim exceeds $10,000 threshold; requires manager review."
+    }
+}

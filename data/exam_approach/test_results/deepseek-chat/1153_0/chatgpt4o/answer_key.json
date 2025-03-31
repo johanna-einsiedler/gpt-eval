@@ -1,0 +1,22 @@
+{
+    "answer_key": {
+        "low_stock_items": [
+            "P-100",
+            "P-205"
+        ],
+        "reorder_quantities": {
+            "P-100": 30,
+            "P-205": 30
+        },
+        "purchase_priority": [
+            "P-205",
+            "P-100"
+        ],
+        "required_justification_keywords": [
+            "lead time",
+            "sales",
+            "P-205",
+            "P-100"
+        ]
+    }
+}

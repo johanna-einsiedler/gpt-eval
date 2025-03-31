@@ -1,0 +1,94 @@
+{
+  "candidate_id": "YOUR_ID_HERE",
+  "task1": {
+    "top_growth_categories": {
+      "score": 0.0,
+      "max_score": 8,
+      "feedback": "Correctly identified 0 out of 3 categories."
+    },
+    "highest_sales_months": {
+      "score": 0.0,
+      "max_score": 8,
+      "feedback": "Correctly identified 0 out of 3 months."
+    },
+    "profit_margins_2022": {
+      "score": 0.0,
+      "max_score": 10,
+      "feedback": "Incorrect profit margins for: Outerwear, Casual Wear, Formal Wear, Accessories, Footwear"
+    },
+    "worst_performing_products": {
+      "score": 0.0,
+      "max_score": 9,
+      "feedback": "Correctly identified 0 out of 3 products."
+    }
+  },
+  "task2": {
+    "overall_correlation_coefficient": {
+      "score": 0,
+      "max_score": 10,
+      "feedback": "Correlation coefficient outside acceptable range. Expected around 0.78."
+    },
+    "strongest_correlated_category": {
+      "score": 0,
+      "max_score": 10,
+      "feedback": "Incorrect category. Expected: Formal Wear"
+    },
+    "average_lag_time_months": {
+      "score": 0,
+      "max_score": 10,
+      "feedback": "Incorrect lag time. Expected: 2"
+    }
+  },
+  "task3": {
+    "q1_2023_forecast": {
+      "score": 0.0,
+      "max_score": 10,
+      "feedback": "Forecasts outside acceptable range for: Outerwear, Casual Wear, Formal Wear, Accessories, Footwear"
+    },
+    "inventory_recommendations": {
+      "score": 0.0,
+      "max_score": 8,
+      "feedback": "Incorrect recommendations for: Outerwear, Casual Wear, Formal Wear, Accessories, Footwear"
+    },
+    "increase_allocation_products": {
+      "score": 0.0,
+      "max_score": 6,
+      "feedback": "Correctly identified 0 out of 3 products for increase allocation."
+    },
+    "decrease_allocation_products": {
+      "score": 0.0,
+      "max_score": 6,
+      "feedback": "Correctly identified 0 out of 3 products for decrease allocation."
+    },
+    "influential_economic_indicators": {
+      "score": 0.0,
+      "max_score": 5,
+      "feedback": "Correctly identified 0 out of 3 economic indicators."
+    }
+  },
+  "task_scores": {
+    "task1": {
+      "score": 0.0,
+      "max_score": 35,
+      "percentage": 0.0
+    },
+    "task2": {
+      "score": 0,
+      "max_score": 30,
+      "percentage": 0.0
+    },
+    "task3": {
+      "score": 0.0,
+      "max_score": 35,
+      "percentage": 0.0
+    }
+  },
+  "overall_score": 0.0,
+  "passing_criteria": {
+    "task1_minimum_met": false,
+    "task2_minimum_met": false,
+    "task3_minimum_met": false,
+    "overall_score_minimum_met": false,
+    "passed": false
+  }
+}

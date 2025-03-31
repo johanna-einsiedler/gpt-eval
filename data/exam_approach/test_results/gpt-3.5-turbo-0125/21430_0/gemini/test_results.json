@@ -1,0 +1,35 @@
+{
+    "questionable_claims_correct": 0,
+    "referral_report_correct": false,
+    "details": {
+        "questionable_claims": [
+            {
+                "claim_id": "1003",
+                "correct": false,
+                "reason": "Frequent similar claims (slip and fall) by the same claimant."
+            },
+            {
+                "claim_id": "1005",
+                "correct": false,
+                "reason": "Unusually high claim amount for a first claim, requires investigation to verify loss."
+            },
+            {
+                "claim_id": "1009",
+                "correct": false,
+                "reason": "Frequent injury claims by the same claimant, raising suspicion of potential claim farming."
+            },
+            {
+                "claim_id": "1010",
+                "correct": false,
+                "reason": "Unusually high claim amount for business interruption, requires detailed investigation."
+            }
+        ],
+        "referral_report": {
+            "claim_id": "1003",
+            "correct": false,
+            "summary": "Claimant Peter Jones has filed multiple slip and fall claims in a short period, with this being the third in two years. This pattern of frequent similar claims raises concerns about potential claim exaggeration or even fraudulent activity.",
+            "additional_information": "Review Peter Jones's previous claim history in detail, investigate the circumstances of each slip and fall incident, and check for any patterns or inconsistencies in the incident descriptions or medical reports. Consider surveillance if deemed necessary."
+        }
+    },
+    "overall_score": 0.0
+}

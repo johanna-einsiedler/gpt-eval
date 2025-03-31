@@ -1,0 +1,22 @@
+{
+  "overall_score": 15.15,
+  "task_1": {
+    "score": 5,
+    "max_score": 18,
+    "details": [
+      "Supplier order mismatch at position 1",
+      "Supplier order mismatch at position 2"
+    ]
+  },
+  "task_2": {
+    "score": 0,
+    "max_score": 15,
+    "details": [
+      "Supplier order mismatch at position 1",
+      "Supplier order mismatch at position 2",
+      "Supplier order mismatch at position 3"
+    ]
+  },
+  "total_points": 5,
+  "max_points": 33
+}

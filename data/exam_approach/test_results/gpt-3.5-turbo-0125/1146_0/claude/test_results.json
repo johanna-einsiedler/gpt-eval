@@ -1,0 +1,59 @@
+{
+    "task_1_results": [
+        {
+            "name": "Export Administration Regulations (EAR)",
+            "correct": false
+        },
+        {
+            "name": "Restriction of Hazardous Substances (RoHS) Directive",
+            "correct": false
+        },
+        {
+            "name": "Federal Communications Commission (FCC) Regulations",
+            "correct": false
+        },
+        {
+            "name": "Customs-Trade Partnership Against Terrorism (C-TPAT)",
+            "correct": false
+        }
+    ],
+    "task_2_results": [
+        {
+            "item": "Verify that the electronic components are not on the Commerce Control List (CCL) or require an export license under EAR",
+            "correct": false
+        },
+        {
+            "item": "Screen the international supplier against restricted party lists including the Denied Persons List, Entity List, and Unverified List",
+            "correct": false
+        },
+        {
+            "item": "Obtain end-use and end-user certifications to ensure components won't be used for prohibited purposes",
+            "correct": false
+        },
+        {
+            "item": "Request and maintain RoHS compliance documentation from the supplier, including material declarations and test reports",
+            "correct": false
+        },
+        {
+            "item": "Verify that electronic components meet substance restriction thresholds for lead, mercury, cadmium, and other restricted materials",
+            "correct": false
+        },
+        {
+            "item": "Obtain FCC test reports and certification documentation for electronic components that may affect electromagnetic compatibility",
+            "correct": false
+        },
+        {
+            "item": "Verify that components meet applicable FCC emissions standards for the intended product classification",
+            "correct": false
+        },
+        {
+            "item": "Assess the international supplier's security protocols and verify they meet C-TPAT minimum security criteria",
+            "correct": false
+        },
+        {
+            "item": "Document the supplier's supply chain security measures and maintain records for C-TPAT compliance",
+            "correct": false
+        }
+    ],
+    "overall_score": 0.0
+}

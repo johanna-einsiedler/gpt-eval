@@ -1,0 +1,38 @@
+{
+    "candidate_id": "EXAMPLE_ID",
+    "task_1": {
+        "laws_and_regulations": [
+            {
+                "name": "International Traffic in Arms Regulations (ITAR)",
+                "description": "Regulates the export and import of defense-related articles and services.",
+                "application": "Ensures that the electronic components being purchased do not fall under restricted categories that require special licenses for international trade."
+            },
+            {
+                "name": "RoHS Directive (Restriction of Hazardous Substances)",
+                "description": "Limits the use of specific hazardous materials found in electrical and electronic products.",
+                "application": "Ensures that the electronic components comply with environmental standards by restricting hazardous substances."
+            },
+            {
+                "name": "Consumer Product Safety Improvement Act (CPSIA)",
+                "description": "Establishes safety standards and other requirements for consumer products.",
+                "application": "Ensures that the electronic components meet safety standards to prevent harm to consumers."
+            }
+        ]
+    },
+    "task_2": {
+        "compliance_checklist": [
+            {
+                "item": "Verify if the electronic components require an ITAR license for export.",
+                "law_or_regulation": "International Traffic in Arms Regulations (ITAR)"
+            },
+            {
+                "item": "Check that the components comply with RoHS standards by reviewing material safety data sheets.",
+                "law_or_regulation": "RoHS Directive"
+            },
+            {
+                "item": "Ensure that the components meet CPSIA safety standards by obtaining certification from the supplier.",
+                "law_or_regulation": "Consumer Product Safety Improvement Act (CPSIA)"
+            }
+        ]
+    }
+}

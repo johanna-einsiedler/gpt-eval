@@ -1,0 +1,12 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "score": 6,
+        "max_score": 5
+    },
+    "task_2": {
+        "score": 0,
+        "max_score": 2
+    },
+    "overall_score": 85.71428571428571
+}

@@ -1,0 +1,30 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "model_version": "GPT-4-turbo",
+    "task_1": {
+        "applicable_laws": [
+            "Regulation AB-2020"
+        ],
+        "justification": "Anti-bribery certification required for contracts over $10,000 (Section 1 of regulations.pdf)."
+    },
+    "task_2": {
+        "non_compliant_terms": [
+            "Payment terms 'Net 45' violate Regulation PT-2019 (max 30 days).",
+            "$100 holiday gift violates Clause 2.1 (no pre-approval for gifts >$50)."
+        ],
+        "corrective_action": [
+            "Revise payment terms to 'Net 30'.",
+            "Remove gift or seek Legal pre-approval."
+        ]
+    },
+    "task_3": {
+        "legal_risks": [
+            "Clause 4.2: Ambiguous delivery timelines may lead to vendor delays.",
+            "Clause 7.1: Indefinite confidentiality is unenforceable in most jurisdictions."
+        ],
+        "mitigation_strategy": [
+            "Specify exact delivery deadlines in Clause 4.2.",
+            "Limit confidentiality to 5 years in Clause 7.1."
+        ]
+    }
+}

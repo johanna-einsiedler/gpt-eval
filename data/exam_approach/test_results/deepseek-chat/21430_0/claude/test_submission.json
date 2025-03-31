@@ -1,0 +1,19 @@
+{
+    "candidate_id": "Claude-3-Opus-20240229",
+    "case_1": {
+        "red_flags": [
+            "Witness 1 Statement: 'Saw blue car run red light and hit claimant's car' vs Witness 2 Statement: 'Claimant's car was stationary when hit by speeding vehicle'",
+            "Accident Date: 2023-10-15 @ 2:30 AM with no traffic cameras at the location"
+        ],
+        "referral_reason": "The witness statements directly contradict each other regarding how the accident occurred, and the incident took place at 2:30 AM with no traffic cameras to verify what happened.",
+        "recommended_action": "investigator"
+    },
+    "case_2": {
+        "red_flags": [
+            "POLICY: Increased coverage from $200k to $500k (2 weeks before fire)",
+            "FIRE DEPARTMENT NOTES: Origin: Kitchen (gas stove left on) vs CLAIMANT STATEMENT: 'I was out of town. Neighbor called 911.'"
+        ],
+        "referral_reason": "The claimant significantly increased policy coverage just two weeks before the fire, and there's a contradiction between the fire originating from a gas stove left on while the claimant claims to have been out of town.",
+        "recommended_action": "investigator"
+    }
+}

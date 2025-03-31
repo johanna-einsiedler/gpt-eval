@@ -1,0 +1,197 @@
+{
+  "overall_score": 76.83333333333333,
+  "total_points": 76.83333333333333,
+  "max_points": 100,
+  "section_results": {
+    "market_trend_analysis": {
+      "score": 13.0,
+      "max_score": 20,
+      "details": {
+        "high_volatility_commodities": {
+          "score": 2,
+          "max_score": 6,
+          "details": [
+            "Correctly identified Cotton as high volatility (+2)",
+            "Incorrectly identified Plastic Resin as high volatility (+0)",
+            "Incorrectly identified Steel as high volatility (+0)"
+          ]
+        },
+        "price_changes": {
+          "score": 7.999999999999999,
+          "max_score": 8,
+          "details": [
+            "Cotton: Correct calculation 35.29% (+0.8)",
+            "Copper: Correct calculation 11.96% (+0.8)",
+            "Aluminum: Correct calculation 14.29% (+0.8)",
+            "Steel: Correct calculation 17.65% (+0.8)",
+            "Plastic Resin: Correct calculation 25.0% (+0.8)",
+            "Rubber: Correct calculation 10.81% (+0.8)",
+            "Silicon: Correct calculation 10.87% (+0.8)",
+            "Zinc: Correct calculation 11.29% (+0.8)",
+            "Titanium: Correct calculation 8.65% (+0.8)",
+            "Nickel: Correct calculation 11.63% (+0.8)"
+          ]
+        },
+        "seasonal_patterns": {
+          "score": 3,
+          "max_score": 6,
+          "details": [
+            "Unrecognized seasonal pattern for Aluminum (+0)",
+            "Unrecognized seasonal pattern for Copper (+0)",
+            "Unrecognized seasonal pattern for Plastic Resin (+0)",
+            "Correctly identified seasonal pattern for Cotton (+3)"
+          ]
+        }
+      }
+    },
+    "supply_risk_assessment": {
+      "score": 18.333333333333332,
+      "max_score": 20,
+      "details": {
+        "disruption_risks": {
+          "score": 9,
+          "max_score": 9,
+          "details": [
+            "Risk 1: Correctly identified disruption risk (+3)",
+            "Risk 2: Correctly identified disruption risk (+3)",
+            "Risk 3: Correctly identified disruption risk (+3)"
+          ]
+        },
+        "affected_commodities": {
+          "score": 6,
+          "max_score": 6,
+          "details": [
+            "Risk 1: Correctly identified all affected commodities (+2)",
+            "Risk 2: Correctly identified all affected commodities (+2)",
+            "Risk 3: Correctly identified all affected commodities (+2)"
+          ]
+        },
+        "price_impact": {
+          "score": 3.3333333333333335,
+          "max_score": 5,
+          "details": [
+            "Risk 1: Price impact within acceptable range (+1.67)",
+            "Risk 2: Price impact outside acceptable range (+0)",
+            "Risk 3: Price impact within acceptable range (+1.67)"
+          ]
+        }
+      }
+    },
+    "demand_supply_gap": {
+      "score": 10.0,
+      "max_score": 20,
+      "details": {
+        "inventory_coverage": {
+          "score": 0,
+          "max_score": 10,
+          "details": [
+            "Aluminum: Incorrect calculation 8.0 vs expected 8.7 weeks (+0)",
+            "Copper: Incorrect calculation 8.5 vs expected 9.2 weeks (+0)",
+            "Steel: Incorrect calculation 11.7 vs expected 12.6 weeks (+0)",
+            "Plastic Resin: Incorrect calculation 12.4 vs expected 13.5 weeks (+0)",
+            "Rubber: Incorrect calculation 7.4 vs expected 8.0 weeks (+0)",
+            "Silicon: Incorrect calculation 9.0 vs expected 9.8 weeks (+0)",
+            "Zinc: Incorrect calculation 8.8 vs expected 9.5 weeks (+0)",
+            "Titanium: Incorrect calculation 10.7 vs expected 11.5 weeks (+0)",
+            "Nickel: Incorrect calculation 11.0 vs expected 11.9 weeks (+0)",
+            "Cotton: Incorrect calculation 12.0 vs expected 12.9 weeks (+0)"
+          ]
+        },
+        "stockout_risk_commodities": {
+          "score": 10.0,
+          "max_score": 10,
+          "details": [
+            "Correctly identified 3 out of 3 high stockout risk commodities (+10.00)"
+          ]
+        }
+      }
+    },
+    "futures_analysis": {
+      "score": 20.0,
+      "max_score": 20,
+      "details": {
+        "price_increase_indicators": {
+          "score": 8,
+          "max_score": 8,
+          "details": [
+            "Correctly identified at least 6 commodities with price increase indicators (+8)"
+          ]
+        },
+        "price_spreads": {
+          "score": 5.999999999999999,
+          "max_score": 6,
+          "details": [
+            "Aluminum: Correct calculation 5.36% (+0.6)",
+            "Copper: Correct calculation 11.65% (+0.6)",
+            "Steel: Correct calculation 5.0% (+0.6)",
+            "Plastic Resin: Correct calculation -6.67% (+0.6)",
+            "Rubber: Correct calculation 17.07% (+0.6)",
+            "Silicon: Correct calculation 13.73% (+0.6)",
+            "Zinc: Correct calculation 4.35% (+0.6)",
+            "Titanium: Correct calculation -2.65% (+0.6)",
+            "Nickel: Correct calculation 6.25% (+0.6)",
+            "Cotton: Correct calculation 8.7% (+0.6)"
+          ]
+        },
+        "forward_contract_recommendations": {
+          "score": 6,
+          "max_score": 6,
+          "details": [
+            "Made 3 valid forward contract recommendations (+6)"
+          ]
+        }
+      }
+    },
+    "purchasing_recommendations": {
+      "score": 15.5,
+      "max_score": 20,
+      "details": {
+        "correct_commodities": {
+          "score": 5,
+          "max_score": 5,
+          "details": [
+            "Recommended 5 out of 5 critical commodities (+5)"
+          ]
+        },
+        "appropriate_timing": {
+          "score": 4.5,
+          "max_score": 5,
+          "details": [
+            "Aluminum: Correct timing recommendation 'immediate' (+1)",
+            "Copper: Correct timing recommendation 'immediate' (+1)",
+            "Rubber: Correct timing recommendation 'immediate' (+1)",
+            "Silicon: Reasonable timing recommendation 'immediate' (+0.5)",
+            "Titanium: Correct timing recommendation '60days' (+1)"
+          ]
+        },
+        "reasonable_quantity": {
+          "score": 4,
+          "max_score": 5,
+          "details": [
+            "Aluminum: Reasonable quantity recommendation 50% (+1)",
+            "Copper: Reasonable quantity recommendation 60% (+1)",
+            "Rubber: Reasonable quantity recommendation 70% (+1)",
+            "Silicon: Reasonable quantity recommendation 50% (+1)",
+            "Titanium: Questionable quantity recommendation 30% vs expected 50% (+0)"
+          ]
+        },
+        "justified_max_price": {
+          "score": 2,
+          "max_score": 5,
+          "details": [
+            "Aluminum: Reasonable max price recommendation $3080 (+1)",
+            "Copper: Questionable max price recommendation $12875 vs expected $11000 (+0)",
+            "Rubber: Questionable max price recommendation $2460 vs expected $2300 (+0)",
+            "Silicon: Questionable max price recommendation $3111 vs expected $2750 (+0)",
+            "Titanium: Reasonable max price recommendation $5500 (+1)"
+          ]
+        }
+      }
+    }
+  },
+  "passed": false,
+  "section_minimums_passed": false,
+  "section_minimum_details": [
+    "demand_supply_gap: 50.00% (below 60% minimum)"
+  ]
+}

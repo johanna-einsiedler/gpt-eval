@@ -1,0 +1,12 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "updated_spreadsheet": "path/to/your/updated_spreadsheet.xlsx"
+    },
+    "task_2": {
+        "completed_report": "path/to/your/completed_report.pdf",
+        "total_transactions": 15,
+        "total_inventory_value": 241.0,
+        "inventory_discrepancies": "Inventory levels adjusted based on transactions."
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "calculatedDuty": 1125.0,
+        "mpf": 155.88,
+        "hmf": 56.25,
+        "totalDutyAndFees": 1337.13
+    },
+    "task2": {
+        "entryNumber": "2809-2023-10022",
+        "bondType": "Single Transaction",
+        "paymentMethod": "ACH",
+        "justification": "ACH is preferred for duty payments from China per Payment Methods Matrix"
+    },
+    "task3": {
+        "responsibleParty": "Seller",
+        "correctAmount": 3750.0,
+        "documentationRequired": [
+            "Original Commercial Invoice",
+            "Carrier's Freight Bill",
+            "Signed Contract with Incoterms"
+        ]
+    },
+    "task4": {
+        "freightCharges": 3120.0,
+        "insuranceCost": 211.25,
+        "landedCost": 35831.25,
+        "paymentDueDate": "2023-11-24"
+    },
+    "task5": {
+        "selectedOption": "Resubmit with Corrected HTS Code",
+        "reasonCode": "RC-001",
+        "estimatedResolutionTime": 2
+    }
+}

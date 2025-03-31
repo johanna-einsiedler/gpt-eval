@@ -1,0 +1,13 @@
+{
+    "task_1": {
+        "discrepancies": 0.0,
+        "total_cost": false,
+        "conclusion": false
+    },
+    "task_2": {
+        "financial_ratios": 0.5,
+        "financial_health": false,
+        "recommendation": false
+    },
+    "overall_score": 8.333333333333332
+}

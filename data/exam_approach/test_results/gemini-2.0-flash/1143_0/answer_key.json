@@ -1,0 +1,189 @@
+{
+    "exam_name": "Basic Practical Exam for Purchasing Agents",
+    "part1_purchase_order": {
+        "expected_po_number": "PO-2023-1001",
+        "expected_vendor_name": "Acme Office Supplies",
+        "expected_vendor_address": "123 Main Street, Anytown, USA",
+        "expected_ship_to_address": "456 Elm Avenue, Suite 200, Anytown, USA",
+        "expected_payment_terms": "Net 30",
+        "expected_items": [
+            {
+                "description_keywords": [
+                    "Black Ballpoint Pens"
+                ],
+                "quantity": 50,
+                "unit_price_range": {
+                    "min": 0.1,
+                    "max": 0.5,
+                    "unit": "USD per pen"
+                },
+                "line_total_validation": "quantity * unit_price"
+            },
+            {
+                "description_keywords": [
+                    "A4 White Printer Paper",
+                    "500 sheets/ream"
+                ],
+                "quantity": 2,
+                "unit_price_range": {
+                    "min": 5.0,
+                    "max": 15.0,
+                    "unit": "USD per ream"
+                },
+                "line_total_validation": "quantity * unit_price"
+            },
+            {
+                "description_keywords": [
+                    "Stapler"
+                ],
+                "quantity": 2,
+                "unit_price_range": {
+                    "min": 5.0,
+                    "max": 20.0,
+                    "unit": "USD per stapler"
+                },
+                "line_total_validation": "quantity * unit_price"
+            },
+            {
+                "description_keywords": [
+                    "Sticky Note Pads",
+                    "3x3 inches",
+                    "Yellow"
+                ],
+                "quantity": 10,
+                "unit_price_range": {
+                    "min": 1.0,
+                    "max": 5.0,
+                    "unit": "USD per pad"
+                },
+                "line_total_validation": "quantity * unit_price"
+            }
+        ],
+        "expected_sales_tax_rate": 0.07,
+        "subtotal_validation": "sum of line_totals",
+        "sales_tax_validation": "subtotal * expected_sales_tax_rate",
+        "total_amount_validation": "subtotal + sales_tax",
+        "notes_keywords_present": [
+            "ensure pens are standard black ink"
+        ]
+    },
+    "part2_rfq": {
+        "expected_subject_keywords": [
+            "Request for Quotation",
+            "Office Cleaning Services"
+        ],
+        "expected_sections": [
+            "Introduction",
+            "Description of Services Required",
+            "Instructions to Bidders",
+            "Evaluation Criteria",
+            "Contact Information"
+        ],
+        "expected_introduction_keywords": [
+            "Example Corp",
+            "quotations",
+            "annual office cleaning services"
+        ],
+        "expected_service_description_keywords": [
+            "office cleaning",
+            "5,000 sq ft",
+            "dusting",
+            "wiping surfaces",
+            "vacuuming",
+            "mopping",
+            "trash",
+            "recycling",
+            "restrooms",
+            "kitchen",
+            "break room"
+        ],
+        "expected_instructions_keywords": [
+            "submission deadline",
+            "5 business days",
+            "pricing breakdown",
+            "company profile",
+            "references",
+            "purchasing@examplecorp.com"
+        ],
+        "expected_evaluation_criteria_keywords": [
+            "price",
+            "experience",
+            "references"
+        ],
+        "expected_contact_name": "John Smith",
+        "expected_contact_email": "purchasing@examplecorp.com"
+    },
+    "part3_requisition_review": {
+        "requisition_laptops_issues": [
+            {
+                "issue_keywords": [
+                    "vague description",
+                    "good ones",
+                    "unclear specifications"
+                ],
+                "explanation_keywords": [
+                    "difficult to procure",
+                    "not specific enough",
+                    "potential for wrong items"
+                ]
+            },
+            {
+                "issue_keywords": [
+                    "missing department approval",
+                    "no signature"
+                ],
+                "explanation_keywords": [
+                    "policy violation",
+                    "unauthorized purchase",
+                    "lack of accountability"
+                ]
+            },
+            {
+                "issue_keywords": [
+                    "missing budget code"
+                ],
+                "explanation_keywords": [
+                    "cannot process",
+                    "track expenses",
+                    "budget allocation"
+                ]
+            }
+        ],
+        "requisition_website_maintenance_issues": [
+            {
+                "issue_keywords": [
+                    "vague description",
+                    "maintain website",
+                    "unclear scope"
+                ],
+                "explanation_keywords": [
+                    "difficult to get accurate quotes",
+                    "scope of work undefined",
+                    "potential for cost overruns"
+                ]
+            },
+            {
+                "issue_keywords": [
+                    "no budget code"
+                ],
+                "explanation_keywords": [
+                    "cannot process",
+                    "track expenses",
+                    "budget allocation"
+                ]
+            },
+            {
+                "issue_keywords": [
+                    "ASAP delivery",
+                    "for service",
+                    "unrealistic"
+                ],
+                "explanation_keywords": [
+                    "services require planning",
+                    "not immediate delivery",
+                    "negotiate realistic timeline"
+                ]
+            }
+        ]
+    }
+}

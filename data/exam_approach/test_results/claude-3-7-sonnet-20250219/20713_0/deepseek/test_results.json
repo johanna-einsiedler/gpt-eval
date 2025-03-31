@@ -1,0 +1,124 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "exercise1_results": {
+    "score": 17,
+    "max_score": 25,
+    "details": {
+      "imu_calculation": {
+        "score": 3,
+        "max_score": 5,
+        "comments": [
+          "KA003: Expected IMU around 45.8%, got 50.0%",
+          "KA005: Expected IMU around 47.1%, got 52.0%"
+        ]
+      },
+      "mmu_calculation": {
+        "score": 0,
+        "max_score": 5,
+        "comments": [
+          "KA001: Expected MMU around 100.0%, got 45.0%",
+          "KA002: Expected MMU around 77.8%, got 40.0%",
+          "KA003: Expected MMU around 84.6%, got 44.0%",
+          "KA004: Expected MMU around 87.5%, got 42.0%",
+          "KA005: Expected MMU around 89.0%, got 46.0%"
+        ]
+      },
+      "target_margins": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "competitive_positioning": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "justification_quality": {
+        "score": 4,
+        "max_score": 5,
+        "comments": []
+      }
+    }
+  },
+  "exercise2_results": {
+    "score": 14.5,
+    "max_score": 25,
+    "details": {
+      "progressive_schedule": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "projected_units": {
+        "score": 0,
+        "max_score": 5,
+        "comments": [
+          "Week 1: Expected around 132 units, got 180",
+          "Week 2: Expected around 158 units, got 216",
+          "Week 3: Expected around 193 units, got 259",
+          "Week 4: Expected around 220 units, got 311",
+          "Week 5: Expected around 249 units, got 373",
+          "Week 6: Expected around 264 units, got 448"
+        ]
+      },
+      "projected_revenue": {
+        "score": 0,
+        "max_score": 5,
+        "comments": [
+          "Week 1: Expected around $5148, got $7198",
+          "Week 2: Expected around $5530, got $7559",
+          "Week 3: Expected around $5790, got $7789",
+          "Week 4: Expected around $5500, got $7789",
+          "Week 5: Expected around $4980, got $7479",
+          "Week 6: Expected around $3960, got $6272"
+        ]
+      },
+      "special_events": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "strategy_explanation": {
+        "score": 4.5,
+        "max_score": 5,
+        "comments": []
+      }
+    }
+  },
+  "exercise3_results": {
+    "score": 23,
+    "max_score": 25,
+    "details": {
+      "minimum_markup": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "implied_markup_calculation": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "competitor_positioning": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "price_sensitivity": {
+        "score": 4,
+        "max_score": 5,
+        "comments": [
+          "E002: Price may not fully reflect sensitivity rating of 8/10",
+          "E004: Price may not fully reflect sensitivity rating of 9/10"
+        ]
+      },
+      "positioning_strategy": {
+        "score": 4,
+        "max_score": 5,
+        "comments": []
+      }
+    }
+  },
+  "overall_score": 72.7,
+  "passed": true
+}

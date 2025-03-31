@@ -1,0 +1,72 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "examination_date": "2023-10-15",
+    "claim_analysis": {
+        "key_facts": [
+            "Michael Wilson was driving north on Main Street with a green light.",
+            "Sarah Johnson claims the light was yellow when she entered the intersection.",
+            "Robert Martinez was a pedestrian legally crossing with the walk signal."
+        ],
+        "discrepancies": [
+            "Conflicting statements about the traffic light status.",
+            "Witnesses disagree on which vehicle had the green light."
+        ],
+        "additional_information_needed": [
+            "Traffic camera footage.",
+            "Further witness statements."
+        ],
+        "potential_coverage_issues": [
+            "Possible exclusion for running a red light."
+        ]
+    },
+    "coverage_determination": {
+        "is_covered": true,
+        "applicable_provisions": [
+            "Bodily Injury Liability",
+            "Property Damage Liability"
+        ],
+        "exclusions_limitations": [
+            "Exclusion for intentional acts."
+        ],
+        "determination_rationale": "The policy covers bodily injury and property damage, but there may be an exclusion if the insured intentionally ran a red light."
+    },
+    "liability_assessment": {
+        "insured_liability_percentage": 60,
+        "claimant_liability_percentage": 40,
+        "third_party_liability_percentage": 0,
+        "liability_rationale": "Based on witness statements and the police report, the insured likely ran a red light, contributing to the accident."
+    },
+    "damages_evaluation": {
+        "economic_damages": {
+            "medical_expenses": 230000.0,
+            "wage_loss": 12000.0,
+            "property_damage": 32000.0,
+            "other_economic": 0.0
+        },
+        "non_economic_damages": {
+            "pain_suffering": 50000.0,
+            "other_non_economic": 0.0
+        },
+        "future_damages": 53400.0,
+        "total_damages": 377400.0,
+        "recommended_reserves": 400000.0,
+        "evaluation_rationale": "Calculated based on medical records, projected future expenses, and typical pain and suffering awards."
+    },
+    "resolution_strategy": {
+        "settlement_authority": 350000.0,
+        "negotiation_approach": "Aim for a settlement within policy limits, emphasizing shared liability.",
+        "potential_barriers": [
+            "Disputed liability.",
+            "High medical expenses."
+        ],
+        "proposed_timeline": "Aim to resolve within 6 months, allowing time for further investigation and negotiations."
+    },
+    "communications": {
+        "insured_update": "Dear Mr. Wilson, we are currently reviewing the details of your claim and will keep you updated on any developments.",
+        "claimant_attorney_request": "Dear Attorney, please provide any additional medical records or evidence supporting your client's claim.",
+        "file_note": "Reviewed all statements and evidence. Liability likely shared between insured and claimant. Further investigation needed."
+    },
+    "additional_observations": [
+        "Consider potential subrogation against the delivery company if their truck contributed to the accident."
+    ]
+}

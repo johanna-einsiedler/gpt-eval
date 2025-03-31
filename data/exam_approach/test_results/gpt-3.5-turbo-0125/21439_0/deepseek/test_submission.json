@@ -1,0 +1,26 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "irregularities": [
+        {
+            "claim_id": "1001",
+            "description": "Overpayment: Paid Amount ($1200) exceeds Billed Amount ($1000)"
+        },
+        {
+            "claim_id": "1002",
+            "description": "Underpayment: Paid Amount ($800) is less than Billed Amount ($1000)"
+        },
+        {
+            "claim_id": "1003",
+            "description": "Irregularity: Paid status with zero Paid Amount"
+        },
+        {
+            "claim_id": "1004",
+            "description": "Overpayment: Paid Amount ($1500) exceeds Billed Amount ($1300)"
+        }
+    ],
+    "summary": {
+        "total_overpayments": 2,
+        "total_underpayments": 1,
+        "total_other_irregularities": 1
+    }
+}

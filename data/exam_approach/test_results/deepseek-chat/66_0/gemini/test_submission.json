@@ -1,0 +1,11 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "sales_trend_analysis": "Electronics sales declined steadily by 10 units each month from January to December 2023. Conversely, Home Appliances sales consistently increased by 10 units per month over the same period.",
+        "inventory_recommendation": "Reduce Electronics inventory by 40% to mitigate overstocking due to the declining sales trend. Increase Home Appliances inventory by 40% to capitalize on the growing sales trend and meet anticipated demand."
+    },
+    "task_2": {
+        "market_trend_research": "A significant consumer trend is the increasing demand for smart and energy-efficient home appliances, driven by rising energy costs and environmental consciousness. (Source:  'Energy Efficiency 2023' report by the International Energy Agency (IEA)).",
+        "impact_on_demand": "This trend is expected to further boost the demand for Home Appliances, particularly for models with smart features and high energy efficiency ratings, potentially leading to a 15-20% increase in sales for these specific product lines in the coming months."
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "task_1_results": [
+        {
+            "claim_id": "CL-2023-0042",
+            "correct": false,
+            "issue": "Missing Data",
+            "proposed_correction": "Contact claimant to obtain missing policy effective date"
+        },
+        {
+            "claim_id": "CL-2023-0078",
+            "correct": false,
+            "issue": "Incorrect Data",
+            "proposed_correction": "Verify claim amount as it exceeds typical range for this claim type"
+        },
+        {
+            "claim_id": "CL-2023-0103",
+            "correct": false,
+            "issue": "Duplicate Entry",
+            "proposed_correction": "Remove duplicate entry and consolidate information with claim CL-2023-0102"
+        }
+    ],
+    "task_2_results": [
+        {
+            "claim_id": "CL-2023-0056",
+            "correct": false,
+            "reason": "Exceeds Policy Limit"
+        },
+        {
+            "claim_id": "CL-2023-0089",
+            "correct": false,
+            "reason": "Invalid Claim Date"
+        },
+        {
+            "claim_id": "CL-2023-0112",
+            "correct": false,
+            "reason": "Unapproved Claim Type"
+        }
+    ],
+    "overall_score": 0.0
+}

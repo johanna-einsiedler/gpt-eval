@@ -1,0 +1,20 @@
+{
+    "candidate_id": "GPT-4o",
+    "task_1": {
+        "discrepancies": [
+            {
+                "claim_id": "N/A",
+                "issue": "Unable to verify data - claims_data.xlsx file not provided"
+            }
+        ]
+    },
+    "task_2": {
+        "analysis": [
+            {
+                "claim_id": "N/A",
+                "validity": "N/A",
+                "recommendation": "Unable to analyze claims - company_guidelines.pdf and claims_summary.txt files not provided"
+            }
+        ]
+    }
+}

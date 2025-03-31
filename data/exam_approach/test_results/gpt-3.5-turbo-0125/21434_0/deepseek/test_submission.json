@@ -1,0 +1,29 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "settled_claims_summary": {
+        "total_number_of_claims": 150,
+        "total_settlement_amount": 750000.0,
+        "average_settlement_amount": 5000.0
+    },
+    "claims_inventory": [
+        {
+            "claim_id": "C123",
+            "status": "Pending",
+            "missing_information": "Claimant address"
+        },
+        {
+            "claim_id": "C124",
+            "status": "Under Review",
+            "missing_information": null
+        },
+        {
+            "claim_id": "C125",
+            "status": "Completed",
+            "missing_information": "Supporting documents"
+        }
+    ],
+    "discrepancies": [
+        "Claim ID C125 has inconsistent settlement dates.",
+        "Claim ID C123 lacks a valid policy number."
+    ]
+}

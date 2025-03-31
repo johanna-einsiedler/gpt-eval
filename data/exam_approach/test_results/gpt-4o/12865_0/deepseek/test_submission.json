@@ -1,0 +1,12 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "commission_rate": "15%",
+        "payment_schedule": "monthly",
+        "additional_fees": "2% administrative fee on gross earnings",
+        "total_amount_due": "$8,500.00"
+    },
+    "task_2": {
+        "payment_request_email": "Subject: Payment Request for April 2024 Services\n\nDear [Client's Name],\n\nI hope this email finds you well. As per our agreement dated [Contract Date], I am writing to request payment for services rendered during April 2024.\n\nHere are the payment details:\n- Gross earnings: $50,000.00\n- Agent commission (15%): $7,500.00\n- Administrative fee (2%): $1,000.00\n- Total amount due: $8,500.00\n\nPayment is due by [Due Date, typically 15 days from invoice date]. Please remit payment to:\n[Bank Name]\n[Account Name]\n[Account Number]\n[Routing Number]\n\nFor your convenience, I've attached a detailed statement and copy of the relevant contract provisions. If you have any questions or need additional information, please don't hesitate to contact me.\n\nThank you for your prompt attention to this matter. I appreciate our continued partnership.\n\nBest regards,\n[Your Name]\n[Your Title]\n[Your Contact Information]"
+    }
+}

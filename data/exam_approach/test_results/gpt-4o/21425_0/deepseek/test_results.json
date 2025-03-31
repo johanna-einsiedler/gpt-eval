@@ -1,0 +1,39 @@
+{
+    "task_1_score": 0.0,
+    "task_1_details": [
+        {
+            "claim_id": "1",
+            "priority_correct": true,
+            "justification_correct": false
+        },
+        {
+            "claim_id": "2",
+            "priority_correct": false,
+            "justification_correct": false
+        },
+        {
+            "claim_id": "3",
+            "priority_correct": false,
+            "justification_correct": false
+        },
+        {
+            "claim_id": "4",
+            "priority_correct": false,
+            "justification_correct": false
+        },
+        {
+            "claim_id": "5",
+            "priority_correct": false,
+            "justification_correct": false
+        }
+    ],
+    "task_2_score": 0.0,
+    "task_2_details": {
+        "steps_correct": 0,
+        "total_steps": 5,
+        "communication_correct": false,
+        "resource_allocation_correct": false,
+        "potential_challenges_correct": false
+    },
+    "overall_score": 0.0
+}

@@ -1,0 +1,97 @@
+{
+  "candidateID": "Claude-3-Sonnet",
+  "exercise1": {
+    "points_earned": 5,
+    "max_points": 25,
+    "breakdown": {
+      "supplier_selection": {
+        "earned": 0,
+        "max": 10,
+        "comments": "Incorrect supplier selected."
+      },
+      "score_calculations": {
+        "earned": 0,
+        "max": 10,
+        "comments": "Quality score calculation incorrect.; Cost score calculation incorrect.; Reliability score calculation incorrect.; Total score calculation incorrect."
+      },
+      "justification": {
+        "earned": 5,
+        "max": 5,
+        "comments": "Excellent justification with all key factors."
+      }
+    }
+  },
+  "exercise2": {
+    "points_earned": 21,
+    "max_points": 25,
+    "breakdown": {
+      "order_quantities": {
+        "earned": 10,
+        "max": 10,
+        "comments": "All order quantities correct."
+      },
+      "cost_calculations": {
+        "earned": 6,
+        "max": 10,
+        "comments": "Floor cleaner cost calculations slightly off.; Disinfectant cost calculations slightly off."
+      },
+      "calculation_breakdown": {
+        "earned": 5,
+        "max": 5,
+        "comments": "Excellent calculation breakdown with formula and reasoning."
+      }
+    }
+  },
+  "exercise3": {
+    "points_earned": 25.0,
+    "max_points": 25,
+    "breakdown": {
+      "line_items": {
+        "earned": 10.0,
+        "max": 10,
+        "comments": "All line items calculated correctly."
+      },
+      "totals": {
+        "earned": 10.0,
+        "max": 10,
+        "comments": "All totals calculated correctly."
+      },
+      "po_format": {
+        "earned": 5,
+        "max": 5,
+        "comments": "PO format is complete and correct."
+      }
+    }
+  },
+  "exercise4": {
+    "points_earned": 22,
+    "max_points": 25,
+    "breakdown": {
+      "counteroffer_price": {
+        "earned": 8,
+        "max": 10,
+        "comments": "Reasonable counteroffer price within market range."
+      },
+      "requested_terms": {
+        "earned": 4,
+        "max": 5,
+        "comments": "Good negotiation terms requested."
+      },
+      "justification": {
+        "earned": 5,
+        "max": 5,
+        "comments": "Excellent justification with market context."
+      },
+      "savings_calculation": {
+        "earned": 5,
+        "max": 5,
+        "comments": "Savings calculation is correct."
+      }
+    }
+  },
+  "overall_score": 73.0,
+  "total_points": 73.0,
+  "max_points": 100,
+  "passed": false,
+  "failure_reason": "Failed to meet minimum score in: Exercise 1"
+}

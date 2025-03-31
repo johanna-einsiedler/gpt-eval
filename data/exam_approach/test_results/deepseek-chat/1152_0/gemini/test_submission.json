@@ -1,0 +1,63 @@
+{
+    "candidate_id": "GPT-4o",
+    "task_1": {
+        "suppliers": [
+            {
+                "name": "Supplier A",
+                "contact": "sales@supplierA.com",
+                "product": "Model X Ergo Chair",
+                "specifications": "Adjustable height (18\"-22\"), lumbar support"
+            },
+            {
+                "name": "Supplier B",
+                "contact": "www.supplierB.com/contact",
+                "product": "Comfort Plus Chair",
+                "specifications": "Mesh backrest, 360-degree swivel"
+            },
+            {
+                "name": "Supplier C",
+                "contact": "orders@supplierC.com",
+                "product": "Executive Ergo Seat",
+                "specifications": "Genuine leather, tilt mechanism"
+            }
+        ]
+    },
+    "task_2": {
+        "printer_comparison": [
+            {
+                "model": "Printer Alpha",
+                "price": "$1,200",
+                "warranty": "2 years",
+                "print_speed": "30 ppm",
+                "pros": "Lower price"
+            },
+            {
+                "model": "Printer Beta",
+                "price": "$1,500",
+                "warranty": "3 years",
+                "print_speed": "45 ppm",
+                "pros": "Faster print speed and longer warranty"
+            }
+        ],
+        "recommendation": "Printer Beta",
+        "reason": "Although Printer Beta is $300 more expensive than Printer Alpha, it offers a significantly faster print speed (45 ppm vs 30 ppm) and a longer warranty (3 years vs 2 years), providing better value and long-term reliability for the increased investment."
+    },
+    "task_3": {
+        "cloud_storage_options": [
+            {
+                "provider": "Google Drive",
+                "storage_limit": "2TB",
+                "price": "$9.99/month",
+                "security_features": "Encryption in transit and at rest, two-factor authentication"
+            },
+            {
+                "provider": "Microsoft OneDrive",
+                "storage_limit": "1TB",
+                "price": "$6.99/month",
+                "security_features": "Encryption at rest and in transit, ransomware detection and recovery"
+            }
+        ],
+        "recommendation": "Google Drive",
+        "reason": "Google Drive offers 2TB of storage, fulfilling the minimum 1TB requirement, and while slightly more expensive at $9.99/month compared to OneDrive's $6.99/month for 1TB, it provides double the storage within the budget and robust security features including encryption and two-factor authentication, making it a better value for potentially larger sensitive project files."
+    }
+}

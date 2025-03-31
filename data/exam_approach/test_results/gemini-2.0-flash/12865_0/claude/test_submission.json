@@ -1,0 +1,16 @@
+{
+    "task1_commission_percentage": "15",
+    "task1_gross_performance_income_definition": [
+        "Live Performance Fees",
+        "Streaming Royalties"
+    ],
+    "task2_november_commission_due": "1545.00",
+    "task3_invoice_essential_components": [
+        "Invoice Number",
+        "Invoice Date",
+        "Amount Due"
+    ],
+    "task4_remaining_balance_due": "1045.00",
+    "candidate_id": "GPT-4",
+    "model_version": "GPT-4-turbo"
+}

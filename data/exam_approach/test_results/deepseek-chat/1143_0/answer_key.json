@@ -1,0 +1,44 @@
+{
+    "answer_key": {
+        "task_1": {
+            "errors_found": [
+                "missing_vendor_ID",
+                "typo_in_item_description",
+                "incorrect_date_format"
+            ],
+            "corrected_requisition": {
+                "vendor_name": "ABC Supplies",
+                "vendor_ID": "V12345",
+                "item_description": "Office Chairs",
+                "quantity": 10,
+                "unit_price": 150.0,
+                "delivery_date": "2023-12-15"
+            }
+        },
+        "task_2": {
+            "purchase_order": {
+                "PO_number": "PO-2023-001",
+                "vendor_name": "XYZ Office Supplies",
+                "items": [
+                    {
+                        "description": "Desk Lamps",
+                        "quantity": 5,
+                        "unit_price": 25.0
+                    },
+                    {
+                        "description": "Notepads",
+                        "quantity": 20,
+                        "unit_price": 3.5
+                    }
+                ],
+                "total_cost": 235.0,
+                "payment_terms": "Net 30",
+                "delivery_date": "2023-12-10"
+            }
+        },
+        "task_3": {
+            "selected_bid": "Supplier_B",
+            "reason": "Lowest total cost ($120.00) with acceptable delivery time (2 weeks) and Net 30 payment terms."
+        }
+    }
+}

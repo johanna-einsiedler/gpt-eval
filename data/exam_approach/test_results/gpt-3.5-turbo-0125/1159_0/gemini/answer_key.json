@@ -1,0 +1,16 @@
+{
+    "policy_draft": {
+        "objectives": "To ensure efficient, transparent, and cost-effective procurement processes that meet the organization's needs while complying with all relevant regulations.",
+        "scope": "This policy applies to all procurement activities within the organization, including the acquisition of goods, services, and works.",
+        "procurement_methods": "The organization will use competitive bidding, direct procurement, and request for proposals (RFP) as primary methods, depending on the nature and value of the procurement.",
+        "evaluation_criteria": "Bids will be evaluated based on cost, quality, delivery time, and compliance with technical specifications.",
+        "compliance_measures": "Regular audits and compliance checks will be conducted to ensure adherence to procurement policies and legal requirements."
+    },
+    "procedure_development": {
+        "step_1": "Solicitation of bids: Issue a public notice or invitation to bid, detailing the requirements and submission guidelines.",
+        "step_2": "Evaluation of received bids: Form a committee to review and score bids based on predefined criteria.",
+        "step_3": "Negotiation with bidders: Engage in discussions with shortlisted bidders to clarify terms and conditions.",
+        "step_4": "Awarding of contracts: Select the winning bid and formally award the contract, ensuring all parties are informed.",
+        "step_5": "Contract management: Monitor contract performance and ensure compliance with agreed terms."
+    }
+}

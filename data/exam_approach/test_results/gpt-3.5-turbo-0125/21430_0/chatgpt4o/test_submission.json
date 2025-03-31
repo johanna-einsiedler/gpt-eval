@@ -1,0 +1,22 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "questionable_claims": [
+        {
+            "claim_id": "A1234",
+            "reason": "Unusually high claim amount compared to similar claims."
+        },
+        {
+            "claim_id": "B5678",
+            "reason": "Inconsistent incident description with previous claims."
+        },
+        {
+            "claim_id": "C9101",
+            "reason": "Frequent claims by the same individual within a short period."
+        }
+    ],
+    "referral_report": {
+        "claim_id": "A1234",
+        "summary": "The claim amount is significantly higher than average for similar incidents.",
+        "additional_information": "The claimant has a history of frequent claims with similar patterns, raising concerns about potential fraud."
+    }
+}

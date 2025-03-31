@@ -1,0 +1,14 @@
+{
+    "task_1": {
+        "correct": 0,
+        "total": 2,
+        "score": 0.0
+    },
+    "task_2": {
+        "correct": 2,
+        "total": 2,
+        "score": 100.0,
+        "within_budget": true
+    },
+    "overall_score": 50.0
+}

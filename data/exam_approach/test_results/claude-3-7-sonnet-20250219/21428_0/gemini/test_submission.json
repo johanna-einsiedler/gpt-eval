@@ -1,0 +1,45 @@
+{
+    "candidateID": "GPT-4o",
+    "exercise1": {
+        "inconsistencies": [
+            "Time of incident is inconsistent across documents (Claimant: 2:30 PM, Police: 3:45 PM, Medical: ~4:00 PM).",
+            "Weather conditions are reported differently (Claimant: clear and dry, Police: light rain).",
+            "Description of accident differs between claimant statement and medical report (Claimant: ran red light, struck passenger side, Medical: stopped at red light, struck from behind).",
+            "Claimant mentions a pedestrian witness, but the police report states no witness was recorded."
+        ],
+        "verificationStatus": "rejected",
+        "reasonCode": "R04"
+    },
+    "exercise2": {
+        "coverageDecision": "covered",
+        "applicableClauses": [
+            "2.1",
+            "3.1",
+            "4.5"
+        ],
+        "exclusions": []
+    },
+    "exercise3": {
+        "calculatedAmount": 13300.0,
+        "deductibleApplied": 1000.0,
+        "finalSettlement": 12300.0,
+        "adjustmentFactors": []
+    },
+    "exercise4": {
+        "fraudRiskScore": 9,
+        "redFlagsIdentified": [
+            "RF05",
+            "RF06",
+            "RF10",
+            "RF12",
+            "RF14",
+            "RF15",
+            "RF18",
+            "RF21",
+            "RF22",
+            "RF23",
+            "RF24"
+        ],
+        "recommendedAction": "A7"
+    }
+}

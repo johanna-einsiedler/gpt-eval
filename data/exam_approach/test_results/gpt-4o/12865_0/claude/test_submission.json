@@ -1,0 +1,12 @@
+{
+    "candidate_id": "GPT-4o",
+    "task_1": {
+        "commission_rate": "15%",
+        "payment_schedule": "monthly",
+        "additional_fees": "3% processing fee for international payments, $250 annual contract maintenance fee",
+        "total_amount_due": "$7,750.00"
+    },
+    "task_2": {
+        "payment_request_email": "Subject: Payment Request - April 2023 Commission\n\nDear Mr. Johnson,\n\nI hope this email finds you well. I am writing to request payment for the commission due as per our representation agreement dated January 15, 2023.\n\nBased on your total earnings of $50,000 for the month of April 2023, the following payment is now due:\n\nGross Earnings: $50,000.00\nCommission (15%): $7,500.00\nProcessing Fee (3% - international payment): $250.00\nTotal Amount Due: $7,750.00\n\nAs outlined in our agreement, payment is due within 15 days of receipt of this notice. Please remit payment via wire transfer to our account using the details provided below:\n\nBank Name: First National Bank\nAccount Name: Elite Talent Management LLC\nAccount Number: 12345678\nRouting Number: 987654321\nReference: Johnson-April2023\n\nPlease confirm once the payment has been processed. If you have any questions or concerns regarding this invoice, please don't hesitate to contact me directly.\n\nThank you for your prompt attention to this matter.\n\nBest regards,\n\nSarah Williams\nTalent Agent\nElite Talent Management\nPhone: (555) 123-4567\nEmail: sarah.williams@elitetalent.com"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "candidate_id": "GPT-4o",
+    "task_1": {
+        "items": [
+            {
+                "item_id": "1",
+                "duty_payable": "0.00"
+            },
+            {
+                "item_id": "2",
+                "duty_payable": "0.00"
+            }
+        ],
+        "total_duty": "0.00"
+    },
+    "task_2": {
+        "freight_quote": {
+            "service_provider": "Unknown",
+            "quote_amount": "0.00",
+            "currency": "USD",
+            "confirmation_number": "Unknown"
+        }
+    }
+}

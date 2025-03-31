@@ -1,0 +1,39 @@
+{
+    "item_1": {
+        "description": "Industrial Grade Cable Ties\n    - UV Resistant\n    - Color: Black\n    - Length: 300mm\n    - Width: 7.6mm\n    - Quantity: 1000",
+        "supplier_1": {
+            "supplier_name_score": 1,
+            "product_code_score": 1,
+            "catalog_reference_score": 1,
+            "notes_score": 0,
+            "total_supplier_score": 3
+        },
+        "supplier_2": {
+            "supplier_name_score": 0,
+            "product_code_score": 0,
+            "catalog_reference_score": 0,
+            "notes_score": 0,
+            "total_supplier_score": 0
+        },
+        "total_item_score": 3
+    },
+    "item_2": {
+        "description": "Ergonomic Office Chair\n    - Adjustable Height\n    - Lumbar Support\n    - Swivel Base\n    - Color: Grey\n    - Quantity: 5",
+        "supplier_1": {
+            "supplier_name_score": 1,
+            "product_code_score": 1,
+            "catalog_reference_score": 1,
+            "notes_score": 0,
+            "total_supplier_score": 3
+        },
+        "supplier_2": {
+            "supplier_name_score": 1,
+            "product_code_score": 0,
+            "catalog_reference_score": 1,
+            "notes_score": 0,
+            "total_supplier_score": 2
+        },
+        "total_item_score": 5
+    },
+    "overall_score": 66.67
+}

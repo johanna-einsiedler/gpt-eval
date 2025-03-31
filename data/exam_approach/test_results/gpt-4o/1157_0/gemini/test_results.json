@@ -1,0 +1,32 @@
+{
+    "task_1_score": 0,
+    "task_1_max_score": 5,
+    "task_1_feedback": {
+        "product_name": "Expected: High-Performance Laptop, Found: Ergonomic Office Chair",
+        "dimensions": "Expected: 35.8x24.6x1.8 cm, Found: Seat Height Adjustment Range: 45-55 cm; Seat Width: 50 cm; Seat Depth: 48 cm; Backrest Height: 55 cm; Armrest Height Adjustment Range: 20-30 cm from seat surface.",
+        "materials": "Expected: Aluminum, Plastic, Found: Frame Material: Steel; Seat and Backrest Material: High-density mesh fabric; Armrest Material: Polyurethane (PU) foam with fabric cover; Base Material: Nylon; Castor Wheels Material: Polyurethane (PU).",
+        "performance_criteria": "Expected: Intel i7 processor, 16GB RAM, 512GB SSD, 15.6-inch display, Found: Weight Capacity: Minimum 150 kg; Backrest Tilt Angle: Adjustable from 90 to 120 degrees with locking mechanism; Durability: To withstand daily use for at least 5 years under normal office conditions; Castor Wheels: Smooth and quiet rolling on carpet and hard floors.",
+        "additional_requirements": "Expected: Must include a backlit keyboard, Wi-Fi 6 support, and a minimum battery life of 10 hours., Found: Certifications: Must meet ANSI/BIFMA standards for safety and durability; Ergonomics: Lumbar support adjustable; Headrest: Adjustable height and angle; Assembly: To be delivered in disassembled form with clear assembly instructions and all necessary tools."
+    },
+    "task_2_score": 0,
+    "task_2_max_score": 4,
+    "task_2_feedback": [
+        {
+            "issue_description": "Expected: The dimensions are missing units., Found: The 'Dimensions' section in the sample specification is too vague. 'Standard size' is not specific and does not provide clear requirements for manufacturers.",
+            "suggested_correction": "Expected: Add 'cm' to the dimensions to specify the units., Found: Specify exact dimensions for seat height, seat width, seat depth, backrest height, and armrest height, including adjustment ranges where applicable. Use specific units like centimeters (cm) or inches."
+        },
+        {
+            "issue_description": "Expected: The material list is incomplete., Found: The 'Materials' section is too general. 'Metal and fabric' does not specify the type of metal or fabric, which can lead to variations in quality and durability.",
+            "suggested_correction": "Expected: Include all materials such as 'Aluminum, Plastic, Glass'., Found: Detail the specific materials required for each component of the chair, such as frame material (e.g., steel, aluminum), seat and backrest fabric (e.g., mesh, polyester, leather), and base material (e.g., nylon, steel). Specify material properties where necessary (e.g., high-density mesh, fire-retardant fabric)."
+        },
+        {
+            "issue_description": "Expected: Performance criteria lack specific processor model., Found: The 'Performance Criteria' section stating 'Should be comfortable' is subjective and not measurable. Comfort is not a quantifiable performance metric.",
+            "suggested_correction": "Expected: Specify the processor model, e.g., 'Intel i7-1165G7'., Found: Replace subjective criteria with objective and measurable performance standards. For example, specify requirements for weight capacity, adjustability (e.g., backrest tilt angle, height adjustment range), durability testing standards (e.g., ANSI/BIFMA standards), and any specific ergonomic features (e.g., lumbar support adjustability)."
+        },
+        {
+            "issue_description": "Expected: Additional requirements do not mention operating system compatibility., Found: The 'Additional Requirements' section is stated as 'None', which is insufficient. There are likely to be other important requirements that are not considered.",
+            "suggested_correction": "Expected: Add 'Must be compatible with Windows 10 and Linux'., Found: Include relevant additional requirements such as compliance with safety standards (e.g., ANSI/BIFMA), ergonomic certifications, warranty period, packaging requirements, assembly instructions, and any specific testing or inspection requirements. Consider adding requirements related to environmental standards or sustainability if relevant."
+        }
+    ],
+    "overall_score": 0.0
+}

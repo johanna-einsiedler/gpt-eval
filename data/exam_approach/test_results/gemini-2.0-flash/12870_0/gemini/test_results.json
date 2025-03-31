@@ -1,0 +1,38 @@
+{
+    "candidate_id": "candidate42",
+    "candidate_name": "Bard Model",
+    "model_version": "GPT-4o",
+    "overall_score": 80.0,
+    "detailed_results": {
+        "task1": [
+            {
+                "trend_number": 1,
+                "points": 5,
+                "feedback": [
+                    "Trend 1: Source domain NOT ACCEPTABLE (www.billboard.com). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com']",
+                    "Trend 1: Description relevant (keywords matched: 5)",
+                    "Trend 1: Impact relevant (keywords matched: 1)"
+                ]
+            },
+            {
+                "trend_number": 2,
+                "points": 2,
+                "feedback": [
+                    "Trend 2: Source domain NOT ACCEPTABLE (www.hypebot.com). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com', 'techcrunch.com', 'theverge.com']",
+                    "Trend 2: Description relevant (keywords matched: 1)",
+                    "Trend 2: Impact keywords insufficient (0 matched, need >= 1)"
+                ]
+            }
+        ],
+        "task2": {
+            "points": 1,
+            "feedback": [
+                "Deal: Source domain NOT ACCEPTABLE (www.musicbusinessworldwide.com). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com', 'prnewswire.com', 'businesswire.com']",
+                "Deal: Summary keywords insufficient (0 matched, need >= 1)",
+                "Deal: Key terms correctly stated as 'Not Publicly Available'"
+            ]
+        }
+    },
+    "total_points": 8,
+    "max_points": 10
+}

@@ -1,0 +1,48 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "scenario_1": {
+        "claim_covered": true,
+        "payment_amount": 6455.0,
+        "deductible_applied": 500.0,
+        "decision_rationale": "The claim is covered under the collision coverage of the policy. The accident was not excluded (not racing, not intentional, not under influence, etc.). The total estimate is $6,955 minus the $500 collision deductible equals $6,455 payable. The other driver was uninsured but this doesn't affect the collision coverage claim.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "Police report confirms accident details. All repair estimates appear reasonable for the described damage."
+    },
+    "scenario_2": {
+        "claim_covered": true,
+        "payment_amount": 18030.0,
+        "deductible_applied": 1000.0,
+        "decision_rationale": "The water damage is covered as it resulted from a sudden and accidental discharge of water from plumbing (a burst pipe). The total restoration estimate is $19,030 minus the $1,000 deductible equals $18,030 payable. The damage was discovered within the 14-day window for leakage.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "Plumber's report confirms frozen pipe as cause. Photos support extent of damage. Thermostat setting was reasonable for winter conditions."
+    },
+    "scenario_3": {
+        "claim_covered": true,
+        "payment_amount": 10920.0,
+        "deductible_applied": 1500.0,
+        "decision_rationale": "All medical services were medically necessary and performed by in-network providers. The total billed amount is $15,220. After applying the $1,500 deductible, the plan pays 80% of the remaining $13,720 ($10,976). However, the patient has already paid $335 in copays which should be credited, resulting in a net payment of $10,920.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "All treatments were properly documented and medically necessary for the ankle fracture. No duplicate billing identified."
+    },
+    "scenario_4": {
+        "claim_covered": true,
+        "payment_amount": 25000.0,
+        "deductible_applied": 2500.0,
+        "decision_rationale": "The business interruption is covered as it resulted from a covered fire loss. The average monthly net income was $13,508. For 2.5 months, this equals $33,770. Continuing expenses are $33,200/month but saved expenses offset this. Extra expenses are $12,300. Total covered loss would be approximately $46,070 minus $2,500 deductible, but this exceeds authority level.",
+        "exceeds_authority": true,
+        "fraud_indicators": [],
+        "documentation_notes": "Fire department report confirms accidental cause. Financial records appear consistent with business operations. Claim requires escalation due to amount."
+    },
+    "scenario_5": {
+        "claim_covered": true,
+        "payment_amount": 8219.99,
+        "deductible_applied": 500.0,
+        "decision_rationale": "The theft is covered as there was evidence of forced entry. All items fall under personal property coverage. Jewelry is subject to $1,500 sublimit. Total replacement cost is $8,719.99 ($2,499 + $1,299 + $1,998 + $499.99 + $329 + $395 + $150 + $550) minus $500 deductible equals $8,219.99 payable.",
+        "exceeds_authority": false,
+        "fraud_indicators": [],
+        "documentation_notes": "Police report confirms burglary. Documentation supports ownership and values of stolen items. No suspicious patterns in claimed items."
+    }
+}

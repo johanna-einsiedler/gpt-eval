@@ -1,0 +1,94 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "transaction_summary": {
+        "total_transactions": 30,
+        "total_purchase_amount": 19847.55,
+        "transactions_with_issues": 3,
+        "issue_details": [
+            {
+                "transaction_id": "TR-10028",
+                "issue_type": "missing_data",
+                "description": "Missing origin code"
+            },
+            {
+                "transaction_id": "TR-10029",
+                "issue_type": "missing_data",
+                "description": "Missing quality certification"
+            },
+            {
+                "transaction_id": "TR-10030",
+                "issue_type": "missing_data",
+                "description": "Missing unit price"
+            }
+        ]
+    },
+    "inventory_analysis": {
+        "total_inventory_value": 19847.55,
+        "product_categories": {
+            "Fresh Fruits": {
+                "total_quantity": 3580,
+                "average_price": 3.51,
+                "total_value": 12568.75
+            },
+            "Dairy Products": {
+                "total_quantity": 1595,
+                "average_price": 4.03,
+                "total_value": 6428.75
+            },
+            "Grains": {
+                "total_quantity": 11500,
+                "average_price": 0.43,
+                "total_value": 4945.0
+            },
+            "Poultry Products": {
+                "total_quantity": 1300,
+                "average_price": 3.39,
+                "total_value": 4405.0
+            }
+        },
+        "top_volume_products": [
+            "P-3001",
+            "P-3002",
+            "P-3003"
+        ],
+        "top_cost_products": [
+            "P-1001",
+            "P-1004",
+            "P-1002"
+        ]
+    },
+    "monthly_summary": {
+        "January": {
+            "total_purchases": 6288.83,
+            "largest_category": "Fresh Fruits",
+            "largest_category_value": 2983.13
+        },
+        "February": {
+            "total_purchases": 6758.28,
+            "largest_category": "Fresh Fruits",
+            "largest_category_value": 3493.75
+        },
+        "March": {
+            "total_purchases": 6799.44,
+            "largest_category": "Fresh Fruits",
+            "largest_category_value": 6091.88
+        }
+    },
+    "compliance_report": {
+        "regulated_products_total": 17930,
+        "origin_tracking_complete": false,
+        "certification_documentation_complete": false,
+        "reporting_issues": [
+            {
+                "product_code": "P-1004",
+                "transaction_id": "TR-10028",
+                "issue_type": "missing_origin"
+            },
+            {
+                "product_code": "P-4001",
+                "transaction_id": "TR-10029",
+                "issue_type": "missing_certification"
+            }
+        ]
+    }
+}

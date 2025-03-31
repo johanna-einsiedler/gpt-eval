@@ -1,0 +1,100 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "examination_date": "2023-06-15",
+    "claim_analysis": {
+        "key_facts": [
+            "Accident occurred on 03/15/2023 at 5:45 PM at intersection of Main Street and Oak Avenue in Springfield, IL",
+            "Involved parties: Michael Wilson (insured), Sarah Johnson (claimant 1), Robert Martinez (claimant 2 - pedestrian), QuickShip Delivery (third party)",
+            "Weather conditions: Light rain, dusk",
+            "Police report indicates insured ran red light, but witness statements conflict",
+            "Delivery truck partially obstructed view of intersection for both drivers",
+            "Pedestrian Robert Martinez suffered severe injuries requiring hospitalization and surgery",
+            "Sarah Johnson sustained wrist fracture and chest injuries",
+            "Michael Wilson had minor whiplash injuries"
+        ],
+        "discrepancies": [
+            "Conflict between police report (says insured ran red light) and witness Maria Garcia (says insured had green light)",
+            "Discrepancy between insured's statement (had green light) and witness James Taylor (says insured ran red light)",
+            "Sarah Johnson claims light was yellow when she entered intersection, while other witnesses say it was red",
+            "Police issued citation to insured for running red light despite conflicting evidence"
+        ],
+        "additional_information_needed": [
+            "Traffic light timing sequence data",
+            "Toxicology reports for all drivers",
+            "Independent accident reconstruction report",
+            "Medical prognosis updates for Robert Martinez",
+            "Employment verification and wage documentation for all injured parties",
+            "QuickShip Delivery truck parking regulations for that location",
+            "Maintenance records for traffic signals"
+        ],
+        "potential_coverage_issues": [
+            "Possible coverage limit concerns given severity of Robert Martinez's injuries",
+            "Potential for underinsured motorist claim if Sarah Johnson's limits are insufficient",
+            "Possible third-party liability claim against QuickShip Delivery for obstructed view",
+            "Medical payments coverage may be exhausted by Robert Martinez's treatment"
+        ]
+    },
+    "coverage_determination": {
+        "is_covered": true,
+        "applicable_provisions": [
+            "Bodily Injury Liability coverage",
+            "Property Damage Liability coverage",
+            "Medical Payments coverage",
+            "Uninsured/Underinsured Motorist coverage (if applicable)"
+        ],
+        "exclusions_limitations": [
+            "Policy limits of $250,000 per person/$500,000 per accident for BI",
+            "$100,000 limit for PD",
+            "$10,000 limit for Medical Payments",
+            "Possible intentional acts exclusion if red light violation is proven willful"
+        ],
+        "determination_rationale": "The loss appears to be covered under the insured's policy as it involves an auto accident with the insured vehicle. Bodily Injury and Property Damage liability coverage would apply to claims made by Sarah Johnson and Robert Martinez. Medical Payments coverage may apply to the insured's medical expenses. The key coverage issue will be determining liability percentages among the parties, as this will affect how the policy limits are allocated. There are no apparent policy exclusions that would bar coverage, though the limits may be insufficient for the severe injuries sustained by Robert Martinez."
+    },
+    "liability_assessment": {
+        "insured_liability_percentage": 40,
+        "claimant_liability_percentage": 50,
+        "third_party_liability_percentage": 10,
+        "liability_rationale": "Based on the conflicting evidence, it appears both drivers share responsibility for the accident. The insured may have failed to properly observe the traffic signal (per police report and witness James Taylor), while Sarah Johnson admitted to accelerating to make a yellow light and was traveling above the speed limit. The delivery truck's obstruction of visibility contributes to the accident as a proximate cause. The pedestrian bears no liability as he had the walk signal. Applying comparative negligence principles, I assign 40% liability to the insured for potential failure to observe traffic signal and maintain proper lookout, 50% to Sarah Johnson for speeding and attempting to beat the light, and 10% to QuickShip Delivery for creating a hazardous visibility condition by parking where they did."
+    },
+    "damages_evaluation": {
+        "economic_damages": {
+            "medical_expenses": 230700.0,
+            "wage_loss": 12000.0,
+            "property_damage": 32000.0,
+            "other_economic": 3500.0
+        },
+        "non_economic_damages": {
+            "pain_suffering": 350000.0,
+            "other_non_economic": 50000.0
+        },
+        "future_damages": 58400.0,
+        "total_damages": 700600.0,
+        "recommended_reserves": 500000.0,
+        "evaluation_rationale": "Economic damages include current medical expenses ($230,700 - $219,300 for Robert Martinez + $7,125 for Sarah Johnson + $4,400 for insured), wage loss ($12,000 - $11,200 for Sarah Johnson + $750 for insured + $50 estimated for Robert Martinez), property damage ($32,000 - $15,000 insured vehicle + $12,000 Honda + $5,000 city property), and other economic ($3,500 for Robert Martinez's equipment). Non-economic damages estimated at $350,000 for pain/suffering (primarily Robert Martinez) and $50,000 for other non-economic (loss of enjoyment, etc.). Future damages include Robert Martinez's projected medical costs ($53,400) and $5,000 for Sarah Johnson's therapy. Recommended reserves set at $500,000 considering policy limits and liability percentages."
+    },
+    "resolution_strategy": {
+        "settlement_authority": 250000.0,
+        "negotiation_approach": "Begin with mediation to resolve liability disputes. For Robert Martinez's claim, offer policy limits of $250,000 once medical treatment stabilizes, with agreement to waive excess liability. For Sarah Johnson's claim, negotiate based on 40% liability share (approximately $30,000). For property damage, pay claims promptly. Consider tendering limits to Robert Martinez early to mitigate excess exposure. Explore contribution from Sarah Johnson's insurer and potential third-party claim against QuickShip.",
+        "potential_barriers": [
+            "Conflicting liability evidence may prolong negotiations",
+            "Severity of Robert Martinez's injuries may exceed policy limits",
+            "Sarah Johnson may dispute liability percentage",
+            "QuickShip may deny responsibility for visibility issues",
+            "Potential bad faith concerns if claims handling is delayed"
+        ],
+        "proposed_timeline": "1. Immediate: Secure all medical records and wage documentation (30 days). 2. Month 2-3: Complete independent accident reconstruction. 3. Month 3: Begin settlement negotiations with Robert Martinez's attorney. 4. Month 4: Mediation with Sarah Johnson's insurer. 5. Month 5-6: Finalize all settlements or prepare for litigation if necessary."
+    },
+    "communications": {
+        "insured_update": "Dear Mr. Wilson, This letter serves as an update regarding your claim AL-2023-45678. We have reviewed all available information, including the police report, witness statements, and your recorded statement. While the investigation is ongoing, we want to assure you we are working diligently to resolve this matter. There are conflicting accounts regarding the traffic signal status at the time of the accident, and we are obtaining additional evidence to clarify this issue. We have arranged for an independent accident reconstruction to help determine liability. Your medical treatment appears to be progressing well, and we will continue to process those expenses under your Medical Payments coverage. Please continue to keep us informed of any changes in your condition or treatment. If you have any questions, please contact your adjuster at 555-555-1212. Sincerely, Claims Adjuster",
+        "claimant_attorney_request": "Dear Attorney Smith, Re: Robert Martinez claim Our file: AL-2023-45678 Your client: Robert Martinez We are writing to request updated medical records and treatment plans for Mr. Martinez to properly evaluate his claim. Specifically, we need: 1. Most recent physician reports and prognosis 2. Physical therapy progress notes 3. Documentation of any anticipated future treatment 4. Verification of lost wages 5. Health insurance lien information, if applicable Please provide these documents within 30 days to facilitate our evaluation. We would also like to schedule an independent medical examination once Mr. Martinez's condition has stabilized. Please contact us to arrange this. We remain willing to discuss potential resolution of this claim and would be available for a settlement conference at your convenience. Sincerely, Claims Adjuster",
+        "file_note": "File Note - AL-2023-45678 Date: 06/15/2023 Summary: Completed initial review of all claim materials. Key issues: 1. Conflicting evidence regarding traffic signal status - police report cites insured for red light violation but witness Maria Garcia supports insured's claim of green light. 2. Severe injuries to pedestrian Robert Martinez likely to exceed policy limits. 3. Sarah Johnson admits to speeding to make yellow light. 4. Delivery truck obstruction appears to be contributing factor. Action Plan: 1. Order independent accident reconstruction. 2. Request complete medical records for all injured parties. 3. Begin settlement discussions with Robert Martinez's attorney, anticipating tender of policy limits. 4. Contact QuickShip Delivery regarding potential contribution. 5. Schedule mediation with Sarah Johnson's insurer. Reserves set at $500,000 based on current exposure. Will re-evaluate after receiving reconstruction report and updated medicals."
+    },
+    "additional_observations": [
+        "Potential for excess verdict given severity of pedestrian injuries",
+        "Consider recommending insured retain personal counsel for excess exposure",
+        "QuickShip Delivery may have some liability for parking in manner that obstructed views",
+        "Police citation to insured may be problematic despite conflicting evidence",
+        "Early mediation recommended to resolve liability disputes",
+        "Medical payments coverage should be paid promptly to insured"
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "candidate_id": "12345",
+    "model_version": "GPT-4-turbo",
+    "data_analysis_summary": "Analysis of sales data and current inventory levels revealed several key findings. Black Pens are in high demand (250 sold last month) but low supply (only 30 in stock). A4 Paper also shows high demand (120 sold) with low current stock (25). Conversely, Staplers are overstocked (150 in stock) despite low sales (15 sold). Employee feedback corroborates these findings, highlighting shortages of Black Pens and A4 Paper while noting excess Staplers.",
+    "identified_supply_issues": [
+        {
+            "item_name": "Black Pens",
+            "reasoning": "High sales volume (250 units) with critically low inventory (30 units). Employee feedback specifically mentions frequent shortages."
+        },
+        {
+            "item_name": "A4 Paper",
+            "reasoning": "Significant sales (120 units) with low current stock (25 units). Employees report shortages towards the end of the week."
+        },
+        {
+            "item_name": "Staplers",
+            "reasoning": "Overstocked (150 units) with minimal sales (15 units). Employee feedback explicitly states 'we definitely don't need more of those.'"
+        }
+    ],
+    "purchasing_plan": {
+        "item_plans": [
+            {
+                "item_name": "Black Pens",
+                "target_inventory_level": 300,
+                "target_level_reasoning": "Based on last month's sales of 250, plus 20% buffer for demand fluctuations.",
+                "reorder_point": 100,
+                "reorder_point_reasoning": "Allows for one week's supply (approx 60 units) plus safety stock."
+            },
+            {
+                "item_name": "A4 Paper",
+                "target_inventory_level": 150,
+                "target_level_reasoning": "Based on last month's usage of 120, plus 25% buffer for peak periods.",
+                "reorder_point": 50,
+                "reorder_point_reasoning": "Ensures replenishment before reaching critical levels reported by employees."
+            },
+            {
+                "item_name": "Staplers",
+                "target_inventory_level": 30,
+                "target_level_reasoning": "Dramatic reduction from current 150, as sales data shows very low demand (15/month).",
+                "reorder_point": 10,
+                "reorder_point_reasoning": "Maintain minimal stock given low usage rate."
+            }
+        ],
+        "review_frequency": "Monthly"
+    },
+    "employee_access_strategy": "The purchasing plan ensures adequate stock of high-demand items (Black Pens, A4 Paper) while reducing overstock of underutilized items (Staplers). By maintaining appropriate inventory levels and reorder points, employees will have consistent access to essential supplies without unnecessary stockpiling. Monthly reviews allow for adjustments based on changing usage patterns."
+}

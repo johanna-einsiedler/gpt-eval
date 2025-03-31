@@ -1,0 +1,33 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "task_1": {
+        "items": [
+            {
+                "name": "Item Name Example from Catalog (Hypothetical)",
+                "price": "$99.99",
+                "supplier": "Supplier Name from Catalog (Hypothetical)",
+                "source": "Catalog"
+            },
+            {
+                "name": "Service Example from Periodical (Hypothetical)",
+                "price": "$50.00",
+                "supplier": "Supplier Name from Periodical (Hypothetical)",
+                "source": "Periodical"
+            }
+        ]
+    },
+    "task_2": {
+        "suppliers": [
+            {
+                "name": "Branch Furniture",
+                "url": "https://www.branchfurniture.com/",
+                "contact_info": "Contact form available on website: https://www.branchfurniture.com/contact"
+            },
+            {
+                "name": "Fully",
+                "url": "https://www.fully.com/",
+                "contact_info": "Phone: 888-511-3377, Email & Chat available on website: https://www.fully.com/contact"
+            }
+        ]
+    }
+}

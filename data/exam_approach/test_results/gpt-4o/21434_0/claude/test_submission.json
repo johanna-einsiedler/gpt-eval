@@ -1,0 +1,15 @@
+{
+    "candidate_id": "Claude-3-Opus-20240229",
+    "task_1": {
+        "spreadsheet_link": "https://example.com/my_organized_claims_spreadsheet.xlsx",
+        "summary": {
+            "total_claims": 157,
+            "total_settlement_amount": 2345678.92,
+            "average_settlement_amount": 14940.63
+        }
+    },
+    "task_2": {
+        "text_document_link": "https://example.com/claims_analysis_document.txt",
+        "notes": "I organized the claims requiring detailed analysis by categorizing them based on issue type and severity. I created a structured format that includes the Claim ID, Claimant Name, Issue Description, and added columns for Priority Level and Next Steps. I faced challenges with some ambiguous issue descriptions that required additional context, which I noted in a separate section. I also included a summary of common issues identified across multiple claims to help identify potential patterns."
+    }
+}

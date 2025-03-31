@@ -1,0 +1,96 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "product_identification": {
+            "name": "Ergonomic High-Back Office Chair with Adjustable Lumbar Support",
+            "category": "Office Furniture - Ergonomic Seating",
+            "intended_use": "Designed for prolonged office use in corporate environments, providing ergonomic support for 8+ hours of daily use with multiple adjustment points for personalized comfort."
+        },
+        "technical_requirements": {
+            "dimensions": "Height: 45-52 inches (114-132 cm), Width: 27 inches (68.5 cm), Depth: 25 inches (63.5 cm), Seat Height: 16-21 inches (40.6-53.3 cm) adjustable",
+            "weight_capacity": "300 lbs (136 kg) minimum",
+            "materials": [
+                "Mesh backrest: Polyester mesh with minimum tensile strength of 200 lbs (90.7 kg)",
+                "Seat cushion: High-density foam (minimum 1.8 lb/ft³ density)",
+                "Frame: Reinforced nylon base with aluminum reinforcement",
+                "Armrests: PU-coated adjustable armrests",
+                "Base: 5-star aluminum base with 26-inch (66 cm) diameter"
+            ]
+        },
+        "performance_requirements": {
+            "adjustability_features": [
+                "Seat height adjustment range: 16-21 inches (40.6-53.3 cm)",
+                "Backrest recline: 95-120 degrees with locking positions",
+                "Lumbar support: Height and depth adjustable",
+                "Armrests: 4D adjustable (height, width, pivot, and depth)",
+                "Headrest: Height and angle adjustable",
+                "Seat depth adjustment: 15-18 inches (38-45.7 cm)"
+            ],
+            "ergonomic_standards": [
+                "ANSI/BIFMA X5.1-2017 compliant",
+                "ANSI/BIFMA G1-2013 ergonomic guidelines",
+                "Seat pan tilt: 0-5 degrees forward tilt capability"
+            ]
+        },
+        "quality_standards": {
+            "certifications": [
+                "Greenguard Gold Certification (for low chemical emissions)",
+                "BIFMA level® certification (minimum level 1)",
+                "California TB 117-2013 flammability standards"
+            ],
+            "testing_requirements": [
+                "Cycle testing: Minimum 100,000 tilt mechanism cycles",
+                "Impact testing: Seat drop test from 6 inches (15 cm) with 225 lbs (102 kg) load",
+                "Fabric durability: Minimum 100,000 double rubs (Wyzenbeek method)",
+                "Base stability: 250 lbs (113 kg) load at 20 degree tilt without tipping"
+            ]
+        },
+        "compliance_requirements": {
+            "safety_standards": [
+                "ANSI/BIFMA X5.1-2017 safety requirements",
+                "OSHA 1910.90 ergonomic standards",
+                "ASTM F1858-98 (office chair stability)"
+            ],
+            "environmental_considerations": [
+                "Minimum 30% recycled content in materials",
+                "VOC emissions compliant with ANSI/BIFMA X7.1-2011",
+                "Packaging made from minimum 50% recycled materials",
+                "Disassembly instructions for proper recycling included"
+            ]
+        }
+    },
+    "task2": {
+        "identified_issues": [
+            {
+                "issue_number": 1,
+                "issue_description": "Screen size specification is vague ('approximately 24\"') without exact measurement or tolerance",
+                "location_in_document": "Section 2, Screen Size",
+                "correction": "Screen Size: 24.0 inches diagonal (60.96 cm) ±0.2 inches, measured viewable area"
+            },
+            {
+                "issue_number": 2,
+                "issue_description": "Resolution specification is non-technical ('good quality') without specific pixel dimensions",
+                "location_in_document": "Section 2, Resolution",
+                "correction": "Resolution: 1920 x 1080 pixels (Full HD) minimum, with 16:9 aspect ratio"
+            },
+            {
+                "issue_number": 3,
+                "issue_description": "Response time is subjective ('fast') without numerical specification",
+                "location_in_document": "Section 2, Response Time",
+                "correction": "Response Time: 5ms gray-to-gray (GtG) maximum"
+            },
+            {
+                "issue_number": 4,
+                "issue_description": "Connectivity ports are not specified ('multiple ports')",
+                "location_in_document": "Section 2, Connectivity",
+                "correction": "Connectivity: Must include 1x HDMI 2.0, 1x DisplayPort 1.2, 1x VGA, and 4x USB 3.0 downstream ports"
+            },
+            {
+                "issue_number": 5,
+                "issue_description": "Performance requirements lack measurable criteria ('should work well', 'clear display')",
+                "location_in_document": "Section 4, Performance Requirements",
+                "correction": "Performance Requirements: Must support 99% sRGB color gamut, 300 cd/m² brightness, 1000:1 contrast ratio, and 178° viewing angles (horizontal/vertical)"
+            }
+        ]
+    }
+}

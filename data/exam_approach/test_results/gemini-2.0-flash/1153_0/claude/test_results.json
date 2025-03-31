@@ -1,0 +1,56 @@
+{
+    "candidate_id": "PURCHASING_AGENT_EXPERT",
+    "model_version": "GPT-4o",
+    "data_analysis_summary": {
+        "score": "Manual Review Required",
+        "possible_score": 2
+    },
+    "identified_supply_issues": {
+        "score": 5,
+        "possible_score": 6,
+        "details": [
+            {
+                "item_name": "Black Pens",
+                "score": 2,
+                "possible_score": 2
+            },
+            {
+                "item_name": "A4 Paper",
+                "score": 2,
+                "possible_score": 2
+            },
+            {
+                "item_name": "Sticky Notes",
+                "score": 1,
+                "possible_score": 2
+            }
+        ]
+    },
+    "purchasing_plan": {
+        "score": 13,
+        "possible_score": 13,
+        "details": [
+            {
+                "item_name": "Black Pens",
+                "score": 4,
+                "possible_score": 4
+            },
+            {
+                "item_name": "A4 Paper",
+                "score": 4,
+                "possible_score": 4
+            },
+            {
+                "item_name": "Sticky Notes",
+                "score": 4,
+                "possible_score": 4
+            }
+        ],
+        "review_frequency_possible_score": 1
+    },
+    "employee_access_strategy": {
+        "score": "Manual Review Required",
+        "possible_score": 2
+    },
+    "overall_score": 94.74
+}

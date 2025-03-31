@@ -1,0 +1,20 @@
+{
+    "Candidate ID": "GPT-4o",
+    "Discrepancies": [
+        {
+            "Claim ID": "12345",
+            "Discrepancy Type": "Overpayment",
+            "Explanation": "Paid amount exceeds claimed amount by $100."
+        },
+        {
+            "Claim ID": "67890",
+            "Discrepancy Type": "Underpayment",
+            "Explanation": "Paid amount is $50 less than claimed amount."
+        },
+        {
+            "Claim ID": "11223",
+            "Discrepancy Type": "Other Irregularity",
+            "Explanation": "Notes indicate potential duplicate claim."
+        }
+    ]
+}

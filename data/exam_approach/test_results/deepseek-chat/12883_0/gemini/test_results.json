@@ -1,0 +1,57 @@
+{
+  "overall_score": 100.0,
+  "task_1": {
+    "score": 3,
+    "total": 3,
+    "details": [
+      {
+        "entry": 1,
+        "status": "correct"
+      },
+      {
+        "entry": 2,
+        "status": "correct"
+      },
+      {
+        "entry": 3,
+        "status": "correct"
+      }
+    ]
+  },
+  "task_2": {
+    "score": 3,
+    "total": 3,
+    "details": [
+      {
+        "entry": 1,
+        "status": "correct"
+      },
+      {
+        "entry": 2,
+        "status": "correct"
+      },
+      {
+        "entry": 3,
+        "status": "correct"
+      }
+    ]
+  },
+  "task_3": {
+    "score": 3,
+    "total": 3,
+    "details": [
+      {
+        "entry": 1,
+        "status": "correct"
+      },
+      {
+        "entry": 2,
+        "status": "correct"
+      },
+      {
+        "entry": 3,
+        "status": "correct"
+      }
+    ]
+  }
+}

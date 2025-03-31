@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "items": [
+            {
+                "item_id": "1",
+                "duty_payable": "5.00"
+            },
+            {
+                "item_id": "2",
+                "duty_payable": "20.00"
+            },
+            {
+                "item_id": "3",
+                "duty_payable": "1.00"
+            }
+        ],
+        "total_duty": "26.00"
+    },
+    "task_2": {
+        "freight_quote": {
+            "service_provider": "FedEx",
+            "quote_amount": "75.50",
+            "currency": "USD",
+            "confirmation_number": "FEDEX12345"
+        }
+    }
+}

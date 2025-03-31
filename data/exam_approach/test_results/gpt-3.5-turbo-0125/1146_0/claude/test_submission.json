@@ -1,0 +1,67 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "task_1": {
+        "laws_and_regulations": [
+            {
+                "name": "Export Administration Regulations (EAR)",
+                "description": "U.S. regulations administered by the Bureau of Industry and Security (BIS) that govern the export and re-export of commercial and dual-use items, including most electronic components.",
+                "application": "When purchasing electronic components from international suppliers, companies must ensure the components aren't controlled items requiring export licenses. They must verify the supplier isn't on restricted entity lists and confirm the end-use doesn't violate EAR restrictions."
+            },
+            {
+                "name": "Restriction of Hazardous Substances (RoHS) Directive",
+                "description": "European Union directive that restricts the use of specific hazardous materials in electrical and electronic products, including lead, mercury, cadmium, hexavalent chromium, PBBs, and PBDEs.",
+                "application": "Electronic components purchased from international suppliers must comply with RoHS standards if the final products will be sold in the EU market. Purchasing agents must obtain documentation certifying RoHS compliance from suppliers and verify components meet the restricted substance thresholds."
+            },
+            {
+                "name": "Federal Communications Commission (FCC) Regulations",
+                "description": "U.S. regulations that govern electromagnetic compatibility and radio frequency emissions from electronic devices to prevent harmful interference with radio communications.",
+                "application": "Electronic components must comply with FCC standards if they will be incorporated into products sold in the U.S. market. Purchasing agents must ensure suppliers provide appropriate test reports and certification documentation demonstrating compliance with applicable FCC requirements."
+            },
+            {
+                "name": "Customs-Trade Partnership Against Terrorism (C-TPAT)",
+                "description": "A voluntary U.S. Customs and Border Protection program that strengthens international supply chains and improves U.S. border security through partnerships with importers and international suppliers.",
+                "application": "When importing electronic components, companies participating in C-TPAT must ensure their international suppliers meet security criteria and follow best practices for supply chain security. This includes verifying the supplier's security measures and maintaining documentation of compliance."
+            }
+        ]
+    },
+    "task_2": {
+        "compliance_checklist": [
+            {
+                "item": "Verify that the electronic components are not on the Commerce Control List (CCL) or require an export license under EAR",
+                "law_or_regulation": "Export Administration Regulations (EAR)"
+            },
+            {
+                "item": "Screen the international supplier against restricted party lists including the Denied Persons List, Entity List, and Unverified List",
+                "law_or_regulation": "Export Administration Regulations (EAR)"
+            },
+            {
+                "item": "Obtain end-use and end-user certifications to ensure components won't be used for prohibited purposes",
+                "law_or_regulation": "Export Administration Regulations (EAR)"
+            },
+            {
+                "item": "Request and maintain RoHS compliance documentation from the supplier, including material declarations and test reports",
+                "law_or_regulation": "Restriction of Hazardous Substances (RoHS) Directive"
+            },
+            {
+                "item": "Verify that electronic components meet substance restriction thresholds for lead, mercury, cadmium, and other restricted materials",
+                "law_or_regulation": "Restriction of Hazardous Substances (RoHS) Directive"
+            },
+            {
+                "item": "Obtain FCC test reports and certification documentation for electronic components that may affect electromagnetic compatibility",
+                "law_or_regulation": "Federal Communications Commission (FCC) Regulations"
+            },
+            {
+                "item": "Verify that components meet applicable FCC emissions standards for the intended product classification",
+                "law_or_regulation": "Federal Communications Commission (FCC) Regulations"
+            },
+            {
+                "item": "Assess the international supplier's security protocols and verify they meet C-TPAT minimum security criteria",
+                "law_or_regulation": "Customs-Trade Partnership Against Terrorism (C-TPAT)"
+            },
+            {
+                "item": "Document the supplier's supply chain security measures and maintain records for C-TPAT compliance",
+                "law_or_regulation": "Customs-Trade Partnership Against Terrorism (C-TPAT)"
+            }
+        ]
+    }
+}

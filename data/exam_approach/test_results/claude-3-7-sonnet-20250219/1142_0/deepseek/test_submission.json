@@ -1,0 +1,73 @@
+{
+    "candidateID": "Claude-3-Sonnet",
+    "exercise1": {
+        "selectedSupplier": "OfficeMart Global",
+        "justification": "OfficeMart Global provides the best balance across all evaluation criteria. While not the absolute best in any single category, their scores are strong across quality (7), price (8), and reliability (7). The calculated total score of 7.20 outperforms competitors when considering the weighted importance of each factor. Their free shipping on orders over $5,000 and standard 3-year warranty provide additional value. This selection optimizes for both cost-effectiveness and risk mitigation, as they don't have the quality concerns of ValueFurn or the premium pricing of EcoOffice and PremiumWork.",
+        "qualityScore": 7.0,
+        "costScore": 8.0,
+        "reliabilityScore": 7.0,
+        "totalScore": 7.2
+    },
+    "exercise2": {
+        "optimalOrderQuantity": {
+            "floorCleaner": 30,
+            "disinfectant": 25
+        },
+        "totalAnnualCost": {
+            "floorCleaner": 5688.0,
+            "disinfectant": 4239.0
+        },
+        "costSavings": {
+            "floorCleaner": 432.0,
+            "disinfectant": 261.0
+        },
+        "breakdownCalculations": "For floor cleaner: EOQ = √((2*120*75)/(45*0.18)) = 47.14 → adjusted to 30 for discount. Annual cost = (120*45*0.97) + (120/30*75) + (30/2*45*0.18*0.97) = 5238 + 300 + 117.86 = 5688. Current cost = (120*45) + (120/20*75) + (20/2*45*0.18) = 5400 + 450 + 81 = 5931. Savings = 5931 - 5688 = 243. For disinfectant: EOQ = √((2*120*75)/(32.5*0.18)) = 55.47 → adjusted to 25 for discount. Annual cost = (120*32.5*0.98) + (120/25*75) + (25/2*32.5*0.18*0.98) = 3822 + 360 + 71.66 = 4239. Current cost = (120*32.5) + (120/15*75) + (15/2*32.5*0.18) = 3900 + 600 + 43.88 = 4500. Savings = 4500 - 4239 = 261."
+    },
+    "exercise3": {
+        "poNumber": "PO-2023-001",
+        "lineItems": [
+            {
+                "itemNumber": "TS-LT-15",
+                "description": "Business Laptop, 15\" Display",
+                "quantity": 5,
+                "unitPrice": 1249.99,
+                "totalPrice": 6249.95
+            },
+            {
+                "itemNumber": "TS-MN-24",
+                "description": "24\" Monitor, 4K Resolution",
+                "quantity": 8,
+                "unitPrice": 289.99,
+                "totalPrice": 2319.92
+            },
+            {
+                "itemNumber": "TS-KB-WL",
+                "description": "Wireless Keyboard and Mouse Combo",
+                "quantity": 10,
+                "unitPrice": 79.99,
+                "totalPrice": 799.9
+            },
+            {
+                "itemNumber": "TS-DK-USB",
+                "description": "USB-C Docking Station",
+                "quantity": 5,
+                "unitPrice": 159.99,
+                "totalPrice": 799.95
+            }
+        ],
+        "subtotal": 10169.72,
+        "tax": 762.73,
+        "shipping": 125.0,
+        "grandTotal": 11057.45
+    },
+    "exercise4": {
+        "initialOfferAnalysis": "The initial offer from MetalWorks is above market average at $3.85/lb when current market average is $3.65. Their terms are less favorable than standard (Net 15 vs typical Net 30, 4-week delivery vs 2-3 week market standard). However, our history as a regular customer for 2+ years with perfect payment history provides leverage for negotiation. The 5,000 lb minimum is double typical market minimums. Given raw aluminum prices have decreased 5% and supply chain improvements, we should expect better pricing and terms.",
+        "counterofferPrice": 3.55,
+        "requestedTerms": [
+            "Net 30 payment terms",
+            "3-week maximum delivery timeframe"
+        ],
+        "justification": "The counteroffer of $3.55/lb is reasonable given: 1) Current market range goes as low as $3.45, 2) Our history as a reliable customer deserves preferred pricing, 3) The large order quantity (double typical minimum) warrants additional discount. Requesting Net 30 terms aligns with industry standards and improves our cash flow. The reduced delivery time is achievable given improved supply chains. This offer would save $1,500 vs their initial quote while still providing them healthy margins.",
+        "expectedSavings": 1500.0
+    }
+}

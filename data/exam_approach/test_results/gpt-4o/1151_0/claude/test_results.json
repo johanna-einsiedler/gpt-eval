@@ -1,0 +1,25 @@
+{
+    "task_1_results": {
+        "total_items_correct": false,
+        "total_cost_correct": false,
+        "earliest_date_correct": false,
+        "latest_date_correct": false,
+        "task_1_score": 0.0
+    },
+    "task_2_results": [
+        {
+            "product_name": "Industrial Pump XL-500",
+            "correct": false
+        },
+        {
+            "product_name": "Circuit Board Assembly CB-200",
+            "correct": false
+        },
+        {
+            "product_name": "Hydraulic Valve HV-100",
+            "correct": false
+        }
+    ],
+    "overall_pass": false,
+    "overall_score": 0.0
+}

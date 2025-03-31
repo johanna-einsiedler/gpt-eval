@@ -1,0 +1,19 @@
+{
+  "Total Cost PO-2023-103_expected": "500.00",
+  "Total Cost PO-2023-103_submitted": "500.00",
+  "Total Cost PO-2023-103_score": 1,
+  "Overdue Delivery POs_expected": [
+    "PO-2023-103",
+    "PO-2023-108",
+    "PO-2023-110"
+  ],
+  "Overdue Delivery POs_submitted": [
+    "PO-2023-103",
+    "PO-2023-110"
+  ],
+  "Overdue Delivery POs_score": 0,
+  "Global Components Inc. Order Count_expected": "3",
+  "Global Components Inc. Order Count_submitted": "2",
+  "Global Components Inc. Order Count_score": 0,
+  "overall_score": 33.33
+}

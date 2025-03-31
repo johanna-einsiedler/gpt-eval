@@ -1,0 +1,118 @@
+{
+    "candidateId": "YOUR_ID_HERE",
+    "modelVersion": "Claude-3-Sonnet",
+    "exercise1": {
+        "poNumber": "PO-2023-0472",
+        "vendorID": "VS-1042",
+        "requisitionNumber": "PR-2023-0472",
+        "orderDate": "2023-10-25",
+        "deliveryDate": "2023-11-05",
+        "subtotal": 1604.83,
+        "taxAmount": 120.36,
+        "shippingCost": 45.0,
+        "totalAmount": 1770.19,
+        "paymentTerms": "Net 30",
+        "lineItems": [
+            {
+                "itemNumber": "CAM-4582",
+                "description": "Digital Camera - 24MP",
+                "quantity": 2,
+                "unitPrice": 649.99,
+                "totalPrice": 1299.98
+            },
+            {
+                "itemNumber": "TRP-2234",
+                "description": "Professional Tripod - Adjustable",
+                "quantity": 2,
+                "unitPrice": 89.95,
+                "totalPrice": 179.9
+            },
+            {
+                "itemNumber": "MEM-8877",
+                "description": "SD Memory Card 128GB",
+                "quantity": 5,
+                "unitPrice": 24.99,
+                "totalPrice": 124.95
+            }
+        ]
+    },
+    "exercise2": {
+        "rfqNumber": "RFQ-2023-0095",
+        "issueDate": "2023-10-25",
+        "submissionDeadline": "2023-11-08",
+        "contactPerson": "Purchasing Department",
+        "items": [
+            {
+                "itemName": "Ergonomic Office Chair",
+                "quantity": 15,
+                "specifications": "Adjustable height (range: 16\" to 21\"), Lumbar support, Adjustable armrests, 360-degree swivel, Five-wheel base, Mesh back for breathability, Weight capacity: minimum 275 lbs, Color: Black or Navy Blue, Warranty: Minimum 3 years"
+            },
+            {
+                "itemName": "Adjustable Standing Desk",
+                "quantity": 10,
+                "specifications": "Electric height adjustment (range: 28\" to 48\"), Desktop dimensions: 60\" W x 30\" D, Weight capacity: minimum 200 lbs, Programmable height presets, Anti-collision feature, Cable management system, Material: Commercial-grade laminate, Color: White or Light Oak, Warranty: Minimum 5 years on frame, 2 years on electronics"
+            },
+            {
+                "itemName": "Filing Cabinet",
+                "quantity": 5,
+                "specifications": "4-drawer vertical cabinet, Letter size, Full-extension drawers with ball-bearing slides, Central locking system, Anti-tipping mechanism, Dimensions: approximately 15\" W x 25\" D x 52\" H, Material: Steel construction, Color: Black or Gray, Warranty: Minimum 5 years"
+            }
+        ],
+        "evaluationCriteria": [
+            {
+                "criterionName": "Price",
+                "weight": 40
+            },
+            {
+                "criterionName": "Quality",
+                "weight": 30
+            },
+            {
+                "criterionName": "Delivery time",
+                "weight": 20
+            },
+            {
+                "criterionName": "Warranty",
+                "weight": 10
+            }
+        ],
+        "termsIncluded": true
+    },
+    "exercise3": {
+        "requisitions": [
+            {
+                "requisitionNumber": "PR-2023-0473",
+                "isComplete": true,
+                "itemsInCatalog": true,
+                "policyCompliant": true,
+                "calculatedTotal": 5804.9,
+                "decision": "approve",
+                "justification": "All required information is present, items are from an approved vendor, and the requisition complies with company policies.",
+                "missingInformation": "",
+                "suggestedVendor": "Computer World (VS-1156)"
+            },
+            {
+                "requisitionNumber": "PR-2023-0474",
+                "isComplete": false,
+                "itemsInCatalog": false,
+                "policyCompliant": false,
+                "calculatedTotal": 5267.45,
+                "decision": "return",
+                "justification": "Missing department manager approval, items not in approved catalog, and vendor not on approved vendor list.",
+                "missingInformation": "Department manager approval, item numbers",
+                "suggestedVendor": "Furniture Plus (VS-1103)"
+            },
+            {
+                "requisitionNumber": "PR-2023-0475",
+                "isComplete": true,
+                "itemsInCatalog": true,
+                "policyCompliant": true,
+                "calculatedTotal": 1112.14,
+                "decision": "approve",
+                "justification": "All required information is present, items are from an approved vendor, and the requisition complies with company policies.",
+                "missingInformation": "",
+                "suggestedVendor": "Office Essentials (VS-1087)"
+            }
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "task_1": {
+        "product_features": "The product should have a high-resolution display, a minimum of 8GB RAM, and a battery life of at least 10 hours.",
+        "quality_standards": "The product must comply with ISO 9001 quality management standards and have a CE certification.",
+        "dimensions": "The product should measure 15 inches in width, 10 inches in height, and 0.5 inches in depth.",
+        "materials": "The product should be made of aluminum alloy for the body and tempered glass for the screen.",
+        "additional_information": "The product should support wireless connectivity, including Wi-Fi 6 and Bluetooth 5.0."
+    },
+    "task_2": [
+        {
+            "issue": "The specification lists 'plastic' as the material for the body.",
+            "explanation": "Plastic is not as durable as aluminum alloy, which is specified in the requirements.",
+            "suggestion": "Change the material to 'aluminum alloy' for better durability and compliance with the requirements."
+        },
+        {
+            "issue": "The battery life is stated as 'at least 8 hours'.",
+            "explanation": "The requirement specifies a minimum battery life of 10 hours.",
+            "suggestion": "Update the battery life to 'at least 10 hours' to meet the specified requirements."
+        },
+        {
+            "issue": "The specification does not mention CE certification.",
+            "explanation": "CE certification is required to ensure compliance with European safety standards.",
+            "suggestion": "Include 'CE certification' in the quality standards section."
+        }
+    ]
+}

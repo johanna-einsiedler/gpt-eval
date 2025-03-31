@@ -1,0 +1,79 @@
+{
+    "candidateId": "GPT-4o",
+    "exercise1": {
+        "relevantProvisions": [
+            {
+                "farReference": "FAR 9.405",
+                "title": "Effect of Listing",
+                "applicationToScenario": "This provision applies because two potential suppliers are proposed for debarment, which means they are excluded from receiving contracts unless a compelling reason is determined by the agency head."
+            },
+            {
+                "farReference": "FAR 19.502-2",
+                "title": "Total Small Business Set-Asides",
+                "applicationToScenario": "The procurement must be set aside for small businesses as the value exceeds the micro-purchase threshold but not the simplified acquisition threshold, and there are at least five small businesses capable of providing the equipment."
+            },
+            {
+                "farReference": "FAR 23.103",
+                "title": "Sustainable Acquisition Policy",
+                "applicationToScenario": "The agency's sustainability initiative requires that the office equipment, such as computers and printers, be ENERGY STAR certified, aligning with the sustainable acquisition policy."
+            }
+        ]
+    },
+    "exercise2": {
+        "complianceIssues": [
+            {
+                "issueDescription": "No formal supplier qualification process.",
+                "regulationViolated": "FDA 21 CFR 820.50",
+                "correctiveAction": "Establish a documented supplier qualification process to ensure all suppliers meet quality standards and are checked against government exclusion lists."
+            },
+            {
+                "issueDescription": "Verbal communication of quality requirements.",
+                "regulationViolated": "FDA 21 CFR 820.40",
+                "correctiveAction": "Implement written documentation for quality requirements communicated to suppliers to ensure compliance and traceability."
+            },
+            {
+                "issueDescription": "Undisclosed conflict of interest.",
+                "regulationViolated": "Federal Anti-Kickback Statute",
+                "correctiveAction": "Develop a formal conflict of interest policy and require disclosure of any personal relationships with suppliers to prevent biased decision-making."
+            }
+        ]
+    },
+    "exercise3": {
+        "scenarioDecisions": [
+            {
+                "scenarioNumber": 1,
+                "isCompliant": false,
+                "applicableRegulations": [
+                    "ISO 13485:2016 Section 7.4.1"
+                ],
+                "correctAction": "Verify the supplier's certification through the industry database or obtain updated certification before proceeding with the purchase to ensure compliance with supplier qualification standards."
+            },
+            {
+                "scenarioNumber": 2,
+                "isCompliant": false,
+                "applicableRegulations": [
+                    "Dodd-Frank Act Section 1502"
+                ],
+                "correctAction": "Require detailed documentation of the supply chain to verify the 'conflict-free' status of minerals and ensure compliance with SEC reporting requirements."
+            },
+            {
+                "scenarioNumber": 3,
+                "isCompliant": false,
+                "applicableRegulations": [
+                    "TSCA",
+                    "OSHA Hazard Communication Standard"
+                ],
+                "correctAction": "Request updated SDS in the GHS format to ensure compliance with current hazardous materials documentation requirements before purchasing."
+            },
+            {
+                "scenarioNumber": 4,
+                "isCompliant": false,
+                "applicableRegulations": [
+                    "FAR 19.502-2",
+                    "FAR 52.219-6"
+                ],
+                "correctAction": "Consider the qualified small business to meet small business subcontracting goals, ensuring compliance with federal contract requirements for small business utilization."
+            }
+        ]
+    }
+}

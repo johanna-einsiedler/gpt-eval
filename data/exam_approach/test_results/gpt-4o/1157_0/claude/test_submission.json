@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4o",
+    "task_1_specification": {
+        "product_name": "Industrial-Grade HVAC Air Filter",
+        "dimensions": "24\" x 24\" x 2\" (609.6mm x 609.6mm x 50.8mm)",
+        "materials": "Aluminum frame, MERV 13 rated filter media, polyester backing, galvanized steel wire mesh support",
+        "performance_criteria": "Minimum efficiency reporting value (MERV) of 13, pressure drop not to exceed 0.35 inches w.g. at 500 FPM, minimum dust holding capacity of 180g, temperature resistance up to 200°F (93.3°C), humidity resistance up to 100% RH",
+        "additional_requirements": "Must comply with ASHRAE 52.2 standards, UL 900 Class 2 fire rating, antimicrobial treatment to prevent mold growth, individually sealed in plastic packaging with clear labeling of specifications, minimum service life of 3 months under standard operating conditions"
+    },
+    "task_2_review": [
+        {
+            "issue_description": "Ambiguous material specifications for the product casing",
+            "suggested_correction": "Specify exact material composition with grade (e.g., 'ABS plastic' should be changed to 'ABS plastic, UL94V-0 flame retardant grade') and minimum thickness requirements (e.g., '2.5mm ± 0.1mm wall thickness')"
+        },
+        {
+            "issue_description": "Missing critical performance parameters for electrical components",
+            "suggested_correction": "Add specific electrical requirements including input voltage range (100-240V AC), operating current (maximum 2.5A), power consumption (45W typical, 60W maximum), and required safety certifications (UL, CE, RoHS)"
+        },
+        {
+            "issue_description": "Inadequate quality control and testing requirements",
+            "suggested_correction": "Include detailed QC protocols: 100% functional testing before shipping, minimum 24-hour burn-in period, drop test requirements (survive 1m drop on concrete surface), and IP54 water/dust resistance testing methodology"
+        },
+        {
+            "issue_description": "Vague packaging and shipping specifications",
+            "suggested_correction": "Define exact packaging requirements: individual units in anti-static bags, foam inserts with minimum 1\" thickness on all sides, double-wall corrugated cartons (minimum 275# burst strength), maximum carton weight of 40 lbs, and palletized shipping with stretch wrap and corner protectors"
+        }
+    ]
+}

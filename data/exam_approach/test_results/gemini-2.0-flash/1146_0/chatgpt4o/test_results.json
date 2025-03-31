@@ -1,0 +1,23 @@
+{
+  "candidate_id": "YOUR_ID_HERE",
+  "model_version": "MODEL_VERSION_HERE",
+  "question_results": {
+    "1": {
+      "score": 1,
+      "feedback": "Correct regulation name and valid URL provided."
+    },
+    "2": {
+      "score": 0.5,
+      "feedback": "Partially correct - mentions some key concepts but missing others."
+    },
+    "3": {
+      "score": 0.5,
+      "feedback": "Partially correct - mentions some key concepts but missing others."
+    },
+    "4": {
+      "score": 0.5,
+      "feedback": "Partially correct - Step 1 (general search) is well described, but Step 2 is weaker."
+    }
+  },
+  "overall_score": 62.5
+}

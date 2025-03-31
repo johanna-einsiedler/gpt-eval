@@ -1,0 +1,66 @@
+{
+  "overall_score": 83.9952380952381,
+  "total_points": 100,
+  "passing_threshold": 70,
+  "tasks": {
+    "task1": {
+      "score": 20,
+      "max_points": 20,
+      "percentage": 100.0,
+      "feedback": [
+        "Correct festival commission calculation: +5 points",
+        "Correct endorsement deal commission calculation: +7 points",
+        "Correct streaming royalty commission calculation: +5 points",
+        "Clear explanation with contract clause references: +3 points"
+      ]
+    },
+    "task2": {
+      "score": 17.142857142857142,
+      "max_points": 20,
+      "percentage": 85.71428571428571,
+      "feedback": [
+        "Correctly identified all three discrepancies: +6 points",
+        "Correctly calculated all commission impacts: +6 points",
+        "Resolution steps quality: +5.142857142857142 points out of 8"
+      ]
+    },
+    "task3": {
+      "score": 16.285714285714285,
+      "max_points": 20,
+      "percentage": 81.42857142857143,
+      "feedback": [
+        "All required projects included in schedule: +5 points",
+        "Payment details accuracy: 21/21 correct: +5.0 points",
+        "Correctly prioritized deposits as high priority: +2.5 points",
+        "Schedule is properly organized chronologically: +2.5 points",
+        "Collection strategy quality: +1.2857142857142856 points out of 5"
+      ]
+    },
+    "task4": {
+      "score": 17.06666666666667,
+      "max_points": 20,
+      "percentage": 85.33333333333334,
+      "feedback": [
+        "Initial collection email quality: +8.666666666666668 points out of 10",
+        "  - Required elements: 7/9",
+        "  - Tone and professionalism: 4/4",
+        "Follow-up email quality: +8.4 points out of 10",
+        "  - Required elements: 9/10",
+        "  - Escalation and professionalism: 3/4"
+      ]
+    },
+    "task5": {
+      "score": 13.5,
+      "max_points": 20,
+      "percentage": 67.5,
+      "feedback": [
+        "Payment log accuracy: 38/38 correct fields: +12 points",
+        "Reconciliation notes quality: +1.5 points out of 8",
+        "  - Word count (71): 0/2",
+        "  - Key elements: 3/8: 1.5/4",
+        "  - Recommendations: 0/2"
+      ]
+    }
+  },
+  "passed": true
+}

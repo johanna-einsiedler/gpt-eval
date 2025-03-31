@@ -1,0 +1,41 @@
+{
+    "candidate_id": "purchasing_agent_expert",
+    "model_version": "GPT-4o",
+    "part1_duty_payment": {
+        "estimated_duty_amount": "500.00 USD",
+        "duty_calculation_steps": "Multiplied the total value of goods ($20,000 USD) by the duty rate for microcontrollers from China to USA (2.5%) to get $500.00 USD",
+        "common_duty_payment_methods": [
+            "ACH (Automated Clearing House) Payment",
+            "Single Transaction Bond"
+        ],
+        "steps_to_arrange_duty_payment": [
+            "Confirm the HS code classification with customs broker",
+            "Provide commercial invoice and packing list to customs broker",
+            "Verify the calculated duty amount of $500.00",
+            "Select payment method (ACH or bond)",
+            "Authorize customs broker to make payment on behalf of the company",
+            "Obtain receipt/confirmation of duty payment"
+        ]
+    },
+    "part2_freight_payment": {
+        "common_freight_payment_methods": [
+            "Wire Transfer",
+            "Corporate Credit Card"
+        ],
+        "steps_to_arrange_freight_payment": [
+            "Review the freight quote to confirm charges ($1,750 USD)",
+            "Note payment terms (due upon arrival at destination port)",
+            "Request payment instructions from Oceanic Logistics Inc.",
+            "Prepare internal payment authorization documentation",
+            "Process payment when shipment arrives at Los Angeles port",
+            "Obtain receipt/confirmation of payment from Oceanic Logistics"
+        ],
+        "information_for_freight_payment_instructions": [
+            "Bank account details (account number, bank name, branch)",
+            "SWIFT/BIC code for international wire transfer",
+            "Invoice reference number (OL-2023-10-BASIC-01)",
+            "Beneficiary name and address",
+            "Payment currency and amount confirmation"
+        ]
+    }
+}

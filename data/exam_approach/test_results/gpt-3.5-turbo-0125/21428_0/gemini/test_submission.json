@@ -1,0 +1,52 @@
+{
+    "candidate_id": "Gemini-Pro",
+    "task_1": {
+        "discrepancies": [
+            {
+                "claim_id": "CLM00742",
+                "issue": "Claim amount of $15,000.00 seems unusually high for a minor fender bender reported. Requires further investigation to verify repair estimates."
+            },
+            {
+                "claim_id": "CLM01298",
+                "issue": "Policy number field is missing. Unable to verify policy coverage and terms without a valid policy number."
+            },
+            {
+                "claim_id": "CLM00955",
+                "issue": "Date of claim is listed as 2024-12-25, which is in the future. Date needs to be corrected to reflect the actual date of the incident."
+            },
+            {
+                "claim_id": "CLM01521",
+                "issue": "Claimant's name on the claim form does not match the policyholder name associated with the provided policy number. Verification of claimant's relationship to the policy is required."
+            }
+        ]
+    },
+    "task_2": {
+        "analysis": [
+            {
+                "claim_id": "CS001",
+                "validity": "Valid",
+                "recommendation": "Settlement amount of $2,500.00 is within the expected range for the reported damages and aligns with company guidelines for minor collision claims."
+            },
+            {
+                "claim_id": "CS002",
+                "validity": "Invalid",
+                "recommendation": "Claim is for water damage, but policy guidelines state that flood damage is not covered under standard policies. Verify policy specifics and consider denial based on exclusion clause 3.2 in company guidelines."
+            },
+            {
+                "claim_id": "CS003",
+                "validity": "Valid",
+                "recommendation": "Proposed settlement of $10,000.00 for medical expenses appears reasonable given the submitted medical reports. Confirm that all treatments are pre-approved as per guideline 2.1 and that expenses are within policy limits."
+            },
+            {
+                "claim_id": "CS004",
+                "validity": "Invalid",
+                "recommendation": "Claim lacks supporting documentation such as photos of damage and repair estimates. Request necessary documentation from the claimant to proceed with further analysis as per guideline 1.5."
+            },
+            {
+                "claim_id": "CS005",
+                "validity": "Valid",
+                "recommendation": "Settlement amount of $500.00 for personal property damage is appropriate based on the provided inventory and depreciation schedule, in accordance with company guideline 4.3."
+            }
+        ]
+    }
+}

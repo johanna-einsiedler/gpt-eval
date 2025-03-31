@@ -1,0 +1,104 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "product_selections": [
+            {
+                "requirement_id": "R1",
+                "catalog_id": "WorkSpace Solutions",
+                "product_code": "WS-PRT-L2",
+                "price": 219.99,
+                "justification": "The WS-PRT-L2 Business Laser Printer meets the requirement for a monochrome printer with a minimum of 25 ppm and network connectivity. It offers 30 ppm output and is network-ready, fitting within the budget of $200-250 each."
+            },
+            {
+                "requirement_id": "R2",
+                "catalog_id": "OfficePro Supplies",
+                "product_code": "OP-T350",
+                "price": 219.99,
+                "justification": "The OP-T350 24\" LCD Monitor meets the requirement for a 24\" minimum Full HD monitor with an adjustable stand. It offers 1920x1080 resolution and an adjustable height stand, fitting within the budget of $200-300 each."
+            },
+            {
+                "requirement_id": "R3",
+                "catalog_id": "TechEquip Direct",
+                "product_code": "TE-C100",
+                "price": 99.99,
+                "justification": "The TE-C100 Value Task Chair meets the requirement for an ergonomic design with adjustable height and armrests. It is priced at $99.99, which is within the budget of $100-150 each, and offers a mesh back and height adjustment."
+            }
+        ]
+    },
+    "task2": {
+        "suppliers": [
+            {
+                "requirement_id": "R4",
+                "supplier_name": "EcoClean Solutions",
+                "location": "New York, NY, USA",
+                "contact_info": "info@ecoclean.com, +1-212-555-0199",
+                "source": "Global Supplier Directory"
+            },
+            {
+                "requirement_id": "R4",
+                "supplier_name": "GreenWorks Supplies",
+                "location": "San Francisco, CA, USA",
+                "contact_info": "contact@greenworks.com, +1-415-555-0123",
+                "source": "Office Equipment Marketplace"
+            },
+            {
+                "requirement_id": "R5",
+                "supplier_name": "ElectroParts Inc.",
+                "location": "Austin, TX, USA",
+                "contact_info": "sales@electroparts.com, +1-512-555-0144",
+                "source": "Industrial Supply Network"
+            },
+            {
+                "requirement_id": "R5",
+                "supplier_name": "TechComponents Co.",
+                "location": "Boston, MA, USA",
+                "contact_info": "support@techcomponents.com, +1-617-555-0177",
+                "source": "Global Supplier Directory"
+            }
+        ]
+    },
+    "task3": {
+        "comparison_table": [
+            {
+                "supplier": "ComfortPlus Seating",
+                "product": "CP-Ergo Pro",
+                "price": 279.99,
+                "delivery_time": "4-6 business days",
+                "warranty": "6 years",
+                "rating": 4.4
+            },
+            {
+                "supplier": "ErgoDirect Solutions",
+                "product": "ED-500",
+                "price": 319.99,
+                "delivery_time": "5-7 business days",
+                "warranty": "8 years",
+                "rating": 4.8
+            },
+            {
+                "supplier": "WorkWell Furnishings",
+                "product": "WW-Ergo Elite",
+                "price": 299.99,
+                "delivery_time": "6-8 business days",
+                "warranty": "7 years",
+                "rating": 4.6
+            }
+        ],
+        "recommendation": "ErgoDirect Solutions ED-500",
+        "justification": "The ErgoDirect Solutions ED-500 is recommended due to its superior customer rating of 4.8/5 and an 8-year warranty, which indicates high durability and customer satisfaction. Although it is slightly more expensive at $319.99, the extended warranty and high rating justify the cost. The delivery time of 5-7 business days is reasonable, and the product offers comprehensive ergonomic features, including adjustable headrest and lumbar support, making it a valuable investment for long-term use."
+    },
+    "task4": {
+        "clarification_questions": [
+            "What specific types of video content will be produced (e.g., interviews, product demos)?",
+            "What is the expected duration of the video recordings?",
+            "Will the equipment be used in a studio setting or on location?",
+            "Are there any specific brands or models the team prefers or has experience with?",
+            "What is the level of technical expertise of the team members using the equipment?"
+        ],
+        "information_needed": [
+            "Detailed list of required video equipment features",
+            "Preferred video resolution and frame rate",
+            "Any existing equipment that needs to be compatible with new purchases"
+        ]
+    }
+}

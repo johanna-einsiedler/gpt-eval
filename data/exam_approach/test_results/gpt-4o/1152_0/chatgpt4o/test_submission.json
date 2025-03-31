@@ -1,0 +1,32 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": [
+        {
+            "product_name": "High-Speed Industrial Printer",
+            "description": "A robust printer designed for high-volume industrial use, capable of printing 100 pages per minute.",
+            "supplier_contact": "Industrial Supplies Co., Phone: (555) 123-4567, Email: contact@industrialsupplies.com"
+        },
+        {
+            "product_name": "Eco-Friendly Cleaning Solution",
+            "description": "Biodegradable cleaning solution suitable for all surfaces, certified eco-friendly.",
+            "supplier_contact": "Green Clean Solutions, Phone: (555) 987-6543, Email: sales@greenclean.com"
+        },
+        {
+            "product_name": "Advanced Network Security Software",
+            "description": "Comprehensive security software offering real-time threat detection and prevention for enterprise networks.",
+            "supplier_contact": "CyberSecure Inc., Phone: (555) 246-8100, Email: info@cybersecure.com"
+        }
+    ],
+    "task2": [
+        {
+            "article_title": "The Future of Office Supplies: Sustainability and Innovation",
+            "summary": "This article discusses the growing trend towards sustainable office supplies, highlighting innovations such as recycled materials and energy-efficient products. It emphasizes the importance of eco-friendly practices in reducing environmental impact.",
+            "source": "https://www.officesupplyjournal.com/future-of-office-supplies"
+        },
+        {
+            "article_title": "Top IT Services Trends in 2023",
+            "summary": "The article explores the latest trends in IT services, including the rise of AI-driven solutions, increased focus on cybersecurity, and the shift towards cloud-based services. It provides insights into how these trends are shaping the industry.",
+            "source": "https://www.itindustrynews.com/top-it-services-trends-2023"
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "product_identification": {
+            "name": "ErgoComfort Executive Mesh-Back Office Chair",
+            "category": "Office Furniture - Ergonomic Seating",
+            "intended_use": "For professional office environments requiring extended sitting periods (6-8 hours daily) with proper ergonomic support to reduce fatigue and prevent musculoskeletal disorders."
+        },
+        "technical_requirements": {
+            "dimensions": "Overall Height: 45-50 inches (114.3-127 cm); Seat Width: 19 inches (48.3 cm) ±0.5 inches; Seat Depth: Adjustable 16-19 inches (40.6-48.3 cm); Backrest Height: 22 inches (55.9 cm) from seat; Base Diameter: 27 inches (68.6 cm)",
+            "weight_capacity": "300 lbs (136.1 kg) for standard use; tested to 330 lbs (149.7 kg) for safety factor",
+            "materials": [
+                "Frame: Die-cast aluminum alloy (ASTM B85) with polished finish",
+                "Seat Cushion: High-resilience polyurethane foam, minimum density 1.8 lb/ft³ per BIFMA standards",
+                "Backrest: Breathable mesh fabric (100% polyester), minimum tensile strength 200 lbs",
+                "Base: 5-star configuration reinforced nylon with glass fiber (minimum 30% glass fiber content)",
+                "Casters: Dual-wheel nylon casters with polyurethane tread, BIFMA compliant, available for both carpet and hard floor surfaces"
+            ]
+        },
+        "performance_requirements": {
+            "adjustability_features": [
+                "Seat Height: Pneumatic adjustment range 16-21 inches (40.6-53.3 cm) from floor",
+                "Lumbar Support: Height adjustable 6-10 inches (15.2-25.4 cm) from seat; depth adjustment of 1-3 inches (2.5-7.6 cm)",
+                "Armrests: 4D adjustable - height range 7-10.5 inches (17.8-26.7 cm) from seat, width adjustment range of 2 inches (5.1 cm), forward/backward range of 2.5 inches (6.4 cm), and 30° inward/outward pivot",
+                "Backrest: Recline capability of 95-120 degrees with 5 lockable positions",
+                "Seat Pan: Forward/backward tilt adjustment of 0-5 degrees with tension control",
+                "Headrest: Height adjustable 0-4 inches (0-10.2 cm), angle adjustment of 0-30 degrees"
+            ],
+            "ergonomic_standards": [
+                "ANSI/BIFMA X5.1-2017 Office Chairs standard compliance",
+                "ANSI/BIFMA G1-2013 Ergonomics Guideline compliance",
+                "Meets or exceeds OSHA ergonomic recommendations for computer workstations",
+                "Designed to accommodate 5th percentile female to 95th percentile male body dimensions",
+                "Supports neutral posture positioning per ergonomic best practices"
+            ]
+        },
+        "quality_standards": {
+            "certifications": [
+                "ANSI/BIFMA X5.1-2017 Office Chairs certification",
+                "Greenguard Gold Certification for low chemical emissions",
+                "California TB 117-2013 flammability standard compliance",
+                "BIFMA level® certification (minimum level 2)",
+                "ISO 9001:2015 certified manufacturing facility"
+            ],
+            "testing_requirements": [
+                "Cycle Testing: Minimum 100,000 cycles for seat and back tilt mechanisms",
+                "Drop Testing: Per ANSI/BIFMA X5.1 Section 7",
+                "Stability Testing: Per ANSI/BIFMA X5.1 Sections 11-13",
+                "Arm Strength Testing: Minimum 250 lb static load per ANSI/BIFMA X5.1 Section 14",
+                "Caster Testing: 100,000 cycles minimum per ANSI/BIFMA X5.1 Section 19",
+                "Supplier must provide test reports from independent laboratory"
+            ]
+        },
+        "compliance_requirements": {
+            "safety_standards": [
+                "ANSI/BIFMA X5.1-2017 Office Chairs safety requirements",
+                "California Proposition 65 compliant",
+                "CARB Phase 2 compliant for formaldehyde emissions",
+                "UL 1286 Office Furnishings standard",
+                "Meets ADA accessibility guidelines for controls and adjustments"
+            ],
+            "environmental_considerations": [
+                "Minimum 30% recycled content in metal and plastic components",
+                "No PBDEs, PFCs, or added antimicrobials in materials",
+                "VOC emissions compliant with ANSI/BIFMA X7.1-2011 standard",
+                "Disassembly instructions required for proper end-of-life recycling",
+                "Packaging must contain minimum 50% recycled content and be recyclable",
+                "Product must be designed for disassembly with minimum 90% recyclable materials"
+            ]
+        }
+    },
+    "task2": {
+        "identified_issues": [
+            {
+                "issue_number": 1,
+                "issue_description": "Screen resolution is described as 'Good quality' which is vague and subjective rather than providing specific technical requirements.",
+                "location_in_document": "Section 2, Resolution",
+                "correction": "Resolution: 1920 x 1080 pixels (Full HD) minimum. For optimal office productivity, 2560 x 1440 pixels (QHD) is preferred. Must maintain 16:9 aspect ratio with minimum 96 PPI (pixels per inch)."
+            },
+            {
+                "issue_number": 2,
+                "issue_description": "Response time is listed as 'Fast' without specific measurable parameters, making it impossible to verify compliance.",
+                "location_in_document": "Section 2, Response Time",
+                "correction": "Response Time: Maximum 5ms gray-to-gray (GtG) at standard mode. Maximum 1ms MPRT (Moving Picture Response Time) if gaming mode is available. Response time must be tested according to ISO 13406-2 standard."
+            },
+            {
+                "issue_number": 3,
+                "issue_description": "Connectivity is listed as 'Multiple ports' without specifying types, quantities, or required standards.",
+                "location_in_document": "Section 2, Connectivity",
+                "correction": "Connectivity: Minimum requirements: 1x HDMI 2.0 port, 1x DisplayPort 1.4, 2x USB 3.0 downstream ports, 1x USB Type-C port with DisplayPort Alt Mode and 65W Power Delivery capability. All ports must be clearly labeled and accessible."
+            },
+            {
+                "issue_number": 4,
+                "issue_description": "Performance requirements are subjective and unmeasurable with terms like 'work well,' 'clear display,' and 'sufficient brightness.'",
+                "location_in_document": "Section 4, Performance Requirements",
+                "correction": "Performance Requirements: Brightness: Minimum 300 cd/m² (nits), recommended 350 cd/m²; Contrast Ratio: Minimum 1000:1 static contrast ratio; Color Accuracy: Minimum 95% sRGB color gamut coverage with Delta E < 3; Viewing Angles: Minimum 178° horizontal and vertical; Anti-glare coating required with 3H hardness rating."
+            },
+            {
+                "issue_number": 5,
+                "issue_description": "Compliance section lacks specific standards and certification requirements, using vague terms like 'safety regulations' and 'Energy Star rating preferred.'",
+                "location_in_document": "Section 8, Compliance",
+                "correction": "Compliance: Must be certified to ENERGY STAR 8.0 for displays (not just 'preferred'); Must meet TCO Certified Generation 9 requirements; Must comply with FCC Class B emissions standards; Must be UL/cUL listed or equivalent; RoHS 3 (EU Directive 2015/863) compliant; Must include California Proposition 65 compliance documentation."
+            }
+        ]
+    }
+}

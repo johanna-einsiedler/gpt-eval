@@ -1,0 +1,63 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "top_growth_categories": [
+            "Casual Wear",
+            "Accessories",
+            "Footwear"
+        ],
+        "highest_sales_months": [
+            "December",
+            "November",
+            "January"
+        ],
+        "profit_margins_2022": {
+            "Outerwear": 0.49,
+            "Casual Wear": 0.57,
+            "Formal Wear": 0.42,
+            "Accessories": 0.63,
+            "Footwear": 0.52
+        },
+        "worst_performing_products": [
+            "Blazer - Unisex",
+            "Dress Shoes - Men's",
+            "Sandals - Unisex"
+        ]
+    },
+    "task2": {
+        "overall_correlation_coefficient": 0.78,
+        "strongest_correlated_category": "Formal Wear",
+        "average_lag_time_months": 1
+    },
+    "task3": {
+        "q1_2023_forecast": {
+            "Outerwear": 1250,
+            "Casual Wear": 3850,
+            "Formal Wear": 950,
+            "Accessories": 2100,
+            "Footwear": 1450
+        },
+        "inventory_recommendations": {
+            "Outerwear": "maintain",
+            "Casual Wear": "increase",
+            "Formal Wear": "decrease",
+            "Accessories": "increase",
+            "Footwear": "increase"
+        },
+        "increase_allocation_products": [
+            "T-Shirt - Women's",
+            "Hoodie - Unisex",
+            "Socks - Pack of 3"
+        ],
+        "decrease_allocation_products": [
+            "Blazer - Unisex",
+            "Dress Shoes - Men's",
+            "Sandals - Unisex"
+        ],
+        "influential_economic_indicators": [
+            "Consumer Confidence Index",
+            "Seasonal Trends",
+            "Price Sensitivity"
+        ]
+    }
+}

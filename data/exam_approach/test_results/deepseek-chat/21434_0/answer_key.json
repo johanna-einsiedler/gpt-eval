@@ -1,0 +1,46 @@
+{
+    "correct_answers": {
+        "settled_claims": [
+            "A100",
+            "B200",
+            "H800"
+        ],
+        "open_claims": [
+            "C300",
+            "D400"
+        ],
+        "claims_requiring_analysis": [
+            "E500",
+            "F600",
+            "G700"
+        ],
+        "incomplete_records": [
+            {
+                "Claim_ID": "E500",
+                "Issue": "Settled claim missing settlement amount"
+            },
+            {
+                "Claim_ID": "F600",
+                "Issue": "Under Investigation status with resolution date"
+            },
+            {
+                "Claim_ID": "G700",
+                "Issue": "Settled claim missing resolution date"
+            }
+        ],
+        "settlement_summary": {
+            "total_settled_amount": 18500,
+            "average_settlement_days": 43
+        }
+    },
+    "alternative_acceptable_answers": {
+        "issue_descriptions": [
+            "Settled claim missing settlement amount",
+            "Missing settlement amount for settled claim",
+            "Under Investigation but has resolution date",
+            "Status contradicts resolution date",
+            "Settled claim missing Date_Resolved",
+            "No resolution date for settled claim"
+        ]
+    }
+}

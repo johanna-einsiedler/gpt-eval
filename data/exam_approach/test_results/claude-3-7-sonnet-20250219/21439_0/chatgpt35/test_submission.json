@@ -1,0 +1,60 @@
+{
+    "candidate_id": "GPT-4o",
+    "scenario_1": {
+        "irregularities_identified": [
+            {
+                "type": "OVP",
+                "description": "Additional repair payment of $500.00 to ABC Auto Body exceeds the approved repair amount after deductible.",
+                "amount": 500.0,
+                "calculation_method": "The approved repair amount was $4,850.00 with a $1,000 deductible, resulting in an authorized payment of $3,850.00. An additional payment of $500.00 was made, totaling $4,350.00, which exceeds the authorized amount."
+            },
+            {
+                "type": "OVP",
+                "description": "Extended rental payment of $90.00 for 3 additional days exceeds the approved rental car coverage.",
+                "amount": 90.0,
+                "calculation_method": "The approved rental car coverage was for 7 days at $30/day, totaling $210.00. An additional payment of $90.00 was made for 3 extra days, which was not authorized."
+            }
+        ],
+        "total_discrepancy_amount": 590.0,
+        "recommended_actions": [
+            "Code A1: Contact service provider to request refund",
+            "Code A2: Adjust future payments to recover overpayment"
+        ],
+        "reporting_priority": "medium",
+        "justification": "The total overpayment amount is $590.00, which falls between $250 and $1,000, classifying it as medium priority."
+    },
+    "scenario_2": {
+        "irregularities_identified": [
+            {
+                "type": "DUP",
+                "description": "Duplicate payment of $440.00 to Citywide Medical Center for services on 02/10/2023.",
+                "amount": 440.0,
+                "calculation_method": "The insurance payment of $440.00 was authorized and paid on 02/20/2023. A duplicate payment of the same amount was made on 03/05/2023."
+            }
+        ],
+        "total_discrepancy_amount": 440.0,
+        "recommended_actions": [
+            "Code A1: Contact service provider to request refund",
+            "Code A3: Send formal recovery letter"
+        ],
+        "reporting_priority": "medium",
+        "justification": "The duplicate payment of $440.00 falls between $250 and $1,000, classifying it as medium priority."
+    },
+    "scenario_3": {
+        "irregularities_identified": [
+            {
+                "type": "NCS",
+                "description": "Payment of $5,200.00 to Luxury Bath Solutions for bathroom renovation, which is not covered under the policy.",
+                "amount": 5200.0,
+                "calculation_method": "The policy excludes coverage for bathroom renovations unless directly damaged by a covered peril. The payment was made for a renovation not related to the covered water damage."
+            }
+        ],
+        "total_discrepancy_amount": 5200.0,
+        "recommended_actions": [
+            "Code C1: Contact insured to explain coverage limitations",
+            "Code C2: Request refund from provider"
+        ],
+        "reporting_priority": "high",
+        "justification": "The non-covered service payment of $5,200.00 exceeds $1,000, classifying it as high priority."
+    }
+}

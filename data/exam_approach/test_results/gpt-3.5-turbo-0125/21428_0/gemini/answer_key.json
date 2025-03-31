@@ -1,0 +1,38 @@
+{
+    "candidate_id": "Evaluator",
+    "task_1": {
+        "discrepancies": [
+            {
+                "claim_id": "10001",
+                "issue": "Incorrect claim amount"
+            },
+            {
+                "claim_id": "10002",
+                "issue": "Missing policy number"
+            },
+            {
+                "claim_id": "10003",
+                "issue": "Inconsistent date format"
+            }
+        ]
+    },
+    "task_2": {
+        "analysis": [
+            {
+                "claim_id": "20001",
+                "validity": "Valid",
+                "recommendation": "Settlement amount is appropriate"
+            },
+            {
+                "claim_id": "20002",
+                "validity": "Invalid",
+                "recommendation": "Claim lacks supporting documentation"
+            },
+            {
+                "claim_id": "20003",
+                "validity": "Valid",
+                "recommendation": "Adjust settlement to align with policy limits"
+            }
+        ]
+    }
+}

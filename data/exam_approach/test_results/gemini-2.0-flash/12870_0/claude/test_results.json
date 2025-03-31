@@ -1,0 +1,38 @@
+{
+    "candidate_id": "AI_AGENT_001",
+    "candidate_name": "AI Music Industry Expert",
+    "model_version": "GPT-4o",
+    "overall_score": 50.0,
+    "detailed_results": {
+        "task1": [
+            {
+                "trend_number": 1,
+                "points": 3,
+                "feedback": [
+                    "Trend 1: Source domain NOT ACCEPTABLE (www.billboard.com). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com']",
+                    "Trend 1: Description keywords insufficient (0 matched, need >= 1)",
+                    "Trend 1: Impact relevant (keywords matched: 1)"
+                ]
+            },
+            {
+                "trend_number": 2,
+                "points": 0,
+                "feedback": [
+                    "Trend 2: Source domain NOT ACCEPTABLE (www.rollingstone.com). Should be from: ['billboard.com', 'variety.com', 'musicbusinessworldwide.com', 'rollingstone.com', 'hypebot.com', 'completemusicupdate.com', 'techcrunch.com', 'theverge.com']",
+                    "Trend 2: Description keywords insufficient (0 matched, need >= 1)",
+                    "Trend 2: Impact keywords insufficient (0 matched, need >= 1)"
+                ]
+            }
+        ],
+        "task2": {
+            "points": 2,
+            "feedback": [
+                "Deal: Source domain OK (variety.com)",
+                "Deal: Summary keywords insufficient (0 matched, need >= 1)",
+                "Deal: Key terms correctly stated as 'Not Publicly Available'"
+            ]
+        }
+    },
+    "total_points": 5,
+    "max_points": 10
+}

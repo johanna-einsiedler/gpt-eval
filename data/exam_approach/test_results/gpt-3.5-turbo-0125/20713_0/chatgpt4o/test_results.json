@@ -1,0 +1,16 @@
+{
+    "mark_up_rates": {
+        "product_id_1": false,
+        "product_id_2": false,
+        "product_id_3": false
+    },
+    "mark_down_rates": {
+        "product_id_4": true,
+        "product_id_5": false
+    },
+    "new_selling_prices": {
+        "product_id_4": false,
+        "product_id_5": false
+    },
+    "overall_score": 14.285714285714285
+}

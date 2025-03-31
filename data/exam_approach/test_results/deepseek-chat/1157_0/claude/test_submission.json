@@ -1,0 +1,31 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "product_name": "Industrial Safety Gloves",
+        "key_attributes": {
+            "dimensions": "Available in sizes S, M, L, XL, XXL with palm width measurements 8-12cm and length 22-26cm",
+            "materials": "Cut-resistant aramid fiber inner layer with nitrile-coated palm and fingers, neoprene cuff for chemical resistance",
+            "performance": "Cut resistance Level 4 (EN 388), puncture resistance Level 3 (EN 388), chemical splash protection Type B (EN 374)",
+            "temperature_range": "Operational in temperatures -10°C to 50°C continuous exposure",
+            "standards": "EN 388:2016 (4342) certified for mechanical risks, EN 374-1:2016 Type B certified for chemical protection, CE marked"
+        },
+        "additional_requirements": "Minimum order quantity: 50 pairs. 12-month warranty against manufacturing defects. Available in high-visibility yellow or orange. Delivery within 14 calendar days after order confirmation. Each glove must have size marking and standards compliance printed on cuff."
+    },
+    "task_2": {
+        "errors_found": [
+            "Error 1: Vague usability requirement ('easy to use') without specific metrics or training requirements",
+            "Error 2: Insufficient detail on support requirements (no mention of response time, support hours, or support channels)",
+            "Error 3: Missing specific feature requirements beyond basic 'task tracking' (no mention of reporting, integration capabilities, or security requirements)"
+        ],
+        "corrected_spec": {
+            "deployment": "Cloud-based SaaS solution with 99.9% uptime SLA and secure HTTPS access",
+            "licensing": "50 named user licenses with administrative rights for at least 5 users",
+            "features": "Task tracking with Gantt charts, resource allocation, custom reporting, document storage (minimum 10GB), and mobile app access (iOS and Android)",
+            "integration": "Must support API integration with Microsoft 365 and include pre-built connectors for JIRA and Salesforce",
+            "security": "SOC 2 Type II certified, GDPR compliant, with role-based access controls and two-factor authentication",
+            "usability": "Intuitive web interface with maximum 2-hour learning curve, including interactive tutorials and contextual help",
+            "support": "24/7 technical support via email, chat, and phone with maximum 4-hour response time for critical issues, including dedicated account manager for quarterly reviews",
+            "training": "Minimum 3 hours of live virtual training for all users and additional 4 hours for administrators"
+        }
+    }
+}

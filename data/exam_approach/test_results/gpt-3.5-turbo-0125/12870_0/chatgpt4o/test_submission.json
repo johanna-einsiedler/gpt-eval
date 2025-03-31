@@ -1,0 +1,29 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "industry_trends": [
+        {
+            "title": "The Rise of Virtual Concerts",
+            "source": "Music News Daily",
+            "summary": "Virtual concerts have become increasingly popular, offering artists new ways to reach audiences."
+        },
+        {
+            "title": "Streaming Services Reshape Film Distribution",
+            "source": "Film Industry Weekly",
+            "summary": "Streaming platforms are increasingly becoming the primary distribution channel for new films, impacting traditional cinema releases."
+        }
+    ],
+    "recent_deals": [
+        {
+            "deal_title": "Major Record Label Signs New Artist",
+            "parties_involved": "XYZ Records, John Doe",
+            "date": "2023-09-15",
+            "deal_summary": "XYZ Records signed a multi-album deal with emerging artist John Doe."
+        },
+        {
+            "deal_title": "Top Athlete Secures Endorsement with Sports Brand",
+            "parties_involved": "ABC Sports, Jane Smith",
+            "date": "2023-08-20",
+            "deal_summary": "Jane Smith, a leading athlete, has signed a lucrative endorsement deal with ABC Sports."
+        }
+    ]
+}

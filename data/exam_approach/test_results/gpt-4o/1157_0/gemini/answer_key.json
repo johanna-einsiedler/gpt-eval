@@ -1,0 +1,28 @@
+{
+    "candidate_id": "EXAMPLE_ID",
+    "task_1_specification": {
+        "product_name": "High-Performance Laptop",
+        "dimensions": "35.8x24.6x1.8 cm",
+        "materials": "Aluminum, Plastic",
+        "performance_criteria": "Intel i7 processor, 16GB RAM, 512GB SSD, 15.6-inch display",
+        "additional_requirements": "Must include a backlit keyboard, Wi-Fi 6 support, and a minimum battery life of 10 hours."
+    },
+    "task_2_review": [
+        {
+            "issue_description": "The dimensions are missing units.",
+            "suggested_correction": "Add 'cm' to the dimensions to specify the units."
+        },
+        {
+            "issue_description": "The material list is incomplete.",
+            "suggested_correction": "Include all materials such as 'Aluminum, Plastic, Glass'."
+        },
+        {
+            "issue_description": "Performance criteria lack specific processor model.",
+            "suggested_correction": "Specify the processor model, e.g., 'Intel i7-1165G7'."
+        },
+        {
+            "issue_description": "Additional requirements do not mention operating system compatibility.",
+            "suggested_correction": "Add 'Must be compatible with Windows 10 and Linux'."
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+  "candidate_id": "GPT-4o",
+  "exercise1": {
+    "reasonable_price": {
+      "score": 10,
+      "max_points": 10,
+      "feedback": "Correct price within acceptable range."
+    },
+    "price_trend_analysis": {
+      "score": 4.800000000000001,
+      "max_points": 8,
+      "feedback": "Analysis includes 3 of 5 key elements."
+    },
+    "recommendation": {
+      "score": 0.0,
+      "max_points": 7,
+      "feedback": "Recommendation includes 0 of 5 key elements."
+    },
+    "total_score": 14.8,
+    "max_points": 25
+  },
+  "exercise2": {
+    "recommended_supplier": {
+      "score": 8,
+      "max_points": 10,
+      "feedback": "Alternative supplier with adequate justification."
+    },
+    "ranking": {
+      "score": 1,
+      "max_points": 5,
+      "feedback": "1 of 4 suppliers ranked correctly."
+    },
+    "justification": {
+      "score": 5,
+      "max_points": 5,
+      "feedback": "Justification includes 5 of 5 key elements."
+    },
+    "potential_savings": {
+      "score": 0,
+      "max_points": 5,
+      "feedback": "Incorrect savings calculation."
+    },
+    "total_score": 14,
+    "max_points": 25
+  },
+  "exercise3": {
+    "identified_discrepancies": {
+      "score": 7,
+      "max_points": 8,
+      "feedback": "7 of 8 discrepancies correctly identified."
+    },
+    "total_overcharge": {
+      "score": 5,
+      "max_points": 5,
+      "feedback": "Correct total overcharge calculation."
+    },
+    "corrected_total_price": {
+      "score": 5,
+      "max_points": 5,
+      "feedback": "Correct corrected total price calculation."
+    },
+    "negotiation_points": {
+      "score": 7,
+      "max_points": 7,
+      "feedback": "Negotiation points address 7 of 7 key areas."
+    },
+    "total_score": 24,
+    "max_points": 25
+  },
+  "exercise4": {
+    "acceptable_justifications": {
+      "score": 2.8,
+      "max_points": 7,
+      "feedback": "2 of 5 acceptable justifications correctly identified."
+    },
+    "unacceptable_justifications": {
+      "score": 4.66,
+      "max_points": 7,
+      "feedback": "2 of 3 unacceptable justifications correctly identified."
+    },
+    "counter_proposal": {
+      "score": 5,
+      "max_points": 5,
+      "feedback": "Counter proposal within acceptable range."
+    },
+    "negotiation_strategy": {
+      "score": 1,
+      "max_points": 6,
+      "feedback": "Negotiation strategy includes 1 of 6 key elements."
+    },
+    "total_score": 13.46,
+    "max_points": 25
+  },
+  "overall_score": 66.26,
+  "passing_threshold": 70,
+  "passed": false,
+  "feedback": "Failed to meet minimum score requirement in: exercise1, exercise2, exercise4"
+}

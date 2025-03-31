@@ -1,0 +1,24 @@
+{
+    "candidate_id": "candidate123",
+    "model_version": "GPT-4",
+    "candidate_name": "Jane Doe",
+    "task1_trends": [
+        {
+            "trend_number": 1,
+            "trend_description": "The rise of TikTok as a major platform for music discovery and promotion.",
+            "impact": "Music artists are increasingly leveraging TikTok to go viral, which can lead to rapid growth in streams and fanbase. However, it also pressures artists to create shorter, catchy hooks tailored for the platform.",
+            "source_url": "https://www.billboard.com/pro/tiktok-music-discovery-streaming-impact/"
+        },
+        {
+            "trend_number": 2,
+            "trend_description": "Growing importance of direct-to-fan engagement and monetization through platforms like Patreon and Discord.",
+            "impact": "Artists are building closer relationships with fans and generating revenue directly from their most dedicated supporters, reducing reliance on traditional label deals.",
+            "source_url": "https://www.rollingstone.com/pro/features/music-artists-direct-to-fan-monetization-1234687892/"
+        }
+    ],
+    "task2_deal": {
+        "deal_summary": "In 2023, rising artist Ice Spice signed a joint venture record deal with 10K Projects and Capitol Records.",
+        "key_terms": "Not Publicly Available",
+        "source_url": "https://www.complex.com/music/a/ice-spice-signs-joint-venture-deal-with-10k-projects-capitol-records"
+    }
+}

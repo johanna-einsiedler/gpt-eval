@@ -1,0 +1,52 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "document_review": [
+        {
+            "claim_id": "CL-2024-001",
+            "discrepancies": [
+                "Date of incident on claim form does not match police report"
+            ],
+            "missing_information": [
+                "Police report number"
+            ]
+        },
+        {
+            "claim_id": "CL-2024-002",
+            "discrepancies": [
+                "Claim form not signed by claimant"
+            ],
+            "missing_information": [
+                "Claimant's signature"
+            ]
+        },
+        {
+            "claim_id": "CL-2024-003",
+            "discrepancies": [
+                "Inconsistent description of damage in claim form and photos"
+            ],
+            "missing_information": [
+                "Detailed repair estimate"
+            ]
+        }
+    ],
+    "claim_decisions": [
+        {
+            "claim_id": "CL-2024-001",
+            "calculated_payable_amount": 7500.0,
+            "decision": "approve",
+            "justification": "Claim amount within policy limit and authority level, discrepancies are minor and can be clarified."
+        },
+        {
+            "claim_id": "CL-2024-002",
+            "calculated_payable_amount": 12000.0,
+            "decision": "deny",
+            "justification": "Claim amount exceeds authority level and requires further review. Missing claimant signature."
+        },
+        {
+            "claim_id": "CL-2024-003",
+            "calculated_payable_amount": 4000.0,
+            "decision": "approve",
+            "justification": "Claim amount within policy limit and authority level. Missing information requested for final processing."
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task_1": {
+        "discrepancies": [
+            {
+                "claim_id": "CLM2023001",
+                "issue": "Claim amount ($5,000) exceeds policy limit of $3,000"
+            },
+            {
+                "claim_id": "CLM2023005",
+                "issue": "Missing date of loss information"
+            },
+            {
+                "claim_id": "CLM2023012",
+                "issue": "Policy number format invalid (should be 8 digits, shows 7)"
+            },
+            {
+                "claim_id": "CLM2023018",
+                "issue": "Duplicate claim submission - same claim ID as CLM2023017"
+            }
+        ]
+    },
+    "task_2": {
+        "analysis": [
+            {
+                "claim_id": "CLM2023003",
+                "validity": "Valid",
+                "recommendation": "Approve settlement of $1,200 as it's within guidelines"
+            },
+            {
+                "claim_id": "CLM2023007",
+                "validity": "Invalid",
+                "recommendation": "Deny claim - incident occurred outside coverage period"
+            },
+            {
+                "claim_id": "CLM2023015",
+                "validity": "Valid",
+                "recommendation": "Approve partial settlement of $2,500 (80% of claim) due to deductible"
+            },
+            {
+                "claim_id": "CLM2023022",
+                "validity": "Invalid",
+                "recommendation": "Require additional documentation - police report missing for theft claim"
+            }
+        ]
+    }
+}

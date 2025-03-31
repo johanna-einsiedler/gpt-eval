@@ -1,0 +1,49 @@
+{
+    "candidate_id": "EVALUATOR",
+    "updated_suppliers": [
+        {
+            "supplier_id": "001",
+            "name": "Supplier A",
+            "reputation": "Excellent",
+            "history": "20 years in business",
+            "reviews": "4.5/5 stars",
+            "additional_info": "ISO certified"
+        },
+        {
+            "supplier_id": "002",
+            "name": "Supplier B",
+            "reputation": "Good",
+            "history": "15 years in business",
+            "reviews": "4.0/5 stars",
+            "additional_info": "Award-winning customer service"
+        },
+        {
+            "supplier_id": "003",
+            "name": "Supplier C",
+            "reputation": "Average",
+            "history": "10 years in business",
+            "reviews": "3.5/5 stars",
+            "additional_info": "Fast delivery times"
+        }
+    ],
+    "evaluated_suppliers": [
+        {
+            "supplier_id": "001",
+            "name": "Supplier A",
+            "score": 95,
+            "rank": 1
+        },
+        {
+            "supplier_id": "002",
+            "name": "Supplier B",
+            "score": 85,
+            "rank": 2
+        },
+        {
+            "supplier_id": "003",
+            "name": "Supplier C",
+            "score": 75,
+            "rank": 3
+        }
+    ]
+}

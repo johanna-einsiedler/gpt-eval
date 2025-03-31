@@ -1,0 +1,63 @@
+{
+    "candidate_id": "GPT-4o",
+    "task_1": {
+        "suppliers": [
+            {
+                "name": "Supplier A",
+                "contact": "sales@supplierA.com",
+                "product": "Model X Ergo Chair",
+                "specifications": "Adjustable height (18\"-22\"), lumbar support, 250 lb weight capacity"
+            },
+            {
+                "name": "Supplier B",
+                "contact": "www.supplierB.com/contact",
+                "product": "Comfort Plus Chair",
+                "specifications": "Mesh backrest, 360-degree swivel, 10-year warranty"
+            },
+            {
+                "name": "Supplier C",
+                "contact": "orders@supplierC.com",
+                "product": "Executive Ergo Seat",
+                "specifications": "Genuine leather, tilt mechanism, 5-year warranty"
+            }
+        ]
+    },
+    "task_2": {
+        "printer_comparison": [
+            {
+                "model": "Printer Alpha",
+                "price": "$1,200",
+                "warranty": "2 years",
+                "print_speed": "30 ppm",
+                "pros": "Lower cost"
+            },
+            {
+                "model": "Printer Beta",
+                "price": "$1,500",
+                "warranty": "3 years",
+                "print_speed": "45 ppm",
+                "pros": "Higher speed"
+            }
+        ],
+        "recommendation": "Printer Beta",
+        "reason": "Higher speed and better warranty justify the cost."
+    },
+    "task_3": {
+        "cloud_storage_options": [
+            {
+                "provider": "CloudX",
+                "storage_limit": "1TB",
+                "price": "$10/month",
+                "security_features": "Encryption, multi-factor auth"
+            },
+            {
+                "provider": "SecureStore",
+                "storage_limit": "2TB",
+                "price": "$15/month",
+                "security_features": "End-to-end encryption, compliance with GDPR"
+            }
+        ],
+        "recommendation": "SecureStore",
+        "reason": "Higher storage and compliance for sensitive data."
+    }
+}

@@ -1,0 +1,218 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "task1": {
+        "commission_calculations": [
+            {
+                "performance_type": "Festival appearance",
+                "gross_payment": 45000,
+                "commission_rate": 0.125,
+                "commission_amount": 5625,
+                "contract_clause": "1.2"
+            },
+            {
+                "performance_type": "Brand endorsement deal",
+                "gross_payment": 75000,
+                "tier1_amount": 50000,
+                "tier1_rate": 0.2,
+                "tier1_commission": 10000,
+                "tier2_amount": 25000,
+                "tier2_rate": 0.15,
+                "tier2_commission": 3750,
+                "total_commission": 13750,
+                "contract_clause": "2.1"
+            },
+            {
+                "performance_type": "Streaming royalty payment",
+                "gross_payment": 12500,
+                "platform_fee_rate": 0.15,
+                "platform_fee_amount": 1875,
+                "net_after_platform_fees": 10625,
+                "commission_rate": 0.1,
+                "commission_amount": 1062.5,
+                "contract_clause": "3.1, 3.2"
+            }
+        ],
+        "explanation": "Detailed explanation of your calculations and reasoning, citing specific contract clauses."
+    },
+    "task2": {
+        "discrepancies": [
+            {
+                "event": "Sports Drink Campaign",
+                "contracted_amount": 30000,
+                "received_amount": 27500,
+                "discrepancy_amount": 2500,
+                "commission_impact": 375,
+                "commission_calculation": "15% of $2,500 = $375"
+            },
+            {
+                "event": "Magazine Photo Shoot",
+                "contracted_amount": 8000,
+                "received_amount": 6000,
+                "discrepancy_amount": 2000,
+                "commission_impact": 300,
+                "commission_calculation": "15% of $2,000 = $300"
+            },
+            {
+                "event": "TV Commercial",
+                "contracted_amount": 60000,
+                "received_amount": 65000,
+                "discrepancy_amount": -5000,
+                "commission_impact": -1000,
+                "commission_calculation": "20% of -$5,000 = -$1,000"
+            }
+        ],
+        "resolution_steps": "Detailed step-by-step plan for resolving each discrepancy."
+    },
+    "task3": {
+        "payment_schedule": [
+            {
+                "project_name": "City Lights",
+                "payment_type": "Main payment",
+                "due_date": "2023-08-15",
+                "amount": 52500,
+                "commission_rate": 0.15,
+                "commission_amount": 7875,
+                "priority_level": "Medium",
+                "notes": "70% remaining after deposit"
+            },
+            {
+                "project_name": "City Lights",
+                "payment_type": "Deposit",
+                "due_date": "2023-06-25",
+                "amount": 22500,
+                "commission_rate": 0.15,
+                "commission_amount": 3375,
+                "priority_level": "High",
+                "notes": "30% deposit required"
+            },
+            {
+                "project_name": "The Dark Corner",
+                "payment_type": "Full payment",
+                "due_date": "2023-09-05",
+                "amount": 45000,
+                "commission_rate": 0.125,
+                "commission_amount": 5625,
+                "priority_level": "Medium",
+                "notes": ""
+            },
+            {
+                "project_name": "FilmVision Gala",
+                "payment_type": "Deposit",
+                "due_date": "2023-08-15",
+                "amount": 17500,
+                "commission_rate": 0.2,
+                "commission_amount": 3500,
+                "priority_level": "High",
+                "notes": "50% deposit required"
+            },
+            {
+                "project_name": "FilmVision Gala",
+                "payment_type": "Main payment",
+                "due_date": "2023-09-15",
+                "amount": 17500,
+                "commission_rate": 0.2,
+                "commission_amount": 3500,
+                "priority_level": "Medium",
+                "notes": "50% remaining after deposit"
+            },
+            {
+                "project_name": "Voice of Tomorrow",
+                "payment_type": "Full payment",
+                "due_date": "2023-10-01",
+                "amount": 25000,
+                "commission_rate": 0.15,
+                "commission_amount": 3750,
+                "priority_level": "Medium",
+                "notes": ""
+            },
+            {
+                "project_name": "Brand Ambassador",
+                "payment_type": "Deposit",
+                "due_date": "2023-09-10",
+                "amount": 12500,
+                "commission_rate": 0.18,
+                "commission_amount": 2250,
+                "priority_level": "High",
+                "notes": "25% deposit required"
+            }
+        ],
+        "collection_strategy": "Detailed explanation of your payment collection strategy, including prioritization rationale and timeline management."
+    },
+    "task4": {
+        "collection_email": "Full text of your initial collection email to FilmVision.",
+        "follow_up_email": "Full text of your follow-up email for the 45-day late payment."
+    },
+    "task5": {
+        "payment_log": [
+            {
+                "payment_id": "MM-2304-01",
+                "date_received": "2023-04-12",
+                "source": "Summer Festival",
+                "contracted_amount": 35000,
+                "actual_amount": 35000,
+                "commission_rate": 0.125,
+                "commission_amount": 4375,
+                "payment_method": "Wire Transfer",
+                "status": "Paid in full",
+                "days_late": 2
+            },
+            {
+                "payment_id": "MM-2304-02",
+                "date_received": "2023-04-30",
+                "source": "Streaming Royalties",
+                "contracted_amount": 8500,
+                "actual_amount": 7225,
+                "platform_fee": 1275,
+                "net_after_platform_fees": 7225,
+                "commission_rate": 0.1,
+                "commission_amount": 722.5,
+                "payment_method": "ACH",
+                "status": "Paid in full",
+                "days_late": 5
+            },
+            {
+                "payment_id": "MM-2305-01",
+                "date_received": "2023-05-20",
+                "source": "Sports Brand Deal",
+                "contracted_amount": 65000,
+                "actual_amount": 65000,
+                "tier1_amount": 50000,
+                "tier1_rate": 0.2,
+                "tier1_commission": 10000,
+                "tier2_amount": 15000,
+                "tier2_rate": 0.15,
+                "tier2_commission": 2250,
+                "total_commission": 12250,
+                "payment_method": "Check",
+                "status": "Paid in full",
+                "days_late": 5
+            },
+            {
+                "payment_id": "MM-2305-02",
+                "date_received": "2023-06-10",
+                "source": "Private Performance",
+                "contracted_amount": 25000,
+                "actual_amount": 25000,
+                "commission_rate": 0.15,
+                "commission_amount": 3750,
+                "payment_method": "Wire Transfer",
+                "status": "Paid in full",
+                "days_late": 11
+            },
+            {
+                "payment_id": "MM-2306-01",
+                "date_received": "2023-06-15",
+                "source": "Music Video Cameo",
+                "contracted_amount": 12000,
+                "actual_amount": 10000,
+                "discrepancy_amount": 2000,
+                "commission_rate": 0.15,
+                "commission_amount": 1500,
+                "payment_method": "PayPal",
+                "status": "Partial payment",
+                "days_late": 0
+            }
+        ],
+        "reconciliation_notes": "Detailed notes explaining any discrepancies, commission calculations, and recommended follow-up actions."
+    }
+}

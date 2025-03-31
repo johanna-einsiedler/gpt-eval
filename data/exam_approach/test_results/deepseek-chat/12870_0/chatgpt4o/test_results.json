@@ -1,0 +1,48 @@
+{
+  "industry_trends": {
+    "score": 3,
+    "max_score": 3,
+    "details": [
+      {
+        "trend": "Short-Form Video Dominance",
+        "status": "correct"
+      },
+      {
+        "trend": "Athlete-Led Venture Capital",
+        "status": "correct"
+      },
+      {
+        "trend": "NFT Collapse & Digital Asset Pivots",
+        "status": "correct"
+      }
+    ]
+  },
+  "notable_deals": {
+    "score": 3,
+    "max_score": 3,
+    "details": [
+      {
+        "parties": "DJ Pulse & Tech Giant Byte",
+        "parties_match": true,
+        "value_match": true,
+        "significance_match": true,
+        "significance_similarity": 100
+      },
+      {
+        "parties": "Artist Vega & Brand Nova",
+        "parties_match": true,
+        "value_match": true,
+        "significance_match": true,
+        "significance_similarity": 63
+      },
+      {
+        "parties": "Athlete Cruz & Sponsor Peak",
+        "parties_match": true,
+        "value_match": true,
+        "significance_match": false,
+        "significance_similarity": 56
+      }
+    ]
+  },
+  "overall_score": 100
+}

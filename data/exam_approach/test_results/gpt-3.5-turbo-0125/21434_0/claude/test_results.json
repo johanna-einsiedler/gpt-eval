@@ -1,0 +1,8 @@
+{
+    "score_details": {
+        "settled_claims_summary_correct": false,
+        "claims_inventory_correct": false,
+        "discrepancies_correct": false
+    },
+    "overall_score": 0.0
+}

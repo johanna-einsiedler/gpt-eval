@@ -1,0 +1,338 @@
+{
+    "task1_policy_framework": {
+        "policy_statement": "This procurement policy establishes guidelines for acquiring goods and services that maximize value, ensure compliance with regulatory requirements, and maintain ethical standards. It applies to all employees involved in procurement activities across all departments and covers all purchases regardless of value.",
+        "approval_thresholds": [
+            {
+                "threshold": "under $5,000",
+                "approvers": [
+                    "Department Manager"
+                ],
+                "documentation": [
+                    "Purchase requisition with business justification",
+                    "Proof of budget availability",
+                    "Vendor selection documentation"
+                ]
+            },
+            {
+                "threshold": "$5,000-$25,000",
+                "approvers": [
+                    "Department Manager",
+                    "Finance Director"
+                ],
+                "documentation": [
+                    "Purchase requisition with business justification",
+                    "Proof of budget availability",
+                    "Vendor selection documentation",
+                    "Minimum of three competitive quotes",
+                    "Bid comparison documentation",
+                    "Technical evaluation (if applicable)",
+                    "Vendor qualification verification"
+                ]
+            },
+            {
+                "threshold": "over $25,000",
+                "approvers": [
+                    "Department Manager",
+                    "Finance Director",
+                    "CEO"
+                ],
+                "documentation": [
+                    "Purchase requisition with business justification",
+                    "Proof of budget availability",
+                    "Vendor selection documentation",
+                    "Formal RFP/RFQ documentation",
+                    "Detailed evaluation matrix with scoring",
+                    "Contract review by legal department",
+                    "Risk assessment documentation",
+                    "Executive approval documentation",
+                    "Minimum of three competitive quotes",
+                    "Bid comparison documentation"
+                ]
+            }
+        ],
+        "conflict_of_interest": "All employees involved in procurement must disclose any personal, financial, or familial relationships with potential vendors. Employees must recuse themselves from decisions involving vendors where conflicts exist. Annual conflict of interest disclosures are required for all procurement staff, and ad-hoc disclosures must be submitted when new conflicts arise.",
+        "emergency_purchases": "Emergency purchases may bypass standard procedures only when there is immediate risk to health, safety, or business continuity. The emergency must be documented and certified by a Department Director. Post-purchase documentation must be completed within 5 business days, and the purchase must be reviewed by the Compliance Department within 30 days."
+    },
+    "task2_bid_evaluation": {
+        "evaluation_criteria": [
+            {
+                "criterion": "Price",
+                "weight": 0.3,
+                "scoring_definitions": {
+                    "1": "More than 15% above the average bid price or budget allocation, representing poor value.",
+                    "2": "Between 5-15% above the average bid price, representing below-average value.",
+                    "3": "Within ±5% of the average bid price, representing acceptable value.",
+                    "4": "Between 5-15% below the average bid price, representing good value.",
+                    "5": "More than 15% below the average bid price while meeting all requirements, representing excellent value."
+                }
+            },
+            {
+                "criterion": "Technical compliance",
+                "weight": 0.25,
+                "scoring_definitions": {
+                    "1": "Fails to meet multiple critical technical requirements with significant deficiencies.",
+                    "2": "Meets most basic requirements but has notable gaps in critical technical specifications.",
+                    "3": "Meets all essential technical requirements with minor deficiencies in non-critical areas.",
+                    "4": "Fully complies with all technical requirements and exceeds specifications in some areas.",
+                    "5": "Exceeds technical requirements in multiple critical areas, offering superior functionality or performance."
+                }
+            },
+            {
+                "criterion": "Vendor reliability",
+                "weight": 0.2,
+                "scoring_definitions": {
+                    "1": "New vendor with no track record or established vendor with documented performance issues (below 85% on-time delivery or quality ratings).",
+                    "2": "Limited history (1-2 years) or inconsistent performance metrics (85-89% on-time delivery or quality ratings).",
+                    "3": "Moderate history (3-4 years) with acceptable performance metrics (90-92% on-time delivery and quality ratings).",
+                    "4": "Established history (5-7 years) with strong performance metrics (93-95% on-time delivery and quality ratings).",
+                    "5": "Extensive history (8+ years) with excellent performance metrics (96%+ on-time delivery and quality ratings)."
+                }
+            },
+            {
+                "criterion": "Delivery timeline",
+                "weight": 0.15,
+                "scoring_definitions": {
+                    "1": "Delivery timeline exceeds required timeframe by more than 50% or is unacceptably long.",
+                    "2": "Delivery timeline exceeds required timeframe by 25-50%, causing moderate delays.",
+                    "3": "Delivery timeline meets the required timeframe with minimal flexibility.",
+                    "4": "Delivery timeline is 10-25% faster than required with reasonable flexibility for changes.",
+                    "5": "Delivery timeline is more than 25% faster than required with high flexibility for changes."
+                }
+            },
+            {
+                "criterion": "Warranty/support",
+                "weight": 0.1,
+                "scoring_definitions": {
+                    "1": "Minimal warranty coverage (less than 12 months) with limited support options and slow response times (24+ hours).",
+                    "2": "Basic warranty coverage (12 months) with standard support options and average response times (12-24 hours).",
+                    "3": "Standard warranty coverage (18-24 months) with comprehensive support options and good response times (8-12 hours).",
+                    "4": "Extended warranty coverage (24-36 months) with premium support options and quick response times (4-8 hours).",
+                    "5": "Superior warranty coverage (36+ months) with exceptional support options and rapid response times (under 4 hours)."
+                }
+            }
+        ],
+        "vendor_evaluations": [
+            {
+                "vendor_name": "TechSupply Inc.",
+                "criteria_scores": {
+                    "Price": 3,
+                    "Technical compliance": 4,
+                    "Vendor reliability": 4,
+                    "Delivery timeline": 3,
+                    "Warranty/support": 4
+                },
+                "total_weighted_score": 3.6
+            },
+            {
+                "vendor_name": "Global Electronics",
+                "criteria_scores": {
+                    "Price": 4,
+                    "Technical compliance": 3,
+                    "Vendor reliability": 3,
+                    "Delivery timeline": 2,
+                    "Warranty/support": 3
+                },
+                "total_weighted_score": 3.15
+            },
+            {
+                "vendor_name": "Digital Solutions",
+                "criteria_scores": {
+                    "Price": 2,
+                    "Technical compliance": 5,
+                    "Vendor reliability": 4,
+                    "Delivery timeline": 5,
+                    "Warranty/support": 5
+                },
+                "total_weighted_score": 3.95
+            }
+        ],
+        "winning_bid": "Digital Solutions"
+    },
+    "task3_process_flowchart": {
+        "process_steps": [
+            {
+                "step_number": 1,
+                "step_name": "Purchase Requisition Creation",
+                "description": "Identify need, create formal purchase requisition with detailed specifications, justification, and estimated cost. Verify budget availability.",
+                "responsible_role": "Requester",
+                "estimated_timeframe": 2,
+                "required_documentation": [
+                    "Purchase requisition form",
+                    "Budget verification",
+                    "Technical specifications"
+                ]
+            },
+            {
+                "step_number": 2,
+                "step_name": "Requisition Review and Approval",
+                "description": "Review requisition for completeness, business necessity, and budget alignment. Approve or reject based on departmental priorities.",
+                "responsible_role": "Department Manager",
+                "estimated_timeframe": 3,
+                "required_documentation": [
+                    "Approved requisition",
+                    "Budget code confirmation"
+                ]
+            },
+            {
+                "step_number": 3,
+                "step_name": "Procurement Strategy Development",
+                "description": "Determine appropriate procurement method based on value threshold, complexity, and urgency. Develop bid specifications if required.",
+                "responsible_role": "Purchasing Agent",
+                "estimated_timeframe": 3,
+                "required_documentation": [
+                    "Procurement strategy document",
+                    "Bid specifications",
+                    "Market research notes"
+                ]
+            },
+            {
+                "step_number": 4,
+                "step_name": "Solicitation of Bids/Quotes",
+                "description": "Request quotes or proposals from qualified vendors. Ensure competitive process for purchases above $5,000. Provide clear specifications and requirements.",
+                "responsible_role": "Purchasing Agent",
+                "estimated_timeframe": 5,
+                "required_documentation": [
+                    "RFQ/RFP documents",
+                    "Vendor communication records",
+                    "Bid receipt log"
+                ]
+            },
+            {
+                "step_number": 5,
+                "step_name": "Bid Evaluation and Vendor Selection",
+                "description": "Evaluate bids using established criteria. Compare pricing, technical compliance, vendor reliability, delivery timeline, and warranty/support. Select optimal vendor.",
+                "responsible_role": "Purchasing Agent",
+                "estimated_timeframe": 4,
+                "required_documentation": [
+                    "Bid evaluation matrix",
+                    "Vendor comparison summary",
+                    "Selection justification"
+                ]
+            },
+            {
+                "step_number": 6,
+                "step_name": "Financial Approval",
+                "description": "Review selected vendor and pricing for purchases above $5,000. Verify budget availability and appropriate financial controls.",
+                "responsible_role": "Finance Director",
+                "estimated_timeframe": 2,
+                "required_documentation": [
+                    "Financial approval form",
+                    "Budget verification",
+                    "Cost analysis"
+                ]
+            },
+            {
+                "step_number": 7,
+                "step_name": "Executive Approval",
+                "description": "Final review and approval for high-value purchases exceeding $25,000. Ensure alignment with strategic objectives and financial prudence.",
+                "responsible_role": "CEO",
+                "estimated_timeframe": 3,
+                "required_documentation": [
+                    "Executive approval form",
+                    "Strategic alignment statement",
+                    "Financial impact analysis"
+                ]
+            },
+            {
+                "step_number": 8,
+                "step_name": "Purchase Order Creation",
+                "description": "Generate formal purchase order with detailed specifications, pricing, delivery terms, and payment conditions. Obtain necessary signatures.",
+                "responsible_role": "Purchasing Agent",
+                "estimated_timeframe": 2,
+                "required_documentation": [
+                    "Purchase order",
+                    "Terms and conditions",
+                    "Delivery specifications"
+                ]
+            },
+            {
+                "step_number": 9,
+                "step_name": "Order Placement and Confirmation",
+                "description": "Send purchase order to selected vendor. Confirm receipt, pricing, specifications, and delivery timeline. Address any discrepancies.",
+                "responsible_role": "Purchasing Agent",
+                "estimated_timeframe": 1,
+                "required_documentation": [
+                    "Vendor acknowledgment",
+                    "Order confirmation",
+                    "Communication log"
+                ]
+            },
+            {
+                "step_number": 10,
+                "step_name": "Receipt and Inspection",
+                "description": "Receive goods or services. Inspect for quality, quantity, and compliance with specifications. Document any discrepancies or damages.",
+                "responsible_role": "Requester",
+                "estimated_timeframe": 2,
+                "required_documentation": [
+                    "Receiving report",
+                    "Inspection checklist",
+                    "Discrepancy documentation"
+                ]
+            },
+            {
+                "step_number": 11,
+                "step_name": "Invoice Processing and Payment",
+                "description": "Match invoice with purchase order and receiving documentation. Verify pricing and quantities. Process payment according to terms.",
+                "responsible_role": "Finance Director",
+                "estimated_timeframe": 5,
+                "required_documentation": [
+                    "Invoice",
+                    "Payment authorization",
+                    "Three-way match verification"
+                ]
+            }
+        ],
+        "decision_points": [
+            {
+                "decision_point_number": 1,
+                "description": "Determine approval path based on purchase value threshold as established in the procurement policy.",
+                "options": [
+                    {
+                        "condition": "Purchase under $5,000",
+                        "next_step": 3
+                    },
+                    {
+                        "condition": "Purchase between $5,000-$25,000",
+                        "next_step": 6
+                    },
+                    {
+                        "condition": "Purchase over $25,000",
+                        "next_step": 7
+                    }
+                ]
+            },
+            {
+                "decision_point_number": 2,
+                "description": "Determine procurement method based on purchase complexity, value, and market conditions.",
+                "options": [
+                    {
+                        "condition": "Simple purchase with established vendors",
+                        "next_step": 4
+                    },
+                    {
+                        "condition": "Complex purchase requiring formal RFP",
+                        "next_step": 4
+                    },
+                    {
+                        "condition": "Emergency purchase",
+                        "next_step": 8
+                    }
+                ]
+            },
+            {
+                "decision_point_number": 3,
+                "description": "Evaluate received goods/services against order specifications and quality requirements.",
+                "options": [
+                    {
+                        "condition": "Goods/services meet all requirements",
+                        "next_step": 11
+                    },
+                    {
+                        "condition": "Discrepancies or quality issues exist",
+                        "next_step": 9
+                    }
+                ]
+            }
+        ]
+    }
+}

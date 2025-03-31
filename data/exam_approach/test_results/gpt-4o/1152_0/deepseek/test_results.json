@@ -1,0 +1,27 @@
+{
+    "task1_results": [
+        {
+            "product_name": "Ergonomic Office Chair",
+            "is_correct": false
+        },
+        {
+            "product_name": "Wireless Keyboard and Mouse Combo",
+            "is_correct": false
+        },
+        {
+            "product_name": "Multi-Function Printer",
+            "is_correct": false
+        }
+    ],
+    "task2_results": [
+        {
+            "article_title": "The Future of Office Supplies: Trends to Watch in 2023",
+            "is_correct": false
+        },
+        {
+            "article_title": "How IT Services Are Evolving to Meet Remote Work Demands",
+            "is_correct": false
+        }
+    ],
+    "overall_score": 0.0
+}

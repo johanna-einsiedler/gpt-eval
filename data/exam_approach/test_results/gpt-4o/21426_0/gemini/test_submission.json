@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "document_issues": [
+        "Missing signature on page 2 of Claim Document 1",
+        "Incorrect policy number on Claim Document 2 (listed as 789021, should be 789012)",
+        "Missing invoice for the claimed amount for Claim Document 3"
+    ],
+    "claim_decisions": [
+        {
+            "claim_id": "1001",
+            "payable_amount": 1500,
+            "decision": "approve",
+            "justification": "Claim amount is within policy limits and authority level."
+        },
+        {
+            "claim_id": "1002",
+            "payable_amount": 0,
+            "decision": "deny",
+            "justification": "Claim amount exceeds policy limits."
+        },
+        {
+            "claim_id": "1003",
+            "payable_amount": 500,
+            "decision": "approve",
+            "justification": "Claim amount is within policy limits and authority level."
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+  "overall_score": 70.0,
+  "category_scores": {
+    "overpayments": 0.0,
+    "underpayments": 100.0,
+    "irregularities": 100.0
+  },
+  "details": {
+    "overpayments": [
+      {
+        "claim_id": "CLAIM001",
+        "status": "incorrect",
+        "message": "Incorrect entry for overpayment",
+        "expected": {
+          "claim_id": "CLAIM001",
+          "amount_pailed": 1200,
+          "approved_amount": 1000,
+          "discrepancy": 200
+        },
+        "submitted": {
+          "claim_id": "CLAIM001",
+          "amount_paid": 1200,
+          "approved_amount": 1000,
+          "discrepancy": 200
+        }
+      }
+    ],
+    "underpayments": [
+      {
+        "claim_id": "CLAIM003",
+        "status": "correct",
+        "message": "Correct underpayment found"
+      },
+      {
+        "claim_id": "CLAIM006",
+        "status": "correct",
+        "message": "Correct underpayment found"
+      }
+    ],
+    "irregularities": [
+      {
+        "claim_id": "CLAIM004",
+        "status": "correct",
+        "message": "Correct irregularitie found"
+      },
+      {
+        "claim_id": "CLAIM009",
+        "status": "correct",
+        "message": "Correct irregularitie found"
+      }
+    ]
+  }
+}

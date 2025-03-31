@@ -1,0 +1,66 @@
+{
+  "overall_score": 60.766666666666666,
+  "total_points": 100,
+  "passing_threshold": 70,
+  "tasks": {
+    "task1": {
+      "score": 17,
+      "max_points": 20,
+      "percentage": 85.0,
+      "feedback": [
+        "Correct festival commission calculation: +5 points",
+        "Correct endorsement deal commission calculation: +7 points",
+        "Correct streaming royalty commission calculation: +5 points",
+        "Explanation lacks both detail and contract clause references"
+      ]
+    },
+    "task2": {
+      "score": 12.0,
+      "max_points": 20,
+      "percentage": 60.0,
+      "feedback": [
+        "Correctly identified all three discrepancies: +6 points",
+        "Correctly calculated all commission impacts: +6 points",
+        "Resolution steps quality: +0.0 points out of 8"
+      ]
+    },
+    "task3": {
+      "score": 15.0,
+      "max_points": 20,
+      "percentage": 75.0,
+      "feedback": [
+        "All required projects included in schedule: +5 points",
+        "Payment details accuracy: 21/21 correct: +5.0 points",
+        "Correctly prioritized deposits as high priority: +2.5 points",
+        "Schedule is properly organized chronologically: +2.5 points",
+        "Collection strategy quality: +0.0 points out of 5"
+      ]
+    },
+    "task4": {
+      "score": 2.2666666666666666,
+      "max_points": 20,
+      "percentage": 11.333333333333332,
+      "feedback": [
+        "Initial collection email quality: +1.6666666666666665 points out of 10",
+        "  - Required elements: 1/9",
+        "  - Tone and professionalism: 1/4",
+        "Follow-up email quality: +0.6000000000000001 points out of 10",
+        "  - Required elements: 1/10",
+        "  - Escalation and professionalism: 0/4"
+      ]
+    },
+    "task5": {
+      "score": 14.5,
+      "max_points": 20,
+      "percentage": 72.5,
+      "feedback": [
+        "Payment log accuracy: 38/38 correct fields: +12 points",
+        "Reconciliation notes quality: +2.5 points out of 8",
+        "  - Word count (11): 0/2",
+        "  - Key elements: 1/8: 0.5/4",
+        "  - Recommendations: 2/2"
+      ]
+    }
+  },
+  "passed": false
+}

@@ -1,0 +1,90 @@
+{
+    "answer_key": {
+        "1": {
+            "type": "Information Retrieval & Identification",
+            "correct_answer_example": "Regulation Name: ISO 14001, URL: https://www.iso.org/iso-14001-environmental-management.html",
+            "validation_criteria": "Regulation name should be a recognized international environmental standard or regulation related to sustainable procurement. URL should be a valid link to the official website or a reputable source describing the standard/regulation. Examples include ISO 14001, EMAS, LEED (for building materials if applicable to furniture), FSC (for wood products in furniture), etc."
+        },
+        "2": {
+            "type": "Interpretation of Regulatory Text",
+            "correct_answer_keywords": [
+                "prohibits",
+                "cash",
+                "cash equivalents",
+                "lavish",
+                "excessive",
+                "gifts during tender",
+                "obligation",
+                "bribery",
+                "corruption",
+                "fair competition",
+                "ethical conduct",
+                "objectivity"
+            ],
+            "negative_keywords": [
+                "allows",
+                "unlimited",
+                "cash gifts",
+                "expensive gifts always ok"
+            ],
+            "explanation_guidance": "Answer should explain that the section prohibits cash/cash equivalents and lavish gifts/hospitality to prevent bribery and ensure fair purchasing decisions. It should also mention the importance of ethical conduct and compliance with anti-bribery laws.  Look for keywords related to prohibitions, types of gifts prohibited, and reasons for the policy (ethics, legality, fairness)."
+        },
+        "3": {
+            "type": "Application of Regulation to Scenario",
+            "correct_answer_keywords": [
+                "ethical sourcing",
+                "reputation",
+                "legal risk",
+                "compliance",
+                "labor disputes",
+                "fair labor practices",
+                "wage and hour",
+                "safety",
+                "child labor",
+                "discrimination",
+                "working conditions"
+            ],
+            "explanation_guidance": "Answer should explain that labor laws are relevant because non-compliance by suppliers can lead to ethical and reputational risks for the purchasing company. It should mention at least one specific area of labor law (e.g., wage laws, safety regulations, child labor laws) as relevant to supplier evaluation. Focus on the link between supplier labor practices and the purchasing decision, highlighting risks and ethical considerations."
+        },
+        "4": {
+            "type": "Basic Legal Research Strategy",
+            "correct_answer_step1_keywords": [
+                "search engine",
+                "google",
+                "import regulations",
+                "export regulations",
+                "country name",
+                "initial research",
+                "general overview"
+            ],
+            "correct_answer_step2_keywords": [
+                "official government website",
+                "customs",
+                "trade ministry",
+                "embassy",
+                "legislation",
+                "official sources",
+                "detailed information",
+                "specific regulations"
+            ],
+            "explanation_guidance": "Step 1 should involve using a search engine with general keywords like 'import/export regulations' and the 'country name' for initial research. Step 2 should involve moving to official government sources (customs, trade ministry websites) for detailed and reliable information.  Assess if the steps are logical and progress from general to specific, utilizing appropriate tools (web browser and search engines)."
+        }
+    },
+    "explanation_of_correct_answers": {
+        "1": "For Question 1, a correct answer identifies a major international regulation or standard related to sustainable procurement.  ISO 14001 (Environmental Management Systems) is a strong example as it is widely recognized and relevant to product sourcing and environmental impact. Other valid answers could include EMAS (Eco-Management and Audit Scheme), LEED (Leadership in Energy and Environmental Design - relevant for building materials and potentially furniture materials), FSC (Forest Stewardship Council - for wood-based furniture), or similar standards. The key is that the regulation/standard is international, relevant to environmental sustainability in procurement, and the provided URL leads to a credible source describing it.",
+        "2": "For Question 2, the 'Ethical_Sourcing_Excerpt.pdf' clearly prohibits accepting or offering cash or cash equivalents, lavish or excessive gifts/hospitality, gifts during tender processes, and gifts that create obligation. The 'Why is this important?' section explains that these prohibitions are in place to prevent bribery and corruption, ensure fair competition, maintain ethical conduct and reputation, and ensure objectivity in decision-making. A correct answer should capture these key prohibitions and reasons, demonstrating an understanding of the excerpt's content and its implications for legal and ethical purchasing.",
+        "3": "For Question 3, labor laws and regulations are highly relevant to supplier selection because they directly relate to ethical sourcing, corporate social responsibility, and potential legal and reputational risks.  Suppliers who violate labor laws may engage in unethical practices like unfair wages, unsafe working conditions, child labor, or discrimination. Choosing such suppliers can damage the purchasing company's reputation and potentially lead to legal repercussions.  Mentioning a specific area of labor law, such as 'wage and hour laws,' 'occupational safety and health regulations,' 'child labor laws,' or 'anti-discrimination laws,' demonstrates a practical understanding of the scope of labor law relevance in procurement.",
+        "4": "For Question 4, a logical first step in researching import/export regulations for a new country is to use a general search engine like Google with broad search terms such as 'import regulations [country name]' or 'export regulations [country name]'. This allows for an initial overview and identification of potentially relevant official sources. The second step should then be to refine the search by directly accessing official government websites of the target country, such as the customs authority, trade ministry, or embassy websites. These official sources are more likely to provide accurate, detailed, and up-to-date information on specific import/export regulations. This two-step approach moves from general exploration to targeted, reliable information gathering."
+    },
+    "passing_criteria": {
+        "minimum_correct_questions": 3,
+        "partial_credit_policy": "Partial credit may be awarded for answers that demonstrate partial understanding or are partially correct. For example, in Question 1, if the regulation name is correct but the URL is slightly off or less ideal but still relevant, partial credit could be given. In Question 2 and 3, if the explanation captures some but not all key aspects, partial credit is possible. For Question 4, if one step is well-described but the other is weak, partial credit could be considered. The evaluator should use professional judgment to assess the degree of understanding and practical skill demonstrated, even if the answer is not perfectly matching the ideal answer key.",
+        "justification": "Passing criteria of 3 out of 4 correct questions with potential for partial credit is set to assess foundational competence. This basic exam aims to verify the candidate's ability to initiate regulatory monitoring and apply basic principles, not to demonstrate expert-level legal knowledge.  Success in 3 out of 4 questions, even with some partial credits, indicates a sufficient grasp of the fundamental skills being tested at the basic level."
+    },
+    "programmatic_validation_guidance": {
+        "question_1_validation": "For Question 1, validation can be done by: 1) Checking if the provided regulation name is in a list of known valid international environmental standards/regulations (this list can be expanded). 2) Validating the URL by checking if it is a valid URL format and if the domain belongs to a reputable organization (e.g., iso.org, un.org, government websites, recognized certification bodies).  A simple keyword search on the linked page for the provided regulation name can also increase confidence in the answer's relevance.",
+        "question_2_validation": "For Question 2, programmatic validation can be achieved through keyword analysis. Check if the answer text contains a sufficient number of 'correct_answer_keywords' and a minimal number of 'negative_keywords'.  A scoring system can be implemented based on the presence and frequency of these keywords, weighted by their importance.  Natural Language Processing (NLP) techniques could be used for more sophisticated semantic analysis to understand the meaning and relevance of the answer beyond simple keyword matching, but for basic validation, keyword presence is a good starting point.",
+        "question_3_validation": "Similar to Question 2, keyword analysis can be used for Question 3. Check for the presence of 'correct_answer_keywords' related to ethical sourcing, risks, labor law areas, and supplier evaluation.  The keywords should indicate an understanding of the link between labor laws and supplier selection decisions.  Again, NLP could enhance validation, but keyword presence provides a basic level of automated assessment.",
+        "question_4_validation": "For Question 4, validation can focus on the *type* of resources and search terms mentioned in each step. Step 1 should ideally involve 'search engine' and 'general keywords'. Step 2 should involve 'official government websites' or similar 'authoritative sources'.  Keyword matching for step descriptions against 'correct_answer_step1_keywords' and 'correct_answer_step2_keywords' can be used.  The logical progression from general search to official sources is also a key validation point.  Ensure that the steps are described in a way that reflects a practical research approach using a web browser."
+    }
+}
