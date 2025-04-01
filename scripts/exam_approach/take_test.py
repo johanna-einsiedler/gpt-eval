@@ -65,7 +65,7 @@ def save_answer_json(row, path, model):
     return True
 
 def save_evaluation(row, path):
-        """
+    """
     Extracts and saves Python evaluation code from a DataFrame row to a file.
 
     Args:
@@ -103,6 +103,7 @@ def save_evaluation(row, path):
 
     print(f"File saved successfully: {file_path}")
     return True
+
 
 
 
@@ -321,7 +322,7 @@ def collect_overall_scores(row,parent_directory):
 if __name__ == "__main__":
     path_to_data = '../../data/exam_approach/exams/'
     for root, dirs, files in os.walk(path_to_data):
-        for model in dirs:
+        for model in ['gpt-4o']:
             print('Taking the exams of', model)
 
                  # Create the output directory for the current model if it does not exist
@@ -338,8 +339,17 @@ if __name__ == "__main__":
                         df = pd.read_csv(file_path)
                         print('Overall ', df.shape[0], ' tasks in the data')
 
-            df= pd.read_csv(f'../../data/exam_approach/test_results/{model}/test_results_business_and_financial_operations_occupations_scores.csv')
+            df= pd.read_csv(f'../../data/exam_approach/exam_approach/exams/{model}/exams_business_and_financial_operations_occupations_CORE_automatable.csv')[0:150]
 
+
+            overwrite = True
+                if  overwrite == False:
+                    print('reading in existing results')
+                    existing_df = pd.read_csv('../../data/exam_approach/test_results/test_results_business_and_financial_operations_occupations_scores.csv')
+                    df = df[~df['task_id'].isin(existing_df['task_id'])]
+                print('Processing ', df.shape[0], ' new tasks.')
+            
+                    #
             #test models
             df['test_answers_gemini'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template, 'gemini'))
             df['test_answers_claude'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template, 'claude' ))
@@ -350,16 +360,6 @@ if __name__ == "__main__":
             df.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_business_and_financial_operations_occupations_CORE_automatable.csv')
 
 
-
-
-# overwrite = True
-    # if  overwrite == False:
-    #     print('reading in existing results')
-    #     existing_df = pd.read_csv('../../data/exam_approach/test_results/test_results_business_and_financial_operations_occupations.csv')
-    #     df = df[~df['task_id'].isin(existing_df['task_id'])]
-    # print('Processing ', df.shape[0], ' new tasks.')
-  
-        # #
     
     # # # read in labels & filter exposure 
    

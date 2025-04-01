@@ -162,47 +162,34 @@ def custom_join_and(lst):
         return ""  # If the list is empty
 
 
+def safe_eval(value, default=[]):
+    """Safely evaluates a string to a Python object, returning default if NaN or invalid."""
+    if pd.isna(value):  # Check for NaN
+        return default
+    try:
+        return ast.literal_eval(value)  # Convert string to list
+    except (ValueError, SyntaxError):  # Handle malformed data
+        return default  # Return default if evaluation fails
 def build_system_prompt(row, system_prompt_template, standard=True):
     """
     Builds a system prompt for designing a practical exam based on the given row of data.
-
-    Args:
-        row (pd.Series): A row of data containing information about the task, including required tools, materials, 
-                         occupation, and task description.
-        system_prompt_template (str): A template string for the system prompt with placeholders for dynamic content.
-        standard (bool): A flag indicating whether to use the standard tools and materials fields 
-                         (default is True). If False, non-standard fields are used.
-
-    Returns:
-        str: A formatted system prompt string with the provided task details.
-
-    Example:
-        row = {
-            'occupation': 'data scientist',
-            'task_description': 'analyze a dataset',
-            'task_id': '123',
-            'required_tools_standard': "['Python', 'Jupyter Notebook']",
-            'required_materials_standard': "['sample_dataset.csv']"
-        }
-        system_prompt_template = "You are an examiner of {occupation} capabilities. {tools_instructions} {materials_instructions}"
-        build_system_prompt(row, system_prompt_template)
-
-        Output:
-        "You are an examiner of data scientist capabilities. - The candidate has access to a computer with the following tools: Python and Jupyter Notebook. - The candidate can also be given digital materials such as sample_dataset.csv that must be used for the test."
     """
-    if standard:
-        required_tools = ast.literal_eval(row['required_tools_standard'])
-        required_materials = ast.literal_eval(row['required_materials_standard'])
-    else:
-        required_tools = ast.literal_eval(row['required_tools'])
-        required_materials = ast.literal_eval(row['required_materials'])
 
-    if isinstance(required_tools, (tuple, list)):
+
+    if standard:
+        required_tools = safe_eval(row['required_tools_standard'])
+        required_materials = safe_eval(row['required_materials_standard'])
+        print(required_tools)
+    else:
+        required_tools = safe_eval(row['required_tools'])
+        required_materials = safe_eval(row['required_materials'])
+
+    if isinstance(required_tools, (tuple, list)) and required_tools:
         tools_instructions = """- The candidate has access to a computer with the following tools: """ + custom_join_and(required_tools)
     else: 
         tools_instructions = """- The candidate does not have access to any special tools."""
 
-    if isinstance(required_materials, (tuple, list)):
+    if isinstance(required_materials, (tuple, list)) and required_materials:
         materials_instructions = """- The candidate can also be given digital materials such as """ + \
             custom_join_or(required_materials) + """ that must be used for the test."""
     else:
@@ -215,7 +202,6 @@ def build_system_prompt(row, system_prompt_template, standard=True):
         tools_instructions=tools_instructions,
         materials_instructions=materials_instructions
     )
-    print(system_prompt)
     return system_prompt
 
 
@@ -259,22 +245,22 @@ if __name__ == "__main__":
     if len(sys.argv) >1:
         path_to_data = sys.argv[1]
     else:
-        #path_to_data = '../../data/exam_approach/material_lists/'
-        path_to_data = '../../data/exam_approach/exams/'
+        path_to_data = '../../data/exam_approach/material_lists/'
+        #path_to_data = '../../data/exam_approach/exams/'
 
     if len(sys.argv)>2:
         overwrite = sys.argv[3]
     else:
-        overwrite = True
+        overwrite = False
 
 
 
     # read in list of task ids to be excluded
-    exclusion_list = pd.read_csv('../../data/exam_approach/exclusion_lists/presention_image_audio_video_virtual_all.csv',index_col=0).rename(columns={'0':'task_id'})
-    
-  for root, dirs, files in os.walk(path_to_data):
+    exclusion_list = pd.read_csv('../../data/exam_approach/exclusion_lists/presentation_image_audio_video_virtual_all.csv',index_col=0).rename(columns={'0':'task_id'})
+
+    #for root, dirs, files in os.walk(path_to_data):
     # Iterate over models (subdirectories) in the current root directory
-    for model in dirs:
+    for model in ['claude-3-7-sonnet-20250219']:
         print('Generating exams using', model)
 
         # Create the output directory for the current model if it does not exist
@@ -283,10 +269,11 @@ if __name__ == "__main__":
             os.makedirs(output_dir)
 
         # Process files in the model's directory
-        model_path = os.path.join(root, model)  # Construct the full path to the model directory
+        model_path = os.path.join(path_to_data, model)  
+        print(model_path)# Construct the full path to the model directory
         for file in os.listdir(model_path):  # Use os.listdir instead of os.walk for files in the model
             file_path = os.path.join(model_path, file)  # Full path to the file
-
+            print(file_path)
             # Only process CSV files
             if file.endswith('.csv') and os.path.isfile(file_path):
                 print(f"Processing file: {file_path}")
@@ -311,24 +298,24 @@ if __name__ == "__main__":
                 df['answer_instructions'] = df.apply(run_query, axis=1, args=('prompt_instructions',model, ))
 
 
-                get 3. MATERIALS
+                #get 3. MATERIALS
                 print('Generating materials')
                 df['prompt_materials'] = df.apply(build_prompts, axis=1, args=(prompt_template_materials,))
                 df['answer_materials'] = df.apply(run_query, axis=1, args=('prompt_materials',model,))
 
 
-                4. SUBMISSION
+                #4. SUBMISSION
                 print('Generating submission requirements')
                 df['prompt_submission'] = df.apply(build_prompts, axis=1, args=(prompt_template_submission,))
                 df['answer_submission'] = df.apply(run_query, axis=1, args=('prompt_submission',model,))
 
 
-                4. EVALUATION
+                #5. EVALUATION
                 print('Generating evaluation guide')
                 df['prompt_evaluation'] = df.apply(build_prompts, axis=1, args=(prompt_template_evaluation,))
                 df['answer_evaluation'] = df.apply(run_query, axis=1, args=('prompt_evaluation',model,))
 
-                # 5. GRADING
+                # 6. GRADING
                 print('Generating grading script')
                 df['prompt_grading'] = df.apply(build_prompts, axis=1, args=(prompt_template_grading,))
                 df['answer_grading'] = df.apply(run_query, axis=1, args=('prompt_grading',model,))
@@ -338,4 +325,4 @@ if __name__ == "__main__":
                 else:
                     df.to_csv(f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
                     print('saved to ', f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
-        print('Finished! Processed '+str(df.shape[0]) +' tasks!')
+                print('Finished! Processed '+str(df.shape[0]) +' tasks!')

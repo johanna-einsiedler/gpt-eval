@@ -1,0 +1,1093 @@
+,row,prompt,task_id,occupation,task_description,e1_description,e2_description,e3_description,e1_remote_possible,e2_remote_possible,e3_remote_possible,e1_required_tools,e2_required_tools,e3_required_tools,e1_required_materials,e2_required_materials,e3_required_materials,e1_output,e2_output,e3_output,output
+0,0,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Test, maintain, and monitor computer programs and systems, including coordinating the installation of computer programs and systems..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3465.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Test, maintain, and monitor computer programs and systems, including coordinating the installation of computer programs and systems."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3465.0,Computer Systems Analysts,"Test, maintain, and monitor computer programs and systems, including coordinating the installation of computer programs and systems.",Testing a new software update to ensure compatibility with existing systems.,Monitoring system performance to identify and resolve bottlenecks.,Coordinating the installation of a new enterprise resource planning (ERP) system across multiple departments.,True,True,False,"['Testing software', 'Code editor']","['Monitoring software', 'Data analysis tools']","['Project management software', 'Communication tools']","['Data files', 'Information']","['Data files', 'Information']","['Information', 'Data files']","['Reports', 'Text documents']","['Reports', 'Spreadsheets']","['Project plans', 'Sent emails']","```json
+{
+  ""task_id"": ""3465.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Test, maintain, and monitor computer programs and systems, including coordinating the installation of computer programs and systems."",
+  ""e1_description"": ""Testing a new software update to ensure compatibility with existing systems."",
+  ""e2_description"": ""Monitoring system performance to identify and resolve bottlenecks."",
+  ""e3_description"": ""Coordinating the installation of a new enterprise resource planning (ERP) system across multiple departments."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": false,
+  ""e1_required_tools"": [""Testing software"", ""Code editor""],
+  ""e2_required_tools"": [""Monitoring software"", ""Data analysis tools""],
+  ""e3_required_tools"": [""Project management software"", ""Communication tools""],
+  ""e1_required_materials"": [""Data files"", ""Information""],
+  ""e2_required_materials"": [""Data files"", ""Information""],
+  ""e3_required_materials"": [""Information"", ""Data files""],
+  ""e1_output"": [""Reports"", ""Text documents""],
+  ""e2_output"": [""Reports"", ""Spreadsheets""],
+  ""e3_output"": [""Project plans"", ""Sent emails""]
+}
+```"
+1,1,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Troubleshoot program and system malfunctions to restore normal functioning..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""20950.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Troubleshoot program and system malfunctions to restore normal functioning."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",20950.0,Computer Systems Analysts,Troubleshoot program and system malfunctions to restore normal functioning.,Diagnosing and resolving a server crash that is affecting the company's email system.,Identifying and fixing a bug in a financial software application that is causing incorrect calculations.,Resolving network connectivity issues that are preventing users from accessing a cloud-based application.,True,True,True,"['Remote access software', 'System monitoring tools', 'Log analysis tools']","['Code editor', 'Debugging tools', 'Version control system']","['Network diagnostic tools', 'Remote access software', 'System monitoring tools']","['Data files', 'Information']","['Data files', 'Information']","['Information', 'Data files']","['Text documents', 'Sent emails']","['Text documents', 'Numbers']","['Text documents', 'Sent emails']","```json
+{
+  ""task_id"": ""20950.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Troubleshoot program and system malfunctions to restore normal functioning."",
+  ""e1_description"": ""Diagnosing and resolving a server crash that is affecting the company's email system."",
+  ""e2_description"": ""Identifying and fixing a bug in a financial software application that is causing incorrect calculations."",
+  ""e3_description"": ""Resolving network connectivity issues that are preventing users from accessing a cloud-based application."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Remote access software"", ""System monitoring tools"", ""Log analysis tools""],
+  ""e2_required_tools"": [""Code editor"", ""Debugging tools"", ""Version control system""],
+  ""e3_required_tools"": [""Network diagnostic tools"", ""Remote access software"", ""System monitoring tools""],
+  ""e1_required_materials"": [""Data files"", ""Information""],
+  ""e2_required_materials"": [""Data files"", ""Information""],
+  ""e3_required_materials"": [""Information"", ""Data files""],
+  ""e1_output"": [""Text documents"", ""Sent emails""],
+  ""e2_output"": [""Text documents"", ""Numbers""],
+  ""e3_output"": [""Text documents"", ""Sent emails""]
+}
+```"
+2,2,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Expand or modify system to serve new purposes or improve work flow..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3470.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Expand or modify system to serve new purposes or improve work flow."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3470.0,Computer Systems Analysts,Expand or modify system to serve new purposes or improve work flow.,Integrating a new customer relationship management (CRM) module into an existing enterprise resource planning (ERP) system to improve customer interaction tracking.,Upgrading the current database system to a more scalable solution to handle increased data volume and improve query performance.,Implementing a new workflow automation tool to streamline repetitive tasks and improve overall efficiency in the organization.,True,True,True,"['Database management software', 'Code editor', 'Integration platform']","['Database management software', 'Data migration tools', 'Code editor']","['Workflow automation software', 'Code editor', 'Project management software']","['Data files', 'Information', 'Text documents']","['Data files', 'Information', 'Text documents']","['Information', 'Text documents', 'Data files']","['Spreadsheets', 'Text documents', 'Sent emails']","['Spreadsheets', 'Text documents', 'Sent emails']","['Spreadsheets', 'Text documents', 'Sent emails']","```json
+{
+  ""task_id"": ""3470.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Expand or modify system to serve new purposes or improve work flow."",
+  ""e1_description"": ""Integrating a new customer relationship management (CRM) module into an existing enterprise resource planning (ERP) system to improve customer interaction tracking."",
+  ""e2_description"": ""Upgrading the current database system to a more scalable solution to handle increased data volume and improve query performance."",
+  ""e3_description"": ""Implementing a new workflow automation tool to streamline repetitive tasks and improve overall efficiency in the organization."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Database management software"", ""Code editor"", ""Integration platform""],
+  ""e2_required_tools"": [""Database management software"", ""Data migration tools"", ""Code editor""],
+  ""e3_required_tools"": [""Workflow automation software"", ""Code editor"", ""Project management software""],
+  ""e1_required_materials"": [""Data files"", ""Information"", ""Text documents""],
+  ""e2_required_materials"": [""Data files"", ""Information"", ""Text documents""],
+  ""e3_required_materials"": [""Information"", ""Text documents"", ""Data files""],
+  ""e1_output"": [""Spreadsheets"", ""Text documents"", ""Sent emails""],
+  ""e2_output"": [""Spreadsheets"", ""Text documents"", ""Sent emails""],
+  ""e3_output"": [""Spreadsheets"", ""Text documents"", ""Sent emails""]
+}
+```"
+3,3,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Use the computer in the analysis and solution of business problems, such as development of integrated production and inventory control and cost analysis systems..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3482.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Use the computer in the analysis and solution of business problems, such as development of integrated production and inventory control and cost analysis systems."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3482.0,Computer Systems Analysts,"Use the computer in the analysis and solution of business problems, such as development of integrated production and inventory control and cost analysis systems.",Developing an integrated production control system to optimize manufacturing processes.,Creating an inventory management system to reduce excess stock and improve order fulfillment.,Designing a cost analysis system to identify and reduce unnecessary expenses in business operations.,True,True,True,"['Database management software', 'Data analysis software', 'Code editor']","['Database management software', 'Spreadsheet software', 'Data visualization software']","['Data analysis software', 'Spreadsheet software', 'Presentation software']","['Data files', 'Information']","['Data files', 'Information']","['Data files', 'Information']","['Spreadsheets', 'Text documents']","['Spreadsheets', 'Text documents']","['Spreadsheets', 'Text documents']","```json
+{
+  ""task_id"": ""3482.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Use the computer in the analysis and solution of business problems, such as development of integrated production and inventory control and cost analysis systems."",
+  ""e1_description"": ""Developing an integrated production control system to optimize manufacturing processes."",
+  ""e2_description"": ""Creating an inventory management system to reduce excess stock and improve order fulfillment."",
+  ""e3_description"": ""Designing a cost analysis system to identify and reduce unnecessary expenses in business operations."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Database management software"", ""Data analysis software"", ""Code editor""],
+  ""e2_required_tools"": [""Database management software"", ""Spreadsheet software"", ""Data visualization software""],
+  ""e3_required_tools"": [""Data analysis software"", ""Spreadsheet software"", ""Presentation software""],
+  ""e1_required_materials"": [""Data files"", ""Information""],
+  ""e2_required_materials"": [""Data files"", ""Information""],
+  ""e3_required_materials"": [""Data files"", ""Information""],
+  ""e1_output"": [""Spreadsheets"", ""Text documents""],
+  ""e2_output"": [""Spreadsheets"", ""Text documents""],
+  ""e3_output"": [""Spreadsheets"", ""Text documents""]
+}
+```"
+4,4,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Develop, document, and revise system design procedures, test procedures, and quality standards..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3477.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Develop, document, and revise system design procedures, test procedures, and quality standards."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3477.0,Computer Systems Analysts,"Develop, document, and revise system design procedures, test procedures, and quality standards.",Creating a new system design procedure for a company's internal software application.,Documenting and revising test procedures for a cloud-based service platform.,Updating quality standards for a legacy system to align with current industry practices.,True,True,True,"['Code editor', 'Text editor', 'Diagramming software']","['Text editor', 'Testing software', 'Spreadsheet']","['Text editor', 'Spreadsheet', 'Presentation software']","['Data files', 'Text documents', 'Information']","['Text documents', 'Information', 'Data files']","['Text documents', 'Information', 'Data files']","['Text documents', 'Diagrams', 'Spreadsheets']","['Text documents', 'Spreadsheets', 'Reports']","['Text documents', 'Spreadsheets', 'Presentations']","```json
+{
+  ""task_id"": ""3477.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Develop, document, and revise system design procedures, test procedures, and quality standards."",
+  ""e1_description"": ""Creating a new system design procedure for a company's internal software application."",
+  ""e2_description"": ""Documenting and revising test procedures for a cloud-based service platform."",
+  ""e3_description"": ""Updating quality standards for a legacy system to align with current industry practices."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Code editor"", ""Text editor"", ""Diagramming software""],
+  ""e2_required_tools"": [""Text editor"", ""Testing software"", ""Spreadsheet""],
+  ""e3_required_tools"": [""Text editor"", ""Spreadsheet"", ""Presentation software""],
+  ""e1_required_materials"": [""Data files"", ""Text documents"", ""Information""],
+  ""e2_required_materials"": [""Text documents"", ""Information"", ""Data files""],
+  ""e3_required_materials"": [""Text documents"", ""Information"", ""Data files""],
+  ""e1_output"": [""Text documents"", ""Diagrams"", ""Spreadsheets""],
+  ""e2_output"": [""Text documents"", ""Spreadsheets"", ""Reports""],
+  ""e3_output"": [""Text documents"", ""Spreadsheets"", ""Presentations""]
+}
+```"
+5,5,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Assess the usefulness of pre-developed application packages and adapt them to a user environment..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3475.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Assess the usefulness of pre-developed application packages and adapt them to a user environment."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3475.0,Computer Systems Analysts,Assess the usefulness of pre-developed application packages and adapt them to a user environment.,Evaluating a customer relationship management (CRM) software package to determine its suitability for a small business's sales team.,Assessing an enterprise resource planning (ERP) system for integration into a manufacturing company's existing IT infrastructure.,Analyzing a human resources management system (HRMS) to ensure it meets the compliance and reporting needs of a healthcare organization.,True,True,True,"['Spreadsheets', 'Code editor', 'Presentation software']","['Spreadsheets', 'Code editor', 'Database management software']","['Spreadsheets', 'Text editor', 'Presentation software']","['Data files', 'Information', 'PDFs']","['Data files', 'Information', 'PDFs']","['Data files', 'Information', 'PDFs']","['Spreadsheets', 'Text documents', 'Presentation slides']","['Spreadsheets', 'Text documents', 'Database reports']","['Spreadsheets', 'Text documents', 'Presentation slides']","```json
+{
+  ""task_id"": ""3475.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Assess the usefulness of pre-developed application packages and adapt them to a user environment."",
+  ""e1_description"": ""Evaluating a customer relationship management (CRM) software package to determine its suitability for a small business's sales team."",
+  ""e2_description"": ""Assessing an enterprise resource planning (ERP) system for integration into a manufacturing company's existing IT infrastructure."",
+  ""e3_description"": ""Analyzing a human resources management system (HRMS) to ensure it meets the compliance and reporting needs of a healthcare organization."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Spreadsheets"", ""Code editor"", ""Presentation software""],
+  ""e2_required_tools"": [""Spreadsheets"", ""Code editor"", ""Database management software""],
+  ""e3_required_tools"": [""Spreadsheets"", ""Text editor"", ""Presentation software""],
+  ""e1_required_materials"": [""Data files"", ""Information"", ""PDFs""],
+  ""e2_required_materials"": [""Data files"", ""Information"", ""PDFs""],
+  ""e3_required_materials"": [""Data files"", ""Information"", ""PDFs""],
+  ""e1_output"": [""Spreadsheets"", ""Text documents"", ""Presentation slides""],
+  ""e2_output"": [""Spreadsheets"", ""Text documents"", ""Database reports""],
+  ""e3_output"": [""Spreadsheets"", ""Text documents"", ""Presentation slides""]
+}
+```"
+6,6,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Define the goals of the system and devise flow charts and diagrams describing logical operational steps of programs..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3476.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Define the goals of the system and devise flow charts and diagrams describing logical operational steps of programs."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3476.0,Computer Systems Analysts,Define the goals of the system and devise flow charts and diagrams describing logical operational steps of programs.,Analyzing a company's current inventory management system to define goals for a new automated system and creating flow charts to illustrate the new process.,"Designing a customer relationship management (CRM) system for a retail business, including defining system goals and creating diagrams to map out user interactions.","Developing a new payroll processing system for a corporation, defining the system's objectives, and creating logical diagrams to outline the processing steps.",True,True,True,"['Diagramming software', 'Text editor']","['Diagramming software', 'Text editor']","['Diagramming software', 'Text editor']","['Data files', 'Information']","['Data files', 'Information']","['Data files', 'Information']","['Flow charts', 'Text documents']","['Diagrams', 'Text documents']","['Diagrams', 'Text documents']","```json
+{
+  ""task_id"": ""3476.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Define the goals of the system and devise flow charts and diagrams describing logical operational steps of programs."",
+  ""e1_description"": ""Analyzing a company's current inventory management system to define goals for a new automated system and creating flow charts to illustrate the new process."",
+  ""e2_description"": ""Designing a customer relationship management (CRM) system for a retail business, including defining system goals and creating diagrams to map out user interactions."",
+  ""e3_description"": ""Developing a new payroll processing system for a corporation, defining the system's objectives, and creating logical diagrams to outline the processing steps."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Diagramming software"", ""Text editor""],
+  ""e2_required_tools"": [""Diagramming software"", ""Text editor""],
+  ""e3_required_tools"": [""Diagramming software"", ""Text editor""],
+  ""e1_required_materials"": [""Data files"", ""Information""],
+  ""e2_required_materials"": [""Data files"", ""Information""],
+  ""e3_required_materials"": [""Data files"", ""Information""],
+  ""e1_output"": [""Flow charts"", ""Text documents""],
+  ""e2_output"": [""Diagrams"", ""Text documents""],
+  ""e3_output"": [""Diagrams"", ""Text documents""]
+}
+```"
+7,7,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Provide staff and users with assistance solving computer-related problems, such as malfunctions and program problems..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3464.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Provide staff and users with assistance solving computer-related problems, such as malfunctions and program problems."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3464.0,Computer Systems Analysts,"Provide staff and users with assistance solving computer-related problems, such as malfunctions and program problems.",Assisting a user in resolving a software application crash issue.,Helping a staff member troubleshoot network connectivity problems.,Guiding a user through the process of recovering lost data from a corrupted file.,True,True,True,"['Remote desktop software', 'Communication platform']","['Network diagnostic tools', 'Communication platform']","['Data recovery software', 'Communication platform']","['Information', 'Data files']","['Information', 'Data files']","['Information', 'Data files']","['Sent emails', 'Text documents']","['Sent emails', 'Text documents']","['Sent emails', 'Text documents']","```json
+{
+  ""task_id"": ""3464.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Provide staff and users with assistance solving computer-related problems, such as malfunctions and program problems."",
+  ""e1_description"": ""Assisting a user in resolving a software application crash issue."",
+  ""e2_description"": ""Helping a staff member troubleshoot network connectivity problems."",
+  ""e3_description"": ""Guiding a user through the process of recovering lost data from a corrupted file."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Remote desktop software"", ""Communication platform""],
+  ""e2_required_tools"": [""Network diagnostic tools"", ""Communication platform""],
+  ""e3_required_tools"": [""Data recovery software"", ""Communication platform""],
+  ""e1_required_materials"": [""Information"", ""Data files""],
+  ""e2_required_materials"": [""Information"", ""Data files""],
+  ""e3_required_materials"": [""Information"", ""Data files""],
+  ""e1_output"": [""Sent emails"", ""Text documents""],
+  ""e2_output"": [""Sent emails"", ""Text documents""],
+  ""e3_output"": [""Sent emails"", ""Text documents""]
+}
+```"
+8,8,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Use object-oriented programming languages, as well as client and server applications development processes and multimedia and Internet technology..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3466.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Use object-oriented programming languages, as well as client and server applications development processes and multimedia and Internet technology."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3466.0,Computer Systems Analysts,"Use object-oriented programming languages, as well as client and server applications development processes and multimedia and Internet technology.",Developing a web-based application using object-oriented programming to manage client data and interactions.,Creating a multimedia-rich e-learning platform that integrates server-side processing and client-side interactivity.,Designing and implementing an online marketplace platform that utilizes object-oriented programming for both client and server-side operations.,True,True,True,"['Code editor', 'Web server', 'Database management system']","['Code editor', 'Multimedia editing software', 'Web server']","['Code editor', 'Web server', 'Database management system']","['Data files', 'Information']","['Images', 'Audio files', 'Information']","['Data files', 'Information']","['Text documents', 'Spreadsheets']","['Text documents', 'Presentations']","['Text documents', 'Spreadsheets']","```json
+{
+  ""task_id"": ""3466.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Use object-oriented programming languages, as well as client and server applications development processes and multimedia and Internet technology."",
+  ""e1_description"": ""Developing a web-based application using object-oriented programming to manage client data and interactions."",
+  ""e2_description"": ""Creating a multimedia-rich e-learning platform that integrates server-side processing and client-side interactivity."",
+  ""e3_description"": ""Designing and implementing an online marketplace platform that utilizes object-oriented programming for both client and server-side operations."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Code editor"", ""Web server"", ""Database management system""],
+  ""e2_required_tools"": [""Code editor"", ""Multimedia editing software"", ""Web server""],
+  ""e3_required_tools"": [""Code editor"", ""Web server"", ""Database management system""],
+  ""e1_required_materials"": [""Data files"", ""Information""],
+  ""e2_required_materials"": [""Images"", ""Audio files"", ""Information""],
+  ""e3_required_materials"": [""Data files"", ""Information""],
+  ""e1_output"": [""Text documents"", ""Spreadsheets""],
+  ""e2_output"": [""Text documents"", ""Presentations""],
+  ""e3_output"": [""Text documents"", ""Spreadsheets""]
+}
+```"
+9,9,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Review and analyze computer printouts and performance indicators to locate code problems, and correct errors by correcting codes..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3478.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Review and analyze computer printouts and performance indicators to locate code problems, and correct errors by correcting codes."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3478.0,Computer Systems Analysts,"Review and analyze computer printouts and performance indicators to locate code problems, and correct errors by correcting codes.",Analyzing server logs to identify performance bottlenecks in a web application and correcting the code to optimize database queries.,Reviewing error reports from a financial software system to identify and fix bugs causing incorrect transaction processing.,Examining system performance metrics to locate memory leaks in a desktop application and updating the code to improve memory management.,True,True,True,"['Code editor', 'Log analysis software', 'Database management tool']","['Code editor', 'Error tracking software', 'Spreadsheet']","['Code editor', 'Performance monitoring tool', 'Debugging tool']","['Data files', 'Information']","['Data files', 'Information']","['Data files', 'Information']","['Text documents', 'Spreadsheets']","['Text documents', 'Spreadsheets']","['Text documents', 'Spreadsheets']","```json
+{
+  ""task_id"": ""3478.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Review and analyze computer printouts and performance indicators to locate code problems, and correct errors by correcting codes."",
+  ""e1_description"": ""Analyzing server logs to identify performance bottlenecks in a web application and correcting the code to optimize database queries."",
+  ""e2_description"": ""Reviewing error reports from a financial software system to identify and fix bugs causing incorrect transaction processing."",
+  ""e3_description"": ""Examining system performance metrics to locate memory leaks in a desktop application and updating the code to improve memory management."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Code editor"", ""Log analysis software"", ""Database management tool""],
+  ""e2_required_tools"": [""Code editor"", ""Error tracking software"", ""Spreadsheet""],
+  ""e3_required_tools"": [""Code editor"", ""Performance monitoring tool"", ""Debugging tool""],
+  ""e1_required_materials"": [""Data files"", ""Information""],
+  ""e2_required_materials"": [""Data files"", ""Information""],
+  ""e3_required_materials"": [""Data files"", ""Information""],
+  ""e1_output"": [""Text documents"", ""Spreadsheets""],
+  ""e2_output"": [""Text documents"", ""Spreadsheets""],
+  ""e3_output"": [""Text documents"", ""Spreadsheets""]
+}
+```"
+10,10,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Read manuals, periodicals, and technical reports to learn how to develop programs that meet staff and user requirements..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3480.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Read manuals, periodicals, and technical reports to learn how to develop programs that meet staff and user requirements."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3480.0,Computer Systems Analysts,"Read manuals, periodicals, and technical reports to learn how to develop programs that meet staff and user requirements.",A Computer Systems Analyst reads a technical report on a new database management system to understand its features and how it can be integrated into the company's existing infrastructure.,A Computer Systems Analyst reviews periodicals to stay updated on the latest cybersecurity threats and solutions to ensure the company's software remains secure.,A Computer Systems Analyst studies a manual for a new programming framework to learn how to develop more efficient applications for the company's internal processes.,True,True,True,"['Text Editor', 'PDF Reader']","['Web Browser', 'Text Editor']","['Text Editor', 'PDF Reader']","['PDFs', 'Information']","['Information', 'Data Files']","['PDFs', 'Information']","['Text Documents', 'Spreadsheets']","['Text Documents', 'Sent Emails']","['Text Documents', 'Spreadsheets']","```json
+{
+  ""task_id"": ""3480.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Read manuals, periodicals, and technical reports to learn how to develop programs that meet staff and user requirements."",
+  ""e1_description"": ""A Computer Systems Analyst reads a technical report on a new database management system to understand its features and how it can be integrated into the company's existing infrastructure."",
+  ""e2_description"": ""A Computer Systems Analyst reviews periodicals to stay updated on the latest cybersecurity threats and solutions to ensure the company's software remains secure."",
+  ""e3_description"": ""A Computer Systems Analyst studies a manual for a new programming framework to learn how to develop more efficient applications for the company's internal processes."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Text Editor"", ""PDF Reader""],
+  ""e2_required_tools"": [""Web Browser"", ""Text Editor""],
+  ""e3_required_tools"": [""Text Editor"", ""PDF Reader""],
+  ""e1_required_materials"": [""PDFs"", ""Information""],
+  ""e2_required_materials"": [""Information"", ""Data Files""],
+  ""e3_required_materials"": [""PDFs"", ""Information""],
+  ""e1_output"": [""Text Documents"", ""Spreadsheets""],
+  ""e2_output"": [""Text Documents"", ""Sent Emails""],
+  ""e3_output"": [""Text Documents"", ""Spreadsheets""]
+}
+```"
+11,11,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Determine computer software or hardware needed to set up or alter system..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3472.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Determine computer software or hardware needed to set up or alter system."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3472.0,Computer Systems Analysts,Determine computer software or hardware needed to set up or alter system.,Analyzing a company's current IT infrastructure to recommend new hardware for improved performance.,Evaluating software requirements for a new customer relationship management (CRM) system implementation.,Assessing the need for additional network security software to protect against emerging threats.,True,True,True,"['Spreadsheets', 'Presentation software', 'Communication tools']","['Spreadsheets', 'Text editor', 'Communication tools']","['Spreadsheets', 'Presentation software', 'Communication tools']","['Data files', 'Information']","['Data files', 'Information']","['Data files', 'Information']","['Spreadsheets', 'Presentation documents']","['Text documents', 'Spreadsheets']","['Presentation documents', 'Spreadsheets']","```json
+{
+  ""task_id"": ""3472.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Determine computer software or hardware needed to set up or alter system."",
+  ""e1_description"": ""Analyzing a company's current IT infrastructure to recommend new hardware for improved performance."",
+  ""e2_description"": ""Evaluating software requirements for a new customer relationship management (CRM) system implementation."",
+  ""e3_description"": ""Assessing the need for additional network security software to protect against emerging threats."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Spreadsheets"", ""Presentation software"", ""Communication tools""],
+  ""e2_required_tools"": [""Spreadsheets"", ""Text editor"", ""Communication tools""],
+  ""e3_required_tools"": [""Spreadsheets"", ""Presentation software"", ""Communication tools""],
+  ""e1_required_materials"": [""Data files"", ""Information""],
+  ""e2_required_materials"": [""Data files"", ""Information""],
+  ""e3_required_materials"": [""Data files"", ""Information""],
+  ""e1_output"": [""Spreadsheets"", ""Presentation documents""],
+  ""e2_output"": [""Text documents"", ""Spreadsheets""],
+  ""e3_output"": [""Presentation documents"", ""Spreadsheets""]
+}
+```"
+12,12,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Analyze information processing or computation needs and plan and design computer systems, using techniques such as structured analysis, data modeling, and information engineering..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3474.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Analyze information processing or computation needs and plan and design computer systems, using techniques such as structured analysis, data modeling, and information engineering."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3474.0,Computer Systems Analysts,"Analyze information processing or computation needs and plan and design computer systems, using techniques such as structured analysis, data modeling, and information engineering.",Analyzing a company's current data processing system to identify inefficiencies and designing a new system to improve data flow and processing speed.,"Designing a computer system for a retail company to manage inventory, sales, and customer data using data modeling techniques.",Planning and designing a cloud-based system for a healthcare provider to securely store and process patient information.,True,True,True,"['Data modeling software', 'Spreadsheet software', 'Diagramming tool']","['Data modeling software', 'Spreadsheet software', 'Diagramming tool']","['Data modeling software', 'Spreadsheet software', 'Diagramming tool']","['Data files', 'Information']","['Data files', 'Information']","['Data files', 'Information']","['Spreadsheets', 'Text documents', 'Diagrams']","['Spreadsheets', 'Text documents', 'Diagrams']","['Spreadsheets', 'Text documents', 'Diagrams']","```json
+{
+  ""task_id"": ""3474.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Analyze information processing or computation needs and plan and design computer systems, using techniques such as structured analysis, data modeling, and information engineering."",
+  ""e1_description"": ""Analyzing a company's current data processing system to identify inefficiencies and designing a new system to improve data flow and processing speed."",
+  ""e2_description"": ""Designing a computer system for a retail company to manage inventory, sales, and customer data using data modeling techniques."",
+  ""e3_description"": ""Planning and designing a cloud-based system for a healthcare provider to securely store and process patient information."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Data modeling software"", ""Spreadsheet software"", ""Diagramming tool""],
+  ""e2_required_tools"": [""Data modeling software"", ""Spreadsheet software"", ""Diagramming tool""],
+  ""e3_required_tools"": [""Data modeling software"", ""Spreadsheet software"", ""Diagramming tool""],
+  ""e1_required_materials"": [""Data files"", ""Information""],
+  ""e2_required_materials"": [""Data files"", ""Information""],
+  ""e3_required_materials"": [""Data files"", ""Information""],
+  ""e1_output"": [""Spreadsheets"", ""Text documents"", ""Diagrams""],
+  ""e2_output"": [""Spreadsheets"", ""Text documents"", ""Diagrams""],
+  ""e3_output"": [""Spreadsheets"", ""Text documents"", ""Diagrams""]
+}
+```"
+13,13,"
+
+
+
+
+1. **Generate examples **
+
+List three concrete example cases where Computer Systems Analysts have to Specify inputs accessed by the system and plan the distribution and use of the results..
+
+2. **Remote Feasibility:**  
+For each example, determine whether the task can be completed remotely.
+
+3.  **Tools Required:**  
+For each example, provide a list of **tools** that are required to complete the task.
+Tools are defined as software or applications (e.g., Python, code editor, spreadsheets, text editor, presentation software, image generator) that are required to complete the task. 
+    - Don't refer to specific software brands, rather give the general category of tools required for the task. 
+    - Also, only list tools that are absolutetly crucial, i.e. there is no way the task could be performed without them.
+
+4. **Digital content formats required**
+
+For each example, provide a list of the formats of the digital content that the worker needs to work with to complete the task.
+Examples of formats of digital content are data files, PDFs, images, audio files, information.
+- Don't refer to digital content formats specific to the task, rather give a generally applicable content format.
+
+5. **Artefactss**
+For each example, provide a list of types of artefacts that can be used to assess whether the task has successfully been completed or not.
+Examples of types artefacts are sent emails, spreadsheets, numbers or text documents.
+- Don't refer to artefacts specific to the task, rather give generally applicable types of artefacts.
+
+
+Your response must be in valid JSON format following the structure provided below. Do not include any extra text or commentary outside of this JSON. The ""/"" delimit the options you can choose from
+
+**Expected JSON Structure:**
+
+{
+  ""task_id"": ""3484.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Specify inputs accessed by the system and plan the distribution and use of the results."",
+  ""e1_description"":  ""Description of first example"",
+""e2_description"":  ""Description of second example"",
+  ""e3_description"":  ""Description of third example"",
+  ""e1_remote_possible"": true/false,
+    ""e2_remote_possible"": true/false,
+  ""e3_remote_possible"": true/false,
+""e1_required_tools"": [""Tool1"", ""Tool2"",....],
+""e2_required_tools"": [""Tool1"", ""Tool2"",....],
+""e3_required_tools"": [""Tool1"", ""Tool2"",....],
+""e1_required_materials"": [""Material1"", ""Material2"",....],
+""e2_required_materials"": [""Material1"", ""Material2"",....],
+""e3_required_materials"": [""Material1"", ""Material2"",....],
+""e1_output"": [""Output1"", ""Output2"",...],
+""e2_output"": [""Output1"", ""Output2"",...],
+""e3_output"": [""Output1"", ""Output2"",...],
+
+  }
+
+",3484.0,Computer Systems Analysts,Specify inputs accessed by the system and plan the distribution and use of the results.,Analyzing a customer relationship management (CRM) system to determine necessary data inputs and how the output reports will be distributed to sales and marketing teams.,Designing a financial reporting system that specifies the required financial data inputs and plans the distribution of financial summaries to department heads.,Developing an inventory management system that identifies necessary inventory data inputs and plans the distribution of inventory status reports to warehouse managers.,True,True,True,"['Data analysis software', 'Spreadsheets', 'Presentation software']","['Data analysis software', 'Spreadsheets', 'Text editor']","['Data analysis software', 'Spreadsheets', 'Presentation software']","['Data files', 'Information', 'Text documents']","['Data files', 'Information', 'Text documents']","['Data files', 'Information', 'Text documents']","['Spreadsheets', 'Presentation documents']","['Spreadsheets', 'Text documents']","['Spreadsheets', 'Presentation documents']","```json
+{
+  ""task_id"": ""3484.0"",
+  ""occupation"": ""Computer Systems Analysts"",
+  ""task_description"": ""Specify inputs accessed by the system and plan the distribution and use of the results."",
+  ""e1_description"": ""Analyzing a customer relationship management (CRM) system to determine necessary data inputs and how the output reports will be distributed to sales and marketing teams."",
+  ""e2_description"": ""Designing a financial reporting system that specifies the required financial data inputs and plans the distribution of financial summaries to department heads."",
+  ""e3_description"": ""Developing an inventory management system that identifies necessary inventory data inputs and plans the distribution of inventory status reports to warehouse managers."",
+  ""e1_remote_possible"": true,
+  ""e2_remote_possible"": true,
+  ""e3_remote_possible"": true,
+  ""e1_required_tools"": [""Data analysis software"", ""Spreadsheets"", ""Presentation software""],
+  ""e2_required_tools"": [""Data analysis software"", ""Spreadsheets"", ""Text editor""],
+  ""e3_required_tools"": [""Data analysis software"", ""Spreadsheets"", ""Presentation software""],
+  ""e1_required_materials"": [""Data files"", ""Information"", ""Text documents""],
+  ""e2_required_materials"": [""Data files"", ""Information"", ""Text documents""],
+  ""e3_required_materials"": [""Data files"", ""Information"", ""Text documents""],
+  ""e1_output"": [""Spreadsheets"", ""Presentation documents""],
+  ""e2_output"": [""Spreadsheets"", ""Text documents""],
+  ""e3_output"": [""Spreadsheets"", ""Presentation documents""]
+}
+```"
