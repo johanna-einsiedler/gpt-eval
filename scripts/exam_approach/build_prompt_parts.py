@@ -34,8 +34,6 @@ You are an excellent examiner of {occupation} capabilities. Design a remote, **p
 '''
 
 
-
-
 prompt_overview ='''
 
 ### Your assignment
@@ -65,7 +63,22 @@ Here are the instructions for the candidate: <instructions> {answer_instructions
 
 ## Your assignment:
 - If the exam doesn't require any additional material, just respond with "No material required".
-- Else create synthetic test materials (CSV contents, datasets, etc.) that have predictable outcomes. Include the actual content to be provided to candidates and ensure all materials have clear identifiers, labels, or pre-defined categories that prevent ambiguity.
+- Otherwise, create two parts:
+  1. Synthetic test materials (CSV contents, datasets, etc.) that have predictable outcomes. Include the actual content to be provided to candidates and ensure all materials have clear identifiers, labels, or pre-defined categories that prevent ambiguity.
+  2. An explanation for the evaluator on how these materials were created and any knowledge helpful for knowing the correct answers
+
+ Format your response with these specific XML tags:
+<MATERIALS_FOR_CANDIDATE>
+[Include here the actual content to be provided to candidates. Ensure all materials have clear identifiers, labels, or pre-defined categories that prevent ambiguity.]
+</MATERIALS_FOR_CANDIDATE>
+
+<MATERIALS_EXPLANATION_FOR_EVALUATOR>
+[Explain to the evaluator:
+- How the materials were created and what, if any, statistical patterns or other relationships exist
+- Cross-references or important conections between different materials (e.g., codes in a CSV that match details in text, or relationships between texts)
+- Any tricky elements or common pitfalls in the materials that may cause candidates to answer incorrectly
+- "Hidden" information that requires careful reading to identify]
+</MATERIALS_EXPLANATION_FOR_EVALUATOR> 
 
 IMPORTANT: When designing the test, eliminate any opportunities for candidates to make arbitrary choices (like custom account codes, naming conventions, or classification systems) that would complicate evaluation. Either:
 - Provide pre-defined structures/codes that must be used, or
@@ -321,8 +334,8 @@ if __name__ == "__main__":
                 df['answer_grading'] = df.apply(run_query, axis=1, args=('prompt_grading',model,))
             
                 if overwrite == False:
-                    pd.concat([existing_df,df]).to_csv(f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
+                    pd.concat([existing_df,df]).to_csv(f'../../data/exam_approach/exams/{model}/exams_materialsexplained_{file.replace("task_list_","")}')
                 else:
-                    df.to_csv(f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
+                    df.to_csv(f'../../data/exam_approach/exams/{model}/exams_materialsexplained_{file.replace("task_list_","")}')
                     print('saved to ', f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
                 print('Finished! Processed '+str(df.shape[0]) +' tasks!')
