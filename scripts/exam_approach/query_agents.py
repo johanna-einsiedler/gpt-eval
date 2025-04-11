@@ -4,7 +4,7 @@ import anthropic
 import google.generativeai as genai
 import os
 import requests
-from google import genai as ggenai
+# from google import genai as ggenai
 
 
 dotenv_path = find_dotenv()
@@ -21,6 +21,7 @@ def take_test(row, system_prompt_template, test_prompt_template, model):
         test_prompt = test_prompt_template.format(
             answer_instructions=row['answer_instructions'],
             answer_materials=row['answer_materials'],
+            answer_materialscandidateonly=row['answer_materialscandidateonly'],
             answer_submission=row['answer_submission']
         )
 
@@ -34,11 +35,12 @@ def take_test(row, system_prompt_template, test_prompt_template, model):
 def query_agent(system_prompt, user_prompt, model):
 
         if 'gemini' in model:
-            client = ggenai.Client()
-            if model in client.models.list():
-                response =query_gemini(system_prompt, user_prompt, model)
-            else:
-                response =query_gemini(system_prompt, user_prompt)
+            pass
+            # client = ggenai.Client()
+            # if model in client.models.list():
+            #     response =query_gemini(system_prompt, user_prompt, model)
+            # else:
+            #     response =query_gemini(system_prompt, user_prompt)
 
         if 'gpt' in model:
             # Retrieve the list of available models
