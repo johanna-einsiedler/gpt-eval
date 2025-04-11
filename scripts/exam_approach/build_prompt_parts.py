@@ -13,7 +13,7 @@ dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 
 # load openai api key
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
 # client = OpenAI(
@@ -32,7 +32,6 @@ You are an excellent examiner of {occupation} capabilities. Design a remote, **p
 - Design a **practical** exam that can be completed remotely using only these tools. A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
 - To simplify evaluation, the candidate should submit answers to questions in a structured JSON format. The JSON file should have the name "test_submission.json".
 '''
-
 
 prompt_overview ='''
 
@@ -53,8 +52,8 @@ Based on the explanation write clear, concise instructions for the candidate inc
 
 IMPORTANT: When designing the test, eliminate any opportunities for candidates to make arbitrary choices (like custom account codes, naming conventions, or classification systems) that would complicate evaluation. Either:
 - Provide pre-defined structures/codes that must be used, or
-- Design questions with objectively verifiable numerical/text answers that don't depend on the candidate's approach
-
+- Design questions with objectively verifiable numerical/text answers that don't depend on the candidate's approach. 
+- You can ask for text answers that can be compared to an exact match, but avoid asking for text answers such as justification that require interpretation and/or with many possible correct answers.
 '''
 
 prompt_template_materials = """
@@ -91,13 +90,12 @@ Here are the instructions for the candidate: <instructions> {answer_instructions
 Here are the materials provided to the candidate: <materials> {answer_materials} </materials>
 
 ## Your assignment
-Based on the given information, specify exactly what the candidate needs to submit, including:
+Based on the given information, specify exactly what format the candidate's answers must be in, including:
 - Required JSON answer format with question IDs
 - The exact format of answers (numbers, text, specific units, decimal places)
 - Any supplementary files if necessary
-- instruct to submit with a candidate id where "YOUR_ID_HERE" use the model version that is powering you "GPT-4-turbo", "GPT-4o", "Claude-3_7-Sonnet", "DeepSeekR1", "Gemini-Flash-2", etc.
-
-
+- You should only specify format and/or code/conventions to use in answering, but you should not give the answers away
+- Instruct to submit with a candidate id where "YOUR_ID_HERE" is the model version that is powering the candidate "GPT-4-turbo", "GPT-4o", "Claude-3_7-Sonnet", "DeepSeekR1", "Gemini-Flash-2", etc.
 """
 
 prompt_template_evaluation = """
