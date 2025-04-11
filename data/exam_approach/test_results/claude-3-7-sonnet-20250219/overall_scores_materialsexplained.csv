@@ -1,0 +1,4 @@
+,task_id,occupation,task_description,score_claude,score_chatgpt4o,score_deepseek,score_chatgpt35,score_gemini
+0,12865.0,"Agents and Business Managers of Artists, Performers, and Athletes","Collect fees, commissions, or other payments, according to contract terms.",85.0,83.9952380952381,84.63333333333333,60.766666666666666,
+1,12870.0,"Agents and Business Managers of Artists, Performers, and Athletes",Keep informed of industry trends and deals.,94.0,71.0,82.5,37.0,84.5
+2,12883.0,"Buyers and Purchasing Agents, Farm Products","Maintain records of business transactions and product inventories, reporting data to companies or government agencies as necessary.",64.29,,,,

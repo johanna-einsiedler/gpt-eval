@@ -1,218 +1,37 @@
 {
     "candidate_id": "EVALUATOR_KEY",
     "task1": {
-        "commission_calculations": [
-            {
-                "performance_type": "Festival appearance",
-                "gross_payment": 45000,
-                "commission_rate": 0.125,
-                "commission_amount": 5625,
-                "contract_clause": "1.2"
-            },
-            {
-                "performance_type": "Brand endorsement deal",
-                "gross_payment": 75000,
-                "tier1_amount": 50000,
-                "tier1_rate": 0.2,
-                "tier1_commission": 10000,
-                "tier2_amount": 25000,
-                "tier2_rate": 0.15,
-                "tier2_commission": 3750,
-                "total_commission": 13750,
-                "contract_clause": "2.1"
-            },
-            {
-                "performance_type": "Streaming royalty payment",
-                "gross_payment": 12500,
-                "platform_fee_rate": 0.15,
-                "platform_fee_amount": 1875,
-                "net_after_platform_fees": 10625,
-                "commission_rate": 0.1,
-                "commission_amount": 1062.5,
-                "contract_clause": "3.1, 3.2"
-            }
-        ],
-        "explanation": "For the festival appearance, I applied the 12.5% commission rate specified in clause 1.2 directly to the gross payment of $45,000, resulting in $5,625. For the brand endorsement, I used the tiered structure in clause 2.1, applying 20% to the first $50,000 ($10,000) and 15% to the remaining $25,000 ($3,750), totaling $13,750. For streaming royalties, I first calculated the platform fee of 15% ($1,875) per clause 3.2, subtracted it from the gross payment to get $10,625, then applied the 10% commission rate from clause 3.1 to arrive at $1,062.50. All calculations follow the specific contract terms for each payment type."
+        "clientA_commission": 12000.0,
+        "clientB_commission": 27600.0,
+        "clientC_commission": 10360.0
     },
     "task2": {
-        "discrepancies": [
-            {
-                "event": "Sports Drink Campaign",
-                "contracted_amount": 30000,
-                "received_amount": 27500,
-                "discrepancy_amount": 2500,
-                "commission_impact": 375,
-                "commission_calculation": "15% of $2,500 = $375"
-            },
-            {
-                "event": "Magazine Photo Shoot",
-                "contracted_amount": 8000,
-                "received_amount": 6000,
-                "discrepancy_amount": 2000,
-                "commission_impact": 300,
-                "commission_calculation": "15% of $2,000 = $300"
-            },
-            {
-                "event": "TV Commercial",
-                "contracted_amount": 60000,
-                "received_amount": 65000,
-                "discrepancy_amount": -5000,
-                "commission_impact": -1000,
-                "commission_calculation": "20% of -$5,000 = -$1,000"
-            }
-        ],
-        "resolution_steps": "For the Sports Drink Campaign, I would first contact the client to verify the payment discrepancy of $2,500. I would then email the campaign manager with a copy of the contract and invoice, requesting the remaining balance. If no response within 7 days, I would follow up with a phone call and escalate to their accounting department if needed. For the Magazine Photo Shoot, I would check if there were any agreed reductions or scope changes before contacting the magazine's finance department with documentation of the original agreement. For the TV Commercial overpayment, I would immediately notify the client of the $5,000 excess payment, document the discrepancy, and either refund the difference or apply it to future services with proper documentation and client approval. In all cases, I would maintain detailed records of all communications and resolution attempts, adjust commission calculations accordingly, and provide transparent documentation to both the talent and the paying parties."
+        "clientA_discrepancy": 500.0,
+        "clientB_discrepancy": 100.0,
+        "clientC_discrepancy": 860.0,
+        "underpaid_clients": [
+            "A",
+            "B",
+            "C"
+        ]
     },
     "task3": {
-        "payment_schedule": [
-            {
-                "project_name": "City Lights",
-                "payment_type": "Deposit",
-                "due_date": "2023-06-25",
-                "amount": 22500,
-                "commission_rate": 0.15,
-                "commission_amount": 3375,
-                "priority_level": "High",
-                "notes": "30% deposit required"
-            },
-            {
-                "project_name": "FilmVision Gala",
-                "payment_type": "Deposit",
-                "due_date": "2023-08-15",
-                "amount": 17500,
-                "commission_rate": 0.2,
-                "commission_amount": 3500,
-                "priority_level": "High",
-                "notes": "50% deposit required"
-            },
-            {
-                "project_name": "City Lights",
-                "payment_type": "Main payment",
-                "due_date": "2023-08-15",
-                "amount": 52500,
-                "commission_rate": 0.15,
-                "commission_amount": 7875,
-                "priority_level": "Medium",
-                "notes": "70% remaining after deposit"
-            },
-            {
-                "project_name": "Brand Ambassador",
-                "payment_type": "Deposit",
-                "due_date": "2023-09-10",
-                "amount": 12500,
-                "commission_rate": 0.18,
-                "commission_amount": 2250,
-                "priority_level": "High",
-                "notes": "25% deposit required"
-            },
-            {
-                "project_name": "The Dark Corner",
-                "payment_type": "Full payment",
-                "due_date": "2023-09-05",
-                "amount": 45000,
-                "commission_rate": 0.125,
-                "commission_amount": 5625,
-                "priority_level": "Medium",
-                "notes": "No deposit required"
-            },
-            {
-                "project_name": "FilmVision Gala",
-                "payment_type": "Main payment",
-                "due_date": "2023-09-15",
-                "amount": 17500,
-                "commission_rate": 0.2,
-                "commission_amount": 3500,
-                "priority_level": "Medium",
-                "notes": "50% remaining after deposit"
-            },
-            {
-                "project_name": "Voice of Tomorrow",
-                "payment_type": "Full payment",
-                "due_date": "2023-10-01",
-                "amount": 25000,
-                "commission_rate": 0.15,
-                "commission_amount": 3750,
-                "priority_level": "Medium",
-                "notes": "No deposit required"
-            }
-        ],
-        "collection_strategy": "My 90-day collection strategy prioritizes securing deposits first, as they represent contractual commitments and cash flow security. I've assigned high priority to all deposits, with the most imminent being City Lights (due June 25), followed by FilmVision Gala (August 15) and Brand Ambassador (September 10). For each deposit, I'll send reminder emails 14 days before the due date and follow up 7 days before if unpaid. For main payments, I've scheduled reminders at 21, 14, and 7 days before due dates. The strategy includes weekly status reviews and maintaining a tracking spreadsheet with payment status, contact history, and follow-up actions. For projects without deposits (The Dark Corner, Voice of Tomorrow), I'll implement earlier payment reminders starting 30 days before due dates. This approach ensures we maintain positive client relationships while securing timely payments, with special attention to the highest value projects (City Lights at $75,000 and Brand Ambassador at $50,000) to maximize cash flow."
+        "clientA_due_date": "2023-06-20",
+        "clientA_late_fee": 9.0,
+        "clientB_due_date": "2023-07-07",
+        "clientB_late_fee": 404.4,
+        "clientC_due_date": "2023-08-04",
+        "clientC_late_fee": 0.0
     },
     "task4": {
-        "collection_email": "Subject: FilmVision Gala - Payment Due Notice\n\nDear FilmVision Accounting Team,\n\nI hope this email finds you well. I am writing on behalf of SceneSteal regarding the outstanding payment for the FilmVision Gala appearance on August 30, 2023.\n\nAccording to our records, payment in the amount of $35,000 was due on September 15, 2023. As of today, we have not yet received this payment, which is now 15 days past due.\n\nThe payment details are as follows:\n- Project: FilmVision Gala\n- Invoice #: SS-2023-FVG\n- Amount Due: $35,000\n- Due Date: September 15, 2023\n- Payment Method: Wire transfer (details on invoice)\n\nAs outlined in our agreement, timely payment is essential to maintain our professional relationship. SceneSteal fulfilled all contractual obligations for the appearance, which was very well received by attendees.\n\nPlease remit payment at your earliest convenience. If you have already sent payment, please disregard this notice and provide the payment details so we can update our records.\n\nIf you have any questions or concerns regarding this payment, please don't hesitate to contact me directly at [phone number] or [email].\n\nThank you for your prompt attention to this matter.\n\nBest regards,\n\n[Agent Name]\nTalent Management Inc.\n[Contact Information]",
-        "follow_up_email": "Subject: URGENT: Overdue Payment for FilmVision Gala\n\nDear FilmVision Accounting Team,\n\nThis is a follow-up to my previous email dated [15 days ago] regarding the outstanding payment for SceneSteal's appearance at the FilmVision Gala on August 30, 2023.\n\nAs of today, the payment of $35,000 is now 45 days past due. According to our contract terms (Section 4.2), late payments are subject to a 1.5% monthly interest charge, which has now accrued to an additional $787.50.\n\nPayment details:\n- Project: FilmVision Gala\n- Invoice #: SS-2023-FVG\n- Original Due Date: September 15, 2023\n- Days Overdue: 45\n- Current Amount Due (including late fees): $35,787.50\n\nWe value our business relationship with FilmVision and would appreciate your immediate attention to this matter. This significant delay is affecting our client's financial planning and our ability to maintain our professional obligations.\n\nPlease be advised that if payment is not received within 7 business days, we will need to escalate this matter according to our collection procedures, which may affect future booking availability.\n\nIf there are any issues preventing timely payment, please contact me immediately at [phone number] so we can discuss possible solutions.\n\nThank you for your prompt attention to this urgent matter.\n\nRegards,\n\n[Agent Name]\nTalent Management Inc.\n[Contact Information]"
+        "late_fees_allocation": 350.0,
+        "current_commission_allocation": 9650.0,
+        "previous_commission_allocation": 0.0,
+        "remaining_balance": 550.0
     },
     "task5": {
-        "payment_log": [
-            {
-                "payment_id": "MM-2304-01",
-                "date_received": "2023-04-12",
-                "source": "Summer Festival",
-                "contracted_amount": 35000,
-                "actual_amount": 35000,
-                "commission_rate": 0.125,
-                "commission_amount": 4375,
-                "payment_method": "Wire Transfer",
-                "status": "Paid in full",
-                "days_late": 2
-            },
-            {
-                "payment_id": "MM-2304-02",
-                "date_received": "2023-04-30",
-                "source": "Streaming Royalties",
-                "contracted_amount": 8500,
-                "actual_amount": 7225,
-                "platform_fee": 1275,
-                "net_after_platform_fees": 7225,
-                "commission_rate": 0.1,
-                "commission_amount": 722.5,
-                "payment_method": "ACH",
-                "status": "Paid in full",
-                "days_late": 5
-            },
-            {
-                "payment_id": "MM-2305-01",
-                "date_received": "2023-05-20",
-                "source": "Sports Brand Deal",
-                "contracted_amount": 65000,
-                "actual_amount": 65000,
-                "tier1_amount": 50000,
-                "tier1_rate": 0.2,
-                "tier1_commission": 10000,
-                "tier2_amount": 15000,
-                "tier2_rate": 0.15,
-                "tier2_commission": 2250,
-                "total_commission": 12250,
-                "payment_method": "Check",
-                "status": "Paid in full",
-                "days_late": 5
-            },
-            {
-                "payment_id": "MM-2305-02",
-                "date_received": "2023-06-10",
-                "source": "Private Performance",
-                "contracted_amount": 25000,
-                "actual_amount": 25000,
-                "commission_rate": 0.15,
-                "commission_amount": 3750,
-                "payment_method": "Wire Transfer",
-                "status": "Paid in full",
-                "days_late": 11
-            },
-            {
-                "payment_id": "MM-2306-01",
-                "date_received": "2023-06-15",
-                "source": "Music Video Cameo",
-                "contracted_amount": 12000,
-                "actual_amount": 10000,
-                "discrepancy_amount": 2000,
-                "commission_rate": 0.15,
-                "commission_amount": 1500,
-                "payment_method": "PayPal",
-                "status": "Partial payment",
-                "days_late": 0
-            }
-        ],
-        "reconciliation_notes": "After reviewing MelodyMaker's payment records, I've identified several issues requiring attention. The Summer Festival payment (MM-2304-01) was received 2 days late but in full, with the correct 12.5% commission rate applied. For the Streaming Royalties (MM-2304-02), the payment reflects the 15% platform fee deduction, resulting in $7,225 received instead of $8,500. The commission was correctly calculated at 10% of the net amount after platform fees. The Sports Brand Deal (MM-2305-01) was paid in full but 5 days late. I applied the tiered commission structure: 20% on the first $50,000 and 15% on the remaining $15,000, totaling $12,250. The Private Performance payment (MM-2305-02) was significantly late (11 days) but paid in full with the correct 15% commission. The Music Video Cameo payment (MM-2306-01) shows a $2,000 shortfall that requires immediate follow-up. I recommend contacting the client to determine the reason for the partial payment and requesting the remaining $2,000. Additionally, I suggest implementing a late fee policy for future payments, as three of the five payments were received after their due dates."
+        "clientA_compliant": false,
+        "clientB_compliant": true,
+        "clientC_compliant": true
     }
 }

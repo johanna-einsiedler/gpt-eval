@@ -80,6 +80,7 @@ get_exam_generation_prompts(sorted_tasks_id[19], 'evaluation', 'answer')
 get_exam_generation_prompts(sorted_tasks_id[19], 'grading', 'answer')
 
 
+get_exam_generation_prompts(sorted_tasks_id[19], 'materials', 'prompt')
 
 df_exams.columns
 

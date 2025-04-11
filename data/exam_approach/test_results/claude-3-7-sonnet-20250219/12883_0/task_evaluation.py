@@ -1,327 +1,336 @@
-# task_evaluation.py
-
 import json
-import math
-from pathlib import Path
+import os
+from decimal import Decimal, ROUND_HALF_UP
 
-def load_json_file(file_path):
+def load_json_file(filename):
     """Load and parse a JSON file."""
     try:
-        with open(file_path, 'r') as file:
+        with open(filename, 'r') as file:
             return json.load(file)
-    except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error loading {file_path}: {e}")
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+        return None
+    except json.JSONDecodeError:
+        print(f"Error: File '{filename}' contains invalid JSON.")
         return None
 
-def save_json_file(data, file_path):
-    """Save data to a JSON file."""
-    with open(file_path, 'w') as file:
-        json.dump(data, indent=2, sort_keys=False)
+def round_decimal(value, places=2):
+    """Round a decimal value to the specified number of places."""
+    if isinstance(value, (int, float)):
+        value = Decimal(str(value))
+    return float(value.quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))
 
-def is_close(val1, val2, tolerance=0.05):
-    """Check if two numerical values are close within a tolerance."""
-    if isinstance(val1, (int, float)) and isinstance(val2, (int, float)):
-        return abs(val1 - val2) <= tolerance
-    return val1 == val2
-
-def evaluate_transaction_management(submission, answer_key):
-    """Evaluate the transaction record management section."""
+def evaluate_inventory_summary(candidate, answer_key):
+    """Evaluate the inventory summary section."""
     score = 0
-    feedback = []
+    details = {}
     
-    # Check total transactions (3 points)
-    if submission["transaction_summary"]["total_transactions"] == answer_key["transaction_summary"]["total_transactions"]:
-        score += 3
-        feedback.append("Correctly identified total number of transactions.")
-    else:
-        feedback.append(f"Incorrect total transactions. Expected: {answer_key['transaction_summary']['total_transactions']}, Got: {submission['transaction_summary']['total_transactions']}")
-    
-    # Check total purchase amount (7 points)
-    if is_close(submission["transaction_summary"]["total_purchase_amount"], answer_key["transaction_summary"]["total_purchase_amount"]):
-        score += 7
-        feedback.append("Correctly calculated total purchase amount.")
-    else:
-        feedback.append(f"Incorrect total purchase amount. Expected: {answer_key['transaction_summary']['total_purchase_amount']}, Got: {submission['transaction_summary']['total_purchase_amount']}")
-    
-    # Check transactions with issues (5 points)
-    if submission["transaction_summary"]["transactions_with_issues"] == answer_key["transaction_summary"]["transactions_with_issues"]:
-        score += 5
-        feedback.append("Correctly identified number of transactions with issues.")
-    else:
-        feedback.append(f"Incorrect number of transactions with issues. Expected: {answer_key['transaction_summary']['transactions_with_issues']}, Got: {submission['transaction_summary']['transactions_with_issues']}")
-    
-    # Check issue details (5 points)
-    expected_issues = {issue["transaction_id"]: issue["issue_type"] for issue in answer_key["transaction_summary"]["issue_details"]}
-    submitted_issues = {issue["transaction_id"]: issue["issue_type"] for issue in submission["transaction_summary"]["issue_details"]}
-    
-    issue_score = 0
-    for transaction_id, issue_type in expected_issues.items():
-        if transaction_id in submitted_issues and submitted_issues[transaction_id] == issue_type:
-            issue_score += 1
-    
-    issue_points = min(5, round(5 * (issue_score / len(expected_issues))))
-    score += issue_points
-    
-    if issue_points == 5:
-        feedback.append("Correctly identified all transaction issues.")
-    else:
-        feedback.append(f"Partially identified transaction issues ({issue_score}/{len(expected_issues)}).")
-    
-    # Check data organization (10 points) - This is more subjective, but we'll check for presence of all required fields
-    required_fields = ["total_transactions", "total_purchase_amount", "transactions_with_issues", "issue_details"]
-    if all(field in submission["transaction_summary"] for field in required_fields):
-        score += 10
-        feedback.append("Transaction data properly organized with all required fields.")
-    else:
-        missing = [field for field in required_fields if field not in submission["transaction_summary"]]
-        feedback.append(f"Missing required transaction fields: {', '.join(missing)}")
-    
-    return score, feedback
-
-def evaluate_inventory_tracking(submission, answer_key):
-    """Evaluate the inventory tracking section."""
-    score = 0
-    feedback = []
-    
-    # Check total inventory value (5 points)
-    if is_close(submission["inventory_analysis"]["total_inventory_value"], answer_key["inventory_analysis"]["total_inventory_value"]):
-        score += 5
-        feedback.append("Correctly calculated total inventory value.")
-    else:
-        feedback.append(f"Incorrect total inventory value. Expected: {answer_key['inventory_analysis']['total_inventory_value']}, Got: {submission['inventory_analysis']['total_inventory_value']}")
-    
-    # Check product categories (15 points)
-    category_score = 0
-    expected_categories = answer_key["inventory_analysis"]["product_categories"]
-    submitted_categories = submission["inventory_analysis"]["product_categories"]
-    
-    for category_name, expected_data in expected_categories.items():
-        if category_name not in submitted_categories:
-            feedback.append(f"Missing category: {category_name}")
-            continue
-            
-        submitted_data = submitted_categories[category_name]
-        
-        # Check total quantity (1.25 points per category)
-        if is_close(submitted_data["total_quantity"], expected_data["total_quantity"]):
-            category_score += 1.25
-        else:
-            feedback.append(f"Incorrect total quantity for {category_name}. Expected: {expected_data['total_quantity']}, Got: {submitted_data['total_quantity']}")
-        
-        # Check average price (1.25 points per category)
-        if is_close(submitted_data["average_price"], expected_data["average_price"]):
-            category_score += 1.25
-        else:
-            feedback.append(f"Incorrect average price for {category_name}. Expected: {expected_data['average_price']}, Got: {submitted_data['average_price']}")
-        
-        # Check total value (1.25 points per category)
-        if is_close(submitted_data["total_value"], expected_data["total_value"]):
-            category_score += 1.25
-        else:
-            feedback.append(f"Incorrect total value for {category_name}. Expected: {expected_data['total_value']}, Got: {submitted_data['total_value']}")
-    
-    category_points = min(15, round(category_score))
-    score += category_points
-    
-    if category_points == 15:
-        feedback.append("Correctly calculated all category totals, averages, and values.")
-    else:
-        feedback.append(f"Partially correct category calculations ({category_points}/15 points).")
-    
-    # Check top volume products (5 points)
-    expected_top_volume = set(answer_key["inventory_analysis"]["top_volume_products"])
-    submitted_top_volume = set(submission["inventory_analysis"]["top_volume_products"])
-    
-    volume_match = len(expected_top_volume.intersection(submitted_top_volume))
-    volume_points = min(5, round(5 * (volume_match / len(expected_top_volume))))
-    score += volume_points
-    
-    if volume_points == 5:
-        feedback.append("Correctly identified top products by volume.")
-    else:
-        feedback.append(f"Partially identified top products by volume ({volume_match}/{len(expected_top_volume)}).")
-    
-    # Check top cost products (5 points)
-    expected_top_cost = set(answer_key["inventory_analysis"]["top_cost_products"])
-    submitted_top_cost = set(submission["inventory_analysis"]["top_cost_products"])
-    
-    cost_match = len(expected_top_cost.intersection(submitted_top_cost))
-    cost_points = min(5, round(5 * (cost_match / len(expected_top_cost))))
-    score += cost_points
-    
-    if cost_points == 5:
-        feedback.append("Correctly identified top products by cost.")
-    else:
-        feedback.append(f"Partially identified top products by cost ({cost_match}/{len(expected_top_cost)}).")
-    
-    return score, feedback
-
-def evaluate_report_generation(submission, answer_key):
-    """Evaluate the report generation section."""
-    score = 0
-    feedback = []
-    
-    # Check monthly summary (15 points)
-    monthly_score = 0
-    expected_months = answer_key["monthly_summary"]
-    submitted_months = submission["monthly_summary"]
-    
-    for month_name, expected_data in expected_months.items():
-        if month_name not in submitted_months:
-            feedback.append(f"Missing month: {month_name}")
-            continue
-            
-        submitted_data = submitted_months[month_name]
-        
-        # Check total purchases (1.67 points per month)
-        if is_close(submitted_data["total_purchases"], expected_data["total_purchases"]):
-            monthly_score += 1.67
-        else:
-            feedback.append(f"Incorrect total purchases for {month_name}. Expected: {expected_data['total_purchases']}, Got: {submitted_data['total_purchases']}")
-        
-        # Check largest category (1.67 points per month)
-        if submitted_data["largest_category"] == expected_data["largest_category"]:
-            monthly_score += 1.67
-        else:
-            feedback.append(f"Incorrect largest category for {month_name}. Expected: {expected_data['largest_category']}, Got: {submitted_data['largest_category']}")
-        
-        # Check largest category value (1.67 points per month)
-        if is_close(submitted_data["largest_category_value"], expected_data["largest_category_value"]):
-            monthly_score += 1.67
-        else:
-            feedback.append(f"Incorrect largest category value for {month_name}. Expected: {expected_data['largest_category_value']}, Got: {submitted_data['largest_category_value']}")
-    
-    monthly_points = min(15, round(monthly_score))
-    score += monthly_points
-    
-    if monthly_points == 15:
-        feedback.append("Correctly generated monthly summary report.")
-    else:
-        feedback.append(f"Partially correct monthly summary ({monthly_points}/15 points).")
-    
-    # Check compliance report (15 points)
-    compliance_score = 0
-    
-    # Check regulated products total (3 points)
-    if submission["compliance_report"]["regulated_products_total"] == answer_key["compliance_report"]["regulated_products_total"]:
-        compliance_score += 3
-        feedback.append("Correctly identified total regulated products.")
-    else:
-        feedback.append(f"Incorrect regulated products total. Expected: {answer_key['compliance_report']['regulated_products_total']}, Got: {submission['compliance_report']['regulated_products_total']}")
-    
-    # Check origin tracking complete (3 points)
-    if submission["compliance_report"]["origin_tracking_complete"] == answer_key["compliance_report"]["origin_tracking_complete"]:
-        compliance_score += 3
-        feedback.append("Correctly assessed origin tracking completeness.")
-    else:
-        feedback.append(f"Incorrect origin tracking assessment. Expected: {answer_key['compliance_report']['origin_tracking_complete']}, Got: {submission['compliance_report']['origin_tracking_complete']}")
-    
-    # Check certification documentation complete (3 points)
-    if submission["compliance_report"]["certification_documentation_complete"] == answer_key["compliance_report"]["certification_documentation_complete"]:
-        compliance_score += 3
-        feedback.append("Correctly assessed certification documentation completeness.")
-    else:
-        feedback.append(f"Incorrect certification documentation assessment. Expected: {answer_key['compliance_report']['certification_documentation_complete']}, Got: {submission['compliance_report']['certification_documentation_complete']}")
-    
-    # Check reporting issues (6 points)
-    expected_issues = {(issue["product_code"], issue["transaction_id"]): issue["issue_type"] 
-                      for issue in answer_key["compliance_report"]["reporting_issues"]}
-    submitted_issues = {(issue["product_code"], issue["transaction_id"]): issue["issue_type"] 
-                       for issue in submission["compliance_report"]["reporting_issues"]}
-    
-    issue_match = 0
-    for key, issue_type in expected_issues.items():
-        if key in submitted_issues and submitted_issues[key] == issue_type:
-            issue_match += 1
-    
-    issue_points = min(6, round(6 * (issue_match / max(1, len(expected_issues)))))
-    compliance_score += issue_points
-    
-    if issue_points == 6:
-        feedback.append("Correctly identified all compliance reporting issues.")
-    else:
-        feedback.append(f"Partially identified compliance reporting issues ({issue_match}/{len(expected_issues)}).")
-    
-    compliance_points = min(15, compliance_score)
-    score += compliance_points
-    
-    # Check JSON formatting (10 points)
-    # This is a bit subjective, but we'll check for presence of all required sections
-    required_sections = ["transaction_summary", "inventory_analysis", "monthly_summary", "compliance_report"]
-    if all(section in submission for section in required_sections):
-        score += 10
-        feedback.append("JSON properly formatted with all required sections.")
-    else:
-        missing = [section for section in required_sections if section not in submission]
-        feedback.append(f"Missing required JSON sections: {', '.join(missing)}")
-    
-    return score, feedback
-
-def evaluate_submission(submission_path, answer_key_path):
-    """Evaluate a candidate's submission against the answer key."""
-    submission = load_json_file(submission_path)
-    answer_key = load_json_file(answer_key_path)
-    
-    if not submission or not answer_key:
-        return {"error": "Failed to load submission or answer key"}
-    
-    # Evaluate each section
-    transaction_score, transaction_feedback = evaluate_transaction_management(submission, answer_key)
-    inventory_score, inventory_feedback = evaluate_inventory_tracking(submission, answer_key)
-    report_score, report_feedback = evaluate_report_generation(submission, answer_key)
-    
-    # Calculate total score
-    total_score = transaction_score + inventory_score + report_score
-    max_score = 30 + 30 + 40  # Based on the evaluation criteria
-    percentage_score = round((total_score / max_score) * 100, 2)
-    
-    # Prepare results
-    results = {
-        "overall_score": percentage_score,
-        "passing_threshold": 70,
-        "passed": percentage_score >= 70,
-        "section_scores": {
-            "transaction_record_management": {
-                "score": transaction_score,
-                "max_score": 30,
-                "percentage": round((transaction_score / 30) * 100, 2),
-                "feedback": transaction_feedback
-            },
-            "inventory_tracking": {
-                "score": inventory_score,
-                "max_score": 30,
-                "percentage": round((inventory_score / 30) * 100, 2),
-                "feedback": inventory_feedback
-            },
-            "report_generation": {
-                "score": report_score,
-                "max_score": 40,
-                "percentage": round((report_score / 40) * 100, 2),
-                "feedback": report_feedback
-            }
-        },
-        "total_points": total_score,
-        "max_points": max_score
+    # Check total_apple_inventory_kg
+    candidate_apple = candidate.get("total_apple_inventory_kg", 0)
+    key_apple = answer_key.get("total_apple_inventory_kg", 0)
+    apple_correct = abs(candidate_apple - key_apple) <= key_apple * 0.01  # 1% margin
+    if apple_correct:
+        score += 1
+    details["total_apple_inventory_kg"] = {
+        "candidate_answer": candidate_apple,
+        "correct_answer": key_apple,
+        "is_correct": apple_correct
     }
+    
+    # Check total_corn_inventory_kg
+    candidate_corn = candidate.get("total_corn_inventory_kg", 0)
+    key_corn = answer_key.get("total_corn_inventory_kg", 0)
+    corn_correct = abs(candidate_corn - key_corn) <= key_corn * 0.01  # 1% margin
+    if corn_correct:
+        score += 1
+    details["total_corn_inventory_kg"] = {
+        "candidate_answer": candidate_corn,
+        "correct_answer": key_corn,
+        "is_correct": corn_correct
+    }
+    
+    # Check highest_inventory_product
+    candidate_highest = candidate.get("highest_inventory_product", "")
+    key_highest = answer_key.get("highest_inventory_product", "")
+    highest_correct = candidate_highest == key_highest
+    if highest_correct:
+        score += 1
+    details["highest_inventory_product"] = {
+        "candidate_answer": candidate_highest,
+        "correct_answer": key_highest,
+        "is_correct": highest_correct
+    }
+    
+    # Check lowest_inventory_product - Note: Accept CRN-03 as correct answer
+    candidate_lowest = candidate.get("lowest_inventory_product", "")
+    key_lowest = "CRN-03"  # Override the answer key as per the note
+    lowest_correct = candidate_lowest == key_lowest
+    if lowest_correct:
+        score += 1
+    details["lowest_inventory_product"] = {
+        "candidate_answer": candidate_lowest,
+        "correct_answer": key_lowest,
+        "is_correct": lowest_correct
+    }
+    
+    return score, details
+
+def evaluate_transaction_analysis(candidate, answer_key):
+    """Evaluate the transaction analysis section."""
+    score = 0
+    details = {}
+    
+    # Check total_transactions
+    candidate_total = candidate.get("total_transactions", 0)
+    key_total = answer_key.get("total_transactions", 0)
+    total_correct = candidate_total == key_total
+    if total_correct:
+        score += 1
+    details["total_transactions"] = {
+        "candidate_answer": candidate_total,
+        "correct_answer": key_total,
+        "is_correct": total_correct
+    }
+    
+    # Check highest_value_transaction_id
+    candidate_highest = candidate.get("highest_value_transaction_id", "")
+    key_highest = answer_key.get("highest_value_transaction_id", "")
+    highest_correct = candidate_highest == key_highest
+    if highest_correct:
+        score += 1
+    details["highest_value_transaction_id"] = {
+        "candidate_answer": candidate_highest,
+        "correct_answer": key_highest,
+        "is_correct": highest_correct
+    }
+    
+    # Check total_expenditure
+    candidate_expenditure = round_decimal(candidate.get("total_expenditure", 0))
+    key_expenditure = round_decimal(answer_key.get("total_expenditure", 0))
+    expenditure_correct = abs(candidate_expenditure - key_expenditure) <= key_expenditure * 0.01  # 1% margin
+    if expenditure_correct:
+        score += 1
+    details["total_expenditure"] = {
+        "candidate_answer": candidate_expenditure,
+        "correct_answer": key_expenditure,
+        "is_correct": expenditure_correct
+    }
+    
+    # Check average_transaction_value
+    candidate_avg = round_decimal(candidate.get("average_transaction_value", 0))
+    key_avg = round_decimal(answer_key.get("average_transaction_value", 0))
+    avg_correct = abs(candidate_avg - key_avg) <= key_avg * 0.01  # 1% margin
+    if avg_correct:
+        score += 1
+    details["average_transaction_value"] = {
+        "candidate_answer": candidate_avg,
+        "correct_answer": key_avg,
+        "is_correct": avg_correct
+    }
+    
+    return score, details
+
+def evaluate_reporting_compliance(candidate, answer_key):
+    """Evaluate the reporting compliance section."""
+    score = 0
+    details = {}
+    
+    # Check quarterly_report_date
+    candidate_date = candidate.get("quarterly_report_date", "")
+    key_date = answer_key.get("quarterly_report_date", "")
+    date_correct = candidate_date == key_date
+    if date_correct:
+        score += 1
+    details["quarterly_report_date"] = {
+        "candidate_answer": candidate_date,
+        "correct_answer": key_date,
+        "is_correct": date_correct
+    }
+    
+    # Check required_fields
+    candidate_fields = set(candidate.get("required_fields", []))
+    key_fields = set(answer_key.get("required_fields", []))
+    
+    # Calculate percentage of correct fields
+    if len(key_fields) > 0:
+        correct_fields = candidate_fields.intersection(key_fields)
+        fields_percentage = len(correct_fields) / len(key_fields)
+        fields_correct = fields_percentage >= 0.75  # 75% or more correct
+        if fields_correct:
+            score += 1
+    else:
+        fields_correct = False
+    
+    details["required_fields"] = {
+        "candidate_answer": sorted(list(candidate_fields)),
+        "correct_answer": sorted(list(key_fields)),
+        "is_correct": fields_correct,
+        "percentage_correct": round(fields_percentage * 100, 2) if 'fields_percentage' in locals() else 0
+    }
+    
+    # Check retention_period_years
+    candidate_period = candidate.get("retention_period_years", 0)
+    key_period = answer_key.get("retention_period_years", 0)
+    period_correct = candidate_period == key_period
+    if period_correct:
+        score += 1
+    details["retention_period_years"] = {
+        "candidate_answer": candidate_period,
+        "correct_answer": key_period,
+        "is_correct": period_correct
+    }
+    
+    return score, details
+
+def evaluate_data_verification(candidate, answer_key):
+    """Evaluate the data verification section."""
+    score = 0
+    details = {}
+    
+    # Check duplicate_transaction_ids
+    candidate_duplicates = set(candidate.get("duplicate_transaction_ids", []))
+    key_duplicates = set(answer_key.get("duplicate_transaction_ids", []))
+    duplicates_correct = candidate_duplicates == key_duplicates
+    if duplicates_correct:
+        score += 1
+    details["duplicate_transaction_ids"] = {
+        "candidate_answer": sorted(list(candidate_duplicates)),
+        "correct_answer": sorted(list(key_duplicates)),
+        "is_correct": duplicates_correct
+    }
+    
+    # Check missing_data_fields
+    candidate_missing = set(candidate.get("missing_data_fields", []))
+    key_missing = set(answer_key.get("missing_data_fields", []))
+    missing_correct = candidate_missing == key_missing
+    if missing_correct:
+        score += 1
+    details["missing_data_fields"] = {
+        "candidate_answer": sorted(list(candidate_missing)),
+        "correct_answer": sorted(list(key_missing)),
+        "is_correct": missing_correct
+    }
+    
+    return score, details
+
+def evaluate_json_format(candidate):
+    """Evaluate if the JSON format is correct."""
+    required_sections = [
+        "inventory_summary", 
+        "transaction_analysis", 
+        "reporting_compliance", 
+        "data_verification"
+    ]
+    
+    # Check if all required sections are present
+    for section in required_sections:
+        if section not in candidate:
+            return 0, {"format_correct": False, "reason": f"Missing section: {section}"}
+    
+    return 1, {"format_correct": True}
+
+def evaluate_submission(candidate_data, answer_key_data):
+    """Evaluate the entire submission."""
+    results = {
+        "candidate_id": candidate_data.get("candidate_id", "Unknown"),
+        "sections": {}
+    }
+    
+    total_score = 0
+    max_score = 0
+    
+    # Evaluate JSON format (1 point)
+    format_score, format_details = evaluate_json_format(candidate_data)
+    total_score += format_score
+    max_score += 1
+    results["sections"]["json_format"] = {
+        "score": format_score,
+        "max_score": 1,
+        "details": format_details
+    }
+    
+    # Only continue evaluation if JSON format is correct
+    if format_score > 0:
+        # Evaluate inventory summary (4 points)
+        inventory_score, inventory_details = evaluate_inventory_summary(
+            candidate_data.get("inventory_summary", {}),
+            answer_key_data.get("inventory_summary", {})
+        )
+        total_score += inventory_score
+        max_score += 4
+        results["sections"]["inventory_summary"] = {
+            "score": inventory_score,
+            "max_score": 4,
+            "details": inventory_details
+        }
+        
+        # Evaluate transaction analysis (4 points)
+        transaction_score, transaction_details = evaluate_transaction_analysis(
+            candidate_data.get("transaction_analysis", {}),
+            answer_key_data.get("transaction_analysis", {})
+        )
+        total_score += transaction_score
+        max_score += 4
+        results["sections"]["transaction_analysis"] = {
+            "score": transaction_score,
+            "max_score": 4,
+            "details": transaction_details
+        }
+        
+        # Evaluate reporting compliance (3 points)
+        compliance_score, compliance_details = evaluate_reporting_compliance(
+            candidate_data.get("reporting_compliance", {}),
+            answer_key_data.get("reporting_compliance", {})
+        )
+        total_score += compliance_score
+        max_score += 3
+        results["sections"]["reporting_compliance"] = {
+            "score": compliance_score,
+            "max_score": 3,
+            "details": compliance_details
+        }
+        
+        # Evaluate data verification (2 points)
+        verification_score, verification_details = evaluate_data_verification(
+            candidate_data.get("data_verification", {}),
+            answer_key_data.get("data_verification", {})
+        )
+        total_score += verification_score
+        max_score += 2
+        results["sections"]["data_verification"] = {
+            "score": verification_score,
+            "max_score": 2,
+            "details": verification_details
+        }
+    
+    # Calculate overall score as a percentage
+    overall_score = (total_score / max_score * 100) if max_score > 0 else 0
+    results["total_score"] = total_score
+    results["max_score"] = max_score
+    results["overall_score"] = round(overall_score, 2)
+    results["passed"] = overall_score >= 80  # 80% is passing
     
     return results
 
 def main():
-    """Main function to run the evaluation."""
-    current_dir = Path.cwd()
-    submission_path = current_dir / "test_submission.json"
-    answer_key_path = current_dir / "answer_key.json"
-    results_path = current_dir / "test_results.json"
+    # Load the candidate submission and answer key
+    candidate_data = load_json_file("test_submission.json")
+    answer_key_data = load_json_file("answer_key.json")
     
-    results = evaluate_submission(submission_path, answer_key_path)
-    save_json_file(results, results_path)
+    if not candidate_data or not answer_key_data:
+        print("Error: Could not load required files.")
+        return
     
-    print(f"Evaluation complete. Results saved to {results_path}")
+    # Evaluate the submission
+    results = evaluate_submission(candidate_data, answer_key_data)
+    
+    # Save the results
+    with open("test_results.json", "w") as file:
+        json.dump(results, file, indent=2)
+    
+    print(f"Evaluation complete. Results saved to 'test_results.json'.")
     print(f"Overall score: {results['overall_score']}%")
-    if results.get("passed"):
-        print("PASSED")
-    else:
-        print("FAILED")
+    print(f"Result: {'PASS' if results['passed'] else 'FAIL'}")
 
 if __name__ == "__main__":
     main()
