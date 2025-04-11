@@ -110,7 +110,6 @@ Based on the given information create the following for the evaluator:
 - Complete answer key in JSON format for automated checking
 - Explanation of correct answers and how they were derived
 - Passing criteria (e.g., minimum number of correct answers)
-- If there are multiple valid solution approaches, provide a way to programmatically validate answers (e.g., a validation formula or script)
 """
 
 prompt_template_grading ="""
@@ -126,6 +125,13 @@ Then the script should automatically score the test performance and save the res
 In addition to the detailed test results, 'test_results.json' should include one variable 'overall_score' with the percentage of points achieved by the candidate.
 
 """
+
+# Function to extract materials for candidates
+def extract_materials_for_candidate(row):
+    match = re.search(r'<MATERIALS_FOR_CANDIDATE>(.*?)</MATERIALS_FOR_CANDIDATE>', row['answer_materials'], re.DOTALL)
+    if match:
+        return match.group(1).strip()  # Extract and strip any leading/trailing whitespace
+    return None  # Return None if no match is found
 
 
 def custom_join_or(lst):
@@ -260,7 +266,7 @@ if __name__ == "__main__":
         #path_to_data = '../../data/exam_approach/exams/'
 
     if len(sys.argv)>2:
-        overwrite = sys.argv[3]
+        overwrite = sys.argv[2]
     else:
         overwrite = False
 
@@ -296,6 +302,8 @@ if __name__ == "__main__":
                 print('Processing ', df.shape[0], ' new tasks.')
                 df = df[~df['task_id'].isin(exclusion_list['task_id'])]
                 print('After applying tools and materials exclusion criteria there are ', df.shape[0], ' tasks left.')
+                df = df.iloc[:3]
+                print('Maria filtered to top 3')
                 df["system_prompt"] = df.apply(build_system_prompt, axis=1, args=(system_prompt_template,))
                 
                 # get 1. OVERVIEW
@@ -313,6 +321,8 @@ if __name__ == "__main__":
                 print('Generating materials')
                 df['prompt_materials'] = df.apply(build_prompts, axis=1, args=(prompt_template_materials,))
                 df['answer_materials'] = df.apply(run_query, axis=1, args=('prompt_materials',model,))
+                # Extract materials for candidates from the existing 'answer_materials' column
+                df['answer_materialscandidateonly'] = df['answer_materials'].apply(lambda x: extract_materials_for_candidate({'answer_materials': x}))
 
 
                 #4. SUBMISSION
@@ -331,6 +341,8 @@ if __name__ == "__main__":
                 df['prompt_grading'] = df.apply(build_prompts, axis=1, args=(prompt_template_grading,))
                 df['answer_grading'] = df.apply(run_query, axis=1, args=('prompt_grading',model,))
             
+                # NOTE I think we can move this out of foor loop when overwrite is true
+                # If so I would also do the candidate extraction from materials after the for loop
                 if overwrite == False:
                     pd.concat([existing_df,df]).to_csv(f'../../data/exam_approach/exams/{model}/exams_materialsexplained_{file.replace("task_list_","")}')
                 else:
