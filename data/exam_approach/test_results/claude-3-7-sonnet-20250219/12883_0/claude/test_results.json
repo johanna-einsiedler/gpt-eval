@@ -1,0 +1,134 @@
+{
+  "candidate_id": "GPT-4o",
+  "sections": {
+    "json_format": {
+      "score": 1,
+      "max_score": 1,
+      "details": {
+        "format_correct": true
+      }
+    },
+    "inventory_summary": {
+      "score": 1,
+      "max_score": 4,
+      "details": {
+        "total_apple_inventory_kg": {
+          "candidate_answer": 5175,
+          "correct_answer": 2925,
+          "is_correct": false
+        },
+        "total_corn_inventory_kg": {
+          "candidate_answer": 7775,
+          "correct_answer": 2425,
+          "is_correct": false
+        },
+        "highest_inventory_product": {
+          "candidate_answer": "WHT-04",
+          "correct_answer": "WHT-04",
+          "is_correct": true
+        },
+        "lowest_inventory_product": {
+          "candidate_answer": "POT-02",
+          "correct_answer": "CRN-03",
+          "is_correct": false
+        }
+      }
+    },
+    "transaction_analysis": {
+      "score": 2,
+      "max_score": 4,
+      "details": {
+        "total_transactions": {
+          "candidate_answer": 54,
+          "correct_answer": 54,
+          "is_correct": true
+        },
+        "highest_value_transaction_id": {
+          "candidate_answer": "TR-2023-021",
+          "correct_answer": "TR-2023-021",
+          "is_correct": true
+        },
+        "total_expenditure": {
+          "candidate_answer": 29598.5,
+          "correct_answer": 30840.0,
+          "is_correct": false
+        },
+        "average_transaction_value": {
+          "candidate_answer": 548.12,
+          "correct_answer": 571.11,
+          "is_correct": false
+        }
+      }
+    },
+    "reporting_compliance": {
+      "score": 3,
+      "max_score": 3,
+      "details": {
+        "quarterly_report_date": {
+          "candidate_answer": "2024-01-31",
+          "correct_answer": "2024-01-31",
+          "is_correct": true
+        },
+        "required_fields": {
+          "candidate_answer": [
+            "date",
+            "price_per_kg",
+            "product_code",
+            "quality_grade",
+            "quantity_kg",
+            "supplier_id",
+            "total_amount",
+            "transaction_id"
+          ],
+          "correct_answer": [
+            "date",
+            "price_per_kg",
+            "product_code",
+            "quality_grade",
+            "quantity_kg",
+            "supplier_id",
+            "total_amount",
+            "transaction_id"
+          ],
+          "is_correct": true,
+          "percentage_correct": 100.0
+        },
+        "retention_period_years": {
+          "candidate_answer": 5,
+          "correct_answer": 5,
+          "is_correct": true
+        }
+      }
+    },
+    "data_verification": {
+      "score": 2,
+      "max_score": 2,
+      "details": {
+        "duplicate_transaction_ids": {
+          "candidate_answer": [
+            "TR-2023-052"
+          ],
+          "correct_answer": [
+            "TR-2023-052"
+          ],
+          "is_correct": true
+        },
+        "missing_data_fields": {
+          "candidate_answer": [
+            "price_per_kg",
+            "total_amount"
+          ],
+          "correct_answer": [
+            "price_per_kg",
+            "total_amount"
+          ],
+          "is_correct": true
+        }
+      }
+    }
+  },
+  "total_score": 9,
+  "max_score": 14,
+  "overall_score": 64.29,
+  "passed": false
+}

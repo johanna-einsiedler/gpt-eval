@@ -1,57 +1,126 @@
 {
-  "task1": {
-    "score": 14,
-    "max_score": 20,
-    "percentage": 70.0,
-    "feedback": [
-      "Platform identification: 6/6 points",
-      "Impact analysis: 8/8 points"
-    ]
+  "candidate_id": "Claude-3_7-Sonnet",
+  "task1_results": {
+    "score": 27,
+    "max_score": 30,
+    "feedback": [],
+    "details": {
+      "trend1": {
+        "points": 9,
+        "max_points": 10,
+        "feedback": [
+          "Correctly identified a valid trend",
+          "Correctly cited a valid source",
+          "Provided reasonable impact score (6-10)",
+          "Provided 3 substantive implications"
+        ]
+      },
+      "trend2": {
+        "points": 9,
+        "max_points": 10,
+        "feedback": [
+          "Correctly identified a valid trend",
+          "Correctly cited a valid source",
+          "Provided reasonable impact score (6-10)",
+          "Provided 3 substantive implications"
+        ]
+      },
+      "trend3": {
+        "points": 9,
+        "max_points": 10,
+        "feedback": [
+          "Correctly identified a valid trend",
+          "Correctly cited a valid source",
+          "Provided reasonable impact score (6-10)",
+          "Provided 3 substantive implications"
+        ]
+      }
+    }
   },
-  "task2": {
-    "score": 13,
-    "max_score": 20,
-    "percentage": 65.0,
-    "feedback": [
-      "Deal identification and recency: 3/5 points",
-      "Significance analysis: 5/5 points",
-      "Negotiation lessons: 5/5 points"
-    ]
+  "task2_results": {
+    "score": 32,
+    "max_score": 35,
+    "feedback": [],
+    "details": {
+      "compensation": {
+        "points": 7,
+        "max_points": 10,
+        "feedback": [
+          "Deal 1 compensation correctly calculated",
+          "Deal 2 base compensation correct but missed performance bonus"
+        ]
+      },
+      "term_length": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Deal 1 term length correct (36 months)",
+          "Deal 2 term length correct (24 months)"
+        ]
+      },
+      "rights_retained": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Listed at least 2 substantive rights for Deal 1",
+          "Listed at least 2 substantive rights for Deal 2"
+        ]
+      },
+      "more_favorable": {
+        "points": 5,
+        "max_points": 5,
+        "feedback": [
+          "Correctly identified Deal 2 as more favorable"
+        ]
+      }
+    }
   },
-  "task3": {
-    "score": 19.5,
-    "max_score": 20,
-    "percentage": 97.5,
-    "feedback": [
-      "Publication selection: 3/3 points",
-      "URL validation: 3/3 points",
-      "Trending topic identification: 6/6 points",
-      "Key points analysis: 7.5/8 points"
-    ]
+  "task3_results": {
+    "score": 35,
+    "max_score": 35,
+    "feedback": [],
+    "details": {
+      "platform_selection": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Excellent choice of TikTok Creator Marketplace for audience expansion (1B+ users)"
+        ]
+      },
+      "compensation_recommendation": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Compensation recommendation (50000) is appropriate for mid-tier talent on TikTok Creator Marketplace"
+        ]
+      },
+      "rights_recommendation": {
+        "points": 7,
+        "max_points": 7,
+        "feedback": [
+          "Provided 2 substantive rights recommendations"
+        ]
+      },
+      "supporting_trend_evidence": {
+        "points": 8,
+        "max_points": 8,
+        "feedback": [
+          "Provided 2 substantive supporting trends"
+        ]
+      }
+    }
   },
-  "task4": {
-    "score": 20,
-    "max_score": 20,
-    "percentage": 100.0,
-    "feedback": [
-      "Opportunity identification: 6/6 points",
-      "Growth evidence: 6/6 points",
-      "Client advice: 8/8 points"
-    ]
-  },
-  "task5": {
-    "score": 20,
-    "max_score": 20,
-    "percentage": 100.0,
-    "feedback": [
-      "Event selection: 5/5 points",
-      "Date validation: 5/5 points",
-      "Industry significance: 5/5 points",
-      "Client type matching: 5/5 points"
-    ]
-  },
-  "overall_score": 86.5,
-  "total_points": 86.5,
-  "max_points": 100,
-  "pass_fail": "PASS"
+  "overall_feedback": [
+    "PASSED with a score of 94.0%",
+    "Task 1 (Industry News Analysis): 27/30 points (90.0%)",
+    "Task 2 (Deal Structure Comparison): 32/35 points (91.43%)",
+    "Task 3 (Client Advisory Scenario): 35/35 points (100.0%)",
+    "CRITICAL ERRORS IDENTIFIED:",
+    "- Failed to account for performance bonus in Deal 2 compensation"
+  ],
+  "overall_score": 94.0,
+  "passed": true,
+  "critical_errors": [
+    "Failed to account for performance bonus in Deal 2 compensation"
+  ]
 }

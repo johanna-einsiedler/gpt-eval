@@ -1,0 +1,160 @@
+{
+  "candidate_id": "Claude-3-Opus-20240229",
+  "tasks": {
+    "task1": {
+      "points": 3,
+      "max_points": 3,
+      "details": {
+        "clientA_commission": {
+          "submitted": 12000.0,
+          "expected": 12000.0,
+          "correct": true
+        },
+        "clientB_commission": {
+          "submitted": 27600.0,
+          "expected": 27600.0,
+          "correct": true
+        },
+        "clientC_commission": {
+          "submitted": 10360.0,
+          "expected": 10360.0,
+          "correct": true
+        }
+      },
+      "fully_correct": true
+    },
+    "task2": {
+      "points": 4,
+      "max_points": 4,
+      "details": {
+        "clientA_discrepancy": {
+          "submitted": 500.0,
+          "expected": 500.0,
+          "correct": true
+        },
+        "clientB_discrepancy": {
+          "submitted": 100.0,
+          "expected": 100.0,
+          "correct": true
+        },
+        "clientC_discrepancy": {
+          "submitted": 860.0,
+          "expected": 860.0,
+          "correct": true
+        },
+        "underpaid_clients": {
+          "submitted": [
+            "A",
+            "B",
+            "C"
+          ],
+          "expected": [
+            "A",
+            "B",
+            "C"
+          ],
+          "correct": true
+        }
+      },
+      "fully_correct": true
+    },
+    "task3": {
+      "points": 4,
+      "max_points": 6,
+      "details": {
+        "clientA_due_date": {
+          "submitted": "2023-06-20",
+          "expected": "2023-06-20",
+          "correct": true
+        },
+        "clientB_due_date": {
+          "submitted": "2023-07-07",
+          "expected": "2023-07-07",
+          "correct": true
+        },
+        "clientC_due_date": {
+          "submitted": "2023-08-04",
+          "expected": "2023-08-04",
+          "correct": true
+        },
+        "clientA_late_fee": {
+          "submitted": 0.0,
+          "expected": 9.0,
+          "correct": false
+        },
+        "clientB_late_fee": {
+          "submitted": 54.4,
+          "expected": 404.4,
+          "correct": false
+        },
+        "clientC_late_fee": {
+          "submitted": 0.0,
+          "expected": 0.0,
+          "correct": true
+        }
+      },
+      "fully_correct": false
+    },
+    "task4": {
+      "points": 3,
+      "max_points": 4,
+      "details": {
+        "late_fees_allocation": {
+          "submitted": 350.0,
+          "expected": 350.0,
+          "correct": true
+        },
+        "current_commission_allocation": {
+          "submitted": 9650.0,
+          "expected": 9650.0,
+          "correct": true
+        },
+        "previous_commission_allocation": {
+          "submitted": 0.0,
+          "expected": 0.0,
+          "correct": true
+        },
+        "remaining_balance": {
+          "submitted": 0.0,
+          "expected": 550.0,
+          "correct": false
+        }
+      },
+      "fully_correct": false
+    },
+    "task5": {
+      "points": 3,
+      "max_points": 3,
+      "details": {
+        "clientA_compliant": {
+          "submitted": false,
+          "expected": false,
+          "correct": true
+        },
+        "clientB_compliant": {
+          "submitted": true,
+          "expected": true,
+          "correct": true
+        },
+        "clientC_compliant": {
+          "submitted": true,
+          "expected": true,
+          "correct": true
+        }
+      },
+      "fully_correct": true
+    }
+  },
+  "task_scores": {
+    "task1": 3,
+    "task2": 4,
+    "task3": 4,
+    "task4": 3,
+    "task5": 3
+  },
+  "total_points": 17,
+  "max_points": 20,
+  "tasks_fully_correct": 3,
+  "overall_score": 85.0,
+  "passed": true
+}
