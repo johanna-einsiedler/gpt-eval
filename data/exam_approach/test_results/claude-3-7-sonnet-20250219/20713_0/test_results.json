@@ -1,0 +1,153 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "overall_score": 99.99,
+  "total_points": 99.99000000000001,
+  "max_points": 100,
+  "sections": {
+    "initial_markup": {
+      "points": 30,
+      "max_points": 30,
+      "details": {
+        "NP-101": {
+          "points": 6,
+          "max_points": 6,
+          "details": {
+            "markup_percentage": "Correct",
+            "retail_price": "Correct"
+          }
+        },
+        "NP-102": {
+          "points": 6,
+          "max_points": 6,
+          "details": {
+            "markup_percentage": "Correct",
+            "retail_price": "Correct"
+          }
+        },
+        "NP-103": {
+          "points": 6,
+          "max_points": 6,
+          "details": {
+            "markup_percentage": "Correct",
+            "retail_price": "Correct"
+          }
+        },
+        "NP-104": {
+          "points": 6,
+          "max_points": 6,
+          "details": {
+            "markup_percentage": "Correct",
+            "retail_price": "Correct"
+          }
+        },
+        "NP-105": {
+          "points": 6,
+          "max_points": 6,
+          "details": {
+            "markup_percentage": "Correct",
+            "retail_price": "Correct"
+          }
+        }
+      }
+    },
+    "seasonal_markdown": {
+      "points": 30.0,
+      "max_points": 30,
+      "details": {
+        "SP-201": {
+          "points": 7.5,
+          "max_points": 7.5,
+          "details": {
+            "markdown_percentage": "Correct",
+            "new_price": "Correct",
+            "second_markdown": "Correct"
+          }
+        },
+        "SP-202": {
+          "points": 7.5,
+          "max_points": 7.5,
+          "details": {
+            "markdown_percentage": "Correct",
+            "new_price": "Correct",
+            "second_markdown": "Correct"
+          }
+        },
+        "SP-203": {
+          "points": 7.5,
+          "max_points": 7.5,
+          "details": {
+            "markdown_percentage": "Correct",
+            "new_price": "Correct",
+            "second_markdown": "Correct"
+          }
+        },
+        "SP-204": {
+          "points": 7.5,
+          "max_points": 7.5,
+          "details": {
+            "markdown_percentage": "Correct",
+            "new_price": "Correct",
+            "second_markdown": "Correct"
+          }
+        }
+      }
+    },
+    "promotional_pricing": {
+      "points": 19.98,
+      "max_points": 20,
+      "details": {
+        "PP-301": {
+          "points": 6.66,
+          "max_points": 6.67,
+          "details": {
+            "discount_percentage": "Correct",
+            "breakeven_volume_increase": "Correct"
+          }
+        },
+        "PP-302": {
+          "points": 6.66,
+          "max_points": 6.67,
+          "details": {
+            "discount_percentage": "Correct",
+            "breakeven_volume_increase": "Correct"
+          }
+        },
+        "PP-303": {
+          "points": 6.66,
+          "max_points": 6.67,
+          "details": {
+            "discount_percentage": "Correct",
+            "breakeven_volume_increase": "Correct"
+          }
+        }
+      }
+    },
+    "competitive_repricing": {
+      "points": 20.009999999999998,
+      "max_points": 20,
+      "details": {
+        "CP-401": {
+          "points": 6.67,
+          "max_points": 6.67,
+          "details": {
+            "new_price": "Correct"
+          }
+        },
+        "CP-402": {
+          "points": 6.67,
+          "max_points": 6.67,
+          "details": {
+            "new_price": "Correct"
+          }
+        },
+        "CP-403": {
+          "points": 6.67,
+          "max_points": 6.67,
+          "details": {
+            "new_price": "Correct"
+          }
+        }
+      }
+    }
+  }
+}

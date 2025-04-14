@@ -9,6 +9,9 @@ import anthropic
 import regex as re
 import sys
 import ast
+import json
+import subprocess
+
 
 from typing import Annotated
 from langchain_anthropic import ChatAnthropic
@@ -30,12 +33,13 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
 # llm = ChatOpenAI(model="gpt-3.5-turbo")
 
-# Initialize Claude Haiku
-llm = ChatAnthropic(
-    model="claude-3-haiku-20240307",  # Claude Haiku model
-    anthropic_api_key=ANTHROPIC_API_KEY
-)
+# # Initialize Claude Haiku
+# llm = ChatAnthropic(
+#     model="claude-3-haiku-20240307",  # Claude Haiku model
+#     anthropic_api_key=ANTHROPIC_API_KEY
+# )
 
+model = 'claude-3-7-sonnet-20250219'
 # Initialize Claude Sonnet
 llm = ChatAnthropic(
     model= 'claude-3-7-sonnet-20250219',  # Claude Haiku model
@@ -88,23 +92,42 @@ def build_system_prompt(occupation, task_description, task_id, required_tools, r
     )
 
 
+def extract_and_save_python_script(script_text: str, folder: str, filename: str = "task_evaluation.py"):
+    """Finds Python code enclosed in triple backticks ```python ...``` and saves it to file.
+    useful for extractign grading script
+    """
+    match = re.search(r'```python(.*?)```', script_text, re.DOTALL)
+    if not match:
+        raise ValueError("No ```python ... ``` code block found in the grading text.")
+    code = match.group(1).strip()
 
-row = {
-    'occupation': 'Wholesale and Retail Buyers, Except Farm Products',
-    'task_description': 'Recommend mark-up rates, mark-down rates, or merchandise selling prices.',
-    'task_id': 'TASK123',
-    'required_tools_standard': "[['Spreadsheets', 'PDF viewer']]",
-    'required_materials_standard': "[['Text', 'Data']]"
-}
+    os.makedirs(folder, exist_ok=True)
+    file_path = os.path.join(folder, filename)
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(code)
 
-tools = safe_eval(row['required_tools_standard'])
-materials = safe_eval(row['required_materials_standard'])
+def extract_and_save_json(json_text: str, folder: str, filename: str = "answer_key.json"):
+    """
+    Finds JSON enclosed in triple backticks ```json ...``` and saves it to a file.
+    """
+    match = re.search(r'```json(.*?)```', json_text, re.DOTALL)
+    if not match:
+        raise ValueError("No ```json ... ``` block found in the evaluation text.")
+    json_str = match.group(1).strip()
+
+    data = json.loads(json_str)  # parse the JSON
+    os.makedirs(folder, exist_ok=True)
+    file_path = os.path.join(folder, filename)
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
 
 
 class ExamState(TypedDict):
     occupation: str
     task_id: str
     task_description: str
+    exam_author_model: str
     
     # Tools and materials
     tools: str#List[str]
@@ -124,10 +147,13 @@ class ExamState(TypedDict):
     evaluation: str
     grading: str
 
+    errors: list
     # Boolean flags for validation checks
     check_real_materials: bool
     check_no_internet: bool
-    # Counters for failed checks that could be fixed interatively
+    # Key grade and count how many times below threshold
+    key_grade_threshold:float
+    key_grade:float
     failed_answer_key_test:int
     
 
@@ -296,6 +322,7 @@ def node_evaluation(state: ExamState) -> ExamState:
     return state
 
 def node_grading(state: ExamState) -> ExamState:
+    # Note, I modified the prompt so that files are passed as argument
     prompt_template_grading ="""
     Here is brief explanation of the exam's purpose and structure intended for the evaluator: <examoverview> {answer_overview}</examoverview>
     Here are the instructions for the candidate: <instructions> {answer_instructions} </instructions>
@@ -304,9 +331,17 @@ def node_grading(state: ExamState) -> ExamState:
     Here is the information given to the evaluator: <evaluation_information> {answer_evaluation} </evaluation_information>
 
     ## Your assignment
-    Based on the given information create a python script named 'task_evaluation.py' that reads in the candidate submission ('test_submission.json') and reads in the answer key ('answer_key.json') provided, placed in the same folder as 'task_evaluation.py'.
-    Then the script should automatically score the test performance and save the result as 'test_results.json' in the same folder. 
-    In addition to the detailed test results, 'test_results.json' should include one variable 'overall_score' with the percentage of points achieved by the candidate.
+    Based on the given information, create a Python script named 'task_evaluation.py' that reads in the candidate submission and the answer key provided as arguments in the command line. The script should:
+    - Accept two arguments in the following order:
+    1. The **first argument** is the name of the candidate submission JSON file (e.g., `test_submission.json`).
+    2. The **second argument** is the name of the answer key JSON file (e.g., `answer_key.json`).
+    - Automatically score the test performance based on the provided files.
+    - Save the results as `test_results.json` in the same folder as the script.
+    - In addition to the detailed test results, `test_results.json` should include one variable `overall_score` with the percentage of points achieved by the candidate.
+
+    The script should be runnable from the command line like this:
+    ```bash
+    python task_evaluation.py test_submission.json answer_key.json
     """
     prompt = prompt_template_grading.format(
         answer_overview=state["overview"],
@@ -321,6 +356,113 @@ def node_grading(state: ExamState) -> ExamState:
     ]
     state["grading"] = llm(messages).content
     return state
+
+
+def node_save_eval_and_answer(state: ExamState) -> ExamState:
+    """
+    1) Saves the Python grading script from state["grading"] into `task_evaluation.py`
+    2) Saves the answer key JSON from state["evaluation"] into `answer_key.json`
+    """
+    task_id = state["task_id"]
+    path = "../../data/exam_approach/test_results/" + state["exam_author_model"] + "/"
+    folder = task_id.replace(".", "_")
+    
+    try:
+        # 1. Save the Python grading script
+        extract_and_save_python_script(
+            script_text=state["grading"], 
+            folder= path + folder, 
+            filename="task_evaluation.py"
+        )
+        # 2. Save the answer key
+        extract_and_save_json(
+            json_text=state["evaluation"], 
+            folder=path + folder, 
+            filename="answer_key.json"
+        )
+        print(f"Grading script and answer key saved successfully for task {task_id}.")
+    except Exception as exc:
+        err_msg = f"Error saving assets for {task_id}: {exc}"
+        print(err_msg)
+        state["errors"].append(err_msg)
+
+    return state
+
+def node_check_answer_key(state: ExamState) -> ExamState:
+    errors =[]
+    task_id = state["task_id"]
+    subfolder = task_id.replace(".", "_")
+    path =  "../../data/exam_approach/test_results/" + state["exam_author_model"] + "/" + subfolder + "/"
+    # Passes answer_key isntead of test_submission to later check answer key gets full marks
+    subprocess.run(["ls", "-l", path])
+    try:
+        result = subprocess.run(
+            ["python", "task_evaluation.py", "answer_key.json", "answer_key.json"],
+            cwd=path,
+            check=True,  # Raise an exception if the command fails
+            stderr=subprocess.PIPE,  # Capture stderr
+            stdout=subprocess.PIPE   # Capture stdout (if needed)
+            )
+        print("Script executed successfully.")
+
+        # If the script runs successfully, append None to errors list (no errors)
+        errors.append(None)
+            # Now get answer key grade
+        try:
+            # Load the JSON file
+            with open(path + 'test_results.json', 'r') as f:
+                data = json.load(f)
+            
+            # Extract the overall_score
+            overall_score = data.get("overall_score", None)
+            state["key_grade"] = overall_score
+            return state
+
+        except FileNotFoundError:
+            print(path)
+            print(f"Error: The file '{path}' was not found.")
+            errors.append('no overall score found')
+            state["errors"].append(errors)
+            state["key_grade"] = np.nan
+            return state
+        except json.JSONDecodeError:
+            print(f"Error: The file '{path}' is not a valid JSON file.")
+            errors.append('not json file')
+            state["errors"].append(errors)
+            state["key_grade"] = np.nan
+            return state
+        except Exception as e:
+            print(f"An unexpected error occurred: {str(e)}")
+            state["errors"].append(errors)
+            errors.append(str(e))
+            state["key_grade"] = np.nan
+            return state
+    
+    except subprocess.CalledProcessError as e:
+        # Capture and store the error output in the errors list
+        print(f"Error: Script failed with return code {e.returncode}")
+        print(f"Error Output:\n{e.stderr.decode('utf-8')}")
+        errors.append(e.stderr.decode('utf-8'))  # Append the error message to the errors list
+        state["errors"].append(errors)
+        state["key_grade"] = np.nan
+        return state
+    except FileNotFoundError:
+        error_message = "Error: The script or directory was not found. Check the path."
+        print(error_message)
+        print(path)
+        errors.append(error_message)  # Append the error message to the errors list
+        state["errors"].append(errors)
+        state["key_grade"] = np.nan
+        return state
+    except Exception as e:
+        # Capture and store any unexpected error
+        error_message = f"An unexpected error occurred: {str(e)}"
+        print(error_message)
+        errors.append(error_message)  # Append the error message to the errors list   
+        state["errors"].append(errors)
+        state["key_grade"] = np.nan
+        return state
+
 
 
 def node_check_materials_fake_image(state: ExamState) -> ExamState:
@@ -342,8 +484,6 @@ def node_check_materials_fake_image(state: ExamState) -> ExamState:
     else:
         state["check_real_materials"] = True
     return state
-
-
 
 def node_check_materials_fake_website(state: ExamState) -> ExamState:
     prompt_check_fake_website = """
@@ -367,23 +507,32 @@ def node_check_materials_fake_website(state: ExamState) -> ExamState:
     return state
 
 
+
+
+def node_end(state: ExamState):
+    pass
+
 def route_after_image_check(state: ExamState) -> str:
 
     if state["check_real_materials"] == False:
-        return "node_finish"
+        return "node_end"
     else:
         return "node_check_websites"
 
 def route_after_internet_check(state: ExamState) -> str:
 
     if state["check_no_internet"] == False:
-        return "node_finish"
+        return "node_end"
     else:
         return "node_submission"
 
+def route_after_key_check(state: ExamState) -> str:
+    if state["key_grade"] < state["key_grade_threshold"]:
+        return "node_grading"
+    else:
+        print("Key grade is above threshold, key grade: ", state["key_grade"])
+        return "node_end"
 
-def node_end(state: ExamState):
-    pass
 
 graph_builder = StateGraph(ExamState)
 
@@ -397,31 +546,48 @@ graph_builder.add_node("node_check_websites", node_check_materials_fake_website)
 graph_builder.add_node("node_submission", node_submission)
 graph_builder.add_node("node_evaluation", node_evaluation)
 graph_builder.add_node("node_grading", node_grading)
+graph_builder.add_node("node_save_eval_and_answer", node_save_eval_and_answer)
+graph_builder.add_node("node_check_answer_key", node_check_answer_key)
 graph_builder.add_node("node_end", node_end)
 
 #Add edges the graph
 graph_builder.add_edge(START, "construct_system_prompt")
 graph_builder.add_edge("construct_system_prompt", "node_overview")
 graph_builder.add_edge("node_overview", "node_instructions")
-
 ### NOTE - probably add conditional edge depending on whether materials are required
 graph_builder.add_edge("node_instructions", "node_materials")
 graph_builder.add_edge("node_materials", "node_check_images")
 ### Add conditional edges if materials_fake_website or materials_fake_image then end the process
 graph_builder.add_conditional_edges("node_check_images", route_after_image_check)
 graph_builder.add_conditional_edges("node_check_websites", route_after_internet_check)
-
+# If it passes will continue to generatl submissions and grading
 graph_builder.add_edge("node_submission", 'node_evaluation')
 graph_builder.add_edge("node_evaluation", 'node_grading')
-graph_builder.add_edge("node_grading", 'node_end')
+# Now check the answer key and how much it scores
+graph_builder.add_edge("node_grading", 'node_save_eval_and_answer')
+graph_builder.add_edge("node_save_eval_and_answer", "node_check_answer_key")
+graph_builder.add_edge("node_check_answer_key", "node_end")
 graph_builder.add_edge("node_end", END)
 
 graph = graph_builder.compile()
+
+row = {
+    'occupation': 'Wholesale and Retail Buyers, Except Farm Products',
+    'task_description': 'Recommend mark-up rates, mark-down rates, or merchandise selling prices.',
+    'task_id': '20713.0',
+    'required_tools_standard': "[['Spreadsheets', 'PDF viewer']]",
+    'required_materials_standard': "[['Text', 'Data']]"
+}
+
+tools = safe_eval(row['required_tools_standard'])
+materials = safe_eval(row['required_materials_standard'])
+
 
 init_state: ExamState = {
     "occupation": row["occupation"],
     "task_id": row["task_id"],
     "task_description": row["task_description"],
+    "exam_author_model": model,
 
     # Map your row fields to the typed dict fields
     "tools": row["required_tools_standard"],
@@ -438,8 +604,11 @@ init_state: ExamState = {
     "evaluation": "",
     "grading": "",
 
+    "errors": [],
     "check_real_materials": True,
     "check_no_internet": True,
+    "key_grade_threshold": 80.0,
+    "key_grade": 0.0,
     "failed_answer_key_test": 0
 }
 
