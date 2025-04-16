@@ -12,7 +12,6 @@ import ast
 import json
 import subprocess
 
-
 from typing import Annotated
 from langchain_anthropic import ChatAnthropic
 from langchain_openai import ChatOpenAI  # or your equivalent import
@@ -151,10 +150,13 @@ class ExamState(TypedDict):
     # Boolean flags for validation checks
     check_real_materials: bool
     check_no_internet: bool
+    failed_candidate_materials:int
     # Key grade and count how many times below threshold
     key_grade_threshold:float
     key_grade:float
     failed_answer_key_test:int
+    check_overall_makes_sense: bool
+    explanation_overall_makes_sense:str
     
 
 def node_system_prompt(state: ExamState) -> ExamState:
@@ -181,6 +183,8 @@ def node_system_prompt(state: ExamState) -> ExamState:
 
 # 2. Query overview
 def node_overview(state: ExamState) -> ExamState:
+    # NOTE - Maybe we want to in the overview prentively prompt the LLM to have trick questions or things that are
+    # not obvious, so that the evaluator knows this, but the candidate doesn't
     prompt_overview ='''### Your assignment
     Provide a brief explanation of the exam's purpose and structure for the evaluator.
     '''
@@ -189,7 +193,6 @@ def node_overview(state: ExamState) -> ExamState:
     SystemMessage(content=state["system_prompt"]),
     HumanMessage(content=prompt_overview)
     ]
-
 
     state["overview"] = llm(messages).content
     return state
@@ -262,7 +265,10 @@ def node_materials(state: ExamState) -> ExamState:
     try:
         state["materials_candidate"] = re.search(r'<MATERIALS_FOR_CANDIDATE>(.*?)</MATERIALS_FOR_CANDIDATE>', state["materials_all"], re.DOTALL).group(1)
     except:
-        print(msg)
+        state["materials_candidate"] = "Not extracted"
+        # keep track of how many times this fails, if more than 3 then break
+        state["failed_candidate_materials"] += 1
+        print("materials candidate was not able to be extracted")
 
     return state
 
@@ -388,13 +394,58 @@ def node_save_eval_and_answer(state: ExamState) -> ExamState:
 
     return state
 
+
+
+def node_check_materials_fake_image(state: ExamState) -> ExamState:
+    # NOTE - TODO, maybe we want to add space for reasoning?
+    prompt_check_fake_image = """
+    You are a system verifying if the provided instructions and/or materials falsely claim to include an image, but it is only a description. 
+    If the materials explicitly claim they have an image but only provide a textual description, 
+    and that image is crucial for at least one task, respond with "Y". 
+    In all other cases (including no mention of an image at all), respond with "N". 
+    Return only "Y" or "N".
+    """
+
+    messages = [
+        SystemMessage(content=prompt_check_fake_image),
+        HumanMessage(content=state['instructions'] + state["materials_all"])
+    ]
+
+    if llm(messages).content == "Y":
+        state["check_real_materials"] = False
+    else:
+        state["check_real_materials"] = True
+    return state
+
+def node_check_materials_fake_website(state: ExamState) -> ExamState:
+    prompt_check_fake_website = """
+    You are a system verifying whether the instructions and/or materials provided reference a publicly available website or news source that appears to be fabricated. 
+    It is acceptable if the materials reference an internal document, company guidelines, accounting statements or well known public documents. 
+    However, if the materials claim to reference a real, publicly accessible website or piece of news (e.g., something you would expect to find only online) 
+    and that url or texts  appears to be made up, respond with "Y". 
+    In all other cases, respond with "N". 
+    Return only "Y" or "N".
+    """
+    
+    messages = [
+        SystemMessage(content=prompt_check_fake_website),
+        HumanMessage(content= state["instructions"] + state["materials_all"])
+    ]
+
+    if llm(messages).content == "Y":
+        state["check_no_internet"] = False
+    else:
+        state["check_no_internet"] = True
+    return state
+
+
 def node_check_answer_key(state: ExamState) -> ExamState:
     errors =[]
     task_id = state["task_id"]
     subfolder = task_id.replace(".", "_")
     path =  "../../data/exam_approach/test_results/" + state["exam_author_model"] + "/" + subfolder + "/"
     # Passes answer_key isntead of test_submission to later check answer key gets full marks
-    subprocess.run(["ls", "-l", path])
+    # subprocess.run(["ls", "-l", path])
     try:
         result = subprocess.run(
             ["python", "task_evaluation.py", "answer_key.json", "answer_key.json"],
@@ -465,52 +516,101 @@ def node_check_answer_key(state: ExamState) -> ExamState:
 
 
 
-def node_check_materials_fake_image(state: ExamState) -> ExamState:
-    prompt_check_fake_image = """
-    You are a system verifying if the provided materials falsely claim to include an image, but it is only a description. 
-    If the materials explicitly claim they have an image but only provide a textual description, 
-    and that image is crucial for at least one task, respond with "Y". 
-    In all other cases (including no mention of an image at all), respond with "N". 
-    Return only "Y" or "N".
+def node_overall_makes_sense(state: ExamState) -> ExamState:
+
+    system_prompt = f"""
+    You are a system verifying a remote, **practical** exam to assess a {state['occupation']}'s ability to {state['task_description']}.
+
+    CANDIDATE vs. EVALUATOR CONTEXT:
+    - The candidate only sees: Instructions, Materials, Submission format.
+    - The evaluator sees everything else (Overview, Evaluation info, Grading script, and the answer key).
+
+    CHECKS TO PERFORM:
+    1) Is this exam actually practical (testing real job tasks) rather than purely theoretical?
+    2) Are the tasks realistic for a {state['occupation']} in the year 2025?
+    3) Are the instructions, materials, and submission requirements unambiguous?
+    4) Do the grading script and answer key correctly reflect the exam?
+    - No scenario where a candidate can pass overall despite failing a critical part.
+    - No scenario where a candidate who meets all requirements is incorrectly failed.
+
+    HOW TO RESPOND:
+    Return EXACTLY one JSON object. Here is the required structure (note the doubled braces to show literal braces in an f-string):
+
+    {{
+    "makes_sense": true,
+    "explanation": "A concise explanation here"
+    }}
+
+    No additional text (e.g., disclaimers, markdown formatting) outside this JSON object.
+        """
+
+    user_message = f"""
+    === EXAM CONTENT (Evaluator-Only Context in addition to Candidate Materials) ===
+
+    • Overview (Evaluator-Only):
+    {state["overview"]}
+
+    • Instructions (Candidate Sees):
+    {state["instructions"]}
+
+    • Materials (Candidate Sees):
+    {state["materials_all"]}
+
+    • Submission Format (Candidate Sees):
+    {state["submission"]}
+
+    • Evaluation Info & Answer Key Explanation (Evaluator-Only):
+    {state["evaluation"]}
+
+    • Grading Script (Evaluator-Only):
+    {state["grading"]}
+
+    (Note: The answer key is passed to the grading script as 'answer_key.json'.)
     """
 
     messages = [
-        SystemMessage(content=prompt_check_fake_image),
-        HumanMessage(content=state["materials_all"])
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=user_message.strip())
     ]
 
-    if llm(messages).content == "Y":
-        state["check_real_materials"] = False
-    else:
-        state["check_real_materials"] = True
-    return state
+    response = llm(messages).content.strip()
 
-def node_check_materials_fake_website(state: ExamState) -> ExamState:
-    prompt_check_fake_website = """
-    You are a system verifying whether the provided materials reference a publicly available website or news source that appears to be fabricated. 
-    It is acceptable if the materials reference an internal document, company guidelines, accounting statements or well known public documents. 
-    However, if the materials claim to reference a real, publicly accessible website or piece of news (e.g., something you would expect to find only online) 
-    and that url or texts  appears to be made up, respond with "Y". 
-    In all other cases, respond with "N". 
-    Return only "Y" or "N".
-    """
-    
-    messages = [
-        SystemMessage(content=prompt_check_fake_website),
-        HumanMessage(content=state["materials_all"])
-    ]
+    try:
+        result = json.loads(response)
+        state["check_overall_makes_sense"] = bool(result.get("makes_sense", False))
+        state["explanation_overall_makes_sense"] = str(result.get("explanation", ""))
+    except json.JSONDecodeError:
+        # If the LLM's response isn't valid JSON, mark sense-check as False
+        # and store the raw response for debugging.
+        state["check_overall_makes_sense"] = False
+        state["explanation_overall_makes_sense"] = (
+            "Could not parse JSON. Raw LLM response:\n" + response
+        )
 
-    if llm(messages).content == "Y":
-        state["check_no_internet"] = False
-    else:
-        state["check_no_internet"] = True
     return state
 
 
+def node_end(state: ExamState) -> ExamState:
+    '''Compiles the exam
+    '''
+    if state["check_real_materials"] and state["check_no_internet"] and state["key_grade"] > state["key_grade_threshold"]:
+        state['exam'] = state['instructions'] + state['materials_candidate'] + state['submission'] 
+    else:
+        state['exam'] = "Exam not valid"
+    return state
 
+#### Routing functions
 
-def node_end(state: ExamState):
-    pass
+def route_after_materials_candiate(state: ExamState) -> str:
+
+    if state["failed_candidate_materials"] >= 3:
+        # if it has consistently failed in generating materials for candiate just end it
+        return "node_end"
+    elif state["materials_candidate"] == "Not extracted":
+        return "node_materials"
+    else:
+        return "node_check_images"
+
 
 def route_after_image_check(state: ExamState) -> str:
 
@@ -548,6 +648,7 @@ graph_builder.add_node("node_evaluation", node_evaluation)
 graph_builder.add_node("node_grading", node_grading)
 graph_builder.add_node("node_save_eval_and_answer", node_save_eval_and_answer)
 graph_builder.add_node("node_check_answer_key", node_check_answer_key)
+graph_builder.add_node("node_overall_makes_sense", node_overall_makes_sense)
 graph_builder.add_node("node_end", node_end)
 
 #Add edges the graph
@@ -556,7 +657,8 @@ graph_builder.add_edge("construct_system_prompt", "node_overview")
 graph_builder.add_edge("node_overview", "node_instructions")
 ### NOTE - probably add conditional edge depending on whether materials are required
 graph_builder.add_edge("node_instructions", "node_materials")
-graph_builder.add_edge("node_materials", "node_check_images")
+# add conditional edges in case materials for candidate where not extracted
+graph_builder.add_conditional_edges("node_materials", route_after_materials_candiate)
 ### Add conditional edges if materials_fake_website or materials_fake_image then end the process
 graph_builder.add_conditional_edges("node_check_images", route_after_image_check)
 graph_builder.add_conditional_edges("node_check_websites", route_after_internet_check)
@@ -566,7 +668,8 @@ graph_builder.add_edge("node_evaluation", 'node_grading')
 # Now check the answer key and how much it scores
 graph_builder.add_edge("node_grading", 'node_save_eval_and_answer')
 graph_builder.add_edge("node_save_eval_and_answer", "node_check_answer_key")
-graph_builder.add_edge("node_check_answer_key", "node_end")
+graph_builder.add_edge("node_check_answer_key", "node_overall_makes_sense")
+graph_builder.add_edge("node_overall_makes_sense", "node_end")
 graph_builder.add_edge("node_end", END)
 
 graph = graph_builder.compile()
@@ -607,9 +710,12 @@ init_state: ExamState = {
     "errors": [],
     "check_real_materials": True,
     "check_no_internet": True,
+    "failed_candidate_materials": 0,
     "key_grade_threshold": 80.0,
     "key_grade": 0.0,
-    "failed_answer_key_test": 0
+    "failed_answer_key_test": 0,
+    "check_overall_makes_sense": True,
+    "explanation_overall_makes_sense": ""
 }
 
 # Now just invoke the compiled graph with that initial state
@@ -618,6 +724,80 @@ result_state = graph.invoke(init_state)
 result_state
 
 
+##### Now run on a real dataframe
+file_answers = "../../data/exam_approach/test_results/{}/test_results_business_and_financial_operations_occupations_CORE_automatable.csv".format(model)
+df_26tasks = pd.read_csv(file_answers)
+df_26tasks  = df_26tasks .loc[:, ~df_26tasks .columns.str.contains('^Unnamed')]
+
+df_26tasks.columns
+df_26tasks = df_26tasks[['occupation', 'task_description', 'task_id', 'required_tools_standard', 'required_materials_standard']]
+
+# Initialize an empty list to store result states
+result_states = []
+
+# Iterate over each row in the DataFrame
+for _, row in df_26tasks.iterrows():  # Use iterrows() to iterate over rows
+    # Initialize the state for the current row
+    
+    init_state: ExamState = {
+        "occupation": row["occupation"],
+        "task_id": row["task_id"],
+        "task_description": row["task_description"],
+        "exam_author_model": model,
+
+        # Map your row fields to the typed dict fields
+        "tools": row["required_tools_standard"],
+        "materials": row["required_materials_standard"],
+
+        # Provide defaults or placeholders for the rest
+        "exam": {},
+        "system_prompt": "",
+        "overview": "",
+        "instructions": "",
+        "materials_all": "",
+        "materials_candidate": "",
+        "submission": "",
+        "evaluation": "",
+        "grading": "",
+
+        "errors": [],
+        "check_real_materials": True,
+        "check_no_internet": True,
+        "failed_candidate_materials": 0,
+        "key_grade_threshold": 80.0,
+        "key_grade": 0.0,
+        "failed_answer_key_test": 0,
+        "check_overall_makes_sense": True,
+        "explanation_overall_makes_sense": ""
+    }
+    print(init_state['task_id'])
+    try:
+        # Invoke the compiled graph with the initial state
+        result_state = graph.invoke(init_state)
+        # Append the result_state to the list
+        result_states.append(result_state)
+    except Exception as e:
+        # Handle any errors during graph invocation
+        print(f"Error processing task_id {row['task_id']}: {e}")
+        # Append an error state to the list for debugging
+        result_states.append({
+            "occupation": row["occupation"],
+            "task_id": row["task_id"],
+            "task_description": row["task_description"],
+            "exam_author_model": model,
+            "errors": [str(e)]
+        })
+
+# Convert the list of result states into a DataFrame
+df_result_states = pd.DataFrame(result_states)
+
+df_result_states.to_csv("../../data/exam_approach/test_results/{}/26_task_exam_check_v2.csv".format(model), index=False)
+
+# # Save the resulting DataFrame to a CSV file (optional)
+# df_result_states.to_csv("../../data/exam_approach/test_results/compiled_results.csv", index=False)
+
+# Display the resulting DataFrame
+print(df_result_states)
 
 # graph_builder.add_edge("evaluation", "grading")
 # graph_builder.set_finish_point("grading")
