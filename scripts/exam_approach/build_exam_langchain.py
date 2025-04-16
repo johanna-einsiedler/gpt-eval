@@ -21,6 +21,7 @@ from langgraph.graph.message import add_messages
 from langchain.schema import SystemMessage, HumanMessage
 from langgraph.graph import START
 from langgraph.graph import END
+from IPython.display import Image, display
 
 
 dotenv_path = find_dotenv()
@@ -104,6 +105,7 @@ def extract_and_save_python_script(script_text: str, folder: str, filename: str 
     file_path = os.path.join(folder, filename)
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(code)
+    return code
 
 def extract_and_save_json(json_text: str, folder: str, filename: str = "answer_key.json"):
     """
@@ -119,6 +121,7 @@ def extract_and_save_json(json_text: str, folder: str, filename: str = "answer_k
     file_path = os.path.join(folder, filename)
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
+    return data
 
 
 
@@ -145,6 +148,7 @@ class ExamState(TypedDict):
     submission: str
     evaluation: str
     grading: str
+    answer_key:str
 
     errors: list
     # Boolean flags for validation checks
@@ -375,17 +379,18 @@ def node_save_eval_and_answer(state: ExamState) -> ExamState:
     
     try:
         # 1. Save the Python grading script
-        extract_and_save_python_script(
+        script = extract_and_save_python_script(
             script_text=state["grading"], 
             folder= path + folder, 
             filename="task_evaluation.py"
         )
         # 2. Save the answer key
-        extract_and_save_json(
+        key = extract_and_save_json(
             json_text=state["evaluation"], 
             folder=path + folder, 
             filename="answer_key.json"
         )
+        state['answer_key'] = key
         print(f"Grading script and answer key saved successfully for task {task_id}.")
     except Exception as exc:
         err_msg = f"Error saving assets for {task_id}: {exc}"
@@ -532,13 +537,14 @@ def node_overall_makes_sense(state: ExamState) -> ExamState:
     4) Do the grading script and answer key correctly reflect the exam?
     - No scenario where a candidate can pass overall despite failing a critical part.
     - No scenario where a candidate who meets all requirements is incorrectly failed.
+    - The answer key should score 100% on the grading script, or at least above {state['key_grade_threshold']}.
 
     HOW TO RESPOND:
     Return EXACTLY one JSON object. Here is the required structure (note the doubled braces to show literal braces in an f-string):
 
     {{
     "makes_sense": true,
-    "explanation": "A concise explanation here"
+    "explanation": "A concise explanation here. Also suggest potential weaknesses (e.g. key not scoring 100) or ambiguities in the exam."
     }}
 
     No additional text (e.g., disclaimers, markdown formatting) outside this JSON object.
@@ -564,6 +570,8 @@ def node_overall_makes_sense(state: ExamState) -> ExamState:
 
     • Grading Script (Evaluator-Only):
     {state["grading"]}
+    • Answer key (Evaluator-Only):
+    {state['answer_key']}
 
     (Note: The answer key is passed to the grading script as 'answer_key.json'.)
     """
@@ -706,6 +714,7 @@ init_state: ExamState = {
     "submission": "",
     "evaluation": "",
     "grading": "",
+    "answer_key": "",
 
     "errors": [],
     "check_real_materials": True,
@@ -723,6 +732,14 @@ result_state = graph.invoke(init_state)
 
 result_state
 
+
+g   = graph.get_graph()
+
+
+# # Mermaid text
+# print(g.draw_mermaid())
+
+# display(Image(g.draw_mermaid_png()))
 
 ##### Now run on a real dataframe
 file_answers = "../../data/exam_approach/test_results/{}/test_results_business_and_financial_operations_occupations_CORE_automatable.csv".format(model)
@@ -759,6 +776,7 @@ for _, row in df_26tasks.iterrows():  # Use iterrows() to iterate over rows
         "submission": "",
         "evaluation": "",
         "grading": "",
+        "answer_key": "",
 
         "errors": [],
         "check_real_materials": True,
@@ -795,15 +813,3 @@ df_result_states.to_csv("../../data/exam_approach/test_results/{}/26_task_exam_c
 
 # # Save the resulting DataFrame to a CSV file (optional)
 # df_result_states.to_csv("../../data/exam_approach/test_results/compiled_results.csv", index=False)
-
-# Display the resulting DataFrame
-print(df_result_states)
-
-# graph_builder.add_edge("evaluation", "grading")
-# graph_builder.set_finish_point("grading")
-
-# graph = graph_builder.compile()
-
-# for _, row in df.iterrows():
-#     result = graph.invoke({"row": row.to_dict()})
-#     results.append(result["row"])
