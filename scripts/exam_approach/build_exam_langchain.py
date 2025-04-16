@@ -696,7 +696,7 @@ materials = safe_eval(row['required_materials_standard'])
 
 init_state: ExamState = {
     "occupation": row["occupation"],
-    "task_id": row["task_id"],
+    "task_id": str(row["task_id"]),  # Convert task_id to a string
     "task_description": row["task_description"],
     "exam_author_model": model,
 
@@ -758,7 +758,7 @@ for _, row in df_26tasks.iterrows():  # Use iterrows() to iterate over rows
     
     init_state: ExamState = {
         "occupation": row["occupation"],
-        "task_id": row["task_id"],
+        "task_id": str(row["task_id"]),  # Convert task_id to a string
         "task_description": row["task_description"],
         "exam_author_model": model,
 
