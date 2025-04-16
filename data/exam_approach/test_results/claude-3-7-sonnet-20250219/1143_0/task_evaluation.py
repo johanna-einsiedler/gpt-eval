@@ -1,545 +1,311 @@
 import json
-import math
-from datetime import datetime
+import sys
+from typing import Dict, List, Any, Tuple
 
-def load_json_file(filename):
+def load_json_file(filename: str) -> Dict:
     try:
         with open(filename, 'r') as file:
             return json.load(file)
-    except Exception as e:
-        print(f"Error loading {filename}: {e}")
-        return None
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"Error: File '{filename}' contains invalid JSON.")
+        sys.exit(1)
 
-def save_json_file(data, filename):
-    try:
-        with open(filename, 'w') as file:
-            json.dump(data, file, indent=2)
-        print(f"Results saved to {filename}")
-    except Exception as e:
-        print(f"Error saving {filename}: {e}")
-
-def is_close_enough(val1, val2, tolerance=0.05):
-    """Check if two numeric values are close enough within tolerance"""
-    if isinstance(val1, (int, float)) and isinstance(val2, (int, float)):
-        return abs(val1 - val2) <= tolerance
-    return val1 == val2
-
-def validate_date_format(date_str):
-    """Validate if string is in YYYY-MM-DD format"""
-    try:
-        datetime.strptime(date_str, '%Y-%m-%d')
-        return True
-    except ValueError:
-        return False
-
-def evaluate_exercise1(submission, answer_key):
-    """Evaluate the purchase order preparation exercise"""
-    results = {
-        "points_possible": 20,
-        "points_earned": 0,
-        "percentage": 0,
-        "details": {}
-    }
+def evaluate_scenario1(submission: Dict, answer_key: Dict) -> Tuple[int, int, List[str]]:
+    """Evaluate Purchase Order Preparation scenario"""
+    max_score = 30
+    score = 0
+    feedback = []
     
-    # Check PO number format (1 point)
-    if submission.get("poNumber") == answer_key.get("poNumber"):
-        results["details"]["poNumber"] = {"earned": 1, "possible": 1, "comment": "Correct PO number"}
-        results["points_earned"] += 1
+    # Vendor selection (5 points)
+    if submission.get("vendor_id") == answer_key.get("vendor_id"):
+        score += 5
+        feedback.append("✓ Correct vendor selected")
     else:
-        results["details"]["poNumber"] = {"earned": 0, "possible": 1, "comment": "Incorrect PO number"}
+        feedback.append(f"✗ Incorrect vendor selected. Expected: {answer_key.get('vendor_id')}, Got: {submission.get('vendor_id')}")
     
-    # Check vendor information (2 points)
-    if submission.get("vendorID") == answer_key.get("vendorID"):
-        results["details"]["vendorInfo"] = {"earned": 2, "possible": 2, "comment": "Correct vendor information"}
-        results["points_earned"] += 2
-    else:
-        results["details"]["vendorInfo"] = {"earned": 0, "possible": 2, "comment": "Incorrect vendor information"}
+    # Check line items
+    submission_items = {item.get("item_code"): item for item in submission.get("line_items", [])}
+    key_items = {item.get("item_code"): item for item in answer_key.get("line_items", [])}
     
-    # Check requisition reference (1 point)
-    if submission.get("requisitionNumber") == answer_key.get("requisitionNumber"):
-        results["details"]["requisitionNumber"] = {"earned": 1, "possible": 1, "comment": "Correct requisition reference"}
-        results["points_earned"] += 1
-    else:
-        results["details"]["requisitionNumber"] = {"earned": 0, "possible": 1, "comment": "Incorrect requisition reference"}
+    # Item codes (8 points, 2 points each)
+    expected_codes = set(key_items.keys())
+    submitted_codes = set(submission_items.keys())
     
-    # Check order date (1 point)
-    if validate_date_format(submission.get("orderDate", "")):
-        results["details"]["orderDate"] = {"earned": 1, "possible": 1, "comment": "Valid order date format"}
-        results["points_earned"] += 1
-    else:
-        results["details"]["orderDate"] = {"earned": 0, "possible": 1, "comment": "Invalid order date format"}
+    correct_codes = expected_codes.intersection(submitted_codes)
+    for code in correct_codes:
+        score += 2
+        feedback.append(f"✓ Correct item code: {code}")
     
-    # Check delivery date (1 point)
-    if submission.get("deliveryDate") == answer_key.get("deliveryDate"):
-        results["details"]["deliveryDate"] = {"earned": 1, "possible": 1, "comment": "Correct delivery date"}
-        results["points_earned"] += 1
-    else:
-        results["details"]["deliveryDate"] = {"earned": 0, "possible": 1, "comment": "Incorrect delivery date"}
+    for code in expected_codes - submitted_codes:
+        feedback.append(f"✗ Missing item code: {code}")
     
-    # Check line items (3 points)
-    sub_items = submission.get("lineItems", [])
-    key_items = answer_key.get("lineItems", [])
+    for code in submitted_codes - expected_codes:
+        feedback.append(f"✗ Unexpected item code: {code}")
     
-    if len(sub_items) == len(key_items):
-        item_points = 3
-        results["details"]["lineItemsCount"] = {"earned": 3, "possible": 3, "comment": "All line items included"}
-    else:
-        item_points = round(3 * (len(sub_items) / max(1, len(key_items))))
-        results["details"]["lineItemsCount"] = {
-            "earned": item_points, 
-            "possible": 3, 
-            "comment": f"Missing line items: {len(key_items) - len(sub_items)}"
-        }
-    results["points_earned"] += item_points
-    
-    # Create a mapping of item numbers to check descriptions, quantities, and prices
-    sub_items_map = {item.get("itemNumber"): item for item in sub_items}
-    key_items_map = {item.get("itemNumber"): item for item in key_items}
-    
-    # Check item descriptions (2 points)
-    desc_correct = sum(1 for item_num in key_items_map if 
-                      item_num in sub_items_map and 
-                      sub_items_map[item_num].get("description") == key_items_map[item_num].get("description"))
-    desc_points = round(2 * (desc_correct / max(1, len(key_items))))
-    results["details"]["itemDescriptions"] = {
-        "earned": desc_points, 
-        "possible": 2, 
-        "comment": f"Correct descriptions: {desc_correct}/{len(key_items)}"
-    }
-    results["points_earned"] += desc_points
-    
-    # Check quantities (2 points)
-    qty_correct = sum(1 for item_num in key_items_map if 
-                     item_num in sub_items_map and 
-                     sub_items_map[item_num].get("quantity") == key_items_map[item_num].get("quantity"))
-    qty_points = round(2 * (qty_correct / max(1, len(key_items))))
-    results["details"]["itemQuantities"] = {
-        "earned": qty_points, 
-        "possible": 2, 
-        "comment": f"Correct quantities: {qty_correct}/{len(key_items)}"
-    }
-    results["points_earned"] += qty_points
-    
-    # Check unit prices (2 points)
-    price_correct = sum(1 for item_num in key_items_map if 
-                       item_num in sub_items_map and 
-                       is_close_enough(sub_items_map[item_num].get("unitPrice"), key_items_map[item_num].get("unitPrice"), 0.01))
-    price_points = round(2 * (price_correct / max(1, len(key_items))))
-    results["details"]["unitPrices"] = {
-        "earned": price_points, 
-        "possible": 2, 
-        "comment": f"Correct unit prices: {price_correct}/{len(key_items)}"
-    }
-    results["points_earned"] += price_points
-    
-    # Check calculations (4 points)
-    calc_points = 0
-    calc_comments = []
-    
-    # Subtotal check (1 point)
-    if is_close_enough(submission.get("subtotal"), answer_key.get("subtotal"), 0.01):
-        calc_points += 1
-        calc_comments.append("Correct subtotal")
-    else:
-        calc_comments.append("Incorrect subtotal")
-    
-    # Tax check (1 point)
-    if is_close_enough(submission.get("taxAmount"), answer_key.get("taxAmount"), 0.01):
-        calc_points += 1
-        calc_comments.append("Correct tax amount")
-    else:
-        calc_comments.append("Incorrect tax amount")
-    
-    # Shipping check (1 point)
-    if is_close_enough(submission.get("shippingCost"), answer_key.get("shippingCost"), 0.01):
-        calc_points += 1
-        calc_comments.append("Correct shipping cost")
-    else:
-        calc_comments.append("Incorrect shipping cost")
-    
-    # Total check (1 point)
-    if is_close_enough(submission.get("totalAmount"), answer_key.get("totalAmount"), 0.01):
-        calc_points += 1
-        calc_comments.append("Correct total amount")
-    else:
-        calc_comments.append("Incorrect total amount")
-    
-    results["details"]["calculations"] = {
-        "earned": calc_points, 
-        "possible": 4, 
-        "comment": "; ".join(calc_comments)
-    }
-    results["points_earned"] += calc_points
-    
-    # Check payment terms (1 point)
-    if submission.get("paymentTerms") == answer_key.get("paymentTerms"):
-        results["details"]["paymentTerms"] = {"earned": 1, "possible": 1, "comment": "Correct payment terms"}
-        results["points_earned"] += 1
-    else:
-        results["details"]["paymentTerms"] = {"earned": 0, "possible": 1, "comment": "Incorrect payment terms"}
-    
-    # Calculate percentage
-    results["percentage"] = round((results["points_earned"] / results["points_possible"]) * 100, 2)
-    
-    return results
-
-def evaluate_exercise2(submission, answer_key):
-    """Evaluate the RFQ exercise"""
-    results = {
-        "points_possible": 15,
-        "points_earned": 0,
-        "percentage": 0,
-        "details": {}
-    }
-    
-    # Check RFQ number format (1 point)
-    if submission.get("rfqNumber") == answer_key.get("rfqNumber"):
-        results["details"]["rfqNumber"] = {"earned": 1, "possible": 1, "comment": "Correct RFQ number"}
-        results["points_earned"] += 1
-    else:
-        results["details"]["rfqNumber"] = {"earned": 0, "possible": 1, "comment": "Incorrect RFQ number"}
-    
-    # Check issue date (1 point)
-    if validate_date_format(submission.get("issueDate", "")):
-        results["details"]["issueDate"] = {"earned": 1, "possible": 1, "comment": "Valid issue date format"}
-        results["points_earned"] += 1
-    else:
-        results["details"]["issueDate"] = {"earned": 0, "possible": 1, "comment": "Invalid issue date format"}
-    
-    # Check submission deadline (1 point)
-    # Ideally we'd check if it's 14 days from issue date, but for simplicity we'll just check format
-    if validate_date_format(submission.get("submissionDeadline", "")):
-        results["details"]["submissionDeadline"] = {"earned": 1, "possible": 1, "comment": "Valid submission deadline format"}
-        results["points_earned"] += 1
-    else:
-        results["details"]["submissionDeadline"] = {"earned": 0, "possible": 1, "comment": "Invalid submission deadline format"}
-    
-    # Check items included (3 points)
-    sub_items = submission.get("items", [])
-    key_items = answer_key.get("items", [])
-    
-    # Create a mapping of item names
-    sub_items_names = [item.get("itemName", "").lower() for item in sub_items]
-    key_items_names = [item.get("itemName", "").lower() for item in key_items]
-    
-    # Count how many required items are included
-    items_included = sum(1 for name in key_items_names if any(name in sub_name or sub_name in name for sub_name in sub_items_names))
-    item_points = round(3 * (items_included / max(1, len(key_items))))
-    
-    results["details"]["itemsIncluded"] = {
-        "earned": item_points, 
-        "possible": 3, 
-        "comment": f"Required items included: {items_included}/{len(key_items)}"
-    }
-    results["points_earned"] += item_points
-    
-    # Check quantities (3 points)
-    # Match items by name and check quantities
-    qty_correct = 0
-    for key_item in key_items:
-        key_name = key_item.get("itemName", "").lower()
-        key_qty = key_item.get("quantity")
+    # Quantities, unit prices, account codes (12 points total, 1 point each per item)
+    for code in correct_codes:
+        # Check quantity (1 point each)
+        if submission_items[code].get("quantity") == key_items[code].get("quantity"):
+            score += 1
+            feedback.append(f"✓ Correct quantity for {code}")
+        else:
+            feedback.append(f"✗ Incorrect quantity for {code}. Expected: {key_items[code].get('quantity')}, Got: {submission_items[code].get('quantity')}")
         
-        for sub_item in sub_items:
-            sub_name = sub_item.get("itemName", "").lower()
-            if key_name in sub_name or sub_name in key_name:
-                if sub_item.get("quantity") == key_qty:
-                    qty_correct += 1
-                break
-    
-    qty_points = round(3 * (qty_correct / max(1, len(key_items))))
-    results["details"]["itemQuantities"] = {
-        "earned": qty_points, 
-        "possible": 3, 
-        "comment": f"Correct quantities: {qty_correct}/{len(key_items)}"
-    }
-    results["points_earned"] += qty_points
-    
-    # Check specifications (3 points)
-    # This is a simplified check - in reality, we'd need more sophisticated text matching
-    spec_correct = 0
-    for key_item in key_items:
-        key_name = key_item.get("itemName", "").lower()
-        key_spec = key_item.get("specifications", "").lower()
+        # Check unit price (1 point each)
+        if submission_items[code].get("unit_price") == key_items[code].get("unit_price"):
+            score += 1
+            feedback.append(f"✓ Correct unit price for {code}")
+        else:
+            feedback.append(f"✗ Incorrect unit price for {code}. Expected: {key_items[code].get('unit_price')}, Got: {submission_items[code].get('unit_price')}")
         
-        for sub_item in sub_items:
-            sub_name = sub_item.get("itemName", "").lower()
-            if key_name in sub_name or sub_name in key_name:
-                sub_spec = sub_item.get("specifications", "").lower()
-                # Check if key terms from the answer key specs appear in the submission
-                key_terms = ["adjustable", "warranty", "dimensions"]
-                if any(term in sub_spec for term in key_terms):
-                    spec_correct += 1
-                break
+        # Check account code (1 point each)
+        if submission_items[code].get("account_code") == key_items[code].get("account_code"):
+            score += 1
+            feedback.append(f"✓ Correct account code for {code}")
+        else:
+            feedback.append(f"✗ Incorrect account code for {code}. Expected: {key_items[code].get('account_code')}, Got: {submission_items[code].get('account_code')}")
     
-    spec_points = round(3 * (spec_correct / max(1, len(key_items))))
-    results["details"]["specifications"] = {
-        "earned": spec_points, 
-        "possible": 3, 
-        "comment": f"Adequate specifications: {spec_correct}/{len(key_items)}"
-    }
-    results["points_earned"] += spec_points
-    
-    # Check evaluation criteria (2 points)
-    sub_criteria = submission.get("evaluationCriteria", [])
-    key_criteria = answer_key.get("evaluationCriteria", [])
-    
-    # Create mappings of criterion names to weights
-    sub_criteria_map = {item.get("criterionName", "").lower(): item.get("weight") for item in sub_criteria}
-    key_criteria_map = {item.get("criterionName", "").lower(): item.get("weight") for item in key_criteria}
-    
-    # Check if all required criteria are included with correct weights
-    criteria_correct = sum(1 for name, weight in key_criteria_map.items() 
-                          if name in sub_criteria_map and sub_criteria_map[name] == weight)
-    
-    criteria_points = round(2 * (criteria_correct / max(1, len(key_criteria))))
-    results["details"]["evaluationCriteria"] = {
-        "earned": criteria_points, 
-        "possible": 2, 
-        "comment": f"Correct evaluation criteria: {criteria_correct}/{len(key_criteria)}"
-    }
-    results["points_earned"] += criteria_points
-    
-    # Check inclusion of standard terms (1 point)
-    if submission.get("termsIncluded") == answer_key.get("termsIncluded"):
-        results["details"]["termsIncluded"] = {"earned": 1, "possible": 1, "comment": "Correctly indicated terms inclusion"}
-        results["points_earned"] += 1
+    # Total amount calculation (3 points)
+    # Allow for small differences due to rounding
+    if abs(submission.get("total_amount", 0) - answer_key.get("total_amount", 0)) < 0.1:
+        score += 3
+        feedback.append("✓ Correct total amount")
+    elif abs(submission.get("total_amount", 0) - answer_key.get("total_amount", 0)) < 5:
+        score += 2
+        feedback.append("⚠ Total amount is slightly off, possibly due to rounding")
     else:
-        results["details"]["termsIncluded"] = {"earned": 0, "possible": 1, "comment": "Incorrectly indicated terms inclusion"}
+        feedback.append(f"✗ Incorrect total amount. Expected: {answer_key.get('total_amount')}, Got: {submission.get('total_amount')}")
     
-    # Calculate percentage
-    results["percentage"] = round((results["points_earned"] / results["points_possible"]) * 100, 2)
+    # Delivery date (2 points)
+    if submission.get("delivery_date") == answer_key.get("delivery_date"):
+        score += 2
+        feedback.append("✓ Correct delivery date")
+    else:
+        feedback.append(f"✗ Incorrect delivery date. Expected: {answer_key.get('delivery_date')}, Got: {submission.get('delivery_date')}")
     
-    return results
+    # Check if passing score (21 points, 70%)
+    passed = score >= 21
+    
+    return score, max_score, feedback
 
-def evaluate_exercise3(submission, answer_key):
-    """Evaluate the requisition review exercise"""
-    results = {
-        "points_possible": 25,
-        "points_earned": 0,
-        "percentage": 0,
-        "details": {}
-    }
+def evaluate_scenario2(submission: Dict, answer_key: Dict) -> Tuple[int, int, List[str]]:
+    """Evaluate Bid Solicitation scenario"""
+    max_score = 30
+    score = 0
+    feedback = []
     
-    sub_requisitions = submission.get("requisitions", [])
-    key_requisitions = answer_key.get("requisitions", [])
+    # RFP specifications accuracy (12 points, 2 points per specification)
+    rfp_specs = submission.get("rfp_specifications", {})
+    key_specs = answer_key.get("rfp_specifications", {})
     
-    # Create mappings by requisition number
-    sub_req_map = {req.get("requisitionNumber"): req for req in sub_requisitions}
-    key_req_map = {req.get("requisitionNumber"): req for req in key_requisitions}
+    spec_keys = ["print_speed", "monthly_volume", "network_capabilities", 
+                 "security_features", "mobile_printing", "additional_features"]
     
-    # Check completeness assessment (3 points)
-    completeness_correct = 0
-    for req_num, key_req in key_req_map.items():
-        if req_num in sub_req_map and sub_req_map[req_num].get("isComplete") == key_req.get("isComplete"):
-            completeness_correct += 1
+    for key in spec_keys:
+        # Check if the required specification exists and is correct
+        if key in rfp_specs and rfp_specs[key] == key_specs[key]:
+            score += 2
+            feedback.append(f"✓ Correct RFP specification: {key}")
+        else:
+            feedback.append(f"✗ Incorrect RFP specification: {key}. Expected: {key_specs.get(key)}, Got: {rfp_specs.get(key)}")
     
-    completeness_points = round(3 * (completeness_correct / max(1, len(key_requisitions))))
-    results["details"]["completenessAssessment"] = {
-        "earned": completeness_points, 
-        "possible": 3, 
-        "comment": f"Correct completeness assessments: {completeness_correct}/{len(key_requisitions)}"
-    }
-    results["points_earned"] += completeness_points
+    # Vendor selection (6 points)
+    vendor_analysis = submission.get("vendor_analysis", {})
+    key_analysis = answer_key.get("vendor_analysis", {})
     
-    # Check catalog compliance assessment (3 points)
-    catalog_correct = 0
-    for req_num, key_req in key_req_map.items():
-        if req_num in sub_req_map and sub_req_map[req_num].get("itemsInCatalog") == key_req.get("itemsInCatalog"):
-            catalog_correct += 1
+    if vendor_analysis.get("selected_vendor") == key_analysis.get("selected_vendor"):
+        score += 6
+        feedback.append("✓ Correct vendor selected")
+    else:
+        feedback.append(f"✗ Incorrect vendor selected. Expected: {key_analysis.get('selected_vendor')}, Got: {vendor_analysis.get('selected_vendor')}")
     
-    catalog_points = round(3 * (catalog_correct / max(1, len(key_requisitions))))
-    results["details"]["catalogCompliance"] = {
-        "earned": catalog_points, 
-        "possible": 3, 
-        "comment": f"Correct catalog compliance assessments: {catalog_correct}/{len(key_requisitions)}"
-    }
-    results["points_earned"] += catalog_points
+    # Cost analysis (4 points)
+    if abs(vendor_analysis.get("total_cost", 0) - key_analysis.get("total_cost", 0)) < 0.1:
+        score += 4
+        feedback.append("✓ Correct total cost")
+    elif abs(vendor_analysis.get("total_cost", 0) - key_analysis.get("total_cost", 0)) < 5:
+        score += 3
+        feedback.append("⚠ Total cost is slightly off, possibly due to rounding")
+    else:
+        feedback.append(f"✗ Incorrect total cost. Expected: {key_analysis.get('total_cost')}, Got: {vendor_analysis.get('total_cost')}")
     
-    # Check policy compliance assessment (3 points)
-    policy_correct = 0
-    for req_num, key_req in key_req_map.items():
-        if req_num in sub_req_map and sub_req_map[req_num].get("policyCompliant") == key_req.get("policyCompliant"):
-            policy_correct += 1
+    # Delivery timeframe (2 points)
+    if vendor_analysis.get("delivery_timeframe") == key_analysis.get("delivery_timeframe"):
+        score += 2
+        feedback.append("✓ Correct delivery timeframe")
+    else:
+        feedback.append(f"✗ Incorrect delivery timeframe. Expected: {key_analysis.get('delivery_timeframe')}, Got: {vendor_analysis.get('delivery_timeframe')}")
     
-    policy_points = round(3 * (policy_correct / max(1, len(key_requisitions))))
-    results["details"]["policyCompliance"] = {
-        "earned": policy_points, 
-        "possible": 3, 
-        "comment": f"Correct policy compliance assessments: {policy_correct}/{len(key_requisitions)}"
-    }
-    results["points_earned"] += policy_points
+    # Warranty evaluation (3 points)
+    if vendor_analysis.get("warranty_period") == key_analysis.get("warranty_period"):
+        score += 3
+        feedback.append("✓ Correct warranty period")
+    else:
+        feedback.append(f"✗ Incorrect warranty period. Expected: {key_analysis.get('warranty_period')}, Got: {vendor_analysis.get('warranty_period')}")
     
-    # Check total calculations (3 points)
-    total_correct = 0
-    for req_num, key_req in key_req_map.items():
-        if req_num in sub_req_map and is_close_enough(sub_req_map[req_num].get("calculatedTotal"), key_req.get("calculatedTotal"), 0.05):
-            total_correct += 1
+    # Selection justification (3 points)
+    if "selection_justification" in submission and len(submission["selection_justification"]) > 20:
+        score += 3
+        feedback.append("✓ Provided reasonable selection justification")
+    elif "selection_justification" in submission:
+        score += 1
+        feedback.append("⚠ Selection justification provided but insufficient detail")
+    else:
+        feedback.append("✗ Missing selection justification")
     
-    total_points = round(3 * (total_correct / max(1, len(key_requisitions))))
-    results["details"]["totalCalculations"] = {
-        "earned": total_points, 
-        "possible": 3, 
-        "comment": f"Correct total calculations: {total_correct}/{len(key_requisitions)}"
-    }
-    results["points_earned"] += total_points
+    # Check if passing score (21 points, 70%)
+    passed = score >= 21
     
-    # Check decisions (6 points - 2 per requisition)
-    decision_correct = 0
-    for req_num, key_req in key_req_map.items():
-        if req_num in sub_req_map and sub_req_map[req_num].get("decision") == key_req.get("decision"):
-            decision_correct += 1
+    return score, max_score, feedback
+
+def evaluate_scenario3(submission: Dict, answer_key: Dict) -> Tuple[int, int, List[str]]:
+    """Evaluate Requisition Review scenario"""
+    max_score = 30
+    score = 0
+    feedback = []
     
-    decision_points = round(6 * (decision_correct / max(1, len(key_requisitions))))
-    results["details"]["decisions"] = {
-        "earned": decision_points, 
-        "possible": 6, 
-        "comment": f"Correct decisions: {decision_correct}/{len(key_requisitions)}"
-    }
-    results["points_earned"] += decision_points
-    
-    # Check justifications (3 points)
-    # This is a simplified check - in reality, we'd need more sophisticated text matching
-    justification_score = 0
-    for req_num, key_req in key_req_map.items():
-        if req_num in sub_req_map:
-            sub_just = sub_req_map[req_num].get("justification", "").lower()
-            # Check if justification contains key terms based on the decision
-            if sub_req_map[req_num].get("decision") == "approve" and "approv" in sub_just:
-                justification_score += 1
-            elif sub_req_map[req_num].get("decision") == "reject" and "reject" in sub_just:
-                justification_score += 1
-            elif sub_req_map[req_num].get("decision") == "return" and "return" in sub_just:
-                justification_score += 1
-    
-    justification_points = round(3 * (justification_score / max(1, len(key_requisitions))))
-    results["details"]["justifications"] = {
-        "earned": justification_points, 
-        "possible": 3, 
-        "comment": f"Reasonable justifications: {justification_score}/{len(key_requisitions)}"
-    }
-    results["points_earned"] += justification_points
-    
-    # Check missing information identification (2 points)
-    # Only relevant for incomplete requisitions
-    missing_info_score = 0
-    for req_num, key_req in key_req_map.items():
-        if req_num in sub_req_map and not key_req.get("isComplete"):
-            sub_missing = sub_req_map[req_num].get("missingInformation", "").lower()
-            if sub_missing and len(sub_missing) > 5:  # Simple check that something meaningful was entered
-                missing_info_score += 1
-    
-    # Count how many requisitions should have missing information identified
-    incomplete_reqs = sum(1 for req in key_requisitions if not req.get("isComplete"))
-    
-    missing_info_points = 0
-    if incomplete_reqs > 0:
-        missing_info_points = round(2 * (missing_info_score / incomplete_reqs))
-    elif missing_info_score == 0:  # If no requisitions should have missing info and none were identified
-        missing_info_points = 2
-    
-    results["details"]["missingInformation"] = {
-        "earned": missing_info_points, 
-        "possible": 2, 
-        "comment": f"Identified missing information where needed: {missing_info_score}/{max(1, incomplete_reqs)}"
-    }
-    results["points_earned"] += missing_info_points
-    
-    # Check vendor suggestions (2 points)
-    vendor_score = 0
-    for req_num, key_req in key_req_map.items():
-        if req_num in sub_req_map:
-            sub_vendor = sub_req_map[req_num].get("suggestedVendor", "").lower()
-            key_vendor = key_req.get("suggestedVendor", "").lower()
+    for i in range(1, 4):
+        req_key = f"requisition{i}"
+        
+        # Status determination (4 points per requisition, 12 points total)
+        sub_status = submission.get(req_key, {}).get("status")
+        key_status = answer_key.get(req_key, {}).get("status")
+        
+        if sub_status == key_status:
+            score += 4
+            feedback.append(f"✓ Correct status for {req_key}: {sub_status}")
+        else:
+            feedback.append(f"✗ Incorrect status for {req_key}. Expected: {key_status}, Got: {sub_status}")
+        
+        # Issue identification (approximately 2 points per correct issue, 12 points total)
+        sub_issues = set(submission.get(req_key, {}).get("issues", []))
+        key_issues = set(answer_key.get(req_key, {}).get("issues", []))
+        
+        # Calculate points for issues based on proportion of correct issues
+        num_key_issues = len(key_issues)
+        if num_key_issues > 0:
+            correct_issues = len(sub_issues.intersection(key_issues))
+            points_per_issue = 2 if num_key_issues > 0 else 0
+            issue_points = min(points_per_issue * correct_issues, 4)  # Max 4 points per requisition for issues
+            score += issue_points
             
-            # Check if the suggested vendor contains the key vendor name
-            if key_vendor and (key_vendor in sub_vendor or sub_vendor in key_vendor):
-                vendor_score += 1
+            if correct_issues == num_key_issues:
+                feedback.append(f"✓ Correctly identified all issues for {req_key}")
+            elif correct_issues > 0:
+                feedback.append(f"⚠ Identified {correct_issues} out of {num_key_issues} issues for {req_key}")
+            else:
+                feedback.append(f"✗ Failed to identify any issues for {req_key}")
+        
+        # Required corrections (approximately 1 point per correction, 6 points total)
+        sub_corrections = set(submission.get(req_key, {}).get("required_corrections", []))
+        key_corrections = set(answer_key.get(req_key, {}).get("required_corrections", []))
+        
+        # Calculate points for corrections based on proportion of correct corrections
+        num_key_corrections = len(key_corrections)
+        if num_key_corrections > 0:
+            correct_corrections = len(sub_corrections.intersection(key_corrections))
+            points_per_correction = 1 if num_key_corrections > 0 else 0
+            correction_points = min(points_per_correction * correct_corrections, 2)  # Max 2 points per requisition for corrections
+            score += correction_points
+            
+            if correct_corrections == num_key_corrections:
+                feedback.append(f"✓ Correctly identified all required corrections for {req_key}")
+            elif correct_corrections > 0:
+                feedback.append(f"⚠ Identified {correct_corrections} out of {num_key_corrections} required corrections for {req_key}")
+            else:
+                feedback.append(f"✗ Failed to identify any required corrections for {req_key}")
     
-    vendor_points = round(2 * (vendor_score / max(1, len(key_requisitions))))
-    results["details"]["vendorSuggestions"] = {
-        "earned": vendor_points, 
-        "possible": 2, 
-        "comment": f"Appropriate vendor suggestions: {vendor_score}/{len(key_requisitions)}"
-    }
-    results["points_earned"] += vendor_points
+    # Check if passing score (21 points, 70%)
+    passed = score >= 21
     
-    # Calculate percentage
-    results["percentage"] = round((results["points_earned"] / results["points_possible"]) * 100, 2)
-    
-    return results
+    return score, max_score, feedback
 
-def evaluate_submission(submission, answer_key):
-    """Evaluate the entire submission"""
+def evaluate_submission(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the entire submission against the answer key"""
     results = {
-        "candidateId": submission.get("candidateId", "Unknown"),
-        "modelVersion": submission.get("modelVersion", "Unknown"),
-        "exercise1": evaluate_exercise1(submission.get("exercise1", {}), answer_key.get("exercise1", {})),
-        "exercise2": evaluate_exercise2(submission.get("exercise2", {}), answer_key.get("exercise2", {})),
-        "exercise3": evaluate_exercise3(submission.get("exercise3", {}), answer_key.get("exercise3", {}))
+        "candidate_id": submission.get("candidate_id", "Unknown"),
+        "scenarios": {}
     }
     
-    # Calculate overall score
-    total_points_possible = (
-        results["exercise1"]["points_possible"] + 
-        results["exercise2"]["points_possible"] + 
-        results["exercise3"]["points_possible"]
+    # Evaluate each scenario
+    scenario1_score, scenario1_max, scenario1_feedback = evaluate_scenario1(
+        submission.get("scenario1", {}), answer_key.get("scenario1", {})
     )
-    
-    total_points_earned = (
-        results["exercise1"]["points_earned"] + 
-        results["exercise2"]["points_earned"] + 
-        results["exercise3"]["points_earned"]
-    )
-    
-    results["overall_score"] = round((total_points_earned / total_points_possible) * 100, 2)
-    
-    # Check if candidate passed
-    min_overall_score = 80
-    min_exercise_score = 70
-    
-    passed_overall = results["overall_score"] >= min_overall_score
-    passed_ex1 = results["exercise1"]["percentage"] >= min_exercise_score
-    passed_ex2 = results["exercise2"]["percentage"] >= min_exercise_score
-    passed_ex3 = results["exercise3"]["percentage"] >= min_exercise_score
-    
-    results["passed"] = passed_overall and passed_ex1 and passed_ex2 and passed_ex3
-    
-    # Add pass/fail reasons
-    results["pass_fail_details"] = {
-        "overall_requirement": f"≥{min_overall_score}% overall",
-        "overall_result": f"{results['overall_score']}% - {'PASS' if passed_overall else 'FAIL'}",
-        "exercise_requirements": f"≥{min_exercise_score}% on each exercise",
-        "exercise1_result": f"{results['exercise1']['percentage']}% - {'PASS' if passed_ex1 else 'FAIL'}",
-        "exercise2_result": f"{results['exercise2']['percentage']}% - {'PASS' if passed_ex2 else 'FAIL'}",
-        "exercise3_result": f"{results['exercise3']['percentage']}% - {'PASS' if passed_ex3 else 'FAIL'}"
+    results["scenarios"]["scenario1"] = {
+        "score": scenario1_score,
+        "max_score": scenario1_max,
+        "percentage": round(scenario1_score / scenario1_max * 100, 2),
+        "passed": scenario1_score >= 21,
+        "feedback": scenario1_feedback
     }
+    
+    scenario2_score, scenario2_max, scenario2_feedback = evaluate_scenario2(
+        submission.get("scenario2", {}), answer_key.get("scenario2", {})
+    )
+    results["scenarios"]["scenario2"] = {
+        "score": scenario2_score,
+        "max_score": scenario2_max,
+        "percentage": round(scenario2_score / scenario2_max * 100, 2),
+        "passed": scenario2_score >= 21,
+        "feedback": scenario2_feedback
+    }
+    
+    scenario3_score, scenario3_max, scenario3_feedback = evaluate_scenario3(
+        submission.get("scenario3", {}), answer_key.get("scenario3", {})
+    )
+    results["scenarios"]["scenario3"] = {
+        "score": scenario3_score,
+        "max_score": scenario3_max,
+        "percentage": round(scenario3_score / scenario3_max * 100, 2),
+        "passed": scenario3_score >= 21,
+        "feedback": scenario3_feedback
+    }
+    
+    # Calculate total score
+    total_score = scenario1_score + scenario2_score + scenario3_score
+    total_max = scenario1_max + scenario2_max + scenario3_max
+    total_percentage = round(total_score / total_max * 100, 2)
+    
+    # Count passed scenarios
+    passed_scenarios = sum([
+        1 if results["scenarios"]["scenario1"]["passed"] else 0,
+        1 if results["scenarios"]["scenario2"]["passed"] else 0,
+        1 if results["scenarios"]["scenario3"]["passed"] else 0
+    ])
+    
+    # Determine overall pass/fail status
+    passed = passed_scenarios >= 2 and total_percentage >= 70
+    
+    results["total_score"] = total_score
+    results["total_max_score"] = total_max
+    results["overall_score"] = total_percentage
+    results["passed_scenarios"] = passed_scenarios
+    results["overall_passed"] = passed
     
     return results
 
 def main():
-    # Load the submission and answer key
-    submission = load_json_file("test_submission.json")
-    answer_key = load_json_file("answer_key.json")
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files.")
-        return
+    submission_filename = sys.argv[1]
+    answer_key_filename = sys.argv[2]
     
-    # Evaluate the submission
+    submission = load_json_file(submission_filename)
+    answer_key = load_json_file(answer_key_filename)
+    
     results = evaluate_submission(submission, answer_key)
     
-    # Save the results
-    save_json_file(results, "test_results.json")
+    with open("test_results.json", "w") as f:
+        json.dump(results, f, indent=2)
     
-    # Print summary
-    print(f"\nEvaluation Summary for Candidate: {results['candidateId']}")
-    print(f"Model Version: {results['modelVersion']}")
-    print(f"Overall Score: {results['overall_score']}%")
-    print(f"Exercise 1 Score: {results['exercise1']['percentage']}%")
-    print(f"Exercise 2 Score: {results['exercise2']['percentage']}%")
-    print(f"Exercise 3 Score: {results['exercise3']['percentage']}%")
-    print(f"Result: {'PASS' if results['passed'] else 'FAIL'}")
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
+    print(f"Overall status: {'PASSED' if results['overall_passed'] else 'FAILED'}")
 
 if __name__ == "__main__":
     main()

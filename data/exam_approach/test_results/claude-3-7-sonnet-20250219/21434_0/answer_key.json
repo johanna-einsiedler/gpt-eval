@@ -1,160 +1,173 @@
 {
-    "exercise1": {
+    "candidate_id": "ANSWER_KEY",
+    "task_1": {
         "settled_claims": [
             {
-                "claim_number": "CLM-2023-0472",
-                "claimant_name": "Robert Johnson",
-                "date_of_loss": "03/15/2023",
-                "date_of_settlement": "05/12/2023",
-                "settlement_amount": 9875.45,
-                "coverage_type": "Homeowners - Water Damage",
-                "claim_handler": "Sarah Williams",
-                "settlement_method": "Direct Deposit",
-                "subrogation_potential": false,
-                "final_disposition_code": "SC-01"
+                "claim_number": "SC-2023-10001",
+                "claimant_name": "Michael Johnson",
+                "settlement_amount": "12500.00",
+                "settlement_code": "STL-FP",
+                "document_location": "/settled_claims/SC-2023-10001/"
             },
             {
-                "claim_number": "CLM-2023-0518",
-                "claimant_name": "Maria Garcia",
-                "date_of_loss": "04/02/2023",
-                "date_of_settlement": "06/05/2023",
-                "settlement_amount": 7450.0,
-                "coverage_type": "Auto - Collision",
-                "claim_handler": "David Chen",
-                "settlement_method": "Check",
-                "subrogation_potential": true,
-                "final_disposition_code": "SC-04"
+                "claim_number": "SC-2023-10002",
+                "claimant_name": "Sarah Williams",
+                "settlement_amount": "35750.00",
+                "settlement_code": "STL-BI",
+                "document_location": "/settled_claims/SC-2023-10002/"
             },
             {
-                "claim_number": "CLM-2023-0603",
-                "claimant_name": "Thomas Wilson",
-                "date_of_loss": "04/28/2023",
-                "date_of_settlement": "07/10/2023",
-                "settlement_amount": 18750.0,
-                "coverage_type": "Homeowners - Wind Damage",
-                "claim_handler": "Jennifer Lopez",
-                "settlement_method": "Direct Deposit",
-                "subrogation_potential": false,
-                "final_disposition_code": "SC-02"
+                "claim_number": "SC-2023-10003",
+                "claimant_name": "David Martinez",
+                "settlement_amount": "8950.00",
+                "settlement_code": "STL-WD",
+                "document_location": "/settled_claims/SC-2023-10003/"
             },
             {
-                "claim_number": "CLM-2023-0641",
-                "claimant_name": "Emily Brown",
-                "date_of_loss": "05/10/2023",
-                "date_of_settlement": "06/22/2023",
-                "settlement_amount": 2875.3,
-                "coverage_type": "Auto - Comprehensive",
-                "claim_handler": "Michael Thompson",
-                "settlement_method": "Check",
-                "subrogation_potential": false,
-                "final_disposition_code": "SC-01"
+                "claim_number": "SC-2023-10004",
+                "claimant_name": "Jennifer Taylor",
+                "settlement_amount": "3200.00",
+                "settlement_code": "STL-TH",
+                "document_location": "/settled_claims/SC-2023-10004/"
             },
             {
-                "claim_number": "CLM-2023-0689",
-                "claimant_name": "James Anderson",
-                "date_of_loss": "05/22/2023",
-                "date_of_settlement": "08/03/2023",
-                "settlement_amount": 12500.0,
-                "coverage_type": "Commercial Liability",
-                "claim_handler": "Sarah Williams",
-                "settlement_method": "Electronic Funds Transfer",
-                "subrogation_potential": false,
-                "final_disposition_code": "SC-03"
+                "claim_number": "SC-2023-10005",
+                "claimant_name": "Robert Anderson",
+                "settlement_amount": "18400.00",
+                "settlement_code": "STL-AC",
+                "document_location": "/settled_claims/SC-2023-10005/"
             }
         ],
-        "summary": {
-            "total_claims": 5,
-            "total_settlement_amount": 51450.75,
-            "average_settlement_amount": 10290.15,
-            "oldest_settlement_date": "05/12/2023",
-            "most_recent_settlement_date": "08/03/2023"
+        "quarterly_report": {
+            "total_claims_settled": "10",
+            "total_settlement_amount": "174000.00",
+            "average_settlement_amount": "17400.00",
+            "claims_by_type": {
+                "STL-AC": "2",
+                "STL-BI": "2",
+                "STL-FP": "2",
+                "STL-TH": "2",
+                "STL-WD": "2"
+            }
         }
     },
-    "exercise2": {
-        "claim_inventory": [
+    "task_2": {
+        "claims_requiring_analysis": [
             {
-                "claim_number": "CLM-2023-0742",
-                "complexity_level": 3,
-                "analysis_type": "Multiple",
-                "estimated_completion_days": 65,
-                "missing_documentation": [
-                    "Fire department report",
-                    "Engineering assessment",
-                    "Contents inventory"
-                ],
-                "next_action": "Complete engineering assessment",
-                "action_due_date": "08/05/2023",
-                "priority_code": "A"
+                "claim_number": "CI-2023-05001",
+                "analysis_priority": "3",
+                "analysis_reason_code": "ARC-05",
+                "target_completion_date": "12/06/2023"
             },
             {
-                "claim_number": "CLM-2023-0781",
-                "complexity_level": 2,
-                "analysis_type": "Medical",
-                "estimated_completion_days": 45,
-                "missing_documentation": [
-                    "Complete medical records",
-                    "Medical bills"
-                ],
-                "next_action": "Follow up on medical records request",
-                "action_due_date": "08/05/2023",
-                "priority_code": "B"
+                "claim_number": "CI-2023-05003",
+                "analysis_priority": "2",
+                "analysis_reason_code": "ARC-01",
+                "target_completion_date": "11/29/2023"
             },
             {
-                "claim_number": "CLM-2023-0805",
-                "complexity_level": 2,
-                "analysis_type": "Legal",
-                "estimated_completion_days": 50,
-                "missing_documentation": [
-                    "Complete medical bills",
-                    "Witness statements",
-                    "Legal opinion"
-                ],
-                "next_action": "Complete witness statements",
-                "action_due_date": "08/05/2023",
-                "priority_code": "B"
+                "claim_number": "CI-2023-05004",
+                "analysis_priority": "2",
+                "analysis_reason_code": "ARC-02",
+                "target_completion_date": "11/29/2023"
             },
             {
-                "claim_number": "CLM-2023-0832",
-                "complexity_level": 3,
-                "analysis_type": "Multiple",
-                "estimated_completion_days": 70,
-                "missing_documentation": [
-                    "Detailed inventory list",
-                    "Business interruption documentation",
-                    "Engineering report",
-                    "Maintenance records"
-                ],
-                "next_action": "Complete engineering inspection",
-                "action_due_date": "08/02/2023",
-                "priority_code": "A"
+                "claim_number": "CI-2023-05006",
+                "analysis_priority": "1",
+                "analysis_reason_code": "ARC-02",
+                "target_completion_date": "11/22/2023"
             },
             {
-                "claim_number": "CLM-2023-0851",
-                "complexity_level": 1,
-                "analysis_type": "Investigation",
-                "estimated_completion_days": 30,
-                "missing_documentation": [
-                    "Repair estimate",
-                    "Medical records",
-                    "Proof of uninsured status",
-                    "Recorded statement"
-                ],
-                "next_action": "Take recorded statement",
-                "action_due_date": "08/02/2023",
-                "priority_code": "C"
+                "claim_number": "CI-2023-05007",
+                "analysis_priority": "3",
+                "analysis_reason_code": "ARC-06",
+                "target_completion_date": "12/06/2023"
+            },
+            {
+                "claim_number": "CI-2023-05010",
+                "analysis_priority": "1",
+                "analysis_reason_code": "ARC-03",
+                "target_completion_date": "11/22/2023"
+            },
+            {
+                "claim_number": "CI-2023-05012",
+                "analysis_priority": "2",
+                "analysis_reason_code": "ARC-02",
+                "target_completion_date": "11/29/2023"
+            },
+            {
+                "claim_number": "CI-2023-05013",
+                "analysis_priority": "4",
+                "analysis_reason_code": "ARC-06",
+                "target_completion_date": "12/15/2023"
+            },
+            {
+                "claim_number": "CI-2023-05014",
+                "analysis_priority": "2",
+                "analysis_reason_code": "ARC-03",
+                "target_completion_date": "11/29/2023"
             }
         ],
-        "detailed_analysis_claims": [
+        "priority_counts": {
+            "priority_1": "2",
+            "priority_2": "4",
+            "priority_3": "2",
+            "priority_4": "1"
+        }
+    },
+    "task_3": {
+        "audit_results": [
             {
-                "claim_number": "CLM-2023-0742",
-                "reason_for_detailed_analysis": "High complexity with potential subrogation against appliance manufacturer; reserve exceeds $50,000",
-                "estimated_hours_needed": 12
+                "claim_number": "AUD-2023-001",
+                "file_status": "Minor Deficiencies",
+                "deficiency_codes": [
+                    "DEF-05",
+                    "DEF-07"
+                ],
+                "remediation_required": "Yes"
             },
             {
-                "claim_number": "CLM-2023-0832",
-                "reason_for_detailed_analysis": "High complexity with multiple coverage types (property damage and business interruption); reserve exceeds $50,000",
-                "estimated_hours_needed": 15
+                "claim_number": "AUD-2023-002",
+                "file_status": "Complete",
+                "deficiency_codes": [],
+                "remediation_required": "No"
+            },
+            {
+                "claim_number": "AUD-2023-003",
+                "file_status": "Major Deficiencies",
+                "deficiency_codes": [
+                    "DEF-02",
+                    "DEF-03",
+                    "DEF-07"
+                ],
+                "remediation_required": "Yes"
+            },
+            {
+                "claim_number": "AUD-2023-004",
+                "file_status": "Complete",
+                "deficiency_codes": [],
+                "remediation_required": "No"
+            },
+            {
+                "claim_number": "AUD-2023-005",
+                "file_status": "Critical Deficiencies",
+                "deficiency_codes": [
+                    "DEF-02",
+                    "DEF-03",
+                    "DEF-04",
+                    "DEF-05",
+                    "DEF-06",
+                    "DEF-07"
+                ],
+                "remediation_required": "Yes"
             }
-        ]
+        ],
+        "summary_statistics": {
+            "files_complete": "2",
+            "files_with_minor_deficiencies": "1",
+            "files_with_major_deficiencies": "1",
+            "files_with_critical_deficiencies": "1",
+            "total_deficiencies_found": "11"
+        }
     }
 }

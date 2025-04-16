@@ -1,120 +1,69 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
-    "submissions": [
+    "candidate_name": "ANSWER_KEY",
+    "candidate_id": "EVALUATOR",
+    "submission_date": "2023-09-01",
+    "claim_referrals": [
         {
-            "claim_id": "CL-001",
-            "refer_for_investigation": true,
+            "claim_number": "CLAIM-001",
+            "requires_referral": true,
             "red_flags": [
-                "Accident occurs shortly after policy inception",
-                "No police report for significant damage claim",
-                "No witnesses for high-value claim"
+                "LSC-001: Damage inconsistent with reported cause",
+                "DOC-001: Inconsistencies in provided statements",
+                "CLB-006: History of prior similar claims",
+                "POL-005: Loss occurs close to policy inception date"
             ],
-            "justification": "This claim warrants investigation due to multiple red flags. The accident occurred just 13 days after policy inception, which is suspicious timing. Additionally, the claimant failed to file a police report despite significant damage ($12,450). The lack of witnesses and the parking lot location make verification difficult. These factors combined suggest potential fraud that requires further investigation.",
-            "priority_level": 2,
-            "routing_code": "SIU-A1"
+            "referral_destination": "investigation",
+            "justification": "This claim requires investigation due to multiple inconsistencies and red flags. The damage assessment notes indicate the scratch pattern along the passenger door has a different impact angle than the primary damage, and shows paint transfer from a blue object rather than a metal guardrail (LSC-001). The inspector observed that damage appears older than reported based on visible rust formation (DOC-001). The claimant has two prior similar claims in the past three years, both single-vehicle accidents with similar circumstances - one specifically involving 'swerving to avoid an animal' (CLB-006). Additionally, the policy is relatively new, having been initiated on December 28, 2022, with the loss occurring approximately 5.5 months later (POL-005). The pattern of similar claims, physical evidence inconsistent with the reported cause, and timing relative to policy inception collectively warrant a referral to the investigation team."
         },
         {
-            "claim_id": "CL-002",
-            "refer_for_investigation": true,
+            "claim_number": "CLAIM-002",
+            "requires_referral": true,
             "red_flags": [
-                "Delayed reporting (>72 hours without reasonable explanation)",
-                "Prior water damage claims within 24 months",
-                "Evidence of pre-existing condition (pipe leaking for 2 weeks)"
+                "POL-005: Loss occurs close to policy inception date",
+                "DOC-001: Inconsistencies in provided statements",
+                "POL-001: Coverage lapsed or reinstated shortly before loss",
+                "FIN-001: Claim amount significantly higher than apparent loss"
             ],
-            "justification": "This claim should be referred due to several concerning factors. There was a 7-day delay in reporting without adequate explanation. The claimant has a prior water damage claim within the past 7 months. Most significantly, the plumber's report indicates the homeowner knew about a leaking pipe for approximately 2 weeks before the failure, suggesting potential negligence or failure to mitigate damages. The high claim amount ($45,800) further justifies investigation.",
-            "priority_level": 2,
-            "routing_code": "SIU-P1"
+            "referral_destination": "investigation",
+            "justification": "This claim shows strong indicators of a pre-existing condition being claimed under a new policy. The loss occurred just 15 days after policy inception (POL-005), immediately following the expiration of coverage with a previous carrier. The plumber's report directly contradicts the insured's statement about when the damage occurred, noting 'evidence of long-term water damage and mold behind walls indicates this has been an ongoing issue' and that the 'most recent leak appears to be approximately 2-3 weeks old' (DOC-001). The previous carrier denied a similar water damage claim on January 10, 2023, due to exclusion for gradual water damage, and the insured obtained new coverage on March 15, 2023, with this loss reported shortly after (POL-001). The water mitigation report corroborates that 'pattern of damage suggests water has been present for extended period.' Additionally, the personal property claim ($18,750) appears excessive with all claimed electronics being recently purchased (FIN-001). These factors collectively suggest an attempt to claim pre-existing damage under a new policy, warranting investigation."
         },
         {
-            "claim_id": "CL-003",
-            "refer_for_investigation": true,
+            "claim_number": "CLAIM-003",
+            "requires_referral": true,
             "red_flags": [
-                "Minimal vehicle damage but significant injury claims",
-                "Treatment began with attorney referral rather than emergency care",
-                "Claimant has history of similar claims",
-                "Medical treatment appears excessive for reported injuries"
+                "DOC-003: Documentation appears fabricated or manipulated",
+                "CLB-006: History of prior similar claims",
+                "MED-004: Pre-existing conditions similar to claimed injury",
+                "MED-001: Injuries inconsistent with accident description"
             ],
-            "justification": "This claim shows multiple indicators of potential fraud. The accident was minor (5 mph) with only cosmetic damage, yet resulted in significant injury claims ($28,750). The third-party claimant sought treatment through an attorney referral rather than emergency care, and an MRI was ordered on the first visit despite minor trauma. Most concerning, the claimant has two prior similar claims with other carriers in the past 24 months, establishing a pattern of behavior.",
-            "priority_level": 1,
-            "routing_code": "SIU-M1"
+            "referral_destination": "investigation",
+            "justification": "This claim presents clear evidence of potential fraud. The surveillance video directly contradicts the claimant's version of events, showing the claimant deliberately dropping a grape on the floor and executing a controlled fall, rather than slipping on an existing hazard (DOC-003). The claimant has a significant history of similar slip and fall claims with three prior incidents in the past four years resulting in substantial settlements (CLB-006). Medical records indicate 'degenerative disc disease at L4-L5 and L5-S1 consistent with chronic condition' and 'no acute injury visible on imaging,' contradicting the claim of a new injury from this incident (MED-004). Furthermore, the claimant's social media shows them hiking in a state park 1-2 days after the alleged serious injury, completely inconsistent with the reported severe pain and limited mobility (MED-001). Store records show proper maintenance with floor cleaning 12 minutes before the incident. The combination of surveillance evidence, prior claim history, pre-existing medical conditions, and inconsistent post-incident behavior strongly indicates a fraudulent claim requiring investigation."
         },
         {
-            "claim_id": "CL-004",
-            "refer_for_investigation": false,
+            "claim_number": "CLAIM-004",
+            "requires_referral": true,
             "red_flags": [
-                "Missing documentation of ownership for jewelry"
+                "DOC-001: Inconsistencies in provided statements",
+                "FIN-002: Financial difficulties (bankruptcy, foreclosure, etc.)",
+                "FIN-004: Business experiencing declining revenue or profit",
+                "DOC-002: Missing or altered documentation",
+                "LSC-006: Unusual or suspicious loss circumstances"
             ],
-            "justification": "While the claimant lacks documentation for the jewelry items, the overall claim appears legitimate. The police report confirms forced entry, the claim was reported promptly, and receipts were provided for the electronics. The claim amount is relatively modest ($8,200), and the claimant has no prior claims history. The missing jewelry documentation is a concern but not sufficient alone to warrant a fraud investigation. This could be handled through standard claims processing with a request for additional proof of jewelry ownership.",
-            "priority_level": null,
-            "routing_code": null
+            "referral_destination": "investigation",
+            "justification": "This business theft claim requires investigation due to significant inconsistencies and financial motivations. The warehouse manager's statement directly contradicts the owner's inventory claim, confirming they only received 25 laptops and 40 tablets, not the 85 laptops and 120 tablets reported stolen (DOC-001). Purchase records support the manager's statement, showing only the smaller quantity was actually purchased. The business is experiencing severe financial distress, with tax filings showing a $50,000 loss, decreasing cash reserves, and $175,000 in overdue invoices (FIN-002, FIN-004). The timing is highly suspicious as a government contract payment of $150,000 is due May 15, contingent on delivery of the equipment reported stolen (LSC-006). The submitted inventory documentation appears to be inflated with no supporting purchase records for the additional items claimed (DOC-002). The security camera system being disabled without signs of forced entry at the recording station further raises suspicion. The significant discrepancy between claimed and documented inventory, combined with the business's financial troubles and suspicious circumstances, strongly indicates potential insurance fraud requiring thorough investigation."
         },
         {
-            "claim_id": "CL-005",
-            "refer_for_investigation": true,
+            "claim_number": "CLAIM-005",
+            "requires_referral": true,
             "red_flags": [
-                "Accident occurs shortly after policy inception or coverage increase",
-                "Financial difficulties (90 days past due on auto loan)",
-                "Vehicle purchased one month before accident"
+                "LSC-006: Unusual or suspicious loss circumstances",
+                "FIN-002: Financial difficulties (bankruptcy, foreclosure, etc.)",
+                "FIN-004: Business experiencing declining revenue or profit",
+                "DOC-001: Inconsistencies in provided statements",
+                "CLB-006: History of prior similar claims"
             ],
-            "justification": "This claim raises several concerns that warrant investigation. The accident occurred just 14 days after policy inception. The vehicle was purchased only one month before the accident with a $45,000 loan, and the claimant is already 90 days past due on payments, indicating significant financial distress. These factors combined suggest potential fraud or intentional damage to resolve financial problems. The substantial damage claim ($22,300) further justifies investigation.",
-            "priority_level": 2,
-            "routing_code": "SIU-A1"
-        },
-        {
-            "claim_id": "CL-006",
-            "refer_for_investigation": true,
-            "red_flags": [
-                "Property was recently removed from market after failing to sell",
-                "High-value claim ($175,000)",
-                "Suspicious timing (listing removed 2 weeks before fire)"
-            ],
-            "justification": "This claim requires investigation due to suspicious circumstances. The property was listed for sale for 8 months and removed from the market just 2 weeks before the fire, suggesting potential financial motivation. The claim amount is substantial ($175,000) for what began as an unattended cooking fire. While the fire department confirmed the cause, the timing in relation to the failed home sale creates sufficient suspicion to warrant investigation into possible intentional actions.",
-            "priority_level": 1,
-            "routing_code": "SIU-P1"
-        },
-        {
-            "claim_id": "CL-007",
-            "refer_for_investigation": true,
-            "red_flags": [
-                "Identical injuries among multiple claimants",
-                "Treatment duration excessive for reported injuries",
-                "Two passengers have history of similar claims",
-                "Minor impact but multiple injury claims"
-            ],
-            "justification": "This claim shows strong indicators of potential fraud. All five occupants report identical injuries despite a low-speed impact (15 mph) with minor vehicle damage. All began treatment on the same day (3 days post-accident) with identical treatment plans. Two passengers have filed similar claims with different insurers within the past 18 months, suggesting a pattern. The identical nature of the injuries and treatment plans is particularly suspicious and inconsistent with typical injury patterns in low-speed collisions.",
-            "priority_level": 1,
-            "routing_code": "SIU-M1"
-        },
-        {
-            "claim_id": "CL-008",
-            "refer_for_investigation": false,
-            "red_flags": [
-                "Some pre-existing wear noted on roof"
-            ],
-            "justification": "This claim appears legitimate and does not require fraud investigation. Weather reports confirm a severe hailstorm with 1-2 inch hail in the area on the reported date. The independent adjuster verified recent hail damage consistent with the reported storm. While some pre-existing wear was noted on the north-facing roof sections, this is normal aging rather than a fraud indicator. The claim was reported promptly, and all documentation is consistent with a legitimate hail damage claim.",
-            "priority_level": null,
-            "routing_code": null
-        },
-        {
-            "claim_id": "CL-009",
-            "refer_for_investigation": true,
-            "red_flags": [
-                "Delayed reporting (>72 hours without reasonable explanation)",
-                "Claimant has history of similar claims",
-                "Video evidence contradicts claimant's statement",
-                "No incident report filed at time of alleged incident"
-            ],
-            "justification": "This claim shows clear evidence of potential fraud. The security footage directly contradicts the claimant's account, showing them leaving the store carrying purchases with both hands and no signs of injury. The 17-day reporting delay is suspicious, and no incident report was filed at the time. Most significantly, the claimant has filed three similar liability claims against other businesses in the past 5 years, establishing a pattern of behavior. The high demand amount ($85,000) further justifies investigation.",
-            "priority_level": 1,
-            "routing_code": "SIU-L1"
-        },
-        {
-            "claim_id": "CL-010",
-            "refer_for_investigation": false,
-            "red_flags": [],
-            "justification": "This claim appears to be legitimate with no indicators of fraud. Weather reports confirm a severe windstorm with winds up to 65 mph on the reported date. The independent adjuster verified wind damage consistent with the reported storm, and all damage appears recent and related to the windstorm. The claim was reported promptly, and the documentation is consistent and complete. While there is a prior claim history, it was for an unrelated peril (kitchen fire) and does not establish a pattern of suspicious claims.",
-            "priority_level": null,
-            "routing_code": null
+            "referral_destination": "investigation",
+            "justification": "This commercial fire claim presents strong indicators of potential arson for insurance proceeds. Laboratory results confirmed the presence of gasoline in 3 of 4 samples collected from the kitchen area, with the report stating the 'concentration and distribution pattern inconsistent with accidental presence' and showing 'evidence of deliberate application' (LSC-006). The business faces severe financial difficulties with declining revenue for three years, operating at a monthly loss for six months, $350,000 in business loans 60 days past due, and utility disconnection warnings (FIN-002, FIN-004). The witness statement directly contradicts the owner's account, revealing the owner brought gasoline containers into the restaurant shortly before the fire, which he misrepresented as 'special cleaning supplies' (DOC-001). The business had three prior claims within the past year, and the previous carrier declined renewal due to claims frequency (CLB-006). The fire department's report noted evidence suggesting an accelerated burn due to flammable liquids, corroborating the laboratory findings. The combination of confirmed accelerants, severe financial troubles, contradictory statements, and prior claims history creates a compelling case for investigating potential arson."
         }
     ]
 }

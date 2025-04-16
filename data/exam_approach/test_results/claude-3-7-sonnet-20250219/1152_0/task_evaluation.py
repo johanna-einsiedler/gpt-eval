@@ -1,314 +1,335 @@
+#!/usr/bin/env python3
 import json
-import re
-
-def load_json_file(filename):
-    try:
-        with open(filename, 'r') as file:
-            return json.load(file)
-    except Exception as e:
-        print(f"Error loading {filename}: {e}")
-        return None
+import sys
+import os
 
 def evaluate_task1(submission, answer_key):
     results = {
-        "score": 0,
-        "max_score": 3,
-        "details": []
+        "points": 0,
+        "max_points": 40,
+        "details": {}
     }
     
-    if "product_selections" not in submission:
-        results["details"].append("Missing product_selections section")
-        return results
+    # Check chair selection within price range (5 points per chair, 15 total)
+    valid_chairs = {
+        "OfficeMax": ["OM-EC550", "OM-EC720"],
+        "Staples": ["US-DX450", "SP-1500TF", "ST-HY100"],
+        "Corporate Furnishings": ["CF-TM400", "CF-EP800"]
+    }
     
-    # Create a lookup dictionary from answer key
-    valid_options = {}
-    justification_keywords = {}
-    for item in answer_key["product_selections"]:
-        req_id = item["requirement_id"]
-        valid_options[req_id] = item["valid_options"]
-        justification_keywords[req_id] = item["justification_keywords"]
+    results["details"]["chair_selection"] = {"points": 0, "max_points": 15, "notes": []}
     
-    # Check each submission entry
-    for entry in submission["product_selections"]:
-        req_id = entry.get("requirement_id")
-        if req_id not in valid_options:
-            results["details"].append(f"Invalid requirement_id: {req_id}")
-            continue
+    for chair in submission.get("chair_comparison", []):
+        supplier = chair.get("supplier")
+        model = chair.get("model")
         
-        # Check if product selection is valid
-        product_valid = False
-        for option in valid_options[req_id]:
-            if (entry.get("catalog_id") == option["catalog_id"] and 
-                entry.get("product_code") == option["product_code"] and 
-                entry.get("price") == option["price"]):
-                product_valid = True
-                break
-        
-        # Check justification
-        justification = entry.get("justification", "").lower()
-        keywords_found = sum(1 for keyword in justification_keywords[req_id] 
-                            if keyword.lower() in justification)
-        justification_valid = keywords_found >= 2  # At least 2 keywords
-        
-        # Score this entry
-        if product_valid and justification_valid:
-            results["score"] += 1
-            results["details"].append(f"{req_id}: Correct product and justification")
-        elif product_valid:
-            results["score"] += 0.5
-            results["details"].append(f"{req_id}: Correct product but insufficient justification")
-        elif justification_valid:
-            results["score"] += 0.25
-            results["details"].append(f"{req_id}: Invalid product but reasonable justification")
+        if supplier in valid_chairs and model in valid_chairs[supplier]:
+            results["details"]["chair_selection"]["points"] += 5
+            results["details"]["chair_selection"]["notes"].append(f"Correct: {supplier} {model} is within price range")
         else:
-            results["details"].append(f"{req_id}: Incorrect product and insufficient justification")
+            results["details"]["chair_selection"]["notes"].append(f"Incorrect: {supplier} {model} is not a valid selection")
+    
+    # Check model numbers (3 points per chair, 9 total)
+    results["details"]["model_numbers"] = {"points": 0, "max_points": 9, "notes": []}
+    
+    for chair in submission.get("chair_comparison", []):
+        supplier = chair.get("supplier")
+        model = chair.get("model")
+        
+        # Check if the model number is provided and formatted correctly
+        if model and isinstance(model, str) and model.strip():
+            results["details"]["model_numbers"]["points"] += 3
+            results["details"]["model_numbers"]["notes"].append(f"Correct: Model {model} for {supplier} is properly formatted")
+        else:
+            results["details"]["model_numbers"]["notes"].append(f"Incorrect: Model for {supplier} is missing or improperly formatted")
+    
+    # Check price values (2 points per chair, 6 total)
+    results["details"]["price_values"] = {"points": 0, "max_points": 6, "notes": []}
+    
+    for chair in submission.get("chair_comparison", []):
+        supplier = chair.get("supplier")
+        price = chair.get("price")
+        
+        # Check if price is a number and in the valid range ($200-$500)
+        if isinstance(price, (int, float)) and 200 <= price <= 500:
+            results["details"]["price_values"]["points"] += 2
+            results["details"]["price_values"]["notes"].append(f"Correct: Price ${price} for {supplier} is within range")
+        else:
+            results["details"]["price_values"]["notes"].append(f"Incorrect: Price for {supplier} is missing or outside the valid range")
+    
+    # Check warranty information (2 points per chair, 6 total)
+    results["details"]["warranty_info"] = {"points": 0, "max_points": 6, "notes": []}
+    
+    for chair in submission.get("chair_comparison", []):
+        supplier = chair.get("supplier")
+        warranty = chair.get("warranty_years")
+        
+        # Check if warranty is a positive integer
+        if isinstance(warranty, int) and warranty > 0:
+            results["details"]["warranty_info"]["points"] += 2
+            results["details"]["warranty_info"]["notes"].append(f"Correct: Warranty {warranty} years for {supplier} is valid")
+        else:
+            results["details"]["warranty_info"]["notes"].append(f"Incorrect: Warranty for {supplier} is missing or invalid")
+    
+    # Check lowest price chair (2 points)
+    results["details"]["lowest_price_chair"] = {"points": 0, "max_points": 2, "notes": []}
+    
+    lowest_price_chair = submission.get("lowest_price_chair", {})
+    lowest_supplier = lowest_price_chair.get("supplier")
+    lowest_model = lowest_price_chair.get("model")
+    
+    if lowest_supplier == "Staples" and lowest_model == "US-DX450":
+        results["details"]["lowest_price_chair"]["points"] = 2
+        results["details"]["lowest_price_chair"]["notes"].append("Correct: Identified Staples US-DX450 as lowest price chair")
+    elif lowest_supplier == "Staples" and lowest_model == "ST-HY100":
+        # Alternative correct answer if all chairs are considered
+        results["details"]["lowest_price_chair"]["points"] = 2
+        results["details"]["lowest_price_chair"]["notes"].append("Correct: Identified Staples ST-HY100 as lowest price chair")
+    else:
+        results["details"]["lowest_price_chair"]["notes"].append(f"Incorrect: {lowest_supplier} {lowest_model} is not the lowest price chair")
+    
+    # Check best warranty chair (2 points)
+    results["details"]["best_warranty_chair"] = {"points": 0, "max_points": 2, "notes": []}
+    
+    best_warranty_chair = submission.get("best_warranty_chair", {})
+    best_supplier = best_warranty_chair.get("supplier")
+    best_model = best_warranty_chair.get("model")
+    
+    if best_supplier == "Staples" and best_model == "SP-1500TF":
+        results["details"]["best_warranty_chair"]["points"] = 2
+        results["details"]["best_warranty_chair"]["notes"].append("Correct: Identified Staples SP-1500TF as best warranty chair")
+    else:
+        results["details"]["best_warranty_chair"]["notes"].append(f"Incorrect: {best_supplier} {best_model} is not the best warranty chair")
+    
+    # Calculate total points for Task 1
+    results["points"] = sum(detail["points"] for detail in results["details"].values())
     
     return results
 
 def evaluate_task2(submission, answer_key):
     results = {
-        "score": 0,
-        "max_score": 4,  # 2 suppliers for each of 2 requirements
-        "details": []
+        "points": 0,
+        "max_points": 30,
+        "details": {}
     }
     
-    if "suppliers" not in submission:
-        results["details"].append("Missing suppliers section")
-        return results
+    # Check safety standard (10 points)
+    results["details"]["safety_standard"] = {"points": 0, "max_points": 10, "notes": []}
     
-    # Group submissions by requirement
-    submissions_by_req = {}
-    for entry in submission["suppliers"]:
-        req_id = entry.get("requirement_id")
-        if req_id not in submissions_by_req:
-            submissions_by_req[req_id] = []
-        submissions_by_req[req_id].append(entry)
+    submitted_standard = submission.get("safety_standard", "")
+    correct_standard = answer_key.get("safety_standard", "")
     
-    # Check each requirement
-    for req_id, req_data in answer_key["suppliers"].items():
-        if req_id not in submissions_by_req:
-            results["details"].append(f"Missing entries for {req_id}")
-            continue
-        
-        valid_entries = 0
-        for entry in submissions_by_req[req_id]:
-            # Check required fields
-            fields_valid = all(entry.get(field) for field in req_data["required_fields"])
-            
-            # Check source
-            source_valid = entry.get("source") in req_data["source_options"]
-            
-            # Check keywords
-            entry_text = " ".join(str(value).lower() for value in entry.values())
-            keywords_found = sum(1 for keyword in req_data["keywords"] 
-                                if keyword.lower() in entry_text)
-            keywords_valid = keywords_found >= 2  # At least 2 keywords
-            
-            if fields_valid and source_valid and keywords_valid:
-                valid_entries += 1
-                results["details"].append(f"{req_id}: Valid supplier entry")
-            else:
-                missing = []
-                if not fields_valid:
-                    missing.append("required fields")
-                if not source_valid:
-                    missing.append("valid source")
-                if not keywords_valid:
-                    missing.append("relevant keywords")
-                results["details"].append(f"{req_id}: Invalid entry - missing {', '.join(missing)}")
-        
-        # Score based on valid entries (max 2 per requirement)
-        results["score"] += min(valid_entries, 2)
+    if submitted_standard == correct_standard:
+        results["details"]["safety_standard"]["points"] = 10
+        results["details"]["safety_standard"]["notes"].append(f"Correct: Identified {correct_standard} as the safety standard")
+    else:
+        results["details"]["safety_standard"]["notes"].append(f"Incorrect: Submitted {submitted_standard} instead of {correct_standard}")
+    
+    # Check certification (10 points)
+    results["details"]["certification"] = {"points": 0, "max_points": 10, "notes": []}
+    
+    submitted_certification = submission.get("certification_required", "")
+    correct_certification = answer_key.get("certification_required", "")
+    
+    if submitted_certification == correct_certification:
+        results["details"]["certification"]["points"] = 10
+        results["details"]["certification"]["notes"].append(f"Correct: Identified {correct_certification} as the required certification")
+    else:
+        results["details"]["certification"]["notes"].append(f"Incorrect: Submitted {submitted_certification} instead of {correct_certification}")
+    
+    # Check minimum thickness (10 points)
+    results["details"]["minimum_thickness"] = {"points": 0, "max_points": 10, "notes": []}
+    
+    submitted_thickness = submission.get("minimum_thickness_mm")
+    correct_thickness = answer_key.get("minimum_thickness_mm")
+    
+    if submitted_thickness == correct_thickness:
+        results["details"]["minimum_thickness"]["points"] = 10
+        results["details"]["minimum_thickness"]["notes"].append(f"Correct: Identified {correct_thickness}mm as the minimum thickness")
+    else:
+        results["details"]["minimum_thickness"]["notes"].append(f"Incorrect: Submitted {submitted_thickness}mm instead of {correct_thickness}mm")
+    
+    # Calculate total points for Task 2
+    results["points"] = sum(detail["points"] for detail in results["details"].values())
     
     return results
 
 def evaluate_task3(submission, answer_key):
     results = {
-        "score": 0,
-        "max_score": 3,  # 1 for table, 2 for recommendation
-        "details": []
+        "points": 0,
+        "max_points": 30,
+        "details": {}
     }
     
-    # Check comparison table
-    table_correct = True
-    if "comparison_table" not in submission:
-        results["details"].append("Missing comparison_table section")
-        table_correct = False
-    else:
-        # Convert answer key table to a lookup dictionary
-        expected_table = {f"{item['supplier']}_{item['product']}": item 
-                         for item in answer_key["comparison_table"]}
-        
-        # Check each entry in submission
-        for entry in submission["comparison_table"]:
-            key = f"{entry.get('supplier')}_{entry.get('product')}"
-            if key not in expected_table:
-                results["details"].append(f"Unexpected table entry: {key}")
-                table_correct = False
-                continue
+    # Check supplier identification (5 points per supplier, 15 total)
+    results["details"]["supplier_identification"] = {"points": 0, "max_points": 15, "notes": []}
+    
+    suppliers = submission.get("suppliers", [])
+    
+    for i, supplier in enumerate(suppliers):
+        if i >= 3:  # Only evaluate up to 3 suppliers
+            break
             
-            expected = expected_table[key]
-            for field in ["price", "delivery_time", "warranty", "rating"]:
-                if entry.get(field) != expected[field]:
-                    results["details"].append(f"Incorrect {field} for {key}")
-                    table_correct = False
+        name = supplier.get("name", "")
+        
+        if name and isinstance(name, str) and len(name) > 3:
+            results["details"]["supplier_identification"]["points"] += 5
+            results["details"]["supplier_identification"]["notes"].append(f"Supplier {i+1}: {name} - Valid supplier name")
+        else:
+            results["details"]["supplier_identification"]["notes"].append(f"Supplier {i+1}: {name} - Invalid or missing name")
     
-    if table_correct:
-        results["score"] += 1
-        results["details"].append("Comparison table is correct")
+    # Check supplier information completeness (3 points per supplier, 9 total)
+    results["details"]["supplier_information"] = {"points": 0, "max_points": 9, "notes": []}
     
-    # Check recommendation
-    recommendation = submission.get("recommendation", "")
-    justification = submission.get("justification", "").lower()
+    for i, supplier in enumerate(suppliers):
+        if i >= 3:  # Only evaluate up to 3 suppliers
+            break
+            
+        name = supplier.get("name", "")
+        location = supplier.get("location", "")
+        min_order = supplier.get("minimum_order")
+        lead_time = supplier.get("lead_time_days")
+        
+        # Award points only if all required information is provided and valid
+        if (name and isinstance(name, str) and 
+            location and isinstance(location, str) and 
+            isinstance(min_order, int) and min_order > 0 and
+            isinstance(lead_time, int) and lead_time > 0):
+            
+            results["details"]["supplier_information"]["points"] += 3
+            results["details"]["supplier_information"]["notes"].append(f"Supplier {i+1}: Complete and valid information")
+        else:
+            results["details"]["supplier_information"]["notes"].append(f"Supplier {i+1}: Incomplete or invalid information")
     
-    # Check if recommendation is valid
-    rec_valid = any(valid_rec in recommendation 
-                   for valid_rec in answer_key["valid_recommendations"])
+    # Check fastest delivery supplier (3 points)
+    results["details"]["fastest_delivery"] = {"points": 0, "max_points": 3, "notes": []}
     
-    # Check justification
-    keywords_found = sum(1 for keyword in answer_key["justification_keywords"] 
-                        if keyword.lower() in justification)
-    justification_valid = keywords_found >= 3  # At least 3 keywords
+    fastest_supplier = submission.get("fastest_delivery_supplier", "")
     
-    # Score recommendation and justification
-    if rec_valid and justification_valid:
-        results["score"] += 2
-        results["details"].append("Valid recommendation with good justification")
-    elif rec_valid:
-        results["score"] += 1
-        results["details"].append("Valid recommendation but insufficient justification")
-    elif justification_valid:
-        results["score"] += 0.5
-        results["details"].append("Invalid recommendation but reasonable justification")
+    # Find the supplier with the lowest lead time
+    min_lead_time = float('inf')
+    actual_fastest = ""
+    
+    for supplier in suppliers:
+        name = supplier.get("name", "")
+        lead_time = supplier.get("lead_time_days")
+        
+        if isinstance(lead_time, int) and lead_time < min_lead_time:
+            min_lead_time = lead_time
+            actual_fastest = name
+    
+    if fastest_supplier == actual_fastest and fastest_supplier:
+        results["details"]["fastest_delivery"]["points"] = 3
+        results["details"]["fastest_delivery"]["notes"].append(f"Correct: {fastest_supplier} has the fastest delivery time ({min_lead_time} days)")
     else:
-        results["details"].append("Invalid recommendation and insufficient justification")
+        results["details"]["fastest_delivery"]["notes"].append(f"Incorrect: Submitted {fastest_supplier} but {actual_fastest} has the fastest delivery time ({min_lead_time} days)")
+    
+    # Check lowest minimum order supplier (3 points)
+    results["details"]["lowest_minimum_order"] = {"points": 0, "max_points": 3, "notes": []}
+    
+    lowest_min_order_supplier = submission.get("lowest_minimum_order_supplier", "")
+    
+    # Find the supplier with the lowest minimum order
+    min_order = float('inf')
+    actual_lowest = ""
+    
+    for supplier in suppliers:
+        name = supplier.get("name", "")
+        order = supplier.get("minimum_order")
+        
+        if isinstance(order, int) and order < min_order:
+            min_order = order
+            actual_lowest = name
+    
+    if lowest_min_order_supplier == actual_lowest and lowest_min_order_supplier:
+        results["details"]["lowest_minimum_order"]["points"] = 3
+        results["details"]["lowest_minimum_order"]["notes"].append(f"Correct: {lowest_min_order_supplier} has the lowest minimum order ({min_order} units)")
+    else:
+        results["details"]["lowest_minimum_order"]["notes"].append(f"Incorrect: Submitted {lowest_min_order_supplier} but {actual_lowest} has the lowest minimum order ({min_order} units)")
+    
+    # Calculate total points for Task 3
+    results["points"] = sum(detail["points"] for detail in results["details"].values())
     
     return results
 
-def evaluate_task4(submission, answer_key):
+def evaluate_submission(submission_data, answer_key_data):
     results = {
-        "score": 0,
-        "max_score": 5,  # 3 for questions, 2 for information needed
-        "details": []
+        "task1": evaluate_task1(submission_data.get("task1", {}), answer_key_data.get("task1", {})),
+        "task2": evaluate_task2(submission_data.get("task2", {}), answer_key_data.get("task2", {})),
+        "task3": evaluate_task3(submission_data.get("task3", {}), answer_key_data.get("task3", {}))
     }
     
-    # Evaluate clarification questions
-    if "clarification_questions" not in submission:
-        results["details"].append("Missing clarification_questions section")
-    else:
-        questions = submission["clarification_questions"]
-        valid_categories = answer_key["clarification_questions"]["valid_categories"]
-        
-        # Count questions that are properly formatted and relevant
-        valid_questions = 0
-        categories_covered = set()
-        
-        for question in questions:
-            # Check if it's a proper question
-            is_question = question.strip().endswith("?")
-            
-            # Check if it covers a valid category
-            category_match = None
-            for category in valid_categories:
-                if category.lower() in question.lower():
-                    category_match = category
-                    categories_covered.add(category)
-                    break
-            
-            if is_question and category_match:
-                valid_questions += 1
-                results["details"].append(f"Valid question covering: {category_match}")
-            elif is_question:
-                results["details"].append("Question format correct but category unclear")
-            else:
-                results["details"].append("Invalid question format")
-        
-        # Score based on valid questions and category coverage
-        question_score = min(valid_questions, 5) * 0.4 + min(len(categories_covered), 3) * 0.4
-        results["score"] += min(question_score, 3)  # Max 3 points
+    # Calculate total score
+    total_points = sum(task["points"] for task in results.values())
+    max_points = sum(task["max_points"] for task in results.values())
+    overall_score = (total_points / max_points) * 100 if max_points > 0 else 0
     
-    # Evaluate information needed
-    if "information_needed" not in submission:
-        results["details"].append("Missing information_needed section")
-    else:
-        info_items = submission["information_needed"]
-        valid_categories = answer_key["information_needed"]["valid_categories"]
-        
-        # Count valid information items
-        valid_items = 0
-        categories_covered = set()
-        
-        for item in info_items:
-            # Check if it covers a valid category
-            category_match = None
-            for category in valid_categories:
-                if category.lower() in item.lower():
-                    category_match = category
-                    categories_covered.add(category)
-                    break
-            
-            # Check if it's stated as information, not a question
-            is_info = not item.strip().endswith("?")
-            
-            if is_info and category_match:
-                valid_items += 1
-                results["details"].append(f"Valid information need: {category_match}")
-            elif is_info:
-                results["details"].append("Information format correct but category unclear")
-            else:
-                results["details"].append("Invalid information format (appears to be a question)")
-        
-        # Score based on valid items and category coverage
-        info_score = min(valid_items, 3) * 0.4 + min(len(categories_covered), 2) * 0.4
-        results["score"] += min(info_score, 2)  # Max 2 points
+    # Determine pass status
+    pass_status = "Strong Pass" if overall_score >= 90 else "Pass" if overall_score >= 75 else "Fail"
     
-    return results
-
-def calculate_overall_score(task_results):
-    total_score = sum(task["score"] for task in task_results.values())
-    max_score = sum(task["max_score"] for task in task_results.values())
-    return (total_score / max_score) * 100
-
-def evaluate_submission():
-    # Load files
-    submission = load_json_file("test_submission.json")
-    answer_key = load_json_file("answer_key.json")
+    # Check critical requirements
+    critical_requirements_met = True
+    task1_chairs_correct = results["task1"]["details"]["chair_selection"]["points"] >= 10  # At least 2 chairs correct
+    task2_standard_correct = results["task2"]["details"]["safety_standard"]["points"] > 0
+    task2_thickness_correct = results["task2"]["details"]["minimum_thickness"]["points"] > 0
+    task3_suppliers_identified = results["task3"]["details"]["supplier_identification"]["points"] >= 10  # At least 2 suppliers identified
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files")
-        return
+    if not (task1_chairs_correct and task2_standard_correct and task2_thickness_correct and task3_suppliers_identified):
+        critical_requirements_met = False
+        pass_status = "Fail (Critical Requirements Not Met)"
     
-    # Evaluate each task
-    results = {
-        "task1": evaluate_task1(submission.get("task1", {}), answer_key.get("task1", {})),
-        "task2": evaluate_task2(submission.get("task2", {}), answer_key.get("task2", {})),
-        "task3": evaluate_task3(submission.get("task3", {}), answer_key.get("task3", {})),
-        "task4": evaluate_task4(submission.get("task4", {}), answer_key.get("task4", {}))
-    }
-    
-    # Calculate overall score
-    overall_score = calculate_overall_score(results)
-    
-    # Determine if candidate passed
-    tasks_passed = sum(1 for task in results.values() 
-                      if task["score"] >= 0.7 * task["max_score"])
-    passed = tasks_passed >= 3
-    
-    # Prepare final results
+    # Compile final results
     final_results = {
+        "candidate_id": submission_data.get("candidate_id", "Unknown"),
         "overall_score": round(overall_score, 2),
-        "passed": passed,
-        "tasks_passed": tasks_passed,
-        "task_results": results,
-        "candidate_id": submission.get("candidate_id", "Unknown")
+        "total_points": total_points,
+        "max_points": max_points,
+        "pass_status": pass_status,
+        "critical_requirements_met": critical_requirements_met,
+        "task_results": results
     }
     
-    # Save results
-    with open("test_results.json", "w") as file:
-        json.dump(final_results, file, indent=2)
+    return final_results
+
+def main():
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    print(f"Evaluation complete. Overall score: {overall_score:.2f}%")
-    print(f"Candidate {'passed' if passed else 'failed'} the exam")
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
+    
+    # Check if files exist
+    for file_path in [submission_file, answer_key_file]:
+        if not os.path.exists(file_path):
+            print(f"Error: File {file_path} not found")
+            sys.exit(1)
+    
+    # Load submission and answer key
+    try:
+        with open(submission_file, 'r') as f:
+            submission_data = json.load(f)
+        
+        with open(answer_key_file, 'r') as f:
+            answer_key_data = json.load(f)
+    except json.JSONDecodeError as e:
+        print(f"Error: Invalid JSON format - {e}")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Error reading files: {e}")
+        sys.exit(1)
+    
+    # Evaluate submission
+    results = evaluate_submission(submission_data, answer_key_data)
+    
+    # Save results to file
+    try:
+        with open("test_results.json", 'w') as f:
+            json.dump(results, f, indent=2)
+        print("Evaluation completed. Results saved to test_results.json")
+    except Exception as e:
+        print(f"Error writing results file: {e}")
+        sys.exit(1)
 
 if __name__ == "__main__":
-    evaluate_submission()
+    main()

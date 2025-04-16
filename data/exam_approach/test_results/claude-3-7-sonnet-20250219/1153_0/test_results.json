@@ -1,0 +1,92 @@
+{
+  "task1": {
+    "average_monthly_consumption": {
+      "score": 10.0,
+      "max_points": 10,
+      "errors": 0,
+      "comments": "Found 0 values outside the acceptable range (\u00b15%)"
+    },
+    "top_products": {
+      "score": 8,
+      "max_points": 8,
+      "correct_order": 10,
+      "correct_products": 10,
+      "comments": "Identified 10/10 correct products with 10/10 in correct order"
+    },
+    "seasonal_products": {
+      "score": 7,
+      "max_points": 7,
+      "correct_identified": 5,
+      "comments": "Correctly identified 5/5 seasonal products"
+    }
+  },
+  "task2": {
+    "stock_coverage": {
+      "score": 10.0,
+      "max_points": 10,
+      "errors": 0,
+      "comments": "Found 0 values outside the acceptable range (\u00b15%)"
+    },
+    "low_inventory_products": {
+      "score": 8,
+      "max_points": 8,
+      "missing": [],
+      "extra": [],
+      "comments": "Missing 0 required products, incorrectly included 0 products"
+    },
+    "excess_inventory_products": {
+      "score": 7,
+      "max_points": 7,
+      "comments": "Correctly identified that there are no excess inventory products"
+    }
+  },
+  "task3": {
+    "recommended_order_quantities": {
+      "score": 10.0,
+      "max_points": 10,
+      "errors": 0,
+      "comments": "Found 0/20 values outside the acceptable range (\u00b115%)"
+    },
+    "order_frequency": {
+      "score": 8.0,
+      "max_points": 8,
+      "correct": 7,
+      "total": 7,
+      "comments": "Correctly determined order frequency for 7/7 categories"
+    },
+    "quarterly_cost": {
+      "score": 7,
+      "max_points": 7,
+      "submitted_value": 10712.14,
+      "correct_value": 10712.14,
+      "comments": "Quarterly cost within acceptable range of correct value"
+    }
+  },
+  "task4": {
+    "critical_products": {
+      "score": 8,
+      "max_points": 8,
+      "errors": 0,
+      "departments_evaluated": 10,
+      "comments": "Found errors in 0/10 departments' critical product lists"
+    },
+    "service_levels": {
+      "score": 8.0,
+      "max_points": 8,
+      "correct": 18,
+      "total": 18,
+      "comments": "Service levels appropriate for 18/18 products"
+    },
+    "safety_stock_adjustments": {
+      "score": 9.0,
+      "max_points": 9,
+      "correct": 15,
+      "total": 15,
+      "comments": "Safety stock adjustments appropriate for 15/15 products"
+    }
+  },
+  "overall_score": 100.0,
+  "total_points": 100.0,
+  "max_points": 100,
+  "passed": true
+}

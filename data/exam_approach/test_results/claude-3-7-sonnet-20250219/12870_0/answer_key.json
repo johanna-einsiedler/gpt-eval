@@ -1,64 +1,98 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
+    "candidate_id": "EVALUATOR_SAMPLE",
     "task1": {
-        "trend1": {
-            "title": "Streaming Platforms Shift to Sports Rights Acquisition",
-            "source": "Entertainment Business Weekly",
-            "impact_score": 8,
-            "key_implications": [
-                "Creates new leverage opportunities for talent representatives",
-                "Complicates rights negotiations as digital and traditional boundaries blur",
-                "Increases competition between streaming platforms and traditional networks"
-            ]
-        },
-        "trend2": {
-            "title": "AI-Generated Content Disrupting Production Economics",
-            "source": "Digital Media Today",
-            "impact_score": 9,
-            "key_implications": [
-                "Requires scrutiny of contract language regarding digital likeness rights",
-                "Affects residual payment structures for AI-assisted productions",
-                "Creates particular concerns for voice actors and background performers"
-            ]
-        },
-        "trend3": {
-            "title": "Brand Integration Deals Surpass Traditional Endorsements",
-            "source": "Marketing Insider",
-            "impact_score": 8,
-            "key_implications": [
-                "Shift from flat-fee endorsements to equity stakes and creative input",
-                "Increased value in long-term brand building relationships",
-                "Opportunity for shared upside potential through ownership positions"
-            ]
-        }
+        "developments": [
+            {
+                "headline": "Studios and Streamers Agree to New Deal with SAG-AFTRA to End Voice Actor Strike",
+                "source": "Variety",
+                "date": "2023-09-18",
+                "summary": "SAG-AFTRA announced a tentative agreement with major studios and streaming platforms to end the five-month voice actor strike. The deal includes new protections against AI voice replication, increased base compensation, and residual structures for streaming content. The agreement specifically addresses consent requirements for AI-generated performances.",
+                "impact": "This resolution reshapes how agents must negotiate voice talent contracts by establishing industry standards for AI consent and compensation. Agents will need to become proficient in these new AI clauses, including monitoring for unauthorized voice replication. The deal creates precedent for residual structures in streaming animation that agents can leverage in future negotiations. Additionally, this settlement may influence upcoming negotiations in other entertainment sectors facing similar AI challenges.",
+                "significance_rating": 9,
+                "rating_justification": "This development fundamentally alters how voice talent is protected and compensated in the AI era, creating new responsibilities for agents to understand complex technology rights. The established precedents will influence talent representation across multiple sectors beyond voice acting."
+            },
+            {
+                "headline": "Universal Music Group Removes Its Catalog from TikTok After Failed Negotiations",
+                "source": "Billboard",
+                "date": "2023-09-05",
+                "summary": "Universal Music Group withdrew its entire music catalog from TikTok after failing to reach a new licensing agreement. UMG cited three primary concerns: artist compensation, protection against AI-generated music, and content moderation. The move affects thousands of artists and millions of TikTok users who can no longer access UMG's extensive catalog.",
+                "impact": "This development forces agents to reconsider promotional strategies for music clients, as TikTok has been a crucial platform for music discovery and viral hits. Agents must now evaluate alternative platforms for client promotion and develop contingency plans for catalog restrictions. The dispute also highlights the growing importance of AI rights in talent contracts, requiring agents to negotiate more comprehensive protections across all digital platforms.",
+                "significance_rating": 8,
+                "rating_justification": "This development significantly disrupts established promotional channels for music talent, requiring immediate strategic adjustments from agents. It also elevates AI rights considerations in contract negotiations and demonstrates how major catalog owners are taking more aggressive stances on digital compensation, creating precedents that will affect future talent deals."
+            },
+            {
+                "headline": "Netflix Expands Gaming Division with Major Studio Acquisition",
+                "source": "The Hollywood Reporter",
+                "date": "2023-09-12",
+                "summary": "Netflix announced the acquisition of independent game studio Spry Fox, significantly expanding its gaming division. This marks Netflix's sixth gaming studio acquisition in two years, signaling aggressive growth in interactive entertainment. The company intends to develop original games based on its hit shows while creating new intellectual properties.",
+                "impact": "This expansion creates new cross-platform opportunities for talent representation. Agents with clients in traditional entertainment can now pursue gaming adaptations, voice work, and digital likeness licensing at Netflix. The convergence of streaming content and gaming necessitates agents developing expertise in gaming contracts, which differ substantially from traditional media deals. Actors, writers, and composers represented by agents should be positioned for these emerging opportunities.",
+                "significance_rating": 7,
+                "rating_justification": "While not immediately affecting existing contracts, this development creates substantial new revenue opportunities for talent across multiple disciplines. The convergence of traditional entertainment and gaming is accelerating, and agencies that develop expertise in cross-platform representation will have competitive advantages in securing these new deals."
+            }
+        ]
     },
     "task2": {
         "deal_comparison": {
-            "deal1_compensation": 3300000,
-            "deal2_compensation": 5000000,
-            "deal1_term_length": 36,
-            "deal2_term_length": 24,
-            "deal1_rights_retained": [
-                "Right to pursue film projects during hiatus periods",
-                "Character likeness rights except for show promotion"
-            ],
-            "deal2_rights_retained": [
-                "Right to pursue film and television projects with non-competing services",
-                "Character likeness rights except for show promotion and limited merchandise"
-            ],
-            "more_favorable_deal": "deal2"
+            "deal1": {
+                "talent_name": "Ryan Reynolds",
+                "industry_sector": "Film/TV",
+                "deal_partner": "Paramount Pictures",
+                "announcement_date": "2023-08-15",
+                "structure": "Reynolds signed a first-look development deal for feature films through his production company Maximum Effort. The three-year agreement gives Paramount exclusive first rights to develop and distribute films produced by Maximum Effort, with a commitment to finance at least two theatrical releases annually. The deal includes development funding with a reported $20 million overhead allowance and performance-based extensions.",
+                "compensation_model": "The deal combines guaranteed development funding with significant backend participation. Reynolds receives producer fees for each project, plus performance-based bonuses when films exceed specific box office thresholds. The structure includes increased profit participation percentages for Reynolds on projects he both produces and stars in, reflecting his dual value as producer and on-camera talent.",
+                "rights_arrangement": "Paramount secures exclusive theatrical distribution rights and first-window streaming rights for Paramount+. Maximum Effort retains certain derivative rights, including merchandise, gaming, and international TV distribution after initial windows. The agreement specifically preserves Reynolds' ability to continue existing commitments with other studios while granting Paramount priority on new developments.",
+                "notable_terms": "The deal includes unusually expansive creative control provisions, giving Reynolds final approval on marketing campaigns for projects he produces. It also contains a unique provision allowing Maximum Effort to reclaim intellectual property rights if Paramount doesn't move forward with production within specified timeframes, preventing projects from languishing in development.",
+                "innovative_aspect": "The agreement incorporates a groundbreaking revenue-sharing model for social media and digital marketing campaigns created through Maximum Effort's marketing division. This allows Reynolds to monetize his significant social media presence and marketing expertise while creating promotional content for Paramount releases, effectively turning the marketing requirement into an additional revenue stream.",
+                "sources": [
+                    "https://variety.com/2023/film/news/ryan-reynolds-paramount-first-look-deal-1235674839/",
+                    "https://deadline.com/2023/08/ryan-reynolds-maximum-effort-paramount-first-look-deal-1235821"
+                ]
+            },
+            "deal2": {
+                "talent_name": "Coco Gauff",
+                "industry_sector": "Sports",
+                "deal_partner": "New Balance",
+                "announcement_date": "2023-07-20",
+                "structure": "Gauff signed a long-term apparel and footwear endorsement renewal with New Balance following her Grand Slam victory. The eight-year deal represents one of the most lucrative endorsement contracts in women's tennis. The agreement includes guaranteed annual payments plus performance bonuses for tournament wins and rankings achievements. The structure includes scheduled increases in base compensation as Gauff reaches certain career milestones.",
+                "compensation_model": "The deal features a hybrid compensation structure with a substantial guaranteed base reportedly exceeding $12 million annually, plus tiered performance bonuses for Grand Slam appearances, victories, and year-end rankings. It includes equity components giving Gauff ownership stake in New Balance's tennis division and royalties from signature product lines that exceed specified sales thresholds.",
+                "rights_arrangement": "New Balance secures exclusive rights to Gauff's athletic apparel and footwear endorsements for on-court appearances, with limited exceptions for accessories categories not manufactured by New Balance. Gauff retains rights to non-competing endorsements in beauty, lifestyle, and technology categories. The agreement includes approval rights for Gauff on product designs bearing her name or likeness.",
+                "notable_terms": "The deal includes dedicated funding for the Coco Gauff Foundation with New Balance matching Gauff's personal contributions up to $2 million annually. It also contains scheduling accommodations allowing Gauff to limit commercial appearances during key training periods, addressing work-life balance concerns that have become increasingly important in athlete representation.",
+                "innovative_aspect": "The contract incorporates a pioneering social justice activation clause, allocating specific marketing resources to causes selected by Gauff. This provision allows her to direct a portion of New Balance's marketing budget toward social initiatives she champions, effectively transforming traditional marketing obligations into platform-building opportunities aligned with her personal advocacy goals.",
+                "sources": [
+                    "https://www.sportsbusinessjournal.com/articles/coco-gauff-new-balance-endorsement-extension/",
+                    "https://www.forbes.com/sites/kurtbadenhausen/2023/07/tennis-star-coco-gauff-signs-record-new-balance-deal/"
+                ]
+            },
+            "comparison_insights": "These deals illustrate how elite talent is leveraging their market value beyond traditional compensation structures. Both Reynolds and Gauff secured arrangements that extend beyond simple service-for-payment models, incorporating equity, creative control, and platform-building components. Reynolds' deal reflects the film industry's focus on content ownership and marketing innovation, while Gauff's emphasizes the growing importance of athlete advocacy and social impact in sports endorsements. Both deals demonstrate how top-tier talent can negotiate for structural provisions that advance their broader business and personal goals rather than maximizing immediate compensation. The inclusion of social impact components in both agreements signals the growing expectation that brands and studios must accommodate talent's desire for authentic advocacy platforms."
         }
     },
     "task3": {
-        "platform_selection": "TikTok Creator Marketplace",
-        "compensation_recommendation": 40000,
-        "rights_recommendation": [
-            "Retain content ownership rights",
-            "Limit exclusivity to specific campaign periods"
-        ],
-        "supporting_trend_evidence": [
-            "Brand integration deals surpassing traditional endorsements",
-            "Streaming platforms competing for exclusive content"
-        ]
+        "trend_analysis": {
+            "trend_name": "AI-Driven Content Personalization Transforming Talent Value Metrics",
+            "trend_description": "Streaming platforms and digital content distributors are increasingly deploying AI-driven personalization systems that dynamically adjust content presentation based on individual viewer data. Unlike traditional broadcasting, these systems can prominently feature different talent to different audiences based on viewing history and engagement metrics. This creates a paradigm shift in how talent value is assessed, as visibility and prominence now vary significantly across the user base. The algorithmic promotion of talent is creating new metrics of success beyond traditional ratings or box office figures, with engagement depth, completion rates, and cross-title user retention becoming key performance indicators that directly influence compensation negotiations.",
+            "supporting_evidence": [
+                "Netflix's 2023 Q2 investor report revealed they've expanded their 'Double Thumbs Up' feature to influence content recommendations, with talent agents now receiving quarterly reports showing how specific performers drive viewer retention across their platform (Source: Netflix Investor Relations, July 2023)",
+                "Spotify introduced its 'Featured Artists Algorithm' that customizes artist promotion based on listener behavior, creating measurable differences in artist discovery rates of up to 380% between similar users (Source: Spotify for Artists Blog, August 2023)",
+                "YouTube Premium's new talent contracts now include 'Engagement Escalators' that increase compensation based on viewer retention metrics rather than just view counts, fundamentally changing how performers are valued (Source: Bloomberg Technology, September 2023)"
+            ],
+            "business_impact": "This trend is fundamentally restructuring how talent is valued and compensated across digital entertainment platforms. Traditional metrics like total viewership or album sales are being supplemented or replaced by algorithm-driven engagement metrics that measure not just how many people viewed content, but how deeply they engaged and whether they remained on the platform afterward. This creates new negotiation leverage points for talent representatives who can demonstrate their clients' value through these metrics. However, it also introduces significant challenges, as these metrics are often proprietary, non-standardized across platforms, and constantly evolving. Agents must now develop technical literacy to effectively interpret and leverage these metrics, while also pushing for transparency and standardization in measurement methodology to ensure fair compensation for their clients.",
+            "client_opportunities": [
+                "Develop data-driven personal branding strategies that specifically target audience segments identified as highly responsive to the client's content, creating a virtuous cycle where algorithms increasingly favor the talent for those audiences",
+                "Negotiate contracts that include 'algorithm performance bonuses' triggered when a client's content achieves specific engagement metrics, essentially monetizing their ability to keep viewers on platforms longer than average performers",
+                "Create cross-platform talent packages that leverage audience data from multiple services to demonstrate a client's cumulative audience influence, justifying premium compensation beyond what single-platform metrics would support"
+            ],
+            "recommended_actions": [
+                "Invest in data analytics capabilities within the agency to interpret platform-specific engagement metrics and translate them into compelling negotiation points for talent contracts, including hiring specialized staff familiar with digital platform algorithms",
+                "Develop standardized contract language requiring detailed audience engagement data sharing from platforms, establishing minimum reporting requirements and metrics transparency that protects talent from 'black box' valuation systems",
+                "Create strategic content development plans for clients that specifically optimize for known algorithm preferences on major platforms, such as developing complementary content types that maximize 'suggested viewing' placement"
+            ],
+            "monitoring_sources": [
+                "The Information's weekly 'Platform Algorithm Watch' newsletter tracking changes to major content recommendation systems",
+                "Parrot Analytics' audience demand measurement reports providing cross-platform engagement metrics",
+                "Entertainment Strategy Guy Substack analyzing streaming platform data and algorithm changes",
+                "Digital Music News' monthly streaming royalty and algorithm updates",
+                "Protocol Media newsletter covering technical changes to content distribution platforms"
+            ]
+        }
     }
 }

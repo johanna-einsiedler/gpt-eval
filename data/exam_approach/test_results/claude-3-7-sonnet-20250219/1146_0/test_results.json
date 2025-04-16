@@ -1,0 +1,130 @@
+{
+  "overall_score": 100.0,
+  "total_points": 20,
+  "max_points": 20,
+  "passed": true,
+  "exercises": {
+    "exercise1": {
+      "points": 8,
+      "max_points": 8,
+      "details": {
+        "scenario1": {
+          "points": 2,
+          "max_points": 2,
+          "feedback": [
+            "Correct compliance determination.",
+            "Correct regulation identification."
+          ]
+        },
+        "scenario2": {
+          "points": 2,
+          "max_points": 2,
+          "feedback": [
+            "Correct compliance determination.",
+            "Correct regulation identification."
+          ]
+        },
+        "scenario3": {
+          "points": 2,
+          "max_points": 2,
+          "feedback": [
+            "Correct compliance determination.",
+            "Correct regulation identification."
+          ]
+        },
+        "scenario4": {
+          "points": 2,
+          "max_points": 2,
+          "feedback": [
+            "Correct compliance determination.",
+            "Correct regulation identification."
+          ]
+        }
+      }
+    },
+    "exercise2": {
+      "points": 6,
+      "max_points": 6,
+      "details": {
+        "issue1": {
+          "points": 2,
+          "max_points": 2,
+          "feedback": [
+            "Correct clause number identification.",
+            "Correct regulation identification."
+          ]
+        },
+        "issue2": {
+          "points": 2,
+          "max_points": 2,
+          "feedback": [
+            "Correct clause number identification.",
+            "Correct regulation identification."
+          ]
+        },
+        "issue3": {
+          "points": 2,
+          "max_points": 2,
+          "feedback": [
+            "Correct clause number identification.",
+            "Correct regulation identification."
+          ]
+        }
+      }
+    },
+    "exercise3": {
+      "points": 3,
+      "max_points": 3,
+      "details": {
+        "required_fields": {
+          "points": 1,
+          "max_points": 1,
+          "feedback": [
+            "Correct required fields identified."
+          ]
+        },
+        "retention_period": {
+          "points": 1,
+          "max_points": 1,
+          "feedback": [
+            "Correct retention period identified."
+          ]
+        },
+        "approval_level": {
+          "points": 1,
+          "max_points": 1,
+          "feedback": [
+            "Correct approval level identified."
+          ]
+        }
+      }
+    },
+    "exercise4": {
+      "points": 3,
+      "max_points": 3,
+      "details": {
+        "affected_processes": {
+          "points": 1,
+          "max_points": 1,
+          "feedback": [
+            "Correct affected processes identified."
+          ]
+        },
+        "required_actions": {
+          "points": 1,
+          "max_points": 1,
+          "feedback": [
+            "Correct required actions identified."
+          ]
+        },
+        "implementation_deadline": {
+          "points": 1,
+          "max_points": 1,
+          "feedback": [
+            "Correct implementation deadline identified."
+          ]
+        }
+      }
+    }
+  }
+}

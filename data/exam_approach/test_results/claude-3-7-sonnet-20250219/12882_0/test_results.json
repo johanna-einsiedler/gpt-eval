@@ -1,0 +1,269 @@
+{
+  "candidate_id": "Unknown",
+  "sections": {
+    "product_requirements": {
+      "score": 40.0,
+      "max_score": 40,
+      "details": {
+        "P001": {
+          "status": "correct",
+          "points": 5.714285714285714,
+          "expected": {
+            "product_id": "P001",
+            "product_name": "Red Apples",
+            "quantity_required": 1050,
+            "unit": "kg",
+            "supplier_id": "S003"
+          },
+          "submitted": {
+            "product_id": "P001",
+            "product_name": "Red Apples",
+            "quantity_required": 1050,
+            "unit": "kg",
+            "supplier_id": "S003"
+          }
+        },
+        "P002": {
+          "status": "correct",
+          "points": 5.714285714285714,
+          "expected": {
+            "product_id": "P002",
+            "product_name": "Yellow Onions",
+            "quantity_required": 1100,
+            "unit": "kg",
+            "supplier_id": "S002"
+          },
+          "submitted": {
+            "product_id": "P002",
+            "product_name": "Yellow Onions",
+            "quantity_required": 1100,
+            "unit": "kg",
+            "supplier_id": "S002"
+          }
+        },
+        "P003": {
+          "status": "correct",
+          "points": 5.714285714285714,
+          "expected": {
+            "product_id": "P003",
+            "product_name": "Carrots",
+            "quantity_required": 850,
+            "unit": "kg",
+            "supplier_id": "S004"
+          },
+          "submitted": {
+            "product_id": "P003",
+            "product_name": "Carrots",
+            "quantity_required": 850,
+            "unit": "kg",
+            "supplier_id": "S004"
+          }
+        },
+        "P004": {
+          "status": "correct",
+          "points": 5.714285714285714,
+          "expected": {
+            "product_id": "P004",
+            "product_name": "Lettuce",
+            "quantity_required": 550,
+            "unit": "heads",
+            "supplier_id": "S005"
+          },
+          "submitted": {
+            "product_id": "P004",
+            "product_name": "Lettuce",
+            "quantity_required": 550,
+            "unit": "heads",
+            "supplier_id": "S005"
+          }
+        },
+        "P005": {
+          "status": "correct",
+          "points": 5.714285714285714,
+          "expected": {
+            "product_id": "P005",
+            "product_name": "Potatoes",
+            "quantity_required": 1400,
+            "unit": "kg",
+            "supplier_id": "S004"
+          },
+          "submitted": {
+            "product_id": "P005",
+            "product_name": "Potatoes",
+            "quantity_required": 1400,
+            "unit": "kg",
+            "supplier_id": "S004"
+          }
+        },
+        "P006": {
+          "status": "correct",
+          "points": 5.714285714285714,
+          "expected": {
+            "product_id": "P006",
+            "product_name": "Tomatoes",
+            "quantity_required": 780,
+            "unit": "kg",
+            "supplier_id": "S002"
+          },
+          "submitted": {
+            "product_id": "P006",
+            "product_name": "Tomatoes",
+            "quantity_required": 780,
+            "unit": "kg",
+            "supplier_id": "S002"
+          }
+        },
+        "P007": {
+          "status": "correct",
+          "points": 5.714285714285714,
+          "expected": {
+            "product_id": "P007",
+            "product_name": "Strawberries",
+            "quantity_required": 310,
+            "unit": "kg",
+            "supplier_id": "S002"
+          },
+          "submitted": {
+            "product_id": "P007",
+            "product_name": "Strawberries",
+            "quantity_required": 310,
+            "unit": "kg",
+            "supplier_id": "S002"
+          }
+        }
+      },
+      "passed": true
+    },
+    "demand_changes": {
+      "score": 20.0,
+      "max_score": 20,
+      "details": {
+        "P001": {
+          "status": "correct",
+          "points": 2.857142857142857,
+          "expected": 31.25,
+          "submitted": 31.25
+        },
+        "P002": {
+          "status": "correct",
+          "points": 2.857142857142857,
+          "expected": 22.22,
+          "submitted": 22.22
+        },
+        "P003": {
+          "status": "correct",
+          "points": 2.857142857142857,
+          "expected": 21.43,
+          "submitted": 21.43
+        },
+        "P004": {
+          "status": "correct",
+          "points": 2.857142857142857,
+          "expected": 37.5,
+          "submitted": 37.5
+        },
+        "P005": {
+          "status": "correct",
+          "points": 2.857142857142857,
+          "expected": 16.67,
+          "submitted": 16.67
+        },
+        "P006": {
+          "status": "correct",
+          "points": 2.857142857142857,
+          "expected": 20.0,
+          "submitted": 20.0
+        },
+        "P007": {
+          "status": "correct",
+          "points": 2.857142857142857,
+          "expected": 72.22,
+          "submitted": 72.22
+        }
+      },
+      "passed": true
+    },
+    "supplier_selection": {
+      "score": 15.0,
+      "max_score": 15,
+      "details": {
+        "P001": {
+          "status": "correct",
+          "points": 2.142857142857143,
+          "expected": "S003",
+          "submitted": "S003"
+        },
+        "P002": {
+          "status": "correct",
+          "points": 2.142857142857143,
+          "expected": "S002",
+          "submitted": "S002"
+        },
+        "P003": {
+          "status": "correct",
+          "points": 2.142857142857143,
+          "expected": "S004",
+          "submitted": "S004"
+        },
+        "P004": {
+          "status": "correct",
+          "points": 2.142857142857143,
+          "expected": "S005",
+          "submitted": "S005"
+        },
+        "P005": {
+          "status": "correct",
+          "points": 2.142857142857143,
+          "expected": "S004",
+          "submitted": "S004"
+        },
+        "P006": {
+          "status": "correct",
+          "points": 2.142857142857143,
+          "expected": "S002",
+          "submitted": "S002"
+        },
+        "P007": {
+          "status": "correct",
+          "points": 2.142857142857143,
+          "expected": "S002",
+          "submitted": "S002"
+        }
+      },
+      "passed": true
+    },
+    "procurement_cost": {
+      "score": 10,
+      "max_score": 10,
+      "details": {
+        "expected": 11133.0,
+        "submitted": 11133.0,
+        "difference": 0.0,
+        "percentage_diff": 0.0,
+        "status": "correct"
+      },
+      "passed": true
+    },
+    "priority_products": {
+      "score": 15.0,
+      "max_score": 15,
+      "details": {
+        "expected": [
+          "P007",
+          "P004",
+          "P003"
+        ],
+        "submitted": [
+          "P007",
+          "P004",
+          "P003"
+        ],
+        "correct_count": 3
+      },
+      "passed": true
+    }
+  },
+  "critical_tasks_passed": true,
+  "overall_score": 100.0,
+  "passed": true
+}

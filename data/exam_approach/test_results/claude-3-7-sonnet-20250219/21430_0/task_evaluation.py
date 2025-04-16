@@ -1,295 +1,332 @@
+#!/usr/bin/env python3
 import json
-import os
+import sys
+from pathlib import Path
 
-def load_json(filename):
-    """Load JSON data from a file."""
+
+def load_json_file(file_path):
     try:
-        with open(filename, 'r') as file:
-            return json.load(file)
+        with open(file_path, 'r') as f:
+            return json.load(f)
     except Exception as e:
-        print(f"Error loading {filename}: {e}")
-        return None
+        print(f"Error loading JSON file {file_path}: {e}")
+        sys.exit(1)
 
-def save_json(data, filename):
-    """Save data to a JSON file."""
-    try:
-        with open(filename, 'w') as file:
-            json.dump(data, file, indent=2)
-        print(f"Results saved to {filename}")
-    except Exception as e:
-        print(f"Error saving to {filename}: {e}")
 
-def evaluate_referral_decisions(submission, answer_key):
-    """Evaluate the correctness of referral decisions."""
-    results = {
-        "points_earned": 0,
-        "points_possible": 10,
-        "details": []
+def evaluate_referral_decision(candidate_answer, correct_answer, claim_number):
+    """Evaluate if the candidate made the correct referral decision"""
+    score = 0
+    max_score = 5
+    
+    feedback = ""
+    if candidate_answer == correct_answer:
+        score = max_score
+        feedback = "Correct referral decision"
+    else:
+        feedback = f"Incorrect referral decision. Expected: {correct_answer}"
+    
+    return {
+        "score": score,
+        "max_score": max_score,
+        "feedback": feedback
     }
-    
-    # Create a mapping of claim_id to answer key data for easier lookup
-    answer_key_map = {item["claim_id"]: item for item in answer_key["submissions"]}
-    
-    for item in submission["submissions"]:
-        claim_id = item["claim_id"]
-        if claim_id in answer_key_map:
-            correct_decision = answer_key_map[claim_id]["refer_for_investigation"]
-            candidate_decision = item["refer_for_investigation"]
-            is_correct = candidate_decision == correct_decision
-            
-            detail = {
-                "claim_id": claim_id,
-                "candidate_decision": candidate_decision,
-                "correct_decision": correct_decision,
-                "is_correct": is_correct,
-                "points_earned": 1 if is_correct else 0
-            }
-            
-            results["details"].append(detail)
-            if is_correct:
-                results["points_earned"] += 1
-    
-    results["percentage"] = (results["points_earned"] / results["points_possible"]) * 100
-    return results
 
-def evaluate_red_flags(submission, answer_key):
-    """Evaluate the identification of red flags."""
-    results = {
-        "points_earned": 0,
-        "points_possible": 7,  # 7 claims requiring investigation
-        "details": []
+
+def evaluate_red_flags(candidate_flags, correct_flags, claim_number):
+    """Evaluate if the candidate identified the correct red flags"""
+    score = 0
+    max_score = 7
+    
+    # Normalize the format of red flags for comparison
+    normalized_candidate_flags = [flag.split(':')[0].strip() for flag in candidate_flags]
+    normalized_correct_flags = [flag.split(':')[0].strip() for flag in correct_flags]
+    
+    # Count matching red flags
+    matched_flags = set(normalized_candidate_flags) & set(normalized_correct_flags)
+    matched_count = len(matched_flags)
+    
+    # Determine if critical red flags were identified
+    key_flags_identified = len(matched_flags) >= 2
+    critical_flags_missed = []
+    
+    for flag in normalized_correct_flags:
+        if flag not in normalized_candidate_flags:
+            critical_flags_missed.append(flag)
+    
+    # Score based on the number of key red flags identified
+    if matched_count >= 3:
+        score = 7  # Identified all major red flags (3+ keys)
+        feedback = "Excellent job identifying all major red flags"
+    elif matched_count >= 2 and key_flags_identified:
+        score = 5  # Identified most major red flags (2+ keys, including most critical)
+        feedback = "Good job identifying most major red flags, but missed some"
+    elif matched_count > 0:
+        score = 3  # Identified some red flags but missed critical ones
+        feedback = "Identified some red flags but missed critical ones"
+    else:
+        score = 0  # Failed to identify any valid red flags
+        feedback = "Failed to identify any valid red flags"
+    
+    feedback += f"\nCorrectly identified: {matched_count}/{len(normalized_correct_flags)} red flags"
+    if critical_flags_missed:
+        feedback += f"\nMissed critical flags: {', '.join(critical_flags_missed)}"
+    
+    return {
+        "score": score,
+        "max_score": max_score,
+        "feedback": feedback,
+        "matched_flags": list(matched_flags),
+        "missed_flags": critical_flags_missed
     }
-    
-    # Create a mapping of claim_id to answer key data for easier lookup
-    answer_key_map = {item["claim_id"]: item for item in answer_key["submissions"]}
-    
-    # Filter for claims that should be referred according to answer key
-    referred_claims = [item for item in answer_key["submissions"] if item["refer_for_investigation"]]
-    
-    for answer_item in referred_claims:
-        claim_id = answer_item["claim_id"]
-        correct_red_flags = set(flag.lower() for flag in answer_item["red_flags"])
-        
-        # Find corresponding submission item
-        submission_item = next((item for item in submission["submissions"] if item["claim_id"] == claim_id), None)
-        
-        if submission_item:
-            candidate_red_flags = set(flag.lower() for flag in submission_item["red_flags"])
-            
-            # Count matches
-            matches = 0
-            for candidate_flag in candidate_red_flags:
-                # Check if any correct flag is substantially similar to the candidate flag
-                if any(correct_flag in candidate_flag or candidate_flag in correct_flag for correct_flag in correct_red_flags):
-                    matches += 1
-            
-            # Calculate percentage of correct flags identified
-            correct_flag_count = len(correct_red_flags)
-            percentage_identified = (matches / correct_flag_count) * 100 if correct_flag_count > 0 else 0
-            
-            # Assign points based on percentage
-            points = 0
-            if percentage_identified >= 50:
-                points = 1
-            elif percentage_identified >= 25:
-                points = 0.5
-            
-            detail = {
-                "claim_id": claim_id,
-                "correct_red_flags": list(answer_item["red_flags"]),
-                "candidate_red_flags": list(submission_item["red_flags"]),
-                "matches": matches,
-                "percentage_identified": percentage_identified,
-                "points_earned": points
-            }
-            
-            results["details"].append(detail)
-            results["points_earned"] += points
-    
-    results["percentage"] = (results["points_earned"] / results["points_possible"]) * 100
-    return results
 
-def evaluate_justifications(submission, answer_key):
-    """Evaluate the quality of justifications."""
-    results = {
-        "points_earned": 0,
-        "points_possible": 30,  # 3 points per claim × 10 claims
-        "details": []
+
+def evaluate_referral_destination(candidate_destination, correct_destination, claim_number):
+    """Evaluate if the candidate chose the correct referral destination"""
+    score = 0
+    max_score = 3
+    
+    feedback = ""
+    if candidate_destination.lower() == correct_destination.lower():
+        score = max_score
+        feedback = "Correct referral destination"
+    else:
+        feedback = f"Incorrect referral destination. Expected: {correct_destination}"
+    
+    return {
+        "score": score,
+        "max_score": max_score,
+        "feedback": feedback
     }
-    
-    # Create a mapping of claim_id to answer key data for easier lookup
-    answer_key_map = {item["claim_id"]: item for item in answer_key["submissions"]}
-    
-    for item in submission["submissions"]:
-        claim_id = item["claim_id"]
-        if claim_id in answer_key_map:
-            answer_item = answer_key_map[claim_id]
-            
-            # Check if justification references specific claim details
-            # This is a simplified check - in a real system, this would be more sophisticated
-            references_details = len(item["justification"]) > 50  # Basic length check
-            
-            # Check if justification correctly applies company guidelines
-            # This is a simplified check - in a real system, this would be more sophisticated
-            applies_guidelines = "guidelines" in item["justification"].lower() or "policy" in item["justification"].lower()
-            
-            # Check if justification logically supports the referral decision
-            # This is a simplified check - in a real system, this would be more sophisticated
-            supports_decision = item["refer_for_investigation"] == answer_item["refer_for_investigation"]
-            
-            points = (1 if references_details else 0) + (1 if applies_guidelines else 0) + (1 if supports_decision else 0)
-            
-            detail = {
-                "claim_id": claim_id,
-                "references_details": references_details,
-                "applies_guidelines": applies_guidelines,
-                "supports_decision": supports_decision,
-                "points_earned": points
-            }
-            
-            results["details"].append(detail)
-            results["points_earned"] += points
-    
-    results["percentage"] = (results["points_earned"] / results["points_possible"]) * 100
-    return results
 
-def evaluate_priority_levels(submission, answer_key):
-    """Evaluate the correctness of priority level assignments."""
-    results = {
-        "points_earned": 0,
-        "points_possible": 7,  # 7 claims requiring investigation
-        "details": []
+
+def evaluate_justification(candidate_justification, red_flags_result, claim_number):
+    """Evaluate the quality of the candidate's justification"""
+    score = 0
+    max_score = 5
+    
+    # Calculate a preliminary score based on word count and matched red flags
+    word_count = len(candidate_justification.split())
+    matched_flags_count = len(red_flags_result.get("matched_flags", []))
+    
+    if word_count < 100:
+        preliminary_score = 1  # Very brief justification
+    elif word_count < 150:
+        preliminary_score = 2  # Brief justification
+    elif word_count < 200:
+        preliminary_score = 3  # Adequate justification
+    else:
+        preliminary_score = 4  # Comprehensive justification
+    
+    # Adjust score based on how many red flags were correctly identified
+    if matched_flags_count >= 3 and preliminary_score >= 3:
+        score = 5  # Comprehensive justification with specific evidence cited from multiple documents
+        feedback = "Excellent comprehensive justification with specific evidence cited"
+    elif matched_flags_count >= 2 and preliminary_score >= 2:
+        score = 3  # Adequate justification with some specific evidence cited
+        feedback = "Adequate justification with some specific evidence cited"
+    elif matched_flags_count >= 1:
+        score = 1  # Basic justification with minimal evidence
+        feedback = "Basic justification with minimal evidence"
+    else:
+        score = 0  # Vague justification or no evidence cited
+        feedback = "Vague justification or insufficient evidence cited"
+    
+    feedback += f"\nWord count: {word_count} words"
+    
+    return {
+        "score": score,
+        "max_score": max_score,
+        "feedback": feedback
     }
-    
-    # Filter for claims that should be referred according to answer key
-    referred_claims = [item for item in answer_key["submissions"] if item["refer_for_investigation"]]
-    
-    # Create a mapping of claim_id to submission data for easier lookup
-    submission_map = {item["claim_id"]: item for item in submission["submissions"]}
-    
-    for answer_item in referred_claims:
-        claim_id = answer_item["claim_id"]
-        correct_priority = answer_item["priority_level"]
-        
-        if claim_id in submission_map:
-            submission_item = submission_map[claim_id]
-            candidate_priority = submission_item.get("priority_level")
-            
-            # Calculate points based on how close the priority level is
-            points = 0
-            if candidate_priority == correct_priority:
-                points = 1
-            elif candidate_priority is not None and abs(candidate_priority - correct_priority) == 1:
-                points = 0.5
-            
-            detail = {
-                "claim_id": claim_id,
-                "candidate_priority": candidate_priority,
-                "correct_priority": correct_priority,
-                "points_earned": points
-            }
-            
-            results["details"].append(detail)
-            results["points_earned"] += points
-    
-    results["percentage"] = (results["points_earned"] / results["points_possible"]) * 100
-    return results
 
-def evaluate_routing_codes(submission, answer_key):
-    """Evaluate the correctness of routing code assignments."""
-    results = {
-        "points_earned": 0,
-        "points_possible": 7,  # 7 claims requiring investigation
-        "details": []
-    }
-    
-    # Filter for claims that should be referred according to answer key
-    referred_claims = [item for item in answer_key["submissions"] if item["refer_for_investigation"]]
-    
-    # Create a mapping of claim_id to submission data for easier lookup
-    submission_map = {item["claim_id"]: item for item in submission["submissions"]}
-    
-    for answer_item in referred_claims:
-        claim_id = answer_item["claim_id"]
-        correct_code = answer_item["routing_code"]
-        
-        if claim_id in submission_map:
-            submission_item = submission_map[claim_id]
-            candidate_code = submission_item.get("routing_code")
-            
-            # Check if routing code is correct
-            is_correct = candidate_code == correct_code
-            
-            detail = {
-                "claim_id": claim_id,
-                "candidate_code": candidate_code,
-                "correct_code": correct_code,
-                "is_correct": is_correct,
-                "points_earned": 1 if is_correct else 0
-            }
-            
-            results["details"].append(detail)
-            if is_correct:
-                results["points_earned"] += 1
-    
-    results["percentage"] = (results["points_earned"] / results["points_possible"]) * 100
-    return results
 
-def evaluate_submission():
-    """Main function to evaluate the candidate's submission."""
-    # Load the submission and answer key
-    submission = load_json("test_submission.json")
-    answer_key = load_json("answer_key.json")
+def evaluate_claim(candidate_claim, correct_claim, claim_number):
+    """Evaluate a single claim"""
+    results = {}
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files.")
-        return
-    
-    # Perform evaluations
-    referral_results = evaluate_referral_decisions(submission, answer_key)
-    red_flag_results = evaluate_red_flags(submission, answer_key)
-    justification_results = evaluate_justifications(submission, answer_key)
-    priority_results = evaluate_priority_levels(submission, answer_key)
-    routing_results = evaluate_routing_codes(submission, answer_key)
-    
-    # Calculate overall score
-    total_points_earned = (
-        referral_results["points_earned"] +
-        red_flag_results["points_earned"] +
-        justification_results["points_earned"] +
-        priority_results["points_earned"] +
-        routing_results["points_earned"]
+    # Evaluate referral decision
+    results["referral_decision"] = evaluate_referral_decision(
+        candidate_claim.get("requires_referral", False),
+        correct_claim.get("requires_referral", True),
+        claim_number
     )
     
-    total_points_possible = (
-        referral_results["points_possible"] +
-        red_flag_results["points_possible"] +
-        justification_results["points_possible"] +
-        priority_results["points_possible"] +
-        routing_results["points_possible"]
+    # Evaluate red flags
+    results["red_flags"] = evaluate_red_flags(
+        candidate_claim.get("red_flags", []),
+        correct_claim.get("red_flags", []),
+        claim_number
     )
     
-    overall_percentage = (total_points_earned / total_points_possible) * 100
+    # Evaluate referral destination
+    results["referral_destination"] = evaluate_referral_destination(
+        candidate_claim.get("referral_destination", ""),
+        correct_claim.get("referral_destination", "investigation"),
+        claim_number
+    )
     
-    # Prepare results
-    results = {
-        "candidate_id": submission.get("candidate_id", "Unknown"),
+    # Evaluate justification
+    results["justification"] = evaluate_justification(
+        candidate_claim.get("justification", ""),
+        results["red_flags"],
+        claim_number
+    )
+    
+    # Calculate total score for this claim
+    total_score = (
+        results["referral_decision"]["score"] +
+        results["red_flags"]["score"] +
+        results["referral_destination"]["score"] +
+        results["justification"]["score"]
+    )
+    
+    max_score = (
+        results["referral_decision"]["max_score"] +
+        results["red_flags"]["max_score"] +
+        results["referral_destination"]["max_score"] +
+        results["justification"]["max_score"]
+    )
+    
+    results["total_score"] = total_score
+    results["max_score"] = max_score
+    results["percentage"] = round((total_score / max_score) * 100, 2)
+    
+    return results
+
+
+def check_critical_failures(evaluation_results):
+    """Check for any critical failures that would result in automatic failure"""
+    critical_failures = []
+    
+    # Count incorrect referral decisions
+    incorrect_referrals = 0
+    for claim_number, claim_results in evaluation_results.items():
+        if claim_results["referral_decision"]["score"] == 0:
+            incorrect_referrals += 1
+    
+    if incorrect_referrals >= 2:
+        critical_failures.append("Identified 2 or more claims as 'does not require referral' when clear fraud indicators exist")
+    
+    # Count claims where no valid red flags were identified
+    claims_without_flags = 0
+    for claim_number, claim_results in evaluation_results.items():
+        if len(claim_results["red_flags"].get("matched_flags", [])) == 0:
+            claims_without_flags += 1
+    
+    if claims_without_flags >= 2:
+        critical_failures.append("Failed to identify any valid red flags in 2 or more scenarios")
+    
+    # Count claims with incorrect referral destination
+    incorrect_destinations = 0
+    for claim_number, claim_results in evaluation_results.items():
+        if claim_results["referral_destination"]["score"] == 0:
+            incorrect_destinations += 1
+    
+    if incorrect_destinations >= 2:
+        critical_failures.append("Referred 2 or more claims to settlement rather than investigation when multiple fraud indicators are present")
+    
+    # Count claims with inadequate justification
+    inadequate_justifications = 0
+    for claim_number, claim_results in evaluation_results.items():
+        if claim_results["justification"]["score"] < 3:
+            inadequate_justifications += 1
+    
+    if inadequate_justifications >= 2:
+        critical_failures.append("Provided inadequate justification for 2 or more claims")
+    
+    return critical_failures
+
+
+def generate_overall_assessment(total_score, max_score, critical_failures):
+    """Generate an overall assessment based on the score and critical failures"""
+    percentage = (total_score / max_score) * 100
+    
+    if critical_failures:
+        assessment = "FAILING"
+        reason = "Critical failures detected: " + "; ".join(critical_failures)
+    elif percentage >= 90:
+        assessment = "EXCELLENT"
+        reason = "Demonstrated exceptional ability to identify and properly refer questionable claims."
+    elif percentage >= 80:
+        assessment = "GOOD"
+        reason = "Demonstrated strong ability to identify and properly refer questionable claims."
+    elif percentage >= 70:
+        assessment = "SATISFACTORY"
+        reason = "Demonstrated adequate ability to identify and properly refer questionable claims."
+    elif percentage >= 60:
+        assessment = "NEEDS IMPROVEMENT"
+        reason = "Demonstrated limited ability to identify and properly refer questionable claims."
+    else:
+        assessment = "FAILING"
+        reason = "Failed to demonstrate ability to identify and properly refer questionable claims."
+    
+    return {
+        "assessment": assessment,
+        "reason": reason
+    }
+
+
+def main():
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
+    
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
+    
+    # Load the candidate submission and answer key
+    candidate_submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
+    
+    # Extract claims from both files
+    candidate_claims = {claim["claim_number"]: claim for claim in candidate_submission.get("claim_referrals", [])}
+    correct_claims = {claim["claim_number"]: claim for claim in answer_key.get("claim_referrals", [])}
+    
+    # Evaluate each claim
+    evaluation_results = {}
+    for claim_number, correct_claim in correct_claims.items():
+        candidate_claim = candidate_claims.get(claim_number, {})
+        evaluation_results[claim_number] = evaluate_claim(candidate_claim, correct_claim, claim_number)
+    
+    # Calculate total scores
+    total_score = sum(claim_result["total_score"] for claim_result in evaluation_results.values())
+    max_score = sum(claim_result["max_score"] for claim_result in evaluation_results.values())
+    overall_percentage = round((total_score / max_score) * 100, 2)
+    
+    # Check for critical failures
+    critical_failures = check_critical_failures(evaluation_results)
+    
+    # Generate overall assessment
+    overall_assessment = generate_overall_assessment(total_score, max_score, critical_failures)
+    
+    # Prepare the final results
+    final_results = {
+        "candidate_name": candidate_submission.get("candidate_name", "Unknown"),
+        "candidate_id": candidate_submission.get("candidate_id", "Unknown"),
+        "submission_date": candidate_submission.get("submission_date", "Unknown"),
+        "evaluation_date": Path(submission_file).stat().st_mtime,
         "overall_score": overall_percentage,
-        "passing_score": 75,
-        "passed": overall_percentage >= 75,
-        "total_points_earned": total_points_earned,
-        "total_points_possible": total_points_possible,
-        "evaluation_areas": {
-            "referral_decisions": referral_results,
-            "red_flag_identification": red_flag_results,
-            "justification_quality": justification_results,
-            "priority_level_assignment": priority_results,
-            "routing_code_assignment": routing_results
-        }
+        "total_points": total_score,
+        "max_points": max_score,
+        "critical_failures": critical_failures,
+        "assessment": overall_assessment["assessment"],
+        "assessment_reason": overall_assessment["reason"],
+        "claim_evaluations": evaluation_results
     }
     
-    # Save results
-    save_json(results, "test_results.json")
+    # Save the results to test_results.json
+    output_file = "test_results.json"
+    with open(output_file, 'w') as f:
+        json.dump(final_results, f, indent=2)
+    
+    print(f"Evaluation complete. Results saved to {output_file}")
+    print(f"Overall score: {overall_percentage}%")
+    print(f"Assessment: {overall_assessment['assessment']}")
+    if critical_failures:
+        print("Critical failures detected:")
+        for failure in critical_failures:
+            print(f"- {failure}")
+
 
 if __name__ == "__main__":
-    evaluate_submission()
+    main()

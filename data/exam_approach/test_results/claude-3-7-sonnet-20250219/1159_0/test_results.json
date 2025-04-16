@@ -1,5 +1,33 @@
 {
-  "error": "[Errno 2] No such file or directory: '/Users/htr365/Documents/PhD/21_automatisation/gpt_eval/data/exam_approach/test_results/claude-3-7-sonnet-20250219/1159_0/test_submission.json'",
-  "overall_score": 0,
-  "passed": false
+  "overall_score": 100.0,
+  "total_points": 100,
+  "max_points": 100,
+  "passed": true,
+  "failing_sections": [],
+  "section_scores": {
+    "structure": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0,
+      "deductions": []
+    },
+    "policy_framework": {
+      "points": 25,
+      "max_points": 25,
+      "percentage": 100.0,
+      "deductions": []
+    },
+    "bid_evaluation": {
+      "points": 30,
+      "max_points": 30,
+      "percentage": 100.0,
+      "deductions": []
+    },
+    "vendor_procedure": {
+      "points": 25,
+      "max_points": 25,
+      "percentage": 100.0,
+      "deductions": []
+    }
+  }
 }

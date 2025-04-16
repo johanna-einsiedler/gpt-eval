@@ -1,116 +1,86 @@
 {
-    "exercise1": {
-        "poNumber": "PO-2023-0472",
-        "vendorID": "VS-1042",
-        "requisitionNumber": "PR-2023-0472",
-        "orderDate": "2023-10-25",
-        "deliveryDate": "2023-11-05",
-        "subtotal": 1529.87,
-        "taxAmount": 114.74,
-        "shippingCost": 45.0,
-        "totalAmount": 1689.61,
-        "paymentTerms": "Net 30",
-        "lineItems": [
+    "scenario1": {
+        "vendor_id": "V001",
+        "total_amount": 4356.75,
+        "delivery_date": "2023-11-15",
+        "line_items": [
             {
-                "itemNumber": "CAM-4582",
-                "description": "Digital Camera - 24MP",
-                "quantity": 2,
-                "unitPrice": 649.99,
-                "totalPrice": 1299.98
+                "item_code": "OS-CH-101",
+                "quantity": 4,
+                "unit_price": 375.0,
+                "account_code": "MKT-202"
             },
             {
-                "itemNumber": "TRP-2234",
-                "description": "Professional Tripod - Adjustable",
-                "quantity": 2,
-                "unitPrice": 89.95,
-                "totalPrice": 179.9
+                "item_code": "OS-TB-201",
+                "quantity": 1,
+                "unit_price": 1295.0,
+                "account_code": "MKT-203"
             },
             {
-                "itemNumber": "MEM-8877",
-                "description": "SD Memory Card 128GB",
-                "quantity": 5,
-                "unitPrice": 24.99,
-                "totalPrice": 124.95
+                "item_code": "OS-FC-301",
+                "quantity": 6,
+                "unit_price": 195.0,
+                "account_code": "MKT-204"
+            },
+            {
+                "item_code": "OS-BS-401",
+                "quantity": 2,
+                "unit_price": 275.0,
+                "account_code": "MKT-205"
             }
         ]
     },
-    "exercise2": {
-        "rfqNumber": "RFQ-2023-0095",
-        "issueDate": "2023-10-25",
-        "submissionDeadline": "2023-11-08",
-        "contactPerson": "Purchasing Agent",
-        "items": [
-            {
-                "itemName": "Ergonomic Office Chair",
-                "quantity": 15,
-                "specifications": "Adjustable height (range: 16\" to 21\"), Lumbar support, Adjustable armrests, 360-degree swivel, Five-wheel base, Mesh back for breathability, Weight capacity: minimum 275 lbs, Color: Black or Navy Blue, Warranty: Minimum 3 years"
-            },
-            {
-                "itemName": "Adjustable Standing Desk",
-                "quantity": 10,
-                "specifications": "Electric height adjustment (range: 28\" to 48\"), Desktop dimensions: 60\" W x 30\" D, Weight capacity: minimum 200 lbs, Programmable height presets, Anti-collision feature, Cable management system, Material: Commercial-grade laminate, Color: White or Light Oak, Warranty: Minimum 5 years on frame, 2 years on electronics"
-            },
-            {
-                "itemName": "Filing Cabinet",
-                "quantity": 5,
-                "specifications": "4-drawer vertical cabinet, Letter size, Full-extension drawers with ball-bearing slides, Central locking system, Anti-tipping mechanism, Dimensions: approximately 15\" W x 25\" D x 52\" H, Material: Steel construction, Color: Black or Gray, Warranty: Minimum 5 years"
-            }
-        ],
-        "evaluationCriteria": [
-            {
-                "criterionName": "price",
-                "weight": 40
-            },
-            {
-                "criterionName": "quality",
-                "weight": 30
-            },
-            {
-                "criterionName": "delivery time",
-                "weight": 20
-            },
-            {
-                "criterionName": "warranty",
-                "weight": 10
-            }
-        ],
-        "termsIncluded": true
+    "scenario2": {
+        "rfp_specifications": {
+            "print_speed": "45 pages/minute (B&W), 35 pages/minute (color)",
+            "monthly_volume": "15,000 - 20,000 pages",
+            "network_capabilities": "Ethernet, Wireless",
+            "security_features": "Secure print, user authentication, data encryption",
+            "mobile_printing": "AirPrint, Google Cloud Print",
+            "additional_features": "Stapling, hole punching, booklet creation"
+        },
+        "vendor_analysis": {
+            "selected_vendor": "Office Technology Solutions",
+            "total_cost": 7845.0,
+            "delivery_timeframe": "3 weeks",
+            "warranty_period": "3 years"
+        },
+        "vendor_scores": {
+            "Office Technology Solutions": 92,
+            "Digital Imaging Systems": 78,
+            "Enterprise Print Solutions": 86
+        },
+        "selection_justification": "Office Technology Solutions offers the best overall value with a competitive price under budget ($7,845), exceeds all technical requirements, includes a 3-year warranty, provides 3-week delivery, and includes all requested features. While Enterprise Print Solutions has superior specifications, their price exceeds the budget constraint of $8,000."
     },
-    "exercise3": {
-        "requisitions": [
-            {
-                "requisitionNumber": "PR-2023-0473",
-                "isComplete": true,
-                "itemsInCatalog": true,
-                "policyCompliant": true,
-                "calculatedTotal": 5399.91,
-                "decision": "approve",
-                "justification": "Complete requisition with all required approvals. Items are from approved vendor and within catalog.",
-                "missingInformation": "",
-                "suggestedVendor": "Computer World (VS-1156)"
-            },
-            {
-                "requisitionNumber": "PR-2023-0474",
-                "isComplete": false,
-                "itemsInCatalog": false,
-                "policyCompliant": false,
-                "calculatedTotal": 4899.95,
-                "decision": "return",
-                "justification": "Missing department manager approval, items not in catalog, vendor not on approved list.",
-                "missingInformation": "Department manager approval, item numbers, approved vendor",
-                "suggestedVendor": "Furniture Plus (VS-1103)"
-            },
-            {
-                "requisitionNumber": "PR-2023-0475",
-                "isComplete": true,
-                "itemsInCatalog": true,
-                "policyCompliant": true,
-                "calculatedTotal": 1064.65,
-                "decision": "approve",
-                "justification": "Complete requisition with all required approvals. Items are from approved vendor and within catalog.",
-                "missingInformation": "",
-                "suggestedVendor": "Office Essentials (VS-1087)"
-            }
-        ]
+    "scenario3": {
+        "requisition1": {
+            "status": "returned",
+            "issues": [
+                "Missing Department Manager approval",
+                "Required by date listed as 'ASAP' which is not acceptable per policy section 1.1.f",
+                "Total amount exceeds $5,000 requiring competitive bidding"
+            ],
+            "required_corrections": [
+                "Obtain Department Manager approval signature",
+                "Provide specific required delivery date",
+                "Include minimum of two written quotes per policy section 2.1"
+            ]
+        },
+        "requisition2": {
+            "status": "approved",
+            "issues": [],
+            "required_corrections": []
+        },
+        "requisition3": {
+            "status": "returned",
+            "issues": [
+                "Professional services purchase requires detailed scope of work document per policy section 4.2",
+                "Training service price ($12,500) exceeds standard catalog price ($10,000)"
+            ],
+            "required_corrections": [
+                "Attach detailed scope of work document for training services",
+                "Provide justification for price exceeding standard catalog price or adjust to catalog price"
+            ]
+        }
     }
 }

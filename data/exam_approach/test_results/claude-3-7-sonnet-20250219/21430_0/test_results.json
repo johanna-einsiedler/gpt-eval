@@ -1,0 +1,176 @@
+{
+  "candidate_name": "ANSWER_KEY",
+  "candidate_id": "EVALUATOR",
+  "submission_date": "2023-09-01",
+  "evaluation_date": 1744810443.7388587,
+  "overall_score": 98.0,
+  "total_points": 98,
+  "max_points": 100,
+  "critical_failures": [],
+  "assessment": "EXCELLENT",
+  "assessment_reason": "Demonstrated exceptional ability to identify and properly refer questionable claims.",
+  "claim_evaluations": {
+    "CLAIM-001": {
+      "referral_decision": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Correct referral decision"
+      },
+      "red_flags": {
+        "score": 7,
+        "max_score": 7,
+        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 4/4 red flags",
+        "matched_flags": [
+          "LSC-001",
+          "POL-005",
+          "CLB-006",
+          "DOC-001"
+        ],
+        "missed_flags": []
+      },
+      "referral_destination": {
+        "score": 3,
+        "max_score": 3,
+        "feedback": "Correct referral destination"
+      },
+      "justification": {
+        "score": 3,
+        "max_score": 5,
+        "feedback": "Adequate justification with some specific evidence cited\nWord count: 137 words"
+      },
+      "total_score": 18,
+      "max_score": 20,
+      "percentage": 90.0
+    },
+    "CLAIM-002": {
+      "referral_decision": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Correct referral decision"
+      },
+      "red_flags": {
+        "score": 7,
+        "max_score": 7,
+        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 4/4 red flags",
+        "matched_flags": [
+          "POL-001",
+          "POL-005",
+          "DOC-001",
+          "FIN-001"
+        ],
+        "missed_flags": []
+      },
+      "referral_destination": {
+        "score": 3,
+        "max_score": 3,
+        "feedback": "Correct referral destination"
+      },
+      "justification": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Excellent comprehensive justification with specific evidence cited\nWord count: 165 words"
+      },
+      "total_score": 20,
+      "max_score": 20,
+      "percentage": 100.0
+    },
+    "CLAIM-003": {
+      "referral_decision": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Correct referral decision"
+      },
+      "red_flags": {
+        "score": 7,
+        "max_score": 7,
+        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 4/4 red flags",
+        "matched_flags": [
+          "DOC-003",
+          "CLB-006",
+          "MED-001",
+          "MED-004"
+        ],
+        "missed_flags": []
+      },
+      "referral_destination": {
+        "score": 3,
+        "max_score": 3,
+        "feedback": "Correct referral destination"
+      },
+      "justification": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Excellent comprehensive justification with specific evidence cited\nWord count: 164 words"
+      },
+      "total_score": 20,
+      "max_score": 20,
+      "percentage": 100.0
+    },
+    "CLAIM-004": {
+      "referral_decision": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Correct referral decision"
+      },
+      "red_flags": {
+        "score": 7,
+        "max_score": 7,
+        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 5/5 red flags",
+        "matched_flags": [
+          "DOC-002",
+          "FIN-004",
+          "DOC-001",
+          "LSC-006",
+          "FIN-002"
+        ],
+        "missed_flags": []
+      },
+      "referral_destination": {
+        "score": 3,
+        "max_score": 3,
+        "feedback": "Correct referral destination"
+      },
+      "justification": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Excellent comprehensive justification with specific evidence cited\nWord count: 167 words"
+      },
+      "total_score": 20,
+      "max_score": 20,
+      "percentage": 100.0
+    },
+    "CLAIM-005": {
+      "referral_decision": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Correct referral decision"
+      },
+      "red_flags": {
+        "score": 7,
+        "max_score": 7,
+        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 5/5 red flags",
+        "matched_flags": [
+          "FIN-004",
+          "DOC-001",
+          "LSC-006",
+          "FIN-002",
+          "CLB-006"
+        ],
+        "missed_flags": []
+      },
+      "referral_destination": {
+        "score": 3,
+        "max_score": 3,
+        "feedback": "Correct referral destination"
+      },
+      "justification": {
+        "score": 5,
+        "max_score": 5,
+        "feedback": "Excellent comprehensive justification with specific evidence cited\nWord count: 174 words"
+      },
+      "total_score": 20,
+      "max_score": 20,
+      "percentage": 100.0
+    }
+  }
+}

@@ -1,236 +1,257 @@
+#!/usr/bin/env python3
 import json
-import os
-from decimal import Decimal
+import sys
+from typing import Dict, Any, List, Tuple
 
-def load_json_file(filename):
+def load_json_file(filename: str) -> Dict[str, Any]:
     """Load and parse a JSON file."""
     try:
         with open(filename, 'r') as file:
             return json.load(file)
-    except FileNotFoundError:
-        print(f"Error: File '{filename}' not found.")
-        return None
-    except json.JSONDecodeError:
-        print(f"Error: File '{filename}' contains invalid JSON.")
-        return None
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading {filename}: {e}")
+        sys.exit(1)
 
-def evaluate_coverage_determination(candidate_answer, correct_answer, scenario_id):
-    """Evaluate the coverage determination."""
-    # Special case for scenario 5
-    if scenario_id == 5:
-        if candidate_answer in ["partially_covered", "additional_investigation_needed"]:
-            return True, "Correct determination"
+def evaluate_exercise1(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[int, int, List[str]]:
+    """Evaluate Exercise 1 (6 points total)."""
+    points = 0
+    max_points = 6
+    feedback = []
+    
+    sub_ex1 = submission.get("exercise1", {})
+    key_ex1 = answer_key.get("exercise1", {})
+    
+    # Check claim number (1 point)
+    if sub_ex1.get("claimNumber") == key_ex1.get("claimNumber"):
+        points += 1
+    else:
+        feedback.append("Incorrect claim number")
+    
+    # Check coverage determination (1 point)
+    if sub_ex1.get("coverageDetermination") == key_ex1.get("coverageDetermination"):
+        points += 1
+    else:
+        feedback.append("Incorrect coverage determination")
+    
+    # Check applicable limit (1 point)
+    if sub_ex1.get("applicableLimit") == key_ex1.get("applicableLimit"):
+        points += 1
+    else:
+        feedback.append("Incorrect applicable limit")
+    
+    # Check applicable deductible (1 point)
+    if sub_ex1.get("applicableDeductible") == key_ex1.get("applicableDeductible"):
+        points += 1
+    else:
+        feedback.append("Incorrect applicable deductible")
+    
+    # Check relevant policy section (1 point)
+    if sub_ex1.get("relevantPolicySection") == key_ex1.get("relevantPolicySection"):
+        points += 1
+    else:
+        feedback.append("Incorrect relevant policy section")
+    
+    # Check applicable exclusions (1 point)
+    if sorted(sub_ex1.get("applicableExclusions", [])) == sorted(key_ex1.get("applicableExclusions", [])):
+        points += 1
+    else:
+        feedback.append("Incorrect applicable exclusions")
+    
+    return points, max_points, feedback
+
+def evaluate_exercise2(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[int, int, List[str]]:
+    """Evaluate Exercise 2 (10 points total - 5 for policy matches, 5 for benefits calculation)."""
+    points = 0
+    max_points = 10
+    feedback = []
+    
+    sub_ex2 = submission.get("exercise2", {})
+    key_ex2 = answer_key.get("exercise2", {})
+    
+    # Evaluate policy matches (5 points)
+    sub_matches = {(match.get("claimId"), match.get("policyId"), match.get("coverageType")) 
+                  for match in sub_ex2.get("policyMatches", [])}
+    key_matches = {(match.get("claimId"), match.get("policyId"), match.get("coverageType")) 
+                  for match in key_ex2.get("policyMatches", [])}
+    
+    # Count correct matches
+    correct_matches = len(sub_matches.intersection(key_matches))
+    points += correct_matches
+    
+    if correct_matches < 5:
+        feedback.append(f"Matched {correct_matches}/5 policies correctly")
+    
+    # Evaluate benefits calculation (5 points)
+    sub_benefits = {(calc.get("claimId"), calc.get("eligibleAmount"), calc.get("ineligibleAmount")) 
+                   for calc in sub_ex2.get("benefitsCalculation", [])}
+    key_benefits = {(calc.get("claimId"), calc.get("eligibleAmount"), calc.get("ineligibleAmount")) 
+                   for calc in key_ex2.get("benefitsCalculation", [])}
+    
+    # Count correct benefit calculations
+    correct_benefits = len(sub_benefits.intersection(key_benefits))
+    points += correct_benefits
+    
+    if correct_benefits < 5:
+        feedback.append(f"Calculated benefits correctly for {correct_benefits}/5 claims")
+    
+    return points, max_points, feedback
+
+def evaluate_exercise3(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[int, int, List[str]]:
+    """Evaluate Exercise 3 (4 points total - 2 points per claim)."""
+    points = 0
+    max_points = 4
+    feedback = []
+    
+    sub_ex3 = submission.get("exercise3", {})
+    key_ex3 = answer_key.get("exercise3", {})
+    
+    # Evaluate claim 1
+    sub_claim1 = sub_ex3.get("claim1", {})
+    key_claim1 = key_ex3.get("claim1", {})
+    
+    # Check coverage verification (1 point)
+    if sub_claim1.get("coverageVerification") == key_claim1.get("coverageVerification"):
+        points += 1
+    else:
+        feedback.append("Incorrect coverage verification for claim 1")
+    
+    # Check maximum payable or denial reason (1 point)
+    if sub_claim1.get("coverageVerification") == True:
+        if sub_claim1.get("maximumPayable") == key_claim1.get("maximumPayable"):
+            points += 1
         else:
-            return False, f"Incorrect determination. Expected 'partially_covered' or 'additional_investigation_needed', got '{candidate_answer}'"
-    
-    # For other scenarios
-    if candidate_answer == correct_answer:
-        return True, "Correct determination"
+            feedback.append("Incorrect maximum payable amount for claim 1")
     else:
-        return False, f"Incorrect determination. Expected '{correct_answer}', got '{candidate_answer}'"
-
-def evaluate_payment_calculation(candidate_payment, correct_payment, scenario_id):
-    """Evaluate the payment calculation with acceptable variance."""
-    acceptable_variance = 100.00
+        if sub_claim1.get("denialReason") == key_claim1.get("denialReason"):
+            points += 1
+        else:
+            feedback.append("Incorrect denial reason for claim 1")
     
-    # Convert to Decimal for precise comparison
-    candidate_payment = Decimal(str(candidate_payment))
-    correct_payment = Decimal(str(correct_payment))
+    # Evaluate claim 2
+    sub_claim2 = sub_ex3.get("claim2", {})
+    key_claim2 = key_ex3.get("claim2", {})
     
-    # Define valid ranges for each scenario
-    valid_ranges = {
-        1: (Decimal('3667.65'), Decimal('3668.00')),
-        2: (Decimal('14730.00'), Decimal('15730.00')),
-        3: (Decimal('17880.00'), Decimal('17880.80')),
-        4: (Decimal('566.67'), Decimal('567.00')),
-        5: (Decimal('0.00'), Decimal('0.00'))
-    }
-    
-    min_valid, max_valid = valid_ranges.get(scenario_id, (correct_payment - acceptable_variance, correct_payment + acceptable_variance))
-    
-    if min_valid <= candidate_payment <= max_valid:
-        return True, "Correct payment calculation"
+    # Check coverage verification (1 point)
+    if sub_claim2.get("coverageVerification") == key_claim2.get("coverageVerification"):
+        points += 1
     else:
-        return False, f"Incorrect payment calculation. Expected between {min_valid} and {max_valid}, got {candidate_payment}"
-
-def evaluate_coverage_category(candidate_category, correct_category, scenario_id):
-    """Evaluate the coverage category with multiple valid options."""
-    valid_categories = {
-        1: ["Collision", "Auto Collision"],
-        2: ["Dwelling", "Property", "Water Damage"],
-        3: ["Hospital Inpatient", "Medical", "Surgical"],
-        4: ["Temporary Total Disability", "TTD", "Workers' Compensation"],
-        5: []  # Any category is acceptable for scenario 5
-    }
+        feedback.append("Incorrect coverage verification for claim 2")
     
-    if scenario_id == 5:
-        return True, "Any category is acceptable for this scenario due to incomplete information"
-    
-    if candidate_category in valid_categories.get(scenario_id, [correct_category]):
-        return True, "Correct coverage category"
+    # Check maximum payable or denial reason (1 point)
+    if sub_claim2.get("coverageVerification") == True:
+        if sub_claim2.get("maximumPayable") == key_claim2.get("maximumPayable"):
+            points += 1
+        else:
+            feedback.append("Incorrect maximum payable amount for claim 2")
     else:
-        return False, f"Incorrect coverage category. Expected one of {valid_categories.get(scenario_id, [correct_category])}, got '{candidate_category}'"
+        if sub_claim2.get("denialReason") == key_claim2.get("denialReason"):
+            points += 1
+        else:
+            feedback.append("Incorrect denial reason for claim 2")
+    
+    return points, max_points, feedback
 
-def evaluate_policy_section(candidate_section, correct_section, scenario_id):
-    """Evaluate the applicable policy section."""
-    if scenario_id == 5:
-        # For scenario 5, any value is acceptable since information is incomplete
-        return True, "Any policy section is acceptable for this scenario due to incomplete information"
+def check_critical_requirements(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> List[str]:
+    """Check if critical requirements are met."""
+    critical_issues = []
     
-    if candidate_section == correct_section:
-        return True, "Correct policy section"
-    else:
-        return False, f"Incorrect policy section. Expected '{correct_section}', got '{candidate_section}'"
+    # Must correctly identify coverage determination in Exercise 1
+    if submission.get("exercise1", {}).get("coverageDetermination") != answer_key.get("exercise1", {}).get("coverageDetermination"):
+        critical_issues.append("Failed to correctly identify coverage determination in Exercise 1")
+    
+    # Must correctly identify at least 4/5 policy matches in Exercise 2
+    sub_matches = {(match.get("claimId"), match.get("policyId"), match.get("coverageType")) 
+                  for match in submission.get("exercise2", {}).get("policyMatches", [])}
+    key_matches = {(match.get("claimId"), match.get("policyId"), match.get("coverageType")) 
+                  for match in answer_key.get("exercise2", {}).get("policyMatches", [])}
+    correct_matches = len(sub_matches.intersection(key_matches))
+    
+    if correct_matches < 4:
+        critical_issues.append(f"Failed to correctly identify at least 4/5 policy matches in Exercise 2 (got {correct_matches})")
+    
+    # Must correctly identify both coverage determinations in Exercise 3
+    sub_ex3 = submission.get("exercise3", {})
+    key_ex3 = answer_key.get("exercise3", {})
+    
+    if sub_ex3.get("claim1", {}).get("coverageVerification") != key_ex3.get("claim1", {}).get("coverageVerification"):
+        critical_issues.append("Failed to correctly identify coverage determination for claim 1 in Exercise 3")
+    
+    if sub_ex3.get("claim2", {}).get("coverageVerification") != key_ex3.get("claim2", {}).get("coverageVerification"):
+        critical_issues.append("Failed to correctly identify coverage determination for claim 2 in Exercise 3")
+    
+    return critical_issues
 
-def evaluate_investigation_needs(candidate_investigation, correct_investigation, scenario_id):
-    """Evaluate recognition of investigation needs."""
-    if candidate_investigation == correct_investigation:
-        return True, "Correct identification of investigation needs"
-    else:
-        return False, f"Incorrect identification of investigation needs. Expected '{correct_investigation}', got '{candidate_investigation}'"
-
-def evaluate_submission(candidate, answer_key):
-    """Evaluate the candidate's submission against the answer key."""
-    results = {
-        "candidate_id": candidate.get("candidate_id", "Unknown"),
-        "scenario_results": [],
-        "summary": {
-            "coverage_determination": {"correct": 0, "total": 5},
-            "payment_calculation": {"correct": 0, "total": 5},
-            "coverage_category": {"correct": 0, "total": 5},
-            "policy_section": {"correct": 0, "total": 5},
-            "investigation_needs": {"correct": 0, "total": 5},
-            "overall_score": 0.0
-        }
-    }
+def evaluate_submission(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
+    """Evaluate the entire submission and generate results."""
+    results = {"candidate_id": submission.get("candidate_id", "Unknown")}
     
-    # Map candidate scenarios by ID for easier access
-    candidate_scenarios = {s["scenario_id"]: s for s in candidate.get("scenarios", [])}
-    key_scenarios = {s["scenario_id"]: s for s in answer_key.get("scenarios", [])}
+    # Evaluate each exercise
+    ex1_points, ex1_max, ex1_feedback = evaluate_exercise1(submission, answer_key)
+    ex2_points, ex2_max, ex2_feedback = evaluate_exercise2(submission, answer_key)
+    ex3_points, ex3_max, ex3_feedback = evaluate_exercise3(submission, answer_key)
     
-    # Evaluate each scenario
-    for scenario_id in range(1, 6):
-        candidate_scenario = candidate_scenarios.get(scenario_id, {})
-        key_scenario = key_scenarios.get(scenario_id, {})
-        
-        if not candidate_scenario or not key_scenario:
-            results["scenario_results"].append({
-                "scenario_id": scenario_id,
-                "evaluation": "Missing scenario data",
-                "score": 0.0
-            })
-            continue
-        
-        scenario_result = {
-            "scenario_id": scenario_id,
-            "evaluations": {}
-        }
-        
-        # Evaluate coverage determination
-        correct, message = evaluate_coverage_determination(
-            candidate_scenario.get("coverage_determination", ""),
-            key_scenario.get("coverage_determination", ""),
-            scenario_id
-        )
-        scenario_result["evaluations"]["coverage_determination"] = {
-            "correct": correct,
-            "message": message
-        }
-        if correct:
-            results["summary"]["coverage_determination"]["correct"] += 1
-        
-        # Evaluate payment calculation
-        correct, message = evaluate_payment_calculation(
-            candidate_scenario.get("calculated_payment", 0.0),
-            key_scenario.get("calculated_payment", 0.0),
-            scenario_id
-        )
-        scenario_result["evaluations"]["payment_calculation"] = {
-            "correct": correct,
-            "message": message
-        }
-        if correct:
-            results["summary"]["payment_calculation"]["correct"] += 1
-        
-        # Evaluate coverage category
-        correct, message = evaluate_coverage_category(
-            candidate_scenario.get("coverage_category", ""),
-            key_scenario.get("coverage_category", ""),
-            scenario_id
-        )
-        scenario_result["evaluations"]["coverage_category"] = {
-            "correct": correct,
-            "message": message
-        }
-        if correct:
-            results["summary"]["coverage_category"]["correct"] += 1
-        
-        # Evaluate policy section
-        correct, message = evaluate_policy_section(
-            candidate_scenario.get("applicable_policy_section", ""),
-            key_scenario.get("applicable_policy_section", ""),
-            scenario_id
-        )
-        scenario_result["evaluations"]["policy_section"] = {
-            "correct": correct,
-            "message": message
-        }
-        if correct:
-            results["summary"]["policy_section"]["correct"] += 1
-        
-        # Evaluate investigation needs
-        correct, message = evaluate_investigation_needs(
-            candidate_scenario.get("additional_investigation_needed", False),
-            key_scenario.get("additional_investigation_needed", False),
-            scenario_id
-        )
-        scenario_result["evaluations"]["investigation_needs"] = {
-            "correct": correct,
-            "message": message
-        }
-        if correct:
-            results["summary"]["investigation_needs"]["correct"] += 1
-        
-        # Calculate scenario score
-        correct_count = sum(1 for eval_result in scenario_result["evaluations"].values() if eval_result["correct"])
-        scenario_result["score"] = (correct_count / 5) * 100  # 5 evaluation criteria per scenario
-        
-        results["scenario_results"].append(scenario_result)
+    # Calculate total score
+    total_points = ex1_points + ex2_points + ex3_points
+    total_max = ex1_max + ex2_max + ex3_max
+    overall_score = (total_points / total_max) * 100
     
-    # Calculate overall score
-    total_correct = sum(category["correct"] for category in results["summary"].values() if isinstance(category, dict))
-    total_possible = sum(category["total"] for category in results["summary"].values() if isinstance(category, dict))
-    results["summary"]["overall_score"] = (total_correct / total_possible) * 100 if total_possible > 0 else 0.0
+    # Check critical requirements
+    critical_issues = check_critical_requirements(submission, answer_key)
     
-    # Check passing criteria
-    results["summary"]["passed"] = (
-        results["summary"]["coverage_determination"]["correct"] >= 4 and
-        results["summary"]["payment_calculation"]["correct"] >= 3 and
-        results["summary"]["policy_section"]["correct"] >= 3 and
-        results["summary"]["investigation_needs"]["correct"] >= 1 and
-        results["summary"]["overall_score"] >= 80.0
-    )
+    # Compile results
+    results.update({
+        "exercise1": {
+            "points": ex1_points,
+            "max_points": ex1_max,
+            "feedback": ex1_feedback
+        },
+        "exercise2": {
+            "points": ex2_points,
+            "max_points": ex2_max,
+            "feedback": ex2_feedback
+        },
+        "exercise3": {
+            "points": ex3_points,
+            "max_points": ex3_max,
+            "feedback": ex3_feedback
+        },
+        "overall_score": round(overall_score, 2),
+        "total_points": total_points,
+        "passing_score": 80,
+        "passed": overall_score >= 80 and not critical_issues,
+        "critical_issues": critical_issues
+    })
     
     return results
 
 def main():
-    # Load the candidate submission and answer key
-    candidate = load_json_file("test_submission.json")
-    answer_key = load_json_file("answer_key.json")
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    if not candidate or not answer_key:
-        print("Error: Could not load required files.")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
+    
+    # Load the files
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
     
     # Evaluate the submission
-    results = evaluate_submission(candidate, answer_key)
+    results = evaluate_submission(submission, answer_key)
     
-    # Save the results
-    with open("test_results.json", "w") as file:
-        json.dump(results, file, indent=2)
+    # Save results to file
+    with open("test_results.json", "w") as f:
+        json.dump(results, f, indent=2)
     
-    print(f"Evaluation complete. Overall score: {results['summary']['overall_score']:.2f}%")
-    print(f"Results saved to 'test_results.json'")
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
+    if results.get("passed"):
+        print("PASSED")
+    else:
+        print("FAILED")
+        if results.get("critical_issues"):
+            for issue in results.get("critical_issues"):
+                print(f"- {issue}")
 
 if __name__ == "__main__":
     main()

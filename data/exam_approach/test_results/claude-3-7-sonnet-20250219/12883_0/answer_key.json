@@ -1,38 +1,236 @@
 {
     "candidate_id": "EVALUATOR_KEY",
-    "inventory_summary": {
-        "total_apple_inventory_kg": 2925,
-        "total_corn_inventory_kg": 2425,
-        "highest_inventory_product": "WHT-04",
-        "lowest_inventory_product": "POT-02"
+    "transaction_summary": {
+        "total_expenditure_by_category": {
+            "Grains": 117760.0,
+            "Produce": 35562.5,
+            "Protein": 66147.5,
+            "Dairy": 21320.0
+        }
     },
-    "transaction_analysis": {
-        "total_transactions": 54,
-        "highest_value_transaction_id": "TR-2023-021",
-        "total_expenditure": 30840.0,
-        "average_transaction_value": 571.11
+    "inventory_reconciliation": {
+        "ending_inventory": {
+            "CORN-ORG-01": 3700,
+            "CORN-CNV-07": 3200,
+            "SOYB-ORG-13": 1500,
+            "SOYB-CNV-02": 2100,
+            "WHEAT-ORG-03": 1400,
+            "WHEAT-CNV-14": 2500,
+            "APPL-ORG-04": 190,
+            "APPL-CNV-11": 350,
+            "POTA-ORG-08": 400,
+            "BEEF-GRF-05": 1900,
+            "PORK-ORG-10": 1600,
+            "POULTRY-FRR-12": 1250,
+            "MILK-ORG-06": 1200,
+            "MILK-CNV-15": 1700,
+            "EGGS-FRR-09": 220
+        },
+        "discrepancies": [
+            {
+                "product_code": "CORN-ORG-01",
+                "discrepancy_amount": -2500
+            }
+        ]
     },
-    "reporting_compliance": {
-        "quarterly_report_date": "2024-01-31",
-        "required_fields": [
-            "transaction_id",
-            "date",
-            "supplier_id",
-            "product_code",
-            "quantity_kg",
-            "price_per_kg",
-            "total_amount",
-            "quality_grade"
+    "regulatory_report": {
+        "commodity_volumes": {
+            "Corn": 8500,
+            "Soybeans": 3200,
+            "Wheat": 4700,
+            "Apples": 1100,
+            "Potatoes": 850,
+            "Beef": 5500,
+            "Pork": 3200,
+            "Poultry": 2900,
+            "Milk": 6400,
+            "Eggs": 450
+        },
+        "price_ranges": {
+            "Corn": {
+                "min": 5.75,
+                "max": 7.65
+            },
+            "Soybeans": {
+                "min": 12.75,
+                "max": 18.5
+            },
+            "Wheat": {
+                "min": 6.75,
+                "max": 9.25
+            },
+            "Apples": {
+                "min": 24.25,
+                "max": 32.5
+            },
+            "Potatoes": {
+                "min": 28.5,
+                "max": 28.5
+            },
+            "Beef": {
+                "min": 4.85,
+                "max": 4.85
+            },
+            "Pork": {
+                "min": 3.65,
+                "max": 3.65
+            },
+            "Poultry": {
+                "min": 2.95,
+                "max": 2.95
+            },
+            "Milk": {
+                "min": 2.85,
+                "max": 3.95
+            },
+            "Eggs": {
+                "min": 42.75,
+                "max": 42.75
+            }
+        },
+        "certification_summary": {
+            "USDA Organic": 8,
+            "USDA Grass-Fed": 1,
+            "USDA Free-Range": 3,
+            "Conventional": 4
+        },
+        "origin_verification": {
+            "Iowa": {
+                "purchase_count": 3,
+                "commodities": [
+                    "Corn"
+                ]
+            },
+            "Illinois": {
+                "purchase_count": 2,
+                "commodities": [
+                    "Soybeans"
+                ]
+            },
+            "Kansas": {
+                "purchase_count": 2,
+                "commodities": [
+                    "Wheat"
+                ]
+            },
+            "Washington": {
+                "purchase_count": 2,
+                "commodities": [
+                    "Apples"
+                ]
+            },
+            "Nebraska": {
+                "purchase_count": 1,
+                "commodities": [
+                    "Beef"
+                ]
+            },
+            "Wisconsin": {
+                "purchase_count": 2,
+                "commodities": [
+                    "Milk"
+                ]
+            },
+            "Idaho": {
+                "purchase_count": 1,
+                "commodities": [
+                    "Potatoes"
+                ]
+            },
+            "California": {
+                "purchase_count": 1,
+                "commodities": [
+                    "Eggs"
+                ]
+            },
+            "Minnesota": {
+                "purchase_count": 1,
+                "commodities": [
+                    "Pork"
+                ]
+            },
+            "Arkansas": {
+                "purchase_count": 1,
+                "commodities": [
+                    "Poultry"
+                ]
+            }
+        }
+    },
+    "audit_response": {
+        "transaction_records": [
+            {
+                "transaction_id": "TR1003",
+                "product_code": "WHEAT-ORG-03",
+                "product_name": "Organic Wheat",
+                "supplier_id": "SUPP789",
+                "date": "2023-04-03",
+                "quantity": 1200,
+                "unit": "bushel",
+                "price_per_unit": 9.25,
+                "certification_code": "USDA-ORG-789",
+                "origin_state": "Kansas"
+            },
+            {
+                "transaction_id": "TR1005",
+                "product_code": "BEEF-GRF-05",
+                "product_name": "Grass-Fed Beef",
+                "supplier_id": "SUPP567",
+                "date": "2023-04-07",
+                "quantity": 5500,
+                "unit": "pound",
+                "price_per_unit": 4.85,
+                "certification_code": "USDA-GRF-234",
+                "origin_state": "Nebraska"
+            },
+            {
+                "transaction_id": "TR1009",
+                "product_code": "EGGS-FRR-09",
+                "product_name": "Free-Range Eggs",
+                "supplier_id": "SUPP678",
+                "date": "2023-04-15",
+                "quantity": 450,
+                "unit": "case",
+                "price_per_unit": 42.75,
+                "certification_code": "USDA-FRR-678",
+                "origin_state": "California"
+            },
+            {
+                "transaction_id": "TR1013",
+                "product_code": "SOYB-ORG-13",
+                "product_name": "Organic Soybeans",
+                "supplier_id": "SUPP456",
+                "date": "2023-04-23",
+                "quantity": 1400,
+                "unit": "bushel",
+                "price_per_unit": 18.5,
+                "certification_code": "USDA-ORG-901",
+                "origin_state": "Illinois"
+            }
         ],
-        "retention_period_years": 5
-    },
-    "data_verification": {
-        "duplicate_transaction_ids": [
-            "TR-2023-052"
-        ],
-        "missing_data_fields": [
-            "price_per_kg",
-            "total_amount"
+        "product_traceability": {
+            "WHEAT-ORG-03": {
+                "origin": "Kansas",
+                "certification": "USDA-ORG-789"
+            },
+            "BEEF-GRF-05": {
+                "origin": "Nebraska",
+                "certification": "USDA-GRF-234"
+            },
+            "EGGS-FRR-09": {
+                "origin": "California",
+                "certification": "USDA-FRR-678"
+            },
+            "SOYB-ORG-13": {
+                "origin": "Illinois",
+                "certification": "USDA-ORG-901"
+            }
+        },
+        "certification_codes": [
+            "USDA-ORG-789",
+            "USDA-GRF-234",
+            "USDA-FRR-678",
+            "USDA-ORG-901"
         ]
     }
 }

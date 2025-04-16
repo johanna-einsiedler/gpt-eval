@@ -1,63 +1,72 @@
 {
     "candidate_id": "EVALUATOR_KEY",
     "task1": {
-        "top_growth_categories": [
-            "Accessories",
-            "Casual Wear",
-            "Footwear"
-        ],
-        "highest_sales_months": [
-            "December",
-            "November",
-            "October"
-        ],
-        "profit_margins_2022": {
-            "Outerwear": 0.49,
-            "Casual Wear": 0.63,
-            "Formal Wear": 0.58,
-            "Accessories": 0.67,
-            "Footwear": 0.54
+        "highest_growth_category": "Beauty Products",
+        "average_monthly_sales_q4": {
+            "Electronics": 658.33,
+            "Home Goods": 511.67,
+            "Apparel": 411.67,
+            "Sporting Goods": 351.67,
+            "Beauty Products": 406.67
         },
-        "worst_performing_products": [
-            "Blazer - Unisex",
-            "Dress Shoes - Men's",
-            "Heels - Women's"
-        ]
+        "lowest_sales_month": "February",
+        "percentage_decrease": 6.41
     },
     "task2": {
-        "overall_correlation_coefficient": 0.78,
-        "strongest_correlated_category": "Formal Wear",
-        "average_lag_time_months": 2
+        "current_interest_rate": 4.75,
+        "interest_rate_change": 0.5,
+        "consumer_confidence_index": 98,
+        "confidence_index_direction": "decreased",
+        "economic_impacts": {
+            "Rising Interest Rates": "C",
+            "Decreasing Inflation": "B",
+            "Declining Unemployment": "A",
+            "Falling Consumer Confidence": "D",
+            "Increasing GDP Growth": "B"
+        }
     },
     "task3": {
-        "q1_2023_forecast": {
-            "Outerwear": 2450,
-            "Casual Wear": 6300,
-            "Formal Wear": 1850,
-            "Accessories": 3200,
-            "Footwear": 2100
+        "forecast_july": {
+            "Electronics": 572.25,
+            "Home Goods": 424.0,
+            "Apparel": 387.6,
+            "Sporting Goods": 345.6,
+            "Beauty Products": 348.4
         },
-        "inventory_recommendations": {
-            "Outerwear": "decrease",
-            "Casual Wear": "increase",
-            "Formal Wear": "maintain",
-            "Accessories": "increase",
-            "Footwear": "maintain"
+        "forecast_august": {
+            "Electronics": 588.6,
+            "Home Goods": 436.0,
+            "Apparel": 437.0,
+            "Sporting Goods": 336.0,
+            "Beauty Products": 358.45
         },
-        "increase_allocation_products": [
-            "T-Shirt - Men's",
-            "T-Shirt - Women's",
-            "Scarf - Winter"
-        ],
-        "decrease_allocation_products": [
-            "Blazer - Unisex",
-            "Winter Jacket - Men's",
-            "Winter Jacket - Women's"
-        ],
-        "influential_economic_indicators": [
-            "Consumer Confidence Index",
-            "Seasonal Trends",
-            "Year-over-Year Growth"
-        ]
+        "forecast_september": {
+            "Electronics": 610.4,
+            "Home Goods": 428.0,
+            "Apparel": 418.0,
+            "Sporting Goods": 304.0,
+            "Beauty Products": 365.15
+        },
+        "q3_regional_sales": {
+            "North": 1399.2,
+            "South": 1580.97,
+            "East": 1274.13,
+            "West": 1519.4,
+            "Central": 1134.0
+        },
+        "highest_august_category": "Electronics"
+    },
+    "task4": {
+        "inventory_allocation": {
+            "Electronics": 588.6,
+            "Home Goods": 524.0,
+            "Beauty Products": 358.45
+        },
+        "optimal_stock_levels": {
+            "Electronics": 588.6,
+            "Home Goods": 436.0,
+            "Beauty Products": 269.34
+        },
+        "maximum_investment": 93143.1
     }
 }

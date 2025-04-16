@@ -1,0 +1,269 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "claim_evaluations": [
+    {
+      "claim_id": "CL-78342",
+      "details": [
+        {
+          "criterion": "Coverage Determination",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "covered",
+          "correct_answer": "covered",
+          "correct": true
+        },
+        {
+          "criterion": "Settlement Calculation",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": 6850.0,
+          "correct_answer": 6850.0,
+          "correct": true,
+          "note": null
+        },
+        {
+          "criterion": "Decision (Approve/Deny/Escalate)",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "approve",
+          "correct_answer": "approve",
+          "correct": true
+        },
+        {
+          "criterion": "Authority Level Assessment",
+          "points_earned": 3,
+          "max_points": 3,
+          "candidate_answer": true,
+          "correct_answer": true,
+          "correct": true
+        },
+        {
+          "criterion": "Justification",
+          "points_earned": 2,
+          "max_points": 2,
+          "candidate_answer": "Active policy covers collision damage. Estimated r...",
+          "correct": true
+        }
+      ],
+      "score": 20,
+      "max_score": 20
+    },
+    {
+      "claim_id": "CL-91275",
+      "details": [
+        {
+          "criterion": "Coverage Determination",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "covered",
+          "correct_answer": "covered",
+          "correct": true
+        },
+        {
+          "criterion": "Settlement Calculation",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": 9275.0,
+          "correct_answer": 9275.0,
+          "correct": true,
+          "note": null
+        },
+        {
+          "criterion": "Decision (Approve/Deny/Escalate)",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "approve",
+          "correct_answer": "approve",
+          "correct": true
+        },
+        {
+          "criterion": "Authority Level Assessment",
+          "points_earned": 3,
+          "max_points": 3,
+          "candidate_answer": true,
+          "correct_answer": true,
+          "correct": true
+        },
+        {
+          "criterion": "Justification",
+          "points_earned": 2,
+          "max_points": 2,
+          "candidate_answer": "Sudden burst pipe is covered under active policy. ...",
+          "correct": true
+        }
+      ],
+      "score": 20,
+      "max_score": 20
+    },
+    {
+      "claim_id": "CL-64510",
+      "details": [
+        {
+          "criterion": "Coverage Determination",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "covered",
+          "correct_answer": "covered",
+          "correct": true
+        },
+        {
+          "criterion": "Settlement Calculation",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": 15950.0,
+          "correct_answer": 15950.0,
+          "correct": true,
+          "note": null
+        },
+        {
+          "criterion": "Decision (Approve/Deny/Escalate)",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "escalate",
+          "correct_answer": "escalate",
+          "correct": true
+        },
+        {
+          "criterion": "Authority Level Assessment",
+          "points_earned": 3,
+          "max_points": 3,
+          "candidate_answer": false,
+          "correct_answer": false,
+          "correct": true
+        },
+        {
+          "criterion": "Justification",
+          "points_earned": 2,
+          "max_points": 2,
+          "candidate_answer": "Comprehensive coverage applies to storm damage. Re...",
+          "correct": true
+        }
+      ],
+      "score": 20,
+      "max_score": 20
+    },
+    {
+      "claim_id": "CL-83726",
+      "details": [
+        {
+          "criterion": "Coverage Determination",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "covered",
+          "correct_answer": "covered",
+          "correct": true
+        },
+        {
+          "criterion": "Settlement Calculation",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": 11350.0,
+          "correct_answer": 11350.0,
+          "correct": true,
+          "note": null
+        },
+        {
+          "criterion": "Decision (Approve/Deny/Escalate)",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "approve",
+          "correct_answer": "approve",
+          "correct": true
+        },
+        {
+          "criterion": "Authority Level Assessment",
+          "points_earned": 3,
+          "max_points": 3,
+          "candidate_answer": true,
+          "correct_answer": true,
+          "correct": true
+        },
+        {
+          "criterion": "Justification",
+          "points_earned": 2,
+          "max_points": 2,
+          "candidate_answer": "Theft with forced entry is covered. Total claim of...",
+          "correct": true
+        }
+      ],
+      "score": 20,
+      "max_score": 20
+    },
+    {
+      "claim_id": "CL-52198",
+      "details": [
+        {
+          "criterion": "Coverage Determination",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "not_covered",
+          "correct_answer": "not_covered",
+          "correct": true
+        },
+        {
+          "criterion": "Settlement Calculation",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": 0.0,
+          "correct_answer": 0.0,
+          "correct": true,
+          "note": null
+        },
+        {
+          "criterion": "Decision (Approve/Deny/Escalate)",
+          "points_earned": 5,
+          "max_points": 5,
+          "candidate_answer": "deny",
+          "correct_answer": "deny",
+          "correct": true
+        },
+        {
+          "criterion": "Authority Level Assessment",
+          "points_earned": 3,
+          "max_points": 3,
+          "candidate_answer": true,
+          "correct_answer": true,
+          "correct": true
+        },
+        {
+          "criterion": "Reason Code",
+          "points_earned": 0,
+          "max_points": 0,
+          "candidate_answer": "RC002",
+          "correct_answer": "RC002",
+          "correct": true
+        },
+        {
+          "criterion": "Justification",
+          "points_earned": 2,
+          "max_points": 2,
+          "candidate_answer": "Policy expired on 02/01/2023 before claim was repo...",
+          "correct": true
+        }
+      ],
+      "score": 20,
+      "max_score": 20
+    }
+  ],
+  "total_score": 100,
+  "max_score": 100,
+  "overall_score": 100.0,
+  "pass_criteria": {
+    "critical_claims_handled_correctly": true,
+    "critical_claim_details": {
+      "CL-64510": true,
+      "CL-52198": true
+    },
+    "decision_accuracy": {
+      "correct_decisions": 5,
+      "required": 4,
+      "passed": true
+    },
+    "calculation_accuracy": {
+      "accurate_calculations": 5,
+      "required": 4,
+      "passed": true
+    }
+  },
+  "passed_exam": true
+}

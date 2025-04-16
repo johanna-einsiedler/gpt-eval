@@ -1,0 +1,23 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "exercise1": {
+    "points": 6,
+    "max_points": 6,
+    "feedback": []
+  },
+  "exercise2": {
+    "points": 10,
+    "max_points": 10,
+    "feedback": []
+  },
+  "exercise3": {
+    "points": 4,
+    "max_points": 4,
+    "feedback": []
+  },
+  "overall_score": 100.0,
+  "total_points": 20,
+  "passing_score": 80,
+  "passed": true,
+  "critical_issues": []
+}

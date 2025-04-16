@@ -1,0 +1,40 @@
+{
+  "supplier_rankings": {
+    "score": 25,
+    "max_score": 25,
+    "percentage": 100.0,
+    "details": "Correct ranking order (+15 points); Weighted scores: 10/10 points - SUP417: Score within tolerance (+2 points), SUP842: Score within tolerance (+2 points), SUP253: Score within tolerance (+2 points), SUP975: Score within tolerance (+2 points), SUP631: Score within tolerance (+2 points)"
+  },
+  "evaluation_metrics": {
+    "score": 35,
+    "max_score": 35,
+    "percentage": 100.0,
+    "details": "Individual category scores: 20/20 points - price_score: Scores within tolerance; quality_score: Scores within tolerance; selection_score: Scores within tolerance; service_score: Scores within tolerance; support_score: Scores within tolerance; reliability_score: Scores within tolerance; production_score: Scores within tolerance; distribution_score: Scores within tolerance; reputation_score: Scores within tolerance; Relative ordering: 15/15 points - price_score: Correct ordering; quality_score: Correct ordering; selection_score: Correct ordering; service_score: Correct ordering; support_score: Correct ordering; reliability_score: Correct ordering; production_score: Correct ordering; distribution_score: Correct ordering; reputation_score: Correct ordering"
+  },
+  "cost_analysis": {
+    "score": 10,
+    "max_score": 10,
+    "percentage": 100.0,
+    "details": "Annual spend calculations: 5/5 points - All annual spend calculations correct; Unit price reporting: 5/5 points - All unit prices correct"
+  },
+  "optimal_supplier": {
+    "score": 15,
+    "max_score": 15,
+    "percentage": 100.0,
+    "details": "Correctly identified SUP417 as the optimal supplier"
+  },
+  "risk_assessment": {
+    "score": 15,
+    "max_score": 15,
+    "percentage": 100.0,
+    "details": "Correctly identified all high-risk suppliers (+10 points); Risk reasons: 5/5 points - Provided complete reasoning mentioning both quality and reliability issues"
+  },
+  "total": {
+    "score": 100,
+    "max_score": 100,
+    "percentage": 100.0,
+    "details": "Total points: 100/100"
+  },
+  "overall_score": 100.0,
+  "qualification_level": "Excellent"
+}

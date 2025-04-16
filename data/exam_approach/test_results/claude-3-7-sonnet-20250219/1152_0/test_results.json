@@ -1,0 +1,131 @@
+{
+  "candidate_id": "Unknown",
+  "overall_score": 85.0,
+  "total_points": 85,
+  "max_points": 100,
+  "pass_status": "Pass",
+  "critical_requirements_met": true,
+  "task_results": {
+    "task1": {
+      "points": 40,
+      "max_points": 40,
+      "details": {
+        "chair_selection": {
+          "points": 15,
+          "max_points": 15,
+          "notes": [
+            "Correct: OfficeMax OM-EC550 is within price range",
+            "Correct: Staples SP-1500TF is within price range",
+            "Correct: Corporate Furnishings CF-TM400 is within price range"
+          ]
+        },
+        "model_numbers": {
+          "points": 9,
+          "max_points": 9,
+          "notes": [
+            "Correct: Model OM-EC550 for OfficeMax is properly formatted",
+            "Correct: Model SP-1500TF for Staples is properly formatted",
+            "Correct: Model CF-TM400 for Corporate Furnishings is properly formatted"
+          ]
+        },
+        "price_values": {
+          "points": 6,
+          "max_points": 6,
+          "notes": [
+            "Correct: Price $279.99 for OfficeMax is within range",
+            "Correct: Price $329.99 for Staples is within range",
+            "Correct: Price $319.99 for Corporate Furnishings is within range"
+          ]
+        },
+        "warranty_info": {
+          "points": 6,
+          "max_points": 6,
+          "notes": [
+            "Correct: Warranty 3 years for OfficeMax is valid",
+            "Correct: Warranty 6 years for Staples is valid",
+            "Correct: Warranty 4 years for Corporate Furnishings is valid"
+          ]
+        },
+        "lowest_price_chair": {
+          "points": 2,
+          "max_points": 2,
+          "notes": [
+            "Correct: Identified Staples US-DX450 as lowest price chair"
+          ]
+        },
+        "best_warranty_chair": {
+          "points": 2,
+          "max_points": 2,
+          "notes": [
+            "Correct: Identified Staples SP-1500TF as best warranty chair"
+          ]
+        }
+      }
+    },
+    "task2": {
+      "points": 30,
+      "max_points": 30,
+      "details": {
+        "safety_standard": {
+          "points": 10,
+          "max_points": 10,
+          "notes": [
+            "Correct: Identified ASTM F3326-21 as the safety standard"
+          ]
+        },
+        "certification": {
+          "points": 10,
+          "max_points": 10,
+          "notes": [
+            "Correct: Identified ANSI Z97.1 as the required certification"
+          ]
+        },
+        "minimum_thickness": {
+          "points": 10,
+          "max_points": 10,
+          "notes": [
+            "Correct: Identified 4.5mm as the minimum thickness"
+          ]
+        }
+      }
+    },
+    "task3": {
+      "points": 15,
+      "max_points": 30,
+      "details": {
+        "supplier_identification": {
+          "points": 15,
+          "max_points": 15,
+          "notes": [
+            "Supplier 1: [Any plausible supplier name] - Valid supplier name",
+            "Supplier 2: [Any plausible supplier name] - Valid supplier name",
+            "Supplier 3: [Any plausible supplier name] - Valid supplier name"
+          ]
+        },
+        "supplier_information": {
+          "points": 0,
+          "max_points": 9,
+          "notes": [
+            "Supplier 1: Incomplete or invalid information",
+            "Supplier 2: Incomplete or invalid information",
+            "Supplier 3: Incomplete or invalid information"
+          ]
+        },
+        "fastest_delivery": {
+          "points": 0,
+          "max_points": 3,
+          "notes": [
+            "Incorrect: Submitted [Must match one of the suppliers with lowest lead_time_days] but  has the fastest delivery time (inf days)"
+          ]
+        },
+        "lowest_minimum_order": {
+          "points": 0,
+          "max_points": 3,
+          "notes": [
+            "Incorrect: Submitted [Must match one of the suppliers with lowest minimum_order] but  has the lowest minimum order (inf units)"
+          ]
+        }
+      }
+    }
+  }
+}

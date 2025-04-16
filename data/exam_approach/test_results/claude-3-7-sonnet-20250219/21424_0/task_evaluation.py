@@ -1,521 +1,427 @@
+#!/usr/bin/env python3
 import json
-import re
+import sys
+import math
 
 def load_json_file(filename):
     try:
-        with open(filename, 'r') as file:
-            return json.load(file)
-    except Exception as e:
+        with open(filename, 'r') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"Error loading {filename}: {e}")
-        return None
+        sys.exit(1)
 
-def validate_reserve(candidate_value, key_value, allowed_percentage):
-    """Validate if candidate's reserve value is within acceptable range"""
-    lower_bound = key_value * (1 - allowed_percentage/100)
-    upper_bound = key_value * (1 + allowed_percentage/100)
-    return lower_bound <= candidate_value <= upper_bound
-
-def validate_reserve_codes(candidate_code, acceptable_codes):
-    """Validate if candidate's reserve code is acceptable"""
-    return candidate_code in acceptable_codes
-
-def validate_policy_sections(candidate_sections, required_sections):
-    """Validate if candidate included all required policy sections"""
-    return all(section in candidate_sections for section in required_sections)
-
-def count_words(text):
-    """Count words in a text string"""
-    return len(re.findall(r'\w+', text))
-
-def validate_justification(justification, required_elements):
-    """Check if justification contains required elements and is within word limit"""
-    if count_words(justification) > 250:
-        return False, "Exceeds 250 word limit"
-    
-    missing_elements = [element for element in required_elements 
-                        if element.lower() not in justification.lower()]
-    
-    if missing_elements:
-        return False, f"Missing elements: {', '.join(missing_elements)}"
-    return True, ""
-
-def evaluate_scenario_1(candidate, answer_key):
-    """Evaluate Auto Liability Claim scenario"""
-    score = 0
-    max_score = 30
-    feedback = []
-    critical_errors = []
-    
-    # Bodily Injury Reserve (10 points)
-    bi_reserve = candidate["bodily_injury_reserve"]
-    key_bi_reserve = answer_key["bodily_injury_reserve"]
-    
-    if validate_reserve(bi_reserve, key_bi_reserve, 15):
-        score += 10
-        feedback.append("Bodily Injury Reserve calculation: Correct (10/10)")
-    else:
-        if bi_reserve < key_bi_reserve * 0.5 or bi_reserve > key_bi_reserve * 2:
-            critical_errors.append("Critical Error: Bodily Injury Reserve significantly off (below 50% or above 200% of expected)")
-            feedback.append("Bodily Injury Reserve calculation: Incorrect (0/10) - Critical Error")
-        else:
-            points = max(0, 10 - int(abs(bi_reserve - key_bi_reserve) / key_bi_reserve * 20))
-            score += points
-            feedback.append(f"Bodily Injury Reserve calculation: Partially correct ({points}/10)")
-    
-    # Property Damage Reserve (8 points)
-    pd_reserve = candidate["property_damage_reserve"]
-    key_pd_reserve = answer_key["property_damage_reserve"]
-    
-    if validate_reserve(pd_reserve, key_pd_reserve, 10):
-        score += 8
-        feedback.append("Property Damage Reserve calculation: Correct (8/8)")
-    else:
-        if pd_reserve < key_pd_reserve * 0.5 or pd_reserve > key_pd_reserve * 2:
-            critical_errors.append("Critical Error: Property Damage Reserve significantly off (below 50% or above 200% of expected)")
-            feedback.append("Property Damage Reserve calculation: Incorrect (0/8) - Critical Error")
-        else:
-            points = max(0, 8 - int(abs(pd_reserve - key_pd_reserve) / key_pd_reserve * 16))
-            score += points
-            feedback.append(f"Property Damage Reserve calculation: Partially correct ({points}/8)")
-    
-    # Medical Expense Reserve (7 points)
-    me_reserve = candidate["medical_expense_reserve"]
-    key_me_reserve = answer_key["medical_expense_reserve"]
-    
-    if validate_reserve(me_reserve, key_me_reserve, 15):
-        score += 7
-        feedback.append("Medical Expense Reserve calculation: Correct (7/7)")
-    else:
-        if me_reserve < key_me_reserve * 0.5 or me_reserve > key_me_reserve * 2:
-            critical_errors.append("Critical Error: Medical Expense Reserve significantly off (below 50% or above 200% of expected)")
-            feedback.append("Medical Expense Reserve calculation: Incorrect (0/7) - Critical Error")
-        else:
-            points = max(0, 7 - int(abs(me_reserve - key_me_reserve) / key_me_reserve * 14))
-            score += points
-            feedback.append(f"Medical Expense Reserve calculation: Partially correct ({points}/7)")
-    
-    # Reserve Codes (part of above scores)
-    acceptable_bi_codes = ["AL-BI-01", "AL-BI-02"]
-    acceptable_pd_codes = ["AL-PD-01"]
-    acceptable_me_codes = ["AL-ME-01", "AL-ME-02", "AL-ME-03"]
-    
-    if not validate_reserve_codes(candidate["bodily_injury_code"], acceptable_bi_codes):
-        critical_errors.append("Critical Error: Incorrect Bodily Injury Reserve code")
-        feedback.append("Incorrect Bodily Injury Reserve code")
-    
-    if not validate_reserve_codes(candidate["property_damage_code"], acceptable_pd_codes):
-        critical_errors.append("Critical Error: Incorrect Property Damage Reserve code")
-        feedback.append("Incorrect Property Damage Reserve code")
-    
-    if not validate_reserve_codes(candidate["medical_expense_code"], acceptable_me_codes):
-        critical_errors.append("Critical Error: Incorrect Medical Expense Reserve code")
-        feedback.append("Incorrect Medical Expense Reserve code")
-    
-    # Policy references and justification (5 points)
-    required_sections = ["2.1", "2.2", "2.3"]
-    candidate_sections = candidate["policy_sections_referenced"]
-    
-    if validate_policy_sections(candidate_sections, required_sections):
-        score += 3
-        feedback.append("Policy references: Correct (3/3)")
-    else:
-        missing = [s for s in required_sections if s not in candidate_sections]
-        points = max(0, 3 - len(missing))
-        score += points
-        feedback.append(f"Policy references: Missing {', '.join(missing)} ({points}/3)")
-    
-    required_elements = [
-        "pain and suffering multiplier",
-        "attorney",
-        "contingency"
-    ]
-    
-    justification_valid, justification_feedback = validate_justification(
-        candidate["justification"], required_elements
-    )
-    
-    if justification_valid:
-        score += 2
-        feedback.append("Justification: Complete (2/2)")
-    else:
-        if not candidate["justification"]:
-            critical_errors.append("Critical Error: No justification provided")
-            feedback.append("Justification: Missing (0/2) - Critical Error")
-        else:
-            feedback.append(f"Justification: Incomplete (0/2) - {justification_feedback}")
-    
-    return {
-        "score": score,
-        "max_score": max_score,
-        "percentage": round((score / max_score) * 100, 2),
-        "feedback": feedback,
-        "critical_errors": critical_errors
+def evaluate_part1(submission, answer_key):
+    results = {
+        "points_earned": 0,
+        "points_possible": 45,
+        "details": {}
     }
-
-def evaluate_scenario_2(candidate, answer_key):
-    """Evaluate Workers' Compensation scenario"""
-    score = 0
-    max_score = 35
-    feedback = []
-    critical_errors = []
     
-    # Indemnity Reserve (10 points)
-    indemnity_reserve = candidate["indemnity_reserve"]
-    key_indemnity_reserve = answer_key["indemnity_reserve"]
-    
-    if validate_reserve(indemnity_reserve, key_indemnity_reserve, 15):
-        score += 10
-        feedback.append("Indemnity Reserve calculation: Correct (10/10)")
-    else:
-        if indemnity_reserve < key_indemnity_reserve * 0.5 or indemnity_reserve > key_indemnity_reserve * 2:
-            critical_errors.append("Critical Error: Indemnity Reserve significantly off (below 50% or above 200% of expected)")
-            feedback.append("Indemnity Reserve calculation: Incorrect (0/10) - Critical Error")
-        else:
-            points = max(0, 10 - int(abs(indemnity_reserve - key_indemnity_reserve) / key_indemnity_reserve * 20))
-            score += points
-            feedback.append(f"Indemnity Reserve calculation: Partially correct ({points}/10)")
-    
-    # Medical Reserve (10 points)
-    medical_reserve = candidate["medical_reserve"]
-    key_medical_reserve = answer_key["medical_reserve"]
-    
-    if validate_reserve(medical_reserve, key_medical_reserve, 15):
-        score += 10
-        feedback.append("Medical Reserve calculation: Correct (10/10)")
-    else:
-        if medical_reserve < key_medical_reserve * 0.5 or medical_reserve > key_medical_reserve * 2:
-            critical_errors.append("Critical Error: Medical Reserve significantly off (below 50% or above 200% of expected)")
-            feedback.append("Medical Reserve calculation: Incorrect (0/10) - Critical Error")
-        else:
-            points = max(0, 10 - int(abs(medical_reserve - key_medical_reserve) / key_medical_reserve * 20))
-            score += points
-            feedback.append(f"Medical Reserve calculation: Partially correct ({points}/10)")
-    
-    # Rehabilitation Reserve (8 points)
-    rehab_reserve = candidate["rehabilitation_reserve"]
-    key_rehab_reserve = answer_key["rehabilitation_reserve"]
-    
-    if validate_reserve(rehab_reserve, key_rehab_reserve, 50):  # Higher tolerance due to subjectivity
-        score += 8
-        feedback.append("Rehabilitation Reserve calculation: Correct (8/8)")
-    else:
-        if rehab_reserve < key_rehab_reserve * 0.5 or rehab_reserve > key_rehab_reserve * 2:
-            critical_errors.append("Critical Error: Rehabilitation Reserve significantly off (below 50% or above 200% of expected)")
-            feedback.append("Rehabilitation Reserve calculation: Incorrect (0/8) - Critical Error")
-        else:
-            points = max(0, 8 - int(abs(rehab_reserve - key_rehab_reserve) / key_rehab_reserve * 16))
-            score += points
-            feedback.append(f"Rehabilitation Reserve calculation: Partially correct ({points}/8)")
-    
-    # Net change calculation (2 points)
-    expected_net_change = candidate["total_reserve"] - candidate["previous_total_reserve"]
-    if abs(candidate["net_change"] - expected_net_change) < 0.01:  # Allow for rounding differences
-        score += 2
-        feedback.append("Net change calculation: Correct (2/2)")
-    else:
-        feedback.append(f"Net change calculation: Incorrect (0/2). Expected {expected_net_change}, got {candidate['net_change']}")
-    
-    # Reserve Codes (part of above scores)
-    acceptable_indemnity_codes = ["WC-IN-01", "WC-IN-02", "WC-IN-03"]
-    acceptable_medical_codes = ["WC-ME-02", "WC-ME-03", "WC-ME-05"]
-    acceptable_rehab_codes = ["WC-RH-01", "WC-RH-02"]
-    
-    if not validate_reserve_codes(candidate["indemnity_code"], acceptable_indemnity_codes):
-        critical_errors.append("Critical Error: Incorrect Indemnity Reserve code")
-        feedback.append("Incorrect Indemnity Reserve code")
-    
-    if not validate_reserve_codes(candidate["medical_code"], acceptable_medical_codes):
-        critical_errors.append("Critical Error: Incorrect Medical Reserve code")
-        feedback.append("Incorrect Medical Reserve code")
-    
-    if not validate_reserve_codes(candidate["rehabilitation_code"], acceptable_rehab_codes):
-        critical_errors.append("Critical Error: Incorrect Rehabilitation Reserve code")
-        feedback.append("Incorrect Rehabilitation Reserve code")
-    
-    # Policy references and justification (5 points)
-    required_sections = ["3.1", "3.2", "3.3", "3.4"]
-    candidate_sections = candidate["policy_sections_referenced"]
-    
-    if validate_policy_sections(candidate_sections, required_sections):
-        score += 3
-        feedback.append("Policy references: Correct (3/3)")
-    else:
-        missing = [s for s in required_sections if s not in candidate_sections]
-        points = max(0, 3 - len(missing))
-        score += points
-        feedback.append(f"Policy references: Missing {', '.join(missing)} ({points}/3)")
-    
-    required_elements = [
-        "MRI",
-        "surgery",
-        "disability",
-        "contingency",
-        "rehabilitation"
-    ]
-    
-    justification_valid, justification_feedback = validate_justification(
-        candidate["justification"], required_elements
-    )
-    
-    if justification_valid:
-        score += 2
-        feedback.append("Justification: Complete (2/2)")
-    else:
-        if not candidate["justification"]:
-            critical_errors.append("Critical Error: No justification provided")
-            feedback.append("Justification: Missing (0/2) - Critical Error")
-        else:
-            feedback.append(f"Justification: Incomplete (0/2) - {justification_feedback}")
-    
-    return {
-        "score": score,
-        "max_score": max_score,
-        "percentage": round((score / max_score) * 100, 2),
-        "feedback": feedback,
-        "critical_errors": critical_errors
-    }
-
-def evaluate_scenario_3(candidate, answer_key):
-    """Evaluate General Liability scenario"""
-    score = 0
-    max_score = 35
-    feedback = []
-    critical_errors = []
-    
-    # Identification of exposures (10 points)
-    candidate_exposures = candidate["exposures"]
-    if len(candidate_exposures) < 3:
-        critical_errors.append("Critical Error: Failed to identify at least 3 exposures")
-        feedback.append("Exposure identification: Insufficient (0/10) - Critical Error")
-    else:
-        score += 10
-        feedback.append("Exposure identification: Complete (10/10)")
-    
-    # Check for property damage reserve (8 points)
-    property_damage_exposure = None
-    for exposure in candidate_exposures:
-        if "property" in exposure["exposure_type"].lower():
-            property_damage_exposure = exposure
-            break
-    
-    if property_damage_exposure:
-        pd_reserve = property_damage_exposure["reserve_amount"]
-        key_pd_reserve = 142300.00  # From answer key
+    for claim_id in ["claim001", "claim002", "claim003"]:
+        claim_results = {"points_earned": 0, "points_possible": 15, "details": {}}
         
-        if validate_reserve(pd_reserve, key_pd_reserve, 15):
-            score += 8
-            feedback.append("Property Damage Reserve calculation: Correct (8/8)")
-        else:
-            if pd_reserve < key_pd_reserve * 0.5 or pd_reserve > key_pd_reserve * 2:
-                critical_errors.append("Critical Error: Property Damage Reserve significantly off (below 50% or above 200% of expected)")
-                feedback.append("Property Damage Reserve calculation: Incorrect (0/8) - Critical Error")
-            else:
-                points = max(0, 8 - int(abs(pd_reserve - key_pd_reserve) / key_pd_reserve * 16))
-                score += points
-                feedback.append(f"Property Damage Reserve calculation: Partially correct ({points}/8)")
-        
-        # Check code
-        acceptable_pd_codes = ["GL-PD-01", "GL-PD-02", "GL-PD-03"]
-        if not validate_reserve_codes(property_damage_exposure["reserve_code"], acceptable_pd_codes):
-            critical_errors.append("Critical Error: Incorrect Property Damage Reserve code")
-            feedback.append("Incorrect Property Damage Reserve code")
-    else:
-        critical_errors.append("Critical Error: No Property Damage exposure identified")
-        feedback.append("Property Damage Reserve: Missing (0/8) - Critical Error")
-    
-    # Check for business interruption reserve (8 points)
-    bi_exposure = None
-    for exposure in candidate_exposures:
-        if "business" in exposure["exposure_type"].lower() or "interruption" in exposure["exposure_type"].lower():
-            bi_exposure = exposure
-            break
-    
-    if bi_exposure:
-        bi_reserve = bi_exposure["reserve_amount"]
-        key_bi_reserve = 34100.00  # From answer key
-        
-        if validate_reserve(bi_reserve, key_bi_reserve, 10):
-            score += 8
-            feedback.append("Business Interruption Reserve calculation: Correct (8/8)")
-        else:
-            if bi_reserve < key_bi_reserve * 0.5 or bi_reserve > key_bi_reserve * 2:
-                critical_errors.append("Critical Error: Business Interruption Reserve significantly off (below 50% or above 200% of expected)")
-                feedback.append("Business Interruption Reserve calculation: Incorrect (0/8) - Critical Error")
-            else:
-                points = max(0, 8 - int(abs(bi_reserve - key_bi_reserve) / key_bi_reserve * 16))
-                score += points
-                feedback.append(f"Business Interruption Reserve calculation: Partially correct ({points}/8)")
-        
-        # Check code
-        acceptable_bi_codes = ["GL-BI-01", "GL-BI-02"]
-        if not validate_reserve_codes(bi_exposure["reserve_code"], acceptable_bi_codes):
-            critical_errors.append("Critical Error: Incorrect Business Interruption Reserve code")
-            feedback.append("Incorrect Business Interruption Reserve code")
-    else:
-        critical_errors.append("Critical Error: No Business Interruption exposure identified")
-        feedback.append("Business Interruption Reserve: Missing (0/8) - Critical Error")
-    
-    # Check for additional exposure (4 points)
-    # Look for emergency response, legal expenses, or other valid third exposure
-    additional_exposure = None
-    for exposure in candidate_exposures:
-        if ("emergency" in exposure["exposure_type"].lower() or 
-            "legal" in exposure["exposure_type"].lower() or 
-            "third" in exposure["exposure_type"].lower()):
-            additional_exposure = exposure
-            break
-    
-    if additional_exposure:
-        # We'll check if it's emergency response costs specifically
-        if "emergency" in additional_exposure["exposure_type"].lower():
-            er_reserve = additional_exposure["reserve_amount"]
-            key_er_reserve = 10000.00  # From answer key
+        # Skip if claim is missing in submission
+        if claim_id not in submission:
+            claim_results["details"]["error"] = f"Missing {claim_id} in submission"
+            results["details"][claim_id] = claim_results
+            continue
             
-            if validate_reserve(er_reserve, key_er_reserve, 15):
-                score += 4
-                feedback.append("Additional Exposure Reserve calculation: Correct (4/4)")
-            else:
-                if er_reserve < key_er_reserve * 0.5 or er_reserve > key_er_reserve * 2:
-                    critical_errors.append("Critical Error: Additional Exposure Reserve significantly off (below 50% or above 200% of expected)")
-                    feedback.append("Additional Exposure Reserve calculation: Incorrect (0/4) - Critical Error")
-                else:
-                    points = max(0, 4 - int(abs(er_reserve - key_er_reserve) / key_er_reserve * 8))
-                    score += points
-                    feedback.append(f"Additional Exposure Reserve calculation: Partially correct ({points}/4)")
-        else:
-            # If it's another valid exposure type, we'll give partial credit
-            score += 2
-            feedback.append("Additional Exposure identified but not Emergency Response Costs (2/4)")
+        sub_claim = submission[claim_id]
+        key_claim = answer_key[claim_id]
         
-        # Check code
-        acceptable_additional_codes = ["GL-ER-01", "GL-LE-01", "GL-TP-01", "GL-TP-02", "GL-SU-01"]
-        if not validate_reserve_codes(additional_exposure["reserve_code"], acceptable_additional_codes):
-            critical_errors.append("Critical Error: Incorrect Additional Exposure Reserve code")
-            feedback.append("Incorrect Additional Exposure Reserve code")
-    else:
-        feedback.append("Additional Exposure Reserve: Missing (0/4)")
-    
-    # Policy references and justification (5 points)
-    required_sections = ["4.1", "4.2", "4.3"]
-    candidate_sections = candidate["policy_sections_referenced"]
-    
-    if validate_policy_sections(candidate_sections, required_sections):
-        score += 3
-        feedback.append("Policy references: Correct (3/3)")
-    else:
-        missing = [s for s in required_sections if s not in candidate_sections]
-        points = max(0, 3 - len(missing))
-        score += points
-        feedback.append(f"Policy references: Missing {', '.join(missing)} ({points}/3)")
-    
-    required_elements = [
-        "separate",
-        "exposure",
-        "contingency",
-        "business interruption"
-    ]
-    
-    justification_valid, justification_feedback = validate_justification(
-        candidate["justification"], required_elements
-    )
-    
-    if justification_valid:
-        score += 2
-        feedback.append("Justification: Complete (2/2)")
-    else:
-        if not candidate["justification"]:
-            critical_errors.append("Critical Error: No justification provided")
-            feedback.append("Justification: Missing (0/2) - Critical Error")
+        # Indemnity Reserve (8 points)
+        indemnity_points = 0
+        tolerance = 0.05  # 5% for claim001 and claim002
+        if claim_id == "claim003":
+            tolerance = 0.10  # 10% for claim003
+            
+        if "indemnityReserve" in sub_claim:
+            sub_indemnity = float(sub_claim["indemnityReserve"])
+            key_indemnity = float(key_claim["indemnityReserve"])
+            
+            percentage_diff = abs((sub_indemnity - key_indemnity) / key_indemnity)
+            if percentage_diff <= tolerance:
+                indemnity_points = 8
+            else:
+                indemnity_points = math.floor(8 * (1 - percentage_diff / (2 * tolerance)))
+                indemnity_points = max(0, indemnity_points)
+                
+            claim_results["details"]["indemnityReserve"] = {
+                "submitted": sub_indemnity,
+                "expected": key_indemnity,
+                "diff_percentage": round(percentage_diff * 100, 2),
+                "points_earned": indemnity_points,
+                "points_possible": 8
+            }
         else:
-            feedback.append(f"Justification: Incomplete (0/2) - {justification_feedback}")
-    
-    return {
-        "score": score,
-        "max_score": max_score,
-        "percentage": round((score / max_score) * 100, 2),
-        "feedback": feedback,
-        "critical_errors": critical_errors
-    }
+            claim_results["details"]["indemnityReserve"] = {
+                "error": "Missing indemnityReserve",
+                "points_earned": 0,
+                "points_possible": 8
+            }
+            
+        # Expense Reserve (4 points)
+        expense_points = 0
+        if "expenseReserve" in sub_claim:
+            sub_expense = float(sub_claim["expenseReserve"])
+            key_expense = float(key_claim["expenseReserve"])
+            
+            percentage_diff = abs((sub_expense - key_expense) / key_expense)
+            if percentage_diff <= 0.05:  # 5% tolerance
+                expense_points = 4
+            else:
+                expense_points = math.floor(4 * (1 - percentage_diff / 0.1))
+                expense_points = max(0, expense_points)
+                
+            claim_results["details"]["expenseReserve"] = {
+                "submitted": sub_expense,
+                "expected": key_expense,
+                "diff_percentage": round(percentage_diff * 100, 2),
+                "points_earned": expense_points,
+                "points_possible": 4
+            }
+        else:
+            claim_results["details"]["expenseReserve"] = {
+                "error": "Missing expenseReserve",
+                "points_earned": 0,
+                "points_possible": 4
+            }
+            
+        # Policy Reference (3 points)
+        policy_points = 0
+        if "policyReference" in sub_claim:
+            sub_policy = sub_claim["policyReference"]
+            key_policy = key_claim["policyReference"]
+            
+            if sub_policy == key_policy:
+                policy_points = 3
+                
+            claim_results["details"]["policyReference"] = {
+                "submitted": sub_policy,
+                "expected": key_policy,
+                "points_earned": policy_points,
+                "points_possible": 3
+            }
+        else:
+            claim_results["details"]["policyReference"] = {
+                "error": "Missing policyReference",
+                "points_earned": 0,
+                "points_possible": 3
+            }
+            
+        claim_results["points_earned"] = indemnity_points + expense_points + policy_points
+        results["points_earned"] += claim_results["points_earned"]
+        results["details"][claim_id] = claim_results
+        
+    return results
 
-def evaluate_submission(candidate, answer_key):
-    """Evaluate the entire submission"""
-    scenario1_results = evaluate_scenario_1(candidate["scenario_1"], answer_key["scenario_1"])
-    scenario2_results = evaluate_scenario_2(candidate["scenario_2"], answer_key["scenario_2"])
-    scenario3_results = evaluate_scenario_3(candidate["scenario_3"], answer_key["scenario_3"])
-    
-    # Calculate overall score
-    total_score = scenario1_results["score"] + scenario2_results["score"] + scenario3_results["score"]
-    max_score = scenario1_results["max_score"] + scenario2_results["max_score"] + scenario3_results["max_score"]
-    overall_percentage = round((total_score / max_score) * 100, 2)
-    
-    # Check for passing criteria
-    passed = True
-    failure_reasons = []
-    
-    # 1. Overall score at least 70%
-    if overall_percentage < 70:
-        passed = False
-        failure_reasons.append(f"Overall score below 70% (got {overall_percentage}%)")
-    
-    # 2. Minimum scenario scores (60% each)
-    if scenario1_results["percentage"] < 60:
-        passed = False
-        failure_reasons.append(f"Scenario 1 score below 60% (got {scenario1_results['percentage']}%)")
-    
-    if scenario2_results["percentage"] < 60:
-        passed = False
-        failure_reasons.append(f"Scenario 2 score below 60% (got {scenario2_results['percentage']}%)")
-    
-    if scenario3_results["percentage"] < 60:
-        passed = False
-        failure_reasons.append(f"Scenario 3 score below 60% (got {scenario3_results['percentage']}%)")
-    
-    # 3. Critical errors
-    all_critical_errors = (
-        scenario1_results["critical_errors"] + 
-        scenario2_results["critical_errors"] + 
-        scenario3_results["critical_errors"]
-    )
-    
-    if all_critical_errors:
-        passed = False
-        failure_reasons.append(f"Critical errors present: {len(all_critical_errors)}")
-    
-    return {
-        "overall_score": overall_percentage,
-        "total_points": total_score,
-        "max_points": max_score,
-        "passed": passed,
-        "failure_reasons": failure_reasons if not passed else [],
-        "scenario_1": scenario1_results,
-        "scenario_2": scenario2_results,
-        "scenario_3": scenario3_results,
-        "critical_errors": all_critical_errors
+def evaluate_part2(submission, answer_key):
+    results = {
+        "points_earned": 0,
+        "points_possible": 30,
+        "details": {}
     }
+    
+    # Check if adjustedClaims exists in submission
+    if "adjustedClaims" not in submission:
+        results["details"]["error"] = "Missing adjustedClaims in submission"
+        return results
+        
+    # Create dictionary of answer key claims for easier lookup
+    key_claims = {claim["claimId"]: claim for claim in answer_key["adjustedClaims"]}
+    sub_claims = {claim["claimId"]: claim for claim in submission["adjustedClaims"]}
+    
+    identified_claims = set(sub_claims.keys())
+    required_claims = set(key_claims.keys())
+    
+    # Check if submission identified all 15 claims (2 points each for identification)
+    identification_points = 0
+    for claim_id in required_claims:
+        if claim_id in identified_claims:
+            identification_points += 2
+    
+    results["details"]["claim_identification"] = {
+        "points_earned": identification_points,
+        "points_possible": 30,
+        "submitted_count": len(identified_claims),
+        "expected_count": len(required_claims),
+        "missing_claims": list(required_claims - identified_claims),
+        "extra_claims": list(identified_claims - required_claims)
+    }
+    
+    # Evaluate each claim that was included in the submission
+    claim_points = 0
+    claim_evaluations = {}
+    
+    for claim_id in identified_claims:
+        claim_eval = {"points_earned": 0, "points_possible": 2}
+        
+        # Skip if not in answer key (shouldn't happen if we checked correctly)
+        if claim_id not in key_claims:
+            claim_eval["error"] = "Claim not in answer key"
+            claim_evaluations[claim_id] = claim_eval
+            continue
+            
+        sub_claim = sub_claims[claim_id]
+        key_claim = key_claims[claim_id]
+        
+        # Direction of adjustment (0.5 point)
+        sub_original = float(sub_claim.get("originalReserve", 0))
+        sub_adjusted = float(sub_claim.get("adjustedReserve", 0))
+        key_original = float(key_claim.get("originalReserve", 0))
+        key_adjusted = float(key_claim.get("adjustedReserve", 0))
+        
+        sub_direction = sub_adjusted > sub_original
+        key_direction = key_adjusted > key_original
+        
+        direction_points = 0.5 if sub_direction == key_direction else 0
+        
+        # Value within tolerance (0.5 point)
+        value_points = 0
+        if "adjustedReserve" in sub_claim:
+            percentage_diff = abs((sub_adjusted - key_adjusted) / key_adjusted)
+            if percentage_diff <= 0.15:  # 15% tolerance
+                value_points = 0.5
+                
+        # Reason code (1 point)
+        reason_points = 0
+        if "reasonCode" in sub_claim and sub_claim["reasonCode"] == key_claim["reasonCode"]:
+            reason_points = 1
+            
+        claim_eval["points_earned"] = direction_points + value_points + reason_points
+        claim_eval["details"] = {
+            "direction": {
+                "submitted": "increase" if sub_direction else "decrease",
+                "expected": "increase" if key_direction else "decrease",
+                "points": direction_points
+            },
+            "value": {
+                "submitted": sub_adjusted,
+                "expected": key_adjusted,
+                "diff_percentage": round(percentage_diff * 100, 2) if "adjustedReserve" in sub_claim else "N/A",
+                "points": value_points
+            },
+            "reason_code": {
+                "submitted": sub_claim.get("reasonCode", "Missing"),
+                "expected": key_claim["reasonCode"],
+                "points": reason_points
+            }
+        }
+        
+        claim_points += claim_eval["points_earned"]
+        claim_evaluations[claim_id] = claim_eval
+    
+    # Critical error check: if more than 5 claims are missing, it's an automatic failure
+    critical_error = None
+    if len(required_claims - identified_claims) > 5:
+        critical_error = "Missed more than 5 claims that require adjustment"
+    
+    # Check for direction reversal critical error
+    direction_errors = []
+    for claim_id in identified_claims.intersection(required_claims):
+        sub_claim = sub_claims[claim_id]
+        key_claim = key_claims[claim_id]
+        
+        sub_original = float(sub_claim.get("originalReserve", 0))
+        sub_adjusted = float(sub_claim.get("adjustedReserve", 0))
+        key_original = float(key_claim.get("originalReserve", 0))
+        key_adjusted = float(key_claim.get("adjustedReserve", 0))
+        
+        sub_direction = sub_adjusted > sub_original
+        key_direction = key_adjusted > key_original
+        
+        if sub_direction != key_direction:
+            direction_errors.append(claim_id)
+    
+    if direction_errors:
+        if not critical_error:
+            critical_error = "Increasing reserves when they should be decreased or vice versa"
+        results["details"]["direction_errors"] = direction_errors
+    
+    if critical_error:
+        results["critical_error"] = critical_error
+    
+    # Final part2 score (identification score already included in identification_points)
+    results["points_earned"] = identification_points
+    results["details"]["claim_evaluations"] = claim_evaluations
+    
+    return results
+
+def evaluate_part3(submission, answer_key):
+    results = {
+        "points_earned": 0,
+        "points_possible": 25,
+        "details": {}
+    }
+    
+    # Check if recommendations exists in submission
+    if "recommendations" not in submission:
+        results["details"]["error"] = "Missing recommendations in submission"
+        return results
+    
+    # Get the three largest percentage change claims from answer key
+    key_recommendations = answer_key["recommendations"]
+    key_claim_ids = {rec["claimId"] for rec in key_recommendations}
+    
+    # Check which of the correct claims the candidate identified
+    sub_recommendations = submission["recommendations"]
+    sub_claim_ids = {rec["claimId"] for rec in sub_recommendations if "claimId" in rec}
+    
+    # Score for correctly identifying the three claims (5 points each)
+    identification_points = 0
+    for claim_id in key_claim_ids:
+        if claim_id in sub_claim_ids:
+            identification_points += 5
+    
+    results["details"]["claim_identification"] = {
+        "points_earned": identification_points,
+        "points_possible": 15,
+        "expected_claims": list(key_claim_ids),
+        "submitted_claims": list(sub_claim_ids),
+        "correct_claims": list(key_claim_ids.intersection(sub_claim_ids)),
+        "incorrect_claims": list(sub_claim_ids - key_claim_ids)
+    }
+    
+    # Create dictionaries for easier lookup
+    key_recs = {rec["claimId"]: rec for rec in key_recommendations}
+    sub_recs = {rec["claimId"]: rec for rec in sub_recommendations if "claimId" in rec}
+    
+    # Evaluate each recommendation that was included in the submission and is one of the correct ones
+    detail_points = 0
+    rec_evaluations = {}
+    
+    for claim_id in key_claim_ids.intersection(sub_claim_ids):
+        rec_eval = {"points_earned": 0, "points_possible": 3.5}
+        
+        sub_rec = sub_recs[claim_id]
+        key_rec = key_recs[claim_id]
+        
+        # Reserve values match Part 2 (1 point)
+        reserve_match = False
+        if ("currentReserve" in sub_rec and "recommendedReserve" in sub_rec and
+            abs(float(sub_rec["currentReserve"]) - float(key_rec["currentReserve"])) < 0.01 and
+            abs(float(sub_rec["recommendedReserve"]) - float(key_rec["recommendedReserve"])) < 0.01):
+            reserve_match = True
+            
+        # Policy section reference (1.5 points)
+        policy_match = False
+        if "policySection" in sub_rec and sub_rec["policySection"] == key_rec["policySection"]:
+            policy_match = True
+            
+        # Change category (1 point)
+        category_match = False
+        if "changeCategory" in sub_rec and sub_rec["changeCategory"] == key_rec["changeCategory"]:
+            category_match = True
+            
+        rec_eval["points_earned"] = (1 if reserve_match else 0) + (1.5 if policy_match else 0) + (1 if category_match else 0)
+        rec_eval["details"] = {
+            "reserve_values": {
+                "submitted": {
+                    "current": sub_rec.get("currentReserve", "Missing"),
+                    "recommended": sub_rec.get("recommendedReserve", "Missing")
+                },
+                "expected": {
+                    "current": key_rec["currentReserve"],
+                    "recommended": key_rec["recommendedReserve"]
+                },
+                "match": reserve_match,
+                "points": 1 if reserve_match else 0
+            },
+            "policy_section": {
+                "submitted": sub_rec.get("policySection", "Missing"),
+                "expected": key_rec["policySection"],
+                "match": policy_match,
+                "points": 1.5 if policy_match else 0
+            },
+            "change_category": {
+                "submitted": sub_rec.get("changeCategory", "Missing"),
+                "expected": key_rec["changeCategory"],
+                "match": category_match,
+                "points": 1 if category_match else 0
+            }
+        }
+        
+        detail_points += rec_eval["points_earned"]
+        rec_evaluations[claim_id] = rec_eval
+    
+    results["points_earned"] = identification_points + detail_points
+    results["details"]["recommendation_evaluations"] = rec_evaluations
+    
+    return results
+
+def evaluate_submission(submission, answer_key):
+    # Initialize results dictionary
+    results = {
+        "overall_score": 0,
+        "points_earned": 0,
+        "points_possible": 100,
+        "pass_status": None,
+        "parts": {}
+    }
+    
+    # Check if submission has the necessary structure
+    if "part1" not in submission or "part2" not in submission or "part3" not in submission:
+        results["error"] = "Submission missing one or more required parts"
+        results["pass_status"] = "Fail"
+        return results
+    
+    # Evaluate each part
+    part1_results = evaluate_part1(submission["part1"], answer_key["part1"])
+    part2_results = evaluate_part2(submission["part2"], answer_key["part2"])
+    part3_results = evaluate_part3(submission["part3"], answer_key["part3"])
+    
+    # Add results to the main dictionary
+    results["parts"]["part1"] = part1_results
+    results["parts"]["part2"] = part2_results
+    results["parts"]["part3"] = part3_results
+    
+    # Calculate total points
+    total_earned = part1_results["points_earned"] + part2_results["points_earned"] + part3_results["points_earned"]
+    total_possible = part1_results["points_possible"] + part2_results["points_possible"] + part3_results["points_possible"]
+    
+    results["points_earned"] = total_earned
+    
+    # Check for critical errors that cause automatic failure
+    if "critical_error" in part2_results:
+        results["critical_error"] = part2_results["critical_error"]
+        results["pass_status"] = "Fail"
+    else:
+        # Determine pass status
+        if total_earned >= 80:
+            results["pass_status"] = "Pass"
+        elif total_earned >= 65:
+            results["pass_status"] = "Conditional Pass"
+        else:
+            results["pass_status"] = "Fail"
+    
+    # Calculate overall percentage score
+    results["overall_score"] = round((total_earned / total_possible) * 100, 2)
+    
+    return results
 
 def main():
-    # Load files
-    candidate_submission = load_json_file("test_submission.json")
-    answer_key = load_json_file("answer_key.json")
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
+        
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    if not candidate_submission or not answer_key:
-        print("Error: Could not load required files")
-        return
+    # Load the files
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
     
-    # Evaluate submission
-    results = evaluate_submission(candidate_submission, answer_key)
+    # Evaluate the submission
+    results = evaluate_submission(submission, answer_key)
     
-    # Save results
+    # Save results to file
     with open("test_results.json", "w") as f:
         json.dump(results, f, indent=2)
     
-    print(f"Evaluation complete. Overall score: {results['overall_score']}%")
-    print(f"Result: {'PASS' if results['passed'] else 'FAIL'}")
-    if not results['passed']:
-        print("Failure reasons:")
-        for reason in results['failure_reasons']:
-            print(f"- {reason}")
-    print("Detailed results saved to test_results.json")
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
+    print(f"Pass status: {results['pass_status']}")
 
 if __name__ == "__main__":
     main()

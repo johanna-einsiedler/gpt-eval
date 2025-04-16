@@ -1,0 +1,119 @@
+{
+  "candidateId": "EVALUATOR_KEY",
+  "Exercise1": {
+    "score": 4,
+    "max_score": 4,
+    "details": {
+      "lowestTotalCost": {
+        "correct": true,
+        "submitted": 59639.5,
+        "expected": 59639.5
+      },
+      "recommendedSupplier": {
+        "correct": true,
+        "submitted": "C",
+        "expected": "C"
+      },
+      "priceVariance": {
+        "correct": true,
+        "submitted": 16.11,
+        "expected": 16.11
+      },
+      "volumeDiscountSavings": {
+        "correct": true,
+        "submitted": 4378.5,
+        "expected": 4378.5
+      }
+    }
+  },
+  "Exercise2": {
+    "score": 4,
+    "max_score": 4,
+    "details": {
+      "overchargedComponents": {
+        "correct": true,
+        "submitted": [
+          "SC-003",
+          "SC-005",
+          "SC-008"
+        ],
+        "expected": [
+          "SC-003",
+          "SC-005",
+          "SC-008"
+        ],
+        "matches": 3,
+        "required_matches": 2
+      },
+      "totalOvercharge": {
+        "correct": true,
+        "submitted": 24.5,
+        "expected": 24.5
+      },
+      "marketRateCompliantComponents": {
+        "correct": true,
+        "submitted": [
+          "SC-002",
+          "SC-004",
+          "SC-007",
+          "SC-010",
+          "SC-011",
+          "SC-012"
+        ],
+        "expected": [
+          "SC-002",
+          "SC-004",
+          "SC-007",
+          "SC-010",
+          "SC-011",
+          "SC-012"
+        ],
+        "matches": 6,
+        "required_matches": 4
+      },
+      "revisedTotalPrice": {
+        "correct": true,
+        "submitted": 564.7,
+        "expected": 564.7
+      }
+    }
+  },
+  "Exercise3": {
+    "score": 4,
+    "max_score": 4,
+    "details": {
+      "averageQ4Price": {
+        "correct": true,
+        "submitted": 40.22,
+        "expected": 40.22
+      },
+      "projectedQ1Price": {
+        "correct": true,
+        "submitted": 50.36,
+        "expected": 50.36,
+        "acceptable_range": [
+          49.5,
+          51.5
+        ]
+      },
+      "sixMonthTrend": {
+        "correct": true,
+        "submitted": "increasing",
+        "expected": "increasing"
+      },
+      "optimalPurchaseMonth": {
+        "correct": true,
+        "submitted": "June",
+        "expected": "June",
+        "acceptable_values": [
+          "June",
+          "May"
+        ]
+      }
+    }
+  },
+  "total_score": 12,
+  "max_score": 12,
+  "overall_score": 100.0,
+  "passed": true
+}

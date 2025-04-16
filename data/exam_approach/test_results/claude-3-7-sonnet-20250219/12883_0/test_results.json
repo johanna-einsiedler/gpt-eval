@@ -1,0 +1,53 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "overall_score": 100.0,
+  "total_points": 100,
+  "total_possible": 100,
+  "passed": true,
+  "sections": {
+    "Transaction Recording": {
+      "points": 30,
+      "max_points": 30,
+      "feedback": [
+        "Correct Grains expenditure calculation: 117760.0",
+        "Correct Produce expenditure calculation: 35562.5",
+        "Correct Protein expenditure calculation: 66147.5",
+        "Correct Dairy expenditure calculation: 21320.0",
+        "Correct product categorization",
+        "Accurate arithmetic in all calculations"
+      ]
+    },
+    "Inventory Reconciliation": {
+      "points": 25,
+      "max_points": 25,
+      "feedback": [
+        "All ending inventory calculations correct",
+        "Correct identification of all inventory discrepancies"
+      ]
+    },
+    "Regulatory Compliance Reporting": {
+      "points": 25,
+      "max_points": 25,
+      "feedback": [
+        "All commodity volumes correct",
+        "All price ranges correct",
+        "Certification summary correct",
+        "Origin verification correct",
+        "Proper data aggregation across product types"
+      ]
+    },
+    "Audit Trail Documentation": {
+      "points": 20,
+      "max_points": 20,
+      "feedback": [
+        "All transaction records correct",
+        "All product traceability information correct",
+        "All certification codes correct"
+      ]
+    }
+  },
+  "critical_elements_met": true,
+  "critical_feedback": [],
+  "section_minimums_met": true,
+  "minimum_feedback": []
+}

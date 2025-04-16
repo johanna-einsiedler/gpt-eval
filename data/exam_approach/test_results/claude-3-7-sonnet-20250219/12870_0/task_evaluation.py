@@ -1,419 +1,434 @@
 import json
-import os
-from typing import Dict, Any, List, Union
+import sys
+import re
+from datetime import datetime, timedelta
 
-def load_json(filename: str) -> Dict[str, Any]:
-    """Load JSON data from a file."""
+
+def count_words(text):
+    if not text:
+        return 0
+    return len(re.findall(r'\b\w+\b', text))
+
+
+def is_date_within_range(date_str, months=6):
     try:
-        with open(filename, 'r') as file:
-            return json.load(file)
-    except FileNotFoundError:
-        print(f"Error: File '{filename}' not found.")
-        return {}
-    except json.JSONDecodeError:
-        print(f"Error: File '{filename}' contains invalid JSON.")
-        return {}
+        date = datetime.strptime(date_str, "%Y-%m-%d")
+        cutoff_date = datetime.now() - timedelta(days=30 * months)
+        return date >= cutoff_date
+    except (ValueError, TypeError):
+        return False
 
-def save_json(data: Dict[str, Any], filename: str) -> None:
-    """Save data as JSON to a file."""
-    with open(filename, 'w') as file:
-        json.dump(data, file, indent=2)
 
-def evaluate_task1(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
-    """Evaluate Task 1: Industry News Analysis."""
-    results = {
-        "score": 0,
-        "max_score": 30,
-        "feedback": [],
-        "details": {}
+def is_date_within_30_days(date_str):
+    return is_date_within_range(date_str, months=1)
+
+
+def validate_json_format(submission):
+    required_structure = {
+        "task1": {
+            "developments": [
+                {
+                    "headline": str,
+                    "source": str,
+                    "date": str,
+                    "summary": str,
+                    "impact": str,
+                    "significance_rating": int,
+                    "rating_justification": str
+                }
+            ]
+        },
+        "task2": {
+            "deal_comparison": {
+                "deal1": {
+                    "talent_name": str,
+                    "industry_sector": str,
+                    "deal_partner": str,
+                    "announcement_date": str,
+                    "structure": str,
+                    "compensation_model": str,
+                    "rights_arrangement": str,
+                    "notable_terms": str,
+                    "innovative_aspect": str,
+                    "sources": list
+                },
+                "deal2": {
+                    "talent_name": str,
+                    "industry_sector": str,
+                    "deal_partner": str,
+                    "announcement_date": str,
+                    "structure": str,
+                    "compensation_model": str,
+                    "rights_arrangement": str,
+                    "notable_terms": str,
+                    "innovative_aspect": str,
+                    "sources": list
+                },
+                "comparison_insights": str
+            }
+        },
+        "task3": {
+            "trend_analysis": {
+                "trend_name": str,
+                "trend_description": str,
+                "supporting_evidence": list,
+                "business_impact": str,
+                "client_opportunities": list,
+                "recommended_actions": list,
+                "monitoring_sources": list
+            }
+        }
     }
     
-    # Check if all three trends are present
-    for i in range(1, 4):
-        trend_key = f"trend{i}"
-        if trend_key not in submission.get("task1", {}):
-            results["feedback"].append(f"Missing {trend_key} in task1")
-            continue
+    format_score = 0
+    max_format_score = 10
+    
+    # Check if all required keys are present
+    try:
+        if "task1" in submission and "developments" in submission["task1"]:
+            if len(submission["task1"]["developments"]) == 3:
+                format_score += 2
+                
+        if "task2" in submission and "deal_comparison" in submission["task2"]:
+            if all(key in submission["task2"]["deal_comparison"] for key in ["deal1", "deal2", "comparison_insights"]):
+                format_score += 4
+                
+        if "task3" in submission and "trend_analysis" in submission["task3"]:
+            if all(key in submission["task3"]["trend_analysis"] for key in ["trend_name", "trend_description", 
+                                                                           "supporting_evidence", "business_impact",
+                                                                           "client_opportunities", "recommended_actions", 
+                                                                           "monitoring_sources"]):
+                format_score += 4
+    except (KeyError, TypeError):
+        pass
+    
+    return format_score
+
+
+def evaluate_task1(submission):
+    score = 0
+    max_score = 30
+    feedback = []
+    
+    try:
+        developments = submission["task1"]["developments"]
+        
+        if not isinstance(developments, list) or len(developments) < 3:
+            feedback.append("Task 1: Fewer than 3 developments provided")
+            return score, max_score, feedback
+        
+        for i, dev in enumerate(developments[:3]):
+            dev_score = 0
+            dev_feedback = []
             
-        trend_results = {"points": 0, "max_points": 10, "feedback": []}
-        
-        # Check if trend title is valid (from the materials)
-        valid_titles = [
-            "Streaming Platforms Shift to Sports Rights Acquisition",
-            "AI-Generated Content Disrupting Production Economics",
-            "Brand Integration Deals Surpass Traditional Endorsements",
-            "Olympic Sponsorship Rates Surge Ahead of 2024 Paris Games",
-            "Podcast Talent Acquisition Heats Up"
-        ]
-        
-        title = submission["task1"][trend_key].get("title", "")
-        if any(title.lower() in valid_title.lower() for valid_title in valid_titles):
-            trend_results["points"] += 2
-            trend_results["feedback"].append("Correctly identified a valid trend")
-        else:
-            trend_results["feedback"].append("Trend title not found in provided materials")
-        
-        # Check source citation
-        valid_sources = [
-            "Entertainment Business Weekly",
-            "Digital Media Today", 
-            "Marketing Insider",
-            "Sports Business Journal",
-            "Audio Industry Report"
-        ]
-        
-        source = submission["task1"][trend_key].get("source", "")
-        if any(source.lower() in valid_source.lower() for valid_source in valid_sources):
-            trend_results["points"] += 2
-            trend_results["feedback"].append("Correctly cited a valid source")
-        else:
-            trend_results["feedback"].append("Source citation does not match materials")
-        
-        # Check impact score
-        impact_score = submission["task1"][trend_key].get("impact_score", 0)
-        if isinstance(impact_score, int) and 1 <= impact_score <= 10:
-            if 6 <= impact_score <= 10:
-                trend_results["points"] += 2
-                trend_results["feedback"].append("Provided reasonable impact score (6-10)")
+            # Check if recent (within 30 days)
+            if is_date_within_30_days(dev.get("date")):
+                dev_score += 2
             else:
-                trend_results["points"] += 1
-                trend_results["feedback"].append("Impact score (1-5) seems low for a major trend")
-        else:
-            trend_results["feedback"].append("Impact score must be an integer between 1-10")
-        
-        # Check implications
-        implications = submission["task1"][trend_key].get("key_implications", [])
-        if len(implications) == 3:
-            implication_points = min(4, sum(1 for imp in implications if len(imp) > 10))
-            trend_results["points"] += implication_points
-            if implication_points == 4:
-                trend_results["feedback"].append("Provided 3 substantive implications")
+                dev_feedback.append(f"Development {i+1}: Not within the past 30 days")
+            
+            # Check headline and source
+            if dev.get("headline") and dev.get("source"):
+                dev_score += 1
             else:
-                trend_results["feedback"].append(f"Provided {implication_points} substantive implications")
-        else:
-            trend_results["feedback"].append(f"Expected 3 implications, found {len(implications)}")
-        
-        results["score"] += trend_results["points"]
-        results["details"][trend_key] = trend_results
-    
-    return results
-
-def evaluate_task2(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
-    """Evaluate Task 2: Deal Structure Comparison."""
-    results = {
-        "score": 0,
-        "max_score": 35,
-        "feedback": [],
-        "details": {}
-    }
-    
-    if "deal_comparison" not in submission.get("task2", {}):
-        results["feedback"].append("Missing deal_comparison in task2")
-        return results
-    
-    deal_comp = submission["task2"]["deal_comparison"]
-    key_comp = answer_key["task2"]["deal_comparison"]
-    
-    # Check compensation calculations
-    comp_results = {"points": 0, "max_points": 10, "feedback": []}
-    
-    # Deal 1 compensation
-    deal1_comp = deal_comp.get("deal1_compensation", 0)
-    if isinstance(deal1_comp, int):
-        # Allow 10% margin of error
-        if abs(deal1_comp - key_comp["deal1_compensation"]) <= key_comp["deal1_compensation"] * 0.1:
-            comp_results["points"] += 5
-            comp_results["feedback"].append("Deal 1 compensation correctly calculated")
-        else:
-            comp_results["feedback"].append("Deal 1 compensation calculation incorrect")
-    else:
-        comp_results["feedback"].append("Deal 1 compensation must be an integer")
-    
-    # Deal 2 compensation
-    deal2_comp = deal_comp.get("deal2_compensation", 0)
-    if isinstance(deal2_comp, int):
-        # Allow 10% margin of error
-        if abs(deal2_comp - key_comp["deal2_compensation"]) <= key_comp["deal2_compensation"] * 0.1:
-            comp_results["points"] += 5
-            comp_results["feedback"].append("Deal 2 compensation correctly calculated (including performance bonus)")
-        else:
-            # Check if they missed the performance bonus
-            if abs(deal2_comp - 3000000) <= 300000:
-                comp_results["points"] += 2
-                comp_results["feedback"].append("Deal 2 base compensation correct but missed performance bonus")
+                dev_feedback.append(f"Development {i+1}: Missing headline or source")
+            
+            # Check summary word count (50-75 words)
+            summary_words = count_words(dev.get("summary", ""))
+            if 40 <= summary_words <= 85:  # Allow some flexibility
+                dev_score += 1
             else:
-                comp_results["feedback"].append("Deal 2 compensation calculation incorrect")
-    else:
-        comp_results["feedback"].append("Deal 2 compensation must be an integer")
+                dev_feedback.append(f"Development {i+1}: Summary word count ({summary_words}) outside desired range (50-75)")
+            
+            # Check impact word count (75-100 words)
+            impact_words = count_words(dev.get("impact", ""))
+            if 65 <= impact_words <= 110:  # Allow some flexibility
+                dev_score += 1
+            else:
+                dev_feedback.append(f"Development {i+1}: Impact word count ({impact_words}) outside desired range (75-100)")
+            
+            # Check significance rating (1-10)
+            rating = dev.get("significance_rating")
+            if isinstance(rating, int) and 1 <= rating <= 10:
+                dev_score += 1
+            else:
+                dev_feedback.append(f"Development {i+1}: Invalid significance rating")
+            
+            # Check rating justification
+            if dev.get("rating_justification") and len(dev.get("rating_justification", "")) > 10:
+                dev_score += 1
+            else:
+                dev_feedback.append(f"Development {i+1}: Missing or inadequate rating justification")
+            
+            # Add quality score (subjective, but we'll base on length and completeness)
+            quality_score = min(3, dev_score)  # Scale based on previous metrics
+            dev_score += quality_score
+            
+            score += dev_score
+            feedback.extend(dev_feedback)
     
-    results["score"] += comp_results["points"]
-    results["details"]["compensation"] = comp_results
+    except (KeyError, TypeError):
+        feedback.append("Task 1: Invalid or missing data structure")
     
-    # Check term lengths
-    term_results = {"points": 0, "max_points": 10, "feedback": []}
-    
-    # Deal 1 term
-    deal1_term = deal_comp.get("deal1_term_length", 0)
-    if deal1_term == key_comp["deal1_term_length"]:
-        term_results["points"] += 5
-        term_results["feedback"].append("Deal 1 term length correct (36 months)")
-    else:
-        term_results["feedback"].append(f"Deal 1 term length incorrect (should be 36 months, got {deal1_term})")
-    
-    # Deal 2 term
-    deal2_term = deal_comp.get("deal2_term_length", 0)
-    if deal2_term == key_comp["deal2_term_length"]:
-        term_results["points"] += 5
-        term_results["feedback"].append("Deal 2 term length correct (24 months)")
-    else:
-        term_results["feedback"].append(f"Deal 2 term length incorrect (should be 24 months, got {deal2_term})")
-    
-    results["score"] += term_results["points"]
-    results["details"]["term_length"] = term_results
-    
-    # Check rights retained
-    rights_results = {"points": 0, "max_points": 10, "feedback": []}
-    
-    # Deal 1 rights
-    deal1_rights = deal_comp.get("deal1_rights_retained", [])
-    if len(deal1_rights) >= 2:
-        valid_rights_count = sum(1 for right in deal1_rights if len(right) > 10)
-        if valid_rights_count >= 2:
-            rights_results["points"] += 5
-            rights_results["feedback"].append("Listed at least 2 substantive rights for Deal 1")
-        else:
-            rights_results["points"] += valid_rights_count
-            rights_results["feedback"].append(f"Listed only {valid_rights_count} substantive rights for Deal 1")
-    else:
-        rights_results["feedback"].append("Insufficient rights listed for Deal 1")
-    
-    # Deal 2 rights
-    deal2_rights = deal_comp.get("deal2_rights_retained", [])
-    if len(deal2_rights) >= 2:
-        valid_rights_count = sum(1 for right in deal2_rights if len(right) > 10)
-        if valid_rights_count >= 2:
-            rights_results["points"] += 5
-            rights_results["feedback"].append("Listed at least 2 substantive rights for Deal 2")
-        else:
-            rights_results["points"] += valid_rights_count
-            rights_results["feedback"].append(f"Listed only {valid_rights_count} substantive rights for Deal 2")
-    else:
-        rights_results["feedback"].append("Insufficient rights listed for Deal 2")
-    
-    results["score"] += rights_results["points"]
-    results["details"]["rights_retained"] = rights_results
-    
-    # Check more favorable deal
-    favorable_results = {"points": 0, "max_points": 5, "feedback": []}
-    
-    more_favorable = deal_comp.get("more_favorable_deal", "")
-    if more_favorable == key_comp["more_favorable_deal"]:
-        favorable_results["points"] += 5
-        favorable_results["feedback"].append("Correctly identified Deal 2 as more favorable")
-    else:
-        favorable_results["feedback"].append("Failed to identify Deal 2 as the more favorable deal")
-    
-    results["score"] += favorable_results["points"]
-    results["details"]["more_favorable"] = favorable_results
-    
-    return results
+    return score, max_score, feedback
 
-def evaluate_task3(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
-    """Evaluate Task 3: Client Advisory Scenario."""
-    results = {
-        "score": 0,
-        "max_score": 35,
-        "feedback": [],
-        "details": {}
-    }
-    
-    # Check platform selection
-    platform_results = {"points": 0, "max_points": 10, "feedback": []}
-    
-    platform = submission.get("task3", {}).get("platform_selection", "")
-    high_reach_platforms = ["TikTok Creator Marketplace", "YouTube Shorts"]
-    medium_reach_platforms = ["Twitch"]
-    low_reach_platforms = ["Substack", "Clubhouse", "Twitter Spaces"]
-    
-    if any(p.lower() in platform.lower() for p in high_reach_platforms):
-        platform_results["points"] += 10
-        platform_results["feedback"].append(f"Excellent choice of {platform} for audience expansion (1B+ users)")
-    elif any(p.lower() in platform.lower() for p in medium_reach_platforms):
-        platform_results["points"] += 5
-        platform_results["feedback"].append(f"{platform} is a reasonable choice but has smaller reach than optimal options")
-    elif any(p.lower() in platform.lower() for p in low_reach_platforms):
-        platform_results["points"] += 2
-        platform_results["feedback"].append(f"{platform} has limited reach for audience expansion purposes")
-    else:
-        platform_results["feedback"].append(f"Platform '{platform}' not found in provided materials")
-    
-    results["score"] += platform_results["points"]
-    results["details"]["platform_selection"] = platform_results
-    
-    # Check compensation recommendation
-    comp_results = {"points": 0, "max_points": 10, "feedback": []}
-    
-    comp_rec = submission.get("task3", {}).get("compensation_recommendation", 0)
-    
-    # Define appropriate ranges based on platform
-    platform_ranges = {
-        "tiktok": (25000, 50000),
-        "youtube": (20000, 45000),
-        "twitch": (10000, 30000),
-        "substack": (5000, 20000),
-        "clubhouse": (5000, 15000),
-        "twitter": (5000, 15000)
-    }
-    
-    # Determine which platform range to use
-    selected_range = None
-    for p_key, p_range in platform_ranges.items():
-        if p_key.lower() in platform.lower():
-            selected_range = p_range
-            break
-    
-    if selected_range and isinstance(comp_rec, int):
-        if selected_range[0] <= comp_rec <= selected_range[1]:
-            comp_results["points"] += 10
-            comp_results["feedback"].append(f"Compensation recommendation ({comp_rec}) is appropriate for mid-tier talent on {platform}")
-        elif comp_rec > 0:
-            # Outside range but still reasonable
-            comp_results["points"] += 5
-            comp_results["feedback"].append(f"Compensation recommendation ({comp_rec}) is outside typical range for mid-tier talent")
-        else:
-            comp_results["feedback"].append("Compensation must be a positive integer")
-    else:
-        comp_results["feedback"].append("Could not evaluate compensation recommendation")
-    
-    results["score"] += comp_results["points"]
-    results["details"]["compensation_recommendation"] = comp_results
-    
-    # Check rights recommendation
-    rights_results = {"points": 0, "max_points": 7, "feedback": []}
-    
-    rights_rec = submission.get("task3", {}).get("rights_recommendation", [])
-    if len(rights_rec) == 2:
-        valid_rights_count = sum(1 for right in rights_rec if len(right) > 10)
-        if valid_rights_count == 2:
-            rights_results["points"] += 7
-            rights_results["feedback"].append("Provided 2 substantive rights recommendations")
-        else:
-            rights_results["points"] += valid_rights_count * 3
-            rights_results["feedback"].append(f"Provided {valid_rights_count} substantive rights recommendations")
-    else:
-        rights_results["feedback"].append(f"Expected 2 rights recommendations, found {len(rights_rec)}")
-    
-    results["score"] += rights_results["points"]
-    results["details"]["rights_recommendation"] = rights_results
-    
-    # Check supporting trend evidence
-    trend_results = {"points": 0, "max_points": 8, "feedback": []}
-    
-    trend_evidence = submission.get("task3", {}).get("supporting_trend_evidence", [])
-    if len(trend_evidence) == 2:
-        valid_trends_count = sum(1 for trend in trend_evidence if len(trend) > 10)
-        if valid_trends_count == 2:
-            trend_results["points"] += 8
-            trend_results["feedback"].append("Provided 2 substantive supporting trends")
-        else:
-            trend_results["points"] += valid_trends_count * 4
-            trend_results["feedback"].append(f"Provided {valid_trends_count} substantive supporting trends")
-    else:
-        trend_results["feedback"].append(f"Expected 2 supporting trends, found {len(trend_evidence)}")
-    
-    results["score"] += trend_results["points"]
-    results["details"]["supporting_trend_evidence"] = trend_results
-    
-    return results
 
-def evaluate_submission(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
-    """Evaluate the entire submission against the answer key."""
-    results = {
-        "candidate_id": submission.get("candidate_id", "Unknown"),
-        "task1_results": evaluate_task1(submission, answer_key),
-        "task2_results": evaluate_task2(submission, answer_key),
-        "task3_results": evaluate_task3(submission, answer_key),
-        "overall_feedback": []
-    }
+def evaluate_task2(submission):
+    score = 0
+    max_score = 35
+    feedback = []
     
-    # Calculate overall score
-    total_score = (
-        results["task1_results"]["score"] + 
-        results["task2_results"]["score"] + 
-        results["task3_results"]["score"]
-    )
-    
-    total_possible = (
-        results["task1_results"]["max_score"] + 
-        results["task2_results"]["max_score"] + 
-        results["task3_results"]["max_score"]
-    )
-    
-    results["overall_score"] = round((total_score / total_possible) * 100, 2)
-    
-    # Determine if the candidate passed
-    passed = results["overall_score"] >= 70
-    results["passed"] = passed
-    
-    # Generate overall feedback
-    if passed:
-        results["overall_feedback"].append(f"PASSED with a score of {results['overall_score']}%")
-    else:
-        results["overall_feedback"].append(f"FAILED with a score of {results['overall_score']}%")
-    
-    # Add task-specific feedback
-    for task_num, task_name in [(1, "Industry News Analysis"), (2, "Deal Structure Comparison"), (3, "Client Advisory Scenario")]:
-        task_key = f"task{task_num}_results"
-        task_score = results[task_key]["score"]
-        task_max = results[task_key]["max_score"]
-        task_percent = round((task_score / task_max) * 100, 2)
+    try:
+        deal_comparison = submission["task2"]["deal_comparison"]
         
-        results["overall_feedback"].append(f"Task {task_num} ({task_name}): {task_score}/{task_max} points ({task_percent}%)")
+        # Evaluate deal1
+        deal1_score = 0
+        deal1 = deal_comparison.get("deal1", {})
+        
+        # Check if recent (within 6 months)
+        if is_date_within_range(deal1.get("announcement_date")):
+            deal1_score += 2
+        else:
+            feedback.append("Deal 1: Not within the past 6 months")
+        
+        # Check basic information
+        if all(deal1.get(field) for field in ["talent_name", "industry_sector", "deal_partner"]):
+            deal1_score += 2
+        else:
+            feedback.append("Deal 1: Missing basic information (talent, sector, or partner)")
+        
+        # Check deal components
+        deal_components = ["structure", "compensation_model", "rights_arrangement", "notable_terms", "innovative_aspect"]
+        for component in deal_components:
+            if deal1.get(component) and count_words(deal1.get(component, "")) >= 30:
+                deal1_score += 1
+            else:
+                feedback.append(f"Deal 1: Missing or inadequate {component}")
+        
+        # Check sources
+        if isinstance(deal1.get("sources"), list) and len(deal1.get("sources", [])) >= 2:
+            deal1_score += 2
+        else:
+            feedback.append("Deal 1: Fewer than 2 sources provided")
+        
+        # Quality score
+        deal1_quality = min(3, deal1_score // 2)  # Scale based on previous metrics
+        deal1_score += deal1_quality
+        
+        # Evaluate deal2
+        deal2_score = 0
+        deal2 = deal_comparison.get("deal2", {})
+        
+        # Check if recent (within 6 months)
+        if is_date_within_range(deal2.get("announcement_date")):
+            deal2_score += 2
+        else:
+            feedback.append("Deal 2: Not within the past 6 months")
+        
+        # Check basic information
+        if all(deal2.get(field) for field in ["talent_name", "industry_sector", "deal_partner"]):
+            deal2_score += 2
+        else:
+            feedback.append("Deal 2: Missing basic information (talent, sector, or partner)")
+        
+        # Check deal components
+        for component in deal_components:
+            if deal2.get(component) and count_words(deal2.get(component, "")) >= 30:
+                deal2_score += 1
+            else:
+                feedback.append(f"Deal 2: Missing or inadequate {component}")
+        
+        # Check sources
+        if isinstance(deal2.get("sources"), list) and len(deal2.get("sources", [])) >= 2:
+            deal2_score += 2
+        else:
+            feedback.append("Deal 2: Fewer than 2 sources provided")
+        
+        # Quality score
+        deal2_quality = min(3, deal2_score // 2)  # Scale based on previous metrics
+        deal2_score += deal2_quality
+        
+        # Check if deals are from different sectors
+        if deal1.get("industry_sector") and deal2.get("industry_sector") and \
+           deal1.get("industry_sector").lower() != deal2.get("industry_sector").lower():
+            score += 2
+        else:
+            feedback.append("Deals are not from different entertainment sectors")
+        
+        # Evaluate comparison insights
+        insights = deal_comparison.get("comparison_insights", "")
+        insights_words = count_words(insights)
+        
+        if insights_words >= 80:
+            insights_score = 3
+        elif insights_words >= 40:
+            insights_score = 2
+        elif insights_words > 0:
+            insights_score = 1
+        else:
+            insights_score = 0
+            feedback.append("Missing comparison insights")
+        
+        score += deal1_score + deal2_score + insights_score
+        
+    except (KeyError, TypeError):
+        feedback.append("Task 2: Invalid or missing data structure")
     
-    # Check for critical errors
-    critical_errors = []
+    return score, max_score, feedback
+
+
+def evaluate_task3(submission):
+    score = 0
+    max_score = 35
+    feedback = []
     
-    # Critical error 1: Missing performance bonus in Deal 2
-    deal2_comp = submission.get("task2", {}).get("deal_comparison", {}).get("deal2_compensation", 0)
-    if abs(deal2_comp - 3000000) <= 300000:  # They only counted base compensation
-        critical_errors.append("Failed to account for performance bonus in Deal 2 compensation")
+    try:
+        trend_analysis = submission["task3"]["trend_analysis"]
+        
+        # Check trend name and description
+        if trend_analysis.get("trend_name") and len(trend_analysis.get("trend_name", "")) > 5:
+            score += 2
+        else:
+            feedback.append("Missing or inadequate trend name")
+        
+        description_words = count_words(trend_analysis.get("trend_description", ""))
+        if description_words >= 120:
+            score += 3
+        elif description_words >= 80:
+            score += 2
+        elif description_words > 0:
+            score += 1
+        else:
+            feedback.append("Missing trend description")
+        
+        # Check supporting evidence
+        evidence = trend_analysis.get("supporting_evidence", [])
+        if isinstance(evidence, list) and len(evidence) >= 3:
+            evidence_score = min(6, len(evidence) * 2)
+            score += evidence_score
+        else:
+            feedback.append("Fewer than 3 pieces of supporting evidence provided")
+        
+        # Check business impact
+        impact_words = count_words(trend_analysis.get("business_impact", ""))
+        if impact_words >= 120:
+            score += 4
+        elif impact_words >= 80:
+            score += 3
+        elif impact_words > 0:
+            score += 1
+        else:
+            feedback.append("Missing or inadequate business impact analysis")
+        
+        # Check client opportunities
+        opportunities = trend_analysis.get("client_opportunities", [])
+        if isinstance(opportunities, list) and len(opportunities) >= 3:
+            opp_score = min(6, len(opportunities) * 2)
+            score += opp_score
+        else:
+            feedback.append("Fewer than 3 client opportunities provided")
+        
+        # Check recommended actions
+        actions = trend_analysis.get("recommended_actions", [])
+        if isinstance(actions, list) and len(actions) >= 3:
+            action_score = min(6, len(actions) * 2)
+            score += action_score
+        else:
+            feedback.append("Fewer than 3 recommended actions provided")
+        
+        # Check monitoring sources
+        sources = trend_analysis.get("monitoring_sources", [])
+        if isinstance(sources, list) and len(sources) >= 3:
+            source_score = min(5, len(sources))
+            score += source_score
+        else:
+            feedback.append("Fewer than 3 monitoring sources provided")
+        
+        # Quality assessment (subjective element)
+        quality_score = min(3, score // 10)  # Scale based on previous metrics
+        score += quality_score
+        
+    except (KeyError, TypeError):
+        feedback.append("Task 3: Invalid or missing data structure")
     
-    # Critical error 2: Incorrect favorable deal identification
-    more_favorable = submission.get("task2", {}).get("deal_comparison", {}).get("more_favorable_deal", "")
-    if more_favorable != "deal2":
-        critical_errors.append("Failed to identify Deal 2 as the more favorable deal")
-    
-    # Critical error 3: Poor platform selection for audience expansion
-    platform = submission.get("task3", {}).get("platform_selection", "")
-    high_reach_platforms = ["TikTok Creator Marketplace", "YouTube Shorts"]
-    if not any(p.lower() in platform.lower() for p in high_reach_platforms):
-        critical_errors.append(f"Selected {platform} which has limited reach when audience expansion was the goal")
-    
-    if critical_errors:
-        results["critical_errors"] = critical_errors
-        results["overall_feedback"].append("CRITICAL ERRORS IDENTIFIED:")
-        for error in critical_errors:
-            results["overall_feedback"].append(f"- {error}")
-    
-    return results
+    return score, max_score, feedback
+
 
 def main():
-    # Load the submission and answer key
-    submission = load_json("test_submission.json")
-    answer_key = load_json("answer_key.json")
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py <submission_file> <answer_key_file>")
+        sys.exit(1)
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files.")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    # Evaluate the submission
-    results = evaluate_submission(submission, answer_key)
+    try:
+        with open(submission_file, 'r') as f:
+            submission = json.load(f)
+        
+        with open(answer_key_file, 'r') as f:
+            answer_key = json.load(f)
+    except FileNotFoundError:
+        print(f"Error: Could not find one of the input files")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"Error: Invalid JSON in one of the input files")
+        sys.exit(1)
     
-    # Save the results
-    save_json(results, "test_results.json")
-    print(f"Evaluation complete. Results saved to 'test_results.json'.")
-    print(f"Overall score: {results['overall_score']}%")
-    print(f"Result: {'PASSED' if results.get('passed', False) else 'FAILED'}")
+    # Evaluate format of submission
+    format_score = validate_json_format(submission)
+    format_max = 10
+    
+    # Evaluate each task
+    task1_score, task1_max, task1_feedback = evaluate_task1(submission)
+    task2_score, task2_max, task2_feedback = evaluate_task2(submission)
+    task3_score, task3_max, task3_feedback = evaluate_task3(submission)
+    
+    # Calculate overall score
+    total_score = format_score + task1_score + task2_score + task3_score
+    total_max = format_max + task1_max + task2_max + task3_max
+    overall_percentage = (total_score / total_max) * 100
+    
+    # Generate result
+    result = {
+        "candidate_id": submission.get("candidate_id", "Unknown"),
+        "format_score": {
+            "score": format_score,
+            "max_score": format_max,
+            "percentage": (format_score / format_max) * 100
+        },
+        "task1": {
+            "score": task1_score,
+            "max_score": task1_max,
+            "percentage": (task1_score / task1_max) * 100,
+            "feedback": task1_feedback
+        },
+        "task2": {
+            "score": task2_score,
+            "max_score": task2_max,
+            "percentage": (task2_score / task2_max) * 100,
+            "feedback": task2_feedback
+        },
+        "task3": {
+            "score": task3_score,
+            "max_score": task3_max,
+            "percentage": (task3_score / task3_max) * 100,
+            "feedback": task3_feedback
+        },
+        "total_score": total_score,
+        "total_possible": total_max,
+        "overall_score": overall_percentage,
+        "result": "PASS" if overall_percentage >= 80 else "FAIL"
+    }
+    
+    # Save result to file
+    with open("test_results.json", 'w') as f:
+        json.dump(result, f, indent=2)
+    
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {overall_percentage:.2f}%")
+    print(f"Result: {result['result']}")
+
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,86 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "task_scores": {
+    "task1": 1.0,
+    "task2": 1.0,
+    "task3": 1.0,
+    "task4": 1.0
+  },
+  "task_feedback": {
+    "task1": {
+      "highest_growth_category": "Correct",
+      "average_monthly_sales_q4": {
+        "Electronics": "Correct",
+        "Home Goods": "Correct",
+        "Apparel": "Correct",
+        "Sporting Goods": "Correct",
+        "Beauty Products": "Correct"
+      },
+      "lowest_sales_month": "Correct",
+      "percentage_decrease": "Correct"
+    },
+    "task2": {
+      "current_interest_rate": "Correct",
+      "interest_rate_change": "Correct",
+      "consumer_confidence_index": "Correct",
+      "confidence_index_direction": "Correct",
+      "economic_impacts": {
+        "Rising Interest Rates": "Correct",
+        "Decreasing Inflation": "Correct",
+        "Declining Unemployment": "Correct",
+        "Falling Consumer Confidence": "Correct",
+        "Increasing GDP Growth": "Correct"
+      },
+      "economic_impacts_score": "5/5 correct"
+    },
+    "task3": {
+      "forecast_july": {
+        "Electronics": "Correct",
+        "Home Goods": "Correct",
+        "Apparel": "Correct",
+        "Sporting Goods": "Correct",
+        "Beauty Products": "Correct"
+      },
+      "forecast_august": {
+        "Electronics": "Correct",
+        "Home Goods": "Correct",
+        "Apparel": "Correct",
+        "Sporting Goods": "Correct",
+        "Beauty Products": "Correct"
+      },
+      "forecast_september": {
+        "Electronics": "Correct",
+        "Home Goods": "Correct",
+        "Apparel": "Correct",
+        "Sporting Goods": "Correct",
+        "Beauty Products": "Correct"
+      },
+      "q3_regional_sales": {
+        "North": "Correct",
+        "South": "Correct",
+        "East": "Correct",
+        "West": "Correct",
+        "Central": "Correct"
+      },
+      "highest_august_category": "Correct"
+    },
+    "task4": {
+      "top_categories": "Correct",
+      "optimal_stock_levels": {
+        "Electronics": "Correct",
+        "Home Goods": "Correct",
+        "Beauty Products": "Correct"
+      },
+      "maximum_investment": "Correct"
+    }
+  },
+  "analytical_techniques": {
+    "Sales Trend Analysis": "Correctly applied",
+    "Economic Indicator Interpretation": "Correctly applied",
+    "Sales Forecasting": "Correctly applied",
+    "Inventory Planning": "Correctly applied"
+  },
+  "overall_score": 100.0,
+  "methodology_correct": true,
+  "passed": true
+}

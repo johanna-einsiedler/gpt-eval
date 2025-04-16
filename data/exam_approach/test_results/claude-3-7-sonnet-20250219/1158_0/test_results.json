@@ -1,0 +1,79 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "exercise1": {
+    "score": 5,
+    "possible": 5,
+    "details": {
+      "pricePattern": {
+        "correct": true,
+        "score": 1
+      },
+      "peakMonth": {
+        "correct": true,
+        "score": 1
+      },
+      "lowestPrice": {
+        "correct": true,
+        "score": 1
+      },
+      "percentageChange": {
+        "correct": true,
+        "score": 1
+      },
+      "quarterWithHighestVolatility": {
+        "correct": true,
+        "score": 1
+      }
+    }
+  },
+  "exercise2": {
+    "score": 4,
+    "possible": 4,
+    "details": {
+      "impactScore": {
+        "correct": true,
+        "score": 1
+      },
+      "expectedPriceChange": {
+        "correct": true,
+        "score": 1
+      },
+      "recommendedAction": {
+        "correct": true,
+        "score": 1
+      },
+      "alternateSupplierCode": {
+        "correct": true,
+        "score": 1
+      }
+    }
+  },
+  "exercise3": {
+    "score": 5,
+    "possible": 5,
+    "details": {
+      "contractRecommendation": {
+        "correct": true,
+        "score": 1
+      },
+      "priceTarget": {
+        "correct": true,
+        "score": 1
+      },
+      "potentialSavings": {
+        "correct": true,
+        "score": 1
+      },
+      "riskLevel": {
+        "correct": true,
+        "score": 1
+      },
+      "bonus": {
+        "description": "All items correct",
+        "score": 1
+      }
+    }
+  },
+  "critical_elements_passed": true,
+  "overall_score": 100.0
+}

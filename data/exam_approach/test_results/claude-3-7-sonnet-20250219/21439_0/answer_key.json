@@ -1,76 +1,32 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
-    "scenario_1": {
-        "irregularities_identified": [
-            {
-                "type": "OVP",
-                "description": "Unauthorized additional repair payment to ABC Auto Body beyond the approved amount",
-                "amount": 500.0,
-                "calculation_method": "Additional payment of $500.00 (TX-001237) was made to ABC Auto Body beyond the authorized repair payment of $3,850.00 (TX-001234)"
-            },
-            {
-                "type": "OVP",
-                "description": "Unauthorized extended rental car payment to Enterprise beyond the approved duration",
-                "amount": 90.0,
-                "calculation_method": "Additional payment of $90.00 (TX-001238) was made to Enterprise for 3 extra days beyond the authorized 7 days at $30/day ($210.00 total, TX-001235)"
-            }
-        ],
-        "total_discrepancy_amount": 590.0,
-        "recommended_actions": [
-            "Code A1: Contact service provider to request refund",
-            "Code A3: Send formal recovery letter",
-            "Code C3: Update claim notes to prevent future errors"
-        ],
-        "reporting_priority": "medium",
-        "justification": "The total irregularity amount is $590.00, which falls between $250 and $1,000, qualifying as medium priority according to the guidelines"
+    "scenario1": {
+        "claimNumber": "123456",
+        "irregularityType": "overpayment",
+        "amountInQuestion": 950.0,
+        "dateIdentified": "YYYY-MM-DD",
+        "affectedBenefit": "collision",
+        "correctAmount": 7350.0,
+        "regulationViolated": "internal_policy",
+        "explanation": "Two overpayments were identified: 1) Collision coverage payment of $7,850 did not deduct the $500 deductible, and 2) Rental car payment of $450 was incorrectly paid as $900 (30 days instead of approved 15 days)."
     },
-    "scenario_2": {
-        "irregularities_identified": [
-            {
-                "type": "DUP",
-                "description": "Duplicate payment of the full claim amount to Citywide Medical Center",
-                "amount": 440.0,
-                "calculation_method": "The full claim amount of $440.00 was paid twice (MED-TX-5678 on 02/20/2023 and MED-TX-5681 on 03/05/2023)"
-            },
-            {
-                "type": "DUP",
-                "description": "Separate payment for X-Ray services already included in the full claim payment",
-                "amount": 220.0,
-                "calculation_method": "X-Ray services (CPT 71046) costing $220.00 were paid separately (MED-TX-5679) despite being included in the full claim payment of $440.00"
-            },
-            {
-                "type": "DUP",
-                "description": "Separate payment for Lab services already included in the full claim payment",
-                "amount": 105.0,
-                "calculation_method": "Lab services (CPT 80053) costing $105.00 were paid separately (MED-TX-5680) despite being included in the full claim payment of $440.00"
-            }
-        ],
-        "total_discrepancy_amount": 765.0,
-        "recommended_actions": [
-            "Code A1: Contact service provider to request refund",
-            "Code A3: Send formal recovery letter",
-            "Code C3: Update claim notes to prevent future errors"
-        ],
-        "reporting_priority": "medium",
-        "justification": "The total irregularity amount is $765.00, which falls between $250 and $1,000, qualifying as medium priority according to the guidelines"
+    "scenario2": {
+        "claimNumber": "789012",
+        "irregularityType": "duplicate",
+        "amountInQuestion": 4780.0,
+        "dateIdentified": "YYYY-MM-DD",
+        "affectedBenefit": "personal_property",
+        "correctAmount": 4780.0,
+        "regulationViolated": "internal_policy",
+        "explanation": "Personal property payment of $4,780.00 was issued twice - first on 7/12/2023 (CHK20046) and again on 7/20/2023 (CHK20050) as noted in the transaction log."
     },
-    "scenario_3": {
-        "irregularities_identified": [
-            {
-                "type": "NCS",
-                "description": "Payment for bathroom renovation which is explicitly excluded by the policy unless directly damaged by a covered peril",
-                "amount": 5200.0,
-                "calculation_method": "Transaction PROP-009 shows payment of $5,200.00 to Luxury Bath Solutions for bathroom renovation, which is listed as an exclusion in the policy coverage document"
-            }
-        ],
-        "total_discrepancy_amount": 5200.0,
-        "recommended_actions": [
-            "Code C1: Contact insured to explain coverage limitations",
-            "Code C2: Request refund from provider",
-            "Code C3: Update claim notes to prevent future errors",
-            "Code A4: Refer to collections department if over $1,000"
-        ],
-        "reporting_priority": "high",
-        "justification": "The irregularity amount is $5,200.00, which exceeds $1,000, qualifying as high priority according to the guidelines"
+    "scenario3": {
+        "claimNumber": "345678",
+        "irregularityType": "underpayment",
+        "amountInQuestion": 160.0,
+        "dateIdentified": "YYYY-MM-DD",
+        "affectedBenefit": "inpatient",
+        "correctAmount": 624.0,
+        "regulationViolated": "none",
+        "explanation": "Mathematical error in laboratory tests payment calculation. 80% of $780 allowed amount should be $624, but only $464 was paid, resulting in a $160 underpayment to the provider."
     }
 }

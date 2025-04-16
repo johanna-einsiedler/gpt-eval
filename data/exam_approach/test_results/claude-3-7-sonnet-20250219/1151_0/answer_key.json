@@ -1,267 +1,108 @@
 {
-    "candidateId": "GPT-4-turbo",
-    "exercise1": {
-        "totalItems": 17,
-        "totalValue": 24743.4,
-        "reorderCount": 3,
-        "mostExpensiveItem": {
-            "productCode": "EF-5023",
-            "unitCost": 356.8
-        },
-        "updatedRecords": [
-            {
-                "productCode": "AB-1001",
-                "quantity": 45,
-                "unitCost": 189.99,
-                "totalValue": 8549.55,
-                "status": "OK"
-            },
-            {
-                "productCode": "AB-1002",
-                "quantity": 12,
-                "unitCost": 245.5,
-                "totalValue": 2946.0,
-                "status": "REORDER"
-            },
-            {
-                "productCode": "TU-6543",
-                "quantity": 28,
-                "unitCost": 78.25,
-                "totalValue": 2191.0,
-                "status": "OK"
-            },
-            {
-                "productCode": "CD-3045",
-                "quantity": 8,
-                "unitCost": 112.75,
-                "totalValue": 902.0,
-                "status": "REORDER"
-            },
-            {
-                "productCode": "EF-5023",
-                "quantity": 31,
-                "unitCost": 356.8,
-                "totalValue": 11060.8,
-                "status": "OK"
-            },
-            {
-                "productCode": "GH-7891",
-                "quantity": 52,
-                "unitCost": 67.5,
-                "totalValue": 3510.0,
-                "status": "OK"
-            },
-            {
-                "productCode": "IJ-2234",
-                "quantity": 19,
-                "unitCost": 95.3,
-                "totalValue": 1810.7,
-                "status": "REORDER"
-            },
-            {
-                "productCode": "RS-4321",
-                "quantity": 5,
-                "unitCost": 124.6,
-                "totalValue": 623.0,
-                "status": "REORDER"
-            },
-            {
-                "productCode": "KL-4567",
-                "quantity": 120,
-                "unitCost": 12.99,
-                "totalValue": 1558.8,
-                "status": "OK"
-            },
-            {
-                "productCode": "MN-6789",
-                "quantity": 22,
-                "unitCost": 43.75,
-                "totalValue": 962.5,
-                "status": "OK"
-            },
-            {
-                "productCode": "OP-8901",
-                "quantity": 14,
-                "unitCost": 28.5,
-                "totalValue": 399.0,
-                "status": "REORDER"
-            },
-            {
-                "productCode": "QR-1122",
-                "quantity": 37,
-                "unitCost": 18.25,
-                "totalValue": 675.25,
-                "status": "OK"
-            },
-            {
-                "productCode": "VW-8765",
-                "quantity": 9,
-                "unitCost": 86.4,
-                "totalValue": 777.6,
-                "status": "REORDER"
-            },
-            {
-                "productCode": "ST-3344",
-                "quantity": 63,
-                "unitCost": 8.75,
-                "totalValue": 551.25,
-                "status": "OK"
-            },
-            {
-                "productCode": "UV-5566",
-                "quantity": 42,
-                "unitCost": 22.99,
-                "totalValue": 965.58,
-                "status": "OK"
-            },
-            {
-                "productCode": "WX-7788",
-                "quantity": 16,
-                "unitCost": 54.3,
-                "totalValue": 868.8,
-                "status": "REORDER"
-            },
-            {
-                "productCode": "YZ-9900",
-                "quantity": 27,
-                "unitCost": 15.8,
-                "totalValue": 426.6,
-                "status": "OK"
-            }
+    "candidate_id": "EVALUATOR_KEY",
+    "task1": {
+        "errors_found": [
+            "Missing quantity for item OP-303 Sticky Notes on 1/22/2023",
+            "Missing total cost calculations for transactions on 1/22/2023 and 5/31/2023",
+            "Inconsistent currency formatting (some prices include $ symbol, others don't)",
+            "Calculation error in total cost for OP-1414 Headphones (shows $279.6, should be $279.60)",
+            "Inconsistent decimal places in total costs (e.g., $59.9 instead of $59.90)"
+        ],
+        "corrections_made": [
+            "Added missing quantity for OP-303 on 1/22/2023 (logical estimate based on similar orders)",
+            "Calculated missing total costs by multiplying quantity by unit price",
+            "Standardized all currency formatting to include $ symbol and two decimal places",
+            "Corrected calculation for OP-1414 Headphones total cost",
+            "Applied consistent formatting to all numeric values (prices and totals)"
+        ],
+        "summary_insights": [
+            "Office Supplies category represents 73% of all purchases by quantity but only 58% by total cost",
+            "Copy Paper (OP-101) is the most frequently purchased item with 85 units ordered across the six-month period",
+            "Technology items have a significantly higher average unit price ($41.65) compared to Office Supplies ($7.86)",
+            "Monthly purchasing volume increased by approximately 25% from January to June"
         ]
     },
-    "exercise2": {
-        "totalOrders": 15,
-        "lateDeliveryPercentage": 40.0,
-        "fastestSupplier": {
-            "supplierName": "Acme Industrial",
-            "avgDeliveryDays": 9.7
-        },
-        "totalPriceVariance": 36.8,
-        "orderAnalysis": [
+    "task2": {
+        "tracking_method": "I calculated the difference between actual delivery date and expected delivery date for each order, with positive values indicating late deliveries and negative values indicating early deliveries. I then created a column to categorize each delivery as 'Early', 'On-time', or 'Late' and calculated the percentage of on-time or early deliveries for each vendor. I also calculated the average days early/late for each vendor by averaging the difference values.",
+        "top_performers": [
             {
-                "poNumber": "PO-2023-001",
-                "deliveryStatus": "on-time",
-                "deliveryDays": 9,
-                "priceVariance": 0.0
+                "vendor_name": "Tech Supplies Co",
+                "on_time_percentage": "100.0%",
+                "avg_days": "-1.2",
+                "total_value": "$4,705.00"
             },
             {
-                "poNumber": "PO-2023-002",
-                "deliveryStatus": "late",
-                "deliveryDays": 18,
-                "priceVariance": 36.5
+                "vendor_name": "Paper Plus",
+                "on_time_percentage": "100.0%",
+                "avg_days": "0.0",
+                "total_value": "$1,740.00"
             },
             {
-                "poNumber": "PO-2023-003",
-                "deliveryStatus": "late",
-                "deliveryDays": 13,
-                "priceVariance": 0.0
-            },
-            {
-                "poNumber": "PO-2023-004",
-                "deliveryStatus": "on-time",
-                "deliveryDays": 14,
-                "priceVariance": -67.5
-            },
-            {
-                "poNumber": "PO-2023-005",
-                "deliveryStatus": "late",
-                "deliveryDays": 18,
-                "priceVariance": 0.0
-            },
-            {
-                "poNumber": "PO-2023-006",
-                "deliveryStatus": "on-time",
-                "deliveryDays": 9,
-                "priceVariance": 0.0
-            },
-            {
-                "poNumber": "PO-2023-007",
-                "deliveryStatus": "late",
-                "deliveryDays": 19,
-                "priceVariance": 0.0
-            },
-            {
-                "poNumber": "PO-2023-008",
-                "deliveryStatus": "on-time",
-                "deliveryDays": 9,
-                "priceVariance": -19.5
-            },
-            {
-                "poNumber": "PO-2023-009",
-                "deliveryStatus": "on-time",
-                "deliveryDays": 14,
-                "priceVariance": 0.0
-            },
-            {
-                "poNumber": "PO-2023-010",
-                "deliveryStatus": "late",
-                "deliveryDays": 19,
-                "priceVariance": 8.7
-            },
-            {
-                "poNumber": "PO-2023-011",
-                "deliveryStatus": "on-time",
-                "deliveryDays": 13,
-                "priceVariance": 0.0
-            },
-            {
-                "poNumber": "PO-2023-012",
-                "deliveryStatus": "on-time",
-                "deliveryDays": 14,
-                "priceVariance": 0.0
-            },
-            {
-                "poNumber": "PO-2023-013",
-                "deliveryStatus": "on-time",
-                "deliveryDays": 9,
-                "priceVariance": 0.0
-            },
-            {
-                "poNumber": "PO-2023-014",
-                "deliveryStatus": "late",
-                "deliveryDays": 18,
-                "priceVariance": 12.5
-            },
-            {
-                "poNumber": "PO-2023-015",
-                "deliveryStatus": "late",
-                "deliveryDays": 18,
-                "priceVariance": 0.0
+                "vendor_name": "Office Solutions Inc",
+                "on_time_percentage": "0.0%",
+                "avg_days": "2.7",
+                "total_value": "$4,030.00"
             }
+        ],
+        "needs_improvement": [
+            {
+                "vendor_name": "Furniture World",
+                "on_time_percentage": "0.0%",
+                "avg_days": "7.0",
+                "total_value": "$4,250.00"
+            },
+            {
+                "vendor_name": "Stationery Express",
+                "on_time_percentage": "0.0%",
+                "avg_days": "5.8",
+                "total_value": "$1,335.00"
+            },
+            {
+                "vendor_name": "Office Solutions Inc",
+                "on_time_percentage": "0.0%",
+                "avg_days": "2.7",
+                "total_value": "$4,030.00"
+            }
+        ],
+        "recommendations": [
+            "Consolidate orders with Tech Supplies Co and Paper Plus when possible as they consistently deliver on time or early with excellent quality ratings",
+            "Implement performance improvement plans for Furniture World and Stationery Express, including earlier lead times or penalties for late deliveries",
+            "Consider reducing order volumes from Furniture World until delivery performance improves, as they consistently deliver 7 days late on average",
+            "Request delivery time guarantees in contracts with all vendors and establish clear expectations for on-time performance"
         ]
     },
-    "exercise3": {
-        "lowestDefectProduct": {
-            "productCode": "AB-1002",
-            "defectRate": 0.0
-        },
-        "highestDefectProduct": {
-            "productCode": "WX-7788",
-            "defectRate": 0.16
-        },
-        "avgSupplierQuality": 4.6,
-        "qualityReviewProducts": [
+    "task3": {
+        "data_organization": "I imported the pipe-delimited text file into a spreadsheet, creating separate columns for each data field. I formatted date fields consistently, applied currency formatting to monetary values, and created additional columns to categorize transactions by department, purchase type, and payment method. I also added a column to calculate days between transaction date and today to identify recent transactions.",
+        "anomaly_detection_method": "I created multiple filters to identify potential anomalies: (1) unusually high total amounts compared to department averages, (2) transactions missing approvers or with self-approval, (3) non-standard payment methods, (4) unusual requestors or vendors, and (5) mathematical inconsistencies between quantity, unit price, and total amount. I also looked for duplicate transactions and emergency purchases that might indicate process violations.",
+        "flagged_transactions": [
             {
-                "productCode": "IJ-2234",
-                "defectRate": 0.12,
-                "supplier": "ElectroTech"
+                "transaction_id": "TX23-1037",
+                "reason_flagged": "Unusually high unit price for laptops ($9,999.99) compared to earlier laptop purchase (TX23-1001) at $999.99. Total cost is 10x higher than expected, possibly a decimal place error or potential fraud."
             },
             {
-                "productCode": "WX-7788",
-                "defectRate": 0.16,
-                "supplier": "Precision Parts"
+                "transaction_id": "TX23-1039",
+                "reason_flagged": "Payment made using Personal Card instead of standard Corporate Card or Purchase Order. Also has calculation error: total amount ($1,999.90) doesn't match unit price × quantity ($199.99)."
             },
             {
-                "productCode": "RS-4321",
-                "defectRate": 0.2,
-                "supplier": "ElectroTech"
+                "transaction_id": "TX23-1040",
+                "reason_flagged": "Emergency purchase lacks required approver (shows 'None'), violating approval policy. Emergency purchases require proper authorization even if expedited."
             },
             {
-                "productCode": "VW-8765",
-                "defectRate": 0.11,
-                "supplier": "TechSupply Inc"
+                "transaction_id": "TX23-1042",
+                "reason_flagged": "Robert Taylor is both requestor and approver, violating segregation of duties principle. No transaction should be self-approved to prevent potential fraud or policy violations."
+            },
+            {
+                "transaction_id": "TX23-1038",
+                "reason_flagged": "Transaction has 'Unknown' requestor, lacking accountability and proper documentation. Also appears to be a duplicate of TX23-1009 (identical description and amount)."
             }
+        ],
+        "system_improvements": [
+            "Implement automated validation checks to flag mathematical inconsistencies between quantity, unit price, and total amount",
+            "Enforce segregation of duties by preventing the same person from being both requestor and approver in the system",
+            "Create standardized vendor list with dropdown selection to prevent variations in vendor naming (e.g., 'Office Supplies Unknown')",
+            "Implement electronic approval workflow that requires proper authorization for all purchases, especially emergency ones",
+            "Add system controls to prevent use of personal payment methods like personal credit cards",
+            "Create automatic flagging for unusually high purchase amounts compared to historical averages for similar items"
         ]
     }
 }

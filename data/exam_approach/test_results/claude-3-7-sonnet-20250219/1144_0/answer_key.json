@@ -1,1 +1,296 @@
-"{}"
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "supplier_rankings": [
+        {
+            "rank": 1,
+            "supplier_id": "SUP417",
+            "score": 8.2
+        },
+        {
+            "rank": 2,
+            "supplier_id": "SUP842",
+            "score": 8.05
+        },
+        {
+            "rank": 3,
+            "supplier_id": "SUP253",
+            "score": 7.83
+        },
+        {
+            "rank": 4,
+            "supplier_id": "SUP975",
+            "score": 7.1
+        },
+        {
+            "rank": 5,
+            "supplier_id": "SUP631",
+            "score": 5.65
+        }
+    ],
+    "evaluation_metrics": {
+        "price_score": [
+            {
+                "supplier_id": "SUP631",
+                "score": 9.0
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 7.6
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 7.3
+            },
+            {
+                "supplier_id": "SUP417",
+                "score": 6.9
+            },
+            {
+                "supplier_id": "SUP842",
+                "score": 5.5
+            }
+        ],
+        "quality_score": [
+            {
+                "supplier_id": "SUP842",
+                "score": 9.5
+            },
+            {
+                "supplier_id": "SUP417",
+                "score": 9.0
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 8.0
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 6.5
+            },
+            {
+                "supplier_id": "SUP631",
+                "score": 4.0
+            }
+        ],
+        "selection_score": [
+            {
+                "supplier_id": "SUP417",
+                "score": 10.0
+            },
+            {
+                "supplier_id": "SUP842",
+                "score": 7.5
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 7.1
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 6.3
+            },
+            {
+                "supplier_id": "SUP631",
+                "score": 5.4
+            }
+        ],
+        "service_score": [
+            {
+                "supplier_id": "SUP842",
+                "score": 9.6
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 8.4
+            },
+            {
+                "supplier_id": "SUP417",
+                "score": 7.5
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 7.0
+            },
+            {
+                "supplier_id": "SUP631",
+                "score": 5.8
+            }
+        ],
+        "support_score": [
+            {
+                "supplier_id": "SUP842",
+                "score": 9.0
+            },
+            {
+                "supplier_id": "SUP417",
+                "score": 8.5
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 7.5
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 6.0
+            },
+            {
+                "supplier_id": "SUP631",
+                "score": 4.0
+            }
+        ],
+        "reliability_score": [
+            {
+                "supplier_id": "SUP842",
+                "score": 9.6
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 8.4
+            },
+            {
+                "supplier_id": "SUP417",
+                "score": 7.5
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 7.0
+            },
+            {
+                "supplier_id": "SUP631",
+                "score": 5.0
+            }
+        ],
+        "production_score": [
+            {
+                "supplier_id": "SUP631",
+                "score": 9.5
+            },
+            {
+                "supplier_id": "SUP417",
+                "score": 8.8
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 8.0
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 7.5
+            },
+            {
+                "supplier_id": "SUP842",
+                "score": 5.8
+            }
+        ],
+        "distribution_score": [
+            {
+                "supplier_id": "SUP417",
+                "score": 8.3
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 8.0
+            },
+            {
+                "supplier_id": "SUP842",
+                "score": 7.8
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 7.4
+            },
+            {
+                "supplier_id": "SUP631",
+                "score": 4.5
+            }
+        ],
+        "reputation_score": [
+            {
+                "supplier_id": "SUP842",
+                "score": 9.5
+            },
+            {
+                "supplier_id": "SUP417",
+                "score": 9.0
+            },
+            {
+                "supplier_id": "SUP975",
+                "score": 7.8
+            },
+            {
+                "supplier_id": "SUP253",
+                "score": 7.5
+            },
+            {
+                "supplier_id": "SUP631",
+                "score": 3.5
+            }
+        ]
+    },
+    "cost_analysis": {
+        "annual_spend": [
+            {
+                "supplier_id": "SUP842",
+                "amount": 197500
+            },
+            {
+                "supplier_id": "SUP417",
+                "amount": 177500
+            },
+            {
+                "supplier_id": "SUP975",
+                "amount": 165625
+            },
+            {
+                "supplier_id": "SUP253",
+                "amount": 159375
+            },
+            {
+                "supplier_id": "SUP631",
+                "amount": 143750
+            }
+        ],
+        "unit_price": [
+            {
+                "supplier_id": "SUP842",
+                "price": 15.8
+            },
+            {
+                "supplier_id": "SUP417",
+                "price": 14.2
+            },
+            {
+                "supplier_id": "SUP975",
+                "price": 13.25
+            },
+            {
+                "supplier_id": "SUP253",
+                "price": 12.75
+            },
+            {
+                "supplier_id": "SUP631",
+                "price": 11.5
+            }
+        ]
+    },
+    "optimal_supplier": "SUP417",
+    "risk_assessment": {
+        "high_risk_suppliers": [
+            "SUP631"
+        ],
+        "risk_reasons": [
+            "SUP631: Poor quality score (4.0) and reliability score (5.0) below minimum threshold of 6.0, with concerning labor violations and environmental ratings."
+        ]
+    },
+    "evaluation_methodology": {
+        "price_methodology": "Scores based on unit price comparison, with lowest price (SUP631 at $11.50) receiving highest score (9.0) and highest price (SUP842 at $15.80) receiving lowest score (5.5).",
+        "quality_methodology": "Scores derived from defect rates in quality report, with adjustments based on customer feedback and consistency comments, giving highest ratings to suppliers with lowest defect rates and consistent quality.",
+        "selection_methodology": "Based on number of product variants in required category from the quality report, with CircuitTech (120 variants) earning the highest score (10.0).",
+        "service_methodology": "Primarily based on on-time delivery percentages, with additional consideration for customer feedback on service reliability and responsiveness.",
+        "support_methodology": "Calculated from technical support response times and warranty processing metrics, with additional weight given to customer feedback on support quality and effectiveness.",
+        "reliability_score": "Primarily derived from on-time delivery statistics with adjustments based on customer feedback regarding consistency and reliability of deliveries.",
+        "production_methodology": "Based on maximum monthly capacity data, with consideration for customer feedback regarding capacity limitations or expansions.",
+        "distribution_methodology": "Evaluated using regional coverage, number of distribution centers, shipping partners, and average transit days data from distribution capabilities file.",
+        "reputation_methodology": "Synthesized from industry standing, legal issues, environmental/labor ratings, and financial stability information, with consideration for years in business and certifications."
+    }
+}

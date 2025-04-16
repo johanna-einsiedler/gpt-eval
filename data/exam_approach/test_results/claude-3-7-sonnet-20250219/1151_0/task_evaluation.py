@@ -1,629 +1,510 @@
 import json
+import sys
 import re
-from decimal import Decimal, getcontext
+from typing import Dict, List, Any, Tuple
 
-# Set precision for decimal calculations
-getcontext().prec = 10
-
-def load_json(filename):
-    """Load JSON data from a file."""
+def load_json_file(file_path: str) -> Dict:
+    """Load a JSON file and return its contents as a dictionary."""
     try:
-        with open(filename, 'r') as file:
+        with open(file_path, 'r') as file:
             return json.load(file)
-    except Exception as e:
-        print(f"Error loading {filename}: {e}")
-        return None
+    except FileNotFoundError:
+        print(f"Error: File '{file_path}' not found.")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"Error: '{file_path}' is not a valid JSON file.")
+        sys.exit(1)
 
-def save_json(data, filename):
-    """Save data as JSON to a file."""
-    try:
-        with open(filename, 'w') as file:
-            json.dump(data, file, indent=2)
-        print(f"Results saved to {filename}")
-    except Exception as e:
-        print(f"Error saving to {filename}: {e}")
-
-def within_tolerance(value1, value2, tolerance):
-    """Check if two values are within a specified tolerance."""
-    if isinstance(value1, str) or isinstance(value2, str):
-        return value1 == value2
-    return abs(float(value1) - float(value2)) <= float(tolerance)
-
-def matches_pattern(text, pattern):
-    """Check if text matches a regex pattern."""
-    return bool(re.match(pattern, text))
-
-def evaluate_exercise1(submission, answer_key):
-    """Evaluate Exercise 1 (35 points total)."""
-    results = {
-        "points_earned": 0,
-        "max_points": 35,
-        "details": {}
+def evaluate_task1(submission: Dict, answer_key: Dict) -> Tuple[int, Dict]:
+    """
+    Evaluate Task 1: Inventory Record Maintenance
+    Max points: 40
+    """
+    score = 0
+    feedback = {}
+    
+    # Evaluate errors found (max 15 points)
+    errors_found = submission.get("task1", {}).get("errors_found", [])
+    key_errors = answer_key.get("task1", {}).get("errors_found", [])
+    
+    # Count valid errors identified
+    valid_errors = 0
+    error_feedback = []
+    
+    for error in errors_found:
+        # Check if any key error contains this submission error (or vice versa)
+        if any(re.search(re.escape(e.lower()), error.lower()) or 
+               re.search(re.escape(error.lower()), e.lower()) for e in key_errors):
+            valid_errors += 1
+            error_feedback.append(f"Correct: {error}")
+        else:
+            error_feedback.append(f"Not a key error: {error}")
+    
+    # Assign points based on number of valid errors found
+    if valid_errors >= 5:
+        score += 15
+    elif valid_errors >= 4:
+        score += 10
+    elif valid_errors >= 3:
+        score += 5
+    
+    feedback["errors_found"] = {
+        "score": min(15, score),
+        "max_score": 15,
+        "feedback": error_feedback,
+        "valid_count": valid_errors
     }
     
-    # Check product code identification (6 points)
-    product_codes_correct = True
-    missing_codes = ["TU-6543", "RS-4321", "VW-8765"]
-    submission_codes = [record["productCode"] for record in submission["updatedRecords"]]
+    # Evaluate corrections made (max 15 points)
+    corrections_made = submission.get("task1", {}).get("corrections_made", [])
+    key_corrections = answer_key.get("task1", {}).get("corrections_made", [])
     
-    for code in missing_codes:
-        if code not in submission_codes:
-            product_codes_correct = False
+    valid_corrections = 0
+    correction_feedback = []
+    
+    for correction in corrections_made:
+        if any(re.search(re.escape(c.lower()), correction.lower()) or 
+               re.search(re.escape(correction.lower()), c.lower()) for c in key_corrections):
+            valid_corrections += 1
+            correction_feedback.append(f"Correct: {correction}")
+        else:
+            correction_feedback.append(f"Not a key correction: {correction}")
+    
+    correction_score = 0
+    if valid_corrections >= 5:
+        correction_score = 15
+    elif valid_corrections >= 4:
+        correction_score = 10
+    elif valid_corrections >= 3:
+        correction_score = 5
+    
+    score += correction_score
+    feedback["corrections_made"] = {
+        "score": correction_score,
+        "max_score": 15,
+        "feedback": correction_feedback,
+        "valid_count": valid_corrections
+    }
+    
+    # Evaluate summary insights (max 10 points)
+    insights = submission.get("task1", {}).get("summary_insights", [])
+    key_insights = answer_key.get("task1", {}).get("summary_insights", [])
+    
+    valid_insights = 0
+    insight_feedback = []
+    
+    for insight in insights:
+        if any(re.search(re.escape(i.lower()), insight.lower()) or 
+               re.search(re.escape(insight.lower()), i.lower()) for i in key_insights):
+            valid_insights += 1
+            insight_feedback.append(f"Correct: {insight}")
+        else:
+            insight_feedback.append(f"Not a key insight: {insight}")
+    
+    insight_score = 0
+    if valid_insights >= 2:
+        insight_score = 10
+    elif valid_insights >= 1:
+        insight_score = 5
+    
+    score += insight_score
+    feedback["summary_insights"] = {
+        "score": insight_score,
+        "max_score": 10,
+        "feedback": insight_feedback,
+        "valid_count": valid_insights
+    }
+    
+    feedback["total_score"] = score
+    feedback["max_score"] = 40
+    
+    return score, feedback
+
+def evaluate_task2(submission: Dict, answer_key: Dict) -> Tuple[int, Dict]:
+    """
+    Evaluate Task 2: Delivery Performance Analysis
+    Max points: 30
+    """
+    score = 0
+    feedback = {}
+    
+    # Evaluate tracking method (max 5 points)
+    tracking_method = submission.get("task2", {}).get("tracking_method", "")
+    key_tracking = answer_key.get("task2", {}).get("tracking_method", "")
+    
+    # Check if the tracking method contains key elements
+    tracking_score = 0
+    tracking_feedback = []
+    
+    key_elements = ["expected delivery", "actual delivery", "difference", "early", "late"]
+    valid_elements = 0
+    
+    for element in key_elements:
+        if re.search(element.lower(), tracking_method.lower()):
+            valid_elements += 1
+            tracking_feedback.append(f"Includes key element: {element}")
+    
+    # If method covers most key elements, award points
+    if valid_elements >= 3:
+        tracking_score = 5
+    elif valid_elements >= 2:
+        tracking_score = 3
+    
+    score += tracking_score
+    feedback["tracking_method"] = {
+        "score": tracking_score,
+        "max_score": 5,
+        "feedback": tracking_feedback,
+        "valid_elements": valid_elements
+    }
+    
+    # Evaluate top performers (max 10 points)
+    top_performers = submission.get("task2", {}).get("top_performers", [])
+    key_top_performers = answer_key.get("task2", {}).get("top_performers", [])
+    
+    # Check if correct vendors are identified as top performers
+    valid_top_performers = 0
+    top_performer_feedback = []
+    
+    key_vendor_names = [performer["vendor_name"] for performer in key_top_performers]
+    
+    for i, performer in enumerate(top_performers):
+        vendor_name = performer.get("vendor_name", "")
+        
+        if vendor_name in key_vendor_names:
+            valid_top_performers += 1
+            top_performer_feedback.append(f"Correct top performer: {vendor_name}")
             
-    if product_codes_correct:
-        results["details"]["product_code_identification"] = {
-            "earned": 6,
-            "max": 6,
-            "comment": "All product codes correctly identified"
-        }
-        results["points_earned"] += 6
-    else:
-        results["details"]["product_code_identification"] = {
-            "earned": 0,
-            "max": 6,
-            "comment": "Missing or incorrect product codes"
-        }
+            # Check if metrics are reasonably accurate
+            key_performer = next((p for p in key_top_performers if p["vendor_name"] == vendor_name), None)
+            if key_performer:
+                # Check on_time_percentage
+                submitted_pct = performer.get("on_time_percentage", "0%").replace("%", "")
+                key_pct = key_performer.get("on_time_percentage", "0%").replace("%", "")
+                
+                try:
+                    if abs(float(submitted_pct) - float(key_pct)) <= 5:
+                        top_performer_feedback.append(f"  - Accurate on-time percentage for {vendor_name}")
+                    else:
+                        top_performer_feedback.append(f"  - Inaccurate on-time percentage for {vendor_name}")
+                except ValueError:
+                    top_performer_feedback.append(f"  - Invalid on-time percentage format for {vendor_name}")
+                
+                # Check avg_days
+                submitted_days = performer.get("avg_days", "0").replace("+", "")
+                key_days = key_performer.get("avg_days", "0").replace("+", "")
+                
+                try:
+                    if abs(float(submitted_days) - float(key_days)) <= 1:
+                        top_performer_feedback.append(f"  - Accurate average days for {vendor_name}")
+                    else:
+                        top_performer_feedback.append(f"  - Inaccurate average days for {vendor_name}")
+                except ValueError:
+                    top_performer_feedback.append(f"  - Invalid average days format for {vendor_name}")
+        else:
+            top_performer_feedback.append(f"Incorrect top performer: {vendor_name}")
     
-    # Check total value calculations (8 points)
-    total_value_errors = 0
-    for sub_record in submission["updatedRecords"]:
-        expected_total = float(sub_record["quantity"]) * float(sub_record["unitCost"])
-        if not within_tolerance(sub_record["totalValue"], expected_total, 0.02):
-            total_value_errors += 1
+    top_performer_score = 0
+    if valid_top_performers >= 3:
+        top_performer_score = 10
+    elif valid_top_performers >= 2:
+        top_performer_score = 5
     
-    total_value_score = 8 - min(total_value_errors, 8)
-    results["points_earned"] += total_value_score
-    results["details"]["total_value_calculations"] = {
-        "earned": total_value_score,
-        "max": 8,
-        "comment": f"{total_value_errors} errors in total value calculations"
+    score += top_performer_score
+    feedback["top_performers"] = {
+        "score": top_performer_score,
+        "max_score": 10,
+        "feedback": top_performer_feedback,
+        "valid_count": valid_top_performers
     }
     
-    # Check reorder status identification (7 points)
-    # Create a mapping of product codes to minimum stock from answer key
-    min_stock_map = {}
-    for record in answer_key["exercise1"]["updatedRecords"]:
-        product_code = record["productCode"]
-        status = record["status"]
-        # Find the corresponding record in the original data to get min stock
-        for orig_record in submission["updatedRecords"]:
-            if orig_record["productCode"] == product_code:
-                min_stock_map[product_code] = status
-                break
+    # Evaluate needs improvement (max 10 points)
+    needs_improvement = submission.get("task2", {}).get("needs_improvement", [])
+    key_needs_improvement = answer_key.get("task2", {}).get("needs_improvement", [])
     
-    reorder_errors = 0
-    for sub_record in submission["updatedRecords"]:
-        product_code = sub_record["productCode"]
-        if product_code in min_stock_map:
-            expected_status = min_stock_map[product_code]
-            if sub_record["status"] != expected_status:
-                reorder_errors += 1
+    valid_needs_improvement = 0
+    needs_improvement_feedback = []
     
-    reorder_score = 7 - min(reorder_errors, 7)
-    results["points_earned"] += reorder_score
-    results["details"]["reorder_status_identification"] = {
-        "earned": reorder_score,
-        "max": 7,
-        "comment": f"{reorder_errors} errors in reorder status identification"
+    key_vendor_names = [performer["vendor_name"] for performer in key_needs_improvement]
+    
+    for i, performer in enumerate(needs_improvement):
+        vendor_name = performer.get("vendor_name", "")
+        
+        if vendor_name in key_vendor_names:
+            valid_needs_improvement += 1
+            needs_improvement_feedback.append(f"Correct vendor needing improvement: {vendor_name}")
+            
+            # Check if metrics are reasonably accurate (similar to top performers check)
+            key_performer = next((p for p in key_needs_improvement if p["vendor_name"] == vendor_name), None)
+            if key_performer:
+                # Similar metric checks as for top performers
+                # Omitted for brevity but follow the same pattern
+                pass
+        else:
+            needs_improvement_feedback.append(f"Incorrect vendor needing improvement: {vendor_name}")
+    
+    needs_improvement_score = 0
+    if valid_needs_improvement >= 3:
+        needs_improvement_score = 10
+    elif valid_needs_improvement >= 2:
+        needs_improvement_score = 5
+    
+    score += needs_improvement_score
+    feedback["needs_improvement"] = {
+        "score": needs_improvement_score,
+        "max_score": 10,
+        "feedback": needs_improvement_feedback,
+        "valid_count": valid_needs_improvement
     }
     
-    # Check summary statistics (8 points)
-    summary_points = 0
+    # Evaluate recommendations (max 5 points)
+    recommendations = submission.get("task2", {}).get("recommendations", [])
+    key_recommendations = answer_key.get("task2", {}).get("recommendations", [])
     
-    # Total items (2 points)
-    if submission["totalItems"] == answer_key["exercise1"]["totalItems"]:
-        summary_points += 2
-        results["details"]["total_items"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correct total items count"
-        }
-    else:
-        results["details"]["total_items"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": f"Incorrect total items: got {submission['totalItems']}, expected {answer_key['exercise1']['totalItems']}"
-        }
+    valid_recommendations = 0
+    recommendation_feedback = []
     
-    # Total value (2 points)
-    if within_tolerance(submission["totalValue"], answer_key["exercise1"]["totalValue"], 0.02):
-        summary_points += 2
-        results["details"]["total_value"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correct total inventory value"
-        }
-    else:
-        results["details"]["total_value"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": f"Incorrect total value: got {submission['totalValue']}, expected {answer_key['exercise1']['totalValue']}"
-        }
+    for recommendation in recommendations:
+        if any(re.search(re.escape(r.lower()), recommendation.lower()) or 
+               re.search(re.escape(recommendation.lower()), r.lower()) for r in key_recommendations):
+            valid_recommendations += 1
+            recommendation_feedback.append(f"Valid recommendation: {recommendation}")
+        else:
+            # Check if it's a reasonable recommendation even if not in the key
+            if any(keyword in recommendation.lower() for keyword in ["vendor", "deliver", "performance", "time", "quality"]):
+                valid_recommendations += 1
+                recommendation_feedback.append(f"Reasonable recommendation: {recommendation}")
+            else:
+                recommendation_feedback.append(f"Not a key recommendation: {recommendation}")
     
-    # Reorder count (2 points)
-    if submission["reorderCount"] == answer_key["exercise1"]["reorderCount"]:
-        summary_points += 2
-        results["details"]["reorder_count"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correct reorder count"
-        }
-    else:
-        results["details"]["reorder_count"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": f"Incorrect reorder count: got {submission['reorderCount']}, expected {answer_key['exercise1']['reorderCount']}"
-        }
+    recommendation_score = 0
+    if valid_recommendations >= 2:
+        recommendation_score = 5
+    elif valid_recommendations >= 1:
+        recommendation_score = 2
     
-    # Most expensive item (2 points)
-    if (submission["mostExpensiveItem"]["productCode"] == answer_key["exercise1"]["mostExpensiveItem"]["productCode"] and
-        within_tolerance(submission["mostExpensiveItem"]["unitCost"], 
-                         answer_key["exercise1"]["mostExpensiveItem"]["unitCost"], 0.02)):
-        summary_points += 2
-        results["details"]["most_expensive_item"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correctly identified most expensive item"
-        }
-    else:
-        results["details"]["most_expensive_item"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": "Incorrectly identified most expensive item"
-        }
-    
-    results["points_earned"] += summary_points
-    
-    # Check JSON formatting (6 points)
-    # This is a simplified check - in a real scenario, you might want more detailed validation
-    json_format_score = 6  # Assume correct format initially
-    
-    # Check if all required fields are present
-    required_fields = ["totalItems", "totalValue", "reorderCount", "mostExpensiveItem", "updatedRecords"]
-    for field in required_fields:
-        if field not in submission:
-            json_format_score -= 2
-            break
-    
-    # Check if mostExpensiveItem has the correct structure
-    if "mostExpensiveItem" in submission:
-        if not all(key in submission["mostExpensiveItem"] for key in ["productCode", "unitCost"]):
-            json_format_score -= 2
-    
-    # Check if updatedRecords has the correct structure
-    if "updatedRecords" in submission:
-        for record in submission["updatedRecords"]:
-            if not all(key in record for key in ["productCode", "quantity", "unitCost", "totalValue", "status"]):
-                json_format_score -= 2
-                break
-    
-    results["points_earned"] += json_format_score
-    results["details"]["json_formatting"] = {
-        "earned": json_format_score,
-        "max": 6,
-        "comment": "JSON formatting evaluation"
+    score += recommendation_score
+    feedback["recommendations"] = {
+        "score": recommendation_score,
+        "max_score": 5,
+        "feedback": recommendation_feedback,
+        "valid_count": valid_recommendations
     }
     
-    return results
+    feedback["total_score"] = score
+    feedback["max_score"] = 30
+    
+    return score, feedback
 
-def evaluate_exercise2(submission, answer_key):
-    """Evaluate Exercise 2 (35 points total)."""
-    results = {
-        "points_earned": 0,
-        "max_points": 35,
-        "details": {}
+def evaluate_task3(submission: Dict, answer_key: Dict) -> Tuple[int, Dict]:
+    """
+    Evaluate Task 3: Purchase Record Review and Anomaly Detection
+    Max points: 30
+    """
+    score = 0
+    feedback = {}
+    
+    # Evaluate data organization (max 5 points)
+    data_organization = submission.get("task3", {}).get("data_organization", "")
+    key_data_organization = answer_key.get("task3", {}).get("data_organization", "")
+    
+    data_org_score = 0
+    data_org_feedback = []
+    
+    key_elements = ["import", "spreadsheet", "column", "format", "organize", "structure"]
+    valid_elements = 0
+    
+    for element in key_elements:
+        if re.search(element.lower(), data_organization.lower()):
+            valid_elements += 1
+            data_org_feedback.append(f"Includes key element: {element}")
+    
+    if valid_elements >= 3:
+        data_org_score = 5
+    elif valid_elements >= 2:
+        data_org_score = 3
+    
+    score += data_org_score
+    feedback["data_organization"] = {
+        "score": data_org_score,
+        "max_score": 5,
+        "feedback": data_org_feedback,
+        "valid_elements": valid_elements
     }
     
-    # Check delivery status identification (8 points)
-    delivery_status_errors = 0
+    # Evaluate anomaly detection method (max 5 points)
+    anomaly_method = submission.get("task3", {}).get("anomaly_detection_method", "")
+    key_anomaly_method = answer_key.get("task3", {}).get("anomaly_detection_method", "")
     
-    # Create a mapping of PO numbers to expected delivery status
-    status_map = {}
-    for record in answer_key["exercise2"]["orderAnalysis"]:
-        status_map[record["poNumber"]] = record["deliveryStatus"]
+    anomaly_method_score = 0
+    anomaly_method_feedback = []
     
-    for sub_record in submission["exercise2"]["orderAnalysis"]:
-        po_number = sub_record["poNumber"]
-        if po_number in status_map:
-            if sub_record["deliveryStatus"] != status_map[po_number]:
-                delivery_status_errors += 1
+    key_elements = ["outlier", "high", "unusual", "policy", "violation", "duplicate", "missing", "calculation", "error"]
+    valid_elements = 0
     
-    delivery_status_score = 8 - min(delivery_status_errors, 8)
-    results["points_earned"] += delivery_status_score
-    results["details"]["delivery_status_identification"] = {
-        "earned": delivery_status_score,
-        "max": 8,
-        "comment": f"{delivery_status_errors} errors in delivery status identification"
+    for element in key_elements:
+        if re.search(element.lower(), anomaly_method.lower()):
+            valid_elements += 1
+            anomaly_method_feedback.append(f"Includes key element: {element}")
+    
+    if valid_elements >= 3:
+        anomaly_method_score = 5
+    elif valid_elements >= 2:
+        anomaly_method_score = 3
+    
+    score += anomaly_method_score
+    feedback["anomaly_detection_method"] = {
+        "score": anomaly_method_score,
+        "max_score": 5,
+        "feedback": anomaly_method_feedback,
+        "valid_elements": valid_elements
     }
     
-    # Check delivery days calculation (7 points)
-    delivery_days_errors = 0
+    # Evaluate flagged transactions (max 15 points)
+    flagged_transactions = submission.get("task3", {}).get("flagged_transactions", [])
+    key_flagged_transactions = answer_key.get("task3", {}).get("flagged_transactions", [])
     
-    # Create a mapping of PO numbers to expected delivery days
-    days_map = {}
-    for record in answer_key["exercise2"]["orderAnalysis"]:
-        days_map[record["poNumber"]] = record["deliveryDays"]
+    valid_flagged = 0
+    flagged_feedback = []
     
-    for sub_record in submission["exercise2"]["orderAnalysis"]:
-        po_number = sub_record["poNumber"]
-        if po_number in days_map:
-            if sub_record["deliveryDays"] != days_map[po_number]:
-                delivery_days_errors += 1
+    key_transaction_ids = [t["transaction_id"] for t in key_flagged_transactions]
     
-    delivery_days_score = 7 - min(delivery_days_errors, 7)
-    results["points_earned"] += delivery_days_score
-    results["details"]["delivery_days_calculation"] = {
-        "earned": delivery_days_score,
-        "max": 7,
-        "comment": f"{delivery_days_errors} errors in delivery days calculation"
+    for transaction in flagged_transactions:
+        transaction_id = transaction.get("transaction_id", "")
+        reason = transaction.get("reason_flagged", "")
+        
+        if transaction_id in key_transaction_ids:
+            valid_flagged += 1
+            flagged_feedback.append(f"Correct flagged transaction: {transaction_id}")
+            
+            # Check if reason is valid
+            key_transaction = next((t for t in key_flagged_transactions if t["transaction_id"] == transaction_id), None)
+            if key_transaction:
+                key_reason = key_transaction.get("reason_flagged", "")
+                if any(keyword in reason.lower() for keyword in key_reason.lower().split()):
+                    flagged_feedback.append(f"  - Valid reason provided for {transaction_id}")
+                else:
+                    flagged_feedback.append(f"  - Reason doesn't match key concern for {transaction_id}")
+        else:
+            # Check if it's a reasonable flag even if not in the key
+            if "TX23-1041" in transaction_id:  # This is a valid anomaly in the data but not in our top 5
+                valid_flagged += 1
+                flagged_feedback.append(f"Reasonable flagged transaction: {transaction_id} (unusual vendor)")
+            else:
+                flagged_feedback.append(f"Not a key flagged transaction: {transaction_id}")
+    
+    flagged_score = 0
+    if valid_flagged >= 4:
+        flagged_score = 15
+    elif valid_flagged >= 3:
+        flagged_score = 10
+    elif valid_flagged >= 2:
+        flagged_score = 5
+    
+    score += flagged_score
+    feedback["flagged_transactions"] = {
+        "score": flagged_score,
+        "max_score": 15,
+        "feedback": flagged_feedback,
+        "valid_count": valid_flagged
     }
     
-    # Check price variance calculation (7 points)
-    price_variance_errors = 0
+    # Evaluate system improvements (max 5 points)
+    improvements = submission.get("task3", {}).get("system_improvements", [])
+    key_improvements = answer_key.get("task3", {}).get("system_improvements", [])
     
-    # Create a mapping of PO numbers to expected price variance
-    variance_map = {}
-    for record in answer_key["exercise2"]["orderAnalysis"]:
-        variance_map[record["poNumber"]] = record["priceVariance"]
+    valid_improvements = 0
+    improvement_feedback = []
     
-    for sub_record in submission["exercise2"]["orderAnalysis"]:
-        po_number = sub_record["poNumber"]
-        if po_number in variance_map:
-            if not within_tolerance(sub_record["priceVariance"], variance_map[po_number], 0.02):
-                price_variance_errors += 1
+    for improvement in improvements:
+        if any(re.search(re.escape(i.lower()), improvement.lower()) or 
+               re.search(re.escape(improvement.lower()), i.lower()) for i in key_improvements):
+            valid_improvements += 1
+            improvement_feedback.append(f"Valid improvement: {improvement}")
+        else:
+            # Check if it's a reasonable improvement even if not in the key
+            key_terms = ["automat", "valid", "approv", "system", "control", "standard", "track", "flag"]
+            if any(term in improvement.lower() for term in key_terms):
+                valid_improvements += 1
+                improvement_feedback.append(f"Reasonable improvement: {improvement}")
+            else:
+                improvement_feedback.append(f"Not a key improvement: {improvement}")
     
-    price_variance_score = 7 - min(price_variance_errors, 7)
-    results["points_earned"] += price_variance_score
-    results["details"]["price_variance_calculation"] = {
-        "earned": price_variance_score,
-        "max": 7,
-        "comment": f"{price_variance_errors} errors in price variance calculation"
+    improvement_score = 0
+    if valid_improvements >= 3:
+        improvement_score = 5
+    elif valid_improvements >= 2:
+        improvement_score = 3
+    
+    score += improvement_score
+    feedback["system_improvements"] = {
+        "score": improvement_score,
+        "max_score": 5,
+        "feedback": improvement_feedback,
+        "valid_count": valid_improvements
     }
     
-    # Check summary statistics (8 points)
-    summary_points = 0
+    feedback["total_score"] = score
+    feedback["max_score"] = 30
     
-    # Total orders (2 points)
-    if submission["exercise2"]["totalOrders"] == answer_key["exercise2"]["totalOrders"]:
-        summary_points += 2
-        results["details"]["total_orders"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correct total orders count"
-        }
-    else:
-        results["details"]["total_orders"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": f"Incorrect total orders: got {submission['exercise2']['totalOrders']}, expected {answer_key['exercise2']['totalOrders']}"
-        }
-    
-    # Late delivery percentage (2 points)
-    if within_tolerance(submission["exercise2"]["lateDeliveryPercentage"], 
-                        answer_key["exercise2"]["lateDeliveryPercentage"], 0.1):
-        summary_points += 2
-        results["details"]["late_delivery_percentage"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correct late delivery percentage"
-        }
-    else:
-        results["details"]["late_delivery_percentage"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": f"Incorrect late delivery percentage: got {submission['exercise2']['lateDeliveryPercentage']}, expected {answer_key['exercise2']['lateDeliveryPercentage']}"
-        }
-    
-    # Fastest supplier (2 points)
-    if (submission["exercise2"]["fastestSupplier"]["supplierName"] == 
-        answer_key["exercise2"]["fastestSupplier"]["supplierName"] and
-        within_tolerance(submission["exercise2"]["fastestSupplier"]["avgDeliveryDays"],
-                         answer_key["exercise2"]["fastestSupplier"]["avgDeliveryDays"], 0.1)):
-        summary_points += 2
-        results["details"]["fastest_supplier"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correctly identified fastest supplier"
-        }
-    else:
-        results["details"]["fastest_supplier"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": "Incorrectly identified fastest supplier"
-        }
-    
-    # Total price variance (2 points)
-    if within_tolerance(submission["exercise2"]["totalPriceVariance"], 
-                        answer_key["exercise2"]["totalPriceVariance"], 0.02):
-        summary_points += 2
-        results["details"]["total_price_variance"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correct total price variance"
-        }
-    else:
-        results["details"]["total_price_variance"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": f"Incorrect total price variance: got {submission['exercise2']['totalPriceVariance']}, expected {answer_key['exercise2']['totalPriceVariance']}"
-        }
-    
-    results["points_earned"] += summary_points
-    
-    # Check JSON formatting (5 points)
-    json_format_score = 5  # Assume correct format initially
-    
-    # Check if all required fields are present
-    required_fields = ["totalOrders", "lateDeliveryPercentage", "fastestSupplier", "totalPriceVariance", "orderAnalysis"]
-    for field in required_fields:
-        if field not in submission["exercise2"]:
-            json_format_score -= 2
-            break
-    
-    # Check if fastestSupplier has the correct structure
-    if "fastestSupplier" in submission["exercise2"]:
-        if not all(key in submission["exercise2"]["fastestSupplier"] for key in ["supplierName", "avgDeliveryDays"]):
-            json_format_score -= 1
-    
-    # Check if orderAnalysis has the correct structure
-    if "orderAnalysis" in submission["exercise2"]:
-        for record in submission["exercise2"]["orderAnalysis"]:
-            if not all(key in record for key in ["poNumber", "deliveryStatus", "deliveryDays", "priceVariance"]):
-                json_format_score -= 2
-                break
-    
-    results["points_earned"] += json_format_score
-    results["details"]["json_formatting"] = {
-        "earned": json_format_score,
-        "max": 5,
-        "comment": "JSON formatting evaluation"
-    }
-    
-    return results
-
-def evaluate_exercise3(submission, answer_key):
-    """Evaluate Exercise 3 (30 points total)."""
-    results = {
-        "points_earned": 0,
-        "max_points": 30,
-        "details": {}
-    }
-    
-    # Check defect rate calculations (8 points)
-    # For this, we'll check if the highest and lowest defect rates are correctly identified
-    defect_rate_points = 8  # Start with full points
-    
-    # Check lowest defect product
-    valid_lowest_defect_products = ["AB-1002", "MN-6789", "UV-5566"]  # Any of these is acceptable
-    if submission["exercise3"]["lowestDefectProduct"]["productCode"] not in valid_lowest_defect_products:
-        defect_rate_points -= 4
-        results["details"]["lowest_defect_product"] = {
-            "earned": 0,
-            "max": 4,
-            "comment": f"Incorrect lowest defect product: got {submission['exercise3']['lowestDefectProduct']['productCode']}, expected one of {valid_lowest_defect_products}"
-        }
-    else:
-        results["details"]["lowest_defect_product"] = {
-            "earned": 4,
-            "max": 4,
-            "comment": "Correctly identified lowest defect product"
-        }
-    
-    # Check highest defect product
-    if submission["exercise3"]["highestDefectProduct"]["productCode"] != answer_key["exercise3"]["highestDefectProduct"]["productCode"]:
-        defect_rate_points -= 4
-        results["details"]["highest_defect_product"] = {
-            "earned": 0,
-            "max": 4,
-            "comment": f"Incorrect highest defect product: got {submission['exercise3']['highestDefectProduct']['productCode']}, expected {answer_key['exercise3']['highestDefectProduct']['productCode']}"
-        }
-    else:
-        results["details"]["highest_defect_product"] = {
-            "earned": 4,
-            "max": 4,
-            "comment": "Correctly identified highest defect product"
-        }
-    
-    results["points_earned"] += defect_rate_points
-    
-    # Check identification of quality review products (7 points)
-    # Create a set of product codes that should be in quality review
-    expected_review_products = set()
-    for product in answer_key["exercise3"]["qualityReviewProducts"]:
-        expected_review_products.add(product["productCode"])
-    
-    # Create a set of product codes that the candidate identified for quality review
-    submitted_review_products = set()
-    for product in submission["exercise3"]["qualityReviewProducts"]:
-        submitted_review_products.add(product["productCode"])
-    
-    # Calculate false positives and false negatives
-    false_positives = submitted_review_products - expected_review_products
-    false_negatives = expected_review_products - submitted_review_products
-    
-    quality_review_errors = len(false_positives) + len(false_negatives)
-    quality_review_score = 7 - min(quality_review_errors, 7)
-    
-    results["points_earned"] += quality_review_score
-    results["details"]["quality_review_identification"] = {
-        "earned": quality_review_score,
-        "max": 7,
-        "comment": f"{quality_review_errors} errors in quality review product identification"
-    }
-    
-    # Check summary statistics (10 points)
-    summary_points = 0
-    
-    # Lowest defect rate (2 points)
-    if within_tolerance(submission["exercise3"]["lowestDefectProduct"]["defectRate"], 0.00, 0.001):
-        summary_points += 2
-        results["details"]["lowest_defect_rate"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correct lowest defect rate"
-        }
-    else:
-        results["details"]["lowest_defect_rate"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": f"Incorrect lowest defect rate: got {submission['exercise3']['lowestDefectProduct']['defectRate']}, expected 0.00"
-        }
-    
-    # Highest defect rate (3 points)
-    if within_tolerance(submission["exercise3"]["highestDefectProduct"]["defectRate"], 
-                        answer_key["exercise3"]["highestDefectProduct"]["defectRate"], 0.01):
-        summary_points += 3
-        results["details"]["highest_defect_rate"] = {
-            "earned": 3,
-            "max": 3,
-            "comment": "Correct highest defect rate"
-        }
-    else:
-        results["details"]["highest_defect_rate"] = {
-            "earned": 0,
-            "max": 3,
-            "comment": f"Incorrect highest defect rate: got {submission['exercise3']['highestDefectProduct']['defectRate']}, expected {answer_key['exercise3']['highestDefectProduct']['defectRate']}"
-        }
-    
-    # Average supplier quality (3 points)
-    if within_tolerance(submission["exercise3"]["avgSupplierQuality"], 
-                        answer_key["exercise3"]["avgSupplierQuality"], 0.1):
-        summary_points += 3
-        results["details"]["avg_supplier_quality"] = {
-            "earned": 3,
-            "max": 3,
-            "comment": "Correct average supplier quality"
-        }
-    else:
-        results["details"]["avg_supplier_quality"] = {
-            "earned": 0,
-            "max": 3,
-            "comment": f"Incorrect average supplier quality: got {submission['exercise3']['avgSupplierQuality']}, expected {answer_key['exercise3']['avgSupplierQuality']}"
-        }
-    
-    # Quality review products count (2 points)
-    if len(submission["exercise3"]["qualityReviewProducts"]) == len(answer_key["exercise3"]["qualityReviewProducts"]):
-        summary_points += 2
-        results["details"]["quality_review_count"] = {
-            "earned": 2,
-            "max": 2,
-            "comment": "Correct number of quality review products"
-        }
-    else:
-        results["details"]["quality_review_count"] = {
-            "earned": 0,
-            "max": 2,
-            "comment": f"Incorrect number of quality review products: got {len(submission['exercise3']['qualityReviewProducts'])}, expected {len(answer_key['exercise3']['qualityReviewProducts'])}"
-        }
-    
-    results["points_earned"] += summary_points
-    
-    # Check JSON formatting (5 points)
-    json_format_score = 5  # Assume correct format initially
-    
-    # Check if all required fields are present
-    required_fields = ["lowestDefectProduct", "highestDefectProduct", "avgSupplierQuality", "qualityReviewProducts"]
-    for field in required_fields:
-        if field not in submission["exercise3"]:
-            json_format_score -= 2
-            break
-    
-    # Check if defect products have the correct structure
-    for field in ["lowestDefectProduct", "highestDefectProduct"]:
-        if field in submission["exercise3"]:
-            if not all(key in submission["exercise3"][field] for key in ["productCode", "defectRate"]):
-                json_format_score -= 1
-    
-    # Check if qualityReviewProducts has the correct structure
-    if "qualityReviewProducts" in submission["exercise3"]:
-        for product in submission["exercise3"]["qualityReviewProducts"]:
-            if not all(key in product for key in ["productCode", "defectRate", "supplier"]):
-                json_format_score -= 2
-                break
-    
-    results["points_earned"] += json_format_score
-    results["details"]["json_formatting"] = {
-        "earned": json_format_score,
-        "max": 5,
-        "comment": "JSON formatting evaluation"
-    }
-    
-    return results
-
-def evaluate_submission(submission, answer_key):
-    """Evaluate the entire submission."""
-    results = {
-        "overall_score": 0,
-        "passing_threshold": 70,
-        "exercise_results": {}
-    }
-    
-    # Evaluate each exercise
-    results["exercise_results"]["exercise1"] = evaluate_exercise1(submission, answer_key)
-    results["exercise_results"]["exercise2"] = evaluate_exercise2(submission, answer_key)
-    results["exercise_results"]["exercise3"] = evaluate_exercise3(submission, answer_key)
-    
-    # Calculate total points and overall score
-    total_points_earned = (
-        results["exercise_results"]["exercise1"]["points_earned"] +
-        results["exercise_results"]["exercise2"]["points_earned"] +
-        results["exercise_results"]["exercise3"]["points_earned"]
-    )
-    
-    total_points_possible = (
-        results["exercise_results"]["exercise1"]["max_points"] +
-        results["exercise_results"]["exercise2"]["max_points"] +
-        results["exercise_results"]["exercise3"]["max_points"]
-    )
-    
-    results["overall_score"] = round((total_points_earned / total_points_possible) * 100, 2)
-    
-    # Determine if the candidate passed
-    exercise1_percent = (results["exercise_results"]["exercise1"]["points_earned"] / 
-                         results["exercise_results"]["exercise1"]["max_points"]) * 100
-    exercise2_percent = (results["exercise_results"]["exercise2"]["points_earned"] / 
-                         results["exercise_results"]["exercise2"]["max_points"]) * 100
-    exercise3_percent = (results["exercise_results"]["exercise3"]["points_earned"] / 
-                         results["exercise_results"]["exercise3"]["max_points"]) * 100
-    
-    passed_exercise1 = exercise1_percent >= 60
-    passed_exercise2 = exercise2_percent >= 60
-    passed_exercise3 = exercise3_percent >= 60
-    passed_overall = results["overall_score"] >= 70
-    
-    results["passed"] = passed_exercise1 and passed_exercise2 and passed_exercise3 and passed_overall
-    
-    results["exercise_percentages"] = {
-        "exercise1": round(exercise1_percent, 2),
-        "exercise2": round(exercise2_percent, 2),
-        "exercise3": round(exercise3_percent, 2)
-    }
-    
-    results["passing_criteria"] = {
-        "overall_threshold": 70,
-        "exercise_threshold": 60,
-        "exercise1_passed": passed_exercise1,
-        "exercise2_passed": passed_exercise2,
-        "exercise3_passed": passed_exercise3,
-        "overall_passed": passed_overall
-    }
-    
-    return results
+    return score, feedback
 
 def main():
-    # Load the submission and answer key
-    submission = load_json("test_submission.json")
-    answer_key = load_json("answer_key.json")
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py <submission_file> <answer_key_file>")
+        sys.exit(1)
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files.")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    # Evaluate the submission
-    results = evaluate_submission(submission, answer_key)
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
     
-    # Save the results
-    save_json(results, "test_results.json")
+    # Evaluate each task
+    task1_score, task1_feedback = evaluate_task1(submission, answer_key)
+    task2_score, task2_feedback = evaluate_task2(submission, answer_key)
+    task3_score, task3_feedback = evaluate_task3(submission, answer_key)
+    
+    total_score = task1_score + task2_score + task3_score
+    max_possible_score = 100  # 40 + 30 + 30
+    
+    # Check if minimum requirements are met for passing
+    passed_task1 = task1_score >= 20  # At least 50% of Task 1 (40 points)
+    passed_task2 = task2_score >= 15  # At least 50% of Task 2 (30 points)
+    passed_task3 = task3_score >= 15  # At least 50% of Task 3 (30 points)
+    passed_overall = total_score >= 70  # At least 70% overall
+    
+    passed_exam = passed_task1 and passed_task2 and passed_task3 and passed_overall
+    
+    # Prepare results
+    results = {
+        "candidate_id": submission.get("candidate_id", "Unknown"),
+        "overall_score": round((total_score / max_possible_score) * 100, 1),
+        "total_points": total_score,
+        "max_possible_points": max_possible_score,
+        "passed_exam": passed_exam,
+        "task1": task1_feedback,
+        "task2": task2_feedback,
+        "task3": task3_feedback,
+        "passing_criteria": {
+            "minimum_overall_score": 70,
+            "minimum_task1_score": 20,
+            "minimum_task2_score": 15,
+            "minimum_task3_score": 15,
+            "passed_task1": passed_task1,
+            "passed_task2": passed_task2,
+            "passed_task3": passed_task3,
+            "passed_overall": passed_overall
+        }
+    }
+    
+    # Write results to file
+    with open("test_results.json", "w") as file:
+        json.dump(results, file, indent=2)
+    
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall Score: {results['overall_score']}%")
+    print(f"Passed: {'Yes' if passed_exam else 'No'}")
 
 if __name__ == "__main__":
     main()

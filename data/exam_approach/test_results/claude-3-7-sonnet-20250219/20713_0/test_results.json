@@ -1,153 +1,150 @@
 {
-  "candidate_id": "EVALUATOR_KEY",
-  "overall_score": 99.99,
-  "total_points": 99.99000000000001,
+  "candidate_id": "Unknown",
+  "total_points": 93,
   "max_points": 100,
-  "sections": {
-    "initial_markup": {
-      "points": 30,
-      "max_points": 30,
-      "details": {
-        "NP-101": {
-          "points": 6,
-          "max_points": 6,
-          "details": {
-            "markup_percentage": "Correct",
-            "retail_price": "Correct"
-          }
-        },
-        "NP-102": {
-          "points": 6,
-          "max_points": 6,
-          "details": {
-            "markup_percentage": "Correct",
-            "retail_price": "Correct"
-          }
-        },
-        "NP-103": {
-          "points": 6,
-          "max_points": 6,
-          "details": {
-            "markup_percentage": "Correct",
-            "retail_price": "Correct"
-          }
-        },
-        "NP-104": {
-          "points": 6,
-          "max_points": 6,
-          "details": {
-            "markup_percentage": "Correct",
-            "retail_price": "Correct"
-          }
-        },
-        "NP-105": {
-          "points": 6,
-          "max_points": 6,
-          "details": {
-            "markup_percentage": "Correct",
-            "retail_price": "Correct"
-          }
-        }
-      }
-    },
-    "seasonal_markdown": {
-      "points": 30.0,
-      "max_points": 30,
-      "details": {
-        "SP-201": {
-          "points": 7.5,
-          "max_points": 7.5,
-          "details": {
-            "markdown_percentage": "Correct",
-            "new_price": "Correct",
-            "second_markdown": "Correct"
-          }
-        },
-        "SP-202": {
-          "points": 7.5,
-          "max_points": 7.5,
-          "details": {
-            "markdown_percentage": "Correct",
-            "new_price": "Correct",
-            "second_markdown": "Correct"
-          }
-        },
-        "SP-203": {
-          "points": 7.5,
-          "max_points": 7.5,
-          "details": {
-            "markdown_percentage": "Correct",
-            "new_price": "Correct",
-            "second_markdown": "Correct"
-          }
-        },
-        "SP-204": {
-          "points": 7.5,
-          "max_points": 7.5,
-          "details": {
-            "markdown_percentage": "Correct",
-            "new_price": "Correct",
-            "second_markdown": "Correct"
-          }
-        }
-      }
-    },
-    "promotional_pricing": {
-      "points": 19.98,
-      "max_points": 20,
-      "details": {
-        "PP-301": {
-          "points": 6.66,
-          "max_points": 6.67,
-          "details": {
-            "discount_percentage": "Correct",
-            "breakeven_volume_increase": "Correct"
-          }
-        },
-        "PP-302": {
-          "points": 6.66,
-          "max_points": 6.67,
-          "details": {
-            "discount_percentage": "Correct",
-            "breakeven_volume_increase": "Correct"
-          }
-        },
-        "PP-303": {
-          "points": 6.66,
-          "max_points": 6.67,
-          "details": {
-            "discount_percentage": "Correct",
-            "breakeven_volume_increase": "Correct"
-          }
-        }
-      }
-    },
-    "competitive_repricing": {
-      "points": 20.009999999999998,
-      "max_points": 20,
-      "details": {
-        "CP-401": {
-          "points": 6.67,
-          "max_points": 6.67,
-          "details": {
-            "new_price": "Correct"
-          }
-        },
-        "CP-402": {
-          "points": 6.67,
-          "max_points": 6.67,
-          "details": {
-            "new_price": "Correct"
-          }
-        },
-        "CP-403": {
-          "points": 6.67,
-          "max_points": 6.67,
-          "details": {
-            "new_price": "Correct"
-          }
-        }
+  "overall_score": 93,
+  "pass_status": false,
+  "exercise1": {
+    "points": 30,
+    "max_points": 30,
+    "details": {
+      "product_a_markup": {
+        "submitted": 0.72,
+        "correct": 0.72,
+        "difference": 0.0,
+        "points": 6,
+        "evaluation": "Correct (within \u00b10.02 tolerance)"
+      },
+      "product_b_markup": {
+        "submitted": 0.61,
+        "correct": 0.61,
+        "difference": 0.0,
+        "points": 6,
+        "evaluation": "Correct (within \u00b10.02 tolerance)"
+      },
+      "product_c_markup": {
+        "submitted": 0.82,
+        "correct": 0.82,
+        "difference": 0.0,
+        "points": 6,
+        "evaluation": "Correct (within \u00b10.02 tolerance)"
+      },
+      "product_d_markup": {
+        "submitted": 0.54,
+        "correct": 0.54,
+        "difference": 0.0,
+        "points": 6,
+        "evaluation": "Correct (within \u00b10.02 tolerance)"
+      },
+      "product_e_markup": {
+        "submitted": 0.67,
+        "correct": 0.67,
+        "difference": 0.0,
+        "points": 6,
+        "evaluation": "Correct (within \u00b10.02 tolerance)"
       }
     }
-  }
+  },
+  "exercise2": {
+    "points": 35,
+    "max_points": 35,
+    "details": {
+      "item1_markdown": {
+        "submitted": 0.25,
+        "correct": 0.25,
+        "difference": 0.0,
+        "points": 7,
+        "evaluation": "Correct (within \u00b10.05 tolerance)"
+      },
+      "item2_markdown": {
+        "submitted": 0.4,
+        "correct": 0.4,
+        "difference": 0.0,
+        "points": 7,
+        "evaluation": "Correct (within \u00b10.05 tolerance)"
+      },
+      "item3_markdown": {
+        "submitted": 0.15,
+        "correct": 0.15,
+        "difference": 0.0,
+        "points": 7,
+        "evaluation": "Correct (within \u00b10.05 tolerance)"
+      },
+      "item4_markdown": {
+        "submitted": 0.3,
+        "correct": 0.3,
+        "difference": 0.0,
+        "points": 7,
+        "evaluation": "Correct (within \u00b10.05 tolerance)"
+      },
+      "expected_clearance": {
+        "submitted": 5878.74,
+        "correct": 5878.74,
+        "difference_pct": 0.0,
+        "points": 7,
+        "evaluation": "Correct (within \u00b15% tolerance)"
+      }
+    }
+  },
+  "exercise3": {
+    "points": 28,
+    "max_points": 35,
+    "details": {
+      "product_x_price": {
+        "submitted": 40.99,
+        "correct": 40.99,
+        "submitted_margin_pct": 40.23,
+        "required_margin_pct": 60.0,
+        "difference_pct": 0.0,
+        "points": 0,
+        "in_competitor_range": true,
+        "margin_requirement_met": false,
+        "evaluation": "Incorrect (doesn't meet margin requirement)"
+      },
+      "product_y_price": {
+        "submitted": 61.25,
+        "correct": 61.25,
+        "submitted_margin_pct": 40.0,
+        "required_margin_pct": 40.0,
+        "difference_pct": 0.0,
+        "points": 7,
+        "in_competitor_range": true,
+        "margin_requirement_met": true,
+        "evaluation": "Correct (within \u00b15% tolerance)"
+      },
+      "product_z_price": {
+        "submitted": 84.99,
+        "correct": 84.99,
+        "submitted_margin_pct": 38.52,
+        "required_margin_pct": 35.0,
+        "difference_pct": 0.0,
+        "points": 7,
+        "in_competitor_range": true,
+        "margin_requirement_met": true,
+        "evaluation": "Correct (within \u00b15% tolerance)"
+      },
+      "total_revenue": {
+        "submitted": 51747.5,
+        "correct": 51747.5,
+        "difference_pct": 0.0,
+        "points": 7,
+        "evaluation": "Correct (within \u00b15% tolerance)"
+      },
+      "total_profit": {
+        "submitted": 23685.0,
+        "correct": 23685.0,
+        "difference_pct": 0.0,
+        "points": 7,
+        "evaluation": "Correct (within \u00b15% tolerance)"
+      }
+    }
+  },
+  "critical_requirements_met": {
+    "markup_formula_correct": true,
+    "markdown_considers_inventory": true,
+    "prices_meet_margin_requirements": false,
+    "prices_within_range": true
+  },
+  "performance_level": "Fail",
+  "failure_reason": "Failed critical requirements: Prices meet margin requirements"
 }

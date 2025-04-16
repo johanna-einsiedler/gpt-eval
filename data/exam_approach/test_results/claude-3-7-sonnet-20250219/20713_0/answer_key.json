@@ -1,72 +1,23 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
-    "initial_markup": {
-        "NP-101": {
-            "markup_percentage": 0.72,
-            "retail_price": 89.99
-        },
-        "NP-102": {
-            "markup_percentage": 1.22,
-            "retail_price": 152.22
-        },
-        "NP-103": {
-            "markup_percentage": 0.92,
-            "retail_price": 167.79
-        },
-        "NP-104": {
-            "markup_percentage": 1.86,
-            "retail_price": 99.43
-        },
-        "NP-105": {
-            "markup_percentage": 1.08,
-            "retail_price": 163.33
-        }
+    "exercise1": {
+        "product_a_markup": 0.72,
+        "product_b_markup": 0.61,
+        "product_c_markup": 0.82,
+        "product_d_markup": 0.54,
+        "product_e_markup": 0.67
     },
-    "seasonal_markdown": {
-        "SP-201": {
-            "markdown_percentage": 0.25,
-            "new_price": 149.99,
-            "second_markdown": 0.15
-        },
-        "SP-202": {
-            "markdown_percentage": 0.3,
-            "new_price": 41.99,
-            "second_markdown": 0.0
-        },
-        "SP-203": {
-            "markdown_percentage": 0.2,
-            "new_price": 31.99,
-            "second_markdown": 0.1
-        },
-        "SP-204": {
-            "markdown_percentage": 0.15,
-            "new_price": 42.49,
-            "second_markdown": 0.0
-        }
+    "exercise2": {
+        "item1_markdown": 0.25,
+        "item2_markdown": 0.4,
+        "item3_markdown": 0.15,
+        "item4_markdown": 0.3,
+        "expected_clearance": 5878.74
     },
-    "promotional_pricing": {
-        "PP-301": {
-            "discount_percentage": 0.2,
-            "breakeven_volume_increase": 0.41
-        },
-        "PP-302": {
-            "discount_percentage": 0.15,
-            "breakeven_volume_increase": 0.33
-        },
-        "PP-303": {
-            "discount_percentage": 0.2,
-            "breakeven_volume_increase": 0.45
-        }
-    },
-    "competitive_repricing": {
-        "CP-401": {
-            "new_price": 79.99
-        },
-        "CP-402": {
-            "new_price": 114.99
-        },
-        "CP-403": {
-            "new_price": 299.99
-        }
+    "exercise3": {
+        "product_x_price": 40.99,
+        "product_y_price": 61.25,
+        "product_z_price": 84.99,
+        "total_revenue": 51747.5,
+        "total_profit": 23685.0
     }
 }

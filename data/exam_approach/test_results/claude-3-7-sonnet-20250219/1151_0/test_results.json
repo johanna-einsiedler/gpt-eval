@@ -1,0 +1,166 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "overall_score": 100.0,
+  "total_points": 100,
+  "max_possible_points": 100,
+  "passed_exam": true,
+  "task1": {
+    "errors_found": {
+      "score": 15,
+      "max_score": 15,
+      "feedback": [
+        "Correct: Missing quantity for item OP-303 Sticky Notes on 1/22/2023",
+        "Correct: Missing total cost calculations for transactions on 1/22/2023 and 5/31/2023",
+        "Correct: Inconsistent currency formatting (some prices include $ symbol, others don't)",
+        "Correct: Calculation error in total cost for OP-1414 Headphones (shows $279.6, should be $279.60)",
+        "Correct: Inconsistent decimal places in total costs (e.g., $59.9 instead of $59.90)"
+      ],
+      "valid_count": 5
+    },
+    "corrections_made": {
+      "score": 15,
+      "max_score": 15,
+      "feedback": [
+        "Correct: Added missing quantity for OP-303 on 1/22/2023 (logical estimate based on similar orders)",
+        "Correct: Calculated missing total costs by multiplying quantity by unit price",
+        "Correct: Standardized all currency formatting to include $ symbol and two decimal places",
+        "Correct: Corrected calculation for OP-1414 Headphones total cost",
+        "Correct: Applied consistent formatting to all numeric values (prices and totals)"
+      ],
+      "valid_count": 5
+    },
+    "summary_insights": {
+      "score": 10,
+      "max_score": 10,
+      "feedback": [
+        "Correct: Office Supplies category represents 73% of all purchases by quantity but only 58% by total cost",
+        "Correct: Copy Paper (OP-101) is the most frequently purchased item with 85 units ordered across the six-month period",
+        "Correct: Technology items have a significantly higher average unit price ($41.65) compared to Office Supplies ($7.86)",
+        "Correct: Monthly purchasing volume increased by approximately 25% from January to June"
+      ],
+      "valid_count": 4
+    },
+    "total_score": 40,
+    "max_score": 40
+  },
+  "task2": {
+    "tracking_method": {
+      "score": 5,
+      "max_score": 5,
+      "feedback": [
+        "Includes key element: expected delivery",
+        "Includes key element: actual delivery",
+        "Includes key element: difference",
+        "Includes key element: early",
+        "Includes key element: late"
+      ],
+      "valid_elements": 5
+    },
+    "top_performers": {
+      "score": 10,
+      "max_score": 10,
+      "feedback": [
+        "Correct top performer: Tech Supplies Co",
+        "  - Accurate on-time percentage for Tech Supplies Co",
+        "  - Accurate average days for Tech Supplies Co",
+        "Correct top performer: Paper Plus",
+        "  - Accurate on-time percentage for Paper Plus",
+        "  - Accurate average days for Paper Plus",
+        "Correct top performer: Office Solutions Inc",
+        "  - Accurate on-time percentage for Office Solutions Inc",
+        "  - Accurate average days for Office Solutions Inc"
+      ],
+      "valid_count": 3
+    },
+    "needs_improvement": {
+      "score": 10,
+      "max_score": 10,
+      "feedback": [
+        "Correct vendor needing improvement: Furniture World",
+        "Correct vendor needing improvement: Stationery Express",
+        "Correct vendor needing improvement: Office Solutions Inc"
+      ],
+      "valid_count": 3
+    },
+    "recommendations": {
+      "score": 5,
+      "max_score": 5,
+      "feedback": [
+        "Valid recommendation: Consolidate orders with Tech Supplies Co and Paper Plus when possible as they consistently deliver on time or early with excellent quality ratings",
+        "Valid recommendation: Implement performance improvement plans for Furniture World and Stationery Express, including earlier lead times or penalties for late deliveries",
+        "Valid recommendation: Consider reducing order volumes from Furniture World until delivery performance improves, as they consistently deliver 7 days late on average",
+        "Valid recommendation: Request delivery time guarantees in contracts with all vendors and establish clear expectations for on-time performance"
+      ],
+      "valid_count": 4
+    },
+    "total_score": 30,
+    "max_score": 30
+  },
+  "task3": {
+    "data_organization": {
+      "score": 5,
+      "max_score": 5,
+      "feedback": [
+        "Includes key element: import",
+        "Includes key element: spreadsheet",
+        "Includes key element: column",
+        "Includes key element: format"
+      ],
+      "valid_elements": 4
+    },
+    "anomaly_detection_method": {
+      "score": 5,
+      "max_score": 5,
+      "feedback": [
+        "Includes key element: high",
+        "Includes key element: unusual",
+        "Includes key element: violation",
+        "Includes key element: duplicate",
+        "Includes key element: missing"
+      ],
+      "valid_elements": 5
+    },
+    "flagged_transactions": {
+      "score": 15,
+      "max_score": 15,
+      "feedback": [
+        "Correct flagged transaction: TX23-1037",
+        "  - Valid reason provided for TX23-1037",
+        "Correct flagged transaction: TX23-1039",
+        "  - Valid reason provided for TX23-1039",
+        "Correct flagged transaction: TX23-1040",
+        "  - Valid reason provided for TX23-1040",
+        "Correct flagged transaction: TX23-1042",
+        "  - Valid reason provided for TX23-1042",
+        "Correct flagged transaction: TX23-1038",
+        "  - Valid reason provided for TX23-1038"
+      ],
+      "valid_count": 5
+    },
+    "system_improvements": {
+      "score": 5,
+      "max_score": 5,
+      "feedback": [
+        "Valid improvement: Implement automated validation checks to flag mathematical inconsistencies between quantity, unit price, and total amount",
+        "Valid improvement: Enforce segregation of duties by preventing the same person from being both requestor and approver in the system",
+        "Valid improvement: Create standardized vendor list with dropdown selection to prevent variations in vendor naming (e.g., 'Office Supplies Unknown')",
+        "Valid improvement: Implement electronic approval workflow that requires proper authorization for all purchases, especially emergency ones",
+        "Valid improvement: Add system controls to prevent use of personal payment methods like personal credit cards",
+        "Valid improvement: Create automatic flagging for unusually high purchase amounts compared to historical averages for similar items"
+      ],
+      "valid_count": 6
+    },
+    "total_score": 30,
+    "max_score": 30
+  },
+  "passing_criteria": {
+    "minimum_overall_score": 70,
+    "minimum_task1_score": 20,
+    "minimum_task2_score": 15,
+    "minimum_task3_score": 15,
+    "passed_task1": true,
+    "passed_task2": true,
+    "passed_task3": true,
+    "passed_overall": true
+  }
+}

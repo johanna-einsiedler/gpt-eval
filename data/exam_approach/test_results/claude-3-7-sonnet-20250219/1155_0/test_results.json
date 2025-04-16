@@ -1,0 +1,174 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "scenarios": {
+    "scenario_1": {
+      "items": {
+        "duty_amount": {
+          "candidate_answer": 1125.0,
+          "correct_answer": 1125.0,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "total_freight_charges": {
+          "candidate_answer": 3145.0,
+          "correct_answer": 3145.0,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "payment_due_date": {
+          "candidate_answer": "A",
+          "correct_answer": "A",
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "duty_payment_method": {
+          "candidate_answer": "A",
+          "correct_answer": "A",
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "freight_payment_method": {
+          "candidate_answer": "C",
+          "correct_answer": "C",
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        }
+      },
+      "points_earned": 20,
+      "points_possible": 20,
+      "percentage": 100.0
+    },
+    "scenario_2": {
+      "items": {
+        "duty_industrial_pumps": {
+          "candidate_answer": 712.5,
+          "correct_answer": 712.5,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "duty_control_panels": {
+          "candidate_answer": 425.25,
+          "correct_answer": 425.25,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "duty_measuring_instruments": {
+          "candidate_answer": 209.1,
+          "correct_answer": 209.1,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "total_duty": {
+          "candidate_answer": 1346.85,
+          "correct_answer": 1346.85,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "freight_charges_usd": {
+          "candidate_answer": 4433.4,
+          "correct_answer": 4433.4,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "incoterm": {
+          "candidate_answer": "C",
+          "correct_answer": "C",
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "bond_type": {
+          "candidate_answer": "B",
+          "correct_answer": "B",
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        }
+      },
+      "points_earned": 28,
+      "points_possible": 28,
+      "percentage": 100.0
+    },
+    "scenario_3": {
+      "items": {
+        "duty_amount": {
+          "candidate_answer": 2677.5,
+          "correct_answer": 2677.5,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "merchandise_processing_fee": {
+          "candidate_answer": 265.0,
+          "correct_answer": 265.0,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "insurance_cost": {
+          "candidate_answer": 573.75,
+          "correct_answer": 573.75,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "total_freight_charges": {
+          "candidate_answer": 8448.75,
+          "correct_answer": 8448.75,
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "required_form": {
+          "candidate_answer": "B",
+          "correct_answer": "B",
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        },
+        "payment_timeframe": {
+          "candidate_answer": "B",
+          "correct_answer": "B",
+          "points_earned": 4,
+          "points_possible": 4,
+          "is_correct": true,
+          "notes": ""
+        }
+      },
+      "points_earned": 24,
+      "points_possible": 24,
+      "percentage": 100.0
+    }
+  },
+  "overall_points_earned": 72,
+  "overall_points_possible": 72,
+  "overall_score": 100.0,
+  "passed": true
+}

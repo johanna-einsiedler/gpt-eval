@@ -1,36 +1,27 @@
 {
-    "candidate_id": "GPT-4o",
-    "task1": {
-        "calculatedDuty": 1125.0,
-        "mpf": 155.88,
-        "hmf": 56.25,
-        "totalDutyAndFees": 1337.13
+    "candidate_id": "EVALUATOR_KEY",
+    "scenario_1": {
+        "duty_amount": 1125.0,
+        "total_freight_charges": 3145.0,
+        "payment_due_date": "A",
+        "duty_payment_method": "A",
+        "freight_payment_method": "C"
     },
-    "task2": {
-        "entryNumber": "280-XXXXXXX-X",
-        "bondType": "Continuous",
-        "paymentMethod": "ACH",
-        "justification": "ACH is the preferred payment method for duty payments from China according to the payment matrix, and the transaction is within the credit limit of $100,000."
+    "scenario_2": {
+        "duty_industrial_pumps": 712.5,
+        "duty_control_panels": 425.25,
+        "duty_measuring_instruments": 209.1,
+        "total_duty": 1346.85,
+        "freight_charges_usd": 4433.4,
+        "incoterm": "C",
+        "bond_type": "B"
     },
-    "task3": {
-        "responsibleParty": "Buyer",
-        "correctAmount": 4125.0,
-        "documentationRequired": [
-            "Carrier's Freight Bill",
-            "Commercial Invoice",
-            "Bill of Lading",
-            "Proof of Delivery"
-        ]
-    },
-    "task4": {
-        "freightCharges": 3900.0,
-        "insuranceCost": 211.25,
-        "landedCost": 36611.25,
-        "paymentDueDate": "2023-11-24"
-    },
-    "task5": {
-        "selectedOption": "Resubmit with Corrected HTS Code",
-        "reasonCode": "RC-001",
-        "estimatedResolutionTime": 2
+    "scenario_3": {
+        "duty_amount": 2677.5,
+        "merchandise_processing_fee": 265.0,
+        "insurance_cost": 573.75,
+        "total_freight_charges": 8448.75,
+        "required_form": "B",
+        "payment_timeframe": "B"
     }
 }
