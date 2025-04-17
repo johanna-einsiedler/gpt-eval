@@ -1,27 +1,26 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
-    "scenario_1": {
-        "duty_amount": 1125.0,
-        "total_freight_charges": 3145.0,
-        "payment_due_date": "A",
-        "duty_payment_method": "A",
-        "freight_payment_method": "C"
+    "scenario1": {
+        "dutyAmount": 2250.0,
+        "freightAmount": 2800.0,
+        "paymentMethod": "wire",
+        "paymentResponsibility": "buyer",
+        "paymentDeadline": "CURRENT_DATE+12",
+        "customsReferenceNumber": "CHN583927"
     },
-    "scenario_2": {
-        "duty_industrial_pumps": 712.5,
-        "duty_control_panels": 425.25,
-        "duty_measuring_instruments": 209.1,
-        "total_duty": 1346.85,
-        "freight_charges_usd": 4433.4,
-        "incoterm": "C",
-        "bond_type": "B"
+    "scenario2": {
+        "dutyAmount": 682.5,
+        "freightAmount": 3150.0,
+        "paymentMethod": "credit",
+        "paymentResponsibility": "buyer",
+        "paymentDeadline": "CURRENT_DATE+3",
+        "customsReferenceNumber": "GER724851"
     },
-    "scenario_3": {
-        "duty_amount": 2677.5,
-        "merchandise_processing_fee": 265.0,
-        "insurance_cost": 573.75,
-        "total_freight_charges": 8448.75,
-        "required_form": "B",
-        "payment_timeframe": "B"
+    "scenario3": {
+        "dutyAmount": 0.0,
+        "freightAmount": 4200.0,
+        "paymentMethod": "wire",
+        "paymentResponsibility": "buyer",
+        "paymentDeadline": "CURRENT_DATE+19",
+        "customsReferenceNumber": "VNM291635"
     }
 }

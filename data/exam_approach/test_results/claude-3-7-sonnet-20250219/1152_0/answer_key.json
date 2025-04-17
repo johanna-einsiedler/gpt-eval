@@ -1,61 +1,91 @@
 {
-    "task1": {
-        "chair_comparison": [
+    "candidate_id": "YOUR_ID_HERE",
+    "exercise1": {
+        "circuit_breakers": [
             {
-                "supplier": "OfficeMax",
-                "model": "OM-EC550",
-                "price": 279.99,
-                "warranty_years": 3
+                "supplier_name": "Thomasson Electronics",
+                "catalog_page": "page 45",
+                "product_code": "TE-CB20-3P",
+                "price": "$168.75"
             },
             {
-                "supplier": "Staples",
-                "model": "SP-1500TF",
-                "price": 329.99,
-                "warranty_years": 6
-            },
-            {
-                "supplier": "Corporate Furnishings",
-                "model": "CF-TM400",
-                "price": 319.99,
-                "warranty_years": 4
+                "supplier_name": "ELECTRO-INDUSTRIAL SUPPLY CO.",
+                "catalog_page": "page 3",
+                "product_code": "CB-2030A",
+                "price": "$178.50"
             }
         ],
-        "lowest_price_chair": {
-            "supplier": "Staples",
-            "model": "US-DX450"
+        "cable_connectors": [
+            {
+                "supplier_name": "SealTech Industries",
+                "catalog_page": "page 12",
+                "product_code": "SMP-400",
+                "price": "$44.95"
+            },
+            {
+                "supplier_name": "ELECTRO-INDUSTRIAL SUPPLY CO.",
+                "catalog_page": "page 7",
+                "product_code": "CC-WP400",
+                "price": "$38.95"
+            }
+        ],
+        "logic_controllers": [
+            {
+                "supplier_name": "NextGen Automation",
+                "catalog_page": "page 28",
+                "product_code": "NPLC-24",
+                "price": "$785.00"
+            },
+            {
+                "supplier_name": "INDUSTRIAL TECH SUPPLIES",
+                "catalog_page": "page 31",
+                "product_code": "ITS-PLC32",
+                "price": "$925.00"
+            }
+        ]
+    },
+    "exercise2": {
+        "desk_chair": {
+            "dimensions": "26\"W x 26\"D x 38-42\"H (adjustable)",
+            "materials": "Mesh back, padded leather seat, aluminum frame",
+            "warranty": "5-year limited warranty",
+            "lead_time": "Ships within 3-5 business days",
+            "minimum_order": "2 units"
         },
-        "best_warranty_chair": {
-            "supplier": "Staples",
-            "model": "SP-1500TF"
+        "standing_desk": {
+            "dimensions": "60\"W x 30\"D x 25-50\"H (adjustable height)",
+            "materials": "Bamboo top with steel frame, powder-coated finish",
+            "warranty": "7-year warranty on frame, 3-year on electronics",
+            "lead_time": "7-10 business days",
+            "minimum_order": "1 unit"
+        },
+        "conference_table": {
+            "dimensions": "96\"L x 48\"W x 30\"H",
+            "materials": "Solid oak with mahogany finish",
+            "warranty": "10-year manufacturer warranty",
+            "lead_time": "4-6 weeks for delivery",
+            "minimum_order": "1 unit"
+        },
+        "filing_cabinet": {
+            "dimensions": "15\"W x 25\"D x 52\"H",
+            "materials": "Steel construction with reinforced drawers",
+            "warranty": "Lifetime limited warranty",
+            "lead_time": "In stock, ships within 48 hours",
+            "minimum_order": "2 units"
+        },
+        "partition_system": {
+            "dimensions": "60\"W x 1.5\"D x 65\"H (per panel)",
+            "materials": "Sound-absorbing fabric panels with aluminum frame",
+            "warranty": "5-year warranty",
+            "lead_time": "15-20 business days",
+            "minimum_order": "4 panels"
         }
     },
-    "task2": {
-        "safety_standard": "ASTM F3326-21",
-        "certification_required": "ANSI Z97.1",
-        "minimum_thickness_mm": 4.5
-    },
-    "task3": {
-        "suppliers": [
-            {
-                "name": "[Any plausible supplier name]",
-                "location": "[Any plausible location]",
-                "minimum_order": "[Any reasonable quantity]",
-                "lead_time_days": "[Any reasonable number]"
-            },
-            {
-                "name": "[Any plausible supplier name]",
-                "location": "[Any plausible location]",
-                "minimum_order": "[Any reasonable quantity]",
-                "lead_time_days": "[Any reasonable number]"
-            },
-            {
-                "name": "[Any plausible supplier name]",
-                "location": "[Any plausible location]",
-                "minimum_order": "[Any reasonable quantity]",
-                "lead_time_days": "[Any reasonable number]"
-            }
-        ],
-        "fastest_delivery_supplier": "[Must match one of the suppliers with lowest lead_time_days]",
-        "lowest_minimum_order_supplier": "[Must match one of the suppliers with lowest minimum_order]"
+    "exercise3": {
+        "lowest_price_sc100": "Supplier C at $26.95",
+        "shortest_delivery_lab_chemicals": "Supplier C at 2 days",
+        "highest_quality_pharma_reagents": "Supplier B with 9.8/10",
+        "best_safety_certification": "Supplier B",
+        "total_order_cost_supplier_b": "$7,035.00"
     }
 }

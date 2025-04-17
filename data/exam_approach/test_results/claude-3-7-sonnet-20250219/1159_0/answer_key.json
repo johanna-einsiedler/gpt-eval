@@ -1,120 +1,172 @@
 {
-    "policy_framework": {
-        "policy_sections": [
-            "Procurement Authority Delegation",
-            "Competitive Bidding Requirements",
-            "Sole Source Justification",
-            "Ethical Standards and Conflict of Interest",
-            "Sustainable Procurement Guidelines"
-        ],
-        "approval_workflow": [
-            {
-                "level": "Level 1",
-                "threshold": "$0 - $5,000",
-                "approvers": [
-                    "Department Manager"
-                ]
+    "candidateID": "EVALUATOR_KEY",
+    "task1": {
+        "bidThreshold": {
+            "Office Supplies": {
+                "Micro": "$0-$3,000",
+                "Small": "$3,001-$10,000",
+                "Medium": "$10,001-$50,000",
+                "Large": "$50,001-$150,000",
+                "Enterprise": ">$150,000"
             },
-            {
-                "level": "Level 2",
-                "threshold": "$5,001 - $25,000",
-                "approvers": [
-                    "Department Director"
-                ]
+            "IT Equipment": {
+                "Micro": "$0-$5,000",
+                "Small": "$5,001-$15,000",
+                "Medium": "$15,001-$75,000",
+                "Large": "$75,001-$200,000",
+                "Enterprise": ">$200,000"
             },
-            {
-                "level": "Level 3",
-                "threshold": "$25,001 - $100,000",
-                "approvers": [
-                    "VP of Finance"
-                ]
+            "Professional Services": {
+                "Micro": "$0-$7,500",
+                "Small": "$7,501-$25,000",
+                "Medium": "$25,001-$100,000",
+                "Large": "$100,001-$250,000",
+                "Enterprise": ">$250,000"
             },
-            {
-                "level": "Level 4",
-                "threshold": "$100,001+",
-                "approvers": [
-                    "CEO/CFO"
-                ]
+            "Construction": {
+                "Micro": "$0-$10,000",
+                "Small": "$10,001-$50,000",
+                "Medium": "$50,001-$250,000",
+                "Large": "$250,001-$500,000",
+                "Enterprise": ">$500,000"
             }
-        ],
-        "compliance_checklist": [
-            "Documented Approval Authority Matrix",
-            "Supplier Code of Conduct Acknowledgment",
-            "Competitive Bidding for Purchases Over $25,000",
-            "Conflict of Interest Disclosure Requirements",
-            "Documentation Retention (7 Years Minimum)"
-        ]
-    },
-    "bid_evaluation": {
-        "scoring_criteria": [
-            {
-                "criterion": "Price Competitiveness",
-                "weight": 30
-            },
-            {
-                "criterion": "Technical Capability",
-                "weight": 25
-            },
-            {
-                "criterion": "Delivery Performance",
-                "weight": 20
-            },
-            {
-                "criterion": "Quality Management System",
-                "weight": 15
-            },
-            {
-                "criterion": "Financial Stability",
-                "weight": 10
-            }
-        ],
-        "weighted_formula": "Final Score = (Price Score × 0.30) + (Technical Score × 0.25) + (Delivery Score × 0.20) + (Quality Score × 0.15) + (Financial Score × 0.10)",
-        "minimum_thresholds": {
-            "Price Competitiveness": 70,
-            "Technical Capability": 75,
-            "Delivery Performance": 80,
-            "Quality Management System": 75,
-            "Financial Stability": 80
+        },
+        "approvalProcess": {
+            "Micro": [
+                "Department Manager Approval",
+                "Budget Verification"
+            ],
+            "Small": [
+                "Department Manager Approval",
+                "Budget Verification",
+                "Procurement Officer Review"
+            ],
+            "Medium": [
+                "Department Manager Approval",
+                "Budget Verification",
+                "Procurement Officer Review",
+                "Competitive Bidding",
+                "Deputy Director Approval"
+            ],
+            "Large": [
+                "Department Manager Approval",
+                "Budget Verification",
+                "Procurement Officer Review",
+                "Competitive Bidding",
+                "RFP Publication",
+                "Legal Department Review",
+                "Deputy Director Approval",
+                "Executive Director Signature"
+            ],
+            "Enterprise": [
+                "Department Manager Approval",
+                "Budget Verification",
+                "Procurement Officer Review",
+                "Competitive Bidding",
+                "RFP Publication",
+                "Sealed Bid Process",
+                "Legal Department Review",
+                "Deputy Director Approval",
+                "Executive Director Signature",
+                "Board Vote"
+            ]
+        },
+        "requiredDocuments": {
+            "Micro": [
+                "Purchase Requisition Form",
+                "Budget Availability Certification"
+            ],
+            "Small": [
+                "Purchase Requisition Form",
+                "Budget Availability Certification",
+                "Competitive Quotes",
+                "Vendor W-9"
+            ],
+            "Medium": [
+                "Purchase Requisition Form",
+                "Budget Availability Certification",
+                "Competitive Quotes",
+                "Vendor W-9",
+                "Vendor Certificate of Insurance",
+                "Bid Solicitation Document",
+                "Bid Tabulation Sheet",
+                "Conflict of Interest Disclosure"
+            ],
+            "Large": [
+                "Purchase Requisition Form",
+                "Budget Availability Certification",
+                "Competitive Quotes",
+                "Vendor W-9",
+                "Vendor Certificate of Insurance",
+                "Bid Solicitation Document",
+                "Bid Tabulation Sheet",
+                "Conflict of Interest Disclosure",
+                "Contract Draft",
+                "Legal Review Memo",
+                "Vendor Performance History"
+            ],
+            "Enterprise": [
+                "Purchase Requisition Form",
+                "Budget Availability Certification",
+                "Competitive Quotes",
+                "Vendor W-9",
+                "Vendor Certificate of Insurance",
+                "Bid Solicitation Document",
+                "Bid Tabulation Sheet",
+                "Conflict of Interest Disclosure",
+                "Contract Draft",
+                "Legal Review Memo",
+                "Vendor Performance History",
+                "Board Resolution"
+            ]
+        },
+        "evaluationCriteria": {
+            "Price": 40,
+            "Technical Specifications": 25,
+            "Delivery Timeline": 15,
+            "Vendor Experience": 10,
+            "Warranty Terms": 10
         }
     },
-    "vendor_procedure": {
-        "qualification_steps": [
-            "Initial Capability Assessment",
-            "Financial Stability Verification",
-            "Reference Checks",
-            "Quality Management System Review",
-            "Compliance Certification Verification"
-        ],
-        "performance_metrics": [
-            {
-                "metric": "On-Time Delivery Rate",
-                "benchmark": "95%"
-            },
-            {
-                "metric": "Quality Acceptance Rate",
-                "benchmark": "98%"
-            },
-            {
-                "metric": "Cost Variance",
-                "benchmark": "<2%"
-            },
-            {
-                "metric": "Response Time",
-                "benchmark": "<24 hours"
-            },
-            {
-                "metric": "Invoice Accuracy",
-                "benchmark": "99%"
-            },
-            {
-                "metric": "Contract Compliance",
-                "benchmark": "100%"
-            }
-        ],
-        "corrective_actions": [
-            "Performance Improvement Plan (PIP) Implementation",
-            "Increased Inspection Frequency",
-            "Payment Term Adjustment"
+    "task2": {
+        "vendorSelection": "WorkSpace Masters",
+        "totalCost": 52500,
+        "complianceStatus": true,
+        "documentationNeeded": [
+            "Purchase Order",
+            "Vendor Contract",
+            "Insurance Certificate",
+            "Product Specifications",
+            "Delivery Schedule",
+            "Warranty Documentation",
+            "Installation Certificate"
         ]
+    },
+    "task3": {
+        "policyStatement": "Emergency procurements are permitted only when an imminent threat to public health, welfare, or safety exists, and must follow modified but documented procedures to ensure accountability and transparency.",
+        "procedureSteps": [
+            "Document justification for emergency procurement",
+            "Verify budget availability for emergency expenditure",
+            "Secure verbal approval from department director",
+            "Identify potential vendors able to respond to emergency needs",
+            "Obtain quotes from available vendors (minimum one if others unavailable)",
+            "Select vendor based on availability, capability, and cost",
+            "Issue emergency purchase order or contract",
+            "Notify Procurement Office within 24 hours",
+            "Submit full documentation within 3 business days",
+            "Procurement Office conducts post-procurement review"
+        ],
+        "complianceRating": {
+            "Document justification for emergency procurement": 5,
+            "Verify budget availability for emergency expenditure": 5,
+            "Secure verbal approval from department director": 4,
+            "Identify potential vendors able to respond to emergency needs": 4,
+            "Obtain quotes from available vendors (minimum one if others unavailable)": 3,
+            "Select vendor based on availability, capability, and cost": 4,
+            "Issue emergency purchase order or contract": 5,
+            "Notify Procurement Office within 24 hours": 4,
+            "Submit full documentation within 3 business days": 5,
+            "Procurement Office conducts post-procurement review": 5
+        }
     }
 }

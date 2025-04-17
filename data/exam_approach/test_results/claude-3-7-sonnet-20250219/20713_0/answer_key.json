@@ -1,23 +1,110 @@
 {
-    "exercise1": {
-        "product_a_markup": 0.72,
-        "product_b_markup": 0.61,
-        "product_c_markup": 0.82,
-        "product_d_markup": 0.54,
-        "product_e_markup": 0.67
+    "task1_markup_calculation": {
+        "product_A": {
+            "cost_based_markup_percent": 122.2,
+            "retail_based_markup_percent": 55.0,
+            "recommended_selling_price": 27.99,
+            "justification": "Applied 55% margin to the cost of $12.50, yielding a selling price of $27.78, rounded to $27.99. This falls within the apparel department's target margin of 50-60% while staying competitive with the average market price of $29.99."
+        },
+        "product_B": {
+            "cost_based_markup_percent": 163.2,
+            "retail_based_markup_percent": 62.0,
+            "recommended_selling_price": 49.99,
+            "justification": "Applied 62% margin to the cost of $18.75, yielding a selling price of $49.34, rounded to $49.99. This aligns with the accessories department's target margin of 60-65% and is slightly below competitor average of $52.99."
+        },
+        "product_C": {
+            "cost_based_markup_percent": 92.3,
+            "retail_based_markup_percent": 48.0,
+            "recommended_selling_price": 86.99,
+            "justification": "Applied 48% margin to the cost of $45.00, yielding a selling price of $86.54, rounded to $86.99. This falls within the home department's target margin of 45-55% and is slightly below the competitor average of $89.99."
+        },
+        "product_D": {
+            "cost_based_markup_percent": 138.1,
+            "retail_based_markup_percent": 58.0,
+            "recommended_selling_price": 33.99,
+            "justification": "Applied 58% margin to the cost of $14.25, yielding a selling price of $33.93, rounded to $33.99. This aligns with the footwear department's target margin of 55-60% and is competitively priced below the market average of $39.99."
+        },
+        "product_E": {
+            "cost_based_markup_percent": 81.8,
+            "retail_based_markup_percent": 45.0,
+            "recommended_selling_price": 40.99,
+            "justification": "Applied 45% margin to the cost of $22.50, yielding a selling price of $40.91, rounded to $40.99. This meets the electronics department's target margin of 40-50% and is competitive with the market average of $42.99."
+        }
     },
-    "exercise2": {
-        "item1_markdown": 0.25,
-        "item2_markdown": 0.4,
-        "item3_markdown": 0.15,
-        "item4_markdown": 0.3,
-        "expected_clearance": 5878.74
+    "task2_markdown_strategy": {
+        "product_F": {
+            "required_markdown_percent": 11.1,
+            "recommended_markdown_price": 266.99,
+            "units_expected_to_sell": 40,
+            "justification": "Current trajectory would sell 30 units (5 units × 6 weeks), but we need to sell 40 units (95% of 42). To increase sales by 33.3%, we need an 11.1% markdown based on the 5%:15% markdown-to-sales ratio in guidelines."
+        },
+        "product_G": {
+            "required_markdown_percent": 13.8,
+            "recommended_markdown_price": 21.99,
+            "units_expected_to_sell": 113,
+            "justification": "Current trajectory would sell 80 units (20 units × 4 weeks), but we need to sell 113 units (90% of 125). To increase sales by 41.3%, we need a 13.8% markdown based on the 5%:15% markdown-to-sales ratio."
+        },
+        "product_H": {
+            "required_markdown_percent": 17.0,
+            "recommended_markdown_price": 33.99,
+            "units_expected_to_sell": 68,
+            "justification": "Current trajectory would sell 45 units (15 units × 3 weeks), but we need to sell all 68 units (100%). To increase sales by 51.1%, we need a 17.0% markdown based on the 5%:15% markdown-to-sales ratio."
+        }
     },
-    "exercise3": {
-        "product_x_price": 40.99,
-        "product_y_price": 61.25,
-        "product_z_price": 84.99,
-        "total_revenue": 51747.5,
-        "total_profit": 23685.0
+    "task3_competitive_pricing": {
+        "product_I": {
+            "competitor_average_price": 129.99,
+            "recommended_price": 111.99,
+            "percent_difference_from_average": -13.8,
+            "achieved_margin_percent": 42.4,
+            "justification": "Minimum price to achieve 42% margin is $111.21 ($64.50/(1-0.42)). Setting price at $111.99 positions us 13.8% below competitor average while maintaining required margin, which should drive higher sales volume."
+        },
+        "product_J": {
+            "competitor_average_price": 99.99,
+            "recommended_price": 101.99,
+            "percent_difference_from_average": 2.0,
+            "achieved_margin_percent": 55.1,
+            "justification": "Minimum price to achieve 55% margin is $101.67 ($45.75/(1-0.55)). Setting price at $101.99 positions us slightly above competitor average while maintaining required margin, justified by product quality."
+        },
+        "product_K": {
+            "competitor_average_price": 69.99,
+            "recommended_price": 62.99,
+            "percent_difference_from_average": -10.0,
+            "achieved_margin_percent": 48.8,
+            "justification": "Minimum price to achieve 48% margin is $62.02 ($32.25/(1-0.48)). Setting price at $62.99 positions us 10% below competitor average while exceeding required margin, making us competitively priced."
+        },
+        "product_L": {
+            "competitor_average_price": 44.99,
+            "recommended_price": 39.99,
+            "percent_difference_from_average": -11.1,
+            "achieved_margin_percent": 51.2,
+            "justification": "Minimum price to achieve 50% margin is $39.00 ($19.50/(1-0.50)). Setting price at $39.99 positions us 11.1% below competitor average while exceeding required margin and matching the lowest competitor."
+        }
+    },
+    "task4_margin_adjustment": {
+        "product_M": {
+            "required_price_adjustment_percent": 16.5,
+            "new_recommended_price": 53.99,
+            "expected_impact_on_sales": "With price elasticity of 1.2, the 16.5% price increase would likely result in approximately 19.8% decrease in sales volume (120 units dropping to about 96 units monthly).",
+            "justification": "Current margin of 51.1% needs to increase to target of 58%. The required price is $53.57 ($22.50/(1-0.58)), representing a 16.5% increase from current $45.99. Rounding to $53.99 achieves target margin."
+        },
+        "product_N": {
+            "required_price_adjustment_percent": 10.7,
+            "new_recommended_price": 88.99,
+            "expected_impact_on_sales": "With high price elasticity of 1.8, the 10.7% price increase would likely result in approximately 19.3% decrease in sales volume (85 units dropping to about 69 units monthly).",
+            "justification": "Current margin of 46.9% needs to increase to target of 52%. The required price is $88.54 ($42.50/(1-0.52)), representing a 10.7% increase from current $79.99. Rounding to $88.99 achieves target margin."
+        },
+        "product_O": {
+            "required_price_adjustment_percent": 9.9,
+            "new_recommended_price": 131.99,
+            "expected_impact_on_sales": "With very high price elasticity of 2.5, the 9.9% price increase would likely result in approximately 24.8% decrease in sales volume (65 units dropping to about 49 units monthly).",
+            "justification": "Current margin of 39.6% needs to increase to target of 45%. The required price is $131.82 ($72.50/(1-0.45)), representing a 9.9% increase from current $119.99. Rounding to $131.99 achieves target margin."
+        },
+        "product_P": {
+            "required_price_adjustment_percent": -10.5,
+            "new_recommended_price": 80.99,
+            "expected_impact_on_sales": "With low price elasticity of 0.9, the 10.5% price decrease would likely result in approximately 9.5% increase in sales volume (95 units increasing to about 104 units monthly).",
+            "justification": "Current margin of 55.3% exceeds target of 50%. The required price is $80.50 ($40.25/(1-0.50)), representing a 10.5% decrease from current $89.99. Rounding to $80.99 achieves target margin while likely increasing sales."
+        }
     }
 }

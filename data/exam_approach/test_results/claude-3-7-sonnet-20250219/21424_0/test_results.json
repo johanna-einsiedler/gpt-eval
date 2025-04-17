@@ -1,556 +1,173 @@
 {
-  "overall_score": 100.5,
-  "points_earned": 100.5,
-  "points_possible": 100,
-  "pass_status": "Pass",
-  "parts": {
-    "part1": {
-      "points_earned": 45,
-      "points_possible": 45,
-      "details": {
-        "claim001": {
-          "points_earned": 15,
-          "points_possible": 15,
-          "details": {
-            "indemnityReserve": {
-              "submitted": 28757.0,
-              "expected": 28757.0,
-              "diff_percentage": 0.0,
-              "points_earned": 8,
-              "points_possible": 8
-            },
-            "expenseReserve": {
-              "submitted": 2876.0,
-              "expected": 2876.0,
-              "diff_percentage": 0.0,
-              "points_earned": 4,
-              "points_possible": 4
-            },
-            "policyReference": {
-              "submitted": "2.3",
-              "expected": "2.3",
-              "points_earned": 3,
-              "points_possible": 3
-            }
-          }
+  "candidate_id": "EVALUATOR_KEY",
+  "scenario_results": [
+    {
+      "claim_number": "AC-2023-45678",
+      "evaluation": {
+        "reserve_amount": {
+          "candidate_value": 102350.0,
+          "expected_value": 102350.0,
+          "score": 10,
+          "max_score": 10,
+          "feedback": "Excellent - within 5% of expected reserve"
         },
-        "claim002": {
-          "points_earned": 15,
-          "points_possible": 15,
-          "details": {
-            "indemnityReserve": {
-              "submitted": 95950.0,
-              "expected": 95950.0,
-              "diff_percentage": 0.0,
-              "points_earned": 8,
-              "points_possible": 8
-            },
-            "expenseReserve": {
-              "submitted": 10000.0,
-              "expected": 10000.0,
-              "diff_percentage": 0.0,
-              "points_earned": 4,
-              "points_possible": 4
-            },
-            "policyReference": {
-              "submitted": "3.2",
-              "expected": "3.2",
-              "points_earned": 3,
-              "points_possible": 3
-            }
-          }
+        "reserve_change_code": {
+          "candidate_value": "B1",
+          "expected_value": "B1",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve change code"
         },
-        "claim003": {
-          "points_earned": 15,
-          "points_possible": 15,
-          "details": {
-            "indemnityReserve": {
-              "submitted": 367750.0,
-              "expected": 367750.0,
-              "diff_percentage": 0.0,
-              "points_earned": 8,
-              "points_possible": 8
-            },
-            "expenseReserve": {
-              "submitted": 25000.0,
-              "expected": 25000.0,
-              "diff_percentage": 0.0,
-              "points_earned": 4,
-              "points_possible": 4
-            },
-            "policyReference": {
-              "submitted": "4.2",
-              "expected": "4.2",
-              "points_earned": 3,
-              "points_possible": 3
-            }
-          }
+        "reserve_category_code": {
+          "candidate_value": "BI",
+          "expected_value": "BI",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve category code"
+        },
+        "justification": {
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Complete justification with all required elements"
         }
-      }
+      },
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Excellent - within 5% of expected reserve",
+        "Correct reserve change code",
+        "Correct reserve category code",
+        "Complete justification with all required elements"
+      ]
     },
-    "part2": {
-      "points_earned": 30,
-      "points_possible": 30,
-      "details": {
-        "claim_identification": {
-          "points_earned": 30,
-          "points_possible": 30,
-          "submitted_count": 15,
-          "expected_count": 15,
-          "missing_claims": [],
-          "extra_claims": []
+    {
+      "claim_number": "PR-2023-98765",
+      "evaluation": {
+        "reserve_amount": {
+          "candidate_value": 219250.0,
+          "expected_value": 219250.0,
+          "score": 10,
+          "max_score": 10,
+          "feedback": "Excellent - within 5% of expected reserve"
         },
-        "claim_evaluations": {
-          "CL-23-01865": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "decrease",
-                "expected": "decrease",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 25000.0,
-                "expected": 25000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A1",
-                "expected": "A1",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-02289": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "decrease",
-                "expected": "decrease",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 140000.0,
-                "expected": 140000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A2",
-                "expected": "A2",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-00873": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "increase",
-                "expected": "increase",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 35000.0,
-                "expected": 35000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A2",
-                "expected": "A2",
-                "points": 1
-              }
-            }
-          },
-          "CL-22-10485": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "increase",
-                "expected": "increase",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 48000.0,
-                "expected": 48000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A3",
-                "expected": "A3",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-02487": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "decrease",
-                "expected": "decrease",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 40000.0,
-                "expected": 40000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A4",
-                "expected": "A4",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-02137": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "decrease",
-                "expected": "decrease",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 28500.0,
-                "expected": 28500.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A2",
-                "expected": "A2",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-00157": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "decrease",
-                "expected": "decrease",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 95000.0,
-                "expected": 95000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A4",
-                "expected": "A4",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-01287": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "increase",
-                "expected": "increase",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 20000.0,
-                "expected": 20000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A4",
-                "expected": "A4",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-01512": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "increase",
-                "expected": "increase",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 78000.0,
-                "expected": 78000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A2",
-                "expected": "A2",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-02044": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "decrease",
-                "expected": "decrease",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 62500.0,
-                "expected": 62500.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A4",
-                "expected": "A4",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-01788": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "increase",
-                "expected": "increase",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 16000.0,
-                "expected": 16000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A2",
-                "expected": "A2",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-01045": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "increase",
-                "expected": "increase",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 155000.0,
-                "expected": 155000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A1",
-                "expected": "A1",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-02356": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "increase",
-                "expected": "increase",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 55000.0,
-                "expected": 55000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A5",
-                "expected": "A5",
-                "points": 1
-              }
-            }
-          },
-          "CL-23-00394": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "decrease",
-                "expected": "decrease",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 20000.0,
-                "expected": 20000.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A3",
-                "expected": "A3",
-                "points": 1
-              }
-            }
-          },
-          "CL-22-11042": {
-            "points_earned": 2.0,
-            "points_possible": 2,
-            "details": {
-              "direction": {
-                "submitted": "increase",
-                "expected": "increase",
-                "points": 0.5
-              },
-              "value": {
-                "submitted": 24500.0,
-                "expected": 24500.0,
-                "diff_percentage": 0.0,
-                "points": 0.5
-              },
-              "reason_code": {
-                "submitted": "A2",
-                "expected": "A2",
-                "points": 1
-              }
-            }
-          }
+        "reserve_change_code": {
+          "candidate_value": "B2",
+          "expected_value": "B2",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve change code"
+        },
+        "reserve_category_code": {
+          "candidate_value": "PROP",
+          "expected_value": "PROP",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve category code"
+        },
+        "justification": {
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Complete justification with all required elements"
         }
-      }
+      },
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Excellent - within 5% of expected reserve",
+        "Correct reserve change code",
+        "Correct reserve category code",
+        "Complete justification with all required elements"
+      ]
     },
-    "part3": {
-      "points_earned": 25.5,
-      "points_possible": 25,
-      "details": {
-        "claim_identification": {
-          "points_earned": 15,
-          "points_possible": 15,
-          "expected_claims": [
-            "CL-23-02044",
-            "CL-23-01045",
-            "CL-23-00157"
-          ],
-          "submitted_claims": [
-            "CL-23-02044",
-            "CL-23-01045",
-            "CL-23-00157"
-          ],
-          "correct_claims": [
-            "CL-23-02044",
-            "CL-23-01045",
-            "CL-23-00157"
-          ],
-          "incorrect_claims": []
+    {
+      "claim_number": "WC-2023-34567",
+      "evaluation": {
+        "reserve_amount": {
+          "candidate_value": 126000.56,
+          "expected_value": 126000.56,
+          "score": 10,
+          "max_score": 10,
+          "feedback": "Excellent - within 5% of expected reserve"
         },
-        "recommendation_evaluations": {
-          "CL-23-02044": {
-            "points_earned": 3.5,
-            "points_possible": 3.5,
-            "details": {
-              "reserve_values": {
-                "submitted": {
-                  "current": 125000.0,
-                  "recommended": 62500.0
-                },
-                "expected": {
-                  "current": 125000.0,
-                  "recommended": 62500.0
-                },
-                "match": true,
-                "points": 1
-              },
-              "policy_section": {
-                "submitted": "4.2",
-                "expected": "4.2",
-                "match": true,
-                "points": 1.5
-              },
-              "change_category": {
-                "submitted": "4",
-                "expected": "4",
-                "match": true,
-                "points": 1
-              }
-            }
-          },
-          "CL-23-01045": {
-            "points_earned": 3.5,
-            "points_possible": 3.5,
-            "details": {
-              "reserve_values": {
-                "submitted": {
-                  "current": 85000.0,
-                  "recommended": 155000.0
-                },
-                "expected": {
-                  "current": 85000.0,
-                  "recommended": 155000.0
-                },
-                "match": true,
-                "points": 1
-              },
-              "policy_section": {
-                "submitted": "4.1",
-                "expected": "4.1",
-                "match": true,
-                "points": 1.5
-              },
-              "change_category": {
-                "submitted": "4",
-                "expected": "4",
-                "match": true,
-                "points": 1
-              }
-            }
-          },
-          "CL-23-00157": {
-            "points_earned": 3.5,
-            "points_possible": 3.5,
-            "details": {
-              "reserve_values": {
-                "submitted": {
-                  "current": 145000.0,
-                  "recommended": 95000.0
-                },
-                "expected": {
-                  "current": 145000.0,
-                  "recommended": 95000.0
-                },
-                "match": true,
-                "points": 1
-              },
-              "policy_section": {
-                "submitted": "1.1",
-                "expected": "1.1",
-                "match": true,
-                "points": 1.5
-              },
-              "change_category": {
-                "submitted": "3",
-                "expected": "3",
-                "match": true,
-                "points": 1
-              }
-            }
-          }
+        "reserve_change_code": {
+          "candidate_value": "B1",
+          "expected_value": "B1",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve change code"
+        },
+        "reserve_category_code": {
+          "candidate_value": "WAGE",
+          "expected_value": "WAGE",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve category code"
+        },
+        "justification": {
+          "score": 0,
+          "max_score": 5,
+          "feedback": "No justification provided"
         }
-      }
+      },
+      "score": 20,
+      "max_score": 25,
+      "feedback": [
+        "Excellent - within 5% of expected reserve",
+        "Correct reserve change code",
+        "Correct reserve category code",
+        "No justification provided"
+      ]
+    },
+    {
+      "claim_number": "GL-2023-87654",
+      "evaluation": {
+        "reserve_amount": {
+          "candidate_value": 130000.0,
+          "expected_value": 130000.0,
+          "score": 10,
+          "max_score": 10,
+          "feedback": "Excellent - within 5% of expected reserve"
+        },
+        "reserve_change_code": {
+          "candidate_value": "C1",
+          "expected_value": "C1",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve change code"
+        },
+        "reserve_category_code": {
+          "candidate_value": "LIA",
+          "expected_value": "LIA",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve category code"
+        },
+        "justification": {
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Complete justification with all required elements"
+        }
+      },
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Excellent - within 5% of expected reserve",
+        "Correct reserve change code",
+        "Correct reserve category code",
+        "Complete justification with all required elements"
+      ]
     }
-  }
+  ],
+  "total_score": 95,
+  "max_score": 100,
+  "overall_score": 95.0,
+  "passing_threshold": 75,
+  "passed": true,
+  "overall_feedback": [
+    "Correctly calculated reserves for 4 of 4 scenarios",
+    "Correctly identified reserve codes for 4 of 4 scenarios",
+    "Correctly identified category codes for 4 of 4 scenarios",
+    "Provided adequate justifications for 3 of 4 scenarios",
+    "Superior performance demonstrated"
+  ]
 }

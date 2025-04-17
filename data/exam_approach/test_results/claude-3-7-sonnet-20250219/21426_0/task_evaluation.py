@@ -1,259 +1,209 @@
 #!/usr/bin/env python3
-"""
-Claims Adjuster Authority Level Processing Exam Evaluator.
-
-This script evaluates a candidate's submission for the Claims Adjuster practical exam
-by comparing it to an answer key and generating a detailed evaluation report.
-
-Usage:
-    python task_evaluation.py test_submission.json answer_key.json
-"""
 
 import json
 import sys
-from typing import Dict, List, Any, Tuple
+import os
+from math import isclose
 
-
-def load_json_file(file_path: str) -> Dict:
+def load_json(filename):
     """Load and parse a JSON file."""
     try:
-        with open(file_path, 'r') as file:
+        with open(filename, 'r') as file:
             return json.load(file)
-    except (json.JSONDecodeError, FileNotFoundError) as e:
-        print(f"Error loading {file_path}: {e}")
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading {filename}: {e}")
         sys.exit(1)
 
-
-def evaluate_claim(candidate_claim: Dict, answer_claim: Dict) -> Tuple[int, Dict]:
-    """
-    Evaluate a single claim against the answer key.
-    
-    Returns a tuple containing:
-        - Score out of 20 points
-        - Dictionary with detailed evaluation results
-    """
-    score = 0
-    evaluation = {
-        "claim_id": candidate_claim["claim_id"],
-        "details": [],
-        "score": 0,
-        "max_score": 20,
-    }
-    
-    # 1. Coverage determination evaluation (5 points)
-    if candidate_claim["coverage_determination"] == answer_claim["coverage_determination"]:
-        score += 5
-        evaluation["details"].append({
-            "criterion": "Coverage Determination",
-            "points_earned": 5,
-            "max_points": 5,
-            "candidate_answer": candidate_claim["coverage_determination"],
-            "correct_answer": answer_claim["coverage_determination"],
-            "correct": True
-        })
-    else:
-        evaluation["details"].append({
-            "criterion": "Coverage Determination",
-            "points_earned": 0,
-            "max_points": 5,
-            "candidate_answer": candidate_claim["coverage_determination"],
-            "correct_answer": answer_claim["coverage_determination"],
-            "correct": False
-        })
-    
-    # 2. Settlement calculation evaluation (5 points)
-    # Allow for a small margin of error ($50)
-    candidate_settlement = candidate_claim["calculated_settlement"]
-    correct_settlement = answer_claim["calculated_settlement"]
-    settlement_points = 0
-    
-    if abs(candidate_settlement - correct_settlement) <= 50:
-        settlement_points = 5
-    
-    score += settlement_points
-    evaluation["details"].append({
-        "criterion": "Settlement Calculation",
-        "points_earned": settlement_points,
-        "max_points": 5,
-        "candidate_answer": candidate_settlement,
-        "correct_answer": correct_settlement,
-        "correct": settlement_points == 5,
-        "note": "Within $50 margin" if 0 < abs(candidate_settlement - correct_settlement) <= 50 else None
-    })
-    
-    # 3. Decision evaluation (5 points)
-    if candidate_claim["decision"] == answer_claim["decision"]:
-        score += 5
-        evaluation["details"].append({
-            "criterion": "Decision (Approve/Deny/Escalate)",
-            "points_earned": 5,
-            "max_points": 5,
-            "candidate_answer": candidate_claim["decision"],
-            "correct_answer": answer_claim["decision"],
-            "correct": True
-        })
-    else:
-        evaluation["details"].append({
-            "criterion": "Decision (Approve/Deny/Escalate)",
-            "points_earned": 0,
-            "max_points": 5,
-            "candidate_answer": candidate_claim["decision"],
-            "correct_answer": answer_claim["decision"],
-            "correct": False
-        })
-    
-    # 4. Authority level assessment (3 points)
-    if candidate_claim["within_authority"] == answer_claim["within_authority"]:
-        score += 3
-        evaluation["details"].append({
-            "criterion": "Authority Level Assessment",
-            "points_earned": 3,
-            "max_points": 3,
-            "candidate_answer": candidate_claim["within_authority"],
-            "correct_answer": answer_claim["within_authority"],
-            "correct": True
-        })
-    else:
-        evaluation["details"].append({
-            "criterion": "Authority Level Assessment",
-            "points_earned": 0,
-            "max_points": 3,
-            "candidate_answer": candidate_claim["within_authority"],
-            "correct_answer": answer_claim["within_authority"],
-            "correct": False
-        })
-    
-    # 5. Reason code evaluation (part of justification - evaluated separately)
-    if candidate_claim["coverage_determination"] == "not_covered":
-        if candidate_claim["reason_code"] == answer_claim["reason_code"]:
-            evaluation["details"].append({
-                "criterion": "Reason Code",
-                "points_earned": 0,  # Not counted in score directly, but noted
-                "max_points": 0,
-                "candidate_answer": candidate_claim["reason_code"],
-                "correct_answer": answer_claim["reason_code"],
-                "correct": True
-            })
-        else:
-            evaluation["details"].append({
-                "criterion": "Reason Code",
-                "points_earned": 0,
-                "max_points": 0,
-                "candidate_answer": candidate_claim["reason_code"],
-                "correct_answer": answer_claim["reason_code"],
-                "correct": False
-            })
-    
-    # 6. Justification evaluation (2 points)
-    # Simplified evaluation - just check if justification exists and isn't empty
-    if candidate_claim["justification"] and len(candidate_claim["justification"].strip()) > 0:
-        score += 2
-        evaluation["details"].append({
-            "criterion": "Justification",
-            "points_earned": 2,
-            "max_points": 2,
-            "candidate_answer": candidate_claim["justification"][:50] + "..." if len(candidate_claim["justification"]) > 50 else candidate_claim["justification"],
-            "correct": True
-        })
-    else:
-        evaluation["details"].append({
-            "criterion": "Justification",
-            "points_earned": 0, 
-            "max_points": 2,
-            "candidate_answer": "(Missing or empty)",
-            "correct": False
-        })
-    
-    evaluation["score"] = score
-    return score, evaluation
-
-
-def evaluate_submission(submission: Dict, answer_key: Dict) -> Dict:
-    """Evaluate the complete test submission against the answer key."""
-    total_score = 0
-    max_score = 100
-    claim_evaluations = []
-    
-    # Create a mapping of claim_id to answer_key claim for easier lookup
-    answer_claims = {claim["claim_id"]: claim for claim in answer_key["claim_decisions"]}
-    
-    # Track critical claims (3 and 5)
-    critical_claim_ids = ["CL-64510", "CL-52198"]  # Claim 3 and Claim 5
-    critical_claims_correct = {claim_id: False for claim_id in critical_claim_ids}
-    
-    # Counters for pass criteria
-    correct_decisions = 0
-    accurate_calculations = 0
-    
-    for candidate_claim in submission["claim_decisions"]:
-        claim_id = candidate_claim["claim_id"]
-        
-        if claim_id in answer_claims:
-            answer_claim = answer_claims[claim_id]
-            claim_score, claim_evaluation = evaluate_claim(candidate_claim, answer_claim)
-            
-            # Add to total score
-            total_score += claim_score
-            claim_evaluations.append(claim_evaluation)
-            
-            # Check if decision is correct
-            decision_correct = False
-            for detail in claim_evaluation["details"]:
-                if detail["criterion"] == "Decision (Approve/Deny/Escalate)" and detail["correct"]:
-                    decision_correct = True
-                    correct_decisions += 1
-            
-            # Check if calculation is within margin
-            calculation_accurate = False
-            for detail in claim_evaluation["details"]:
-                if detail["criterion"] == "Settlement Calculation" and detail["correct"]:
-                    calculation_accurate = True
-                    accurate_calculations += 1
-            
-            # Check if critical claims are correct
-            if claim_id in critical_claim_ids:
-                critical_claims_correct[claim_id] = decision_correct
-    
-    # Determine if pass criteria are met
-    passes_critical_claims = all(critical_claims_correct.values())
-    passes_decision_accuracy = correct_decisions >= 4
-    passes_calculation_accuracy = accurate_calculations >= 4
-    
-    # Calculate percentage score
-    percentage_score = (total_score / max_score) * 100
-    
-    # Create the evaluation results
+def evaluate_submission(submission, answer_key):
+    """Evaluate a candidate's submission against the answer key."""
     results = {
-        "candidate_id": submission.get("candidate_id", "UNKNOWN"),
-        "claim_evaluations": claim_evaluations,
-        "total_score": total_score,
-        "max_score": max_score,
-        "overall_score": percentage_score,
-        "pass_criteria": {
-            "critical_claims_handled_correctly": passes_critical_claims,
-            "critical_claim_details": {
-                "CL-64510": critical_claims_correct["CL-64510"],
-                "CL-52198": critical_claims_correct["CL-52198"]
-            },
-            "decision_accuracy": {
-                "correct_decisions": correct_decisions,
-                "required": 4,
-                "passed": passes_decision_accuracy
-            },
-            "calculation_accuracy": {
-                "accurate_calculations": accurate_calculations,
-                "required": 4,
-                "passed": passes_calculation_accuracy
-            }
-        },
-        "passed_exam": passes_critical_claims and passes_decision_accuracy and passes_calculation_accuracy and percentage_score >= 80
+        "candidate_id": submission.get("candidate_id", "Unknown"),
+        "claim_results": [],
+        "overall_score": 0,
+        "max_possible_score": 100,
+        "passing_threshold": 75
     }
+    
+    total_points = 0
+    
+    # Match claims by claim_id for evaluation
+    submission_claims = {claim["claim_id"]: claim for claim in submission.get("claims", [])}
+    answer_key_claims = {claim["claim_id"]: claim for claim in answer_key.get("claims", [])}
+    
+    for claim_id, answer in answer_key_claims.items():
+        if claim_id not in submission_claims:
+            results["claim_results"].append({
+                "claim_id": claim_id,
+                "points": 0,
+                "max_points": 20,
+                "details": "Claim missing from submission"
+            })
+            continue
+            
+        submission_claim = submission_claims[claim_id]
+        claim_score = evaluate_claim(submission_claim, answer)
+        total_points += claim_score["total_points"]
+        results["claim_results"].append(claim_score)
+    
+    # Check for any extra claims in submission that weren't in the answer key
+    for claim_id in submission_claims:
+        if claim_id not in answer_key_claims:
+            results["claim_results"].append({
+                "claim_id": claim_id,
+                "points": 0,
+                "max_points": 0,
+                "details": "Extra claim not in answer key"
+            })
+    
+    # Calculate overall percentage score
+    results["overall_score"] = round((total_points / 100) * 100, 2)
+    results["passed"] = results["overall_score"] >= results["passing_threshold"]
+    
+    # Check for critical errors (automatic failure conditions)
+    critical_errors = check_critical_errors(submission_claims, answer_key_claims)
+    
+    if critical_errors:
+        results["critical_errors"] = critical_errors
+        results["passed"] = False
+        results["details"] = "Automatic failure due to critical errors"
     
     return results
 
+def evaluate_claim(submission, answer):
+    """Evaluate a single claim against its answer."""
+    result = {
+        "claim_id": submission["claim_id"],
+        "max_points": 20,
+        "scoring_details": {
+            "calculation": {"earned": 0, "possible": 8, "notes": ""},
+            "decision": {"earned": 0, "possible": 5, "notes": ""},
+            "escalation_code": {"earned": 0, "possible": 3, "notes": ""},
+            "payment_breakdown": {"earned": 0, "possible": 4, "notes": ""}
+        }
+    }
+    
+    # Evaluate calculated payment (8 points, with 5% tolerance)
+    if isclose(submission["calculated_payment"], answer["calculated_payment"], rel_tol=0.05):
+        result["scoring_details"]["calculation"]["earned"] = 8
+    else:
+        result["scoring_details"]["calculation"]["notes"] = (
+            f"Expected {answer['calculated_payment']}, "
+            f"got {submission['calculated_payment']}"
+        )
+    
+    # Evaluate decision (5 points)
+    if submission["decision"] == answer["decision"]:
+        result["scoring_details"]["decision"]["earned"] = 5
+    else:
+        result["scoring_details"]["decision"]["notes"] = (
+            f"Expected '{answer['decision']}', got '{submission['decision']}'"
+        )
+    
+    # Evaluate escalation code (3 points)
+    # Only matters if the decision is "escalate"
+    if answer["decision"] == "escalate":
+        if submission["escalation_code"] == answer["escalation_code"]:
+            result["scoring_details"]["escalation_code"]["earned"] = 3
+        else:
+            result["scoring_details"]["escalation_code"]["notes"] = (
+                f"Expected '{answer['escalation_code']}', "
+                f"got '{submission['escalation_code']}'"
+            )
+    else:
+        # If the answer doesn't require escalation, we only give points if the
+        # submission also doesn't have an escalation code
+        if submission["escalation_code"] is None:
+            result["scoring_details"]["escalation_code"]["earned"] = 3
+        else:
+            result["scoring_details"]["escalation_code"]["notes"] = (
+                f"Expected null, got '{submission['escalation_code']}'"
+            )
+    
+    # Evaluate payment breakdown (4 points)
+    breakdown_score, breakdown_notes = evaluate_payment_breakdown(
+        submission["payment_breakdown"], 
+        answer["payment_breakdown"]
+    )
+    result["scoring_details"]["payment_breakdown"]["earned"] = breakdown_score
+    if breakdown_notes:
+        result["scoring_details"]["payment_breakdown"]["notes"] = breakdown_notes
+    
+    # Calculate total points for this claim
+    result["total_points"] = sum(
+        detail["earned"] for detail in result["scoring_details"].values()
+    )
+    
+    return result
+
+def evaluate_payment_breakdown(submission_breakdown, answer_breakdown):
+    """Evaluate the payment breakdown with 5% tolerance on each component."""
+    # Get all possible keys from both breakdowns
+    all_keys = set(submission_breakdown.keys()).union(set(answer_breakdown.keys()))
+    
+    # Count components that match within tolerance
+    matching_components = 0
+    total_components = len(all_keys)
+    notes = []
+    
+    for key in all_keys:
+        sub_value = submission_breakdown.get(key, 0)
+        ans_value = answer_breakdown.get(key, 0)
+        
+        # If both values are zero, consider them matching
+        if sub_value == 0 and ans_value == 0:
+            matching_components += 1
+            continue
+            
+        # Otherwise, check with tolerance
+        if isclose(sub_value, ans_value, rel_tol=0.05):
+            matching_components += 1
+        else:
+            notes.append(f"{key}: Expected {ans_value}, got {sub_value}")
+    
+    # Calculate score proportionally (out of 4 points)
+    score = round(4 * (matching_components / total_components))
+    
+    return score, "; ".join(notes) if notes else ""
+
+def check_critical_errors(submission_claims, answer_key_claims):
+    """Check for critical errors that result in automatic failure."""
+    critical_errors = []
+    
+    # Check for approving claims that exceed authority
+    for claim_id, answer in answer_key_claims.items():
+        if claim_id not in submission_claims:
+            continue
+            
+        submission = submission_claims[claim_id]
+        
+        # Critical error: Approving a claim that should be escalated
+        if (answer["decision"] == "escalate" and 
+            submission["decision"] == "approve" and
+            answer["calculated_payment"] > 25000):
+            critical_errors.append(
+                f"Claim {claim_id}: Approved a claim that exceeds authority limit"
+            )
+            
+        # Critical error: Using incorrect escalation code when escalating
+        if (submission["decision"] == "escalate" and 
+            submission["escalation_code"] != answer["escalation_code"] and
+            submission["escalation_code"] is not None):
+            critical_errors.append(
+                f"Claim {claim_id}: Used incorrect escalation code"
+            )
+            
+        # Critical error: Failure to recognize replacement cost vs ACV in Claim 5
+        if (claim_id == "RD-20231105" and 
+            submission["decision"] == "approve" and
+            answer["decision"] == "escalate"):
+            critical_errors.append(
+                "Claim RD-20231105: Failed to recognize replacement cost vs. actual cash value distinction"
+            )
+    
+    return critical_errors
 
 def main():
-    """Main function to process command line arguments and evaluate the submission."""
+    """Main function to parse arguments and run evaluation."""
     if len(sys.argv) != 3:
         print("Usage: python task_evaluation.py test_submission.json answer_key.json")
         sys.exit(1)
@@ -261,21 +211,29 @@ def main():
     submission_file = sys.argv[1]
     answer_key_file = sys.argv[2]
     
-    # Load the files
-    submission = load_json_file(submission_file)
-    answer_key = load_json_file(answer_key_file)
+    submission = load_json(submission_file)
+    answer_key = load_json(answer_key_file)
     
-    # Evaluate the submission
+    # Normalize answer key structure if needed
+    if "answer_key" in answer_key:
+        answer_key = answer_key["answer_key"]
+    
     results = evaluate_submission(submission, answer_key)
     
-    # Save the results
+    # Save results to JSON file
     with open("test_results.json", "w") as f:
         json.dump(results, f, indent=2)
     
-    print(f"Evaluation completed. Results saved to test_results.json")
-    print(f"Overall score: {results['overall_score']:.2f}%")
-    print(f"Passed exam: {results['passed_exam']}")
-
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
+    if results.get("passed", False):
+        print("PASSED")
+    else:
+        print("FAILED")
+        if "critical_errors" in results:
+            print("Critical errors found:")
+            for error in results["critical_errors"]:
+                print(f"- {error}")
 
 if __name__ == "__main__":
     main()

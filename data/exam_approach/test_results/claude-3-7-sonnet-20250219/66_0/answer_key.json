@@ -1,72 +1,30 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
+    "candidate_id": "EVALUATOR_REFERENCE",
     "task1": {
-        "highest_growth_category": "Beauty Products",
-        "average_monthly_sales_q4": {
-            "Electronics": 658.33,
-            "Home Goods": 511.67,
-            "Apparel": 411.67,
-            "Sporting Goods": 351.67,
-            "Beauty Products": 406.67
-        },
-        "lowest_sales_month": "February",
-        "percentage_decrease": 6.41
+        "top_products": [
+            "Product B",
+            "Product C",
+            "Product A"
+        ],
+        "growth_rate_q4": 15.0,
+        "seasonal_pattern": "winter",
+        "peak_month": "December 2022"
     },
     "task2": {
-        "current_interest_rate": 4.75,
-        "interest_rate_change": 0.5,
-        "consumer_confidence_index": 98,
-        "confidence_index_direction": "decreased",
-        "economic_impacts": {
-            "Rising Interest Rates": "C",
-            "Decreasing Inflation": "B",
-            "Declining Unemployment": "A",
-            "Falling Consumer Confidence": "D",
-            "Increasing GDP Growth": "B"
-        }
+        "market_expansion": true,
+        "price_sensitivity_score": 7.5,
+        "trend_direction": "positive",
+        "expected_demand_change": 4.1
     },
     "task3": {
-        "forecast_july": {
-            "Electronics": 572.25,
-            "Home Goods": 424.0,
-            "Apparel": 387.6,
-            "Sporting Goods": 345.6,
-            "Beauty Products": 348.4
-        },
-        "forecast_august": {
-            "Electronics": 588.6,
-            "Home Goods": 436.0,
-            "Apparel": 437.0,
-            "Sporting Goods": 336.0,
-            "Beauty Products": 358.45
-        },
-        "forecast_september": {
-            "Electronics": 610.4,
-            "Home Goods": 428.0,
-            "Apparel": 418.0,
-            "Sporting Goods": 304.0,
-            "Beauty Products": 365.15
-        },
-        "q3_regional_sales": {
-            "North": 1399.2,
-            "South": 1580.97,
-            "East": 1274.13,
-            "West": 1519.4,
-            "Central": 1134.0
-        },
-        "highest_august_category": "Electronics"
-    },
-    "task4": {
-        "inventory_allocation": {
-            "Electronics": 588.6,
-            "Home Goods": 524.0,
-            "Beauty Products": 358.45
-        },
-        "optimal_stock_levels": {
-            "Electronics": 588.6,
-            "Home Goods": 436.0,
-            "Beauty Products": 269.34
-        },
-        "maximum_investment": 93143.1
+        "product_a_forecast": 535,
+        "product_b_forecast": 397,
+        "product_c_forecast": 267,
+        "total_inventory_value": 24332.0,
+        "recommended_stock_ratio": [
+            0.29,
+            0.38,
+            0.33
+        ]
     }
 }

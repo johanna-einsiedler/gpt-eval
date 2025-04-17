@@ -1,23 +1,139 @@
 {
-  "candidate_id": "EVALUATOR_KEY",
-  "exercise1": {
-    "points": 6,
-    "max_points": 6,
-    "feedback": []
-  },
-  "exercise2": {
-    "points": 10,
-    "max_points": 10,
-    "feedback": []
-  },
-  "exercise3": {
-    "points": 4,
-    "max_points": 4,
-    "feedback": []
-  },
+  "candidate_id": "ANSWER_KEY",
   "overall_score": 100.0,
-  "total_points": 20,
-  "passing_score": 80,
-  "passed": true,
-  "critical_issues": []
+  "exercises": {
+    "exercise_1": {
+      "score": 7,
+      "total_points": 7,
+      "field_results": {
+        "policy_number": {
+          "correct": true,
+          "submitted": "AP-98754321",
+          "expected": "AP-98754321"
+        },
+        "claim_number": {
+          "correct": true,
+          "submitted": "CLM-20230714-8842",
+          "expected": "CLM-20230714-8842"
+        },
+        "incident_date": {
+          "correct": true,
+          "submitted": "2023-07-14",
+          "expected": "2023-07-14"
+        },
+        "incident_covered": {
+          "correct": true,
+          "submitted": true,
+          "expected": true
+        },
+        "applicable_coverage_section": {
+          "correct": true,
+          "submitted": "Section 5",
+          "expected": "Section 5"
+        },
+        "coverage_limit": {
+          "correct": true,
+          "submitted": 50000,
+          "expected": 50000
+        },
+        "deductible_amount": {
+          "correct": true,
+          "submitted": 200,
+          "expected": 200
+        }
+      },
+      "errors": []
+    },
+    "exercise_2": {
+      "score": 7,
+      "total_points": 7,
+      "field_results": {
+        "patient_id": {
+          "correct": true,
+          "submitted": "EJ-789456123",
+          "expected": "EJ-789456123"
+        },
+        "service_date": {
+          "correct": true,
+          "submitted": "2023-06-02",
+          "expected": "2023-06-02"
+        },
+        "provider_in_network": {
+          "correct": true,
+          "submitted": true,
+          "expected": true
+        },
+        "procedure_code": {
+          "correct": true,
+          "submitted": "73221",
+          "expected": "73221"
+        },
+        "procedure_covered": {
+          "correct": true,
+          "submitted": true,
+          "expected": true
+        },
+        "patient_responsibility_percentage": {
+          "correct": true,
+          "submitted": 30,
+          "expected": 30
+        },
+        "patient_responsibility_amount": {
+          "correct": true,
+          "submitted": 360,
+          "expected": 360
+        }
+      },
+      "errors": []
+    },
+    "exercise_3": {
+      "score": 8,
+      "total_points": 8,
+      "field_results": {
+        "claim_number": {
+          "correct": true,
+          "submitted": "HCL-20230518-4421",
+          "expected": "HCL-20230518-4421"
+        },
+        "property_address": {
+          "correct": true,
+          "submitted": "456 Maple Avenue, Springfield, IL 62704",
+          "expected": "456 Maple Avenue, Springfield, IL 62704"
+        },
+        "damage_type": {
+          "correct": true,
+          "submitted": "water",
+          "expected": "water"
+        },
+        "date_of_loss": {
+          "correct": true,
+          "submitted": "2023-05-18",
+          "expected": "2023-05-18"
+        },
+        "previous_similar_claims": {
+          "correct": true,
+          "submitted": 3,
+          "expected": 3
+        },
+        "coverage_applies": {
+          "correct": true,
+          "submitted": true,
+          "expected": true
+        },
+        "excluded_peril": {
+          "correct": true,
+          "submitted": false,
+          "expected": false
+        },
+        "potential_red_flags": {
+          "correct": true,
+          "submitted": 2,
+          "expected": 2
+        }
+      },
+      "errors": []
+    }
+  },
+  "critical_errors": [],
+  "passed": true
 }

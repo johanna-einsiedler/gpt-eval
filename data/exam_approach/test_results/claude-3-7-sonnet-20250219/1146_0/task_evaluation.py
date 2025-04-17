@@ -1,254 +1,179 @@
-#!/usr/bin/env python3
 import json
 import sys
-from typing import Dict, Any, List, Union, Tuple
+from typing import Dict, Any
 
-def load_json_file(file_path: str) -> Dict[str, Any]:
-    """Load a JSON file and return its contents as a dictionary."""
+
+def load_json_file(filename: str) -> Dict[str, Any]:
+    """Load and parse a JSON file."""
     try:
-        with open(file_path, 'r') as file:
+        with open(filename, 'r') as file:
             return json.load(file)
-    except json.JSONDecodeError:
-        print(f"Error: The file {file_path} is not a valid JSON file.")
-        sys.exit(1)
-    except FileNotFoundError:
-        print(f"Error: The file {file_path} was not found.")
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading {filename}: {e}")
         sys.exit(1)
 
-def evaluate_exercise1(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[int, Dict[str, Any]]:
-    """Evaluate Exercise 1: Regulatory Compliance Analysis."""
-    max_points = 8
-    points = 0
-    details = {}
-    
-    for scenario in ["scenario1", "scenario2", "scenario3", "scenario4"]:
-        details[scenario] = {"points": 0, "max_points": 2, "feedback": []}
-        
-        # Check if compliance determination is correct
-        if submission["exercise1"][scenario]["compliant"] == answer_key["exercise1"][scenario]["compliant"]:
-            points += 1
-            details[scenario]["points"] += 1
-            details[scenario]["feedback"].append("Correct compliance determination.")
-        else:
-            details[scenario]["feedback"].append("Incorrect compliance determination.")
-        
-        # Check if regulation violated is correct
-        sub_reg = submission["exercise1"][scenario]["regulation_violated"]
-        key_reg = answer_key["exercise1"][scenario]["regulation_violated"]
-        
-        if (sub_reg == key_reg) or (sub_reg is None and key_reg is None):
-            points += 1
-            details[scenario]["points"] += 1
-            details[scenario]["feedback"].append("Correct regulation identification.")
-        else:
-            details[scenario]["feedback"].append(f"Incorrect regulation identification. Expected: {key_reg}, Got: {sub_reg}")
-    
-    return points, details
 
-def evaluate_exercise2(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[int, Dict[str, Any]]:
-    """Evaluate Exercise 2: Contract Review for Regulatory Compliance."""
-    max_points = 6
-    points = 0
-    details = {}
+def evaluate_exercise1(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
+    """Evaluate Exercise 1 - Procurement Scenarios."""
+    result = {"points": 0, "max_points": 30, "details": {}}
     
-    for issue in ["issue1", "issue2", "issue3"]:
-        details[issue] = {"points": 0, "max_points": 2, "feedback": []}
+    for scenario_num in range(1, 4):
+        scenario_result = {"points": 0, "max_points": 10, "feedback": []}
         
-        # Check if clause number is correct
-        if submission["exercise2"][issue]["clause_number"] == answer_key["exercise2"][issue]["clause_number"]:
-            points += 1
-            details[issue]["points"] += 1
-            details[issue]["feedback"].append("Correct clause number identification.")
-        else:
-            sub_clause = submission["exercise2"][issue]["clause_number"]
-            key_clause = answer_key["exercise2"][issue]["clause_number"]
-            details[issue]["feedback"].append(f"Incorrect clause number. Expected: {key_clause}, Got: {sub_clause}")
+        # Check violation code
+        submission_code = submission["exercise1"][f"scenario{scenario_num}_violation_code"]
+        answer_code = answer_key["exercise1"][f"scenario{scenario_num}_violation_code"]
         
-        # Check if regulation violated is correct
-        if submission["exercise2"][issue]["regulation_violated"] == answer_key["exercise2"][issue]["regulation_violated"]:
-            points += 1
-            details[issue]["points"] += 1
-            details[issue]["feedback"].append("Correct regulation identification.")
+        # Special case for scenario 1 where either ETH-02 or COR-03 is acceptable
+        if scenario_num == 1 and submission_code in ["ETH-02", "COR-03"]:
+            scenario_result["points"] += 5
+            scenario_result["feedback"].append("Correct violation code identified.")
+        elif submission_code == answer_code:
+            scenario_result["points"] += 5
+            scenario_result["feedback"].append("Correct violation code identified.")
         else:
-            sub_reg = submission["exercise2"][issue]["regulation_violated"]
-            key_reg = answer_key["exercise2"][issue]["regulation_violated"]
-            details[issue]["feedback"].append(f"Incorrect regulation identification. Expected: {key_reg}, Got: {sub_reg}")
+            scenario_result["feedback"].append(f"Incorrect violation code. Expected: {answer_code}, Got: {submission_code}")
+        
+        # Check regulation reference
+        submission_ref = submission["exercise1"][f"scenario{scenario_num}_regulation_reference"]
+        answer_ref = answer_key["exercise1"][f"scenario{scenario_num}_regulation_reference"]
+        
+        # For scenario 1, accept reference that matches the violation code provided
+        if scenario_num == 1:
+            alt_ref = "Anti-Corruption Act of 2010, Section 7"
+            if (submission_code == "ETH-02" and submission_ref == answer_ref) or \
+               (submission_code == "COR-03" and submission_ref == alt_ref):
+                scenario_result["points"] += 5
+                scenario_result["feedback"].append("Correct regulation reference provided.")
+            else:
+                scenario_result["feedback"].append("Incorrect regulation reference for the violation code.")
+        elif submission_ref == answer_ref:
+            scenario_result["points"] += 5
+            scenario_result["feedback"].append("Correct regulation reference provided.")
+        else:
+            scenario_result["feedback"].append(f"Incorrect regulation reference. Expected: {answer_ref}, Got: {submission_ref}")
+        
+        result["details"][f"Scenario {scenario_num}"] = scenario_result
+        result["points"] += scenario_result["points"]
     
-    return points, details
+    return result
 
-def evaluate_exercise3(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[int, Dict[str, Any]]:
-    """Evaluate Exercise 3: Compliance Documentation Requirements."""
-    max_points = 3
-    points = 0
-    details = {}
-    
-    # Check required fields
-    details["required_fields"] = {"points": 0, "max_points": 1, "feedback": []}
-    submission_fields_set = set(submission["exercise3"]["required_fields"])
-    answer_fields_set = set(answer_key["exercise3"]["required_fields"])
-    
-    if submission_fields_set == answer_fields_set:
-        points += 1
-        details["required_fields"]["points"] = 1
-        details["required_fields"]["feedback"].append("Correct required fields identified.")
-    else:
-        missing = answer_fields_set - submission_fields_set
-        extra = submission_fields_set - answer_fields_set
-        feedback = []
-        if missing:
-            feedback.append(f"Missing fields: {', '.join(missing)}")
-        if extra:
-            feedback.append(f"Extra fields: {', '.join(extra)}")
-        details["required_fields"]["feedback"] = feedback if feedback else ["Incorrect required fields."]
-    
-    # Check retention period
-    details["retention_period"] = {"points": 0, "max_points": 1, "feedback": []}
-    if submission["exercise3"]["retention_period"] == answer_key["exercise3"]["retention_period"]:
-        points += 1
-        details["retention_period"]["points"] = 1
-        details["retention_period"]["feedback"].append("Correct retention period identified.")
-    else:
-        sub_period = submission["exercise3"]["retention_period"]
-        key_period = answer_key["exercise3"]["retention_period"]
-        details["retention_period"]["feedback"].append(f"Incorrect retention period. Expected: {key_period}, Got: {sub_period}")
-    
-    # Check approval level
-    details["approval_level"] = {"points": 0, "max_points": 1, "feedback": []}
-    if submission["exercise3"]["approval_level"] == answer_key["exercise3"]["approval_level"]:
-        points += 1
-        details["approval_level"]["points"] = 1
-        details["approval_level"]["feedback"].append("Correct approval level identified.")
-    else:
-        sub_level = submission["exercise3"]["approval_level"]
-        key_level = answer_key["exercise3"]["approval_level"]
-        details["approval_level"]["feedback"].append(f"Incorrect approval level. Expected: {key_level}, Got: {sub_level}")
-    
-    return points, details
 
-def evaluate_exercise4(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[int, Dict[str, Any]]:
-    """Evaluate Exercise 4: Regulatory Change Response."""
-    max_points = 3
-    points = 0
-    details = {}
+def evaluate_exercise2(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
+    """Evaluate Exercise 2 - Policy Update."""
+    result = {"points": 0, "max_points": 30, "details": {}}
     
-    # Check affected processes
-    details["affected_processes"] = {"points": 0, "max_points": 1, "feedback": []}
-    submission_processes_set = set(submission["exercise4"]["affected_processes"])
-    answer_processes_set = set(answer_key["exercise4"]["affected_processes"])
-    
-    if submission_processes_set == answer_processes_set:
-        points += 1
-        details["affected_processes"]["points"] = 1
-        details["affected_processes"]["feedback"].append("Correct affected processes identified.")
+    # Check policy section
+    policy_result = {"points": 0, "max_points": 10, "feedback": []}
+    if submission["exercise2"]["policy_section"] == answer_key["exercise2"]["policy_section"]:
+        policy_result["points"] = 10
+        policy_result["feedback"].append("Correct policy section identified.")
     else:
-        missing = answer_processes_set - submission_processes_set
-        extra = submission_processes_set - answer_processes_set
-        feedback = []
-        if missing:
-            feedback.append(f"Missing processes: {', '.join(missing)}")
-        if extra:
-            feedback.append(f"Extra processes: {', '.join(extra)}")
-        details["affected_processes"]["feedback"] = feedback if feedback else ["Incorrect affected processes."]
+        policy_result["feedback"].append(f"Incorrect policy section. Expected: {answer_key['exercise2']['policy_section']}, Got: {submission['exercise2']['policy_section']}")
+    result["details"]["Policy Section"] = policy_result
+    result["points"] += policy_result["points"]
     
-    # Check required actions
-    details["required_actions"] = {"points": 0, "max_points": 1, "feedback": []}
-    submission_actions_set = set(submission["exercise4"]["required_actions"])
-    answer_actions_set = set(answer_key["exercise4"]["required_actions"])
-    
-    if submission_actions_set == answer_actions_set:
-        points += 1
-        details["required_actions"]["points"] = 1
-        details["required_actions"]["feedback"].append("Correct required actions identified.")
+    # Check update required
+    update_result = {"points": 0, "max_points": 10, "feedback": []}
+    if submission["exercise2"]["update_required"] == answer_key["exercise2"]["update_required"]:
+        update_result["points"] = 10
+        update_result["feedback"].append("Correct determination of update requirement.")
     else:
-        missing = answer_actions_set - submission_actions_set
-        extra = submission_actions_set - answer_actions_set
-        feedback = []
-        if missing:
-            feedback.append(f"Missing actions: {', '.join(missing)}")
-        if extra:
-            feedback.append(f"Extra actions: {', '.join(extra)}")
-        details["required_actions"]["feedback"] = feedback if feedback else ["Incorrect required actions."]
+        update_result["feedback"].append(f"Incorrect update requirement. Expected: {answer_key['exercise2']['update_required']}, Got: {submission['exercise2']['update_required']}")
+    result["details"]["Update Required"] = update_result
+    result["points"] += update_result["points"]
     
-    # Check implementation deadline
-    details["implementation_deadline"] = {"points": 0, "max_points": 1, "feedback": []}
-    if submission["exercise4"]["implementation_deadline"] == answer_key["exercise4"]["implementation_deadline"]:
-        points += 1
-        details["implementation_deadline"]["points"] = 1
-        details["implementation_deadline"]["feedback"].append("Correct implementation deadline identified.")
+    # Check compliance status code
+    status_result = {"points": 0, "max_points": 10, "feedback": []}
+    if submission["exercise2"]["compliance_status_code"] == answer_key["exercise2"]["compliance_status_code"]:
+        status_result["points"] = 10
+        status_result["feedback"].append("Correct compliance status code selected.")
     else:
-        sub_deadline = submission["exercise4"]["implementation_deadline"]
-        key_deadline = answer_key["exercise4"]["implementation_deadline"]
-        details["implementation_deadline"]["feedback"].append(f"Incorrect implementation deadline. Expected: {key_deadline}, Got: {sub_deadline}")
+        status_result["feedback"].append(f"Incorrect compliance status code. Expected: {answer_key['exercise2']['compliance_status_code']}, Got: {submission['exercise2']['compliance_status_code']}")
+    result["details"]["Compliance Status Code"] = status_result
+    result["points"] += status_result["points"]
     
-    return points, details
+    return result
+
+
+def evaluate_exercise3(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
+    """Evaluate Exercise 3 - Supplier Contract Review."""
+    result = {"points": 0, "max_points": 40, "details": {}}
+    
+    # Evaluate each clause
+    for clause_num in range(1, 4):
+        clause_result = {"points": 0, "max_points": 10, "feedback": []}
+        
+        # Check if compliant
+        compliant_key = f"clause{clause_num}_compliant"
+        violation_key = f"clause{clause_num}_violation_code"
+        
+        if submission["exercise3"][compliant_key] == answer_key["exercise3"][compliant_key]:
+            clause_result["points"] += 5
+            clause_result["feedback"].append("Correct compliance determination.")
+        else:
+            clause_result["feedback"].append(f"Incorrect compliance determination. Expected: {answer_key['exercise3'][compliant_key]}, Got: {submission['exercise3'][compliant_key]}")
+        
+        # Check violation code
+        if submission["exercise3"][compliant_key] == True and submission["exercise3"][violation_key] == "N/A":
+            # If marked as compliant and violation code is N/A
+            if answer_key["exercise3"][compliant_key] == True:
+                clause_result["points"] += 5
+                clause_result["feedback"].append("Correctly provided N/A for violation code on compliant clause.")
+        elif submission["exercise3"][compliant_key] == False:
+            # If marked as non-compliant, check violation code
+            if submission["exercise3"][violation_key] == answer_key["exercise3"][violation_key]:
+                clause_result["points"] += 5
+                clause_result["feedback"].append("Correct violation code provided.")
+            else:
+                clause_result["feedback"].append(f"Incorrect violation code. Expected: {answer_key['exercise3'][violation_key]}, Got: {submission['exercise3'][violation_key]}")
+        
+        result["details"][f"Clause {clause_num}"] = clause_result
+        result["points"] += clause_result["points"]
+    
+    # Check overall status code
+    status_result = {"points": 0, "max_points": 10, "feedback": []}
+    if submission["exercise3"]["overall_status_code"] == answer_key["exercise3"]["overall_status_code"]:
+        status_result["points"] = 10
+        status_result["feedback"].append("Correct overall status code selected.")
+    else:
+        status_result["feedback"].append(f"Incorrect overall status code. Expected: {answer_key['exercise3']['overall_status_code']}, Got: {submission['exercise3']['overall_status_code']}")
+    result["details"]["Overall Status"] = status_result
+    result["points"] += status_result["points"]
+    
+    return result
+
 
 def evaluate_submission(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
-    """Evaluate the complete submission against the answer key."""
+    """Evaluate the full submission against the answer key."""
     results = {
-        "overall_score": 0,
-        "total_points": 0,
-        "max_points": 20,
-        "passed": False,
-        "exercises": {}
+        "candidate_id": submission.get("candidate_id", "Unknown"),
+        "exercise1": evaluate_exercise1(submission, answer_key),
+        "exercise2": evaluate_exercise2(submission, answer_key),
+        "exercise3": evaluate_exercise3(submission, answer_key),
     }
     
-    # Evaluate each exercise
-    ex1_points, ex1_details = evaluate_exercise1(submission, answer_key)
-    ex2_points, ex2_details = evaluate_exercise2(submission, answer_key)
-    ex3_points, ex3_details = evaluate_exercise3(submission, answer_key)
-    ex4_points, ex4_details = evaluate_exercise4(submission, answer_key)
+    # Calculate total score
+    total_points = sum(results[ex]["points"] for ex in ["exercise1", "exercise2", "exercise3"])
+    max_points = sum(results[ex]["max_points"] for ex in ["exercise1", "exercise2", "exercise3"])
+    overall_percentage = (total_points / max_points) * 100
     
-    # Store individual exercise results
-    results["exercises"]["exercise1"] = {
-        "points": ex1_points,
-        "max_points": 8,
-        "details": ex1_details
-    }
-    
-    results["exercises"]["exercise2"] = {
-        "points": ex2_points,
-        "max_points": 6,
-        "details": ex2_details
-    }
-    
-    results["exercises"]["exercise3"] = {
-        "points": ex3_points,
-        "max_points": 3,
-        "details": ex3_details
-    }
-    
-    results["exercises"]["exercise4"] = {
-        "points": ex4_points,
-        "max_points": 3,
-        "details": ex4_details
-    }
-    
-    # Calculate total points
-    total_points = ex1_points + ex2_points + ex3_points + ex4_points
+    # Add overall assessment
     results["total_points"] = total_points
+    results["max_points"] = max_points
+    results["overall_score"] = round(overall_percentage, 2)
     
-    # Calculate percentage score
-    results["overall_score"] = (total_points / 20) * 100
-    
-    # Determine if passed based on criteria
-    passed = (
-        total_points >= 16 and  # At least 80% overall
-        ex1_points >= 6 and     # At least 75% in Exercise 1
-        ex2_points >= 4 and     # At least 67% in Exercise 2
-        ex3_points >= 1 and     # At least 1 point in Exercise 3
-        ex4_points >= 1         # At least 1 point in Exercise 4
-    )
-    
-    results["passed"] = passed
-    
-    # Add candidate ID if available
-    if "candidate_id" in submission:
-        results["candidate_id"] = submission["candidate_id"]
+    if overall_percentage >= 90:
+        results["performance_level"] = "Excellent"
+    elif overall_percentage >= 70:
+        results["performance_level"] = "Pass"
+    else:
+        results["performance_level"] = "Fail"
     
     return results
 
+
 def main():
-    """Main function to parse arguments and evaluate submission."""
     if len(sys.argv) != 3:
         print("Usage: python task_evaluation.py test_submission.json answer_key.json")
         sys.exit(1)
@@ -262,12 +187,12 @@ def main():
     results = evaluate_submission(submission, answer_key)
     
     # Save results to file
-    with open('test_results.json', 'w') as f:
+    with open("test_results.json", "w") as f:
         json.dump(results, f, indent=2)
     
-    print(f"Evaluation completed. Results saved to test_results.json")
-    print(f"Overall score: {results['overall_score']:.2f}% ({results['total_points']}/{results['max_points']} points)")
-    print(f"Result: {'PASSED' if results['passed'] else 'FAILED'}")
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall Score: {results['overall_score']}% ({results['performance_level']})")
+
 
 if __name__ == "__main__":
     main()

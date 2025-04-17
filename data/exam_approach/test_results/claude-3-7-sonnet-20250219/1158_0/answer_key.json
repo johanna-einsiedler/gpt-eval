@@ -1,22 +1,67 @@
 {
-    "candidateID": "EVALUATOR_KEY",
-    "exercise1": {
-        "pricePattern": "uptrend",
-        "peakMonth": "2022-08",
-        "lowestPrice": 3.15,
-        "percentageChange": 142.46,
-        "quarterWithHighestVolatility": "Q2-2020"
+    "candidate_id": "EVALUATOR_KEY",
+    "task1": {
+        "price_trends": {
+            "steel": "Cyclical pattern with overall downward trend in 2022 after peaking in April 2022",
+            "aluminum": "High volatility with sharp rise until March 2022, followed by significant decline and stabilization in late 2022",
+            "copper": "Highest initial prices with substantial decline in mid-2022 followed by recovery in late 2022"
+        },
+        "volatility_calculations": {
+            "steel": 4.19,
+            "aluminum": 6.19,
+            "copper": 4.38
+        },
+        "production_price_correlation": "steel",
+        "price_increase_prediction": "copper",
+        "prediction_justification": "Copper shows the strongest consistent increases in the last three months of data (Q4 2022), with prices rising from $7,565.20 to $8,372.80. This upward momentum coincides with increasing production volumes, suggesting continued price strengthening. Additionally, copper demonstrates a recovery trend with three consecutive monthly increases of substantial magnitude (6.42%, 4.00%)."
     },
-    "exercise2": {
-        "impactScore": 7,
-        "expectedPriceChange": 8.9,
-        "recommendedAction": "maintain_levels",
-        "alternateSupplierCode": "SUP193"
+    "task2": {
+        "disruption_impact_analysis": {
+            "logistics_bottleneck": "The logistics bottleneck caused moderate price increases across materials (average 29.2%) with semiconductor chips and electronic components most affected. The disruption primarily impacted global shipping capacity with 12-15 day port delays, creating significant inventory challenges for 3 months until resolving in late May.",
+            "geopolitical_conflict": "The geopolitical conflict created the most severe and long-lasting disruption, particularly affecting industrial chemicals (43.2% increase) and steel rebar (36.4% increase). This 10+ month disruption disrupted critical Eastern European supply routes with only partial adaptation achieved by September, leaving some materials still restricted at year-end.",
+            "natural_disaster": "The natural disaster in Southeast Asia created extreme price volatility for electronic components (94.7% increase) and semiconductor chips (87.0% increase). Manufacturing facilities and transportation infrastructure damages caused significant but shorter-term disruptions, with most production normalized by late October."
+        },
+        "price_sensitive_materials": [
+            "Electronic Components",
+            "Semiconductor Chips",
+            "Industrial Chemicals",
+            "Automotive Parts",
+            "Plastic Resin"
+        ],
+        "longest_recovery_disruption": "Geopolitical Conflict",
+        "mitigation_recommendations": [
+            "Diversify supplier base across different geographical regions to reduce dependency on single-source suppliers",
+            "Maintain strategic safety stock for price-sensitive and long-recovery materials, particularly electronic components and industrial chemicals",
+            "Implement dual-sourcing strategy for critical materials with at least one domestic supplier option",
+            "Develop flexible logistics networks with alternative transportation modes and routes",
+            "Establish long-term contracts with price ceiling clauses for highly volatile materials"
+        ]
     },
-    "exercise3": {
-        "contractRecommendation": "3month",
-        "priceTarget": 7.941,
-        "potentialSavings": 52312.5,
-        "riskLevel": 3
+    "task3": {
+        "futures_spot_comparison": "Futures prices were generally poor predictors during volatile periods in mid-2022, with significant divergence between contracted and maturity prices. 3-month futures were consistently more accurate than 6-month futures across all commodities. The market showed clear transitions between backwardation in Q1 2022, contango through Q2-Q3 2022, and a return to backwardation in late 2022, suggesting improving market sentiment by year-end.",
+        "market_patterns": {
+            "backwardation_commodities": [
+                "aluminum",
+                "steel",
+                "copper"
+            ],
+            "contango_commodities": []
+        },
+        "current_futures_research": "Current aluminum futures research varies by candidate's finding. Key aspects to evaluate: current prices compared to historical data, whether backwardation continues or has changed, and any emerging market factors affecting aluminum pricing.",
+        "purchase_timing_recommendation": "With all three commodities currently in backwardation (December 2022), immediate spot purchases are recommended over long-term futures contracts. For aluminum specifically, the shallow backwardation (small difference between spot and futures) suggests a strategic approach of securing 60-70% of Q1 needs immediately, while establishing forward contracts for Q2-Q3 requirements to hedge against potential market reversals. The transition from contango to backwardation indicates improving market conditions that favor near-term purchasing."
+    },
+    "task4": {
+        "market_condition_summary": "The market shows significant supply chain stress with electronic components facing severe constraints (14-week lead times, 40% increase) and stainless steel and wiring/cables experiencing high constraints. Materials with the lowest inventory levels correlate directly with the longest lead times, particularly evident in electronic components (45% inventory, 14-week lead time). Rising energy costs and declining raw material availability further exacerbate these challenges, though global shipping shows slight improvement.",
+        "supply_constrained_materials": [
+            "Electronic Components",
+            "Stainless Steel",
+            "Wiring/Cables",
+            "Aluminum",
+            "Plastic Resins",
+            "Bearings"
+        ],
+        "market_research_findings": "Market research findings vary by candidate's web research. Key aspects to evaluate: current electronic component and stainless steel availability, energy cost impacts on manufacturing, and any recent developments affecting these constrained materials.",
+        "procurement_strategy": "Implement a tiered procurement approach prioritizing electronic components for immediate ordering with 25% buffer stock due to severe constraints and 14-week lead times. Secure stainless steel through strategic contracts with domestic large suppliers (88% on-time delivery) to mitigate high constraints. For aluminum and plastic resins with moderate constraints, increase inventory by 15-20% while maintaining regular ordering for low-constraint materials. Leverage the improving global shipping index by establishing flexibility in delivery schedules, and utilize the current backwardation market condition for spot purchases of immediately needed materials.",
+        "strategy_justification": "This tiered strategy addresses the critical electronic component shortage (45% inventory, 40% lead time increase) while balancing warehouse capacity constraints (2,500 ton limit) by strategically increasing inventory only for moderate-to-high constraint materials. Prioritizing domestic large suppliers mitigates quality and delivery risks (highest on-time delivery at 88%, lowest quality issues at 2.1%). The approach aligns with market conditions by leveraging the current backwardation market for immediate needs while establishing longer-term contracts for more stable materials, ensuring the 90% materials requirement is met before January 15 production start."
     }
 }

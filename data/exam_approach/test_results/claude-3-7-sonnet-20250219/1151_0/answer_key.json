@@ -1,108 +1,101 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
-    "task1": {
-        "errors_found": [
-            "Missing quantity for item OP-303 Sticky Notes on 1/22/2023",
-            "Missing total cost calculations for transactions on 1/22/2023 and 5/31/2023",
-            "Inconsistent currency formatting (some prices include $ symbol, others don't)",
-            "Calculation error in total cost for OP-1414 Headphones (shows $279.6, should be $279.60)",
-            "Inconsistent decimal places in total costs (e.g., $59.9 instead of $59.90)"
+    "inventory_analysis": {
+        "items_below_threshold": [
+            "PC-205",
+            "PC-220",
+            "PC-310",
+            "PC-507"
         ],
-        "corrections_made": [
-            "Added missing quantity for OP-303 on 1/22/2023 (logical estimate based on similar orders)",
-            "Calculated missing total costs by multiplying quantity by unit price",
-            "Standardized all currency formatting to include $ symbol and two decimal places",
-            "Corrected calculation for OP-1414 Headphones total cost",
-            "Applied consistent formatting to all numeric values (prices and totals)"
+        "items_requiring_reorder": [
+            "PC-205",
+            "PC-220",
+            "PC-310",
+            "PC-507",
+            "PC-506"
         ],
-        "summary_insights": [
-            "Office Supplies category represents 73% of all purchases by quantity but only 58% by total cost",
-            "Copy Paper (OP-101) is the most frequently purchased item with 85 units ordered across the six-month period",
-            "Technology items have a significantly higher average unit price ($41.65) compared to Office Supplies ($7.86)",
-            "Monthly purchasing volume increased by approximately 25% from January to June"
-        ]
+        "current_inventory_levels": {
+            "Metal Components": 3655,
+            "Rubber Products": 1315,
+            "Plastic Components": 1505,
+            "Electrical Components": 273,
+            "Electronic Components": 2925,
+            "Display & Control Systems": 342
+        }
     },
-    "task2": {
-        "tracking_method": "I calculated the difference between actual delivery date and expected delivery date for each order, with positive values indicating late deliveries and negative values indicating early deliveries. I then created a column to categorize each delivery as 'Early', 'On-time', or 'Late' and calculated the percentage of on-time or early deliveries for each vendor. I also calculated the average days early/late for each vendor by averaging the difference values.",
-        "top_performers": [
-            {
-                "vendor_name": "Tech Supplies Co",
-                "on_time_percentage": "100.0%",
-                "avg_days": "-1.2",
-                "total_value": "$4,705.00"
-            },
-            {
-                "vendor_name": "Paper Plus",
-                "on_time_percentage": "100.0%",
-                "avg_days": "0.0",
-                "total_value": "$1,740.00"
-            },
-            {
-                "vendor_name": "Office Solutions Inc",
-                "on_time_percentage": "0.0%",
-                "avg_days": "2.7",
-                "total_value": "$4,030.00"
-            }
+    "vendor_performance": {
+        "top_vendors": [
+            "V-001",
+            "V-006",
+            "V-002"
         ],
-        "needs_improvement": [
-            {
-                "vendor_name": "Furniture World",
-                "on_time_percentage": "0.0%",
-                "avg_days": "7.0",
-                "total_value": "$4,250.00"
-            },
-            {
-                "vendor_name": "Stationery Express",
-                "on_time_percentage": "0.0%",
-                "avg_days": "5.8",
-                "total_value": "$1,335.00"
-            },
-            {
-                "vendor_name": "Office Solutions Inc",
-                "on_time_percentage": "0.0%",
-                "avg_days": "2.7",
-                "total_value": "$4,030.00"
-            }
+        "bottom_vendors": [
+            "V-004",
+            "V-007",
+            "V-005"
         ],
-        "recommendations": [
-            "Consolidate orders with Tech Supplies Co and Paper Plus when possible as they consistently deliver on time or early with excellent quality ratings",
-            "Implement performance improvement plans for Furniture World and Stationery Express, including earlier lead times or penalties for late deliveries",
-            "Consider reducing order volumes from Furniture World until delivery performance improves, as they consistently deliver 7 days late on average",
-            "Request delivery time guarantees in contracts with all vendors and establish clear expectations for on-time performance"
-        ]
+        "avg_delivery_metrics": {
+            "V-001": {
+                "on_time_rate": 77.8,
+                "avg_delivery_days": 7.1,
+                "defect_rate": 0.3
+            },
+            "V-002": {
+                "on_time_rate": 75.0,
+                "avg_delivery_days": 7.6,
+                "defect_rate": 0.5
+            },
+            "V-003": {
+                "on_time_rate": 75.0,
+                "avg_delivery_days": 8.0,
+                "defect_rate": 1.0
+            },
+            "V-004": {
+                "on_time_rate": 25.0,
+                "avg_delivery_days": 9.4,
+                "defect_rate": 2.0
+            },
+            "V-005": {
+                "on_time_rate": 62.5,
+                "avg_delivery_days": 7.9,
+                "defect_rate": 1.2
+            },
+            "V-006": {
+                "on_time_rate": 77.8,
+                "avg_delivery_days": 6.7,
+                "defect_rate": 0.2
+            },
+            "V-007": {
+                "on_time_rate": 33.3,
+                "avg_delivery_days": 9.0,
+                "defect_rate": 2.1
+            }
+        }
     },
-    "task3": {
-        "data_organization": "I imported the pipe-delimited text file into a spreadsheet, creating separate columns for each data field. I formatted date fields consistently, applied currency formatting to monetary values, and created additional columns to categorize transactions by department, purchase type, and payment method. I also added a column to calculate days between transaction date and today to identify recent transactions.",
-        "anomaly_detection_method": "I created multiple filters to identify potential anomalies: (1) unusually high total amounts compared to department averages, (2) transactions missing approvers or with self-approval, (3) non-standard payment methods, (4) unusual requestors or vendors, and (5) mathematical inconsistencies between quantity, unit price, and total amount. I also looked for duplicate transactions and emergency purchases that might indicate process violations.",
-        "flagged_transactions": [
-            {
-                "transaction_id": "TX23-1037",
-                "reason_flagged": "Unusually high unit price for laptops ($9,999.99) compared to earlier laptop purchase (TX23-1001) at $999.99. Total cost is 10x higher than expected, possibly a decimal place error or potential fraud."
-            },
-            {
-                "transaction_id": "TX23-1039",
-                "reason_flagged": "Payment made using Personal Card instead of standard Corporate Card or Purchase Order. Also has calculation error: total amount ($1,999.90) doesn't match unit price × quantity ($199.99)."
-            },
-            {
-                "transaction_id": "TX23-1040",
-                "reason_flagged": "Emergency purchase lacks required approver (shows 'None'), violating approval policy. Emergency purchases require proper authorization even if expedited."
-            },
-            {
-                "transaction_id": "TX23-1042",
-                "reason_flagged": "Robert Taylor is both requestor and approver, violating segregation of duties principle. No transaction should be self-approved to prevent potential fraud or policy violations."
-            },
-            {
-                "transaction_id": "TX23-1038",
-                "reason_flagged": "Transaction has 'Unknown' requestor, lacking accountability and proper documentation. Also appears to be a duplicate of TX23-1009 (identical description and amount)."
-            }
+    "cost_analysis": {
+        "highest_cost_products": [
+            "PC-507",
+            "PC-310",
+            "PC-506",
+            "PC-150",
+            "PC-505"
         ],
-        "system_improvements": [
-            "Implement automated validation checks to flag mathematical inconsistencies between quantity, unit price, and total amount",
-            "Enforce segregation of duties by preventing the same person from being both requestor and approver in the system",
-            "Create standardized vendor list with dropdown selection to prevent variations in vendor naming (e.g., 'Office Supplies Unknown')",
-            "Implement electronic approval workflow that requires proper authorization for all purchases, especially emergency ones",
-            "Add system controls to prevent use of personal payment methods like personal credit cards",
-            "Create automatic flagging for unusually high purchase amounts compared to historical averages for similar items"
-        ]
+        "products_with_price_increases": [
+            "PC-101",
+            "PC-150",
+            "PC-205",
+            "PC-220",
+            "PC-310",
+            "PC-506",
+            "PC-153",
+            "PC-207"
+        ],
+        "total_monthly_spend": {
+            "January": 19197.5,
+            "February": 21995.0,
+            "March": 24217.5,
+            "April": 20555.0,
+            "May": 22467.5,
+            "June": 25406.25
+        }
     }
 }

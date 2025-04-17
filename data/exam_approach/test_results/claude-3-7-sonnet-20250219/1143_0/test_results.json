@@ -1,71 +1,43 @@
 {
-  "candidate_id": "Unknown",
-  "scenarios": {
-    "scenario1": {
-      "score": 30,
-      "max_score": 30,
-      "percentage": 100.0,
-      "passed": true,
-      "feedback": [
-        "\u2713 Correct vendor selected",
-        "\u2713 Correct item code: OS-FC-301",
-        "\u2713 Correct item code: OS-CH-101",
-        "\u2713 Correct item code: OS-BS-401",
-        "\u2713 Correct item code: OS-TB-201",
-        "\u2713 Correct quantity for OS-FC-301",
-        "\u2713 Correct unit price for OS-FC-301",
-        "\u2713 Correct account code for OS-FC-301",
-        "\u2713 Correct quantity for OS-CH-101",
-        "\u2713 Correct unit price for OS-CH-101",
-        "\u2713 Correct account code for OS-CH-101",
-        "\u2713 Correct quantity for OS-BS-401",
-        "\u2713 Correct unit price for OS-BS-401",
-        "\u2713 Correct account code for OS-BS-401",
-        "\u2713 Correct quantity for OS-TB-201",
-        "\u2713 Correct unit price for OS-TB-201",
-        "\u2713 Correct account code for OS-TB-201",
-        "\u2713 Correct total amount",
-        "\u2713 Correct delivery date"
-      ]
-    },
-    "scenario2": {
-      "score": 30,
-      "max_score": 30,
-      "percentage": 100.0,
-      "passed": true,
-      "feedback": [
-        "\u2713 Correct RFP specification: print_speed",
-        "\u2713 Correct RFP specification: monthly_volume",
-        "\u2713 Correct RFP specification: network_capabilities",
-        "\u2713 Correct RFP specification: security_features",
-        "\u2713 Correct RFP specification: mobile_printing",
-        "\u2713 Correct RFP specification: additional_features",
-        "\u2713 Correct vendor selected",
-        "\u2713 Correct total cost",
-        "\u2713 Correct delivery timeframe",
-        "\u2713 Correct warranty period",
-        "\u2713 Provided reasonable selection justification"
-      ]
-    },
-    "scenario3": {
-      "score": 24,
-      "max_score": 30,
-      "percentage": 80.0,
-      "passed": true,
-      "feedback": [
-        "\u2713 Correct status for requisition1: returned",
-        "\u2713 Correctly identified all issues for requisition1",
-        "\u2713 Correctly identified all required corrections for requisition1",
-        "\u2713 Correct status for requisition2: approved",
-        "\u2713 Correct status for requisition3: returned",
-        "\u2713 Correctly identified all issues for requisition3",
-        "\u2713 Correctly identified all required corrections for requisition3"
-      ]
-    }
+  "section1": {
+    "score": 40,
+    "max_score": 40,
+    "percentage": 100.0,
+    "feedback": [
+      "Correctly selected Dell Enterprise as the vendor",
+      "All items transferred correctly",
+      "All calculations correct",
+      "Correctly identified tax exemption status",
+      "Selected appropriate shipping method"
+    ],
+    "critical_fail": false
   },
-  "total_score": 84,
-  "total_max_score": 90,
-  "overall_score": 93.33,
-  "passed_scenarios": 3,
-  "overall_passed": true
+  "section2": {
+    "score": 30,
+    "max_score": 30,
+    "percentage": 100.0,
+    "feedback": [
+      "Thorough vendor analysis with correct specification compliance assessment",
+      "Correctly selected TechnoSource Inc. as the vendor",
+      "Excellent justification referencing policy criteria",
+      "All RFQ questions answered correctly"
+    ],
+    "critical_fail": false
+  },
+  "section3": {
+    "score": 30,
+    "max_score": 30,
+    "percentage": 100.0,
+    "feedback": [
+      "Requisition 1: 14/14 points - Correct status identification, Correctly identified all errors, Correct account code assignment, Correct approval workflow",
+      "Requisition 2: 16/16 points - Correct status identification, Correct account code assignment, Correct approval workflow, Correctly identified all rush process steps"
+    ],
+    "critical_fail": false
+  },
+  "overall_score": 100.0,
+  "total_points": 100,
+  "max_points": 100,
+  "critical_failures": [],
+  "passed": true,
+  "grade": "Excellent"
 }

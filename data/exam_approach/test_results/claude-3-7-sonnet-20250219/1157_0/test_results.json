@@ -1,102 +1,48 @@
 {
-  "candidate_id": "EVALUATOR_KEY",
-  "overall_score": 96.0,
-  "total_points": 96.0,
+  "overall_score": 15.0,
+  "passed": false,
+  "total_points": 15.0,
   "max_points": 100,
-  "passed": true,
-  "task_status": {
+  "tasks": {
     "task1": {
-      "score": 26.0,
-      "max_score": 30,
-      "percentage": 86.67,
-      "passed": true
+      "score": 0,
+      "max_score": 40,
+      "percentage": 0.0,
+      "feedback": [
+        "General Information section missing - 0/5 points",
+        "Technical Requirements section missing - 0/10 points",
+        "Material Requirements section missing - 0/8 points",
+        "Performance Requirements section missing - 0/7 points",
+        "Certification Requirements section missing - 0/5 points",
+        "Testing Requirements section missing - 0/5 points"
+      ]
     },
     "task2": {
-      "score": 40,
-      "max_score": 40,
-      "percentage": 100.0,
-      "passed": true
+      "score": 0.0,
+      "max_score": 35,
+      "percentage": 0.0,
+      "feedback": [
+        "Error identification: 0/5 errors correctly identified - 0.0/20 points",
+        "Corrections: 0/5 correct solutions provided - 0.0/15 points"
+      ]
     },
     "task3": {
-      "score": 30.0,
-      "max_score": 30,
-      "percentage": 100.0,
-      "passed": true
+      "score": 15,
+      "max_score": 25,
+      "percentage": 60.0,
+      "feedback": [
+        "Recommended model: Correct - 10/10 points",
+        "Requirements met: 0/0 correct - 0/10 points",
+        "Requirements not met: Correct - 5/5 points"
+      ]
     }
   },
-  "detailed_results": {
-    "task1": {
-      "identified_issues_score": 16,
-      "identified_issues_feedback": [
-        "Correct issue type: ambiguous_requirement.",
-        "Duplicate issue type: ambiguous_requirement.",
-        "Correct issue type: conflicting_specification.",
-        "Correct issue type: missing_test_method.",
-        "Correct issue type: inadequate_performance_criteria."
-      ],
-      "missing_elements_score": 10.0,
-      "missing_elements_feedback": [
-        "Correct missing element: Specific ANSI/BIFMA standards for office chairs.",
-        "Correct missing element: Detailed material specifications (gauge of metal, density of foam, etc.).",
-        "Correct missing element: Assembly requirements and instructions."
-      ],
-      "total_score": 26.0,
-      "max_score": 30
-    },
-    "task2": {
-      "scores": {
-        "category": 5,
-        "material": 5,
-        "dimensions": 5,
-        "weight_capacity": 5,
-        "finish_type": 5,
-        "certifications": 5,
-        "additional_features": 5,
-        "warranty": 5
-      },
-      "feedback": {
-        "product_name": "Acceptable name provided.",
-        "category": "Correct category selected.",
-        "material": "Correct material selected.",
-        "dimensions": "All dimensions are correct.",
-        "weight_capacity": "Correct weight capacity specified.",
-        "finish_type": "Correct finish type selected.",
-        "certifications": "Included 4 correct certifications.",
-        "additional_features": "Included 6 correct features.",
-        "warranty": "Correct warranty duration specified."
-      },
-      "total_score": 40,
-      "max_score": 40
-    },
-    "task3": {
-      "calculation_scores": {
-        "total_cost_of_ownership": 7.5,
-        "cost_efficiency_scores": 7.5
-      },
-      "calculation_feedback": {
-        "total_cost_of_ownership": [
-          "Correct calculation for PR-2001: 3939.00.",
-          "Correct calculation for PR-2002: 1213.00.",
-          "Correct calculation for PR-2003: 2641.00.",
-          "Correct calculation for PR-2004: 4849.00.",
-          "Correct calculation for PR-2005: 1827.00.",
-          "Correct calculation for PR-2006: 4499.00."
-        ],
-        "cost_efficiency_scores": [
-          "Correct calculation for PR-2001: 1279.0.",
-          "Correct calculation for PR-2002: 594.4.",
-          "Correct calculation for PR-2003: 1060.2.",
-          "Correct calculation for PR-2004: 1390.2.",
-          "Correct calculation for PR-2005: 657.4.",
-          "Correct calculation for PR-2006: 2133.6."
-        ]
-      },
-      "selection_score": 10,
-      "selection_feedback": "Correct product selected: PR-2006.",
-      "compliance_score": 5,
-      "compliance_feedback": "All specification compliance checks are correct.",
-      "total_score": 30.0,
-      "max_score": 30
-    }
+  "passing_criteria": {
+    "overall_score_requirement": "\u2265 70%",
+    "per_task_requirement": "\u2265 50% per task",
+    "overall_score_achieved": "15.0%",
+    "task1_score_achieved": "0.0%",
+    "task2_score_achieved": "0.0%",
+    "task3_score_achieved": "60.0%"
   }
 }

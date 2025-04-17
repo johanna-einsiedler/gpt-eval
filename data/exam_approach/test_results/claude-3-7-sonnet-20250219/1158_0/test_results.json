@@ -1,79 +1,148 @@
 {
   "candidate_id": "EVALUATOR_KEY",
-  "exercise1": {
-    "score": 5,
-    "possible": 5,
-    "details": {
-      "pricePattern": {
-        "correct": true,
-        "score": 1
+  "task1": {
+    "score": 24.0,
+    "max_score": 25,
+    "passing_score": 18,
+    "passed": true,
+    "feedback": {
+      "price_trends": {
+        "score": 6,
+        "max_score": 6,
+        "details": {
+          "steel": 2,
+          "aluminum": 2,
+          "copper": 2
+        }
       },
-      "peakMonth": {
-        "correct": true,
-        "score": 1
+      "volatility_calculations": {
+        "score": 6,
+        "max_score": 6,
+        "details": {
+          "steel": 2,
+          "aluminum": 2,
+          "copper": 2
+        }
       },
-      "lowestPrice": {
-        "correct": true,
-        "score": 1
+      "production_price_correlation": {
+        "score": 4,
+        "max_score": 4,
+        "correct_answer": "steel"
       },
-      "percentageChange": {
-        "correct": true,
-        "score": 1
+      "price_increase_prediction": {
+        "score": 4,
+        "max_score": 4,
+        "correct_answer": "copper"
       },
-      "quarterWithHighestVolatility": {
-        "correct": true,
-        "score": 1
+      "prediction_justification": {
+        "score": 4.0,
+        "max_score": 5
       }
     }
   },
-  "exercise2": {
-    "score": 4,
-    "possible": 4,
-    "details": {
-      "impactScore": {
-        "correct": true,
-        "score": 1
+  "task2": {
+    "score": 25,
+    "max_score": 25,
+    "passing_score": 18,
+    "passed": true,
+    "feedback": {
+      "disruption_impact_analysis": {
+        "score": 9,
+        "max_score": 9,
+        "details": {
+          "logistics_bottleneck": 3,
+          "geopolitical_conflict": 3,
+          "natural_disaster": 3
+        }
       },
-      "expectedPriceChange": {
-        "correct": true,
-        "score": 1
+      "price_sensitive_materials": {
+        "score": 5,
+        "max_score": 5,
+        "correct_materials": [
+          "Electronic Components",
+          "Semiconductor Chips",
+          "Industrial Chemicals",
+          "Automotive Parts",
+          "Plastic Resin"
+        ]
       },
-      "recommendedAction": {
-        "correct": true,
-        "score": 1
+      "longest_recovery_disruption": {
+        "score": 3,
+        "max_score": 3,
+        "correct_answer": "Geopolitical Conflict"
       },
-      "alternateSupplierCode": {
-        "correct": true,
-        "score": 1
+      "mitigation_recommendations": {
+        "score": 8,
+        "max_score": 8
       }
     }
   },
-  "exercise3": {
-    "score": 5,
-    "possible": 5,
-    "details": {
-      "contractRecommendation": {
-        "correct": true,
-        "score": 1
+  "task3": {
+    "score": 24.0,
+    "max_score": 25,
+    "passing_score": 17,
+    "passed": true,
+    "feedback": {
+      "futures_spot_comparison": {
+        "score": 6,
+        "max_score": 6
       },
-      "priceTarget": {
-        "correct": true,
-        "score": 1
+      "market_patterns": {
+        "score": 6,
+        "max_score": 6,
+        "details": {
+          "backwardation_commodities": 3,
+          "contango_commodities": 3
+        }
       },
-      "potentialSavings": {
-        "correct": true,
-        "score": 1
+      "current_futures_research": {
+        "score": 4.0,
+        "max_score": 5
       },
-      "riskLevel": {
-        "correct": true,
-        "score": 1
-      },
-      "bonus": {
-        "description": "All items correct",
-        "score": 1
+      "purchase_timing_recommendation": {
+        "score": 8,
+        "max_score": 8
       }
     }
   },
-  "critical_elements_passed": true,
-  "overall_score": 100.0
+  "task4": {
+    "score": 22.80952380952381,
+    "max_score": 25,
+    "passing_score": 17,
+    "passed": true,
+    "feedback": {
+      "market_condition_summary": {
+        "score": 5,
+        "max_score": 5
+      },
+      "supply_constrained_materials": {
+        "score": 6,
+        "max_score": 6,
+        "correct_materials": [
+          "Electronic Components",
+          "Stainless Steel",
+          "Wiring/Cables",
+          "Aluminum",
+          "Plastic Resins",
+          "Bearings"
+        ]
+      },
+      "market_research_findings": {
+        "score": 2.6666666666666665,
+        "max_score": 4
+      },
+      "procurement_strategy": {
+        "score": 5.142857142857142,
+        "max_score": 6
+      },
+      "strategy_justification": {
+        "score": 4,
+        "max_score": 4
+      }
+    }
+  },
+  "overall_score": 95.81,
+  "passed": true,
+  "total_points": 95.80952380952381,
+  "max_points": 100
 }

@@ -1,118 +1,132 @@
 {
-  "scenario1": {
-    "missingDocuments": {
-      "score": 10,
-      "possiblePoints": 10,
-      "correctlyIdentified": [
-        "Repair Estimate",
-        "Driver's License Copy",
-        "Witness Statements",
-        "Photos of Damage"
-      ],
-      "incorrectlyIdentified": [],
-      "missingFromSubmission": []
-    },
-    "validClaim": {
-      "score": 5,
-      "possiblePoints": 5,
-      "submitted": false,
-      "correct": false
-    },
-    "reasonCode": {
-      "score": 10,
-      "possiblePoints": 10,
-      "submitted": "INCP-02",
-      "correct": "INCP-02"
-    }
-  },
-  "scenario2": {
-    "fraudIndicators": {
-      "score": 15,
-      "possiblePoints": 15,
-      "correctlyIdentified": [
-        "Recent policy changes before loss (coverage increases, added endorsements)",
-        "Multiple claims within 12-month period",
-        "Evidence contradicting reported cause of loss"
-      ],
-      "incorrectlyIdentified": [],
-      "missingFromSubmission": []
-    },
-    "investigationRecommended": {
-      "score": 5,
-      "possiblePoints": 5,
-      "submitted": true,
-      "correct": true
-    },
-    "suspicionLevel": {
-      "score": 5,
-      "possiblePoints": 5,
-      "submitted": "5",
-      "correct": "5"
-    }
-  },
-  "scenario3": {
-    "coverageApplies": {
-      "score": 10,
-      "possiblePoints": 10,
-      "submitted": false,
-      "correct": false
-    },
-    "applicableSection": {
-      "score": 5,
-      "possiblePoints": 5,
-      "submitted": "SECTION A",
-      "correct": "SECTION A"
-    },
-    "exclusionApplies": {
-      "score": 5,
-      "possiblePoints": 5,
-      "submitted": true,
-      "correct": true
-    },
-    "exclusionCode": {
-      "score": 5,
-      "possiblePoints": 5,
-      "submitted": "EX-10",
-      "correct": "EX-10"
-    }
-  },
-  "scenario4": {
-    "baseSettlementAmount": {
-      "score": 6,
-      "possiblePoints": 6,
-      "submitted": "23800",
-      "correct": "23800"
-    },
-    "deductibleAmount": {
-      "score": 4,
-      "possiblePoints": 4,
-      "submitted": "1000",
-      "correct": "1000"
-    },
-    "depreciationAmount": {
-      "score": 8,
-      "possiblePoints": 8,
-      "submitted": "2870",
-      "correct": "2870"
-    },
-    "finalSettlementAmount": {
-      "score": 7,
-      "possiblePoints": 7,
-      "submitted": "19930",
-      "correct": "19930"
-    }
-  },
-  "scenarioScores": {
-    "scenario1": 25,
-    "scenario2": 25,
-    "scenario3": 25,
-    "scenario4": 25
-  },
-  "totalScore": 100,
-  "possiblePoints": 100,
   "overall_score": 100.0,
-  "passedMinimumScore": true,
-  "passedScenarioMinimums": true,
-  "criticalErrors": [],
-  "passed": true
+  "passing_threshold": 75,
+  "passed": true,
+  "fail_reason": null,
+  "critical_element_passed": true,
+  "total_points": 100.0,
+  "max_points": 100,
+  "status_evaluation": {
+    "points": 50,
+    "max_points": 50,
+    "details": {
+      "claim_1": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Valid",
+        "expected": "Valid",
+        "correct": true
+      },
+      "claim_2": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Invalid",
+        "expected": "Invalid",
+        "correct": true
+      },
+      "claim_3": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Requires Additional Information",
+        "expected": "Requires Additional Information",
+        "correct": true
+      },
+      "claim_4": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Requires Additional Information",
+        "expected": "Requires Additional Information",
+        "correct": true
+      },
+      "claim_5": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Valid",
+        "expected": "Valid",
+        "correct": true
+      }
+    }
+  },
+  "discrepancy_evaluation": {
+    "points": 40.0,
+    "max_points": 40,
+    "details": {
+      "claim_1": {
+        "points": 5,
+        "max_points": 5,
+        "correct_codes": [],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      },
+      "claim_2": {
+        "points": 10.0,
+        "max_points": 10,
+        "correct_codes": [
+          "E103",
+          "E102"
+        ],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      },
+      "claim_3": {
+        "points": 10.0,
+        "max_points": 10,
+        "correct_codes": [
+          "E105"
+        ],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      },
+      "claim_4": {
+        "points": 10.0,
+        "max_points": 10,
+        "correct_codes": [
+          "E102",
+          "E104"
+        ],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      },
+      "claim_5": {
+        "points": 5,
+        "max_points": 5,
+        "correct_codes": [],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      }
+    }
+  },
+  "additional_info_evaluation": {
+    "points": 10,
+    "max_points": 10,
+    "details": {
+      "claim_3": {
+        "points": 5,
+        "max_points": 5,
+        "submitted": [
+          "Management review approval for provider with Probation status"
+        ],
+        "expected": [
+          "Management review approval for provider with Probation status"
+        ],
+        "reason": "Correct"
+      },
+      "claim_4": {
+        "points": 5,
+        "max_points": 5,
+        "submitted": [
+          "Verification of correct policy expiration date"
+        ],
+        "expected": [
+          "Verification of correct policy expiration date"
+        ],
+        "reason": "Correct"
+      }
+    }
+  }
 }

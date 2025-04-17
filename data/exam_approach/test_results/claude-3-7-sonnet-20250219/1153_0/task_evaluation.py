@@ -1,430 +1,360 @@
+#!/usr/bin/env python3
 import json
 import sys
-import math
+import os
 
 def load_json_file(file_path):
+    """Load and parse a JSON file."""
     try:
         with open(file_path, 'r') as file:
             return json.load(file)
     except Exception as e:
-        print(f"Error loading JSON file {file_path}: {str(e)}")
+        print(f"Error loading {file_path}: {e}")
         sys.exit(1)
 
-def evaluate_average_monthly_consumption(submission, answer_key):
-    submission_values = submission.get('task1', {}).get('average_monthly_consumption', {})
-    answer_key_values = answer_key.get('task1', {}).get('average_monthly_consumption', {})
-    
-    points = 10
-    errors = 0
-    
-    for product_id, correct_value in answer_key_values.items():
-        if product_id not in submission_values:
-            errors += 1
-            continue
-            
-        submitted_value = submission_values.get(product_id, 0)
-        if not isinstance(submitted_value, (int, float)):
-            errors += 1
-            continue
-            
-        # Check if within ±5% of correct value
-        if abs(submitted_value - correct_value) > (correct_value * 0.05):
-            errors += 1
-    
-    points_deducted = min(points, errors * 0.5)
-    score = points - points_deducted
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "errors": errors,
-        "comments": f"Found {errors} values outside the acceptable range (±5%)"
-    }
+def evaluate_part1(submission, answer_key):
+    """Evaluate Part 1: Data Analysis."""
+    score = 0
+    results = {}
 
-def evaluate_top_products(submission, answer_key):
-    submission_values = submission.get('task1', {}).get('top_products', [])
-    answer_key_values = answer_key.get('task1', {}).get('top_products', [])
+    # Top 5 requested items (2 points each, max 10 points)
+    correct_items = set(answer_key["part1"]["top_requested_items"])
+    submitted_items = set(submission["part1"].get("top_requested_items", []))
     
-    points = 8
-    correct_order = 0
-    correct_products = 0
+    correct_count = len(correct_items.intersection(submitted_items))
+    top_items_score = correct_count * 2
     
-    # Check products in correct order
-    for i, product_id in enumerate(answer_key_values):
-        if i < len(submission_values) and submission_values[i] == product_id:
-            correct_order += 1
-    
-    # Check correct products regardless of order
-    submission_set = set(submission_values[:10])
-    answer_key_set = set(answer_key_values[:10])
-    correct_products = len(submission_set.intersection(answer_key_set))
-    
-    # Scoring: full points if at least 8 products match and are in correct order
-    if correct_order >= 8:
-        score = points
-    else:
-        # Partial credit for having correct products but wrong order
-        order_score = (correct_order / 10) * (points * 0.7)  # 70% weight for correct order
-        product_score = (correct_products / 10) * (points * 0.3)  # 30% weight for having correct products
-        score = order_score + product_score
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "correct_order": correct_order,
-        "correct_products": correct_products,
-        "comments": f"Identified {correct_products}/10 correct products with {correct_order}/10 in correct order"
+    results["top_requested_items"] = {
+        "score": top_items_score,
+        "max_score": 10,
+        "correct_count": correct_count,
+        "total_count": 5,
+        "details": f"Found {correct_count}/5 correct items"
     }
+    score += top_items_score
 
-def evaluate_seasonal_products(submission, answer_key):
-    submission_values = set(submission.get('task1', {}).get('seasonal_products', []))
-    answer_key_values = set(answer_key.get('task1', {}).get('seasonal_products', []))
+    # Average monthly usage (1 point per correct calculation, max 5 points)
+    usage_score = 0
+    correct_usages = 0
+    usage_details = []
     
-    points = 7
-    correct_identified = len(submission_values.intersection(answer_key_values))
+    key_usages = answer_key["part1"]["average_monthly_usage"]
+    submission_usages = submission["part1"].get("average_monthly_usage", {})
     
-    # Full points if at least 4 of 5 key seasonal products are identified
-    if correct_identified >= 4:
-        score = points
-    else:
-        # Partial points based on proportion identified
-        score = (correct_identified / 5) * points
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "correct_identified": correct_identified,
-        "comments": f"Correctly identified {correct_identified}/5 seasonal products"
-    }
-
-def evaluate_stock_coverage(submission, answer_key):
-    submission_values = submission.get('task2', {}).get('stock_coverage', {})
-    answer_key_values = answer_key.get('task2', {}).get('stock_coverage', {})
-    
-    points = 10
-    errors = 0
-    
-    for product_id, correct_value in answer_key_values.items():
-        if product_id not in submission_values:
-            errors += 1
-            continue
-            
-        submitted_value = submission_values.get(product_id, 0)
-        if not isinstance(submitted_value, (int, float)):
-            errors += 1
-            continue
-            
-        # Check if within ±5% of correct value
-        if abs(submitted_value - correct_value) > (correct_value * 0.05):
-            errors += 1
-    
-    points_deducted = min(points, errors * 0.5)
-    score = points - points_deducted
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "errors": errors,
-        "comments": f"Found {errors} values outside the acceptable range (±5%)"
-    }
-
-def evaluate_low_inventory_products(submission, answer_key):
-    submission_values = set(submission.get('task2', {}).get('low_inventory_products', []))
-    answer_key_values = set(answer_key.get('task2', {}).get('low_inventory_products', []))
-    
-    points = 8
-    incorrect = 0
-    
-    missing = answer_key_values - submission_values
-    extra = submission_values - answer_key_values
-    
-    incorrect = len(missing) + len(extra)
-    points_deducted = min(points, incorrect * 2)
-    score = points - points_deducted
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "missing": list(missing),
-        "extra": list(extra),
-        "comments": f"Missing {len(missing)} required products, incorrectly included {len(extra)} products"
-    }
-
-def evaluate_excess_inventory_products(submission, answer_key):
-    submission_values = set(submission.get('task2', {}).get('excess_inventory_products', []))
-    answer_key_values = set(answer_key.get('task2', {}).get('excess_inventory_products', []))
-    
-    points = 7
-    
-    # The answer key says there are no excess inventory products
-    if len(answer_key_values) == 0 and len(submission_values) == 0:
-        score = points
-        comments = "Correctly identified that there are no excess inventory products"
-    else:
-        score = 0
-        comments = "Incorrectly identified products as excess when there should be none"
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "comments": comments
-    }
-
-def evaluate_recommended_order_quantities(submission, answer_key):
-    submission_values = submission.get('task3', {}).get('recommended_order_quantities', {})
-    answer_key_values = answer_key.get('task3', {}).get('recommended_order_quantities', {})
-    
-    points = 10
-    errors = 0
-    
-    for product_id, correct_value in answer_key_values.items():
-        if product_id not in submission_values:
-            errors += 1
-            continue
-            
-        submitted_value = submission_values.get(product_id, 0)
-        if not isinstance(submitted_value, (int, float)):
-            errors += 1
-            continue
-            
-        # Check if within ±15% of correct value
-        if abs(submitted_value - correct_value) > (correct_value * 0.15):
-            errors += 1
-    
-    # Calculate score: full points if all recommendations are within range
-    # Partial points based on proportion of correct recommendations
-    total_products = len(answer_key_values)
-    correct_products = total_products - errors
-    score = (correct_products / total_products) * points
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "errors": errors,
-        "comments": f"Found {errors}/{total_products} values outside the acceptable range (±15%)"
-    }
-
-def evaluate_order_frequency(submission, answer_key):
-    submission_values = submission.get('task3', {}).get('order_frequency', {})
-    answer_key_values = answer_key.get('task3', {}).get('order_frequency', {})
-    
-    points = 8
-    correct = 0
-    total = len(answer_key_values)
-    
-    for category, correct_value in answer_key_values.items():
-        if category not in submission_values:
-            continue
-            
-        submitted_value = submission_values.get(category, 0)
-        if not isinstance(submitted_value, (int, float)):
-            continue
-            
-        # Consider a match if exactly equal or within ±1 for reasonable variation
-        if submitted_value == correct_value or abs(submitted_value - correct_value) <= 1:
-            correct += 1
-    
-    score = (correct / total) * points
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "correct": correct,
-        "total": total,
-        "comments": f"Correctly determined order frequency for {correct}/{total} categories"
-    }
-
-def evaluate_quarterly_cost(submission, answer_key):
-    submission_value = submission.get('task3', {}).get('quarterly_cost', 0)
-    answer_key_value = answer_key.get('task3', {}).get('quarterly_cost', 0)
-    
-    points = 7
-    
-    if not isinstance(submission_value, (int, float)):
-        score = 0
-        comments = "Invalid quarterly cost value"
-    else:
-        # Full points if within ±10% of correct value
-        percentage_diff = abs(submission_value - answer_key_value) / answer_key_value
-        
-        if percentage_diff <= 0.10:
-            score = points
-            comments = f"Quarterly cost within acceptable range of correct value"
+    for item_id, expected_usage in key_usages.items():
+        submitted_usage = submission_usages.get(item_id)
+        if submitted_usage is not None and submitted_usage == expected_usage:
+            usage_score += 1
+            correct_usages += 1
+            usage_details.append(f"{item_id}: Correct ({submitted_usage})")
         else:
-            # Scale points based on how far off the estimate is
-            score_multiplier = max(0, 1 - (percentage_diff - 0.10) * 2)  # Lose points more rapidly beyond 10%
-            score = points * score_multiplier
-            comments = f"Quarterly cost outside acceptable range (±10%), off by {percentage_diff:.1%}"
+            submitted_value = "Missing" if submitted_usage is None else submitted_usage
+            usage_details.append(f"{item_id}: Incorrect (submitted: {submitted_value}, expected: {expected_usage})")
     
+    results["average_monthly_usage"] = {
+        "score": usage_score,
+        "max_score": 5,
+        "correct_count": correct_usages,
+        "total_count": 5,
+        "details": usage_details
+    }
+    score += usage_score
+
+    # Stockout items (2 points per correct item with frequency, max 18 points)
+    stockout_score = 0
+    correct_stockouts = 0
+    stockout_details = []
+    
+    key_stockouts = answer_key["part1"]["stockout_items"]
+    submission_stockouts = submission["part1"].get("stockout_items", {})
+    
+    for item_id, expected_frequency in key_stockouts.items():
+        submitted_frequency = submission_stockouts.get(item_id)
+        if submitted_frequency is not None and submitted_frequency == expected_frequency:
+            stockout_score += 2
+            correct_stockouts += 1
+            stockout_details.append(f"{item_id}: Correct frequency ({submitted_frequency})")
+        else:
+            submitted_value = "Missing" if submitted_frequency is None else submitted_frequency
+            stockout_details.append(f"{item_id}: Incorrect (submitted: {submitted_value}, expected: {expected_frequency})")
+    
+    # Check for additional items not in the answer key
+    for item_id in submission_stockouts:
+        if item_id not in key_stockouts:
+            stockout_details.append(f"{item_id}: Incorrect (not a valid stockout item)")
+    
+    results["stockout_items"] = {
+        "score": stockout_score,
+        "max_score": 18,
+        "correct_count": correct_stockouts,
+        "total_count": len(key_stockouts),
+        "details": stockout_details
+    }
+    score += stockout_score
+
     return {
         "score": score,
-        "max_points": points,
-        "submitted_value": submission_value,
-        "correct_value": answer_key_value,
-        "comments": comments
+        "max_score": 33,
+        "component_scores": results
     }
 
-def evaluate_critical_products(submission, answer_key):
-    submission_values = submission.get('task4', {}).get('critical_products', {})
-    answer_key_values = answer_key.get('task4', {}).get('critical_products', {})
+def evaluate_part2(submission, answer_key):
+    """Evaluate Part 2: Supply Gap Identification."""
+    score = 0
+    results = {}
+
+    # Stock coverage calculation (1 point per correct calculation, max 10 points)
+    coverage_score = 0
+    correct_coverages = 0
+    coverage_details = []
     
-    points = 8
-    errors = 0
-    departments_evaluated = 0
+    key_coverages = answer_key["part2"]["stock_coverage"]
+    submission_coverages = submission["part2"].get("stock_coverage", {})
     
-    for dept_id, correct_products in answer_key_values.items():
-        departments_evaluated += 1
-        if dept_id not in submission_values:
-            errors += 1
-            continue
-            
-        submitted_products = set(submission_values.get(dept_id, []))
-        correct_products_set = set(correct_products)
-        
-        if submitted_products != correct_products_set:
-            errors += 1
+    for item_id, expected_coverage in key_coverages.items():
+        submitted_coverage = submission_coverages.get(item_id)
+        if submitted_coverage is not None and submitted_coverage == expected_coverage:
+            coverage_score += 1
+            correct_coverages += 1
+            coverage_details.append(f"{item_id}: Correct ({submitted_coverage} days)")
+        else:
+            submitted_value = "Missing" if submitted_coverage is None else submitted_coverage
+            coverage_details.append(f"{item_id}: Incorrect (submitted: {submitted_value}, expected: {expected_coverage})")
     
-    points_deducted = min(points, errors)
-    score = points - points_deducted
+    results["stock_coverage"] = {
+        "score": coverage_score,
+        "max_score": 10,
+        "correct_count": correct_coverages,
+        "total_count": 10,
+        "details": coverage_details
+    }
+    score += coverage_score
+
+    # Insufficient stock items (3 points per correct item, max 9 points)
+    insufficient_score = 0
+    correct_items = set(answer_key["part2"]["insufficient_stock_items"])
+    submitted_items = set(submission["part2"].get("insufficient_stock_items", []))
     
+    common_items = correct_items.intersection(submitted_items)
+    insufficient_score = len(common_items) * 3
+    
+    extra_items = submitted_items - correct_items
+    missing_items = correct_items - submitted_items
+    
+    results["insufficient_stock_items"] = {
+        "score": insufficient_score,
+        "max_score": 9,
+        "correct_count": len(common_items),
+        "total_count": len(correct_items),
+        "details": f"Correct: {list(common_items)}, Missing: {list(missing_items)}, Extra: {list(extra_items)}"
+    }
+    score += insufficient_score
+
+    # Highest unfulfilled categories (4 points per correct category in correct order, max 16 points)
+    unfulfilled_score = 0
+    unfulfilled_details = []
+    
+    key_categories = answer_key["part2"]["highest_unfulfilled_categories"]
+    submission_categories = submission["part2"].get("highest_unfulfilled_categories", [])
+    
+    for i, expected_category in enumerate(key_categories):
+        if i < len(submission_categories) and submission_categories[i] == expected_category:
+            unfulfilled_score += 4
+            unfulfilled_details.append(f"Position {i+1}: Correct ({expected_category})")
+        else:
+            submitted_value = "Missing" if i >= len(submission_categories) else submission_categories[i]
+            unfulfilled_details.append(f"Position {i+1}: Incorrect (submitted: {submitted_value}, expected: {expected_category})")
+    
+    results["highest_unfulfilled_categories"] = {
+        "score": unfulfilled_score,
+        "max_score": 16,
+        "correct_count": unfulfilled_score // 4,
+        "total_count": 3,
+        "details": unfulfilled_details
+    }
+    score += unfulfilled_score
+
     return {
         "score": score,
-        "max_points": points,
-        "errors": errors,
-        "departments_evaluated": departments_evaluated,
-        "comments": f"Found errors in {errors}/{departments_evaluated} departments' critical product lists"
+        "max_score": 35,
+        "component_scores": results
     }
 
-def evaluate_service_levels(submission, answer_key):
-    submission_values = submission.get('task4', {}).get('service_levels', {})
-    answer_key_values = answer_key.get('task4', {}).get('service_levels', {})
-    
-    points = 8
-    errors = 0
-    total_products = len(answer_key_values)
-    
-    for product_id, correct_value in answer_key_values.items():
-        if product_id not in submission_values:
-            errors += 1
-            continue
-            
-        submitted_value = submission_values.get(product_id, 0)
-        if not isinstance(submitted_value, (int, float)):
-            errors += 1
-            continue
-            
-        # Service levels should be within a reasonable range (±3%)
-        if abs(submitted_value - correct_value) > 3:
-            errors += 1
-    
-    correct_products = total_products - errors
-    score = (correct_products / total_products) * points
-    
-    return {
-        "score": score,
-        "max_points": points,
-        "correct": correct_products,
-        "total": total_products,
-        "comments": f"Service levels appropriate for {correct_products}/{total_products} products"
-    }
+def evaluate_part3(submission, answer_key):
+    """Evaluate Part 3: Strategic Purchasing Plan."""
+    score = 0
+    results = {}
 
-def evaluate_safety_stock_adjustments(submission, answer_key):
-    submission_values = submission.get('task4', {}).get('safety_stock_adjustments', {})
-    answer_key_values = answer_key.get('task4', {}).get('safety_stock_adjustments', {})
+    # Optimal order quantities (1 point per reasonable quantity, max 10 points)
+    quantities_score = 0
+    quantities_details = []
     
-    points = 9
-    errors = 0
-    total_products = len(answer_key_values)
+    key_quantities = answer_key["part3"]["optimal_order_quantities"]
+    submission_quantities = submission["part3"].get("optimal_order_quantities", {})
     
-    for product_id, correct_value in answer_key_values.items():
-        if product_id not in submission_values:
-            errors += 1
-            continue
-            
-        submitted_value = submission_values.get(product_id, 0)
-        if not isinstance(submitted_value, (int, float)):
-            errors += 1
-            continue
-            
-        # Safety stock should be within a reasonable range (±30%)
-        if abs(submitted_value - correct_value) > (correct_value * 0.3):
-            errors += 1
+    for item_id, expected_quantity in key_quantities.items():
+        submitted_quantity = submission_quantities.get(item_id)
+        if submitted_quantity is not None:
+            # Allow some flexibility in the quantities
+            if abs(submitted_quantity - expected_quantity) <= expected_quantity * 0.2:  # Within 20%
+                quantities_score += 1
+                quantities_details.append(f"{item_id}: Reasonable ({submitted_quantity}, expected ~{expected_quantity})")
+            else:
+                quantities_details.append(f"{item_id}: Outside reasonable range (submitted: {submitted_quantity}, expected ~{expected_quantity})")
+        else:
+            quantities_details.append(f"{item_id}: Missing")
     
-    correct_products = total_products - errors
-    score = (correct_products / total_products) * points
+    results["optimal_order_quantities"] = {
+        "score": quantities_score,
+        "max_score": 10,
+        "correct_count": quantities_score,
+        "total_count": 10,
+        "details": quantities_details
+    }
+    score += quantities_score
+
+    # Monthly schedule (10 points for reasonable prioritization of at-risk items)
+    schedule_score = 0
+    schedule_details = []
     
+    # Check if high-risk items (S002, S005, S008) are prioritized in month1
+    key_schedule = answer_key["part3"]["monthly_schedule"]
+    submission_schedule = submission["part3"].get("monthly_schedule", {})
+    
+    high_risk_items = {"S002", "S005", "S008"}
+    month1_items = set(submission_schedule.get("month1", {}).keys())
+    
+    prioritized_count = len(high_risk_items.intersection(month1_items))
+    
+    if prioritized_count == 3:
+        schedule_score = 10
+        schedule_details.append("Excellent prioritization: All high-risk items in month1")
+    elif prioritized_count == 2:
+        schedule_score = 7
+        schedule_details.append("Good prioritization: 2/3 high-risk items in month1")
+    elif prioritized_count == 1:
+        schedule_score = 4
+        schedule_details.append("Fair prioritization: 1/3 high-risk items in month1")
+    else:
+        schedule_score = 0
+        schedule_details.append("Poor prioritization: No high-risk items in month1")
+    
+    results["monthly_schedule"] = {
+        "score": schedule_score,
+        "max_score": 10,
+        "details": schedule_details
+    }
+    score += schedule_score
+
+    # Projected savings (12 points for reasonable calculation within ±15% of answer key)
+    savings_score = 0
+    key_savings = answer_key["part3"]["projected_savings"]
+    submission_savings = submission["part3"].get("projected_savings", 0)
+    
+    # Calculate acceptable range (±15%)
+    lower_bound = key_savings * 0.85
+    upper_bound = key_savings * 1.15
+    
+    if lower_bound <= submission_savings <= upper_bound:
+        savings_score = 12
+        savings_details = f"Reasonable savings calculation: {submission_savings} (expected ~{key_savings})"
+    else:
+        savings_score = 0
+        savings_details = f"Unreasonable savings calculation: {submission_savings} (expected range: {int(lower_bound)}-{int(upper_bound)})"
+    
+    results["projected_savings"] = {
+        "score": savings_score,
+        "max_score": 12,
+        "details": savings_details
+    }
+    score += savings_score
+
+    # Recommended vendors (5 points per reasonable vendor selection, max 25 points)
+    vendors_score = 0
+    vendors_details = []
+    
+    key_vendors = answer_key["part3"]["recommended_vendors"]
+    submission_vendors = submission["part3"].get("recommended_vendors", {})
+    
+    for category, expected_vendor in key_vendors.items():
+        submitted_vendor = submission_vendors.get(category)
+        if submitted_vendor is not None:
+            if submitted_vendor == expected_vendor:
+                vendors_score += 5
+                vendors_details.append(f"{category}: Optimal selection ({submitted_vendor})")
+            else:
+                # Check if vendor is valid for this category
+                # This is a simplified check - in a real evaluation, this would reference the vendor list
+                if submitted_vendor.startswith("V"):  # Assuming all valid vendors start with V
+                    vendors_score += 3  # Partial credit for reasonable alternative
+                    vendors_details.append(f"{category}: Alternative selection ({submitted_vendor}, expected: {expected_vendor})")
+                else:
+                    vendors_details.append(f"{category}: Invalid vendor ({submitted_vendor})")
+        else:
+            vendors_details.append(f"{category}: Missing")
+    
+    results["recommended_vendors"] = {
+        "score": vendors_score,
+        "max_score": 25,
+        "details": vendors_details
+    }
+    score += vendors_score
+
     return {
         "score": score,
-        "max_points": points,
-        "correct": correct_products,
-        "total": total_products,
-        "comments": f"Safety stock adjustments appropriate for {correct_products}/{total_products} products"
+        "max_score": 57,
+        "component_scores": results
     }
 
 def evaluate_submission(submission, answer_key):
-    results = {
-        "task1": {
-            "average_monthly_consumption": evaluate_average_monthly_consumption(submission, answer_key),
-            "top_products": evaluate_top_products(submission, answer_key),
-            "seasonal_products": evaluate_seasonal_products(submission, answer_key)
-        },
-        "task2": {
-            "stock_coverage": evaluate_stock_coverage(submission, answer_key),
-            "low_inventory_products": evaluate_low_inventory_products(submission, answer_key),
-            "excess_inventory_products": evaluate_excess_inventory_products(submission, answer_key)
-        },
-        "task3": {
-            "recommended_order_quantities": evaluate_recommended_order_quantities(submission, answer_key),
-            "order_frequency": evaluate_order_frequency(submission, answer_key),
-            "quarterly_cost": evaluate_quarterly_cost(submission, answer_key)
-        },
-        "task4": {
-            "critical_products": evaluate_critical_products(submission, answer_key),
-            "service_levels": evaluate_service_levels(submission, answer_key),
-            "safety_stock_adjustments": evaluate_safety_stock_adjustments(submission, answer_key)
-        }
+    """Evaluate the entire submission."""
+    # Evaluate each part
+    part1_results = evaluate_part1(submission, answer_key)
+    part2_results = evaluate_part2(submission, answer_key)
+    part3_results = evaluate_part3(submission, answer_key)
+    
+    # Calculate overall score
+    total_score = part1_results["score"] + part2_results["score"] + part3_results["score"]
+    max_score = part1_results["max_score"] + part2_results["max_score"] + part3_results["max_score"]
+    overall_percentage = (total_score / max_score) * 100
+    
+    # Determine if the candidate passed
+    passed = overall_percentage >= 60
+    
+    return {
+        "candidate_id": submission.get("candidate_id", "Unknown"),
+        "overall_score": round(overall_percentage, 2),
+        "total_points": total_score,
+        "max_points": max_score,
+        "passed": passed,
+        "part1": part1_results,
+        "part2": part2_results,
+        "part3": part3_results
     }
-    
-    # Calculate total score
-    total_points = 0
-    max_points = 0
-    
-    for task, subtasks in results.items():
-        for subtask, evaluation in subtasks.items():
-            total_points += evaluation["score"]
-            max_points += evaluation["max_points"]
-    
-    # Calculate percentage
-    percentage = (total_points / max_points) * 100 if max_points > 0 else 0
-    
-    # Add overall score to results
-    results["overall_score"] = round(percentage, 2)
-    results["total_points"] = total_points
-    results["max_points"] = max_points
-    results["passed"] = percentage >= 75
-    
-    return results
 
 def main():
+    """Main function to run the evaluation."""
     if len(sys.argv) != 3:
-        print("Usage: python task_evaluation.py <submission_file> <answer_key_file>")
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
         sys.exit(1)
     
-    submission_file = sys.argv[1]
-    answer_key_file = sys.argv[2]
+    submission_path = sys.argv[1]
+    answer_key_path = sys.argv[2]
     
-    submission = load_json_file(submission_file)
-    answer_key = load_json_file(answer_key_file)
+    # Load the submission and answer key
+    submission = load_json_file(submission_path)
+    answer_key = load_json_file(answer_key_path)
     
-    evaluation_results = evaluate_submission(submission, answer_key)
+    # Evaluate the submission
+    results = evaluate_submission(submission, answer_key)
     
-    # Write results to file
-    with open("test_results.json", "w") as results_file:
-        json.dump(evaluation_results, results_file, indent=2)
+    # Save the results
+    with open("test_results.json", "w") as f:
+        json.dump(results, f, indent=2)
     
     print(f"Evaluation complete. Results saved to test_results.json")
-    print(f"Overall Score: {evaluation_results['overall_score']}%")
-    print(f"Result: {'PASSED' if evaluation_results['passed'] else 'FAILED'}")
+    print(f"Overall score: {results['overall_score']}%")
+    print(f"Pass status: {'PASSED' if results['passed'] else 'FAILED'}")
 
 if __name__ == "__main__":
     main()

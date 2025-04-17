@@ -1,63 +1,25 @@
 {
+    "candidate_id": "EVALUATOR_KEY",
     "exercise1": {
-        "scenario1": {
-            "compliant": false,
-            "regulation_violated": "FAR 13.003(c)"
-        },
-        "scenario2": {
-            "compliant": true,
-            "regulation_violated": null
-        },
-        "scenario3": {
-            "compliant": false,
-            "regulation_violated": "FAR 3.101-1"
-        },
-        "scenario4": {
-            "compliant": true,
-            "regulation_violated": null
-        }
+        "scenario1_violation_code": "ETH-02",
+        "scenario1_regulation_reference": "Federal Procurement Regulation 48 CFR § 3.101-1",
+        "scenario2_violation_code": "DAT-05",
+        "scenario2_regulation_reference": "Data Protection Act of 2018, Section 24",
+        "scenario3_violation_code": "ENV-01",
+        "scenario3_regulation_reference": "Environmental Protection Act, Section 42"
     },
     "exercise2": {
-        "issue1": {
-            "clause_number": "2.3",
-            "regulation_violated": "FAR 4.802"
-        },
-        "issue2": {
-            "clause_number": "5.2",
-            "regulation_violated": "FAR 9.505"
-        },
-        "issue3": {
-            "clause_number": "7.1",
-            "regulation_violated": "FAR 15.403"
-        }
+        "policy_section": "Section 3: Supplier Selection and Management",
+        "update_required": true,
+        "compliance_status_code": "UNC"
     },
     "exercise3": {
-        "required_fields": [
-            "Purchase justification",
-            "Market research findings",
-            "Vendor selection rationale",
-            "Price reasonableness determination",
-            "Approved budget allocation",
-            "Technical specifications",
-            "Section 508 compliance verification",
-            "Cybersecurity assessment",
-            "Approved by specified authority"
-        ],
-        "retention_period": "7 years",
-        "approval_level": "Chief Information Officer"
-    },
-    "exercise4": {
-        "affected_processes": [
-            "Technology product evaluation",
-            "Vendor qualification",
-            "Solicitation preparation for technology purchases"
-        ],
-        "required_actions": [
-            "Update the vendor qualification questionnaire to include supply chain security information",
-            "Add supply chain risk assessment to the technology evaluation procedure",
-            "Modify procurement documentation templates to include component origin verification",
-            "Train procurement staff on the new requirements"
-        ],
-        "implementation_deadline": "2023-09-30"
+        "clause1_compliant": false,
+        "clause1_violation_code": "ETH-02",
+        "clause2_compliant": false,
+        "clause2_violation_code": "DAT-05",
+        "clause3_compliant": false,
+        "clause3_violation_code": "ENV-01",
+        "overall_status_code": "RAC"
     }
 }

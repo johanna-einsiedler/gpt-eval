@@ -1,131 +1,293 @@
 {
-  "candidate_id": "Unknown",
-  "overall_score": 85.0,
-  "total_points": 85,
-  "max_points": 100,
-  "pass_status": "Pass",
-  "critical_requirements_met": true,
-  "task_results": {
-    "task1": {
-      "points": 40,
-      "max_points": 40,
-      "details": {
-        "chair_selection": {
-          "points": 15,
-          "max_points": 15,
-          "notes": [
-            "Correct: OfficeMax OM-EC550 is within price range",
-            "Correct: Staples SP-1500TF is within price range",
-            "Correct: Corporate Furnishings CF-TM400 is within price range"
+  "overall_score": 100.0,
+  "total_points_earned": 100.0,
+  "total_points_possible": 100,
+  "pass_status": true,
+  "performance_tier": "Excellent",
+  "exercises": {
+    "exercise1": {
+      "points_earned": 30,
+      "points_possible": 30,
+      "component_scores": {
+        "circuit_breakers": {
+          "points_earned": 10,
+          "points_possible": 10,
+          "details": [
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            },
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            }
           ]
         },
-        "model_numbers": {
-          "points": 9,
-          "max_points": 9,
-          "notes": [
-            "Correct: Model OM-EC550 for OfficeMax is properly formatted",
-            "Correct: Model SP-1500TF for Staples is properly formatted",
-            "Correct: Model CF-TM400 for Corporate Furnishings is properly formatted"
+        "cable_connectors": {
+          "points_earned": 10,
+          "points_possible": 10,
+          "details": [
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            },
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            }
           ]
         },
-        "price_values": {
-          "points": 6,
-          "max_points": 6,
-          "notes": [
-            "Correct: Price $279.99 for OfficeMax is within range",
-            "Correct: Price $329.99 for Staples is within range",
-            "Correct: Price $319.99 for Corporate Furnishings is within range"
-          ]
-        },
-        "warranty_info": {
-          "points": 6,
-          "max_points": 6,
-          "notes": [
-            "Correct: Warranty 3 years for OfficeMax is valid",
-            "Correct: Warranty 6 years for Staples is valid",
-            "Correct: Warranty 4 years for Corporate Furnishings is valid"
-          ]
-        },
-        "lowest_price_chair": {
-          "points": 2,
-          "max_points": 2,
-          "notes": [
-            "Correct: Identified Staples US-DX450 as lowest price chair"
-          ]
-        },
-        "best_warranty_chair": {
-          "points": 2,
-          "max_points": 2,
-          "notes": [
-            "Correct: Identified Staples SP-1500TF as best warranty chair"
+        "logic_controllers": {
+          "points_earned": 10,
+          "points_possible": 10,
+          "details": [
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            },
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            }
           ]
         }
-      }
+      },
+      "critical_pass": true
     },
-    "task2": {
-      "points": 30,
-      "max_points": 30,
-      "details": {
-        "safety_standard": {
-          "points": 10,
-          "max_points": 10,
-          "notes": [
-            "Correct: Identified ASTM F3326-21 as the safety standard"
-          ]
+    "exercise2": {
+      "points_earned": 30.0,
+      "points_possible": 30,
+      "component_scores": {
+        "desk_chair": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "26\"W x 26\"D x 38-42\"H (adjustable)",
+              "submitted": "26\"W x 26\"D x 38-42\"H (adjustable)"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Mesh back, padded leather seat, aluminum frame",
+              "submitted": "Mesh back, padded leather seat, aluminum frame"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "5-year limited warranty",
+              "submitted": "5-year limited warranty"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Ships within 3-5 business days",
+              "submitted": "Ships within 3-5 business days"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "2 units",
+              "submitted": "2 units"
+            }
+          }
         },
-        "certification": {
-          "points": 10,
-          "max_points": 10,
-          "notes": [
-            "Correct: Identified ANSI Z97.1 as the required certification"
-          ]
+        "standing_desk": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "60\"W x 30\"D x 25-50\"H (adjustable height)",
+              "submitted": "60\"W x 30\"D x 25-50\"H (adjustable height)"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Bamboo top with steel frame, powder-coated finish",
+              "submitted": "Bamboo top with steel frame, powder-coated finish"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "7-year warranty on frame, 3-year on electronics",
+              "submitted": "7-year warranty on frame, 3-year on electronics"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "7-10 business days",
+              "submitted": "7-10 business days"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "1 unit",
+              "submitted": "1 unit"
+            }
+          }
         },
-        "minimum_thickness": {
-          "points": 10,
-          "max_points": 10,
-          "notes": [
-            "Correct: Identified 4.5mm as the minimum thickness"
-          ]
+        "conference_table": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "96\"L x 48\"W x 30\"H",
+              "submitted": "96\"L x 48\"W x 30\"H"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Solid oak with mahogany finish",
+              "submitted": "Solid oak with mahogany finish"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "10-year manufacturer warranty",
+              "submitted": "10-year manufacturer warranty"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "4-6 weeks for delivery",
+              "submitted": "4-6 weeks for delivery"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "1 unit",
+              "submitted": "1 unit"
+            }
+          }
+        },
+        "filing_cabinet": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "15\"W x 25\"D x 52\"H",
+              "submitted": "15\"W x 25\"D x 52\"H"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Steel construction with reinforced drawers",
+              "submitted": "Steel construction with reinforced drawers"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Lifetime limited warranty",
+              "submitted": "Lifetime limited warranty"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "In stock, ships within 48 hours",
+              "submitted": "In stock, ships within 48 hours"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "2 units",
+              "submitted": "2 units"
+            }
+          }
+        },
+        "partition_system": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "60\"W x 1.5\"D x 65\"H (per panel)",
+              "submitted": "60\"W x 1.5\"D x 65\"H (per panel)"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Sound-absorbing fabric panels with aluminum frame",
+              "submitted": "Sound-absorbing fabric panels with aluminum frame"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "5-year warranty",
+              "submitted": "5-year warranty"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "15-20 business days",
+              "submitted": "15-20 business days"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "4 panels",
+              "submitted": "4 panels"
+            }
+          }
         }
-      }
+      },
+      "critical_pass": true
     },
-    "task3": {
-      "points": 15,
-      "max_points": 30,
-      "details": {
-        "supplier_identification": {
-          "points": 15,
-          "max_points": 15,
-          "notes": [
-            "Supplier 1: [Any plausible supplier name] - Valid supplier name",
-            "Supplier 2: [Any plausible supplier name] - Valid supplier name",
-            "Supplier 3: [Any plausible supplier name] - Valid supplier name"
-          ]
+    "exercise3": {
+      "points_earned": 40,
+      "points_possible": 40,
+      "component_scores": {
+        "lowest_price_sc100": {
+          "points_earned": 6,
+          "points_possible": 6,
+          "correct": true,
+          "expected": "Supplier C at $26.95",
+          "submitted": "Supplier C at $26.95"
         },
-        "supplier_information": {
-          "points": 0,
-          "max_points": 9,
-          "notes": [
-            "Supplier 1: Incomplete or invalid information",
-            "Supplier 2: Incomplete or invalid information",
-            "Supplier 3: Incomplete or invalid information"
-          ]
+        "shortest_delivery_lab_chemicals": {
+          "points_earned": 6,
+          "points_possible": 6,
+          "correct": true,
+          "expected": "Supplier C at 2 days",
+          "submitted": "Supplier C at 2 days"
         },
-        "fastest_delivery": {
-          "points": 0,
-          "max_points": 3,
-          "notes": [
-            "Incorrect: Submitted [Must match one of the suppliers with lowest lead_time_days] but  has the fastest delivery time (inf days)"
-          ]
+        "highest_quality_pharma_reagents": {
+          "points_earned": 6,
+          "points_possible": 6,
+          "correct": true,
+          "expected": "Supplier B with 9.8/10",
+          "submitted": "Supplier B with 9.8/10"
         },
-        "lowest_minimum_order": {
-          "points": 0,
-          "max_points": 3,
-          "notes": [
-            "Incorrect: Submitted [Must match one of the suppliers with lowest minimum_order] but  has the lowest minimum order (inf units)"
-          ]
+        "best_safety_certification": {
+          "points_earned": 10,
+          "points_possible": 10,
+          "correct": true,
+          "expected": "Supplier B",
+          "submitted": "Supplier B"
+        },
+        "total_order_cost_supplier_b": {
+          "points_earned": 12,
+          "points_possible": 12,
+          "correct": true,
+          "expected": "$7,035.00",
+          "submitted": "$7,035.00"
         }
-      }
+      },
+      "critical_pass": true
     }
   }
 }

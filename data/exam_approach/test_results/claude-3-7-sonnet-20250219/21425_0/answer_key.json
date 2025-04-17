@@ -1,137 +1,43 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
+    "liability_determination": {
+        "primary_liability_percentage": 80,
+        "contributory_negligence_percentage": 20,
+        "liability_rationale_code": "LR-02"
+    },
     "coverage_analysis": {
-        "coverage_determination": "no",
-        "coverage_issues": [
-            "Business use exclusion applies as insured was making a delivery for his side business",
-            "Insured was engaged in the business of delivering goods at time of accident"
-        ],
-        "applicable_policy_sections": [
-            "Section IV, Exclusion A.6"
-        ],
-        "exclusions_applied": [
-            "Business use exclusion"
-        ]
+        "coverage_applies": true,
+        "applicable_policy_section": 1,
+        "exclusions_applied": []
     },
-    "liability_assessment": {
-        "insured_liability_percentage": 15,
-        "other_parties_liability": [
-            {
-                "name": "Michael Davis",
-                "percentage": 85
-            }
-        ],
-        "liability_rationale": "Michael Davis cited for running red light confirmed by two independent witnesses. Insured's minor contributory negligence for proceeding through yellow light that was changing."
+    "reserve_calculations": {
+        "bodily_injury_reserve": 60000,
+        "property_damage_reserve": 27000,
+        "expense_reserve": 5000
     },
-    "damages_evaluation": {
-        "claimant_reserves": [
-            {
-                "claimant_name": "Sarah Jones",
-                "bodily_injury_reserve": 150000,
-                "property_damage_reserve": 0,
-                "medical_payments_reserve": 10000,
-                "other_reserves": 0,
-                "total_reserve": 160000
-            },
-            {
-                "claimant_name": "Tom Wright",
-                "bodily_injury_reserve": 15000,
-                "property_damage_reserve": 0,
-                "medical_payments_reserve": 8500,
-                "other_reserves": 0,
-                "total_reserve": 23500
-            },
-            {
-                "claimant_name": "John Smith",
-                "bodily_injury_reserve": 0,
-                "property_damage_reserve": 18500,
-                "medical_payments_reserve": 3200,
-                "other_reserves": 0,
-                "total_reserve": 21700
-            },
-            {
-                "claimant_name": "Michael Davis",
-                "bodily_injury_reserve": 25000,
-                "property_damage_reserve": 14800,
-                "medical_payments_reserve": 0,
-                "other_reserves": 0,
-                "total_reserve": 39800
-            },
-            {
-                "claimant_name": "Jennifer Davis",
-                "bodily_injury_reserve": 30000,
-                "property_damage_reserve": 0,
-                "medical_payments_reserve": 0,
-                "other_reserves": 0,
-                "total_reserve": 30000
-            },
-            {
-                "claimant_name": "City of Springfield",
-                "bodily_injury_reserve": 0,
-                "property_damage_reserve": 3200,
-                "medical_payments_reserve": 0,
-                "other_reserves": 0,
-                "total_reserve": 3200
-            }
-        ],
-        "total_claim_reserve": 278200
-    },
-    "settlement_strategy": {
-        "settlement_recommendations": [
-            {
-                "claimant_name": "Sarah Jones",
-                "minimum_settlement": 120000,
-                "maximum_settlement": 160000,
-                "settlement_factors": [
-                    "Severe injuries with surgical intervention",
-                    "Permanent partial disability",
-                    "Medical expenses of $100,000",
-                    "Lost wages of $10,000",
-                    "Potential coverage defense based on business use exclusion"
-                ]
-            },
-            {
-                "claimant_name": "Tom Wright",
-                "minimum_settlement": 12000,
-                "maximum_settlement": 20000,
-                "settlement_factors": [
-                    "Mild concussion and neck strain",
-                    "Medical expenses of $8,500",
-                    "Lost wages of $2,000",
-                    "Expected full recovery",
-                    "Potential coverage defense based on business use exclusion"
-                ]
-            },
-            {
-                "claimant_name": "Michael Davis",
-                "minimum_settlement": 15000,
-                "maximum_settlement": 25000,
-                "settlement_factors": [
-                    "Fractured wrist and chest contusion",
-                    "Medical expenses of $12,500",
-                    "Lost wages of $6,000",
-                    "85% at fault for accident",
-                    "Potential coverage defense based on business use exclusion"
-                ]
-            },
-            {
-                "claimant_name": "Jennifer Davis",
-                "minimum_settlement": 20000,
-                "maximum_settlement": 30000,
-                "settlement_factors": [
-                    "Moderate concussion and fractured collarbone",
-                    "Medical expenses of $15,000",
-                    "Lost wages of $3,500",
-                    "Not at fault for accident",
-                    "Potential coverage defense based on business use exclusion"
-                ]
-            }
-        ]
-    },
-    "claim_classification": {
-        "liability_code": "LD-02",
-        "severity_code": "CS-04",
-        "coverage_code": "CI-02",
-        "final_classification": "LD-02, CS-04, CI-02"
+    "investigation_steps": [
+        "IS-01",
+        "IS-03",
+        "IS-13",
+        "IS-02",
+        "IS-04",
+        "IS-05",
+        "IS-08",
+        "IS-09",
+        "IS-06",
+        "IS-07",
+        "IS-10",
+        "IS-11",
+        "IS-14",
+        "IS-15",
+        "IS-19",
+        "IS-16",
+        "IS-18",
+        "IS-17",
+        "IS-20"
+    ],
+    "communication_responses": {
+        "claimant_letter": "CL-07",
+        "defense_counsel_referral": false,
+        "subrogation_potential": "SP-04"
     }
 }

@@ -1,356 +1,236 @@
 #!/usr/bin/env python3
+
 import json
 import sys
-import math
-from typing import Dict, Any, Tuple
+from typing import Dict, Any, List, Union
 
-def load_json(filename: str) -> Dict[str, Any]:
-    """Load JSON data from file."""
+
+def load_json_file(file_path: str) -> Dict[str, Any]:
+    """Load and parse a JSON file."""
     try:
-        with open(filename, 'r') as file:
-            return json.load(file)
+        with open(file_path, 'r') as f:
+            return json.load(f)
     except Exception as e:
-        print(f"Error loading {filename}: {e}")
+        print(f"Error loading JSON file {file_path}: {e}")
         sys.exit(1)
 
-def evaluate_task1(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
-    """Evaluate Task 1: Sales Trend Analysis."""
-    score = 0
-    max_score = 4
-    feedback = {}
+
+def evaluate_task1(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
+    """Evaluate Task 1 answers and assign points."""
+    result = {"points": 0, "max_points": 30, "breakdown": {}}
     
-    # Check highest growth category
-    if submission['highest_growth_category'] == answer_key['highest_growth_category']:
-        score += 1
-        feedback['highest_growth_category'] = "Correct"
+    # Top Products (10 points)
+    submitted_products = submission["task1"]["top_products"]
+    correct_products = answer_key["task1"]["top_products"]
+    
+    if submitted_products == correct_products:
+        result["breakdown"]["top_products"] = {"points": 10, "max_points": 10, "note": "All 3 correct in right order"}
+        result["points"] += 10
+    elif submitted_products[:2] == correct_products[:2]:
+        result["breakdown"]["top_products"] = {"points": 6, "max_points": 10, "note": "2 correct in right order"}
+        result["points"] += 6
+    elif set(submitted_products) == set(correct_products):
+        result["breakdown"]["top_products"] = {"points": 5, "max_points": 10, "note": "All correct but wrong order"}
+        result["points"] += 5
     else:
-        feedback['highest_growth_category'] = f"Incorrect. Expected: {answer_key['highest_growth_category']}"
+        result["breakdown"]["top_products"] = {"points": 0, "max_points": 10, "note": "Incorrect products"}
     
-    # Check average monthly sales with 1% tolerance
-    avg_sales_correct = True
-    avg_sales_feedback = {}
-    for category in answer_key['average_monthly_sales_q4']:
-        submitted = submission['average_monthly_sales_q4'].get(category, 0)
-        expected = answer_key['average_monthly_sales_q4'][category]
+    # Growth Rate Q4 (8 points)
+    submitted_growth = submission["task1"]["growth_rate_q4"]
+    correct_growth = answer_key["task1"]["growth_rate_q4"]
+    growth_diff = abs(submitted_growth - correct_growth)
+    
+    if growth_diff <= 0.5:
+        result["breakdown"]["growth_rate_q4"] = {"points": 8, "max_points": 8, "note": "Within ±0.5%"}
+        result["points"] += 8
+    elif growth_diff <= 1.0:
+        result["breakdown"]["growth_rate_q4"] = {"points": 4, "max_points": 8, "note": "Within ±1%"}
+        result["points"] += 4
+    else:
+        result["breakdown"]["growth_rate_q4"] = {"points": 0, "max_points": 8, "note": "Outside ±1%"}
+    
+    # Seasonal Pattern (6 points)
+    if submission["task1"]["seasonal_pattern"] == answer_key["task1"]["seasonal_pattern"]:
+        result["breakdown"]["seasonal_pattern"] = {"points": 6, "max_points": 6, "note": "Correct"}
+        result["points"] += 6
+    else:
+        result["breakdown"]["seasonal_pattern"] = {"points": 0, "max_points": 6, "note": "Incorrect"}
+    
+    # Peak Month (6 points)
+    if submission["task1"]["peak_month"] == answer_key["task1"]["peak_month"]:
+        result["breakdown"]["peak_month"] = {"points": 6, "max_points": 6, "note": "Correct"}
+        result["points"] += 6
+    else:
+        result["breakdown"]["peak_month"] = {"points": 0, "max_points": 6, "note": "Incorrect"}
+    
+    return result
+
+
+def evaluate_task2(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
+    """Evaluate Task 2 answers and assign points."""
+    result = {"points": 0, "max_points": 30, "breakdown": {}}
+    
+    # Market Expansion (6 points)
+    if submission["task2"]["market_expansion"] == answer_key["task2"]["market_expansion"]:
+        result["breakdown"]["market_expansion"] = {"points": 6, "max_points": 6, "note": "Correct"}
+        result["points"] += 6
+    else:
+        result["breakdown"]["market_expansion"] = {"points": 0, "max_points": 6, "note": "Incorrect"}
+    
+    # Price Sensitivity Score (8 points)
+    submitted_score = submission["task2"]["price_sensitivity_score"]
+    correct_score = answer_key["task2"]["price_sensitivity_score"]
+    score_diff = abs(submitted_score - correct_score)
+    
+    if score_diff == 0:
+        result["breakdown"]["price_sensitivity_score"] = {"points": 8, "max_points": 8, "note": "Exact score"}
+        result["points"] += 8
+    elif score_diff <= 1:
+        result["breakdown"]["price_sensitivity_score"] = {"points": 4, "max_points": 8, "note": "Within ±1"}
+        result["points"] += 4
+    else:
+        result["breakdown"]["price_sensitivity_score"] = {"points": 0, "max_points": 8, "note": "Outside ±1"}
+    
+    # Trend Direction (6 points)
+    if submission["task2"]["trend_direction"] == answer_key["task2"]["trend_direction"]:
+        result["breakdown"]["trend_direction"] = {"points": 6, "max_points": 6, "note": "Correct"}
+        result["points"] += 6
+    else:
+        result["breakdown"]["trend_direction"] = {"points": 0, "max_points": 6, "note": "Incorrect"}
+    
+    # Expected Demand Change (10 points)
+    submitted_demand = submission["task2"]["expected_demand_change"]
+    correct_demand = answer_key["task2"]["expected_demand_change"]
+    demand_diff = abs(submitted_demand - correct_demand)
+    
+    if demand_diff == 0:
+        result["breakdown"]["expected_demand_change"] = {"points": 10, "max_points": 10, "note": "Exact answer"}
+        result["points"] += 10
+    elif demand_diff <= 0.5:
+        result["breakdown"]["expected_demand_change"] = {"points": 6, "max_points": 10, "note": "Within ±0.5%"}
+        result["points"] += 6
+    elif demand_diff <= 1.0:
+        result["breakdown"]["expected_demand_change"] = {"points": 3, "max_points": 10, "note": "Within ±1%"}
+        result["points"] += 3
+    else:
+        result["breakdown"]["expected_demand_change"] = {"points": 0, "max_points": 10, "note": "Outside ±1%"}
+    
+    return result
+
+
+def evaluate_task3(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
+    """Evaluate Task 3 answers and assign points."""
+    result = {"points": 0, "max_points": 40, "breakdown": {}}
+    
+    # Product Forecasts (15 points, 5 each)
+    products = ["product_a_forecast", "product_b_forecast", "product_c_forecast"]
+    forecast_points = 0
+    
+    for product in products:
+        submitted_value = submission["task3"][product]
+        correct_value = answer_key["task3"][product]
+        percentage_diff = abs((submitted_value - correct_value) / correct_value * 100)
         
-        # Check if within 1% of correct value
-        if abs((submitted - expected) / expected) <= 0.01:
-            avg_sales_feedback[category] = "Correct"
+        if percentage_diff <= 5:
+            result["breakdown"][product] = {"points": 5, "max_points": 5, "note": f"Within ±5% (submitted: {submitted_value}, correct: {correct_value})"}
+            forecast_points += 5
         else:
-            avg_sales_correct = False
-            avg_sales_feedback[category] = f"Incorrect. Expected: {expected:.2f}, got: {submitted:.2f}"
+            result["breakdown"][product] = {"points": 0, "max_points": 5, "note": f"Outside ±5% (submitted: {submitted_value}, correct: {correct_value})"}
     
-    if avg_sales_correct:
-        score += 1
+    result["points"] += forecast_points
     
-    feedback['average_monthly_sales_q4'] = avg_sales_feedback
+    # Total Inventory Value (10 points)
+    submitted_inventory = submission["task3"]["total_inventory_value"]
+    correct_inventory = answer_key["task3"]["total_inventory_value"]
+    inventory_percentage_diff = abs((submitted_inventory - correct_inventory) / correct_inventory * 100)
     
-    # Check lowest sales month
-    if submission['lowest_sales_month'] == answer_key['lowest_sales_month']:
-        score += 1
-        feedback['lowest_sales_month'] = "Correct"
+    if inventory_percentage_diff <= 2:
+        result["breakdown"]["total_inventory_value"] = {"points": 10, "max_points": 10, "note": "Within ±2%"}
+        result["points"] += 10
+    elif inventory_percentage_diff <= 5:
+        result["breakdown"]["total_inventory_value"] = {"points": 5, "max_points": 10, "note": "Within ±5%"}
+        result["points"] += 5
     else:
-        feedback['lowest_sales_month'] = f"Incorrect. Expected: {answer_key['lowest_sales_month']}"
+        result["breakdown"]["total_inventory_value"] = {"points": 0, "max_points": 10, "note": "Outside ±5%"}
     
-    # Check percentage decrease with 0.5 percentage point tolerance
-    submitted_pct = submission['percentage_decrease']
-    expected_pct = answer_key['percentage_decrease']
-    if abs(submitted_pct - expected_pct) <= 0.5:
-        score += 1
-        feedback['percentage_decrease'] = "Correct"
+    # Recommended Stock Ratio (15 points)
+    submitted_ratio = submission["task3"]["recommended_stock_ratio"]
+    correct_ratio = answer_key["task3"]["recommended_stock_ratio"]
+    
+    # Check if ratios sum to 1.00
+    if abs(sum(submitted_ratio) - 1.00) > 0.01:
+        result["breakdown"]["recommended_stock_ratio"] = {"points": 0, "max_points": 15, "note": "Ratios don't sum to 1.00"}
     else:
-        feedback['percentage_decrease'] = f"Incorrect. Expected: {expected_pct:.2f}, got: {submitted_pct:.2f}"
-    
-    return score / max_score, feedback
-
-def evaluate_task2(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
-    """Evaluate Task 2: Economic Indicator Interpretation."""
-    score = 0
-    max_score = 3
-    feedback = {}
-    
-    # Check interest rate values (must be 100% accurate)
-    interest_rate_correct = True
-    if submission['current_interest_rate'] == answer_key['current_interest_rate']:
-        feedback['current_interest_rate'] = "Correct"
-    else:
-        interest_rate_correct = False
-        feedback['current_interest_rate'] = f"Incorrect. Expected: {answer_key['current_interest_rate']}, got: {submission['current_interest_rate']}"
-    
-    if submission['interest_rate_change'] == answer_key['interest_rate_change']:
-        feedback['interest_rate_change'] = "Correct"
-    else:
-        interest_rate_correct = False
-        feedback['interest_rate_change'] = f"Incorrect. Expected: {answer_key['interest_rate_change']}, got: {submission['interest_rate_change']}"
-    
-    if interest_rate_correct:
-        score += 1
-    
-    # Check consumer confidence index and direction (must be 100% accurate)
-    confidence_correct = True
-    if submission['consumer_confidence_index'] == answer_key['consumer_confidence_index']:
-        feedback['consumer_confidence_index'] = "Correct"
-    else:
-        confidence_correct = False
-        feedback['consumer_confidence_index'] = f"Incorrect. Expected: {answer_key['consumer_confidence_index']}, got: {submission['consumer_confidence_index']}"
-    
-    if submission['confidence_index_direction'] == answer_key['confidence_index_direction']:
-        feedback['confidence_index_direction'] = "Correct"
-    else:
-        confidence_correct = False
-        feedback['confidence_index_direction'] = f"Incorrect. Expected: {answer_key['confidence_index_direction']}, got: {submission['confidence_index_direction']}"
-    
-    if confidence_correct:
-        score += 1
-    
-    # Check economic impacts (need 4 of 5 correct)
-    correct_impacts = 0
-    impact_feedback = {}
-    
-    for indicator in answer_key['economic_impacts']:
-        submitted_impact = submission['economic_impacts'].get(indicator, "")
-        expected_impact = answer_key['economic_impacts'][indicator]
+        # Check differences for each ratio
+        max_diff = max(abs(submitted_ratio[i] - correct_ratio[i]) for i in range(3))
         
-        if submitted_impact == expected_impact:
-            correct_impacts += 1
-            impact_feedback[indicator] = "Correct"
+        if max_diff <= 0.03:
+            result["breakdown"]["recommended_stock_ratio"] = {"points": 15, "max_points": 15, "note": "All ratios within ±0.03"}
+            result["points"] += 15
+        elif max_diff <= 0.05:
+            result["breakdown"]["recommended_stock_ratio"] = {"points": 7, "max_points": 15, "note": "All ratios within ±0.05"}
+            result["points"] += 7
         else:
-            impact_feedback[indicator] = f"Incorrect. Expected: {expected_impact}, got: {submitted_impact}"
+            result["breakdown"]["recommended_stock_ratio"] = {"points": 0, "max_points": 15, "note": "Outside ±0.05"}
     
-    if correct_impacts >= 4:
-        score += 1
-        
-    feedback['economic_impacts'] = impact_feedback
-    feedback['economic_impacts_score'] = f"{correct_impacts}/5 correct"
-    
-    return score / max_score, feedback
+    return result
 
-def evaluate_task3(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
-    """Evaluate Task 3: Sales Forecasting."""
-    score = 0
-    max_score = 3
-    feedback = {}
-    
-    # Check monthly forecasts (within 2% of correct values)
-    forecast_months = ['forecast_july', 'forecast_august', 'forecast_september']
-    forecast_correct = True
-    
-    for month in forecast_months:
-        month_feedback = {}
-        for category in answer_key[month]:
-            submitted = submission[month].get(category, 0)
-            expected = answer_key[month][category]
-            
-            # Check if within 2% of correct value
-            if abs((submitted - expected) / expected) <= 0.02:
-                month_feedback[category] = "Correct"
-            else:
-                forecast_correct = False
-                month_feedback[category] = f"Incorrect. Expected: {expected:.2f}, got: {submitted:.2f}"
-        
-        feedback[month] = month_feedback
-    
-    if forecast_correct:
-        score += 1
-    
-    # Check regional sales projections (within 2% of correct values)
-    regional_correct = True
-    regional_feedback = {}
-    
-    for region in answer_key['q3_regional_sales']:
-        submitted = submission['q3_regional_sales'].get(region, 0)
-        expected = answer_key['q3_regional_sales'][region]
-        
-        # Check if within 2% of correct value
-        if abs((submitted - expected) / expected) <= 0.02:
-            regional_feedback[region] = "Correct"
-        else:
-            regional_correct = False
-            regional_feedback[region] = f"Incorrect. Expected: {expected:.2f}, got: {submitted:.2f}"
-    
-    feedback['q3_regional_sales'] = regional_feedback
-    
-    if regional_correct:
-        score += 1
-    
-    # Check highest August category
-    if submission['highest_august_category'] == answer_key['highest_august_category']:
-        score += 1
-        feedback['highest_august_category'] = "Correct"
-    else:
-        feedback['highest_august_category'] = f"Incorrect. Expected: {answer_key['highest_august_category']}"
-    
-    return score / max_score, feedback
-
-def evaluate_task4(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
-    """Evaluate Task 4: Inventory Planning."""
-    score = 0
-    max_score = 3
-    feedback = {}
-    
-    # Check if the candidate identified the correct top 3 categories
-    correct_categories = set(answer_key['inventory_allocation'].keys())
-    submitted_categories = set(submission['inventory_allocation'].keys())
-    
-    categories_correct = correct_categories == submitted_categories
-    if categories_correct:
-        score += 1
-        feedback['top_categories'] = "Correct"
-    else:
-        missing = correct_categories - submitted_categories
-        extra = submitted_categories - correct_categories
-        feedback['top_categories'] = f"Incorrect. Missing: {missing if missing else 'None'}, Extra: {extra if extra else 'None'}"
-    
-    # Check optimal stock calculations (within 3% of correct values)
-    if categories_correct:
-        stock_correct = True
-        stock_feedback = {}
-        
-        for category in answer_key['optimal_stock_levels']:
-            submitted = submission['optimal_stock_levels'].get(category, 0)
-            expected = answer_key['optimal_stock_levels'][category]
-            
-            # Check if within 3% of correct value
-            if abs((submitted - expected) / expected) <= 0.03:
-                stock_feedback[category] = "Correct"
-            else:
-                stock_correct = False
-                stock_feedback[category] = f"Incorrect. Expected: {expected:.2f}, got: {submitted:.2f}"
-        
-        if stock_correct:
-            score += 1
-    else:
-        stock_feedback = "Cannot evaluate due to incorrect categories"
-    
-    feedback['optimal_stock_levels'] = stock_feedback
-    
-    # Check maximum investment (within 5% of correct value)
-    submitted_investment = submission['maximum_investment']
-    expected_investment = answer_key['maximum_investment']
-    
-    if abs((submitted_investment - expected_investment) / expected_investment) <= 0.05:
-        score += 1
-        feedback['maximum_investment'] = "Correct"
-    else:
-        feedback['maximum_investment'] = f"Incorrect. Expected: {expected_investment:.2f}, got: {submitted_investment:.2f}"
-    
-    return score / max_score, feedback
-
-def check_methodology(submission: Dict[str, Any], scores: Dict[str, float]) -> Tuple[bool, Dict[str, Any]]:
-    """Check if the candidate correctly applied at least 3 of 4 analytical techniques."""
-    correct_techniques = 0
-    technique_feedback = {}
-    
-    # Consider a technique correctly applied if the task score is at least 0.75
-    if scores['task1'] >= 0.75:
-        correct_techniques += 1
-        technique_feedback['Sales Trend Analysis'] = "Correctly applied"
-    else:
-        technique_feedback['Sales Trend Analysis'] = "Not correctly applied"
-        
-    if scores['task2'] >= 0.67:  # 2 out of 3 or better
-        correct_techniques += 1
-        technique_feedback['Economic Indicator Interpretation'] = "Correctly applied"
-    else:
-        technique_feedback['Economic Indicator Interpretation'] = "Not correctly applied"
-        
-    if scores['task3'] >= 0.67:  # 2 out of 3 or better
-        correct_techniques += 1
-        technique_feedback['Sales Forecasting'] = "Correctly applied"
-    else:
-        technique_feedback['Sales Forecasting'] = "Not correctly applied"
-        
-    if scores['task4'] >= 0.67:  # 2 out of 3 or better
-        correct_techniques += 1
-        technique_feedback['Inventory Planning'] = "Correctly applied"
-    else:
-        technique_feedback['Inventory Planning'] = "Not correctly applied"
-    
-    return correct_techniques >= 3, technique_feedback
 
 def evaluate_submission(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
-    """Evaluate the entire submission against the answer key."""
+    """Evaluate the full submission against the answer key."""
     results = {
-        "candidate_id": submission.get("candidate_id", "Not provided"),
-        "task_scores": {},
-        "task_feedback": {},
-        "analytical_techniques": {},
-        "overall_score": 0
+        "candidate_id": submission.get("candidate_id", "UNKNOWN"),
+        "overall_score": 0,
+        "passing_threshold": 70,
+        "strong_performance_threshold": 85,
+        "tasks": {}
     }
     
     # Evaluate each task
-    task1_score, task1_feedback = evaluate_task1(submission["task1"], answer_key["task1"])
-    task2_score, task2_feedback = evaluate_task2(submission["task2"], answer_key["task2"])
-    task3_score, task3_feedback = evaluate_task3(submission["task3"], answer_key["task3"])
-    task4_score, task4_feedback = evaluate_task4(submission["task4"], answer_key["task4"])
+    task1_results = evaluate_task1(submission, answer_key)
+    task2_results = evaluate_task2(submission, answer_key)
+    task3_results = evaluate_task3(submission, answer_key)
     
-    # Store scores and feedback
-    results["task_scores"] = {
-        "task1": task1_score,
-        "task2": task2_score,
-        "task3": task3_score,
-        "task4": task4_score
-    }
+    results["tasks"]["task1"] = task1_results
+    results["tasks"]["task2"] = task2_results
+    results["tasks"]["task3"] = task3_results
     
-    results["task_feedback"] = {
-        "task1": task1_feedback,
-        "task2": task2_feedback,
-        "task3": task3_feedback,
-        "task4": task4_feedback
-    }
+    # Calculate overall score
+    total_points = task1_results["points"] + task2_results["points"] + task3_results["points"]
+    max_points = task1_results["max_points"] + task2_results["max_points"] + task3_results["max_points"]
+    results["overall_score"] = round((total_points / max_points) * 100, 2)
     
-    # Check methodology
-    methodology_correct, technique_feedback = check_methodology(submission, results["task_scores"])
-    results["analytical_techniques"] = technique_feedback
-    results["methodology_correct"] = methodology_correct
-    
-    # Calculate overall score (80% required to pass)
-    # Equal weight for each task (25% each)
-    raw_score = (task1_score + task2_score + task3_score + task4_score) / 4
-    
-    # Critical error check - if any task is completely failed, the overall score is capped
-    critical_error = False
-    for task_score in results["task_scores"].values():
-        if task_score == 0:
-            critical_error = True
-    
-    # Factor in methodology requirement
-    if not methodology_correct:
-        critical_error = True
-    
-    # Calculate final score
-    results["overall_score"] = raw_score * 100  # Convert to percentage
-    
-    # Determine pass/fail status (need 80% and no critical errors)
-    results["passed"] = results["overall_score"] >= 80 and not critical_error
-    
-    if critical_error:
-        results["critical_error"] = True
-        results["critical_error_message"] = "Critical error detected: either completely failed a task or did not correctly apply at least 3 analytical techniques"
+    # Determine if candidate passed
+    results["passed"] = results["overall_score"] >= results["passing_threshold"]
+    results["strong_performance"] = results["overall_score"] >= results["strong_performance_threshold"]
     
     return results
 
+
 def main():
-    """Main function to process command line arguments and evaluate submission."""
+    """Main function to process command line arguments and run evaluation."""
     if len(sys.argv) != 3:
-        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        print("Usage: python task_evaluation.py <submission_file> <answer_key_file>")
         sys.exit(1)
     
     submission_file = sys.argv[1]
     answer_key_file = sys.argv[2]
     
-    submission = load_json(submission_file)
-    answer_key = load_json(answer_key_file)
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
     
     results = evaluate_submission(submission, answer_key)
     
     # Save results to file
-    with open('test_results.json', 'w') as f:
+    with open("test_results.json", "w") as f:
         json.dump(results, f, indent=2)
     
     print(f"Evaluation complete. Results saved to test_results.json")
-    print(f"Overall score: {results['overall_score']:.2f}%")
-    print(f"Passed: {results['passed']}")
+    print(f"Overall Score: {results['overall_score']}%")
+    print(f"Result: {'PASSED' if results['passed'] else 'FAILED'}")
+    if results['strong_performance']:
+        print("Strong Performance: YES")
+
 
 if __name__ == "__main__":
     main()

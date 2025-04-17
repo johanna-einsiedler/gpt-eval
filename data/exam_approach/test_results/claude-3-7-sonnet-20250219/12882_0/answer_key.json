@@ -1,89 +1,306 @@
 {
-    "product_requirements": [
-        {
-            "product_id": "P001",
-            "product_name": "Red Apples",
-            "quantity_required": 1050,
-            "unit": "kg",
-            "supplier_id": "S003"
-        },
+    "candidate_id": "EVALUATOR_KEY",
+    "top_products": [
         {
             "product_id": "P002",
-            "product_name": "Yellow Onions",
-            "quantity_required": 1100,
-            "unit": "kg",
-            "supplier_id": "S002"
+            "product_name": "Conventional Apples",
+            "sales_volume": 7900,
+            "category": "Fresh Fruit"
         },
         {
-            "product_id": "P003",
-            "product_name": "Carrots",
-            "quantity_required": 850,
-            "unit": "kg",
-            "supplier_id": "S004"
+            "product_id": "P020",
+            "product_name": "Organic Milk",
+            "sales_volume": 8570,
+            "category": "Dairy & Eggs"
+        },
+        {
+            "product_id": "P012",
+            "product_name": "Conventional Potatoes",
+            "sales_volume": 7450,
+            "category": "Root Vegetables"
         },
         {
             "product_id": "P004",
-            "product_name": "Lettuce",
-            "quantity_required": 550,
-            "unit": "heads",
-            "supplier_id": "S005"
+            "product_name": "Conventional Strawberries",
+            "sales_volume": 3950,
+            "category": "Fresh Fruit"
         },
         {
-            "product_id": "P005",
-            "product_name": "Potatoes",
-            "quantity_required": 1400,
-            "unit": "kg",
-            "supplier_id": "S004"
-        },
-        {
-            "product_id": "P006",
-            "product_name": "Tomatoes",
-            "quantity_required": 780,
-            "unit": "kg",
-            "supplier_id": "S002"
-        },
-        {
-            "product_id": "P007",
-            "product_name": "Strawberries",
-            "quantity_required": 310,
-            "unit": "kg",
-            "supplier_id": "S002"
+            "product_id": "P016",
+            "product_name": "Conventional Onions",
+            "sales_volume": 6000,
+            "category": "Root Vegetables"
         }
     ],
-    "demand_changes": [
+    "inventory_below_threshold": [
         {
-            "product_id": "P001",
-            "percentage_change": 31.25
-        },
-        {
-            "product_id": "P002",
-            "percentage_change": 22.22
+            "product_id": "P005",
+            "product_name": "Organic Blueberries",
+            "current_level": 150,
+            "minimum_threshold": 200,
+            "units": "pints"
         },
         {
             "product_id": "P003",
-            "percentage_change": 21.43
-        },
-        {
-            "product_id": "P004",
-            "percentage_change": 37.5
-        },
-        {
-            "product_id": "P005",
-            "percentage_change": 16.67
+            "product_name": "Organic Strawberries",
+            "current_level": 250,
+            "minimum_threshold": 300,
+            "units": "pints"
         },
         {
             "product_id": "P006",
-            "percentage_change": 20.0
+            "product_name": "Conventional Blueberries",
+            "current_level": 400,
+            "minimum_threshold": 350,
+            "units": "pints"
         },
         {
-            "product_id": "P007",
-            "percentage_change": 72.22
+            "product_id": "P019",
+            "product_name": "Farm Fresh Eggs",
+            "current_level": 950,
+            "minimum_threshold": 900,
+            "units": "dozens"
         }
     ],
-    "total_procurement_cost": 11133.0,
-    "priority_products": [
-        "P007",
-        "P004",
-        "P003"
-    ]
+    "unfulfillable_orders": [
+        {
+            "order_id": "O1001",
+            "customer_name": "Green Valley Market",
+            "product_id": "P003",
+            "product_name": "Organic Strawberries",
+            "ordered_quantity": 200,
+            "available_inventory": 250,
+            "shortage": 130,
+            "units": "pints"
+        },
+        {
+            "order_id": "O1003",
+            "customer_name": "Organic Basket Co-op",
+            "product_id": "P005",
+            "product_name": "Organic Blueberries",
+            "ordered_quantity": 150,
+            "available_inventory": 150,
+            "shortage": 150,
+            "units": "pints"
+        },
+        {
+            "order_id": "O1005",
+            "customer_name": "Wholesome Foods",
+            "product_id": "P003",
+            "product_name": "Organic Strawberries",
+            "ordered_quantity": 180,
+            "available_inventory": 250,
+            "shortage": 130,
+            "units": "pints"
+        },
+        {
+            "order_id": "O1006",
+            "customer_name": "Market Fresh",
+            "product_id": "P006",
+            "product_name": "Conventional Blueberries",
+            "ordered_quantity": 300,
+            "available_inventory": 400,
+            "shortage": 150,
+            "units": "pints"
+        },
+        {
+            "order_id": "O1008",
+            "customer_name": "Nature's Best",
+            "product_id": "P005",
+            "product_name": "Organic Blueberries",
+            "ordered_quantity": 180,
+            "available_inventory": 150,
+            "shortage": 150,
+            "units": "pints"
+        },
+        {
+            "order_id": "O1009",
+            "customer_name": "County Farm Market",
+            "product_id": "P001",
+            "product_name": "Organic Apples",
+            "ordered_quantity": 400,
+            "available_inventory": 850,
+            "shortage": 100,
+            "units": "lbs"
+        }
+    ],
+    "purchase_recommendations": [
+        {
+            "product_id": "P001",
+            "product_name": "Organic Apples",
+            "purchase_quantity": 650,
+            "units": "lbs",
+            "supplier_id": "S001",
+            "supplier_name": "Orchard Valley Farms",
+            "unit_cost": 1.1,
+            "total_cost": 715.0,
+            "reason": "Selected for highest quality rating (4.8/5.0) with competitive price and fast 3-day lead time"
+        },
+        {
+            "product_id": "P002",
+            "product_name": "Conventional Apples",
+            "purchase_quantity": 1500,
+            "units": "lbs",
+            "supplier_id": "S001",
+            "supplier_name": "Orchard Valley Farms",
+            "unit_cost": 0.75,
+            "total_cost": 1125.0,
+            "reason": "Selected for highest quality rating (4.8/5.0) with competitive price and fast 3-day lead time"
+        },
+        {
+            "product_id": "P003",
+            "product_name": "Organic Strawberries",
+            "purchase_quantity": 450,
+            "units": "pints",
+            "supplier_id": "S002",
+            "supplier_name": "Berry Good Harvests",
+            "unit_cost": 3.5,
+            "total_cost": 1575.0,
+            "reason": "Selected for fastest lead time (2 days) to meet urgent needs and higher quality (4.7/5.0)"
+        },
+        {
+            "product_id": "P005",
+            "product_name": "Organic Blueberries",
+            "purchase_quantity": 350,
+            "units": "pints",
+            "supplier_id": "S002",
+            "supplier_name": "Berry Good Harvests",
+            "unit_cost": 4.25,
+            "total_cost": 1487.5,
+            "reason": "Selected for fastest lead time (2 days) to meet urgent needs and higher quality (4.7/5.0)"
+        },
+        {
+            "product_id": "P006",
+            "product_name": "Conventional Blueberries",
+            "purchase_quantity": 500,
+            "units": "pints",
+            "supplier_id": "S002",
+            "supplier_name": "Berry Good Harvests",
+            "unit_cost": 2.75,
+            "total_cost": 1375.0,
+            "reason": "Selected for fastest lead time (2 days) to meet upcoming orders and higher quality (4.7/5.0)"
+        },
+        {
+            "product_id": "P008",
+            "product_name": "Romaine Lettuce",
+            "purchase_quantity": 800,
+            "units": "heads",
+            "supplier_id": "S004",
+            "supplier_name": "Green Acres Farms",
+            "unit_cost": 1.35,
+            "total_cost": 1080.0,
+            "reason": "Selected for highest quality rating (4.9/5.0) with good price and fastest lead time (2 days)"
+        },
+        {
+            "product_id": "P010",
+            "product_name": "Baby Spinach",
+            "purchase_quantity": 600,
+            "units": "lbs",
+            "supplier_id": "S004",
+            "supplier_name": "Green Acres Farms",
+            "unit_cost": 2.35,
+            "total_cost": 1410.0,
+            "reason": "Selected for highest quality rating (4.9/5.0) with fast lead time (2 days)"
+        },
+        {
+            "product_id": "P011",
+            "product_name": "Organic Potatoes",
+            "purchase_quantity": 450,
+            "units": "lbs",
+            "supplier_id": "S005",
+            "supplier_name": "Earthbound Produce",
+            "unit_cost": 1.65,
+            "total_cost": 742.5,
+            "reason": "Selected for better quality rating (4.6/5.0) with competitive price and reasonable lead time (3 days)"
+        },
+        {
+            "product_id": "P012",
+            "product_name": "Conventional Potatoes",
+            "purchase_quantity": 1150,
+            "units": "lbs",
+            "supplier_id": "S005",
+            "supplier_name": "Earthbound Produce",
+            "unit_cost": 0.8,
+            "total_cost": 920.0,
+            "reason": "Selected for better quality rating (4.6/5.0) with competitive price and reasonable lead time (3 days)"
+        },
+        {
+            "product_id": "P013",
+            "product_name": "Organic Carrots",
+            "purchase_quantity": 350,
+            "units": "lbs",
+            "supplier_id": "S005",
+            "supplier_name": "Earthbound Produce",
+            "unit_cost": 1.5,
+            "total_cost": 525.0,
+            "reason": "Selected for better quality rating (4.6/5.0) with competitive price and reasonable lead time (3 days)"
+        },
+        {
+            "product_id": "P014",
+            "product_name": "Conventional Carrots",
+            "purchase_quantity": 600,
+            "units": "lbs",
+            "supplier_id": "S005",
+            "supplier_name": "Earthbound Produce",
+            "unit_cost": 0.85,
+            "total_cost": 510.0,
+            "reason": "Selected for better quality rating (4.6/5.0) with competitive price and reasonable lead time (3 days)"
+        },
+        {
+            "product_id": "P016",
+            "product_name": "Conventional Onions",
+            "purchase_quantity": 600,
+            "units": "lbs",
+            "supplier_id": "S005",
+            "supplier_name": "Earthbound Produce",
+            "unit_cost": 0.75,
+            "total_cost": 450.0,
+            "reason": "Selected for better quality rating (4.6/5.0) with competitive price and reasonable lead time (3 days)"
+        },
+        {
+            "product_id": "P017",
+            "product_name": "Local Honey",
+            "purchase_quantity": 200,
+            "units": "jars",
+            "supplier_id": "S007",
+            "supplier_name": "Sweet Harvest Apiaries",
+            "unit_cost": 8.0,
+            "total_cost": 1600.0,
+            "reason": "Selected for highest quality rating (4.9/5.0) and better pricing despite longer lead time (5 days)"
+        },
+        {
+            "product_id": "P018",
+            "product_name": "Maple Syrup",
+            "purchase_quantity": 200,
+            "units": "bottles",
+            "supplier_id": "S008",
+            "supplier_name": "Northern Woods Maple",
+            "unit_cost": 11.5,
+            "total_cost": 2300.0,
+            "reason": "Selected for higher quality rating (4.8/5.0) and competitive pricing despite longer lead time (6 days)"
+        },
+        {
+            "product_id": "P019",
+            "product_name": "Farm Fresh Eggs",
+            "purchase_quantity": 700,
+            "units": "dozens",
+            "supplier_id": "S012",
+            "supplier_name": "Happy Hen Farms",
+            "unit_cost": 3.45,
+            "total_cost": 2415.0,
+            "reason": "Selected for highest quality rating (4.9/5.0) and best price, with reasonable lead time (3 days)"
+        },
+        {
+            "product_id": "P020",
+            "product_name": "Organic Milk",
+            "purchase_quantity": 1300,
+            "units": "gallons",
+            "supplier_id": "S011",
+            "supplier_name": "Sunshine Dairy Cooperative",
+            "unit_cost": 3.95,
+            "total_cost": 5135.0,
+            "reason": "Selected for best price with good quality rating (4.7/5.0) and fast lead time (2 days)"
+        }
+    ],
+    "total_purchase_cost": 23365.0
 }

@@ -1,50 +1,62 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
-    "claim_decisions": [
-        {
-            "claim_id": "CL-78342",
-            "coverage_determination": "covered",
-            "reason_code": null,
-            "calculated_settlement": 6850.0,
-            "decision": "approve",
-            "within_authority": true,
-            "justification": "Active policy covers collision damage. Estimated repair cost of $7,850 minus $1,000 deductible equals $6,850, which is within authority level."
-        },
-        {
-            "claim_id": "CL-91275",
-            "coverage_determination": "covered",
-            "reason_code": null,
-            "calculated_settlement": 9275.0,
-            "decision": "approve",
-            "within_authority": true,
-            "justification": "Sudden burst pipe is covered under active policy. Total damage of $9,775 minus $500 deductible equals $9,275, which is within authority level."
-        },
-        {
-            "claim_id": "CL-64510",
-            "coverage_determination": "covered",
-            "reason_code": null,
-            "calculated_settlement": 15950.0,
-            "decision": "escalate",
-            "within_authority": false,
-            "justification": "Comprehensive coverage applies to storm damage. Repair estimate of $16,450 minus $500 deductible equals $15,950, which exceeds Level 2 authority."
-        },
-        {
-            "claim_id": "CL-83726",
-            "coverage_determination": "covered",
-            "reason_code": null,
-            "calculated_settlement": 11350.0,
-            "decision": "approve",
-            "within_authority": true,
-            "justification": "Theft with forced entry is covered. Total claim of $12,350 minus $1,000 deductible equals $11,350, which is within authority level."
-        },
-        {
-            "claim_id": "CL-52198",
-            "coverage_determination": "not_covered",
-            "reason_code": "RC002",
-            "calculated_settlement": 0.0,
-            "decision": "deny",
-            "within_authority": true,
-            "justification": "Policy expired on 02/01/2023 before claim was reported on 03/10/2023. Incident also reported beyond 30-day requirement."
-        }
-    ]
+    "answer_key": {
+        "claims": [
+            {
+                "claim_id": "WD-20231101",
+                "calculated_payment": 23860.0,
+                "decision": "approve",
+                "escalation_code": null,
+                "payment_breakdown": {
+                    "property_damage": 21660.0,
+                    "additional_living_expense": 2200.0,
+                    "other_covered_losses": 0.0
+                }
+            },
+            {
+                "claim_id": "AC-20231102",
+                "calculated_payment": 21575.0,
+                "decision": "approve",
+                "escalation_code": null,
+                "payment_breakdown": {
+                    "property_damage": 17900.0,
+                    "rental_reimbursement": 525.0,
+                    "medical_payments": 3150.0
+                }
+            },
+            {
+                "claim_id": "BI-20231103",
+                "calculated_payment": 46900.0,
+                "decision": "escalate",
+                "escalation_code": "ESC01",
+                "payment_breakdown": {
+                    "property_damage": 23500.0,
+                    "business_interruption": 23400.0,
+                    "other_covered_losses": 0.0
+                }
+            },
+            {
+                "claim_id": "SF-20231104",
+                "calculated_payment": 14650.0,
+                "decision": "approve",
+                "escalation_code": null,
+                "payment_breakdown": {
+                    "medical_payments": 6450.0,
+                    "lost_wages": 2200.0,
+                    "pain_and_suffering": 7500.0,
+                    "other_covered_losses": 0.0
+                }
+            },
+            {
+                "claim_id": "RD-20231105",
+                "calculated_payment": 29050.0,
+                "decision": "escalate",
+                "escalation_code": "ESC01",
+                "payment_breakdown": {
+                    "roof_replacement_acv": 27000.0,
+                    "additional_damages": 2050.0,
+                    "other_covered_losses": 0.0
+                }
+            }
+        ]
+    }
 }

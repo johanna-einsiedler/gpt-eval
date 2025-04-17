@@ -1,510 +1,387 @@
-import json
+#!/usr/bin/env python3
+"""
+Evaluates a candidate's purchasing agent exam submission against an answer key.
+Usage: python task_evaluation.py test_submission.json answer_key.json
+"""
+
 import sys
-import re
+import json
+import os
 from typing import Dict, List, Any, Tuple
 
-def load_json_file(file_path: str) -> Dict:
+def load_json(filename: str) -> Dict:
     """Load a JSON file and return its contents as a dictionary."""
     try:
-        with open(file_path, 'r') as file:
+        with open(filename, 'r') as file:
             return json.load(file)
-    except FileNotFoundError:
-        print(f"Error: File '{file_path}' not found.")
-        sys.exit(1)
-    except json.JSONDecodeError:
-        print(f"Error: '{file_path}' is not a valid JSON file.")
+    except (json.JSONDecodeError, FileNotFoundError) as e:
+        print(f"Error loading {filename}: {e}")
         sys.exit(1)
 
-def evaluate_task1(submission: Dict, answer_key: Dict) -> Tuple[int, Dict]:
+def check_list_match(candidate_list: List, answer_list: List) -> Tuple[float, int, List]:
     """
-    Evaluate Task 1: Inventory Record Maintenance
-    Max points: 40
+    Compare candidate list with answer list and return percentage match,
+    number of correct items, and missing items.
     """
-    score = 0
-    feedback = {}
+    if not answer_list:
+        return 1.0, 0, []
     
-    # Evaluate errors found (max 15 points)
-    errors_found = submission.get("task1", {}).get("errors_found", [])
-    key_errors = answer_key.get("task1", {}).get("errors_found", [])
+    correct_items = [item for item in candidate_list if item in answer_list]
+    correct_count = len(correct_items)
+    missing_items = [item for item in answer_list if item not in candidate_list]
     
-    # Count valid errors identified
-    valid_errors = 0
-    error_feedback = []
+    # Calculate percentage of correct items
+    percentage = correct_count / len(answer_list) if answer_list else 1.0
     
-    for error in errors_found:
-        # Check if any key error contains this submission error (or vice versa)
-        if any(re.search(re.escape(e.lower()), error.lower()) or 
-               re.search(re.escape(error.lower()), e.lower()) for e in key_errors):
-            valid_errors += 1
-            error_feedback.append(f"Correct: {error}")
-        else:
-            error_feedback.append(f"Not a key error: {error}")
-    
-    # Assign points based on number of valid errors found
-    if valid_errors >= 5:
-        score += 15
-    elif valid_errors >= 4:
-        score += 10
-    elif valid_errors >= 3:
-        score += 5
-    
-    feedback["errors_found"] = {
-        "score": min(15, score),
-        "max_score": 15,
-        "feedback": error_feedback,
-        "valid_count": valid_errors
-    }
-    
-    # Evaluate corrections made (max 15 points)
-    corrections_made = submission.get("task1", {}).get("corrections_made", [])
-    key_corrections = answer_key.get("task1", {}).get("corrections_made", [])
-    
-    valid_corrections = 0
-    correction_feedback = []
-    
-    for correction in corrections_made:
-        if any(re.search(re.escape(c.lower()), correction.lower()) or 
-               re.search(re.escape(correction.lower()), c.lower()) for c in key_corrections):
-            valid_corrections += 1
-            correction_feedback.append(f"Correct: {correction}")
-        else:
-            correction_feedback.append(f"Not a key correction: {correction}")
-    
-    correction_score = 0
-    if valid_corrections >= 5:
-        correction_score = 15
-    elif valid_corrections >= 4:
-        correction_score = 10
-    elif valid_corrections >= 3:
-        correction_score = 5
-    
-    score += correction_score
-    feedback["corrections_made"] = {
-        "score": correction_score,
-        "max_score": 15,
-        "feedback": correction_feedback,
-        "valid_count": valid_corrections
-    }
-    
-    # Evaluate summary insights (max 10 points)
-    insights = submission.get("task1", {}).get("summary_insights", [])
-    key_insights = answer_key.get("task1", {}).get("summary_insights", [])
-    
-    valid_insights = 0
-    insight_feedback = []
-    
-    for insight in insights:
-        if any(re.search(re.escape(i.lower()), insight.lower()) or 
-               re.search(re.escape(insight.lower()), i.lower()) for i in key_insights):
-            valid_insights += 1
-            insight_feedback.append(f"Correct: {insight}")
-        else:
-            insight_feedback.append(f"Not a key insight: {insight}")
-    
-    insight_score = 0
-    if valid_insights >= 2:
-        insight_score = 10
-    elif valid_insights >= 1:
-        insight_score = 5
-    
-    score += insight_score
-    feedback["summary_insights"] = {
-        "score": insight_score,
-        "max_score": 10,
-        "feedback": insight_feedback,
-        "valid_count": valid_insights
-    }
-    
-    feedback["total_score"] = score
-    feedback["max_score"] = 40
-    
-    return score, feedback
+    return percentage, correct_count, missing_items
 
-def evaluate_task2(submission: Dict, answer_key: Dict) -> Tuple[int, Dict]:
+def check_numerical_value(candidate_value: float, answer_value: float) -> float:
     """
-    Evaluate Task 2: Delivery Performance Analysis
-    Max points: 30
+    Compare candidate's numerical value with answer value and return score.
+    Full points if within 1%, half points if within 5%, zero otherwise.
     """
-    score = 0
-    feedback = {}
+    if answer_value == 0:  # Avoid division by zero
+        return 1.0 if candidate_value == 0 else 0.0
     
-    # Evaluate tracking method (max 5 points)
-    tracking_method = submission.get("task2", {}).get("tracking_method", "")
-    key_tracking = answer_key.get("task2", {}).get("tracking_method", "")
+    percentage_diff = abs((candidate_value - answer_value) / answer_value)
     
-    # Check if the tracking method contains key elements
-    tracking_score = 0
-    tracking_feedback = []
-    
-    key_elements = ["expected delivery", "actual delivery", "difference", "early", "late"]
-    valid_elements = 0
-    
-    for element in key_elements:
-        if re.search(element.lower(), tracking_method.lower()):
-            valid_elements += 1
-            tracking_feedback.append(f"Includes key element: {element}")
-    
-    # If method covers most key elements, award points
-    if valid_elements >= 3:
-        tracking_score = 5
-    elif valid_elements >= 2:
-        tracking_score = 3
-    
-    score += tracking_score
-    feedback["tracking_method"] = {
-        "score": tracking_score,
-        "max_score": 5,
-        "feedback": tracking_feedback,
-        "valid_elements": valid_elements
-    }
-    
-    # Evaluate top performers (max 10 points)
-    top_performers = submission.get("task2", {}).get("top_performers", [])
-    key_top_performers = answer_key.get("task2", {}).get("top_performers", [])
-    
-    # Check if correct vendors are identified as top performers
-    valid_top_performers = 0
-    top_performer_feedback = []
-    
-    key_vendor_names = [performer["vendor_name"] for performer in key_top_performers]
-    
-    for i, performer in enumerate(top_performers):
-        vendor_name = performer.get("vendor_name", "")
-        
-        if vendor_name in key_vendor_names:
-            valid_top_performers += 1
-            top_performer_feedback.append(f"Correct top performer: {vendor_name}")
-            
-            # Check if metrics are reasonably accurate
-            key_performer = next((p for p in key_top_performers if p["vendor_name"] == vendor_name), None)
-            if key_performer:
-                # Check on_time_percentage
-                submitted_pct = performer.get("on_time_percentage", "0%").replace("%", "")
-                key_pct = key_performer.get("on_time_percentage", "0%").replace("%", "")
-                
-                try:
-                    if abs(float(submitted_pct) - float(key_pct)) <= 5:
-                        top_performer_feedback.append(f"  - Accurate on-time percentage for {vendor_name}")
-                    else:
-                        top_performer_feedback.append(f"  - Inaccurate on-time percentage for {vendor_name}")
-                except ValueError:
-                    top_performer_feedback.append(f"  - Invalid on-time percentage format for {vendor_name}")
-                
-                # Check avg_days
-                submitted_days = performer.get("avg_days", "0").replace("+", "")
-                key_days = key_performer.get("avg_days", "0").replace("+", "")
-                
-                try:
-                    if abs(float(submitted_days) - float(key_days)) <= 1:
-                        top_performer_feedback.append(f"  - Accurate average days for {vendor_name}")
-                    else:
-                        top_performer_feedback.append(f"  - Inaccurate average days for {vendor_name}")
-                except ValueError:
-                    top_performer_feedback.append(f"  - Invalid average days format for {vendor_name}")
-        else:
-            top_performer_feedback.append(f"Incorrect top performer: {vendor_name}")
-    
-    top_performer_score = 0
-    if valid_top_performers >= 3:
-        top_performer_score = 10
-    elif valid_top_performers >= 2:
-        top_performer_score = 5
-    
-    score += top_performer_score
-    feedback["top_performers"] = {
-        "score": top_performer_score,
-        "max_score": 10,
-        "feedback": top_performer_feedback,
-        "valid_count": valid_top_performers
-    }
-    
-    # Evaluate needs improvement (max 10 points)
-    needs_improvement = submission.get("task2", {}).get("needs_improvement", [])
-    key_needs_improvement = answer_key.get("task2", {}).get("needs_improvement", [])
-    
-    valid_needs_improvement = 0
-    needs_improvement_feedback = []
-    
-    key_vendor_names = [performer["vendor_name"] for performer in key_needs_improvement]
-    
-    for i, performer in enumerate(needs_improvement):
-        vendor_name = performer.get("vendor_name", "")
-        
-        if vendor_name in key_vendor_names:
-            valid_needs_improvement += 1
-            needs_improvement_feedback.append(f"Correct vendor needing improvement: {vendor_name}")
-            
-            # Check if metrics are reasonably accurate (similar to top performers check)
-            key_performer = next((p for p in key_needs_improvement if p["vendor_name"] == vendor_name), None)
-            if key_performer:
-                # Similar metric checks as for top performers
-                # Omitted for brevity but follow the same pattern
-                pass
-        else:
-            needs_improvement_feedback.append(f"Incorrect vendor needing improvement: {vendor_name}")
-    
-    needs_improvement_score = 0
-    if valid_needs_improvement >= 3:
-        needs_improvement_score = 10
-    elif valid_needs_improvement >= 2:
-        needs_improvement_score = 5
-    
-    score += needs_improvement_score
-    feedback["needs_improvement"] = {
-        "score": needs_improvement_score,
-        "max_score": 10,
-        "feedback": needs_improvement_feedback,
-        "valid_count": valid_needs_improvement
-    }
-    
-    # Evaluate recommendations (max 5 points)
-    recommendations = submission.get("task2", {}).get("recommendations", [])
-    key_recommendations = answer_key.get("task2", {}).get("recommendations", [])
-    
-    valid_recommendations = 0
-    recommendation_feedback = []
-    
-    for recommendation in recommendations:
-        if any(re.search(re.escape(r.lower()), recommendation.lower()) or 
-               re.search(re.escape(recommendation.lower()), r.lower()) for r in key_recommendations):
-            valid_recommendations += 1
-            recommendation_feedback.append(f"Valid recommendation: {recommendation}")
-        else:
-            # Check if it's a reasonable recommendation even if not in the key
-            if any(keyword in recommendation.lower() for keyword in ["vendor", "deliver", "performance", "time", "quality"]):
-                valid_recommendations += 1
-                recommendation_feedback.append(f"Reasonable recommendation: {recommendation}")
-            else:
-                recommendation_feedback.append(f"Not a key recommendation: {recommendation}")
-    
-    recommendation_score = 0
-    if valid_recommendations >= 2:
-        recommendation_score = 5
-    elif valid_recommendations >= 1:
-        recommendation_score = 2
-    
-    score += recommendation_score
-    feedback["recommendations"] = {
-        "score": recommendation_score,
-        "max_score": 5,
-        "feedback": recommendation_feedback,
-        "valid_count": valid_recommendations
-    }
-    
-    feedback["total_score"] = score
-    feedback["max_score"] = 30
-    
-    return score, feedback
+    if percentage_diff <= 0.01:  # Within 1%
+        return 1.0
+    elif percentage_diff <= 0.05:  # Within 5%
+        return 0.5
+    else:
+        return 0.0
 
-def evaluate_task3(submission: Dict, answer_key: Dict) -> Tuple[int, Dict]:
-    """
-    Evaluate Task 3: Purchase Record Review and Anomaly Detection
-    Max points: 30
-    """
+def evaluate_inventory_analysis(candidate: Dict, answer_key: Dict) -> Tuple[float, Dict]:
+    """Evaluate the inventory analysis section of the submission."""
     score = 0
-    feedback = {}
+    details = {}
     
-    # Evaluate data organization (max 5 points)
-    data_organization = submission.get("task3", {}).get("data_organization", "")
-    key_data_organization = answer_key.get("task3", {}).get("data_organization", "")
-    
-    data_org_score = 0
-    data_org_feedback = []
-    
-    key_elements = ["import", "spreadsheet", "column", "format", "organize", "structure"]
-    valid_elements = 0
-    
-    for element in key_elements:
-        if re.search(element.lower(), data_organization.lower()):
-            valid_elements += 1
-            data_org_feedback.append(f"Includes key element: {element}")
-    
-    if valid_elements >= 3:
-        data_org_score = 5
-    elif valid_elements >= 2:
-        data_org_score = 3
-    
-    score += data_org_score
-    feedback["data_organization"] = {
-        "score": data_org_score,
-        "max_score": 5,
-        "feedback": data_org_feedback,
-        "valid_elements": valid_elements
+    # Items below threshold (10 points)
+    candidate_items = candidate.get("items_below_threshold", [])
+    answer_items = answer_key.get("items_below_threshold", [])
+    percentage, correct_count, missing = check_list_match(candidate_items, answer_items)
+    points = 10 * percentage
+    score += points
+    details["items_below_threshold"] = {
+        "score": points,
+        "max_points": 10,
+        "correct_count": correct_count,
+        "total_count": len(answer_items),
+        "missing_items": missing,
+        "comments": f"Identified {correct_count}/{len(answer_items)} items correctly"
     }
     
-    # Evaluate anomaly detection method (max 5 points)
-    anomaly_method = submission.get("task3", {}).get("anomaly_detection_method", "")
-    key_anomaly_method = answer_key.get("task3", {}).get("anomaly_detection_method", "")
-    
-    anomaly_method_score = 0
-    anomaly_method_feedback = []
-    
-    key_elements = ["outlier", "high", "unusual", "policy", "violation", "duplicate", "missing", "calculation", "error"]
-    valid_elements = 0
-    
-    for element in key_elements:
-        if re.search(element.lower(), anomaly_method.lower()):
-            valid_elements += 1
-            anomaly_method_feedback.append(f"Includes key element: {element}")
-    
-    if valid_elements >= 3:
-        anomaly_method_score = 5
-    elif valid_elements >= 2:
-        anomaly_method_score = 3
-    
-    score += anomaly_method_score
-    feedback["anomaly_detection_method"] = {
-        "score": anomaly_method_score,
-        "max_score": 5,
-        "feedback": anomaly_method_feedback,
-        "valid_elements": valid_elements
+    # Items requiring reorder (10 points)
+    candidate_items = candidate.get("items_requiring_reorder", [])
+    answer_items = answer_key.get("items_requiring_reorder", [])
+    percentage, correct_count, missing = check_list_match(candidate_items, answer_items)
+    points = 10 * percentage
+    score += points
+    details["items_requiring_reorder"] = {
+        "score": points,
+        "max_points": 10,
+        "correct_count": correct_count,
+        "total_count": len(answer_items),
+        "missing_items": missing,
+        "comments": f"Identified {correct_count}/{len(answer_items)} items correctly"
     }
     
-    # Evaluate flagged transactions (max 15 points)
-    flagged_transactions = submission.get("task3", {}).get("flagged_transactions", [])
-    key_flagged_transactions = answer_key.get("task3", {}).get("flagged_transactions", [])
+    # Current inventory levels (10 points)
+    candidate_levels = candidate.get("current_inventory_levels", {})
+    answer_levels = answer_key.get("current_inventory_levels", {})
     
-    valid_flagged = 0
-    flagged_feedback = []
+    inventory_score = 0
+    inventory_details = {}
     
-    key_transaction_ids = [t["transaction_id"] for t in key_flagged_transactions]
-    
-    for transaction in flagged_transactions:
-        transaction_id = transaction.get("transaction_id", "")
-        reason = transaction.get("reason_flagged", "")
+    for category, answer_value in answer_levels.items():
+        candidate_value = candidate_levels.get(category, 0)
+        category_score = check_numerical_value(candidate_value, answer_value)
+        inventory_score += category_score * (10 / len(answer_levels))
         
-        if transaction_id in key_transaction_ids:
-            valid_flagged += 1
-            flagged_feedback.append(f"Correct flagged transaction: {transaction_id}")
-            
-            # Check if reason is valid
-            key_transaction = next((t for t in key_flagged_transactions if t["transaction_id"] == transaction_id), None)
-            if key_transaction:
-                key_reason = key_transaction.get("reason_flagged", "")
-                if any(keyword in reason.lower() for keyword in key_reason.lower().split()):
-                    flagged_feedback.append(f"  - Valid reason provided for {transaction_id}")
-                else:
-                    flagged_feedback.append(f"  - Reason doesn't match key concern for {transaction_id}")
-        else:
-            # Check if it's a reasonable flag even if not in the key
-            if "TX23-1041" in transaction_id:  # This is a valid anomaly in the data but not in our top 5
-                valid_flagged += 1
-                flagged_feedback.append(f"Reasonable flagged transaction: {transaction_id} (unusual vendor)")
-            else:
-                flagged_feedback.append(f"Not a key flagged transaction: {transaction_id}")
+        inventory_details[category] = {
+            "candidate_value": candidate_value,
+            "correct_value": answer_value,
+            "score": category_score,
+            "comments": "Correct" if category_score == 1.0 else 
+                       "Within 5% margin" if category_score == 0.5 else 
+                       "Incorrect"
+        }
     
-    flagged_score = 0
-    if valid_flagged >= 4:
-        flagged_score = 15
-    elif valid_flagged >= 3:
-        flagged_score = 10
-    elif valid_flagged >= 2:
-        flagged_score = 5
-    
-    score += flagged_score
-    feedback["flagged_transactions"] = {
-        "score": flagged_score,
-        "max_score": 15,
-        "feedback": flagged_feedback,
-        "valid_count": valid_flagged
+    score += inventory_score
+    details["current_inventory_levels"] = {
+        "score": inventory_score,
+        "max_points": 10,
+        "category_details": inventory_details,
+        "comments": "Inventory levels analysis"
     }
     
-    # Evaluate system improvements (max 5 points)
-    improvements = submission.get("task3", {}).get("system_improvements", [])
-    key_improvements = answer_key.get("task3", {}).get("system_improvements", [])
+    return score, details
+
+def evaluate_vendor_performance(candidate: Dict, answer_key: Dict) -> Tuple[float, Dict]:
+    """Evaluate the vendor performance section of the submission."""
+    score = 0
+    details = {}
     
-    valid_improvements = 0
-    improvement_feedback = []
-    
-    for improvement in improvements:
-        if any(re.search(re.escape(i.lower()), improvement.lower()) or 
-               re.search(re.escape(improvement.lower()), i.lower()) for i in key_improvements):
-            valid_improvements += 1
-            improvement_feedback.append(f"Valid improvement: {improvement}")
-        else:
-            # Check if it's a reasonable improvement even if not in the key
-            key_terms = ["automat", "valid", "approv", "system", "control", "standard", "track", "flag"]
-            if any(term in improvement.lower() for term in key_terms):
-                valid_improvements += 1
-                improvement_feedback.append(f"Reasonable improvement: {improvement}")
-            else:
-                improvement_feedback.append(f"Not a key improvement: {improvement}")
-    
-    improvement_score = 0
-    if valid_improvements >= 3:
-        improvement_score = 5
-    elif valid_improvements >= 2:
-        improvement_score = 3
-    
-    score += improvement_score
-    feedback["system_improvements"] = {
-        "score": improvement_score,
-        "max_score": 5,
-        "feedback": improvement_feedback,
-        "valid_count": valid_improvements
+    # Top vendors (10 points)
+    candidate_vendors = candidate.get("top_vendors", [])
+    answer_vendors = answer_key.get("top_vendors", [])
+    percentage, correct_count, missing = check_list_match(candidate_vendors, answer_vendors)
+    points = 10 * percentage
+    score += points
+    details["top_vendors"] = {
+        "score": points,
+        "max_points": 10,
+        "correct_count": correct_count,
+        "total_count": len(answer_vendors),
+        "missing_items": missing,
+        "comments": f"Identified {correct_count}/{len(answer_vendors)} top vendors correctly"
     }
     
-    feedback["total_score"] = score
-    feedback["max_score"] = 30
+    # Bottom vendors (10 points)
+    candidate_vendors = candidate.get("bottom_vendors", [])
+    answer_vendors = answer_key.get("bottom_vendors", [])
+    percentage, correct_count, missing = check_list_match(candidate_vendors, answer_vendors)
+    points = 10 * percentage
+    score += points
+    details["bottom_vendors"] = {
+        "score": points,
+        "max_points": 10,
+        "correct_count": correct_count,
+        "total_count": len(answer_vendors),
+        "missing_items": missing,
+        "comments": f"Identified {correct_count}/{len(answer_vendors)} bottom vendors correctly"
+    }
     
-    return score, feedback
+    # Delivery metrics (20 points: 6 for on-time, 7 for delivery days, 7 for defect rate)
+    candidate_metrics = candidate.get("avg_delivery_metrics", {})
+    answer_metrics = answer_key.get("avg_delivery_metrics", {})
+    
+    on_time_score = 0
+    delivery_days_score = 0
+    defect_rate_score = 0
+    metrics_details = {}
+    
+    for vendor_id, answer_values in answer_metrics.items():
+        vendor_details = {}
+        candidate_values = candidate_metrics.get(vendor_id, {})
+        
+        # On-time rate (6 points)
+        candidate_on_time = candidate_values.get("on_time_rate", 0)
+        answer_on_time = answer_values.get("on_time_rate", 0)
+        on_time_score_vendor = check_numerical_value(candidate_on_time, answer_on_time)
+        on_time_score += on_time_score_vendor * (6 / len(answer_metrics))
+        
+        vendor_details["on_time_rate"] = {
+            "candidate_value": candidate_on_time,
+            "correct_value": answer_on_time,
+            "score": on_time_score_vendor,
+            "comments": "Correct" if on_time_score_vendor == 1.0 else 
+                       "Within 5% margin" if on_time_score_vendor == 0.5 else 
+                       "Incorrect"
+        }
+        
+        # Avg delivery days (7 points)
+        candidate_days = candidate_values.get("avg_delivery_days", 0)
+        answer_days = answer_values.get("avg_delivery_days", 0)
+        days_score_vendor = check_numerical_value(candidate_days, answer_days)
+        delivery_days_score += days_score_vendor * (7 / len(answer_metrics))
+        
+        vendor_details["avg_delivery_days"] = {
+            "candidate_value": candidate_days,
+            "correct_value": answer_days,
+            "score": days_score_vendor,
+            "comments": "Correct" if days_score_vendor == 1.0 else 
+                       "Within 5% margin" if days_score_vendor == 0.5 else 
+                       "Incorrect"
+        }
+        
+        # Defect rate (7 points)
+        candidate_defect = candidate_values.get("defect_rate", 0)
+        answer_defect = answer_values.get("defect_rate", 0)
+        defect_score_vendor = check_numerical_value(candidate_defect, answer_defect)
+        defect_rate_score += defect_score_vendor * (7 / len(answer_metrics))
+        
+        vendor_details["defect_rate"] = {
+            "candidate_value": candidate_defect,
+            "correct_value": answer_defect,
+            "score": defect_score_vendor,
+            "comments": "Correct" if defect_score_vendor == 1.0 else 
+                       "Within 5% margin" if defect_score_vendor == 0.5 else 
+                       "Incorrect"
+        }
+        
+        metrics_details[vendor_id] = vendor_details
+    
+    score += on_time_score + delivery_days_score + defect_rate_score
+    
+    details["avg_delivery_metrics"] = {
+        "on_time_rate_score": on_time_score,
+        "on_time_rate_max": 6,
+        "avg_delivery_days_score": delivery_days_score,
+        "avg_delivery_days_max": 7,
+        "defect_rate_score": defect_rate_score,
+        "defect_rate_max": 7,
+        "vendor_details": metrics_details,
+        "comments": "Vendor delivery metrics analysis"
+    }
+    
+    return score, details
+
+def evaluate_cost_analysis(candidate: Dict, answer_key: Dict) -> Tuple[float, Dict]:
+    """Evaluate the cost analysis section of the submission."""
+    score = 0
+    details = {}
+    
+    # Highest cost products (10 points)
+    candidate_products = candidate.get("highest_cost_products", [])
+    answer_products = answer_key.get("highest_cost_products", [])
+    percentage, correct_count, missing = check_list_match(candidate_products, answer_products)
+    points = 10 * percentage
+    score += points
+    details["highest_cost_products"] = {
+        "score": points,
+        "max_points": 10,
+        "correct_count": correct_count,
+        "total_count": len(answer_products),
+        "missing_items": missing,
+        "comments": f"Identified {correct_count}/{len(answer_products)} highest cost products correctly"
+    }
+    
+    # Products with price increases (10 points)
+    candidate_products = candidate.get("products_with_price_increases", [])
+    answer_products = answer_key.get("products_with_price_increases", [])
+    percentage, correct_count, missing = check_list_match(candidate_products, answer_products)
+    points = 10 * percentage
+    score += points
+    details["products_with_price_increases"] = {
+        "score": points,
+        "max_points": 10,
+        "correct_count": correct_count,
+        "total_count": len(answer_products),
+        "missing_items": missing,
+        "comments": f"Identified {correct_count}/{len(answer_products)} products with price increases correctly"
+    }
+    
+    # Total monthly spend (10 points)
+    candidate_spend = candidate.get("total_monthly_spend", {})
+    answer_spend = answer_key.get("total_monthly_spend", {})
+    
+    spend_score = 0
+    spend_details = {}
+    
+    for month, answer_value in answer_spend.items():
+        candidate_value = candidate_spend.get(month, 0)
+        month_score = check_numerical_value(candidate_value, answer_value)
+        spend_score += month_score * (10 / len(answer_spend))
+        
+        spend_details[month] = {
+            "candidate_value": candidate_value,
+            "correct_value": answer_value,
+            "score": month_score,
+            "comments": "Correct" if month_score == 1.0 else 
+                       "Within 5% margin" if month_score == 0.5 else 
+                       "Incorrect"
+        }
+    
+    score += spend_score
+    details["total_monthly_spend"] = {
+        "score": spend_score,
+        "max_points": 10,
+        "month_details": spend_details,
+        "comments": "Monthly spending analysis"
+    }
+    
+    return score, details
+
+def evaluate_submission(candidate: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the full candidate submission against the answer key."""
+    results = {
+        "candidate_id": candidate.get("candidate_id", "Unknown"),
+        "section_scores": {},
+        "detailed_feedback": {}
+    }
+    
+    total_score = 0
+    
+    # Evaluate inventory analysis (30 points)
+    inventory_score, inventory_details = evaluate_inventory_analysis(
+        candidate.get("inventory_analysis", {}),
+        answer_key.get("inventory_analysis", {})
+    )
+    total_score += inventory_score
+    results["section_scores"]["inventory_analysis"] = {
+        "score": inventory_score,
+        "max_points": 30,
+        "percentage": (inventory_score / 30) * 100
+    }
+    results["detailed_feedback"]["inventory_analysis"] = inventory_details
+    
+    # Evaluate vendor performance (40 points)
+    vendor_score, vendor_details = evaluate_vendor_performance(
+        candidate.get("vendor_performance", {}),
+        answer_key.get("vendor_performance", {})
+    )
+    total_score += vendor_score
+    results["section_scores"]["vendor_performance"] = {
+        "score": vendor_score,
+        "max_points": 40,
+        "percentage": (vendor_score / 40) * 100
+    }
+    results["detailed_feedback"]["vendor_performance"] = vendor_details
+    
+    # Evaluate cost analysis (30 points)
+    cost_score, cost_details = evaluate_cost_analysis(
+        candidate.get("cost_analysis", {}),
+        answer_key.get("cost_analysis", {})
+    )
+    total_score += cost_score
+    results["section_scores"]["cost_analysis"] = {
+        "score": cost_score,
+        "max_points": 30,
+        "percentage": (cost_score / 30) * 100
+    }
+    results["detailed_feedback"]["cost_analysis"] = cost_details
+    
+    # Calculate overall score
+    overall_percentage = (total_score / 100) * 100
+    results["overall_score"] = overall_percentage
+    
+    # Determine performance level
+    if overall_percentage >= 90:
+        performance = "Excellent"
+    elif overall_percentage >= 80:
+        performance = "Good"
+    elif overall_percentage >= 70:
+        performance = "Satisfactory"
+    elif overall_percentage >= 60:
+        performance = "Needs Improvement"
+    else:
+        performance = "Unsatisfactory"
+    
+    results["performance_level"] = performance
+    results["pass_fail"] = "Pass" if overall_percentage >= 70 else "Fail"
+    
+    return results
 
 def main():
+    """Main function to process command line arguments and evaluate submission."""
     if len(sys.argv) != 3:
-        print("Usage: python task_evaluation.py <submission_file> <answer_key_file>")
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
         sys.exit(1)
     
     submission_file = sys.argv[1]
     answer_key_file = sys.argv[2]
     
-    submission = load_json_file(submission_file)
-    answer_key = load_json_file(answer_key_file)
+    submission = load_json(submission_file)
+    answer_key = load_json(answer_key_file)
     
-    # Evaluate each task
-    task1_score, task1_feedback = evaluate_task1(submission, answer_key)
-    task2_score, task2_feedback = evaluate_task2(submission, answer_key)
-    task3_score, task3_feedback = evaluate_task3(submission, answer_key)
+    results = evaluate_submission(submission, answer_key)
     
-    total_score = task1_score + task2_score + task3_score
-    max_possible_score = 100  # 40 + 30 + 30
+    with open("test_results.json", 'w') as outfile:
+        json.dump(results, outfile, indent=2)
     
-    # Check if minimum requirements are met for passing
-    passed_task1 = task1_score >= 20  # At least 50% of Task 1 (40 points)
-    passed_task2 = task2_score >= 15  # At least 50% of Task 2 (30 points)
-    passed_task3 = task3_score >= 15  # At least 50% of Task 3 (30 points)
-    passed_overall = total_score >= 70  # At least 70% overall
-    
-    passed_exam = passed_task1 and passed_task2 and passed_task3 and passed_overall
-    
-    # Prepare results
-    results = {
-        "candidate_id": submission.get("candidate_id", "Unknown"),
-        "overall_score": round((total_score / max_possible_score) * 100, 1),
-        "total_points": total_score,
-        "max_possible_points": max_possible_score,
-        "passed_exam": passed_exam,
-        "task1": task1_feedback,
-        "task2": task2_feedback,
-        "task3": task3_feedback,
-        "passing_criteria": {
-            "minimum_overall_score": 70,
-            "minimum_task1_score": 20,
-            "minimum_task2_score": 15,
-            "minimum_task3_score": 15,
-            "passed_task1": passed_task1,
-            "passed_task2": passed_task2,
-            "passed_task3": passed_task3,
-            "passed_overall": passed_overall
-        }
-    }
-    
-    # Write results to file
-    with open("test_results.json", "w") as file:
-        json.dump(results, file, indent=2)
-    
-    print(f"Evaluation complete. Results saved to test_results.json")
-    print(f"Overall Score: {results['overall_score']}%")
-    print(f"Passed: {'Yes' if passed_exam else 'No'}")
+    print(f"Evaluation complete. Overall score: {results['overall_score']:.1f}%. Results saved to test_results.json")
 
 if __name__ == "__main__":
     main()

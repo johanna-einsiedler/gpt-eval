@@ -1,320 +1,523 @@
+#!/usr/bin/env python3
+
 import json
 import sys
+import re
+from typing import Dict, List, Union, Any
 
-def evaluate_test(submission_file, answer_key_file):
-    # Load submission and answer key
+def load_json_file(filename: str) -> Dict:
+    """Load a JSON file and return its contents as a dictionary."""
     try:
-        with open(submission_file, 'r') as f:
-            submission = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error loading submission file: {e}")
+        with open(filename, 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
         sys.exit(1)
-    
-    try:
-        with open(answer_key_file, 'r') as f:
-            answer_key = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error loading answer key file: {e}")
+    except json.JSONDecodeError:
+        print(f"Error: File '{filename}' is not a valid JSON file.")
         sys.exit(1)
+
+def evaluate_price_trends(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 1: Price Trend Analysis."""
+    score = 0
+    max_score = 25
+    feedback = {}
     
-    # Initialize result structure
-    results = {
-        "candidate_id": submission.get("candidateID", "Unknown"),
-        "exercise1": {
-            "score": 0,
-            "possible": 5,
-            "details": {}
-        },
-        "exercise2": {
-            "score": 0,
-            "possible": 4,
-            "details": {}
-        },
-        "exercise3": {
-            "score": 0,
-            "possible": 5,  # 4 items plus bonus
-            "details": {}
-        },
-        "critical_elements_passed": True,
-        "overall_score": 0
+    # Price trends (6 points - 2 per commodity)
+    price_trends_score = 0
+    price_trends_feedback = {}
+    
+    for commodity in ["steel", "aluminum", "copper"]:
+        if commodity in submission["task1"]["price_trends"]:
+            # Check if the key patterns are mentioned
+            key_patterns = answer_key["task1"]["price_trends"][commodity].lower().split()
+            submission_text = submission["task1"]["price_trends"][commodity].lower()
+            
+            pattern_matches = sum(1 for pattern in key_patterns if pattern in submission_text)
+            commodity_score = min(2, (pattern_matches / len(key_patterns)) * 2)
+            
+            price_trends_score += commodity_score
+            price_trends_feedback[commodity] = commodity_score
+        else:
+            price_trends_feedback[commodity] = 0
+    
+    # Volatility calculations (6 points - 2 per commodity)
+    volatility_score = 0
+    volatility_feedback = {}
+    
+    for commodity in ["steel", "aluminum", "copper"]:
+        if commodity in submission["task1"]["volatility_calculations"]:
+            correct_value = answer_key["task1"]["volatility_calculations"][commodity]
+            submitted_value = submission["task1"]["volatility_calculations"][commodity]
+            
+            # Allow for some margin of error (within 10%)
+            error_margin = abs(correct_value * 0.1)
+            if abs(submitted_value - correct_value) <= error_margin:
+                volatility_score += 2
+                volatility_feedback[commodity] = 2
+            else:
+                # Partial credit based on how close they are
+                accuracy = max(0, 1 - abs(submitted_value - correct_value) / correct_value)
+                partial_score = accuracy * 2
+                volatility_score += partial_score
+                volatility_feedback[commodity] = partial_score
+        else:
+            volatility_feedback[commodity] = 0
+    
+    # Production-price correlation (4 points)
+    correlation_score = 0
+    if submission["task1"]["production_price_correlation"].lower() == answer_key["task1"]["production_price_correlation"].lower():
+        correlation_score = 4
+    
+    # Price increase prediction (4 points)
+    prediction_score = 0
+    if submission["task1"]["price_increase_prediction"].lower() == answer_key["task1"]["price_increase_prediction"].lower():
+        prediction_score = 4
+    
+    # Prediction justification (5 points)
+    justification_score = 0
+    key_justification = answer_key["task1"]["prediction_justification"].lower()
+    submission_justification = submission["task1"]["prediction_justification"].lower()
+    
+    # Check for key elements in justification
+    key_elements = [
+        "consecutive monthly increases",
+        "upward trend",
+        "increasing production",
+        "three months",
+        "q4"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_justification)
+    justification_score = min(5, (element_matches / len(key_elements)) * 5)
+    
+    # Calculate total score for Task 1
+    task1_score = price_trends_score + volatility_score + correlation_score + prediction_score + justification_score
+    
+    feedback["price_trends"] = {
+        "score": price_trends_score,
+        "max_score": 6,
+        "details": price_trends_feedback
     }
     
-    # Evaluate Exercise 1
-    evaluate_exercise1(submission, answer_key, results)
+    feedback["volatility_calculations"] = {
+        "score": volatility_score,
+        "max_score": 6,
+        "details": volatility_feedback
+    }
     
-    # Evaluate Exercise 2
-    evaluate_exercise2(submission, answer_key, results)
+    feedback["production_price_correlation"] = {
+        "score": correlation_score,
+        "max_score": 4,
+        "correct_answer": answer_key["task1"]["production_price_correlation"]
+    }
     
-    # Evaluate Exercise 3
-    evaluate_exercise3(submission, answer_key, results)
+    feedback["price_increase_prediction"] = {
+        "score": prediction_score,
+        "max_score": 4,
+        "correct_answer": answer_key["task1"]["price_increase_prediction"]
+    }
     
-    # Check critical elements
-    check_critical_elements(results)
+    feedback["prediction_justification"] = {
+        "score": justification_score,
+        "max_score": 5
+    }
     
-    # Calculate overall score as percentage
-    total_score = results["exercise1"]["score"] + results["exercise2"]["score"] + results["exercise3"]["score"]
-    total_possible = results["exercise1"]["possible"] + results["exercise2"]["possible"] + results["exercise3"]["possible"]
-    results["overall_score"] = round((total_score / total_possible) * 100, 2)
+    return {
+        "score": task1_score,
+        "max_score": max_score,
+        "passing_score": 18,
+        "passed": task1_score >= 18,
+        "feedback": feedback
+    }
+
+def evaluate_disruption_analysis(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 2: Supply Chain Disruption Analysis."""
+    score = 0
+    max_score = 25
+    feedback = {}
+    
+    # Disruption impact analysis (9 points - 3 per disruption)
+    impact_score = 0
+    impact_feedback = {}
+    
+    for disruption in ["logistics_bottleneck", "geopolitical_conflict", "natural_disaster"]:
+        if disruption in submission["task2"]["disruption_impact_analysis"]:
+            key_elements = answer_key["task2"]["disruption_impact_analysis"][disruption].lower().split(". ")
+            submission_text = submission["task2"]["disruption_impact_analysis"][disruption].lower()
+            
+            # Check for key elements (price impact, duration, affected materials)
+            elements_found = 0
+            for element in key_elements:
+                if any(key_term in submission_text for key_term in element.split()[:3]):
+                    elements_found += 1
+            
+            disruption_score = min(3, (elements_found / len(key_elements)) * 3)
+            impact_score += disruption_score
+            impact_feedback[disruption] = disruption_score
+        else:
+            impact_feedback[disruption] = 0
+    
+    # Price sensitive materials (5 points)
+    sensitive_materials_score = 0
+    correct_materials = set(m.lower() for m in answer_key["task2"]["price_sensitive_materials"])
+    submitted_materials = set(m.lower() for m in submission["task2"]["price_sensitive_materials"] if m)
+    
+    if submitted_materials:
+        # Calculate intersection of correct and submitted materials
+        matching_materials = correct_materials.intersection(submitted_materials)
+        sensitive_materials_score = min(5, (len(matching_materials) / len(correct_materials)) * 5)
+    
+    # Longest recovery disruption (3 points)
+    recovery_score = 0
+    if submission["task2"]["longest_recovery_disruption"].lower() == answer_key["task2"]["longest_recovery_disruption"].lower():
+        recovery_score = 3
+    
+    # Mitigation recommendations (8 points)
+    mitigation_score = 0
+    if submission["task2"]["mitigation_recommendations"]:
+        key_strategies = [s.lower() for s in answer_key["task2"]["mitigation_recommendations"]]
+        submitted_strategies = [s.lower() for s in submission["task2"]["mitigation_recommendations"] if s]
+        
+        # Check for conceptual matches rather than exact wording
+        strategy_matches = 0
+        for submitted in submitted_strategies:
+            for key in key_strategies:
+                # If enough key terms match, consider it a match
+                key_terms = set(re.findall(r'\b\w+\b', key))
+                submitted_terms = set(re.findall(r'\b\w+\b', submitted))
+                overlap = len(key_terms.intersection(submitted_terms))
+                
+                if overlap >= len(key_terms) * 0.3:  # 30% match threshold
+                    strategy_matches += 1
+                    break
+        
+        mitigation_score = min(8, (strategy_matches / len(key_strategies)) * 8)
+    
+    # Calculate total score for Task 2
+    task2_score = impact_score + sensitive_materials_score + recovery_score + mitigation_score
+    
+    feedback["disruption_impact_analysis"] = {
+        "score": impact_score,
+        "max_score": 9,
+        "details": impact_feedback
+    }
+    
+    feedback["price_sensitive_materials"] = {
+        "score": sensitive_materials_score,
+        "max_score": 5,
+        "correct_materials": answer_key["task2"]["price_sensitive_materials"]
+    }
+    
+    feedback["longest_recovery_disruption"] = {
+        "score": recovery_score,
+        "max_score": 3,
+        "correct_answer": answer_key["task2"]["longest_recovery_disruption"]
+    }
+    
+    feedback["mitigation_recommendations"] = {
+        "score": mitigation_score,
+        "max_score": 8
+    }
+    
+    return {
+        "score": task2_score,
+        "max_score": max_score,
+        "passing_score": 18,
+        "passed": task2_score >= 18,
+        "feedback": feedback
+    }
+
+def evaluate_futures_market(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 3: Futures Market Interpretation."""
+    score = 0
+    max_score = 25
+    feedback = {}
+    
+    # Futures-spot comparison (6 points)
+    comparison_score = 0
+    key_comparison = answer_key["task3"]["futures_spot_comparison"].lower()
+    submission_comparison = submission["task3"]["futures_spot_comparison"].lower()
+    
+    # Check for key elements in comparison
+    key_elements = [
+        "poor predictors",
+        "volatile periods",
+        "3-month futures",
+        "more accurate",
+        "backwardation",
+        "contango"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_comparison)
+    comparison_score = min(6, (element_matches / len(key_elements)) * 6)
+    
+    # Market patterns (6 points)
+    patterns_score = 0
+    
+    # Check backwardation commodities
+    correct_backwardation = set(c.lower() for c in answer_key["task3"]["market_patterns"]["backwardation_commodities"])
+    submitted_backwardation = set(c.lower() for c in submission["task3"]["market_patterns"]["backwardation_commodities"] if c)
+    
+    backwardation_score = 0
+    if submitted_backwardation:
+        matching = correct_backwardation.intersection(submitted_backwardation)
+        backwardation_score = min(3, (len(matching) / len(correct_backwardation)) * 3)
+    
+    # Check contango commodities
+    correct_contango = set(c.lower() for c in answer_key["task3"]["market_patterns"]["contango_commodities"])
+    submitted_contango = set(c.lower() for c in submission["task3"]["market_patterns"]["contango_commodities"] if c)
+    
+    contango_score = 0
+    # Special case: if correct_contango is empty and submitted_contango is empty, full points
+    if not correct_contango and not submitted_contango:
+        contango_score = 3
+    elif correct_contango:
+        matching = correct_contango.intersection(submitted_contango)
+        contango_score = min(3, (len(matching) / len(correct_contango)) * 3)
+    
+    patterns_score = backwardation_score + contango_score
+    
+    # Current futures research (5 points)
+    # This requires evaluating the quality of web research, which is subjective
+    # Checking if it contains meaningful content
+    research_score = 0
+    if "current_futures_research" in submission["task3"] and submission["task3"]["current_futures_research"].strip():
+        research_content = submission["task3"]["current_futures_research"].lower()
+        # Check if it contains relevant terms
+        relevant_terms = ["aluminum", "price", "market", "futures", "contract"]
+        term_matches = sum(1 for term in relevant_terms if term in research_content)
+        research_score = min(5, (term_matches / len(relevant_terms)) * 5)
+    
+    # Purchase timing recommendation (8 points)
+    recommendation_score = 0
+    key_recommendation = answer_key["task3"]["purchase_timing_recommendation"].lower()
+    submission_recommendation = submission["task3"]["purchase_timing_recommendation"].lower()
+    
+    # Check for key elements in recommendation
+    key_elements = [
+        "backwardation",
+        "immediate",
+        "spot purchases",
+        "strategic",
+        "contracts",
+        "hedge"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_recommendation)
+    recommendation_score = min(8, (element_matches / len(key_elements)) * 8)
+    
+    # Calculate total score for Task 3
+    task3_score = comparison_score + patterns_score + research_score + recommendation_score
+    
+    feedback["futures_spot_comparison"] = {
+        "score": comparison_score,
+        "max_score": 6
+    }
+    
+    feedback["market_patterns"] = {
+        "score": patterns_score,
+        "max_score": 6,
+        "details": {
+            "backwardation_commodities": backwardation_score,
+            "contango_commodities": contango_score
+        }
+    }
+    
+    feedback["current_futures_research"] = {
+        "score": research_score,
+        "max_score": 5
+    }
+    
+    feedback["purchase_timing_recommendation"] = {
+        "score": recommendation_score,
+        "max_score": 8
+    }
+    
+    return {
+        "score": task3_score,
+        "max_score": max_score,
+        "passing_score": 17,
+        "passed": task3_score >= 17,
+        "feedback": feedback
+    }
+
+def evaluate_market_conditions(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 4: Market Conditions Assessment."""
+    score = 0
+    max_score = 25
+    feedback = {}
+    
+    # Market condition summary (5 points)
+    summary_score = 0
+    key_summary = answer_key["task4"]["market_condition_summary"].lower()
+    submission_summary = submission["task4"]["market_condition_summary"].lower()
+    
+    # Check for key elements in summary
+    key_elements = [
+        "electronic components",
+        "severe constraints",
+        "stainless steel",
+        "lead times",
+        "inventory levels"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_summary)
+    summary_score = min(5, (element_matches / len(key_elements)) * 5)
+    
+    # Supply constrained materials (6 points)
+    constrained_score = 0
+    correct_materials = set(m.lower() for m in answer_key["task4"]["supply_constrained_materials"])
+    submitted_materials = set(m.lower() for m in submission["task4"]["supply_constrained_materials"] if m)
+    
+    if submitted_materials:
+        # Calculate intersection of correct and submitted materials
+        matching_materials = correct_materials.intersection(submitted_materials)
+        constrained_score = min(6, (len(matching_materials) / len(correct_materials)) * 6)
+    
+    # Market research findings (4 points)
+    # This requires evaluating the quality of web research, which is subjective
+    research_score = 0
+    if "market_research_findings" in submission["task4"] and submission["task4"]["market_research_findings"].strip():
+        research_content = submission["task4"]["market_research_findings"].lower()
+        # Check if it contains relevant terms
+        relevant_terms = ["market", "supply", "electronic", "components", "steel", "manufacturing"]
+        term_matches = sum(1 for term in relevant_terms if term in research_content)
+        research_score = min(4, (term_matches / len(relevant_terms)) * 4)
+    
+    # Procurement strategy (6 points)
+    strategy_score = 0
+    key_strategy = answer_key["task4"]["procurement_strategy"].lower()
+    submission_strategy = submission["task4"]["procurement_strategy"].lower()
+    
+    # Check for key elements in strategy
+    key_elements = [
+        "tiered",
+        "approach",
+        "electronic components",
+        "immediate",
+        "buffer stock",
+        "domestic suppliers",
+        "inventory"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_strategy)
+    strategy_score = min(6, (element_matches / len(key_elements)) * 6)
+    
+    # Strategy justification (4 points)
+    justification_score = 0
+    key_justification = answer_key["task4"]["strategy_justification"].lower()
+    submission_justification = submission["task4"]["strategy_justification"].lower()
+    
+    # Check for key elements in justification
+    key_elements = [
+        "warehouse capacity",
+        "constraints",
+        "suppliers",
+        "delivery",
+        "90%",
+        "production"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_justification)
+    justification_score = min(4, (element_matches / len(key_elements)) * 4)
+    
+    # Calculate total score for Task 4
+    task4_score = summary_score + constrained_score + research_score + strategy_score + justification_score
+    
+    feedback["market_condition_summary"] = {
+        "score": summary_score,
+        "max_score": 5
+    }
+    
+    feedback["supply_constrained_materials"] = {
+        "score": constrained_score,
+        "max_score": 6,
+        "correct_materials": answer_key["task4"]["supply_constrained_materials"]
+    }
+    
+    feedback["market_research_findings"] = {
+        "score": research_score,
+        "max_score": 4
+    }
+    
+    feedback["procurement_strategy"] = {
+        "score": strategy_score,
+        "max_score": 6
+    }
+    
+    feedback["strategy_justification"] = {
+        "score": justification_score,
+        "max_score": 4
+    }
+    
+    return {
+        "score": task4_score,
+        "max_score": max_score,
+        "passing_score": 17,
+        "passed": task4_score >= 17,
+        "feedback": feedback
+    }
+
+def evaluate_submission(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the complete submission against the answer key."""
+    results = {}
+    
+    # Evaluate each task
+    task1_results = evaluate_price_trends(submission, answer_key)
+    task2_results = evaluate_disruption_analysis(submission, answer_key)
+    task3_results = evaluate_futures_market(submission, answer_key)
+    task4_results = evaluate_market_conditions(submission, answer_key)
+    
+    # Calculate overall score
+    total_score = task1_results["score"] + task2_results["score"] + task3_results["score"] + task4_results["score"]
+    total_max_score = task1_results["max_score"] + task2_results["max_score"] + task3_results["max_score"] + task4_results["max_score"]
+    overall_percentage = (total_score / total_max_score) * 100
+    
+    # Determine if overall passing criteria met
+    passed_overall = (
+        overall_percentage >= 70 and
+        task1_results["passed"] and
+        task2_results["passed"] and
+        task3_results["passed"] and
+        task4_results["passed"]
+    )
+    
+    results["candidate_id"] = submission.get("candidate_id", "unknown")
+    results["task1"] = task1_results
+    results["task2"] = task2_results
+    results["task3"] = task3_results
+    results["task4"] = task4_results
+    results["overall_score"] = round(overall_percentage, 2)
+    results["passed"] = passed_overall
+    results["total_points"] = total_score
+    results["max_points"] = total_max_score
     
     return results
 
-def evaluate_exercise1(submission, answer_key, results):
-    ex1_sub = submission.get("exercise1", {})
-    ex1_key = answer_key.get("exercise1", {})
-    
-    # Price Pattern
-    price_pattern = ex1_sub.get("pricePattern")
-    if price_pattern == ex1_key.get("pricePattern"):
-        results["exercise1"]["score"] += 1
-        results["exercise1"]["details"]["pricePattern"] = {"correct": True, "score": 1}
-    else:
-        results["exercise1"]["details"]["pricePattern"] = {"correct": False, "score": 0, 
-                                                         "expected": ex1_key.get("pricePattern"), 
-                                                         "submitted": price_pattern}
-    
-    # Peak Month
-    peak_month = ex1_sub.get("peakMonth")
-    if peak_month == ex1_key.get("peakMonth"):
-        results["exercise1"]["score"] += 1
-        results["exercise1"]["details"]["peakMonth"] = {"correct": True, "score": 1}
-    else:
-        results["exercise1"]["details"]["peakMonth"] = {"correct": False, "score": 0, 
-                                                      "expected": ex1_key.get("peakMonth"), 
-                                                      "submitted": peak_month}
-    
-    # Lowest Price
-    lowest_price = ex1_sub.get("lowestPrice")
-    expected_price = ex1_key.get("lowestPrice")
-    
-    if lowest_price is not None and expected_price is not None:
-        if abs(lowest_price - expected_price) < 0.01:  # Exact match
-            results["exercise1"]["score"] += 1
-            results["exercise1"]["details"]["lowestPrice"] = {"correct": True, "score": 1}
-        elif abs((lowest_price - expected_price) / expected_price) <= 0.05:  # Within 5%
-            results["exercise1"]["score"] += 0.5
-            results["exercise1"]["details"]["lowestPrice"] = {"correct": "partial", "score": 0.5, 
-                                                           "expected": expected_price, 
-                                                           "submitted": lowest_price}
-        else:
-            results["exercise1"]["details"]["lowestPrice"] = {"correct": False, "score": 0, 
-                                                           "expected": expected_price, 
-                                                           "submitted": lowest_price}
-    else:
-        results["exercise1"]["details"]["lowestPrice"] = {"correct": False, "score": 0, 
-                                                       "expected": expected_price, 
-                                                       "submitted": lowest_price}
-    
-    # Percentage Change
-    pct_change = ex1_sub.get("percentageChange")
-    expected_pct = ex1_key.get("percentageChange")
-    
-    if pct_change is not None and expected_pct is not None:
-        if abs(pct_change - expected_pct) < 0.1:  # Exact match with small tolerance
-            results["exercise1"]["score"] += 1
-            results["exercise1"]["details"]["percentageChange"] = {"correct": True, "score": 1}
-        elif abs((pct_change - expected_pct) / expected_pct) <= 0.05:  # Within 5%
-            results["exercise1"]["score"] += 0.5
-            results["exercise1"]["details"]["percentageChange"] = {"correct": "partial", "score": 0.5, 
-                                                                "expected": expected_pct, 
-                                                                "submitted": pct_change}
-        else:
-            results["exercise1"]["details"]["percentageChange"] = {"correct": False, "score": 0, 
-                                                                "expected": expected_pct, 
-                                                                "submitted": pct_change}
-    else:
-        results["exercise1"]["details"]["percentageChange"] = {"correct": False, "score": 0, 
-                                                            "expected": expected_pct, 
-                                                            "submitted": pct_change}
-    
-    # Quarter with Highest Volatility
-    quarter = ex1_sub.get("quarterWithHighestVolatility")
-    if quarter == ex1_key.get("quarterWithHighestVolatility"):
-        results["exercise1"]["score"] += 1
-        results["exercise1"]["details"]["quarterWithHighestVolatility"] = {"correct": True, "score": 1}
-    else:
-        results["exercise1"]["details"]["quarterWithHighestVolatility"] = {"correct": False, "score": 0, 
-                                                                         "expected": ex1_key.get("quarterWithHighestVolatility"), 
-                                                                         "submitted": quarter}
-
-def evaluate_exercise2(submission, answer_key, results):
-    ex2_sub = submission.get("exercise2", {})
-    ex2_key = answer_key.get("exercise2", {})
-    
-    # Impact Score
-    impact_score = ex2_sub.get("impactScore")
-    expected_score = ex2_key.get("impactScore")
-    
-    if impact_score == expected_score:
-        results["exercise2"]["score"] += 1
-        results["exercise2"]["details"]["impactScore"] = {"correct": True, "score": 1}
-    else:
-        results["exercise2"]["details"]["impactScore"] = {"correct": False, "score": 0, 
-                                                        "expected": expected_score, 
-                                                        "submitted": impact_score}
-    
-    # Expected Price Change
-    price_change = ex2_sub.get("expectedPriceChange")
-    expected_change = ex2_key.get("expectedPriceChange")
-    
-    if price_change is not None and expected_change is not None:
-        if abs(price_change - expected_change) < 0.1:  # Exact match with small tolerance
-            results["exercise2"]["score"] += 1
-            results["exercise2"]["details"]["expectedPriceChange"] = {"correct": True, "score": 1}
-        elif abs((price_change - expected_change) / expected_change) <= 0.05:  # Within 5%
-            results["exercise2"]["score"] += 0.5
-            results["exercise2"]["details"]["expectedPriceChange"] = {"correct": "partial", "score": 0.5, 
-                                                                   "expected": expected_change, 
-                                                                   "submitted": price_change}
-        else:
-            results["exercise2"]["details"]["expectedPriceChange"] = {"correct": False, "score": 0, 
-                                                                   "expected": expected_change, 
-                                                                   "submitted": price_change}
-    else:
-        results["exercise2"]["details"]["expectedPriceChange"] = {"correct": False, "score": 0, 
-                                                               "expected": expected_change, 
-                                                               "submitted": price_change}
-    
-    # Recommended Action - zero tolerance item
-    action = ex2_sub.get("recommendedAction")
-    if action == ex2_key.get("recommendedAction"):
-        results["exercise2"]["score"] += 1
-        results["exercise2"]["details"]["recommendedAction"] = {"correct": True, "score": 1}
-    else:
-        results["exercise2"]["details"]["recommendedAction"] = {"correct": False, "score": 0, 
-                                                              "expected": ex2_key.get("recommendedAction"), 
-                                                              "submitted": action}
-    
-    # Alternate Supplier Code
-    supplier = ex2_sub.get("alternateSupplierCode")
-    if supplier == ex2_key.get("alternateSupplierCode"):
-        results["exercise2"]["score"] += 1
-        results["exercise2"]["details"]["alternateSupplierCode"] = {"correct": True, "score": 1}
-    else:
-        results["exercise2"]["details"]["alternateSupplierCode"] = {"correct": False, "score": 0, 
-                                                                  "expected": ex2_key.get("alternateSupplierCode"), 
-                                                                  "submitted": supplier}
-
-def evaluate_exercise3(submission, answer_key, results):
-    ex3_sub = submission.get("exercise3", {})
-    ex3_key = answer_key.get("exercise3", {})
-    
-    # Contract Recommendation - zero tolerance item
-    contract = ex3_sub.get("contractRecommendation")
-    if contract == ex3_key.get("contractRecommendation"):
-        results["exercise3"]["score"] += 1
-        results["exercise3"]["details"]["contractRecommendation"] = {"correct": True, "score": 1}
-    elif contract in ["spot", "3month", "6month", "12month"]:  # Valid but not optimal
-        results["exercise3"]["details"]["contractRecommendation"] = {"correct": "partial", "score": 0.5, 
-                                                                   "expected": ex3_key.get("contractRecommendation"), 
-                                                                   "submitted": contract}
-        results["exercise3"]["score"] += 0.5
-    else:
-        results["exercise3"]["details"]["contractRecommendation"] = {"correct": False, "score": 0, 
-                                                                   "expected": ex3_key.get("contractRecommendation"), 
-                                                                   "submitted": contract}
-    
-    # Price Target
-    price_target = ex3_sub.get("priceTarget")
-    expected_target = ex3_key.get("priceTarget")
-    
-    if price_target is not None and expected_target is not None:
-        if abs(price_target - expected_target) < 0.01:  # Exact match
-            results["exercise3"]["score"] += 1
-            results["exercise3"]["details"]["priceTarget"] = {"correct": True, "score": 1}
-        elif abs((price_target - expected_target) / expected_target) <= 0.05:  # Within 5%
-            results["exercise3"]["score"] += 0.5
-            results["exercise3"]["details"]["priceTarget"] = {"correct": "partial", "score": 0.5, 
-                                                           "expected": expected_target, 
-                                                           "submitted": price_target}
-        else:
-            results["exercise3"]["details"]["priceTarget"] = {"correct": False, "score": 0, 
-                                                           "expected": expected_target, 
-                                                           "submitted": price_target}
-    else:
-        results["exercise3"]["details"]["priceTarget"] = {"correct": False, "score": 0, 
-                                                       "expected": expected_target, 
-                                                       "submitted": price_target}
-    
-    # Potential Savings
-    savings = ex3_sub.get("potentialSavings")
-    expected_savings = ex3_key.get("potentialSavings")
-    
-    if savings is not None and expected_savings is not None:
-        if abs(savings - expected_savings) < 1:  # Small tolerance for rounding
-            results["exercise3"]["score"] += 1
-            results["exercise3"]["details"]["potentialSavings"] = {"correct": True, "score": 1}
-        elif abs((savings - expected_savings) / expected_savings) <= 0.05:  # Within 5%
-            results["exercise3"]["score"] += 0.5
-            results["exercise3"]["details"]["potentialSavings"] = {"correct": "partial", "score": 0.5, 
-                                                                "expected": expected_savings, 
-                                                                "submitted": savings}
-        else:
-            results["exercise3"]["details"]["potentialSavings"] = {"correct": False, "score": 0, 
-                                                                "expected": expected_savings, 
-                                                                "submitted": savings}
-    else:
-        results["exercise3"]["details"]["potentialSavings"] = {"correct": False, "score": 0, 
-                                                            "expected": expected_savings, 
-                                                            "submitted": savings}
-    
-    # Risk Level
-    risk_level = ex3_sub.get("riskLevel")
-    if risk_level == ex3_key.get("riskLevel"):
-        results["exercise3"]["score"] += 1
-        results["exercise3"]["details"]["riskLevel"] = {"correct": True, "score": 1}
-    else:
-        results["exercise3"]["details"]["riskLevel"] = {"correct": False, "score": 0, 
-                                                      "expected": ex3_key.get("riskLevel"), 
-                                                      "submitted": risk_level}
-    
-    # Bonus point if all items in Exercise 3 are correct
-    all_correct = all(item.get("correct") == True for item in results["exercise3"]["details"].values())
-    if all_correct:
-        results["exercise3"]["score"] += 1
-        results["exercise3"]["details"]["bonus"] = {"description": "All items correct", "score": 1}
-
-def check_critical_elements(results):
-    # Check if candidate met the minimum requirements for each exercise
-    ex1_score = results["exercise1"]["score"]
-    ex2_score = results["exercise2"]["score"]
-    ex3_score = results["exercise3"]["score"]
-    
-    # Critical elements requirement: at least 3/5 in Ex1, 3/4 in Ex2, 3/4 in Ex3
-    if ex1_score < 3 or ex2_score < 3 or ex3_score < 3:
-        results["critical_elements_passed"] = False
-    
-    # Zero tolerance items
-    ex2_action = results["exercise2"]["details"].get("recommendedAction", {}).get("correct")
-    ex3_contract = results["exercise3"]["details"].get("contractRecommendation", {}).get("correct")
-    
-    if ex2_action is not True or ex3_contract is not True:
-        if ex3_contract == "partial":  # Allow partial credit for contract recommendation
-            pass
-        else:
-            results["critical_elements_passed"] = False
-    
-    # Overall passing requirement: at least 11/14 points
-    total_score = ex1_score + ex2_score + ex3_score
-    if total_score < 11:
-        results["critical_elements_passed"] = False
-
 def main():
+    """Main function to run the evaluation script."""
     if len(sys.argv) != 3:
-        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        print("Usage: python task_evaluation.py <submission_file> <answer_key_file>")
         sys.exit(1)
     
     submission_file = sys.argv[1]
     answer_key_file = sys.argv[2]
     
-    results = evaluate_test(submission_file, answer_key_file)
+    # Load the submission and answer key
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
     
-    # Save results to file
-    with open("test_results.json", "w") as f:
-        json.dump(results, f, indent=2)
+    # Evaluate the submission
+    results = evaluate_submission(submission, answer_key)
     
-    print(f"Evaluation complete. Results saved to test_results.json")
+    # Save the results
+    with open("test_results.json", "w") as file:
+        json.dump(results, file, indent=2)
+    
+    print(f"Evaluation completed. Results saved to test_results.json")
     print(f"Overall score: {results['overall_score']}%")
-    print(f"Passed critical elements: {results['critical_elements_passed']}")
+    print(f"Result: {'PASSED' if results['passed'] else 'FAILED'}")
 
 if __name__ == "__main__":
     main()

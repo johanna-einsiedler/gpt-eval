@@ -1,79 +1,31 @@
 {
-    "candidate_id": "EVALUATOR_KEY",
-    "exercise1": {
-        "claimNumber": "CLM-2023-07892",
-        "coverageDetermination": "covered",
-        "applicableLimit": 25000,
-        "applicableDeductible": 500,
-        "relevantPolicySection": "SECTION II",
-        "applicableExclusions": []
+    "candidate_id": "ANSWER_KEY",
+    "exercise_1": {
+        "policy_number": "AP-98754321",
+        "claim_number": "CLM-20230714-8842",
+        "incident_date": "2023-07-14",
+        "incident_covered": true,
+        "applicable_coverage_section": "Section 5",
+        "coverage_limit": 50000,
+        "deductible_amount": 200
     },
-    "exercise2": {
-        "policyMatches": [
-            {
-                "claimId": "CLM-20301",
-                "policyId": "POL-H-5672",
-                "coverageType": "Health"
-            },
-            {
-                "claimId": "CLM-20302",
-                "policyId": "POL-A-7890",
-                "coverageType": "Auto"
-            },
-            {
-                "claimId": "CLM-20303",
-                "policyId": "POL-H-2341",
-                "coverageType": "Health"
-            },
-            {
-                "claimId": "CLM-20304",
-                "policyId": "POL-H-6589",
-                "coverageType": "Health"
-            },
-            {
-                "claimId": "CLM-20305",
-                "policyId": "POL-P-4231",
-                "coverageType": "Property"
-            }
-        ],
-        "benefitsCalculation": [
-            {
-                "claimId": "CLM-20301",
-                "eligibleAmount": "450.00",
-                "ineligibleAmount": "2000.00"
-            },
-            {
-                "claimId": "CLM-20302",
-                "eligibleAmount": "3875.50",
-                "ineligibleAmount": "1000.00"
-            },
-            {
-                "claimId": "CLM-20303",
-                "eligibleAmount": "125.00",
-                "ineligibleAmount": "50.00"
-            },
-            {
-                "claimId": "CLM-20304",
-                "eligibleAmount": "372.75",
-                "ineligibleAmount": "20.00"
-            },
-            {
-                "claimId": "CLM-20305",
-                "eligibleAmount": "7500.00",
-                "ineligibleAmount": "1250.00"
-            }
-        ]
+    "exercise_2": {
+        "patient_id": "EJ-789456123",
+        "service_date": "2023-06-02",
+        "provider_in_network": true,
+        "procedure_code": "73221",
+        "procedure_covered": true,
+        "patient_responsibility_percentage": 30,
+        "patient_responsibility_amount": 360
     },
-    "exercise3": {
-        "claim1": {
-            "coverageVerification": true,
-            "denialReason": "",
-            "maximumPayable": 1050
-        },
-        "claim2": {
-            "coverageVerification": false,
-            "denialReason": "Alternative medicine treatments (acupuncture, naturopathy, etc.) are not covered",
-            "maximumPayable": 0
-        }
+    "exercise_3": {
+        "claim_number": "HCL-20230518-4421",
+        "property_address": "456 Maple Avenue, Springfield, IL 62704",
+        "damage_type": "water",
+        "date_of_loss": "2023-05-18",
+        "previous_similar_claims": 3,
+        "coverage_applies": true,
+        "excluded_peril": false,
+        "potential_red_flags": 2
     }
 }

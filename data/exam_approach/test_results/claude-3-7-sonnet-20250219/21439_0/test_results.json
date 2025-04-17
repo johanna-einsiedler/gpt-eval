@@ -1,115 +1,49 @@
 {
-  "candidate_id": "Unknown",
-  "evaluation_date": "2025-04-16",
-  "scenario_results": [
-    {
-      "scenario": "scenario1",
-      "points_possible": 33,
-      "points_earned": 33,
-      "breakdown": {
-        "irregularity_identification": {
-          "possible": 10,
-          "earned": 10,
-          "notes": ""
-        },
-        "amount_in_question": {
-          "possible": 8,
-          "earned": 8,
-          "notes": ""
-        },
-        "affected_benefit": {
-          "possible": 5,
-          "earned": 5,
-          "notes": ""
-        },
-        "regulation_violated": {
-          "possible": 5,
-          "earned": 5,
-          "notes": ""
-        },
-        "explanation": {
-          "possible": 5,
-          "earned": 5,
-          "notes": ""
-        }
-      }
-    },
-    {
-      "scenario": "scenario2",
-      "points_possible": 33,
-      "points_earned": 32,
-      "breakdown": {
-        "irregularity_identification": {
-          "possible": 10,
-          "earned": 10,
-          "notes": ""
-        },
-        "amount_in_question": {
-          "possible": 8,
-          "earned": 8,
-          "notes": ""
-        },
-        "affected_benefit": {
-          "possible": 5,
-          "earned": 5,
-          "notes": ""
-        },
-        "regulation_violated": {
-          "possible": 5,
-          "earned": 5,
-          "notes": ""
-        },
-        "explanation": {
-          "possible": 5,
-          "earned": 4,
-          "notes": ""
-        }
-      }
-    },
-    {
-      "scenario": "scenario3",
-      "points_possible": 33,
-      "points_earned": 33,
-      "breakdown": {
-        "irregularity_identification": {
-          "possible": 10,
-          "earned": 10,
-          "notes": ""
-        },
-        "amount_in_question": {
-          "possible": 8,
-          "earned": 8,
-          "notes": ""
-        },
-        "affected_benefit": {
-          "possible": 5,
-          "earned": 5,
-          "notes": ""
-        },
-        "regulation_violated": {
-          "possible": 5,
-          "earned": 5,
-          "notes": ""
-        },
-        "explanation": {
-          "possible": 5,
-          "earned": 5,
-          "notes": ""
-        }
-      }
-    }
-  ],
-  "formatting_score": 1,
-  "overall_score_details": {
-    "total_points_possible": 100,
-    "total_points_earned": 99,
-    "percentage_score": 99.0,
-    "passing_threshold": 70,
-    "passed": true
+  "identification_score": 20,
+  "classification_score": 20,
+  "financial_impact_score": 20,
+  "recommended_action_score": 20,
+  "documentation_score": 20,
+  "false_positives": 0,
+  "details": {
+    "correct_identifications": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "missed_identifications": [],
+    "false_identifications": [],
+    "correct_classifications": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "incorrect_classifications": [],
+    "correct_financial_impacts": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "incorrect_financial_impacts": [],
+    "correct_recommended_actions": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "incorrect_recommended_actions": [],
+    "correct_documentation": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "incorrect_documentation": []
   },
-  "overall_score": 99.0,
-  "correct_identifications": 3,
-  "minimum_identifications_required": 2,
-  "final_result": "PASS",
-  "feedback": "Excellent performance! You demonstrated strong attention to detail and understanding of irregularity reporting procedures."
+  "overall_score": 125.0,
+  "status": "Pass",
+  "primary_criteria_met": 4
 }

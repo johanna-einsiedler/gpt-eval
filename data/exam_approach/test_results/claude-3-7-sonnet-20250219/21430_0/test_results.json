@@ -1,176 +1,204 @@
 {
-  "candidate_name": "ANSWER_KEY",
-  "candidate_id": "EVALUATOR",
-  "submission_date": "2023-09-01",
-  "evaluation_date": 1744810443.7388587,
-  "overall_score": 98.0,
-  "total_points": 98,
-  "max_points": 100,
-  "critical_failures": [],
-  "assessment": "EXCELLENT",
-  "assessment_reason": "Demonstrated exceptional ability to identify and properly refer questionable claims.",
-  "claim_evaluations": {
-    "CLAIM-001": {
-      "referral_decision": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Correct referral decision"
+  "candidate_id": "EVALUATOR_KEY",
+  "overall_score": 100.0,
+  "passed": true,
+  "fatal_errors": [],
+  "referral_decisions": {
+    "score_percentage": 100.0,
+    "weighted_score": 40.0,
+    "correct_count": 5,
+    "total_count": 5,
+    "details": [
+      {
+        "claim_id": "Claim-1",
+        "submitted": true,
+        "expected": true,
+        "is_correct": true
       },
-      "red_flags": {
-        "score": 7,
-        "max_score": 7,
-        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 4/4 red flags",
-        "matched_flags": [
-          "LSC-001",
-          "POL-005",
-          "CLB-006",
-          "DOC-001"
+      {
+        "claim_id": "Claim-2",
+        "submitted": true,
+        "expected": true,
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-3",
+        "submitted": true,
+        "expected": true,
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-4",
+        "submitted": false,
+        "expected": false,
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-5",
+        "submitted": true,
+        "expected": true,
+        "is_correct": true
+      }
+    ]
+  },
+  "referral_types": {
+    "score_percentage": 100.0,
+    "weighted_score": 20.0,
+    "correct_count": 4,
+    "total_count": 4,
+    "details": [
+      {
+        "claim_id": "Claim-1",
+        "submitted": "SIU_INVESTIGATION",
+        "expected": "SIU_INVESTIGATION",
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-2",
+        "submitted": "FIELD_INVESTIGATION",
+        "expected": "FIELD_INVESTIGATION",
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-3",
+        "submitted": "SIU_INVESTIGATION",
+        "expected": "SIU_INVESTIGATION",
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-5",
+        "submitted": "SIU_INVESTIGATION",
+        "expected": "SIU_INVESTIGATION",
+        "is_correct": true
+      }
+    ]
+  },
+  "red_flags": {
+    "score_percentage": 100.0,
+    "weighted_score": 25.0,
+    "identified_key_flags": 18,
+    "total_key_flags": 18,
+    "details": [
+      {
+        "claim_id": "Claim-1",
+        "correct_flags": [
+          "RF031",
+          "RF007",
+          "RF003",
+          "RF015"
         ],
-        "missed_flags": []
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
       },
-      "referral_destination": {
-        "score": 3,
-        "max_score": 3,
-        "feedback": "Correct referral destination"
-      },
-      "justification": {
-        "score": 3,
-        "max_score": 5,
-        "feedback": "Adequate justification with some specific evidence cited\nWord count: 137 words"
-      },
-      "total_score": 18,
-      "max_score": 20,
-      "percentage": 90.0
-    },
-    "CLAIM-002": {
-      "referral_decision": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Correct referral decision"
-      },
-      "red_flags": {
-        "score": 7,
-        "max_score": 7,
-        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 4/4 red flags",
-        "matched_flags": [
-          "POL-001",
-          "POL-005",
-          "DOC-001",
-          "FIN-001"
+      {
+        "claim_id": "Claim-2",
+        "correct_flags": [
+          "RF011",
+          "RF044",
+          "RF042",
+          "RF012"
         ],
-        "missed_flags": []
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
       },
-      "referral_destination": {
-        "score": 3,
-        "max_score": 3,
-        "feedback": "Correct referral destination"
-      },
-      "justification": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Excellent comprehensive justification with specific evidence cited\nWord count: 165 words"
-      },
-      "total_score": 20,
-      "max_score": 20,
-      "percentage": 100.0
-    },
-    "CLAIM-003": {
-      "referral_decision": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Correct referral decision"
-      },
-      "red_flags": {
-        "score": 7,
-        "max_score": 7,
-        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 4/4 red flags",
-        "matched_flags": [
-          "DOC-003",
-          "CLB-006",
-          "MED-001",
-          "MED-004"
+      {
+        "claim_id": "Claim-3",
+        "correct_flags": [
+          "RF015",
+          "RF016",
+          "RF006",
+          "RF007",
+          "RF035"
         ],
-        "missed_flags": []
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
       },
-      "referral_destination": {
-        "score": 3,
-        "max_score": 3,
-        "feedback": "Correct referral destination"
+      {
+        "claim_id": "Claim-4",
+        "correct_flags": [],
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
       },
-      "justification": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Excellent comprehensive justification with specific evidence cited\nWord count: 164 words"
-      },
-      "total_score": 20,
-      "max_score": 20,
-      "percentage": 100.0
-    },
-    "CLAIM-004": {
-      "referral_decision": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Correct referral decision"
-      },
-      "red_flags": {
-        "score": 7,
-        "max_score": 7,
-        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 5/5 red flags",
-        "matched_flags": [
-          "DOC-002",
-          "FIN-004",
-          "DOC-001",
-          "LSC-006",
-          "FIN-002"
+      {
+        "claim_id": "Claim-5",
+        "correct_flags": [
+          "RF049",
+          "RF011",
+          "RF020",
+          "RF005",
+          "RF009"
         ],
-        "missed_flags": []
-      },
-      "referral_destination": {
-        "score": 3,
-        "max_score": 3,
-        "feedback": "Correct referral destination"
-      },
-      "justification": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Excellent comprehensive justification with specific evidence cited\nWord count: 167 words"
-      },
-      "total_score": 20,
-      "max_score": 20,
-      "percentage": 100.0
-    },
-    "CLAIM-005": {
-      "referral_decision": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Correct referral decision"
-      },
-      "red_flags": {
-        "score": 7,
-        "max_score": 7,
-        "feedback": "Excellent job identifying all major red flags\nCorrectly identified: 5/5 red flags",
-        "matched_flags": [
-          "FIN-004",
-          "DOC-001",
-          "LSC-006",
-          "FIN-002",
-          "CLB-006"
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
+      }
+    ]
+  },
+  "evidence_citation": {
+    "score_percentage": 100.0,
+    "weighted_score": 15.0,
+    "correct_citations_count": 5,
+    "total_claims": 5,
+    "details": [
+      {
+        "claim_id": "Claim-1",
+        "correct_evidence": [
+          "DOC003",
+          "DOC001",
+          "DOC007"
         ],
-        "missed_flags": []
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
       },
-      "referral_destination": {
-        "score": 3,
-        "max_score": 3,
-        "feedback": "Correct referral destination"
+      {
+        "claim_id": "Claim-2",
+        "correct_evidence": [
+          "DOC004",
+          "DOC002",
+          "DOC006"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
       },
-      "justification": {
-        "score": 5,
-        "max_score": 5,
-        "feedback": "Excellent comprehensive justification with specific evidence cited\nWord count: 174 words"
+      {
+        "claim_id": "Claim-3",
+        "correct_evidence": [
+          "DOC004",
+          "DOC001",
+          "DOC007"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
       },
-      "total_score": 20,
-      "max_score": 20,
-      "percentage": 100.0
-    }
+      {
+        "claim_id": "Claim-4",
+        "correct_evidence": [
+          "DOC002",
+          "DOC003",
+          "DOC006"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
+      },
+      {
+        "claim_id": "Claim-5",
+        "correct_evidence": [
+          "DOC004",
+          "DOC003",
+          "DOC007"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
+      }
+    ]
   }
 }

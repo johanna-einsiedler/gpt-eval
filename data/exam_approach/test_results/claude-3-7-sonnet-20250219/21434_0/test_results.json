@@ -1,79 +1,70 @@
 {
-  "candidate_id": "ANSWER_KEY",
-  "overall_score": 97.0,
-  "passed": true,
-  "task_1": {
-    "points_earned": 32.0,
-    "max_points": 35,
-    "details": {
-      "settlement_codes": {
-        "correct": 5,
-        "total": 5,
-        "errors": []
-      },
-      "document_locations": {
-        "correct": 5,
-        "total": 5,
-        "errors": []
-      },
-      "quarterly_report": {
-        "correct": 8,
-        "total": 7,
-        "errors": []
-      }
+  "exercise1": {
+    "settled_claims": {
+      "correct": true,
+      "score": 6,
+      "max_score": 6,
+      "details": "All settled claims correct"
     },
-    "critical_failures": []
-  },
-  "task_2": {
-    "points_earned": 35.0,
-    "max_points": 35,
-    "details": {
-      "claims_identification": {
-        "correct": 9,
-        "total": 9,
-        "errors": []
-      },
-      "priority_assignment": {
-        "correct": 9,
-        "total": 9,
-        "errors": []
-      },
-      "priority_counts": {
-        "correct": 4,
-        "total": 4,
-        "errors": []
-      }
+    "pending_claims": {
+      "correct": true,
+      "score": 8,
+      "max_score": 8,
+      "details": "All pending claims correct"
     },
-    "critical_failures": []
+    "denied_claims": {
+      "correct": true,
+      "score": 6,
+      "max_score": 6,
+      "details": "All denied claims correct"
+    }
   },
-  "task_3": {
-    "points_earned": 30.0,
-    "max_points": 30,
-    "details": {
-      "file_status": {
-        "correct": 5,
-        "total": 5,
-        "errors": []
-      },
-      "deficiency_identification": {
-        "correct": 11,
-        "total": 11,
-        "errors": []
-      },
-      "remediation_required": {
-        "correct": 5,
-        "total": 5,
-        "errors": []
-      },
-      "summary_statistics": {
-        "correct": 5,
-        "total": 5,
-        "errors": []
-      }
+  "exercise2": {
+    "updated_claims": {
+      "correct": true,
+      "score": 6,
+      "max_score": 6,
+      "details": "All updated claims correct"
     },
-    "critical_failures": []
+    "followup_claims": {
+      "correct": true,
+      "score": 5,
+      "max_score": 5,
+      "details": "All followup claims correct"
+    },
+    "priority1_claims": {
+      "correct": true,
+      "score": 5,
+      "max_score": 5,
+      "details": "All priority1 claims correct"
+    },
+    "avg_days_to_resolve": {
+      "correct": true,
+      "score": 4,
+      "max_score": 4,
+      "details": "Correct average days calculation"
+    }
   },
-  "format_errors": [],
-  "critical_failures": [],
-  "minimum_requirements_met": true
+  "exercise3": {
+    "high_complexity_claims": {
+      "correct": true,
+      "score": 4,
+      "max_score": 4,
+      "details": "All high complexity claims correct"
+    },
+    "total_financial_exposure": {
+      "correct": true,
+      "score": 3,
+      "max_score": 3,
+      "details": "Correct financial exposure calculation"
+    },
+    "highest_severity": {
+      "correct": true,
+      "score": 3,
+      "max_score": 3,
+      "details": "Correct severity code"
+    }
+  },
+  "overall_score": 100.0,
+  "pass": true
 }

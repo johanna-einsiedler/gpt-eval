@@ -1,408 +1,337 @@
 #!/usr/bin/env python3
 import json
 import sys
-import math
+import os
 
-def load_json_file(file_path):
+def load_json(file_path):
     """Load and parse a JSON file."""
     try:
-        with open(file_path, 'r') as f:
-            return json.load(f)
+        with open(file_path, 'r') as file:
+            return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error loading JSON file {file_path}: {e}")
+        print(f"Error loading {file_path}: {e}")
         sys.exit(1)
 
-def evaluate_supplier_rankings(submission, answer_key):
-    """Evaluate the supplier rankings section."""
-    score = 0
-    max_score = 25
+def evaluate_meets_requirements(candidate, answer_key):
+    """Evaluate if candidate correctly identified suppliers meeting requirements."""
+    specs_score = 0
+    budget_score = 0
     
-    # Get the submission and answer key rankings
-    sub_rankings = {item["supplier_id"]: {"rank": item["rank"], "score": item["score"]} 
-                    for item in submission["supplier_rankings"]}
-    key_rankings = {item["supplier_id"]: {"rank": item["rank"], "score": item["score"]} 
-                    for item in answer_key["supplier_rankings"]}
+    # Check specifications
+    for supplier in answer_key["meets_specifications"]:
+        if candidate["meets_specifications"].get(supplier) == answer_key["meets_specifications"][supplier]:
+            specs_score += 1
     
-    # Check if rankings match the answer key
-    correct_ordering = True
-    for supplier_id, data in key_rankings.items():
-        if supplier_id not in sub_rankings:
-            correct_ordering = False
-            break
-        if sub_rankings[supplier_id]["rank"] != data["rank"]:
-            correct_ordering = False
-            break
+    # Check budget
+    for supplier in answer_key["meets_budget"]:
+        if candidate["meets_budget"].get(supplier) == answer_key["meets_budget"][supplier]:
+            budget_score += 1
     
-    # Award points for correct ranking order (15 points)
-    if correct_ordering:
-        score += 15
-        details = "Correct ranking order (+15 points)"
-    else:
-        details = "Incorrect ranking order (0 out of 15 points)"
+    specs_score = (specs_score / 5) * 10  # 10 points total for specifications
+    budget_score = (budget_score / 5) * 10  # 10 points total for budget
     
-    # Award points for appropriate weighted scores (10 points)
-    weighted_score_points = 0
-    weighted_score_details = []
+    return {
+        "specifications_score": specs_score,
+        "budget_score": budget_score,
+        "total_essential_score": specs_score + budget_score
+    }
+
+def evaluate_supplier_scores(candidate, answer_key):
+    """Evaluate if candidate's scores are within acceptable ranges."""
+    # Define acceptable ranges for each supplier and criterion
+    acceptable_ranges = {
+        "supplier_A": {
+            "price": (6, 8),
+            "quality": (5, 7),
+            "delivery_reliability": (6, 8),
+            "production_capacity": (6, 8),
+            "technical_support": (5, 7),
+            "financial_stability": (6, 8)
+        },
+        "supplier_B": {
+            "price": (5, 7),
+            "quality": (8, 10),
+            "delivery_reliability": (8, 10),
+            "production_capacity": (7, 9),
+            "technical_support": (8, 10),
+            "financial_stability": (7, 9)
+        },
+        "supplier_C": {
+            "price": (2, 4),
+            "quality": (3, 5),
+            "delivery_reliability": (2, 4),
+            "production_capacity": (2, 4),
+            "technical_support": (3, 5),
+            "financial_stability": (4, 6)
+        },
+        "supplier_D": {
+            "price": (8, 10),
+            "quality": (7, 9),
+            "delivery_reliability": (7, 9),
+            "production_capacity": (9, 10),
+            "technical_support": (7, 9),
+            "financial_stability": (8, 10)
+        },
+        "supplier_E": {
+            "price": (4, 6),
+            "quality": (6, 8),
+            "delivery_reliability": (5, 7),
+            "production_capacity": (5, 7),
+            "technical_support": (5, 7),
+            "financial_stability": (5, 7)
+        }
+    }
     
-    for supplier_id, data in key_rankings.items():
-        if supplier_id in sub_rankings:
-            key_score = data["score"]
-            sub_score = sub_rankings[supplier_id]["score"]
+    score_details = {}
+    total_correct = 0
+    total_criteria = 0
+    
+    for supplier in candidate["supplier_scores"]:
+        supplier_result = {"criteria_scores": {}}
+        supplier_correct = 0
+        supplier_total = 0
+        
+        for criterion in candidate["supplier_scores"][supplier]:
+            if criterion == "total_score":
+                continue
             
-            # Check if score is within ±0.5 of the key
-            if abs(key_score - sub_score) <= 0.5:
-                weighted_score_points += 2  # 2 points per supplier (10 points total for 5 suppliers)
-                weighted_score_details.append(f"{supplier_id}: Score within tolerance (+2 points)")
-            else:
-                weighted_score_details.append(f"{supplier_id}: Score outside tolerance (0 points)")
+            supplier_total += 1
+            total_criteria += 1
+            
+            min_val, max_val = acceptable_ranges[supplier][criterion]
+            score = candidate["supplier_scores"][supplier][criterion]
+            
+            is_in_range = min_val <= score <= max_val
+            
+            if is_in_range:
+                supplier_correct += 1
+                total_correct += 1
+                
+            supplier_result["criteria_scores"][criterion] = {
+                "score": score,
+                "acceptable_range": (min_val, max_val),
+                "is_correct": is_in_range
+            }
+        
+        # Check if total score matches sum of individual scores
+        individual_sum = sum(candidate["supplier_scores"][supplier][c] for c in candidate["supplier_scores"][supplier] if c != "total_score")
+        reported_total = candidate["supplier_scores"][supplier]["total_score"]
+        total_score_correct = individual_sum == reported_total
+        
+        supplier_result["total_score"] = {
+            "reported": reported_total,
+            "calculated": individual_sum,
+            "is_correct": total_score_correct
+        }
+        
+        supplier_result["accuracy"] = supplier_correct / supplier_total
+        score_details[supplier] = supplier_result
     
-    score += weighted_score_points
-    details += f"; Weighted scores: {weighted_score_points}/10 points - " + ", ".join(weighted_score_details)
+    overall_accuracy = total_correct / total_criteria if total_criteria > 0 else 0
+    score = overall_accuracy * 40  # 40 points total for supplier scores
     
     return {
         "score": score,
-        "max_score": max_score,
-        "percentage": (score / max_score) * 100,
+        "overall_accuracy": overall_accuracy,
+        "details": score_details
+    }
+
+def evaluate_price_comparison(candidate, answer_key):
+    """Evaluate if candidate's price comparison is accurate."""
+    correct_prices = 0
+    details = {}
+    
+    for supplier in answer_key["price_comparison"]:
+        correct_price = answer_key["price_comparison"][supplier]
+        candidate_price = candidate["price_comparison"].get(supplier, 0)
+        
+        # Allow for small float precision differences
+        is_correct = abs(candidate_price - correct_price) < 0.01
+        
+        if is_correct:
+            correct_prices += 1
+            
+        details[supplier] = {
+            "candidate_price": candidate_price,
+            "correct_price": correct_price,
+            "is_correct": is_correct
+        }
+    
+    accuracy = correct_prices / len(answer_key["price_comparison"]) if answer_key["price_comparison"] else 0
+    score = accuracy * 15  # 15 points total for price comparison
+    
+    return {
+        "score": score,
+        "accuracy": accuracy,
         "details": details
     }
 
-def evaluate_metrics(submission, answer_key):
-    """Evaluate the evaluation metrics section."""
-    score = 0
-    max_score = 35
+def evaluate_recommended_suppliers(candidate, answer_key):
+    """Evaluate if candidate recommended the correct suppliers."""
+    correct_recommendations = 0
+    details = {"recommendations": []}
     
-    # Get the evaluation metrics from submission and answer key
+    for i, supplier in enumerate(answer_key["recommended_suppliers"]):
+        if i < len(candidate["recommended_suppliers"]) and candidate["recommended_suppliers"][i] == supplier:
+            correct_recommendations += 1
+            details["recommendations"].append({
+                "position": i + 1,
+                "candidate_choice": candidate["recommended_suppliers"][i],
+                "correct_choice": supplier,
+                "is_correct": True
+            })
+        else:
+            candidate_choice = candidate["recommended_suppliers"][i] if i < len(candidate["recommended_suppliers"]) else "None"
+            details["recommendations"].append({
+                "position": i + 1,
+                "candidate_choice": candidate_choice,
+                "correct_choice": supplier,
+                "is_correct": False
+            })
+    
+    accuracy = correct_recommendations / len(answer_key["recommended_suppliers"]) if answer_key["recommended_suppliers"] else 0
+    score = accuracy * 20  # 20 points total for recommended suppliers
+    
+    return {
+        "score": score,
+        "accuracy": accuracy,
+        "details": details
+    }
+
+def evaluate_justifications(candidate, answer_key):
+    """Evaluate quality of candidate's justifications based on length and content."""
+    # This is a simplified assessment as true qualitative evaluation needs human judgment
+    justification_scores = {}
+    total_score = 0
+    
+    # Check if justifications exist for all suppliers
+    suppliers_covered = 0
+    for supplier in answer_key["justification"]:
+        if supplier == "final_recommendation":
+            continue
+            
+        if supplier in candidate["justification"] and len(candidate["justification"][supplier]) > 20:
+            suppliers_covered += 1
+    
+    # Data-driven reasoning - check for mentions of specific metrics
     metrics = [
-        "price_score", "quality_score", "selection_score", "service_score", 
-        "support_score", "reliability_score", "production_score", 
-        "distribution_score", "reputation_score"
+        "price", "cost", "$", "quality", "rejection", "delivery", "on-time", 
+        "lead time", "capacity", "production", "technical", "support", 
+        "response time", "financial", "stability"
     ]
     
-    category_score_details = []
-    ordering_score_details = []
+    metrics_used = 0
+    total_metrics = len(metrics) if "justification" in candidate else 0
     
-    category_score_points = 0
-    ordering_score_points = 0
+    if "justification" in candidate:
+        all_text = " ".join(candidate["justification"].values()).lower()
+        for metric in metrics:
+            if metric.lower() in all_text:
+                metrics_used += 1
     
-    for metric in metrics:
-        # Check if metric exists in both submission and answer key
-        if metric not in submission["evaluation_metrics"] or metric not in answer_key["evaluation_metrics"]:
-            category_score_details.append(f"{metric}: Missing metric (0 points)")
-            ordering_score_details.append(f"{metric}: Missing metric (0 points)")
-            continue
-        
-        # Get the submission and answer key scores for this metric
-        sub_scores = {item["supplier_id"]: item["score"] 
-                      for item in submission["evaluation_metrics"][metric]}
-        key_scores = {item["supplier_id"]: item["score"] 
-                      for item in answer_key["evaluation_metrics"][metric]}
-        
-        # Check individual category scores (within ±1.0)
-        metric_score_correct = True
-        for supplier_id, key_score in key_scores.items():
-            if supplier_id not in sub_scores:
-                metric_score_correct = False
-                break
-            if abs(key_score - sub_scores[supplier_id]) > 1.0:
-                metric_score_correct = False
-                break
-        
-        # Each metric is worth approximately 2.22 points (20 points / 9 metrics)
-        if metric_score_correct:
-            category_score_points += 2.22
-            category_score_details.append(f"{metric}: Scores within tolerance")
-        else:
-            category_score_details.append(f"{metric}: Scores outside tolerance")
-        
-        # Check correct relative ordering
-        # Get ordered lists of supplier IDs from highest to lowest score
-        try:
-            key_ordered = [item["supplier_id"] for item in sorted(
-                answer_key["evaluation_metrics"][metric], 
-                key=lambda x: x["score"], 
-                reverse=True
-            )]
-            
-            sub_ordered = [item["supplier_id"] for item in sorted(
-                submission["evaluation_metrics"][metric], 
-                key=lambda x: x["score"], 
-                reverse=True
-            )]
-            
-            # Each metric is worth approximately 1.67 points (15 points / 9 metrics)
-            if key_ordered == sub_ordered:
-                ordering_score_points += 1.67
-                ordering_score_details.append(f"{metric}: Correct ordering")
-            else:
-                ordering_score_details.append(f"{metric}: Incorrect ordering")
-        except Exception as e:
-            ordering_score_details.append(f"{metric}: Error checking ordering - {str(e)}")
+    # Completeness - check for final recommendation
+    has_final_recommendation = (
+        "justification" in candidate and 
+        "final_recommendation" in candidate["justification"] and
+        len(candidate["justification"]["final_recommendation"]) > 50
+    )
     
-    # Round the scores to avoid floating point issues and cap at max possible
-    category_score_points = min(round(category_score_points), 20)
-    ordering_score_points = min(round(ordering_score_points), 15)
+    # Calculate scores
+    supplier_coverage_score = (suppliers_covered / 5) * 10  # 10 points
+    data_driven_score = (metrics_used / total_metrics) * 10 if total_metrics > 0 else 0  # 10 points
+    completeness_score = 5 if has_final_recommendation else 0  # 5 points
     
-    score = category_score_points + ordering_score_points
-    
-    details = f"Individual category scores: {category_score_points}/20 points - " + "; ".join(category_score_details)
-    details += f"; Relative ordering: {ordering_score_points}/15 points - " + "; ".join(ordering_score_details)
+    total_score = supplier_coverage_score + data_driven_score + completeness_score
     
     return {
-        "score": score,
-        "max_score": max_score,
-        "percentage": (score / max_score) * 100,
-        "details": details
-    }
-
-def evaluate_cost_analysis(submission, answer_key):
-    """Evaluate the cost analysis section."""
-    score = 0
-    max_score = 10
-    
-    # Check annual spend calculations (5 points)
-    annual_spend_score = 0
-    annual_spend_details = []
-    
-    key_annual_spend = {item["supplier_id"]: item["amount"] 
-                       for item in answer_key["cost_analysis"]["annual_spend"]}
-    sub_annual_spend = {item["supplier_id"]: item["amount"] 
-                       for item in submission["cost_analysis"]["annual_spend"]}
-    
-    correct_annual_spend = True
-    for supplier_id, amount in key_annual_spend.items():
-        if supplier_id not in sub_annual_spend:
-            correct_annual_spend = False
-            annual_spend_details.append(f"{supplier_id}: Missing from submission")
-            break
-        
-        # Allow for slight differences due to rounding
-        if abs(amount - sub_annual_spend[supplier_id]) > 1:
-            correct_annual_spend = False
-            annual_spend_details.append(f"{supplier_id}: Incorrect calculation (expected {amount}, got {sub_annual_spend[supplier_id]})")
-    
-    if correct_annual_spend:
-        annual_spend_score = 5
-        annual_spend_details = ["All annual spend calculations correct"]
-    
-    # Check unit price reporting (5 points)
-    unit_price_score = 0
-    unit_price_details = []
-    
-    key_unit_price = {item["supplier_id"]: item["price"] 
-                     for item in answer_key["cost_analysis"]["unit_price"]}
-    sub_unit_price = {item["supplier_id"]: item["price"] 
-                     for item in submission["cost_analysis"]["unit_price"]}
-    
-    correct_unit_price = True
-    for supplier_id, price in key_unit_price.items():
-        if supplier_id not in sub_unit_price:
-            correct_unit_price = False
-            unit_price_details.append(f"{supplier_id}: Missing from submission")
-            break
-        
-        # Check exact match for unit price (should be copied directly from materials)
-        if abs(price - sub_unit_price[supplier_id]) > 0.01:
-            correct_unit_price = False
-            unit_price_details.append(f"{supplier_id}: Incorrect price (expected {price}, got {sub_unit_price[supplier_id]})")
-    
-    if correct_unit_price:
-        unit_price_score = 5
-        unit_price_details = ["All unit prices correct"]
-    
-    score = annual_spend_score + unit_price_score
-    details = f"Annual spend calculations: {annual_spend_score}/5 points - " + "; ".join(annual_spend_details)
-    details += f"; Unit price reporting: {unit_price_score}/5 points - " + "; ".join(unit_price_details)
-    
-    return {
-        "score": score,
-        "max_score": max_score,
-        "percentage": (score / max_score) * 100,
-        "details": details
-    }
-
-def evaluate_optimal_supplier(submission, answer_key):
-    """Evaluate the optimal supplier identification."""
-    score = 0
-    max_score = 15
-    
-    key_optimal = answer_key["optimal_supplier"]
-    sub_optimal = submission["optimal_supplier"]
-    
-    if sub_optimal == key_optimal:
-        score = 15
-        details = f"Correctly identified {key_optimal} as the optimal supplier"
-    # Allow for QualityTech with proper justification (check would need evaluation of methodology, simplified here)
-    elif sub_optimal == "SUP842":
-        score = 12
-        details = f"Identified QualityTech (SUP842) instead of CircuitTech (SUP417); partial credit assigned"
-    else:
-        details = f"Incorrectly identified {sub_optimal} as the optimal supplier; correct answer is {key_optimal}"
-    
-    return {
-        "score": score,
-        "max_score": max_score,
-        "percentage": (score / max_score) * 100,
-        "details": details
-    }
-
-def evaluate_risk_assessment(submission, answer_key):
-    """Evaluate the risk assessment section."""
-    score = 0
-    max_score = 15
-    
-    key_high_risk = set(answer_key["risk_assessment"]["high_risk_suppliers"])
-    sub_high_risk = set(submission["risk_assessment"]["high_risk_suppliers"])
-    
-    # Check if high-risk suppliers are correctly identified (10 points)
-    if key_high_risk == sub_high_risk:
-        score += 10
-        details = "Correctly identified all high-risk suppliers (+10 points)"
-    elif "SUP631" in sub_high_risk:
-        # Give partial credit if at least SUP631 is identified as high-risk
-        score += 8
-        details = "Correctly identified SUP631 as high-risk but missed or added others (+8 points)"
-    else:
-        details = "Failed to identify SUP631 as a high-risk supplier (0 points)"
-    
-    # Check for appropriate risk reasons (5 points)
-    sub_reasons = submission["risk_assessment"]["risk_reasons"]
-    
-    # Check if risk reasons mention quality and reliability issues
-    quality_mentioned = False
-    reliability_mentioned = False
-    
-    for reason in sub_reasons:
-        lower_reason = reason.lower()
-        if "quality" in lower_reason or "defect" in lower_reason:
-            quality_mentioned = True
-        if "reliability" in lower_reason or "on-time" in lower_reason or "delivery" in lower_reason:
-            reliability_mentioned = True
-    
-    reason_score = 0
-    reason_details = []
-    
-    if "SUP631" in sub_high_risk:
-        if quality_mentioned and reliability_mentioned:
-            reason_score = 5
-            reason_details.append("Provided complete reasoning mentioning both quality and reliability issues")
-        elif quality_mentioned or reliability_mentioned:
-            reason_score = 3
-            reason_details.append("Mentioned some key issues but not all (quality or reliability)")
-        else:
-            reason_details.append("Failed to mention key quality and reliability issues")
-    else:
-        reason_details.append("No credit for reasons as SUP631 not identified as high-risk")
-    
-    score += reason_score
-    details += f"; Risk reasons: {reason_score}/5 points - " + "; ".join(reason_details)
-    
-    return {
-        "score": score,
-        "max_score": max_score,
-        "percentage": (score / max_score) * 100,
-        "details": details
-    }
-
-def check_automatic_failures(submission):
-    """Check for automatic failing conditions."""
-    failures = []
-    
-    # 1. Failure to identify AsiaComponents (SUP631) as a high-risk supplier
-    if "SUP631" not in submission["risk_assessment"]["high_risk_suppliers"]:
-        failures.append("Failed to identify AsiaComponents (SUP631) as a high-risk supplier")
-    
-    # 2. Recommending AsiaComponents (SUP631) as the optimal supplier
-    if submission["optimal_supplier"] == "SUP631":
-        failures.append("Incorrectly recommended AsiaComponents (SUP631) as the optimal supplier")
-    
-    # 3. Major calculation errors - checked in individual sections
-    
-    # 4. Incomplete submission - check for missing required sections
-    required_sections = ["supplier_rankings", "evaluation_metrics", "cost_analysis", 
-                        "optimal_supplier", "risk_assessment"]
-    
-    for section in required_sections:
-        if section not in submission:
-            failures.append(f"Incomplete submission: Missing {section} section")
-    
-    return failures
-
-def evaluate_submission(submission, answer_key):
-    """Evaluate the entire submission."""
-    results = {
-        "supplier_rankings": evaluate_supplier_rankings(submission, answer_key),
-        "evaluation_metrics": evaluate_metrics(submission, answer_key),
-        "cost_analysis": evaluate_cost_analysis(submission, answer_key),
-        "optimal_supplier": evaluate_optimal_supplier(submission, answer_key),
-        "risk_assessment": evaluate_risk_assessment(submission, answer_key),
-    }
-    
-    # Calculate total score and max possible score
-    total_score = sum(section["score"] for section in results.values())
-    max_score = sum(section["max_score"] for section in results.values())
-    
-    # Check for automatic failing conditions
-    automatic_failures = check_automatic_failures(submission)
-    
-    if automatic_failures:
-        overall_score = 0
-        failure_message = "AUTOMATIC FAILURE: " + "; ".join(automatic_failures)
-    else:
-        overall_score = (total_score / max_score) * 100
-    
-    # Add overall results
-    results["total"] = {
         "score": total_score,
-        "max_score": max_score,
-        "percentage": (total_score / max_score) * 100,
-        "details": f"Total points: {total_score}/{max_score}"
+        "supplier_coverage_score": supplier_coverage_score,
+        "data_driven_score": data_driven_score,
+        "completeness_score": completeness_score,
+        "suppliers_covered": suppliers_covered,
+        "metrics_used": metrics_used,
+        "has_final_recommendation": has_final_recommendation
     }
+
+def evaluate_submission(candidate, answer_key):
+    """Evaluate the candidate's submission against the answer key."""
+    # Check if JSON is in valid format
+    is_valid_format = (
+        "supplier_scores" in candidate and 
+        "recommended_suppliers" in candidate and
+        "price_comparison" in candidate and
+        "meets_specifications" in candidate and
+        "meets_budget" in candidate
+    )
     
-    results["overall_score"] = overall_score
+    if not is_valid_format:
+        return {
+            "overall_score": 0,
+            "is_valid_format": False,
+            "message": "Submission is not in the required format"
+        }
+
+    # Evaluate different sections
+    essential_elements = evaluate_meets_requirements(candidate, answer_key)
+    supplier_scores = evaluate_supplier_scores(candidate, answer_key)
+    price_comparison = evaluate_price_comparison(candidate, answer_key)
+    recommended_suppliers = evaluate_recommended_suppliers(candidate, answer_key)
+    justifications = evaluate_justifications(candidate, answer_key)
     
-    if automatic_failures:
-        results["automatic_failures"] = automatic_failures
+    # Calculate overall score (out of 100)
+    overall_score = (
+        essential_elements["total_essential_score"] +  # 20 points
+        supplier_scores["score"] +                     # 40 points
+        price_comparison["score"] +                    # 15 points
+        recommended_suppliers["score"] +               # 20 points
+        justifications["score"]                        # 25 points
+    )
     
-    # Determine qualification level
-    if overall_score >= 90:
-        results["qualification_level"] = "Excellent"
-    elif overall_score >= 80:
-        results["qualification_level"] = "Good"
-    elif overall_score >= 70:
-        results["qualification_level"] = "Satisfactory"
-    else:
-        results["qualification_level"] = "Needs Improvement"
+    # Apply pass/fail criteria
+    passed_essential = (
+        essential_elements["specifications_score"] == 10 and
+        essential_elements["budget_score"] == 10 and
+        is_valid_format
+    )
     
-    return results
+    passed_overall = overall_score >= 75
+    
+    passed = passed_essential and passed_overall
+    
+    return {
+        "overall_score": overall_score,
+        "percentage_score": overall_score,  # Already out of 100
+        "passed": passed,
+        "passed_essential": passed_essential,
+        "passed_overall": passed_overall,
+        "is_valid_format": is_valid_format,
+        "essential_elements": essential_elements,
+        "supplier_scores": supplier_scores,
+        "price_comparison": price_comparison,
+        "recommended_suppliers": recommended_suppliers,
+        "justifications": justifications
+    }
 
 def main():
-    """Main function to run the evaluation."""
     if len(sys.argv) != 3:
-        print("Usage: python task_evaluation.py <submission_file> <answer_key_file>")
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
         sys.exit(1)
     
-    submission_file = sys.argv[1]
+    candidate_file = sys.argv[1]
     answer_key_file = sys.argv[2]
     
-    # Load the submission and answer key
-    submission = load_json_file(submission_file)
-    answer_key = load_json_file(answer_key_file)
+    candidate = load_json(candidate_file)
+    answer_key = load_json(answer_key_file)
     
-    # Evaluate the submission
-    results = evaluate_submission(submission, answer_key)
+    results = evaluate_submission(candidate, answer_key)
     
-    # Save the results
+    # Save results to file
     with open("test_results.json", "w") as f:
         json.dump(results, f, indent=2)
     
     print(f"Evaluation complete. Results saved to test_results.json")
     print(f"Overall score: {results['overall_score']:.2f}%")
-    print(f"Qualification level: {results['qualification_level']}")
-    
-    if "automatic_failures" in results:
-        print("AUTOMATIC FAILURE CONDITIONS DETECTED:")
-        for failure in results["automatic_failures"]:
-            print(f"- {failure}")
+    print(f"Result: {'PASS' if results['passed'] else 'FAIL'}")
 
 if __name__ == "__main__":
     main()

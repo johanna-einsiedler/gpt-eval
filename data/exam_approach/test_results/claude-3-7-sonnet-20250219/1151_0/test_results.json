@@ -1,166 +1,316 @@
 {
-  "candidate_id": "EVALUATOR_KEY",
+  "candidate_id": "Unknown",
+  "section_scores": {
+    "inventory_analysis": {
+      "score": 30.0,
+      "max_points": 30,
+      "percentage": 100.0
+    },
+    "vendor_performance": {
+      "score": 40.0,
+      "max_points": 40,
+      "percentage": 100.0
+    },
+    "cost_analysis": {
+      "score": 30.0,
+      "max_points": 30,
+      "percentage": 100.0
+    }
+  },
+  "detailed_feedback": {
+    "inventory_analysis": {
+      "items_below_threshold": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_count": 4,
+        "total_count": 4,
+        "missing_items": [],
+        "comments": "Identified 4/4 items correctly"
+      },
+      "items_requiring_reorder": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_count": 5,
+        "total_count": 5,
+        "missing_items": [],
+        "comments": "Identified 5/5 items correctly"
+      },
+      "current_inventory_levels": {
+        "score": 10.0,
+        "max_points": 10,
+        "category_details": {
+          "Metal Components": {
+            "candidate_value": 3655,
+            "correct_value": 3655,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "Rubber Products": {
+            "candidate_value": 1315,
+            "correct_value": 1315,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "Plastic Components": {
+            "candidate_value": 1505,
+            "correct_value": 1505,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "Electrical Components": {
+            "candidate_value": 273,
+            "correct_value": 273,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "Electronic Components": {
+            "candidate_value": 2925,
+            "correct_value": 2925,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "Display & Control Systems": {
+            "candidate_value": 342,
+            "correct_value": 342,
+            "score": 1.0,
+            "comments": "Correct"
+          }
+        },
+        "comments": "Inventory levels analysis"
+      }
+    },
+    "vendor_performance": {
+      "top_vendors": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_count": 3,
+        "total_count": 3,
+        "missing_items": [],
+        "comments": "Identified 3/3 top vendors correctly"
+      },
+      "bottom_vendors": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_count": 3,
+        "total_count": 3,
+        "missing_items": [],
+        "comments": "Identified 3/3 bottom vendors correctly"
+      },
+      "avg_delivery_metrics": {
+        "on_time_rate_score": 5.999999999999999,
+        "on_time_rate_max": 6,
+        "avg_delivery_days_score": 7.0,
+        "avg_delivery_days_max": 7,
+        "defect_rate_score": 7.0,
+        "defect_rate_max": 7,
+        "vendor_details": {
+          "V-001": {
+            "on_time_rate": {
+              "candidate_value": 77.8,
+              "correct_value": 77.8,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "avg_delivery_days": {
+              "candidate_value": 7.1,
+              "correct_value": 7.1,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "defect_rate": {
+              "candidate_value": 0.3,
+              "correct_value": 0.3,
+              "score": 1.0,
+              "comments": "Correct"
+            }
+          },
+          "V-002": {
+            "on_time_rate": {
+              "candidate_value": 75.0,
+              "correct_value": 75.0,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "avg_delivery_days": {
+              "candidate_value": 7.6,
+              "correct_value": 7.6,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "defect_rate": {
+              "candidate_value": 0.5,
+              "correct_value": 0.5,
+              "score": 1.0,
+              "comments": "Correct"
+            }
+          },
+          "V-003": {
+            "on_time_rate": {
+              "candidate_value": 75.0,
+              "correct_value": 75.0,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "avg_delivery_days": {
+              "candidate_value": 8.0,
+              "correct_value": 8.0,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "defect_rate": {
+              "candidate_value": 1.0,
+              "correct_value": 1.0,
+              "score": 1.0,
+              "comments": "Correct"
+            }
+          },
+          "V-004": {
+            "on_time_rate": {
+              "candidate_value": 25.0,
+              "correct_value": 25.0,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "avg_delivery_days": {
+              "candidate_value": 9.4,
+              "correct_value": 9.4,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "defect_rate": {
+              "candidate_value": 2.0,
+              "correct_value": 2.0,
+              "score": 1.0,
+              "comments": "Correct"
+            }
+          },
+          "V-005": {
+            "on_time_rate": {
+              "candidate_value": 62.5,
+              "correct_value": 62.5,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "avg_delivery_days": {
+              "candidate_value": 7.9,
+              "correct_value": 7.9,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "defect_rate": {
+              "candidate_value": 1.2,
+              "correct_value": 1.2,
+              "score": 1.0,
+              "comments": "Correct"
+            }
+          },
+          "V-006": {
+            "on_time_rate": {
+              "candidate_value": 77.8,
+              "correct_value": 77.8,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "avg_delivery_days": {
+              "candidate_value": 6.7,
+              "correct_value": 6.7,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "defect_rate": {
+              "candidate_value": 0.2,
+              "correct_value": 0.2,
+              "score": 1.0,
+              "comments": "Correct"
+            }
+          },
+          "V-007": {
+            "on_time_rate": {
+              "candidate_value": 33.3,
+              "correct_value": 33.3,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "avg_delivery_days": {
+              "candidate_value": 9.0,
+              "correct_value": 9.0,
+              "score": 1.0,
+              "comments": "Correct"
+            },
+            "defect_rate": {
+              "candidate_value": 2.1,
+              "correct_value": 2.1,
+              "score": 1.0,
+              "comments": "Correct"
+            }
+          }
+        },
+        "comments": "Vendor delivery metrics analysis"
+      }
+    },
+    "cost_analysis": {
+      "highest_cost_products": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_count": 5,
+        "total_count": 5,
+        "missing_items": [],
+        "comments": "Identified 5/5 highest cost products correctly"
+      },
+      "products_with_price_increases": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_count": 8,
+        "total_count": 8,
+        "missing_items": [],
+        "comments": "Identified 8/8 products with price increases correctly"
+      },
+      "total_monthly_spend": {
+        "score": 10.0,
+        "max_points": 10,
+        "month_details": {
+          "January": {
+            "candidate_value": 19197.5,
+            "correct_value": 19197.5,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "February": {
+            "candidate_value": 21995.0,
+            "correct_value": 21995.0,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "March": {
+            "candidate_value": 24217.5,
+            "correct_value": 24217.5,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "April": {
+            "candidate_value": 20555.0,
+            "correct_value": 20555.0,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "May": {
+            "candidate_value": 22467.5,
+            "correct_value": 22467.5,
+            "score": 1.0,
+            "comments": "Correct"
+          },
+          "June": {
+            "candidate_value": 25406.25,
+            "correct_value": 25406.25,
+            "score": 1.0,
+            "comments": "Correct"
+          }
+        },
+        "comments": "Monthly spending analysis"
+      }
+    }
+  },
   "overall_score": 100.0,
-  "total_points": 100,
-  "max_possible_points": 100,
-  "passed_exam": true,
-  "task1": {
-    "errors_found": {
-      "score": 15,
-      "max_score": 15,
-      "feedback": [
-        "Correct: Missing quantity for item OP-303 Sticky Notes on 1/22/2023",
-        "Correct: Missing total cost calculations for transactions on 1/22/2023 and 5/31/2023",
-        "Correct: Inconsistent currency formatting (some prices include $ symbol, others don't)",
-        "Correct: Calculation error in total cost for OP-1414 Headphones (shows $279.6, should be $279.60)",
-        "Correct: Inconsistent decimal places in total costs (e.g., $59.9 instead of $59.90)"
-      ],
-      "valid_count": 5
-    },
-    "corrections_made": {
-      "score": 15,
-      "max_score": 15,
-      "feedback": [
-        "Correct: Added missing quantity for OP-303 on 1/22/2023 (logical estimate based on similar orders)",
-        "Correct: Calculated missing total costs by multiplying quantity by unit price",
-        "Correct: Standardized all currency formatting to include $ symbol and two decimal places",
-        "Correct: Corrected calculation for OP-1414 Headphones total cost",
-        "Correct: Applied consistent formatting to all numeric values (prices and totals)"
-      ],
-      "valid_count": 5
-    },
-    "summary_insights": {
-      "score": 10,
-      "max_score": 10,
-      "feedback": [
-        "Correct: Office Supplies category represents 73% of all purchases by quantity but only 58% by total cost",
-        "Correct: Copy Paper (OP-101) is the most frequently purchased item with 85 units ordered across the six-month period",
-        "Correct: Technology items have a significantly higher average unit price ($41.65) compared to Office Supplies ($7.86)",
-        "Correct: Monthly purchasing volume increased by approximately 25% from January to June"
-      ],
-      "valid_count": 4
-    },
-    "total_score": 40,
-    "max_score": 40
-  },
-  "task2": {
-    "tracking_method": {
-      "score": 5,
-      "max_score": 5,
-      "feedback": [
-        "Includes key element: expected delivery",
-        "Includes key element: actual delivery",
-        "Includes key element: difference",
-        "Includes key element: early",
-        "Includes key element: late"
-      ],
-      "valid_elements": 5
-    },
-    "top_performers": {
-      "score": 10,
-      "max_score": 10,
-      "feedback": [
-        "Correct top performer: Tech Supplies Co",
-        "  - Accurate on-time percentage for Tech Supplies Co",
-        "  - Accurate average days for Tech Supplies Co",
-        "Correct top performer: Paper Plus",
-        "  - Accurate on-time percentage for Paper Plus",
-        "  - Accurate average days for Paper Plus",
-        "Correct top performer: Office Solutions Inc",
-        "  - Accurate on-time percentage for Office Solutions Inc",
-        "  - Accurate average days for Office Solutions Inc"
-      ],
-      "valid_count": 3
-    },
-    "needs_improvement": {
-      "score": 10,
-      "max_score": 10,
-      "feedback": [
-        "Correct vendor needing improvement: Furniture World",
-        "Correct vendor needing improvement: Stationery Express",
-        "Correct vendor needing improvement: Office Solutions Inc"
-      ],
-      "valid_count": 3
-    },
-    "recommendations": {
-      "score": 5,
-      "max_score": 5,
-      "feedback": [
-        "Valid recommendation: Consolidate orders with Tech Supplies Co and Paper Plus when possible as they consistently deliver on time or early with excellent quality ratings",
-        "Valid recommendation: Implement performance improvement plans for Furniture World and Stationery Express, including earlier lead times or penalties for late deliveries",
-        "Valid recommendation: Consider reducing order volumes from Furniture World until delivery performance improves, as they consistently deliver 7 days late on average",
-        "Valid recommendation: Request delivery time guarantees in contracts with all vendors and establish clear expectations for on-time performance"
-      ],
-      "valid_count": 4
-    },
-    "total_score": 30,
-    "max_score": 30
-  },
-  "task3": {
-    "data_organization": {
-      "score": 5,
-      "max_score": 5,
-      "feedback": [
-        "Includes key element: import",
-        "Includes key element: spreadsheet",
-        "Includes key element: column",
-        "Includes key element: format"
-      ],
-      "valid_elements": 4
-    },
-    "anomaly_detection_method": {
-      "score": 5,
-      "max_score": 5,
-      "feedback": [
-        "Includes key element: high",
-        "Includes key element: unusual",
-        "Includes key element: violation",
-        "Includes key element: duplicate",
-        "Includes key element: missing"
-      ],
-      "valid_elements": 5
-    },
-    "flagged_transactions": {
-      "score": 15,
-      "max_score": 15,
-      "feedback": [
-        "Correct flagged transaction: TX23-1037",
-        "  - Valid reason provided for TX23-1037",
-        "Correct flagged transaction: TX23-1039",
-        "  - Valid reason provided for TX23-1039",
-        "Correct flagged transaction: TX23-1040",
-        "  - Valid reason provided for TX23-1040",
-        "Correct flagged transaction: TX23-1042",
-        "  - Valid reason provided for TX23-1042",
-        "Correct flagged transaction: TX23-1038",
-        "  - Valid reason provided for TX23-1038"
-      ],
-      "valid_count": 5
-    },
-    "system_improvements": {
-      "score": 5,
-      "max_score": 5,
-      "feedback": [
-        "Valid improvement: Implement automated validation checks to flag mathematical inconsistencies between quantity, unit price, and total amount",
-        "Valid improvement: Enforce segregation of duties by preventing the same person from being both requestor and approver in the system",
-        "Valid improvement: Create standardized vendor list with dropdown selection to prevent variations in vendor naming (e.g., 'Office Supplies Unknown')",
-        "Valid improvement: Implement electronic approval workflow that requires proper authorization for all purchases, especially emergency ones",
-        "Valid improvement: Add system controls to prevent use of personal payment methods like personal credit cards",
-        "Valid improvement: Create automatic flagging for unusually high purchase amounts compared to historical averages for similar items"
-      ],
-      "valid_count": 6
-    },
-    "total_score": 30,
-    "max_score": 30
-  },
-  "passing_criteria": {
-    "minimum_overall_score": 70,
-    "minimum_task1_score": 20,
-    "minimum_task2_score": 15,
-    "minimum_task3_score": 15,
-    "passed_task1": true,
-    "passed_task2": true,
-    "passed_task3": true,
-    "passed_overall": true
-  }
+  "performance_level": "Excellent",
+  "pass_fail": "Pass"
 }

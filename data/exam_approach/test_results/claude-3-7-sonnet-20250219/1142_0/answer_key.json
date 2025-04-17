@@ -1,36 +1,80 @@
 {
-    "exercise1": {
-        "selected_vendor": "D",
-        "total_score": 7.45,
-        "calculation_method": "Multiplied each vendor's score by its corresponding weight and summed the results (Price×0.35 + Quality×0.25 + Delivery×0.15 + Warranty×0.15 + Service×0.10)"
-    },
-    "exercise2": {
-        "supplier_1_difference": 12.05,
-        "supplier_2_difference": 13.39,
-        "supplier_3_difference": 12.8,
-        "highest_savings_supplier": "2",
-        "potential_savings_amount": 53563.0,
-        "calculation_method": "Calculated percentage difference between current and benchmark prices, then multiplied price gaps by annual quantities to determine total potential savings"
-    },
-    "exercise3": {
-        "product_a_optimal_quantity": 1000,
-        "product_b_optimal_quantity": 500,
-        "product_c_optimal_quantity": 2500,
-        "total_annual_cost": 338425.0,
-        "calculation_method": "Calculated EOQ, then compared total annual costs at each price break point using the formula: (Annual Demand × Unit Price) + (Annual Demand ÷ Order Quantity × Order Cost) + (Order Quantity ÷ 2 × Annual Holding Cost)"
-    },
-    "exercise4": {
-        "approved_requisitions": [
-            "PR009",
-            "PR010",
-            "PR002",
-            "PR007",
-            "PR001",
-            "PR008",
-            "PR004"
-        ],
-        "total_cost": 45300.0,
-        "total_priority_score": 51,
-        "selection_strategy": "Calculated priority-to-cost ratio for each requisition, then selected items in descending order of ratio until budget was nearly exhausted"
+    "answer_key": {
+        "task_1": {
+            "selected_supplier": "GlobalBearing Solutions",
+            "total_cost_calculation": {
+                "BearingPro": 4625.0,
+                "GlobalBearing": 3975.0,
+                "PrecisionParts": 4875.0
+            },
+            "primary_selection_factor": "price",
+            "acceptable_alternate": {
+                "comment": "PrecisionParts may be acceptable if candidate prioritizes quality/delivery and provides strong justification"
+            }
+        },
+        "task_2": {
+            "compliance_issues": [
+                "Weight capacity: 275 lbs minimum",
+                "Armrests: Height adjustable, minimum 2\" range",
+                "Warranty: 5-year minimum on parts",
+                "Seat height adjustment: 16-20 inches"
+            ],
+            "recommendation": "reject",
+            "critical_failing": "Weight capacity: 275 lbs minimum"
+        },
+        "task_3": {
+            "eoq_calculation": 286,
+            "recommended_order_quantity": 300,
+            "orders_per_year": 17,
+            "order_frequency_days": 21,
+            "total_annual_cost": 5675.0,
+            "take_quantity_discount": true
+        },
+        "task_4": {
+            "justified_increase_percentage": 7.5,
+            "counter_offer_percentage": 5.0,
+            "primary_negotiation_leverage": "volume",
+            "negotiation_approach": "collaborative",
+            "prioritized_concessions_to_request": [
+                "phased implementation",
+                "extended payment terms",
+                "volume discount"
+            ]
+        },
+        "task_5": {
+            "procurement_timeline": [
+                {
+                    "stage": "Requirements gathering",
+                    "days": 4
+                },
+                {
+                    "stage": "RFQ development",
+                    "days": 4
+                },
+                {
+                    "stage": "Vendor response period",
+                    "days": 8
+                },
+                {
+                    "stage": "Evaluation & selection",
+                    "days": 4
+                },
+                {
+                    "stage": "Contract & ordering",
+                    "days": 3
+                },
+                {
+                    "stage": "Delivery & deployment",
+                    "days": 18
+                }
+            ],
+            "top_evaluation_criteria": [
+                "technical specifications compliance",
+                "delivery timeline",
+                "price"
+            ],
+            "first_delivery_date": "Day 23",
+            "primary_procurement_risk": "timeline"
+        }
     }
 }

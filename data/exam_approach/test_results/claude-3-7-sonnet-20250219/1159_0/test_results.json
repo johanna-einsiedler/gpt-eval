@@ -1,33 +1,105 @@
 {
-  "overall_score": 100.0,
-  "total_points": 100,
-  "max_points": 100,
+  "overall_score": 99.99999999999999,
   "passed": true,
-  "failing_sections": [],
-  "section_scores": {
-    "structure": {
-      "points": 20,
-      "max_points": 20,
-      "percentage": 100.0,
-      "deductions": []
+  "critical_fails": [],
+  "task1_results": {
+    "score": 100.0,
+    "bid_thresholds": {
+      "score": 100.0,
+      "correct_items": 20,
+      "total_items": 20,
+      "details": {
+        "Office Supplies_Micro": "Correct",
+        "Office Supplies_Small": "Correct",
+        "Office Supplies_Medium": "Correct",
+        "Office Supplies_Large": "Correct",
+        "Office Supplies_Enterprise": "Correct",
+        "IT Equipment_Micro": "Correct",
+        "IT Equipment_Small": "Correct",
+        "IT Equipment_Medium": "Correct",
+        "IT Equipment_Large": "Correct",
+        "IT Equipment_Enterprise": "Correct",
+        "Professional Services_Micro": "Correct",
+        "Professional Services_Small": "Correct",
+        "Professional Services_Medium": "Correct",
+        "Professional Services_Large": "Correct",
+        "Professional Services_Enterprise": "Correct",
+        "Construction_Micro": "Correct",
+        "Construction_Small": "Correct",
+        "Construction_Medium": "Correct",
+        "Construction_Large": "Correct",
+        "Construction_Enterprise": "Correct"
+      }
     },
-    "policy_framework": {
-      "points": 25,
-      "max_points": 25,
-      "percentage": 100.0,
-      "deductions": []
+    "approval_process": {
+      "score": 100.0,
+      "correct_tiers": 5,
+      "total_tiers": 5,
+      "details": {
+        "Micro": "Correct (2/2 steps correct, 100.0%)",
+        "Small": "Correct (3/3 steps correct, 100.0%)",
+        "Medium": "Correct (5/5 steps correct, 100.0%)",
+        "Large": "Correct (8/8 steps correct, 100.0%)",
+        "Enterprise": "Correct (10/10 steps correct, 100.0%)"
+      }
     },
-    "bid_evaluation": {
-      "points": 30,
-      "max_points": 30,
-      "percentage": 100.0,
-      "deductions": []
+    "required_documents": {
+      "score": 100.0,
+      "correct_tiers": 5,
+      "total_tiers": 5,
+      "details": {
+        "Micro": "Correct (2/2 docs correct, 100.0%)",
+        "Small": "Correct (4/4 docs correct, 100.0%)",
+        "Medium": "Correct (8/8 docs correct, 100.0%)",
+        "Large": "Correct (11/11 docs correct, 100.0%)",
+        "Enterprise": "Correct (12/12 docs correct, 100.0%)"
+      }
     },
-    "vendor_procedure": {
-      "points": 25,
-      "max_points": 25,
-      "percentage": 100.0,
-      "deductions": []
-    }
+    "evaluation_criteria": {
+      "score": 100.0,
+      "details": {
+        "sum_to_100": true,
+        "criteria_included": "5/5 correct criteria included",
+        "matching_values": "5/5 criteria have correct values"
+      }
+    },
+    "critical_fail": null
+  },
+  "task2_results": {
+    "score": 100.0,
+    "vendor_selection": {
+      "score": 100,
+      "details": "Correct"
+    },
+    "total_cost": {
+      "score": 100,
+      "details": "Within acceptable range"
+    },
+    "compliance_status": {
+      "score": 100,
+      "details": "Correct"
+    },
+    "documentation_needed": {
+      "score": 100.0,
+      "details": "7/7 correct documents identified (100.0%)"
+    },
+    "critical_fail": null
+  },
+  "task3_results": {
+    "score": 100.0,
+    "policy_statement": {
+      "score": 100,
+      "details": "Correct",
+      "critical_fail": null
+    },
+    "procedure_steps": {
+      "score": 100.0,
+      "details": "10/10 correct steps (100.0%)"
+    },
+    "compliance_rating": {
+      "score": 100,
+      "details": "Average rating: 4.40"
+    },
+    "critical_fail": null
   }
 }

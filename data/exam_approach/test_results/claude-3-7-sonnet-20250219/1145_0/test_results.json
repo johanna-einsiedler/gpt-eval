@@ -1,119 +1,209 @@
 {
-  "candidateId": "EVALUATOR_KEY",
-  "Exercise1": {
-    "score": 4,
-    "max_score": 4,
-    "details": {
-      "lowestTotalCost": {
-        "correct": true,
-        "submitted": 59639.5,
-        "expected": 59639.5
-      },
-      "recommendedSupplier": {
-        "correct": true,
-        "submitted": "C",
-        "expected": "C"
-      },
-      "priceVariance": {
-        "correct": true,
-        "submitted": 16.11,
-        "expected": 16.11
-      },
-      "volumeDiscountSavings": {
-        "correct": true,
-        "submitted": 4378.5,
-        "expected": 4378.5
-      }
-    }
-  },
-  "Exercise2": {
-    "score": 4,
-    "max_score": 4,
-    "details": {
-      "overchargedComponents": {
-        "correct": true,
-        "submitted": [
-          "SC-003",
-          "SC-005",
-          "SC-008"
-        ],
-        "expected": [
-          "SC-003",
-          "SC-005",
-          "SC-008"
-        ],
-        "matches": 3,
-        "required_matches": 2
-      },
-      "totalOvercharge": {
-        "correct": true,
-        "submitted": 24.5,
-        "expected": 24.5
-      },
-      "marketRateCompliantComponents": {
-        "correct": true,
-        "submitted": [
-          "SC-002",
-          "SC-004",
-          "SC-007",
-          "SC-010",
-          "SC-011",
-          "SC-012"
-        ],
-        "expected": [
-          "SC-002",
-          "SC-004",
-          "SC-007",
-          "SC-010",
-          "SC-011",
-          "SC-012"
-        ],
-        "matches": 6,
-        "required_matches": 4
-      },
-      "revisedTotalPrice": {
-        "correct": true,
-        "submitted": 564.7,
-        "expected": 564.7
-      }
-    }
-  },
-  "Exercise3": {
-    "score": 4,
-    "max_score": 4,
-    "details": {
-      "averageQ4Price": {
-        "correct": true,
-        "submitted": 40.22,
-        "expected": 40.22
-      },
-      "projectedQ1Price": {
-        "correct": true,
-        "submitted": 50.36,
-        "expected": 50.36,
-        "acceptable_range": [
-          49.5,
-          51.5
-        ]
-      },
-      "sixMonthTrend": {
-        "correct": true,
-        "submitted": "increasing",
-        "expected": "increasing"
-      },
-      "optimalPurchaseMonth": {
-        "correct": true,
-        "submitted": "June",
-        "expected": "June",
-        "acceptable_values": [
-          "June",
-          "May"
-        ]
-      }
-    }
-  },
-  "total_score": 12,
-  "max_score": 12,
+  "candidate_id": "Unknown",
   "overall_score": 100.0,
-  "passed": true
+  "total_points_earned": 100,
+  "total_points_possible": 100,
+  "passed": true,
+  "failure_conditions": [],
+  "task_results": {
+    "task1": {
+      "points_possible": 30,
+      "points_earned": 30,
+      "breakdown": {
+        "lowest_total_cost_supplier": {
+          "correct": true,
+          "points_earned": 10,
+          "points_possible": 10,
+          "submitted_answer": "D",
+          "correct_answer": "D"
+        },
+        "high_variance_items": {
+          "correct": true,
+          "points_earned": 10,
+          "points_possible": 10,
+          "submitted_answer": [
+            "OE008",
+            "OE003"
+          ],
+          "correct_answer": [
+            "OE008",
+            "OE003"
+          ],
+          "common_items": [
+            "OE008",
+            "OE003"
+          ]
+        },
+        "supplier_with_most_lowest_prices": {
+          "correct": true,
+          "points_earned": 5,
+          "points_possible": 5,
+          "submitted_answer": "D",
+          "correct_answer": "D"
+        },
+        "count_of_lowest_prices": {
+          "correct": true,
+          "points_earned": 5,
+          "points_possible": 5,
+          "submitted_answer": 5,
+          "correct_answer": 5
+        }
+      }
+    },
+    "task2": {
+      "points_possible": 35,
+      "points_earned": 35,
+      "breakdown": {
+        "price_changes": {
+          "correct": true,
+          "points_earned": 10,
+          "points_possible": 10,
+          "details": {
+            "material_A": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 95.7,
+              "correct_answer": 95.7
+            },
+            "material_B": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 45.0,
+              "correct_answer": 45.0
+            },
+            "material_C": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 17.4,
+              "correct_answer": 17.4
+            },
+            "material_D": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 15.6,
+              "correct_answer": 15.6
+            },
+            "material_E": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 25.6,
+              "correct_answer": 25.6
+            }
+          }
+        },
+        "most_stable_material": {
+          "correct": true,
+          "points_earned": 10,
+          "points_possible": 10,
+          "submitted_answer": "material_C",
+          "correct_answer": "material_C"
+        },
+        "average_prices": {
+          "correct": true,
+          "points_earned": 10,
+          "points_possible": 10,
+          "details": {
+            "material_A": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 7.9,
+              "correct_answer": 7.9
+            },
+            "material_B": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 14.89,
+              "correct_answer": 14.89
+            },
+            "material_C": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 3.73,
+              "correct_answer": 3.73
+            },
+            "material_D": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 9.7,
+              "correct_answer": 9.7
+            },
+            "material_E": {
+              "correct": true,
+              "points_earned": 2,
+              "points_possible": 2,
+              "submitted_answer": 25.38,
+              "correct_answer": 25.38
+            }
+          }
+        },
+        "highest_price_quarter": {
+          "correct": true,
+          "points_earned": 5,
+          "points_possible": 5,
+          "submitted_answer": "2023-Q4",
+          "correct_answer": "2023-Q4"
+        }
+      }
+    },
+    "task3": {
+      "points_possible": 35,
+      "points_earned": 35,
+      "breakdown": {
+        "above_market_components": {
+          "correct": true,
+          "points_earned": 10,
+          "points_possible": 10,
+          "submitted_answer": [
+            "C003",
+            "C001"
+          ],
+          "correct_answer": [
+            "C003",
+            "C001"
+          ],
+          "common_components": [
+            "C003",
+            "C001"
+          ]
+        },
+        "benchmark_adjusted_price": {
+          "correct": true,
+          "points_earned": 10,
+          "points_possible": 10,
+          "submitted_answer": 198.75,
+          "correct_answer": 198.75
+        },
+        "savings_percentage": {
+          "correct": true,
+          "points_earned": 5,
+          "points_possible": 5,
+          "submitted_answer": 4.3,
+          "correct_answer": 4.3
+        },
+        "materials_percentage": {
+          "correct": true,
+          "points_earned": 5,
+          "points_possible": 5,
+          "submitted_answer": 54.0,
+          "correct_answer": 54.0
+        },
+        "labor_percentage": {
+          "correct": true,
+          "points_earned": 5,
+          "points_possible": 5,
+          "submitted_answer": 38.7,
+          "correct_answer": 38.7
+        }
+      }
+    }
+  }
 }

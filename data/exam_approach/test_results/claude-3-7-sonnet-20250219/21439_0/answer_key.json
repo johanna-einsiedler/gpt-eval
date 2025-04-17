@@ -1,32 +1,32 @@
 {
-    "scenario1": {
-        "claimNumber": "123456",
-        "irregularityType": "overpayment",
-        "amountInQuestion": 950.0,
-        "dateIdentified": "YYYY-MM-DD",
-        "affectedBenefit": "collision",
-        "correctAmount": 7350.0,
-        "regulationViolated": "internal_policy",
-        "explanation": "Two overpayments were identified: 1) Collision coverage payment of $7,850 did not deduct the $500 deductible, and 2) Rental car payment of $450 was incorrectly paid as $900 (30 days instead of approved 15 days)."
-    },
-    "scenario2": {
-        "claimNumber": "789012",
-        "irregularityType": "duplicate",
-        "amountInQuestion": 4780.0,
-        "dateIdentified": "YYYY-MM-DD",
-        "affectedBenefit": "personal_property",
-        "correctAmount": 4780.0,
-        "regulationViolated": "internal_policy",
-        "explanation": "Personal property payment of $4,780.00 was issued twice - first on 7/12/2023 (CHK20046) and again on 7/20/2023 (CHK20050) as noted in the transaction log."
-    },
-    "scenario3": {
-        "claimNumber": "345678",
-        "irregularityType": "underpayment",
-        "amountInQuestion": 160.0,
-        "dateIdentified": "YYYY-MM-DD",
-        "affectedBenefit": "inpatient",
-        "correctAmount": 624.0,
-        "regulationViolated": "none",
-        "explanation": "Mathematical error in laboratory tests payment calculation. 80% of $780 allowed amount should be $624, but only $464 was paid, resulting in a $160 underpayment to the provider."
-    }
+    "identified_irregularities": [
+        {
+            "claim_id": "CL-2023-5104",
+            "irregularity_type": "OVP",
+            "evidence_location": "Page 3",
+            "financial_impact": 8900.0,
+            "recommended_action": "REC"
+        },
+        {
+            "claim_id": "CL-2023-5236",
+            "irregularity_type": "UNP",
+            "evidence_location": "Page 3-4",
+            "financial_impact": 500.0,
+            "recommended_action": "ADJ"
+        },
+        {
+            "claim_id": "CL-2023-5972",
+            "irregularity_type": "OVP",
+            "evidence_location": "Page 3-4",
+            "financial_impact": 2800.0,
+            "recommended_action": "REC"
+        },
+        {
+            "claim_id": "CL-2023-6104",
+            "irregularity_type": "UNP",
+            "evidence_location": "Page 3-4",
+            "financial_impact": 1000.0,
+            "recommended_action": "ADJ"
+        }
+    ]
 }

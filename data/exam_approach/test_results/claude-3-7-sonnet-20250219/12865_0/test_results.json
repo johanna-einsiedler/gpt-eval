@@ -1,157 +1,209 @@
 {
-  "candidateId": "EVALUATOR_ANSWER_KEY",
-  "task1_results": {
-    "points_possible": 20,
-    "points_earned": 20,
+  "candidate_id": "EVALUATOR_KEY",
+  "task1": {
+    "score": 30,
+    "max_score": 30,
     "details": [
       {
-        "category": "musicSales",
-        "submission_value": 9667.5,
-        "expected_value": 9667.5,
+        "transaction_id": 1,
+        "submitted_amount": 23750.0,
+        "correct_amount": 23750.0,
         "is_correct": true
       },
       {
-        "category": "livePerformances",
-        "submission_value": 14000.0,
-        "expected_value": 14000.0,
+        "transaction_id": 2,
+        "submitted_amount": 8000.0,
+        "correct_amount": 8000.0,
         "is_correct": true
       },
       {
-        "category": "merchandising",
-        "submission_value": 1800.0,
-        "expected_value": 1800.0,
+        "transaction_id": 3,
+        "submitted_amount": 9225.0,
+        "correct_amount": 9225.0,
         "is_correct": true
       },
       {
-        "category": "endorsements",
-        "submission_value": 14250.0,
-        "expected_value": 14250.0,
+        "transaction_id": 4,
+        "submitted_amount": 4950.0,
+        "correct_amount": 4950.0,
         "is_correct": true
       },
       {
-        "category": "totalCommission",
-        "submission_value": 39717.5,
-        "expected_value": 39717.5,
+        "transaction_id": 5,
+        "submitted_amount": 6750.0,
+        "correct_amount": 6750.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 6,
+        "submitted_amount": 3125.0,
+        "correct_amount": 3125.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 7,
+        "submitted_amount": 6300.0,
+        "correct_amount": 6300.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 8,
+        "submitted_amount": 23200.0,
+        "correct_amount": 23200.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 9,
+        "submitted_amount": 7425.0,
+        "correct_amount": 7425.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 10,
+        "submitted_amount": 3240.0,
+        "correct_amount": 3240.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 11,
+        "submitted_amount": 4000.0,
+        "correct_amount": 4000.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 12,
+        "submitted_amount": 14000.0,
+        "correct_amount": 14000.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 13,
+        "submitted_amount": 800.0,
+        "correct_amount": 800.0,
         "is_correct": true
       }
-    ]
+    ],
+    "feedback": "Excellent job calculating commissions accurately."
   },
-  "task2_results": {
-    "points_possible": 20,
-    "points_earned": 20,
+  "task2": {
+    "score": 25,
+    "max_score": 25,
+    "details": [
+      {
+        "payment_id": 1,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 2,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 3,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 4,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 5,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 6,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 7,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 8,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 9,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      }
+    ],
+    "feedback": "Excellent job identifying and calculating payment discrepancies."
+  },
+  "task3": {
+    "score": 36,
+    "max_score": 25,
+    "details": [],
+    "client_scores": {
+      "client1_royalty": {
+        "tiers_correct": 4,
+        "total_correct": true,
+        "special_provision_applied": true,
+        "score": 1.5
+      },
+      "client2_royalty": {
+        "tiers_correct": 4,
+        "total_correct": true,
+        "special_provision_applied": true,
+        "score": 1.5
+      },
+      "client3_royalty": {
+        "tiers_correct": 8,
+        "total_correct": true,
+        "special_provision_applied": true,
+        "score": 1.3
+      }
+    },
+    "feedback": "Excellent work on royalty calculations for all clients."
+  },
+  "task4": {
+    "score": 20,
+    "max_score": 20,
     "details": {
-      "discrepancies_found": [
+      "correct_payments": 5,
+      "missed_payments": [],
+      "incorrect_dates": [
         {
-          "paymentId": "JC-2303-EA",
-          "correct_calculation": true
+          "payment": "LuxuryLifestyle-Appearance Completion",
+          "submitted_date": "2023-10-25",
+          "correct_date": "2023-12-20"
         },
         {
-          "paymentId": "JC-2306-LC",
-          "correct_calculation": true
-        },
-        {
-          "paymentId": "JC-2308-AF",
-          "correct_calculation": true
-        },
-        {
-          "paymentId": "JC-2309-LM",
-          "correct_calculation": true
+          "payment": "LuxuryLifestyle-Appearance Completion",
+          "submitted_date": "2023-11-30",
+          "correct_date": "2023-12-20"
         }
       ],
-      "discrepancies_missed": [],
-      "incorrect_calculations": [],
-      "total_comparison": {
-        "submission_value": 13825.0,
-        "expected_value": 13825.0,
-        "is_correct": true
-      }
-    }
+      "incorrect_amounts": [],
+      "total_accuracy": 1.0
+    },
+    "feedback": "Good job identifying most payments, but some dates or amounts need correction."
   },
-  "task3_results": {
-    "points_possible": 20,
-    "points_earned": 20,
-    "details": {
-      "priority_client": {
-        "submission_value": "SOPHIA LEE",
-        "expected_value": "SOPHIA LEE",
-        "is_correct": true
-      },
-      "collection_steps": {
-        "submission_value": [
-          "3",
-          "2",
-          "5"
-        ],
-        "expected_value": [
-          "3",
-          "2",
-          "5"
-        ],
-        "evaluation": "Excellent - Perfect match with recommended steps",
-        "score": 1.0
-      },
-      "recovery_amount": {
-        "submission_value": 63240.0,
-        "expected_value": 63240.0,
-        "is_correct": true
-      }
-    }
-  },
-  "task4_results": {
-    "points_possible": 20,
-    "points_earned": 20,
-    "details": {
-      "commission_splits": {
-        "primaryAgent": {
-          "submission_value": 33950.0,
-          "expected_value": 33950.0,
-          "is_correct": true
-        },
-        "coAgent": {
-          "submission_value": 14550.0,
-          "expected_value": 14550.0,
-          "is_correct": true
-        },
-        "businessManager": {
-          "submission_value": 24250.0,
-          "expected_value": 24250.0,
-          "is_correct": true
-        }
-      },
-      "split_application": {
-        "submission_value": true,
-        "expected_value": true,
-        "is_correct": true
-      }
-    }
-  },
-  "task5_results": {
-    "points_possible": 20,
-    "points_earned": 20,
-    "details": {
-      "clientNetEarnings": {
-        "submission_value": 254700.0,
-        "expected_value": 254700.0,
-        "is_correct": true
-      },
-      "totalCommissionsCollected": {
-        "submission_value": 33450.0,
-        "expected_value": 33450.0,
-        "is_correct": true
-      },
-      "outstandingPayments": {
-        "submission_value": 3750.0,
-        "expected_value": 3750.0,
-        "is_correct": true
-      },
-      "reconciliationStatus": {
-        "submission_value": "Partially Reconciled",
-        "expected_value": "Partially Reconciled",
-        "is_correct": true
-      }
-    }
-  },
-  "pass_fail": "PASS",
-  "reason": "Overall score 100.00% meets the 70% passing threshold",
-  "overall_score": 100.0
+  "overall_score": 111,
+  "overall_assessment": "Excellent"
 }

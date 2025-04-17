@@ -1,32 +1,39 @@
 {
-    "candidateId": "EVALUATOR_KEY",
-    "Exercise1": {
-        "lowestTotalCost": 59639.5,
-        "recommendedSupplier": "C",
-        "priceVariance": 16.11,
-        "volumeDiscountSavings": 4378.5
-    },
-    "Exercise2": {
-        "overchargedComponents": [
-            "SC-003",
-            "SC-005",
-            "SC-008"
+    "task1": {
+        "lowest_total_cost_supplier": "D",
+        "high_variance_items": [
+            "OE003",
+            "OE008"
         ],
-        "totalOvercharge": 24.5,
-        "marketRateCompliantComponents": [
-            "SC-002",
-            "SC-004",
-            "SC-007",
-            "SC-010",
-            "SC-011",
-            "SC-012"
-        ],
-        "revisedTotalPrice": 564.7
+        "supplier_with_most_lowest_prices": "D",
+        "count_of_lowest_prices": 5
     },
-    "Exercise3": {
-        "averageQ4Price": 40.22,
-        "projectedQ1Price": 50.36,
-        "sixMonthTrend": "increasing",
-        "optimalPurchaseMonth": "June"
+    "task2": {
+        "price_changes": {
+            "material_A": 95.7,
+            "material_B": 45.0,
+            "material_C": 17.4,
+            "material_D": 15.6,
+            "material_E": 25.6
+        },
+        "most_stable_material": "material_C",
+        "average_prices": {
+            "material_A": 7.9,
+            "material_B": 14.89,
+            "material_C": 3.73,
+            "material_D": 9.7,
+            "material_E": 25.38
+        },
+        "highest_price_quarter": "2023-Q4"
+    },
+    "task3": {
+        "above_market_components": [
+            "C001",
+            "C003"
+        ],
+        "benchmark_adjusted_price": 198.75,
+        "savings_percentage": 4.3,
+        "materials_percentage": 54.0,
+        "labor_percentage": 38.7
     }
 }

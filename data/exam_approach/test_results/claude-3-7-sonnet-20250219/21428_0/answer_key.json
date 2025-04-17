@@ -1,33 +1,62 @@
 {
-    "scenario1": {
-        "missingDocuments": [
-            "Driver's License Copy",
-            "Repair Estimate",
-            "Witness Statements",
-            "Photos of Damage"
-        ],
-        "validClaim": false,
-        "reasonCode": "INCP-02"
-    },
-    "scenario2": {
-        "fraudIndicators": [
-            "Recent policy changes before loss (coverage increases, added endorsements)",
-            "Multiple claims within 12-month period",
-            "Evidence contradicting reported cause of loss"
-        ],
-        "investigationRecommended": true,
-        "suspicionLevel": "5"
-    },
-    "scenario3": {
-        "coverageApplies": false,
-        "applicableSection": "SECTION A",
-        "exclusionApplies": true,
-        "exclusionCode": "EX-10"
-    },
-    "scenario4": {
-        "baseSettlementAmount": "23800",
-        "deductibleAmount": "1000",
-        "depreciationAmount": "2870",
-        "finalSettlementAmount": "19930"
+    "candidate_id": "EVALUATOR_KEY",
+    "claims": {
+        "claim_1": {
+            "claim_id": "CL20230405",
+            "discrepancies": [],
+            "status": "Valid",
+            "additional_information_needed": []
+        },
+        "claim_2": {
+            "claim_id": "CL20230512",
+            "discrepancies": [
+                {
+                    "error_code": "E102",
+                    "description": "Policy expired on 02/15/2023, which is before the date of loss (04/28/2023)"
+                },
+                {
+                    "error_code": "E103",
+                    "description": "Claim amount ($12,750.00) exceeds coverage limit ($10,000.00) for Outpatient Procedures"
+                }
+            ],
+            "status": "Invalid",
+            "additional_information_needed": []
+        },
+        "claim_3": {
+            "claim_id": "CL20230621",
+            "discrepancies": [
+                {
+                    "error_code": "E105",
+                    "description": "Provider Quick Dry Restoration (QDR-7732) has 'Probation' status, requires management review per procedure 3.4"
+                }
+            ],
+            "status": "Requires Additional Information",
+            "additional_information_needed": [
+                "Management review approval for provider with Probation status"
+            ]
+        },
+        "claim_4": {
+            "claim_id": "CL20230709",
+            "discrepancies": [
+                {
+                    "error_code": "E104",
+                    "description": "Policy expiration date discrepancy: listed as 06/01/2023 in claims data spreadsheet but 06/01/2024 in verification tool"
+                },
+                {
+                    "error_code": "E102",
+                    "description": "If spreadsheet date is correct (06/01/2023), policy not in force at time of loss (07/02/2023)"
+                }
+            ],
+            "status": "Requires Additional Information",
+            "additional_information_needed": [
+                "Verification of correct policy expiration date"
+            ]
+        },
+        "claim_5": {
+            "claim_id": "CL20230817",
+            "discrepancies": [],
+            "status": "Valid",
+            "additional_information_needed": []
+        }
     }
 }

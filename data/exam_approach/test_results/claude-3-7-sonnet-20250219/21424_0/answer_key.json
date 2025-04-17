@@ -1,138 +1,37 @@
 {
-    "part1": {
-        "claim001": {
-            "indemnityReserve": 28757.0,
-            "expenseReserve": 2876.0,
-            "policyReference": "2.3"
+    "candidate_id": "EVALUATOR_KEY",
+    "scenarios": [
+        {
+            "claim_number": "AC-2023-45678",
+            "current_reserve": 50000.0,
+            "recommended_reserve": 102350.0,
+            "reserve_change_code": "B1",
+            "reserve_category_code": "BI",
+            "justification": "Reserve increased based on new medical information (surgical consultation 08/05/2023) confirming L4-L5 disc herniation requiring microdiscectomy. The updated reserve includes current medical expenses ($11,350), estimated surgical costs ($35,000), post-surgical physical therapy for 12 weeks ($10,800), and pain and suffering calculated at 3.5x medical specials (as per Section II.5 of reserve guidelines for severe injuries requiring surgery). The injury has progressed from the initial soft tissue diagnosis to a severe injury requiring surgical intervention per Appendix A of the reserve guidelines, necessitating this material reserve adjustment."
         },
-        "claim002": {
-            "indemnityReserve": 95950.0,
-            "expenseReserve": 10000.0,
-            "policyReference": "3.2"
+        {
+            "claim_number": "PR-2023-98765",
+            "current_reserve": 125000.0,
+            "recommended_reserve": 219250.0,
+            "reserve_change_code": "B2",
+            "reserve_category_code": "PROP",
+            "justification": "Reserve increased based on new property damage information from the engineering report (08/18/2023) revealing previously unidentified structural damage and extensive electrical issues. The adjusted reserve incorporates the higher contractor estimate ($135,000), additional structural reinforcement costs ($40,000 midpoint of engineer's estimate), and contents inventory ($39,250) as required by Section III of reserve guidelines. This material change exceeds 25% of previous reserve, incorporating newly discovered damage that wasn't visible during initial inspection, and follows the comprehensive property reserve calculation methodology in the reserve worksheet."
         },
-        "claim003": {
-            "indemnityReserve": 367750.0,
-            "expenseReserve": 25000.0,
-            "policyReference": "4.2"
+        {
+            "claim_number": "WC-2023-34567",
+            "current_reserve": 75000.0,
+            "recommended_reserve": 126000.56,
+            "reserve_change_code": "B1",
+            "reserve_category_code": "WAGE",
+            "reserve_explanation": "Reserve increased based on updated medical evaluation (09/01/2023) changing diagnosis from lumbar strain to L5-S1 disc herniation with persistence radiculopathy. Medical component includes expenses to date ($9,100) plus estimated future treatment including epidural injections and possible surgery ($50,000). Indemnity component includes TTD paid to date ($9,167.18) plus additional 25 weeks of TTD at $833.38/week ($20,834.50) and estimated permanent partial disability ($30,000). Total recommendation reflects Section IV of reserve guidelines requiring immediate recalculation when disability status changes with potential permanent work restrictions now indicated."
+        },
+        {
+            "claim_number": "GL-2023-87654",
+            "current_reserve": 250000.0,
+            "recommended_reserve": 130000.0,
+            "reserve_change_code": "C1",
+            "reserve_category_code": "LIA",
+            "justification": "Reserve decreased based on new liability information from the updated investigation report (08/05/2023) showing liability probability reduced from 80% to 40%. Per Section V.2 of reserve guidelines, reserves must be updated when liability assessment changes. The adjusted reserve applies the 40% liability factor to total potential damages ($285,000 = medical to date $28,500 + future medical $55,000 + lost wages $15,000 + pain and suffering $185,000 + property $1,500), plus $15,000 for defense costs. This material change reflects newly discovered evidence including additional security footage showing warning signs and witness statements regarding claimant's inattention."
         }
-    },
-    "part2": {
-        "adjustedClaims": [
-            {
-                "claimId": "CL-22-10485",
-                "originalReserve": 32000.0,
-                "adjustedReserve": 48000.0,
-                "reasonCode": "A3"
-            },
-            {
-                "claimId": "CL-22-11042",
-                "originalReserve": 18500.0,
-                "adjustedReserve": 24500.0,
-                "reasonCode": "A2"
-            },
-            {
-                "claimId": "CL-23-00157",
-                "originalReserve": 145000.0,
-                "adjustedReserve": 95000.0,
-                "reasonCode": "A4"
-            },
-            {
-                "claimId": "CL-23-00394",
-                "originalReserve": 24000.0,
-                "adjustedReserve": 20000.0,
-                "reasonCode": "A3"
-            },
-            {
-                "claimId": "CL-23-00873",
-                "originalReserve": 27500.0,
-                "adjustedReserve": 35000.0,
-                "reasonCode": "A2"
-            },
-            {
-                "claimId": "CL-23-01045",
-                "originalReserve": 85000.0,
-                "adjustedReserve": 155000.0,
-                "reasonCode": "A1"
-            },
-            {
-                "claimId": "CL-23-01287",
-                "originalReserve": 16500.0,
-                "adjustedReserve": 20000.0,
-                "reasonCode": "A4"
-            },
-            {
-                "claimId": "CL-23-01512",
-                "originalReserve": 62000.0,
-                "adjustedReserve": 78000.0,
-                "reasonCode": "A2"
-            },
-            {
-                "claimId": "CL-23-01788",
-                "originalReserve": 12500.0,
-                "adjustedReserve": 16000.0,
-                "reasonCode": "A2"
-            },
-            {
-                "claimId": "CL-23-01865",
-                "originalReserve": 35000.0,
-                "adjustedReserve": 25000.0,
-                "reasonCode": "A1"
-            },
-            {
-                "claimId": "CL-23-02044",
-                "originalReserve": 125000.0,
-                "adjustedReserve": 62500.0,
-                "reasonCode": "A4"
-            },
-            {
-                "claimId": "CL-23-02137",
-                "originalReserve": 31000.0,
-                "adjustedReserve": 28500.0,
-                "reasonCode": "A2"
-            },
-            {
-                "claimId": "CL-23-02289",
-                "originalReserve": 175000.0,
-                "adjustedReserve": 140000.0,
-                "reasonCode": "A2"
-            },
-            {
-                "claimId": "CL-23-02356",
-                "originalReserve": 42000.0,
-                "adjustedReserve": 55000.0,
-                "reasonCode": "A5"
-            },
-            {
-                "claimId": "CL-23-02487",
-                "originalReserve": 65000.0,
-                "adjustedReserve": 40000.0,
-                "reasonCode": "A4"
-            }
-        ]
-    },
-    "part3": {
-        "recommendations": [
-            {
-                "claimId": "CL-23-02044",
-                "currentReserve": 125000.0,
-                "recommendedReserve": 62500.0,
-                "policySection": "4.2",
-                "changeCategory": "4"
-            },
-            {
-                "claimId": "CL-23-01045",
-                "currentReserve": 85000.0,
-                "recommendedReserve": 155000.0,
-                "policySection": "4.1",
-                "changeCategory": "4"
-            },
-            {
-                "claimId": "CL-23-00157",
-                "currentReserve": 145000.0,
-                "recommendedReserve": 95000.0,
-                "policySection": "1.1",
-                "changeCategory": "3"
-            }
-        ]
-    }
+    ]
 }

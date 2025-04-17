@@ -1,173 +1,116 @@
 {
-    "candidate_id": "ANSWER_KEY",
-    "task_1": {
+    "exercise1": {
         "settled_claims": [
-            {
-                "claim_number": "SC-2023-10001",
-                "claimant_name": "Michael Johnson",
-                "settlement_amount": "12500.00",
-                "settlement_code": "STL-FP",
-                "document_location": "/settled_claims/SC-2023-10001/"
-            },
-            {
-                "claim_number": "SC-2023-10002",
-                "claimant_name": "Sarah Williams",
-                "settlement_amount": "35750.00",
-                "settlement_code": "STL-BI",
-                "document_location": "/settled_claims/SC-2023-10002/"
-            },
-            {
-                "claim_number": "SC-2023-10003",
-                "claimant_name": "David Martinez",
-                "settlement_amount": "8950.00",
-                "settlement_code": "STL-WD",
-                "document_location": "/settled_claims/SC-2023-10003/"
-            },
-            {
-                "claim_number": "SC-2023-10004",
-                "claimant_name": "Jennifer Taylor",
-                "settlement_amount": "3200.00",
-                "settlement_code": "STL-TH",
-                "document_location": "/settled_claims/SC-2023-10004/"
-            },
-            {
-                "claim_number": "SC-2023-10005",
-                "claimant_name": "Robert Anderson",
-                "settlement_amount": "18400.00",
-                "settlement_code": "STL-AC",
-                "document_location": "/settled_claims/SC-2023-10005/"
-            }
+            "CL-2023-0001",
+            "CL-2023-0004",
+            "CL-2023-0006",
+            "CL-2023-0009",
+            "CL-2023-0011",
+            "CL-2023-0015",
+            "CL-2023-0017",
+            "CL-2023-0020",
+            "CL-2023-0022",
+            "CL-2023-0025",
+            "CL-2023-0030",
+            "CL-2023-0035",
+            "CL-2023-0040",
+            "CL-2023-0042",
+            "CL-2023-0045",
+            "CL-2023-0050"
         ],
-        "quarterly_report": {
-            "total_claims_settled": "10",
-            "total_settlement_amount": "174000.00",
-            "average_settlement_amount": "17400.00",
-            "claims_by_type": {
-                "STL-AC": "2",
-                "STL-BI": "2",
-                "STL-FP": "2",
-                "STL-TH": "2",
-                "STL-WD": "2"
-            }
-        }
+        "pending_claims": [
+            "CL-2023-0002",
+            "CL-2023-0005",
+            "CL-2023-0007",
+            "CL-2023-0010",
+            "CL-2023-0012",
+            "CL-2023-0014",
+            "CL-2023-0016",
+            "CL-2023-0019",
+            "CL-2023-0021",
+            "CL-2023-0024",
+            "CL-2023-0026",
+            "CL-2023-0027",
+            "CL-2023-0029",
+            "CL-2023-0031",
+            "CL-2023-0032",
+            "CL-2023-0034",
+            "CL-2023-0036",
+            "CL-2023-0037",
+            "CL-2023-0039",
+            "CL-2023-0041",
+            "CL-2023-0044",
+            "CL-2023-0046",
+            "CL-2023-0047",
+            "CL-2023-0049"
+        ],
+        "denied_claims": [
+            "CL-2023-0003",
+            "CL-2023-0008",
+            "CL-2023-0013",
+            "CL-2023-0018",
+            "CL-2023-0023",
+            "CL-2023-0028",
+            "CL-2023-0033",
+            "CL-2023-0038",
+            "CL-2023-0043",
+            "CL-2023-0048"
+        ]
     },
-    "task_2": {
-        "claims_requiring_analysis": [
-            {
-                "claim_number": "CI-2023-05001",
-                "analysis_priority": "3",
-                "analysis_reason_code": "ARC-05",
-                "target_completion_date": "12/06/2023"
-            },
-            {
-                "claim_number": "CI-2023-05003",
-                "analysis_priority": "2",
-                "analysis_reason_code": "ARC-01",
-                "target_completion_date": "11/29/2023"
-            },
-            {
-                "claim_number": "CI-2023-05004",
-                "analysis_priority": "2",
-                "analysis_reason_code": "ARC-02",
-                "target_completion_date": "11/29/2023"
-            },
-            {
-                "claim_number": "CI-2023-05006",
-                "analysis_priority": "1",
-                "analysis_reason_code": "ARC-02",
-                "target_completion_date": "11/22/2023"
-            },
-            {
-                "claim_number": "CI-2023-05007",
-                "analysis_priority": "3",
-                "analysis_reason_code": "ARC-06",
-                "target_completion_date": "12/06/2023"
-            },
-            {
-                "claim_number": "CI-2023-05010",
-                "analysis_priority": "1",
-                "analysis_reason_code": "ARC-03",
-                "target_completion_date": "11/22/2023"
-            },
-            {
-                "claim_number": "CI-2023-05012",
-                "analysis_priority": "2",
-                "analysis_reason_code": "ARC-02",
-                "target_completion_date": "11/29/2023"
-            },
-            {
-                "claim_number": "CI-2023-05013",
-                "analysis_priority": "4",
-                "analysis_reason_code": "ARC-06",
-                "target_completion_date": "12/15/2023"
-            },
-            {
-                "claim_number": "CI-2023-05014",
-                "analysis_priority": "2",
-                "analysis_reason_code": "ARC-03",
-                "target_completion_date": "11/29/2023"
-            }
+    "exercise2": {
+        "updated_claims": [
+            "CL-2023-0014",
+            "CL-2023-0027",
+            "CL-2023-0031"
         ],
-        "priority_counts": {
-            "priority_1": "2",
-            "priority_2": "4",
-            "priority_3": "2",
-            "priority_4": "1"
-        }
+        "followup_claims": [
+            "CL-2023-0005",
+            "CL-2023-0007",
+            "CL-2023-0010",
+            "CL-2023-0012",
+            "CL-2023-0014",
+            "CL-2023-0019",
+            "CL-2023-0024",
+            "CL-2023-0026",
+            "CL-2023-0027",
+            "CL-2023-0029",
+            "CL-2023-0031",
+            "CL-2023-0032",
+            "CL-2023-0034",
+            "CL-2023-0037",
+            "CL-2023-0039",
+            "CL-2023-0044",
+            "CL-2023-0046",
+            "CL-2023-0047",
+            "CL-2023-0049"
+        ],
+        "priority1_claims": [
+            "CL-2023-0005",
+            "CL-2023-0007",
+            "CL-2023-0012",
+            "CL-2023-0019",
+            "CL-2023-0027",
+            "CL-2023-0029",
+            "CL-2023-0032",
+            "CL-2023-0037",
+            "CL-2023-0039",
+            "CL-2023-0044",
+            "CL-2023-0049"
+        ],
+        "avg_days_to_resolve": 45
     },
-    "task_3": {
-        "audit_results": [
-            {
-                "claim_number": "AUD-2023-001",
-                "file_status": "Minor Deficiencies",
-                "deficiency_codes": [
-                    "DEF-05",
-                    "DEF-07"
-                ],
-                "remediation_required": "Yes"
-            },
-            {
-                "claim_number": "AUD-2023-002",
-                "file_status": "Complete",
-                "deficiency_codes": [],
-                "remediation_required": "No"
-            },
-            {
-                "claim_number": "AUD-2023-003",
-                "file_status": "Major Deficiencies",
-                "deficiency_codes": [
-                    "DEF-02",
-                    "DEF-03",
-                    "DEF-07"
-                ],
-                "remediation_required": "Yes"
-            },
-            {
-                "claim_number": "AUD-2023-004",
-                "file_status": "Complete",
-                "deficiency_codes": [],
-                "remediation_required": "No"
-            },
-            {
-                "claim_number": "AUD-2023-005",
-                "file_status": "Critical Deficiencies",
-                "deficiency_codes": [
-                    "DEF-02",
-                    "DEF-03",
-                    "DEF-04",
-                    "DEF-05",
-                    "DEF-06",
-                    "DEF-07"
-                ],
-                "remediation_required": "Yes"
-            }
+    "exercise3": {
+        "high_complexity_claims": [
+            "CL-2023-0005",
+            "CL-2023-0012",
+            "CL-2023-0019",
+            "CL-2023-0029",
+            "CL-2023-0032",
+            "CL-2023-0039",
+            "CL-2023-0044",
+            "CL-2023-0049"
         ],
-        "summary_statistics": {
-            "files_complete": "2",
-            "files_with_minor_deficiencies": "1",
-            "files_with_major_deficiencies": "1",
-            "files_with_critical_deficiencies": "1",
-            "total_deficiencies_found": "11"
-        }
+        "total_financial_exposure": 158900,
+        "highest_severity": "S4"
     }
 }

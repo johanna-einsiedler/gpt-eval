@@ -1,53 +1,263 @@
 {
-  "candidate_id": "EVALUATOR_KEY",
-  "overall_score": 100.0,
-  "total_points": 100,
-  "total_possible": 100,
-  "passed": true,
-  "sections": {
-    "Transaction Recording": {
-      "points": 30,
-      "max_points": 30,
-      "feedback": [
-        "Correct Grains expenditure calculation: 117760.0",
-        "Correct Produce expenditure calculation: 35562.5",
-        "Correct Protein expenditure calculation: 66147.5",
-        "Correct Dairy expenditure calculation: 21320.0",
-        "Correct product categorization",
-        "Accurate arithmetic in all calculations"
-      ]
-    },
-    "Inventory Reconciliation": {
-      "points": 25,
-      "max_points": 25,
-      "feedback": [
-        "All ending inventory calculations correct",
-        "Correct identification of all inventory discrepancies"
-      ]
-    },
-    "Regulatory Compliance Reporting": {
-      "points": 25,
-      "max_points": 25,
-      "feedback": [
-        "All commodity volumes correct",
-        "All price ranges correct",
-        "Certification summary correct",
-        "Origin verification correct",
-        "Proper data aggregation across product types"
-      ]
-    },
-    "Audit Trail Documentation": {
-      "points": 20,
-      "max_points": 20,
-      "feedback": [
-        "All transaction records correct",
-        "All product traceability information correct",
-        "All certification codes correct"
-      ]
+  "task1": {
+    "points": 30.0,
+    "max_points": 30,
+    "details": {
+      "valid_transactions_count": {
+        "score": 10,
+        "max_points": 10,
+        "submitted": 12,
+        "expected": 12
+      },
+      "total_value": {
+        "score": 10,
+        "max_points": 10,
+        "submitted": 8317.25,
+        "expected": 8317.25
+      },
+      "error_transactions": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_identifications": 4,
+        "total_errors": 4
+      }
     }
   },
-  "critical_elements_met": true,
-  "critical_feedback": [],
-  "section_minimums_met": true,
-  "minimum_feedback": []
+  "task2": {
+    "points": 35.0,
+    "max_points": 35,
+    "details": {
+      "updated_inventory": {
+        "score": 15.0,
+        "max_points": 15,
+        "correct_items": 15,
+        "total_items": 15
+      },
+      "variance_percentages": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_items": 15,
+        "total_items": 15
+      },
+      "highest_variance_products": {
+        "score": 10.0,
+        "max_points": 10,
+        "correct_items": 5,
+        "total_items": 5
+      }
+    }
+  },
+  "task3": {
+    "points": 35.0,
+    "max_points": 35,
+    "details": {
+      "usda_category_totals": {
+        "score": 20.0,
+        "max_points": 20,
+        "category_details": {
+          "Fruits": {
+            "score": 3.3333333333333335,
+            "max_points": 3.3333333333333335,
+            "details": {
+              "volume": {
+                "score": 1,
+                "submitted": 1450,
+                "expected": 1450
+              },
+              "value": {
+                "score": 1,
+                "submitted": 1435.0,
+                "expected": 1435.0
+              },
+              "transaction_count": {
+                "score": 1,
+                "submitted": 3,
+                "expected": 3
+              },
+              "organic_volume": {
+                "score": 1,
+                "submitted": 1450,
+                "expected": 1450
+              },
+              "conventional_volume": {
+                "score": 1,
+                "submitted": 0,
+                "expected": 0
+              }
+            }
+          },
+          "Vegetables": {
+            "score": 3.3333333333333335,
+            "max_points": 3.3333333333333335,
+            "details": {
+              "volume": {
+                "score": 1,
+                "submitted": 2355,
+                "expected": 2355
+              },
+              "value": {
+                "score": 1,
+                "submitted": 2479.75,
+                "expected": 2479.75
+              },
+              "transaction_count": {
+                "score": 1,
+                "submitted": 6,
+                "expected": 6
+              },
+              "organic_volume": {
+                "score": 1,
+                "submitted": 875,
+                "expected": 875
+              },
+              "conventional_volume": {
+                "score": 1,
+                "submitted": 1480,
+                "expected": 1480
+              }
+            }
+          },
+          "Root Vegetables": {
+            "score": 3.3333333333333335,
+            "max_points": 3.3333333333333335,
+            "details": {
+              "volume": {
+                "score": 1,
+                "submitted": 4000,
+                "expected": 4000
+              },
+              "value": {
+                "score": 1,
+                "submitted": 1580.0,
+                "expected": 1580.0
+              },
+              "transaction_count": {
+                "score": 1,
+                "submitted": 3,
+                "expected": 3
+              },
+              "organic_volume": {
+                "score": 1,
+                "submitted": 0,
+                "expected": 0
+              },
+              "conventional_volume": {
+                "score": 1,
+                "submitted": 4000,
+                "expected": 4000
+              }
+            }
+          },
+          "Leafy Greens": {
+            "score": 3.3333333333333335,
+            "max_points": 3.3333333333333335,
+            "details": {
+              "volume": {
+                "score": 1,
+                "submitted": 270,
+                "expected": 270
+              },
+              "value": {
+                "score": 1,
+                "submitted": 1912.5,
+                "expected": 1912.5
+              },
+              "transaction_count": {
+                "score": 1,
+                "submitted": 2,
+                "expected": 2
+              },
+              "organic_volume": {
+                "score": 1,
+                "submitted": 270,
+                "expected": 270
+              },
+              "conventional_volume": {
+                "score": 1,
+                "submitted": 0,
+                "expected": 0
+              }
+            }
+          },
+          "Grains": {
+            "score": 3.3333333333333335,
+            "max_points": 3.3333333333333335,
+            "details": {
+              "volume": {
+                "score": 1,
+                "submitted": 1200,
+                "expected": 1200
+              },
+              "value": {
+                "score": 1,
+                "submitted": 384.0,
+                "expected": 384.0
+              },
+              "transaction_count": {
+                "score": 1,
+                "submitted": 1,
+                "expected": 1
+              },
+              "organic_volume": {
+                "score": 1,
+                "submitted": 0,
+                "expected": 0
+              },
+              "conventional_volume": {
+                "score": 1,
+                "submitted": 1200,
+                "expected": 1200
+              }
+            }
+          },
+          "Other": {
+            "score": 3.3333333333333335,
+            "max_points": 3.3333333333333335,
+            "details": {
+              "volume": {
+                "score": 1,
+                "submitted": 0,
+                "expected": 0
+              },
+              "value": {
+                "score": 1,
+                "submitted": 0.0,
+                "expected": 0.0
+              },
+              "transaction_count": {
+                "score": 1,
+                "submitted": 0,
+                "expected": 0
+              },
+              "organic_volume": {
+                "score": 1,
+                "submitted": 0,
+                "expected": 0
+              },
+              "conventional_volume": {
+                "score": 1,
+                "submitted": 0,
+                "expected": 0
+              }
+            }
+          }
+        }
+      },
+      "compliance_issues": {
+        "score": 5,
+        "max_points": 5,
+        "submitted": [],
+        "expected": []
+      },
+      "verification_code": {
+        "score": 10,
+        "max_points": 10,
+        "submitted": "VA8542-09",
+        "expected": "VA8542-09"
+      }
+    }
+  },
+  "overall_score": 100,
+  "points": 100.0,
+  "max_points": 100
 }

@@ -1,92 +1,136 @@
 {
-  "task1": {
-    "average_monthly_consumption": {
-      "score": 10.0,
-      "max_points": 10,
-      "errors": 0,
-      "comments": "Found 0 values outside the acceptable range (\u00b15%)"
-    },
-    "top_products": {
-      "score": 8,
-      "max_points": 8,
-      "correct_order": 10,
-      "correct_products": 10,
-      "comments": "Identified 10/10 correct products with 10/10 in correct order"
-    },
-    "seasonal_products": {
-      "score": 7,
-      "max_points": 7,
-      "correct_identified": 5,
-      "comments": "Correctly identified 5/5 seasonal products"
+  "candidate_id": "EVALUATOR_REFERENCE",
+  "overall_score": 94.4,
+  "total_points": 118,
+  "max_points": 125,
+  "passed": true,
+  "part1": {
+    "score": 25,
+    "max_score": 33,
+    "component_scores": {
+      "top_requested_items": {
+        "score": 10,
+        "max_score": 10,
+        "correct_count": 5,
+        "total_count": 5,
+        "details": "Found 5/5 correct items"
+      },
+      "average_monthly_usage": {
+        "score": 5,
+        "max_score": 5,
+        "correct_count": 5,
+        "total_count": 5,
+        "details": [
+          "S002: Correct (82)",
+          "S003: Correct (72)",
+          "S005: Correct (49)",
+          "S001: Correct (52)",
+          "S008: Correct (32)"
+        ]
+      },
+      "stockout_items": {
+        "score": 10,
+        "max_score": 18,
+        "correct_count": 5,
+        "total_count": 5,
+        "details": [
+          "S002: Correct frequency (2)",
+          "S005: Correct frequency (3)",
+          "S008: Correct frequency (3)",
+          "S011: Correct frequency (1)",
+          "S013: Correct frequency (1)"
+        ]
+      }
     }
   },
-  "task2": {
-    "stock_coverage": {
-      "score": 10.0,
-      "max_points": 10,
-      "errors": 0,
-      "comments": "Found 0 values outside the acceptable range (\u00b15%)"
-    },
-    "low_inventory_products": {
-      "score": 8,
-      "max_points": 8,
-      "missing": [],
-      "extra": [],
-      "comments": "Missing 0 required products, incorrectly included 0 products"
-    },
-    "excess_inventory_products": {
-      "score": 7,
-      "max_points": 7,
-      "comments": "Correctly identified that there are no excess inventory products"
+  "part2": {
+    "score": 31,
+    "max_score": 35,
+    "component_scores": {
+      "stock_coverage": {
+        "score": 10,
+        "max_score": 10,
+        "correct_count": 10,
+        "total_count": 10,
+        "details": [
+          "S001: Correct (69 days)",
+          "S002: Correct (22 days)",
+          "S003: Correct (36 days)",
+          "S004: Correct (50 days)",
+          "S005: Correct (22 days)",
+          "S006: Correct (40 days)",
+          "S007: Correct (50 days)",
+          "S008: Correct (24 days)",
+          "S009: Correct (42 days)",
+          "S010: Correct (39 days)"
+        ]
+      },
+      "insufficient_stock_items": {
+        "score": 9,
+        "max_score": 9,
+        "correct_count": 3,
+        "total_count": 3,
+        "details": "Correct: ['S008', 'S005', 'S002'], Missing: [], Extra: []"
+      },
+      "highest_unfulfilled_categories": {
+        "score": 12,
+        "max_score": 16,
+        "correct_count": 3,
+        "total_count": 3,
+        "details": [
+          "Position 1: Correct (Writing Instruments)",
+          "Position 2: Correct (Office Accessories)",
+          "Position 3: Correct (Desktop Accessories)"
+        ]
+      }
     }
   },
-  "task3": {
-    "recommended_order_quantities": {
-      "score": 10.0,
-      "max_points": 10,
-      "errors": 0,
-      "comments": "Found 0/20 values outside the acceptable range (\u00b115%)"
-    },
-    "order_frequency": {
-      "score": 8.0,
-      "max_points": 8,
-      "correct": 7,
-      "total": 7,
-      "comments": "Correctly determined order frequency for 7/7 categories"
-    },
-    "quarterly_cost": {
-      "score": 7,
-      "max_points": 7,
-      "submitted_value": 10712.14,
-      "correct_value": 10712.14,
-      "comments": "Quarterly cost within acceptable range of correct value"
+  "part3": {
+    "score": 62,
+    "max_score": 57,
+    "component_scores": {
+      "optimal_order_quantities": {
+        "score": 10,
+        "max_score": 10,
+        "correct_count": 10,
+        "total_count": 10,
+        "details": [
+          "S001: Reasonable (100, expected ~100)",
+          "S002: Reasonable (100, expected ~100)",
+          "S003: Reasonable (80, expected ~80)",
+          "S004: Reasonable (60, expected ~60)",
+          "S005: Reasonable (80, expected ~80)",
+          "S006: Reasonable (50, expected ~50)",
+          "S007: Reasonable (20, expected ~20)",
+          "S008: Reasonable (60, expected ~60)",
+          "S009: Reasonable (50, expected ~50)",
+          "S010: Reasonable (20, expected ~20)"
+        ]
+      },
+      "monthly_schedule": {
+        "score": 10,
+        "max_score": 10,
+        "details": [
+          "Excellent prioritization: All high-risk items in month1"
+        ]
+      },
+      "projected_savings": {
+        "score": 12,
+        "max_score": 12,
+        "details": "Reasonable savings calculation: 628 (expected ~628)"
+      },
+      "recommended_vendors": {
+        "score": 30,
+        "max_score": 25,
+        "details": [
+          "Paper Products: Optimal selection (V001)",
+          "Writing Instruments: Optimal selection (V003)",
+          "Office Accessories: Optimal selection (V006)",
+          "Filing Supplies: Optimal selection (V007)",
+          "Printing Supplies: Optimal selection (V010)",
+          "Desktop Accessories: Optimal selection (V012)"
+        ]
+      }
     }
-  },
-  "task4": {
-    "critical_products": {
-      "score": 8,
-      "max_points": 8,
-      "errors": 0,
-      "departments_evaluated": 10,
-      "comments": "Found errors in 0/10 departments' critical product lists"
-    },
-    "service_levels": {
-      "score": 8.0,
-      "max_points": 8,
-      "correct": 18,
-      "total": 18,
-      "comments": "Service levels appropriate for 18/18 products"
-    },
-    "safety_stock_adjustments": {
-      "score": 9.0,
-      "max_points": 9,
-      "correct": 15,
-      "total": 15,
-      "comments": "Safety stock adjustments appropriate for 15/15 products"
-    }
-  },
-  "overall_score": 100.0,
-  "total_points": 100.0,
-  "max_points": 100,
-  "passed": true
+  }
 }

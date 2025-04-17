@@ -1,85 +1,131 @@
 {
-    "scenario1": {
-        "vendor_id": "V001",
-        "total_amount": 4356.75,
-        "delivery_date": "2023-11-15",
-        "line_items": [
+    "candidate_id": "EVALUATOR_ANSWER_KEY",
+    "section1": {
+        "purchase_order": {
+            "po_number": "PO-2023-153",
+            "vendor_id": "VEN-003",
+            "vendor_name": "Dell Enterprise",
+            "date": "10/15/2023",
+            "required_by": "10/30/2023",
+            "department": "IT Department",
+            "shipping_method": "Standard",
+            "terms": "Net 30",
+            "account_code": "5240-IT-EQUIP"
+        },
+        "item_list": [
             {
-                "item_code": "OS-CH-101",
-                "quantity": 4,
-                "unit_price": 375.0,
-                "account_code": "MKT-202"
+                "item_code": "LT-450X",
+                "description": "Dell Latitude 5420 Laptop",
+                "quantity": 5,
+                "unit_price": 1249.99,
+                "total": 6249.95
             },
             {
-                "item_code": "OS-TB-201",
-                "quantity": 1,
-                "unit_price": 1295.0,
-                "account_code": "MKT-203"
+                "item_code": "MS-220W",
+                "description": "Wireless Mouse Combo",
+                "quantity": 5,
+                "unit_price": 34.99,
+                "total": 174.95
             },
             {
-                "item_code": "OS-FC-301",
-                "quantity": 6,
-                "unit_price": 195.0,
-                "account_code": "MKT-204"
+                "item_code": "DP-150D",
+                "description": "Dell Docking Station",
+                "quantity": 3,
+                "unit_price": 189.99,
+                "total": 569.97
             },
             {
-                "item_code": "OS-BS-401",
+                "item_code": "KB-101E",
+                "description": "Ergonomic Keyboard",
+                "quantity": 5,
+                "unit_price": 79.99,
+                "total": 399.95
+            },
+            {
+                "item_code": "HD-1TB2",
+                "description": "External Hard Drive 1TB",
                 "quantity": 2,
-                "unit_price": 275.0,
-                "account_code": "MKT-205"
+                "unit_price": 129.99,
+                "total": 259.98
             }
-        ]
+        ],
+        "order_totals": {
+            "subtotal": 7654.8,
+            "tax": 0.0,
+            "shipping": 45.0,
+            "total": 7699.8
+        },
+        "tax_exempt_applied": true,
+        "justification": "Dell Enterprise is marked as tax exempt in the approved vendors list"
     },
-    "scenario2": {
-        "rfp_specifications": {
-            "print_speed": "45 pages/minute (B&W), 35 pages/minute (color)",
-            "monthly_volume": "15,000 - 20,000 pages",
-            "network_capabilities": "Ethernet, Wireless",
-            "security_features": "Secure print, user authentication, data encryption",
-            "mobile_printing": "AirPrint, Google Cloud Print",
-            "additional_features": "Stapling, hole punching, booklet creation"
-        },
-        "vendor_analysis": {
-            "selected_vendor": "Office Technology Solutions",
-            "total_cost": 7845.0,
-            "delivery_timeframe": "3 weeks",
-            "warranty_period": "3 years"
-        },
-        "vendor_scores": {
-            "Office Technology Solutions": 92,
-            "Digital Imaging Systems": 78,
-            "Enterprise Print Solutions": 86
-        },
-        "selection_justification": "Office Technology Solutions offers the best overall value with a competitive price under budget ($7,845), exceeds all technical requirements, includes a 3-year warranty, provides 3-week delivery, and includes all requested features. While Enterprise Print Solutions has superior specifications, their price exceeds the budget constraint of $8,000."
+    "section2": {
+        "selected_vendor": "TechnoSource Inc.",
+        "cost_comparison": [
+            {
+                "vendor": "OfficeMax Business",
+                "total_cost": 6094.38,
+                "delivery_time": "7-10 business days",
+                "meets_specifications": false,
+                "warranty": "3 years",
+                "notes": "28 ppm speed does not meet minimum 35 ppm requirement"
+            },
+            {
+                "vendor": "Corporate Supply Pro",
+                "total_cost": 6079.38,
+                "delivery_time": "14-21 business days",
+                "meets_specifications": true,
+                "warranty": "3 years",
+                "notes": "Lowest cost but longest delivery time"
+            },
+            {
+                "vendor": "TechnoSource Inc.",
+                "total_cost": 6899.38,
+                "delivery_time": "3-5 business days",
+                "meets_specifications": true,
+                "warranty": "5 years",
+                "notes": "Highest cost but fastest delivery and longest warranty"
+            }
+        ],
+        "selection_justification": "According to the company purchasing policy, technical compliance is the first priority. OfficeMax Business is eliminated as non-compliant (28 ppm vs. required 35 ppm). Between the remaining two compliant vendors, TechnoSource Inc. offers better technical specifications (40 ppm), faster delivery (3-5 days vs 14-21 days), and better warranty (5 years vs 3 years), making it the best choice despite the higher price.",
+        "rfq_answers": {
+            "question1": "c",
+            "question2": "d",
+            "question3": "b",
+            "question4": "c",
+            "question5": "b"
+        }
     },
-    "scenario3": {
+    "section3": {
         "requisition1": {
-            "status": "returned",
-            "issues": [
-                "Missing Department Manager approval",
-                "Required by date listed as 'ASAP' which is not acceptable per policy section 1.1.f",
-                "Total amount exceeds $5,000 requiring competitive bidding"
+            "requisition_number": "REQ-2023-112",
+            "status": "Returned for Completion",
+            "errors": [
+                "Missing approval signature",
+                "Missing total estimated amount",
+                "No account code assigned"
             ],
-            "required_corrections": [
-                "Obtain Department Manager approval signature",
-                "Provide specific required delivery date",
-                "Include minimum of two written quotes per policy section 2.1"
-            ]
+            "account_code": "5410-MKT-MKTG",
+            "approval_workflow": [
+                "Department Manager",
+                "Purchasing Manager"
+            ],
+            "estimated_total": 4975.0
         },
         "requisition2": {
-            "status": "approved",
-            "issues": [],
-            "required_corrections": []
-        },
-        "requisition3": {
-            "status": "returned",
-            "issues": [
-                "Professional services purchase requires detailed scope of work document per policy section 4.2",
-                "Training service price ($12,500) exceeds standard catalog price ($10,000)"
+            "requisition_number": "REQ-2023-118",
+            "status": "Approved",
+            "errors": [],
+            "account_code": "5510-OPS-SFTY",
+            "approval_workflow": [
+                "Department Manager",
+                "Purchasing Manager"
             ],
-            "required_corrections": [
-                "Attach detailed scope of work document for training services",
-                "Provide justification for price exceeding standard catalog price or adjust to catalog price"
+            "rush_process_steps": [
+                "Must include justification for rush status",
+                "Requires additional approval from next level manager",
+                "Must be flagged in the system with RUSH designation",
+                "Purchasing department must process within 24 hours",
+                "May incur additional expedited shipping charges"
             ]
         }
     }

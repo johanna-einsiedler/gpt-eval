@@ -1,130 +1,101 @@
 {
-  "overall_score": 100.0,
-  "total_points": 20,
-  "max_points": 20,
-  "passed": true,
-  "exercises": {
-    "exercise1": {
-      "points": 8,
-      "max_points": 8,
-      "details": {
-        "scenario1": {
-          "points": 2,
-          "max_points": 2,
-          "feedback": [
-            "Correct compliance determination.",
-            "Correct regulation identification."
-          ]
-        },
-        "scenario2": {
-          "points": 2,
-          "max_points": 2,
-          "feedback": [
-            "Correct compliance determination.",
-            "Correct regulation identification."
-          ]
-        },
-        "scenario3": {
-          "points": 2,
-          "max_points": 2,
-          "feedback": [
-            "Correct compliance determination.",
-            "Correct regulation identification."
-          ]
-        },
-        "scenario4": {
-          "points": 2,
-          "max_points": 2,
-          "feedback": [
-            "Correct compliance determination.",
-            "Correct regulation identification."
-          ]
-        }
-      }
-    },
-    "exercise2": {
-      "points": 6,
-      "max_points": 6,
-      "details": {
-        "issue1": {
-          "points": 2,
-          "max_points": 2,
-          "feedback": [
-            "Correct clause number identification.",
-            "Correct regulation identification."
-          ]
-        },
-        "issue2": {
-          "points": 2,
-          "max_points": 2,
-          "feedback": [
-            "Correct clause number identification.",
-            "Correct regulation identification."
-          ]
-        },
-        "issue3": {
-          "points": 2,
-          "max_points": 2,
-          "feedback": [
-            "Correct clause number identification.",
-            "Correct regulation identification."
-          ]
-        }
-      }
-    },
-    "exercise3": {
-      "points": 3,
-      "max_points": 3,
-      "details": {
-        "required_fields": {
-          "points": 1,
-          "max_points": 1,
-          "feedback": [
-            "Correct required fields identified."
-          ]
-        },
-        "retention_period": {
-          "points": 1,
-          "max_points": 1,
-          "feedback": [
-            "Correct retention period identified."
-          ]
-        },
-        "approval_level": {
-          "points": 1,
-          "max_points": 1,
-          "feedback": [
-            "Correct approval level identified."
-          ]
-        }
-      }
-    },
-    "exercise4": {
-      "points": 3,
-      "max_points": 3,
-      "details": {
-        "affected_processes": {
-          "points": 1,
-          "max_points": 1,
-          "feedback": [
-            "Correct affected processes identified."
-          ]
-        },
-        "required_actions": {
-          "points": 1,
-          "max_points": 1,
-          "feedback": [
-            "Correct required actions identified."
-          ]
-        },
-        "implementation_deadline": {
-          "points": 1,
-          "max_points": 1,
-          "feedback": [
-            "Correct implementation deadline identified."
-          ]
-        }
+  "candidate_id": "EVALUATOR_KEY",
+  "exercise1": {
+    "points": 30,
+    "max_points": 30,
+    "details": {
+      "Scenario 1": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct violation code identified.",
+          "Correct regulation reference provided."
+        ]
+      },
+      "Scenario 2": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct violation code identified.",
+          "Correct regulation reference provided."
+        ]
+      },
+      "Scenario 3": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct violation code identified.",
+          "Correct regulation reference provided."
+        ]
       }
     }
-  }
+  },
+  "exercise2": {
+    "points": 30,
+    "max_points": 30,
+    "details": {
+      "Policy Section": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct policy section identified."
+        ]
+      },
+      "Update Required": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct determination of update requirement."
+        ]
+      },
+      "Compliance Status Code": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct compliance status code selected."
+        ]
+      }
+    }
+  },
+  "exercise3": {
+    "points": 40,
+    "max_points": 40,
+    "details": {
+      "Clause 1": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct compliance determination.",
+          "Correct violation code provided."
+        ]
+      },
+      "Clause 2": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct compliance determination.",
+          "Correct violation code provided."
+        ]
+      },
+      "Clause 3": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct compliance determination.",
+          "Correct violation code provided."
+        ]
+      },
+      "Overall Status": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct overall status code selected."
+        ]
+      }
+    }
+  },
+  "total_points": 100,
+  "max_points": 100,
+  "overall_score": 100.0,
+  "performance_level": "Excellent"
 }
