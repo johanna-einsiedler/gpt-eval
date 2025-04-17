@@ -809,7 +809,7 @@ for _, row in df_26tasks.iterrows():  # Use iterrows() to iterate over rows
 # Convert the list of result states into a DataFrame
 df_result_states = pd.DataFrame(result_states)
 
-df_result_states.to_csv("../../data/exam_approach/test_results/{}/26_task_exam_check_v2.csv".format(model), index=False)
+df_result_states.to_csv("../../data/exam_approach/test_results/{}/first_50_task_exam_check_v3.csv".format(model), index=False)
 
 # # Save the resulting DataFrame to a CSV file (optional)
 # df_result_states.to_csv("../../data/exam_approach/test_results/compiled_results.csv", index=False)
