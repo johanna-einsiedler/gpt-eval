@@ -1,0 +1,369 @@
+{
+  "overall_score": 119.33333333333334,
+  "percentage_score": 119.33333333333334,
+  "passed": true,
+  "passed_essential": true,
+  "passed_overall": true,
+  "is_valid_format": true,
+  "essential_elements": {
+    "specifications_score": 10.0,
+    "budget_score": 10.0,
+    "total_essential_score": 20.0
+  },
+  "supplier_scores": {
+    "score": 40.0,
+    "overall_accuracy": 1.0,
+    "details": {
+      "supplier_A": {
+        "criteria_scores": {
+          "price": {
+            "score": 7,
+            "acceptable_range": [
+              6,
+              8
+            ],
+            "is_correct": true
+          },
+          "quality": {
+            "score": 6,
+            "acceptable_range": [
+              5,
+              7
+            ],
+            "is_correct": true
+          },
+          "delivery_reliability": {
+            "score": 7,
+            "acceptable_range": [
+              6,
+              8
+            ],
+            "is_correct": true
+          },
+          "production_capacity": {
+            "score": 7,
+            "acceptable_range": [
+              6,
+              8
+            ],
+            "is_correct": true
+          },
+          "technical_support": {
+            "score": 6,
+            "acceptable_range": [
+              5,
+              7
+            ],
+            "is_correct": true
+          },
+          "financial_stability": {
+            "score": 7,
+            "acceptable_range": [
+              6,
+              8
+            ],
+            "is_correct": true
+          }
+        },
+        "total_score": {
+          "reported": 40,
+          "calculated": 40,
+          "is_correct": true
+        },
+        "accuracy": 1.0
+      },
+      "supplier_B": {
+        "criteria_scores": {
+          "price": {
+            "score": 6,
+            "acceptable_range": [
+              5,
+              7
+            ],
+            "is_correct": true
+          },
+          "quality": {
+            "score": 9,
+            "acceptable_range": [
+              8,
+              10
+            ],
+            "is_correct": true
+          },
+          "delivery_reliability": {
+            "score": 9,
+            "acceptable_range": [
+              8,
+              10
+            ],
+            "is_correct": true
+          },
+          "production_capacity": {
+            "score": 8,
+            "acceptable_range": [
+              7,
+              9
+            ],
+            "is_correct": true
+          },
+          "technical_support": {
+            "score": 9,
+            "acceptable_range": [
+              8,
+              10
+            ],
+            "is_correct": true
+          },
+          "financial_stability": {
+            "score": 8,
+            "acceptable_range": [
+              7,
+              9
+            ],
+            "is_correct": true
+          }
+        },
+        "total_score": {
+          "reported": 49,
+          "calculated": 49,
+          "is_correct": true
+        },
+        "accuracy": 1.0
+      },
+      "supplier_C": {
+        "criteria_scores": {
+          "price": {
+            "score": 3,
+            "acceptable_range": [
+              2,
+              4
+            ],
+            "is_correct": true
+          },
+          "quality": {
+            "score": 4,
+            "acceptable_range": [
+              3,
+              5
+            ],
+            "is_correct": true
+          },
+          "delivery_reliability": {
+            "score": 3,
+            "acceptable_range": [
+              2,
+              4
+            ],
+            "is_correct": true
+          },
+          "production_capacity": {
+            "score": 3,
+            "acceptable_range": [
+              2,
+              4
+            ],
+            "is_correct": true
+          },
+          "technical_support": {
+            "score": 4,
+            "acceptable_range": [
+              3,
+              5
+            ],
+            "is_correct": true
+          },
+          "financial_stability": {
+            "score": 5,
+            "acceptable_range": [
+              4,
+              6
+            ],
+            "is_correct": true
+          }
+        },
+        "total_score": {
+          "reported": 22,
+          "calculated": 22,
+          "is_correct": true
+        },
+        "accuracy": 1.0
+      },
+      "supplier_D": {
+        "criteria_scores": {
+          "price": {
+            "score": 9,
+            "acceptable_range": [
+              8,
+              10
+            ],
+            "is_correct": true
+          },
+          "quality": {
+            "score": 8,
+            "acceptable_range": [
+              7,
+              9
+            ],
+            "is_correct": true
+          },
+          "delivery_reliability": {
+            "score": 8,
+            "acceptable_range": [
+              7,
+              9
+            ],
+            "is_correct": true
+          },
+          "production_capacity": {
+            "score": 10,
+            "acceptable_range": [
+              9,
+              10
+            ],
+            "is_correct": true
+          },
+          "technical_support": {
+            "score": 8,
+            "acceptable_range": [
+              7,
+              9
+            ],
+            "is_correct": true
+          },
+          "financial_stability": {
+            "score": 9,
+            "acceptable_range": [
+              8,
+              10
+            ],
+            "is_correct": true
+          }
+        },
+        "total_score": {
+          "reported": 52,
+          "calculated": 52,
+          "is_correct": true
+        },
+        "accuracy": 1.0
+      },
+      "supplier_E": {
+        "criteria_scores": {
+          "price": {
+            "score": 5,
+            "acceptable_range": [
+              4,
+              6
+            ],
+            "is_correct": true
+          },
+          "quality": {
+            "score": 7,
+            "acceptable_range": [
+              6,
+              8
+            ],
+            "is_correct": true
+          },
+          "delivery_reliability": {
+            "score": 6,
+            "acceptable_range": [
+              5,
+              7
+            ],
+            "is_correct": true
+          },
+          "production_capacity": {
+            "score": 6,
+            "acceptable_range": [
+              5,
+              7
+            ],
+            "is_correct": true
+          },
+          "technical_support": {
+            "score": 6,
+            "acceptable_range": [
+              5,
+              7
+            ],
+            "is_correct": true
+          },
+          "financial_stability": {
+            "score": 6,
+            "acceptable_range": [
+              5,
+              7
+            ],
+            "is_correct": true
+          }
+        },
+        "total_score": {
+          "reported": 36,
+          "calculated": 36,
+          "is_correct": true
+        },
+        "accuracy": 1.0
+      }
+    }
+  },
+  "price_comparison": {
+    "score": 15.0,
+    "accuracy": 1.0,
+    "details": {
+      "supplier_A": {
+        "candidate_price": 3.12,
+        "correct_price": 3.12,
+        "is_correct": true
+      },
+      "supplier_B": {
+        "candidate_price": 3.14,
+        "correct_price": 3.14,
+        "is_correct": true
+      },
+      "supplier_C": {
+        "candidate_price": 3.25,
+        "correct_price": 3.25,
+        "is_correct": true
+      },
+      "supplier_D": {
+        "candidate_price": 3.1,
+        "correct_price": 3.1,
+        "is_correct": true
+      },
+      "supplier_E": {
+        "candidate_price": 3.18,
+        "correct_price": 3.18,
+        "is_correct": true
+      }
+    }
+  },
+  "recommended_suppliers": {
+    "score": 20.0,
+    "accuracy": 1.0,
+    "details": {
+      "recommendations": [
+        {
+          "position": 1,
+          "candidate_choice": "Supplier D",
+          "correct_choice": "Supplier D",
+          "is_correct": true
+        },
+        {
+          "position": 2,
+          "candidate_choice": "Supplier B",
+          "correct_choice": "Supplier B",
+          "is_correct": true
+        }
+      ]
+    }
+  },
+  "justifications": {
+    "score": 24.333333333333336,
+    "supplier_coverage_score": 10.0,
+    "data_driven_score": 9.333333333333334,
+    "completeness_score": 5,
+    "suppliers_covered": 5,
+    "metrics_used": 14,
+    "has_final_recommendation": true
+  }
+}

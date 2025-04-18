@@ -1,551 +1,360 @@
+#!/usr/bin/env python3
 import json
+import sys
 import os
 
-def load_json_file(filename):
+def load_json_file(file_path):
     """Load and parse a JSON file."""
     try:
-        with open(filename, 'r') as file:
+        with open(file_path, 'r') as file:
             return json.load(file)
     except Exception as e:
-        print(f"Error loading {filename}: {e}")
-        return None
+        print(f"Error loading {file_path}: {e}")
+        sys.exit(1)
 
-def evaluate_top_requested_items(submission_items, key_items):
-    """Evaluate the top requested items section."""
-    correct_count = 0
-    feedback = []
-    
-    # Create a dictionary from key items for easier lookup
-    key_items_dict = {item["item_id"]: item for item in key_items}
-    
-    for i, item in enumerate(submission_items):
-        item_id = item.get("item_id", "")
-        if item_id in key_items_dict:
-            key_item = key_items_dict[item_id]
-            submission_demand = item.get("monthly_demand", 0)
-            key_demand = key_item.get("monthly_demand", 0)
-            
-            # Check if demand is within 5% of expected value
-            if abs(submission_demand - key_demand) <= key_demand * 0.05:
-                correct_count += 1
-                feedback.append(f"Item {item_id}: Correct demand value")
-            else:
-                feedback.append(f"Item {item_id}: Incorrect demand value. Got {submission_demand}, expected {key_demand}")
-        else:
-            feedback.append(f"Item {item_id}: Not in top 10 requested items")
-    
-    score = (correct_count / len(key_items)) * 10
-    return {
-        "score": score,
-        "max_score": 10,
-        "correct_count": correct_count,
-        "total_count": len(key_items),
-        "feedback": feedback
-    }
-
-def evaluate_inventory_turnover(submission_turnover, key_turnover):
-    """Evaluate the inventory turnover section."""
-    correct_count = 0
-    feedback = []
-    
-    # Create a dictionary from key turnover for easier lookup
-    key_turnover_dict = {item["category"]: item for item in key_turnover}
-    
-    for item in submission_turnover:
-        category = item.get("category", "")
-        if category in key_turnover_dict:
-            key_item = key_turnover_dict[category]
-            submission_rate = item.get("turnover_rate", 0)
-            key_rate = key_item.get("turnover_rate", 0)
-            
-            # Check if turnover rate is within 0.5 of expected value
-            if abs(submission_rate - key_rate) <= 0.5:
-                correct_count += 1
-                feedback.append(f"Category {category}: Correct turnover rate")
-            else:
-                feedback.append(f"Category {category}: Incorrect turnover rate. Got {submission_rate}, expected {key_rate}")
-        else:
-            feedback.append(f"Category {category}: Not found in answer key")
-    
-    score = (correct_count / len(key_turnover)) * 10
-    return {
-        "score": score,
-        "max_score": 10,
-        "correct_count": correct_count,
-        "total_count": len(key_turnover),
-        "feedback": feedback
-    }
-
-def evaluate_stockout_items(submission_items, key_items):
-    """Evaluate the stockout items section."""
-    correct_count = 0
-    feedback = []
-    
-    # Create a dictionary from key items for easier lookup
-    key_items_dict = {item["item_id"]: item for item in key_items}
-    submission_items_dict = {item["item_id"]: item for item in submission_items}
-    
-    # Check for items in submission that are in the key
-    for item_id, item in submission_items_dict.items():
-        if item_id in key_items_dict:
-            stockout_count = item.get("stockout_count", 0)
-            if stockout_count >= 3:
-                correct_count += 1
-                feedback.append(f"Item {item_id}: Correctly identified as stockout item")
-            else:
-                feedback.append(f"Item {item_id}: Incorrect stockout count. Got {stockout_count}, expected ≥3")
-        else:
-            feedback.append(f"Item {item_id}: Incorrectly identified as stockout item")
-    
-    # Check for items in key that are missing from submission
-    for item_id in key_items_dict:
-        if item_id not in submission_items_dict:
-            feedback.append(f"Item {item_id}: Missing stockout item")
-    
-    score = (correct_count / len(key_items)) * 10
-    return {
-        "score": score,
-        "max_score": 10,
-        "correct_count": correct_count,
-        "total_count": len(key_items),
-        "feedback": feedback
-    }
-
-def evaluate_critical_lead_times(submission_times, key_times):
-    """Evaluate the critical lead times section."""
-    correct_count = 0
-    feedback = []
-    
-    # Create a dictionary from key times for easier lookup
-    key_times_dict = {item["supplier_id"]: item for item in key_times}
-    
-    for item in submission_times:
-        supplier_id = item.get("supplier_id", "")
-        if supplier_id in key_times_dict:
-            key_item = key_times_dict[supplier_id]
-            submission_lead_time = item.get("avg_lead_time_days", 0)
-            key_lead_time = key_item.get("avg_lead_time_days", 0)
-            
-            # Check if lead time matches exactly
-            if submission_lead_time == key_lead_time:
-                correct_count += 1
-                feedback.append(f"Supplier {supplier_id}: Correct lead time")
-            else:
-                feedback.append(f"Supplier {supplier_id}: Incorrect lead time. Got {submission_lead_time}, expected {key_lead_time}")
-        else:
-            feedback.append(f"Supplier {supplier_id}: Not a critical supplier")
-    
-    score = (correct_count / len(key_times)) * 10
-    return {
-        "score": score,
-        "max_score": 10,
-        "correct_count": correct_count,
-        "total_count": len(key_times),
-        "feedback": feedback
-    }
-
-def evaluate_optimal_reorder_points(submission_points, key_points):
-    """Evaluate the optimal reorder points section."""
-    correct_count = 0
-    feedback = []
-    
-    # Create a dictionary from key points for easier lookup
-    key_points_dict = {item["item_id"]: item for item in key_points}
-    
-    for item in submission_points:
-        item_id = item.get("item_id", "")
-        if item_id in key_points_dict:
-            key_item = key_points_dict[item_id]
-            submission_point = item.get("reorder_point", 0)
-            key_point = key_item.get("reorder_point", 0)
-            
-            # Check if reorder point is within 20% of expected value
-            if abs(submission_point - key_point) <= key_point * 0.2:
-                correct_count += 1
-                feedback.append(f"Item {item_id}: Correct reorder point")
-            else:
-                feedback.append(f"Item {item_id}: Incorrect reorder point. Got {submission_point}, expected {key_point}")
-        else:
-            feedback.append(f"Item {item_id}: Not in top 15 items by volume")
-    
-    score = (correct_count / len(key_points)) * 10
-    return {
-        "score": score,
-        "max_score": 10,
-        "correct_count": correct_count,
-        "total_count": len(key_points),
-        "feedback": feedback
-    }
-
-def evaluate_delayed_delivery_suppliers(submission_suppliers, key_suppliers):
-    """Evaluate the delayed delivery suppliers section."""
-    correct_count = 0
-    feedback = []
-    
-    # Create a dictionary from key suppliers for easier lookup
-    key_suppliers_dict = {item["supplier_id"]: item for item in key_suppliers}
-    submission_suppliers_dict = {item["supplier_id"]: item for item in submission_suppliers}
-    
-    # Check for suppliers in submission that are in the key
-    for supplier_id, item in submission_suppliers_dict.items():
-        if supplier_id in key_suppliers_dict:
-            key_item = key_suppliers_dict[supplier_id]
-            submission_frequency = item.get("delay_frequency", 0)
-            key_frequency = key_item.get("delay_frequency", 0)
-            
-            # Check if delay frequency is within 0.05 of expected value
-            if abs(submission_frequency - key_frequency) <= 0.05:
-                correct_count += 1
-                feedback.append(f"Supplier {supplier_id}: Correct delay frequency")
-            else:
-                feedback.append(f"Supplier {supplier_id}: Incorrect delay frequency. Got {submission_frequency}, expected {key_frequency}")
-        else:
-            feedback.append(f"Supplier {supplier_id}: Incorrectly identified as delayed supplier")
-    
-    # Check for suppliers in key that are missing from submission
-    for supplier_id in key_suppliers_dict:
-        if supplier_id not in submission_suppliers_dict:
-            feedback.append(f"Supplier {supplier_id}: Missing delayed supplier")
-    
-    score = (correct_count / len(key_suppliers)) * 10
-    return {
-        "score": score,
-        "max_score": 10,
-        "correct_count": correct_count,
-        "total_count": len(key_suppliers),
-        "feedback": feedback
-    }
-
-def evaluate_purchasing_schedule(submission_schedule, key_schedule):
-    """Evaluate the purchasing schedule section."""
-    correct_count = 0
-    feedback = []
-    
-    # Create a dictionary from key schedule for easier lookup
-    key_schedule_dict = {item["item_id"]: item for item in key_schedule}
-    
-    for item in submission_schedule:
-        item_id = item.get("item_id", "")
-        if item_id in key_schedule_dict:
-            key_item = key_schedule_dict[item_id]
-            
-            # Check order frequency
-            submission_frequency = item.get("order_frequency", "")
-            key_frequency = key_item.get("order_frequency", "")
-            frequency_correct = submission_frequency == key_frequency
-            
-            # Check order quantity (within 20% of expected)
-            submission_quantity = item.get("order_quantity", 0)
-            key_quantity = key_item.get("order_quantity", 0)
-            quantity_correct = abs(submission_quantity - key_quantity) <= key_quantity * 0.2
-            
-            if frequency_correct and quantity_correct:
-                correct_count += 1
-                feedback.append(f"Item {item_id}: Correct schedule")
-            else:
-                issues = []
-                if not frequency_correct:
-                    issues.append(f"frequency (got {submission_frequency}, expected {key_frequency})")
-                if not quantity_correct:
-                    issues.append(f"quantity (got {submission_quantity}, expected {key_quantity})")
-                feedback.append(f"Item {item_id}: Incorrect {' and '.join(issues)}")
-        else:
-            feedback.append(f"Item {item_id}: Not in top 20 items by demand")
-    
-    score = (correct_count / len(key_schedule)) * 10
-    return {
-        "score": score,
-        "max_score": 10,
-        "correct_count": correct_count,
-        "total_count": len(key_schedule),
-        "feedback": feedback
-    }
-
-def evaluate_seasonal_inventory_approach(submission_approach, key_approach):
-    """Evaluate the seasonal inventory approach section."""
+def evaluate_part1(submission, answer_key):
+    """Evaluate Part 1: Data Analysis."""
     score = 0
-    feedback = []
+    results = {}
+
+    # Top 5 requested items (2 points each, max 10 points)
+    correct_items = set(answer_key["part1"]["top_requested_items"])
+    submitted_items = set(submission["part1"].get("top_requested_items", []))
     
-    # Check winter items strategy
-    if "winter_items" in submission_approach and "winter_items" in key_approach:
-        submission_winter = submission_approach["winter_items"]
-        key_winter = key_approach["winter_items"]
-        
-        if "strategy" in submission_winter and "strategy" in key_winter:
-            # Check if strategy mentions reducing inventory and includes a percentage
-            submission_strategy = submission_winter["strategy"].lower()
-            if "reduce" in submission_strategy and any(str(i) in submission_strategy for i in range(10, 40)):
-                score += 2.5
-                feedback.append("Winter strategy: Correctly identifies reduction in inventory")
-            else:
-                feedback.append("Winter strategy: Does not clearly identify reduction or specific percentage")
-        
-        if "rationale" in submission_winter and "rationale" in key_winter:
-            # Check if rationale mentions lower demand in winter months
-            submission_rationale = submission_winter["rationale"].lower()
-            if "lower demand" in submission_rationale or "decreased demand" in submission_rationale:
-                score += 2.5
-                feedback.append("Winter rationale: Correctly identifies lower demand in winter")
-            else:
-                feedback.append("Winter rationale: Does not clearly explain lower demand in winter")
-    else:
-        feedback.append("Missing winter items strategy or rationale")
+    correct_count = len(correct_items.intersection(submitted_items))
+    top_items_score = correct_count * 2
     
-    # Check summer items strategy
-    if "summer_items" in submission_approach and "summer_items" in key_approach:
-        submission_summer = submission_approach["summer_items"]
-        key_summer = key_approach["summer_items"]
-        
-        if "strategy" in submission_summer and "strategy" in key_summer:
-            # Check if strategy mentions increasing inventory and includes a percentage
-            submission_strategy = submission_summer["strategy"].lower()
-            if "increase" in submission_strategy and any(str(i) in submission_strategy for i in range(15, 35)):
-                score += 2.5
-                feedback.append("Summer strategy: Correctly identifies increase in inventory")
-            else:
-                feedback.append("Summer strategy: Does not clearly identify increase or specific percentage")
-        
-        if "rationale" in submission_summer and "rationale" in key_summer:
-            # Check if rationale mentions higher demand in Q3 or summer
-            submission_rationale = submission_summer["rationale"].lower()
-            if ("higher demand" in submission_rationale or "increased demand" in submission_rationale) and ("q3" in submission_rationale or "summer" in submission_rationale):
-                score += 2.5
-                feedback.append("Summer rationale: Correctly identifies higher demand in summer/Q3")
-            else:
-                feedback.append("Summer rationale: Does not clearly explain higher demand in summer/Q3")
-    else:
-        feedback.append("Missing summer items strategy or rationale")
+    results["top_requested_items"] = {
+        "score": top_items_score,
+        "max_score": 10,
+        "correct_count": correct_count,
+        "total_count": 5,
+        "details": f"Found {correct_count}/5 correct items"
+    }
+    score += top_items_score
+
+    # Average monthly usage (1 point per correct calculation, max 5 points)
+    usage_score = 0
+    correct_usages = 0
+    usage_details = []
     
+    key_usages = answer_key["part1"]["average_monthly_usage"]
+    submission_usages = submission["part1"].get("average_monthly_usage", {})
+    
+    for item_id, expected_usage in key_usages.items():
+        submitted_usage = submission_usages.get(item_id)
+        if submitted_usage is not None and submitted_usage == expected_usage:
+            usage_score += 1
+            correct_usages += 1
+            usage_details.append(f"{item_id}: Correct ({submitted_usage})")
+        else:
+            submitted_value = "Missing" if submitted_usage is None else submitted_usage
+            usage_details.append(f"{item_id}: Incorrect (submitted: {submitted_value}, expected: {expected_usage})")
+    
+    results["average_monthly_usage"] = {
+        "score": usage_score,
+        "max_score": 5,
+        "correct_count": correct_usages,
+        "total_count": 5,
+        "details": usage_details
+    }
+    score += usage_score
+
+    # Stockout items (2 points per correct item with frequency, max 18 points)
+    stockout_score = 0
+    correct_stockouts = 0
+    stockout_details = []
+    
+    key_stockouts = answer_key["part1"]["stockout_items"]
+    submission_stockouts = submission["part1"].get("stockout_items", {})
+    
+    for item_id, expected_frequency in key_stockouts.items():
+        submitted_frequency = submission_stockouts.get(item_id)
+        if submitted_frequency is not None and submitted_frequency == expected_frequency:
+            stockout_score += 2
+            correct_stockouts += 1
+            stockout_details.append(f"{item_id}: Correct frequency ({submitted_frequency})")
+        else:
+            submitted_value = "Missing" if submitted_frequency is None else submitted_frequency
+            stockout_details.append(f"{item_id}: Incorrect (submitted: {submitted_value}, expected: {expected_frequency})")
+    
+    # Check for additional items not in the answer key
+    for item_id in submission_stockouts:
+        if item_id not in key_stockouts:
+            stockout_details.append(f"{item_id}: Incorrect (not a valid stockout item)")
+    
+    results["stockout_items"] = {
+        "score": stockout_score,
+        "max_score": 18,
+        "correct_count": correct_stockouts,
+        "total_count": len(key_stockouts),
+        "details": stockout_details
+    }
+    score += stockout_score
+
     return {
         "score": score,
-        "max_score": 10,
-        "feedback": feedback
+        "max_score": 33,
+        "component_scores": results
     }
 
-def evaluate_process_improvements(submission_improvements, key_improvements):
-    """Evaluate the process improvements section."""
+def evaluate_part2(submission, answer_key):
+    """Evaluate Part 2: Supply Gap Identification."""
     score = 0
-    feedback = []
+    results = {}
+
+    # Stock coverage calculation (1 point per correct calculation, max 10 points)
+    coverage_score = 0
+    correct_coverages = 0
+    coverage_details = []
     
-    # Check if there are at least 3 improvements
-    if len(submission_improvements) >= 3:
-        score += 2
-        feedback.append("Provided at least 3 process improvements")
-    else:
-        feedback.append(f"Provided only {len(submission_improvements)} improvements, expected at least 3")
+    key_coverages = answer_key["part2"]["stock_coverage"]
+    submission_coverages = submission["part2"].get("stock_coverage", {})
     
-    # Check for stockout-related improvement
-    has_stockout_improvement = False
-    for improvement in submission_improvements:
-        current = improvement.get("current_process", "").lower()
-        recommended = improvement.get("recommended_change", "").lower()
-        benefit = improvement.get("expected_benefit", "").lower()
-        
-        if ("stockout" in current or "stockout" in recommended or "stockout" in benefit or
-            "out of stock" in current or "out of stock" in recommended or "out of stock" in benefit):
-            has_stockout_improvement = True
-            break
+    for item_id, expected_coverage in key_coverages.items():
+        submitted_coverage = submission_coverages.get(item_id)
+        if submitted_coverage is not None and submitted_coverage == expected_coverage:
+            coverage_score += 1
+            correct_coverages += 1
+            coverage_details.append(f"{item_id}: Correct ({submitted_coverage} days)")
+        else:
+            submitted_value = "Missing" if submitted_coverage is None else submitted_coverage
+            coverage_details.append(f"{item_id}: Incorrect (submitted: {submitted_value}, expected: {expected_coverage})")
     
-    if has_stockout_improvement:
-        score += 3
-        feedback.append("Included improvement related to stockouts")
-    else:
-        feedback.append("No improvement specifically addressing stockouts")
+    results["stock_coverage"] = {
+        "score": coverage_score,
+        "max_score": 10,
+        "correct_count": correct_coverages,
+        "total_count": 10,
+        "details": coverage_details
+    }
+    score += coverage_score
+
+    # Insufficient stock items (3 points per correct item, max 9 points)
+    insufficient_score = 0
+    correct_items = set(answer_key["part2"]["insufficient_stock_items"])
+    submitted_items = set(submission["part2"].get("insufficient_stock_items", []))
     
-    # Check for ordering efficiency improvement
-    has_ordering_improvement = False
-    for improvement in submission_improvements:
-        current = improvement.get("current_process", "").lower()
-        recommended = improvement.get("recommended_change", "").lower()
-        benefit = improvement.get("expected_benefit", "").lower()
-        
-        if ("order" in current or "order" in recommended or 
-            "purchas" in current or "purchas" in recommended or
-            "consolidat" in current or "consolidat" in recommended):
-            has_ordering_improvement = True
-            break
+    common_items = correct_items.intersection(submitted_items)
+    insufficient_score = len(common_items) * 3
     
-    if has_ordering_improvement:
-        score += 3
-        feedback.append("Included improvement related to ordering efficiency")
-    else:
-        feedback.append("No improvement specifically addressing ordering efficiency")
+    extra_items = submitted_items - correct_items
+    missing_items = correct_items - submitted_items
     
-    # Check for quantifiable benefits
-    has_quantifiable_benefit = False
-    for improvement in submission_improvements:
-        benefit = improvement.get("expected_benefit", "").lower()
-        
-        # Check for percentages or numbers in the benefit
-        if any(str(i) in benefit for i in range(10, 100)) or "%" in benefit:
-            has_quantifiable_benefit = True
-            break
+    results["insufficient_stock_items"] = {
+        "score": insufficient_score,
+        "max_score": 9,
+        "correct_count": len(common_items),
+        "total_count": len(correct_items),
+        "details": f"Correct: {list(common_items)}, Missing: {list(missing_items)}, Extra: {list(extra_items)}"
+    }
+    score += insufficient_score
+
+    # Highest unfulfilled categories (4 points per correct category in correct order, max 16 points)
+    unfulfilled_score = 0
+    unfulfilled_details = []
     
-    if has_quantifiable_benefit:
-        score += 2
-        feedback.append("Included quantifiable expected benefits")
-    else:
-        feedback.append("No quantifiable benefits provided")
+    key_categories = answer_key["part2"]["highest_unfulfilled_categories"]
+    submission_categories = submission["part2"].get("highest_unfulfilled_categories", [])
     
+    for i, expected_category in enumerate(key_categories):
+        if i < len(submission_categories) and submission_categories[i] == expected_category:
+            unfulfilled_score += 4
+            unfulfilled_details.append(f"Position {i+1}: Correct ({expected_category})")
+        else:
+            submitted_value = "Missing" if i >= len(submission_categories) else submission_categories[i]
+            unfulfilled_details.append(f"Position {i+1}: Incorrect (submitted: {submitted_value}, expected: {expected_category})")
+    
+    results["highest_unfulfilled_categories"] = {
+        "score": unfulfilled_score,
+        "max_score": 16,
+        "correct_count": unfulfilled_score // 4,
+        "total_count": 3,
+        "details": unfulfilled_details
+    }
+    score += unfulfilled_score
+
     return {
         "score": score,
-        "max_score": 10,
-        "feedback": feedback
+        "max_score": 35,
+        "component_scores": results
     }
 
-def evaluate_projected_outcomes(submission_outcomes, key_outcomes):
-    """Evaluate the projected outcomes section."""
+def evaluate_part3(submission, answer_key):
+    """Evaluate Part 3: Strategic Purchasing Plan."""
     score = 0
-    feedback = []
+    results = {}
+
+    # Optimal order quantities (1 point per reasonable quantity, max 10 points)
+    quantities_score = 0
+    quantities_details = []
     
-    # Check cost savings (within 20% of expected)
-    submission_savings = submission_outcomes.get("cost_savings", 0)
-    key_savings = key_outcomes.get("cost_savings", 0)
-    if abs(submission_savings - key_savings) <= key_savings * 0.2:
-        score += 3
-        feedback.append("Cost savings: Within acceptable range")
+    key_quantities = answer_key["part3"]["optimal_order_quantities"]
+    submission_quantities = submission["part3"].get("optimal_order_quantities", {})
+    
+    for item_id, expected_quantity in key_quantities.items():
+        submitted_quantity = submission_quantities.get(item_id)
+        if submitted_quantity is not None:
+            # Allow some flexibility in the quantities
+            if abs(submitted_quantity - expected_quantity) <= expected_quantity * 0.2:  # Within 20%
+                quantities_score += 1
+                quantities_details.append(f"{item_id}: Reasonable ({submitted_quantity}, expected ~{expected_quantity})")
+            else:
+                quantities_details.append(f"{item_id}: Outside reasonable range (submitted: {submitted_quantity}, expected ~{expected_quantity})")
+        else:
+            quantities_details.append(f"{item_id}: Missing")
+    
+    results["optimal_order_quantities"] = {
+        "score": quantities_score,
+        "max_score": 10,
+        "correct_count": quantities_score,
+        "total_count": 10,
+        "details": quantities_details
+    }
+    score += quantities_score
+
+    # Monthly schedule (10 points for reasonable prioritization of at-risk items)
+    schedule_score = 0
+    schedule_details = []
+    
+    # Check if high-risk items (S002, S005, S008) are prioritized in month1
+    key_schedule = answer_key["part3"]["monthly_schedule"]
+    submission_schedule = submission["part3"].get("monthly_schedule", {})
+    
+    high_risk_items = {"S002", "S005", "S008"}
+    month1_items = set(submission_schedule.get("month1", {}).keys())
+    
+    prioritized_count = len(high_risk_items.intersection(month1_items))
+    
+    if prioritized_count == 3:
+        schedule_score = 10
+        schedule_details.append("Excellent prioritization: All high-risk items in month1")
+    elif prioritized_count == 2:
+        schedule_score = 7
+        schedule_details.append("Good prioritization: 2/3 high-risk items in month1")
+    elif prioritized_count == 1:
+        schedule_score = 4
+        schedule_details.append("Fair prioritization: 1/3 high-risk items in month1")
     else:
-        feedback.append(f"Cost savings: Outside acceptable range. Got {submission_savings}, expected {key_savings}")
+        schedule_score = 0
+        schedule_details.append("Poor prioritization: No high-risk items in month1")
     
-    # Check service level improvement (within 20% of expected)
-    submission_service = submission_outcomes.get("service_level_improvement", 0)
-    key_service = key_outcomes.get("service_level_improvement", 0)
-    if abs(submission_service - key_service) <= key_service * 0.2:
-        score += 3
-        feedback.append("Service level improvement: Within acceptable range")
+    results["monthly_schedule"] = {
+        "score": schedule_score,
+        "max_score": 10,
+        "details": schedule_details
+    }
+    score += schedule_score
+
+    # Projected savings (12 points for reasonable calculation within ±15% of answer key)
+    savings_score = 0
+    key_savings = answer_key["part3"]["projected_savings"]
+    submission_savings = submission["part3"].get("projected_savings", 0)
+    
+    # Calculate acceptable range (±15%)
+    lower_bound = key_savings * 0.85
+    upper_bound = key_savings * 1.15
+    
+    if lower_bound <= submission_savings <= upper_bound:
+        savings_score = 12
+        savings_details = f"Reasonable savings calculation: {submission_savings} (expected ~{key_savings})"
     else:
-        feedback.append(f"Service level improvement: Outside acceptable range. Got {submission_service}, expected {key_service}")
+        savings_score = 0
+        savings_details = f"Unreasonable savings calculation: {submission_savings} (expected range: {int(lower_bound)}-{int(upper_bound)})"
     
-    # Check stockout reduction (within 20% of expected)
-    submission_reduction = submission_outcomes.get("stockout_reduction", 0)
-    key_reduction = key_outcomes.get("stockout_reduction", 0)
-    if abs(submission_reduction - key_reduction) <= key_reduction * 0.2:
-        score += 4
-        feedback.append("Stockout reduction: Within acceptable range")
-    else:
-        feedback.append(f"Stockout reduction: Outside acceptable range. Got {submission_reduction}, expected {key_reduction}")
+    results["projected_savings"] = {
+        "score": savings_score,
+        "max_score": 12,
+        "details": savings_details
+    }
+    score += savings_score
+
+    # Recommended vendors (5 points per reasonable vendor selection, max 25 points)
+    vendors_score = 0
+    vendors_details = []
     
+    key_vendors = answer_key["part3"]["recommended_vendors"]
+    submission_vendors = submission["part3"].get("recommended_vendors", {})
+    
+    for category, expected_vendor in key_vendors.items():
+        submitted_vendor = submission_vendors.get(category)
+        if submitted_vendor is not None:
+            if submitted_vendor == expected_vendor:
+                vendors_score += 5
+                vendors_details.append(f"{category}: Optimal selection ({submitted_vendor})")
+            else:
+                # Check if vendor is valid for this category
+                # This is a simplified check - in a real evaluation, this would reference the vendor list
+                if submitted_vendor.startswith("V"):  # Assuming all valid vendors start with V
+                    vendors_score += 3  # Partial credit for reasonable alternative
+                    vendors_details.append(f"{category}: Alternative selection ({submitted_vendor}, expected: {expected_vendor})")
+                else:
+                    vendors_details.append(f"{category}: Invalid vendor ({submitted_vendor})")
+        else:
+            vendors_details.append(f"{category}: Missing")
+    
+    results["recommended_vendors"] = {
+        "score": vendors_score,
+        "max_score": 25,
+        "details": vendors_details
+    }
+    score += vendors_score
+
     return {
         "score": score,
-        "max_score": 10,
-        "feedback": feedback
+        "max_score": 57,
+        "component_scores": results
     }
 
 def evaluate_submission(submission, answer_key):
-    """Evaluate the entire submission against the answer key."""
-    results = {
-        "data_analysis": {
-            "top_requested_items": evaluate_top_requested_items(
-                submission.get("data_analysis", {}).get("top_requested_items", []),
-                answer_key.get("data_analysis", {}).get("top_requested_items", [])
-            ),
-            "inventory_turnover": evaluate_inventory_turnover(
-                submission.get("data_analysis", {}).get("inventory_turnover", []),
-                answer_key.get("data_analysis", {}).get("inventory_turnover", [])
-            ),
-            "stockout_items": evaluate_stockout_items(
-                submission.get("data_analysis", {}).get("stockout_items", []),
-                answer_key.get("data_analysis", {}).get("stockout_items", [])
-            )
-        },
-        "supply_chain_assessment": {
-            "critical_lead_times": evaluate_critical_lead_times(
-                submission.get("supply_chain_assessment", {}).get("critical_lead_times", []),
-                answer_key.get("supply_chain_assessment", {}).get("critical_lead_times", [])
-            ),
-            "optimal_reorder_points": evaluate_optimal_reorder_points(
-                submission.get("supply_chain_assessment", {}).get("optimal_reorder_points", []),
-                answer_key.get("supply_chain_assessment", {}).get("optimal_reorder_points", [])
-            ),
-            "delayed_delivery_suppliers": evaluate_delayed_delivery_suppliers(
-                submission.get("supply_chain_assessment", {}).get("delayed_delivery_suppliers", []),
-                answer_key.get("supply_chain_assessment", {}).get("delayed_delivery_suppliers", [])
-            )
-        },
-        "strategic_purchasing_program": {
-            "purchasing_schedule": evaluate_purchasing_schedule(
-                submission.get("strategic_purchasing_program", {}).get("purchasing_schedule", []),
-                answer_key.get("strategic_purchasing_program", {}).get("purchasing_schedule", [])
-            ),
-            "seasonal_inventory_approach": evaluate_seasonal_inventory_approach(
-                submission.get("strategic_purchasing_program", {}).get("seasonal_inventory_approach", {}),
-                answer_key.get("strategic_purchasing_program", {}).get("seasonal_inventory_approach", {})
-            ),
-            "process_improvements": evaluate_process_improvements(
-                submission.get("strategic_purchasing_program", {}).get("process_improvements", []),
-                answer_key.get("strategic_purchasing_program", {}).get("process_improvements", [])
-            )
-        },
-        "projected_outcomes": evaluate_projected_outcomes(
-            submission.get("projected_outcomes", {}),
-            answer_key.get("projected_outcomes", {})
-        )
+    """Evaluate the entire submission."""
+    # Evaluate each part
+    part1_results = evaluate_part1(submission, answer_key)
+    part2_results = evaluate_part2(submission, answer_key)
+    part3_results = evaluate_part3(submission, answer_key)
+    
+    # Calculate overall score
+    total_score = part1_results["score"] + part2_results["score"] + part3_results["score"]
+    max_score = part1_results["max_score"] + part2_results["max_score"] + part3_results["max_score"]
+    overall_percentage = (total_score / max_score) * 100
+    
+    # Determine if the candidate passed
+    passed = overall_percentage >= 60
+    
+    return {
+        "candidate_id": submission.get("candidate_id", "Unknown"),
+        "overall_score": round(overall_percentage, 2),
+        "total_points": total_score,
+        "max_points": max_score,
+        "passed": passed,
+        "part1": part1_results,
+        "part2": part2_results,
+        "part3": part3_results
     }
-    
-    # Calculate section scores
-    data_analysis_score = (
-        results["data_analysis"]["top_requested_items"]["score"] +
-        results["data_analysis"]["inventory_turnover"]["score"] +
-        results["data_analysis"]["stockout_items"]["score"]
-    )
-    
-    supply_chain_score = (
-        results["supply_chain_assessment"]["critical_lead_times"]["score"] +
-        results["supply_chain_assessment"]["optimal_reorder_points"]["score"] +
-        results["supply_chain_assessment"]["delayed_delivery_suppliers"]["score"]
-    )
-    
-    strategic_program_score = (
-        results["strategic_purchasing_program"]["purchasing_schedule"]["score"] +
-        results["strategic_purchasing_program"]["seasonal_inventory_approach"]["score"] +
-        results["strategic_purchasing_program"]["process_improvements"]["score"]
-    )
-    
-    outcomes_score = results["projected_outcomes"]["score"]
-    
-    # Calculate total score
-    total_score = data_analysis_score + supply_chain_score + strategic_program_score + outcomes_score
-    
-    # Calculate overall percentage
-    overall_percentage = (total_score / 100) * 100
-    
-    # Add summary to results
-    results["summary"] = {
-        "data_analysis_score": data_analysis_score,
-        "supply_chain_score": supply_chain_score,
-        "strategic_program_score": strategic_program_score,
-        "outcomes_score": outcomes_score,
-        "total_score": total_score,
-        "overall_score": overall_percentage,
-        "passed": total_score >= 70
-    }
-    
-    return results
 
 def main():
-    # File paths
-    submission_file = "test_submission.json"
-    answer_key_file = "answer_key.json"
-    results_file = "test_results.json"
+    """Main function to run the evaluation."""
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    # Load files
-    submission = load_json_file(submission_file)
-    answer_key = load_json_file(answer_key_file)
+    submission_path = sys.argv[1]
+    answer_key_path = sys.argv[2]
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files.")
-        return
+    # Load the submission and answer key
+    submission = load_json_file(submission_path)
+    answer_key = load_json_file(answer_key_path)
     
-    # Evaluate submission
+    # Evaluate the submission
     results = evaluate_submission(submission, answer_key)
     
-    # Save results
-    try:
-        with open(results_file, 'w') as file:
-            json.dump(results, file, indent=2)
-        print(f"Evaluation complete. Results saved to {results_file}")
-    except Exception as e:
-        print(f"Error saving results: {e}")
+    # Save the results
+    with open("test_results.json", "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
+    print(f"Pass status: {'PASSED' if results['passed'] else 'FAILED'}")
 
 if __name__ == "__main__":
     main()

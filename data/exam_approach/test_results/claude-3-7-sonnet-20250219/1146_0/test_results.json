@@ -1,0 +1,101 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "exercise1": {
+    "points": 30,
+    "max_points": 30,
+    "details": {
+      "Scenario 1": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct violation code identified.",
+          "Correct regulation reference provided."
+        ]
+      },
+      "Scenario 2": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct violation code identified.",
+          "Correct regulation reference provided."
+        ]
+      },
+      "Scenario 3": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct violation code identified.",
+          "Correct regulation reference provided."
+        ]
+      }
+    }
+  },
+  "exercise2": {
+    "points": 30,
+    "max_points": 30,
+    "details": {
+      "Policy Section": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct policy section identified."
+        ]
+      },
+      "Update Required": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct determination of update requirement."
+        ]
+      },
+      "Compliance Status Code": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct compliance status code selected."
+        ]
+      }
+    }
+  },
+  "exercise3": {
+    "points": 40,
+    "max_points": 40,
+    "details": {
+      "Clause 1": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct compliance determination.",
+          "Correct violation code provided."
+        ]
+      },
+      "Clause 2": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct compliance determination.",
+          "Correct violation code provided."
+        ]
+      },
+      "Clause 3": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct compliance determination.",
+          "Correct violation code provided."
+        ]
+      },
+      "Overall Status": {
+        "points": 10,
+        "max_points": 10,
+        "feedback": [
+          "Correct overall status code selected."
+        ]
+      }
+    }
+  },
+  "total_points": 100,
+  "max_points": 100,
+  "overall_score": 100.0,
+  "performance_level": "Excellent"
+}

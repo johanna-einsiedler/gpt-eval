@@ -1,0 +1,465 @@
+{
+  "candidate_id": "Unknown",
+  "task1_results": {
+    "points_earned": 25.0,
+    "points_possible": 25,
+    "product_scores": {
+      "product_A": {
+        "points_earned": 5.0,
+        "points_possible": 5,
+        "details": {
+          "cost_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "retail_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_B": {
+        "points_earned": 5.0,
+        "points_possible": 5,
+        "details": {
+          "cost_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "retail_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_C": {
+        "points_earned": 5.0,
+        "points_possible": 5,
+        "details": {
+          "cost_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "retail_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_D": {
+        "points_earned": 5.0,
+        "points_possible": 5,
+        "details": {
+          "cost_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "retail_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_E": {
+        "points_earned": 5.0,
+        "points_possible": 5,
+        "details": {
+          "cost_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "retail_based_markup": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          }
+        }
+      }
+    }
+  },
+  "task2_results": {
+    "points_earned": 24.990000000000002,
+    "points_possible": 25,
+    "product_scores": {
+      "product_F": {
+        "points_earned": 8.33,
+        "points_possible": 8.333333333333334,
+        "details": {
+          "required_markdown_percent": {
+            "points_earned": 3.0,
+            "points_possible": 3,
+            "exact_match": true
+          },
+          "recommended_markdown_price": {
+            "points_earned": 3.0,
+            "points_possible": 3,
+            "exact_match": true
+          },
+          "units_expected_to_sell": {
+            "points_earned": 1,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.33,
+            "points_possible": 1.33,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_G": {
+        "points_earned": 8.33,
+        "points_possible": 8.333333333333334,
+        "details": {
+          "required_markdown_percent": {
+            "points_earned": 3.0,
+            "points_possible": 3,
+            "exact_match": true
+          },
+          "recommended_markdown_price": {
+            "points_earned": 3.0,
+            "points_possible": 3,
+            "exact_match": true
+          },
+          "units_expected_to_sell": {
+            "points_earned": 1,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.33,
+            "points_possible": 1.33,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_H": {
+        "points_earned": 8.33,
+        "points_possible": 8.333333333333334,
+        "details": {
+          "required_markdown_percent": {
+            "points_earned": 3.0,
+            "points_possible": 3,
+            "exact_match": true
+          },
+          "recommended_markdown_price": {
+            "points_earned": 3.0,
+            "points_possible": 3,
+            "exact_match": true
+          },
+          "units_expected_to_sell": {
+            "points_earned": 1,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.33,
+            "points_possible": 1.33,
+            "quality": 1.0
+          }
+        }
+      }
+    }
+  },
+  "task3_results": {
+    "points_earned": 25.0,
+    "points_possible": 25,
+    "product_scores": {
+      "product_I": {
+        "points_earned": 6.25,
+        "points_possible": 6.25,
+        "details": {
+          "competitor_average_price": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "percent_difference_from_average": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "achieved_margin_percent": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.25,
+            "points_possible": 1.25,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_J": {
+        "points_earned": 6.25,
+        "points_possible": 6.25,
+        "details": {
+          "competitor_average_price": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "percent_difference_from_average": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "achieved_margin_percent": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.25,
+            "points_possible": 1.25,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_K": {
+        "points_earned": 6.25,
+        "points_possible": 6.25,
+        "details": {
+          "competitor_average_price": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "percent_difference_from_average": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "achieved_margin_percent": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.25,
+            "points_possible": 1.25,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_L": {
+        "points_earned": 6.25,
+        "points_possible": 6.25,
+        "details": {
+          "competitor_average_price": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "percent_difference_from_average": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "achieved_margin_percent": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "exact_match": true
+          },
+          "justification": {
+            "points_earned": 1.25,
+            "points_possible": 1.25,
+            "quality": 1.0
+          }
+        }
+      }
+    }
+  },
+  "task4_results": {
+    "points_earned": 25.0,
+    "points_possible": 25,
+    "product_scores": {
+      "product_M": {
+        "points_earned": 6.25,
+        "points_possible": 6.25,
+        "details": {
+          "required_price_adjustment_percent": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "new_recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "expected_impact_on_sales": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          },
+          "justification": {
+            "points_earned": 1.25,
+            "points_possible": 1.25,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_N": {
+        "points_earned": 6.25,
+        "points_possible": 6.25,
+        "details": {
+          "required_price_adjustment_percent": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "new_recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "expected_impact_on_sales": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          },
+          "justification": {
+            "points_earned": 1.25,
+            "points_possible": 1.25,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_O": {
+        "points_earned": 6.25,
+        "points_possible": 6.25,
+        "details": {
+          "required_price_adjustment_percent": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "new_recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "expected_impact_on_sales": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          },
+          "justification": {
+            "points_earned": 1.25,
+            "points_possible": 1.25,
+            "quality": 1.0
+          }
+        }
+      },
+      "product_P": {
+        "points_earned": 6.25,
+        "points_possible": 6.25,
+        "details": {
+          "required_price_adjustment_percent": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "new_recommended_price": {
+            "points_earned": 2.0,
+            "points_possible": 2,
+            "exact_match": true
+          },
+          "expected_impact_on_sales": {
+            "points_earned": 1.0,
+            "points_possible": 1,
+            "quality": 1.0
+          },
+          "justification": {
+            "points_earned": 1.25,
+            "points_possible": 1.25,
+            "quality": 1.0
+          }
+        }
+      }
+    }
+  },
+  "overall_score": 100.0,
+  "result": "Pass with Distinction"
+}

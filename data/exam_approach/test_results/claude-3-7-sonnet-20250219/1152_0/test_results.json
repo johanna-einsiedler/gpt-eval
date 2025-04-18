@@ -1,0 +1,293 @@
+{
+  "overall_score": 100.0,
+  "total_points_earned": 100.0,
+  "total_points_possible": 100,
+  "pass_status": true,
+  "performance_tier": "Excellent",
+  "exercises": {
+    "exercise1": {
+      "points_earned": 30,
+      "points_possible": 30,
+      "component_scores": {
+        "circuit_breakers": {
+          "points_earned": 10,
+          "points_possible": 10,
+          "details": [
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            },
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            }
+          ]
+        },
+        "cable_connectors": {
+          "points_earned": 10,
+          "points_possible": 10,
+          "details": [
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            },
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            }
+          ]
+        },
+        "logic_controllers": {
+          "points_earned": 10,
+          "points_possible": 10,
+          "details": [
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            },
+            {
+              "points": 5,
+              "max_points": 5,
+              "notes": []
+            }
+          ]
+        }
+      },
+      "critical_pass": true
+    },
+    "exercise2": {
+      "points_earned": 30.0,
+      "points_possible": 30,
+      "component_scores": {
+        "desk_chair": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "26\"W x 26\"D x 38-42\"H (adjustable)",
+              "submitted": "26\"W x 26\"D x 38-42\"H (adjustable)"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Mesh back, padded leather seat, aluminum frame",
+              "submitted": "Mesh back, padded leather seat, aluminum frame"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "5-year limited warranty",
+              "submitted": "5-year limited warranty"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Ships within 3-5 business days",
+              "submitted": "Ships within 3-5 business days"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "2 units",
+              "submitted": "2 units"
+            }
+          }
+        },
+        "standing_desk": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "60\"W x 30\"D x 25-50\"H (adjustable height)",
+              "submitted": "60\"W x 30\"D x 25-50\"H (adjustable height)"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Bamboo top with steel frame, powder-coated finish",
+              "submitted": "Bamboo top with steel frame, powder-coated finish"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "7-year warranty on frame, 3-year on electronics",
+              "submitted": "7-year warranty on frame, 3-year on electronics"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "7-10 business days",
+              "submitted": "7-10 business days"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "1 unit",
+              "submitted": "1 unit"
+            }
+          }
+        },
+        "conference_table": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "96\"L x 48\"W x 30\"H",
+              "submitted": "96\"L x 48\"W x 30\"H"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Solid oak with mahogany finish",
+              "submitted": "Solid oak with mahogany finish"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "10-year manufacturer warranty",
+              "submitted": "10-year manufacturer warranty"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "4-6 weeks for delivery",
+              "submitted": "4-6 weeks for delivery"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "1 unit",
+              "submitted": "1 unit"
+            }
+          }
+        },
+        "filing_cabinet": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "15\"W x 25\"D x 52\"H",
+              "submitted": "15\"W x 25\"D x 52\"H"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Steel construction with reinforced drawers",
+              "submitted": "Steel construction with reinforced drawers"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Lifetime limited warranty",
+              "submitted": "Lifetime limited warranty"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "In stock, ships within 48 hours",
+              "submitted": "In stock, ships within 48 hours"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "2 units",
+              "submitted": "2 units"
+            }
+          }
+        },
+        "partition_system": {
+          "points_earned": 6.0,
+          "points_possible": 6,
+          "details": {
+            "dimensions": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "60\"W x 1.5\"D x 65\"H (per panel)",
+              "submitted": "60\"W x 1.5\"D x 65\"H (per panel)"
+            },
+            "materials": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "Sound-absorbing fabric panels with aluminum frame",
+              "submitted": "Sound-absorbing fabric panels with aluminum frame"
+            },
+            "warranty": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "5-year warranty",
+              "submitted": "5-year warranty"
+            },
+            "lead_time": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "15-20 business days",
+              "submitted": "15-20 business days"
+            },
+            "minimum_order": {
+              "correct": true,
+              "points": 1.2,
+              "expected": "4 panels",
+              "submitted": "4 panels"
+            }
+          }
+        }
+      },
+      "critical_pass": true
+    },
+    "exercise3": {
+      "points_earned": 40,
+      "points_possible": 40,
+      "component_scores": {
+        "lowest_price_sc100": {
+          "points_earned": 6,
+          "points_possible": 6,
+          "correct": true,
+          "expected": "Supplier C at $26.95",
+          "submitted": "Supplier C at $26.95"
+        },
+        "shortest_delivery_lab_chemicals": {
+          "points_earned": 6,
+          "points_possible": 6,
+          "correct": true,
+          "expected": "Supplier C at 2 days",
+          "submitted": "Supplier C at 2 days"
+        },
+        "highest_quality_pharma_reagents": {
+          "points_earned": 6,
+          "points_possible": 6,
+          "correct": true,
+          "expected": "Supplier B with 9.8/10",
+          "submitted": "Supplier B with 9.8/10"
+        },
+        "best_safety_certification": {
+          "points_earned": 10,
+          "points_possible": 10,
+          "correct": true,
+          "expected": "Supplier B",
+          "submitted": "Supplier B"
+        },
+        "total_order_cost_supplier_b": {
+          "points_earned": 12,
+          "points_possible": 12,
+          "correct": true,
+          "expected": "$7,035.00",
+          "submitted": "$7,035.00"
+        }
+      },
+      "critical_pass": true
+    }
+  }
+}

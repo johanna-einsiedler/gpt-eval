@@ -1,0 +1,132 @@
+{
+  "overall_score": 100.0,
+  "passing_threshold": 75,
+  "passed": true,
+  "fail_reason": null,
+  "critical_element_passed": true,
+  "total_points": 100.0,
+  "max_points": 100,
+  "status_evaluation": {
+    "points": 50,
+    "max_points": 50,
+    "details": {
+      "claim_1": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Valid",
+        "expected": "Valid",
+        "correct": true
+      },
+      "claim_2": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Invalid",
+        "expected": "Invalid",
+        "correct": true
+      },
+      "claim_3": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Requires Additional Information",
+        "expected": "Requires Additional Information",
+        "correct": true
+      },
+      "claim_4": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Requires Additional Information",
+        "expected": "Requires Additional Information",
+        "correct": true
+      },
+      "claim_5": {
+        "points": 10,
+        "max_points": 10,
+        "submitted": "Valid",
+        "expected": "Valid",
+        "correct": true
+      }
+    }
+  },
+  "discrepancy_evaluation": {
+    "points": 40.0,
+    "max_points": 40,
+    "details": {
+      "claim_1": {
+        "points": 5,
+        "max_points": 5,
+        "correct_codes": [],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      },
+      "claim_2": {
+        "points": 10.0,
+        "max_points": 10,
+        "correct_codes": [
+          "E103",
+          "E102"
+        ],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      },
+      "claim_3": {
+        "points": 10.0,
+        "max_points": 10,
+        "correct_codes": [
+          "E105"
+        ],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      },
+      "claim_4": {
+        "points": 10.0,
+        "max_points": 10,
+        "correct_codes": [
+          "E102",
+          "E104"
+        ],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      },
+      "claim_5": {
+        "points": 5,
+        "max_points": 5,
+        "correct_codes": [],
+        "missing_codes": [],
+        "extra_codes": [],
+        "correct_percentage": 1.0
+      }
+    }
+  },
+  "additional_info_evaluation": {
+    "points": 10,
+    "max_points": 10,
+    "details": {
+      "claim_3": {
+        "points": 5,
+        "max_points": 5,
+        "submitted": [
+          "Management review approval for provider with Probation status"
+        ],
+        "expected": [
+          "Management review approval for provider with Probation status"
+        ],
+        "reason": "Correct"
+      },
+      "claim_4": {
+        "points": 5,
+        "max_points": 5,
+        "submitted": [
+          "Verification of correct policy expiration date"
+        ],
+        "expected": [
+          "Verification of correct policy expiration date"
+        ],
+        "reason": "Correct"
+      }
+    }
+  }
+}

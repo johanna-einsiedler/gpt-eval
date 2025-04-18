@@ -1,1 +1,83 @@
-"{}"
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "supplier_scores": {
+        "supplier_A": {
+            "price": 7,
+            "quality": 6,
+            "delivery_reliability": 7,
+            "production_capacity": 7,
+            "technical_support": 6,
+            "financial_stability": 7,
+            "total_score": 40
+        },
+        "supplier_B": {
+            "price": 6,
+            "quality": 9,
+            "delivery_reliability": 9,
+            "production_capacity": 8,
+            "technical_support": 9,
+            "financial_stability": 8,
+            "total_score": 49
+        },
+        "supplier_C": {
+            "price": 3,
+            "quality": 4,
+            "delivery_reliability": 3,
+            "production_capacity": 3,
+            "technical_support": 4,
+            "financial_stability": 5,
+            "total_score": 22
+        },
+        "supplier_D": {
+            "price": 9,
+            "quality": 8,
+            "delivery_reliability": 8,
+            "production_capacity": 10,
+            "technical_support": 8,
+            "financial_stability": 9,
+            "total_score": 52
+        },
+        "supplier_E": {
+            "price": 5,
+            "quality": 7,
+            "delivery_reliability": 6,
+            "production_capacity": 6,
+            "technical_support": 6,
+            "financial_stability": 6,
+            "total_score": 36
+        }
+    },
+    "recommended_suppliers": [
+        "Supplier D",
+        "Supplier B"
+    ],
+    "price_comparison": {
+        "supplier_A": 3.12,
+        "supplier_B": 3.14,
+        "supplier_C": 3.25,
+        "supplier_D": 3.1,
+        "supplier_E": 3.18
+    },
+    "meets_specifications": {
+        "supplier_A": true,
+        "supplier_B": true,
+        "supplier_C": false,
+        "supplier_D": true,
+        "supplier_E": true
+    },
+    "meets_budget": {
+        "supplier_A": true,
+        "supplier_B": true,
+        "supplier_C": false,
+        "supplier_D": true,
+        "supplier_E": true
+    },
+    "justification": {
+        "supplier_A": "Supplier A offers good value with a total cost of $3.12, well within budget. They have acceptable quality metrics (1.8% rejection rate) and reliable delivery (92% on-time), with sufficient production capacity (60,000 units) to meet requirements.",
+        "supplier_B": "Supplier B excels in quality (0.7% rejection rate) and delivery reliability (97% on-time), with strong technical support (4-hour response time). Their price is slightly higher at $3.14, but compensated by excellent performance metrics and superior certifications.",
+        "supplier_C": "Supplier C fails to meet both budget constraints ($3.25 > $3.20 maximum) and technical specifications (temperature range -30°C to +80°C below requirement). Their production capacity (45,000 units) is also below the minimum requirement of 50,000 units.",
+        "supplier_D": "Supplier D offers the best overall value with the lowest total cost ($3.10) while maintaining excellent quality (1.1% rejection rate) and delivery performance (95% on-time). They have the highest production capacity (80,000 units) with quick ramp-up time and excellent financial stability (89/100).",
+        "supplier_E": "Supplier E meets all specifications with acceptable performance metrics, but their pricing ($3.18) is on the higher end while offering no standout advantages. Their 30-day payment terms are also less favorable than other qualified suppliers.",
+        "final_recommendation": "Supplier D is the top recommendation due to offering the lowest total cost ($3.10) while maintaining excellent quality, delivery reliability, and the highest production capacity (80,000 units) with quick 30-day ramp-up. Supplier B is the second choice, delivering exceptional quality (lowest rejection rate of 0.7%) and reliability (97% on-time delivery) with the best technical support, despite a slightly higher price point ($3.14)."
+    }
+}

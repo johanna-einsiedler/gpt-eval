@@ -1,0 +1,204 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "overall_score": 100.0,
+  "passed": true,
+  "fatal_errors": [],
+  "referral_decisions": {
+    "score_percentage": 100.0,
+    "weighted_score": 40.0,
+    "correct_count": 5,
+    "total_count": 5,
+    "details": [
+      {
+        "claim_id": "Claim-1",
+        "submitted": true,
+        "expected": true,
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-2",
+        "submitted": true,
+        "expected": true,
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-3",
+        "submitted": true,
+        "expected": true,
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-4",
+        "submitted": false,
+        "expected": false,
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-5",
+        "submitted": true,
+        "expected": true,
+        "is_correct": true
+      }
+    ]
+  },
+  "referral_types": {
+    "score_percentage": 100.0,
+    "weighted_score": 20.0,
+    "correct_count": 4,
+    "total_count": 4,
+    "details": [
+      {
+        "claim_id": "Claim-1",
+        "submitted": "SIU_INVESTIGATION",
+        "expected": "SIU_INVESTIGATION",
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-2",
+        "submitted": "FIELD_INVESTIGATION",
+        "expected": "FIELD_INVESTIGATION",
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-3",
+        "submitted": "SIU_INVESTIGATION",
+        "expected": "SIU_INVESTIGATION",
+        "is_correct": true
+      },
+      {
+        "claim_id": "Claim-5",
+        "submitted": "SIU_INVESTIGATION",
+        "expected": "SIU_INVESTIGATION",
+        "is_correct": true
+      }
+    ]
+  },
+  "red_flags": {
+    "score_percentage": 100.0,
+    "weighted_score": 25.0,
+    "identified_key_flags": 18,
+    "total_key_flags": 18,
+    "details": [
+      {
+        "claim_id": "Claim-1",
+        "correct_flags": [
+          "RF031",
+          "RF007",
+          "RF003",
+          "RF015"
+        ],
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
+      },
+      {
+        "claim_id": "Claim-2",
+        "correct_flags": [
+          "RF011",
+          "RF044",
+          "RF042",
+          "RF012"
+        ],
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
+      },
+      {
+        "claim_id": "Claim-3",
+        "correct_flags": [
+          "RF015",
+          "RF016",
+          "RF006",
+          "RF007",
+          "RF035"
+        ],
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
+      },
+      {
+        "claim_id": "Claim-4",
+        "correct_flags": [],
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
+      },
+      {
+        "claim_id": "Claim-5",
+        "correct_flags": [
+          "RF049",
+          "RF011",
+          "RF020",
+          "RF005",
+          "RF009"
+        ],
+        "missed_flags": [],
+        "irrelevant_flags": [],
+        "irrelevant_count": 0
+      }
+    ]
+  },
+  "evidence_citation": {
+    "score_percentage": 100.0,
+    "weighted_score": 15.0,
+    "correct_citations_count": 5,
+    "total_claims": 5,
+    "details": [
+      {
+        "claim_id": "Claim-1",
+        "correct_evidence": [
+          "DOC003",
+          "DOC001",
+          "DOC007"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
+      },
+      {
+        "claim_id": "Claim-2",
+        "correct_evidence": [
+          "DOC004",
+          "DOC002",
+          "DOC006"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
+      },
+      {
+        "claim_id": "Claim-3",
+        "correct_evidence": [
+          "DOC004",
+          "DOC001",
+          "DOC007"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
+      },
+      {
+        "claim_id": "Claim-4",
+        "correct_evidence": [
+          "DOC002",
+          "DOC003",
+          "DOC006"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
+      },
+      {
+        "claim_id": "Claim-5",
+        "correct_evidence": [
+          "DOC004",
+          "DOC003",
+          "DOC007"
+        ],
+        "missed_evidence": [],
+        "irrelevant_evidence": [],
+        "sufficient_citations": true
+      }
+    ]
+  }
+}

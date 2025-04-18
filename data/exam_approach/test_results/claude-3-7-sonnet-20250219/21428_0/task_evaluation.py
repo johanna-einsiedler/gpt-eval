@@ -1,312 +1,231 @@
+#!/usr/bin/env python3
 import json
-import re
-from difflib import SequenceMatcher
+import sys
+from typing import Dict, List, Any
 
-def load_json_file(filename):
+
+def load_json_file(filename: str) -> Dict:
+    """Load and parse a JSON file."""
     try:
         with open(filename, 'r') as file:
             return json.load(file)
-    except Exception as e:
+    except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"Error loading {filename}: {e}")
-        return None
+        sys.exit(1)
 
-def similarity_score(a, b):
-    """Calculate string similarity between 0 and 1"""
-    return SequenceMatcher(None, a.lower(), b.lower()).ratio()
 
-def find_best_match(candidate_item, answer_items, threshold=0.7):
-    """Find the best matching item from answer_items for candidate_item"""
-    best_score = 0
-    best_match = None
+def evaluate_status(submission: Dict, answer_key: Dict) -> Dict[str, int]:
+    """Evaluate the correctness of claim status determinations."""
+    results = {"points": 0, "max_points": 50, "details": {}}
     
-    for answer_item in answer_items:
-        score = similarity_score(candidate_item, answer_item)
-        if score > best_score:
-            best_score = score
-            best_match = answer_item
-    
-    if best_score >= threshold:
-        return best_match
-    return None
+    for claim_num in range(1, 6):
+        claim_key = f"claim_{claim_num}"
+        submission_claim = submission["claims"].get(claim_key, {})
+        answer_claim = answer_key["claims"].get(claim_key, {})
+        
+        submission_status = submission_claim.get("status", "")
+        answer_status = answer_claim.get("status", "")
+        
+        is_correct = submission_status == answer_status
+        points = 10 if is_correct else 0
+        
+        results["details"][claim_key] = {
+            "points": points,
+            "max_points": 10,
+            "submitted": submission_status,
+            "expected": answer_status,
+            "correct": is_correct
+        }
+        results["points"] += points
+        
+    return results
 
-def evaluate_exercise1(candidate, answer_key):
-    score = 0
-    feedback = []
-    
-    # Check inconsistencies (6 points)
-    candidate_inconsistencies = candidate.get("exercise1", {}).get("inconsistencies", [])
-    answer_inconsistencies = answer_key.get("exercise1", {}).get("inconsistencies", [])
-    
-    matched_inconsistencies = []
-    for c_inconsistency in candidate_inconsistencies:
-        match = find_best_match(c_inconsistency, answer_inconsistencies)
-        if match and match not in matched_inconsistencies:
-            matched_inconsistencies.append(match)
-    
-    inconsistency_points = min(6, len(matched_inconsistencies) * 2)
-    score += inconsistency_points
-    feedback.append(f"Identified {len(matched_inconsistencies)} of 4 inconsistencies: {inconsistency_points}/6 points")
-    
-    # Check verification status (2 points)
-    candidate_status = candidate.get("exercise1", {}).get("verificationStatus", "")
-    answer_status = answer_key.get("exercise1", {}).get("verificationStatus", "")
-    
-    if candidate_status.lower() == answer_status.lower():
-        score += 2
-        feedback.append("Correct verification status: 2/2 points")
-    else:
-        feedback.append(f"Incorrect verification status. Expected '{answer_status}', got '{candidate_status}': 0/2 points")
-    
-    # Check reason code (2 points)
-    candidate_code = candidate.get("exercise1", {}).get("reasonCode", "")
-    answer_code = answer_key.get("exercise1", {}).get("reasonCode", "")
-    
-    # Allow for R03 or R04 as valid reason codes
-    if candidate_code == answer_code or (answer_code == "R04" and candidate_code == "R03"):
-        score += 2
-        feedback.append("Correct reason code: 2/2 points")
-    else:
-        feedback.append(f"Incorrect reason code. Expected '{answer_code}' (or R03), got '{candidate_code}': 0/2 points")
-    
-    return score, feedback
 
-def evaluate_exercise2(candidate, answer_key):
-    score = 0
-    feedback = []
+def evaluate_discrepancies(submission: Dict, answer_key: Dict) -> Dict[str, Any]:
+    """Evaluate the correctness of identified discrepancies."""
+    results = {"points": 0, "max_points": 40, "details": {}}
     
-    # Check coverage decision (4 points)
-    candidate_decision = candidate.get("exercise2", {}).get("coverageDecision", "")
-    answer_decision = answer_key.get("exercise2", {}).get("coverageDecision", "")
-    
-    if candidate_decision.lower() == answer_decision.lower():
-        score += 4
-        feedback.append("Correct coverage decision: 4/4 points")
-    else:
-        feedback.append(f"Incorrect coverage decision. Expected '{answer_decision}', got '{candidate_decision}': 0/4 points")
-    
-    # Check applicable clauses (4 points)
-    candidate_clauses = candidate.get("exercise2", {}).get("applicableClauses", [])
-    answer_clauses = answer_key.get("exercise2", {}).get("applicableClauses", [])
-    
-    matched_clauses = [clause for clause in candidate_clauses if clause in answer_clauses]
-    
-    if len(matched_clauses) >= 2:
-        clause_points = 4
-    elif len(matched_clauses) == 1:
-        clause_points = 2
-    else:
-        clause_points = 0
-    
-    score += clause_points
-    feedback.append(f"Identified {len(matched_clauses)} of {len(answer_clauses)} applicable clauses: {clause_points}/4 points")
-    
-    # Check exclusions (2 points)
-    candidate_exclusions = candidate.get("exercise2", {}).get("exclusions", [])
-    answer_exclusions = answer_key.get("exercise2", {}).get("exclusions", [])
-    
-    if len(candidate_exclusions) == len(answer_exclusions) == 0:
-        score += 2
-        feedback.append("Correctly identified no exclusions apply: 2/2 points")
-    else:
-        feedback.append(f"Incorrect exclusions. Expected empty list, got {candidate_exclusions}: 0/2 points")
-    
-    return score, feedback
-
-def evaluate_exercise3(candidate, answer_key):
-    score = 0
-    feedback = []
-    
-    # Check calculated amount (3 points)
-    candidate_amount = candidate.get("exercise3", {}).get("calculatedAmount", 0)
-    answer_amount = answer_key.get("exercise3", {}).get("calculatedAmount", 0)
-    
-    if isinstance(candidate_amount, str):
-        try:
-            candidate_amount = float(candidate_amount.replace(',', ''))
-        except:
-            candidate_amount = 0
-    
-    if abs(candidate_amount - answer_amount) <= 300:
-        score += 3
-        feedback.append("Calculated amount within acceptable range: 3/3 points")
-    else:
-        feedback.append(f"Calculated amount outside acceptable range. Expected around {answer_amount}, got {candidate_amount}: 0/3 points")
-    
-    # Check deductible applied (2 points)
-    candidate_deductible = candidate.get("exercise3", {}).get("deductibleApplied", 0)
-    answer_deductible = answer_key.get("exercise3", {}).get("deductibleApplied", 0)
-    
-    if isinstance(candidate_deductible, str):
-        try:
-            candidate_deductible = float(candidate_deductible.replace(',', ''))
-        except:
-            candidate_deductible = 0
-    
-    if abs(candidate_deductible - answer_deductible) <= 0.01:
-        score += 2
-        feedback.append("Correct deductible applied: 2/2 points")
-    else:
-        feedback.append(f"Incorrect deductible. Expected {answer_deductible}, got {candidate_deductible}: 0/2 points")
-    
-    # Check final settlement (3 points)
-    candidate_settlement = candidate.get("exercise3", {}).get("finalSettlement", 0)
-    answer_settlement = answer_key.get("exercise3", {}).get("finalSettlement", 0)
-    
-    if isinstance(candidate_settlement, str):
-        try:
-            candidate_settlement = float(candidate_settlement.replace(',', ''))
-        except:
-            candidate_settlement = 0
-    
-    if abs(candidate_settlement - answer_settlement) <= 300:
-        score += 3
-        feedback.append("Final settlement within acceptable range: 3/3 points")
-    else:
-        feedback.append(f"Final settlement outside acceptable range. Expected around {answer_settlement}, got {candidate_settlement}: 0/3 points")
-    
-    # Check adjustment factors (2 points)
-    candidate_factors = candidate.get("exercise3", {}).get("adjustmentFactors", [])
-    answer_factors = answer_key.get("exercise3", {}).get("adjustmentFactors", [])
-    
-    if "ADJ01" in candidate_factors:
-        score += 2
-        feedback.append("Correctly identified ADJ01 adjustment factor: 2/2 points")
-    else:
-        feedback.append(f"Failed to identify ADJ01 adjustment factor. Got {candidate_factors}: 0/2 points")
-    
-    return score, feedback
-
-def evaluate_exercise4(candidate, answer_key):
-    score = 0
-    feedback = []
-    
-    # Check fraud risk score (2 points)
-    candidate_risk = candidate.get("exercise4", {}).get("fraudRiskScore", 0)
-    answer_risk = answer_key.get("exercise4", {}).get("fraudRiskScore", 0)
-    
-    if isinstance(candidate_risk, str):
-        try:
-            candidate_risk = int(candidate_risk)
-        except:
-            candidate_risk = 0
-    
-    if abs(candidate_risk - answer_risk) <= 1:
-        score += 2
-        feedback.append("Fraud risk score within acceptable range: 2/2 points")
-    else:
-        feedback.append(f"Fraud risk score outside acceptable range. Expected around {answer_risk}, got {candidate_risk}: 0/2 points")
-    
-    # Check red flags identified (6 points)
-    candidate_flags = candidate.get("exercise4", {}).get("redFlagsIdentified", [])
-    answer_flags = answer_key.get("exercise4", {}).get("redFlagsIdentified", [])
-    
-    matched_flags = [flag for flag in candidate_flags if flag in answer_flags]
-    
-    if len(matched_flags) >= 6:
-        flag_points = 6
-    else:
-        flag_points = min(len(matched_flags), 6)
-    
-    score += flag_points
-    feedback.append(f"Identified {len(matched_flags)} of {len(answer_flags)} red flags: {flag_points}/6 points")
-    
-    # Check recommended action (2 points)
-    candidate_action = candidate.get("exercise4", {}).get("recommendedAction", "")
-    answer_action = answer_key.get("exercise4", {}).get("recommendedAction", "")
-    
-    # Allow for A6 or A7 as valid actions
-    if candidate_action == answer_action or (answer_action == "A7" and candidate_action == "A6"):
-        score += 2
-        feedback.append("Appropriate recommended action: 2/2 points")
-    else:
-        feedback.append(f"Inappropriate recommended action. Expected '{answer_action}' (or A6), got '{candidate_action}': 0/2 points")
-    
-    return score, feedback
-
-def evaluate_submission(candidate, answer_key):
-    results = {
-        "overall_score": 0,
-        "passing_threshold": 70,
-        "total_points": 40,
-        "points_achieved": 0,
-        "exercises": {}
+    # Points allocation per claim
+    point_values = {
+        "claim_1": 5,  # No discrepancies
+        "claim_2": 10,  # Two discrepancies (5 each)
+        "claim_3": 10,  # One discrepancy
+        "claim_4": 10,  # Two discrepancies (5 each)
+        "claim_5": 5,   # No discrepancies
     }
     
-    # Evaluate Exercise 1
-    ex1_score, ex1_feedback = evaluate_exercise1(candidate, answer_key)
-    results["exercises"]["exercise1"] = {
-        "score": ex1_score,
-        "max_score": 10,
-        "percentage": (ex1_score / 10) * 100,
-        "feedback": ex1_feedback,
-        "passed": ex1_score >= 5  # 50% threshold
-    }
+    for claim_num in range(1, 6):
+        claim_key = f"claim_{claim_num}"
+        submission_claim = submission["claims"].get(claim_key, {})
+        answer_claim = answer_key["claims"].get(claim_key, {})
+        
+        submission_discrepancies = submission_claim.get("discrepancies", [])
+        answer_discrepancies = answer_claim.get("discrepancies", [])
+        
+        # Create sets of error codes from both submissions
+        submission_codes = {d.get("error_code") for d in submission_discrepancies}
+        answer_codes = {d.get("error_code") for d in answer_discrepancies}
+        
+        # Calculate correctly identified discrepancies
+        correct_codes = submission_codes.intersection(answer_codes)
+        
+        # Handle evaluation differently based on whether there should be discrepancies
+        if not answer_discrepancies:  # No discrepancies expected
+            points = point_values[claim_key] if not submission_discrepancies else 0
+            correct_percentage = 1.0 if not submission_discrepancies else 0.0
+        else:  # Discrepancies expected
+            # Calculate points based on number of correct discrepancies
+            max_claim_points = point_values[claim_key]
+            points_per_discrepancy = max_claim_points / len(answer_codes)
+            points = len(correct_codes) * points_per_discrepancy
+            
+            # Handle partial credit for correct codes but incomplete descriptions
+            if len(correct_codes) < len(submission_codes.intersection(answer_codes)):
+                for code in correct_codes:
+                    # Check if description is incomplete
+                    sub_desc = next((d.get("description", "") for d in submission_discrepancies 
+                                   if d.get("error_code") == code), "")
+                    ans_desc = next((d.get("description", "") for d in answer_discrepancies 
+                                   if d.get("error_code") == code), "")
+                    
+                    # Partial credit (3 points) for correct code but incomplete description
+                    if sub_desc and len(sub_desc) < len(ans_desc) * 0.5:  # Simplified check
+                        points -= (points_per_discrepancy - 3)
+            
+            correct_percentage = len(correct_codes) / len(answer_codes) if answer_codes else 0.0
+            
+            # No points for extraneous discrepancies
+            if len(submission_codes - answer_codes) > 0:
+                points = max(0, points - 3)  # Penalty for incorrect discrepancies
+        
+        results["details"][claim_key] = {
+            "points": round(points, 1),
+            "max_points": point_values[claim_key],
+            "correct_codes": list(correct_codes),
+            "missing_codes": list(answer_codes - submission_codes),
+            "extra_codes": list(submission_codes - answer_codes),
+            "correct_percentage": correct_percentage
+        }
+        results["points"] += points
     
-    # Evaluate Exercise 2
-    ex2_score, ex2_feedback = evaluate_exercise2(candidate, answer_key)
-    results["exercises"]["exercise2"] = {
-        "score": ex2_score,
-        "max_score": 10,
-        "percentage": (ex2_score / 10) * 100,
-        "feedback": ex2_feedback,
-        "passed": ex2_score >= 5  # 50% threshold
-    }
+    results["points"] = round(results["points"], 1)
+    return results
+
+
+def evaluate_additional_info(submission: Dict, answer_key: Dict) -> Dict[str, Any]:
+    """Evaluate the correctness of additional information needed."""
+    results = {"points": 0, "max_points": 10, "details": {}}
     
-    # Evaluate Exercise 3
-    ex3_score, ex3_feedback = evaluate_exercise3(candidate, answer_key)
-    results["exercises"]["exercise3"] = {
-        "score": ex3_score,
-        "max_score": 10,
-        "percentage": (ex3_score / 10) * 100,
-        "feedback": ex3_feedback,
-        "passed": ex3_score >= 5  # 50% threshold
-    }
+    # Claims that require additional information in the answer key
+    claims_needing_info = ["claim_3", "claim_4"]
+    points_per_claim = 5
     
-    # Evaluate Exercise 4
-    ex4_score, ex4_feedback = evaluate_exercise4(candidate, answer_key)
-    results["exercises"]["exercise4"] = {
-        "score": ex4_score,
-        "max_score": 10,
-        "percentage": (ex4_score / 10) * 100,
-        "feedback": ex4_feedback,
-        "passed": ex4_score >= 5  # 50% threshold
-    }
-    
-    # Calculate overall results
-    total_score = ex1_score + ex2_score + ex3_score + ex4_score
-    results["points_achieved"] = total_score
-    results["overall_score"] = (total_score / 40) * 100
-    
-    # Determine if candidate passed
-    min_score_requirement = total_score >= 28  # 70% overall
-    min_exercise_requirement = all(results["exercises"][ex]["passed"] for ex in results["exercises"])
-    results["passed"] = min_score_requirement and min_exercise_requirement
-    
-    if results["passed"]:
-        results["result"] = "PASS"
-    else:
-        results["result"] = "FAIL"
+    for claim_key in claims_needing_info:
+        submission_claim = submission["claims"].get(claim_key, {})
+        answer_claim = answer_key["claims"].get(claim_key, {})
+        
+        submission_status = submission_claim.get("status", "")
+        submission_info = submission_claim.get("additional_information_needed", [])
+        answer_info = answer_claim.get("additional_information_needed", [])
+        
+        # If status is not "Requires Additional Information", no points
+        if submission_status != "Requires Additional Information":
+            points = 0
+            reason = "Wrong status (should be 'Requires Additional Information')"
+        # If no additional info provided but required, no points
+        elif not submission_info and answer_info:
+            points = 0
+            reason = "No additional information provided"
+        else:
+            # Simple check: is there overlap in the additional information?
+            # This is simplified - in a real evaluation you might want more sophisticated matching
+            has_relevant_info = any(any(sub_info.lower() in ans_info.lower() or 
+                                       ans_info.lower() in sub_info.lower() 
+                                       for ans_info in answer_info)
+                                   for sub_info in submission_info)
+            
+            points = points_per_claim if has_relevant_info else 0
+            reason = "Correct" if has_relevant_info else "Additional information not relevant to discrepancies"
+        
+        results["details"][claim_key] = {
+            "points": points,
+            "max_points": points_per_claim,
+            "submitted": submission_info,
+            "expected": answer_info,
+            "reason": reason
+        }
+        results["points"] += points
     
     return results
 
+
+def check_critical_element(submission: Dict) -> bool:
+    """Check if the candidate correctly identified Claim #2 as Invalid (critical element)."""
+    claim2 = submission["claims"].get("claim_2", {})
+    return claim2.get("status") == "Invalid"
+
+
+def evaluate_submission(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the full submission against the answer key."""
+    status_results = evaluate_status(submission, answer_key)
+    discrepancy_results = evaluate_discrepancies(submission, answer_key)
+    additional_info_results = evaluate_additional_info(submission, answer_key)
+    
+    # Calculate total score
+    total_points = status_results["points"] + discrepancy_results["points"] + additional_info_results["points"]
+    max_points = status_results["max_points"] + discrepancy_results["max_points"] + additional_info_results["max_points"]
+    overall_percentage = (total_points / max_points) * 100
+    
+    # Check critical element
+    critical_element_passed = check_critical_element(submission)
+    passed = overall_percentage >= 75 and critical_element_passed
+    
+    if not critical_element_passed and overall_percentage >= 75:
+        fail_reason = "Failed to correctly identify Claim #2 as Invalid (critical element)"
+    elif overall_percentage < 75:
+        fail_reason = f"Overall score below 75% threshold ({overall_percentage:.1f}%)"
+    else:
+        fail_reason = None
+    
+    return {
+        "overall_score": round(overall_percentage, 1),
+        "passing_threshold": 75,
+        "passed": passed,
+        "fail_reason": fail_reason,
+        "critical_element_passed": critical_element_passed,
+        "total_points": total_points,
+        "max_points": max_points,
+        "status_evaluation": status_results,
+        "discrepancy_evaluation": discrepancy_results,
+        "additional_info_evaluation": additional_info_results
+    }
+
+
 def main():
-    # Load the candidate submission and answer key
-    candidate = load_json_file("test_submission.json")
-    answer_key = load_json_file("answer_key.json")
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    if not candidate or not answer_key:
-        print("Error: Could not load required files.")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    # Evaluate the submission
-    results = evaluate_submission(candidate, answer_key)
+    # Load files
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
     
-    # Save the results
-    with open("test_results.json", "w") as file:
-        json.dump(results, file, indent=2)
+    # Evaluate submission
+    results = evaluate_submission(submission, answer_key)
     
-    print(f"Evaluation complete. Overall score: {results['overall_score']:.2f}%")
-    print(f"Result: {results['result']}")
+    # Write results to file
+    with open("test_results.json", "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
+    print(f"Result: {'PASS' if results['passed'] else 'FAIL'}")
+    if results['fail_reason']:
+        print(f"Reason: {results['fail_reason']}")
+
 
 if __name__ == "__main__":
     main()

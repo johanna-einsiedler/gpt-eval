@@ -1,0 +1,48 @@
+{
+  "overall_score": 15.0,
+  "passed": false,
+  "total_points": 15.0,
+  "max_points": 100,
+  "tasks": {
+    "task1": {
+      "score": 0,
+      "max_score": 40,
+      "percentage": 0.0,
+      "feedback": [
+        "General Information section missing - 0/5 points",
+        "Technical Requirements section missing - 0/10 points",
+        "Material Requirements section missing - 0/8 points",
+        "Performance Requirements section missing - 0/7 points",
+        "Certification Requirements section missing - 0/5 points",
+        "Testing Requirements section missing - 0/5 points"
+      ]
+    },
+    "task2": {
+      "score": 0.0,
+      "max_score": 35,
+      "percentage": 0.0,
+      "feedback": [
+        "Error identification: 0/5 errors correctly identified - 0.0/20 points",
+        "Corrections: 0/5 correct solutions provided - 0.0/15 points"
+      ]
+    },
+    "task3": {
+      "score": 15,
+      "max_score": 25,
+      "percentage": 60.0,
+      "feedback": [
+        "Recommended model: Correct - 10/10 points",
+        "Requirements met: 0/0 correct - 0/10 points",
+        "Requirements not met: Correct - 5/5 points"
+      ]
+    }
+  },
+  "passing_criteria": {
+    "overall_score_requirement": "\u2265 70%",
+    "per_task_requirement": "\u2265 50% per task",
+    "overall_score_achieved": "15.0%",
+    "task1_score_achieved": "0.0%",
+    "task2_score_achieved": "0.0%",
+    "task3_score_achieved": "60.0%"
+  }
+}

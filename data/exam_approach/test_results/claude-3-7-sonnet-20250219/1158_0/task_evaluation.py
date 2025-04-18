@@ -1,547 +1,522 @@
+#!/usr/bin/env python3
+
 import json
-import math
-from typing import Dict, List, Any, Union
+import sys
+import re
+from typing import Dict, List, Union, Any
 
-def load_json(file_path: str) -> Dict:
-    """Load JSON data from a file."""
+def load_json_file(filename: str) -> Dict:
+    """Load a JSON file and return its contents as a dictionary."""
     try:
-        with open(file_path, 'r') as file:
+        with open(filename, 'r') as file:
             return json.load(file)
-    except Exception as e:
-        print(f"Error loading {file_path}: {e}")
-        return {}
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"Error: File '{filename}' is not a valid JSON file.")
+        sys.exit(1)
 
-def save_json(data: Dict, file_path: str) -> None:
-    """Save data as JSON to a file."""
-    try:
-        with open(file_path, 'w') as file:
-            json.dump(data, file, indent=2)
-        print(f"Results saved to {file_path}")
-    except Exception as e:
-        print(f"Error saving results to {file_path}: {e}")
-
-def evaluate_market_trend_analysis(submission: Dict, answer_key: Dict) -> Dict:
-    """Evaluate the market trend analysis section."""
-    results = {
-        "score": 0,
-        "max_score": 20,
-        "details": {}
-    }
+def evaluate_price_trends(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 1: Price Trend Analysis."""
+    score = 0
+    max_score = 25
+    feedback = {}
     
-    # High volatility commodities (6 points)
-    high_vol_score = 0
-    high_vol_details = []
+    # Price trends (6 points - 2 per commodity)
+    price_trends_score = 0
+    price_trends_feedback = {}
     
-    key_commodities = [item["commodity"] for item in answer_key["market_trend_analysis"]["high_volatility_commodities"]]
-    submission_commodities = [item["commodity"] for item in submission.get("market_trend_analysis", {}).get("high_volatility_commodities", [])]
-    
-    for commodity in submission_commodities:
-        if commodity in key_commodities:
-            high_vol_score += 2
-            high_vol_details.append(f"Correctly identified {commodity} as high volatility (+2)")
+    for commodity in ["steel", "aluminum", "copper"]:
+        if commodity in submission["task1"]["price_trends"]:
+            # Check if the key patterns are mentioned
+            key_patterns = answer_key["task1"]["price_trends"][commodity].lower().split()
+            submission_text = submission["task1"]["price_trends"][commodity].lower()
+            
+            pattern_matches = sum(1 for pattern in key_patterns if pattern in submission_text)
+            commodity_score = min(2, (pattern_matches / len(key_patterns)) * 2)
+            
+            price_trends_score += commodity_score
+            price_trends_feedback[commodity] = commodity_score
         else:
-            high_vol_details.append(f"Incorrectly identified {commodity} as high volatility (+0)")
+            price_trends_feedback[commodity] = 0
     
-    results["details"]["high_volatility_commodities"] = {
-        "score": high_vol_score,
-        "max_score": 6,
-        "details": high_vol_details
-    }
+    # Volatility calculations (6 points - 2 per commodity)
+    volatility_score = 0
+    volatility_feedback = {}
     
-    # Price changes (8 points)
-    price_change_score = 0
-    price_change_details = []
-    
-    key_price_changes = {item["commodity"]: item["percentage_change"] for item in answer_key["market_trend_analysis"]["price_changes"]}
-    submission_price_changes = {item["commodity"]: item["percentage_change"] for item in submission.get("market_trend_analysis", {}).get("price_changes", [])}
-    
-    for commodity, key_value in key_price_changes.items():
-        if commodity in submission_price_changes:
-            submission_value = submission_price_changes[commodity]
-            # Allow for small differences in calculation
-            if abs(submission_value - key_value) <= 0.5:
-                price_change_score += 0.8
-                price_change_details.append(f"{commodity}: Correct calculation {submission_value}% (+0.8)")
+    for commodity in ["steel", "aluminum", "copper"]:
+        if commodity in submission["task1"]["volatility_calculations"]:
+            correct_value = answer_key["task1"]["volatility_calculations"][commodity]
+            submitted_value = submission["task1"]["volatility_calculations"][commodity]
+            
+            # Allow for some margin of error (within 10%)
+            error_margin = abs(correct_value * 0.1)
+            if abs(submitted_value - correct_value) <= error_margin:
+                volatility_score += 2
+                volatility_feedback[commodity] = 2
             else:
-                price_change_details.append(f"{commodity}: Incorrect calculation {submission_value}% vs expected {key_value}% (+0)")
+                # Partial credit based on how close they are
+                accuracy = max(0, 1 - abs(submitted_value - correct_value) / correct_value)
+                partial_score = accuracy * 2
+                volatility_score += partial_score
+                volatility_feedback[commodity] = partial_score
         else:
-            price_change_details.append(f"{commodity}: Missing calculation (+0)")
+            volatility_feedback[commodity] = 0
     
-    results["details"]["price_changes"] = {
-        "score": price_change_score,
-        "max_score": 8,
-        "details": price_change_details
-    }
+    # Production-price correlation (4 points)
+    correlation_score = 0
+    if submission["task1"]["production_price_correlation"].lower() == answer_key["task1"]["production_price_correlation"].lower():
+        correlation_score = 4
     
-    # Seasonal patterns (6 points)
-    seasonal_score = 0
-    seasonal_details = []
+    # Price increase prediction (4 points)
+    prediction_score = 0
+    if submission["task1"]["price_increase_prediction"].lower() == answer_key["task1"]["price_increase_prediction"].lower():
+        prediction_score = 4
     
-    key_patterns = [item["commodity"] for item in answer_key["market_trend_analysis"]["seasonal_patterns"]]
-    submission_patterns = submission.get("market_trend_analysis", {}).get("seasonal_patterns", [])
+    # Prediction justification (5 points)
+    justification_score = 0
+    key_justification = answer_key["task1"]["prediction_justification"].lower()
+    submission_justification = submission["task1"]["prediction_justification"].lower()
     
-    for pattern in submission_patterns:
-        commodity = pattern.get("commodity", "")
-        if commodity in key_patterns:
-            seasonal_score += 3
-            seasonal_details.append(f"Correctly identified seasonal pattern for {commodity} (+3)")
-        else:
-            seasonal_details.append(f"Unrecognized seasonal pattern for {commodity} (+0)")
+    # Check for key elements in justification
+    key_elements = [
+        "consecutive monthly increases",
+        "upward trend",
+        "increasing production",
+        "three months",
+        "q4"
+    ]
     
-    results["details"]["seasonal_patterns"] = {
-        "score": seasonal_score,
+    element_matches = sum(1 for element in key_elements if element in submission_justification)
+    justification_score = min(5, (element_matches / len(key_elements)) * 5)
+    
+    # Calculate total score for Task 1
+    task1_score = price_trends_score + volatility_score + correlation_score + prediction_score + justification_score
+    
+    feedback["price_trends"] = {
+        "score": price_trends_score,
         "max_score": 6,
-        "details": seasonal_details
+        "details": price_trends_feedback
     }
     
-    results["score"] = high_vol_score + price_change_score + seasonal_score
-    return results
+    feedback["volatility_calculations"] = {
+        "score": volatility_score,
+        "max_score": 6,
+        "details": volatility_feedback
+    }
+    
+    feedback["production_price_correlation"] = {
+        "score": correlation_score,
+        "max_score": 4,
+        "correct_answer": answer_key["task1"]["production_price_correlation"]
+    }
+    
+    feedback["price_increase_prediction"] = {
+        "score": prediction_score,
+        "max_score": 4,
+        "correct_answer": answer_key["task1"]["price_increase_prediction"]
+    }
+    
+    feedback["prediction_justification"] = {
+        "score": justification_score,
+        "max_score": 5
+    }
+    
+    return {
+        "score": task1_score,
+        "max_score": max_score,
+        "passing_score": 18,
+        "passed": task1_score >= 18,
+        "feedback": feedback
+    }
 
-def evaluate_supply_risk_assessment(submission: Dict, answer_key: Dict) -> Dict:
-    """Evaluate the supply risk assessment section."""
-    results = {
-        "score": 0,
-        "max_score": 20,
-        "details": {}
-    }
+def evaluate_disruption_analysis(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 2: Supply Chain Disruption Analysis."""
+    score = 0
+    max_score = 25
+    feedback = {}
     
-    # Disruption risks (9 points)
-    risk_score = 0
-    risk_details = []
-    
-    key_risks = [item["risk"].lower() for item in answer_key["supply_risk_assessment"]["disruption_risks"]]
-    submission_risks = submission.get("supply_risk_assessment", {}).get("disruption_risks", [])
-    
-    for i, risk_item in enumerate(submission_risks[:3]):  # Evaluate up to 3 risks
-        risk_text = risk_item.get("risk", "").lower()
-        # Check if risk description contains key terms from any of the expected risks
-        matched = False
-        for key_risk in key_risks:
-            # Check for keyword matches
-            if ("port strike" in risk_text and "port strike" in key_risk) or \
-               ("copper mine" in risk_text and "copper mine" in key_risk) or \
-               ("silicon" in risk_text and "energy" in risk_text and "silicon" in key_risk):
-                risk_score += 3
-                risk_details.append(f"Risk {i+1}: Correctly identified disruption risk (+3)")
-                matched = True
-                break
-        
-        if not matched:
-            risk_details.append(f"Risk {i+1}: Unrecognized disruption risk (+0)")
-    
-    results["details"]["disruption_risks"] = {
-        "score": risk_score,
-        "max_score": 9,
-        "details": risk_details
-    }
-    
-    # Affected commodities (6 points)
-    commodities_score = 0
-    commodities_details = []
-    
-    key_risk_commodities = {item["risk"].lower(): set(item["affected_commodities"]) 
-                           for item in answer_key["supply_risk_assessment"]["disruption_risks"]}
-    
-    for i, risk_item in enumerate(submission_risks[:3]):
-        risk_text = risk_item.get("risk", "").lower()
-        submission_commodities = set(risk_item.get("affected_commodities", []))
-        
-        # Match the risk to the correct key risk
-        matched_key = None
-        for key_risk in key_risk_commodities:
-            if ("port strike" in risk_text and "port strike" in key_risk) or \
-               ("copper mine" in risk_text and "copper mine" in key_risk) or \
-               ("silicon" in risk_text and "energy" in risk_text and "silicon" in key_risk):
-                matched_key = key_risk
-                break
-        
-        if matched_key:
-            expected_commodities = key_risk_commodities[matched_key]
-            if submission_commodities == expected_commodities:
-                commodities_score += 2
-                commodities_details.append(f"Risk {i+1}: Correctly identified all affected commodities (+2)")
-            elif submission_commodities.intersection(expected_commodities):
-                commodities_score += 1
-                commodities_details.append(f"Risk {i+1}: Partially identified affected commodities (+1)")
-            else:
-                commodities_details.append(f"Risk {i+1}: Incorrectly identified affected commodities (+0)")
-        else:
-            commodities_details.append(f"Risk {i+1}: Could not match risk to evaluate commodities (+0)")
-    
-    results["details"]["affected_commodities"] = {
-        "score": commodities_score,
-        "max_score": 6,
-        "details": commodities_details
-    }
-    
-    # Price impact (5 points)
+    # Disruption impact analysis (9 points - 3 per disruption)
     impact_score = 0
-    impact_details = []
+    impact_feedback = {}
     
-    key_risk_impacts = {}
-    for item in answer_key["supply_risk_assessment"]["disruption_risks"]:
-        key_risk_impacts[item["risk"].lower()] = item["potential_price_impact"]
-    
-    for i, risk_item in enumerate(submission_risks[:3]):
-        risk_text = risk_item.get("risk", "").lower()
-        submission_impact = risk_item.get("potential_price_impact", 0)
-        
-        # Match the risk to the correct key risk
-        matched_key = None
-        for key_risk in key_risk_impacts:
-            if ("port strike" in risk_text and "port strike" in key_risk) or \
-               ("copper mine" in risk_text and "copper mine" in key_risk) or \
-               ("silicon" in risk_text and "energy" in risk_text and "silicon" in key_risk):
-                matched_key = key_risk
-                break
-        
-        if matched_key:
-            expected_impact = key_risk_impacts[matched_key]
-            if abs(submission_impact - expected_impact) <= 2.5:
-                impact_score += 5/3  # 5 points divided by 3 risks
-                impact_details.append(f"Risk {i+1}: Price impact within acceptable range (+{5/3:.2f})")
-            else:
-                impact_details.append(f"Risk {i+1}: Price impact outside acceptable range (+0)")
+    for disruption in ["logistics_bottleneck", "geopolitical_conflict", "natural_disaster"]:
+        if disruption in submission["task2"]["disruption_impact_analysis"]:
+            key_elements = answer_key["task2"]["disruption_impact_analysis"][disruption].lower().split(". ")
+            submission_text = submission["task2"]["disruption_impact_analysis"][disruption].lower()
+            
+            # Check for key elements (price impact, duration, affected materials)
+            elements_found = 0
+            for element in key_elements:
+                if any(key_term in submission_text for key_term in element.split()[:3]):
+                    elements_found += 1
+            
+            disruption_score = min(3, (elements_found / len(key_elements)) * 3)
+            impact_score += disruption_score
+            impact_feedback[disruption] = disruption_score
         else:
-            impact_details.append(f"Risk {i+1}: Could not match risk to evaluate price impact (+0)")
+            impact_feedback[disruption] = 0
     
-    results["details"]["price_impact"] = {
+    # Price sensitive materials (5 points)
+    sensitive_materials_score = 0
+    correct_materials = set(m.lower() for m in answer_key["task2"]["price_sensitive_materials"])
+    submitted_materials = set(m.lower() for m in submission["task2"]["price_sensitive_materials"] if m)
+    
+    if submitted_materials:
+        # Calculate intersection of correct and submitted materials
+        matching_materials = correct_materials.intersection(submitted_materials)
+        sensitive_materials_score = min(5, (len(matching_materials) / len(correct_materials)) * 5)
+    
+    # Longest recovery disruption (3 points)
+    recovery_score = 0
+    if submission["task2"]["longest_recovery_disruption"].lower() == answer_key["task2"]["longest_recovery_disruption"].lower():
+        recovery_score = 3
+    
+    # Mitigation recommendations (8 points)
+    mitigation_score = 0
+    if submission["task2"]["mitigation_recommendations"]:
+        key_strategies = [s.lower() for s in answer_key["task2"]["mitigation_recommendations"]]
+        submitted_strategies = [s.lower() for s in submission["task2"]["mitigation_recommendations"] if s]
+        
+        # Check for conceptual matches rather than exact wording
+        strategy_matches = 0
+        for submitted in submitted_strategies:
+            for key in key_strategies:
+                # If enough key terms match, consider it a match
+                key_terms = set(re.findall(r'\b\w+\b', key))
+                submitted_terms = set(re.findall(r'\b\w+\b', submitted))
+                overlap = len(key_terms.intersection(submitted_terms))
+                
+                if overlap >= len(key_terms) * 0.3:  # 30% match threshold
+                    strategy_matches += 1
+                    break
+        
+        mitigation_score = min(8, (strategy_matches / len(key_strategies)) * 8)
+    
+    # Calculate total score for Task 2
+    task2_score = impact_score + sensitive_materials_score + recovery_score + mitigation_score
+    
+    feedback["disruption_impact_analysis"] = {
         "score": impact_score,
+        "max_score": 9,
+        "details": impact_feedback
+    }
+    
+    feedback["price_sensitive_materials"] = {
+        "score": sensitive_materials_score,
         "max_score": 5,
-        "details": impact_details
+        "correct_materials": answer_key["task2"]["price_sensitive_materials"]
     }
     
-    results["score"] = risk_score + commodities_score + impact_score
-    return results
+    feedback["longest_recovery_disruption"] = {
+        "score": recovery_score,
+        "max_score": 3,
+        "correct_answer": answer_key["task2"]["longest_recovery_disruption"]
+    }
+    
+    feedback["mitigation_recommendations"] = {
+        "score": mitigation_score,
+        "max_score": 8
+    }
+    
+    return {
+        "score": task2_score,
+        "max_score": max_score,
+        "passing_score": 18,
+        "passed": task2_score >= 18,
+        "feedback": feedback
+    }
 
-def evaluate_demand_supply_gap(submission: Dict, answer_key: Dict) -> Dict:
-    """Evaluate the demand-supply gap analysis section."""
-    results = {
-        "score": 0,
-        "max_score": 20,
-        "details": {}
+def evaluate_futures_market(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 3: Futures Market Interpretation."""
+    score = 0
+    max_score = 25
+    feedback = {}
+    
+    # Futures-spot comparison (6 points)
+    comparison_score = 0
+    key_comparison = answer_key["task3"]["futures_spot_comparison"].lower()
+    submission_comparison = submission["task3"]["futures_spot_comparison"].lower()
+    
+    # Check for key elements in comparison
+    key_elements = [
+        "poor predictors",
+        "volatile periods",
+        "3-month futures",
+        "more accurate",
+        "backwardation",
+        "contango"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_comparison)
+    comparison_score = min(6, (element_matches / len(key_elements)) * 6)
+    
+    # Market patterns (6 points)
+    patterns_score = 0
+    
+    # Check backwardation commodities
+    correct_backwardation = set(c.lower() for c in answer_key["task3"]["market_patterns"]["backwardation_commodities"])
+    submitted_backwardation = set(c.lower() for c in submission["task3"]["market_patterns"]["backwardation_commodities"] if c)
+    
+    backwardation_score = 0
+    if submitted_backwardation:
+        matching = correct_backwardation.intersection(submitted_backwardation)
+        backwardation_score = min(3, (len(matching) / len(correct_backwardation)) * 3)
+    
+    # Check contango commodities
+    correct_contango = set(c.lower() for c in answer_key["task3"]["market_patterns"]["contango_commodities"])
+    submitted_contango = set(c.lower() for c in submission["task3"]["market_patterns"]["contango_commodities"] if c)
+    
+    contango_score = 0
+    # Special case: if correct_contango is empty and submitted_contango is empty, full points
+    if not correct_contango and not submitted_contango:
+        contango_score = 3
+    elif correct_contango:
+        matching = correct_contango.intersection(submitted_contango)
+        contango_score = min(3, (len(matching) / len(correct_contango)) * 3)
+    
+    patterns_score = backwardation_score + contango_score
+    
+    # Current futures research (5 points)
+    # This requires evaluating the quality of web research, which is subjective
+    # Checking if it contains meaningful content
+    research_score = 0
+    if "current_futures_research" in submission["task3"] and submission["task3"]["current_futures_research"].strip():
+        research_content = submission["task3"]["current_futures_research"].lower()
+        # Check if it contains relevant terms
+        relevant_terms = ["aluminum", "price", "market", "futures", "contract"]
+        term_matches = sum(1 for term in relevant_terms if term in research_content)
+        research_score = min(5, (term_matches / len(relevant_terms)) * 5)
+    
+    # Purchase timing recommendation (8 points)
+    recommendation_score = 0
+    key_recommendation = answer_key["task3"]["purchase_timing_recommendation"].lower()
+    submission_recommendation = submission["task3"]["purchase_timing_recommendation"].lower()
+    
+    # Check for key elements in recommendation
+    key_elements = [
+        "backwardation",
+        "immediate",
+        "spot purchases",
+        "strategic",
+        "contracts",
+        "hedge"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_recommendation)
+    recommendation_score = min(8, (element_matches / len(key_elements)) * 8)
+    
+    # Calculate total score for Task 3
+    task3_score = comparison_score + patterns_score + research_score + recommendation_score
+    
+    feedback["futures_spot_comparison"] = {
+        "score": comparison_score,
+        "max_score": 6
     }
     
-    # Inventory coverage (10 points)
-    coverage_score = 0
-    coverage_details = []
-    
-    key_coverage = {item["commodity"]: item["coverage_weeks"] 
-                   for item in answer_key["demand_supply_gap"]["inventory_coverage"]}
-    submission_coverage = {item["commodity"]: item["coverage_weeks"] 
-                          for item in submission.get("demand_supply_gap", {}).get("inventory_coverage", [])}
-    
-    for commodity, key_value in key_coverage.items():
-        if commodity in submission_coverage:
-            submission_value = submission_coverage[commodity]
-            # Allow for small differences in calculation
-            if abs(submission_value - key_value) <= 0.5:
-                coverage_score += 1
-                coverage_details.append(f"{commodity}: Correct calculation {submission_value} weeks (+1)")
-            else:
-                coverage_details.append(f"{commodity}: Incorrect calculation {submission_value} vs expected {key_value} weeks (+0)")
-        else:
-            coverage_details.append(f"{commodity}: Missing calculation (+0)")
-    
-    results["details"]["inventory_coverage"] = {
-        "score": coverage_score,
-        "max_score": 10,
-        "details": coverage_details
-    }
-    
-    # Stockout risk commodities (10 points)
-    stockout_score = 0
-    stockout_details = []
-    
-    key_stockout = set(answer_key["demand_supply_gap"]["stockout_risk_commodities"])
-    submission_stockout = set(submission.get("demand_supply_gap", {}).get("stockout_risk_commodities", []))
-    
-    # Calculate points for each correct commodity (3.33 points each)
-    correct_count = len(key_stockout.intersection(submission_stockout))
-    stockout_score = correct_count * (10/3)
-    
-    stockout_details.append(f"Correctly identified {correct_count} out of 3 high stockout risk commodities (+{stockout_score:.2f})")
-    
-    if correct_count < 3:
-        missing = key_stockout - submission_stockout
-        extra = submission_stockout - key_stockout
-        if missing:
-            stockout_details.append(f"Missing stockout risk commodities: {', '.join(missing)}")
-        if extra:
-            stockout_details.append(f"Incorrectly included commodities: {', '.join(extra)}")
-    
-    results["details"]["stockout_risk_commodities"] = {
-        "score": stockout_score,
-        "max_score": 10,
-        "details": stockout_details
-    }
-    
-    results["score"] = coverage_score + stockout_score
-    return results
-
-def evaluate_futures_analysis(submission: Dict, answer_key: Dict) -> Dict:
-    """Evaluate the futures market interpretation section."""
-    results = {
-        "score": 0,
-        "max_score": 20,
-        "details": {}
-    }
-    
-    # Price increase indicators (8 points)
-    indicators_score = 0
-    indicators_details = []
-    
-    key_indicators = set(answer_key["futures_analysis"]["price_increase_indicators"])
-    submission_indicators = set(submission.get("futures_analysis", {}).get("price_increase_indicators", []))
-    
-    correct_count = len(key_indicators.intersection(submission_indicators))
-    
-    # Full points if at least 6 correct
-    if correct_count >= 6:
-        indicators_score = 8
-        indicators_details.append(f"Correctly identified at least 6 commodities with price increase indicators (+8)")
-    else:
-        # Partial points based on correct count
-        indicators_score = (correct_count / 6) * 8
-        indicators_details.append(f"Correctly identified {correct_count} out of 8 commodities with price increase indicators (+{indicators_score:.2f})")
-    
-    results["details"]["price_increase_indicators"] = {
-        "score": indicators_score,
-        "max_score": 8,
-        "details": indicators_details
-    }
-    
-    # Price spreads (6 points)
-    spreads_score = 0
-    spreads_details = []
-    
-    key_spreads = {item["commodity"]: item["spread_percentage"] 
-                  for item in answer_key["futures_analysis"]["price_spreads"]}
-    submission_spreads = {item["commodity"]: item["spread_percentage"] 
-                         for item in submission.get("futures_analysis", {}).get("price_spreads", [])}
-    
-    for commodity, key_value in key_spreads.items():
-        if commodity in submission_spreads:
-            submission_value = submission_spreads[commodity]
-            # Allow for small differences in calculation
-            if abs(submission_value - key_value) <= 0.5:
-                spreads_score += 0.6
-                spreads_details.append(f"{commodity}: Correct calculation {submission_value}% (+0.6)")
-            else:
-                spreads_details.append(f"{commodity}: Incorrect calculation {submission_value}% vs expected {key_value}% (+0)")
-        else:
-            spreads_details.append(f"{commodity}: Missing calculation (+0)")
-    
-    results["details"]["price_spreads"] = {
-        "score": spreads_score,
+    feedback["market_patterns"] = {
+        "score": patterns_score,
         "max_score": 6,
-        "details": spreads_details
+        "details": {
+            "backwardation_commodities": backwardation_score,
+            "contango_commodities": contango_score
+        }
     }
     
-    # Forward contract recommendations (6 points)
-    contract_score = 0
-    contract_details = []
-    
-    key_recommendations = set(answer_key["futures_analysis"]["forward_contract_recommendations"])
-    submission_recommendations = set(submission.get("futures_analysis", {}).get("forward_contract_recommendations", []))
-    
-    # Check for valid recommendations (must be in the key recommendations or have high spread)
-    valid_recommendations = []
-    high_spread_commodities = [commodity for commodity, spread in key_spreads.items() if spread >= 5]
-    
-    for commodity in submission_recommendations:
-        if commodity in key_recommendations or commodity in high_spread_commodities:
-            valid_recommendations.append(commodity)
-    
-    # 2 points per valid recommendation, up to 3 recommendations
-    valid_count = min(len(valid_recommendations), 3)
-    contract_score = valid_count * 2
-    
-    contract_details.append(f"Made {valid_count} valid forward contract recommendations (+{contract_score})")
-    
-    results["details"]["forward_contract_recommendations"] = {
-        "score": contract_score,
-        "max_score": 6,
-        "details": contract_details
+    feedback["current_futures_research"] = {
+        "score": research_score,
+        "max_score": 5
     }
     
-    results["score"] = indicators_score + spreads_score + contract_score
-    return results
+    feedback["purchase_timing_recommendation"] = {
+        "score": recommendation_score,
+        "max_score": 8
+    }
+    
+    return {
+        "score": task3_score,
+        "max_score": max_score,
+        "passing_score": 17,
+        "passed": task3_score >= 17,
+        "feedback": feedback
+    }
 
-def evaluate_purchasing_recommendations(submission: Dict, answer_key: Dict) -> Dict:
-    """Evaluate the purchasing recommendations section."""
-    results = {
-        "score": 0,
-        "max_score": 20,
-        "details": {}
+def evaluate_market_conditions(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 4: Market Conditions Assessment."""
+    score = 0
+    max_score = 25
+    feedback = {}
+    
+    # Market condition summary (5 points)
+    summary_score = 0
+    key_summary = answer_key["task4"]["market_condition_summary"].lower()
+    submission_summary = submission["task4"]["market_condition_summary"].lower()
+    
+    # Check for key elements in summary
+    key_elements = [
+        "electronic components",
+        "severe constraints",
+        "stainless steel",
+        "lead times",
+        "inventory levels"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_summary)
+    summary_score = min(5, (element_matches / len(key_elements)) * 5)
+    
+    # Supply constrained materials (6 points)
+    constrained_score = 0
+    correct_materials = set(m.lower() for m in answer_key["task4"]["supply_constrained_materials"])
+    submitted_materials = set(m.lower() for m in submission["task4"]["supply_constrained_materials"] if m)
+    
+    if submitted_materials:
+        # Calculate intersection of correct and submitted materials
+        matching_materials = correct_materials.intersection(submitted_materials)
+        constrained_score = min(6, (len(matching_materials) / len(correct_materials)) * 6)
+    
+    # Market research findings (4 points)
+    # This requires evaluating the quality of web research, which is subjective
+    research_score = 0
+    if "market_research_findings" in submission["task4"] and submission["task4"]["market_research_findings"].strip():
+        research_content = submission["task4"]["market_research_findings"].lower()
+        # Check if it contains relevant terms
+        relevant_terms = ["market", "supply", "electronic", "components", "steel", "manufacturing"]
+        term_matches = sum(1 for term in relevant_terms if term in research_content)
+        research_score = min(4, (term_matches / len(relevant_terms)) * 4)
+    
+    # Procurement strategy (6 points)
+    strategy_score = 0
+    key_strategy = answer_key["task4"]["procurement_strategy"].lower()
+    submission_strategy = submission["task4"]["procurement_strategy"].lower()
+    
+    # Check for key elements in strategy
+    key_elements = [
+        "tiered",
+        "approach",
+        "electronic components",
+        "immediate",
+        "buffer stock",
+        "domestic suppliers",
+        "inventory"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_strategy)
+    strategy_score = min(6, (element_matches / len(key_elements)) * 6)
+    
+    # Strategy justification (4 points)
+    justification_score = 0
+    key_justification = answer_key["task4"]["strategy_justification"].lower()
+    submission_justification = submission["task4"]["strategy_justification"].lower()
+    
+    # Check for key elements in justification
+    key_elements = [
+        "warehouse capacity",
+        "constraints",
+        "suppliers",
+        "delivery",
+        "90%",
+        "production"
+    ]
+    
+    element_matches = sum(1 for element in key_elements if element in submission_justification)
+    justification_score = min(4, (element_matches / len(key_elements)) * 4)
+    
+    # Calculate total score for Task 4
+    task4_score = summary_score + constrained_score + research_score + strategy_score + justification_score
+    
+    feedback["market_condition_summary"] = {
+        "score": summary_score,
+        "max_score": 5
     }
     
-    # Get critical commodities from answer key
-    key_critical_commodities = [item["commodity"] for item in answer_key["purchasing_recommendations"]]
-    submission_recommendations = submission.get("purchasing_recommendations", [])
-    
-    # Correct commodities (5 points)
-    commodities_score = 0
-    commodities_details = []
-    
-    submission_commodities = [item["commodity"] for item in submission_recommendations]
-    correct_commodities = [c for c in submission_commodities if c in key_critical_commodities]
-    
-    commodities_score = len(correct_commodities)
-    commodities_details.append(f"Recommended {len(correct_commodities)} out of 5 critical commodities (+{commodities_score})")
-    
-    if len(correct_commodities) < 5:
-        missing = set(key_critical_commodities) - set(submission_commodities)
-        commodities_details.append(f"Missing recommendations for: {', '.join(missing)}")
-    
-    results["details"]["correct_commodities"] = {
-        "score": commodities_score,
-        "max_score": 5,
-        "details": commodities_details
+    feedback["supply_constrained_materials"] = {
+        "score": constrained_score,
+        "max_score": 6,
+        "correct_materials": answer_key["task4"]["supply_constrained_materials"]
     }
     
-    # Create lookup for key recommendations
-    key_recommendations = {item["commodity"]: item for item in answer_key["purchasing_recommendations"]}
-    
-    # Appropriate timing (5 points)
-    timing_score = 0
-    timing_details = []
-    
-    for item in submission_recommendations:
-        commodity = item.get("commodity")
-        if commodity in key_critical_commodities:
-            submission_timing = item.get("timing")
-            key_timing = key_recommendations[commodity]["timing"]
-            
-            # Check if timing is reasonable
-            if submission_timing == key_timing:
-                timing_score += 1
-                timing_details.append(f"{commodity}: Correct timing recommendation '{submission_timing}' (+1)")
-            # Allow for one level of difference (immediate vs 30days, or 30days vs 60days)
-            elif (submission_timing == "immediate" and key_timing == "30days") or \
-                 (submission_timing == "30days" and key_timing == "immediate") or \
-                 (submission_timing == "30days" and key_timing == "60days") or \
-                 (submission_timing == "60days" and key_timing == "30days"):
-                timing_score += 0.5
-                timing_details.append(f"{commodity}: Reasonable timing recommendation '{submission_timing}' (+0.5)")
-            else:
-                timing_details.append(f"{commodity}: Incorrect timing recommendation '{submission_timing}' vs expected '{key_timing}' (+0)")
-    
-    results["details"]["appropriate_timing"] = {
-        "score": timing_score,
-        "max_score": 5,
-        "details": timing_details
+    feedback["market_research_findings"] = {
+        "score": research_score,
+        "max_score": 4
     }
     
-    # Reasonable quantity (5 points)
-    quantity_score = 0
-    quantity_details = []
-    
-    for item in submission_recommendations:
-        commodity = item.get("commodity")
-        if commodity in key_critical_commodities:
-            submission_quantity = item.get("quantity_percentage")
-            key_quantity = key_recommendations[commodity]["quantity_percentage"]
-            
-            # Check if quantity is reasonable (within 15% of key quantity)
-            if submission_quantity is not None and abs(submission_quantity - key_quantity) <= 15:
-                quantity_score += 1
-                quantity_details.append(f"{commodity}: Reasonable quantity recommendation {submission_quantity}% (+1)")
-            else:
-                quantity_details.append(f"{commodity}: Questionable quantity recommendation {submission_quantity}% vs expected {key_quantity}% (+0)")
-    
-    results["details"]["reasonable_quantity"] = {
-        "score": quantity_score,
-        "max_score": 5,
-        "details": quantity_details
+    feedback["procurement_strategy"] = {
+        "score": strategy_score,
+        "max_score": 6
     }
     
-    # Justified max price (5 points)
-    price_score = 0
-    price_details = []
-    
-    for item in submission_recommendations:
-        commodity = item.get("commodity")
-        if commodity in key_critical_commodities:
-            submission_price = item.get("max_price")
-            key_price = key_recommendations[commodity]["max_price"]
-            
-            # Check if price is reasonable (within 5% of key price)
-            if submission_price is not None and abs(submission_price - key_price) / key_price <= 0.05:
-                price_score += 1
-                price_details.append(f"{commodity}: Reasonable max price recommendation ${submission_price} (+1)")
-            else:
-                price_details.append(f"{commodity}: Questionable max price recommendation ${submission_price} vs expected ${key_price} (+0)")
-    
-    results["details"]["justified_max_price"] = {
-        "score": price_score,
-        "max_score": 5,
-        "details": price_details
+    feedback["strategy_justification"] = {
+        "score": justification_score,
+        "max_score": 4
     }
     
-    results["score"] = commodities_score + timing_score + quantity_score + price_score
-    return results
+    return {
+        "score": task4_score,
+        "max_score": max_score,
+        "passing_score": 17,
+        "passed": task4_score >= 17,
+        "feedback": feedback
+    }
 
 def evaluate_submission(submission: Dict, answer_key: Dict) -> Dict:
-    """Evaluate the entire submission against the answer key."""
-    results = {
-        "overall_score": 0,
-        "total_points": 0,
-        "max_points": 100,
-        "section_results": {}
-    }
+    """Evaluate the complete submission against the answer key."""
+    results = {}
     
-    # Evaluate each section
-    results["section_results"]["market_trend_analysis"] = evaluate_market_trend_analysis(submission, answer_key)
-    results["section_results"]["supply_risk_assessment"] = evaluate_supply_risk_assessment(submission, answer_key)
-    results["section_results"]["demand_supply_gap"] = evaluate_demand_supply_gap(submission, answer_key)
-    results["section_results"]["futures_analysis"] = evaluate_futures_analysis(submission, answer_key)
-    results["section_results"]["purchasing_recommendations"] = evaluate_purchasing_recommendations(submission, answer_key)
+    # Evaluate each task
+    task1_results = evaluate_price_trends(submission, answer_key)
+    task2_results = evaluate_disruption_analysis(submission, answer_key)
+    task3_results = evaluate_futures_market(submission, answer_key)
+    task4_results = evaluate_market_conditions(submission, answer_key)
     
-    # Calculate total points and overall score
-    for section, section_results in results["section_results"].items():
-        results["total_points"] += section_results["score"]
+    # Calculate overall score
+    total_score = task1_results["score"] + task2_results["score"] + task3_results["score"] + task4_results["score"]
+    total_max_score = task1_results["max_score"] + task2_results["max_score"] + task3_results["max_score"] + task4_results["max_score"]
+    overall_percentage = (total_score / total_max_score) * 100
     
-    results["overall_score"] = (results["total_points"] / results["max_points"]) * 100
+    # Determine if overall passing criteria met
+    passed_overall = (
+        overall_percentage >= 70 and
+        task1_results["passed"] and
+        task2_results["passed"] and
+        task3_results["passed"] and
+        task4_results["passed"]
+    )
     
-    # Add pass/fail status
-    results["passed"] = results["overall_score"] >= 75
-    
-    # Check section minimums (60% in each section)
-    section_minimums_passed = True
-    section_minimum_details = []
-    
-    for section, section_results in results["section_results"].items():
-        section_score_percentage = (section_results["score"] / section_results["max_score"]) * 100
-        if section_score_percentage < 60:
-            section_minimums_passed = False
-            section_minimum_details.append(f"{section}: {section_score_percentage:.2f}% (below 60% minimum)")
-    
-    results["section_minimums_passed"] = section_minimums_passed
-    if not section_minimums_passed:
-        results["section_minimum_details"] = section_minimum_details
-        results["passed"] = False
+    results["candidate_id"] = submission.get("candidate_id", "unknown")
+    results["task1"] = task1_results
+    results["task2"] = task2_results
+    results["task3"] = task3_results
+    results["task4"] = task4_results
+    results["overall_score"] = round(overall_percentage, 2)
+    results["passed"] = passed_overall
+    results["total_points"] = total_score
+    results["max_points"] = total_max_score
     
     return results
 
 def main():
-    # Load the submission and answer key
-    submission = load_json("test_submission.json")
-    answer_key = load_json("answer_key.json")
+    """Main function to run the evaluation script."""
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py <submission_file> <answer_key_file>")
+        sys.exit(1)
     
-    if not submission or not answer_key:
-        print("Error: Could not load submission or answer key.")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
+    
+    # Load the submission and answer key
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
     
     # Evaluate the submission
     results = evaluate_submission(submission, answer_key)
     
     # Save the results
-    save_json(results, "test_results.json")
+    with open("test_results.json", "w") as file:
+        json.dump(results, file, indent=2)
     
-    # Print summary
-    print(f"Overall Score: {results['overall_score']:.2f}%")
-    print(f"Total Points: {results['total_points']:.2f} / {results['max_points']}")
+    print(f"Evaluation completed. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
     print(f"Result: {'PASSED' if results['passed'] else 'FAILED'}")
 
 if __name__ == "__main__":

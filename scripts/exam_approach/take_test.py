@@ -9,23 +9,29 @@ import regex as re
 import json
 import subprocess
 import shutil
-import google.generativeai as genai
+# import google.generativeai as genai
 from query_agents import query_agent, take_test
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 
 # load openai api key
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+# DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
+# GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+
+model ='claude-3-7-sonnet-20250219'
 
 
 test_prompt_template = """Instructions: <instructions> {answer_instructions} </instructions>
-Answer materials: <materials> {answer_materials} </materials>
+Answer materials: <materials> {answer_materialscandidateonly} </materials>
 Submission instructions: <submission_instructions> {answer_submission} </submission_instructions>"""
 system_prompt_template = """You are an expert worker within the domain of {occupation}. Complete the following test."""
 
+
+def split_materials_candidate(row):
+    row['materials']
 
 def save_answer_json(row, path, model):
     """
@@ -108,7 +114,7 @@ def save_evaluation(row, path):
 
 
 def save_answer_key(row, path):
-        """
+    """
     Extracts and saves the answer key from a DataFrame row to a JSON file.
 
     Args:
@@ -211,7 +217,7 @@ def run_evaluation(row,path, model):
 
 
 def copy_answer_key(row,folder):
-        """
+    """
     Copies the answer key JSON file to all subdirectories within the task-specific folder.
 
     Args:
@@ -251,7 +257,7 @@ def copy_answer_key(row,folder):
 
 
 def collect_overall_scores(row,parent_directory):
-        """
+    """
     Collects the 'overall_score' from test result JSON files across subdirectories within a task-specific folder.
 
     Args:
@@ -322,7 +328,7 @@ def collect_overall_scores(row,parent_directory):
 if __name__ == "__main__":
     path_to_data = '../../data/exam_approach/exams/'
     for root, dirs, files in os.walk(path_to_data):
-        for model in ['gpt-4o']:
+        for model in ['claude-3-7-sonnet-20250219']:#['gpt-4o']:
             print('Taking the exams of', model)
 
                  # Create the output directory for the current model if it does not exist
@@ -338,26 +344,28 @@ if __name__ == "__main__":
                         print(file_path)
                         df = pd.read_csv(file_path)
                         print('Overall ', df.shape[0], ' tasks in the data')
-
-            df= pd.read_csv(f'../../data/exam_approach/exam_approach/exams/{model}/exams_business_and_financial_operations_occupations_CORE_automatable.csv')[0:150]
-
+            # NOTE changed below to candidate_materials
+            df= pd.read_csv(f'../../data/exam_approach/exams/{model}/exams_materialsexplained_business_and_financial_operations_occupations_CORE_automatable.csv')[0:150]
+            
 
             overwrite = True
-                if  overwrite == False:
-                    print('reading in existing results')
-                    existing_df = pd.read_csv('../../data/exam_approach/test_results/test_results_business_and_financial_operations_occupations_scores.csv')
-                    df = df[~df['task_id'].isin(existing_df['task_id'])]
-                print('Processing ', df.shape[0], ' new tasks.')
-            
+            if  overwrite == False:
+                print('reading in existing results')
+                existing_df = pd.read_csv('../../data/exam_approach/test_results/test_results_materialsexplained_business_and_financial_operations_occupations_scores.csv')
+                df = df[~df['task_id'].isin(existing_df['task_id'])]
+            print('Processing ', df.shape[0], ' new tasks.')
+        
                     #
+            print(df.head())
+            print(df.columns)
             #test models
-            df['test_answers_gemini'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template, 'gemini'))
+            # df['test_answers_gemini'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template, 'gemini'))
             df['test_answers_claude'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template, 'claude' ))
-            df['test_answers_chatgpt4o'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template, "gpt-4o"))
-            df['test_answers_chatgpt35'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template,'gpt-3.5-turbo-0125'))
-            df['test_answers_deepseek'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template,'deepseek'))
+            # df['test_answers_chatgpt4o'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template, "gpt-4o"))
+            # df['test_answers_chatgpt35'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template,'gpt-3.5-turbo-0125'))
+            # df['test_answers_deepseek'] = df.apply(take_test,axis=1, args=(system_prompt_template, test_prompt_template,'deepseek'))
 
-            df.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_business_and_financial_operations_occupations_CORE_automatable.csv')
+            df.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_materialsexplained_business_and_financial_operations_occupations_CORE_automatable.csv')
 
 
     
@@ -367,12 +375,12 @@ if __name__ == "__main__":
             model_folder_path = f'../../data/exam_approach/test_results/{model}/'
             # save answers as json files
             print('saving answer files')
-            df['answer_valid_chatgpt4o'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'chatgpt4o'))
-            df['answer_valid_chatgpt35'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'chatgpt35'))
-            df['answer_valid_deepseek'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'deepseek'))
+            # df['answer_valid_chatgpt4o'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'chatgpt4o'))
+            # df['answer_valid_chatgpt35'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'chatgpt35'))
+            # df['answer_valid_deepseek'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'deepseek'))
             df['answer_valid_claude'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'claude'))
-            df['answer_valid_gemini'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'gemini'))
-            df.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_business_and_financial_operations_occupations_scores.csv')
+            # df['answer_valid_gemini'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'gemini'))
+            df.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_materialsexplained_business_and_financial_operations_occupations_scores.csv')
 
             print('saving evaluation files and answer keys')
             # save evaluation script and answer key in appropriate folders
@@ -383,11 +391,11 @@ if __name__ == "__main__":
 
             # run evaluation and document potential errors
             print('running evaluation')
-            df['errors_chatgpt35'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'chatgpt35',))
-            df['errors_chatgpt4o'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'chatgpt4o',))
+            # df['errors_chatgpt35'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'chatgpt35',))
+            # df['errors_chatgpt4o'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'chatgpt4o',))
             df['errors_claude'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'claude',))
-            df['errors_deepseek'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'deepseek',))
-            df['errors_gemini'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'gemini',))
+            # df['errors_deepseek'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'deepseek',))
+            # df['errors_gemini'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'gemini',))
 
             print('collecting scores')
             df['scores'] =  df.apply(collect_overall_scores,axis=1, args= (model_folder_path,))
@@ -396,7 +404,7 @@ if __name__ == "__main__":
             # Combine the original DataFrame with the new columns
             df_expanded = pd.concat([df.drop('scores', axis=1), scores_df], axis=1)
             
-            df_expanded.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_business_and_financial_operations_occupations_scores.csv')
+            df_expanded.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_materialsexplained_business_and_financial_operations_occupations_scores.csv')
 
             scores_df = pd.concat([df[['task_id','occupation','task_description']],scores_df], axis=1)
-            scores_df.to_csv(f'../../data/exam_approach/test_results/{model}/overall_scores.csv')
+            scores_df.to_csv(f'../../data/exam_approach/test_results/{model}/overall_scores_materialsexplained.csv')

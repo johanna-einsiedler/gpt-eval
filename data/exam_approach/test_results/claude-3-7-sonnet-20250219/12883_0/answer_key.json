@@ -1,94 +1,104 @@
 {
     "candidate_id": "EVALUATOR_KEY",
-    "transaction_summary": {
-        "total_transactions": 30,
-        "total_purchase_amount": 42275.85,
-        "transactions_with_issues": 3,
-        "issue_details": [
-            {
-                "transaction_id": "TR-10028",
-                "issue_type": "missing_data",
-                "description": "Missing origin code"
-            },
-            {
-                "transaction_id": "TR-10029",
-                "issue_type": "missing_data",
-                "description": "Missing certification"
-            },
-            {
-                "transaction_id": "TR-10030",
-                "issue_type": "missing_data",
-                "description": "Missing unit price"
-            }
-        ]
-    },
-    "inventory_analysis": {
-        "total_inventory_value": 42275.85,
-        "product_categories": {
-            "Fresh Fruits": {
-                "total_quantity": 3230,
-                "average_price": 3.59,
-                "total_value": 11580.5
-            },
-            "Dairy Products": {
-                "total_quantity": 1585,
-                "average_price": 5.84,
-                "total_value": 9252.5
-            },
-            "Grains": {
-                "total_quantity": 10000,
-                "average_price": 0.57,
-                "total_value": 5710.0
-            },
-            "Poultry Products": {
-                "total_quantity": 1800,
-                "average_price": 3.79,
-                "total_value": 6825.0
-            }
-        },
-        "top_volume_products": [
-            "P-3001",
-            "P-3002",
-            "P-1001"
-        ],
-        "top_cost_products": [
-            "P-1001",
-            "P-3001",
-            "P-4001"
-        ]
-    },
-    "monthly_summary": {
-        "January": {
-            "total_purchases": 12167.5,
-            "largest_category": "Fresh Fruits",
-            "largest_category_value": 4462.5
-        },
-        "February": {
-            "total_purchases": 13748.75,
-            "largest_category": "Grains",
-            "largest_category_value": 4175.0
-        },
-        "March": {
-            "total_purchases": 16359.6,
-            "largest_category": "Fresh Fruits",
-            "largest_category_value": 4845.0
+    "task1": {
+        "valid_transactions_count": 12,
+        "total_value_valid_transactions": 8317.25,
+        "error_transactions": {
+            "FP23-1004": "E001",
+            "FP23-1006": "E002",
+            "FP23-1008": "E015",
+            "FP23-1014": "E005"
         }
     },
-    "compliance_report": {
-        "regulated_products_total": 13,
-        "origin_tracking_complete": false,
-        "certification_documentation_complete": false,
-        "reporting_issues": [
-            {
-                "product_code": "P-1004",
-                "transaction_id": "TR-10028",
-                "issue_type": "missing_origin"
-            },
-            {
-                "product_code": "P-4001",
-                "transaction_id": "TR-10029",
-                "issue_type": "missing_certification"
-            }
+    "task2": {
+        "updated_inventory": {
+            "APPLE-RD-01": 2950,
+            "APPLE-GD-09": 2430,
+            "BEANS-GR-10": 680,
+            "BROC-FRH-13": 835,
+            "CABBAGE-GR-15": 1820,
+            "CARROT-OR-06": 2030,
+            "CORN-SWT-03": 2150,
+            "CUCUMBER-EN-12": 720,
+            "LETTUCE-RM-05": 235,
+            "ONION-YL-08": 2760,
+            "PEPPER-BL-11": 420,
+            "POTATO-RS-02": 5200,
+            "SPINACH-BY-14": 300,
+            "SQUASH-BT-07": 870,
+            "TOMATO-VN-04": 780
+        },
+        "variance_percentages": {
+            "APPLE-RD-01": -4.24,
+            "APPLE-GD-09": -2.26,
+            "BEANS-GR-10": -5.15,
+            "BROC-FRH-13": -4.79,
+            "CABBAGE-GR-15": -3.85,
+            "CARROT-OR-06": -2.46,
+            "CORN-SWT-03": -2.79,
+            "CUCUMBER-EN-12": -3.06,
+            "LETTUCE-RM-05": -4.26,
+            "ONION-YL-08": -2.9,
+            "PEPPER-BL-11": -4.29,
+            "POTATO-RS-02": -3.42,
+            "SPINACH-BY-14": -8.0,
+            "SQUASH-BT-07": -4.02,
+            "TOMATO-VN-04": -4.87
+        },
+        "highest_variance_products": [
+            "SPINACH-BY-14",
+            "BEANS-GR-10",
+            "TOMATO-VN-04",
+            "BROC-FRH-13",
+            "PEPPER-BL-11"
         ]
+    },
+    "task3": {
+        "usda_category_totals": {
+            "Fruits": {
+                "total_volume": 1450,
+                "total_value": 1435.0,
+                "transaction_count": 3,
+                "organic_volume": 1450,
+                "conventional_volume": 0
+            },
+            "Vegetables": {
+                "total_volume": 2355,
+                "total_value": 2479.75,
+                "transaction_count": 6,
+                "organic_volume": 875,
+                "conventional_volume": 1480
+            },
+            "Root Vegetables": {
+                "total_volume": 4000,
+                "total_value": 1580.0,
+                "transaction_count": 3,
+                "organic_volume": 0,
+                "conventional_volume": 4000
+            },
+            "Leafy Greens": {
+                "total_volume": 270,
+                "total_value": 1912.5,
+                "transaction_count": 2,
+                "organic_volume": 270,
+                "conventional_volume": 0
+            },
+            "Grains": {
+                "total_volume": 1200,
+                "total_value": 384.0,
+                "transaction_count": 1,
+                "organic_volume": 0,
+                "conventional_volume": 1200
+            },
+            "Other": {
+                "total_volume": 0,
+                "total_value": 0.0,
+                "transaction_count": 0,
+                "organic_volume": 0,
+                "conventional_volume": 0
+            }
+        },
+        "compliance_issues": [],
+        "verification_code": "VA8542-09"
     }
 }

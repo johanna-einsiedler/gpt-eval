@@ -1,0 +1,46 @@
+{
+  "candidate_id": "UNKNOWN",
+  "comments": [
+    "scenario1: Invalid date format. Got CURRENT_DATE+12, expected format YYYY-MM-DD",
+    "scenario2: Invalid date format. Got CURRENT_DATE+3, expected format YYYY-MM-DD",
+    "scenario3: Invalid date format. Got CURRENT_DATE+19, expected format YYYY-MM-DD",
+    "PASSED with a score of 97.5%"
+  ],
+  "overall_score": 97.5,
+  "passed": true,
+  "point_totals": {
+    "customs_reference": 1.5,
+    "duty_amounts": 6,
+    "freight_amounts": 6,
+    "payment_deadline": 0,
+    "payment_method": 3,
+    "payment_responsibility": 3,
+    "total_points": 19.5
+  },
+  "scores": {
+    "scenario1": {
+      "customsReferenceNumber": 0.5,
+      "dutyAmount": 2,
+      "freightAmount": 2,
+      "paymentDeadline": 0,
+      "paymentMethod": 1,
+      "paymentResponsibility": 1
+    },
+    "scenario2": {
+      "customsReferenceNumber": 0.5,
+      "dutyAmount": 2,
+      "freightAmount": 2,
+      "paymentDeadline": 0,
+      "paymentMethod": 1,
+      "paymentResponsibility": 1
+    },
+    "scenario3": {
+      "customsReferenceNumber": 0.5,
+      "dutyAmount": 2,
+      "freightAmount": 2,
+      "paymentDeadline": 0,
+      "paymentMethod": 1,
+      "paymentResponsibility": 1
+    }
+  }
+}

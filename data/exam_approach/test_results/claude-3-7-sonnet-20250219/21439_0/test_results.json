@@ -1,0 +1,49 @@
+{
+  "identification_score": 20,
+  "classification_score": 20,
+  "financial_impact_score": 20,
+  "recommended_action_score": 20,
+  "documentation_score": 20,
+  "false_positives": 0,
+  "details": {
+    "correct_identifications": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "missed_identifications": [],
+    "false_identifications": [],
+    "correct_classifications": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "incorrect_classifications": [],
+    "correct_financial_impacts": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "incorrect_financial_impacts": [],
+    "correct_recommended_actions": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "incorrect_recommended_actions": [],
+    "correct_documentation": [
+      "CL-2023-5104",
+      "CL-2023-5236",
+      "CL-2023-5972",
+      "CL-2023-6104"
+    ],
+    "incorrect_documentation": []
+  },
+  "overall_score": 125.0,
+  "status": "Pass",
+  "primary_criteria_met": 4
+}

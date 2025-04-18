@@ -1,213 +1,367 @@
+#!/usr/bin/env python3
+
 import json
+import sys
 import os
 
-def validate_submission(submission, answer_key):
-    score = 0
-    max_score = 100
-    
-    # Exercise 1 validation (50 points)
-    ex1_score = 0
-    max_ex1_score = 50
-    
-    # Validate settled claims (40 points)
-    for i, claim in enumerate(submission["exercise1"]["settled_claims"]):
-        key_claim = answer_key["exercise1"]["settled_claims"][i]
-        
-        # Exact match fields (1 point each)
-        exact_fields = ["claim_number", "claimant_name", "date_of_loss", 
-                        "date_of_settlement", "coverage_type", "claim_handler", 
-                        "settlement_method", "subrogation_potential", "final_disposition_code"]
-        
-        for field in exact_fields:
-            if claim[field] == key_claim[field]:
-                ex1_score += 1
-        
-        # Settlement amount (within $0.01)
-        if abs(claim["settlement_amount"] - key_claim["settlement_amount"]) <= 0.01:
-            ex1_score += 1
-    
-    # Validate summary (10 points)
-    summary = submission["exercise1"]["summary"]
-    key_summary = answer_key["exercise1"]["summary"]
-    
-    # Exact match fields (2 points each)
-    if summary["total_claims"] == key_summary["total_claims"]:
-        ex1_score += 2
-    
-    if summary["oldest_settlement_date"] == key_summary["oldest_settlement_date"]:
-        ex1_score += 2
-        
-    if summary["most_recent_settlement_date"] == key_summary["most_recent_settlement_date"]:
-        ex1_score += 2
-    
-    # Flexible range fields (2 points each)
-    if abs(summary["total_settlement_amount"] - key_summary["total_settlement_amount"]) <= 0.01:
-        ex1_score += 2
-        
-    if abs(summary["average_settlement_amount"] - key_summary["average_settlement_amount"]) <= 0.01:
-        ex1_score += 2
-    
-    # Exercise 2 validation (50 points)
-    ex2_score = 0
-    max_ex2_score = 50
-    
-    # Validate claim inventory (35 points)
-    for i, claim in enumerate(submission["exercise2"]["claim_inventory"]):
-        key_claim = answer_key["exercise2"]["claim_inventory"][i]
-        
-        # Exact match fields (1 point each)
-        if claim["claim_number"] == key_claim["claim_number"]:
-            ex2_score += 1
-            
-        if claim["complexity_level"] == key_claim["complexity_level"]:
-            ex2_score += 1
-            
-        if claim["analysis_type"] == key_claim["analysis_type"]:
-            ex2_score += 1
-            
-        if claim["next_action"] == key_claim["next_action"]:
-            ex2_score += 1
-            
-        if claim["action_due_date"] == key_claim["action_due_date"]:
-            ex2_score += 1
-            
-        if claim["priority_code"] == key_claim["priority_code"]:
-            ex2_score += 1
-        
-        # Flexible range fields
-        if abs(claim["estimated_completion_days"] - key_claim["estimated_completion_days"]) <= 10:
-            ex2_score += 1
-        
-        # Missing documentation (check if all required items are present, order doesn't matter)
-        missing_docs_match = True
-        if len(claim["missing_documentation"]) != len(key_claim["missing_documentation"]):
-            missing_docs_match = False
-        else:
-            for doc in key_claim["missing_documentation"]:
-                if doc not in claim["missing_documentation"]:
-                    missing_docs_match = False
-                    break
-        
-        if missing_docs_match:
-            ex2_score += 1
-    
-    # Validate detailed analysis claims (15 points)
-    submitted_claims = {c["claim_number"]: c for c in submission["exercise2"]["detailed_analysis_claims"]}
-    key_claims = {c["claim_number"]: c for c in answer_key["exercise2"]["detailed_analysis_claims"]}
-    
-    # Check if the correct claims are identified (5 points)
-    for claim_number in key_claims:
-        if claim_number in submitted_claims:
-            ex2_score += 2.5  # Correct identification
-            
-            # Check reason (2.5 points)
-            # This is subjective - we'll check if key terms are present
-            key_terms = ["complexity", "reserve", "exceeds $50,000"]
-            reason_score = 0
-            for term in key_terms:
-                if term.lower() in submitted_claims[claim_number]["reason_for_detailed_analysis"].lower():
-                    reason_score += 0.83  # 2.5 points divided by 3 terms
-            
-            ex2_score += min(reason_score, 2.5)
-            
-            # Check hours (2.5 points)
-            if abs(submitted_claims[claim_number]["estimated_hours_needed"] - key_claims[claim_number]["estimated_hours_needed"]) <= 5:
-                ex2_score += 2.5
-    
-    # Calculate total score
-    score = ex1_score + ex2_score
-    
-    # Calculate percentage score
-    percentage_score = (score / max_score) * 100
-    
-    # Determine if passed
-    passed = score >= 80 and ex1_score >= 35 and ex2_score >= 35
-    
-    return {
-        "total_score": score,
-        "exercise1_score": ex1_score,
-        "exercise2_score": ex2_score,
-        "max_score": max_score,
-        "max_exercise1_score": max_ex1_score,
-        "max_exercise2_score": max_ex2_score,
-        "overall_score": percentage_score,
-        "passed": passed,
-        "detailed_results": {
-            "exercise1": {
-                "settled_claims_score": ex1_score - (
-                    2 if summary["total_claims"] == key_summary["total_claims"] else 0
-                ) - (
-                    2 if summary["oldest_settlement_date"] == key_summary["oldest_settlement_date"] else 0
-                ) - (
-                    2 if summary["most_recent_settlement_date"] == key_summary["most_recent_settlement_date"] else 0
-                ) - (
-                    2 if abs(summary["total_settlement_amount"] - key_summary["total_settlement_amount"]) <= 0.01 else 0
-                ) - (
-                    2 if abs(summary["average_settlement_amount"] - key_summary["average_settlement_amount"]) <= 0.01 else 0
-                ),
-                "summary_score": (
-                    2 if summary["total_claims"] == key_summary["total_claims"] else 0
-                ) + (
-                    2 if summary["oldest_settlement_date"] == key_summary["oldest_settlement_date"] else 0
-                ) + (
-                    2 if summary["most_recent_settlement_date"] == key_summary["most_recent_settlement_date"] else 0
-                ) + (
-                    2 if abs(summary["total_settlement_amount"] - key_summary["total_settlement_amount"]) <= 0.01 else 0
-                ) + (
-                    2 if abs(summary["average_settlement_amount"] - key_summary["average_settlement_amount"]) <= 0.01 else 0
-                )
-            },
-            "exercise2": {
-                "claim_inventory_score": ex2_score - sum(
-                    2.5 + min(sum(0.83 for term in ["complexity", "reserve", "exceeds $50,000"] 
-                                 if term.lower() in submitted_claims[claim_number]["reason_for_detailed_analysis"].lower()), 2.5) + 
-                    (2.5 if abs(submitted_claims[claim_number]["estimated_hours_needed"] - key_claims[claim_number]["estimated_hours_needed"]) <= 5 else 0)
-                    for claim_number in key_claims if claim_number in submitted_claims
-                ),
-                "detailed_analysis_score": sum(
-                    2.5 + min(sum(0.83 for term in ["complexity", "reserve", "exceeds $50,000"] 
-                                 if term.lower() in submitted_claims[claim_number]["reason_for_detailed_analysis"].lower()), 2.5) + 
-                    (2.5 if abs(submitted_claims[claim_number]["estimated_hours_needed"] - key_claims[claim_number]["estimated_hours_needed"]) <= 5 else 0)
-                    for claim_number in key_claims if claim_number in submitted_claims
-                )
-            }
+
+def load_json_file(filename):
+    """Load and parse JSON from a file."""
+    try:
+        with open(filename, 'r') as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading {filename}: {e}")
+        sys.exit(1)
+
+
+def evaluate_exercise1(submission, answer_key):
+    """Evaluate Exercise 1: Claim Organization and Categorization."""
+    results = {
+        "settled_claims": {
+            "correct": False,
+            "score": 0,
+            "max_score": 6,
+            "details": "Incorrect settled claims"
+        },
+        "pending_claims": {
+            "correct": False,
+            "score": 0,
+            "max_score": 8,
+            "details": "Incorrect pending claims"
+        },
+        "denied_claims": {
+            "correct": False,
+            "score": 0,
+            "max_score": 6,
+            "details": "Incorrect denied claims"
         }
     }
+    
+    # Check settled claims
+    sub_settled = set(submission.get("settled_claims", []))
+    key_settled = set(answer_key.get("settled_claims", []))
+    
+    if sub_settled == key_settled:
+        results["settled_claims"]["correct"] = True
+        results["settled_claims"]["score"] = 6
+        results["settled_claims"]["details"] = "All settled claims correct"
+    else:
+        # Calculate percentage correct for failure condition
+        if len(key_settled) > 0:
+            correct_percentage = len(sub_settled.intersection(key_settled)) / len(key_settled) * 100
+            results["settled_claims"]["details"] = f"{correct_percentage:.1f}% of settled claims correct"
+            # Check for automatic failure condition (below 75%)
+            if correct_percentage < 75:
+                results["automatic_failure"] = True
+                results["automatic_failure_reason"] = "Failed to identify at least 75% of settled claims"
+    
+    # Check pending claims
+    sub_pending = set(submission.get("pending_claims", []))
+    key_pending = set(answer_key.get("pending_claims", []))
+    
+    if sub_pending == key_pending:
+        results["pending_claims"]["correct"] = True
+        results["pending_claims"]["score"] = 8
+        results["pending_claims"]["details"] = "All pending claims correct"
+    else:
+        # Calculate percentage correct for failure condition
+        if len(key_pending) > 0:
+            correct_percentage = len(sub_pending.intersection(key_pending)) / len(key_pending) * 100
+            results["pending_claims"]["details"] = f"{correct_percentage:.1f}% of pending claims correct"
+            # Check for automatic failure condition (below 75%)
+            if correct_percentage < 75:
+                results["automatic_failure"] = True
+                results["automatic_failure_reason"] = "Failed to identify at least 75% of pending claims"
+    
+    # Check denied claims
+    sub_denied = set(submission.get("denied_claims", []))
+    key_denied = set(answer_key.get("denied_claims", []))
+    
+    if sub_denied == key_denied:
+        results["denied_claims"]["correct"] = True
+        results["denied_claims"]["score"] = 6
+        results["denied_claims"]["details"] = "All denied claims correct"
+    else:
+        # Calculate percentage correct for failure condition
+        if len(key_denied) > 0:
+            correct_percentage = len(sub_denied.intersection(key_denied)) / len(key_denied) * 100
+            results["denied_claims"]["details"] = f"{correct_percentage:.1f}% of denied claims correct"
+            # Check for automatic failure condition (below 75%)
+            if correct_percentage < 75:
+                results["automatic_failure"] = True
+                results["automatic_failure_reason"] = "Failed to identify at least 75% of denied claims"
+    
+    return results
+
+
+def evaluate_exercise2(submission, answer_key):
+    """Evaluate Exercise 2: Claim Status Updates and Inventory Maintenance."""
+    results = {
+        "updated_claims": {
+            "correct": False,
+            "score": 0,
+            "max_score": 6,
+            "details": "Incorrect updated claims"
+        },
+        "followup_claims": {
+            "correct": False,
+            "score": 0,
+            "max_score": 5,
+            "details": "Incorrect followup claims"
+        },
+        "priority1_claims": {
+            "correct": False,
+            "score": 0,
+            "max_score": 5,
+            "details": "Incorrect priority1 claims"
+        },
+        "avg_days_to_resolve": {
+            "correct": False,
+            "score": 0,
+            "max_score": 4,
+            "details": "Incorrect average days calculation"
+        }
+    }
+    
+    # Check updated claims - must be exact match
+    sub_updated = set(submission.get("updated_claims", []))
+    key_updated = set(answer_key.get("updated_claims", []))
+    
+    if sub_updated == key_updated:
+        results["updated_claims"]["correct"] = True
+        results["updated_claims"]["score"] = 6
+        results["updated_claims"]["details"] = "All updated claims correct"
+    else:
+        results["automatic_failure"] = True
+        results["automatic_failure_reason"] = "Failed to identify all three claims that should be updated to 'Closed' status"
+    
+    # Check followup claims - need at least 80% correct
+    sub_followup = set(submission.get("followup_claims", []))
+    key_followup = set(answer_key.get("followup_claims", []))
+    
+    if key_followup:
+        correct_percentage = len(sub_followup.intersection(key_followup)) / len(key_followup) * 100
+        results["followup_claims"]["details"] = f"{correct_percentage:.1f}% of followup claims correct"
+        
+        if correct_percentage >= 80:
+            results["followup_claims"]["score"] = 5
+            if correct_percentage == 100:
+                results["followup_claims"]["correct"] = True
+                results["followup_claims"]["details"] = "All followup claims correct"
+        else:
+            results["followup_claims"]["score"] = int((correct_percentage / 80) * 5)
+    
+    # Check priority1 claims - need at least 90% correct
+    sub_priority = set(submission.get("priority1_claims", []))
+    key_priority = set(answer_key.get("priority1_claims", []))
+    
+    if key_priority:
+        correct_percentage = len(sub_priority.intersection(key_priority)) / len(key_priority) * 100
+        results["priority1_claims"]["details"] = f"{correct_percentage:.1f}% of priority1 claims correct"
+        
+        if correct_percentage >= 90:
+            results["priority1_claims"]["score"] = 5
+            if correct_percentage == 100:
+                results["priority1_claims"]["correct"] = True
+                results["priority1_claims"]["details"] = "All priority1 claims correct"
+        else:
+            results["priority1_claims"]["score"] = int((correct_percentage / 90) * 5)
+    
+    # Check average days calculation - within ±5 days
+    sub_avg_days = submission.get("avg_days_to_resolve", 0)
+    key_avg_days = answer_key.get("avg_days_to_resolve", 0)
+    
+    if isinstance(sub_avg_days, (int, float)) and isinstance(key_avg_days, (int, float)):
+        difference = abs(sub_avg_days - key_avg_days)
+        results["avg_days_to_resolve"]["details"] = f"Submitted {sub_avg_days}, expected {key_avg_days}, difference of {difference} days"
+        
+        if difference <= 5:
+            results["avg_days_to_resolve"]["score"] = 4
+            if difference == 0:
+                results["avg_days_to_resolve"]["correct"] = True
+                results["avg_days_to_resolve"]["details"] = "Correct average days calculation"
+            else:
+                results["avg_days_to_resolve"]["details"] = f"Within acceptable range (±5 days)"
+    
+    return results
+
+
+def evaluate_exercise3(submission, answer_key):
+    """Evaluate Exercise 3: Claims Requiring Detailed Analysis."""
+    results = {
+        "high_complexity_claims": {
+            "correct": False,
+            "score": 0,
+            "max_score": 4,
+            "details": "Incorrect high complexity claims"
+        },
+        "total_financial_exposure": {
+            "correct": False,
+            "score": 0,
+            "max_score": 3,
+            "details": "Incorrect financial exposure calculation"
+        },
+        "highest_severity": {
+            "correct": False,
+            "score": 0,
+            "max_score": 3,
+            "details": "Incorrect severity code"
+        }
+    }
+    
+    # Check high complexity claims - need at least 90% correct
+    sub_complexity = set(submission.get("high_complexity_claims", []))
+    key_complexity = set(answer_key.get("high_complexity_claims", []))
+    
+    if key_complexity:
+        correct_percentage = len(sub_complexity.intersection(key_complexity)) / len(key_complexity) * 100
+        results["high_complexity_claims"]["details"] = f"{correct_percentage:.1f}% of high complexity claims correct"
+        
+        if correct_percentage >= 90:
+            results["high_complexity_claims"]["score"] = 4
+            if correct_percentage == 100:
+                results["high_complexity_claims"]["correct"] = True
+                results["high_complexity_claims"]["details"] = "All high complexity claims correct"
+        else:
+            results["high_complexity_claims"]["score"] = int((correct_percentage / 90) * 4)
+    
+    # Check financial exposure - within ±$5,000
+    sub_exposure = submission.get("total_financial_exposure", 0)
+    key_exposure = answer_key.get("total_financial_exposure", 0)
+    
+    if isinstance(sub_exposure, (int, float)) and isinstance(key_exposure, (int, float)):
+        difference = abs(sub_exposure - key_exposure)
+        results["total_financial_exposure"]["details"] = f"Submitted {sub_exposure}, expected {key_exposure}, difference of ${difference:,}"
+        
+        if difference <= 5000:
+            results["total_financial_exposure"]["score"] = 3
+            if difference == 0:
+                results["total_financial_exposure"]["correct"] = True
+                results["total_financial_exposure"]["details"] = "Correct financial exposure calculation"
+            else:
+                results["total_financial_exposure"]["details"] = f"Within acceptable range (±$5,000)"
+    
+    # Check highest severity - must be exact
+    sub_severity = submission.get("highest_severity", "")
+    key_severity = answer_key.get("highest_severity", "")
+    
+    if sub_severity == key_severity:
+        results["highest_severity"]["correct"] = True
+        results["highest_severity"]["score"] = 3
+        results["highest_severity"]["details"] = "Correct severity code"
+    else:
+        results["automatic_failure"] = True
+        results["automatic_failure_reason"] = "Failed to correctly identify the highest severity code"
+    
+    return results
+
+
+def calculate_overall_score(results):
+    """Calculate the overall score as a percentage."""
+    total_score = 0
+    total_possible = 0
+    
+    # Exercise 1
+    for category in results["exercise1"]:
+        if category not in ["automatic_failure", "automatic_failure_reason"]:
+            total_score += results["exercise1"][category]["score"]
+            total_possible += results["exercise1"][category]["max_score"]
+    
+    # Exercise 2
+    for category in results["exercise2"]:
+        if category not in ["automatic_failure", "automatic_failure_reason"]:
+            total_score += results["exercise2"][category]["score"]
+            total_possible += results["exercise2"][category]["max_score"]
+    
+    # Exercise 3
+    for category in results["exercise3"]:
+        if category not in ["automatic_failure", "automatic_failure_reason"]:
+            total_score += results["exercise3"][category]["score"]
+            total_possible += results["exercise3"][category]["max_score"]
+    
+    # Calculate percentage
+    if total_possible > 0:
+        return (total_score / total_possible) * 100
+    else:
+        return 0
+
+
+def evaluate_submission(submission_file, answer_key_file):
+    """Evaluate a candidate's submission against the answer key."""
+    # Load submission and answer key
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
+    
+    # Check if the submission is valid JSON
+    if not isinstance(submission, dict):
+        return {
+            "automatic_failure": True,
+            "automatic_failure_reason": "Submission is not a valid JSON object",
+            "overall_score": 0
+        }
+    
+    # Extract exercises from submission and answer key
+    sub_ex1 = submission.get("exercise1", {})
+    sub_ex2 = submission.get("exercise2", {})
+    sub_ex3 = submission.get("exercise3", {})
+    
+    key_ex1 = answer_key.get("exercise1", {})
+    key_ex2 = answer_key.get("exercise2", {})
+    key_ex3 = answer_key.get("exercise3", {})
+    
+    # Evaluate each exercise
+    results = {
+        "exercise1": evaluate_exercise1(sub_ex1, key_ex1),
+        "exercise2": evaluate_exercise2(sub_ex2, key_ex2),
+        "exercise3": evaluate_exercise3(sub_ex3, key_ex3)
+    }
+    
+    # Check for automatic failure conditions
+    automatic_failure = False
+    failure_reasons = []
+    
+    for exercise in ["exercise1", "exercise2", "exercise3"]:
+        if "automatic_failure" in results[exercise]:
+            automatic_failure = True
+            failure_reasons.append(results[exercise]["automatic_failure_reason"])
+    
+    if automatic_failure:
+        results["automatic_failure"] = True
+        results["automatic_failure_reason"] = "; ".join(failure_reasons)
+        results["overall_score"] = 0
+        results["pass"] = False
+    else:
+        # Calculate overall score
+        overall_score = calculate_overall_score(results)
+        results["overall_score"] = round(overall_score, 2)
+        
+        # Determine if candidate passed (needs 80% or higher)
+        results["pass"] = overall_score >= 80
+    
+    return results
+
 
 def main():
-    # Check if files exist
-    if not os.path.exists('test_submission.json'):
-        print("Error: test_submission.json not found")
-        return
+    """Main function to parse arguments and evaluate submission."""
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    if not os.path.exists('answer_key.json'):
-        print("Error: answer_key.json not found")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    # Load submission and answer key
-    try:
-        with open('test_submission.json', 'r') as f:
-            submission = json.load(f)
-        
-        with open('answer_key.json', 'r') as f:
-            answer_key = json.load(f)
-    except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}")
-        return
-    except Exception as e:
-        print(f"Error loading files: {e}")
-        return
-    
-    # Validate submission
-    results = validate_submission(submission, answer_key)
+    # Evaluate submission
+    results = evaluate_submission(submission_file, answer_key_file)
     
     # Save results
-    try:
-        with open('test_results.json', 'w') as f:
-            json.dump(results, f, indent=2)
-        print("Evaluation complete. Results saved to test_results.json")
-    except Exception as e:
-        print(f"Error saving results: {e}")
+    with open("test_results.json", "w") as f:
+        json.dump(results, f, indent=2)
+    
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
+    print(f"Pass: {results['pass']}")
+
 
 if __name__ == "__main__":
     main()

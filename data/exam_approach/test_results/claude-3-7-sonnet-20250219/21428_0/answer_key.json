@@ -1,45 +1,62 @@
 {
-    "candidateID": "EVALUATOR_KEY",
-    "exercise1": {
-        "inconsistencies": [
-            "Time of incident differs: 2:30 PM (claimant) vs 3:45 PM (police) vs 4:00 PM (medical)",
-            "Weather conditions differ: clear/dry (claimant) vs light rain (police)",
-            "Accident description differs: ran red light and side impact (claimant) vs struck from behind (medical)",
-            "Witness mentioned in claimant statement but none recorded in police report"
-        ],
-        "verificationStatus": "rejected",
-        "reasonCode": "R04"
-    },
-    "exercise2": {
-        "coverageDecision": "covered",
-        "applicableClauses": [
-            "2.1",
-            "3.1",
-            "4.5"
-        ],
-        "exclusions": []
-    },
-    "exercise3": {
-        "calculatedAmount": 12950.0,
-        "deductibleApplied": 1000.0,
-        "finalSettlement": 11950.0,
-        "adjustmentFactors": [
-            "ADJ01"
-        ]
-    },
-    "exercise4": {
-        "fraudRiskScore": 9,
-        "redFlagsIdentified": [
-            "RF05",
-            "RF06",
-            "RF12",
-            "RF14",
-            "RF15",
-            "RF18",
-            "RF21",
-            "RF22",
-            "RF23"
-        ],
-        "recommendedAction": "A7"
+    "candidate_id": "EVALUATOR_KEY",
+    "claims": {
+        "claim_1": {
+            "claim_id": "CL20230405",
+            "discrepancies": [],
+            "status": "Valid",
+            "additional_information_needed": []
+        },
+        "claim_2": {
+            "claim_id": "CL20230512",
+            "discrepancies": [
+                {
+                    "error_code": "E102",
+                    "description": "Policy expired on 02/15/2023, which is before the date of loss (04/28/2023)"
+                },
+                {
+                    "error_code": "E103",
+                    "description": "Claim amount ($12,750.00) exceeds coverage limit ($10,000.00) for Outpatient Procedures"
+                }
+            ],
+            "status": "Invalid",
+            "additional_information_needed": []
+        },
+        "claim_3": {
+            "claim_id": "CL20230621",
+            "discrepancies": [
+                {
+                    "error_code": "E105",
+                    "description": "Provider Quick Dry Restoration (QDR-7732) has 'Probation' status, requires management review per procedure 3.4"
+                }
+            ],
+            "status": "Requires Additional Information",
+            "additional_information_needed": [
+                "Management review approval for provider with Probation status"
+            ]
+        },
+        "claim_4": {
+            "claim_id": "CL20230709",
+            "discrepancies": [
+                {
+                    "error_code": "E104",
+                    "description": "Policy expiration date discrepancy: listed as 06/01/2023 in claims data spreadsheet but 06/01/2024 in verification tool"
+                },
+                {
+                    "error_code": "E102",
+                    "description": "If spreadsheet date is correct (06/01/2023), policy not in force at time of loss (07/02/2023)"
+                }
+            ],
+            "status": "Requires Additional Information",
+            "additional_information_needed": [
+                "Verification of correct policy expiration date"
+            ]
+        },
+        "claim_5": {
+            "claim_id": "CL20230817",
+            "discrepancies": [],
+            "status": "Valid",
+            "additional_information_needed": []
+        }
     }
 }

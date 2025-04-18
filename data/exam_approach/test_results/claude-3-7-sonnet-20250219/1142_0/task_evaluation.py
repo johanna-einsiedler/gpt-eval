@@ -1,467 +1,510 @@
-import json
-import math
-import re
+#!/usr/bin/env python3
 
-def load_json_file(filename):
+import json
+import sys
+import os
+from typing import Dict, Any, List, Tuple
+
+def load_json_file(filename: str) -> Dict[str, Any]:
+    """Load and parse a JSON file."""
     try:
         with open(filename, 'r') as file:
             return json.load(file)
-    except Exception as e:
-        print(f"Error loading {filename}: {e}")
-        return None
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f"Error: '{filename}' contains invalid JSON.")
+        sys.exit(1)
 
-def evaluate_exercise1(submission, answer_key):
-    results = {
-        "points_earned": 0,
-        "max_points": 25,
-        "breakdown": {
-            "supplier_selection": {"earned": 0, "max": 10, "comments": ""},
-            "score_calculations": {"earned": 0, "max": 10, "comments": ""},
-            "justification": {"earned": 0, "max": 5, "comments": ""}
-        }
-    }
+def evaluate_task_1(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
+    """Evaluate Task 1: Supplier Quote Analysis"""
+    score = 0
+    max_points = 20
+    feedback = []
     
-    # Check supplier selection (10 points)
-    if submission.get("selectedSupplier") == answer_key.get("selectedSupplier"):
-        results["breakdown"]["supplier_selection"]["earned"] = 10
-        results["breakdown"]["supplier_selection"]["comments"] = "Correct supplier selected."
-    else:
-        # Check if it's PremiumWork which could be an acceptable alternative
-        if submission.get("selectedSupplier") == "PremiumWork Spaces":
-            results["breakdown"]["supplier_selection"]["earned"] = 8
-            results["breakdown"]["supplier_selection"]["comments"] = "Alternative supplier selected with highest quality but higher price."
+    # Check calculations (10 points)
+    calc_points = 0
+    expected_costs = answer_key["total_cost_calculation"]
+    submitted_costs = submission.get("total_cost_calculation", {})
+    
+    suppliers = ["BearingPro", "GlobalBearing", "PrecisionParts"]
+    for supplier in suppliers:
+        expected = expected_costs.get(supplier)
+        submitted = submitted_costs.get(supplier)
+        
+        if submitted is not None and abs(submitted - expected) <= 0.01:  # Allow small rounding differences
+            calc_points += (10 / 3)  # 10 points divided by 3 suppliers
+            feedback.append(f"Correct calculation for {supplier}: ${submitted:.2f}")
         else:
-            results["breakdown"]["supplier_selection"]["earned"] = 0
-            results["breakdown"]["supplier_selection"]["comments"] = "Incorrect supplier selected."
+            feedback.append(f"Incorrect calculation for {supplier}. Expected: ${expected:.2f}, Got: ${submitted if submitted is not None else 'missing'}")
     
-    # Check score calculations (10 points, 2.5 each)
-    score_points = 0
-    score_comments = []
+    # Round to avoid floating point precision issues
+    calc_points = round(calc_points, 2)
+    score += calc_points
     
-    # Quality score (2.5 points)
-    if abs(submission.get("qualityScore", 0) - answer_key.get("qualityScore", 0)) <= 0.1:
-        score_points += 2.5
-    else:
-        score_comments.append("Quality score calculation incorrect.")
+    # Check supplier selection (8 points)
+    selected_supplier = submission.get("selected_supplier")
+    expected_supplier = answer_key["selected_supplier"]
+    alternative = answer_key.get("acceptable_alternate", {}).get("comment", "")
     
-    # Cost score (2.5 points)
-    if abs(submission.get("costScore", 0) - answer_key.get("costScore", 0)) <= 0.1:
-        score_points += 2.5
-    else:
-        score_comments.append("Cost score calculation incorrect.")
-    
-    # Reliability score (2.5 points)
-    if abs(submission.get("reliabilityScore", 0) - answer_key.get("reliabilityScore", 0)) <= 0.1:
-        score_points += 2.5
-    else:
-        score_comments.append("Reliability score calculation incorrect.")
-    
-    # Total score (2.5 points)
-    if abs(submission.get("totalScore", 0) - answer_key.get("totalScore", 0)) <= 0.1:
-        score_points += 2.5
-    else:
-        score_comments.append("Total score calculation incorrect.")
-    
-    results["breakdown"]["score_calculations"]["earned"] = score_points
-    results["breakdown"]["score_calculations"]["comments"] = "; ".join(score_comments) if score_comments else "All score calculations correct."
-    
-    # Check justification (5 points)
-    justification = submission.get("justification", "")
-    if len(justification) >= 50:  # Ensure minimum length
-        if "quality" in justification.lower() and "price" in justification.lower() and "reliability" in justification.lower():
-            if "balance" in justification.lower() or "optimal" in justification.lower():
-                results["breakdown"]["justification"]["earned"] = 5
-                results["breakdown"]["justification"]["comments"] = "Excellent justification with all key factors."
-            else:
-                results["breakdown"]["justification"]["earned"] = 4
-                results["breakdown"]["justification"]["comments"] = "Good justification but missing some reasoning."
+    if selected_supplier == expected_supplier:
+        score += 8
+        feedback.append(f"Correct supplier selection: {selected_supplier}")
+    elif "PrecisionParts" in selected_supplier and "justification" in submission:
+        # Check if justification is strong for choosing PrecisionParts
+        justification = submission.get("selection_justification", "")
+        if len(justification) >= 100 and ("quality" in justification.lower() or "delivery" in justification.lower()):
+            score += 8
+            feedback.append(f"Alternative supplier selection ({selected_supplier}) accepted with strong justification.")
         else:
-            results["breakdown"]["justification"]["earned"] = 3
-            results["breakdown"]["justification"]["comments"] = "Justification missing key evaluation factors."
+            feedback.append(f"Incorrect supplier selection. Expected: {expected_supplier}, Got: {selected_supplier}")
     else:
-        results["breakdown"]["justification"]["earned"] = 0
-        results["breakdown"]["justification"]["comments"] = "Insufficient justification."
+        feedback.append(f"Incorrect supplier selection. Expected: {expected_supplier}, Got: {selected_supplier}")
     
-    # Calculate total points earned
-    results["points_earned"] = (
-        results["breakdown"]["supplier_selection"]["earned"] +
-        results["breakdown"]["score_calculations"]["earned"] +
-        results["breakdown"]["justification"]["earned"]
-    )
+    # Check negotiation points (2 points)
+    negotiation_points = submission.get("negotiation_points", [])
+    if len(negotiation_points) >= 2:
+        score += 2
+        feedback.append(f"Provided {len(negotiation_points)} negotiation points.")
+    else:
+        feedback.append(f"Insufficient negotiation points. Needed at least 2, got {len(negotiation_points)}.")
     
-    return results
+    return score, {"score": score, "max_points": max_points, "feedback": feedback}
 
-def evaluate_exercise2(submission, answer_key):
-    results = {
-        "points_earned": 0,
-        "max_points": 25,
-        "breakdown": {
-            "order_quantities": {"earned": 0, "max": 10, "comments": ""},
-            "cost_calculations": {"earned": 0, "max": 10, "comments": ""},
-            "calculation_breakdown": {"earned": 0, "max": 5, "comments": ""}
-        }
-    }
+def evaluate_task_2(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
+    """Evaluate Task 2: Quality Specification Review"""
+    score = 0
+    max_points = 20
+    feedback = []
     
-    # Check order quantities (10 points, 5 each)
-    order_points = 0
-    order_comments = []
+    # Check compliance issues identification (12 points)
+    expected_issues = set(issue.lower() for issue in answer_key["compliance_issues"])
+    submitted_issues = set(issue.lower() for issue in submission.get("compliance_issues", []))
     
-    # Floor cleaner quantity (5 points)
-    sub_fc_qty = submission.get("optimalOrderQuantity", {}).get("floorCleaner", 0)
-    key_fc_qty = answer_key.get("optimalOrderQuantity", {}).get("floorCleaner", 0)
+    correct_issues = submitted_issues.intersection(expected_issues)
+    issues_score = min(len(correct_issues) * 3, 12)  # 3 points per issue, max 12
+    score += issues_score
     
-    if sub_fc_qty == key_fc_qty:
-        order_points += 5
-    elif 24 <= sub_fc_qty <= 40:  # Allow for reasonable range
-        order_points += 3
-        order_comments.append("Floor cleaner quantity reasonable but not optimal.")
+    found_issues = len(correct_issues)
+    total_issues = len(expected_issues)
+    
+    if found_issues == total_issues:
+        feedback.append(f"Correctly identified all {total_issues} compliance issues.")
     else:
-        order_comments.append("Floor cleaner quantity incorrect.")
+        feedback.append(f"Identified {found_issues} of {total_issues} compliance issues.")
+        missed = expected_issues - submitted_issues
+        if missed:
+            feedback.append(f"Missed issues: {', '.join(missed)}")
     
-    # Disinfectant quantity (5 points)
-    sub_d_qty = submission.get("optimalOrderQuantity", {}).get("disinfectant", 0)
-    key_d_qty = answer_key.get("optimalOrderQuantity", {}).get("disinfectant", 0)
+    # Check recommendation (4 points)
+    expected_recommendation = answer_key["recommendation"]
+    submitted_recommendation = submission.get("recommendation", "")
     
-    if sub_d_qty == key_d_qty:
-        order_points += 5
-    elif 25 <= sub_d_qty <= 35:  # Allow for reasonable range
-        order_points += 3
-        order_comments.append("Disinfectant quantity reasonable but not optimal.")
+    if submitted_recommendation.lower() == expected_recommendation.lower():
+        score += 4
+        feedback.append(f"Correct recommendation: {submitted_recommendation}")
     else:
-        order_comments.append("Disinfectant quantity incorrect.")
+        feedback.append(f"Incorrect recommendation. Expected: {expected_recommendation}, Got: {submitted_recommendation}")
     
-    results["breakdown"]["order_quantities"]["earned"] = order_points
-    results["breakdown"]["order_quantities"]["comments"] = "; ".join(order_comments) if order_comments else "All order quantities correct."
+    # Check critical failing identification (4 points)
+    expected_critical = answer_key["critical_failing"].lower()
+    submitted_justification = submission.get("justification", "").lower()
     
-    # Check cost calculations (10 points, 5 each)
-    cost_points = 0
-    cost_comments = []
-    
-    # Floor cleaner cost and savings (5 points)
-    sub_fc_cost = submission.get("totalAnnualCost", {}).get("floorCleaner", 0)
-    key_fc_cost = answer_key.get("totalAnnualCost", {}).get("floorCleaner", 0)
-    sub_fc_savings = submission.get("costSavings", {}).get("floorCleaner", 0)
-    key_fc_savings = answer_key.get("costSavings", {}).get("floorCleaner", 0)
-    
-    if abs(sub_fc_cost - key_fc_cost) <= 50 and abs(sub_fc_savings - key_fc_savings) <= 50:
-        cost_points += 5
-    elif abs(sub_fc_cost - key_fc_cost) <= 100 or abs(sub_fc_savings - key_fc_savings) <= 100:
-        cost_points += 3
-        cost_comments.append("Floor cleaner cost calculations slightly off.")
+    if "weight capacity" in submitted_justification and "275" in submitted_justification:
+        score += 4
+        feedback.append("Correctly identified weight capacity as critical failing.")
     else:
-        cost_comments.append("Floor cleaner cost calculations incorrect.")
+        feedback.append(f"Failed to identify the critical failing: {expected_critical}")
     
-    # Disinfectant cost and savings (5 points)
-    sub_d_cost = submission.get("totalAnnualCost", {}).get("disinfectant", 0)
-    key_d_cost = answer_key.get("totalAnnualCost", {}).get("disinfectant", 0)
-    sub_d_savings = submission.get("costSavings", {}).get("disinfectant", 0)
-    key_d_savings = answer_key.get("costSavings", {}).get("disinfectant", 0)
-    
-    if abs(sub_d_cost - key_d_cost) <= 50 and abs(sub_d_savings - key_d_savings) <= 50:
-        cost_points += 5
-    elif abs(sub_d_cost - key_d_cost) <= 100 or abs(sub_d_savings - key_d_savings) <= 100:
-        cost_points += 3
-        cost_comments.append("Disinfectant cost calculations slightly off.")
-    else:
-        cost_comments.append("Disinfectant cost calculations incorrect.")
-    
-    results["breakdown"]["cost_calculations"]["earned"] = cost_points
-    results["breakdown"]["cost_calculations"]["comments"] = "; ".join(cost_comments) if cost_comments else "All cost calculations correct."
-    
-    # Check calculation breakdown (5 points)
-    breakdown = submission.get("breakdownCalculations", "")
-    if "EOQ" in breakdown and "formula" in breakdown.lower():
-        if "sqrt" in breakdown or "√" in breakdown:
-            if "discount" in breakdown.lower() and "annual" in breakdown.lower():
-                results["breakdown"]["calculation_breakdown"]["earned"] = 5
-                results["breakdown"]["calculation_breakdown"]["comments"] = "Excellent calculation breakdown with formula and reasoning."
-            else:
-                results["breakdown"]["calculation_breakdown"]["earned"] = 4
-                results["breakdown"]["calculation_breakdown"]["comments"] = "Good calculation breakdown but missing some details."
-        else:
-            results["breakdown"]["calculation_breakdown"]["earned"] = 3
-            results["breakdown"]["calculation_breakdown"]["comments"] = "Calculation breakdown missing formula details."
-    else:
-        results["breakdown"]["calculation_breakdown"]["earned"] = 0
-        results["breakdown"]["calculation_breakdown"]["comments"] = "Insufficient calculation breakdown."
-    
-    # Calculate total points earned
-    results["points_earned"] = (
-        results["breakdown"]["order_quantities"]["earned"] +
-        results["breakdown"]["cost_calculations"]["earned"] +
-        results["breakdown"]["calculation_breakdown"]["earned"]
-    )
-    
-    return results
+    return score, {"score": score, "max_points": max_points, "feedback": feedback}
 
-def evaluate_exercise3(submission, answer_key):
-    results = {
-        "points_earned": 0,
-        "max_points": 25,
-        "breakdown": {
-            "line_items": {"earned": 0, "max": 10, "comments": ""},
-            "totals": {"earned": 0, "max": 10, "comments": ""},
-            "po_format": {"earned": 0, "max": 5, "comments": ""}
-        }
-    }
+def evaluate_task_3(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
+    """Evaluate Task 3: Economic Order Quantity Calculation"""
+    score = 0
+    max_points = 20
+    feedback = []
     
-    # Check line item calculations (10 points)
-    line_points = 0
-    line_comments = []
+    # Check EOQ calculation (5 points)
+    expected_eoq = answer_key["eoq_calculation"]
+    submitted_eoq_string = submission.get("eoq_calculation", "")
     
-    # Check if all line items are present
-    sub_items = submission.get("lineItems", [])
-    key_items = answer_key.get("lineItems", [])
+    # Try to extract a numeric value from the EOQ calculation string
+    import re
+    submitted_eoq = None
+    eoq_matches = re.findall(r'=\s*(\d+\.?\d*)', submitted_eoq_string)
+    if eoq_matches:
+        submitted_eoq = float(eoq_matches[-1])  # Take the last number as the final result
+    else:
+        try:
+            # Try to convert the whole string in case it's just a number
+            submitted_eoq = float(submitted_eoq_string)
+        except ValueError:
+            pass
     
-    if len(sub_items) == len(key_items):
-        # Check each line item's calculations
-        correct_items = 0
-        for sub_item in sub_items:
-            item_number = sub_item.get("itemNumber", "")
-            # Find matching item in answer key
-            key_item = next((item for item in key_items if item.get("itemNumber") == item_number), None)
+    if submitted_eoq is not None and abs(submitted_eoq - expected_eoq) / expected_eoq <= 0.05:  # Within 5%
+        score += 5
+        feedback.append(f"Correct EOQ calculation: {submitted_eoq}")
+    else:
+        feedback.append(f"Incorrect EOQ calculation. Expected around {expected_eoq}, Got: {submitted_eoq_string}")
+    
+    # Check recommended order quantity (5 points)
+    expected_quantity = answer_key["recommended_order_quantity"]
+    submitted_quantity = submission.get("recommended_order_quantity")
+    
+    if submitted_quantity == expected_quantity:
+        score += 5
+        feedback.append(f"Correct recommended order quantity: {submitted_quantity}")
+    else:
+        feedback.append(f"Incorrect recommended order quantity. Expected: {expected_quantity}, Got: {submitted_quantity}")
+    
+    # Check orders per year and frequency (4 points)
+    expected_orders = answer_key["orders_per_year"]
+    submitted_orders = submission.get("orders_per_year")
+    
+    expected_frequency = answer_key["order_frequency_days"]
+    submitted_frequency = submission.get("order_frequency_days")
+    
+    if submitted_orders == expected_orders and submitted_frequency == expected_frequency:
+        score += 4
+        feedback.append(f"Correct orders per year ({submitted_orders}) and frequency ({submitted_frequency} days)")
+    elif submitted_orders == expected_orders:
+        score += 2
+        feedback.append(f"Correct orders per year ({submitted_orders}), but incorrect frequency")
+    elif submitted_frequency == expected_frequency:
+        score += 2
+        feedback.append(f"Correct order frequency ({submitted_frequency} days), but incorrect orders per year")
+    else:
+        feedback.append(f"Incorrect orders per year and frequency. Expected: {expected_orders} orders, {expected_frequency} days")
+    
+    # Check total annual cost (4 points)
+    expected_cost = answer_key["total_annual_cost"]
+    submitted_cost = submission.get("total_annual_cost")
+    
+    if submitted_cost is not None and abs(submitted_cost - expected_cost) <= 50:  # Allow for small differences
+        score += 4
+        feedback.append(f"Correct total annual cost: ${submitted_cost:.2f}")
+    else:
+        feedback.append(f"Incorrect total annual cost. Expected: ${expected_cost:.2f}, Got: ${submitted_cost if submitted_cost is not None else 'missing'}")
+    
+    # Check discount analysis (2 points)
+    expected_discount = answer_key["take_quantity_discount"]
+    discount_analysis = submission.get("discount_analysis", "").lower()
+    
+    if ((expected_discount and "take" in discount_analysis or "recommend" in discount_analysis) or
+        (not expected_discount and "not" in discount_analysis)):
+        score += 2
+        feedback.append("Correct discount analysis.")
+    else:
+        feedback.append("Incorrect or missing discount analysis.")
+    
+    return score, {"score": score, "max_points": max_points, "feedback": feedback}
+
+def evaluate_task_4(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
+    """Evaluate Task 4: Supplier Negotiation Scenario"""
+    score = 0
+    max_points = 20
+    feedback = []
+    
+    # Check justified increase percentage (5 points)
+    expected_increase = answer_key["justified_increase_percentage"]
+    price_analysis = submission.get("price_increase_analysis", "").lower()
+    
+    if "7" in price_analysis and "8" in price_analysis and "material" in price_analysis:
+        score += 5
+        feedback.append("Correctly identified 7-8% as the justified increase range based on market research.")
+    else:
+        feedback.append(f"Failed to identify {expected_increase}% as the justified increase percentage.")
+    
+    # Check counter-offer percentage (5 points)
+    expected_counter = answer_key["counter_offer_percentage"]
+    strategy = submission.get("negotiation_strategy", {})
+    target_outcome = strategy.get("target_outcome", "").lower()
+    
+    # Look for counter-offer in either negotiation strategy or email response
+    email_response = submission.get("email_response", "").lower()
+    counter_offer_found = False
+    
+    if "5%" in target_outcome or "5%" in email_response:
+        counter_offer_found = True
+    elif "4%" in target_outcome or "4%" in email_response or "6%" in target_outcome or "6%" in email_response:
+        # Accept 4-6% as reasonable alternatives
+        counter_offer_found = True
+    
+    if counter_offer_found:
+        score += 5
+        feedback.append("Proposed reasonable counter-offer percentage (4-6%).")
+    else:
+        feedback.append(f"Failed to propose the expected 5% counter-offer or a reasonable alternative.")
+    
+    # Check primary negotiation leverage (4 points)
+    expected_leverage = answer_key["primary_negotiation_leverage"]
+    leverage_points = strategy.get("key_leverage_points", [])
+    
+    leverage_found = False
+    for point in leverage_points:
+        if expected_leverage.lower() in point.lower() or "15%" in point or "increase" in point.lower() and "volume" in point.lower():
+            leverage_found = True
+            break
+    
+    if leverage_found:
+        score += 4
+        feedback.append(f"Correctly identified {expected_leverage} as primary negotiation leverage.")
+    else:
+        feedback.append(f"Failed to identify {expected_leverage} as primary negotiation leverage.")
+    
+    # Check negotiation approach (3 points)
+    expected_approach = answer_key["negotiation_approach"]
+    submitted_approach = strategy.get("approach", "").lower()
+    
+    if expected_approach.lower() in submitted_approach:
+        score += 3
+        feedback.append(f"Correct negotiation approach: {expected_approach}")
+    else:
+        feedback.append(f"Incorrect negotiation approach. Expected: {expected_approach}, Got: {submitted_approach}")
+    
+    # Check concession requests (3 points)
+    expected_concessions = [c.lower() for c in answer_key["prioritized_concessions_to_request"]]
+    min_acceptable = strategy.get("minimum_acceptable_terms", "").lower()
+    
+    concessions_found = 0
+    for expected in expected_concessions:
+        if any(expected in email_response or 
+               expected in min_acceptable or
+               expected in conc.lower() for conc in leverage_points):
+            concessions_found += 1
+    
+    concessions_score = min(concessions_found, 3)
+    score += concessions_score
+    
+    if concessions_found > 0:
+        feedback.append(f"Identified {concessions_found} appropriate concessions to request.")
+    else:
+        feedback.append("Failed to identify appropriate concessions to request.")
+    
+    return score, {"score": score, "max_points": max_points, "feedback": feedback}
+
+def evaluate_task_5(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Tuple[float, Dict[str, Any]]:
+    """Evaluate Task 5: Procurement Planning"""
+    score = 0
+    max_points = 20
+    feedback = []
+    
+    # Check procurement timeline (8 points)
+    expected_timeline = answer_key["procurement_timeline"]
+    submitted_timeline = submission.get("procurement_timeline", [])
+    
+    # Check if all required stages are present
+    expected_stages = [stage["stage"] for stage in expected_timeline]
+    submitted_stages = [stage["stage"] for stage in submitted_timeline]
+    
+    # Check if timeline allows first delivery by day 23
+    first_delivery_possible = False
+    total_days_before_delivery = 0
+    
+    for stage in submitted_timeline:
+        stage_name = stage["stage"].lower()
+        if "delivery" in stage_name:
+            # Check if delivery starts by day 23 or earlier
+            start_day = stage.get("start_day")
+            if start_day is not None and start_day <= 23:
+                first_delivery_possible = True
+            break
+        else:
+            # Count days in previous stages
+            duration = stage.get("duration", 0)
+            total_days_before_delivery += duration
+    
+    # Alternative check if start_day isn't provided
+    if not first_delivery_possible and total_days_before_delivery <= 23:
+        first_delivery_possible = True
+    
+    # Score the timeline
+    timeline_score = 0
+    
+    # 3 points for including all required stages
+    all_stages_present = all(stage.lower() in ' '.join(submitted_stages).lower() for stage in expected_stages)
+    if all_stages_present:
+        timeline_score += 3
+        feedback.append("Included all required procurement stages.")
+    else:
+        feedback.append("Missing one or more required procurement stages.")
+    
+    # 5 points for feasible timeline meeting the first delivery deadline
+    if first_delivery_possible:
+        timeline_score += 5
+        feedback.append("Timeline allows for first delivery by day 23 (meeting the deadline).")
+    else:
+        feedback.append("Timeline does not allow for first delivery by day 23 (missing the deadline).")
+    
+    score += timeline_score
+    
+    # Check evaluation criteria (4 points)
+    expected_criteria = set(c.lower() for c in answer_key["top_evaluation_criteria"])
+    submitted_criteria = []
+    
+    for criterion in submission.get("evaluation_criteria", []):
+        submitted_criteria.append(criterion.get("criterion", "").lower())
+    
+    correct_criteria = set(submitted_criteria).intersection(expected_criteria)
+    criteria_score = min(len(correct_criteria) * 1.5, 4)  # 1.5 points per correct criterion, max 4
+    score += criteria_score
+    
+    if len(correct_criteria) > 0:
+        feedback.append(f"Identified {len(correct_criteria)} of {len(expected_criteria)} key evaluation criteria.")
+    else:
+        feedback.append("Failed to identify any key evaluation criteria.")
+    
+    # Check delivery schedule (4 points)
+    delivery_schedule = submission.get("delivery_schedule", "").lower()
+    
+    if "30" in delivery_schedule and "15" in delivery_schedule:
+        score += 4
+        feedback.append("Delivery schedule correctly accounts for the first group arrival (15 laptops by day 30).")
+    elif "stagger" in delivery_schedule and ("first" in delivery_schedule or "initial" in delivery_schedule):
+        score += 2
+        feedback.append("Delivery schedule mentions staggered delivery but lacks specific details.")
+    else:
+        feedback.append("Delivery schedule does not address first group arrival requirements.")
+    
+    # Check risk assessment (4 points)
+    expected_risk = answer_key["primary_procurement_risk"]
+    risks = submission.get("risk_assessment", [])
+    
+    risk_score = 0
+    risk_found = False
+    
+    for risk in risks:
+        risk_name = risk.get("risk", "").lower()
+        if expected_risk in risk_name or "time" in risk_name or "delay" in risk_name or "deadline" in risk_name:
+            risk_found = True
             
-            if key_item:
-                # Check quantity, unit price, and total price
-                if (sub_item.get("quantity") == key_item.get("quantity") and
-                    abs(sub_item.get("unitPrice", 0) - key_item.get("unitPrice", 0)) <= 0.01 and
-                    abs(sub_item.get("totalPrice", 0) - key_item.get("totalPrice", 0)) <= 0.1):
-                    correct_items += 1
-        
-        # Award points based on correct items (2.5 points per item)
-        line_points = (correct_items / len(key_items)) * 10
-        
-        if correct_items < len(key_items):
-            line_comments.append(f"{len(key_items) - correct_items} line items have calculation errors.")
+            # Check if there's a mitigation strategy
+            if "mitigation" in risk and len(risk["mitigation"]) > 10:
+                risk_score = 4
+            else:
+                risk_score = 2
+            break
+    
+    if not risk_found and len(risks) > 0:
+        risk_score = 1  # At least identified some risks
+    
+    score += risk_score
+    
+    if risk_found:
+        feedback.append(f"Correctly identified {expected_risk} as primary procurement risk.")
     else:
-        line_comments.append("Missing or extra line items.")
+        feedback.append(f"Failed to identify {expected_risk} as primary procurement risk.")
     
-    results["breakdown"]["line_items"]["earned"] = line_points
-    results["breakdown"]["line_items"]["comments"] = "; ".join(line_comments) if line_comments else "All line items calculated correctly."
-    
-    # Check totals calculations (10 points)
-    total_points = 0
-    total_comments = []
-    
-    # Subtotal (3.33 points)
-    if abs(submission.get("subtotal", 0) - answer_key.get("subtotal", 0)) <= 0.1:
-        total_points += 3.33
-    else:
-        total_comments.append("Subtotal calculation incorrect.")
-    
-    # Tax (3.33 points)
-    if abs(submission.get("tax", 0) - answer_key.get("tax", 0)) <= 0.1:
-        total_points += 3.33
-    else:
-        total_comments.append("Tax calculation incorrect.")
-    
-    # Grand total (3.34 points)
-    if abs(submission.get("grandTotal", 0) - answer_key.get("grandTotal", 0)) <= 0.1:
-        total_points += 3.34
-    else:
-        total_comments.append("Grand total calculation incorrect.")
-    
-    results["breakdown"]["totals"]["earned"] = total_points
-    results["breakdown"]["totals"]["comments"] = "; ".join(total_comments) if total_comments else "All totals calculated correctly."
-    
-    # Check PO format (5 points)
-    format_points = 0
-    
-    # Check PO number
-    if submission.get("poNumber") == answer_key.get("poNumber"):
-        format_points += 1
-    
-    # Check if all required fields are present
-    required_fields = ["poNumber", "lineItems", "subtotal", "tax", "shipping", "grandTotal"]
-    missing_fields = [field for field in required_fields if field not in submission]
-    
-    if not missing_fields:
-        format_points += 2
-    
-    # Check if line items have all required fields
-    if sub_items:
-        required_item_fields = ["itemNumber", "description", "quantity", "unitPrice", "totalPrice"]
-        all_fields_present = all(all(field in item for field in required_item_fields) for item in sub_items)
-        
-        if all_fields_present:
-            format_points += 2
-    
-    results["breakdown"]["po_format"]["earned"] = format_points
-    
-    if format_points == 5:
-        results["breakdown"]["po_format"]["comments"] = "PO format is complete and correct."
-    elif format_points >= 3:
-        results["breakdown"]["po_format"]["comments"] = "PO format is mostly correct with minor issues."
-    else:
-        results["breakdown"]["po_format"]["comments"] = "PO format has significant issues."
-    
-    # Calculate total points earned
-    results["points_earned"] = (
-        results["breakdown"]["line_items"]["earned"] +
-        results["breakdown"]["totals"]["earned"] +
-        results["breakdown"]["po_format"]["earned"]
-    )
-    
-    return results
+    return score, {"score": score, "max_points": max_points, "feedback": feedback}
 
-def evaluate_exercise4(submission, answer_key):
+def evaluate_submission(submission: Dict[str, Any], answer_key: Dict[str, Any]) -> Dict[str, Any]:
+    """Evaluate the entire submission against the answer key."""
     results = {
-        "points_earned": 0,
-        "max_points": 25,
-        "breakdown": {
-            "counteroffer_price": {"earned": 0, "max": 10, "comments": ""},
-            "requested_terms": {"earned": 0, "max": 5, "comments": ""},
-            "justification": {"earned": 0, "max": 5, "comments": ""},
-            "savings_calculation": {"earned": 0, "max": 5, "comments": ""}
-        }
+        "candidate_id": submission.get("candidate_id", "Unknown"),
+        "overall_score": 0,
+        "total_points": 0,
+        "max_points": 100,
+        "tasks": {}
     }
     
-    # Check counteroffer price (10 points)
-    sub_price = submission.get("counterofferPrice", 0)
-    key_price = answer_key.get("counterofferPrice", 0)
+    # Evaluate Task 1
+    task1_score, task1_details = evaluate_task_1(submission.get("task_1", {}), answer_key.get("task_1", {}))
+    results["tasks"]["task_1"] = task1_details
+    results["total_points"] += task1_score
     
-    if abs(sub_price - key_price) <= 0.05:
-        results["breakdown"]["counteroffer_price"]["earned"] = 10
-        results["breakdown"]["counteroffer_price"]["comments"] = "Excellent counteroffer price."
-    elif 3.45 <= sub_price <= 3.65:
-        # Within reasonable market range
-        results["breakdown"]["counteroffer_price"]["earned"] = 8
-        results["breakdown"]["counteroffer_price"]["comments"] = "Reasonable counteroffer price within market range."
-    elif 3.40 <= sub_price <= 3.70:
-        # Slightly outside optimal range
-        results["breakdown"]["counteroffer_price"]["earned"] = 5
-        results["breakdown"]["counteroffer_price"]["comments"] = "Counteroffer price slightly outside optimal range."
-    else:
-        results["breakdown"]["counteroffer_price"]["earned"] = 0
-        results["breakdown"]["counteroffer_price"]["comments"] = "Counteroffer price unreasonable."
+    # Evaluate Task 2
+    task2_score, task2_details = evaluate_task_2(submission.get("task_2", {}), answer_key.get("task_2", {}))
+    results["tasks"]["task_2"] = task2_details
+    results["total_points"] += task2_score
     
-    # Check requested terms (5 points)
-    sub_terms = submission.get("requestedTerms", [])
+    # Evaluate Task 3
+    task3_score, task3_details = evaluate_task_3(submission.get("task_3", {}), answer_key.get("task_3", {}))
+    results["tasks"]["task_3"] = task3_details
+    results["total_points"] += task3_score
     
-    valid_term_keywords = [
-        "net 30", "net30", "payment terms", 
-        "delivery", "timeframe", "lead time", "week",
-        "minimum order", "order quantity", "quantity"
-    ]
+    # Evaluate Task 4
+    task4_score, task4_details = evaluate_task_4(submission.get("task_4", {}), answer_key.get("task_4", {}))
+    results["tasks"]["task_4"] = task4_details
+    results["total_points"] += task4_score
     
-    valid_terms_count = 0
-    for term in sub_terms:
-        term_lower = term.lower()
-        for keyword in valid_term_keywords:
-            if keyword in term_lower:
-                valid_terms_count += 1
-                break
+    # Evaluate Task 5
+    task5_score, task5_details = evaluate_task_5(submission.get("task_5", {}), answer_key.get("task_5", {}))
+    results["tasks"]["task_5"] = task5_details
+    results["total_points"] += task5_score
     
-    if valid_terms_count >= 3:
-        results["breakdown"]["requested_terms"]["earned"] = 5
-        results["breakdown"]["requested_terms"]["comments"] = "Excellent negotiation terms requested."
-    elif valid_terms_count == 2:
-        results["breakdown"]["requested_terms"]["earned"] = 4
-        results["breakdown"]["requested_terms"]["comments"] = "Good negotiation terms requested."
-    elif valid_terms_count == 1:
-        results["breakdown"]["requested_terms"]["earned"] = 2
-        results["breakdown"]["requested_terms"]["comments"] = "Only one valid negotiation term requested."
-    else:
-        results["breakdown"]["requested_terms"]["earned"] = 0
-        results["breakdown"]["requested_terms"]["comments"] = "No valid negotiation terms requested."
+    # Calculate overall percentage score
+    results["overall_score"] = round((results["total_points"] / results["max_points"]) * 100, 2)
     
-    # Check justification (5 points)
-    justification = submission.get("justification", "")
+    # Check for passing criteria
+    results["passed"] = results["overall_score"] >= 70
     
-    if len(justification) >= 50:  # Ensure minimum length
-        key_phrases = ["market", "price", "terms", "relationship", "history", "standard"]
-        phrase_count = sum(1 for phrase in key_phrases if phrase in justification.lower())
-        
-        if phrase_count >= 4:
-            results["breakdown"]["justification"]["earned"] = 5
-            results["breakdown"]["justification"]["comments"] = "Excellent justification with market context."
-        elif phrase_count >= 2:
-            results["breakdown"]["justification"]["earned"] = 3
-            results["breakdown"]["justification"]["comments"] = "Adequate justification but missing some market context."
-        else:
-            results["breakdown"]["justification"]["earned"] = 1
-            results["breakdown"]["justification"]["comments"] = "Weak justification with minimal market context."
-    else:
-        results["breakdown"]["justification"]["earned"] = 0
-        results["breakdown"]["justification"]["comments"] = "Insufficient justification."
+    # Check for task minimum scores (60% per task)
+    task_min_scores = all([
+        task1_score >= 12,
+        task2_score >= 12,
+        task3_score >= 12,
+        task4_score >= 12,
+        task5_score >= 12
+    ])
     
-    # Check savings calculation (5 points)
-    sub_savings = submission.get("expectedSavings", 0)
+    if not task_min_scores:
+        results["passed"] = False
+        results["fail_reason"] = "Did not achieve minimum score of 60% on one or more tasks"
     
-    # Calculate expected savings based on submitted counteroffer
-    expected_savings = (3.85 - sub_price) * 5000
+    # Check for critical failures
+    critical_failures = []
     
-    if abs(sub_savings - expected_savings) <= 10:
-        results["breakdown"]["savings_calculation"]["earned"] = 5
-        results["breakdown"]["savings_calculation"]["comments"] = "Savings calculation is correct."
-    elif abs(sub_savings - expected_savings) <= 100:
-        results["breakdown"]["savings_calculation"]["earned"] = 3
-        results["breakdown"]["savings_calculation"]["comments"] = "Savings calculation has minor errors."
-    else:
-        results["breakdown"]["savings_calculation"]["earned"] = 0
-        results["breakdown"]["savings_calculation"]["comments"] = "Savings calculation is incorrect."
+    # Task 1 critical failure: Selecting a supplier without proper cost calculation
+    if not all(key in submission.get("task_1", {}).get("total_cost_calculation", {}) for key in ["BearingPro", "GlobalBearing", "PrecisionParts"]):
+        critical_failures.append("Selecting a supplier in Task 1 without proper cost calculation")
     
-    # Calculate total points earned
-    results["points_earned"] = (
-        results["breakdown"]["counteroffer_price"]["earned"] +
-        results["breakdown"]["requested_terms"]["earned"] +
-        results["breakdown"]["justification"]["earned"] +
-        results["breakdown"]["savings_calculation"]["earned"]
-    )
+    # Task 2 critical failure: Accepting a chair that fails weight capacity
+    if (submission.get("task_2", {}).get("recommendation", "").lower() == "accept" and 
+        "weight capacity" not in " ".join(submission.get("task_2", {}).get("compliance_issues", []))):
+        critical_failures.append("Accepting a chair in Task 2 that fails the critical weight capacity requirement")
+    
+    # Task 3 critical failure: Recommending an order quantity that exceeds constraints
+    if submission.get("task_3", {}).get("recommended_order_quantity", 0) > 500:
+        critical_failures.append("Recommending an order quantity in Task 3 that exceeds warehouse constraints")
+    
+    # Task 5 critical failure: Timeline that can't meet first delivery deadline
+    for stage in submission.get("task_5", {}).get("procurement_timeline", []):
+        if "delivery" in stage.get("stage", "").lower():
+            if stage.get("start_day", 999) > 23:
+                critical_failures.append("Creating a timeline in Task 5 that cannot meet the critical first delivery deadline")
+            break
+    
+    if critical_failures:
+        results["passed"] = False
+        results["critical_failures"] = critical_failures
     
     return results
 
 def main():
-    # Load submission and answer key
-    submission = load_json_file("test_submission.json")
-    answer_key = load_json_file("answer_key.json")
+    """Main function to process command line arguments and evaluate the submission."""
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files.")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    # Evaluate each exercise
-    results = {
-        "candidateID": submission.get("candidateID", "Unknown"),
-        "exercise1": evaluate_exercise1(submission.get("exercise1", {}), answer_key.get("exercise1", {})),
-        "exercise2": evaluate_exercise2(submission.get("exercise2", {}), answer_key.get("exercise2", {})),
-        "exercise3": evaluate_exercise3(submission.get("exercise3", {}), answer_key.get("exercise3", {})),
-        "exercise4": evaluate_exercise4(submission.get("exercise4", {}), answer_key.get("exercise4", {})),
-    }
+    submission = load_json_file(submission_file)
+    answer_key_raw = load_json_file(answer_key_file)
     
-    # Calculate overall score
-    total_points = sum(results[f"exercise{i}"]["points_earned"] for i in range(1, 5))
-    max_points = sum(results[f"exercise{i}"]["max_points"] for i in range(1, 5))
-    overall_percentage = (total_points / max_points) * 100 if max_points > 0 else 0
+    # The answer key might be nested under "answer_key" key
+    answer_key = answer_key_raw.get("answer_key", answer_key_raw)
     
-    results["overall_score"] = round(overall_percentage, 2)
-    results["total_points"] = total_points
-    results["max_points"] = max_points
+    results = evaluate_submission(submission, answer_key)
     
-    # Determine if candidate passed
-    min_overall = 70
-    min_per_exercise = 15
+    # Save the results to test_results.json
+    with open("test_results.json", "w") as f:
+        json.dump(results, f, indent=2)
     
-    exercise_scores = [results[f"exercise{i}"]["points_earned"] for i in range(1, 5)]
-    passed_overall = overall_percentage >= min_overall
-    passed_exercises = all(score >= min_per_exercise for score in exercise_scores)
-    
-    results["passed"] = passed_overall and passed_exercises
-    
-    if not passed_overall:
-        results["failure_reason"] = f"Overall score {overall_percentage:.2f}% is below the required {min_overall}%"
-    elif not passed_exercises:
-        failed_exercises = [f"Exercise {i+1}" for i, score in enumerate(exercise_scores) if score < min_per_exercise]
-        results["failure_reason"] = f"Failed to meet minimum score in: {', '.join(failed_exercises)}"
-    else:
-        results["failure_reason"] = None
-    
-    # Save results to file
-    with open("test_results.json", "w") as file:
-        json.dump(results, file, indent=2)
-    
-    print(f"Evaluation complete. Overall score: {overall_percentage:.2f}%")
-    print(f"Results saved to test_results.json")
+    print(f"Evaluation completed. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}% ({results['total_points']}/{results['max_points']} points)")
+    print(f"Passed: {results['passed']}")
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,56 @@
+{
+  "exercise1": {
+    "score": 25,
+    "max_score": 25,
+    "percentage": 100.0,
+    "feedback": [
+      "Correct vendor selection.",
+      "Correct total score calculation.",
+      "Appropriate calculation method explanation provided."
+    ]
+  },
+  "exercise2": {
+    "score": 25,
+    "max_score": 25,
+    "percentage": 100.0,
+    "feedback": [
+      "Correct supplier_1_difference calculation.",
+      "Correct supplier_2_difference calculation.",
+      "Correct supplier_3_difference calculation.",
+      "Correct highest savings supplier identification.",
+      "Correct potential savings calculation.",
+      "Appropriate calculation method explanation provided."
+    ]
+  },
+  "exercise3": {
+    "score": 25,
+    "max_score": 25,
+    "percentage": 100.0,
+    "feedback": [
+      "Correct product_a_optimal_quantity.",
+      "Correct product_b_optimal_quantity.",
+      "Correct product_c_optimal_quantity.",
+      "Correct total annual cost calculation.",
+      "Appropriate calculation method explanation provided."
+    ]
+  },
+  "exercise4": {
+    "score": 25,
+    "max_score": 25,
+    "percentage": 100.0,
+    "feedback": [
+      "Optimal requisition selection.",
+      "Correct total cost calculation.",
+      "Correct total priority score.",
+      "Appropriate selection strategy explanation provided."
+    ]
+  },
+  "summary": {
+    "total_points": 100,
+    "total_possible": 100,
+    "overall_score": 100.0,
+    "critical_element_passed": true,
+    "passed": true,
+    "performance_level": "Excellent"
+  }
+}

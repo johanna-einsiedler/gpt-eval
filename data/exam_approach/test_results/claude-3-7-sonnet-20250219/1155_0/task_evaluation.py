@@ -1,350 +1,203 @@
+#!/usr/bin/env python3
 import json
-import math
-from datetime import datetime
+import sys
+from datetime import datetime, timedelta
 
-def within_percent(candidate_value, correct_value, percent):
-    """Check if candidate value is within specified percent of correct value"""
-    if correct_value == 0:
-        return candidate_value == 0
-    return abs(candidate_value - correct_value) / abs(correct_value) <= percent/100
+def load_json(file_path):
+    with open(file_path, 'r') as f:
+        return json.load(f)
 
-def evaluate_task1(submission, answer_key):
-    """Evaluate Task 1: Duty Calculation"""
-    results = {
-        "max_points": 5,
-        "points_earned": 0,
-        "feedback": {}
-    }
-    
-    # Check calculated duty
-    if submission["calculatedDuty"] == answer_key["calculatedDuty"]:
-        results["points_earned"] += 1.25
-        results["feedback"]["calculatedDuty"] = "Correct"
-    elif within_percent(submission["calculatedDuty"], answer_key["calculatedDuty"], 5):
-        results["points_earned"] += 0.625
-        results["feedback"]["calculatedDuty"] = "Within 5% of correct value"
-    elif within_percent(submission["calculatedDuty"], answer_key["calculatedDuty"], 10):
-        results["points_earned"] += 0.3125
-        results["feedback"]["calculatedDuty"] = "Within 10% of correct value"
-    else:
-        results["feedback"]["calculatedDuty"] = "Incorrect"
-    
-    # Check MPF
-    if submission["mpf"] == answer_key["mpf"]:
-        results["points_earned"] += 1.25
-        results["feedback"]["mpf"] = "Correct"
-    elif within_percent(submission["mpf"], answer_key["mpf"], 5):
-        results["points_earned"] += 0.625
-        results["feedback"]["mpf"] = "Within 5% of correct value"
-    elif within_percent(submission["mpf"], answer_key["mpf"], 10):
-        results["points_earned"] += 0.3125
-        results["feedback"]["mpf"] = "Within 10% of correct value"
-    else:
-        results["feedback"]["mpf"] = "Incorrect"
-    
-    # Check HMF
-    if submission["hmf"] == answer_key["hmf"]:
-        results["points_earned"] += 1.25
-        results["feedback"]["hmf"] = "Correct"
-    elif within_percent(submission["hmf"], answer_key["hmf"], 5):
-        results["points_earned"] += 0.625
-        results["feedback"]["hmf"] = "Within 5% of correct value"
-    elif within_percent(submission["hmf"], answer_key["hmf"], 10):
-        results["points_earned"] += 0.3125
-        results["feedback"]["hmf"] = "Within 10% of correct value"
-    else:
-        results["feedback"]["hmf"] = "Incorrect"
-    
-    # Check total duty and fees
-    if submission["totalDutyAndFees"] == answer_key["totalDutyAndFees"]:
-        results["points_earned"] += 1.25
-        results["feedback"]["totalDutyAndFees"] = "Correct"
-    elif within_percent(submission["totalDutyAndFees"], answer_key["totalDutyAndFees"], 5):
-        results["points_earned"] += 0.625
-        results["feedback"]["totalDutyAndFees"] = "Within 5% of correct value"
-    elif within_percent(submission["totalDutyAndFees"], answer_key["totalDutyAndFees"], 10):
-        results["points_earned"] += 0.3125
-        results["feedback"]["totalDutyAndFees"] = "Within 10% of correct value"
-    else:
-        results["feedback"]["totalDutyAndFees"] = "Incorrect"
-    
-    return results
+def save_json(data, file_path):
+    with open(file_path, 'w') as f:
+        json.dump(data, indent=2, sort_keys=True, fp=f)
 
-def evaluate_task2(submission, answer_key):
-    """Evaluate Task 2: Customs Documentation"""
-    results = {
-        "max_points": 4,
-        "points_earned": 0,
-        "feedback": {}
-    }
+def calculate_deadline_date(answer_key_date):
+    """Convert a date string like 'CURRENT_DATE+12' to an actual date"""
+    if not answer_key_date.startswith('CURRENT_DATE+'):
+        return answer_key_date
     
-    # Check entry number format
-    if submission["entryNumber"].startswith("280-") and len(submission["entryNumber"]) >= 11:
-        results["points_earned"] += 1
-        results["feedback"]["entryNumber"] = "Correct format"
-    else:
-        results["feedback"]["entryNumber"] = "Incorrect format. Should be 280-XXXXXXX-X"
-    
-    # Check bond type
-    valid_bond_types = ["Single Transaction", "Continuous"]
-    if submission["bondType"] in valid_bond_types:
-        results["points_earned"] += 1
-        results["feedback"]["bondType"] = "Valid bond type selected"
-    else:
-        results["feedback"]["bondType"] = "Invalid bond type. Should be 'Single Transaction' or 'Continuous'"
-    
-    # Check payment method
-    if submission["paymentMethod"] == answer_key["paymentMethod"]:
-        results["points_earned"] += 1
-        results["feedback"]["paymentMethod"] = "Correct payment method"
-    else:
-        results["feedback"]["paymentMethod"] = f"Incorrect payment method. Expected: {answer_key['paymentMethod']}"
-    
-    # Check justification
-    if len(submission["justification"]) >= 50 and len(submission["justification"]) <= 200:
-        if "ach" in submission["justification"].lower() and "china" in submission["justification"].lower():
-            results["points_earned"] += 1
-            results["feedback"]["justification"] = "Adequate justification provided"
-        else:
-            results["feedback"]["justification"] = "Justification missing key elements (ACH and China)"
-    else:
-        results["feedback"]["justification"] = "Justification length outside required range (50-200 characters)"
-    
-    return results
-
-def evaluate_task3(submission, answer_key):
-    """Evaluate Task 3: Freight Charge Discrepancy Resolution"""
-    results = {
-        "max_points": 3,
-        "points_earned": 0,
-        "feedback": {}
-    }
-    
-    # Check responsible party
-    if submission["responsibleParty"] == answer_key["responsibleParty"]:
-        results["points_earned"] += 1
-        results["feedback"]["responsibleParty"] = "Correct"
-    else:
-        results["feedback"]["responsibleParty"] = f"Incorrect. Expected: {answer_key['responsibleParty']}"
-    
-    # Check correct amount
-    if submission["correctAmount"] == answer_key["correctAmount"]:
-        results["points_earned"] += 1
-        results["feedback"]["correctAmount"] = "Correct"
-    elif within_percent(submission["correctAmount"], answer_key["correctAmount"], 5):
-        results["points_earned"] += 0.5
-        results["feedback"]["correctAmount"] = "Within 5% of correct value"
-    else:
-        results["feedback"]["correctAmount"] = f"Incorrect. Expected: {answer_key['correctAmount']}"
-    
-    # Check documentation required
-    valid_docs = [
-        "Carrier's Freight Bill", "Commercial Invoice", "Bill of Lading", 
-        "Proof of Delivery", "Freight Rate Agreement", "Carrier Rate Confirmation"
-    ]
-    
-    if len(submission["documentationRequired"]) >= 2:
-        valid_count = sum(1 for doc in submission["documentationRequired"] if any(valid_doc.lower() in doc.lower() for valid_doc in valid_docs))
-        if valid_count >= 3:
-            results["points_earned"] += 1
-            results["feedback"]["documentationRequired"] = "Sufficient valid documentation listed"
-        elif valid_count >= 2:
-            results["points_earned"] += 0.5
-            results["feedback"]["documentationRequired"] = "Some valid documentation listed, but incomplete"
-        else:
-            results["feedback"]["documentationRequired"] = "Insufficient valid documentation listed"
-    else:
-        results["feedback"]["documentationRequired"] = "Not enough documentation items listed (minimum 2)"
-    
-    return results
-
-def evaluate_task4(submission, answer_key):
-    """Evaluate Task 4: Landed Cost Calculation"""
-    results = {
-        "max_points": 5,
-        "points_earned": 0,
-        "feedback": {}
-    }
-    
-    # Check freight charges
-    if submission["freightCharges"] == answer_key["freightCharges"]:
-        results["points_earned"] += 1.25
-        results["feedback"]["freightCharges"] = "Correct"
-    elif within_percent(submission["freightCharges"], answer_key["freightCharges"], 5):
-        results["points_earned"] += 0.625
-        results["feedback"]["freightCharges"] = "Within 5% of correct value"
-    elif within_percent(submission["freightCharges"], answer_key["freightCharges"], 10):
-        results["points_earned"] += 0.3125
-        results["feedback"]["freightCharges"] = "Within 10% of correct value"
-    else:
-        results["feedback"]["freightCharges"] = f"Incorrect. Expected: {answer_key['freightCharges']}"
-    
-    # Check insurance cost
-    if submission["insuranceCost"] == answer_key["insuranceCost"]:
-        results["points_earned"] += 1.25
-        results["feedback"]["insuranceCost"] = "Correct"
-    elif within_percent(submission["insuranceCost"], answer_key["insuranceCost"], 5):
-        results["points_earned"] += 0.625
-        results["feedback"]["insuranceCost"] = "Within 5% of correct value"
-    elif within_percent(submission["insuranceCost"], answer_key["insuranceCost"], 10):
-        results["points_earned"] += 0.3125
-        results["feedback"]["insuranceCost"] = "Within 10% of correct value"
-    else:
-        results["feedback"]["insuranceCost"] = f"Incorrect. Expected: {answer_key['insuranceCost']}"
-    
-    # Check landed cost
-    if submission["landedCost"] == answer_key["landedCost"]:
-        results["points_earned"] += 1.25
-        results["feedback"]["landedCost"] = "Correct"
-    elif within_percent(submission["landedCost"], answer_key["landedCost"], 5):
-        results["points_earned"] += 0.625
-        results["feedback"]["landedCost"] = "Within 5% of correct value"
-    elif within_percent(submission["landedCost"], answer_key["landedCost"], 10):
-        results["points_earned"] += 0.3125
-        results["feedback"]["landedCost"] = "Within 10% of correct value"
-    else:
-        results["feedback"]["landedCost"] = f"Incorrect. Expected: {answer_key['landedCost']}"
-    
-    # Check payment due date
-    try:
-        submission_date = datetime.strptime(submission["paymentDueDate"], "%Y-%m-%d")
-        answer_date = datetime.strptime(answer_key["paymentDueDate"], "%Y-%m-%d")
-        
-        if submission_date == answer_date:
-            results["points_earned"] += 1.25
-            results["feedback"]["paymentDueDate"] = "Correct"
-        elif abs((submission_date - answer_date).days) <= 2:
-            results["points_earned"] += 0.625
-            results["feedback"]["paymentDueDate"] = "Within 2 days of correct date"
-        else:
-            results["feedback"]["paymentDueDate"] = f"Incorrect. Expected: {answer_key['paymentDueDate']}"
-    except ValueError:
-        results["feedback"]["paymentDueDate"] = "Invalid date format. Use YYYY-MM-DD"
-    
-    return results
-
-def evaluate_task5(submission, answer_key):
-    """Evaluate Task 5: Payment Issue Resolution"""
-    results = {
-        "max_points": 3,
-        "points_earned": 0,
-        "feedback": {}
-    }
-    
-    # Valid options with their reason codes
-    valid_options = {
-        "Resubmit with Corrected HTS Code": "RC-001",
-        "Provide Additional Documentation": "RC-004",
-        "Request Administrative Review": "RC-005"
-    }
-    
-    # Check selected option
-    if submission["selectedOption"] in valid_options:
-        results["points_earned"] += 1
-        results["feedback"]["selectedOption"] = "Valid option selected"
-    else:
-        results["feedback"]["selectedOption"] = "Invalid option selected"
-    
-    # Check reason code
-    if submission["selectedOption"] in valid_options:
-        expected_code = valid_options[submission["selectedOption"]]
-        if submission["reasonCode"] == expected_code:
-            results["points_earned"] += 1
-            results["feedback"]["reasonCode"] = "Correct reason code for selected option"
-        else:
-            results["feedback"]["reasonCode"] = f"Incorrect reason code. Expected: {expected_code} for {submission['selectedOption']}"
-    else:
-        if submission["reasonCode"] in [code for code in valid_options.values()]:
-            results["points_earned"] += 0.5
-            results["feedback"]["reasonCode"] = "Valid reason code, but doesn't match selected option"
-        else:
-            results["feedback"]["reasonCode"] = "Invalid reason code"
-    
-    # Check estimated resolution time
-    # Get expected time range based on reason code
-    time_ranges = {
-        "RC-001": (1, 2),
-        "RC-004": (3, 5),
-        "RC-005": (7, 10)
-    }
-    
-    if submission["reasonCode"] in time_ranges:
-        min_time, max_time = time_ranges[submission["reasonCode"]]
-        if min_time <= submission["estimatedResolutionTime"] <= max_time:
-            results["points_earned"] += 1
-            results["feedback"]["estimatedResolutionTime"] = "Correct resolution time for selected reason code"
-        else:
-            results["feedback"]["estimatedResolutionTime"] = f"Incorrect resolution time. Expected: {min_time}-{max_time} days for {submission['reasonCode']}"
-    else:
-        results["feedback"]["estimatedResolutionTime"] = "Cannot evaluate resolution time for invalid reason code"
-    
-    return results
+    days_to_add = int(answer_key_date.split('+')[1])
+    current_date = datetime.now().date()
+    deadline_date = current_date + timedelta(days=days_to_add)
+    return deadline_date.strftime('%Y-%m-%d')
 
 def evaluate_submission(submission, answer_key):
-    """Evaluate the entire submission"""
     results = {
-        "candidate_id": submission.get("candidate_id", "Unknown"),
-        "evaluation_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "task_results": {}
+        "candidate_id": submission.get("candidate_id", "UNKNOWN"),
+        "scores": {
+            "scenario1": {},
+            "scenario2": {},
+            "scenario3": {},
+        },
+        "point_totals": {
+            "duty_amounts": 0,
+            "freight_amounts": 0,
+            "payment_responsibility": 0,
+            "payment_method": 0,
+            "payment_deadline": 0,
+            "customs_reference": 0,
+            "total_points": 0
+        },
+        "comments": []
     }
     
-    # Evaluate each task
-    results["task_results"]["task1"] = evaluate_task1(submission["task1"], answer_key["task1"])
-    results["task_results"]["task2"] = evaluate_task2(submission["task2"], answer_key["task2"])
-    results["task_results"]["task3"] = evaluate_task3(submission["task3"], answer_key["task3"])
-    results["task_results"]["task4"] = evaluate_task4(submission["task4"], answer_key["task4"])
-    results["task_results"]["task5"] = evaluate_task5(submission["task5"], answer_key["task5"])
+    total_possible_points = 20
     
-    # Calculate total score
-    total_points = sum(task["points_earned"] for task in results["task_results"].values())
-    max_points = sum(task["max_points"] for task in results["task_results"].values())
-    results["total_points"] = total_points
-    results["max_points"] = max_points
-    results["overall_score"] = round((total_points / max_points) * 100, 2)
+    # Convert answer key dates to actual dates
+    for scenario in ["scenario1", "scenario2", "scenario3"]:
+        if scenario in answer_key:
+            date_str = answer_key[scenario].get("paymentDeadline", "")
+            if date_str.startswith("CURRENT_DATE+"):
+                answer_key[scenario]["paymentDeadline"] = calculate_deadline_date(date_str)
     
-    # Check if any task has zero points
-    has_zero_task = any(task["points_earned"] == 0 for task in results["task_results"].values())
+    # Evaluate each scenario
+    for scenario in ["scenario1", "scenario2", "scenario3"]:
+        if scenario not in submission or scenario not in answer_key:
+            results["comments"].append(f"Missing {scenario} in submission or answer key")
+            continue
+        
+        sub_scenario = submission[scenario]
+        key_scenario = answer_key[scenario]
+        scenario_scores = {}
+        
+        # Duty Amount (2 points each)
+        sub_duty = float(sub_scenario.get("dutyAmount", 0))
+        key_duty = float(key_scenario.get("dutyAmount", 0))
+        if abs(sub_duty - key_duty) < 0.01:  # Allow for small float differences
+            scenario_scores["dutyAmount"] = 2
+            results["point_totals"]["duty_amounts"] += 2
+        else:
+            scenario_scores["dutyAmount"] = 0
+            results["comments"].append(f"{scenario}: Incorrect duty amount. Got {sub_duty}, expected {key_duty}")
+        
+        # Freight Amount (2 points each)
+        sub_freight = float(sub_scenario.get("freightAmount", 0))
+        key_freight = float(key_scenario.get("freightAmount", 0))
+        if abs(sub_freight - key_freight) < 0.01:  # Allow for small float differences
+            scenario_scores["freightAmount"] = 2
+            results["point_totals"]["freight_amounts"] += 2
+        else:
+            scenario_scores["freightAmount"] = 0
+            results["comments"].append(f"{scenario}: Incorrect freight amount. Got {sub_freight}, expected {key_freight}")
+        
+        # Payment Responsibility (1 point each)
+        sub_resp = sub_scenario.get("paymentResponsibility", "").lower()
+        key_resp = key_scenario.get("paymentResponsibility", "").lower()
+        if sub_resp == key_resp:
+            scenario_scores["paymentResponsibility"] = 1
+            results["point_totals"]["payment_responsibility"] += 1
+        else:
+            scenario_scores["paymentResponsibility"] = 0
+            results["comments"].append(f"{scenario}: Incorrect payment responsibility. Got {sub_resp}, expected {key_resp}")
+        
+        # Payment Method (1 point each)
+        sub_method = sub_scenario.get("paymentMethod", "").lower()
+        key_method = key_scenario.get("paymentMethod", "").lower()
+        
+        # Special case for scenario 1 and 2 where multiple methods could be acceptable
+        if scenario == "scenario1" and sub_method in ["wire", "ach"]:
+            scenario_scores["paymentMethod"] = 1
+            results["point_totals"]["payment_method"] += 1
+        elif scenario == "scenario2" and sub_method in ["wire", "credit"]:
+            scenario_scores["paymentMethod"] = 1
+            results["point_totals"]["payment_method"] += 1
+        elif sub_method == key_method:
+            scenario_scores["paymentMethod"] = 1
+            results["point_totals"]["payment_method"] += 1
+        else:
+            scenario_scores["paymentMethod"] = 0
+            results["comments"].append(f"{scenario}: Incorrect payment method. Got {sub_method}, expected {key_method}")
+        
+        # Payment Deadline (0.5 points each)
+        sub_date = sub_scenario.get("paymentDeadline", "")
+        key_date = key_scenario.get("paymentDeadline", "")
+        
+        try:
+            sub_date_obj = datetime.strptime(sub_date, "%Y-%m-%d").date()
+            key_date_obj = datetime.strptime(key_date, "%Y-%m-%d").date()
+            
+            # Allow for +/- 1 day variation
+            if abs((sub_date_obj - key_date_obj).days) <= 1:
+                scenario_scores["paymentDeadline"] = 0.5
+                results["point_totals"]["payment_deadline"] += 0.5
+            else:
+                scenario_scores["paymentDeadline"] = 0
+                results["comments"].append(f"{scenario}: Incorrect payment deadline. Got {sub_date}, expected {key_date}")
+        except ValueError:
+            scenario_scores["paymentDeadline"] = 0
+            results["comments"].append(f"{scenario}: Invalid date format. Got {sub_date}, expected format YYYY-MM-DD")
+        
+        # Customs Reference (0.5 points each)
+        sub_ref = sub_scenario.get("customsReferenceNumber", "")
+        key_ref = key_scenario.get("customsReferenceNumber", "")
+        if sub_ref == key_ref:
+            scenario_scores["customsReferenceNumber"] = 0.5
+            results["point_totals"]["customs_reference"] += 0.5
+        else:
+            scenario_scores["customsReferenceNumber"] = 0
+            results["comments"].append(f"{scenario}: Incorrect customs reference. Got {sub_ref}, expected {key_ref}")
+        
+        results["scores"][scenario] = scenario_scores
     
-    # Determine if passed (80% overall and no complete failures)
-    results["passed"] = results["overall_score"] >= 80 and not has_zero_task
+    # Calculate total points
+    total_points = (
+        results["point_totals"]["duty_amounts"] +
+        results["point_totals"]["freight_amounts"] +
+        results["point_totals"]["payment_responsibility"] +
+        results["point_totals"]["payment_method"] +
+        results["point_totals"]["payment_deadline"] +
+        results["point_totals"]["customs_reference"]
+    )
     
-    # Add overall feedback
+    results["point_totals"]["total_points"] = total_points
+    results["overall_score"] = (total_points / total_possible_points) * 100
+    
+    # Determine if candidate passed
+    passed = results["overall_score"] >= 80
+    
+    # Check for critical errors
+    has_critical_errors = False
+    if results["point_totals"]["duty_amounts"] < 4:  # Less than 2 correct duty calculations
+        has_critical_errors = True
+        results["comments"].append("CRITICAL ERROR: Multiple incorrect duty calculations")
+    
+    if results["point_totals"]["customs_reference"] < 1.5:  # Not all customs references correct
+        has_critical_errors = True
+        results["comments"].append("CRITICAL ERROR: Incorrect customs reference numbers")
+    
+    results["passed"] = passed and not has_critical_errors
+    
     if results["passed"]:
-        results["overall_feedback"] = "Congratulations! You have passed the basic practical exam."
+        results["comments"].append(f"PASSED with a score of {results['overall_score']:.1f}%")
     else:
-        if results["overall_score"] < 80:
-            results["overall_feedback"] = "You did not achieve the minimum required score of 80%."
-        if has_zero_task:
-            results["overall_feedback"] = "You must score points in every task to pass the exam."
+        results["comments"].append(f"FAILED with a score of {results['overall_score']:.1f}%")
+        if has_critical_errors:
+            results["comments"].append("Candidate had critical errors that prevent passing regardless of overall score")
     
     return results
 
 def main():
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
+    
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
+    
     try:
-        # Load submission and answer key
-        with open('test_submission.json', 'r') as f:
-            submission = json.load(f)
+        submission = load_json(submission_file)
+        answer_key = load_json(answer_key_file)
         
-        with open('answer_key.json', 'r') as f:
-            answer_key = json.load(f)
-        
-        # Evaluate submission
         results = evaluate_submission(submission, answer_key)
+        save_json(results, "test_results.json")
         
-        # Save results
-        with open('test_results.json', 'w') as f:
-            json.dump(results, f, indent=2)
+        print(f"Evaluation complete. Results saved to test_results.json")
+        print(f"Overall Score: {results['overall_score']:.1f}%")
+        print(f"Result: {'PASSED' if results['passed'] else 'FAILED'}")
         
-        print(f"Evaluation complete. Overall score: {results['overall_score']}%")
-        print(f"Results saved to test_results.json")
-        
-    except FileNotFoundError as e:
-        print(f"Error: {e}")
-        print("Please ensure both test_submission.json and answer_key.json are in the current directory.")
-    except json.JSONDecodeError:
-        print("Error: Invalid JSON format in one of the input files.")
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        print(f"Error: {str(e)}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

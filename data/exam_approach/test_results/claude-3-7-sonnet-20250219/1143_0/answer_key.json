@@ -1,116 +1,132 @@
 {
-    "exercise1": {
-        "poNumber": "PO-2023-0472",
-        "vendorID": "VS-1042",
-        "requisitionNumber": "PR-2023-0472",
-        "orderDate": "2023-10-25",
-        "deliveryDate": "2023-11-05",
-        "subtotal": 1529.87,
-        "taxAmount": 114.74,
-        "shippingCost": 45.0,
-        "totalAmount": 1689.61,
-        "paymentTerms": "Net 30",
-        "lineItems": [
+    "candidate_id": "EVALUATOR_ANSWER_KEY",
+    "section1": {
+        "purchase_order": {
+            "po_number": "PO-2023-153",
+            "vendor_id": "VEN-003",
+            "vendor_name": "Dell Enterprise",
+            "date": "10/15/2023",
+            "required_by": "10/30/2023",
+            "department": "IT Department",
+            "shipping_method": "Standard",
+            "terms": "Net 30",
+            "account_code": "5240-IT-EQUIP"
+        },
+        "item_list": [
             {
-                "itemNumber": "CAM-4582",
-                "description": "Digital Camera - 24MP",
-                "quantity": 2,
-                "unitPrice": 649.99,
-                "totalPrice": 1299.98
-            },
-            {
-                "itemNumber": "TRP-2234",
-                "description": "Professional Tripod - Adjustable",
-                "quantity": 2,
-                "unitPrice": 89.95,
-                "totalPrice": 179.9
-            },
-            {
-                "itemNumber": "MEM-8877",
-                "description": "SD Memory Card 128GB",
+                "item_code": "LT-450X",
+                "description": "Dell Latitude 5420 Laptop",
                 "quantity": 5,
-                "unitPrice": 24.99,
-                "totalPrice": 124.95
-            }
-        ]
-    },
-    "exercise2": {
-        "rfqNumber": "RFQ-2023-0095",
-        "issueDate": "2023-10-25",
-        "submissionDeadline": "2023-11-08",
-        "contactPerson": "Purchasing Agent",
-        "items": [
-            {
-                "itemName": "Ergonomic Office Chair",
-                "quantity": 15,
-                "specifications": "Adjustable height (range: 16\" to 21\"), Lumbar support, Adjustable armrests, 360-degree swivel, Five-wheel base, Mesh back for breathability, Weight capacity: minimum 275 lbs, Color: Black or Navy Blue, Warranty: Minimum 3 years"
+                "unit_price": 1249.99,
+                "total": 6249.95
             },
             {
-                "itemName": "Adjustable Standing Desk",
-                "quantity": 10,
-                "specifications": "Electric height adjustment (range: 28\" to 48\"), Desktop dimensions: 60\" W x 30\" D, Weight capacity: minimum 200 lbs, Programmable height presets, Anti-collision feature, Cable management system, Material: Commercial-grade laminate, Color: White or Light Oak, Warranty: Minimum 5 years on frame, 2 years on electronics"
-            },
-            {
-                "itemName": "Filing Cabinet",
+                "item_code": "MS-220W",
+                "description": "Wireless Mouse Combo",
                 "quantity": 5,
-                "specifications": "4-drawer vertical cabinet, Letter size, Full-extension drawers with ball-bearing slides, Central locking system, Anti-tipping mechanism, Dimensions: approximately 15\" W x 25\" D x 52\" H, Material: Steel construction, Color: Black or Gray, Warranty: Minimum 5 years"
+                "unit_price": 34.99,
+                "total": 174.95
+            },
+            {
+                "item_code": "DP-150D",
+                "description": "Dell Docking Station",
+                "quantity": 3,
+                "unit_price": 189.99,
+                "total": 569.97
+            },
+            {
+                "item_code": "KB-101E",
+                "description": "Ergonomic Keyboard",
+                "quantity": 5,
+                "unit_price": 79.99,
+                "total": 399.95
+            },
+            {
+                "item_code": "HD-1TB2",
+                "description": "External Hard Drive 1TB",
+                "quantity": 2,
+                "unit_price": 129.99,
+                "total": 259.98
             }
         ],
-        "evaluationCriteria": [
+        "order_totals": {
+            "subtotal": 7654.8,
+            "tax": 0.0,
+            "shipping": 45.0,
+            "total": 7699.8
+        },
+        "tax_exempt_applied": true,
+        "justification": "Dell Enterprise is marked as tax exempt in the approved vendors list"
+    },
+    "section2": {
+        "selected_vendor": "TechnoSource Inc.",
+        "cost_comparison": [
             {
-                "criterionName": "price",
-                "weight": 40
+                "vendor": "OfficeMax Business",
+                "total_cost": 6094.38,
+                "delivery_time": "7-10 business days",
+                "meets_specifications": false,
+                "warranty": "3 years",
+                "notes": "28 ppm speed does not meet minimum 35 ppm requirement"
             },
             {
-                "criterionName": "quality",
-                "weight": 30
+                "vendor": "Corporate Supply Pro",
+                "total_cost": 6079.38,
+                "delivery_time": "14-21 business days",
+                "meets_specifications": true,
+                "warranty": "3 years",
+                "notes": "Lowest cost but longest delivery time"
             },
             {
-                "criterionName": "delivery time",
-                "weight": 20
-            },
-            {
-                "criterionName": "warranty",
-                "weight": 10
+                "vendor": "TechnoSource Inc.",
+                "total_cost": 6899.38,
+                "delivery_time": "3-5 business days",
+                "meets_specifications": true,
+                "warranty": "5 years",
+                "notes": "Highest cost but fastest delivery and longest warranty"
             }
         ],
-        "termsIncluded": true
+        "selection_justification": "According to the company purchasing policy, technical compliance is the first priority. OfficeMax Business is eliminated as non-compliant (28 ppm vs. required 35 ppm). Between the remaining two compliant vendors, TechnoSource Inc. offers better technical specifications (40 ppm), faster delivery (3-5 days vs 14-21 days), and better warranty (5 years vs 3 years), making it the best choice despite the higher price.",
+        "rfq_answers": {
+            "question1": "c",
+            "question2": "d",
+            "question3": "b",
+            "question4": "c",
+            "question5": "b"
+        }
     },
-    "exercise3": {
-        "requisitions": [
-            {
-                "requisitionNumber": "PR-2023-0473",
-                "isComplete": true,
-                "itemsInCatalog": true,
-                "policyCompliant": true,
-                "calculatedTotal": 5399.91,
-                "decision": "approve",
-                "justification": "Complete requisition with all required approvals. Items are from approved vendor and within catalog.",
-                "missingInformation": "",
-                "suggestedVendor": "Computer World (VS-1156)"
-            },
-            {
-                "requisitionNumber": "PR-2023-0474",
-                "isComplete": false,
-                "itemsInCatalog": false,
-                "policyCompliant": false,
-                "calculatedTotal": 4899.95,
-                "decision": "return",
-                "justification": "Missing department manager approval, items not in catalog, vendor not on approved list.",
-                "missingInformation": "Department manager approval, item numbers, approved vendor",
-                "suggestedVendor": "Furniture Plus (VS-1103)"
-            },
-            {
-                "requisitionNumber": "PR-2023-0475",
-                "isComplete": true,
-                "itemsInCatalog": true,
-                "policyCompliant": true,
-                "calculatedTotal": 1064.65,
-                "decision": "approve",
-                "justification": "Complete requisition with all required approvals. Items are from approved vendor and within catalog.",
-                "missingInformation": "",
-                "suggestedVendor": "Office Essentials (VS-1087)"
-            }
-        ]
+    "section3": {
+        "requisition1": {
+            "requisition_number": "REQ-2023-112",
+            "status": "Returned for Completion",
+            "errors": [
+                "Missing approval signature",
+                "Missing total estimated amount",
+                "No account code assigned"
+            ],
+            "account_code": "5410-MKT-MKTG",
+            "approval_workflow": [
+                "Department Manager",
+                "Purchasing Manager"
+            ],
+            "estimated_total": 4975.0
+        },
+        "requisition2": {
+            "requisition_number": "REQ-2023-118",
+            "status": "Approved",
+            "errors": [],
+            "account_code": "5510-OPS-SFTY",
+            "approval_workflow": [
+                "Department Manager",
+                "Purchasing Manager"
+            ],
+            "rush_process_steps": [
+                "Must include justification for rush status",
+                "Requires additional approval from next level manager",
+                "Must be flagged in the system with RUSH designation",
+                "Purchasing department must process within 24 hours",
+                "May incur additional expedited shipping charges"
+            ]
+        }
     }
 }

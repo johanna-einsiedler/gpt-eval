@@ -1,0 +1,173 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "scenario_results": [
+    {
+      "claim_number": "AC-2023-45678",
+      "evaluation": {
+        "reserve_amount": {
+          "candidate_value": 102350.0,
+          "expected_value": 102350.0,
+          "score": 10,
+          "max_score": 10,
+          "feedback": "Excellent - within 5% of expected reserve"
+        },
+        "reserve_change_code": {
+          "candidate_value": "B1",
+          "expected_value": "B1",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve change code"
+        },
+        "reserve_category_code": {
+          "candidate_value": "BI",
+          "expected_value": "BI",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve category code"
+        },
+        "justification": {
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Complete justification with all required elements"
+        }
+      },
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Excellent - within 5% of expected reserve",
+        "Correct reserve change code",
+        "Correct reserve category code",
+        "Complete justification with all required elements"
+      ]
+    },
+    {
+      "claim_number": "PR-2023-98765",
+      "evaluation": {
+        "reserve_amount": {
+          "candidate_value": 219250.0,
+          "expected_value": 219250.0,
+          "score": 10,
+          "max_score": 10,
+          "feedback": "Excellent - within 5% of expected reserve"
+        },
+        "reserve_change_code": {
+          "candidate_value": "B2",
+          "expected_value": "B2",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve change code"
+        },
+        "reserve_category_code": {
+          "candidate_value": "PROP",
+          "expected_value": "PROP",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve category code"
+        },
+        "justification": {
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Complete justification with all required elements"
+        }
+      },
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Excellent - within 5% of expected reserve",
+        "Correct reserve change code",
+        "Correct reserve category code",
+        "Complete justification with all required elements"
+      ]
+    },
+    {
+      "claim_number": "WC-2023-34567",
+      "evaluation": {
+        "reserve_amount": {
+          "candidate_value": 126000.56,
+          "expected_value": 126000.56,
+          "score": 10,
+          "max_score": 10,
+          "feedback": "Excellent - within 5% of expected reserve"
+        },
+        "reserve_change_code": {
+          "candidate_value": "B1",
+          "expected_value": "B1",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve change code"
+        },
+        "reserve_category_code": {
+          "candidate_value": "WAGE",
+          "expected_value": "WAGE",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve category code"
+        },
+        "justification": {
+          "score": 0,
+          "max_score": 5,
+          "feedback": "No justification provided"
+        }
+      },
+      "score": 20,
+      "max_score": 25,
+      "feedback": [
+        "Excellent - within 5% of expected reserve",
+        "Correct reserve change code",
+        "Correct reserve category code",
+        "No justification provided"
+      ]
+    },
+    {
+      "claim_number": "GL-2023-87654",
+      "evaluation": {
+        "reserve_amount": {
+          "candidate_value": 130000.0,
+          "expected_value": 130000.0,
+          "score": 10,
+          "max_score": 10,
+          "feedback": "Excellent - within 5% of expected reserve"
+        },
+        "reserve_change_code": {
+          "candidate_value": "C1",
+          "expected_value": "C1",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve change code"
+        },
+        "reserve_category_code": {
+          "candidate_value": "LIA",
+          "expected_value": "LIA",
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Correct reserve category code"
+        },
+        "justification": {
+          "score": 5,
+          "max_score": 5,
+          "feedback": "Complete justification with all required elements"
+        }
+      },
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Excellent - within 5% of expected reserve",
+        "Correct reserve change code",
+        "Correct reserve category code",
+        "Complete justification with all required elements"
+      ]
+    }
+  ],
+  "total_score": 95,
+  "max_score": 100,
+  "overall_score": 95.0,
+  "passing_threshold": 75,
+  "passed": true,
+  "overall_feedback": [
+    "Correctly calculated reserves for 4 of 4 scenarios",
+    "Correctly identified reserve codes for 4 of 4 scenarios",
+    "Correctly identified category codes for 4 of 4 scenarios",
+    "Provided adequate justifications for 3 of 4 scenarios",
+    "Superior performance demonstrated"
+  ]
+}

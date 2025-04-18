@@ -1,0 +1,209 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "task1": {
+    "score": 30,
+    "max_score": 30,
+    "details": [
+      {
+        "transaction_id": 1,
+        "submitted_amount": 23750.0,
+        "correct_amount": 23750.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 2,
+        "submitted_amount": 8000.0,
+        "correct_amount": 8000.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 3,
+        "submitted_amount": 9225.0,
+        "correct_amount": 9225.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 4,
+        "submitted_amount": 4950.0,
+        "correct_amount": 4950.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 5,
+        "submitted_amount": 6750.0,
+        "correct_amount": 6750.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 6,
+        "submitted_amount": 3125.0,
+        "correct_amount": 3125.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 7,
+        "submitted_amount": 6300.0,
+        "correct_amount": 6300.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 8,
+        "submitted_amount": 23200.0,
+        "correct_amount": 23200.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 9,
+        "submitted_amount": 7425.0,
+        "correct_amount": 7425.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 10,
+        "submitted_amount": 3240.0,
+        "correct_amount": 3240.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 11,
+        "submitted_amount": 4000.0,
+        "correct_amount": 4000.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 12,
+        "submitted_amount": 14000.0,
+        "correct_amount": 14000.0,
+        "is_correct": true
+      },
+      {
+        "transaction_id": 13,
+        "submitted_amount": 800.0,
+        "correct_amount": 800.0,
+        "is_correct": true
+      }
+    ],
+    "feedback": "Excellent job calculating commissions accurately."
+  },
+  "task2": {
+    "score": 25,
+    "max_score": 25,
+    "details": [
+      {
+        "payment_id": 1,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 2,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 3,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 4,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 5,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 6,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 7,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 8,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      },
+      {
+        "payment_id": 9,
+        "rate_correct": true,
+        "commission_correct": true,
+        "difference_correct": true,
+        "is_correct": true
+      }
+    ],
+    "feedback": "Excellent job identifying and calculating payment discrepancies."
+  },
+  "task3": {
+    "score": 36,
+    "max_score": 25,
+    "details": [],
+    "client_scores": {
+      "client1_royalty": {
+        "tiers_correct": 4,
+        "total_correct": true,
+        "special_provision_applied": true,
+        "score": 1.5
+      },
+      "client2_royalty": {
+        "tiers_correct": 4,
+        "total_correct": true,
+        "special_provision_applied": true,
+        "score": 1.5
+      },
+      "client3_royalty": {
+        "tiers_correct": 8,
+        "total_correct": true,
+        "special_provision_applied": true,
+        "score": 1.3
+      }
+    },
+    "feedback": "Excellent work on royalty calculations for all clients."
+  },
+  "task4": {
+    "score": 20,
+    "max_score": 20,
+    "details": {
+      "correct_payments": 5,
+      "missed_payments": [],
+      "incorrect_dates": [
+        {
+          "payment": "LuxuryLifestyle-Appearance Completion",
+          "submitted_date": "2023-10-25",
+          "correct_date": "2023-12-20"
+        },
+        {
+          "payment": "LuxuryLifestyle-Appearance Completion",
+          "submitted_date": "2023-11-30",
+          "correct_date": "2023-12-20"
+        }
+      ],
+      "incorrect_amounts": [],
+      "total_accuracy": 1.0
+    },
+    "feedback": "Good job identifying most payments, but some dates or amounts need correction."
+  },
+  "overall_score": 111,
+  "overall_assessment": "Excellent"
+}

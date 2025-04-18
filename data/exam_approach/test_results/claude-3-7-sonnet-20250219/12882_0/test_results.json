@@ -1,0 +1,53 @@
+{
+  "top_products": {
+    "score": 20.0,
+    "max_score": 20,
+    "details": {
+      "correct_products": 5,
+      "total_products": 5,
+      "percentage": 100.0
+    }
+  },
+  "inventory_below_threshold": {
+    "score": 20,
+    "max_score": 20,
+    "details": {
+      "correctly_identified": 4,
+      "total_items_below_threshold": 4,
+      "false_positives": 0
+    }
+  },
+  "unfulfillable_orders": {
+    "score": 20.0,
+    "max_score": 20,
+    "details": {
+      "correctly_identified": 6,
+      "total_unfulfillable_orders": 6,
+      "percentage": 100.0
+    }
+  },
+  "purchase_recommendations": {
+    "score": 30.0,
+    "max_score": 30,
+    "details": {
+      "products_with_correct_quantity": 16,
+      "products_with_correct_supplier": 16,
+      "total_purchase_cost_correct": true,
+      "total_products_requiring_purchase": 16
+    }
+  },
+  "format_completeness": {
+    "score": 10,
+    "max_score": 10,
+    "details": {
+      "valid_json": true,
+      "all_required_fields_present": true,
+      "proper_units_specified": true,
+      "supplier_explanations_provided": true,
+      "deductions": []
+    }
+  },
+  "overall_score": 100.0,
+  "passing_threshold": 70.0,
+  "passed": true
+}

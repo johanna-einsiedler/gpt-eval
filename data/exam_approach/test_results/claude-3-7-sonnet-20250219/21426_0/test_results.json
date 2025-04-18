@@ -1,0 +1,39 @@
+{
+  "candidate_id": "Unknown",
+  "claim_results": [
+    {
+      "claim_id": "WD-20231101",
+      "points": 0,
+      "max_points": 20,
+      "details": "Claim missing from submission"
+    },
+    {
+      "claim_id": "AC-20231102",
+      "points": 0,
+      "max_points": 20,
+      "details": "Claim missing from submission"
+    },
+    {
+      "claim_id": "BI-20231103",
+      "points": 0,
+      "max_points": 20,
+      "details": "Claim missing from submission"
+    },
+    {
+      "claim_id": "SF-20231104",
+      "points": 0,
+      "max_points": 20,
+      "details": "Claim missing from submission"
+    },
+    {
+      "claim_id": "RD-20231105",
+      "points": 0,
+      "max_points": 20,
+      "details": "Claim missing from submission"
+    }
+  ],
+  "overall_score": 0.0,
+  "max_possible_score": 100,
+  "passing_threshold": 75,
+  "passed": false
+}

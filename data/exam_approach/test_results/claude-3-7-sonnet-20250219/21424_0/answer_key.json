@@ -1,67 +1,37 @@
 {
-    "candidate_id": "SAMPLE_ANSWER_KEY",
-    "exam_date": "2023-07-15",
-    "scenario_1": {
-        "bodily_injury_reserve": 28980.0,
-        "bodily_injury_code": "AL-BI-02",
-        "property_damage_reserve": 10075.0,
-        "property_damage_code": "AL-PD-01",
-        "medical_expense_reserve": 5800.0,
-        "medical_expense_code": "AL-ME-02",
-        "total_reserve": 44855.0,
-        "policy_sections_referenced": [
-            "2.1",
-            "2.2",
-            "2.3",
-            "1.2"
-        ],
-        "justification": "The bodily injury reserve calculation is based on current medical expenses ($2,800) plus anticipated treatment costs (16 PT sessions at $125 = $2,000) and potential pain management ($1,500), totaling $6,300 in medical expenses. Adding lost wages of $3,200 and applying a pain and suffering multiplier of 3x medical expenses ($18,900) per section 2.1 for moderate injuries. Using a jurisdiction factor of 1.0 (average) and attorney factor of 1.5 (represented), the BI reserve calculates to $28,980. Property damage includes $8,750 repair plus $450 rental (10 days at $45) with 10% contingency per section 2.2, totaling $10,075. Medical expense reserve includes current and anticipated treatment costs of $5,800. All reserves comply with adequacy standards in section 1.2."
-    },
-    "scenario_2": {
-        "previous_total_reserve": 20500.0,
-        "indemnity_reserve": 23000.0,
-        "indemnity_code": "WC-IN-03",
-        "medical_reserve": 45600.0,
-        "medical_code": "WC-ME-03",
-        "rehabilitation_reserve": 9000.0,
-        "rehabilitation_code": "WC-RH-02",
-        "total_reserve": 77600.0,
-        "net_change": 57100.0,
-        "policy_sections_referenced": [
-            "3.1",
-            "3.2",
-            "3.3",
-            "3.4",
-            "5.3"
-        ],
-        "justification": "Reserve adjustment is triggered by new MRI results showing herniated disc requiring surgery, per section 3.4. Indemnity reserve increased to $23,000 based on extended disability period (12 weeks at $633.33 = $7,600) plus potential PPD (7.5% rating at $695.78 per point = $5,218) with 15% contingency per section 3.1. Medical reserve increased to $45,600 to include surgery ($25,000), post-surgical PT (36 sessions at $125 = $4,500), and previous medical expenses ($8,000) with 20% contingency for complications per section 3.2. Added rehabilitation reserve of $9,000 for potential vocational services (2 months at $4,500) per section 3.3 due to possible inability to return to previous position. Total reserve increase of $57,100 is documented as required by section 5.3."
-    },
-    "scenario_3": {
-        "exposures": [
-            {
-                "exposure_type": "Property Damage - Store Damages",
-                "reserve_amount": 142300.0,
-                "reserve_code": "GL-PD-02"
-            },
-            {
-                "exposure_type": "Business Interruption",
-                "reserve_amount": 34100.0,
-                "reserve_code": "GL-BI-01"
-            },
-            {
-                "exposure_type": "Emergency Response Costs",
-                "reserve_amount": 10000.0,
-                "reserve_code": "GL-ER-01"
-            }
-        ],
-        "total_reserve": 186400.0,
-        "policy_sections_referenced": [
-            "4.1",
-            "4.2",
-            "4.3",
-            "4.4",
-            "5.1"
-        ],
-        "justification": "Following section 4.3, I've set separate reserves for each distinct exposure. Property damage reserve of $142,300 includes inventory damage ($28,500 + $45,700 + $18,200 = $92,400), structural damage ($12,300 + $8,900 + $5,400 = $26,600), and common area damage ($12,000), with 15% contingency per section 4.1. Business interruption reserve of $34,100 covers revenue losses for all three stores ($9,500 + $15,000 + $6,500 = $31,000) with 10% contingency per section 4.2. Emergency response costs of $10,000 are set based on the shopping center's claim. Per section 4.4, I considered contractual obligations (indemnification clause) and potential subrogation from store owners' insurance. All exposures are documented separately with supporting evidence as required by section 5.1."
-    }
+    "candidate_id": "EVALUATOR_KEY",
+    "scenarios": [
+        {
+            "claim_number": "AC-2023-45678",
+            "current_reserve": 50000.0,
+            "recommended_reserve": 102350.0,
+            "reserve_change_code": "B1",
+            "reserve_category_code": "BI",
+            "justification": "Reserve increased based on new medical information (surgical consultation 08/05/2023) confirming L4-L5 disc herniation requiring microdiscectomy. The updated reserve includes current medical expenses ($11,350), estimated surgical costs ($35,000), post-surgical physical therapy for 12 weeks ($10,800), and pain and suffering calculated at 3.5x medical specials (as per Section II.5 of reserve guidelines for severe injuries requiring surgery). The injury has progressed from the initial soft tissue diagnosis to a severe injury requiring surgical intervention per Appendix A of the reserve guidelines, necessitating this material reserve adjustment."
+        },
+        {
+            "claim_number": "PR-2023-98765",
+            "current_reserve": 125000.0,
+            "recommended_reserve": 219250.0,
+            "reserve_change_code": "B2",
+            "reserve_category_code": "PROP",
+            "justification": "Reserve increased based on new property damage information from the engineering report (08/18/2023) revealing previously unidentified structural damage and extensive electrical issues. The adjusted reserve incorporates the higher contractor estimate ($135,000), additional structural reinforcement costs ($40,000 midpoint of engineer's estimate), and contents inventory ($39,250) as required by Section III of reserve guidelines. This material change exceeds 25% of previous reserve, incorporating newly discovered damage that wasn't visible during initial inspection, and follows the comprehensive property reserve calculation methodology in the reserve worksheet."
+        },
+        {
+            "claim_number": "WC-2023-34567",
+            "current_reserve": 75000.0,
+            "recommended_reserve": 126000.56,
+            "reserve_change_code": "B1",
+            "reserve_category_code": "WAGE",
+            "reserve_explanation": "Reserve increased based on updated medical evaluation (09/01/2023) changing diagnosis from lumbar strain to L5-S1 disc herniation with persistence radiculopathy. Medical component includes expenses to date ($9,100) plus estimated future treatment including epidural injections and possible surgery ($50,000). Indemnity component includes TTD paid to date ($9,167.18) plus additional 25 weeks of TTD at $833.38/week ($20,834.50) and estimated permanent partial disability ($30,000). Total recommendation reflects Section IV of reserve guidelines requiring immediate recalculation when disability status changes with potential permanent work restrictions now indicated."
+        },
+        {
+            "claim_number": "GL-2023-87654",
+            "current_reserve": 250000.0,
+            "recommended_reserve": 130000.0,
+            "reserve_change_code": "C1",
+            "reserve_category_code": "LIA",
+            "justification": "Reserve decreased based on new liability information from the updated investigation report (08/05/2023) showing liability probability reduced from 80% to 40%. Per Section V.2 of reserve guidelines, reserves must be updated when liability assessment changes. The adjusted reserve applies the 40% liability factor to total potential damages ($285,000 = medical to date $28,500 + future medical $55,000 + lost wages $15,000 + pain and suffering $185,000 + property $1,500), plus $15,000 for defense costs. This material change reflects newly discovered evidence including additional security footage showing warning signs and witness statements regarding claimant's inattention."
+        }
+    ]
 }

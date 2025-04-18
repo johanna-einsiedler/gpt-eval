@@ -1,721 +1,420 @@
 import json
-import os
-import re
+import sys
+from typing import Dict, List, Any, Union
 
-def count_words(text):
-    """Count the number of words in a text string."""
-    if not text:
-        return 0
-    return len(re.findall(r'\b\w+\b', text))
-
-def validate_policy_statement(statement, answer_key_statement):
-    """Validate the policy statement and assign points."""
-    score = 0
-    max_score = 6
-    
-    # Check if statement exists and has appropriate length
-    if statement and 50 <= count_words(statement) <= 100:
-        # Check for purpose elements (value, compliance, ethics)
-        purpose_keywords = ['value', 'compliance', 'ethical', 'ethics', 'standards', 'maximize']
-        if any(keyword in statement.lower() for keyword in purpose_keywords):
-            score += 2
-            
-        # Check for scope elements (who and what it applies to)
-        scope_keywords = ['all employees', 'all departments', 'all purchases', 'applies to', 'scope']
-        if any(keyword in statement.lower() for keyword in scope_keywords):
-            score += 2
-            
-        # Check if clear and concise
-        if count_words(statement) <= 100 and statement.strip():
-            score += 2
-    
-    return score, max_score
-
-def validate_approval_thresholds(thresholds, answer_key_thresholds):
-    """Validate the approval thresholds and assign points."""
-    score = 0
-    max_score = 12
-    
-    if not thresholds or len(thresholds) != 3:
-        return score, max_score
-    
-    # Create a mapping for easier comparison
-    threshold_map = {t.get('threshold', ''): t for t in thresholds}
-    answer_key_map = {t.get('threshold', ''): t for t in answer_key_thresholds}
-    
-    # Check each threshold
-    for threshold_key in ['under $5,000', '$5,000-$25,000', 'over $25,000']:
-        if threshold_key in threshold_map and threshold_key in answer_key_map:
-            # Threshold matches (+1 point)
-            score += 1
-            
-            # Check approvers (+1 point)
-            candidate_approvers = set(threshold_map[threshold_key].get('approvers', []))
-            key_approvers = set(answer_key_map[threshold_key].get('approvers', []))
-            if candidate_approvers and candidate_approvers.issubset(key_approvers):
-                score += 1
-            
-            # Check documentation (+2 points)
-            candidate_docs = set(threshold_map[threshold_key].get('documentation', []))
-            key_docs = set(answer_key_map[threshold_key].get('documentation', []))
-            if candidate_docs and len(candidate_docs.intersection(key_docs)) >= len(candidate_docs) * 0.7:
-                score += 2
-    
-    return score, max_score
-
-def validate_conflict_of_interest(policy, answer_key_policy):
-    """Validate the conflict of interest policy and assign points."""
-    score = 0
-    max_score = 6
-    
-    if not policy:
-        return score, max_score
-    
-    # Check if requires disclosure (+2 points)
-    disclosure_keywords = ['disclose', 'disclosure', 'report', 'declare']
-    if any(keyword in policy.lower() for keyword in disclosure_keywords):
-        score += 2
-    
-    # Check if specifies when/how (+2 points)
-    when_how_keywords = ['annual', 'yearly', 'when', 'form', 'process', 'procedure']
-    if any(keyword in policy.lower() for keyword in when_how_keywords):
-        score += 2
-    
-    # Check if addresses management of conflicts (+2 points)
-    management_keywords = ['recuse', 'avoid', 'mitigate', 'manage', 'review']
-    if any(keyword in policy.lower() for keyword in management_keywords):
-        score += 2
-    
-    return score, max_score
-
-def validate_emergency_purchases(policy, answer_key_policy):
-    """Validate the emergency purchases policy and assign points."""
-    score = 0
-    max_score = 6
-    
-    if not policy:
-        return score, max_score
-    
-    # Check if defines emergency (+2 points)
-    emergency_keywords = ['immediate risk', 'health', 'safety', 'business continuity', 'urgent']
-    if any(keyword in policy.lower() for keyword in emergency_keywords):
-        score += 2
-    
-    # Check if includes approval requirements (+2 points)
-    approval_keywords = ['certified', 'documented', 'approved', 'director', 'manager']
-    if any(keyword in policy.lower() for keyword in approval_keywords):
-        score += 2
-    
-    # Check if includes post-purchase review (+2 points)
-    review_keywords = ['review', 'documentation', 'within 5', 'within five', '30 days', 'thirty days', 'compliance']
-    if any(keyword in policy.lower() for keyword in review_keywords):
-        score += 2
-    
-    return score, max_score
-
-def validate_evaluation_criteria(criteria, answer_key_criteria):
-    """Validate the evaluation criteria and assign points."""
-    score = 0
-    max_score = 15
-    
-    if not criteria:
-        return score, max_score
-    
-    # Check if includes all 5 criteria (+5 points)
-    expected_criteria = {'Price', 'Technical compliance', 'Vendor reliability', 'Delivery timeline', 'Warranty/support'}
-    candidate_criteria = {c.get('criterion', '') for c in criteria}
-    
-    if candidate_criteria == expected_criteria:
-        score += 5
-    
-    # Check if weights total exactly 1.0 (+5 points)
-    total_weight = sum(c.get('weight', 0) for c in criteria)
-    if 0.99 <= total_weight <= 1.01:  # Allow for small floating point errors
-        score += 5
-    
-    # Check if scoring definitions are specific and measurable (+5 points)
-    definition_count = 0
-    meaningful_definitions = 0
-    
-    for criterion in criteria:
-        definitions = criterion.get('scoring_definitions', {})
-        for score_key in ['1', '2', '3', '4', '5']:
-            if score_key in definitions:
-                definition_count += 1
-                definition = definitions[score_key]
-                if definition and count_words(definition) >= 10:
-                    meaningful_definitions += 1
-    
-    if definition_count == 25 and meaningful_definitions >= 20:
-        score += 5
-    elif definition_count >= 20 and meaningful_definitions >= 15:
-        score += 3
-    elif definition_count >= 15 and meaningful_definitions >= 10:
-        score += 1
-    
-    return score, max_score
-
-def validate_vendor_evaluations(evaluations, answer_key_evaluations):
-    """Validate the vendor evaluations and assign points."""
-    score = 0
-    max_score = 9
-    
-    if not evaluations or len(evaluations) != 3:
-        return score, max_score
-    
-    # Create mappings for easier comparison
-    eval_map = {e.get('vendor_name', ''): e for e in evaluations}
-    key_map = {e.get('vendor_name', ''): e for e in answer_key_evaluations}
-    
-    # Check each vendor
-    for vendor_name in ['TechSupply Inc.', 'Global Electronics', 'Digital Solutions']:
-        if vendor_name in eval_map and vendor_name in key_map:
-            vendor_score = 0
-            
-            # Check if scores are justified by data (+1 point)
-            candidate_scores = eval_map[vendor_name].get('criteria_scores', {})
-            key_scores = key_map[vendor_name].get('criteria_scores', {})
-            
-            if candidate_scores and all(abs(candidate_scores.get(k, 0) - key_scores.get(k, 0)) <= 1 for k in key_scores):
-                vendor_score += 1
-            
-            # Check if weighted calculation is correct (+2 points)
-            candidate_total = eval_map[vendor_name].get('total_weighted_score', 0)
-            
-            # Calculate expected total
-            expected_total = 0
-            for criterion, score in candidate_scores.items():
-                for c in evaluations[0].get('criteria_scores', {}):
-                    if c.get('criterion') == criterion:
-                        weight = c.get('weight', 0)
-                        expected_total += score * weight
-                        break
-            
-            if abs(candidate_total - expected_total) <= 0.1:
-                vendor_score += 2
-            
-            score += vendor_score
-    
-    return score, max_score
-
-def validate_winning_bid(winning_bid, evaluations, answer_key_winning_bid):
-    """Validate the winning bid and assign points."""
-    score = 0
-    max_score = 6
-    
-    if not winning_bid or not evaluations:
-        return score, max_score
-    
-    # Find the vendor with the highest score
-    highest_score = 0
-    highest_vendor = None
-    
-    for evaluation in evaluations:
-        total_score = evaluation.get('total_weighted_score', 0)
-        if total_score > highest_score:
-            highest_score = total_score
-            highest_vendor = evaluation.get('vendor_name', '')
-    
-    # Check if winning bid matches vendor with highest score
-    if winning_bid == highest_vendor:
-        score += 6
-    
-    return score, max_score
-
-def validate_process_steps(steps, answer_key_steps):
-    """Validate the process steps and assign points."""
-    score = 0
-    max_score = 15
-    
-    if not steps or len(steps) < 8:
-        return score, max_score
-    
-    # Check if covers full procurement cycle (+5 points)
-    procurement_stages = {
-        'requisition': False,
-        'approval': False,
-        'sourcing': False,
-        'evaluation': False,
-        'order': False,
-        'receipt': False,
-        'payment': False
-    }
-    
-    stage_keywords = {
-        'requisition': ['requisition', 'request', 'need'],
-        'approval': ['approval', 'review', 'authorize'],
-        'sourcing': ['source', 'bid', 'quote', 'rfp', 'rfq'],
-        'evaluation': ['evaluate', 'selection', 'compare'],
-        'order': ['order', 'purchase order', 'po'],
-        'receipt': ['receipt', 'receive', 'delivery', 'inspect'],
-        'payment': ['payment', 'invoice', 'pay']
-    }
-    
-    for step in steps:
-        step_name = step.get('step_name', '').lower()
-        step_desc = step.get('description', '').lower()
-        combined_text = step_name + ' ' + step_desc
-        
-        for stage, keywords in stage_keywords.items():
-            if any(keyword in combined_text for keyword in keywords):
-                procurement_stages[stage] = True
-    
-    coverage_score = sum(1 for stage in procurement_stages.values() if stage)
-    if coverage_score >= 6:
-        score += 5
-    elif coverage_score >= 5:
-        score += 3
-    elif coverage_score >= 4:
-        score += 1
-    
-    # Check if follows logical sequence (+5 points)
-    expected_sequence = ['requisition', 'approval', 'sourcing', 'evaluation', 'order', 'receipt', 'payment']
-    found_stages = []
-    
-    for step in steps:
-        step_name = step.get('step_name', '').lower()
-        step_desc = step.get('description', '').lower()
-        combined_text = step_name + ' ' + step_desc
-        
-        for stage in expected_sequence:
-            if stage not in found_stages and any(keyword in combined_text for keyword in stage_keywords[stage]):
-                found_stages.append(stage)
-                break
-    
-    # Check if the found stages are in the correct order
-    is_sequence_correct = True
-    for i in range(len(found_stages) - 1):
-        idx1 = expected_sequence.index(found_stages[i])
-        idx2 = expected_sequence.index(found_stages[i + 1])
-        if idx1 >= idx2:
-            is_sequence_correct = False
-            break
-    
-    if is_sequence_correct and len(found_stages) >= 5:
-        score += 5
-    elif is_sequence_correct and len(found_stages) >= 4:
-        score += 3
-    elif len(found_stages) >= 3:
-        score += 1
-    
-    # Check if uses only specified roles (+3 points)
-    allowed_roles = {'Requester', 'Purchasing Agent', 'Department Manager', 'Finance Director', 'CEO'}
-    used_roles = {step.get('responsible_role', '') for step in steps}
-    
-    if used_roles.issubset(allowed_roles):
-        score += 3
-    
-    # Check if timeframes are realistic (+2 points)
-    realistic_timeframes = True
-    for step in steps:
-        timeframe = step.get('estimated_timeframe', '')
-        try:
-            timeframe = float(timeframe)
-            if timeframe <= 0 or timeframe > 30:
-                realistic_timeframes = False
-                break
-        except (ValueError, TypeError):
-            realistic_timeframes = False
-            break
-    
-    if realistic_timeframes:
-        score += 2
-    
-    return score, max_score
-
-def validate_decision_points(decision_points, process_steps, task1_thresholds):
-    """Validate the decision points and assign points."""
-    score = 0
-    max_score = 9
-    
-    if not decision_points or len(decision_points) < 3:
-        return score, max_score
-    
-    # Check if aligns with approval thresholds (+3 points)
-    threshold_alignment = False
-    for dp in decision_points:
-        description = dp.get('description', '').lower()
-        options = dp.get('options', [])
-        option_texts = [opt.get('condition', '').lower() for opt in options]
-        
-        threshold_keywords = ['threshold', 'value', 'amount', 'cost', 'price']
-        if any(keyword in description for keyword in threshold_keywords):
-            if any('$5,000' in opt for opt in option_texts):
-                threshold_alignment = True
-                break
-    
-    if threshold_alignment:
-        score += 3
-    
-    # Check if conditions are clear (+3 points)
-    clear_conditions = True
-    for dp in decision_points:
-        options = dp.get('options', [])
-        for option in options:
-            condition = option.get('condition', '')
-            if not condition or count_words(condition) < 3:
-                clear_conditions = False
-                break
-    
-    if clear_conditions:
-        score += 3
-    
-    # Check if next steps are logical (+3 points)
-    logical_next_steps = True
-    max_step_number = max(step.get('step_number', 0) for step in process_steps) if process_steps else 0
-    
-    for dp in decision_points:
-        options = dp.get('options', [])
-        for option in options:
-            next_step = option.get('next_step', 0)
-            if not isinstance(next_step, (int, float)) or next_step <= 0 or next_step > max_step_number:
-                logical_next_steps = False
-                break
-    
-    if logical_next_steps:
-        score += 3
-    
-    return score, max_score
-
-def validate_roles_and_timeframes(process_steps):
-    """Validate the roles and timeframes and assign points."""
-    score = 0
-    max_score = 6
-    
-    if not process_steps:
-        return score, max_score
-    
-    # Check if roles are appropriate for steps (+3 points)
-    role_appropriateness = {
-        'Requester': ['requisition', 'need', 'receive', 'inspect'],
-        'Purchasing Agent': ['source', 'bid', 'quote', 'evaluate', 'order', 'purchase'],
-        'Department Manager': ['approve', 'review', 'authorize'],
-        'Finance Director': ['budget', 'financial', 'payment', 'invoice'],
-        'CEO': ['executive', 'final', 'high-value', 'strategic']
-    }
-    
-    appropriate_roles = True
-    for step in process_steps:
-        role = step.get('responsible_role', '')
-        step_name = step.get('step_name', '').lower()
-        step_desc = step.get('description', '').lower()
-        combined_text = step_name + ' ' + step_desc
-        
-        if role in role_appropriateness:
-            if not any(keyword in combined_text for keyword in role_appropriateness[role]):
-                appropriate_roles = False
-                break
-    
-    if appropriate_roles:
-        score += 3
-    
-    # Check if timeframes are appropriate for steps (+3 points)
-    timeframe_appropriateness = {
-        'requisition': (1, 3),
-        'approval': (1, 5),
-        'sourcing': (3, 10),
-        'evaluation': (2, 7),
-        'order': (1, 3),
-        'receipt': (1, 5),
-        'payment': (2, 10)
-    }
-    
-    appropriate_timeframes = True
-    for step in process_steps:
-        timeframe = step.get('estimated_timeframe', '')
-        step_name = step.get('step_name', '').lower()
-        step_desc = step.get('description', '').lower()
-        combined_text = step_name + ' ' + step_desc
-        
-        try:
-            timeframe = float(timeframe)
-            
-            for stage, (min_time, max_time) in timeframe_appropriateness.items():
-                stage_keywords = {
-                    'requisition': ['requisition', 'request', 'need'],
-                    'approval': ['approval', 'review', 'authorize'],
-                    'sourcing': ['source', 'bid', 'quote', 'rfp', 'rfq'],
-                    'evaluation': ['evaluate', 'selection', 'compare'],
-                    'order': ['order', 'purchase order', 'po'],
-                    'receipt': ['receipt', 'receive', 'delivery', 'inspect'],
-                    'payment': ['payment', 'invoice', 'pay']
-                }
-                
-                if any(keyword in combined_text for keyword in stage_keywords[stage]):
-                    if timeframe < min_time or timeframe > max_time:
-                        appropriate_timeframes = False
-                        break
-            
-            if not appropriate_timeframes:
-                break
-                
-        except (ValueError, TypeError):
-            appropriate_timeframes = False
-            break
-    
-    if appropriate_timeframes:
-        score += 3
-    
-    return score, max_score
-
-def evaluate_task1(submission, answer_key):
-    """Evaluate Task 1: Procurement Policy Framework."""
-    task1_results = {
-        "policy_statement": {
-            "score": 0,
-            "max_score": 6,
-            "comments": ""
-        },
-        "approval_thresholds": {
-            "score": 0,
-            "max_score": 12,
-            "comments": ""
-        },
-        "conflict_of_interest": {
-            "score": 0,
-            "max_score": 6,
-            "comments": ""
-        },
-        "emergency_purchases": {
-            "score": 0,
-            "max_score": 6,
-            "comments": ""
-        },
-        "total_score": 0,
-        "max_score": 30,
-        "passed": False
-    }
-    
-    # Get task1 data
-    task1 = submission.get('task1_policy_framework', {})
-    key_task1 = answer_key.get('task1_policy_framework', {})
-    
-    # Validate policy statement
-    policy_statement = task1.get('policy_statement', '')
-    key_policy_statement = key_task1.get('policy_statement', '')
-    score, max_score = validate_policy_statement(policy_statement, key_policy_statement)
-    task1_results['policy_statement']['score'] = score
-    task1_results['policy_statement']['max_score'] = max_score
-    
-    # Validate approval thresholds
-    approval_thresholds = task1.get('approval_thresholds', [])
-    key_approval_thresholds = key_task1.get('approval_thresholds', [])
-    score, max_score = validate_approval_thresholds(approval_thresholds, key_approval_thresholds)
-    task1_results['approval_thresholds']['score'] = score
-    task1_results['approval_thresholds']['max_score'] = max_score
-    
-    # Validate conflict of interest
-    conflict_of_interest = task1.get('conflict_of_interest', '')
-    key_conflict_of_interest = key_task1.get('conflict_of_interest', '')
-    score, max_score = validate_conflict_of_interest(conflict_of_interest, key_conflict_of_interest)
-    task1_results['conflict_of_interest']['score'] = score
-    task1_results['conflict_of_interest']['max_score'] = max_score
-    
-    # Validate emergency purchases
-    emergency_purchases = task1.get('emergency_purchases', '')
-    key_emergency_purchases = key_task1.get('emergency_purchases', '')
-    score, max_score = validate_emergency_purchases(emergency_purchases, key_emergency_purchases)
-    task1_results['emergency_purchases']['score'] = score
-    task1_results['emergency_purchases']['max_score'] = max_score
-    
-    # Calculate total score
-    task1_results['total_score'] = (
-        task1_results['policy_statement']['score'] +
-        task1_results['approval_thresholds']['score'] +
-        task1_results['conflict_of_interest']['score'] +
-        task1_results['emergency_purchases']['score']
-    )
-    
-    # Check if passed
-    task1_results['passed'] = task1_results['total_score'] >= 21
-    
-    return task1_results
-
-def evaluate_task2(submission, answer_key):
-    """Evaluate Task 2: Bid Evaluation Matrix."""
-    task2_results = {
-        "evaluation_criteria": {
-            "score": 0,
-            "max_score": 15,
-            "comments": ""
-        },
-        "vendor_evaluations": {
-            "score": 0,
-            "max_score": 9,
-            "comments": ""
-        },
-        "winning_bid": {
-            "score": 0,
-            "max_score": 6,
-            "comments": ""
-        },
-        "total_score": 0,
-        "max_score": 40,
-        "passed": False
-    }
-    
-    # Get task2 data
-    task2 = submission.get('task2_bid_evaluation', {})
-    key_task2 = answer_key.get('task2_bid_evaluation', {})
-    
-    # Validate evaluation criteria
-    evaluation_criteria = task2.get('evaluation_criteria', [])
-    key_evaluation_criteria = key_task2.get('evaluation_criteria', [])
-    score, max_score = validate_evaluation_criteria(evaluation_criteria, key_evaluation_criteria)
-    task2_results['evaluation_criteria']['score'] = score
-    task2_results['evaluation_criteria']['max_score'] = max_score
-    
-    # Validate vendor evaluations
-    vendor_evaluations = task2.get('vendor_evaluations', [])
-    key_vendor_evaluations = key_task2.get('vendor_evaluations', [])
-    score, max_score = validate_vendor_evaluations(vendor_evaluations, key_vendor_evaluations)
-    task2_results['vendor_evaluations']['score'] = score
-    task2_results['vendor_evaluations']['max_score'] = max_score
-    
-    # Validate winning bid
-    winning_bid = task2.get('winning_bid', '')
-    key_winning_bid = key_task2.get('winning_bid', '')
-    score, max_score = validate_winning_bid(winning_bid, vendor_evaluations, key_winning_bid)
-    task2_results['winning_bid']['score'] = score
-    task2_results['winning_bid']['max_score'] = max_score
-    
-    # Calculate total score
-    task2_results['total_score'] = (
-        task2_results['evaluation_criteria']['score'] +
-        task2_results['vendor_evaluations']['score'] +
-        task2_results['winning_bid']['score']
-    )
-    
-    # Check if passed
-    task2_results['passed'] = task2_results['total_score'] >= 28
-    
-    return task2_results
-
-def evaluate_task3(submission, answer_key):
-    """Evaluate Task 3: Procurement Process Flowchart."""
-    task3_results = {
-        "process_steps": {
-            "score": 0,
-            "max_score": 15,
-            "comments": ""
-        },
-        "decision_points": {
-            "score": 0,
-            "max_score": 9,
-            "comments": ""
-        },
-        "roles_and_timeframes": {
-            "score": 0,
-            "max_score": 6,
-            "comments": ""
-        },
-        "total_score": 0,
-        "max_score": 30,
-        "passed": False
-    }
-    
-    # Get task3 data
-    task3 = submission.get('task3_process_flowchart', {})
-    key_task3 = answer_key.get('task3_process_flowchart', {})
-    task1 = submission.get('task1_policy_framework', {})
-    
-    # Validate process steps
-    process_steps = task3.get('process_steps', [])
-    key_process_steps = key_task3.get('process_steps', [])
-    score, max_score = validate_process_steps(process_steps, key_process_steps)
-    task3_results['process_steps']['score'] = score
-    task3_results['process_steps']['max_score'] = max_score
-    
-    # Validate decision points
-    decision_points = task3.get('decision_points', [])
-    key_decision_points = key_task3.get('decision_points', [])
-    approval_thresholds = task1.get('approval_thresholds', [])
-    score, max_score = validate_decision_points(decision_points, process_steps, approval_thresholds)
-    task3_results['decision_points']['score'] = score
-    task3_results['decision_points']['max_score'] = max_score
-    
-    # Validate roles and timeframes
-    score, max_score = validate_roles_and_timeframes(process_steps)
-    task3_results['roles_and_timeframes']['score'] = score
-    task3_results['roles_and_timeframes']['max_score'] = max_score
-    
-    # Calculate total score
-    task3_results['total_score'] = (
-        task3_results['process_steps']['score'] +
-        task3_results['decision_points']['score'] +
-        task3_results['roles_and_timeframes']['score']
-    )
-    
-    # Check if passed
-    task3_results['passed'] = task3_results['total_score'] >= 21
-    
-    return task3_results
-
-def evaluate_submission(submission_path, answer_key_path):
-    """Evaluate the candidate's submission against the answer key."""
+def load_json_file(filename: str) -> Dict:
+    """Load and parse a JSON file."""
     try:
-        with open(submission_path, 'r') as f:
-            submission = json.load(f)
-        
-        with open(answer_key_path, 'r') as f:
-            answer_key = json.load(f)
-        
-        # Evaluate each task
-        task1_results = evaluate_task1(submission, answer_key)
-        task2_results = evaluate_task2(submission, answer_key)
-        task3_results = evaluate_task3(submission, answer_key)
-        
-        # Calculate overall score
-        total_score = task1_results['total_score'] + task2_results['total_score'] + task3_results['total_score']
-        max_score = task1_results['max_score'] + task2_results['max_score'] + task3_results['max_score']
-        overall_score_percentage = (total_score / max_score) * 100 if max_score > 0 else 0
-        
-        # Check if overall passed
-        passed = (
-            task1_results['passed'] and
-            task2_results['passed'] and
-            task3_results['passed'] and
-            overall_score_percentage >= 70
-        )
-        
-        # Compile results
-        results = {
-            "candidate_id": submission.get('candidate_id', 'Unknown'),
-            "task1_results": task1_results,
-            "task2_results": task2_results,
-            "task3_results": task3_results,
-            "total_score": total_score,
-            "max_score": max_score,
-            "overall_score": round(overall_score_percentage, 2),
-            "passed": passed
-        }
-        
-        return results
+        with open(filename, 'r') as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error loading {filename}: {e}")
+        sys.exit(1)
+
+def evaluate_bid_thresholds(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the bid thresholds section."""
+    sub_thresholds = submission.get("bidThreshold", {})
+    key_thresholds = answer_key.get("bidThreshold", {})
     
-    except Exception as e:
-        return {
-            "error": str(e),
-            "overall_score": 0,
-            "passed": False
-        }
+    total_items = 0
+    correct_items = 0
+    details = {}
+    
+    for category in key_thresholds:
+        if category not in sub_thresholds:
+            details[category] = "Missing category"
+            continue
+        
+        for tier in key_thresholds[category]:
+            total_items += 1
+            if tier in sub_thresholds[category] and sub_thresholds[category][tier] == key_thresholds[category][tier]:
+                correct_items += 1
+                details[f"{category}_{tier}"] = "Correct"
+            else:
+                details[f"{category}_{tier}"] = f"Incorrect: Expected '{key_thresholds[category].get(tier, 'Missing')}', got '{sub_thresholds[category].get(tier, 'Missing')}'"
+    
+    percentage = (correct_items / total_items * 100) if total_items > 0 else 0
+    return {
+        "score": percentage,
+        "correct_items": correct_items,
+        "total_items": total_items,
+        "details": details
+    }
+
+def evaluate_approval_process(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the approval process section."""
+    sub_process = submission.get("approvalProcess", {})
+    key_process = answer_key.get("approvalProcess", {})
+    
+    total_tiers = len(key_process)
+    correct_tiers = 0
+    details = {}
+    
+    for tier in key_process:
+        if tier not in sub_process:
+            details[tier] = "Missing tier"
+            continue
+        
+        # Check if steps are in the correct sequence and all are present
+        key_steps = key_process[tier]
+        sub_steps = sub_process[tier]
+        
+        # Count correct steps in proper sequence
+        correct_steps = 0
+        total_steps = len(key_steps)
+        
+        # Check if all key steps are in the submission in correct order
+        for i, step in enumerate(key_steps):
+            if i < len(sub_steps) and step == sub_steps[i]:
+                correct_steps += 1
+        
+        step_percentage = (correct_steps / total_steps * 100) if total_steps > 0 else 0
+        if step_percentage >= 80:  # At least 80% correct steps
+            correct_tiers += 1
+            details[tier] = f"Correct ({correct_steps}/{total_steps} steps correct, {step_percentage:.1f}%)"
+        else:
+            details[tier] = f"Incorrect ({correct_steps}/{total_steps} steps correct, {step_percentage:.1f}%)"
+    
+    percentage = (correct_tiers / total_tiers * 100) if total_tiers > 0 else 0
+    return {
+        "score": percentage,
+        "correct_tiers": correct_tiers,
+        "total_tiers": total_tiers,
+        "details": details
+    }
+
+def evaluate_required_documents(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the required documents section."""
+    sub_docs = submission.get("requiredDocuments", {})
+    key_docs = answer_key.get("requiredDocuments", {})
+    
+    total_tiers = len(key_docs)
+    correct_tiers = 0
+    details = {}
+    
+    for tier in key_docs:
+        if tier not in sub_docs:
+            details[tier] = "Missing tier"
+            continue
+        
+        key_tier_docs = set(key_docs[tier])
+        sub_tier_docs = set(sub_docs[tier])
+        
+        correct_docs = len(key_tier_docs.intersection(sub_tier_docs))
+        total_docs = len(key_tier_docs)
+        
+        percentage = (correct_docs / total_docs * 100) if total_docs > 0 else 0
+        
+        if percentage >= 75:  # At least 75% correct documents
+            correct_tiers += 1
+            details[tier] = f"Correct ({correct_docs}/{total_docs} docs correct, {percentage:.1f}%)"
+        else:
+            details[tier] = f"Incorrect ({correct_docs}/{total_docs} docs correct, {percentage:.1f}%)"
+    
+    score_percentage = (correct_tiers / total_tiers * 100) if total_tiers > 0 else 0
+    return {
+        "score": score_percentage,
+        "correct_tiers": correct_tiers,
+        "total_tiers": total_tiers,
+        "details": details
+    }
+
+def evaluate_evaluation_criteria(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the evaluation criteria section."""
+    sub_criteria = submission.get("evaluationCriteria", {})
+    key_criteria = answer_key.get("evaluationCriteria", {})
+    
+    # Check if criteria percentages sum to 100
+    sub_total = sum(sub_criteria.values())
+    key_total = sum(key_criteria.values())
+    
+    # Check if at least 3 of 5 correct criteria are included
+    correct_criteria = set(sub_criteria.keys()).intersection(set(key_criteria.keys()))
+    correct_count = len(correct_criteria)
+    
+    # Check if criteria values match
+    matching_values = 0
+    for criterion in correct_criteria:
+        if sub_criteria[criterion] == key_criteria[criterion]:
+            matching_values += 1
+    
+    details = {
+        "sum_to_100": sub_total == 100,
+        "criteria_included": f"{correct_count}/5 correct criteria included",
+        "matching_values": f"{matching_values}/{correct_count} criteria have correct values"
+    }
+    
+    # Determine score based on criteria
+    if sub_total != 100:  # Critical fail
+        score = 0
+    elif correct_count < 3:  # Not enough correct criteria
+        score = 25  # Partial credit
+    else:
+        # Base score on matching values if at least 3 criteria are correct
+        score = (matching_values / len(key_criteria)) * 100
+    
+    return {
+        "score": score,
+        "details": details
+    }
+
+def evaluate_task1(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 1 with all its components."""
+    bid_thresholds = evaluate_bid_thresholds(submission.get("task1", {}), answer_key.get("task1", {}))
+    approval_process = evaluate_approval_process(submission.get("task1", {}), answer_key.get("task1", {}))
+    required_documents = evaluate_required_documents(submission.get("task1", {}), answer_key.get("task1", {}))
+    evaluation_criteria = evaluate_evaluation_criteria(submission.get("task1", {}), answer_key.get("task1", {}))
+    
+    # Calculate overall score for Task 1 (equal weighting of components)
+    score = (
+        bid_thresholds["score"] * 0.25 +
+        approval_process["score"] * 0.25 +
+        required_documents["score"] * 0.25 +
+        evaluation_criteria["score"] * 0.25
+    )
+    
+    # Check for critical fail conditions
+    if evaluation_criteria["details"]["sum_to_100"] is False:
+        critical_fail = "Evaluation criteria don't total 100%"
+    else:
+        critical_fail = None
+    
+    return {
+        "score": score,
+        "bid_thresholds": bid_thresholds,
+        "approval_process": approval_process,
+        "required_documents": required_documents,
+        "evaluation_criteria": evaluation_criteria,
+        "critical_fail": critical_fail
+    }
+
+def evaluate_vendor_selection(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the vendor selection section of Task 2."""
+    sub_vendor = submission.get("vendorSelection", "")
+    key_vendor = answer_key.get("vendorSelection", "")
+    
+    is_correct = sub_vendor == key_vendor
+    
+    return {
+        "score": 100 if is_correct else 0,
+        "details": "Correct" if is_correct else f"Incorrect: Expected '{key_vendor}', got '{sub_vendor}'"
+    }
+
+def evaluate_total_cost(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the total cost section of Task 2."""
+    sub_cost = submission.get("totalCost", 0)
+    key_cost = answer_key.get("totalCost", 0)
+    
+    # Must be within $1,000 of correct amount
+    is_within_range = abs(sub_cost - key_cost) <= 1000
+    
+    return {
+        "score": 100 if is_within_range else 0,
+        "details": f"Within acceptable range" if is_within_range else f"Outside acceptable range: Expected '{key_cost}', got '{sub_cost}'"
+    }
+
+def evaluate_compliance_status(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the compliance status section of Task 2."""
+    sub_status = submission.get("complianceStatus", None)
+    key_status = answer_key.get("complianceStatus", None)
+    
+    is_correct = sub_status == key_status
+    
+    return {
+        "score": 100 if is_correct else 0,
+        "details": "Correct" if is_correct else f"Incorrect: Expected '{key_status}', got '{sub_status}'"
+    }
+
+def evaluate_documentation_needed(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the documentation needed section of Task 2."""
+    sub_docs = set(submission.get("documentationNeeded", []))
+    key_docs = set(answer_key.get("documentationNeeded", []))
+    
+    correct_docs = len(sub_docs.intersection(key_docs))
+    total_docs = len(key_docs)
+    
+    # Need at least 5 of 7 correct documents
+    meets_criteria = correct_docs >= 5
+    percentage = (correct_docs / total_docs * 100) if total_docs > 0 else 0
+    
+    return {
+        "score": percentage,
+        "details": f"{correct_docs}/{total_docs} correct documents identified ({percentage:.1f}%)"
+    }
+
+def evaluate_task2(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 2 with all its components."""
+    vendor_selection = evaluate_vendor_selection(submission.get("task2", {}), answer_key.get("task2", {}))
+    total_cost = evaluate_total_cost(submission.get("task2", {}), answer_key.get("task2", {}))
+    compliance_status = evaluate_compliance_status(submission.get("task2", {}), answer_key.get("task2", {}))
+    documentation_needed = evaluate_documentation_needed(submission.get("task2", {}), answer_key.get("task2", {}))
+    
+    # Calculate overall score for Task 2 (equal weighting of components)
+    score = (
+        vendor_selection["score"] * 0.3 +
+        total_cost["score"] * 0.2 +
+        compliance_status["score"] * 0.3 +
+        documentation_needed["score"] * 0.2
+    )
+    
+    # Check for critical fail condition
+    sub_status = submission.get("task2", {}).get("complianceStatus", None)
+    critical_fail = "Selected non-compliant vendor" if sub_status is False else None
+    
+    return {
+        "score": score,
+        "vendor_selection": vendor_selection,
+        "total_cost": total_cost,
+        "compliance_status": compliance_status,
+        "documentation_needed": documentation_needed,
+        "critical_fail": critical_fail
+    }
+
+def evaluate_policy_statement(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the policy statement section of Task 3."""
+    sub_policy = submission.get("policyStatement", "")
+    key_policy = answer_key.get("policyStatement", "")
+    
+    is_correct = sub_policy == key_policy
+    
+    # Critical fail if they selected policy statement #1 (too permissive)
+    is_critical_fail = sub_policy == "Emergency procurements are exempt from all standard procurement procedures."
+    
+    return {
+        "score": 100 if is_correct else 0,
+        "details": "Correct" if is_correct else "Incorrect",
+        "critical_fail": "Selected overly permissive policy" if is_critical_fail else None
+    }
+
+def evaluate_procedure_steps(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the procedure steps section of Task 3."""
+    sub_steps = submission.get("procedureSteps", [])
+    key_steps = answer_key.get("procedureSteps", [])
+    
+    # Check how many steps from the key are in the submission
+    common_steps = set(sub_steps).intersection(set(key_steps))
+    correct_step_count = len(common_steps)
+    total_steps = len(key_steps)
+    
+    # Need at least 7 of 10 steps in reasonable sequence
+    meets_criteria = correct_step_count >= 7
+    percentage = (correct_step_count / total_steps * 100) if total_steps > 0 else 0
+    
+    return {
+        "score": percentage,
+        "details": f"{correct_step_count}/{total_steps} correct steps ({percentage:.1f}%)"
+    }
+
+def evaluate_compliance_rating(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the compliance rating section of Task 3."""
+    sub_ratings = submission.get("complianceRating", {})
+    key_ratings = answer_key.get("complianceRating", {})
+    
+    # Calculate average rating if sufficient steps are provided
+    if len(sub_ratings) > 0:
+        avg_rating = sum(sub_ratings.values()) / len(sub_ratings)
+    else:
+        avg_rating = 0
+    
+    # Average rating must be at least 4.0
+    meets_criteria = avg_rating >= 4.0
+    
+    return {
+        "score": 100 if meets_criteria else (avg_rating / 4.0) * 100,
+        "details": f"Average rating: {avg_rating:.2f}"
+    }
+
+def evaluate_task3(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate Task 3 with all its components."""
+    policy_statement = evaluate_policy_statement(submission.get("task3", {}), answer_key.get("task3", {}))
+    procedure_steps = evaluate_procedure_steps(submission.get("task3", {}), answer_key.get("task3", {}))
+    compliance_rating = evaluate_compliance_rating(submission.get("task3", {}), answer_key.get("task3", {}))
+    
+    # Calculate overall score for Task 3 (equal weighting of components)
+    score = (
+        policy_statement["score"] * 0.4 +
+        procedure_steps["score"] * 0.3 +
+        compliance_rating["score"] * 0.3
+    )
+    
+    # Check for critical fail from policy statement
+    critical_fail = policy_statement.get("critical_fail")
+    
+    return {
+        "score": score,
+        "policy_statement": policy_statement,
+        "procedure_steps": procedure_steps,
+        "compliance_rating": compliance_rating,
+        "critical_fail": critical_fail
+    }
+
+def check_enterprise_approval(submission: Dict) -> bool:
+    """Check if board approval is properly included for enterprise purchases."""
+    enterprise_approvals = submission.get("task1", {}).get("approvalProcess", {}).get("Enterprise", [])
+    return "Board Vote" in enterprise_approvals
+
+def evaluate_submission(submission: Dict, answer_key: Dict) -> Dict:
+    """Evaluate the complete submission against the answer key."""
+    task1_results = evaluate_task1(submission, answer_key)
+    task2_results = evaluate_task2(submission, answer_key)
+    task3_results = evaluate_task3(submission, answer_key)
+    
+    # Additional critical fail check for enterprise approval
+    board_approval_fail = None if check_enterprise_approval(submission) else "Failed to recognize need for Board approval for enterprise-level purchases"
+    
+    # Collect all critical fails
+    critical_fails = []
+    if task1_results.get("critical_fail"):
+        critical_fails.append(task1_results["critical_fail"])
+    if task2_results.get("critical_fail"):
+        critical_fails.append(task2_results["critical_fail"])
+    if task3_results.get("critical_fail"):
+        critical_fails.append(task3_results["critical_fail"])
+    if board_approval_fail:
+        critical_fails.append(board_approval_fail)
+    
+    # Calculate overall score (equal weighting of tasks)
+    # If there are critical fails, cap the score at 65%
+    raw_score = (
+        task1_results["score"] * (1/3) +
+        task2_results["score"] * (1/3) +
+        task3_results["score"] * (1/3)
+    )
+    
+    overall_score = min(raw_score, 65.0) if critical_fails else raw_score
+    passed = overall_score >= 75.0 and not critical_fails
+    
+    return {
+        "overall_score": overall_score,
+        "passed": passed,
+        "critical_fails": critical_fails,
+        "task1_results": task1_results,
+        "task2_results": task2_results,
+        "task3_results": task3_results
+    }
 
 def main():
-    """Main function to run the evaluation."""
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    submission_path = os.path.join(script_dir, 'test_submission.json')
-    answer_key_path = os.path.join(script_dir, 'answer_key.json')
-    results_path = os.path.join(script_dir, 'test_results.json')
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    # Evaluate the submission
-    results = evaluate_submission(submission_path, answer_key_path)
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    # Save the results
-    with open(results_path, 'w') as f:
+    submission = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
+    
+    results = evaluate_submission(submission, answer_key)
+    
+    with open("test_results.json", "w") as f:
         json.dump(results, f, indent=2)
     
-    print(f"Evaluation completed. Results saved to {results_path}")
-    print(f"Overall score: {results.get('overall_score', 0)}%")
-    print(f"Passed: {results.get('passed', False)}")
+    print(f"Evaluation complete. Overall score: {results['overall_score']:.2f}%")
+    if results["critical_fails"]:
+        print("Critical fails detected:")
+        for fail in results["critical_fails"]:
+            print(f"- {fail}")
+    print(f"Test {'PASSED' if results['passed'] else 'FAILED'}")
 
 if __name__ == "__main__":
     main()

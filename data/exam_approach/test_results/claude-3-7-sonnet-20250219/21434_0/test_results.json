@@ -1,0 +1,70 @@
+{
+  "exercise1": {
+    "settled_claims": {
+      "correct": true,
+      "score": 6,
+      "max_score": 6,
+      "details": "All settled claims correct"
+    },
+    "pending_claims": {
+      "correct": true,
+      "score": 8,
+      "max_score": 8,
+      "details": "All pending claims correct"
+    },
+    "denied_claims": {
+      "correct": true,
+      "score": 6,
+      "max_score": 6,
+      "details": "All denied claims correct"
+    }
+  },
+  "exercise2": {
+    "updated_claims": {
+      "correct": true,
+      "score": 6,
+      "max_score": 6,
+      "details": "All updated claims correct"
+    },
+    "followup_claims": {
+      "correct": true,
+      "score": 5,
+      "max_score": 5,
+      "details": "All followup claims correct"
+    },
+    "priority1_claims": {
+      "correct": true,
+      "score": 5,
+      "max_score": 5,
+      "details": "All priority1 claims correct"
+    },
+    "avg_days_to_resolve": {
+      "correct": true,
+      "score": 4,
+      "max_score": 4,
+      "details": "Correct average days calculation"
+    }
+  },
+  "exercise3": {
+    "high_complexity_claims": {
+      "correct": true,
+      "score": 4,
+      "max_score": 4,
+      "details": "All high complexity claims correct"
+    },
+    "total_financial_exposure": {
+      "correct": true,
+      "score": 3,
+      "max_score": 3,
+      "details": "Correct financial exposure calculation"
+    },
+    "highest_severity": {
+      "correct": true,
+      "score": 3,
+      "max_score": 3,
+      "details": "Correct severity code"
+    }
+  },
+  "overall_score": 100.0,
+  "pass": true
+}

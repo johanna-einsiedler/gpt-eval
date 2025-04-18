@@ -1,463 +1,389 @@
-import json
-import math
+#!/usr/bin/env python3
+"""
+Evaluation script for the Wholesale and Retail Buyers pricing practical exam.
+This script compares a candidate's submission against an answer key and produces
+a detailed scoring report.
+"""
 
-def load_json(filename):
+import json
+import sys
+import math
+from typing import Dict, Any, Tuple, List
+
+
+def load_json_file(filename: str) -> Dict[str, Any]:
+    """Load and parse a JSON file."""
     try:
         with open(filename, 'r') as file:
             return json.load(file)
-    except Exception as e:
+    except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"Error loading {filename}: {e}")
-        return None
+        sys.exit(1)
 
-def save_json(data, filename):
-    try:
-        with open(filename, 'w') as file:
-            json.dump(data, file, indent=2)
-        print(f"Results saved to {filename}")
-    except Exception as e:
-        print(f"Error saving to {filename}: {e}")
 
-def evaluate_exercise1(submission, answer_key):
-    results = {
-        "score": 0,
-        "max_score": 25,
-        "details": {
-            "imu_calculation": {"score": 0, "max_score": 5, "comments": []},
-            "mmu_calculation": {"score": 0, "max_score": 5, "comments": []},
-            "target_margins": {"score": 0, "max_score": 5, "comments": []},
-            "competitive_positioning": {"score": 0, "max_score": 5, "comments": []},
-            "justification_quality": {"score": 0, "max_score": 5, "comments": []}
+def is_close(candidate_value: float, answer_value: float, tolerance: float = 0.01) -> Tuple[bool, float]:
+    """
+    Check if candidate value is close to the answer value within tolerance.
+    Returns (is_exact_match, percentage_of_points)
+    """
+    if candidate_value is None or answer_value is None:
+        return False, 0
+    
+    # Check for exact match (rounding to handle floating point issues)
+    if round(candidate_value, 2) == round(answer_value, 2):
+        return True, 1.0
+    
+    # Calculate percentage difference
+    difference = abs(candidate_value - answer_value)
+    relative_diff = difference / max(abs(answer_value), 0.001)  # Avoid division by zero
+    
+    # Assign partial credit
+    if relative_diff <= 0.01:  # Within 1%
+        return False, 0.8
+    elif relative_diff <= 0.03:  # Within 3%
+        return False, 0.5
+    else:
+        return False, 0.0
+
+
+def evaluate_text_answer(candidate_text: str, expected_length: int = 30) -> float:
+    """
+    Evaluate a text answer (justification or explanation).
+    Returns percentage of points based on answer completeness.
+    """
+    if not candidate_text:
+        return 0.0
+    
+    # Basic assessment based on length (as a proxy for completeness)
+    # In a real scenario, this would be more sophisticated
+    if len(candidate_text) >= expected_length:
+        return 1.0
+    elif len(candidate_text) >= expected_length // 2:
+        return 0.75
+    elif len(candidate_text) >= expected_length // 4:
+        return 0.5
+    else:
+        return 0.25
+
+
+def evaluate_task1(candidate: Dict, answer_key: Dict) -> Dict[str, Any]:
+    """Evaluate Task 1: Mark-up Calculation"""
+    results = {"points_earned": 0, "points_possible": 25, "product_scores": {}}
+    points_per_product = 5
+    
+    for product in ["product_A", "product_B", "product_C", "product_D", "product_E"]:
+        product_score = {"points_earned": 0, "points_possible": points_per_product, "details": {}}
+        
+        # Cost-based markup (1 point)
+        exact_match, credit = is_close(
+            candidate["task1_markup_calculation"][product]["cost_based_markup_percent"],
+            answer_key["task1_markup_calculation"][product]["cost_based_markup_percent"]
+        )
+        markup_points = 1 * credit
+        product_score["details"]["cost_based_markup"] = {
+            "points_earned": markup_points,
+            "points_possible": 1,
+            "exact_match": exact_match
         }
-    }
-    
-    # Extract product data
-    sub_products = {p["product_id"]: p for p in submission["exercise1"]["product_markup_rates"]}
-    key_products = {p["product_id"]: p for p in answer_key["exercise1"]["product_markup_rates"]}
-    
-    # Check IMU calculation
-    imu_correct = 0
-    for product_id, key_product in key_products.items():
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            # Allow for small differences due to rounding
-            if abs(sub_product["initial_markup"] - key_product["initial_markup"]) <= 2:
-                imu_correct += 1
-            else:
-                results["details"]["imu_calculation"]["comments"].append(
-                    f"{product_id}: Expected IMU around {key_product['initial_markup']}%, got {sub_product['initial_markup']}%"
-                )
-    
-    results["details"]["imu_calculation"]["score"] = round(5 * (imu_correct / len(key_products)))
-    
-    # Check MMU calculation
-    mmu_correct = 0
-    for product_id, key_product in key_products.items():
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            # Allow for small differences due to rounding
-            if abs(sub_product["maintained_markup"] - key_product["maintained_markup"]) <= 5:
-                mmu_correct += 1
-            else:
-                results["details"]["mmu_calculation"]["comments"].append(
-                    f"{product_id}: Expected MMU around {key_product['maintained_markup']}%, got {sub_product['maintained_markup']}%"
-                )
-    
-    results["details"]["mmu_calculation"]["score"] = round(5 * (mmu_correct / len(key_products)))
-    
-    # Check target margins (based on recommended markup rates)
-    margins_correct = 0
-    target_margins = {
-        "KA001": 40,
-        "KA002": 35,
-        "KA003": 42,
-        "KA004": 38,
-        "KA005": 45
-    }
-    
-    for product_id, target in target_margins.items():
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            # IMU should be at least the target margin
-            if sub_product["recommended_markup_rate"] >= target:
-                margins_correct += 1
-            else:
-                results["details"]["target_margins"]["comments"].append(
-                    f"{product_id}: Recommended markup {sub_product['recommended_markup_rate']}% doesn't meet target margin of {target}%"
-                )
-    
-    results["details"]["target_margins"]["score"] = round(5 * (margins_correct / len(target_margins)))
-    
-    # Check competitive positioning
-    positioning_score = 0
-    industry_averages = {
-        "KA001": 45,
-        "KA002": 40,
-        "KA003": 50,
-        "KA004": 42,
-        "KA005": 48
-    }
-    
-    for product_id, avg in industry_averages.items():
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            # Check if markup is within 5% of industry average or justified
-            if abs(sub_product["recommended_markup_rate"] - avg) <= 5:
-                positioning_score += 1
-            elif len(sub_product["justification"]) > 50:  # Assume justified if explanation is substantial
-                positioning_score += 0.5
-                results["details"]["competitive_positioning"]["comments"].append(
-                    f"{product_id}: Markup deviates from industry average but may be justified"
-                )
-            else:
-                results["details"]["competitive_positioning"]["comments"].append(
-                    f"{product_id}: Markup {sub_product['recommended_markup_rate']}% deviates from industry average {avg}%"
-                )
-    
-    results["details"]["competitive_positioning"]["score"] = round(5 * (positioning_score / len(industry_averages)))
-    
-    # Evaluate justification quality
-    justification_score = 0
-    for product_id in key_products:
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            justification = sub_product["justification"]
-            
-            # Basic scoring based on length and content
-            if len(justification) >= 50:
-                points = 0.5
-                
-                # Check for key terms that should be in justifications
-                key_terms = ["margin", "competitor", "position", "markup", "industry"]
-                for term in key_terms:
-                    if term.lower() in justification.lower():
-                        points += 0.1
-                
-                justification_score += min(points, 1.0)
-            else:
-                results["details"]["justification_quality"]["comments"].append(
-                    f"{product_id}: Justification too brief"
-                )
-    
-    results["details"]["justification_quality"]["score"] = round(5 * (justification_score / len(key_products)))
-    
-    # Calculate total score for Exercise 1
-    results["score"] = sum(detail["score"] for detail in results["details"].values())
+        
+        # Retail-based markup (1 point)
+        exact_match, credit = is_close(
+            candidate["task1_markup_calculation"][product]["retail_based_markup_percent"],
+            answer_key["task1_markup_calculation"][product]["retail_based_markup_percent"]
+        )
+        retail_markup_points = 1 * credit
+        product_score["details"]["retail_based_markup"] = {
+            "points_earned": retail_markup_points,
+            "points_possible": 1,
+            "exact_match": exact_match
+        }
+        
+        # Recommended selling price (2 points)
+        exact_match, credit = is_close(
+            candidate["task1_markup_calculation"][product]["recommended_selling_price"],
+            answer_key["task1_markup_calculation"][product]["recommended_selling_price"]
+        )
+        price_points = 2 * credit
+        product_score["details"]["recommended_price"] = {
+            "points_earned": price_points,
+            "points_possible": 2,
+            "exact_match": exact_match
+        }
+        
+        # Justification (1 point)
+        justification_credit = evaluate_text_answer(
+            candidate["task1_markup_calculation"][product]["justification"]
+        )
+        justification_points = 1 * justification_credit
+        product_score["details"]["justification"] = {
+            "points_earned": justification_points,
+            "points_possible": 1,
+            "quality": justification_credit
+        }
+        
+        # Sum up points for this product
+        product_score["points_earned"] = markup_points + retail_markup_points + price_points + justification_points
+        results["points_earned"] += product_score["points_earned"]
+        results["product_scores"][product] = product_score
     
     return results
 
-def evaluate_exercise2(submission, answer_key):
-    results = {
-        "score": 0,
-        "max_score": 25,
-        "details": {
-            "progressive_schedule": {"score": 0, "max_score": 5, "comments": []},
-            "projected_units": {"score": 0, "max_score": 5, "comments": []},
-            "projected_revenue": {"score": 0, "max_score": 5, "comments": []},
-            "special_events": {"score": 0, "max_score": 5, "comments": []},
-            "strategy_explanation": {"score": 0, "max_score": 5, "comments": []}
+
+def evaluate_task2(candidate: Dict, answer_key: Dict) -> Dict[str, Any]:
+    """Evaluate Task 2: Markdown Strategy"""
+    results = {"points_earned": 0, "points_possible": 25, "product_scores": {}}
+    points_per_product = 25/3  # Approximately 8.33 points per product
+    
+    for product in ["product_F", "product_G", "product_H"]:
+        product_score = {"points_earned": 0, "points_possible": points_per_product, "details": {}}
+        
+        # Required markdown percentage (3 points)
+        exact_match, credit = is_close(
+            candidate["task2_markdown_strategy"][product]["required_markdown_percent"],
+            answer_key["task2_markdown_strategy"][product]["required_markdown_percent"]
+        )
+        markdown_points = 3 * credit
+        product_score["details"]["required_markdown_percent"] = {
+            "points_earned": markdown_points,
+            "points_possible": 3,
+            "exact_match": exact_match
         }
-    }
-    
-    sub_schedule = submission["exercise2"]["markdown_schedule"]
-    key_schedule = answer_key["exercise2"]["markdown_schedule"]
-    
-    # Check progressive markdown schedule
-    is_progressive = True
-    prev_markdown = 0
-    for week in sub_schedule:
-        if week["markdown_percentage"] < prev_markdown:
-            is_progressive = False
-            results["details"]["progressive_schedule"]["comments"].append(
-                f"Week {week['week']}: Markdown decreased from {prev_markdown}% to {week['markdown_percentage']}%"
-            )
-        prev_markdown = week["markdown_percentage"]
-    
-    # Check if markdowns are within acceptable ranges (15-75%)
-    all_in_range = all(15 <= week["markdown_percentage"] <= 75 for week in sub_schedule)
-    
-    if is_progressive and all_in_range:
-        results["details"]["progressive_schedule"]["score"] = 5
-    elif is_progressive:
-        results["details"]["progressive_schedule"]["score"] = 3
-        results["details"]["progressive_schedule"]["comments"].append("Some markdowns outside acceptable range (15-75%)")
-    elif all_in_range:
-        results["details"]["progressive_schedule"]["score"] = 2
-        results["details"]["progressive_schedule"]["comments"].append("Markdowns not consistently progressive")
-    else:
-        results["details"]["progressive_schedule"]["score"] = 1
-        results["details"]["progressive_schedule"]["comments"].append("Markdowns neither progressive nor in acceptable range")
-    
-    # Check projected units calculation
-    units_score = 0
-    for i, (sub_week, key_week) in enumerate(zip(sub_schedule, key_schedule)):
-        # Allow for differences up to 20% due to different calculation methods
-        expected_units = key_week["projected_units_sold"]
-        submitted_units = sub_week["projected_units_sold"]
         
-        if abs(submitted_units - expected_units) <= 0.2 * expected_units:
-            units_score += 1
-        else:
-            results["details"]["projected_units"]["comments"].append(
-                f"Week {i+1}: Expected around {expected_units} units, got {submitted_units}"
-            )
-    
-    results["details"]["projected_units"]["score"] = round(5 * (units_score / len(key_schedule)))
-    
-    # Check projected revenue calculation
-    revenue_score = 0
-    for i, (sub_week, key_week) in enumerate(zip(sub_schedule, key_schedule)):
-        # Allow for differences up to 20% due to different calculation methods
-        expected_revenue = key_week["projected_revenue"]
-        submitted_revenue = sub_week["projected_revenue"]
+        # Recommended markdown price (3 points)
+        exact_match, credit = is_close(
+            candidate["task2_markdown_strategy"][product]["recommended_markdown_price"],
+            answer_key["task2_markdown_strategy"][product]["recommended_markdown_price"]
+        )
+        price_points = 3 * credit
+        product_score["details"]["recommended_markdown_price"] = {
+            "points_earned": price_points,
+            "points_possible": 3,
+            "exact_match": exact_match
+        }
         
-        if abs(submitted_revenue - expected_revenue) <= 0.2 * expected_revenue:
-            revenue_score += 1
-        else:
-            results["details"]["projected_revenue"]["comments"].append(
-                f"Week {i+1}: Expected around ${expected_revenue}, got ${submitted_revenue}"
-            )
-    
-    results["details"]["projected_revenue"]["score"] = round(5 * (revenue_score / len(key_schedule)))
-    
-    # Check consideration of special events (Labor Day)
-    labor_day_week = 5  # Week 5 is Labor Day weekend
-    labor_day_considered = False
-    
-    # Check if Labor Day week has appropriate markdown
-    if sub_schedule[labor_day_week-1]["markdown_percentage"] >= 50:
-        labor_day_considered = True
-    
-    # Check if strategy explanation mentions Labor Day
-    if "labor day" in submission["exercise2"]["strategy_explanation"].lower():
-        labor_day_considered = True
-    
-    if labor_day_considered:
-        results["details"]["special_events"]["score"] = 5
-    else:
-        results["details"]["special_events"]["score"] = 2
-        results["details"]["special_events"]["comments"].append("No clear consideration of Labor Day weekend")
-    
-    # Evaluate strategy explanation
-    strategy = submission["exercise2"]["strategy_explanation"]
-    
-    if len(strategy) >= 100:
-        strategy_score = 3
+        # Units expected to sell (1 point)
+        exact_match = candidate["task2_markdown_strategy"][product]["units_expected_to_sell"] == answer_key["task2_markdown_strategy"][product]["units_expected_to_sell"]
+        units_points = 1 if exact_match else 0
+        product_score["details"]["units_expected_to_sell"] = {
+            "points_earned": units_points,
+            "points_possible": 1,
+            "exact_match": exact_match
+        }
         
-        # Check for key terms that should be in the strategy
-        key_terms = ["markdown", "inventory", "revenue", "sales", "clearance", "deadline"]
-        for term in key_terms:
-            if term.lower() in strategy.lower():
-                strategy_score += 0.5
+        # Justification (1.33 points)
+        justification_credit = evaluate_text_answer(
+            candidate["task2_markdown_strategy"][product]["justification"]
+        )
+        justification_points = 1.33 * justification_credit
+        product_score["details"]["justification"] = {
+            "points_earned": justification_points,
+            "points_possible": 1.33,
+            "quality": justification_credit
+        }
         
-        results["details"]["strategy_explanation"]["score"] = min(strategy_score, 5)
-    else:
-        results["details"]["strategy_explanation"]["score"] = 2
-        results["details"]["strategy_explanation"]["comments"].append("Strategy explanation too brief")
-    
-    # Calculate total score for Exercise 2
-    results["score"] = sum(detail["score"] for detail in results["details"].values())
+        # Sum up points for this product
+        product_score["points_earned"] = markdown_points + price_points + units_points + justification_points
+        results["points_earned"] += product_score["points_earned"]
+        results["product_scores"][product] = product_score
     
     return results
 
-def evaluate_exercise3(submission, answer_key):
-    results = {
-        "score": 0,
-        "max_score": 25,
-        "details": {
-            "minimum_markup": {"score": 0, "max_score": 5, "comments": []},
-            "implied_markup_calculation": {"score": 0, "max_score": 5, "comments": []},
-            "competitor_positioning": {"score": 0, "max_score": 5, "comments": []},
-            "price_sensitivity": {"score": 0, "max_score": 5, "comments": []},
-            "positioning_strategy": {"score": 0, "max_score": 5, "comments": []}
+
+def evaluate_task3(candidate: Dict, answer_key: Dict) -> Dict[str, Any]:
+    """Evaluate Task 3: Competitive Price Positioning"""
+    results = {"points_earned": 0, "points_possible": 25, "product_scores": {}}
+    points_per_product = 6.25  # 25/4 points per product
+    
+    for product in ["product_I", "product_J", "product_K", "product_L"]:
+        product_score = {"points_earned": 0, "points_possible": points_per_product, "details": {}}
+        
+        # Competitor average price (1 point)
+        exact_match, credit = is_close(
+            candidate["task3_competitive_pricing"][product]["competitor_average_price"],
+            answer_key["task3_competitive_pricing"][product]["competitor_average_price"]
+        )
+        avg_price_points = 1 * credit
+        product_score["details"]["competitor_average_price"] = {
+            "points_earned": avg_price_points,
+            "points_possible": 1,
+            "exact_match": exact_match
         }
-    }
-    
-    # Extract product data
-    sub_products = {p["product_id"]: p for p in submission["exercise3"]["product_pricing"]}
-    key_products = {p["product_id"]: p for p in answer_key["exercise3"]["product_pricing"]}
-    
-    # Minimum required markups
-    min_markups = {
-        "E001": 35,
-        "E002": 30,
-        "E003": 40,
-        "E004": 25,
-        "E005": 45
-    }
-    
-    # Check minimum markup requirements
-    markup_met = 0
-    for product_id, min_markup in min_markups.items():
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            if sub_product["implied_markup_rate"] >= min_markup:
-                markup_met += 1
-            else:
-                results["details"]["minimum_markup"]["comments"].append(
-                    f"{product_id}: Markup {sub_product['implied_markup_rate']}% below minimum requirement of {min_markup}%"
-                )
-    
-    results["details"]["minimum_markup"]["score"] = round(5 * (markup_met / len(min_markups)))
-    
-    # Check implied markup calculation
-    markup_calc_correct = 0
-    for product_id, key_product in key_products.items():
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            
-            # Calculate expected markup based on submitted price
-            wholesale_cost = sub_product["wholesale_cost"]
-            recommended_price = sub_product["recommended_price"]
-            expected_markup = ((recommended_price - wholesale_cost) / wholesale_cost) * 100
-            
-            # Allow for small differences due to rounding
-            if abs(sub_product["implied_markup_rate"] - expected_markup) <= 1:
-                markup_calc_correct += 1
-            else:
-                results["details"]["implied_markup_calculation"]["comments"].append(
-                    f"{product_id}: Expected implied markup {expected_markup:.1f}%, got {sub_product['implied_markup_rate']}%"
-                )
-    
-    results["details"]["implied_markup_calculation"]["score"] = round(5 * (markup_calc_correct / len(key_products)))
-    
-    # Check competitor positioning
-    competitor_prices = {
-        "E001": {"budget": 59.99, "mid": 89.99, "premium": 149.99},
-        "E002": {"budget": 49.99, "mid": 79.99, "premium": 129.99},
-        "E003": {"budget": 79.99, "mid": 119.99, "premium": 199.99},
-        "E004": {"budget": 34.99, "mid": 49.99, "premium": 69.99},
-        "E005": {"budget": 99.99, "mid": 159.99, "premium": 249.99}
-    }
-    
-    positioning_correct = 0
-    for product_id, prices in competitor_prices.items():
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            price = sub_product["recommended_price"]
-            
-            # Check if price is between budget and premium
-            if prices["budget"] <= price <= prices["premium"]:
-                positioning_correct += 1
-            else:
-                results["details"]["competitor_positioning"]["comments"].append(
-                    f"{product_id}: Price ${price} outside competitive range (${prices['budget']}-${prices['premium']})"
-                )
-    
-    results["details"]["competitor_positioning"]["score"] = round(5 * (positioning_correct / len(competitor_prices)))
-    
-    # Check price sensitivity consideration
-    sensitivity_ratings = {
-        "E001": 7,  # Wireless Headphones
-        "E002": 8,  # Bluetooth Speaker
-        "E003": 6,  # Fitness Tracker
-        "E004": 9,  # Power Bank
-        "E005": 5   # Smart Watch
-    }
-    
-    # Expected relationship: higher sensitivity should correlate with more competitive pricing
-    sensitivity_considered = 0
-    for product_id, sensitivity in sensitivity_ratings.items():
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            prices = competitor_prices[product_id]
-            price = sub_product["recommended_price"]
-            
-            # For high sensitivity (8-9), price should be closer to budget
-            # For medium sensitivity (6-7), price should be mid-range
-            # For low sensitivity (5), price can be higher
-            
-            if sensitivity >= 8 and price <= (prices["budget"] + prices["mid"]) / 2:
-                sensitivity_considered += 1
-            elif 6 <= sensitivity <= 7 and prices["budget"] < price < prices["premium"]:
-                sensitivity_considered += 1
-            elif sensitivity <= 5 and price >= (prices["mid"] + prices["budget"]) / 2:
-                sensitivity_considered += 1
-            elif "sensitivity" in sub_product["positioning_strategy"].lower():
-                # If they mention sensitivity in their strategy, give partial credit
-                sensitivity_considered += 0.5
-                results["details"]["price_sensitivity"]["comments"].append(
-                    f"{product_id}: Price may not fully reflect sensitivity rating of {sensitivity}/10"
-                )
-            else:
-                results["details"]["price_sensitivity"]["comments"].append(
-                    f"{product_id}: Price doesn't appear to consider sensitivity rating of {sensitivity}/10"
-                )
-    
-    results["details"]["price_sensitivity"]["score"] = round(5 * (sensitivity_considered / len(sensitivity_ratings)))
-    
-    # Evaluate positioning strategy quality
-    strategy_score = 0
-    for product_id in key_products:
-        if product_id in sub_products:
-            sub_product = sub_products[product_id]
-            strategy = sub_product["positioning_strategy"]
-            
-            # Basic scoring based on length and content
-            if len(strategy) >= 30:
-                points = 0.5
-                
-                # Check for key terms that should be in strategies
-                key_terms = ["position", "price", "competitor", "quality", "value", "market"]
-                for term in key_terms:
-                    if term.lower() in strategy.lower():
-                        points += 0.1
-                
-                strategy_score += min(points, 1.0)
-            else:
-                results["details"]["positioning_strategy"]["comments"].append(
-                    f"{product_id}: Positioning strategy too brief"
-                )
-    
-    results["details"]["positioning_strategy"]["score"] = round(5 * (strategy_score / len(key_products)))
-    
-    # Calculate total score for Exercise 3
-    results["score"] = sum(detail["score"] for detail in results["details"].values())
+        
+        # Recommended price (2 points)
+        exact_match, credit = is_close(
+            candidate["task3_competitive_pricing"][product]["recommended_price"],
+            answer_key["task3_competitive_pricing"][product]["recommended_price"]
+        )
+        rec_price_points = 2 * credit
+        product_score["details"]["recommended_price"] = {
+            "points_earned": rec_price_points,
+            "points_possible": 2,
+            "exact_match": exact_match
+        }
+        
+        # Percent difference from average (1 point)
+        exact_match, credit = is_close(
+            candidate["task3_competitive_pricing"][product]["percent_difference_from_average"],
+            answer_key["task3_competitive_pricing"][product]["percent_difference_from_average"]
+        )
+        diff_points = 1 * credit
+        product_score["details"]["percent_difference_from_average"] = {
+            "points_earned": diff_points,
+            "points_possible": 1,
+            "exact_match": exact_match
+        }
+        
+        # Achieved margin percent (1 point)
+        exact_match, credit = is_close(
+            candidate["task3_competitive_pricing"][product]["achieved_margin_percent"],
+            answer_key["task3_competitive_pricing"][product]["achieved_margin_percent"]
+        )
+        margin_points = 1 * credit
+        product_score["details"]["achieved_margin_percent"] = {
+            "points_earned": margin_points,
+            "points_possible": 1,
+            "exact_match": exact_match
+        }
+        
+        # Justification (1.25 points)
+        justification_credit = evaluate_text_answer(
+            candidate["task3_competitive_pricing"][product]["justification"]
+        )
+        justification_points = 1.25 * justification_credit
+        product_score["details"]["justification"] = {
+            "points_earned": justification_points,
+            "points_possible": 1.25,
+            "quality": justification_credit
+        }
+        
+        # Sum up points for this product
+        product_score["points_earned"] = avg_price_points + rec_price_points + diff_points + margin_points + justification_points
+        results["points_earned"] += product_score["points_earned"]
+        results["product_scores"][product] = product_score
     
     return results
 
-def evaluate_submission(submission, answer_key):
+
+def evaluate_task4(candidate: Dict, answer_key: Dict) -> Dict[str, Any]:
+    """Evaluate Task 4: Margin Analysis and Price Adjustment"""
+    results = {"points_earned": 0, "points_possible": 25, "product_scores": {}}
+    points_per_product = 6.25  # 25/4 points per product
+    
+    for product in ["product_M", "product_N", "product_O", "product_P"]:
+        product_score = {"points_earned": 0, "points_possible": points_per_product, "details": {}}
+        
+        # Required price adjustment percent (2 points)
+        exact_match, credit = is_close(
+            candidate["task4_margin_adjustment"][product]["required_price_adjustment_percent"],
+            answer_key["task4_margin_adjustment"][product]["required_price_adjustment_percent"]
+        )
+        adjustment_points = 2 * credit
+        product_score["details"]["required_price_adjustment_percent"] = {
+            "points_earned": adjustment_points,
+            "points_possible": 2,
+            "exact_match": exact_match
+        }
+        
+        # New recommended price (2 points)
+        exact_match, credit = is_close(
+            candidate["task4_margin_adjustment"][product]["new_recommended_price"],
+            answer_key["task4_margin_adjustment"][product]["new_recommended_price"]
+        )
+        price_points = 2 * credit
+        product_score["details"]["new_recommended_price"] = {
+            "points_earned": price_points,
+            "points_possible": 2,
+            "exact_match": exact_match
+        }
+        
+        # Expected impact on sales (1 point)
+        impact_credit = evaluate_text_answer(
+            candidate["task4_margin_adjustment"][product]["expected_impact_on_sales"]
+        )
+        impact_points = 1 * impact_credit
+        product_score["details"]["expected_impact_on_sales"] = {
+            "points_earned": impact_points,
+            "points_possible": 1,
+            "quality": impact_credit
+        }
+        
+        # Justification (1.25 points)
+        justification_credit = evaluate_text_answer(
+            candidate["task4_margin_adjustment"][product]["justification"]
+        )
+        justification_points = 1.25 * justification_credit
+        product_score["details"]["justification"] = {
+            "points_earned": justification_points,
+            "points_possible": 1.25,
+            "quality": justification_credit
+        }
+        
+        # Sum up points for this product
+        product_score["points_earned"] = adjustment_points + price_points + impact_points + justification_points
+        results["points_earned"] += product_score["points_earned"]
+        results["product_scores"][product] = product_score
+    
+    return results
+
+
+def evaluate_submission(candidate: Dict, answer_key: Dict) -> Dict[str, Any]:
+    """Evaluate the complete submission against the answer key."""
     results = {
-        "candidate_id": submission.get("candidate_id", "Unknown"),
-        "exercise1_results": evaluate_exercise1(submission, answer_key),
-        "exercise2_results": evaluate_exercise2(submission, answer_key),
-        "exercise3_results": evaluate_exercise3(submission, answer_key),
-        "overall_score": 0
+        "candidate_id": candidate.get("candidate_id", "Unknown"),
+        "task1_results": evaluate_task1(candidate, answer_key),
+        "task2_results": evaluate_task2(candidate, answer_key),
+        "task3_results": evaluate_task3(candidate, answer_key),
+        "task4_results": evaluate_task4(candidate, answer_key),
     }
     
-    # Calculate overall score as percentage
-    total_score = (
-        results["exercise1_results"]["score"] +
-        results["exercise2_results"]["score"] +
-        results["exercise3_results"]["score"]
+    # Calculate overall score
+    total_points_earned = (
+        results["task1_results"]["points_earned"] +
+        results["task2_results"]["points_earned"] +
+        results["task3_results"]["points_earned"] +
+        results["task4_results"]["points_earned"]
     )
+    total_points_possible = 100  # Fixed total
     
-    total_possible = (
-        results["exercise1_results"]["max_score"] +
-        results["exercise2_results"]["max_score"] +
-        results["exercise3_results"]["max_score"]
-    )
+    results["overall_score"] = round((total_points_earned / total_points_possible) * 100, 1)
     
-    results["overall_score"] = round((total_score / total_possible) * 100, 1)
-    
-    # Add pass/fail status based on criteria (45/75 points or 60%)
-    results["passed"] = results["overall_score"] >= 60
+    # Determine pass/fail status
+    if results["overall_score"] >= 90:
+        results["result"] = "Pass with Distinction"
+    elif results["overall_score"] >= 75:
+        results["result"] = "Pass"
+    elif results["overall_score"] >= 65:
+        results["result"] = "Conditional Pass"
+    else:
+        results["result"] = "Fail"
     
     return results
+
 
 def main():
-    # Load submission and answer key
-    submission = load_json("test_submission.json")
-    answer_key = load_json("answer_key.json")
+    """Main function to process command line arguments and evaluate submission."""
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    # Evaluate submission
-    results = evaluate_submission(submission, answer_key)
+    # Load the candidate submission and answer key
+    candidate = load_json_file(submission_file)
+    answer_key = load_json_file(answer_key_file)
     
-    # Save results
-    save_json(results, "test_results.json")
+    # Evaluate the submission
+    results = evaluate_submission(candidate, answer_key)
+    
+    # Write the results to a file
+    with open("test_results.json", "w") as file:
+        json.dump(results, file, indent=2)
+    
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall Score: {results['overall_score']}%")
+    print(f"Result: {results['result']}")
+
 
 if __name__ == "__main__":
     main()

@@ -13,7 +13,7 @@ dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
 
 # load openai api key
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
 # client = OpenAI(
@@ -32,9 +32,6 @@ You are an excellent examiner of {occupation} capabilities. Design a remote, **p
 - Design a **practical** exam that can be completed remotely using only these tools. A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
 - To simplify evaluation, the candidate should submit answers to questions in a structured JSON format. The JSON file should have the name "test_submission.json".
 '''
-
-
-
 
 prompt_overview ='''
 
@@ -55,8 +52,8 @@ Based on the explanation write clear, concise instructions for the candidate inc
 
 IMPORTANT: When designing the test, eliminate any opportunities for candidates to make arbitrary choices (like custom account codes, naming conventions, or classification systems) that would complicate evaluation. Either:
 - Provide pre-defined structures/codes that must be used, or
-- Design questions with objectively verifiable numerical/text answers that don't depend on the candidate's approach
-
+- Design questions with objectively verifiable numerical/text answers that don't depend on the candidate's approach. 
+- You can ask for text answers that can be compared to an exact match, but avoid asking for text answers such as justification that require interpretation and/or with many possible correct answers.
 '''
 
 prompt_template_materials = """
@@ -65,7 +62,22 @@ Here are the instructions for the candidate: <instructions> {answer_instructions
 
 ## Your assignment:
 - If the exam doesn't require any additional material, just respond with "No material required".
-- Else create synthetic test materials (CSV contents, datasets, etc.) that have predictable outcomes. Include the actual content to be provided to candidates and ensure all materials have clear identifiers, labels, or pre-defined categories that prevent ambiguity.
+- Otherwise, create two parts:
+  1. Synthetic test materials (CSV contents, datasets, etc.) that have predictable outcomes. Include the actual content to be provided to candidates and ensure all materials have clear identifiers, labels, or pre-defined categories that prevent ambiguity.
+  2. An explanation for the evaluator on how these materials were created and any knowledge helpful for knowing the correct answers
+
+ Format your response with these specific XML tags:
+<MATERIALS_FOR_CANDIDATE>
+[Include here the actual content to be provided to candidates. Ensure all materials have clear identifiers, labels, or pre-defined categories that prevent ambiguity.]
+</MATERIALS_FOR_CANDIDATE>
+
+<MATERIALS_EXPLANATION_FOR_EVALUATOR>
+[Explain to the evaluator:
+- How the materials were created and what, if any, statistical patterns or other relationships exist
+- Cross-references or important conections between different materials (e.g., codes in a CSV that match details in text, or relationships between texts)
+- Any tricky elements or common pitfalls in the materials that may cause candidates to answer incorrectly
+- "Hidden" information that requires careful reading to identify]
+</MATERIALS_EXPLANATION_FOR_EVALUATOR> 
 
 IMPORTANT: When designing the test, eliminate any opportunities for candidates to make arbitrary choices (like custom account codes, naming conventions, or classification systems) that would complicate evaluation. Either:
 - Provide pre-defined structures/codes that must be used, or
@@ -78,13 +90,12 @@ Here are the instructions for the candidate: <instructions> {answer_instructions
 Here are the materials provided to the candidate: <materials> {answer_materials} </materials>
 
 ## Your assignment
-Based on the given information, specify exactly what the candidate needs to submit, including:
+Based on the given information, specify exactly what format the candidate's answers must be in, including:
 - Required JSON answer format with question IDs
 - The exact format of answers (numbers, text, specific units, decimal places)
 - Any supplementary files if necessary
-- instruct to submit with a candidate id where "YOUR_ID_HERE" use the model version that is powering you "GPT-4-turbo", "GPT-4o", "Claude-3_7-Sonnet", "DeepSeekR1", "Gemini-Flash-2", etc.
-
-
+- You should only specify format and/or code/conventions to use in answering, but you should not give the answers away
+- Instruct to submit with a candidate id where "YOUR_ID_HERE" is the model version that is powering the candidate "GPT-4-turbo", "GPT-4o", "Claude-3_7-Sonnet", "DeepSeekR1", "Gemini-Flash-2", etc.
 """
 
 prompt_template_evaluation = """
@@ -99,7 +110,6 @@ Based on the given information create the following for the evaluator:
 - Complete answer key in JSON format for automated checking
 - Explanation of correct answers and how they were derived
 - Passing criteria (e.g., minimum number of correct answers)
-- If there are multiple valid solution approaches, provide a way to programmatically validate answers (e.g., a validation formula or script)
 """
 
 prompt_template_grading ="""
@@ -115,6 +125,13 @@ Then the script should automatically score the test performance and save the res
 In addition to the detailed test results, 'test_results.json' should include one variable 'overall_score' with the percentage of points achieved by the candidate.
 
 """
+
+# Function to extract materials for candidates
+def extract_materials_for_candidate(row):
+    match = re.search(r'<MATERIALS_FOR_CANDIDATE>(.*?)</MATERIALS_FOR_CANDIDATE>', row['answer_materials'], re.DOTALL)
+    if match:
+        return match.group(1).strip()  # Extract and strip any leading/trailing whitespace
+    return None  # Return None if no match is found
 
 
 def custom_join_or(lst):
@@ -249,7 +266,7 @@ if __name__ == "__main__":
         #path_to_data = '../../data/exam_approach/exams/'
 
     if len(sys.argv)>2:
-        overwrite = sys.argv[3]
+        overwrite = sys.argv[2]
     else:
         overwrite = False
 
@@ -285,6 +302,8 @@ if __name__ == "__main__":
                 print('Processing ', df.shape[0], ' new tasks.')
                 df = df[~df['task_id'].isin(exclusion_list['task_id'])]
                 print('After applying tools and materials exclusion criteria there are ', df.shape[0], ' tasks left.')
+                df = df.iloc[:3]
+                print('Maria filtered to top 3')
                 df["system_prompt"] = df.apply(build_system_prompt, axis=1, args=(system_prompt_template,))
                 
                 # get 1. OVERVIEW
@@ -302,6 +321,8 @@ if __name__ == "__main__":
                 print('Generating materials')
                 df['prompt_materials'] = df.apply(build_prompts, axis=1, args=(prompt_template_materials,))
                 df['answer_materials'] = df.apply(run_query, axis=1, args=('prompt_materials',model,))
+                # Extract materials for candidates from the existing 'answer_materials' column
+                df['answer_materialscandidateonly'] = df['answer_materials'].apply(lambda x: extract_materials_for_candidate({'answer_materials': x}))
 
 
                 #4. SUBMISSION
@@ -320,9 +341,11 @@ if __name__ == "__main__":
                 df['prompt_grading'] = df.apply(build_prompts, axis=1, args=(prompt_template_grading,))
                 df['answer_grading'] = df.apply(run_query, axis=1, args=('prompt_grading',model,))
             
+                # NOTE I think we can move this out of foor loop when overwrite is true
+                # If so I would also do the candidate extraction from materials after the for loop
                 if overwrite == False:
-                    pd.concat([existing_df,df]).to_csv(f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
+                    pd.concat([existing_df,df]).to_csv(f'../../data/exam_approach/exams/{model}/exams_materialsexplained_{file.replace("task_list_","")}')
                 else:
-                    df.to_csv(f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
+                    df.to_csv(f'../../data/exam_approach/exams/{model}/exams_materialsexplained_{file.replace("task_list_","")}')
                     print('saved to ', f'../../data/exam_approach/exams/{model}/exams_{file.replace("task_list_","")}')
                 print('Finished! Processed '+str(df.shape[0]) +' tasks!')

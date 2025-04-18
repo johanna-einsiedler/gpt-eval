@@ -1,0 +1,93 @@
+{
+  "candidate_id": "EVALUATOR_REFERENCE",
+  "overall_score": 100.0,
+  "passing_threshold": 70,
+  "strong_performance_threshold": 85,
+  "tasks": {
+    "task1": {
+      "points": 30,
+      "max_points": 30,
+      "breakdown": {
+        "top_products": {
+          "points": 10,
+          "max_points": 10,
+          "note": "All 3 correct in right order"
+        },
+        "growth_rate_q4": {
+          "points": 8,
+          "max_points": 8,
+          "note": "Within \u00b10.5%"
+        },
+        "seasonal_pattern": {
+          "points": 6,
+          "max_points": 6,
+          "note": "Correct"
+        },
+        "peak_month": {
+          "points": 6,
+          "max_points": 6,
+          "note": "Correct"
+        }
+      }
+    },
+    "task2": {
+      "points": 30,
+      "max_points": 30,
+      "breakdown": {
+        "market_expansion": {
+          "points": 6,
+          "max_points": 6,
+          "note": "Correct"
+        },
+        "price_sensitivity_score": {
+          "points": 8,
+          "max_points": 8,
+          "note": "Exact score"
+        },
+        "trend_direction": {
+          "points": 6,
+          "max_points": 6,
+          "note": "Correct"
+        },
+        "expected_demand_change": {
+          "points": 10,
+          "max_points": 10,
+          "note": "Exact answer"
+        }
+      }
+    },
+    "task3": {
+      "points": 40,
+      "max_points": 40,
+      "breakdown": {
+        "product_a_forecast": {
+          "points": 5,
+          "max_points": 5,
+          "note": "Within \u00b15% (submitted: 535, correct: 535)"
+        },
+        "product_b_forecast": {
+          "points": 5,
+          "max_points": 5,
+          "note": "Within \u00b15% (submitted: 397, correct: 397)"
+        },
+        "product_c_forecast": {
+          "points": 5,
+          "max_points": 5,
+          "note": "Within \u00b15% (submitted: 267, correct: 267)"
+        },
+        "total_inventory_value": {
+          "points": 10,
+          "max_points": 10,
+          "note": "Within \u00b12%"
+        },
+        "recommended_stock_ratio": {
+          "points": 15,
+          "max_points": 15,
+          "note": "All ratios within \u00b10.03"
+        }
+      }
+    }
+  },
+  "passed": true,
+  "strong_performance": true
+}

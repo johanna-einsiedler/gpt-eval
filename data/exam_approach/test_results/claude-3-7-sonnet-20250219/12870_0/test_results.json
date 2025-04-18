@@ -1,0 +1,39 @@
+{
+  "candidate_id": "EVALUATOR_SAMPLE",
+  "format_score": {
+    "score": 10,
+    "max_score": 10,
+    "percentage": 100.0
+  },
+  "task1": {
+    "score": 22,
+    "max_score": 30,
+    "percentage": 73.33333333333333,
+    "feedback": [
+      "Development 1: Not within the past 30 days",
+      "Development 2: Not within the past 30 days",
+      "Development 2: Impact word count (64) outside desired range (75-100)",
+      "Development 3: Not within the past 30 days",
+      "Development 3: Impact word count (64) outside desired range (75-100)"
+    ]
+  },
+  "task2": {
+    "score": 29,
+    "max_score": 35,
+    "percentage": 82.85714285714286,
+    "feedback": [
+      "Deal 1: Not within the past 6 months",
+      "Deal 2: Not within the past 6 months"
+    ]
+  },
+  "task3": {
+    "score": 34,
+    "max_score": 35,
+    "percentage": 97.14285714285714,
+    "feedback": []
+  },
+  "total_score": 95,
+  "total_possible": 110,
+  "overall_score": 86.36363636363636,
+  "result": "PASS"
+}

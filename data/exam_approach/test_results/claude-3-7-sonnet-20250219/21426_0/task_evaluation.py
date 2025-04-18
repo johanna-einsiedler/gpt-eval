@@ -1,215 +1,239 @@
-import json
-import os
-import math
+#!/usr/bin/env python3
 
-def load_json_file(filename):
+import json
+import sys
+import os
+from math import isclose
+
+def load_json(filename):
     """Load and parse a JSON file."""
     try:
         with open(filename, 'r') as file:
             return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError) as e:
         print(f"Error loading {filename}: {e}")
-        return None
-
-def evaluate_coverage_determination(submission, answer_key, scenario):
-    """Evaluate if the coverage determination is correct (2 points)."""
-    if submission[scenario]["claim_covered"] == answer_key[scenario]["claim_covered"]:
-        return 2, "Correct coverage determination"
-    else:
-        return 0, "Incorrect coverage determination"
-
-def evaluate_payment_calculation(submission, answer_key, scenario):
-    """Evaluate if the payment calculation is correct (3 points)."""
-    correct_amount = answer_key[scenario]["payment_amount"]
-    submitted_amount = submission[scenario]["payment_amount"]
-    
-    # Calculate percentage difference
-    if correct_amount == 0:
-        percentage_diff = 0 if submitted_amount == 0 else 100
-    else:
-        percentage_diff = abs((submitted_amount - correct_amount) / correct_amount * 100)
-    
-    if percentage_diff == 0:
-        return 3, "Correct payment calculation"
-    elif percentage_diff <= 5:
-        return 2, f"Payment calculation within 5% of correct amount (submitted: ${submitted_amount:.2f}, correct: ${correct_amount:.2f})"
-    elif percentage_diff <= 10:
-        return 1, f"Payment calculation within 10% of correct amount (submitted: ${submitted_amount:.2f}, correct: ${correct_amount:.2f})"
-    else:
-        return 0, f"Payment calculation error exceeds 10% (submitted: ${submitted_amount:.2f}, correct: ${correct_amount:.2f})"
-
-def evaluate_deductible_application(submission, answer_key, scenario):
-    """Evaluate if the deductible was correctly applied (1 point)."""
-    if submission[scenario]["deductible_applied"] == answer_key[scenario]["deductible_applied"]:
-        return 1, "Correct deductible application"
-    else:
-        return 0, f"Incorrect deductible application (submitted: ${submission[scenario]['deductible_applied']:.2f}, correct: ${answer_key[scenario]['deductible_applied']:.2f})"
-
-def evaluate_decision_rationale(submission, answer_key, scenario):
-    """Evaluate the decision rationale (2 points)."""
-    # This is a simplified evaluation - in reality, this would require more sophisticated text analysis
-    # or human review. Here we're just checking if the rationale is of sufficient length and contains
-    # key terms that should be present in a good rationale.
-    
-    rationale = submission[scenario]["decision_rationale"].lower()
-    
-    # Check if rationale is of sufficient length (at least 50 words)
-    word_count = len(rationale.split())
-    if word_count < 50:
-        return 0, f"Decision rationale too brief ({word_count} words, minimum 50 required)"
-    
-    # Check for key terms based on the scenario
-    key_terms = {
-        "scenario_1": ["collision", "coverage", "deductible", "repair"],
-        "scenario_2": ["water", "damage", "pipe", "burst", "freezing"],
-        "scenario_3": ["medical", "deductible", "coinsurance", "in-network"],
-        "scenario_4": ["business", "interruption", "income", "expenses"],
-        "scenario_5": ["theft", "stolen", "property", "deductible"]
-    }
-    
-    terms_found = sum(1 for term in key_terms[scenario] if term in rationale)
-    
-    if terms_found >= len(key_terms[scenario]) - 1:
-        return 2, "Comprehensive decision rationale with relevant policy references"
-    elif terms_found >= len(key_terms[scenario]) / 2:
-        return 1, "Adequate decision rationale but missing some key policy references"
-    else:
-        return 0, "Insufficient decision rationale lacking key policy references"
-
-def evaluate_authority_level(submission, answer_key, scenario):
-    """Evaluate if authority level determination is correct (1 point)."""
-    if submission[scenario]["exceeds_authority"] == answer_key[scenario]["exceeds_authority"]:
-        return 1, "Correct authority level determination"
-    else:
-        # This is a critical error if they fail to escalate a claim that exceeds authority
-        if answer_key[scenario]["exceeds_authority"] and not submission[scenario]["exceeds_authority"]:
-            return 0, "CRITICAL ERROR: Failed to escalate claim that exceeds authority level"
-        else:
-            return 0, "Incorrect authority level determination"
-
-def evaluate_fraud_indicators(submission, answer_key, scenario):
-    """Evaluate fraud indicator identification (1 point)."""
-    # In this exam, none of the scenarios have clear fraud indicators
-    # But we'll check if the candidate falsely identified fraud where none exists
-    
-    answer_key_indicators = answer_key[scenario]["fraud_indicators"]
-    submission_indicators = submission[scenario]["fraud_indicators"]
-    
-    if len(answer_key_indicators) == 0 and len(submission_indicators) == 0:
-        return 1, "Correctly identified no fraud indicators"
-    elif len(answer_key_indicators) == 0 and len(submission_indicators) > 0:
-        # The candidate may have reasonable suspicions, so we'll accept with justification
-        # This is a simplified check - in reality, would need human review
-        if len(submission[scenario]["documentation_notes"]) > 30:
-            return 1, "Identified potential fraud indicators with proper justification"
-        else:
-            return 0, "Incorrectly identified fraud indicators without proper justification"
-    else:
-        # Compare the identified indicators with the expected ones
-        matches = sum(1 for ind in submission_indicators if any(ind.lower() in key_ind.lower() for key_ind in answer_key_indicators))
-        if matches >= len(answer_key_indicators) / 2:
-            return 1, "Correctly identified most fraud indicators"
-        else:
-            return 0, "Failed to identify key fraud indicators"
-
-def check_critical_errors(results):
-    """Check for critical errors that would result in automatic failure."""
-    critical_errors = []
-    
-    for scenario in results:
-        if scenario.startswith("scenario_"):
-            # Check for approving a claim that should be denied
-            if "coverage determination" in results[scenario] and "Incorrect" in results[scenario]["coverage determination"]["feedback"]:
-                critical_errors.append(f"{scenario}: Approved a claim that should be denied or vice versa")
-            
-            # Check for failing to escalate (already captured in authority level evaluation)
-            if "authority level" in results[scenario] and "CRITICAL ERROR" in results[scenario]["authority level"]["feedback"]:
-                critical_errors.append(f"{scenario}: {results[scenario]['authority level']['feedback']}")
-            
-            # Check for payment calculation error exceeding 10%
-            if "payment calculation" in results[scenario] and "exceeds 10%" in results[scenario]["payment calculation"]["feedback"]:
-                critical_errors.append(f"{scenario}: {results[scenario]['payment calculation']['feedback']}")
-    
-    return critical_errors
+        sys.exit(1)
 
 def evaluate_submission(submission, answer_key):
-    """Evaluate the candidate's submission against the answer key."""
+    """Evaluate a candidate's submission against the answer key."""
     results = {
         "candidate_id": submission.get("candidate_id", "Unknown"),
-        "total_points": 0,
-        "max_points": 50,
+        "claim_results": [],
         "overall_score": 0,
-        "critical_errors": []
+        "max_possible_score": 100,
+        "passing_threshold": 75
     }
     
-    # Evaluate each scenario
-    for i in range(1, 6):
-        scenario = f"scenario_{i}"
-        scenario_results = {
-            "total_points": 0,
-            "max_points": 10
-        }
-        
-        # Evaluate each aspect of the scenario
-        evaluations = [
-            ("coverage determination", evaluate_coverage_determination),
-            ("payment calculation", evaluate_payment_calculation),
-            ("deductible application", evaluate_deductible_application),
-            ("decision rationale", evaluate_decision_rationale),
-            ("authority level", evaluate_authority_level),
-            ("fraud indicators", evaluate_fraud_indicators)
-        ]
-        
-        for aspect, evaluation_func in evaluations:
-            points, feedback = evaluation_func(submission, answer_key, scenario)
-            scenario_results[aspect] = {
-                "points": points,
-                "feedback": feedback
-            }
-            scenario_results["total_points"] += points
-        
-        results[scenario] = scenario_results
-        results["total_points"] += scenario_results["total_points"]
+    total_points = 0
     
-    # Calculate overall score as a percentage
-    results["overall_score"] = (results["total_points"] / results["max_points"]) * 100
+    # Match claims by claim_id for evaluation
+    submission_claims = {claim["claim_id"]: claim for claim in submission.get("claims", [])}
+    answer_key_claims = {claim["claim_id"]: claim for claim in answer_key.get("claims", [])}
     
-    # Check for critical errors
-    results["critical_errors"] = check_critical_errors(results)
+    for claim_id, answer in answer_key_claims.items():
+        if claim_id not in submission_claims:
+            results["claim_results"].append({
+                "claim_id": claim_id,
+                "points": 0,
+                "max_points": 20,
+                "details": "Claim missing from submission"
+            })
+            continue
+            
+        submission_claim = submission_claims[claim_id]
+        claim_score = evaluate_claim(submission_claim, answer)
+        total_points += claim_score["total_points"]
+        results["claim_results"].append(claim_score)
     
-    # If there are critical errors, the candidate fails regardless of score
-    if results["critical_errors"]:
-        results["pass"] = False
-        results["result_summary"] = "FAIL - Critical errors detected"
-    else:
-        # Pass if score is at least 80%
-        results["pass"] = results["overall_score"] >= 80
-        results["result_summary"] = "PASS" if results["pass"] else "FAIL"
+    # Check for any extra claims in submission that weren't in the answer key
+    for claim_id in submission_claims:
+        if claim_id not in answer_key_claims:
+            results["claim_results"].append({
+                "claim_id": claim_id,
+                "points": 0,
+                "max_points": 0,
+                "details": "Extra claim not in answer key"
+            })
+    
+    # Calculate overall percentage score
+    results["overall_score"] = round((total_points / 100) * 100, 2)
+    results["passed"] = results["overall_score"] >= results["passing_threshold"]
+    
+    # Check for critical errors (automatic failure conditions)
+    critical_errors = check_critical_errors(submission_claims, answer_key_claims)
+    
+    if critical_errors:
+        results["critical_errors"] = critical_errors
+        results["passed"] = False
+        results["details"] = "Automatic failure due to critical errors"
     
     return results
 
+def evaluate_claim(submission, answer):
+    """Evaluate a single claim against its answer."""
+    result = {
+        "claim_id": submission["claim_id"],
+        "max_points": 20,
+        "scoring_details": {
+            "calculation": {"earned": 0, "possible": 8, "notes": ""},
+            "decision": {"earned": 0, "possible": 5, "notes": ""},
+            "escalation_code": {"earned": 0, "possible": 3, "notes": ""},
+            "payment_breakdown": {"earned": 0, "possible": 4, "notes": ""}
+        }
+    }
+    
+    # Evaluate calculated payment (8 points, with 5% tolerance)
+    if isclose(submission["calculated_payment"], answer["calculated_payment"], rel_tol=0.05):
+        result["scoring_details"]["calculation"]["earned"] = 8
+    else:
+        result["scoring_details"]["calculation"]["notes"] = (
+            f"Expected {answer['calculated_payment']}, "
+            f"got {submission['calculated_payment']}"
+        )
+    
+    # Evaluate decision (5 points)
+    if submission["decision"] == answer["decision"]:
+        result["scoring_details"]["decision"]["earned"] = 5
+    else:
+        result["scoring_details"]["decision"]["notes"] = (
+            f"Expected '{answer['decision']}', got '{submission['decision']}'"
+        )
+    
+    # Evaluate escalation code (3 points)
+    # Only matters if the decision is "escalate"
+    if answer["decision"] == "escalate":
+        if submission["escalation_code"] == answer["escalation_code"]:
+            result["scoring_details"]["escalation_code"]["earned"] = 3
+        else:
+            result["scoring_details"]["escalation_code"]["notes"] = (
+                f"Expected '{answer['escalation_code']}', "
+                f"got '{submission['escalation_code']}'"
+            )
+    else:
+        # If the answer doesn't require escalation, we only give points if the
+        # submission also doesn't have an escalation code
+        if submission["escalation_code"] is None:
+            result["scoring_details"]["escalation_code"]["earned"] = 3
+        else:
+            result["scoring_details"]["escalation_code"]["notes"] = (
+                f"Expected null, got '{submission['escalation_code']}'"
+            )
+    
+    # Evaluate payment breakdown (4 points)
+    breakdown_score, breakdown_notes = evaluate_payment_breakdown(
+        submission["payment_breakdown"], 
+        answer["payment_breakdown"]
+    )
+    result["scoring_details"]["payment_breakdown"]["earned"] = breakdown_score
+    if breakdown_notes:
+        result["scoring_details"]["payment_breakdown"]["notes"] = breakdown_notes
+    
+    # Calculate total points for this claim
+    result["total_points"] = sum(
+        detail["earned"] for detail in result["scoring_details"].values()
+    )
+    
+    return result
+
+def evaluate_payment_breakdown(submission_breakdown, answer_breakdown):
+    """Evaluate the payment breakdown with 5% tolerance on each component."""
+    # Get all possible keys from both breakdowns
+    all_keys = set(submission_breakdown.keys()).union(set(answer_breakdown.keys()))
+    
+    # Count components that match within tolerance
+    matching_components = 0
+    total_components = len(all_keys)
+    notes = []
+    
+    for key in all_keys:
+        sub_value = submission_breakdown.get(key, 0)
+        ans_value = answer_breakdown.get(key, 0)
+        
+        # If both values are zero, consider them matching
+        if sub_value == 0 and ans_value == 0:
+            matching_components += 1
+            continue
+            
+        # Otherwise, check with tolerance
+        if isclose(sub_value, ans_value, rel_tol=0.05):
+            matching_components += 1
+        else:
+            notes.append(f"{key}: Expected {ans_value}, got {sub_value}")
+    
+    # Calculate score proportionally (out of 4 points)
+    score = round(4 * (matching_components / total_components))
+    
+    return score, "; ".join(notes) if notes else ""
+
+def check_critical_errors(submission_claims, answer_key_claims):
+    """Check for critical errors that result in automatic failure."""
+    critical_errors = []
+    
+    # Check for approving claims that exceed authority
+    for claim_id, answer in answer_key_claims.items():
+        if claim_id not in submission_claims:
+            continue
+            
+        submission = submission_claims[claim_id]
+        
+        # Critical error: Approving a claim that should be escalated
+        if (answer["decision"] == "escalate" and 
+            submission["decision"] == "approve" and
+            answer["calculated_payment"] > 25000):
+            critical_errors.append(
+                f"Claim {claim_id}: Approved a claim that exceeds authority limit"
+            )
+            
+        # Critical error: Using incorrect escalation code when escalating
+        if (submission["decision"] == "escalate" and 
+            submission["escalation_code"] != answer["escalation_code"] and
+            submission["escalation_code"] is not None):
+            critical_errors.append(
+                f"Claim {claim_id}: Used incorrect escalation code"
+            )
+            
+        # Critical error: Failure to recognize replacement cost vs ACV in Claim 5
+        if (claim_id == "RD-20231105" and 
+            submission["decision"] == "approve" and
+            answer["decision"] == "escalate"):
+            critical_errors.append(
+                "Claim RD-20231105: Failed to recognize replacement cost vs. actual cash value distinction"
+            )
+    
+    return critical_errors
+
 def main():
-    # Load the submission and answer key
-    submission = load_json_file("test_submission.json")
-    answer_key = load_json_file("answer_key.json")
+    """Main function to parse arguments and run evaluation."""
+    if len(sys.argv) != 3:
+        print("Usage: python task_evaluation.py test_submission.json answer_key.json")
+        sys.exit(1)
     
-    if not submission or not answer_key:
-        print("Error: Could not load required files.")
-        return
+    submission_file = sys.argv[1]
+    answer_key_file = sys.argv[2]
     
-    # Evaluate the submission
+    submission = load_json(submission_file)
+    answer_key = load_json(answer_key_file)
+    
+    # Normalize answer key structure if needed
+    if "answer_key" in answer_key:
+        answer_key = answer_key["answer_key"]
+    
     results = evaluate_submission(submission, answer_key)
     
-    # Save the results
-    with open("test_results.json", "w") as file:
-        json.dump(results, file, indent=2)
+    # Save results to JSON file
+    with open("test_results.json", "w") as f:
+        json.dump(results, f, indent=2)
     
-    print(f"Evaluation complete. Overall score: {results['overall_score']:.2f}%")
-    print(f"Result: {results['result_summary']}")
-    if results["critical_errors"]:
-        print("Critical errors:")
-        for error in results["critical_errors"]:
-            print(f"- {error}")
+    print(f"Evaluation complete. Results saved to test_results.json")
+    print(f"Overall score: {results['overall_score']}%")
+    if results.get("passed", False):
+        print("PASSED")
+    else:
+        print("FAILED")
+        if "critical_errors" in results:
+            print("Critical errors found:")
+            for error in results["critical_errors"]:
+                print(f"- {error}")
 
 if __name__ == "__main__":
     main()

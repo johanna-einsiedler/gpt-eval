@@ -1,0 +1,466 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "overall_score": 98.33333333333333,
+  "passed": true,
+  "sections": [
+    {
+      "section_name": "Coverage Analysis",
+      "weight": 35,
+      "items": [
+        {
+          "name": "Coverage Determination",
+          "correct": true,
+          "weight": 10,
+          "score": 10,
+          "expected": "no",
+          "submitted": "no",
+          "critical_element": true
+        },
+        {
+          "name": "Coverage Issues Identification",
+          "correct": true,
+          "weight": 10,
+          "score": 10.0,
+          "expected": [
+            "Business use exclusion applies as insured was making a delivery for his side business",
+            "Insured was engaged in the business of delivering goods at time of accident"
+          ],
+          "submitted": [
+            "Business use exclusion applies as insured was making a delivery for his side business",
+            "Insured was engaged in the business of delivering goods at time of accident"
+          ],
+          "critical_element": true,
+          "notes": "Business use exclusion identification is critical"
+        },
+        {
+          "name": "Policy Sections Applied",
+          "correct": true,
+          "weight": 8,
+          "score": 8.0,
+          "expected": [
+            "Section IV, Exclusion A.6"
+          ],
+          "submitted": [
+            "Section IV, Exclusion A.6"
+          ]
+        },
+        {
+          "name": "Exclusions Applied",
+          "correct": true,
+          "weight": 7,
+          "score": 7.0,
+          "expected": [
+            "Business use exclusion"
+          ],
+          "submitted": [
+            "Business use exclusion"
+          ]
+        }
+      ],
+      "section_score": 35.0
+    },
+    {
+      "section_name": "Liability Assessment",
+      "weight": 25,
+      "items": [
+        {
+          "name": "Insured Liability Percentage",
+          "correct": true,
+          "weight": 10,
+          "score": 10.0,
+          "expected": 15,
+          "submitted": 15,
+          "critical_element": true,
+          "critical_failure": false,
+          "notes": "Assigning majority liability to insured is an automatic failure"
+        },
+        {
+          "name": "Other Parties Liability",
+          "correct": true,
+          "weight": 10,
+          "score": 10.0,
+          "expected": [
+            {
+              "name": "Michael Davis",
+              "percentage": 85
+            }
+          ],
+          "submitted": [
+            {
+              "name": "Michael Davis",
+              "percentage": 85
+            }
+          ]
+        },
+        {
+          "name": "Liability Rationale",
+          "correct": true,
+          "weight": 5,
+          "score": 3.333333333333333,
+          "expected": "Michael Davis cited for running red light confirmed by two independent witnesses. Insured's minor contributory negligence for proceeding through yellow light that was changing.",
+          "submitted": "Michael Davis cited for running red light confirmed by two independent witnesses. Insured's minor contributory negligence for proceeding through yellow light that was changing."
+        }
+      ],
+      "section_score": 23.333333333333332
+    },
+    {
+      "section_name": "Damages Evaluation",
+      "weight": 20,
+      "items": [
+        {
+          "name": "Claimant Reserve Accuracy",
+          "correct": true,
+          "weight": 15,
+          "score": 15.0,
+          "expected": [
+            {
+              "claimant_name": "Sarah Jones",
+              "bodily_injury_reserve": 150000,
+              "property_damage_reserve": 0,
+              "medical_payments_reserve": 10000,
+              "other_reserves": 0,
+              "total_reserve": 160000
+            },
+            {
+              "claimant_name": "Tom Wright",
+              "bodily_injury_reserve": 15000,
+              "property_damage_reserve": 0,
+              "medical_payments_reserve": 8500,
+              "other_reserves": 0,
+              "total_reserve": 23500
+            },
+            {
+              "claimant_name": "John Smith",
+              "bodily_injury_reserve": 0,
+              "property_damage_reserve": 18500,
+              "medical_payments_reserve": 3200,
+              "other_reserves": 0,
+              "total_reserve": 21700
+            },
+            {
+              "claimant_name": "Michael Davis",
+              "bodily_injury_reserve": 25000,
+              "property_damage_reserve": 14800,
+              "medical_payments_reserve": 0,
+              "other_reserves": 0,
+              "total_reserve": 39800
+            },
+            {
+              "claimant_name": "Jennifer Davis",
+              "bodily_injury_reserve": 30000,
+              "property_damage_reserve": 0,
+              "medical_payments_reserve": 0,
+              "other_reserves": 0,
+              "total_reserve": 30000
+            },
+            {
+              "claimant_name": "City of Springfield",
+              "bodily_injury_reserve": 0,
+              "property_damage_reserve": 3200,
+              "medical_payments_reserve": 0,
+              "other_reserves": 0,
+              "total_reserve": 3200
+            }
+          ],
+          "submitted": [
+            {
+              "claimant_name": "Sarah Jones",
+              "bodily_injury_reserve": 150000,
+              "property_damage_reserve": 0,
+              "medical_payments_reserve": 10000,
+              "other_reserves": 0,
+              "total_reserve": 160000
+            },
+            {
+              "claimant_name": "Tom Wright",
+              "bodily_injury_reserve": 15000,
+              "property_damage_reserve": 0,
+              "medical_payments_reserve": 8500,
+              "other_reserves": 0,
+              "total_reserve": 23500
+            },
+            {
+              "claimant_name": "John Smith",
+              "bodily_injury_reserve": 0,
+              "property_damage_reserve": 18500,
+              "medical_payments_reserve": 3200,
+              "other_reserves": 0,
+              "total_reserve": 21700
+            },
+            {
+              "claimant_name": "Michael Davis",
+              "bodily_injury_reserve": 25000,
+              "property_damage_reserve": 14800,
+              "medical_payments_reserve": 0,
+              "other_reserves": 0,
+              "total_reserve": 39800
+            },
+            {
+              "claimant_name": "Jennifer Davis",
+              "bodily_injury_reserve": 30000,
+              "property_damage_reserve": 0,
+              "medical_payments_reserve": 0,
+              "other_reserves": 0,
+              "total_reserve": 30000
+            },
+            {
+              "claimant_name": "City of Springfield",
+              "bodily_injury_reserve": 0,
+              "property_damage_reserve": 3200,
+              "medical_payments_reserve": 0,
+              "other_reserves": 0,
+              "total_reserve": 3200
+            }
+          ],
+          "details": [
+            {
+              "name": "sarah jones",
+              "correct": true,
+              "expected": 160000,
+              "submitted": 160000,
+              "score": 1.0,
+              "critical_element": true,
+              "critical_failure": false,
+              "notes": "Sarah Jones must be adequately reserved (within 30% of expected)"
+            },
+            {
+              "name": "tom wright",
+              "correct": true,
+              "expected": 23500,
+              "submitted": 23500,
+              "score": 1.0
+            },
+            {
+              "name": "john smith",
+              "correct": true,
+              "expected": 21700,
+              "submitted": 21700,
+              "score": 1.0
+            },
+            {
+              "name": "michael davis",
+              "correct": true,
+              "expected": 39800,
+              "submitted": 39800,
+              "score": 1.0
+            },
+            {
+              "name": "jennifer davis",
+              "correct": true,
+              "expected": 30000,
+              "submitted": 30000,
+              "score": 1.0
+            },
+            {
+              "name": "city of springfield",
+              "correct": true,
+              "expected": 3200,
+              "submitted": 3200,
+              "score": 1.0
+            }
+          ]
+        },
+        {
+          "name": "Total Claim Reserve",
+          "correct": true,
+          "weight": 5,
+          "score": 5.0,
+          "expected": 278200,
+          "submitted": 278200
+        }
+      ],
+      "section_score": 20.0
+    },
+    {
+      "section_name": "Settlement Strategy",
+      "weight": 15,
+      "items": [
+        {
+          "name": "Settlement Recommendations",
+          "correct": true,
+          "weight": 15,
+          "score": 15.0,
+          "expected": [
+            {
+              "claimant_name": "Sarah Jones",
+              "minimum_settlement": 120000,
+              "maximum_settlement": 160000,
+              "settlement_factors": [
+                "Severe injuries with surgical intervention",
+                "Permanent partial disability",
+                "Medical expenses of $100,000",
+                "Lost wages of $10,000",
+                "Potential coverage defense based on business use exclusion"
+              ]
+            },
+            {
+              "claimant_name": "Tom Wright",
+              "minimum_settlement": 12000,
+              "maximum_settlement": 20000,
+              "settlement_factors": [
+                "Mild concussion and neck strain",
+                "Medical expenses of $8,500",
+                "Lost wages of $2,000",
+                "Expected full recovery",
+                "Potential coverage defense based on business use exclusion"
+              ]
+            },
+            {
+              "claimant_name": "Michael Davis",
+              "minimum_settlement": 15000,
+              "maximum_settlement": 25000,
+              "settlement_factors": [
+                "Fractured wrist and chest contusion",
+                "Medical expenses of $12,500",
+                "Lost wages of $6,000",
+                "85% at fault for accident",
+                "Potential coverage defense based on business use exclusion"
+              ]
+            },
+            {
+              "claimant_name": "Jennifer Davis",
+              "minimum_settlement": 20000,
+              "maximum_settlement": 30000,
+              "settlement_factors": [
+                "Moderate concussion and fractured collarbone",
+                "Medical expenses of $15,000",
+                "Lost wages of $3,500",
+                "Not at fault for accident",
+                "Potential coverage defense based on business use exclusion"
+              ]
+            }
+          ],
+          "submitted": [
+            {
+              "claimant_name": "Sarah Jones",
+              "minimum_settlement": 120000,
+              "maximum_settlement": 160000,
+              "settlement_factors": [
+                "Severe injuries with surgical intervention",
+                "Permanent partial disability",
+                "Medical expenses of $100,000",
+                "Lost wages of $10,000",
+                "Potential coverage defense based on business use exclusion"
+              ]
+            },
+            {
+              "claimant_name": "Tom Wright",
+              "minimum_settlement": 12000,
+              "maximum_settlement": 20000,
+              "settlement_factors": [
+                "Mild concussion and neck strain",
+                "Medical expenses of $8,500",
+                "Lost wages of $2,000",
+                "Expected full recovery",
+                "Potential coverage defense based on business use exclusion"
+              ]
+            },
+            {
+              "claimant_name": "Michael Davis",
+              "minimum_settlement": 15000,
+              "maximum_settlement": 25000,
+              "settlement_factors": [
+                "Fractured wrist and chest contusion",
+                "Medical expenses of $12,500",
+                "Lost wages of $6,000",
+                "85% at fault for accident",
+                "Potential coverage defense based on business use exclusion"
+              ]
+            },
+            {
+              "claimant_name": "Jennifer Davis",
+              "minimum_settlement": 20000,
+              "maximum_settlement": 30000,
+              "settlement_factors": [
+                "Moderate concussion and fractured collarbone",
+                "Medical expenses of $15,000",
+                "Lost wages of $3,500",
+                "Not at fault for accident",
+                "Potential coverage defense based on business use exclusion"
+              ]
+            }
+          ],
+          "details": [
+            {
+              "name": "sarah jones",
+              "correct": true,
+              "expected_min": 120000,
+              "expected_max": 160000,
+              "submitted_min": 120000,
+              "submitted_max": 160000,
+              "score": 1.0
+            },
+            {
+              "name": "tom wright",
+              "correct": true,
+              "expected_min": 12000,
+              "expected_max": 20000,
+              "submitted_min": 12000,
+              "submitted_max": 20000,
+              "score": 1.0
+            },
+            {
+              "name": "michael davis",
+              "correct": true,
+              "expected_min": 15000,
+              "expected_max": 25000,
+              "submitted_min": 15000,
+              "submitted_max": 25000,
+              "score": 1.0
+            },
+            {
+              "name": "jennifer davis",
+              "correct": true,
+              "expected_min": 20000,
+              "expected_max": 30000,
+              "submitted_min": 20000,
+              "submitted_max": 30000,
+              "score": 1.0
+            }
+          ]
+        }
+      ],
+      "section_score": 15.0
+    },
+    {
+      "section_name": "Claim Classification",
+      "weight": 5,
+      "items": [
+        {
+          "name": "Liability Code",
+          "correct": true,
+          "weight": 1,
+          "score": 1,
+          "expected": "LD-02",
+          "submitted": "LD-02"
+        },
+        {
+          "name": "Severity Code",
+          "correct": true,
+          "weight": 1,
+          "score": 1,
+          "expected": "CS-04",
+          "submitted": "CS-04"
+        },
+        {
+          "name": "Coverage Code",
+          "correct": true,
+          "weight": 1,
+          "score": 1,
+          "expected": "CI-02",
+          "submitted": "CI-02"
+        },
+        {
+          "name": "Final Classification",
+          "correct": true,
+          "weight": 2,
+          "score": 2,
+          "expected": "LD-02, CS-04, CI-02",
+          "submitted": "LD-02, CS-04, CI-02"
+        }
+      ],
+      "section_score": 5
+    }
+  ],
+  "critical_failures": []
+}
