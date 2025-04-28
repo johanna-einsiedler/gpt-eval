@@ -42,7 +42,7 @@ Your assignment is to determine if it is possible to design a meaningful, **prac
    - "PDF viewer"
    - "Presentation software"
    - "Image Generator"
-   - "Web Browser"
+   - "Online search engine"
    - "Other" (specify tool name and classification if needed; otherwise "NA")
 
 3. **Materials Required:**  
@@ -78,7 +78,7 @@ Return a JSON object strictly adhering to the provided structure, without any ex
     "Text editor": "Not Required/Required/NA",
     "PDF viewer": "Not Required/Required/NA", 
     "Presentation software": "Not Required/Required/NA",
-    "Web Browser": "Not Required/Required/NA",
+    "Online search engine": "Not Required/Required/NA",
     "Image Generator": "Not Required/Required/NA",
     "Other": {{
       "name": "Tool Name/NA",
@@ -205,17 +205,17 @@ if __name__ == "__main__":
     if len(sys.argv) >1:
         path_to_data = sys.argv[1]
     else:
-        path_to_data = '../../data/task_lists/business_and_financial_operations_occupations_CORE_automatable.csv'
+        path_to_data = '../../data/task_lists/management_occupations_CORE.csv'
 
     if len(sys.argv)>2:
         models = sys.argv[2]
     else:
-        models = ['gpt-4o', "claude-3-7-sonnet-20250219", "gpt-3.5-turbo-0125", 'gemini-2.0-flash', "deepseek-chat"]
+        models = ["claude-3-7-sonnet-20250219"]
+        #models = ['gpt-4o', , "gpt-3.5-turbo-0125", 'gemini-2.0-flash', "deepseek-chat"]
     if len(sys.argv)>3:
         overwrite = sys.argv[3]
     else:
-        overwrite = False
-
+        overwrite = True
 
 
     # Define the path to the CSV file containing tasks
@@ -225,12 +225,15 @@ if __name__ == "__main__":
     # Read the CSV file into a DataFrame and rename columns for consistency
     df = pd.read_csv(path_to_data)
     df = df.rename(columns={'Task ID': 'task_id', 'Task': 'task', 'Title': 'title'})
-
     # Select tasks for the first 20 unique occupations
     #occupations = df.iloc[:20]['title'].unique()
     #df = df[df['title'].isin(occupations)]
     #print('Generating materials and tools list for the following occupations:', occupations)
-    print('Processing dataset with', df.shape[0], 'observations')
+
+
+    # existing = pd.read_csv('../../data/exam_approach/material_lists/claude-3-7-sonnet-20250219/task_list_business_and_financial_operations_occupations_CORE_automatable.csv')
+    # df = df[~df['task_id'].isin(existing['task_id'])]
+    # print('Processing dataset with', df.shape[0], 'observations')
 
     # Flag to determine whether to overwrite existing output
     print('Overwrite is set to', overwrite)

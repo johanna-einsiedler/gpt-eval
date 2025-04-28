@@ -157,17 +157,20 @@ def get_labels(df, folder_path):
 
 if __name__ == "__main__":
     # Define filtering criteria
-    occupation_group = "Business and Financial Operations Occupations"
-    condition_type = None  # Use 'strict' for AND filtering
-    condition_label = 'AND' if condition_type else 'OR'
-    label_dict = {'label_JE':1,'label_MR':1}
+    #occupation_group = "Business and Financial Operations Occupations"
+    #occupation_group = "Legal Occupations"
+    occupation_group ="Architecture and Engineering Occupations"
+
+    #condition_type = None  # Use 'strict' for AND filtering
+    #condition_label = 'AND' if condition_type else 'OR'
+    #label_dict = {'label_JE':1,'label_MR':1}
     core_only = True
 
 
     df = read_tsv('../data/external/gpts-are-gpts/full_labelset.tsv')
     # drop unnecessary columns
-    df.drop(['human_exposure_agg','gpt4_exposure','gpt4_exposure','gpt_3_relevant','gpt4_automation', 'alpha','beta','gamma','automation','human_labels'],axis=1,inplace=True)
-    print(df.columns)
+    #df.drop(['human_exposure_agg','gpt4_exposure','gpt4_exposure','gpt_3_relevant','gpt4_automation', 'alpha','beta','gamma','automation','human_labels'],axis=1,inplace=True)
+    #print(df.columns)
 
     # Apply filters
     df = filter_occupation_group(df, occupation_group=occupation_group)
@@ -178,20 +181,20 @@ if __name__ == "__main__":
     # filter core vs. supplemental
     if core_only:
         df=df[df['task_type'] =='Core']
-        print("There are ", df.shape[0]," CORE tasks with the desired exposure scores within ", occupation_group)
+        print("There are ", df.shape[0]," CORE tasks within ", occupation_group)
 
     save_path = f'../data/task_lists/{occupation_group.replace(" ", "_").lower()}_{core_label}.csv'
     df.to_csv(save_path, index=False)
 
 
-    # # read in labels & filter exposure
-    folder_path ='../data/manual_automation_labels/'
-    df = get_labels(df, folder_path)
-    df = filter_dataframe(df, label_dict, condition_type)
-    print("There are ", df.shape[0]," tasks with the desired exposure scores within ", occupation_group)
+    # # # read in labels & filter exposure
+    # folder_path ='../data/manual_automation_labels/'
+    # df = get_labels(df, folder_path)
+    # df = filter_dataframe(df, label_dict, condition_type)
+    # print("There are ", df.shape[0]," tasks with the desired exposure scores within ", occupation_group)
 
 
-    # # Save the filtered DataFrame as CSV
-    save_path = f'../data/task_lists/{occupation_group.replace(" ", "_").lower()}_{core_label}_automatable.csv'
-    df.to_csv(save_path, index=False)
-    print(f"Saved to {save_path}")
+    # # # Save the filtered DataFrame as CSV
+    # save_path = f'../data/task_lists/{occupation_group.replace(" ", "_").lower()}_{core_label}_automatable.csv'
+    # df.to_csv(save_path, index=False)
+    # print(f"Saved to {save_path}")

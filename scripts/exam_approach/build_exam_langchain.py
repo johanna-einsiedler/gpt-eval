@@ -11,6 +11,7 @@ import sys
 import ast
 import json
 import subprocess
+import numpy as np
 
 from typing import Annotated
 from langchain_anthropic import ChatAnthropic
@@ -31,28 +32,31 @@ load_dotenv(dotenv_path)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
-# llm = ChatOpenAI(model="gpt-3.5-turbo")
-
-# # Initialize Claude Haiku
-# llm = ChatAnthropic(
-#     model="claude-3-haiku-20240307",  # Claude Haiku model
-#     anthropic_api_key=ANTHROPIC_API_KEY
-# )
 
 model = 'claude-3-7-sonnet-20250219'
 # Initialize Claude Sonnet
 llm = ChatAnthropic(
     model= 'claude-3-7-sonnet-20250219',  # Claude Haiku model
     anthropic_api_key=ANTHROPIC_API_KEY,
+    temperature=0,
     max_tokens=8192
 )
-prompt = "How much is 2 + 2?"
 
 # 1. Using __call__ (direct function call)
-response_via_call = llm(prompt)
-response_via_call.content
+#response_via_call = llm(prompt)
+#response_via_call.content
 
 def safe_eval(value, default=[]):
+    """
+    Safely evaluates a string as a Python literal.
+
+    Parameters:
+        value (any): The value to evaluate. Typically a string representing a Python literal.
+        default (any): The default value to return if evaluation fails or value is NaN. Defaults to an empty list.
+
+    Returns:
+        any: The evaluated Python object, or the default value if evaluation fails.
+    """
     if pd.isna(value):
         return default
     try:
@@ -61,6 +65,21 @@ def safe_eval(value, default=[]):
         return default
 
 def join_items(items, conj='and'):
+    """
+    Joins a list of strings into a human-readable string with commas and a conjunction.
+
+    Parameters:
+        items (list of str): The list of string items to join.
+        conj (str): The conjunction to use before the last item. Defaults to 'and'.
+
+    Returns:
+        str: A string of items joined by commas and the conjunction.
+        
+    Examples:
+        join_items(['apples']) -> "apples"
+        join_items(['apples', 'oranges']) -> "apples and oranges"
+        join_items(['apples', 'bananas', 'oranges']) -> "apples, bananas and oranges"
+    """
     if len(items) == 1:
         return items[0]
     if len(items) > 1:
@@ -158,7 +177,7 @@ class ExamState(TypedDict):
     # Key grade and count how many times below threshold
     key_grade_threshold:float
     key_grade:float
-    failed_answer_key_test:int
+    answer_key_count: int
     check_overall_makes_sense: bool
     explanation_overall_makes_sense:str
     
@@ -178,6 +197,7 @@ def node_system_prompt(state: ExamState) -> ExamState:
     {materials_instructions}
     - Design a **practical** exam that can be completed remotely using only these tools. A practical exam is an exam actually testing whether the described task can be performed successfully. An exam testing knowledge about the task is NOT a practical exam.
     - To simplify evaluation, the candidate should submit answers in a structured JSON format. Name the file "test_submission.json".
+    - The candidate should be able to complete the exam in maximum 90 minutes.
     '''
 
     state["system_prompt"] = build_system_prompt(occupation, task_description, task_id, required_tools, required_materials, template=system_prompt_template)
@@ -192,7 +212,7 @@ def node_overview(state: ExamState) -> ExamState:
     prompt_overview ='''### Your assignment
     Provide a brief explanation of the exam's purpose and structure for the evaluator.
     '''
-
+    print('creating exam overview')
     messages = [
     SystemMessage(content=state["system_prompt"]),
     HumanMessage(content=prompt_overview)
@@ -305,6 +325,7 @@ def node_submission(state: ExamState) -> ExamState:
 
 
 def node_evaluation(state: ExamState) -> ExamState:
+    print('starting node evaluation')
     prompt_template_evaluation = """
     Here is brief explanation of the exam's purpose and structure intended for the evaluator: <examoverview> {answer_overview}</examoverview>
     Here are the instructions for the candidate: <instructions> {answer_instructions} </instructions>
@@ -328,10 +349,12 @@ def node_evaluation(state: ExamState) -> ExamState:
         SystemMessage(content=state["system_prompt"]),
         HumanMessage(content=prompt)
     ]
-    state["evaluation"] = llm(messages).content
+    state['evaluation']= llm(messages).content
+    state["answer_key_count"] += 1
     return state
 
 def node_grading(state: ExamState) -> ExamState:
+    print('starting node grading')
     # Note, I modified the prompt so that files are passed as argument
     prompt_template_grading ="""
     Here is brief explanation of the exam's purpose and structure intended for the evaluator: <examoverview> {answer_overview}</examoverview>
@@ -373,6 +396,7 @@ def node_save_eval_and_answer(state: ExamState) -> ExamState:
     1) Saves the Python grading script from state["grading"] into `task_evaluation.py`
     2) Saves the answer key JSON from state["evaluation"] into `answer_key.json`
     """
+    ('starting node save eval and answer')
     task_id = state["task_id"]
     path = "../../data/exam_approach/test_results/" + state["exam_author_model"] + "/"
     folder = task_id.replace(".", "_")
@@ -396,7 +420,6 @@ def node_save_eval_and_answer(state: ExamState) -> ExamState:
         err_msg = f"Error saving assets for {task_id}: {exc}"
         print(err_msg)
         state["errors"].append(err_msg)
-
     return state
 
 
@@ -471,7 +494,7 @@ def node_check_answer_key(state: ExamState) -> ExamState:
             
             # Extract the overall_score
             overall_score = data.get("overall_score", None)
-            state["key_grade"] = overall_score
+            state["key_grade"] = np.round(overall_score)
             return state
 
         except FileNotFoundError:
@@ -537,7 +560,7 @@ def node_overall_makes_sense(state: ExamState) -> ExamState:
     4) Do the grading script and answer key correctly reflect the exam?
     - No scenario where a candidate can pass overall despite failing a critical part.
     - No scenario where a candidate who meets all requirements is incorrectly failed.
-    - The answer key should score 100% on the grading script, or at least above {state['key_grade_threshold']}.
+    - The answer key should score 100% on the grading script.
 
     HOW TO RESPOND:
     Return EXACTLY one JSON object. Here is the required structure (note the doubled braces to show literal braces in an f-string):
@@ -601,7 +624,7 @@ def node_overall_makes_sense(state: ExamState) -> ExamState:
 def node_end(state: ExamState) -> ExamState:
     '''Compiles the exam
     '''
-    if state["check_real_materials"] and state["check_no_internet"] and state["key_grade"] > state["key_grade_threshold"]:
+    if state["check_real_materials"] and state["check_no_internet"] and state["key_grade"] >= state["key_grade_threshold"]:
         state['exam'] = state['instructions'] + state['materials_candidate'] + state['submission'] 
     else:
         state['exam'] = "Exam not valid"
@@ -634,126 +657,165 @@ def route_after_internet_check(state: ExamState) -> str:
     else:
         return "node_submission"
 
+
+# # Add a dummy node that does nothing but moves to node_evaluation
+# def node_pause_before_evaluation(state: ExamState) -> ExamState:
+#     return state
+
+
+# Update route
 def route_after_key_check(state: ExamState) -> str:
-    if state["key_grade"] < state["key_grade_threshold"]:
-        return "node_grading"
-    else:
-        print("Key grade is above threshold, key grade: ", state["key_grade"])
+    if state["key_grade"] >= state["key_grade_threshold"]:
+        return "node_overall_makes_sense"
+    elif state["answer_key_count"] > 3:
         return "node_end"
+    else:
+        return "node_evaluation"
 
 
-graph_builder = StateGraph(ExamState)
+if __name__ == "__main__":
+    #file_answers = "../../data/exam_approach/test_results/{}/test_results_business_and_financial_operations_occupations_CORE_automatable.csv".format(model)
+    tasks_file = '/Users/htr365/Documents/PhD/21_automatisation/gpt_eval/data/exam_approach/material_lists/claude-3-7-sonnet-20250219/task_list_management_occupations_CORE.csv'
+    df_tasks = pd.read_csv(tasks_file)
+    df_tasks  = df_tasks.loc[:, ~df_tasks .columns.str.contains('^Unnamed')]
+    print('overall data shape',df_tasks.shape)
 
-# Add nodes to the graph
-graph_builder.add_node("construct_system_prompt", node_system_prompt)
-graph_builder.add_node("node_overview", node_overview)
-graph_builder.add_node("node_instructions", node_instructions)
-graph_builder.add_node("node_materials", node_materials)
-graph_builder.add_node("node_check_images", node_check_materials_fake_image)
-graph_builder.add_node("node_check_websites", node_check_materials_fake_website)
-graph_builder.add_node("node_submission", node_submission)
-graph_builder.add_node("node_evaluation", node_evaluation)
-graph_builder.add_node("node_grading", node_grading)
-graph_builder.add_node("node_save_eval_and_answer", node_save_eval_and_answer)
-graph_builder.add_node("node_check_answer_key", node_check_answer_key)
-graph_builder.add_node("node_overall_makes_sense", node_overall_makes_sense)
-graph_builder.add_node("node_end", node_end)
-
-#Add edges the graph
-graph_builder.add_edge(START, "construct_system_prompt")
-graph_builder.add_edge("construct_system_prompt", "node_overview")
-graph_builder.add_edge("node_overview", "node_instructions")
-### NOTE - probably add conditional edge depending on whether materials are required
-graph_builder.add_edge("node_instructions", "node_materials")
-# add conditional edges in case materials for candidate where not extracted
-graph_builder.add_conditional_edges("node_materials", route_after_materials_candiate)
-### Add conditional edges if materials_fake_website or materials_fake_image then end the process
-graph_builder.add_conditional_edges("node_check_images", route_after_image_check)
-graph_builder.add_conditional_edges("node_check_websites", route_after_internet_check)
-# If it passes will continue to generatl submissions and grading
-graph_builder.add_edge("node_submission", 'node_evaluation')
-graph_builder.add_edge("node_evaluation", 'node_grading')
-# Now check the answer key and how much it scores
-graph_builder.add_edge("node_grading", 'node_save_eval_and_answer')
-graph_builder.add_edge("node_save_eval_and_answer", "node_check_answer_key")
-graph_builder.add_edge("node_check_answer_key", "node_overall_makes_sense")
-graph_builder.add_edge("node_overall_makes_sense", "node_end")
-graph_builder.add_edge("node_end", END)
-
-graph = graph_builder.compile()
-
-row = {
-    'occupation': 'Wholesale and Retail Buyers, Except Farm Products',
-    'task_description': 'Recommend mark-up rates, mark-down rates, or merchandise selling prices.',
-    'task_id': '20713.0',
-    'required_tools_standard': "[['Spreadsheets', 'PDF viewer']]",
-    'required_materials_standard': "[['Text', 'Data']]"
-}
-
-tools = safe_eval(row['required_tools_standard'])
-materials = safe_eval(row['required_materials_standard'])
+    #already_done = pd.read_csv('/Users/htr365/Documents/PhD/21_automatisation/gpt_eval/data/exam_approach/test_results/claude-3-7-sonnet-20250219/scores_61.csv')
+    # remove according to exclusion list
+    exclusion_list = pd.read_csv('../../data/exam_approach/exclusion_lists/management_occupations_only_data_text_CORE.csv',index_col=0).rename(columns={'0':'task_id'})
+    df_tasks = df_tasks[~df_tasks['task_id'].isin(exclusion_list['task_id'])]
+    print('data after filtering for tools/materials', df_tasks.shape)
+   # df_tasks = df_tasks[~df_tasks['task_id'].isin(already_done['task_id'])]
+   # print('data after filtering for already existing exams', df_tasks.shape)
 
 
-init_state: ExamState = {
-    "occupation": row["occupation"],
-    "task_id": str(row["task_id"]),  # Convert task_id to a string
-    "task_description": row["task_description"],
-    "exam_author_model": model,
-
-    # Map your row fields to the typed dict fields
-    "tools": row["required_tools_standard"],
-    "materials": row["required_materials_standard"],
-
-    # Provide defaults or placeholders for the rest
-    "exam": {},
-    "system_prompt": "",
-    "overview": "",
-    "instructions": "",
-    "materials_all": "",
-    "materials_candidate": "",
-    "submission": "",
-    "evaluation": "",
-    "grading": "",
-    "answer_key": "",
-
-    "errors": [],
-    "check_real_materials": True,
-    "check_no_internet": True,
-    "failed_candidate_materials": 0,
-    "key_grade_threshold": 80.0,
-    "key_grade": 0.0,
-    "failed_answer_key_test": 0,
-    "check_overall_makes_sense": True,
-    "explanation_overall_makes_sense": ""
-}
-
-# Now just invoke the compiled graph with that initial state
-result_state = graph.invoke(init_state)
-
-result_state
+    #df_tasks = df_tasks[df_tasks['task_id']==12882]
+    df_tasks = df_tasks[['occupation', 'task_description', 'task_id', 'required_tools_standard', 'required_materials_standard']]
+    print(df_tasks.shape)
+    # Initialize an empty list to store result states
+    result_states = []
 
 
-g   = graph.get_graph()
+    graph_builder = StateGraph(ExamState)
+
+    # Add nodes to the graph
+    graph_builder.add_node("construct_system_prompt", node_system_prompt)
+    graph_builder.add_node("node_overview", node_overview)
+    graph_builder.add_node("node_instructions", node_instructions)
+    graph_builder.add_node("node_materials", node_materials)
+    graph_builder.add_node("node_check_images", node_check_materials_fake_image)
+    graph_builder.add_node("node_check_websites", node_check_materials_fake_website)
+    graph_builder.add_node("node_submission", node_submission)
+    graph_builder.add_node("node_evaluation", node_evaluation)
+    graph_builder.add_node("node_grading", node_grading)
+    graph_builder.add_node("node_save_eval_and_answer", node_save_eval_and_answer)
+    graph_builder.add_node("node_check_answer_key", node_check_answer_key)
+    graph_builder.add_node("node_overall_makes_sense", node_overall_makes_sense)
+    graph_builder.add_node("node_end", node_end)
+    #graph_builder.add_node("node_pause_before_evaluation", node_pause_before_evaluation)
+
+    #Add edges the graph
+    graph_builder.add_edge(START, "construct_system_prompt")
+    graph_builder.add_edge("construct_system_prompt", "node_overview")
+    graph_builder.add_edge("node_overview", "node_instructions")
+    ### NOTE - probably add conditional edge depending on whether materials are required
+    graph_builder.add_edge("node_instructions", "node_materials")
+    # add conditional edges in case materials for candidate where not extracted
+    graph_builder.add_conditional_edges("node_materials", route_after_materials_candiate)
+    ### Add conditional edges if materials_fake_website or materials_fake_image then end the process
+    graph_builder.add_conditional_edges("node_check_images", route_after_image_check)
+    graph_builder.add_conditional_edges("node_check_websites", route_after_internet_check)
+    # If it passes will continue to generatl submissions and grading
+    graph_builder.add_edge("node_submission", 'node_evaluation')
+    # graph_builder.add_edge("node_pause_before_evaluation", "node_evaluation")
+
+    graph_builder.add_edge("node_evaluation", 'node_grading')
+    # Now check the answer key and how much it scores
+    graph_builder.add_edge("node_grading", 'node_save_eval_and_answer')
+    graph_builder.add_edge("node_save_eval_and_answer", "node_check_answer_key")
+    # graph_builder.add_edge("node_check_answer_key", "node_overall_makes_sense")
+    graph_builder.add_conditional_edges("node_check_answer_key", route_after_key_check)
+    graph_builder.add_edge("node_overall_makes_sense", "node_end")
+    graph_builder.add_edge("node_end", END)
+
+    graph = graph_builder.compile()
+  
+    # row = {
+    #     'occupation': 'Wholesale and Retail Buyers, Except Farm Products',
+    #     'task_description': 'Recommend mark-up rates, mark-down rates, or merchandise selling prices.',
+    #     'task_id': '20713.0',
+    #     'required_tools_standard': "[['Spreadsheets', 'PDF viewer']]",
+    #     'required_materials_standard': "[['Text', 'Data']]"
+    # }
+    print(df_tasks.head())
+    #row = df_tasks.iloc[0]
+
+    # tools = safe_eval(row['required_tools_standard'])
+    # materials = safe_eval(row['required_materials_standard'])
+    # system_prompt_template = '''You are an excellent examiner of {occupation} capabilities. Design a remote, **practical** exam to verify whether a {occupation} can {task_description}.
+    # This exam will have two parts (basic and advanced). Your current task is **only** to design the basic exam.
+
+    # ### Context
+    # {tools_instructions}
+    # {materials_instructions}
+    # - Design a **practical** exam that can be completed remotely using only these tools. A practical exam is an exam actually testing whether the described task can be performed successfully. An exam testing knowledge about the task is NOT a practical exam.
+    # - To simplify evaluation, the candidate should submit answers in a structured JSON format. Name the file "test_submission.json".
+    # - The candidate should be able to complete the exam in maximum 90 minutes.
+    # '''
+
+    # system_prompt = build_system_prompt('test', 'blablabla', 0, tools, materials, template=system_prompt_template)
+    # # print(system_prompt)
+    # init_state: ExamState = {
+    #     "occupation": row["occupation"],
+    #     "task_id": str(row["task_id"]),  # Convert task_id to a string
+    #     "task_description": row["task_description"],
+    #     "exam_author_model": model,
+
+    #     # Map your row fields to the typed dict fields
+    #     "tools": safe_eval(row["required_tools_standard"]),
+    #     "materials": safe_eval(row["required_materials_standard"]),
+
+    #     # Provide defaults or placeholders for the rest
+    #     "exam": {},
+    #     "system_prompt": "",
+    #     "overview": "",
+    #     "instructions": "",
+    #     "materials_all": "",
+    #     "materials_candidate": "",
+    #     "submission": "",
+    #     "evaluation": "",
+    #     "grading": "",
+    #     "answer_key": "",
+
+    #     "errors": [],
+    #     "check_real_materials": True,
+    #     "check_no_internet": True,
+    #     "failed_candidate_materials": 0,
+    #     "key_grade_threshold": 99.0,
+    #     "key_grade": 0.0,
+    #     "answer_key_count": 0,
+    #     "check_overall_makes_sense": True,
+    #     "explanation_overall_makes_sense": ""
+    # }
+
+    # # Now just invoke the compiled graph with that initial state
+    # result_state = graph.invoke(init_state)
+
+    # #print(result_state)
+    # print('done')
+
+    #g   = graph.get_graph()
 
 
-# # Mermaid text
-# print(g.draw_mermaid())
+        # # Mermaid text
+        # print(g.draw_mermaid())
 
-# display(Image(g.draw_mermaid_png()))
+    # # display(Image(g.draw_mermaid_png()))
 
-##### Now run on a real dataframe
-file_answers = "../../data/exam_approach/test_results/{}/test_results_business_and_financial_operations_occupations_CORE_automatable.csv".format(model)
-df_26tasks = pd.read_csv(file_answers)
-df_26tasks  = df_26tasks .loc[:, ~df_26tasks .columns.str.contains('^Unnamed')]
-
-df_26tasks.columns
-df_26tasks = df_26tasks[['occupation', 'task_description', 'task_id', 'required_tools_standard', 'required_materials_standard']]
-
-# Initialize an empty list to store result states
-result_states = []
+# ##### Now run on a real dataframe
 
 # Iterate over each row in the DataFrame
-for _, row in df_26tasks.iterrows():  # Use iterrows() to iterate over rows
+for _, row in df_tasks.iterrows():  # Use iterrows() to iterate over rows
     # Initialize the state for the current row
     
     init_state: ExamState = {
@@ -763,8 +825,8 @@ for _, row in df_26tasks.iterrows():  # Use iterrows() to iterate over rows
         "exam_author_model": model,
 
         # Map your row fields to the typed dict fields
-        "tools": row["required_tools_standard"],
-        "materials": row["required_materials_standard"],
+        "tools": safe_eval(row["required_tools_standard"]),
+        "materials": safe_eval(row["required_materials_standard"]),
 
         # Provide defaults or placeholders for the rest
         "exam": {},
@@ -782,9 +844,9 @@ for _, row in df_26tasks.iterrows():  # Use iterrows() to iterate over rows
         "check_real_materials": True,
         "check_no_internet": True,
         "failed_candidate_materials": 0,
-        "key_grade_threshold": 80.0,
+        "key_grade_threshold": 99.0,
         "key_grade": 0.0,
-        "failed_answer_key_test": 0,
+        "answer_key_count": 0,
         "check_overall_makes_sense": True,
         "explanation_overall_makes_sense": ""
     }
@@ -806,10 +868,13 @@ for _, row in df_26tasks.iterrows():  # Use iterrows() to iterate over rows
             "errors": [str(e)]
         })
 
-# Convert the list of result states into a DataFrame
-df_result_states = pd.DataFrame(result_states)
+# # Convert the list of result states into a DataFrame
+    #result_states.append(result_state)
+    #result_states.append(result_state)
 
-df_result_states.to_csv("../../data/exam_approach/test_results/{}/first_50_task_exam_check_v3.csv".format(model), index=False)
+    df_result_states = pd.DataFrame(result_states)
 
-# # Save the resulting DataFrame to a CSV file (optional)
-# df_result_states.to_csv("../../data/exam_approach/test_results/compiled_results.csv", index=False)
+    df_result_states.to_csv("../../data/exam_approach/test_results/{}/management_occupations_exams.csv".format(model), index=False)
+
+# # # Save the resulting DataFrame to a CSV file (optional)
+    df_result_states.to_csv("../../data/exam_approach/test_results/management_occupations_exams.csv", index=False)

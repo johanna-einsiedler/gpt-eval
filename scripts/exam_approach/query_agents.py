@@ -4,7 +4,7 @@ import anthropic
 import google.generativeai as genai
 import os
 import requests
-# from google import genai as ggenai
+from google import genai as ggenai
 
 
 dotenv_path = find_dotenv()
@@ -16,17 +16,17 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-def take_test(row, system_prompt_template, test_prompt_template, model):
+def take_test(row, system_prompt_template, exam, model):
 
-        test_prompt = test_prompt_template.format(
-            answer_instructions=row['answer_instructions'],
-            answer_materials=row['answer_materials'],
-            answer_materialscandidateonly=row['answer_materialscandidateonly'],
-            answer_submission=row['answer_submission']
-        )
+        # test_prompt = test_prompt_template.format(
+        #     answer_instructions=row['answer_instructions'],
+        #     answer_materials=row['answer_materials'],
+        #     answer_materialscandidateonly=row['answer_materialscandidateonly'],
+        #     answer_submission=row['answer_submission']
+        # )
 
         system_prompt = system_prompt_template.format(occupation=row['occupation'])
-        response = query_agent(system_prompt, test_prompt, model)
+        response = query_agent(system_prompt, exam, model)
 
         return response
 
@@ -35,36 +35,35 @@ def take_test(row, system_prompt_template, test_prompt_template, model):
 def query_agent(system_prompt, user_prompt, model):
 
         if 'gemini' in model:
-            pass
-            # client = ggenai.Client()
-            # if model in client.models.list():
-            #     response =query_gemini(system_prompt, user_prompt, model)
-            # else:
-            #     response =query_gemini(system_prompt, user_prompt)
+            #client = ggenai.Client()
+            #if model in client.models.list():
+            response =query_gemini(system_prompt, user_prompt, model)
+            #else:
+             #   response =query_gemini(system_prompt, user_prompt)
 
         if 'gpt' in model:
             # Retrieve the list of available models
-            client = OpenAI()
+            #client = OpenAI()
             # Extract model IDs
-            model_ids =client.models.list()
-            if model in model_ids:
-                response =query_chatgpt(system_prompt, user_prompt, model)
-            else:
-                response =query_chatgpt(system_prompt, user_prompt)
+            #model_ids =client.models.list()
+            #if model in model_ids:
+            response =query_chatgpt(system_prompt, user_prompt, model)
+            #else:
+             #   response =query_chatgpt(system_prompt, user_prompt)
         if 'deepseek' in model:
-            client = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
-            model_ids = client.models.list()
-            if model in model_ids:
-                response =query_deepseek(system_prompt, user_prompt, model)
-            else:
-                response =query_deepseek(system_prompt, user_prompt)
+            #client = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
+            #model_ids = client.models.list()
+            #if model in model_ids:
+            response =query_deepseek(system_prompt, user_prompt, model)
+            #else:
+             #   response =query_deepseek(system_prompt, user_prompt)
         if 'claude' in model:
-            client = anthropic.Anthropic()
-            model_ids = client.models.list(limit=20)
-            if model in model_ids:
-                response =query_claude(system_prompt, user_prompt, model)
-            else:
-                response =query_claude(system_prompt, user_prompt)
+            #client = anthropic.Anthropic()
+            #model_ids = client.models.list(limit=20)
+            #if model in model_ids:
+            response =query_claude(system_prompt, user_prompt, model)
+            #else:
+             #   response =query_claude(system_prompt, user_prompt)
         try:
             return response
         except Exception as e:
