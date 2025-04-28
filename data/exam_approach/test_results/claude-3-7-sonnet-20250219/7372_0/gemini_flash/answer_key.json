@@ -1,0 +1,86 @@
+{
+    "task1": {
+        "statement_1": {
+            "explicit_assumptions": [
+                "X is a complete metric space"
+            ],
+            "implicit_assumptions": [
+                "The concept of Cauchy sequence is defined in the space",
+                "The metric structure allows for the definition of convergence",
+                "The space has the necessary properties for the limit of a sequence to exist"
+            ]
+        },
+        "statement_2": {
+            "explicit_assumptions": [
+                "f is a continuous function",
+                "f is defined on a closed interval [a,b]"
+            ],
+            "implicit_assumptions": [
+                "The interval [a,b] is bounded",
+                "The codomain is the real numbers (which is ordered)",
+                "The completeness of the real numbers"
+            ]
+        },
+        "statement_3": {
+            "explicit_assumptions": [
+                "A and B are events in a probability space"
+            ],
+            "implicit_assumptions": [
+                "A probability measure P is defined",
+                "The probability space satisfies the axioms of probability",
+                "The events A and B belong to the same σ-algebra"
+            ]
+        }
+    },
+    "task2": {
+        "assumption_set_A": {
+            "consequences": [
+                "Closed and bounded sets are compact (Heine-Borel theorem)",
+                "Continuous functions on closed bounded intervals are uniformly continuous",
+                "Continuous functions on closed bounded intervals attain their extrema"
+            ],
+            "valid_statements": [
+                1,
+                2,
+                3,
+                5
+            ],
+            "invalid_statements": [
+                4
+            ]
+        },
+        "assumption_set_B": {
+            "consequences": [
+                "Functions may not preserve topological properties due to discontinuities",
+                "Unbounded sets may lead to divergent behavior of sequences",
+                "Standard calculus theorems requiring completeness may not apply"
+            ],
+            "valid_statements": [
+                5
+            ],
+            "invalid_statements": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    "task3": {
+        "scenario1": {
+            "original_conclusion": false,
+            "modified_conclusion": true,
+            "critical_assumption": "A2"
+        },
+        "scenario2": {
+            "original_conclusion": false,
+            "modified_conclusion": false,
+            "critical_assumption": "A3"
+        },
+        "scenario3": {
+            "original_conclusion": true,
+            "modified_conclusion": true,
+            "critical_assumption": "A1"
+        }
+    }
+}

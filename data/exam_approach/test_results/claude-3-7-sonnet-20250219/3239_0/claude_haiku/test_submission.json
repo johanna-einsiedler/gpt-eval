@@ -1,0 +1,31 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "budget_variance_total": 10450.0,
+        "highest_overspend_category": "Social Media"
+    },
+    "task2": {
+        "response_rate": 0.0092,
+        "cost_per_acquisition": 21.58,
+        "roi": 2.57
+    },
+    "task3": {
+        "best_performing_channel": "Channel2",
+        "worst_performing_channel": "Channel4"
+    },
+    "task4": {
+        "benchmark_comparison": {
+            "ctr_variance": 0.02,
+            "cpa_variance": 0.08,
+            "roi_variance": 0.03
+        }
+    },
+    "task5": {
+        "budget_reallocation": {
+            "channel1": 25000,
+            "channel2": 30000,
+            "channel3": 20000,
+            "channel4": 25000
+        }
+    }
+}

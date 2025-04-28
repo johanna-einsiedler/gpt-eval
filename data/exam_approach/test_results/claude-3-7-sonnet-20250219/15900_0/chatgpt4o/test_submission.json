@@ -1,0 +1,25 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "forecast_values": [
+            250,
+            255,
+            260,
+            265
+        ],
+        "accuracy_metric": 0.02,
+        "cost_driver": "weight_lbs",
+        "correlation_value": 0.98
+    },
+    "task2": {
+        "fixed_cost": 2000.0,
+        "variable_cost_coefficient": 5.0,
+        "total_estimated_cost": 27000.0,
+        "cost_breakdown": {
+            "labor": 13500.0,
+            "transportation": 5400.0,
+            "handling": 3600.0,
+            "other": 400.0
+        }
+    }
+}

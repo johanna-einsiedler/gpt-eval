@@ -1,0 +1,53 @@
+{
+    "candidate_id": "HR-Expert-1.0",
+    "historical_analysis": {
+        "avg_monthly_change": {
+            "department_A": 0.83,
+            "department_B": 0.83,
+            "department_C": 0.83,
+            "department_D": 0.83,
+            "department_E": 0.83
+        },
+        "highest_turnover_departments": [
+            "Department C",
+            "Department E",
+            "Department A"
+        ]
+    },
+    "gap_analysis": {
+        "current_gaps": {
+            "department_A": 6,
+            "department_B": 3,
+            "department_C": 12,
+            "department_D": 2,
+            "department_E": 8
+        },
+        "largest_percentage_gap": "department_C"
+    },
+    "forecast": {
+        "end_of_period_headcount": {
+            "department_A": 85,
+            "department_B": 52,
+            "department_C": 125,
+            "department_D": 42,
+            "department_E": 98
+        },
+        "total_new_hires_needed": {
+            "department_A": 11,
+            "department_B": 6,
+            "department_C": 19,
+            "department_D": 4,
+            "department_E": 14
+        },
+        "month_with_highest_hiring_need": "March"
+    },
+    "resource_planning": {
+        "total_projected_headcount": 402,
+        "total_workforce_percentage_change": 12.5,
+        "highest_growth_departments": [
+            "Department C",
+            "Department E",
+            "Department A"
+        ]
+    }
+}

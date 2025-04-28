@@ -1,9 +1,0 @@
-{
-    "markup_rate_q1": 81.82,
-    "markdown_rate_q2": 25.0,
-    "selling_price_q3": 8.75,
-    "selling_price_q4": 1.05,
-    "selling_price_q5": 3.33,
-    "justification_q5": "Set price slightly below competitor to attract customers while achieving close to desired margin.",
-    "candidate_id": "GPT-4-turbo"
-}

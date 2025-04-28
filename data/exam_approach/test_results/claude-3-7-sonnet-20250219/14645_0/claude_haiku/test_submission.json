@@ -1,0 +1,295 @@
+{
+    "candidateId": "Claude-3-Opus",
+    "testSchedule": [
+        {
+            "phase": "Initial Setup and Framework Testing",
+            "startDate": "2024-01-01",
+            "endDate": "2024-01-14",
+            "resources": [
+                "QA1",
+                "QA2",
+                "BA1"
+            ],
+            "deliverables": [
+                "Test strategy document",
+                "Test environment configuration report",
+                "Initial test cases for core framework",
+                "CI/CD pipeline testing verification"
+            ]
+        },
+        {
+            "phase": "Authentication and User Flow Testing",
+            "startDate": "2024-01-15",
+            "endDate": "2024-01-28",
+            "resources": [
+                "QA1",
+                "QA2"
+            ],
+            "deliverables": [
+                "User authentication test cases",
+                "Login/registration workflow validation",
+                "Social media integration test report",
+                "Password recovery scenario testing"
+            ]
+        },
+        {
+            "phase": "Product Catalog and Shopping Cart Testing",
+            "startDate": "2024-01-29",
+            "endDate": "2024-02-11",
+            "resources": [
+                "QA1",
+                "QA2",
+                "QA3"
+            ],
+            "deliverables": [
+                "Product browsing and search test scenarios",
+                "Cart functionality validation report",
+                "Performance testing for catalog and cart",
+                "Cross-device compatibility report"
+            ]
+        },
+        {
+            "phase": "Checkout and UAT Preparation",
+            "startDate": "2024-02-12",
+            "endDate": "2024-02-25",
+            "resources": [
+                "QA1",
+                "QA2",
+                "QA3",
+                "BA1"
+            ],
+            "deliverables": [
+                "Payment gateway integration test report",
+                "End-to-end checkout process validation",
+                "User acceptance testing (UAT) preparation document",
+                "Final regression test suite"
+            ]
+        }
+    ],
+    "riskAssessment": [
+        {
+            "riskId": 1,
+            "probability": 4,
+            "impact": 5,
+            "mitigationPlan": "B"
+        },
+        {
+            "riskId": 2,
+            "probability": 3,
+            "impact": 4,
+            "mitigationPlan": "B"
+        },
+        {
+            "riskId": 3,
+            "probability": 4,
+            "impact": 5,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 4,
+            "probability": 3,
+            "impact": 3,
+            "mitigationPlan": "B"
+        },
+        {
+            "riskId": 5,
+            "probability": 4,
+            "impact": 5,
+            "mitigationPlan": "A"
+        }
+    ],
+    "testCoverage": {
+        "functionalCoverage": 45,
+        "performanceCoverage": 25,
+        "securityCoverage": 20,
+        "usabilityCoverage": 10
+    },
+    "resourceAllocation": [
+        {
+            "resourceId": "QA1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 50
+                },
+                {
+                    "week": 2,
+                    "percentage": 50
+                },
+                {
+                    "week": 3,
+                    "percentage": 75
+                },
+                {
+                    "week": 4,
+                    "percentage": 75
+                },
+                {
+                    "week": 5,
+                    "percentage": 100
+                },
+                {
+                    "week": 6,
+                    "percentage": 100
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "QA2",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 25
+                },
+                {
+                    "week": 2,
+                    "percentage": 50
+                },
+                {
+                    "week": 3,
+                    "percentage": 50
+                },
+                {
+                    "week": 4,
+                    "percentage": 75
+                },
+                {
+                    "week": 5,
+                    "percentage": 75
+                },
+                {
+                    "week": 6,
+                    "percentage": 100
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "QA3",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 0
+                },
+                {
+                    "week": 2,
+                    "percentage": 25
+                },
+                {
+                    "week": 3,
+                    "percentage": 50
+                },
+                {
+                    "week": 4,
+                    "percentage": 50
+                },
+                {
+                    "week": 5,
+                    "percentage": 75
+                },
+                {
+                    "week": 6,
+                    "percentage": 75
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "DEV1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 0
+                },
+                {
+                    "week": 2,
+                    "percentage": 0
+                },
+                {
+                    "week": 3,
+                    "percentage": 10
+                },
+                {
+                    "week": 4,
+                    "percentage": 10
+                },
+                {
+                    "week": 5,
+                    "percentage": 20
+                },
+                {
+                    "week": 6,
+                    "percentage": 20
+                },
+                {
+                    "week": 7,
+                    "percentage": 30
+                },
+                {
+                    "week": 8,
+                    "percentage": 30
+                }
+            ]
+        },
+        {
+            "resourceId": "BA1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 50
+                },
+                {
+                    "week": 2,
+                    "percentage": 25
+                },
+                {
+                    "week": 3,
+                    "percentage": 25
+                },
+                {
+                    "week": 4,
+                    "percentage": 25
+                },
+                {
+                    "week": 5,
+                    "percentage": 25
+                },
+                {
+                    "week": 6,
+                    "percentage": 25
+                },
+                {
+                    "week": 7,
+                    "percentage": 50
+                },
+                {
+                    "week": 8,
+                    "percentage": 50
+                }
+            ]
+        }
+    ],
+    "testingApproach": "A"
+}

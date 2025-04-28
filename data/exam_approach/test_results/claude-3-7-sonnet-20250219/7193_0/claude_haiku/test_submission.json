@@ -1,0 +1,64 @@
+{
+    "candidate_id": "GPT-4-Turbo",
+    "task1": {
+        "schedule_conflicts": [
+            "E019"
+        ],
+        "coverage_score": 0.95,
+        "total_labor_hours": 336,
+        "schedule_data": [
+            {
+                "day": "Monday",
+                "shift": "morning",
+                "employee_id": "E001",
+                "position": "Dealer"
+            },
+            {
+                "day": "Monday",
+                "shift": "morning",
+                "employee_id": "E007",
+                "position": "Pit Boss"
+            },
+            {
+                "day": "Monday",
+                "shift": "morning",
+                "employee_id": "E010",
+                "position": "Cashier"
+            }
+        ]
+    },
+    "task2": {
+        "station_assignments": [
+            {
+                "station_id": "S001",
+                "game_type": "Blackjack",
+                "employee_ids": [
+                    "E016",
+                    "E001"
+                ]
+            },
+            {
+                "station_id": "S004",
+                "game_type": "Poker",
+                "employee_ids": [
+                    "E004"
+                ]
+            }
+        ],
+        "coverage_percentage": 0.92,
+        "high_value_stations_covered": 4
+    },
+    "task3": {
+        "attendance_rate": 0.96,
+        "most_absences": [
+            "E019",
+            "E004",
+            "E014"
+        ],
+        "understaffed_days": [
+            "2023-05-26",
+            "2023-05-29"
+        ],
+        "attendance_trend": "stable"
+    }
+}

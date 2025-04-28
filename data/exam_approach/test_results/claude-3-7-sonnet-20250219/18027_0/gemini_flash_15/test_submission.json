@@ -1,0 +1,236 @@
+{
+    "candidate_id": "GPT-4",
+    "prioritization": [
+        {
+            "project_id": "P001",
+            "priority_level": "Critical",
+            "primary_reason": "Strategic alignment"
+        },
+        {
+            "project_id": "P007",
+            "priority_level": "Critical",
+            "primary_reason": "Strategic alignment"
+        },
+        {
+            "project_id": "P015",
+            "priority_level": "Critical",
+            "primary_reason": "Compliance requirement"
+        },
+        {
+            "project_id": "P004",
+            "priority_level": "High",
+            "primary_reason": "Strategic alignment"
+        },
+        {
+            "project_id": "P009",
+            "priority_level": "High",
+            "primary_reason": "Strategic alignment"
+        },
+        {
+            "project_id": "P013",
+            "priority_level": "High",
+            "primary_reason": "Strategic alignment"
+        },
+        {
+            "project_id": "P011",
+            "priority_level": "High",
+            "primary_reason": "Submission deadline"
+        },
+        {
+            "project_id": "P008",
+            "priority_level": "Medium",
+            "primary_reason": "Submission deadline"
+        },
+        {
+            "project_id": "P005",
+            "priority_level": "Medium",
+            "primary_reason": "Submission deadline"
+        },
+        {
+            "project_id": "P010",
+            "priority_level": "Medium",
+            "primary_reason": "Submission deadline"
+        },
+        {
+            "project_id": "P014",
+            "priority_level": "Medium",
+            "primary_reason": "Submission deadline"
+        },
+        {
+            "project_id": "P002",
+            "priority_level": "Medium",
+            "primary_reason": "Submission deadline"
+        },
+        {
+            "project_id": "P012",
+            "priority_level": "Medium",
+            "primary_reason": "Submission deadline"
+        },
+        {
+            "project_id": "P006",
+            "priority_level": "Low",
+            "primary_reason": "Submission deadline"
+        },
+        {
+            "project_id": "P003",
+            "priority_level": "Low",
+            "primary_reason": "Submission deadline"
+        }
+    ],
+    "budget_allocation": {
+        "quarterly_breakdown": [
+            {
+                "quarter": "Q1",
+                "personnel": 300000,
+                "submissions": 150000,
+                "training": 20000,
+                "consultants": 50000,
+                "contingency": 80000
+            },
+            {
+                "quarter": "Q2",
+                "personnel": 300000,
+                "submissions": 200000,
+                "training": 20000,
+                "consultants": 50000,
+                "contingency": 50000
+            },
+            {
+                "quarter": "Q3",
+                "personnel": 300000,
+                "submissions": 150000,
+                "training": 20000,
+                "consultants": 50000,
+                "contingency": 30000
+            },
+            {
+                "quarter": "Q4",
+                "personnel": 300000,
+                "submissions": 100000,
+                "training": 20000,
+                "consultants": 50000,
+                "contingency": 30000
+            }
+        ]
+    },
+    "resource_allocation": {
+        "team_assignments": [
+            {
+                "team_member_id": "TM001",
+                "assigned_projects": [
+                    "P001",
+                    "P015"
+                ],
+                "allocation_percentage": [
+                    60,
+                    40
+                ]
+            },
+            {
+                "team_member_id": "TM002",
+                "assigned_projects": [
+                    "P007",
+                    "P011"
+                ],
+                "allocation_percentage": [
+                    60,
+                    40
+                ]
+            },
+            {
+                "team_member_id": "TM003",
+                "assigned_projects": [
+                    "P004",
+                    "P009",
+                    "P013"
+                ],
+                "allocation_percentage": [
+                    33,
+                    33,
+                    34
+                ]
+            },
+            {
+                "team_member_id": "TM004",
+                "assigned_projects": [
+                    "P002",
+                    "P003",
+                    "P006",
+                    "P012",
+                    "P014"
+                ],
+                "allocation_percentage": [
+                    20,
+                    20,
+                    20,
+                    20,
+                    20
+                ]
+            },
+            {
+                "team_member_id": "TM005",
+                "assigned_projects": [
+                    "P004",
+                    "P008"
+                ],
+                "allocation_percentage": [
+                    60,
+                    40
+                ]
+            },
+            {
+                "team_member_id": "TM006",
+                "assigned_projects": [
+                    "P005",
+                    "P010"
+                ],
+                "allocation_percentage": [
+                    50,
+                    50
+                ]
+            },
+            {
+                "team_member_id": "TM007",
+                "assigned_projects": [
+                    "P002",
+                    "P003",
+                    "P006",
+                    "P012",
+                    "P014"
+                ],
+                "allocation_percentage": [
+                    20,
+                    20,
+                    20,
+                    20,
+                    20
+                ]
+            },
+            {
+                "team_member_id": "TM008",
+                "assigned_projects": [
+                    "P008",
+                    "P011",
+                    "P015"
+                ],
+                "allocation_percentage": [
+                    33,
+                    33,
+                    34
+                ]
+            }
+        ],
+        "resource_gaps": [
+            {
+                "project_id": "P004",
+                "gap_type": "Capacity",
+                "solution": "Temporary staff"
+            },
+            {
+                "project_id": "P010",
+                "gap_type": "Expertise",
+                "solution": "External consultant"
+            }
+        ]
+    }
+}

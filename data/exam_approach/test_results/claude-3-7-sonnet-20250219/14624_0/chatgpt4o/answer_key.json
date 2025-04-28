@@ -1,0 +1,214 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "task_schedule": [
+        {
+            "task_id": "T1",
+            "assigned_to": "TM1",
+            "start_date": "2023-06-01",
+            "end_date": "2023-06-10",
+            "priority": "High",
+            "estimated_hours": 40
+        },
+        {
+            "task_id": "T2",
+            "assigned_to": "TM2",
+            "start_date": "2023-06-01",
+            "end_date": "2023-06-15",
+            "priority": "High",
+            "estimated_hours": 60
+        },
+        {
+            "task_id": "T3",
+            "assigned_to": "TM1",
+            "start_date": "2023-06-11",
+            "end_date": "2023-06-21",
+            "priority": "Medium",
+            "estimated_hours": 30
+        },
+        {
+            "task_id": "T6",
+            "assigned_to": "TM4",
+            "start_date": "2023-06-15",
+            "end_date": "2023-06-22",
+            "priority": "Medium",
+            "estimated_hours": 20
+        },
+        {
+            "task_id": "T5",
+            "assigned_to": "TM2",
+            "start_date": "2023-06-16",
+            "end_date": "2023-06-30",
+            "priority": "High",
+            "estimated_hours": 45
+        },
+        {
+            "task_id": "T4",
+            "assigned_to": "TM1",
+            "start_date": "2023-06-22",
+            "end_date": "2023-06-30",
+            "priority": "High",
+            "estimated_hours": 25
+        },
+        {
+            "task_id": "T9",
+            "assigned_to": "TM3",
+            "start_date": "2023-06-15",
+            "end_date": "2023-06-25",
+            "priority": "Low",
+            "estimated_hours": 30
+        },
+        {
+            "task_id": "T7",
+            "assigned_to": "TM3",
+            "start_date": "2023-07-01",
+            "end_date": "2023-07-15",
+            "priority": "Medium",
+            "estimated_hours": 35
+        },
+        {
+            "task_id": "T10",
+            "assigned_to": "TM2",
+            "start_date": "2023-07-01",
+            "end_date": "2023-07-10",
+            "priority": "Medium",
+            "estimated_hours": 20
+        },
+        {
+            "task_id": "T11",
+            "assigned_to": "TM1",
+            "start_date": "2023-07-01",
+            "end_date": "2023-07-20",
+            "priority": "High",
+            "estimated_hours": 50
+        },
+        {
+            "task_id": "T8",
+            "assigned_to": "TM2",
+            "start_date": "2023-07-11",
+            "end_date": "2023-07-15",
+            "priority": "Low",
+            "estimated_hours": 15
+        },
+        {
+            "task_id": "T13",
+            "assigned_to": "TM4",
+            "start_date": "2023-06-23",
+            "end_date": "2023-06-30",
+            "priority": "Low",
+            "estimated_hours": 15
+        },
+        {
+            "task_id": "T12",
+            "assigned_to": "TM1",
+            "start_date": "2023-07-21",
+            "end_date": "2023-07-31",
+            "priority": "Medium",
+            "estimated_hours": 25
+        },
+        {
+            "task_id": "T15",
+            "assigned_to": "TM1",
+            "start_date": "2023-08-01",
+            "end_date": "2023-08-15",
+            "priority": "High",
+            "estimated_hours": 35
+        }
+    ],
+    "resource_allocation": {
+        "TM1": {
+            "total_hours_assigned": 155,
+            "utilization_percentage": 96.9,
+            "tasks_assigned": [
+                "T1",
+                "T3",
+                "T4",
+                "T11",
+                "T12",
+                "T15"
+            ]
+        },
+        "TM2": {
+            "total_hours_assigned": 120,
+            "utilization_percentage": 100.0,
+            "tasks_assigned": [
+                "T2",
+                "T5",
+                "T8",
+                "T10"
+            ]
+        },
+        "TM3": {
+            "total_hours_assigned": 65,
+            "utilization_percentage": 46.4,
+            "tasks_assigned": [
+                "T7",
+                "T9"
+            ]
+        },
+        "TM4": {
+            "total_hours_assigned": 35,
+            "utilization_percentage": 35.0,
+            "tasks_assigned": [
+                "T6",
+                "T13"
+            ]
+        }
+    },
+    "priority_completion": {
+        "high": 6,
+        "medium": 5,
+        "low": 3
+    },
+    "unscheduled_tasks": [
+        "T14"
+    ],
+    "strategic_goal_completion": {
+        "G1": {
+            "percentage_completed": 100.0,
+            "completed_tasks": [
+                "T1",
+                "T3",
+                "T4",
+                "T11",
+                "T15"
+            ],
+            "incomplete_tasks": []
+        },
+        "G2": {
+            "percentage_completed": 100.0,
+            "completed_tasks": [
+                "T2",
+                "T5",
+                "T7",
+                "T10"
+            ],
+            "incomplete_tasks": []
+        },
+        "G3": {
+            "percentage_completed": 50.0,
+            "completed_tasks": [
+                "T9"
+            ],
+            "incomplete_tasks": [
+                "T14"
+            ]
+        },
+        "G4": {
+            "percentage_completed": 100.0,
+            "completed_tasks": [
+                "T6",
+                "T12"
+            ],
+            "incomplete_tasks": []
+        },
+        "G5": {
+            "percentage_completed": 100.0,
+            "completed_tasks": [
+                "T6",
+                "T13"
+            ],
+            "incomplete_tasks": []
+        }
+    },
+    "scheduling_rationale": "Prioritized tasks supporting the highest strategic goal (G1 - conference submission) and all high-priority tasks. Respected all dependencies and skill requirements. Maximized utilization of TM1 and TM2 who have critical skills. Scheduled TM4's tasks before their July 31 end date. Only T14 couldn't be scheduled due to resource constraints and lower strategic importance."
+}

@@ -1,0 +1,149 @@
+{
+    "candidate_id": "GPT-4",
+    "required_qualifications": [
+        "Bachelor's degree in Marketing, Communications, Business, or related field",
+        "Minimum 2 years of experience in a marketing role",
+        "Proficiency in Microsoft Office Suite (Word, Excel, PowerPoint)",
+        "Experience with social media platforms for business (Facebook, Instagram, LinkedIn, Twitter)",
+        "Strong written and verbal communication skills",
+        "Ability to manage multiple projects simultaneously with attention to detail",
+        "Experience with digital marketing campaigns"
+    ],
+    "preferred_qualifications": [
+        "Experience with marketing automation tools (HubSpot, Marketo, or similar)",
+        "Knowledge of graphic design software (Adobe Creative Suite)",
+        "Experience with content management systems (WordPress)"
+    ],
+    "candidate_evaluations": [
+        {
+            "candidate_id": "C001",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true
+            ],
+            "match_score": 80
+        },
+        {
+            "candidate_id": "C002",
+            "required_met": [
+                true,
+                false,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                false,
+                false,
+                false
+            ],
+            "match_score": 50
+        },
+        {
+            "candidate_id": "C003",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true
+            ],
+            "match_score": 80
+        },
+        {
+            "candidate_id": "C004",
+            "required_met": [
+                true,
+                false,
+                true,
+                true,
+                true,
+                true,
+                false
+            ],
+            "preferred_met": [
+                false,
+                false,
+                false
+            ],
+            "match_score": 45
+        },
+        {
+            "candidate_id": "C005",
+            "required_met": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                true,
+                false
+            ],
+            "preferred_met": [
+                false,
+                false,
+                false
+            ],
+            "match_score": 35
+        },
+        {
+            "candidate_id": "C006",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true
+            ],
+            "match_score": 80
+        }
+    ],
+    "top_candidates": [
+        "C001",
+        "C003",
+        "C006"
+    ],
+    "top_candidate_strengths": {
+        "C001": [
+            "3 years digital marketing & content creation experience",
+            "Proficient in social media management & campaign execution",
+            "Experience with Google Analytics and various marketing tools"
+        ],
+        "C003": [
+            "4 years experience in digital marketing, content creation, and campaign management",
+            "Proven track record of increasing engagement and conversion rates",
+            "Proficiency in HubSpot, Marketo, and Adobe Creative Suite"
+        ],
+        "C006": [
+            "2.5 years experience in digital marketing campaigns and content creation",
+            "Skilled in data analysis and performance optimization using Google Analytics and HubSpot",
+            "Proficiency in Adobe Creative Suite and WordPress"
+        ]
+    }
+}

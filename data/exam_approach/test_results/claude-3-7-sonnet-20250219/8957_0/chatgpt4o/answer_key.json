@@ -1,0 +1,45 @@
+{
+    "task1": {
+        "record_count": 99,
+        "missing_values_count": 1,
+        "duplicate_records_removed": 1,
+        "outliers_identified": [
+            102000,
+            101000,
+            103000,
+            104000,
+            105000
+        ]
+    },
+    "task2": {
+        "inconsistent_entries": [
+            {
+                "row_id": "1006",
+                "field": "age",
+                "value": "-5"
+            }
+        ],
+        "corrected_values": {
+            "1006": {
+                "age": "5"
+            }
+        },
+        "data_validation_rules": [
+            "Age must be between 18 and 100",
+            "Education must be one of: High School, Associate, Bachelor, Master, Doctorate",
+            "Income must be a positive number less than 500000"
+        ]
+    },
+    "task3": {
+        "weighted_average_income": 67500.0,
+        "weighted_proportion_category_a": 0.3333,
+        "post_stratification_weights": [
+            0.8,
+            1.0,
+            0.8571,
+            0.8,
+            1.0
+        ],
+        "effective_sample_size": 87.5
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "top_pain_points": [
+            "Slow system response",
+            "Difficult navigation",
+            "Limited integration"
+        ],
+        "pain_point_percentages": [
+            35.0,
+            30.0,
+            30.0
+        ],
+        "highest_dissatisfaction_department": "Sales",
+        "average_satisfaction_rating": 2.35,
+        "common_feature_request": "CRM integration"
+    },
+    "task2": {
+        "scenario1": "B",
+        "scenario2": "C",
+        "scenario3": "A",
+        "scenario4": "B"
+    },
+    "task3": {
+        "top5_features": [
+            "CRM integration",
+            "Sales pipeline visualization",
+            "API improvements",
+            "Single sign-on implementation",
+            "Automated backup system"
+        ],
+        "high_impact_low_frequency": "System monitoring dashboard",
+        "average_urgency": 7.5,
+        "highest_priority_department": "IT"
+    },
+    "task4": {
+        "key_stakeholders": [
+            "Michael Chen",
+            "Sarah Johnson",
+            "Jennifer Williams"
+        ],
+        "executive_communication_method": "C",
+        "steering_committee_frequency": "B",
+        "top_metrics": [
+            "Satisfaction rating",
+            "Feature request frequency",
+            "Pain point occurrence"
+        ],
+        "development_team_format": "C"
+    }
+}

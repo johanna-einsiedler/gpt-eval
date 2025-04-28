@@ -1,0 +1,44 @@
+{
+    "candidate_name": "GPT-4",
+    "task1": {
+        "monthly_payment": 1266.71
+    },
+    "task2": {
+        "month_1": {
+            "payment_number": 1,
+            "payment_amount": 1266.71,
+            "principal_portion": 329.21,
+            "interest_portion": 937.5,
+            "remaining_balance": 249670.79
+        },
+        "month_6": {
+            "payment_number": 6,
+            "payment_amount": 1266.71,
+            "principal_portion": 335.36,
+            "interest_portion": 931.35,
+            "remaining_balance": 248023.46
+        },
+        "month_12": {
+            "payment_number": 12,
+            "payment_amount": 1266.71,
+            "principal_portion": 341.59,
+            "interest_portion": 925.12,
+            "remaining_balance": 246356.9
+        }
+    },
+    "task3": {
+        "new_loan_term_years": 22,
+        "new_loan_term_months": 2,
+        "total_interest_saved": 65870.74,
+        "balance_after_5_years": 211119.64
+    },
+    "task4": {
+        "monthly_payment": 966.28,
+        "balloon_payment_amount": 162092.05
+    },
+    "task5": {
+        "new_monthly_payment": 1434.39,
+        "monthly_payment_savings": 328.24,
+        "breakeven_months": 14
+    }
+}

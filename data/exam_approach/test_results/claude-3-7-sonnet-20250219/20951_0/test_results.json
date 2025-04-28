@@ -1,0 +1,69 @@
+{
+  "overall_score": 100.0,
+  "sections": {
+    "treaty_analysis": {
+      "score": 25.0,
+      "max_score": 25,
+      "feedback": [
+        "Correctly identified premium_rates as unfavorable.",
+        "Provided good rationale for premium_rates.",
+        "Correctly identified gulf_exclusion as unfavorable.",
+        "Provided good rationale for gulf_exclusion.",
+        "Correctly identified reinstatements as unfavorable.",
+        "Provided good rationale for reinstatements.",
+        "Correctly identified portfolio_protection as unfavorable.",
+        "Provided good rationale for portfolio_protection.",
+        "Correctly identified sunset_clause as unfavorable.",
+        "Provided good rationale for sunset_clause."
+      ]
+    },
+    "financial_assessment": {
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Expected ceded losses calculation is within acceptable range.",
+        "Correctly assessed overall market rating as above_market.",
+        "Correctly calculated financial impact for Alternative 1.",
+        "Identified relevant pros for Alternative 1.",
+        "Identified relevant cons for Alternative 1.",
+        "Correctly calculated financial impact for Alternative 2.",
+        "Identified relevant pros for Alternative 2.",
+        "Identified relevant cons for Alternative 2.",
+        "Correctly calculated financial impact for Alternative 3.",
+        "Identified relevant pros for Alternative 3.",
+        "Identified relevant cons for Alternative 3."
+      ]
+    },
+    "negotiation_strategy": {
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Priority ranking is well aligned with the answer key.",
+        "Target and minimum positions are well defined and reasonable.",
+        "Concessions are reasonable and well justified."
+      ]
+    },
+    "counterparty_response": {
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Key points effectively address the counterparty's concerns.",
+        "Correctly identified current language for gulf_exclusion.",
+        "Proposed reasonable alternative language for gulf_exclusion.",
+        "Provided good justification for gulf_exclusion modification.",
+        "Correctly identified current language for premium_rates.",
+        "Proposed reasonable alternative language for premium_rates.",
+        "Provided good justification for premium_rates modification.",
+        "Correctly identified current language for reinstatements.",
+        "Proposed reasonable alternative language for reinstatements.",
+        "Provided good justification for reinstatements modification.",
+        "Correctly identified current language for portfolio_protection.",
+        "Proposed reasonable alternative language for portfolio_protection.",
+        "Provided good justification for portfolio_protection modification.",
+        "Proposed modifications are well structured and justified."
+      ]
+    }
+  },
+  "passed": true,
+  "overall_feedback": "Exceptional performance! Demonstrates sophisticated understanding of reinsurance negotiation."
+}

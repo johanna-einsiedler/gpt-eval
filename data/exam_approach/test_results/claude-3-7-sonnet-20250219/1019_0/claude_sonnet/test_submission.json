@@ -1,0 +1,38 @@
+{
+    "candidate_id": "GPT-4o",
+    "total_budget": 175000,
+    "department_allocations": {
+        "engineering": 59500,
+        "sales": 31500,
+        "marketing": 21000,
+        "customer_support": 45500,
+        "administration": 17500
+    },
+    "training_category_costs": {
+        "technical_skills": 43750,
+        "soft_skills": 26250,
+        "compliance": 30000,
+        "leadership": 22500,
+        "onboarding": 22500
+    },
+    "per_employee_costs": {
+        "engineering": 700.0,
+        "sales": 700.0,
+        "marketing": 700.0,
+        "customer_support": 700.0,
+        "administration": 700.0
+    },
+    "roi_calculations": {
+        "technical_skills": 18.5,
+        "soft_skills": 10.0,
+        "compliance": 3.1,
+        "leadership": 19.4,
+        "onboarding": 23.3
+    },
+    "budget_variance_percentage": 0.0613,
+    "cost_saving_opportunities": [
+        "TS-01",
+        "CO-03",
+        "SS-02"
+    ]
+}

@@ -1,0 +1,159 @@
+{
+  "candidate_id": "GPT-4o",
+  "task1": {
+    "score": 30,
+    "max_score": 30,
+    "feedback": [
+      "\u2713 Correctly identified the cost per employee calculation error",
+      "\u2713 Correctly calculated the total expenses",
+      "\u2713 Correctly calculated the efficiency score"
+    ],
+    "details": {
+      "data_errors": {
+        "submitted": [
+          "The total variance is incorrect. The sum of the individual variances ($250 + (-$250) + (-$250) + $150 + $650 + $0 + $150 + $50) is $720, not $750.",
+          "The total expenses are incorrect. The sum of the individual actual expenses ($44,750 + $2,750 + $3,250 + $1,650 + $1,850 + $1,200 + $1,350 + $950) is $57,750. This value is correct in the report.",
+          "The cost per employee calculation is incorrect. With 13 employees and total expenses of $57,750, the cost per employee should be $4,442.31, not $3,850.00.",
+          "The year-to-date budget utilization is not provided to verify its accuracy."
+        ],
+        "expected": [
+          "Cost per employee calculation is incorrect: should be $4,442.31 (57750/13), not $3,850.00"
+        ],
+        "score": 10,
+        "max_score": 10
+      },
+      "total_correct_expenses": {
+        "submitted": 57750.0,
+        "expected": 57750.0,
+        "score": 10,
+        "max_score": 10
+      },
+      "efficiency_score": {
+        "submitted": 100,
+        "expected": 100,
+        "score": 10,
+        "max_score": 10
+      }
+    }
+  },
+  "task2": {
+    "score": 20,
+    "max_score": 40,
+    "feedback": [
+      "\u26a0 Identified 2 out of 3 coverage gaps",
+      "\u2717 Incorrect optimal staff count: submitted 15, expected 14",
+      "\u2713 Correctly identified all schedule conflicts"
+    ],
+    "details": {
+      "coverage_gaps": {
+        "submitted": [
+          "Reception: Monday 8:00 AM - 9:00 AM, only 1 staff member scheduled, minimum 3 required.",
+          "Reception: Tuesday 6:00 PM - 7:00 PM, only 1 staff member scheduled, minimum 3 required.",
+          "Reception: Wednesday 8:00 AM - 5:00 PM, no staff scheduled, minimum 3 required.",
+          "Reception: Thursday 6:00 PM - 7:00 PM, only 1 staff member scheduled, minimum 3 required.",
+          "Reception: Friday 5:00 PM - 6:00 PM, only 1 staff member scheduled, minimum 3 required.",
+          "Finance: Monday 9:00 AM - 10:00 AM, only 1 staff member scheduled, minimum 4 required.",
+          "Finance: Tuesday 6:00 PM - 6:00 PM, only 1 staff member scheduled, minimum 4 required.",
+          "Finance: Wednesday 9:00 AM - 10:00 AM, only 1 staff member scheduled, minimum 4 required.",
+          "Finance: Thursday 6:00 PM - 6:00 PM, only 1 staff member scheduled, minimum 4 required.",
+          "Finance: Friday 6:00 PM - 6:00 PM, only 1 staff member scheduled, minimum 4 required.",
+          "HR: Thursday 8:30 AM - 4:30 PM, only 1 staff member scheduled, minimum 2 required.",
+          "HR: Friday 8:30 AM - 4:30 PM, only 1 staff member scheduled, minimum 2 required.",
+          "Reception: Monday 11:00 AM - 2:00 PM, only 3 staff members scheduled, peak staff required is 5.",
+          "Tuesday 11:00 AM - 2:00 PM, only 3 staff members scheduled, peak staff required is 5.",
+          "Finance: Monday 1:00 PM - 4:00 PM, only 3 staff members scheduled, peak staff required is 6.",
+          "Tuesday 1:00 PM - 4:00 PM, only 3 staff members scheduled, peak staff required is 6.",
+          "HR: Wednesday 9:00 AM - 12:00 PM, only 2 staff members scheduled, peak staff required is 3.",
+          "Thursday 9:00 AM - 12:00 PM, only 1 staff members scheduled, peak staff required is 3.",
+          "Friday 9:00 AM - 12:00 PM, only 1 staff members scheduled, peak staff required is 3."
+        ],
+        "expected": [
+          "Reception: Only 2 staff on Wednesday mornings (8:00-9:00 AM) when minimum is 3",
+          "Finance: Only 3 staff during peak hours (1:00-4:00 PM) on Mondays when 6 are required",
+          "HR: Only 1 staff member on Mondays and Tuesdays when minimum is 2"
+        ],
+        "score": 10,
+        "max_score": 15
+      },
+      "optimal_staff_count": {
+        "submitted": 15,
+        "expected": 14,
+        "score": 0,
+        "max_score": 15
+      },
+      "schedule_conflicts": {
+        "submitted": [
+          "E001: John Smith is scheduled to work on Wednesdays, but has a family commitment on Wednesdays.",
+          "E002: Mary Johnson is scheduled to work on Fridays, but has educational pursuits on Fridays.",
+          "E003: Robert Brown is scheduled to be off on Mondays, which aligns with his volunteer work.",
+          "E004: Patricia Davis is scheduled to work 4 days a week, exceeding her part-time limit of 3 days.",
+          "E007: James Moore is scheduled to work on Wednesdays, but has medical appointments on Wednesdays.",
+          "E008: Jennifer Taylor is scheduled to work on Mondays, but has childcare responsibilities on Mondays.",
+          "E009: David Anderson is scheduled to work on Tuesdays, but has graduate school on Tuesdays.",
+          "E011: Joseph Jackson is scheduled to work on Thursdays and Fridays, but cannot work those days due to part-time status.",
+          "E012: Margaret White is scheduled to work on Mondays and Tuesdays, but cannot work those days due to part-time status."
+        ],
+        "expected": [
+          "E004 (Patricia Davis) is scheduled for 4 days when availability states maximum 3 days per week",
+          "E011 (Joseph Jackson) is scheduled on Thursday despite availability constraints stating cannot work Thursdays"
+        ],
+        "score": 10,
+        "max_score": 10
+      }
+    }
+  },
+  "task3": {
+    "score": 26,
+    "max_score": 30,
+    "feedback": [
+      "\u2713 Correctly selected the appropriate report frequency",
+      "\u26a0 Selected 3 out of 5 appropriate key metrics",
+      "\u2713 Correctly selected the appropriate report format"
+    ],
+    "details": {
+      "report_frequency": {
+        "submitted": "monthly",
+        "expected": "monthly",
+        "score": 10,
+        "max_score": 10
+      },
+      "key_metrics": {
+        "submitted": [
+          "M001",
+          "M002",
+          "M004",
+          "M006",
+          "M010"
+        ],
+        "expected": [
+          "M001",
+          "M003",
+          "M006",
+          "M004",
+          "M005"
+        ],
+        "matches": [
+          "M006",
+          "M001",
+          "M004"
+        ],
+        "score": 6,
+        "max_score": 10
+      },
+      "selected_report_format": {
+        "submitted": "Trend",
+        "expected": "Trend",
+        "score": 10,
+        "max_score": 10
+      }
+    }
+  },
+  "overall_score": 76.0,
+  "performance_assessment": {
+    "score": 76,
+    "max_score": 100,
+    "percentage": 76.0,
+    "rating": "Good",
+    "summary": "The candidate scored 76/100 (76.0%), which is rated as 'Good'."
+  }
+}

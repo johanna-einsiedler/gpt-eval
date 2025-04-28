@@ -1,0 +1,33 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "scenario_1": {
+        "highest_risk_debt_id": "A1",
+        "minimum_payment_to_prevent_foreclosure": 3600,
+        "expense_category_to_reduce": "Dining Out",
+        "interest_savings_highest_interest_first": 1974
+    },
+    "scenario_2": {
+        "debt_priority_ranking": [
+            "B1",
+            "B7",
+            "B2",
+            "B5",
+            "B3",
+            "B4",
+            "B6"
+        ],
+        "total_interest_avalanche_method_24_months": 8120,
+        "total_interest_snowball_method_24_months": 8680,
+        "monthly_payment_for_36_month_payoff": 1650
+    },
+    "scenario_3": {
+        "debts_with_legal_consequences": [
+            "C3",
+            "C4",
+            "C1"
+        ],
+        "debt_to_income_ratio": 20.2,
+        "monthly_increase_needed_for_5year_payoff": 1050,
+        "monthly_savings_with_consolidation": 170
+    }
+}

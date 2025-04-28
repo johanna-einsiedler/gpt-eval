@@ -1,0 +1,41 @@
+{
+  "candidate_id": "Claude-3-Opus",
+  "results": {
+    "annual_budget_total": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct (within 2% margin)"
+    },
+    "q1_variance_percentage": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "fuel_cost_adjustment": {
+      "score": 0,
+      "max_score": 1,
+      "feedback": "Incorrect"
+    },
+    "maintenance_allocation": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "priority_ranking": {
+      "score": 0,
+      "max_score": 1,
+      "feedback": "Incorrect"
+    },
+    "cost_per_mile": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct (within $0.02 margin)"
+    }
+  },
+  "total_score": 4,
+  "max_score": 6,
+  "overall_score": 66.66666666666666,
+  "correct_answers": 4,
+  "critical_elements_passed": true,
+  "passed": true
+}

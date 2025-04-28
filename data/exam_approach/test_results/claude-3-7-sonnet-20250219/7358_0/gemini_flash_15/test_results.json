@@ -1,0 +1,140 @@
+{
+  "candidateId": "GPT-4",
+  "scenarios": {
+    "scenario1": {
+      "items": {
+        "adjustedGrossIncome": {
+          "expected": 52500,
+          "submitted": 52500,
+          "correct": true
+        },
+        "taxableIncome": {
+          "expected": 38650,
+          "submitted": 38650,
+          "correct": true
+        },
+        "federalTaxWithheld": {
+          "expected": 6300,
+          "submitted": 6300,
+          "correct": true
+        },
+        "taxLiability": {
+          "expected": 4438,
+          "submitted": 4637,
+          "correct": false
+        },
+        "refundOrAmountDue": {
+          "expected": 1862,
+          "submitted": 1663,
+          "correct": false
+        }
+      },
+      "correct": 3,
+      "total": 5
+    },
+    "scenario2": {
+      "items": {
+        "adjustedGrossIncome": {
+          "expected": 114200,
+          "submitted": 116200,
+          "correct": false
+        },
+        "taxableIncome": {
+          "expected": 86500,
+          "submitted": 88500,
+          "correct": false
+        },
+        "federalTaxWithheld": {
+          "expected": 13560,
+          "submitted": 13560,
+          "correct": true
+        },
+        "taxLiability": {
+          "expected": 10294,
+          "submitted": 10666,
+          "correct": false
+        },
+        "refundOrAmountDue": {
+          "expected": 3266,
+          "submitted": 2894,
+          "correct": false
+        }
+      },
+      "correct": 1,
+      "total": 5
+    },
+    "scenario3": {
+      "items": {
+        "adjustedGrossIncome": {
+          "expected": 48300,
+          "submitted": 48300,
+          "correct": true
+        },
+        "taxableIncome": {
+          "expected": 27500,
+          "submitted": 27450,
+          "correct": false
+        },
+        "federalTaxWithheld": {
+          "expected": 3825,
+          "submitted": 3825,
+          "correct": true
+        },
+        "taxLiability": {
+          "expected": 2986,
+          "submitted": 2694,
+          "correct": false
+        },
+        "refundOrAmountDue": {
+          "expected": 4839,
+          "submitted": 1131,
+          "correct": false
+        },
+        "childTaxCredit": {
+          "expected": 4000,
+          "submitted": 4000,
+          "correct": true
+        },
+        "earnedIncomeTaxCredit": {
+          "expected": 3000,
+          "submitted": 3000,
+          "correct": true
+        }
+      },
+      "correct": 4,
+      "total": 7
+    }
+  },
+  "overall_results": {
+    "total_correct": 8,
+    "total_items": 17,
+    "overall_score": 47.06,
+    "passed": false
+  },
+  "critical_calculations": {
+    "correct_scenarios": 0,
+    "passed": false
+  },
+  "scenario_specific": {
+    "scenario1": {
+      "correct": 3,
+      "total": 5,
+      "passed": false
+    },
+    "scenario2": {
+      "correct": 1,
+      "total": 5,
+      "passed": false
+    },
+    "scenario3": {
+      "correct": 4,
+      "total": 7,
+      "passed": false
+    },
+    "passed": false
+  },
+  "automatic_failure": false,
+  "failure_reasons": [],
+  "passed": false,
+  "overall_score": 47.06
+}

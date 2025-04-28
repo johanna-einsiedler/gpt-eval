@@ -1,0 +1,32 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "annual_budget": {
+            "fuel_costs": 7425000,
+            "maintenance_costs": 1805000,
+            "labor_costs": 2116800,
+            "overhead_costs": 1585000,
+            "total_annual_budget": 12931800
+        },
+        "cost_per_mwh": 77.49
+    },
+    "task2": {
+        "variance_analysis": {
+            "fuel_variance_percentage": 6.0,
+            "maintenance_variance_percentage": 9.22,
+            "labor_variance_percentage": 2.41,
+            "overhead_variance_percentage": -2.22
+        },
+        "primary_variance_category": "fuel_costs",
+        "corrective_action_code": 1
+    },
+    "task3": {
+        "capex_evaluation": {
+            "total_investment": 3091000,
+            "annual_savings": 776625,
+            "payback_period": 3.98,
+            "five_year_roi": 25.48
+        },
+        "recommendation_code": 2
+    }
+}

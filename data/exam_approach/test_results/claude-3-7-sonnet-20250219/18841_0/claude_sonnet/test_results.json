@@ -1,0 +1,256 @@
+{
+  "candidate_id": "GPT-4o",
+  "overall_score": 90.0,
+  "pass_fail": {
+    "passed": true,
+    "overall_score_requirement": {
+      "required": 75.0,
+      "achieved": 90.0,
+      "passed": true
+    },
+    "section_requirements_passed": true,
+    "critical_items_passed": true
+  },
+  "section_requirements": {
+    "all_sections_passed": true,
+    "sections": {
+      "Financial Analysis": {
+        "required": 3,
+        "earned": 4,
+        "passed": true
+      },
+      "Sales Performance": {
+        "required": 3,
+        "earned": 5,
+        "passed": true
+      },
+      "Operational Efficiency": {
+        "required": 3,
+        "earned": 4,
+        "passed": true
+      },
+      "Cost Reduction": {
+        "required": 1,
+        "earned": 1,
+        "passed": true
+      },
+      "Service Improvements": {
+        "required": 2,
+        "earned": 4,
+        "passed": true
+      }
+    }
+  },
+  "critical_items": {
+    "critical_items_required": 4,
+    "critical_items_correct": 4,
+    "critical_items_passed": true,
+    "items": {
+      "highest_increase_categories": true,
+      "highest_margin_service": true,
+      "potential_annual_savings": true,
+      "most_requested_additional_service": true
+    }
+  },
+  "sections": [
+    {
+      "section_name": "Financial Analysis",
+      "points_possible": 5,
+      "points_earned": 4,
+      "items": [
+        {
+          "item_name": "highest_increase_categories",
+          "correct": true,
+          "submission": [
+            "Marketing and Advertising",
+            "Employee Benefits",
+            "Facility Maintenance"
+          ],
+          "expected": [
+            "Marketing and Advertising",
+            "Facility Maintenance",
+            "Employee Benefits"
+          ]
+        },
+        {
+          "item_name": "highest_increase_percentages",
+          "correct": false,
+          "submission": [
+            43.0,
+            26.0,
+            30.0
+          ],
+          "expected": [
+            43.0,
+            30.0,
+            26.0
+          ]
+        },
+        {
+          "item_name": "service_profit_margins",
+          "correct": true,
+          "submission": {
+            "Traditional Funeral Services": 48.0,
+            "Cremation Services": 58.0,
+            "Memorial Services": 58.0,
+            "Pre-Need Sales": 68.0,
+            "Merchandise": 38.0,
+            "Other Services": 57.0
+          },
+          "expected": {
+            "Traditional Funeral Services": 48.0,
+            "Cremation Services": 58.0,
+            "Memorial Services": 58.0,
+            "Pre-Need Sales": 68.0,
+            "Merchandise": 38.0,
+            "Other Services": 57.0
+          }
+        },
+        {
+          "item_name": "lowest_revenue_month",
+          "correct": true,
+          "submission": "June",
+          "expected": "June"
+        },
+        {
+          "item_name": "monthly_difference_percentage",
+          "correct": true,
+          "submission": -13.7,
+          "expected": -13.8
+        }
+      ]
+    },
+    {
+      "section_name": "Sales Performance",
+      "points_possible": 5,
+      "points_earned": 5,
+      "items": [
+        {
+          "item_name": "highest_margin_service",
+          "correct": true,
+          "submission": "Pre-Need Basic Plan",
+          "expected": "Pre-Need Basic Plan (or Pre-Need Premium Plan)"
+        },
+        {
+          "item_name": "highest_margin_percentage",
+          "correct": true,
+          "submission": 68.0,
+          "expected": 68.0
+        },
+        {
+          "item_name": "cremation_growth_rate",
+          "correct": true,
+          "submission": 32.1,
+          "expected": 32.1
+        },
+        {
+          "item_name": "top_demographic_segment",
+          "correct": true,
+          "submission": "Religious Affiliation",
+          "expected": "Religious Affiliation"
+        },
+        {
+          "item_name": "top_segment_revenue",
+          "correct": true,
+          "submission": 789480.0,
+          "expected": 789480.0
+        }
+      ]
+    },
+    {
+      "section_name": "Operational Efficiency",
+      "points_possible": 5,
+      "points_earned": 4,
+      "items": [
+        {
+          "item_name": "lowest_utilization_department",
+          "correct": true,
+          "submission": "Maintenance",
+          "expected": "Maintenance"
+        },
+        {
+          "item_name": "utilization_rate",
+          "correct": true,
+          "submission": 65.0,
+          "expected": 65.0
+        },
+        {
+          "item_name": "unused_facility_percentage",
+          "correct": false,
+          "submission": 38.3,
+          "expected": 42.5
+        },
+        {
+          "item_name": "lowest_satisfaction_service",
+          "correct": true,
+          "submission": "Price/Value",
+          "expected": "Price/Value"
+        },
+        {
+          "item_name": "satisfaction_score",
+          "correct": true,
+          "submission": 3.6,
+          "expected": 3.6
+        }
+      ]
+    },
+    {
+      "section_name": "Cost Reduction",
+      "points_possible": 2,
+      "points_earned": 1,
+      "items": [
+        {
+          "item_name": "reduction_areas",
+          "correct": false,
+          "submission": [
+            "Salaries and Wages",
+            "Facility Maintenance",
+            "Marketing and Advertising"
+          ],
+          "expected": [
+            "Marketing and Advertising",
+            "Facility Maintenance",
+            "Employee Benefits"
+          ]
+        },
+        {
+          "item_name": "potential_annual_savings",
+          "correct": true,
+          "submission": 31762.5,
+          "expected": 31762.5
+        }
+      ]
+    },
+    {
+      "section_name": "Service Improvements",
+      "points_possible": 3,
+      "points_earned": 4,
+      "items": [
+        {
+          "item_name": "highest_correlation_service",
+          "correct": true,
+          "submission": "Personalization Options",
+          "expected": "Personalization Options"
+        },
+        {
+          "item_name": "correlation_value",
+          "correct": true,
+          "submission": 0.88,
+          "expected": 0.88
+        },
+        {
+          "item_name": "most_requested_additional_service",
+          "correct": true,
+          "submission": "Live Streaming of Services",
+          "expected": "Live Streaming of Services"
+        },
+        {
+          "item_name": "request_frequency",
+          "correct": true,
+          "submission": 28.1,
+          "expected": 28.1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "critical_path": [
+            "A",
+            "B",
+            "C",
+            "I",
+            "J",
+            "L",
+            "M"
+        ],
+        "project_duration": 56,
+        "slack_values": {
+            "A": 0,
+            "B": 0,
+            "C": 0,
+            "D": 0,
+            "E": 1,
+            "F": 0,
+            "G": 5,
+            "H": 5,
+            "I": 0,
+            "J": 0,
+            "K": 1,
+            "L": 0,
+            "M": 0
+        }
+    },
+    "task2": {
+        "optimal_crash_plan": {
+            "C": 3,
+            "I": 2,
+            "J": 2,
+            "L": 1,
+            "B": 3
+        },
+        "crashed_duration": 44,
+        "total_crash_cost": 30000,
+        "new_critical_path": [
+            "A",
+            "B",
+            "C",
+            "I",
+            "J",
+            "L",
+            "M"
+        ]
+    },
+    "task3": {
+        "resource_leveled_schedule": {
+            "A": 0,
+            "B": 5,
+            "C": 13,
+            "D": 25,
+            "E": 32,
+            "F": 40,
+            "G": 25,
+            "H": 32,
+            "I": 49,
+            "J": 57,
+            "K": 49,
+            "L": 63,
+            "M": 67
+        },
+        "project_duration_after_leveling": 70,
+        "max_resource_usage": 10
+    }
+}

@@ -1,0 +1,295 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "departmental_goals": [
+        {
+            "goal_id": 1,
+            "goal_description": "Reduce document processing time from 48 hours to 24 hours by implementing streamlined workflows and utilizing available technology resources",
+            "deadline": "2023-06-15",
+            "priority": "High",
+            "milestones": [
+                {
+                    "milestone_id": 1,
+                    "description": "Complete workflow analysis and identify bottlenecks in current document processing system",
+                    "target_date": "2023-04-21"
+                },
+                {
+                    "milestone_id": 2,
+                    "description": "Train staff on new document processing procedures and high-speed scanning equipment",
+                    "target_date": "2023-05-12"
+                },
+                {
+                    "milestone_id": 3,
+                    "description": "Implement new document processing workflow with 100% staff adoption",
+                    "target_date": "2023-05-26"
+                }
+            ],
+            "resources_required": {
+                "staff_hours": 120,
+                "budget_allocation": 8000,
+                "equipment_ids": [
+                    "E001",
+                    "E002"
+                ]
+            }
+        },
+        {
+            "goal_id": 2,
+            "goal_description": "Modernize filing and records management to improve filing accuracy from 88% to 98% through digital system implementation",
+            "deadline": "2023-06-30",
+            "priority": "High",
+            "milestones": [
+                {
+                    "milestone_id": 1,
+                    "description": "Complete digital filing system configuration and testing",
+                    "target_date": "2023-05-05"
+                },
+                {
+                    "milestone_id": 2,
+                    "description": "Migrate 50% of existing files to new digital system with validation checks",
+                    "target_date": "2023-06-02"
+                },
+                {
+                    "milestone_id": 3,
+                    "description": "Complete staff training and achieve 100% file migration with 98% accuracy",
+                    "target_date": "2023-06-23"
+                }
+            ],
+            "resources_required": {
+                "staff_hours": 160,
+                "budget_allocation": 12000,
+                "equipment_ids": [
+                    "E002",
+                    "E005"
+                ]
+            }
+        },
+        {
+            "goal_id": 3,
+            "goal_description": "Reduce customer response time from 36 hours to 12 hours by implementing a new request tracking system and response protocols",
+            "deadline": "2023-05-31",
+            "priority": "Medium",
+            "milestones": [
+                {
+                    "milestone_id": 1,
+                    "description": "Implement customer request tracking system and establish baseline metrics",
+                    "target_date": "2023-04-28"
+                },
+                {
+                    "milestone_id": 2,
+                    "description": "Develop and document standard response protocols for common request types",
+                    "target_date": "2023-05-12"
+                },
+                {
+                    "milestone_id": 3,
+                    "description": "Train all staff on new protocols and achieve 24-hour average response time",
+                    "target_date": "2023-05-26"
+                }
+            ],
+            "resources_required": {
+                "staff_hours": 100,
+                "budget_allocation": 5000,
+                "equipment_ids": [
+                    "E004",
+                    "E005"
+                ]
+            }
+        },
+        {
+            "goal_id": 4,
+            "goal_description": "Increase meeting room utilization from 65% to 85% by implementing an improved scheduling system and usage policies",
+            "deadline": "2023-05-19",
+            "priority": "Medium",
+            "milestones": [
+                {
+                    "milestone_id": 1,
+                    "description": "Analyze current meeting room usage patterns and identify improvement opportunities",
+                    "target_date": "2023-04-14"
+                },
+                {
+                    "milestone_id": 2,
+                    "description": "Implement new room scheduling software and train department representatives",
+                    "target_date": "2023-04-28"
+                },
+                {
+                    "milestone_id": 3,
+                    "description": "Roll out new meeting room policies and achieve 75% utilization rate",
+                    "target_date": "2023-05-12"
+                }
+            ],
+            "resources_required": {
+                "staff_hours": 80,
+                "budget_allocation": 3000,
+                "equipment_ids": [
+                    "E003",
+                    "E004"
+                ]
+            }
+        },
+        {
+            "goal_id": 5,
+            "goal_description": "Reduce budget variance from 12% to 5% by implementing improved tracking, forecasting, and approval processes",
+            "deadline": "2023-06-23",
+            "priority": "Medium",
+            "milestones": [
+                {
+                    "milestone_id": 1,
+                    "description": "Develop improved budget tracking tools and expenditure approval workflow",
+                    "target_date": "2023-04-21"
+                },
+                {
+                    "milestone_id": 2,
+                    "description": "Train all staff on new budget management procedures and tools",
+                    "target_date": "2023-05-05"
+                },
+                {
+                    "milestone_id": 3,
+                    "description": "Implement monthly budget reviews and achieve 8% or lower variance",
+                    "target_date": "2023-05-26"
+                }
+            ],
+            "resources_required": {
+                "staff_hours": 90,
+                "budget_allocation": 2000,
+                "equipment_ids": [
+                    "E004"
+                ]
+            }
+        }
+    ],
+    "implementation_timeline": {
+        "quarter_start_date": "2023-04-01",
+        "quarter_end_date": "2023-06-30",
+        "goal_schedule": [
+            {
+                "goal_id": 1,
+                "start_date": "2023-04-03",
+                "end_date": "2023-06-15",
+                "resource_allocation_periods": [
+                    {
+                        "resource_id": "S001",
+                        "start_date": "2023-04-03",
+                        "end_date": "2023-06-15"
+                    },
+                    {
+                        "resource_id": "S004",
+                        "start_date": "2023-04-10",
+                        "end_date": "2023-06-15"
+                    },
+                    {
+                        "resource_id": "S006",
+                        "start_date": "2023-04-17",
+                        "end_date": "2023-06-15"
+                    },
+                    {
+                        "resource_id": "B002",
+                        "start_date": "2023-04-24",
+                        "end_date": "2023-05-19"
+                    },
+                    {
+                        "resource_id": "B003",
+                        "start_date": "2023-05-01",
+                        "end_date": "2023-05-19"
+                    }
+                ]
+            },
+            {
+                "goal_id": 2,
+                "start_date": "2023-04-10",
+                "end_date": "2023-06-30",
+                "resource_allocation_periods": [
+                    {
+                        "resource_id": "S001",
+                        "start_date": "2023-05-15",
+                        "end_date": "2023-06-30"
+                    },
+                    {
+                        "resource_id": "S006",
+                        "start_date": "2023-04-10",
+                        "end_date": "2023-06-30"
+                    },
+                    {
+                        "resource_id": "B002",
+                        "start_date": "2023-04-17",
+                        "end_date": "2023-05-26"
+                    },
+                    {
+                        "resource_id": "B003",
+                        "start_date": "2023-05-29",
+                        "end_date": "2023-06-16"
+                    }
+                ]
+            },
+            {
+                "goal_id": 3,
+                "start_date": "2023-04-10",
+                "end_date": "2023-05-31",
+                "resource_allocation_periods": [
+                    {
+                        "resource_id": "S002",
+                        "start_date": "2023-04-10",
+                        "end_date": "2023-05-31"
+                    },
+                    {
+                        "resource_id": "S007",
+                        "start_date": "2023-04-17",
+                        "end_date": "2023-05-31"
+                    },
+                    {
+                        "resource_id": "B002",
+                        "start_date": "2023-04-10",
+                        "end_date": "2023-04-28"
+                    },
+                    {
+                        "resource_id": "B005",
+                        "start_date": "2023-04-17",
+                        "end_date": "2023-05-05"
+                    }
+                ]
+            },
+            {
+                "goal_id": 4,
+                "start_date": "2023-04-03",
+                "end_date": "2023-05-19",
+                "resource_allocation_periods": [
+                    {
+                        "resource_id": "S004",
+                        "start_date": "2023-04-03",
+                        "end_date": "2023-05-19"
+                    },
+                    {
+                        "resource_id": "S007",
+                        "start_date": "2023-04-03",
+                        "end_date": "2023-04-14"
+                    },
+                    {
+                        "resource_id": "B005",
+                        "start_date": "2023-04-17",
+                        "end_date": "2023-04-28"
+                    }
+                ]
+            },
+            {
+                "goal_id": 5,
+                "start_date": "2023-04-03",
+                "end_date": "2023-06-23",
+                "resource_allocation_periods": [
+                    {
+                        "resource_id": "S003",
+                        "start_date": "2023-04-03",
+                        "end_date": "2023-06-23"
+                    },
+                    {
+                        "resource_id": "S005",
+                        "start_date": "2023-04-10",
+                        "end_date": "2023-06-23"
+                    },
+                    {
+                        "resource_id": "B003",
+                        "start_date": "2023-04-24",
+                        "end_date": "2023-05-05"
+                    }
+                ]
+            }
+        ]
+    }
+}

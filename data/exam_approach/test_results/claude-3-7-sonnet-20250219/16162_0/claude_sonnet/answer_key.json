@@ -1,0 +1,199 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "resource_gap_analysis": [
+        {
+            "resource_category": "human",
+            "resource_type": "Database Administrator",
+            "gap_description": "No Database Administrators allocated despite requirement to migrate 28 databases (18 SQL Server, 6 Oracle, 4 MySQL)",
+            "impact_if_not_addressed": "High risk of data loss, extended downtime, and migration failures for all database systems, affecting critical business operations",
+            "priority_level": "high",
+            "supporting_evidence": "Project Requirements 2.2: Database Migration specifies 28 databases to be migrated; Resource Allocation Matrix shows no DBAs"
+        },
+        {
+            "resource_category": "human",
+            "resource_type": "DevOps Engineer",
+            "gap_description": "No DevOps Engineers allocated despite requirements for CI/CD implementation and automation",
+            "impact_if_not_addressed": "Inability to implement automated deployment pipelines, resulting in manual processes, higher error rates, and longer deployment times",
+            "priority_level": "medium",
+            "supporting_evidence": "Project Requirements 3.1: Monitoring and Management mentions automated remediation; no DevOps resources in allocation matrix"
+        },
+        {
+            "resource_category": "human",
+            "resource_type": "Training Specialist",
+            "gap_description": "Training Specialist not allocated until task #23, but training needs exist throughout project",
+            "impact_if_not_addressed": "IT operations team will be unprepared to manage cloud environment, risking operational failures post-migration",
+            "priority_level": "medium",
+            "supporting_evidence": "Project Charter Success Criteria #4: IT operations team fully trained; Stakeholder Expectations 3.1 mentions comprehensive training"
+        },
+        {
+            "resource_category": "human",
+            "resource_type": "Change Management Specialist",
+            "gap_description": "No Change Management Specialist allocated despite significant organizational change",
+            "impact_if_not_addressed": "User resistance, poor adoption of new systems, and business disruption due to inadequate change management",
+            "priority_level": "medium",
+            "supporting_evidence": "Stakeholder Expectations document sections 2.1-2.4 show business units expecting minimal disruption and clear communication"
+        },
+        {
+            "resource_category": "technical",
+            "resource_type": "Database Conversion Tools",
+            "gap_description": "No database migration tools allocated despite need to migrate 28 databases of different types",
+            "impact_if_not_addressed": "Manual database migration will increase project duration, risk of errors, and potential data loss",
+            "priority_level": "high",
+            "supporting_evidence": "Project Requirements 2.2: Database Migration requires migrating 28 databases with minimal downtime; no tools allocated in resource matrix"
+        },
+        {
+            "resource_category": "technical",
+            "resource_type": "Monitoring Tools License",
+            "gap_description": "No monitoring tools allocated despite operational requirements for comprehensive monitoring",
+            "impact_if_not_addressed": "Inability to monitor cloud environment performance, security, and compliance, risking undetected issues and SLA violations",
+            "priority_level": "high",
+            "supporting_evidence": "Project Requirements 3.1: Monitoring and Management requires comprehensive monitoring; no monitoring tools in resource allocation"
+        },
+        {
+            "resource_category": "technical",
+            "resource_type": "Testing Environment",
+            "gap_description": "No testing environment allocated for validating migrations before production deployment",
+            "impact_if_not_addressed": "Increased risk of production issues, downtime, and business disruption due to untested migrations",
+            "priority_level": "high",
+            "supporting_evidence": "Project Requirements 2.3: Application Testing requires test plans and testing; no testing environment in resource allocation"
+        },
+        {
+            "resource_category": "material",
+            "resource_type": "Training Materials",
+            "gap_description": "No training materials allocated despite requirements for knowledge transfer and training",
+            "impact_if_not_addressed": "Ineffective training delivery, knowledge gaps in operations team, and potential operational issues post-migration",
+            "priority_level": "medium",
+            "supporting_evidence": "Project Requirements 3.3: Documentation and Training requires training for IT staff; no training materials allocated"
+        }
+    ],
+    "resource_recommendations": [
+        {
+            "resource_description": "Database Administrator with SQL Server migration experience",
+            "quantity_needed": 2,
+            "skills_required": [
+                "Database Migration",
+                "SQL Server",
+                "Performance Optimization",
+                "Data Protection",
+                "Disaster Recovery Planning"
+            ],
+            "timing_required": "Q2",
+            "estimated_cost": 120000,
+            "acquisition_method": "contract",
+            "justification": "Required to migrate 18 SQL Server databases as specified in Project Requirements 2.2. Needed before Migration Wave 1 begins in June 2024.",
+            "alternatives_considered": "Utilize existing staff with additional training instead of new hires"
+        },
+        {
+            "resource_description": "Database Administrator with Oracle migration experience",
+            "quantity_needed": 1,
+            "skills_required": [
+                "Database Migration",
+                "Oracle",
+                "Performance Optimization",
+                "Data Protection",
+                "Disaster Recovery Planning"
+            ],
+            "timing_required": "Q2",
+            "estimated_cost": 70000,
+            "acquisition_method": "contract",
+            "justification": "Required to migrate 6 Oracle databases as specified in Project Requirements 2.2. Needed before Migration Wave 1 begins in June 2024.",
+            "alternatives_considered": "Engage external consultants instead of hiring full-time staff"
+        },
+        {
+            "resource_description": "DevOps Engineer with CI/CD pipeline experience",
+            "quantity_needed": 1,
+            "skills_required": [
+                "DevOps Practices",
+                "CI/CD Pipeline Implementation",
+                "Infrastructure as Code",
+                "Automated Testing",
+                "Cloud Security"
+            ],
+            "timing_required": "Q2",
+            "estimated_cost": 65000,
+            "acquisition_method": "contract",
+            "justification": "Required to implement automation for deployment, testing, and remediation as specified in Project Requirements 3.1.",
+            "alternatives_considered": "Implement automated solutions instead of manual processes"
+        },
+        {
+            "resource_description": "Training Specialist with technical training experience",
+            "quantity_needed": 1,
+            "skills_required": [
+                "Training Delivery",
+                "Technical Documentation",
+                "Cloud Architecture",
+                "Communication",
+                "Knowledge Management"
+            ],
+            "timing_required": "Q2",
+            "estimated_cost": 45000,
+            "acquisition_method": "contract",
+            "justification": "Required to develop and deliver training throughout project, not just at end, per Stakeholder Expectations 3.1.",
+            "alternatives_considered": "Use virtual training instead of in-person sessions"
+        },
+        {
+            "resource_description": "Change Management Specialist with IT transformation experience",
+            "quantity_needed": 1,
+            "skills_required": [
+                "Change Management",
+                "Stakeholder Management",
+                "Communication",
+                "Training Delivery",
+                "Business Process Analysis"
+            ],
+            "timing_required": "Q2",
+            "estimated_cost": 50000,
+            "acquisition_method": "contract",
+            "justification": "Required to manage organizational change aspects of migration to ensure user adoption and minimize disruption.",
+            "alternatives_considered": "Leverage existing staff with additional training instead of new hires"
+        },
+        {
+            "resource_description": "Database Migration Service License",
+            "quantity_needed": 1,
+            "skills_required": [
+                "Database Migration",
+                "Data Protection",
+                "Performance Optimization"
+            ],
+            "timing_required": "Q2",
+            "estimated_cost": 75000,
+            "acquisition_method": "purchase",
+            "justification": "Required to automate and streamline migration of 28 databases as specified in Project Requirements 2.2.",
+            "alternatives_considered": "Use open-source tools instead of commercial software"
+        },
+        {
+            "resource_description": "Cloud Monitoring and Alerting Platform",
+            "quantity_needed": 1,
+            "skills_required": [
+                "Monitoring and Alerting",
+                "Performance Optimization",
+                "Security",
+                "Compliance Management"
+            ],
+            "timing_required": "Q2",
+            "estimated_cost": 60000,
+            "acquisition_method": "purchase",
+            "justification": "Required to implement comprehensive monitoring per Project Requirements 3.1 and meet stakeholder expectations for reliability.",
+            "alternatives_considered": "Use open-source tools instead of commercial software"
+        },
+        {
+            "resource_description": "Cloud Training and Simulation Environment",
+            "quantity_needed": 1,
+            "skills_required": [
+                "Cloud Architecture",
+                "Training Delivery",
+                "DevOps Practices"
+            ],
+            "timing_required": "Q2",
+            "estimated_cost": 40000,
+            "acquisition_method": "purchase",
+            "justification": "Required to provide hands-on training for IT operations team as specified in Project Requirements 3.3.",
+            "alternatives_considered": "Use cloud provider professional services instead of third-party consultants"
+        }
+    ],
+    "budget_impact_summary": {
+        "total_estimated_cost": 525000,
+        "alignment_with_constraints": "within_budget",
+        "cost_saving_measures": "Implement reserved instances for predictable workloads"
+    }
+}

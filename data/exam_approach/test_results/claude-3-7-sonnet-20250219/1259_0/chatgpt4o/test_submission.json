@@ -1,0 +1,24 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "income_growth_analysis": {
+        "cagr_revenue": 0.102,
+        "cagr_net_income": 0.104,
+        "revenue_growth_consistency_score": 4
+    },
+    "management_quality": {
+        "executive_turnover_rate": 0.1,
+        "compensation_to_revenue_ratio": 0.08,
+        "roi_score": 4
+    },
+    "market_position": {
+        "market_share_percentage": 0.063,
+        "market_share_trend": 2,
+        "competitive_position_score": 7.42
+    },
+    "loan_profitability": {
+        "debt_service_coverage_ratio": 1.5,
+        "interest_coverage_ratio": 4.0,
+        "probability_of_default": 0.06,
+        "expected_loan_profitability_score": 8.8
+    }
+}

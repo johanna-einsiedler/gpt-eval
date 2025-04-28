@@ -1,0 +1,30 @@
+{
+    "task1": {
+        "excess_inventory_value": 16331.5,
+        "stockout_risk_skus": [
+            "SKU102",
+            "SKU104",
+            "SKU106",
+            "SKU108",
+            "SKU110"
+        ],
+        "optimal_reorder_point_sku123": 75,
+        "highest_carrying_cost_category": "Electronics"
+    },
+    "task2": {
+        "carrier_cost_per_mile": {
+            "CarrierA": 1.47,
+            "CarrierB": 1.73,
+            "CarrierC": 1.31
+        },
+        "most_efficient_carrier": "CarrierC",
+        "potential_annual_savings": 6000.0,
+        "optimal_shipment_size": 6500
+    },
+    "task3": {
+        "worst_performing_region": "West",
+        "on_time_delivery_percentage": 60.0,
+        "correlation_coefficient": -0.95,
+        "priority_improvement_metric": "Delivery Time"
+    }
+}

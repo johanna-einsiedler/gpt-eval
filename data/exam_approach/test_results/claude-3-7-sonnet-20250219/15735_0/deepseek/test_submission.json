@@ -1,0 +1,30 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "total_revenue": 1448.65,
+        "total_units_sold": 80,
+        "average_order_value": 45.27,
+        "best_selling_product": "Screen Protector"
+    },
+    "task2": {
+        "total_expenses": 2963.43,
+        "expense_categories": {
+            "advertising": 645.5,
+            "shipping": 441.49,
+            "product_costs": 1751.75,
+            "platform_fees": 183.24,
+            "other": 52.44
+        },
+        "gross_profit": -1514.78,
+        "profit_margin_percentage": -104.58
+    },
+    "task3": {
+        "monthly_summary": {
+            "total_revenue": 1448.65,
+            "total_expenses": 2963.43,
+            "net_profit": -1514.78,
+            "roi_percentage": -51.12,
+            "conversion_rate_percentage": 1.0
+        }
+    }
+}

@@ -1,0 +1,134 @@
+{
+    "candidate_id": "Claude-3-Opus-20240229",
+    "monthly_budget": {
+        "january": {
+            "staff_costs": 162500,
+            "maintenance_costs": 82000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "february": {
+            "staff_costs": 162500,
+            "maintenance_costs": 82000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "march": {
+            "staff_costs": 162500,
+            "maintenance_costs": 88000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "april": {
+            "staff_costs": 162500,
+            "maintenance_costs": 94000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "may": {
+            "staff_costs": 162500,
+            "maintenance_costs": 82000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "june": {
+            "staff_costs": 162500,
+            "maintenance_costs": 82000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "july": {
+            "staff_costs": 162500,
+            "maintenance_costs": 100000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "august": {
+            "staff_costs": 162500,
+            "maintenance_costs": 82000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "september": {
+            "staff_costs": 162500,
+            "maintenance_costs": 82000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "october": {
+            "staff_costs": 162500,
+            "maintenance_costs": 88000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "november": {
+            "staff_costs": 162500,
+            "maintenance_costs": 82000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        },
+        "december": {
+            "staff_costs": 162500,
+            "maintenance_costs": 88000,
+            "operational_supplies": 38000,
+            "utilities": 28500,
+            "regulatory_compliance": 24500,
+            "equipment_upgrades": 60000,
+            "contingency": 16500
+        }
+    },
+    "calculations": {
+        "monthly_well_maintenance_cost": 28000,
+        "preventive_maintenance_allocation": 728000,
+        "reactive_maintenance_allocation": 312000,
+        "cost_per_kwh": 0.0322
+    },
+    "scenario_impacts": {
+        "chemical_cost_increase": 25200,
+        "monitoring_frequency_increase": 66000,
+        "pump_replacement": 120000
+    },
+    "annual_category_totals": {
+        "staff_costs": 1950000,
+        "maintenance_costs": 1040000,
+        "operational_supplies": 456000,
+        "utilities": 342000,
+        "regulatory_compliance": 294000,
+        "equipment_upgrades": 720000,
+        "contingency": 198000
+    },
+    "total_annual_budget": 4850000
+}

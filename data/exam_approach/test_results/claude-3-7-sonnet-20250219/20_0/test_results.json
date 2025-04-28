@@ -1,0 +1,61 @@
+{
+  "essential_requirements": {
+    "has_5_goals": true,
+    "all_goals_in_quarter": true,
+    "all_goals_have_3_milestones": true,
+    "resources_within_limits": true
+  },
+  "meets_essential_requirements": true,
+  "goal_selection": {
+    "score": 19,
+    "max_score": 30,
+    "feedback": [
+      "Goals addressing high-priority needs: 6/15 points",
+      "Goals targeting significant performance gaps: 10/10 points",
+      "Goals aligning with executive expectations: 3/5 points"
+    ]
+  },
+  "goal_quality": {
+    "score": 25,
+    "max_score": 25,
+    "feedback": [
+      "Goals are specific and measurable: 10/10 points",
+      "Goals are realistic given resources: 10/10 points",
+      "Priority levels are appropriate: 5/5 points"
+    ]
+  },
+  "timeline_and_milestones": {
+    "score": 20,
+    "max_score": 25,
+    "feedback": [
+      "Milestones show logical progression: 10/10 points",
+      "Timeline accounts for company events: 0/5 points",
+      "Deadlines are realistic: 10/10 points"
+    ]
+  },
+  "resource_allocation": {
+    "score": 18,
+    "max_score": 20,
+    "feedback": [
+      "Staff allocations match required skills: 10/10 points",
+      "Budget allocations are appropriate: 4/5 points",
+      "Equipment selections are appropriate: 4/5 points"
+    ]
+  },
+  "deductions": {
+    "total_deductions": 0,
+    "reasons": []
+  },
+  "bonus_points": {
+    "total_bonus": 3,
+    "reasons": [
+      "Exceptional alignment with organizational strategy: +3 points"
+    ]
+  },
+  "base_score": 82,
+  "adjusted_score": 85,
+  "max_possible_score": 100,
+  "final_score": 85,
+  "overall_score": 85.0,
+  "passed": true
+}

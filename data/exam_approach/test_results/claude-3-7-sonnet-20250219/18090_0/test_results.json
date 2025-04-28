@@ -1,0 +1,220 @@
+{
+  "candidateID": "EVALUATOR_KEY",
+  "overall_score": 99.4,
+  "scenario1": {
+    "total_score": 65.0,
+    "max_score": 65,
+    "classes": {
+      "score": 30,
+      "max_score": 30,
+      "details": [
+        {
+          "className": "Physician",
+          "matched": true,
+          "notes": [
+            "Attributes: 4/4 matched",
+            "Methods: 3/3 matched",
+            "Relationships: 2/2 matched"
+          ],
+          "score": 5.0
+        },
+        {
+          "className": "Pharmacist",
+          "matched": true,
+          "notes": [
+            "Attributes: 3/3 matched",
+            "Methods: 3/3 matched",
+            "Relationships: 2/2 matched"
+          ],
+          "score": 5.0
+        },
+        {
+          "className": "Nurse",
+          "matched": true,
+          "notes": [
+            "Attributes: 4/4 matched",
+            "Methods: 7/7 matched",
+            "Relationships: 3/3 matched"
+          ],
+          "score": 5.0
+        },
+        {
+          "className": "Patient",
+          "matched": true,
+          "notes": [
+            "Attributes: 6/6 matched",
+            "Methods: 2/2 matched",
+            "Relationships: 1/1 matched"
+          ],
+          "score": 5.0
+        },
+        {
+          "className": "Medication",
+          "matched": true,
+          "notes": [
+            "Attributes: 7/7 matched",
+            "Methods: 2/2 matched",
+            "Relationships: 1/1 matched"
+          ],
+          "score": 5.0
+        },
+        {
+          "className": "MedicationOrder",
+          "matched": true,
+          "notes": [
+            "Attributes: 10/10 matched",
+            "Methods: 4/4 matched",
+            "Relationships: 1/1 matched"
+          ],
+          "score": 5.0
+        }
+      ]
+    },
+    "sequenceDiagram": {
+      "score": 20.0,
+      "max_score": 20,
+      "details": [
+        {
+          "component": "Actors",
+          "matched": "4/4",
+          "score": 4.0
+        },
+        {
+          "component": "Lifelines",
+          "matched": "4/4",
+          "score": 4.0
+        },
+        {
+          "component": "Messages",
+          "matched": "17/17",
+          "score": 8.0
+        },
+        {
+          "component": "Sequence Correctness",
+          "matched": "17/17",
+          "score": 4.0
+        }
+      ]
+    },
+    "identifiedGaps": {
+      "score": 15,
+      "max_score": 15,
+      "details": [
+        {
+          "gap_number": 1,
+          "score": 5.0,
+          "max_score": 5,
+          "notes": [
+            "Gap matches key gap: 'The workflow doesn't specify how nurses are notifi...'",
+            "Impact description: 100% complete",
+            "Recommendation: 100% complete"
+          ]
+        },
+        {
+          "gap_number": 2,
+          "score": 5.0,
+          "max_score": 5,
+          "notes": [
+            "Gap matches key gap: 'The process for handling medication discrepancies ...'",
+            "Impact description: 100% complete",
+            "Recommendation: 100% complete"
+          ]
+        },
+        {
+          "gap_number": 3,
+          "score": 5.0,
+          "max_score": 5,
+          "notes": [
+            "Gap matches key gap: 'The workflow doesn't detail how PRN medication eff...'",
+            "Impact description: 100% complete",
+            "Recommendation: 100% complete"
+          ]
+        }
+      ]
+    }
+  },
+  "scenario2": {
+    "total_score": 34.4,
+    "max_score": 35,
+    "nursingTranslation": {
+      "score": 24.5,
+      "max_score": 25,
+      "details": [
+        {
+          "component": "Purpose Statement",
+          "score": 4.5,
+          "max_score": 5,
+          "notes": [
+            "Purpose statement good length (79 words)",
+            "Included 5/6 key concepts"
+          ]
+        },
+        {
+          "component": "User Roles",
+          "score": 5.0,
+          "max_score": 5,
+          "notes": [
+            "Included 3/3 key nursing roles",
+            "3/3 roles have detailed responsibilities"
+          ]
+        },
+        {
+          "component": "Clinical Workflow",
+          "score": 7.0,
+          "max_score": 7,
+          "notes": [
+            "Included 7/7 key workflow concepts"
+          ]
+        },
+        {
+          "component": "Data Elements",
+          "score": 8.0,
+          "max_score": 8,
+          "notes": [
+            "Included 5/5 key data elements",
+            "6/6 elements have detailed nursing relevance",
+            "6/6 elements have source information"
+          ]
+        }
+      ]
+    },
+    "potentialIssues": {
+      "score": 9.899999999999999,
+      "max_score": 10,
+      "details": [
+        {
+          "issue_number": 1,
+          "score": 3.3,
+          "max_score": 3.33,
+          "notes": [
+            "Issue matches key issue: 'The default alert parameters are standardized acro...'",
+            "Nursing impact: 100% complete",
+            "Possible solution: 100% complete"
+          ]
+        },
+        {
+          "issue_number": 2,
+          "score": 3.3,
+          "max_score": 3.33,
+          "notes": [
+            "Issue matches key issue: 'The system doesn't specify a workflow for document...'",
+            "Nursing impact: 100% complete",
+            "Possible solution: 100% complete"
+          ]
+        },
+        {
+          "issue_number": 3,
+          "score": 3.3,
+          "max_score": 3.33,
+          "notes": [
+            "Issue matches key issue: 'The technical specifications don't address how the...'",
+            "Nursing impact: 100% complete",
+            "Possible solution: 100% complete"
+          ]
+        }
+      ]
+    }
+  },
+  "pass": true,
+  "performance": "Excellent"
+}

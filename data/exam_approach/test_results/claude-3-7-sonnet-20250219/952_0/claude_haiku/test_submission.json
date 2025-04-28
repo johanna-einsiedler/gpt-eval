@@ -1,0 +1,53 @@
+{
+    "candidate_id": "GPT-4o",
+    "exercise1": {
+        "errors": [
+            {
+                "row": "Prototype Manufacturing",
+                "column": "Q2 Actual",
+                "incorrect_value": 93500,
+                "correct_value": 89750
+            },
+            {
+                "row": "Market Research",
+                "column": "Q1 Actual",
+                "incorrect_value": 38500,
+                "correct_value": 36750
+            },
+            {
+                "row": "Packaging Development",
+                "column": "Q3 Actual",
+                "incorrect_value": 47250,
+                "correct_value": 45000
+            },
+            {
+                "row": "Supply Chain Setup",
+                "column": "Q3 Actual",
+                "incorrect_value": 49500,
+                "correct_value": 47250
+            },
+            {
+                "row": "TOTAL",
+                "column": "Annual Actual",
+                "incorrect_value": 1538500,
+                "correct_value": 1520000
+            }
+        ],
+        "correct_total_cost": 1520000,
+        "rd_percentage": 23.03
+    },
+    "exercise2": {
+        "campaign_a_roi": 1.5,
+        "campaign_b_roi": 1.62,
+        "campaign_c_roi": 1.8,
+        "highest_roi_campaign": "C",
+        "blended_roi": 1.63,
+        "campaign_b_breakeven_units": 5716
+    },
+    "exercise3": {
+        "total_annual_revenue": 2324535,
+        "total_annual_profit": 388285,
+        "breakeven_month": 7,
+        "annual_profit_margin_percentage": 16.71
+    }
+}

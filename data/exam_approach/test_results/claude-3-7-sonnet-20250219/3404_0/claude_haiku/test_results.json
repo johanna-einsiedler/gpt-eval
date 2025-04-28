@@ -1,0 +1,114 @@
+{
+  "candidateInfo": {
+    "name": "AI Budget Analyst",
+    "candidateId": "GPT-4-turbo",
+    "date": "2024-02-15"
+  },
+  "exercise1": {
+    "points_possible": 30,
+    "points_earned": 30,
+    "details": [
+      {
+        "directive": 1,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 2,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 3,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 4,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 5,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Complete accuracy across all directives",
+        "points": 5,
+        "max_points": 5
+      }
+    ]
+  },
+  "exercise2": {
+    "points_possible": 40,
+    "points_earned": 6.0,
+    "details": [
+      {
+        "status": "Missing 5 directive impacts",
+        "points": 0,
+        "max_points": 25
+      },
+      {
+        "status": "Department-level adjustments: All correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Compliance calculations: Incorrect total budget adjustment (should be 1591880); Incorrect percentage of total budget (should be 7.96); Incorrect highest impact directive (should be 5); Incorrect lowest impact directive (should be 4)",
+        "points": 1,
+        "max_points": 5
+      },
+      {
+        "status": "Identification of highest/lowest impact directives: Incorrect",
+        "points": 0.0,
+        "max_points": 5
+      }
+    ]
+  },
+  "exercise3": {
+    "points_possible": 30,
+    "points_earned": 23,
+    "details": [
+      {
+        "status": "Selection of highest-priority directives: Missing critical directive(s): 2, 5; Missing high priority directive (should include either 1 or 4)",
+        "points": 0,
+        "max_points": 5
+      },
+      {
+        "status": "Selection of appropriate policy codes: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Selection of logical implementation steps: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Specification of appropriate required resources: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Selection of relevant monitoring metrics: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Overall policy coherence and alignment with directives",
+        "points": 3,
+        "max_points": 5
+      }
+    ]
+  },
+  "overall_score": 59.0,
+  "total_points_earned": 59.0,
+  "total_points_possible": 100,
+  "pass_fail": "FAIL"
+}

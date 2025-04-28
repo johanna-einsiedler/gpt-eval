@@ -1,0 +1,40 @@
+{
+    "candidate_id": "GPT-4",
+    "financial_position": {
+        "net_worth": 703500,
+        "debt_to_income_ratio": 0.39,
+        "emergency_fund_months": 0.8
+    },
+    "retirement_planning": {
+        "projected_gap": 1410000,
+        "required_monthly_savings": 4700
+    },
+    "goal_prioritization": {
+        "ranked_goals": [
+            "Goal_B",
+            "Goal_A",
+            "Goal_D",
+            "Goal_C"
+        ],
+        "top_priority_strategies": [
+            "Strategy_1",
+            "Strategy_2",
+            "Strategy_4"
+        ]
+    },
+    "investment_assessment": {
+        "current_allocation": {
+            "stocks": 0.7,
+            "bonds": 0.19,
+            "cash": 0.07,
+            "other": 0.04
+        },
+        "aligned_with_risk_profile": false,
+        "average_expense_ratio": 0.12
+    },
+    "recommendations": {
+        "emergency_fund": "EF_Option_3",
+        "debt_management": "Debt_Option_1",
+        "investment_allocation": "Invest_Option_2"
+    }
+}

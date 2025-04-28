@@ -1,0 +1,493 @@
+{
+  "task1": {
+    "total_participants_per_event": {
+      "score": 5,
+      "max_score": 5,
+      "details": {
+        "E001": {
+          "submitted": 10,
+          "correct": 10,
+          "is_correct": true
+        },
+        "E002": {
+          "submitted": 12,
+          "correct": 12,
+          "is_correct": true
+        },
+        "E003": {
+          "submitted": 15,
+          "correct": 15,
+          "is_correct": true
+        },
+        "E004": {
+          "submitted": 13,
+          "correct": 13,
+          "is_correct": true
+        },
+        "E005": {
+          "submitted": 10,
+          "correct": 10,
+          "is_correct": true
+        }
+      }
+    },
+    "attendance_rates": {
+      "score": 0.5,
+      "max_score": 5,
+      "details": {
+        "E001": {
+          "submitted": 0.84,
+          "correct": 0.8,
+          "is_correct": false,
+          "is_close": false
+        },
+        "E002": {
+          "submitted": 0.81,
+          "correct": 0.75,
+          "is_correct": false,
+          "is_close": false
+        },
+        "E003": {
+          "submitted": 0.77,
+          "correct": 0.8,
+          "is_correct": false,
+          "is_close": false
+        },
+        "E004": {
+          "submitted": 0.79,
+          "correct": 0.7,
+          "is_correct": false,
+          "is_close": false
+        },
+        "E005": {
+          "submitted": 0.76,
+          "correct": 0.75,
+          "is_correct": false,
+          "is_close": true
+        }
+      }
+    }
+  },
+  "task2": {
+    "score": 2,
+    "max_score": 4,
+    "details": {
+      "highest_attendance_event": {
+        "submitted": "Team Walking Challenge",
+        "correct": "Team Walking Challenge",
+        "is_correct": true
+      },
+      "average_attendance_rate": {
+        "submitted": 0.79,
+        "correct": 0.76,
+        "is_correct": false,
+        "is_close": false
+      },
+      "highest_participation_week": {
+        "submitted": 7,
+        "correct": 5,
+        "is_correct": false
+      },
+      "highest_participation_department": {
+        "submitted": "IT",
+        "correct": "IT",
+        "is_correct": true
+      }
+    }
+  },
+  "task3": {
+    "week_over_week_changes": {
+      "score": 2.2857142857142856,
+      "max_score": 5,
+      "details": {
+        "E001": {
+          "score": 5,
+          "max_score": 7,
+          "percentage": 0.7142857142857143,
+          "details": [
+            {
+              "week": 2,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 3,
+              "submitted": 0.0,
+              "correct": -0.11,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 4,
+              "submitted": 0.0,
+              "correct": 0.13,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 5,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 6,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 7,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 8,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            }
+          ]
+        },
+        "E002": {
+          "score": 3,
+          "max_score": 7,
+          "percentage": 0.42857142857142855,
+          "details": [
+            {
+              "week": 2,
+              "submitted": 0.0,
+              "correct": 0.09,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 3,
+              "submitted": 0.0,
+              "correct": -0.08,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 4,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 5,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 6,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 7,
+              "submitted": 0.0,
+              "correct": -0.09,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 8,
+              "submitted": 0.0,
+              "correct": 0.1,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            }
+          ]
+        },
+        "E003": {
+          "score": 5,
+          "max_score": 7,
+          "percentage": 0.7142857142857143,
+          "details": [
+            {
+              "week": 2,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 3,
+              "submitted": 0.0,
+              "correct": -0.17,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 4,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 5,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 6,
+              "submitted": 0.0,
+              "correct": -0.17,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 7,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 8,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            }
+          ]
+        },
+        "E004": {
+          "score": 2,
+          "max_score": 7,
+          "percentage": 0.2857142857142857,
+          "details": [
+            {
+              "week": 2,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 3,
+              "submitted": 0.0,
+              "correct": -0.11,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 4,
+              "submitted": 0.0,
+              "correct": 0.13,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 5,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 6,
+              "submitted": 0.0,
+              "correct": -0.11,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 7,
+              "submitted": 0.0,
+              "correct": 0.13,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 8,
+              "submitted": 0.0,
+              "correct": -0.11,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            }
+          ]
+        },
+        "E005": {
+          "score": 1,
+          "max_score": 7,
+          "percentage": 0.14285714285714285,
+          "details": [
+            {
+              "week": 2,
+              "submitted": 0.0,
+              "correct": 0.0,
+              "is_correct": true,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 3,
+              "submitted": 0.0,
+              "correct": -0.13,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 4,
+              "submitted": 0.0,
+              "correct": 0.14,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 5,
+              "submitted": 0.0,
+              "correct": -0.13,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 6,
+              "submitted": 0.0,
+              "correct": 0.14,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 7,
+              "submitted": 0.0,
+              "correct": -0.13,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            },
+            {
+              "week": 8,
+              "submitted": 0.0,
+              "correct": 0.14,
+              "is_correct": false,
+              "is_close": false,
+              "correct_direction": false
+            }
+          ]
+        }
+      }
+    },
+    "most_consistent_event": {
+      "score": 1,
+      "max_score": 1,
+      "details": {
+        "submitted": "Morning Yoga",
+        "correct": "Morning Yoga",
+        "is_correct": true
+      }
+    },
+    "age_group_with_highest_attendance": {
+      "score": 1,
+      "max_score": 1,
+      "details": {
+        "submitted": "30-39",
+        "correct": "30-39",
+        "is_correct": true
+      }
+    }
+  },
+  "critical_elements": {
+    "details": {
+      "attendance_rates_threshold": {
+        "required": 3,
+        "achieved": 0,
+        "max": 5,
+        "passed": false
+      },
+      "highest_attendance_event": {
+        "required": 1,
+        "achieved": 1,
+        "max": 1,
+        "passed": true
+      },
+      "json_format": {
+        "required": 1,
+        "achieved": 1,
+        "max": 1,
+        "passed": true
+      }
+    },
+    "all_passed": false
+  },
+  "overall_score": 56.12244897959183,
+  "passing_criteria": {
+    "task1": {
+      "required": 8,
+      "achieved": 5.5,
+      "max": 10,
+      "passed": false
+    },
+    "task2": {
+      "required": 3,
+      "achieved": 2,
+      "max": 4,
+      "passed": false
+    },
+    "task3": {
+      "required": 7,
+      "achieved": 4.285714285714286,
+      "max": 7,
+      "passed": false
+    },
+    "overall_score": {
+      "required": 75,
+      "achieved": 56.12244897959183,
+      "passed": false
+    },
+    "critical_elements": {
+      "passed": false
+    },
+    "final_result": false
+  },
+  "candidate_id": "GPT-4o"
+}

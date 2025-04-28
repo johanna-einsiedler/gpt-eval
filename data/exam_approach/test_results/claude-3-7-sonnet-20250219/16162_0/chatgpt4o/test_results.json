@@ -1,0 +1,90 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "evaluation_sections": {
+    "resource_gap_analysis": {
+      "points_earned": 22.0,
+      "max_points": 40,
+      "evaluations": [
+        {
+          "gap_number": 1,
+          "feedback": "Gap 1: Gap description missing or invalid length (should be 50-200 characters)",
+          "points_earned": 4.0,
+          "max_points": 5
+        },
+        {
+          "gap_number": 2,
+          "feedback": "Gap 2: All criteria met",
+          "points_earned": 5.0,
+          "max_points": 5
+        },
+        {
+          "gap_number": 3,
+          "feedback": "Gap 3: Impact description missing or invalid length (should be 50-200 characters)",
+          "points_earned": 4.0,
+          "max_points": 5
+        },
+        {
+          "gap_number": 4,
+          "feedback": "Gap 4: All criteria met",
+          "points_earned": 5.0,
+          "max_points": 5
+        },
+        {
+          "gap_number": 5,
+          "feedback": "Gap 5: Gap description missing or invalid length (should be 50-200 characters)",
+          "points_earned": 4.0,
+          "max_points": 5
+        }
+      ]
+    },
+    "resource_recommendations": {
+      "points_earned": 25.0,
+      "max_points": 40,
+      "evaluations": [
+        {
+          "recommendation_number": 1,
+          "feedback": "Recommendation 1: All criteria met",
+          "points_earned": 5.0,
+          "max_points": 5
+        },
+        {
+          "recommendation_number": 2,
+          "feedback": "Recommendation 2: All criteria met",
+          "points_earned": 5.0,
+          "max_points": 5
+        },
+        {
+          "recommendation_number": 3,
+          "feedback": "Recommendation 3: All criteria met",
+          "points_earned": 5.0,
+          "max_points": 5
+        },
+        {
+          "recommendation_number": 4,
+          "feedback": "Recommendation 4: All criteria met",
+          "points_earned": 5.0,
+          "max_points": 5
+        },
+        {
+          "recommendation_number": 5,
+          "feedback": "Recommendation 5: All criteria met",
+          "points_earned": 5.0,
+          "max_points": 5
+        }
+      ]
+    },
+    "budget_impact_summary": {
+      "points_earned": 20,
+      "max_points": 20,
+      "evaluation": {
+        "feedback": "All budget criteria met",
+        "points_earned": 20,
+        "max_points": 20
+      }
+    }
+  },
+  "total_points": 67.0,
+  "max_points": 100,
+  "overall_score": 67.0,
+  "pass_fail": "FAIL"
+}

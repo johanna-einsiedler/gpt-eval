@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "quarterly_budget": {
+      "points": 30,
+      "max_points": 25,
+      "percentage": 120.0,
+      "comments": []
+    },
+    "financial_metrics": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0,
+      "comments": []
+    },
+    "top_expenses": {
+      "points": 10,
+      "max_points": 15,
+      "percentage": 66.7,
+      "comments": [
+        "Incorrect percentage for utilities: 0.13 (expected 0.12)"
+      ]
+    },
+    "cost_reduction": {
+      "points": 10,
+      "max_points": 10,
+      "percentage": 100.0,
+      "comments": []
+    },
+    "variance_response": {
+      "points": 15,
+      "max_points": 20,
+      "percentage": 75.0,
+      "comments": [
+        "Incorrect mitigation strategy: MS-001 (expected MS-005)"
+      ]
+    },
+    "contingency_allocation": {
+      "points": 10,
+      "max_points": 10,
+      "percentage": 100.0,
+      "comments": []
+    }
+  },
+  "overall_score": 95.0,
+  "comments": [
+    "Incorrect percentage for utilities: 0.13 (expected 0.12)",
+    "Incorrect mitigation strategy: MS-001 (expected MS-005)"
+  ],
+  "passing_threshold": 75,
+  "total_points": 95,
+  "max_points": 100,
+  "passed": true
+}

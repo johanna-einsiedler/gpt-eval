@@ -1,0 +1,57 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "Agreement_A": [
+        {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The monthly payment calculation is incorrect. Based on the loan amount ($320,000), term (30 years), and interest rate (4.25%), the correct P&I payment should be $1,574.12, not $1,574.35."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "The estimated monthly escrow payment ($450) is inconsistent with the annual property taxes ($3,600) and insurance ($1,800), which would require a $450 monthly escrow payment ($5,400 annually)."
+        }
+    ],
+    "Agreement_B": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The loan has a 25-year amortization period but a 15-year term with a balloon payment, which violates the policy requirement that balloon payments must be clearly disclosed."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "missing_information",
+            "location": "Guarantor Information section",
+            "description": "Missing personal addresses for both guarantors (Robert Green and Susan Green), which are required for complete guarantor identification."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The monthly payment calculation appears incorrect for a $1,750,000 loan at 5.75% interest with 25-year amortization. The correct P&I payment should be approximately $10,986.47, not $14,557.23."
+        }
+    ],
+    "Agreement_C": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The initial advance amount ($75,000) exceeds 50% of the credit line ($150,000), violating the policy that minimum initial draw cannot exceed 50% of credit line."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "The initial interest rate (6.50%) is inconsistent with the stated index (Prime Rate at 5.50%) plus margin (1.00%), which should equal 6.50%. This appears correct but should be verified for timing."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Additional Provisions section",
+            "description": "Missing clear disclosure about how the Prime Rate is determined (which publication or source) for the variable rate calculation."
+        }
+    ]
+}

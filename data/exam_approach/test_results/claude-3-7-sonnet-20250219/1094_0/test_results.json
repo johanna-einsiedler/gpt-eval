@@ -1,0 +1,54 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "overall_score": 100.0,
+  "performance_level": "Excellent",
+  "section_scores": {
+    "item_metrics": {
+      "score": 100.0,
+      "weight": "50%",
+      "correct_items": 28,
+      "total_items": 28,
+      "items_with_errors": [],
+      "error_details": []
+    },
+    "underperforming_items": {
+      "score": 100.0,
+      "weight": "25%",
+      "correctly_identified": 7,
+      "incorrectly_identified": 0,
+      "expected_items": [
+        "E004",
+        "B008",
+        "E008",
+        "A007",
+        "A006",
+        "D005",
+        "E007"
+      ],
+      "submitted_items": [
+        "E004",
+        "B008",
+        "E008",
+        "A007",
+        "A006",
+        "D005",
+        "E007"
+      ],
+      "missed_items": []
+    },
+    "price_adjustments": {
+      "score": 100.0,
+      "weight": "25%",
+      "correct_adjustments": 5,
+      "total_adjustments": 5,
+      "items_with_errors": [],
+      "error_details": []
+    }
+  },
+  "passing_criteria": {
+    "item_metrics": true,
+    "underperforming_items": true,
+    "price_adjustments": true
+  },
+  "passed": true
+}

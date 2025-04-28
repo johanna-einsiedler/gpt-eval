@@ -1,0 +1,8 @@
+{
+    "task1": {
+        "total_revenue": 1919.33,
+        "total_units_sold": 53,
+        "average_order_value": 159.94,
+        "best_selling_product": "Screen Protector"
+    }
+}

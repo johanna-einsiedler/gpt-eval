@@ -1,0 +1,87 @@
+{
+  "candidate_id": "Claude-3-Opus",
+  "overall_score": 53.33,
+  "performance_rating": "Failing",
+  "exercise_results": {
+    "exercise1": {
+      "score": 6,
+      "max_score": 8,
+      "details": {
+        "case1_classification": "Correct",
+        "case2_classification": "Correct",
+        "case3_classification": "Correct",
+        "case1_action": "Correct",
+        "case2_action": "Correct",
+        "case3_action": {
+          "submitted": "Final written warning, removal of supervisory responsibilities",
+          "expected": "Final written warning, suspension without pay (1-5 days), demotion, removal of supervisory responsibilities",
+          "status": "Incorrect"
+        },
+        "precedent_case_ids": {
+          "submitted": [
+            "CV-2021-008",
+            "CV-2022-007"
+          ],
+          "valid_matches": [
+            "CV-2022-007"
+          ],
+          "expected": [
+            "CV-2023-002",
+            "CV-2022-044",
+            "CV-2022-013",
+            "CV-2022-019",
+            "CV-2023-022",
+            "CV-2022-007",
+            "CV-2023-015"
+          ],
+          "status": "Partially Correct"
+        }
+      }
+    },
+    "exercise2": {
+      "score": 4,
+      "max_score": 15,
+      "details": {
+        "workflow_steps": {
+          "matched_count": 0,
+          "expected_count": 8,
+          "status": "Insufficient"
+        },
+        "required_documentation": {
+          "matched_count": 3,
+          "expected_count": 5,
+          "status": "Insufficient"
+        },
+        "approval_sequence": {
+          "matched_count": 2,
+          "expected_count": 5,
+          "status": "Partially Correct"
+        }
+      }
+    },
+    "exercise3": {
+      "score": 6,
+      "max_score": 7,
+      "details": {
+        "communication_template": {
+          "key_elements_found": 4,
+          "expected_elements": 5,
+          "status": "Correct"
+        },
+        "escalation_threshold": {
+          "submitted": "Immediate Escalation Required: Any Level 3 or 4 violation; any violation involving a Director or above; any violation with potential regulatory impact; any violation with potential financial impact exceeding $10,000",
+          "expected": "Immediate Escalation Required",
+          "status": "Incorrect"
+        },
+        "confidentiality_rating": "Correct",
+        "required_stakeholders": {
+          "matched_count": 3,
+          "expected_count": 4,
+          "status": "Correct"
+        }
+      }
+    }
+  },
+  "passing_threshold": 70.0,
+  "passed": false
+}

@@ -1,0 +1,43 @@
+{
+    "task1": {
+        "late_deliveries_percentage": 40.0,
+        "most_common_carrier": "FastExpress,SecureShip",
+        "average_shipping_cost": 1063.95
+    },
+    "task2": {
+        "route_with_highest_cost_per_km": "Washington DC-Seattle",
+        "cost_per_km": 0.45,
+        "total_distance_all_shipments": 118150
+    },
+    "task3": {
+        "carrier_on_time_rates": {
+            "FastExpress": 58.82,
+            "SecureShip": 64.71,
+            "EcoLogistics": 56.25
+        },
+        "most_efficient_carrier": "SecureShip",
+        "efficiency_score": 0.0005
+    },
+    "task4": {
+        "monthly_shipping_costs": [
+            3075.0,
+            2885.0,
+            3757.5,
+            5535.0,
+            5265.0,
+            4995.0,
+            5220.0,
+            3307.5,
+            6165.0,
+            4860.0,
+            3622.5,
+            6030.0
+        ],
+        "peak_shipping_month": "September",
+        "lowest_shipping_month": "February"
+    },
+    "task5": {
+        "potential_savings": 0.0,
+        "recommended_carrier": "FastExpress,SecureShip,EcoLogistics"
+    }
+}

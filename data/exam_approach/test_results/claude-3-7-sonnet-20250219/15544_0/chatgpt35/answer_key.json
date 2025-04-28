@@ -1,0 +1,75 @@
+{
+    "task1": {
+        "total_participants_per_event": {
+            "E001": 10,
+            "E002": 12,
+            "E003": 15,
+            "E004": 13,
+            "E005": 10
+        },
+        "attendance_rates": {
+            "E001": 0.8,
+            "E002": 0.75,
+            "E003": 0.8,
+            "E004": 0.7,
+            "E005": 0.75
+        }
+    },
+    "task2": {
+        "highest_attendance_event": "Team Walking Challenge",
+        "average_attendance_rate": 0.76,
+        "highest_participation_week": 5,
+        "highest_participation_department": "IT"
+    },
+    "task3": {
+        "week_over_week_changes": {
+            "E001": [
+                0.0,
+                -0.11,
+                0.13,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "E002": [
+                0.09,
+                -0.08,
+                0.0,
+                0.0,
+                0.0,
+                -0.09,
+                0.1
+            ],
+            "E003": [
+                0.0,
+                -0.17,
+                0.0,
+                0.0,
+                -0.17,
+                0.0,
+                0.0
+            ],
+            "E004": [
+                0.0,
+                -0.11,
+                0.13,
+                0.0,
+                -0.11,
+                0.13,
+                -0.11
+            ],
+            "E005": [
+                0.0,
+                -0.13,
+                0.14,
+                -0.13,
+                0.14,
+                -0.13,
+                0.14
+            ]
+        },
+        "most_consistent_event": "Morning Yoga",
+        "age_group_with_highest_attendance": "30-39"
+    }
+}

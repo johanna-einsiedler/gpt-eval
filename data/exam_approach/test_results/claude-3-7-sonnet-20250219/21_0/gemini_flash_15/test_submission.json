@@ -1,0 +1,62 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "data_errors": [
+            "Variance calculation for Salaries & Benefits is incorrect. Should be -$250.00",
+            "Variance calculation for Office Supplies is incorrect. Should be $250.00",
+            "Variance calculation for Equipment is incorrect. Should be $250.00",
+            "Variance calculation for Utilities is incorrect. Should be -$150.00",
+            "Variance calculation for Travel & Training is incorrect. Should be -$650.00",
+            "Variance calculation for Maintenance is incorrect. Should be -$150.00",
+            "Variance calculation for Miscellaneous is incorrect. Should be -$50.00",
+            "Total Expenses calculation is incorrect. Should be $57,750.00",
+            "Total Variance calculation is incorrect. Should be -$750.00"
+        ],
+        "total_correct_expenses": 57750.0,
+        "efficiency_score": 99
+    },
+    "task2": {
+        "coverage_gaps": [
+            "Reception: 8:00 AM - 9:00 AM Monday, insufficient staff (2 instead of 3)",
+            "Reception: 8:00 AM - 10:00 AM Wednesday, no staff coverage",
+            "Reception: 11:00 AM - 2:00 PM Monday, insufficient staff (4 instead of 5)",
+            "Reception: 11:00 AM - 2:00 PM Tuesday, insufficient staff (3 instead of 5)",
+            "Reception: 11:00 AM - 2:00 PM Thursday, insufficient staff (3 instead of 5)",
+            "Reception: 11:00 AM - 2:00 PM Friday, insufficient staff (4 instead of 5)",
+            "Finance: 9:00 AM - 10:00 AM Monday, insufficient staff (3 instead of 4)",
+            "Finance: 1:00 PM - 4:00 PM Monday, insufficient staff (5 instead of 6)",
+            "Finance: 1:00 PM - 4:00 PM Tuesday, insufficient staff (5 instead of 6)",
+            "Finance: 1:00 PM - 4:00 PM Wednesday, insufficient staff (5 instead of 6)",
+            "Finance: 1:00 PM - 4:00 PM Thursday, insufficient staff (5 instead of 6)",
+            "Finance: 1:00 PM - 4:00 PM Friday, insufficient staff (5 instead of 6)",
+            "HR: 8:30 AM - 9:00 AM Monday, insufficient staff (1 instead of 2)",
+            "HR: 9:00 AM - 12:00 PM Monday, insufficient staff (2 instead of 3)",
+            "HR: 9:00 AM - 12:00 PM Tuesday, insufficient staff (1 instead of 3)",
+            "HR: 9:00 AM - 12:00 PM Thursday, insufficient staff (1 instead of 3)",
+            "HR: 9:00 AM - 12:00 PM Friday, insufficient staff (1 instead of 3)"
+        ],
+        "optimal_staff_count": 21,
+        "schedule_conflicts": [
+            "E001: Conflict with availability constraint (cannot work Wednesdays)",
+            "E002: Conflict with availability constraint (cannot work Fridays)",
+            "E003: Conflict with availability constraint (cannot work Mondays)",
+            "E004: Conflict with availability constraint (part-time only)",
+            "E007: Conflict with availability constraint (cannot work Wednesdays)",
+            "E008: Conflict with availability constraint (cannot work Mondays)",
+            "E009: Conflict with availability constraint (cannot work Tuesdays)",
+            "E011: Conflict with availability constraint (cannot work Thursdays and Fridays)",
+            "E012: Conflict with availability constraint (cannot work Mondays and Tuesdays)"
+        ]
+    },
+    "task3": {
+        "report_frequency": "monthly",
+        "key_metrics": [
+            "M001",
+            "M003",
+            "M004",
+            "M005",
+            "M009"
+        ],
+        "selected_report_format": "Summary"
+    }
+}

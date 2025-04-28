@@ -1,0 +1,41 @@
+{
+    "answer_key": {
+        "client_scenarios": [
+            {
+                "client_id": "CL001",
+                "months_to_repay": 48,
+                "total_amount_paid": 14315,
+                "total_interest_paid": 4315,
+                "is_repayable": true
+            },
+            {
+                "client_id": "CL002",
+                "months_to_repay": 60,
+                "total_amount_paid": 29920,
+                "total_interest_paid": 4920,
+                "is_repayable": true
+            },
+            {
+                "client_id": "CL003",
+                "months_to_repay": 93,
+                "total_amount_paid": 9254,
+                "total_interest_paid": 4254,
+                "is_repayable": true
+            },
+            {
+                "client_id": "CL004",
+                "months_to_repay": 13,
+                "total_amount_paid": 15548,
+                "total_interest_paid": 548,
+                "is_repayable": true
+            },
+            {
+                "client_id": "CL005",
+                "months_to_repay": null,
+                "total_amount_paid": null,
+                "total_interest_paid": null,
+                "is_repayable": false
+            }
+        ]
+    }
+}

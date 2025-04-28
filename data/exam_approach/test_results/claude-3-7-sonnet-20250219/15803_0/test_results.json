@@ -1,0 +1,51 @@
+{
+  "candidate_id": "Unknown",
+  "task_results": {
+    "task1": {
+      "max_points": 20,
+      "points_earned": 20,
+      "feedback": [
+        "Correct store identified.",
+        "Correct loss amount (within 5% margin)."
+      ]
+    },
+    "task2": {
+      "max_points": 20,
+      "points_earned": 20,
+      "feedback": [
+        "Correct employee identified.",
+        "Correct transaction count (within \u00b12 margin).",
+        "Correct average transaction value (within 5% margin)."
+      ]
+    },
+    "task3": {
+      "max_points": 20,
+      "points_earned": 20,
+      "feedback": [
+        "Correct department identified.",
+        "Correct shrinkage percentage (within \u00b10.5% margin)."
+      ]
+    },
+    "task4": {
+      "max_points": 20,
+      "points_earned": 20,
+      "feedback": [
+        "Correct date identified.",
+        "Correct void count.",
+        "Correct void value (within 5% margin)."
+      ]
+    },
+    "task5": {
+      "max_points": 20,
+      "points_earned": 20,
+      "feedback": [
+        "Correct pattern start date (within \u00b13 days).",
+        "Correct pattern end date (within \u00b13 days).",
+        "Correct estimated loss (within 10% margin)."
+      ]
+    }
+  },
+  "overall_score": 100.0,
+  "passing_threshold": 60,
+  "passed": true
+}

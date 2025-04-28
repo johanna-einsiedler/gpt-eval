@@ -1,0 +1,163 @@
+{
+  "candidate_id": "GPT-4",
+  "task1": {
+    "score": 10,
+    "max_score": 30,
+    "feedback": [
+      "\u2717 Failed to identify the cost per employee calculation error",
+      "\u2713 Correctly calculated the total expenses",
+      "\u2717 Incorrect efficiency score: submitted 99, expected 100"
+    ],
+    "details": {
+      "data_errors": {
+        "submitted": [
+          "Variance calculation for Salaries & Benefits is incorrect. Should be -$250.00",
+          "Variance calculation for Office Supplies is incorrect. Should be $250.00",
+          "Variance calculation for Equipment is incorrect. Should be $250.00",
+          "Variance calculation for Utilities is incorrect. Should be -$150.00",
+          "Variance calculation for Travel & Training is incorrect. Should be -$650.00",
+          "Variance calculation for Maintenance is incorrect. Should be -$150.00",
+          "Variance calculation for Miscellaneous is incorrect. Should be -$50.00",
+          "Total Expenses calculation is incorrect. Should be $57,750.00",
+          "Total Variance calculation is incorrect. Should be -$750.00"
+        ],
+        "expected": [
+          "Cost per employee calculation is incorrect: should be $4,442.31 (57750/13), not $3,850.00"
+        ],
+        "score": 0,
+        "max_score": 10
+      },
+      "total_correct_expenses": {
+        "submitted": 57750.0,
+        "expected": 57750.0,
+        "score": 10,
+        "max_score": 10
+      },
+      "efficiency_score": {
+        "submitted": 99,
+        "expected": 100,
+        "score": 0,
+        "max_score": 10
+      }
+    }
+  },
+  "task2": {
+    "score": 25,
+    "max_score": 40,
+    "feedback": [
+      "\u2713 Correctly identified all coverage gaps",
+      "\u2717 Incorrect optimal staff count: submitted 21, expected 14",
+      "\u2713 Correctly identified all schedule conflicts"
+    ],
+    "details": {
+      "coverage_gaps": {
+        "submitted": [
+          "Reception: 8:00 AM - 9:00 AM Monday, insufficient staff (2 instead of 3)",
+          "Reception: 8:00 AM - 10:00 AM Wednesday, no staff coverage",
+          "Reception: 11:00 AM - 2:00 PM Monday, insufficient staff (4 instead of 5)",
+          "Reception: 11:00 AM - 2:00 PM Tuesday, insufficient staff (3 instead of 5)",
+          "Reception: 11:00 AM - 2:00 PM Thursday, insufficient staff (3 instead of 5)",
+          "Reception: 11:00 AM - 2:00 PM Friday, insufficient staff (4 instead of 5)",
+          "Finance: 9:00 AM - 10:00 AM Monday, insufficient staff (3 instead of 4)",
+          "Finance: 1:00 PM - 4:00 PM Monday, insufficient staff (5 instead of 6)",
+          "Finance: 1:00 PM - 4:00 PM Tuesday, insufficient staff (5 instead of 6)",
+          "Finance: 1:00 PM - 4:00 PM Wednesday, insufficient staff (5 instead of 6)",
+          "Finance: 1:00 PM - 4:00 PM Thursday, insufficient staff (5 instead of 6)",
+          "Finance: 1:00 PM - 4:00 PM Friday, insufficient staff (5 instead of 6)",
+          "HR: 8:30 AM - 9:00 AM Monday, insufficient staff (1 instead of 2)",
+          "HR: 9:00 AM - 12:00 PM Monday, insufficient staff (2 instead of 3)",
+          "HR: 9:00 AM - 12:00 PM Tuesday, insufficient staff (1 instead of 3)",
+          "HR: 9:00 AM - 12:00 PM Thursday, insufficient staff (1 instead of 3)",
+          "HR: 9:00 AM - 12:00 PM Friday, insufficient staff (1 instead of 3)"
+        ],
+        "expected": [
+          "Reception: Only 2 staff on Wednesday mornings (8:00-9:00 AM) when minimum is 3",
+          "Finance: Only 3 staff during peak hours (1:00-4:00 PM) on Mondays when 6 are required",
+          "HR: Only 1 staff member on Mondays and Tuesdays when minimum is 2"
+        ],
+        "score": 15,
+        "max_score": 15
+      },
+      "optimal_staff_count": {
+        "submitted": 21,
+        "expected": 14,
+        "score": 0,
+        "max_score": 15
+      },
+      "schedule_conflicts": {
+        "submitted": [
+          "E001: Conflict with availability constraint (cannot work Wednesdays)",
+          "E002: Conflict with availability constraint (cannot work Fridays)",
+          "E003: Conflict with availability constraint (cannot work Mondays)",
+          "E004: Conflict with availability constraint (part-time only)",
+          "E007: Conflict with availability constraint (cannot work Wednesdays)",
+          "E008: Conflict with availability constraint (cannot work Mondays)",
+          "E009: Conflict with availability constraint (cannot work Tuesdays)",
+          "E011: Conflict with availability constraint (cannot work Thursdays and Fridays)",
+          "E012: Conflict with availability constraint (cannot work Mondays and Tuesdays)"
+        ],
+        "expected": [
+          "E004 (Patricia Davis) is scheduled for 4 days when availability states maximum 3 days per week",
+          "E011 (Joseph Jackson) is scheduled on Thursday despite availability constraints stating cannot work Thursdays"
+        ],
+        "score": 10,
+        "max_score": 10
+      }
+    }
+  },
+  "task3": {
+    "score": 18,
+    "max_score": 30,
+    "feedback": [
+      "\u2713 Correctly selected the appropriate report frequency",
+      "\u26a0 Selected 4 out of 5 appropriate key metrics",
+      "\u2717 Incorrect report format: submitted 'Summary', expected 'Trend'"
+    ],
+    "details": {
+      "report_frequency": {
+        "submitted": "monthly",
+        "expected": "monthly",
+        "score": 10,
+        "max_score": 10
+      },
+      "key_metrics": {
+        "submitted": [
+          "M001",
+          "M003",
+          "M004",
+          "M005",
+          "M009"
+        ],
+        "expected": [
+          "M001",
+          "M003",
+          "M006",
+          "M004",
+          "M005"
+        ],
+        "matches": [
+          "M003",
+          "M005",
+          "M004",
+          "M001"
+        ],
+        "score": 8,
+        "max_score": 10
+      },
+      "selected_report_format": {
+        "submitted": "Summary",
+        "expected": "Trend",
+        "score": 0,
+        "max_score": 10
+      }
+    }
+  },
+  "overall_score": 53.0,
+  "performance_assessment": {
+    "score": 53,
+    "max_score": 100,
+    "percentage": 53.0,
+    "rating": "Needs Improvement",
+    "summary": "The candidate scored 53/100 (53.0%), which is rated as 'Needs Improvement'."
+  }
+}

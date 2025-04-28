@@ -1,0 +1,51 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "task1": {
+        "scenario1": {
+            "explanation": "A Debt Management Program (DMP) can affect your credit score in several ways. Initially, you may see a notation on your credit report indicating your enrollment in a debt management or hardship program. This notation itself isn't negative but shows creditors you're taking steps to manage your debt. When you enroll, your credit accounts will be closed, which might temporarily lower your score by affecting your credit utilization ratio and account age. However, as you make consistent monthly payments through the DMP, you'll build a positive payment history, which is the most significant factor in credit scoring. Over time, this positive payment history and the gradual reduction in your overall debt will likely improve your score. Additionally, completing the program will improve your debt-to-income ratio, which benefits your overall financial profile. Most clients see their credit scores recover and improve within 12-24 months of consistent DMP payments.",
+            "key_points": [
+                "Initial notation on credit report with potential score reduction from closed accounts",
+                "Positive payment history and improved debt-to-income ratio upon completion"
+            ]
+        },
+        "scenario2": {
+            "explanation": "If you miss a payment in your Debt Management Program, there are several important consequences to be aware of. First, you have a 5-day grace period after your due date before your payment is considered late. If you miss a payment beyond this grace period, your creditors may not receive their scheduled payments, which could result in late fees being applied to your accounts. Missing a payment may also jeopardize the concessions (reduced interest rates and waived fees) that creditors have granted you. Most creditors require consistent payments to maintain these benefits. If you miss three consecutive payments, your DMP may be terminated altogether. If your program is terminated, you would need supervisory authorization to re-enroll. The best course of action if you anticipate missing a payment is to contact us immediately. We can often work with you to make arrangements that will keep your program in good standing and maintain your creditor concessions.",
+            "key_points": [
+                "Grace period of 5 days after due date before late status",
+                "Three consecutive missed payments can result in program termination"
+            ]
+        },
+        "scenario3": {
+            "explanation": "When you make your single monthly payment to our agency for your Debt Management Program, we distribute those funds to your creditors following a specific process. First, our agency deducts the monthly service fee (between $25-$50 depending on how many creditors you have). Then, the remaining amount is distributed to all your unsecured creditors using what's called a pro-rata distribution method. This means each creditor receives a payment proportional to their share of your total debt. For example, if one credit card represents 30% of your total debt, that creditor would receive 30% of your available payment amount. This fair distribution method ensures all creditors are treated equally and receive consistent payments. Your funds are typically disbursed to creditors within 3-5 business days of receiving your payment. Each month, we provide a statement showing exactly how your payment was allocated among your creditors, so you can track your progress toward becoming debt-free.",
+            "key_points": [
+                "Agency fee is deducted from the single monthly payment",
+                "Pro-rata distribution methodology applies to all unsecured creditors"
+            ]
+        }
+    },
+    "task2": {
+        "credit_counseling": {
+            "primary_benefit": "Professional assessment of financial situation with personalized action plan and financial management education.",
+            "main_disadvantage": "Does not directly reduce debt and requires client follow-through on recommendations.",
+            "typical_timeline": "Immediate recommendations with implementation timeline varying by client.",
+            "credit_score_impact": "No direct impact on credit score."
+        },
+        "debt_management_program": {
+            "primary_benefit": "Reduced interest rates, waived fees, single monthly payment, and structured path to debt freedom.",
+            "main_disadvantage": "Requires closing credit accounts, 3-5 year commitment, and monthly program fees.",
+            "typical_timeline": "36-60 months to complete program.",
+            "credit_score_impact": "Initial notation, potential reduction from closed accounts, positive payment history, improved debt ratio upon completion."
+        },
+        "debt_settlement": {
+            "primary_benefit": "Potential to reduce total debt amount by 40-60% with shorter timeline than bankruptcy.",
+            "main_disadvantage": "Severe credit damage, potential tax liability, continued collection actions, and high fees.",
+            "typical_timeline": "24-48 months depending on savings rate.",
+            "credit_score_impact": "Significant negative impact (100-150 point reduction) with 'settled' status on report for 7 years."
+        }
+    },
+    "task3": {
+        "rule1": "After you make three monthly payments in a row, you'll qualify for the special benefits from your creditors. These benefits include lower interest rates and waived fees that make your debt repayment more affordable. Consistent payments show creditors you're committed to repaying your debt.",
+        "rule2": "Your monthly payment is divided fairly among all your creditors based on how much you owe each one. If one credit card is 30% of your total debt, it receives 30% of your payment. This ensures all creditors are treated equally while you pay down your balances.",
+        "rule3": "If you leave the program early, you'll need special approval from a manager to join again. This ensures we can create a sustainable plan that works for your situation. We'll review what led to the previous termination and make adjustments to help you succeed this time."
+    }
+}

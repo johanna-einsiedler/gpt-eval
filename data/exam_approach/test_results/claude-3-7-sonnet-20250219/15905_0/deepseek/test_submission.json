@@ -1,0 +1,44 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "late_deliveries_percentage": 42.0,
+        "most_common_carrier": "FastExpress",
+        "average_shipping_cost": 1063.95
+    },
+    "task2": {
+        "route_with_highest_cost_per_km": "Atlanta-Miami",
+        "cost_per_km": 0.45,
+        "total_distance_all_shipments": 118150
+    },
+    "task3": {
+        "carrier_on_time_rates": {
+            "FastExpress": 50.0,
+            "SecureShip": 58.82,
+            "EcoLogistics": 41.67
+        },
+        "most_efficient_carrier": "SecureShip",
+        "efficiency_score": 0.0006
+    },
+    "task4": {
+        "monthly_shipping_costs": [
+            4020.0,
+            3510.0,
+            5355.0,
+            6480.0,
+            5085.0,
+            4995.0,
+            5220.0,
+            4215.0,
+            6165.0,
+            5760.0,
+            4627.5,
+            5670.0
+        ],
+        "peak_shipping_month": "September",
+        "lowest_shipping_month": "February"
+    },
+    "task5": {
+        "potential_savings": 1250.0,
+        "recommended_carrier": "EcoLogistics"
+    }
+}

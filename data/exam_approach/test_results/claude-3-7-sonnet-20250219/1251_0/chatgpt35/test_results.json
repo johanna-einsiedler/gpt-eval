@@ -1,0 +1,284 @@
+{
+  "financial_ratios": {
+    "score": 20.0,
+    "max_score": 50,
+    "correct_ratios": 4,
+    "details": {
+      "current_ratio": {
+        "correct": true,
+        "years": {
+          "year1": {
+            "correct": true,
+            "expected": 2.04,
+            "submitted": 2.04
+          },
+          "year2": {
+            "correct": true,
+            "expected": 1.91,
+            "submitted": 1.9
+          },
+          "year3": {
+            "correct": true,
+            "expected": 1.82,
+            "submitted": 1.82
+          }
+        }
+      },
+      "quick_ratio": {
+        "correct": false,
+        "years": {
+          "year1": {
+            "correct": true,
+            "expected": 1.14,
+            "submitted": 1.1
+          },
+          "year2": {
+            "correct": false,
+            "expected": 1.07,
+            "submitted": 0.95,
+            "reason": "Value outside tolerance range"
+          },
+          "year3": {
+            "correct": false,
+            "expected": 1.03,
+            "submitted": 0.85,
+            "reason": "Value outside tolerance range"
+          }
+        }
+      },
+      "debt_to_equity": {
+        "correct": false,
+        "years": {
+          "year1": {
+            "correct": false,
+            "expected": 0.84,
+            "submitted": 0.63,
+            "reason": "Value outside tolerance range"
+          },
+          "year2": {
+            "correct": false,
+            "expected": 0.94,
+            "submitted": 0.71,
+            "reason": "Value outside tolerance range"
+          },
+          "year3": {
+            "correct": false,
+            "expected": 1.05,
+            "submitted": 0.81,
+            "reason": "Value outside tolerance range"
+          }
+        }
+      },
+      "interest_coverage": {
+        "correct": true,
+        "years": {
+          "year1": {
+            "correct": true,
+            "expected": 2.75,
+            "submitted": 2.75
+          },
+          "year2": {
+            "correct": true,
+            "expected": 1.42,
+            "submitted": 1.42
+          },
+          "year3": {
+            "correct": true,
+            "expected": 0.23,
+            "submitted": 0.23
+          }
+        }
+      },
+      "return_on_assets": {
+        "correct": true,
+        "years": {
+          "year1": {
+            "correct": true,
+            "expected": 0.03,
+            "submitted": 0.03
+          },
+          "year2": {
+            "correct": true,
+            "expected": 0.01,
+            "submitted": 0.01
+          },
+          "year3": {
+            "correct": true,
+            "expected": -0.02,
+            "submitted": -0.02
+          }
+        }
+      },
+      "gross_profit_margin": {
+        "correct": false,
+        "years": {
+          "year1": {
+            "correct": false,
+            "expected": 0.3,
+            "submitted": 30.0,
+            "reason": "Value outside tolerance range"
+          },
+          "year2": {
+            "correct": false,
+            "expected": 0.28,
+            "submitted": 28.0,
+            "reason": "Value outside tolerance range"
+          },
+          "year3": {
+            "correct": false,
+            "expected": 0.26,
+            "submitted": 26.0,
+            "reason": "Value outside tolerance range"
+          }
+        }
+      },
+      "net_profit_margin": {
+        "correct": false,
+        "years": {
+          "year1": {
+            "correct": false,
+            "expected": 0.02,
+            "submitted": 2.04,
+            "reason": "Value outside tolerance range"
+          },
+          "year2": {
+            "correct": false,
+            "expected": 0.01,
+            "submitted": 0.52,
+            "reason": "Value outside tolerance range"
+          },
+          "year3": {
+            "correct": false,
+            "expected": -0.01,
+            "submitted": -1.48,
+            "reason": "Value outside tolerance range"
+          }
+        }
+      },
+      "inventory_turnover": {
+        "correct": false,
+        "years": {
+          "year1": {
+            "correct": false,
+            "expected": 4.8,
+            "submitted": 5.71,
+            "reason": "Value outside tolerance range"
+          },
+          "year2": {
+            "correct": false,
+            "expected": 4.83,
+            "submitted": 4.92,
+            "reason": "Value outside tolerance range"
+          },
+          "year3": {
+            "correct": false,
+            "expected": 4.76,
+            "submitted": 4.29,
+            "reason": "Value outside tolerance range"
+          }
+        }
+      },
+      "accounts_receivable_turnover": {
+        "correct": true,
+        "years": {
+          "year1": {
+            "correct": true,
+            "expected": 8.57,
+            "submitted": 8.57
+          },
+          "year2": {
+            "correct": true,
+            "expected": 7.5,
+            "submitted": 7.5
+          },
+          "year3": {
+            "correct": true,
+            "expected": 6.59,
+            "submitted": 6.59
+          }
+        }
+      },
+      "days_sales_outstanding": {
+        "correct": false,
+        "years": {
+          "year1": {
+            "correct": true,
+            "expected": 42.59,
+            "submitted": 42.57
+          },
+          "year2": {
+            "correct": false,
+            "expected": 48.67,
+            "submitted": 48.6,
+            "reason": "Value outside tolerance range"
+          },
+          "year3": {
+            "correct": false,
+            "expected": 55.39,
+            "submitted": 55.29,
+            "reason": "Value outside tolerance range"
+          }
+        }
+      }
+    }
+  },
+  "industry_comparison": {
+    "score": 10.0,
+    "max_score": 10,
+    "correct_deviations": 6,
+    "expected_deviations": [
+      "net_profit_margin",
+      "return_on_assets",
+      "gross_profit_margin",
+      "inventory_turnover",
+      "days_sales_outstanding",
+      "interest_coverage"
+    ],
+    "submitted_deviations": [
+      "net_profit_margin",
+      "accounts_receivable_turnover",
+      "debt_to_equity",
+      "quick_ratio",
+      "return_on_assets",
+      "gross_profit_margin",
+      "inventory_turnover",
+      "days_sales_outstanding",
+      "current_ratio",
+      "interest_coverage"
+    ]
+  },
+  "risk_factors": {
+    "score": 7.5,
+    "max_score": 15,
+    "correct_factors": 1,
+    "expected_factors": [
+      "high_debt_service_burden",
+      "declining_profitability",
+      "weak_cash_flow"
+    ],
+    "submitted_factors": [
+      "poor_liquidity",
+      "declining_profitability",
+      "high_leverage"
+    ]
+  },
+  "debt_service_coverage_ratio": {
+    "score": 0,
+    "max_score": 10,
+    "correct": false,
+    "expected": 0.45,
+    "submitted": 1.67,
+    "reason": "Value outside tolerance range"
+  },
+  "risk_rating_recommendation": {
+    "score": 15,
+    "max_score": 15,
+    "rating_correct": true,
+    "recommendation_correct": true,
+    "expected_rating": 5,
+    "submitted_rating": 4,
+    "expected_recommendation": "Decline",
+    "submitted_recommendation": "Decline"
+  },
+  "overall_score": 52.5
+}

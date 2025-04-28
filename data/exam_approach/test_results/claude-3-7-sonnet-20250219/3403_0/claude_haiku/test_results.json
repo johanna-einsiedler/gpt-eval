@@ -1,0 +1,51 @@
+{
+  "scenario_1": {
+    "npv": {
+      "points": 0,
+      "feedback": "Incorrect calculation",
+      "max_points": 10
+    },
+    "benefit_cost_ratio": {
+      "points": 0,
+      "feedback": "Incorrect calculation",
+      "max_points": 10
+    },
+    "irr": {
+      "points": 0,
+      "feedback": "Incorrect calculation",
+      "max_points": 10
+    },
+    "payback_period": {
+      "points": 10,
+      "feedback": "Correct within acceptable margin",
+      "max_points": 10
+    },
+    "recommendation": {
+      "points": 0,
+      "feedback": "Incorrect recommendation code; Justification missing key financial considerations",
+      "max_points": 10
+    },
+    "total_points": 10
+  },
+  "scenario_2": {
+    "financing_calculations": {
+      "points": 7.49,
+      "feedback": "option_a annual debt service: error of 2.39%; option_a total cost: correct; option_a present value cost: error of 22.86%; option_a DSCR: correct; option_a minimum coverage assessment: correct; option_b annual debt service: error of 13.14%; option_b total cost: error of 14.59%; option_b present value cost: error of 28.87%; option_b DSCR: error of 0.08; option_b minimum coverage assessment: correct; option_c annual debt service: error of 4.43%; option_c total cost: error of 3.35%; option_c present value cost: error of 15.79%; option_c DSCR: correct; option_c minimum coverage assessment: correct",
+      "max_points": 25
+    },
+    "lowest_cost_option": {
+      "points": 0,
+      "feedback": "Failed to identify lowest cost option",
+      "max_points": 5
+    },
+    "recommendation": {
+      "points": 15,
+      "feedback": "Correct recommendation; Justification partially addresses key considerations",
+      "max_points": 20
+    },
+    "total_points": 22.490000000000002
+  },
+  "critical_errors": [],
+  "overall_score": 32.49,
+  "status": "FAIL"
+}

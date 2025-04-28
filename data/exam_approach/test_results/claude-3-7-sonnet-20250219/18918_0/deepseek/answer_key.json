@@ -1,0 +1,24 @@
+{
+    "budget_variance_total": 13800,
+    "largest_expense_category": "Staff Salaries",
+    "expense_trend_direction": "increasing",
+    "donor_retention_rate": 0.84,
+    "cost_per_dollar_raised": 0.71,
+    "over_budget_categories": [
+        "Event Costs",
+        "Marketing Materials",
+        "Office Supplies",
+        "Travel Expenses"
+    ],
+    "month_with_highest_revenue": "May",
+    "fundraising_roi": 0.4,
+    "expense_category_percentages": {
+        "Staff Salaries": 0.36,
+        "Event Costs": 0.31,
+        "Marketing Materials": 0.15,
+        "Office Supplies": 0.03,
+        "Travel Expenses": 0.07,
+        "Technology": 0.08
+    },
+    "budget_status": "at_risk"
+}

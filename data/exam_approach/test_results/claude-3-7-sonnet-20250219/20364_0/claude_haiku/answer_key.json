@@ -1,0 +1,114 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "scenario1": {
+        "relevant_laws": [
+            "Publication 587: Business Use of Your Home",
+            "IRC Section 280A",
+            "Simplified Method for Home Office Deduction",
+            "Regular Method for Home Office Deduction"
+        ],
+        "explanation": "Based on the information you've provided, you qualify for the home office deduction since you use a dedicated room exclusively and regularly for your self-employed graphic design business. This room is your principal place of business. You have two options for calculating this deduction. The Simplified Method allows you to deduct $5 per square foot of your home used for business, up to 300 square feet. With your 300 sq ft office, this would give you a $1,500 deduction. Alternatively, the Regular Method calculates the business percentage of your home (300 sq ft ÷ 1,500 sq ft = 20%) and applies this to eligible expenses like mortgage/rent, utilities, insurance, and repairs. The Simplified Method is easier but the Regular Method might yield a larger deduction if your home expenses are significant. You'll need to maintain records of your home expenses if using the Regular Method.",
+        "tax_implications": [
+            "Simplified Method: $5 × 300 sq ft = $1,500 deduction",
+            "Regular Method: 20% of qualifying home expenses can be deducted",
+            "The deduction will reduce your self-employment income, lowering both income tax and self-employment tax"
+        ],
+        "next_steps": [
+            "Measure your office space to confirm exact square footage",
+            "Gather records of all home expenses (mortgage/rent, utilities, insurance, repairs) for the tax year",
+            "Calculate both methods to determine which provides the larger deduction",
+            "Complete Form 8829 if using the Regular Method",
+            "Report the deduction on Schedule C with your tax return"
+        ]
+    },
+    "scenario2": {
+        "relevant_laws": [
+            "Publication 590-B: Distributions from IRAs",
+            "Required Minimum Distribution (RMD) rules",
+            "IRC Section 401(a)(9)",
+            "IRC Section 72(t)"
+        ],
+        "explanation": "Your $15,000 distribution from your traditional IRA will be treated as ordinary income and taxed at your regular income tax rate. Since you're 68 years old, you're past the age of 59½, so you won't face the 10% early withdrawal penalty. However, you should be aware that you'll be subject to Required Minimum Distributions (RMDs) starting at age 73. These are mandatory withdrawals the IRS requires you to take annually from your traditional IRA. The amount is calculated based on your account balance and life expectancy. If you don't take your RMD when required, you could face a significant tax penalty of 25% on the amount not distributed. Your current $15,000 withdrawal may satisfy your RMD requirement when you reach that age, but you'll need to calculate the specific amount each year.",
+        "tax_implications": [
+            "The entire $15,000 distribution will be taxed as ordinary income",
+            "No early withdrawal penalty applies since you're over age 59½",
+            "The distribution will be added to your other income and may potentially push you into a higher tax bracket",
+            "You may need to consider making quarterly estimated tax payments if sufficient taxes aren't being withheld"
+        ],
+        "next_steps": [
+            "Check if your IRA custodian withheld any federal or state taxes from the distribution",
+            "Ensure you receive Form 1099-R documenting the distribution by January 31 next year",
+            "Consider if you need to make an estimated tax payment to cover the tax liability",
+            "Report the distribution on your tax return using Form 1040",
+            "Begin planning for Required Minimum Distributions that will be mandatory starting at age 73"
+        ]
+    },
+    "scenario3": {
+        "relevant_laws": [
+            "Publication 972: Child Tax Credit",
+            "IRC Section 24",
+            "Additional Child Tax Credit (refundable portion)",
+            "Child Tax Credit qualifying child requirements"
+        ],
+        "explanation": "Good news! Based on your family situation, you qualify for the Child Tax Credit. For tax year 2023, this credit provides up to $2,000 per qualifying child under age 17, and both your children (ages 4 and 7) meet this age requirement. With your adjusted gross income of $95,000 for married filing jointly, you're well below the $400,000 threshold where the credit begins to phase out. This means you're eligible for the full credit amount of $4,000 ($2,000 per child). Up to $1,600 per child can be refundable through the Additional Child Tax Credit if the regular Child Tax Credit exceeds your tax liability. To claim this credit, your children must be your dependents, have valid Social Security numbers, be U.S. citizens or residents, have lived with you for more than half the year, and not have provided more than half of their own support.",
+        "tax_implications": [
+            "You qualify for the full $2,000 credit for each child, totaling $4,000",
+            "Up to $1,600 per child ($3,200 total) can be refundable if your tax liability is less than the credit amount",
+            "The credit directly reduces your tax liability dollar-for-dollar",
+            "This credit is in addition to other child-related tax benefits you may qualify for, such as the Child and Dependent Care Credit"
+        ],
+        "next_steps": [
+            "Gather Social Security cards for both children",
+            "Have birth certificates available as supporting documentation",
+            "Maintain records showing the children lived with you (school records, medical records)",
+            "Complete Schedule 8812 with your tax return to claim the credit",
+            "Keep documentation of your children's citizenship or residency status"
+        ]
+    },
+    "scenario4": {
+        "relevant_laws": [
+            "Publication 550: Investment Income and Expenses",
+            "IRC Section 1222 (Short-term vs. Long-term Capital Gains)",
+            "Net Investment Income Tax (NIIT)",
+            "Tax loss harvesting provisions"
+        ],
+        "explanation": "You've sold stock for $25,000 that you purchased 10 months ago for $18,000, resulting in a $7,000 capital gain. Since you held the stock for less than one year (10 months), this is considered a short-term capital gain. Short-term gains are taxed at your ordinary income tax rates, which can range from 10% to 37% depending on your tax bracket. This is less favorable than long-term capital gains rates (0%, 15%, or 20%), which apply to investments held for more than one year. If you had held the stock for just two more months, you might have qualified for the lower long-term capital gains rate. When reporting this on your tax return, you'll need to complete Schedule D and Form 8949 to report the sale and calculate the gain.",
+        "tax_implications": [
+            "Your $7,000 gain ($25,000 sale price - $18,000 purchase price) will be taxed as ordinary income",
+            "The tax rate depends on your income tax bracket (10% to 37%)",
+            "If your modified adjusted gross income exceeds $200,000 (single) or $250,000 (married filing jointly), you may also owe the 3.8% Net Investment Income Tax on this gain",
+            "State taxes may also apply to this capital gain depending on your state of residence"
+        ],
+        "next_steps": [
+            "Gather documentation showing the purchase date and price (brokerage statements)",
+            "Obtain the Form 1099-B from your broker reporting the sale",
+            "Consider waiting until the one-year mark for future investment sales to qualify for lower long-term capital gains rates",
+            "Review your investment portfolio for any losing positions that could be sold to offset some of this gain (tax loss harvesting)",
+            "Report the sale on Form 8949 and Schedule D with your tax return"
+        ]
+    },
+    "scenario5": {
+        "relevant_laws": [
+            "California Franchise Tax Board Publication 1031: Guidelines for Determining Resident Status",
+            "Arizona Department of Revenue Publication 704: Nonresidents and Part-Year Residents",
+            "State tax residency rules",
+            "Credit for taxes paid to other states provisions"
+        ],
+        "explanation": "Based on your situation, you're likely considered a California resident for tax purposes since you maintained your permanent residence there while only temporarily working in Arizona for 4 months. California residents are taxed on all income regardless of where it's earned. However, since you physically worked in Arizona for 4 months, Arizona may also tax the income you earned while physically present in that state. The good news is that you won't be double-taxed on the same income. California provides a tax credit for taxes paid to other states. This means you can claim a credit on your California return for income taxes paid to Arizona on the same income. You'll need to file tax returns in both states: a resident return in California reporting all your income, and a non-resident return in Arizona reporting only the income earned while working there.",
+        "tax_implications": [
+            "You'll need to file a resident tax return in California reporting all income",
+            "You'll need to file a non-resident tax return in Arizona reporting only income earned while physically working in Arizona",
+            "California's tax rates range from 1% to 13.3% depending on income level",
+            "Arizona's tax rates are 2.55% to 2.98%, generally lower than California's rates",
+            "California will allow a tax credit for taxes paid to Arizona to prevent double taxation"
+        ],
+        "next_steps": [
+            "Keep records showing the exact dates you were physically working in Arizona",
+            "Calculate the portion of your income earned while physically in Arizona",
+            "Request that your employer provide documentation of where income was earned",
+            "File Form 540 (California resident return) reporting all income",
+            "File Form 140NR (Arizona non-resident return) reporting only Arizona-source income",
+            "Complete California Schedule S to claim the credit for taxes paid to Arizona"
+        ]
+    }
+}

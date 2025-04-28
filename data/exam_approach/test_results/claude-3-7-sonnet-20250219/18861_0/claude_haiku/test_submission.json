@@ -1,0 +1,37 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "section1": {
+        "question1": "60",
+        "question2": "Obituary, funeral program, or death certificate",
+        "question3": [
+            "Verbal Warning",
+            "Written Warning",
+            "Final Written Warning/Performance Improvement Plan"
+        ],
+        "question4": "8",
+        "question5": "1. Employee submits Overtime Request Form to supervisor 24 hours in advance, 2. Supervisor must approve and sign form, 3. Approved form submitted to Payroll before end of pay period"
+    },
+    "section2": {
+        "question1": "12",
+        "question2": [
+            "Request Initiation",
+            "Documentation and Discussion",
+            "Assessment and Determination",
+            "Implementation and Monitoring"
+        ],
+        "question3": "2",
+        "question4": [
+            "State Minimum Wage Poster",
+            "Workers' Compensation Notice",
+            "State and Federal Equal Employment Opportunity Posters"
+        ],
+        "question5": "50"
+    },
+    "section3": {
+        "question1": "no",
+        "question2": "c",
+        "question3": "90 calendar days",
+        "question4": "Parental Leave",
+        "question5": "30"
+    }
+}

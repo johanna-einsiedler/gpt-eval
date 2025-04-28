@@ -1,0 +1,153 @@
+{
+  "task1": {
+    "points": 5.0,
+    "details": {
+      "personnel_costs": {
+        "candidate_value": 748140.0,
+        "correct_value": 748140.0,
+        "points": 1.0
+      },
+      "equipment_maintenance_costs": {
+        "candidate_value": 30490.0,
+        "correct_value": 30490.0,
+        "points": 1.0
+      },
+      "consumables_costs": {
+        "candidate_value": 147225.0,
+        "correct_value": 147405.0,
+        "points": 1.0
+      },
+      "training_costs": {
+        "candidate_value": 22550.0,
+        "correct_value": 22550.0,
+        "points": 1.0
+      },
+      "total_budget": {
+        "candidate_value": 948405.0,
+        "correct_value": 948585.0,
+        "points": 1.0
+      }
+    }
+  },
+  "task2": {
+    "points": 7.0,
+    "details": {
+      "category_variances": {
+        "Personnel": {
+          "dollar_variance": {
+            "candidate_value": 23750.0,
+            "correct_value": 23750.0,
+            "points": 1.0
+          },
+          "percentage_variance": {
+            "candidate_value": 3.8,
+            "correct_value": 3.8,
+            "points": 1.0
+          }
+        },
+        "Equipment Maintenance": {
+          "dollar_variance": {
+            "candidate_value": -2550.0,
+            "correct_value": -2550.0,
+            "points": 1.0
+          },
+          "percentage_variance": {
+            "candidate_value": -6.0,
+            "correct_value": -6.0,
+            "points": 1.0
+          }
+        },
+        "Consumables": {
+          "dollar_variance": {
+            "candidate_value": 7410.0,
+            "correct_value": 7410.0,
+            "points": 1.0
+          },
+          "percentage_variance": {
+            "candidate_value": 9.5,
+            "correct_value": 9.5,
+            "points": 1.0
+          }
+        },
+        "Training": {
+          "dollar_variance": {
+            "candidate_value": -2220.0,
+            "correct_value": -2220.0,
+            "points": 1.0
+          },
+          "percentage_variance": {
+            "candidate_value": -12.0,
+            "correct_value": -12.0,
+            "points": 1.0
+          }
+        },
+        "Utilities": {
+          "dollar_variance": {
+            "candidate_value": 2450.0,
+            "correct_value": 2450.0,
+            "points": 1.0
+          },
+          "percentage_variance": {
+            "candidate_value": 7.0,
+            "correct_value": 7.0,
+            "points": 1.0
+          }
+        }
+      },
+      "largest_variance_categories": {
+        "candidate_value": [
+          "Training",
+          "Consumables",
+          "Utilities"
+        ],
+        "correct_value": [
+          "Training",
+          "Consumables",
+          "Utilities"
+        ],
+        "points": 1.0
+      },
+      "total_variance": {
+        "dollars": {
+          "candidate_value": 28840.0,
+          "correct_value": 28840.0,
+          "points": 1.0
+        },
+        "percentage": {
+          "candidate_value": 3.61,
+          "correct_value": 3.61,
+          "points": 1.0
+        }
+      }
+    }
+  },
+  "task3": {
+    "points": 2.0,
+    "details": {
+      "total_cost_of_ownership": {
+        "candidate_value": 325200.0,
+        "correct_value": 360200.0,
+        "points": 0.0
+      },
+      "annual_cost_savings": {
+        "candidate_value": 103550.0,
+        "correct_value": 103550.0,
+        "points": 1.0
+      },
+      "roi_percentage": {
+        "candidate_value": 59.21,
+        "correct_value": 53.46,
+        "points": 0.0
+      },
+      "payback_period_months": {
+        "candidate_value": 31,
+        "correct_value": 31,
+        "points": 1.0
+      }
+    }
+  },
+  "total_points": 14.0,
+  "max_points": 16,
+  "overall_score": 87.5,
+  "status": "Pass with Distinction"
+}

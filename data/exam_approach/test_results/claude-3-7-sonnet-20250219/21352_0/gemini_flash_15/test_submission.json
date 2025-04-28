@@ -1,0 +1,15 @@
+{
+    "candidate_id": "GPT-4",
+    "annual_budget_total": 2138850,
+    "q1_variance_percentage": 0.0306,
+    "fuel_cost_adjustment": 64200,
+    "maintenance_allocation": 49500,
+    "priority_ranking": [
+        1,
+        2,
+        3,
+        4,
+        5
+    ],
+    "cost_per_mile": 0.95
+}

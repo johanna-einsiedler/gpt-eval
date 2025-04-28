@@ -1,0 +1,30 @@
+{
+    "current_cost_per_mile": {
+        "vehicle_type_A": 2.97,
+        "vehicle_type_B": 2.78,
+        "vehicle_type_C": 3.24
+    },
+    "top_cost_components": [
+        "Driver Wages",
+        "Fuel Cost",
+        "Maintenance Cost"
+    ],
+    "cost_component_percentages": {
+        "Driver Wages": 0.43,
+        "Fuel Cost": 0.21,
+        "Maintenance Cost": 0.09
+    },
+    "six_month_forecast": {
+        "total_cost": 4750000.0,
+        "percentage_change": 0.19
+    },
+    "sensitivity_analysis": {
+        "fuel_impact_percentage": 0.021,
+        "wage_impact_percentage": 0.0213,
+        "most_sensitive_factor": "Driver Wages"
+    },
+    "methodology": {
+        "cost_model_approach": "Aggregated annual data, calculated per-mile costs, analyzed component contributions",
+        "forecast_assumptions": "Linear extrapolation of operational changes, considering cumulative impact of price and utilization shifts"
+    }
+}

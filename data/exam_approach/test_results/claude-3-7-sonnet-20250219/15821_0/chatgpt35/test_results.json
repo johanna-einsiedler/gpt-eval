@@ -1,0 +1,149 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "task1": {
+    "points": 33.0,
+    "max_points": 40,
+    "details": {
+      "total_annual_budget": {
+        "points": 5,
+        "max": 10,
+        "note": "Within 10% of model answer"
+      },
+      "cost_per_MW": {
+        "points": 3,
+        "max": 5,
+        "note": "Within industry benchmark range"
+      },
+      "largest_expense_category": {
+        "points": 5,
+        "max": 5,
+        "note": "Correctly identified"
+      },
+      "largest_expense_amount": {
+        "points": 10,
+        "max": 10,
+        "note": "Within 5% of model answer"
+      },
+      "quarterly_distribution": {
+        "Q1": {
+          "points": 2.5,
+          "max": 2.5,
+          "note": "Within 5 percentage points"
+        },
+        "Q2": {
+          "points": 2.5,
+          "max": 2.5,
+          "note": "Within 5 percentage points"
+        },
+        "Q3": {
+          "points": 2.5,
+          "max": 2.5,
+          "note": "Within 5 percentage points"
+        },
+        "Q4": {
+          "points": 2.5,
+          "max": 2.5,
+          "note": "Within 5 percentage points"
+        }
+      }
+    }
+  },
+  "task2": {
+    "points": 19,
+    "max_points": 30,
+    "details": {
+      "variance_contributors": {
+        "contributor_1": {
+          "points": 3,
+          "max": 5,
+          "note": "Correctly identified category; Insufficient root cause explanation"
+        },
+        "contributor_2": {
+          "points": 3,
+          "max": 5,
+          "note": "Correctly identified category; Insufficient root cause explanation"
+        },
+        "contributor_3": {
+          "points": 3,
+          "max": 5,
+          "note": "Correctly identified category; Insufficient root cause explanation"
+        }
+      },
+      "revised_budget_total": {
+        "points": 0,
+        "max": 5,
+        "note": "Outside acceptable range"
+      },
+      "contingency": {
+        "points": 10,
+        "max": 10,
+        "note": "Within recommended range (8-12%)"
+      }
+    }
+  },
+  "task3": {
+    "points": 21,
+    "max_points": 30,
+    "details": {
+      "key_budget_priorities": {
+        "priority_1": {
+          "points": 3,
+          "max": 3,
+          "note": "Addresses critical maintenance needs"
+        },
+        "priority_2": {
+          "points": 0,
+          "max": 3,
+          "note": "Does not align with critical needs"
+        },
+        "priority_3": {
+          "points": 3,
+          "max": 3,
+          "note": "Addresses critical maintenance needs"
+        }
+      },
+      "cost_saving_measures": {
+        "measure_1": {
+          "points": 2,
+          "max": 2,
+          "note": "Realistic and aligned with benchmarks"
+        },
+        "measure_2": {
+          "points": 2,
+          "max": 2,
+          "note": "Realistic and aligned with benchmarks"
+        }
+      },
+      "major_maintenance_ROI": {
+        "item": {
+          "points": 2,
+          "max": 2,
+          "note": "Valid maintenance item"
+        },
+        "cost": {
+          "points": 2,
+          "max": 2,
+          "note": "Realistic cost calculation"
+        },
+        "return": {
+          "points": 2,
+          "max": 2,
+          "note": "Realistic return and payback period"
+        }
+      },
+      "five_year_projection": {
+        "points": 5,
+        "max": 9,
+        "note": "Consistent increases but not at appropriate rates"
+      }
+    }
+  },
+  "total_points": 73.0,
+  "max_points": 100,
+  "overall_score": 73.0,
+  "passed_minimum_requirements": true,
+  "passed": true,
+  "task1_percent": 82.5,
+  "task2_percent": 63.33,
+  "task3_percent": 70.0
+}

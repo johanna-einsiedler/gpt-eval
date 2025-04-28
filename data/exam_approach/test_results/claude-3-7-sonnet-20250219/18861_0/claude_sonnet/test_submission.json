@@ -1,0 +1,38 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "section1": {
+        "question1": "60 calendar days",
+        "question2": "Bereavement Leave Request Form and documentation of the death (obituary, funeral program, or death certificate) within 7 calendar days of returning to work",
+        "question3": [
+            "Verbal Warning",
+            "Written Warning",
+            "Final Written Warning/Performance Improvement Plan",
+            "Termination"
+        ],
+        "question4": "8",
+        "question5": "1. Employee must submit an Overtime Request Form to their supervisor at least 24 hours before the anticipated overtime. 2. Supervisor must approve and sign the form. 3. The approved form must be submitted to Payroll before the end of the pay period."
+    },
+    "section2": {
+        "question1": "12",
+        "question2": [
+            "Request Initiation",
+            "Documentation and Discussion",
+            "Assessment and Determination",
+            "Implementation and Monitoring"
+        ],
+        "question3": "2 business days",
+        "question4": [
+            "State Minimum Wage Poster",
+            "Workers' Compensation Notice",
+            "State and Federal Equal Employment Opportunity Posters"
+        ],
+        "question5": "50"
+    },
+    "section3": {
+        "question1": "no",
+        "question2": "c",
+        "question3": "90 calendar days",
+        "question4": "Family and Medical Leave",
+        "question5": "45 minutes"
+    }
+}

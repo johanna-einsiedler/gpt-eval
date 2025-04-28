@@ -1,9 +1,0 @@
-{
-    "markup_rate_q1": 81.82,
-    "markdown_rate_q2": 25.0,
-    "selling_price_q3": 8.75,
-    "selling_price_q4": 1.05,
-    "selling_price_q5": 3.33,
-    "justification_q5": "Priced below competition to attract customers while maintaining a reasonable margin close to the desired 40%. The calculated price for 40% margin is $3.33, which is competitive against $3.50.",
-    "candidate_id": "GPT-4-turbo"
-}

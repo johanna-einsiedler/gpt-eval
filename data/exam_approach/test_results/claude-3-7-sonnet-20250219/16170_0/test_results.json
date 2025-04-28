@@ -1,0 +1,88 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "overall_score": 95.0,
+  "passed": true,
+  "task_scores": {
+    "task1": {
+      "charter": {
+        "score": 10.0,
+        "max_score": 10,
+        "feedback": []
+      },
+      "objectives": {
+        "score": 10.0,
+        "max_score": 10,
+        "feedback": []
+      },
+      "success_criteria": {
+        "score": 10.0,
+        "max_score": 10,
+        "feedback": []
+      },
+      "total_score": 30.0,
+      "max_score": 30
+    },
+    "task2": {
+      "schedule": {
+        "score": 15.0,
+        "max_score": 15,
+        "feedback": [
+          {
+            "activity_issues": [
+              {
+                "ACT-12": [
+                  "End date doesn't match duration. Expected: 2024-02-29, Found: 2024-03-01"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "critical_path": {
+        "score": 10.0,
+        "max_score": 10,
+        "feedback": []
+      },
+      "resource_allocation": {
+        "score": 10.0,
+        "max_score": 15,
+        "feedback": [
+          {
+            "format_violations": [
+              "ACT-02: Systems Architect allocation 0.8 not in increments of 0.25",
+              "ACT-03: Network Engineer allocation 0.7 not in increments of 0.25",
+              "ACT-05: Database Administrator allocation 0.6 not in increments of 0.25",
+              "ACT-06: Database Administrator allocation 0.6 not in increments of 0.25",
+              "ACT-08: Cloud Engineer allocation 0.9 not in increments of 0.25",
+              "ACT-11: Cloud Engineer allocation 0.9 not in increments of 0.25"
+            ]
+          }
+        ]
+      },
+      "total_score": 35.0,
+      "max_score": 40
+    },
+    "task3": {
+      "budget_calculations": {
+        "score": 15.0,
+        "max_score": 15,
+        "feedback": []
+      },
+      "phase_breakdown": {
+        "score": 10.0,
+        "max_score": 10,
+        "feedback": []
+      },
+      "budget_risks": {
+        "score": 5.0,
+        "max_score": 5,
+        "feedback": []
+      },
+      "total_score": 30.0,
+      "max_score": 30
+    }
+  },
+  "total_points": 95.0,
+  "max_points": 100,
+  "evaluation_date": "2025-04-25 22:12:29"
+}

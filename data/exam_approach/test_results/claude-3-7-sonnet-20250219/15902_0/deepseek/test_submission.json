@@ -1,0 +1,39 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "on_time_delivery": {
+        "overall_rate": 0.71,
+        "monthly_rates": {
+            "Jan": 0.67,
+            "Feb": 0.67,
+            "Mar": 0.67,
+            "Apr": 0.83
+        },
+        "highest_month": "Apr",
+        "lowest_month": "Jan"
+    },
+    "order_fulfillment": {
+        "overall_rate": 0.93,
+        "category_rates": {
+            "Electronics": 0.97,
+            "Furniture": 0.85,
+            "Apparel": 0.94
+        },
+        "lowest_category": "Furniture"
+    },
+    "inventory_turns": {
+        "average_turns": 0.38,
+        "sku_turns": {
+            "E001": 0.58,
+            "E002": 0.3,
+            "F001": 0.38,
+            "F002": 0.3,
+            "A001": 0.5,
+            "A002": 0.28
+        },
+        "top_performers": [
+            "E001",
+            "A001",
+            "F001"
+        ]
+    }
+}

@@ -1,0 +1,210 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "task1": {
+    "points": 15,
+    "max_points": 25,
+    "details": {
+      "top_pain_points": {
+        "correct": false,
+        "points": 0,
+        "max_points": 5,
+        "submitted": [
+          "Slow system response",
+          "Difficult navigation",
+          "Limited integration"
+        ],
+        "expected": [
+          "Slow system response",
+          "Difficult navigation",
+          "Poor data export"
+        ]
+      },
+      "pain_point_percentages": {
+        "correct": false,
+        "points": 0,
+        "max_points": 5,
+        "submitted": [
+          35.0,
+          30.0,
+          30.0
+        ],
+        "expected": [
+          45.0,
+          40.0,
+          35.0
+        ],
+        "note": "\u00b12% tolerance allowed"
+      },
+      "highest_dissatisfaction_department": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": "Sales",
+        "expected": "Sales"
+      },
+      "average_satisfaction_rating": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": 2.35,
+        "expected": 2.35,
+        "note": "\u00b10.05 tolerance allowed"
+      },
+      "common_feature_request": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": "CRM integration",
+        "expected": "CRM integration"
+      }
+    }
+  },
+  "task2": {
+    "points": 20,
+    "max_points": 20,
+    "details": {
+      "scenario1": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": "B",
+        "expected": "B"
+      },
+      "scenario2": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": "C",
+        "expected": "C"
+      },
+      "scenario3": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": "A",
+        "expected": "A"
+      },
+      "scenario4": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": "B",
+        "expected": "B"
+      }
+    }
+  },
+  "task3": {
+    "points": 10,
+    "max_points": 25,
+    "details": {
+      "top5_features": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": [
+          "CRM integration",
+          "Sales pipeline visualization",
+          "API improvements",
+          "Single sign-on implementation",
+          "Automated backup system"
+        ],
+        "expected": [
+          "CRM integration",
+          "Sales pipeline visualization",
+          "API improvements",
+          "Single sign-on implementation",
+          "Automated backup system"
+        ]
+      },
+      "high_impact_low_frequency": {
+        "correct": true,
+        "points": 5,
+        "max_points": 5,
+        "submitted": "System monitoring dashboard",
+        "expected": "System monitoring dashboard",
+        "note": "Either 'System monitoring dashboard' or 'Financial dashboard' is accepted"
+      },
+      "average_urgency": {
+        "correct": false,
+        "points": 0,
+        "max_points": 5,
+        "submitted": 7.5,
+        "expected": 7.85,
+        "note": "\u00b10.05 tolerance allowed"
+      },
+      "highest_priority_department": {
+        "correct": false,
+        "points": 0,
+        "max_points": 10,
+        "submitted": "IT",
+        "expected": "Sales"
+      }
+    }
+  },
+  "task4": {
+    "points": 18,
+    "max_points": 30,
+    "details": {
+      "key_stakeholders": {
+        "correct": true,
+        "points": 6,
+        "max_points": 6,
+        "submitted": [
+          "Michael Chen",
+          "Sarah Johnson",
+          "Jennifer Williams"
+        ],
+        "expected": [
+          "Michael Chen",
+          "Sarah Johnson",
+          "Jennifer Williams"
+        ],
+        "note": "Must include Michael Chen, Sarah Johnson, and either Jennifer Williams or Robert Kim"
+      },
+      "executive_communication_method": {
+        "correct": false,
+        "points": 0,
+        "max_points": 6,
+        "submitted": "C",
+        "expected": "B"
+      },
+      "steering_committee_frequency": {
+        "correct": true,
+        "points": 6,
+        "max_points": 6,
+        "submitted": "B",
+        "expected": "B"
+      },
+      "top_metrics": {
+        "correct": false,
+        "points": 0,
+        "max_points": 6,
+        "submitted": [
+          "Feature request frequency",
+          "Pain point occurrence",
+          "Satisfaction rating"
+        ],
+        "expected": [
+          "Implementation progress",
+          "Feature priority scores",
+          "Satisfaction ratings"
+        ],
+        "note": "Reasonable alternatives are accepted"
+      },
+      "development_team_format": {
+        "correct": true,
+        "points": 6,
+        "max_points": 6,
+        "submitted": "C",
+        "expected": "C"
+      }
+    }
+  },
+  "summary": {
+    "total_points": 63,
+    "max_points": 100,
+    "overall_score": 63.0,
+    "passed": false
+  },
+  "overall_score": 63.0
+}

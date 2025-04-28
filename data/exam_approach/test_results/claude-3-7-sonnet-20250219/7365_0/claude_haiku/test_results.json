@@ -1,0 +1,223 @@
+{
+  "overall_score": 27.0,
+  "total_points": 27,
+  "max_points": 100,
+  "scenarios": {
+    "scenario_1": {
+      "points_earned": 7,
+      "max_points": 20,
+      "field_scores": {
+        "base_fee": {
+          "points": 3,
+          "max_points": 3,
+          "correct": true,
+          "submitted_value": 175.0,
+          "expected_value": 175.0
+        },
+        "time_charge": {
+          "points": 0,
+          "max_points": 5,
+          "correct": false,
+          "submitted_value": 143.75,
+          "expected_value": 184.38
+        },
+        "complexity_adjustment": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 26.25,
+          "expected_value": 43.75
+        },
+        "additional_forms_fee": {
+          "points": 4,
+          "max_points": 4,
+          "correct": true,
+          "submitted_value": 85.0,
+          "expected_value": 85.0
+        },
+        "total_fee": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 430.0,
+          "expected_value": 444.38
+        }
+      },
+      "errors": []
+    },
+    "scenario_2": {
+      "points_earned": 3,
+      "max_points": 20,
+      "field_scores": {
+        "base_fee": {
+          "points": 3,
+          "max_points": 3,
+          "correct": true,
+          "submitted_value": 650.0,
+          "expected_value": 650.0
+        },
+        "time_charge": {
+          "points": 0,
+          "max_points": 5,
+          "correct": false,
+          "submitted_value": 325.0,
+          "expected_value": 0.0
+        },
+        "complexity_adjustment": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 162.5,
+          "expected_value": 125.0
+        },
+        "additional_forms_fee": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 305.0,
+          "expected_value": 310.0
+        },
+        "total_fee": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 1442.5,
+          "expected_value": 960.0
+        }
+      },
+      "errors": []
+    },
+    "scenario_3": {
+      "points_earned": 7,
+      "max_points": 20,
+      "field_scores": {
+        "base_fee": {
+          "points": 3,
+          "max_points": 3,
+          "correct": true,
+          "submitted_value": 175.0,
+          "expected_value": 175.0
+        },
+        "time_charge": {
+          "points": 0,
+          "max_points": 5,
+          "correct": false,
+          "submitted_value": 210.0,
+          "expected_value": 365.0
+        },
+        "complexity_adjustment": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 42.0,
+          "expected_value": 180.0
+        },
+        "additional_forms_fee": {
+          "points": 4,
+          "max_points": 4,
+          "correct": true,
+          "submitted_value": 210.0,
+          "expected_value": 210.0
+        },
+        "total_fee": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 637.0,
+          "expected_value": 750.0
+        }
+      },
+      "errors": []
+    },
+    "scenario_4": {
+      "points_earned": 7,
+      "max_points": 20,
+      "field_scores": {
+        "base_fee": {
+          "points": 3,
+          "max_points": 3,
+          "correct": true,
+          "submitted_value": 550.0,
+          "expected_value": 550.0
+        },
+        "time_charge": {
+          "points": 0,
+          "max_points": 5,
+          "correct": false,
+          "submitted_value": 468.75,
+          "expected_value": 379.69
+        },
+        "complexity_adjustment": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 231.25,
+          "expected_value": 240.63
+        },
+        "additional_forms_fee": {
+          "points": 4,
+          "max_points": 4,
+          "correct": true,
+          "submitted_value": 470.0,
+          "expected_value": 470.0
+        },
+        "total_fee": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 1719.75,
+          "expected_value": 1399.69
+        }
+      },
+      "errors": []
+    },
+    "scenario_5": {
+      "points_earned": 3,
+      "max_points": 20,
+      "field_scores": {
+        "base_fee": {
+          "points": 3,
+          "max_points": 3,
+          "correct": true,
+          "submitted_value": 175.0,
+          "expected_value": 175.0
+        },
+        "time_charge": {
+          "points": 0,
+          "max_points": 5,
+          "correct": false,
+          "submitted_value": 256.25,
+          "expected_value": 393.75
+        },
+        "complexity_adjustment": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 52.5,
+          "expected_value": 131.25
+        },
+        "additional_forms_fee": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 275.0,
+          "expected_value": 375.0
+        },
+        "total_fee": {
+          "points": 0,
+          "max_points": 4,
+          "correct": false,
+          "submitted_value": 758.75,
+          "expected_value": 943.75
+        }
+      },
+      "errors": []
+    }
+  },
+  "critical_errors": {
+    "complexity_factor_errors": 5,
+    "additional_form_fee_errors": 2,
+    "total_fee_large_errors": 4
+  },
+  "passed": false
+}

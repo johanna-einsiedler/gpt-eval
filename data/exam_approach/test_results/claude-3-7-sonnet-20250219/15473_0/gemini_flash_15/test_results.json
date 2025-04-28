@@ -1,0 +1,152 @@
+{
+  "candidate_id": "GPT-4",
+  "task1": {
+    "points_earned": 0,
+    "points_possible": 40,
+    "details": {
+      "fuel_costs": {
+        "points_earned": 0,
+        "points_possible": 8,
+        "submitted_value": 10800000,
+        "correct_value": 9000000,
+        "error_percentage": 20.0
+      },
+      "maintenance_costs": {
+        "points_earned": 0,
+        "points_possible": 8,
+        "submitted_value": 1685000,
+        "correct_value": 1805000,
+        "error_percentage": 6.65
+      },
+      "labor_costs": {
+        "points_earned": 0,
+        "points_possible": 8,
+        "submitted_value": 1836000,
+        "correct_value": 2142000,
+        "error_percentage": 14.29
+      },
+      "overhead_costs": {
+        "points_earned": 0,
+        "points_possible": 8,
+        "submitted_value": 1370000,
+        "correct_value": 1585000,
+        "error_percentage": 13.56
+      },
+      "total_annual_budget": {
+        "points_earned": 0,
+        "points_possible": 4,
+        "submitted_value": 15691000,
+        "correct_value": 14532000,
+        "error_percentage": 7.98
+      },
+      "cost_per_mwh": {
+        "points_earned": 0,
+        "points_possible": 4,
+        "submitted_value": 94.1,
+        "correct_value": 87.08,
+        "absolute_error": 7.02
+      }
+    },
+    "percentage_score": 0.0
+  },
+  "task2": {
+    "points_earned": 30,
+    "points_possible": 30,
+    "details": {
+      "fuel_variance_percentage": {
+        "points_earned": 4,
+        "points_possible": 4,
+        "submitted_value": 6.0,
+        "correct_value": 6.0,
+        "absolute_error": 0.0
+      },
+      "maintenance_variance_percentage": {
+        "points_earned": 4,
+        "points_possible": 4,
+        "submitted_value": 9.2,
+        "correct_value": 9.22,
+        "absolute_error": 0.02
+      },
+      "labor_variance_percentage": {
+        "points_earned": 4,
+        "points_possible": 4,
+        "submitted_value": 2.4,
+        "correct_value": 2.41,
+        "absolute_error": 0.01
+      },
+      "overhead_variance_percentage": {
+        "points_earned": 4,
+        "points_possible": 4,
+        "submitted_value": -2.23,
+        "correct_value": -2.22,
+        "absolute_error": 0.01
+      },
+      "primary_variance_category": {
+        "points_earned": 7,
+        "points_possible": 7,
+        "submitted_value": "maintenance_costs",
+        "correct_value": "maintenance_costs",
+        "is_correct": true
+      },
+      "corrective_action_code": {
+        "points_earned": 7,
+        "points_possible": 7,
+        "submitted_value": 2,
+        "correct_value": 2,
+        "is_correct": true
+      }
+    },
+    "percentage_score": 100.0
+  },
+  "task3": {
+    "points_earned": 0,
+    "points_possible": 30,
+    "details": {
+      "total_investment": {
+        "points_earned": 0,
+        "points_possible": 6,
+        "submitted_value": 2920000,
+        "correct_value": 3102000,
+        "error_percentage": 5.87
+      },
+      "annual_savings": {
+        "points_earned": 0,
+        "points_possible": 8,
+        "submitted_value": 395000,
+        "correct_value": 850000,
+        "error_percentage": 53.53
+      },
+      "payback_period": {
+        "points_earned": 0,
+        "points_possible": 6,
+        "submitted_value": 7.39,
+        "correct_value": 3.65,
+        "absolute_error": 3.74
+      },
+      "five_year_roi": {
+        "points_earned": 0,
+        "points_possible": 6,
+        "submitted_value": 25.24,
+        "correct_value": 36.99,
+        "absolute_error": 11.75
+      },
+      "recommendation_code": {
+        "points_earned": 0,
+        "points_possible": 4,
+        "submitted_value": 3,
+        "correct_value": 2,
+        "is_correct": false
+      }
+    },
+    "percentage_score": 0.0
+  },
+  "overall_score": 30.0,
+  "passed": false,
+  "pass_criteria": {
+    "overall_score_sufficient": false,
+    "task1_score_sufficient": false,
+    "task2_score_sufficient": true,
+    "task3_score_sufficient": false,
+    "critical_calculations_accurate": false
+  }
+}

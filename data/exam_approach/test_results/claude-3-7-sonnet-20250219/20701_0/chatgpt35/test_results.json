@@ -1,0 +1,110 @@
+{
+  "candidate_id": "DeepOps-1.0",
+  "overall_score": 74.16,
+  "passed": false,
+  "section_scores": {
+    "labor_metrics": 0.0,
+    "department_coverage": 47.5,
+    "conflict_resolutions": 5.0,
+    "duty_allocation": 21.66
+  },
+  "details": {
+    "labor_metrics": {
+      "labor_hours": {
+        "submitted": 320.5,
+        "expected": 290.0,
+        "difference_percent": 10.52,
+        "score": 0.0,
+        "max_score": 5.0
+      },
+      "labor_cost": {
+        "submitted": 5875.25,
+        "expected": 5267.5,
+        "difference_percent": 11.54,
+        "score": 0.0,
+        "max_score": 5.0
+      }
+    },
+    "department_coverage": {
+      "department_A": {
+        "submitted": 100,
+        "expected": 100,
+        "score": 16.67,
+        "max_score": 16.67
+      },
+      "department_B": {
+        "submitted": 95,
+        "expected": 100,
+        "score": 15.83,
+        "max_score": 16.67
+      },
+      "department_C": {
+        "submitted": 90,
+        "expected": 100,
+        "score": 15.0,
+        "max_score": 16.67
+      }
+    },
+    "conflict_resolutions": {
+      "conflict_1": {
+        "submitted": "B",
+        "expected": "B",
+        "correct": true,
+        "score": 5.0,
+        "max_score": 5.0
+      },
+      "conflict_2": {
+        "submitted": "A",
+        "expected": "C",
+        "correct": false,
+        "score": 0,
+        "max_score": 5.0
+      },
+      "conflict_3": {
+        "submitted": "A",
+        "expected": "B",
+        "correct": false,
+        "score": 0,
+        "max_score": 5.0
+      },
+      "summary": {
+        "correct_count": 1,
+        "total_count": 3,
+        "passed_minimum": false
+      }
+    },
+    "duty_allocation": {
+      "duty_1": {
+        "submitted": "E002,E005,E009",
+        "expected": "E002,E005,E009,E002,E009,E005,E002",
+        "correct_assignments": 3,
+        "total_assignments": 3,
+        "percent_correct": 100.0,
+        "score": 8.33,
+        "max_score": 8.333333333333334
+      },
+      "duty_2": {
+        "submitted": "E002,E005,E009",
+        "expected": "E002,E005,E009,E002,E009,E005,E002",
+        "correct_assignments": 3,
+        "total_assignments": 3,
+        "percent_correct": 100.0,
+        "score": 8.33,
+        "max_score": 8.333333333333334
+      },
+      "duty_3": {
+        "submitted": "E002,E005,E009",
+        "expected": "E001,E002,E007,E005,E009,E007,E001",
+        "correct_assignments": 3,
+        "total_assignments": 5,
+        "percent_correct": 60.0,
+        "score": 5.0,
+        "max_score": 8.333333333333334
+      },
+      "summary": {
+        "overall_percent_correct": 81.82,
+        "passed_minimum": true
+      }
+    }
+  }
+}

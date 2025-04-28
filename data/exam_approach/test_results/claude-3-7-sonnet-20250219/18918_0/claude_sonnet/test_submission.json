@@ -1,0 +1,25 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "budget_variance_total": 19000,
+    "largest_expense_category": "Staff Salaries",
+    "expense_trend_direction": "fluctuating",
+    "donor_retention_rate": 0.76,
+    "cost_per_dollar_raised": 0.68,
+    "over_budget_categories": [
+        "Event Costs",
+        "Marketing Materials",
+        "Office Supplies",
+        "Travel Expenses"
+    ],
+    "month_with_highest_revenue": "May",
+    "fundraising_roi": 0.47,
+    "expense_category_percentages": {
+        "Staff Salaries": 0.38,
+        "Event Costs": 0.32,
+        "Marketing Materials": 0.16,
+        "Office Supplies": 0.03,
+        "Travel Expenses": 0.08,
+        "Technology": 0.08
+    },
+    "budget_status": "at_risk"
+}

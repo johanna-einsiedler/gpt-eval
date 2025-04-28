@@ -1,0 +1,59 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "data_errors": [
+            "The total variance is incorrect. The sum of the individual variances ($250 + (-$250) + (-$250) + $150 + $650 + $0 + $150 + $50) is $720, not $750.",
+            "The total expenses are incorrect. The sum of the individual actual expenses ($44,750 + $2,750 + $3,250 + $1,650 + $1,850 + $1,200 + $1,350 + $950) is $57,750. This value is correct in the report.",
+            "The cost per employee calculation is incorrect. With 13 employees and total expenses of $57,750, the cost per employee should be $4,442.31, not $3,850.00.",
+            "The year-to-date budget utilization is not provided to verify its accuracy."
+        ],
+        "total_correct_expenses": 57750.0,
+        "efficiency_score": 100
+    },
+    "task2": {
+        "coverage_gaps": [
+            "Reception: Monday 8:00 AM - 9:00 AM, only 1 staff member scheduled, minimum 3 required.",
+            "Reception: Tuesday 6:00 PM - 7:00 PM, only 1 staff member scheduled, minimum 3 required.",
+            "Reception: Wednesday 8:00 AM - 5:00 PM, no staff scheduled, minimum 3 required.",
+            "Reception: Thursday 6:00 PM - 7:00 PM, only 1 staff member scheduled, minimum 3 required.",
+            "Reception: Friday 5:00 PM - 6:00 PM, only 1 staff member scheduled, minimum 3 required.",
+            "Finance: Monday 9:00 AM - 10:00 AM, only 1 staff member scheduled, minimum 4 required.",
+            "Finance: Tuesday 6:00 PM - 6:00 PM, only 1 staff member scheduled, minimum 4 required.",
+            "Finance: Wednesday 9:00 AM - 10:00 AM, only 1 staff member scheduled, minimum 4 required.",
+            "Finance: Thursday 6:00 PM - 6:00 PM, only 1 staff member scheduled, minimum 4 required.",
+            "Finance: Friday 6:00 PM - 6:00 PM, only 1 staff member scheduled, minimum 4 required.",
+            "HR: Thursday 8:30 AM - 4:30 PM, only 1 staff member scheduled, minimum 2 required.",
+            "HR: Friday 8:30 AM - 4:30 PM, only 1 staff member scheduled, minimum 2 required.",
+            "Reception: Monday 11:00 AM - 2:00 PM, only 3 staff members scheduled, peak staff required is 5.",
+            "Tuesday 11:00 AM - 2:00 PM, only 3 staff members scheduled, peak staff required is 5.",
+            "Finance: Monday 1:00 PM - 4:00 PM, only 3 staff members scheduled, peak staff required is 6.",
+            "Tuesday 1:00 PM - 4:00 PM, only 3 staff members scheduled, peak staff required is 6.",
+            "HR: Wednesday 9:00 AM - 12:00 PM, only 2 staff members scheduled, peak staff required is 3.",
+            "Thursday 9:00 AM - 12:00 PM, only 1 staff members scheduled, peak staff required is 3.",
+            "Friday 9:00 AM - 12:00 PM, only 1 staff members scheduled, peak staff required is 3."
+        ],
+        "optimal_staff_count": 15,
+        "schedule_conflicts": [
+            "E001: John Smith is scheduled to work on Wednesdays, but has a family commitment on Wednesdays.",
+            "E002: Mary Johnson is scheduled to work on Fridays, but has educational pursuits on Fridays.",
+            "E003: Robert Brown is scheduled to be off on Mondays, which aligns with his volunteer work.",
+            "E004: Patricia Davis is scheduled to work 4 days a week, exceeding her part-time limit of 3 days.",
+            "E007: James Moore is scheduled to work on Wednesdays, but has medical appointments on Wednesdays.",
+            "E008: Jennifer Taylor is scheduled to work on Mondays, but has childcare responsibilities on Mondays.",
+            "E009: David Anderson is scheduled to work on Tuesdays, but has graduate school on Tuesdays.",
+            "E011: Joseph Jackson is scheduled to work on Thursdays and Fridays, but cannot work those days due to part-time status.",
+            "E012: Margaret White is scheduled to work on Mondays and Tuesdays, but cannot work those days due to part-time status."
+        ]
+    },
+    "task3": {
+        "report_frequency": "monthly",
+        "key_metrics": [
+            "M001",
+            "M002",
+            "M004",
+            "M006",
+            "M010"
+        ],
+        "selected_report_format": "Trend"
+    }
+}

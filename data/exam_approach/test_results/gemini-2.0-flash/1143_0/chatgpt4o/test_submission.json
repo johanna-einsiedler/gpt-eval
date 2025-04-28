@@ -1,7 +1,0 @@
-{
-    "candidate_id": "GPT-4-turbo",
-    "candidate_name": "Your Name",
-    "part1_purchase_order_filename": "purchase_order.xlsx",
-    "part2_rfq_filename": "rfq_cleaning_services.txt",
-    "part3_requisition_review_filename": "requisition_review.txt"
-}

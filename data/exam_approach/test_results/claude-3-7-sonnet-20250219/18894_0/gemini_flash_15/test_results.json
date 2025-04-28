@@ -1,0 +1,118 @@
+{
+  "candidate_id": "GPT-4",
+  "overall_score": 76.0,
+  "passing_score": 75,
+  "passed": false,
+  "automatic_failure": true,
+  "failure_reasons": [
+    "Case scheduled after contractual deadline"
+  ],
+  "section_scores": {
+    "schedule_creation": {
+      "score": 36,
+      "max_score": 50,
+      "percentage": 72.0
+    },
+    "conflict_resolution": {
+      "score": 30,
+      "max_score": 30,
+      "percentage": 100.0
+    },
+    "special_accommodations": {
+      "score": 0,
+      "max_score": 10,
+      "percentage": 0.0
+    },
+    "json_format": {
+      "score": 10,
+      "max_score": 10,
+      "percentage": 100.0
+    }
+  },
+  "detailed_results": {
+    "schedule_creation": {
+      "priority_order": {
+        "score": 8,
+        "max_score": 10,
+        "comments": [
+          "Termination case GR-2023-044 scheduled after non-termination case GR-2023-046.",
+          "Case GR-2023-044 scheduled after its deadline."
+        ]
+      },
+      "room_assignments": {
+        "score": 10,
+        "max_score": 10,
+        "comments": []
+      },
+      "participant_availability": {
+        "score": 10,
+        "max_score": 10,
+        "comments": [
+          "Full availability check would require additional data processing."
+        ]
+      },
+      "meeting_duration": {
+        "score": 8,
+        "max_score": 10,
+        "comments": [
+          "Case GR-2023-045 scheduled for less than 1.5 hours."
+        ]
+      },
+      "notification_requirements": {
+        "score": 0,
+        "max_score": 10,
+        "comments": [
+          "Case GR-2023-044 scheduled too close to deadline (less than 3 business days).",
+          "Case GR-2023-048 scheduled too close to deadline (less than 3 business days).",
+          "Case GR-2023-043 scheduled too close to deadline (less than 3 business days).",
+          "Case GR-2023-049 scheduled too close to deadline (less than 3 business days).",
+          "Case GR-2023-045 scheduled too close to deadline (less than 3 business days)."
+        ]
+      }
+    },
+    "conflict_resolution": {
+      "overlapping_high_priority": {
+        "score": 10,
+        "max_score": 10,
+        "comments": []
+      },
+      "conference_room_limitation": {
+        "score": 10,
+        "max_score": 10,
+        "comments": []
+      },
+      "key_witness_accommodation": {
+        "score": 10,
+        "max_score": 10,
+        "comments": []
+      }
+    },
+    "special_accommodations": {
+      "identification": {
+        "score": 0,
+        "max_score": 5,
+        "comments": [
+          "Failed to identify special accommodations for: GR-2023-048, GR-2023-044",
+          "Incorrectly identified special accommodations for: GR-2023-045"
+        ]
+      },
+      "appropriate_accommodations": {
+        "score": 0,
+        "max_score": 5,
+        "comments": []
+      }
+    },
+    "json_format": {
+      "syntax": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      },
+      "completeness": {
+        "score": 5,
+        "max_score": 5,
+        "comments": []
+      }
+    }
+  }
+}

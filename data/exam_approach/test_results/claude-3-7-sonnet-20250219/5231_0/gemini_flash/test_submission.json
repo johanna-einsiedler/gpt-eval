@@ -1,0 +1,175 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "retention_recommendations": [
+            {
+                "teacher_id": "T205",
+                "reason": "Thomas Smith has a low evaluation score (2.5), low student growth percentile (35), incomplete professional development, and a pending renewal. These factors combined suggest non-renewal."
+            },
+            {
+                "teacher_id": "T401",
+                "reason": "Nicole White has the lowest evaluation score (2.4), the lowest student growth percentile (32), incomplete professional development, and a provisional certification, indicating a need for improvement or non-renewal."
+            },
+            {
+                "teacher_id": "T118",
+                "reason": "Robert Chen has a low evaluation score (2.8), low student growth percentile (38), incomplete professional development, and a high number of undocumented absences, making him a candidate for non-renewal."
+            }
+        ],
+        "reassignment_recommendations": [
+            {
+                "teacher_id": "T352",
+                "current_program": "General Education",
+                "recommended_program": "Humanities Focus",
+                "rationale": "Daniel Taylor has 14 years of experience teaching History. Reassigning him to Humanities Focus would leverage his expertise in a specialized program."
+            },
+            {
+                "teacher_id": "T127",
+                "current_program": "Arts Program",
+                "recommended_program": "General Education",
+                "rationale": "Kevin Jones has a lower evaluation score (3.7) and student growth percentile (60) compared to other Arts Program teachers. Reassigning him to General Education may be a better fit."
+            }
+        ],
+        "priority_hiring_needs": [
+            {
+                "subject_area": "Mathematics",
+                "justification": "The data shows multiple math teachers with low performance metrics (T103, T287, T401), indicating a need for stronger math instruction."
+            },
+            {
+                "subject_area": "English",
+                "justification": "Two English teachers (T118, T298) have low evaluation scores and student growth percentiles, suggesting a need for improved instruction in this area."
+            },
+            {
+                "subject_area": "Science",
+                "justification": "One science teacher (T205) has a low evaluation score and student growth percentile, and their renewal is pending, indicating a potential vacancy and need for a strong science teacher."
+            }
+        ]
+    },
+    "task2": {
+        "staffing_plan": [
+            {
+                "position_code": "STEM-COORD",
+                "fte": 1.0,
+                "rationale": "To oversee and manage the STEM Academy program."
+            },
+            {
+                "position_code": "STEM-MATH",
+                "fte": 2.0,
+                "rationale": "To provide mathematics instruction to the STEM Academy students."
+            },
+            {
+                "position_code": "STEM-SCI",
+                "fte": 2.0,
+                "rationale": "To provide science instruction to the STEM Academy students."
+            },
+            {
+                "position_code": "STEM-TECH",
+                "fte": 1.0,
+                "rationale": "To provide technology instruction to the STEM Academy students."
+            },
+            {
+                "position_code": "STEM-ENG",
+                "fte": 1.0,
+                "rationale": "To provide engineering instruction to the STEM Academy students."
+            },
+            {
+                "position_code": "STEM-PARA",
+                "fte": 1.0,
+                "rationale": "To provide instructional support to teachers and students in the STEM Academy."
+            },
+            {
+                "position_code": "STEM-COUNSEL",
+                "fte": 0.5,
+                "rationale": "To provide guidance and counseling services to the STEM Academy students."
+            }
+        ],
+        "budget_allocation": {
+            "personnel_total": 357500,
+            "equipment_supplies": 67500,
+            "professional_development": 22500,
+            "adjustments_needed": "The initial budget allocation is within the guidelines. Personnel costs are 79.4% of the total budget, equipment and supplies are 15%, and professional development is 5%."
+        },
+        "implementation_timeline": [
+            {
+                "milestone": "Position postings published",
+                "date": "2024-02-15",
+                "action_items": "Advertise open positions on district website and relevant job boards."
+            },
+            {
+                "milestone": "Initial application review",
+                "date": "2024-03-10",
+                "action_items": "Screen applications and identify qualified candidates."
+            },
+            {
+                "milestone": "First round interviews",
+                "date": "2024-03-25",
+                "action_items": "Conduct initial interviews with shortlisted candidates."
+            },
+            {
+                "milestone": "Second round interviews",
+                "date": "2024-04-15",
+                "action_items": "Conduct second interviews with top candidates."
+            },
+            {
+                "milestone": "Hiring decisions finalized",
+                "date": "2024-05-01",
+                "action_items": "Select final candidates for each position."
+            },
+            {
+                "milestone": "Contracts issued",
+                "date": "2024-05-15",
+                "action_items": "Prepare and issue employment contracts to selected candidates."
+            },
+            {
+                "milestone": "New staff orientation",
+                "date": "2024-08-01",
+                "action_items": "Provide orientation and training to new STEM Academy staff."
+            },
+            {
+                "milestone": "Program launch",
+                "date": "2024-08-15",
+                "action_items": "Begin the STEM Academy program with students."
+            }
+        ]
+    },
+    "task3": {
+        "action_recommendation": "Performance improvement plan",
+        "policy_references": [
+            "4.4.3",
+            "4.4.6"
+        ],
+        "documentation_requirements": [
+            {
+                "requirement_id": "4.5.1",
+                "description": "Attendance record showing dates and reasons for absences."
+            },
+            {
+                "requirement_id": "4.5.2",
+                "description": "Record of prior conversations or warnings about attendance."
+            },
+            {
+                "requirement_id": "4.5.3",
+                "description": "Evidence that district policies were followed in addressing the issue."
+            },
+            {
+                "requirement_id": "4.5.4",
+                "description": "Documentation of impact on educational services."
+            },
+            {
+                "requirement_id": "4.5.5",
+                "description": "Employee's response or explanation."
+            },
+            {
+                "requirement_id": "4.5.6",
+                "description": "Specific corrective action being recommended."
+            },
+            {
+                "requirement_id": "4.5.7",
+                "description": "Timeline for improvement or follow-up."
+            },
+            {
+                "requirement_id": "4.5.8",
+                "description": "Signatures of all parties involved in the conference."
+            }
+        ]
+    }
+}

@@ -1,0 +1,34 @@
+{
+  "candidate_id": "GPT-4",
+  "evaluation_date": "2025-04-28 11:05:07",
+  "task1": {
+    "score": 0,
+    "max_score": 20,
+    "feedback": [
+      "Incorrectly identified transaction amount discrepancies.",
+      "Incorrectly verified the final account balance."
+    ]
+  },
+  "task2": {
+    "score": 30,
+    "max_score": 40,
+    "feedback": [
+      "Correctly identified all over-budget categories.",
+      "Correctly calculated the total variance within acceptable margin.",
+      "Incorrectly calculated the percent over budget."
+    ]
+  },
+  "task3": {
+    "score": 10,
+    "max_score": 40,
+    "feedback": [
+      "Failed to identify any missing entries correctly.",
+      "Correctly verified the total collection amount."
+    ]
+  },
+  "total_score": 40,
+  "max_score": 100,
+  "overall_score": 40.0,
+  "performance_level": "Fail",
+  "pass_fail": "Fail"
+}

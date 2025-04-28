@@ -1,0 +1,185 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "retention_recommendations": [
+            {
+                "teacher_id": "T401",
+                "reason": "Lowest combined metrics with 2.4 evaluation score, 32 SGP, incomplete PD, 84% attendance, and provisional certification status."
+            },
+            {
+                "teacher_id": "T205",
+                "reason": "Low performance metrics with 2.5 evaluation score, 35 SGP, incomplete PD, 88% attendance, and pending certification renewal."
+            },
+            {
+                "teacher_id": "T118",
+                "reason": "Poor performance with 2.8 evaluation score, 38 SGP, incomplete PD, 85% attendance, and documented attendance policy violations."
+            }
+        ],
+        "reassignment_recommendations": [
+            {
+                "teacher_id": "T287",
+                "current_program": "STEM Focus",
+                "recommended_program": "General Education",
+                "rationale": "Below average performance metrics (3.0 evaluation, 42 SGP) indicate teacher may not be well-suited for specialized STEM program requirements."
+            },
+            {
+                "teacher_id": "T298",
+                "current_program": "Humanities Focus",
+                "recommended_program": "General Education",
+                "rationale": "Low evaluation score (2.7) and student growth (40) suggest teacher needs more experience before specialized program assignment."
+            }
+        ],
+        "priority_hiring_needs": [
+            {
+                "subject_area": "Mathematics",
+                "justification": "Two math teachers (T401, T103) have below-average performance metrics, and one is recommended for non-renewal, creating staffing gap in core subject area."
+            },
+            {
+                "subject_area": "English",
+                "justification": "Current English teachers show concerning performance (T118 recommended for non-renewal, T298 for reassignment), indicating need for strong replacements."
+            },
+            {
+                "subject_area": "Science",
+                "justification": "With T205 recommended for non-renewal, additional science teaching capacity is needed to maintain adequate staffing in this core subject area."
+            }
+        ]
+    },
+    "task2": {
+        "staffing_plan": [
+            {
+                "position_code": "STEM-COORD",
+                "fte": 1.0,
+                "rationale": "Required to provide overall program leadership and coordination as specified in implementation guidelines."
+            },
+            {
+                "position_code": "STEM-MATH",
+                "fte": 2.0,
+                "rationale": "Two full-time mathematics teachers needed to support 150 students in the STEM Academy as specified in requirements."
+            },
+            {
+                "position_code": "STEM-SCI",
+                "fte": 2.0,
+                "rationale": "Two full-time science teachers required to deliver specialized science curriculum for 150 STEM Academy students."
+            },
+            {
+                "position_code": "STEM-TECH",
+                "fte": 1.0,
+                "rationale": "One technology teacher needed to provide computer science and technology instruction for the program."
+            },
+            {
+                "position_code": "STEM-ENG",
+                "fte": 1.0,
+                "rationale": "One engineering teacher required to deliver engineering curriculum component of the STEM program."
+            },
+            {
+                "position_code": "STEM-PARA",
+                "fte": 1.0,
+                "rationale": "One instructional paraprofessional needed to support teachers and provide additional assistance to students."
+            },
+            {
+                "position_code": "STEM-COUNSEL",
+                "fte": 0.5,
+                "rationale": "Half-time guidance counselor required to provide academic and career counseling specific to STEM pathways."
+            }
+        ],
+        "budget_allocation": {
+            "personnel_total": 360000,
+            "equipment_supplies": 67500,
+            "professional_development": 22500,
+            "adjustments_needed": "Personnel costs calculated using mid-range salaries for all positions to stay within 80% budget allocation for staffing while ensuring competitive compensation."
+        },
+        "implementation_timeline": [
+            {
+                "milestone": "Position postings published",
+                "date": "2023-02-15",
+                "action_items": "Finalize job descriptions and post all seven required positions through district HR system and external job boards."
+            },
+            {
+                "milestone": "Initial application review",
+                "date": "2023-03-10",
+                "action_items": "Screen applications for minimum qualifications and create shortlist of candidates for first-round interviews."
+            },
+            {
+                "milestone": "First round interviews",
+                "date": "2023-03-25",
+                "action_items": "Conduct initial interviews with qualified candidates for all positions using standardized interview protocols."
+            },
+            {
+                "milestone": "First round interviews",
+                "date": "2023-04-05",
+                "action_items": "Complete all first-round interviews and identify candidates to advance to second round."
+            },
+            {
+                "milestone": "Second round interviews",
+                "date": "2023-04-15",
+                "action_items": "Begin in-depth interviews with finalists, including teaching demonstrations and panel interviews with stakeholders."
+            },
+            {
+                "milestone": "Second round interviews",
+                "date": "2023-04-20",
+                "action_items": "Complete all second-round interviews and prepare hiring recommendations for each position."
+            },
+            {
+                "milestone": "Hiring decisions finalized",
+                "date": "2023-05-01",
+                "action_items": "Make final selections for all positions and begin reference checks and background verification process."
+            },
+            {
+                "milestone": "Contracts issued",
+                "date": "2023-05-15",
+                "action_items": "Issue formal contracts to selected candidates and collect signed agreements to confirm staffing plan."
+            },
+            {
+                "milestone": "New staff orientation",
+                "date": "2023-08-01",
+                "action_items": "Conduct comprehensive orientation for all new STEM Academy staff on program goals and expectations."
+            },
+            {
+                "milestone": "Program launch",
+                "date": "2023-08-15",
+                "action_items": "Begin STEM Academy program with complete staffing in place and all preparations completed."
+            }
+        ]
+    },
+    "task3": {
+        "action_recommendation": "Performance improvement plan",
+        "policy_references": [
+            "4.4.3",
+            "4.4.6"
+        ],
+        "documentation_requirements": [
+            {
+                "requirement_id": "4.5.1",
+                "description": "Attendance record showing dates and reasons for absences"
+            },
+            {
+                "requirement_id": "4.5.2",
+                "description": "Record of prior conversations or warnings about attendance"
+            },
+            {
+                "requirement_id": "4.5.3",
+                "description": "Evidence that district policies were followed in addressing the issue"
+            },
+            {
+                "requirement_id": "4.5.4",
+                "description": "Documentation of impact on educational services"
+            },
+            {
+                "requirement_id": "4.5.5",
+                "description": "Employee's response or explanation"
+            },
+            {
+                "requirement_id": "4.5.6",
+                "description": "Specific corrective action being recommended"
+            },
+            {
+                "requirement_id": "4.5.7",
+                "description": "Timeline for improvement or follow-up"
+            },
+            {
+                "requirement_id": "4.5.8",
+                "description": "Signatures of all parties involved in the conference"
+            }
+        ]
+    }
+}

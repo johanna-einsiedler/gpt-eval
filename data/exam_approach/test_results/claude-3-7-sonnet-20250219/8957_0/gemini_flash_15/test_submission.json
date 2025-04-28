@@ -1,0 +1,46 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "record_count": 108,
+        "missing_values_count": 1,
+        "duplicate_records_removed": 1,
+        "outliers_identified": []
+    },
+    "task2": {
+        "inconsistent_entries": [
+            {
+                "row_id": "1006",
+                "field": "age",
+                "value": "-5"
+            },
+            {
+                "row_id": "1006",
+                "field": "education",
+                "value": "Associate"
+            }
+        ],
+        "corrected_values": {
+            "1006": {
+                "age": 5,
+                "education": "Associate"
+            }
+        },
+        "data_validation_rules": [
+            "Age must be between 18 and 100 (inclusive).",
+            "Education level must be one of: 'High School', 'Associate', 'Bachelor', 'Master', 'Doctorate'.",
+            "Income must be a non-negative numerical value less than or equal to 500000."
+        ]
+    },
+    "task3": {
+        "weighted_average_income": 67500.0,
+        "weighted_proportion_category_a": 0.3333,
+        "post_stratification_weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ],
+        "effective_sample_size": 108.0
+    }
+}

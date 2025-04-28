@@ -1,0 +1,161 @@
+{
+  "overall_score": 33.33,
+  "passing_criteria": {
+    "passed": false,
+    "criteria": {
+      "numerical_accuracy": {
+        "passed": false,
+        "score": 0.09090909090909091,
+        "requirement": "At least 80% of numerical values within acceptable ranges"
+      },
+      "most_sensitive_factor": {
+        "passed": false,
+        "requirement": "Most sensitive factor correctly identified"
+      },
+      "top_components": {
+        "passed": true,
+        "requirement": "Top three cost components correctly identified"
+      },
+      "json_format": {
+        "passed": true,
+        "requirement": "JSON submission properly formatted with all required fields"
+      }
+    }
+  },
+  "evaluation_details": {
+    "cost_per_mile": {
+      "points_possible": 3,
+      "points_earned": 0,
+      "details": {
+        "vehicle_type_A": {
+          "submitted": 1.25,
+          "expected": 3.69,
+          "correct": false,
+          "difference": 2.44,
+          "message": "Outside tolerance"
+        },
+        "vehicle_type_B": {
+          "submitted": 1.1,
+          "expected": 3.53,
+          "correct": false,
+          "difference": 2.4299999999999997,
+          "message": "Outside tolerance"
+        },
+        "vehicle_type_C": {
+          "submitted": 1.35,
+          "expected": 4.21,
+          "correct": false,
+          "difference": 2.86,
+          "message": "Outside tolerance"
+        }
+      }
+    },
+    "top_components": {
+      "points_possible": 3,
+      "points_earned": 3,
+      "details": {
+        "component_1": {
+          "submitted": "Driver Wages",
+          "expected": "Driver Wages",
+          "correct": true,
+          "message": "Correct"
+        },
+        "component_2": {
+          "submitted": "Fuel Cost",
+          "expected": "Fuel Cost",
+          "correct": true,
+          "message": "Correct"
+        },
+        "component_3": {
+          "submitted": "Maintenance Cost",
+          "expected": "Maintenance Cost",
+          "correct": true,
+          "message": "Correct"
+        }
+      }
+    },
+    "component_percentages": {
+      "points_possible": 3,
+      "points_earned": 0,
+      "details": {
+        "Driver Wages": {
+          "submitted": 0.4,
+          "expected": 0.46,
+          "correct": false,
+          "difference": 0.06,
+          "message": "Outside tolerance"
+        },
+        "Fuel Cost": {
+          "submitted": 0.3,
+          "expected": 0.22,
+          "correct": false,
+          "difference": 0.07999999999999999,
+          "message": "Outside tolerance"
+        },
+        "Maintenance Cost": {
+          "submitted": 0.15,
+          "expected": 0.11,
+          "correct": false,
+          "difference": 0.039999999999999994,
+          "message": "Outside tolerance"
+        }
+      }
+    },
+    "forecast": {
+      "points_possible": 2,
+      "points_earned": 0,
+      "details": {
+        "total_cost": {
+          "submitted": 500000.0,
+          "expected": 1025642.5,
+          "correct": false,
+          "difference_percentage": 0.5125007007802427,
+          "message": "Outside tolerance"
+        },
+        "percentage_change": {
+          "submitted": 0.1,
+          "expected": 0.22,
+          "correct": false,
+          "difference": 0.12,
+          "message": "Outside tolerance"
+        }
+      }
+    },
+    "sensitivity": {
+      "points_possible": 3,
+      "points_earned": 1,
+      "details": {
+        "fuel_impact_percentage": {
+          "submitted": 0.05,
+          "expected": 0.02,
+          "correct": false,
+          "difference": 0.030000000000000002,
+          "message": "Outside tolerance"
+        },
+        "wage_impact_percentage": {
+          "submitted": 0.03,
+          "expected": 0.02,
+          "correct": true,
+          "difference": 0.009999999999999998,
+          "message": "Within tolerance"
+        },
+        "most_sensitive_factor": {
+          "submitted": "Fuel Cost",
+          "expected": "Driver Wages",
+          "correct": false,
+          "message": "Incorrect"
+        }
+      }
+    },
+    "json_format": {
+      "points_possible": 1,
+      "points_earned": 1,
+      "details": {
+        "format": {
+          "correct": true,
+          "message": "All required fields present"
+        }
+      }
+    }
+  }
+}

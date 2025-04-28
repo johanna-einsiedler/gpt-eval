@@ -1,0 +1,147 @@
+{
+    "candidate_id": "GPT-4",
+    "program_changes": [
+        {
+            "change_id": "PC001",
+            "financial_impact": 127500,
+            "affected_budget_lines": [
+                "BL-IT-1002",
+                "BL-IT-1003",
+                "BL-IT-1004"
+            ],
+            "adjustments": [
+                {
+                    "budget_line": "BL-IT-1002",
+                    "current_amount": 72000,
+                    "adjustment_amount": 12000,
+                    "new_amount": 84000,
+                    "complies_with_policy": true
+                },
+                {
+                    "budget_line": "BL-IT-1003",
+                    "current_amount": 85000,
+                    "adjustment_amount": 35000,
+                    "new_amount": 120000,
+                    "complies_with_policy": true
+                },
+                {
+                    "budget_line": "BL-IT-1004",
+                    "current_amount": 42000,
+                    "adjustment_amount": 9000,
+                    "new_amount": 51000,
+                    "complies_with_policy": true
+                }
+            ]
+        },
+        {
+            "change_id": "PC002",
+            "financial_impact": -63000,
+            "affected_budget_lines": [
+                "BL-MKT-2001",
+                "BL-MKT-2002"
+            ],
+            "adjustments": [
+                {
+                    "budget_line": "BL-MKT-2001",
+                    "current_amount": 135000,
+                    "adjustment_amount": -37800,
+                    "new_amount": 97200,
+                    "complies_with_policy": true
+                },
+                {
+                    "budget_line": "BL-MKT-2002",
+                    "current_amount": 45000,
+                    "adjustment_amount": -28500,
+                    "new_amount": 16500,
+                    "complies_with_policy": true
+                }
+            ]
+        },
+        {
+            "change_id": "PC003",
+            "financial_impact": 50000,
+            "affected_budget_lines": [
+                "BL-CS-4001",
+                "BL-CS-4002",
+                "BL-CS-4003"
+            ],
+            "adjustments": [
+                {
+                    "budget_line": "BL-CS-4001",
+                    "current_amount": 180000,
+                    "adjustment_amount": 24800,
+                    "new_amount": 204800,
+                    "complies_with_policy": true
+                },
+                {
+                    "budget_line": "BL-CS-4002",
+                    "current_amount": 30000,
+                    "adjustment_amount": 22000,
+                    "new_amount": 52000,
+                    "complies_with_policy": true
+                },
+                {
+                    "budget_line": "BL-CS-4003",
+                    "current_amount": 15000,
+                    "adjustment_amount": 8000,
+                    "new_amount": 23000,
+                    "complies_with_policy": true
+                }
+            ]
+        },
+        {
+            "change_id": "PC004",
+            "financial_impact": 60000,
+            "affected_budget_lines": [
+                "BL-RD-3045",
+                "BL-RD-3004",
+                "BL-RD-3022"
+            ],
+            "adjustments": [
+                {
+                    "budget_line": "BL-RD-3045",
+                    "current_amount": 120000,
+                    "adjustment_amount": -75000,
+                    "new_amount": 45000,
+                    "complies_with_policy": true
+                },
+                {
+                    "budget_line": "BL-RD-3004",
+                    "current_amount": 80000,
+                    "adjustment_amount": 45000,
+                    "new_amount": 125000,
+                    "complies_with_policy": true
+                },
+                {
+                    "budget_line": "BL-RD-3022",
+                    "current_amount": 150000,
+                    "adjustment_amount": 15000,
+                    "new_amount": 165000,
+                    "complies_with_policy": true
+                }
+            ]
+        }
+    ],
+    "manager_notifications": [
+        {
+            "change_id": "PC001",
+            "notification_template_code": "BN-101",
+            "justification": "This is a standard budget adjustment with no policy exceptions or urgency."
+        },
+        {
+            "change_id": "PC002",
+            "notification_template_code": "BN-101",
+            "justification": "This is a standard budget adjustment with no policy exceptions or urgency."
+        },
+        {
+            "change_id": "PC003",
+            "notification_template_code": "BN-101",
+            "justification": "This is a standard budget adjustment with no policy exceptions or urgency."
+        },
+        {
+            "change_id": "PC004",
+            "notification_template_code": "BN-101",
+            "justification": "This is a standard budget adjustment with no policy exceptions or urgency, despite the internal transfer."
+        }
+    ]
+}

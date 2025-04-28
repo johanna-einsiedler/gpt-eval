@@ -1,0 +1,66 @@
+{
+  "section1": {
+    "caseA": {
+      "trauma_identification_points": 4,
+      "postmortem_interval_points": 4,
+      "victim_characteristics_points": 4,
+      "total_points": 12
+    },
+    "caseB": {
+      "trauma_identification_points": 4,
+      "postmortem_interval_points": 4,
+      "victim_characteristics_points": 4,
+      "total_points": 12
+    },
+    "caseC": {
+      "trauma_identification_points": 4,
+      "postmortem_interval_points": 4,
+      "victim_characteristics_points": 4,
+      "total_points": 12
+    },
+    "caseD": {
+      "trauma_identification_points": 4,
+      "postmortem_interval_points": 4,
+      "victim_characteristics_points": 4,
+      "total_points": 12
+    },
+    "total_points": 48,
+    "max_points": 48
+  },
+  "section2": {
+    "error_identification": {
+      "video1": 3,
+      "video2": 3,
+      "video3": 3,
+      "video4": 3,
+      "video5": 3,
+      "total_points": 15
+    },
+    "procedure_sequencing": {
+      "A": 2,
+      "B": 2,
+      "C": 2,
+      "D": 2,
+      "E": 2,
+      "F": 2,
+      "G": 2,
+      "H": 2,
+      "I": 2,
+      "J": 2,
+      "total_points": 20
+    },
+    "documentation_exercise": {
+      "decedent_information": 3,
+      "scene_findings": 4,
+      "postmortem_changes": 5,
+      "preliminary_cause_of_death": 3,
+      "preliminary_manner_of_death": 2,
+      "total_points": 17
+    },
+    "total_points": 52,
+    "max_points": 52
+  },
+  "critical_errors": [],
+  "overall_score": 100.0,
+  "passing_status": "PASS (Excellent)"
+}

@@ -1,0 +1,27 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "scenario1": {
+        "total_monthly_income": 3950.0,
+        "total_necessary_expenses": 2060.0,
+        "available_monthly_income": 1890.0,
+        "debt_to_income_ratio": 0.14,
+        "recommended_monthly_debt_payment": 1701.0,
+        "debt_free_timeline_months": 11
+    },
+    "scenario2": {
+        "total_monthly_income": 7800.0,
+        "total_necessary_expenses": 3890.0,
+        "available_monthly_income": 3910.0,
+        "debt_to_income_ratio": 0.17,
+        "recommended_monthly_debt_payment": 3519.0,
+        "debt_free_timeline_months": 13
+    },
+    "scenario3": {
+        "total_monthly_income": 6550.0,
+        "total_necessary_expenses": 3630.0,
+        "available_monthly_income": 2920.0,
+        "debt_to_income_ratio": 0.32,
+        "recommended_monthly_debt_payment": 2628.0,
+        "debt_free_timeline_months": 34
+    }
+}

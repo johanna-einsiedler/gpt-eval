@@ -1,0 +1,46 @@
+{
+    "candidate_id": "GPT-4o",
+    "product_margins": {
+        "techpro_basic": 0.41,
+        "techpro_professional": 0.37,
+        "techpro_enterprise": 0.35
+    },
+    "minimum_prices": {
+        "techpro_basic": 50.0,
+        "techpro_professional": 83.33,
+        "techpro_enterprise": 133.33
+    },
+    "tiered_pricing": {
+        "techpro_basic": {
+            "tier_1_1_9": 55.0,
+            "tier_2_10_49": 52.0,
+            "tier_3_50plus": 49.0
+        },
+        "techpro_professional": {
+            "tier_1_1_9": 95.0,
+            "tier_2_10_49": 90.0,
+            "tier_3_50plus": 85.0
+        },
+        "techpro_enterprise": {
+            "tier_1_1_9": 159.0,
+            "tier_2_10_49": 150.0,
+            "tier_3_50plus": 142.0
+        }
+    },
+    "discount_rates": {
+        "enterprise": 0.1,
+        "mid_market": 0.05,
+        "small_business": 0.0
+    },
+    "volume_thresholds": {
+        "discount_tier_1": 10,
+        "discount_tier_2": 50,
+        "discount_tier_3": 100
+    },
+    "competitive_price_index": {
+        "techpro_basic": 0.97,
+        "techpro_professional": 1.02,
+        "techpro_enterprise": 1.01
+    },
+    "pricing_strategy_rationale": "The pricing strategy focuses on achieving a minimum 40% profit margin while remaining competitive. Tiered pricing incentivizes larger purchases, and discount rates are tailored to customer segments based on their price sensitivity and purchase volume. Enterprise customers receive the highest discount due to their large volume and lower price sensitivity. The competitive price index aims to position TechPro's products slightly above or at the industry average to reflect their value proposition."
+}

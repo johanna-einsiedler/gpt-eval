@@ -1,0 +1,125 @@
+{
+    "candidate_id": "GPT-4",
+    "section1": {
+        "form1040_client_a_errors": [
+            {
+                "error_type": "value_discrepancy",
+                "field": "Wages, salaries, tips (Line 1)",
+                "reported_value": "$72,500",
+                "correct_value": "$75,500",
+                "explanation": "The wages reported on Form 1040 do not match the W-2 form."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Federal income tax withheld (Line 25a)",
+                "reported_value": "$8,100",
+                "correct_value": "$8,700",
+                "explanation": "The federal income tax withheld does not match the W-2 form."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Total income (Line 9)",
+                "reported_value": "$73,275",
+                "correct_value": "$76,275",
+                "explanation": "Total income calculation is incorrect based on the corrected wages."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Adjusted Gross Income (Line 11)",
+                "reported_value": "$69,775",
+                "correct_value": "$72,775",
+                "explanation": "Adjusted Gross Income is incorrect due to incorrect total income."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Taxable income (Line 15)",
+                "reported_value": "$56,825",
+                "correct_value": "$59,825",
+                "explanation": "Taxable income is incorrect due to incorrect AGI."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Amount you owe (Line 37)",
+                "reported_value": "$1,274",
+                "correct_value": "$674",
+                "explanation": "Amount owed is incorrect due to incorrect tax withheld and total tax."
+            }
+        ],
+        "schedule_c_client_b_errors": [
+            {
+                "error_type": "math_error",
+                "field": "Total expenses (Line 28)",
+                "reported_value": "$35,150",
+                "correct_value": "$34,350",
+                "explanation": "Total expenses calculation is incorrect."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Net profit (Line 31)",
+                "reported_value": "$49,100",
+                "correct_value": "$49,900",
+                "explanation": "Net profit calculation is incorrect due to incorrect total expenses."
+            }
+        ],
+        "form_8949_client_c_missing_fields": [
+            {
+                "field": "Box (f) Code",
+                "explanation": "Box (f) is required to indicate the type of transaction."
+            },
+            {
+                "field": "Box (g) Adjustment",
+                "explanation": "Box (g) is required if there are any adjustments to the gain or loss."
+            }
+        ]
+    },
+    "section2": {
+        "tax_calculation_client_d_errors": [
+            {
+                "field": "Total Tax",
+                "reported_value": 20662.0,
+                "correct_value": 20462.0,
+                "explanation": "The total tax calculation is incorrect due to an error in self-employment tax calculation."
+            }
+        ],
+        "income_reconciliation_client_e": {
+            "discrepancy_found": false,
+            "discrepancy_amount": 0.0,
+            "explanation": "The total income reported matches the supporting documents."
+        },
+        "estimated_tax_client_f": {
+            "reported_payments": 9500.0,
+            "correct_payments": 10000.0,
+            "discrepancy_amount": 500.0,
+            "explanation": "The estimated tax payments reported do not match the total from the spreadsheet."
+        }
+    },
+    "section3": {
+        "client_g_discrepancies": [
+            {
+                "field": "Occupation",
+                "reported_value": "Marketing Director",
+                "correct_value": "Marketing Manager"
+            },
+            {
+                "field": "Address",
+                "reported_value": "456 Oak Avenue, Apt 3B, Chicago, IL 60601",
+                "correct_value": "456 Oak Avenue, Apt 3B, Chicago, IL 60611"
+            }
+        ],
+        "client_h_dependent_errors": [
+            {
+                "dependent_name": "Margaret Wilson",
+                "field": "SSN",
+                "reported_value": "123-45-6788",
+                "correct_value": "123-45-6789"
+            }
+        ],
+        "client_i_contact_errors": [
+            {
+                "field": "Address",
+                "reported_value": "789 Pine Street, Suite 500, San Francisco, CA 94103",
+                "correct_value": "789 Pine Street, Suite 500, San Francisco, CA 94105"
+            }
+        ]
+    }
+}

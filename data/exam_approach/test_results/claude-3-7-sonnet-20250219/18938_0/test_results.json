@@ -1,0 +1,172 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "word_count_issues": [
+    "Task 2 credit_counseling typical_timeline: 8 words (required: 10-25)",
+    "Task 2 credit_counseling credit_score_impact: 6 words (required: 10-25)",
+    "Task 2 debt_management_program typical_timeline: 6 words (required: 10-25)",
+    "Task 2 debt_settlement typical_timeline: 7 words (required: 10-25)",
+    "Task 3 rule1: 46 words (required: 50-75)",
+    "Task 3 rule2: 47 words (required: 50-75)",
+    "Task 3 rule3: 48 words (required: 50-75)"
+  ],
+  "task1_results": {
+    "scenarios": {
+      "scenario1": {
+        "score": 10,
+        "max_score": 10,
+        "feedback": [
+          "Excellent response that covers all required elements"
+        ]
+      },
+      "scenario2": {
+        "score": 8,
+        "max_score": 10,
+        "feedback": [
+          "Missing key elements: actionable advice, re-enrollment requirements"
+        ]
+      },
+      "scenario3": {
+        "score": 9,
+        "max_score": 10,
+        "feedback": [
+          "Missing key elements: disbursement timeline"
+        ]
+      }
+    },
+    "score": 27,
+    "max_score": 30,
+    "percentage": 90.0
+  },
+  "task2_results": {
+    "services": {
+      "credit_counseling": {
+        "primary_benefit": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "main_disadvantage": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "typical_timeline": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "credit_score_impact": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        }
+      },
+      "debt_management_program": {
+        "primary_benefit": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "main_disadvantage": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "typical_timeline": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "credit_score_impact": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        }
+      },
+      "debt_settlement": {
+        "primary_benefit": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "main_disadvantage": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "typical_timeline": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        },
+        "credit_score_impact": {
+          "score": 1,
+          "max_score": 1,
+          "feedback": [
+            "Correct information"
+          ]
+        }
+      }
+    },
+    "score": 12,
+    "max_score": 12,
+    "percentage": 100.0
+  },
+  "task3_results": {
+    "rules": {
+      "rule1": {
+        "score": 6,
+        "max_score": 10,
+        "feedback": [
+          "Missing key elements: plain language, rationale explained"
+        ]
+      },
+      "rule2": {
+        "score": 2,
+        "max_score": 10,
+        "feedback": [
+          "Missing key elements: example provided, no technical jargon, proportional distribution, pro-rata explained simply"
+        ]
+      },
+      "rule3": {
+        "score": 4,
+        "max_score": 10,
+        "feedback": [
+          "Missing key elements: client-friendly language, constructive framing, supervisory authorization explained"
+        ]
+      }
+    },
+    "score": 12,
+    "max_score": 30,
+    "percentage": 40.0
+  },
+  "overall_score": 78.0,
+  "passed": false,
+  "feedback": [
+    "Good performance meeting the basic requirements for client communication.",
+    "Needs improvement in translating technical program rules into client-friendly language.",
+    "NOT PASSED: Candidate needs additional training before being ready to explain credit counseling services and policies to clients."
+  ]
+}

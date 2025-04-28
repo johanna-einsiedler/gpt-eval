@@ -1,0 +1,23 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "diagram": "[S_A] --> [W] --> [M_1] \n[S_B] --> +     --> [M_2] \n                 --> [M_3] --> [DC] --> [R_1]\n                                      --> [R_2]\n                                      --> [R_3]\n                                      --> [R_4]\n                                      <-- [C]",
+        "entities_count": 10
+    },
+    "task2": {
+        "diagram": "Raw Materials | Work-in-Progress | Finished Goods | Distribution Center\nJan: 1200      | Jan: 800          | Jan: 500        | Jan: 1500\nFeb: 1000      | Feb: 850          | Feb: 600        | Feb: 1300\nMar: 1100      | Mar: 900          | Mar: 650        | Mar: 1200\nApr: 950       | Apr: 950          | Apr: 700        | Apr: 1100\nMay: 850       | May: 1000         | May: 750        | May: 1000\nJun: 800       | Jun: 1050         | Jun: 800        | Jun: 900\n\nTrend: Decreasing | Increasing       | Increasing     | Decreasing",
+        "percentage_changes": {
+            "raw_materials": -33.3,
+            "work_in_progress": 31.3,
+            "finished_goods": 60.0,
+            "distribution_center": -40.0
+        }
+    },
+    "task3": {
+        "diagram": "Ingredient Mixing (500) --> Filling & Packaging (400)[!] --> Quality Testing (450) --> Labeling (600) --> Palletizing (550)\n                                                                                                    ^ \n                                                                                                    | 15% Demand Increase Over Capacity",
+        "max_throughput": 400,
+        "over_capacity_stages": [
+            "Filling & Packaging"
+        ]
+    }
+}

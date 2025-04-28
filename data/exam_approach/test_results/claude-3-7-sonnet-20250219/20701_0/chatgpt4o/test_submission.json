@@ -1,0 +1,20 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "total_labor_hours": 285.5,
+    "total_labor_cost": 5245.75,
+    "department_coverage": {
+        "department_A": 100,
+        "department_B": 100,
+        "department_C": 100
+    },
+    "conflict_resolutions": {
+        "conflict_1": "B",
+        "conflict_2": "C",
+        "conflict_3": "A"
+    },
+    "duty_allocation": {
+        "duty_1": "E005,E009",
+        "duty_2": "E002,E005",
+        "duty_3": "E005,E009"
+    }
+}

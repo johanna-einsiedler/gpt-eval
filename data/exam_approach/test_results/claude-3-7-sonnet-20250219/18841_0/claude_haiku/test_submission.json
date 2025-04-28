@@ -1,0 +1,53 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "financial_analysis": {
+        "highest_increase_categories": [
+            "Marketing and Advertising",
+            "Facility Maintenance",
+            "Employee Benefits"
+        ],
+        "highest_increase_percentages": [
+            43.0,
+            30.0,
+            26.0
+        ],
+        "service_profit_margins": {
+            "Traditional Funeral Services": 48.0,
+            "Cremation Services": 58.0,
+            "Memorial Services": 58.0,
+            "Pre-Need Sales": 68.0,
+            "Merchandise": 30.0,
+            "Other Services": 57.0
+        },
+        "lowest_revenue_month": "June",
+        "monthly_difference_percentage": -28.3
+    },
+    "sales_performance": {
+        "highest_margin_service": "Pre-Need Premium Plan",
+        "highest_margin_percentage": 68.0,
+        "cremation_growth_rate": 32.1,
+        "top_demographic_segment": "Senior (65+)",
+        "top_segment_revenue": 643280.0
+    },
+    "operational_efficiency": {
+        "lowest_utilization_department": "Maintenance",
+        "utilization_rate": 65.0,
+        "unused_facility_percentage": 47.5,
+        "lowest_satisfaction_service": "Merchandise Quality",
+        "satisfaction_score": 3.8
+    },
+    "cost_reduction": {
+        "reduction_areas": [
+            "Marketing and Advertising",
+            "Facility Maintenance",
+            "Employee Benefits"
+        ],
+        "potential_annual_savings": 76437.0
+    },
+    "service_improvements": {
+        "highest_correlation_service": "Personalization Options",
+        "correlation_value": 0.88,
+        "most_requested_additional_service": "Live Streaming of Services",
+        "request_frequency": 28.1
+    }
+}

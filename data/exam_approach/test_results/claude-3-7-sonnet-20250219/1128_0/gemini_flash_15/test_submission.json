@@ -1,0 +1,39 @@
+{
+    "candidate_id": "GPT-4",
+    "budget_task": {
+        "total_projected_expenses": 922000,
+        "variance_percentage": 10.67,
+        "largest_expense_category": "Staff Salaries",
+        "cost_per_client": 997.83
+    },
+    "personnel_task": {
+        "total_staff": 20,
+        "certification_expiring": [
+            "S005",
+            "S011",
+            "S017"
+        ],
+        "average_years_experience": 5.26,
+        "staff_to_supervisor_ratio": 5.0
+    },
+    "training_task": {
+        "section_title": "Client Intake Procedures",
+        "word_count": 161,
+        "key_points": [
+            "Client confidentiality must be maintained at all times",
+            "Demographic information must be complete and accurate",
+            "Eligibility determination must follow current program guidelines",
+            "All clients must receive service orientation during intake",
+            "Referrals to other services must be documented appropriately"
+        ],
+        "procedure_steps": [
+            "Greet client and explain intake process",
+            "Complete demographic information form",
+            "Verify client identification and eligibility documentation",
+            "Conduct needs assessment interview",
+            "Explain available services and client rights",
+            "Obtain required consent signatures",
+            "Schedule follow-up appointment"
+        ]
+    }
+}

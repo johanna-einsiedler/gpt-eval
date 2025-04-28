@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "recipient": "Dr. Sarah Johnson, Citywide Medical Center",
+        "subject": "Medical Information Request for James Rodriguez - APP-2023-45871",
+        "body": "Dear Dr. Johnson,\n\nI am writing regarding patient James Rodriguez (Reference Number: APP-2023-45871), who has applied for a 20-Year Term Life Insurance policy. Our underwriting process requires additional clarification about his spinal stenosis diagnosis (Code M47.26).\n\nPer our guidelines section 3.2.14, we need comprehensive details about his condition, specifically:\n1. Exact date of diagnosis\n2. Specific severity classification of the spinal stenosis\n3. Current treatment plan and management status\n4. Impact on activities of daily living\n5. Prognosis from your professional assessment\n6. Details of any imaging studies performed\n\nPlease provide this information by [15 days from today's date]. Your prompt response will help us complete Mr. Rodriguez's insurance application efficiently.\n\nThank you for your cooperation.\n\nSincerely,\nInsurance Underwriting Department",
+        "reference_number": "APP-2023-45871",
+        "response_deadline": "July 14, 2024"
+    },
+    "task2": {
+        "recipient": "Thomas Wilson",
+        "subject": "Auto Insurance Rate Quote for Rebecca Chen - APP-2023-67392",
+        "body": "Dear Mr. Wilson,\n\nRegarding the auto insurance application for Rebecca Chen (Reference Number: APP-2023-67392), I've completed the rate calculation for her 2020 Toyota Camry.\n\nRate Calculation Breakdown:\n- Base Rate (Standard Vehicle): $1,400\n- Driver Age Factor (25-65): 1.00\n- Years Licensed (11 years): 1.00\n- Driving Record (1 minor violation): 1.20\n- Credit Score (Excellent 745): 0.85\n- Annual Mileage (12,000 miles): 1.00\n- Territory (Suburban): 1.00\n- Multi-Policy Discount: Not applicable (1.00)\n\nFinal Calculation:\n$1,400 × 1.00 × 1.00 × 1.20 × 0.85 × 1.00 × 1.00 × 1.00 = $1,428 annually\n\nPlease confirm these details with the client.\n\nBest regards,\nUnderwriting Department",
+        "quoted_rate": "$1,428.00 annually",
+        "calculation_breakdown": {
+            "base_rate": "$1,400",
+            "age_factor": "1.00",
+            "license_factor": "1.00",
+            "driving_record_factor": "1.20",
+            "credit_factor": "0.85",
+            "mileage_factor": "1.00",
+            "territory_factor": "1.00",
+            "multi_policy_factor": "1.00",
+            "final_calculation": "$1,428.00"
+        }
+    },
+    "task3": {
+        "recipient": "Maria Garcia",
+        "subject": "Life Insurance Application Rating Decision for Michael Thompson - APP-2023-89123",
+        "body": "Dear Ms. Garcia,\n\nRegarding Michael Thompson's Whole Life Insurance application (Reference Number: APP-2023-89123), I'm writing to explain our rating decision under guideline UW-LI-5.3.27.\n\nRisk Assessment Factors:\n- Type 2 Diabetes diagnosed 6 years ago\n- HbA1c: 7.4% (above target range)\n- BMI: 31.2 (Obesity Class I)\n- Blood Pressure: 142/92 (Hypertension Stage 1)\n- Cholesterol: Borderline high\n\nBased on these factors, we are classifying this application as 'Rated A', which includes a +25% premium adjustment from the standard rate. The multiple cardiovascular risk factors, including elevated HbA1c and BMI, necessitate this classification.\n\nPlease communicate this decision to the client.\n\nSincerely,\nUnderwriting Department",
+        "policy_classification": "Rated A",
+        "premium_adjustment": "+25% from Standard",
+        "guideline_reference": "UW-LI-5.3.27"
+    }
+}

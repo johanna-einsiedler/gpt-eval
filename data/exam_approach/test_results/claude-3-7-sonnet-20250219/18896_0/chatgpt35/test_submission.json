@@ -1,0 +1,67 @@
+{
+    "candidate_id": "GPT-3.5.2",
+    "identified_risks": [
+        {
+            "risk_id": 1,
+            "risk_description": "Potential risk of a strike due to significant gap between union demands and company's initial bargaining position, leading to production disruptions and financial losses.",
+            "probability": 4,
+            "impact": 5,
+            "risk_score": 20,
+            "risk_category": "Operational",
+            "justification": "The historical cooperative negotiations may not hold given the aggressive union demands and the new staff representative's tactics."
+        },
+        {
+            "risk_id": 2,
+            "risk_description": "Risk of losing skilled workers if layoff provisions are changed to be based on skills and performance, causing operational disruptions and decreased productivity.",
+            "probability": 3,
+            "impact": 4,
+            "risk_score": 12,
+            "risk_category": "Operational",
+            "justification": "Changing layoff criteria may lead to dissatisfaction among long-serving employees and impact workforce stability."
+        },
+        {
+            "risk_id": 3,
+            "risk_description": "Financial risk of increased labor costs if the company agrees to the union's demands for higher wages and increased benefits, impacting profit margins.",
+            "probability": 4,
+            "impact": 4,
+            "risk_score": 16,
+            "risk_category": "Financial",
+            "justification": "The company's current profit margin is already below industry average, making cost increases a significant concern."
+        },
+        {
+            "risk_id": 4,
+            "risk_description": "Reputational risk due to potential negative media coverage following workplace safety stories, impacting public perception and community relations.",
+            "probability": 3,
+            "impact": 3,
+            "risk_score": 9,
+            "risk_category": "Reputational",
+            "justification": "Negative media attention can harm the company's image as a major local employer and affect employee morale."
+        },
+        {
+            "risk_id": 5,
+            "risk_description": "Legal risk of facing litigation if the union files more unfair labor practice charges, leading to legal expenses and potential reputational damage.",
+            "probability": 2,
+            "impact": 4,
+            "risk_score": 8,
+            "risk_category": "Legal",
+            "justification": "Previous charges indicate a pattern that could escalate, resulting in legal battles and negative outcomes for the company."
+        }
+    ],
+    "priority_risks": [
+        {
+            "risk_id": 1,
+            "mitigation_strategy": "Engage in early and transparent communication with the union to bridge the gap between demands and company positions, emphasizing mutual benefits and long-term partnership.",
+            "expected_outcome": "Reduced likelihood of a strike, fostering a more collaborative negotiation process and maintaining production continuity."
+        },
+        {
+            "risk_id": 3,
+            "mitigation_strategy": "Conduct a thorough cost-benefit analysis to assess the financial impact of meeting union demands versus potential losses from prolonged negotiations or strikes, and explore creative solutions like profit-sharing or productivity incentives.",
+            "expected_outcome": "Informed decision-making on labor cost adjustments that balance employee satisfaction with financial sustainability."
+        },
+        {
+            "risk_id": 4,
+            "mitigation_strategy": "Proactively address workplace safety concerns by enhancing safety protocols, conducting employee training, and engaging with the media to showcase commitment to a safe work environment.",
+            "expected_outcome": "Improved safety practices, positive media coverage, and strengthened community relations, mitigating reputational risks."
+        }
+    ]
+}

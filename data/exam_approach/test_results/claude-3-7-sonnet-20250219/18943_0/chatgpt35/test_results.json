@@ -1,0 +1,108 @@
+{
+  "candidate_id": "YOUR_ID_HERE",
+  "scenario_1": {
+    "highest_risk_debt_id": {
+      "candidate_answer": "A1",
+      "correct_answer": "A1",
+      "score": 1,
+      "is_critical": true
+    },
+    "minimum_payment_to_prevent_foreclosure": {
+      "candidate_answer": 3600,
+      "correct_answer": 3600,
+      "score": 1,
+      "is_critical": false
+    },
+    "expense_category_to_reduce": {
+      "candidate_answer": "Dining Out",
+      "correct_answer": "Dining Out",
+      "score": 1,
+      "is_critical": false
+    },
+    "interest_savings_highest_interest_first": {
+      "candidate_answer": 1974,
+      "correct_answer": 1974,
+      "score": 1,
+      "is_critical": false
+    }
+  },
+  "scenario_2": {
+    "debt_priority_ranking": {
+      "candidate_answer": [
+        "B1",
+        "B7",
+        "B2",
+        "B5",
+        "B3",
+        "B4",
+        "B6"
+      ],
+      "correct_answer": [
+        "B1",
+        "B7",
+        "B2",
+        "B5",
+        "B3",
+        "B4",
+        "B6"
+      ],
+      "score": 1,
+      "is_critical": false
+    },
+    "total_interest_avalanche_method_24_months": {
+      "candidate_answer": 8120,
+      "correct_answer": 8120,
+      "score": 1,
+      "is_critical": false
+    },
+    "total_interest_snowball_method_24_months": {
+      "candidate_answer": 8680,
+      "correct_answer": 8680,
+      "score": 1,
+      "is_critical": false
+    },
+    "monthly_payment_for_36_month_payoff": {
+      "candidate_answer": 1650,
+      "correct_answer": 1650,
+      "score": 1,
+      "is_critical": false
+    }
+  },
+  "scenario_3": {
+    "debts_with_legal_consequences": {
+      "candidate_answer": [
+        "C3",
+        "C4",
+        "C1"
+      ],
+      "correct_answer": [
+        "C3",
+        "C4",
+        "C1"
+      ],
+      "score": 1,
+      "is_critical": true
+    },
+    "debt_to_income_ratio": {
+      "candidate_answer": 20.2,
+      "correct_answer": 20.2,
+      "score": 1,
+      "is_critical": false
+    },
+    "monthly_increase_needed_for_5year_payoff": {
+      "candidate_answer": 1050,
+      "correct_answer": 1050,
+      "score": 1,
+      "is_critical": false
+    },
+    "monthly_savings_with_consolidation": {
+      "candidate_answer": 170,
+      "correct_answer": 170,
+      "score": 1,
+      "is_critical": false
+    }
+  },
+  "overall_score": 100.0,
+  "automatic_failure": false,
+  "passed": true
+}

@@ -1,0 +1,109 @@
+{
+    "candidate_id": "GPT-4.2",
+    "scenarios": [
+        {
+            "scenario_number": 1,
+            "missing_information": [
+                "Details of side jobs income",
+                "Frequency and nature of cash deposits",
+                "Total amount earned from side jobs"
+            ],
+            "interview_questions": [
+                "Can you provide more details about the side jobs you did for cash?",
+                "How often did you receive these cash payments?",
+                "Do you have an estimate of the total amount you earned from these side jobs?",
+                "Can you identify the individuals who made these additional deposits into your account?",
+                "Were these side jobs related to your construction work?"
+            ],
+            "tax_form": "Form 1040 Schedule C",
+            "documentation_needed": [
+                "Receipts or invoices from side jobs",
+                "List of individuals making cash deposits"
+            ]
+        },
+        {
+            "scenario_number": 2,
+            "missing_information": [
+                "Insurance coverage details",
+                "Premium statements for Medicare Part B",
+                "Eligibility for medical expense deduction"
+            ],
+            "interview_questions": [
+                "Can you provide details about your health insurance coverage during the tax year?",
+                "Do you have the premium statements for Medicare Part B?",
+                "Have you checked if your medical expenses qualify for a deduction?",
+                "Can you obtain a summary of the medical expenses covered by your insurance?",
+                "Did you receive any reimbursements for these medical expenses?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Health insurance policy details",
+                "Medicare Part B premium statements",
+                "Explanation of benefits from insurance provider"
+            ]
+        },
+        {
+            "scenario_number": 3,
+            "missing_information": [
+                "Proof of support for child",
+                "Duration of child's stay at home",
+                "Education expenses paid for child"
+            ],
+            "interview_questions": [
+                "Can you provide documentation showing your financial support for Tyler?",
+                "How long did Tyler stay with you during the tax year?",
+                "Did you pay for any education expenses for Tyler?",
+                "Can you provide receipts or records of expenses related to Tyler's living arrangements?",
+                "Have you discussed claiming Tyler as a dependent with his other parent?"
+            ],
+            "tax_form": "Form 1040 Schedule 8812",
+            "documentation_needed": [
+                "Receipts for education expenses",
+                "Lease agreement or utility bills showing child's residence",
+                "Communication with child's other parent"
+            ]
+        },
+        {
+            "scenario_number": 4,
+            "missing_information": [
+                "Employer's work-from-home policy",
+                "Percentage of home used for work",
+                "Documentation for occasional work from coffee shops"
+            ],
+            "interview_questions": [
+                "Do you have a copy of your employer's work-from-home policy?",
+                "What percentage of your home space is dedicated to work?",
+                "Can you provide documentation of your work setup at home?",
+                "How often do you work from coffee shops and for what reasons?",
+                "Have you incurred any expenses related to working from coffee shops?"
+            ],
+            "tax_form": "Form 8829",
+            "documentation_needed": [
+                "Employer's work-from-home policy document",
+                "Home office square footage calculation",
+                "Receipts from coffee shops"
+            ]
+        },
+        {
+            "scenario_number": 5,
+            "missing_information": [
+                "Documentation for donation values",
+                "Verification of donation recipients' tax-exempt status",
+                "Details of furniture donation"
+            ],
+            "interview_questions": [
+                "Can you provide documentation supporting the values of your donations?",
+                "Do you have proof of the tax-exempt status of the donation recipients?",
+                "Can you describe the furniture donated to Goodwill in more detail?",
+                "Did you obtain a receipt from Goodwill for the furniture donation?",
+                "Have you received acknowledgment letters from all the charities you donated to?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Itemized list of donated items with values",
+                "Tax ID verification for donation recipients",
+                "Receipt from Goodwill for furniture donation"
+            ]
+        }
+    ]
+}

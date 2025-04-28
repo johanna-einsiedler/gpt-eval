@@ -1,0 +1,39 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "on_time_delivery": {
+        "overall_rate": 0.0,
+        "monthly_rates": {
+            "Jan": 0.0,
+            "Feb": 0.0,
+            "Mar": 0.0,
+            "Apr": 0.0
+        },
+        "highest_month": "Month",
+        "lowest_month": "Month"
+    },
+    "order_fulfillment": {
+        "overall_rate": 0.0,
+        "category_rates": {
+            "Electronics": 0.0,
+            "Furniture": 0.0,
+            "Apparel": 0.0
+        },
+        "lowest_category": "Category"
+    },
+    "inventory_turns": {
+        "average_turns": 0.0,
+        "sku_turns": {
+            "E001": 0.0,
+            "E002": 0.0,
+            "F001": 0.0,
+            "F002": 0.0,
+            "A001": 0.0,
+            "A002": 0.0
+        },
+        "top_performers": [
+            "SKU1",
+            "SKU2",
+            "SKU3"
+        ]
+    }
+}

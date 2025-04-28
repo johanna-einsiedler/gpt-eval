@@ -1,0 +1,157 @@
+{
+    "section1": {
+        "form1040_client_a_errors": [
+            {
+                "error_type": "value_discrepancy",
+                "field": "Wages, salaries, tips (Line 1)",
+                "reported_value": "72500",
+                "correct_value": "75500",
+                "explanation": "W-2 shows $75,500 but Form 1040 reports $72,500 (underreported by $3,000)"
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Federal income tax withheld (Line 25a)",
+                "reported_value": "8100",
+                "correct_value": "8700",
+                "explanation": "W-2 shows $8,700 but Form 1040 reports $8,100 (underreported by $600)"
+            },
+            {
+                "error_type": "math_error",
+                "field": "Total income (Line 9)",
+                "reported_value": "73275",
+                "correct_value": "76275",
+                "explanation": "Total income should be $76,275 ($75,500 + $350 + $425) but is reported as $73,275"
+            },
+            {
+                "error_type": "math_error",
+                "field": "Adjusted Gross Income (Line 11)",
+                "reported_value": "69775",
+                "correct_value": "72775",
+                "explanation": "AGI should be $72,775 ($76,275 - $3,500) but is reported as $69,775"
+            },
+            {
+                "error_type": "math_error",
+                "field": "Taxable income (Line 15)",
+                "reported_value": "56825",
+                "correct_value": "59825",
+                "explanation": "Taxable income should be $59,825 ($72,775 - $12,950) but is reported as $56,825"
+            },
+            {
+                "error_type": "math_error",
+                "field": "Tax (Line 16)",
+                "reported_value": "9374",
+                "correct_value": "10172",
+                "explanation": "Tax on $59,825 for Single filer should be approximately $10,172, not $9,374"
+            },
+            {
+                "error_type": "math_error",
+                "field": "Amount you owe (Line 37)",
+                "reported_value": "1274",
+                "correct_value": "1472",
+                "explanation": "Amount owed should be $1,472 ($10,172 - $8,700) not $1,274"
+            }
+        ],
+        "schedule_c_client_b_errors": [
+            {
+                "error_type": "math_error",
+                "field": "Total expenses (Line 28)",
+                "reported_value": "35150",
+                "correct_value": "36350",
+                "explanation": "Total expenses add up to $36,350 ($2,400 + $3,750 + $1,200 + $2,800 + $1,950 + $12,000 + $3,450 + $4,200 + $2,800 + $0 + $1,800) but are reported as $35,150"
+            },
+            {
+                "error_type": "math_error",
+                "field": "Net profit (Line 31)",
+                "reported_value": "49100",
+                "correct_value": "47900",
+                "explanation": "Net profit should be $47,900 ($84,250 - $36,350) but is reported as $49,100"
+            }
+        ],
+        "form_8949_client_c_missing_fields": [
+            {
+                "field": "Adjustment code (column f)",
+                "explanation": "Required to indicate any adjustments to gain or loss"
+            },
+            {
+                "field": "Adjusted basis (column g)",
+                "explanation": "Required to show the cost basis after any adjustments"
+            },
+            {
+                "field": "Taxpayer name",
+                "explanation": "Required at the top of the form for identification purposes"
+            },
+            {
+                "field": "Checkbox for basis reported to IRS",
+                "explanation": "Required to indicate whether basis was reported to the IRS"
+            }
+        ]
+    },
+    "section2": {
+        "tax_calculation_client_d_errors": [
+            {
+                "field": "Income Tax",
+                "reported_value": 15719.0,
+                "correct_value": 16079.0,
+                "explanation": "The tax on $114,650 for Married Filing Jointly in 2022 should be approximately $16,079, not $15,719"
+            },
+            {
+                "field": "Total Tax",
+                "reported_value": 20662.0,
+                "correct_value": 21022.0,
+                "explanation": "Should be $21,022 ($16,079 + $4,943), not $20,662"
+            },
+            {
+                "field": "Tax After Credits",
+                "reported_value": 16662.0,
+                "correct_value": 17022.0,
+                "explanation": "Should be $17,022 ($21,022 - $4,000), not $16,662"
+            },
+            {
+                "field": "Refund",
+                "reported_value": 838.0,
+                "correct_value": 478.0,
+                "explanation": "Should be $478 ($17,500 - $17,022), not $838"
+            }
+        ],
+        "income_reconciliation_client_e": {
+            "discrepancy_found": false,
+            "discrepancy_amount": 0.0,
+            "explanation": "The total income on Form 1040 ($81,570) matches the total from all income sources in the spreadsheet. The Schedule C business income is correctly reported as $12,500 net profit ($15,500 gross income - $3,000 expenses)."
+        },
+        "estimated_tax_client_f": {
+            "reported_payments": 9500.0,
+            "correct_payments": 10000.0,
+            "discrepancy_amount": 500.0,
+            "explanation": "Form 1040 reports estimated tax payments of $9,500, but the spreadsheet shows total payments of $10,000 (underreported by $500)."
+        }
+    },
+    "section3": {
+        "client_g_discrepancies": [
+            {
+                "field": "Occupation",
+                "reported_value": "Marketing Director",
+                "correct_value": "Marketing Manager"
+            },
+            {
+                "field": "ZIP Code",
+                "reported_value": "60601",
+                "correct_value": "60611"
+            }
+        ],
+        "client_h_dependent_errors": [
+            {
+                "dependent_name": "Margaret Wilson",
+                "field": "SSN",
+                "reported_value": "123-45-6788",
+                "correct_value": "123-45-6789"
+            }
+        ],
+        "client_i_contact_errors": [
+            {
+                "field": "ZIP Code",
+                "reported_value": "94103",
+                "correct_value": "94105"
+            }
+        ]
+    }
+}

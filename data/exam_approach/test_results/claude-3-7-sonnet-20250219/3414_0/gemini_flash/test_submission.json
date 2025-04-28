@@ -1,0 +1,44 @@
+{
+    "candidate_name": "GPT-4-turbo",
+    "task1": {
+        "monthly_payment": 1265.28
+    },
+    "task2": {
+        "month_1": {
+            "payment_number": 1,
+            "payment_amount": 1265.28,
+            "principal_portion": 328.53,
+            "interest_portion": 936.75,
+            "remaining_balance": 249671.47
+        },
+        "month_6": {
+            "payment_number": 6,
+            "payment_amount": 1265.28,
+            "principal_portion": 339.02,
+            "interest_portion": 926.26,
+            "remaining_balance": 247954.83
+        },
+        "month_12": {
+            "payment_number": 12,
+            "payment_amount": 1265.28,
+            "principal_portion": 350.04,
+            "interest_portion": 915.24,
+            "remaining_balance": 245800.11
+        }
+    },
+    "task3": {
+        "new_loan_term_years": 23,
+        "new_loan_term_months": 1,
+        "total_interest_saved": 59147.41,
+        "balance_after_5_years": 222244.48
+    },
+    "task4": {
+        "monthly_payment": 965.17,
+        "balloon_payment_amount": 153149.84
+    },
+    "task5": {
+        "new_monthly_payment": 1530.44,
+        "monthly_payment_savings": 286.54,
+        "breakeven_months": 16
+    }
+}

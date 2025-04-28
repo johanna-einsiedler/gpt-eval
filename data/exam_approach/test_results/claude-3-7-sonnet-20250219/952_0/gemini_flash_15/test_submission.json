@@ -1,0 +1,53 @@
+{
+    "candidate_id": "gpt-4",
+    "exercise1": {
+        "errors": [
+            {
+                "row": "Research & Development",
+                "column": "Q1 Actual",
+                "incorrect_value": 82500,
+                "correct_value": 75000
+            },
+            {
+                "row": "Product Design",
+                "column": "Annual Actual",
+                "incorrect_value": 180000,
+                "correct_value": 180000
+            },
+            {
+                "row": "Prototype Manufacturing",
+                "column": "Q2 Actual",
+                "incorrect_value": 93500,
+                "correct_value": 85000
+            },
+            {
+                "row": "Testing & Quality Assurance",
+                "column": "Q3 Actual",
+                "incorrect_value": 66000,
+                "correct_value": 60000
+            },
+            {
+                "row": "Contingency Fund",
+                "column": "Annual Actual",
+                "incorrect_value": 63000,
+                "correct_value": 67000
+            }
+        ],
+        "correct_total_cost": 1515000,
+        "rd_percentage": 23.08
+    },
+    "exercise2": {
+        "campaign_a_roi": 1.5,
+        "campaign_b_roi": 1.62,
+        "campaign_c_roi": 1.8,
+        "highest_roi_campaign": "C",
+        "blended_roi": 1.64,
+        "campaign_b_breakeven_units": 5716
+    },
+    "exercise3": {
+        "total_annual_revenue": 299880,
+        "total_annual_profit": 47880,
+        "breakeven_month": 6,
+        "annual_profit_margin_percentage": 15.97
+    }
+}

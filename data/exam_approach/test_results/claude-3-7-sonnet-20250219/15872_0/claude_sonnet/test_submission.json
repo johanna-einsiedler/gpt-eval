@@ -1,0 +1,26 @@
+{
+    "current_cost_per_mile": {
+        "vehicle_type_A": 3.07,
+        "vehicle_type_B": 3.08,
+        "vehicle_type_C": 3.59
+    },
+    "top_cost_components": [
+        "Driver Wages",
+        "Fuel Cost",
+        "Maintenance Cost"
+    ],
+    "cost_component_percentages": {
+        "Driver Wages": 0.45,
+        "Fuel Cost": 0.26,
+        "Maintenance Cost": 0.09
+    },
+    "six_month_forecast": {
+        "total_cost": 2338140.0,
+        "percentage_change": 0.05
+    },
+    "sensitivity_analysis": {
+        "fuel_impact_percentage": 0.03,
+        "wage_impact_percentage": 0.02,
+        "most_sensitive_factor": "Fuel Cost"
+    }
+}

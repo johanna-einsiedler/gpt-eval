@@ -1,0 +1,175 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "task1": {
+        "retention_recommendations": [
+            {
+                "teacher_id": "T401",
+                "reason": "Lowest performance metrics: evaluation score 2.4/5, student growth 32%, incomplete PD, 84% attendance, provisional certification."
+            },
+            {
+                "teacher_id": "T205",
+                "reason": "Poor performance metrics: evaluation score 2.5/5, student growth 35%, incomplete PD, 88% attendance, certification renewal pending."
+            },
+            {
+                "teacher_id": "T118",
+                "reason": "Underperforming metrics: evaluation score 2.8/5, student growth 38%, incomplete PD, 85% attendance, and documented attendance policy violations."
+            }
+        ],
+        "reassignment_recommendations": [
+            {
+                "teacher_id": "T287",
+                "current_program": "STEM Focus",
+                "recommended_program": "General Education",
+                "rationale": "Low evaluation score (3.0) and student growth (42%) indicate teacher is not meeting STEM program performance expectations."
+            },
+            {
+                "teacher_id": "T298",
+                "current_program": "Humanities Focus",
+                "recommended_program": "General Education",
+                "rationale": "Low evaluation score (2.7) and student growth (40%) suggest teacher would be better suited for general education rather than specialized humanities program."
+            }
+        ],
+        "priority_hiring_needs": [
+            {
+                "subject_area": "English",
+                "justification": "Potential non-renewal of Robert Chen (T118) and reassignment of Amanda Miller (T298) from Humanities creates critical need for qualified English teachers."
+            },
+            {
+                "subject_area": "Mathematics",
+                "justification": "Potential non-renewal of Nicole White (T401) and reassignment of Michael Brown (T287) from STEM Focus creates staffing gap in mathematics."
+            },
+            {
+                "subject_area": "Science",
+                "justification": "Potential non-renewal of Thomas Smith (T205) creates need for additional science teacher, especially with STEM Academy implementation."
+            }
+        ]
+    },
+    "task2": {
+        "staffing_plan": [
+            {
+                "position_code": "STEM-COORD",
+                "fte": 1.0,
+                "rationale": "Required leadership position to oversee program implementation and coordinate all STEM initiatives."
+            },
+            {
+                "position_code": "STEM-MATH",
+                "fte": 2.0,
+                "rationale": "Two full-time mathematics teachers needed to cover all grade levels and specialized STEM math curriculum."
+            },
+            {
+                "position_code": "STEM-SCI",
+                "fte": 2.0,
+                "rationale": "Two full-time science teachers required to cover biology, chemistry, physics, and environmental science courses."
+            },
+            {
+                "position_code": "STEM-TECH",
+                "fte": 1.0,
+                "rationale": "One technology teacher needed to teach computer science, programming, and digital applications courses."
+            },
+            {
+                "position_code": "STEM-ENG",
+                "fte": 1.0,
+                "rationale": "One engineering teacher required to develop and teach engineering design courses and oversee projects."
+            },
+            {
+                "position_code": "STEM-PARA",
+                "fte": 1.0,
+                "rationale": "One instructional paraprofessional needed to support lab activities and provide individualized student assistance."
+            },
+            {
+                "position_code": "STEM-COUNSEL",
+                "fte": 0.5,
+                "rationale": "Half-time counselor position to provide specialized guidance for STEM pathways and college/career planning."
+            }
+        ],
+        "budget_allocation": {
+            "personnel_total": 360000,
+            "equipment_supplies": 67500,
+            "professional_development": 22500,
+            "adjustments_needed": "Full implementation of staffing plan would cost $523,000 for personnel, exceeding the $360,000 personnel budget. Must phase in positions or reduce FTEs for initial implementation."
+        },
+        "implementation_timeline": [
+            {
+                "milestone": "Position postings published",
+                "date": "2023-02-15",
+                "action_items": "Finalize job descriptions and post all STEM Academy positions through district HR system."
+            },
+            {
+                "milestone": "Initial application review",
+                "date": "2023-03-10",
+                "action_items": "Screen applications for minimum qualifications and create shortlist of candidates for interviews."
+            },
+            {
+                "milestone": "First round interviews",
+                "date": "2023-03-25",
+                "action_items": "Conduct initial interviews with qualified candidates for all STEM positions."
+            },
+            {
+                "milestone": "Second round interviews",
+                "date": "2023-04-15",
+                "action_items": "Conduct follow-up interviews with top candidates, including teaching demonstrations."
+            },
+            {
+                "milestone": "Hiring decisions finalized",
+                "date": "2023-05-01",
+                "action_items": "Select final candidates for all positions and prepare offer packages."
+            },
+            {
+                "milestone": "Contracts issued",
+                "date": "2023-05-15",
+                "action_items": "Distribute and collect signed contracts from all new STEM Academy staff."
+            },
+            {
+                "milestone": "New staff orientation",
+                "date": "2023-08-01",
+                "action_items": "Conduct specialized orientation for STEM Academy staff on program goals and curriculum."
+            },
+            {
+                "milestone": "Program launch",
+                "date": "2023-08-15",
+                "action_items": "Begin STEM Academy classes with new staff and student cohort."
+            }
+        ]
+    },
+    "task3": {
+        "action_recommendation": "Performance improvement plan",
+        "policy_references": [
+            "4.4.3",
+            "4.4.6"
+        ],
+        "documentation_requirements": [
+            {
+                "requirement_id": "4.5.1",
+                "description": "Attendance record showing dates and reasons for absences"
+            },
+            {
+                "requirement_id": "4.5.2",
+                "description": "Record of prior conversations or warnings about attendance"
+            },
+            {
+                "requirement_id": "4.5.3",
+                "description": "Evidence that district policies were followed in addressing the issue"
+            },
+            {
+                "requirement_id": "4.5.4",
+                "description": "Documentation of impact on educational services"
+            },
+            {
+                "requirement_id": "4.5.5",
+                "description": "Employee's response or explanation"
+            },
+            {
+                "requirement_id": "4.5.6",
+                "description": "Specific corrective action being recommended"
+            },
+            {
+                "requirement_id": "4.5.7",
+                "description": "Timeline for improvement or follow-up"
+            },
+            {
+                "requirement_id": "4.5.8",
+                "description": "Signatures of all parties involved in the conference"
+            }
+        ]
+    }
+}

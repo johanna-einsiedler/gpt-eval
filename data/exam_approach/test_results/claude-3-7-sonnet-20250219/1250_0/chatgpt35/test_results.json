@@ -1,0 +1,206 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "overall_score": 18.5,
+  "passed": false,
+  "total_points": 18.5,
+  "max_possible_points": 100,
+  "task_scores": {
+    "task1": {
+      "score": 3.5,
+      "max_possible": 25,
+      "percentage": 14.000000000000002,
+      "details": {
+        "current_ratio_2022": {
+          "submitted": 1.4,
+          "correct": 2.11,
+          "points": 0,
+          "max_points": 2.5,
+          "comment": "Incorrect"
+        },
+        "current_ratio_2023": {
+          "submitted": 1.35,
+          "correct": 2.0,
+          "points": 0,
+          "max_points": 2.5,
+          "comment": "Incorrect"
+        },
+        "quick_ratio_2022": {
+          "submitted": 0.95,
+          "correct": 1.32,
+          "points": 0,
+          "max_points": 2.5,
+          "comment": "Incorrect"
+        },
+        "quick_ratio_2023": {
+          "submitted": 0.9,
+          "correct": 1.24,
+          "points": 0,
+          "max_points": 2.5,
+          "comment": "Incorrect"
+        },
+        "debt_to_equity_2022": {
+          "submitted": 0.64,
+          "correct": 0.71,
+          "points": 0,
+          "max_points": 2.5,
+          "comment": "Incorrect"
+        },
+        "debt_to_equity_2023": {
+          "submitted": 0.59,
+          "correct": 0.78,
+          "points": 0,
+          "max_points": 2.5,
+          "comment": "Incorrect"
+        },
+        "interest_coverage_2022": {
+          "submitted": 5.75,
+          "correct": 5.46,
+          "points": 0,
+          "max_points": 2.5,
+          "comment": "Incorrect"
+        },
+        "interest_coverage_2023": {
+          "submitted": 5.5,
+          "correct": 4.04,
+          "points": 0,
+          "max_points": 2.5,
+          "comment": "Incorrect"
+        },
+        "roa_2022": {
+          "submitted": 0.09,
+          "correct": 0.08,
+          "points": 2.5,
+          "max_points": 2.5,
+          "comment": "Correct"
+        },
+        "roa_2023": {
+          "submitted": 0.08,
+          "correct": 0.06,
+          "points": 1.0,
+          "max_points": 2.5,
+          "comment": "Close to correct value (within \u00b10.05)"
+        }
+      }
+    },
+    "task2": {
+      "score": 0,
+      "max_possible": 25,
+      "percentage": 0.0,
+      "details": {
+        "operating_cash_flow_2023": {
+          "submitted": 1200000,
+          "correct": 803000,
+          "points": 0,
+          "max_points": 8,
+          "comment": "Incorrect"
+        },
+        "free_cash_flow_2023": {
+          "submitted": 800000,
+          "correct": 53000,
+          "points": 0,
+          "max_points": 7,
+          "comment": "Incorrect"
+        },
+        "cash_flow_to_debt_ratio_2023": {
+          "submitted": 0.32,
+          "correct": 0.23,
+          "points": 0,
+          "max_points": 5,
+          "comment": "Incorrect"
+        },
+        "sufficient_cash_flow": {
+          "submitted": "Yes",
+          "correct": "No",
+          "points": 0,
+          "max_points": 5,
+          "comment": "Incorrect - Critical element"
+        }
+      }
+    },
+    "task3": {
+      "score": 15,
+      "max_possible": 25,
+      "percentage": 60.0,
+      "details": {
+        "declining_profit_margins": {
+          "submitted": "Yes",
+          "correct": "Yes",
+          "points": 5,
+          "max_points": 5,
+          "comment": "Correct"
+        },
+        "increasing_accounts_receivable_days": {
+          "submitted": "No",
+          "correct": "Yes",
+          "points": 0,
+          "max_points": 5,
+          "comment": "Incorrect"
+        },
+        "declining_current_ratio": {
+          "submitted": "Yes",
+          "correct": "Yes",
+          "points": 5,
+          "max_points": 5,
+          "comment": "Correct"
+        },
+        "increasing_debt_to_ebitda": {
+          "submitted": "No",
+          "correct": "Yes",
+          "points": 0,
+          "max_points": 5,
+          "comment": "Incorrect"
+        },
+        "negative_free_cash_flow": {
+          "submitted": "No",
+          "correct": "No",
+          "points": 5,
+          "max_points": 5,
+          "comment": "Correct"
+        }
+      }
+    },
+    "task4": {
+      "score": 0,
+      "max_possible": 25,
+      "percentage": 0.0,
+      "details": {
+        "max_loan_amount": {
+          "submitted": 3030000,
+          "correct": 4380000,
+          "points": 0,
+          "max_points": 5,
+          "comment": "Incorrect"
+        },
+        "debt_service_coverage_ratio": {
+          "submitted": 1.25,
+          "correct": 0.91,
+          "points": 0,
+          "max_points": 8,
+          "comment": "Incorrect"
+        },
+        "meets_minimum_dscr": {
+          "submitted": "Yes",
+          "correct": "No",
+          "points": 0,
+          "max_points": 5,
+          "comment": "Incorrect - Critical element"
+        },
+        "loan_recommendation": {
+          "submitted": "Approve",
+          "correct": "Deny",
+          "points": 0,
+          "max_points": 7,
+          "comment": "Incorrect - Critical element"
+        }
+      }
+    }
+  },
+  "critical_elements": {
+    "passed": false,
+    "reason": "Failed to correctly identify that cash flow is insufficient to service the loan"
+  },
+  "task_minimums": {
+    "passed": false,
+    "reason": "Failed to achieve minimum required score for Task1"
+  }
+}

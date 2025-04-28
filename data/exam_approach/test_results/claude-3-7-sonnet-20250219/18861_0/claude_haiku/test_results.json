@@ -1,0 +1,105 @@
+{
+  "candidate_id": "Claude-3-Opus",
+  "section1": {
+    "question1": {
+      "score": 3.0,
+      "max": 6,
+      "feedback": "Partially correct. Missing 'calendar days'"
+    },
+    "question2": {
+      "score": 0,
+      "max": 6,
+      "feedback": "Incorrect. Expected: Bereavement Leave Request Form and documentation of death (obituary, funeral program, or death certificate) within 7 calendar days of returning to work"
+    },
+    "question3": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question4": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question5": {
+      "score": 3.0,
+      "max": 6,
+      "feedback": "Partially correct. Contains key information but not exact wording"
+    }
+  },
+  "section2": {
+    "question1": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question2": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question3": {
+      "score": 3.0,
+      "max": 6,
+      "feedback": "Partially correct. Missing 'business days'"
+    },
+    "question4": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question5": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    }
+  },
+  "section3": {
+    "question1": {
+      "score": 8,
+      "max": 8,
+      "feedback": "Correct"
+    },
+    "question2": {
+      "score": 8,
+      "max": 8,
+      "feedback": "Correct"
+    },
+    "question3": {
+      "score": 8,
+      "max": 8,
+      "feedback": "Correct"
+    },
+    "question4": {
+      "score": 0,
+      "max": 8,
+      "feedback": "Incorrect. Expected: Family and Medical Leave"
+    },
+    "question5": {
+      "score": 0,
+      "max": 8,
+      "feedback": "Incorrect. Expected: 45 minutes"
+    }
+  },
+  "section_scores": {
+    "section1": {
+      "points": 18.0,
+      "max_points": 30,
+      "percentage": 60.0
+    },
+    "section2": {
+      "points": 27.0,
+      "max_points": 30,
+      "percentage": 90.0
+    },
+    "section3": {
+      "points": 24,
+      "max_points": 40,
+      "percentage": 60.0
+    }
+  },
+  "total_points": 69.0,
+  "max_points": 100,
+  "overall_score": 69.0,
+  "pass_fail": "FAIL"
+}

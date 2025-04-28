@@ -1,0 +1,64 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "overall_score": 92.0,
+  "total_points": 92,
+  "max_points": 100,
+  "letters": {
+    "donor_4_letter": {
+      "points": 31,
+      "max_points": 33,
+      "feedback": [],
+      "required_elements": {
+        "points": 13,
+        "max_points": 15
+      },
+      "personalization": {
+        "points": 10,
+        "max_points": 10
+      },
+      "writing_quality": {
+        "points": 8,
+        "max_points": 8
+      }
+    },
+    "donor_7_letter": {
+      "points": 31,
+      "max_points": 33,
+      "feedback": [],
+      "required_elements": {
+        "points": 13,
+        "max_points": 15
+      },
+      "personalization": {
+        "points": 10,
+        "max_points": 10
+      },
+      "writing_quality": {
+        "points": 8,
+        "max_points": 8
+      }
+    },
+    "donor_12_letter": {
+      "points": 29,
+      "max_points": 33,
+      "feedback": [],
+      "required_elements": {
+        "points": 11,
+        "max_points": 15
+      },
+      "personalization": {
+        "points": 10,
+        "max_points": 10
+      },
+      "writing_quality": {
+        "points": 8,
+        "max_points": 8
+      }
+    }
+  },
+  "json_format": {
+    "points": 1,
+    "max_points": 1
+  },
+  "status": "Excellent"
+}

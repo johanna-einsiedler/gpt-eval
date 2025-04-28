@@ -1,0 +1,146 @@
+{
+  "candidate_id": "Unknown",
+  "evaluation_sections": {
+    "required_qualifications": {
+      "score": 15.0,
+      "max_score": 15,
+      "details": {
+        "identified_count": 5,
+        "expected_count": 7,
+        "matches": [
+          [
+            "minimum 2 years of experience in a marketing role",
+            "minimum 2 years of experience in a marketing role"
+          ],
+          [
+            "bachelor's degree in marketing, communications, business, or related field",
+            "bachelor's degree in marketing, communications, business, or related field"
+          ],
+          [
+            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
+            "experience with social media platforms for business"
+          ],
+          [
+            "proficiency in microsoft office suite (word, excel, powerpoint)",
+            "proficiency in microsoft office suite (word, excel, powerpoint)"
+          ],
+          [
+            "strong written and verbal communication skills",
+            "strong written and verbal communication skills"
+          ]
+        ]
+      }
+    },
+    "preferred_qualifications": {
+      "score": 15.0,
+      "max_score": 15,
+      "details": {
+        "identified_count": 3,
+        "expected_count": 6,
+        "matches": [
+          [
+            "knowledge of graphic design software (adobe creative suite)",
+            "knowledge of graphic design software (adobe creative suite)"
+          ],
+          [
+            "experience with content management systems (wordpress)",
+            "experience with content management systems (wordpress)"
+          ],
+          [
+            "experience with marketing automation tools (hubspot, marketo, or similar)",
+            "experience with marketing automation tools (hubspot, marketo, or similar)"
+          ]
+        ]
+      }
+    },
+    "candidate_evaluations": {
+      "score": 33.400000000000006,
+      "max_score": 40,
+      "details": {
+        "qualification_match_accuracy": 0.8333333333333334,
+        "score_calculation_accuracy": 0.8416666666666667,
+        "candidate_evaluations": {
+          "C001": {
+            "required_qualification_accuracy": 1.0,
+            "preferred_qualification_accuracy": 0.6666666666666666,
+            "score_deviation": 10,
+            "meets_minimum_requirements_correct": true
+          },
+          "C002": {
+            "required_qualification_accuracy": 0.8,
+            "preferred_qualification_accuracy": 1.0,
+            "score_deviation": 20,
+            "meets_minimum_requirements_correct": true
+          },
+          "C003": {
+            "required_qualification_accuracy": 1.0,
+            "preferred_qualification_accuracy": 0.6666666666666666,
+            "score_deviation": 25,
+            "meets_minimum_requirements_correct": true
+          },
+          "C004": {
+            "required_qualification_accuracy": 0.6,
+            "preferred_qualification_accuracy": 1.0,
+            "score_deviation": 15,
+            "meets_minimum_requirements_correct": true
+          },
+          "C005": {
+            "required_qualification_accuracy": 0.8,
+            "preferred_qualification_accuracy": 0.6666666666666666,
+            "score_deviation": 5,
+            "meets_minimum_requirements_correct": true
+          },
+          "C006": {
+            "required_qualification_accuracy": 1.0,
+            "preferred_qualification_accuracy": 0.6666666666666666,
+            "score_deviation": 20,
+            "meets_minimum_requirements_correct": true
+          }
+        }
+      }
+    },
+    "candidate_selection": {
+      "score": 26.0,
+      "max_score": 30,
+      "details": {
+        "top_candidates_accuracy": 1.0,
+        "ranking_accuracy": 0.2,
+        "strengths_relevance": 1.0,
+        "top_candidates_comparison": {
+          "submission": [
+            "C001",
+            "C003",
+            "C006"
+          ],
+          "answer_key": [
+            "C003",
+            "C006",
+            "C001"
+          ],
+          "common_candidates": [
+            "C003",
+            "C006",
+            "C001"
+          ]
+        },
+        "strengths_evaluation": {
+          "C003": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          },
+          "C006": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          },
+          "C001": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          }
+        }
+      }
+    }
+  },
+  "overall_score": 89.4,
+  "passing_threshold": 75,
+  "passed": true
+}

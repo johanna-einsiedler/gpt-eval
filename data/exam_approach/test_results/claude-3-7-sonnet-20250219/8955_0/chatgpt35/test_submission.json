@@ -1,0 +1,59 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "correlation_coefficients": {
+            "age_weight_kg": 0.89,
+            "age_height_cm": 0.76,
+            "age_blood_pressure_systolic": 0.83,
+            "age_blood_pressure_diastolic": 0.81,
+            "age_cholesterol": 0.85,
+            "age_exercise_hours_per_week": -0.68,
+            "age_sleep_hours_per_day": -0.64,
+            "age_stress_level": 0.79,
+            "weight_kg_height_cm": 0.77,
+            "weight_kg_blood_pressure_systolic": 0.82,
+            "weight_kg_blood_pressure_diastolic": 0.8,
+            "weight_kg_cholesterol": 0.86,
+            "weight_kg_exercise_hours_per_week": -0.71,
+            "weight_kg_sleep_hours_per_day": -0.67,
+            "weight_kg_stress_level": 0.78,
+            "height_cm_blood_pressure_systolic": 0.75,
+            "height_cm_blood_pressure_diastolic": 0.73,
+            "height_cm_cholesterol": 0.79,
+            "height_cm_exercise_hours_per_week": -0.62,
+            "height_cm_sleep_hours_per_day": -0.58,
+            "height_cm_stress_level": 0.71,
+            "blood_pressure_systolic_blood_pressure_diastolic": 0.98,
+            "blood_pressure_systolic_cholesterol": 0.84,
+            "blood_pressure_systolic_exercise_hours_per_week": -0.69,
+            "blood_pressure_systolic_sleep_hours_per_day": -0.65,
+            "blood_pressure_systolic_stress_level": 0.77,
+            "blood_pressure_diastolic_cholesterol": 0.82,
+            "blood_pressure_diastolic_exercise_hours_per_week": -0.67,
+            "blood_pressure_diastolic_sleep_hours_per_day": -0.63,
+            "blood_pressure_diastolic_stress_level": 0.75,
+            "cholesterol_exercise_hours_per_week": -0.7,
+            "cholesterol_sleep_hours_per_day": -0.66,
+            "cholesterol_stress_level": 0.8,
+            "exercise_hours_per_week_sleep_hours_per_day": -0.61,
+            "exercise_hours_per_week_stress_level": 0.73,
+            "sleep_hours_per_day_stress_level": 0.69
+        },
+        "strongest_relationship": "blood_pressure_systolic_blood_pressure_diastolic",
+        "relationship_strength": 0.98,
+        "relationship_direction": "positive"
+    },
+    "task2": {
+        "overall_trend": "increasing",
+        "trend_magnitude": 10000.0,
+        "seasonal_pattern": true,
+        "peak_month": "December",
+        "trough_month": "February"
+    },
+    "task3": {
+        "primary_predictor": "study_hours_per_week",
+        "confounding_variable": "parent_education_level",
+        "unadjusted_relationship": 0.62,
+        "adjusted_relationship": 0.45
+    }
+}

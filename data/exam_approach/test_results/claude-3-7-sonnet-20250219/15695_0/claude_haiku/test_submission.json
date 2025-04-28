@@ -1,0 +1,173 @@
+{
+    "candidate_id": "GPT-4-Turbo",
+    "scenario_analyses": [
+        {
+            "scenario_id": 1,
+            "key_metrics": [
+                {
+                    "metric_name": "Inventory Turnover Ratio",
+                    "calculation": "Total Annual Issues / Average Inventory Value",
+                    "current_value": 8.3,
+                    "target_value": 12.0,
+                    "gap": -3.7,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Days of Inventory",
+                    "calculation": "(Average Inventory / Annual Issues) × 365",
+                    "current_value": 44.0,
+                    "target_value": 30.0,
+                    "gap": 14.0,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Inventory Holding Cost Percentage",
+                    "calculation": "Total Inventory Holding Cost / Total Inventory Value",
+                    "current_value": 22.5,
+                    "target_value": 15.0,
+                    "gap": 7.5,
+                    "impact": "Medium"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Inventory Turnover Ratio",
+                    "formula": "Total Annual Issues / Average Inventory Value",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Stockout Rate",
+                    "formula": "(Number of Stockout Instances / Total Order Instances) × 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Fill Rate",
+                    "formula": "(Fulfilled Quantity / Total Order Quantity) × 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Inventory Holding Cost",
+                    "formula": "Average Inventory Value × Holding Cost Rate",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Days of Inventory",
+                    "formula": "(Average Inventory / Annual Issues) × 365",
+                    "frequency": "Monthly"
+                }
+            ]
+        },
+        {
+            "scenario_id": 2,
+            "key_metrics": [
+                {
+                    "metric_name": "Perfect Order Rate",
+                    "calculation": "(Number of Perfect Orders / Total Orders) × 100",
+                    "current_value": 40.0,
+                    "target_value": 95.0,
+                    "gap": -55.0,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "On-Time Delivery Rate",
+                    "calculation": "(On-Time Shipments / Total Shipments) × 100",
+                    "current_value": 60.0,
+                    "target_value": 98.0,
+                    "gap": -38.0,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Order Fill Rate",
+                    "calculation": "(Fulfilled Quantity / Total Order Quantity) × 100",
+                    "current_value": 96.7,
+                    "target_value": 99.0,
+                    "gap": -2.3,
+                    "impact": "Medium"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Perfect Order Rate",
+                    "formula": "(Number of Perfect Orders / Total Orders) × 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "On-Time Delivery Rate",
+                    "formula": "(On-Time Shipments / Total Shipments) × 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Order Fill Rate",
+                    "formula": "(Fulfilled Quantity / Total Order Quantity) × 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Order Cycle Time",
+                    "formula": "Average Days Between Order and Delivery",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Customer Satisfaction Score",
+                    "formula": "Average Customer Feedback Rating",
+                    "frequency": "Monthly"
+                }
+            ]
+        },
+        {
+            "scenario_id": 3,
+            "key_metrics": [
+                {
+                    "metric_name": "Supplier On-Time Delivery Rate",
+                    "calculation": "(On-Time Orders / Total Orders) × 100",
+                    "current_value": 82.6,
+                    "target_value": 95.0,
+                    "gap": -12.4,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Supplier Quality Compliance",
+                    "calculation": "(1 - Average Quality Defect Rate) × 100",
+                    "current_value": 97.8,
+                    "target_value": 99.0,
+                    "gap": -1.2,
+                    "impact": "Medium"
+                },
+                {
+                    "metric_name": "Supplier Cost Variance",
+                    "calculation": "Average Price Variance",
+                    "current_value": 0.0,
+                    "target_value": 2.0,
+                    "gap": -2.0,
+                    "impact": "Low"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Supplier On-Time Delivery Rate",
+                    "formula": "(On-Time Orders / Total Orders) × 100",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Quality Compliance",
+                    "formula": "(1 - Quality Defect Rate) × 100",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Lead Time",
+                    "formula": "Average Supplier Delivery Lead Time",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Responsiveness Score",
+                    "formula": "Average Supplier Responsiveness Rating",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Cost Variance",
+                    "formula": "Percentage Deviation from Baseline Pricing",
+                    "frequency": "Monthly"
+                }
+            ]
+        }
+    ]
+}

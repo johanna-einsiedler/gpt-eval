@@ -1,0 +1,20 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "total_expenses": 81250.0,
+    "total_revenue": 61000.0,
+    "net_profit_loss": -20250.0,
+    "largest_expense_category": "VEN",
+    "largest_expense_amount": 34000.0,
+    "outstanding_payments": 15000.0,
+    "duplicate_transactions": [
+        "T008",
+        "T018"
+    ],
+    "errors_identified": [
+        "Duplicate marketing materials charge on T008",
+        "Duplicate venue final payment on T018",
+        "Staff accommodations cost discrepancy, should be 3500.00"
+    ],
+    "budget_variance_percentage": 6.58,
+    "most_over_budget_category": "VEN"
+}

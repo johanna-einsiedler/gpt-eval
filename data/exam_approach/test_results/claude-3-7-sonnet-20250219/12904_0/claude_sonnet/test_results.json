@@ -1,0 +1,169 @@
+{
+  "candidate_id": "GPT-4o",
+  "section_results": {
+    "financial_position": {
+      "points": 3,
+      "max_points": 3,
+      "details": {
+        "net_worth": {
+          "submission": 703500,
+          "answer_key": 703500,
+          "correct": true,
+          "points": 1
+        },
+        "debt_to_income_ratio": {
+          "submission": 0.33,
+          "answer_key": 0.33,
+          "correct": true,
+          "points": 1
+        },
+        "emergency_fund_months": {
+          "submission": 1.9,
+          "answer_key": 1.9,
+          "correct": true,
+          "points": 1
+        }
+      }
+    },
+    "retirement_planning": {
+      "points": 0,
+      "max_points": 2,
+      "details": {
+        "projected_gap": {
+          "submission": -1110098,
+          "answer_key": 300000,
+          "correct": false,
+          "points": 0
+        },
+        "required_monthly_savings": {
+          "submission": 2000,
+          "answer_key": 2900,
+          "correct": false,
+          "points": 0
+        }
+      }
+    },
+    "goal_prioritization": {
+      "points": 5,
+      "max_points": 7,
+      "details": {
+        "ranked_goals": {
+          "submission": [
+            "Goal_B",
+            "Goal_A",
+            "Goal_D",
+            "Goal_C"
+          ],
+          "answer_key": [
+            "Goal_B",
+            "Goal_D",
+            "Goal_A",
+            "Goal_C"
+          ],
+          "correct_count": 2,
+          "automatic_failure": false,
+          "points": 2
+        },
+        "top_priority_strategies": {
+          "submission": [
+            "Strategy_1",
+            "Strategy_6",
+            "Strategy_4"
+          ],
+          "answer_key": [
+            "Strategy_1",
+            "Strategy_4",
+            "Strategy_6"
+          ],
+          "correct_count": 3,
+          "critical_element_satisfied": true,
+          "points": 3
+        }
+      }
+    },
+    "investment_assessment": {
+      "points": 5,
+      "max_points": 5,
+      "details": {
+        "current_allocation": {
+          "asset_classes": {
+            "stocks": {
+              "submission": 0.74,
+              "answer_key": 0.74,
+              "correct": true
+            },
+            "bonds": {
+              "submission": 0.19,
+              "answer_key": 0.19,
+              "correct": true
+            },
+            "cash": {
+              "submission": 0.07,
+              "answer_key": 0.07,
+              "correct": true
+            },
+            "other": {
+              "submission": 0.0,
+              "answer_key": 0.0,
+              "correct": true
+            }
+          },
+          "points": 3
+        },
+        "aligned_with_risk_profile": {
+          "submission": false,
+          "answer_key": false,
+          "correct": true,
+          "critical_element_satisfied": true,
+          "points": 1
+        },
+        "average_expense_ratio": {
+          "submission": 0.0011,
+          "answer_key": 0.0012,
+          "correct": true,
+          "points": 1
+        }
+      }
+    },
+    "recommendations": {
+      "points": 3,
+      "max_points": 3,
+      "details": {
+        "emergency_fund": {
+          "submission": "EF_Option_3",
+          "answer_key": "EF_Option_3",
+          "correct": true,
+          "points": 1
+        },
+        "debt_management": {
+          "submission": "Debt_Option_1",
+          "answer_key": "Debt_Option_1",
+          "correct": true,
+          "points": 1
+        },
+        "investment_allocation": {
+          "submission": "Invest_Option_2",
+          "answer_key": "Invest_Option_2",
+          "correct": true,
+          "automatic_failure": false,
+          "points": 1
+        }
+      }
+    }
+  },
+  "total_points": 16,
+  "max_points": 20,
+  "overall_score": 80.0,
+  "automatic_failure_conditions": [],
+  "critical_elements": {
+    "satisfied": [
+      "Correctly identified investment allocation alignment with risk profile",
+      "Correctly identified at least 2 of 3 recommended strategies for top priority goal"
+    ],
+    "failed": [
+      "Failed to correctly identify retirement savings gap"
+    ],
+    "all_satisfied": false
+  },
+  "passed": false
+}

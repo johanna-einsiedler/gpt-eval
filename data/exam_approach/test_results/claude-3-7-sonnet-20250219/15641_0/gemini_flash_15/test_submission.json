@@ -1,0 +1,55 @@
+{
+    "candidate_id": "GPT-4",
+    "exercise1": {
+        "case1_classification": "Level 2",
+        "case1_action": "Written warning, mandatory remedial training",
+        "case2_classification": "Level 3",
+        "case2_action": "Final written warning, suspension without pay (1-5 days)",
+        "case3_classification": "Level 3",
+        "case3_action": "Final written warning",
+        "precedent_case_ids": [
+            "CV-2021-012",
+            "CV-2022-019"
+        ]
+    },
+    "exercise2": {
+        "workflow_steps": [
+            "Step 1: Initial Report and Investigation: Compliance Manager receives report, initiates investigation, collects evidence (interviews, documents, etc.).",
+            "Step 2: Preliminary Assessment: Compliance Manager prepares a preliminary assessment of the violation, classifying its severity (Level 3) and identifying potential disciplinary actions.",
+            "Step 3: HR Policy Review and Joint Assessment: HR Manager - Employee Relations reviews the case against company employment policies and conducts a joint assessment with the Compliance Manager using the Compliance-HR Joint Assessment Form.",
+            "Step 4: Legal Review (if necessary): If the violation involves potential legal ramifications, the case is reviewed by Legal Counsel.",
+            "Step 5: Department Director Consultation: The Department Director is consulted on the proposed disciplinary action and its potential impact on the department.",
+            "Step 6: HR Director and Compliance Director Approval: The HR Director and Compliance Director review the joint assessment, legal review (if applicable), and Department Director's input and provide final approval for the disciplinary action.",
+            "Step 7: Disciplinary Action Implementation: HR Manager - Employee Relations implements the approved disciplinary action, ensuring proper documentation and notification to the employee.",
+            "Step 8: Documentation and Record Keeping: All relevant documentation (investigation report, joint assessment form, disciplinary action notice, etc.) is filed and maintained according to company policy.",
+            "Step 9: Follow-up and Monitoring: HR Manager - Employee Relations monitors the employee's performance and conduct following the disciplinary action, ensuring compliance with any imposed conditions (e.g., remedial training)."
+        ],
+        "required_documentation": [
+            "Initial Report",
+            "Investigation Report",
+            "Compliance-HR Joint Assessment Form",
+            "Legal Review (if applicable)",
+            "Department Director Consultation Notes",
+            "Disciplinary Action Notice",
+            "Employee Acknowledgement of Disciplinary Action"
+        ],
+        "approval_sequence": [
+            "Compliance Manager",
+            "HR Manager - Employee Relations",
+            "Compliance Director",
+            "HR Director",
+            "Department Director"
+        ]
+    },
+    "exercise3": {
+        "communication_template": "COMPLIANCE VIOLATION NOTIFICATION\nDate: October 26, 2023\nCase ID: CV-2023-1026\nViolation Level: 3\nConfidentiality Rating: Sensitive\n\nIncident Description:\nAn employee, John Smith, in the Finance department, shared non-public financial data with a colleague who had no business need for the information. This violates ACME Corporation's Code of Conduct regarding the protection of confidential information.\n\nApplicable Policy/Regulation:\nACME Corporation Code of Conduct, Section 1, Level 3 Violations\n\nRecommended Action:\nFinal written warning\n\nRequired Stakeholders:\nDepartment Director, HR Manager, Compliance Director, Legal Representative\n\nResponse Timeline:\nWithin 2 business days\n\nAttachments:\nEmail communication, supporting documentation\n\nROUTING INFORMATION\nPrimary Contact: Compliance Manager\nEscalation Contact: Compliance Director\nEscalation Threshold: Any Level 3 or 4 violation; any violation involving a Director or above; any violation with potential regulatory impact; any violation with potential financial impact exceeding $10,000\n",
+        "escalation_threshold": "Any Level 3 or 4 violation; any violation involving a Director or above; any violation with potential regulatory impact; any violation with potential financial impact exceeding $10,000",
+        "confidentiality_rating": "Sensitive",
+        "required_stakeholders": [
+            "Department Director",
+            "HR Manager",
+            "Compliance Director",
+            "Legal Representative"
+        ]
+    }
+}

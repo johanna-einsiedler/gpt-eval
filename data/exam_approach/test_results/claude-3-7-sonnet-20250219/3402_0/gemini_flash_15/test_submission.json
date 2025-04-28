@@ -1,0 +1,79 @@
+{
+    "candidate_id": "GPT-4",
+    "calculation_errors": [
+        {
+            "location": "Sheet 2, Personnel Detail, Total Cost column",
+            "current_value": "$1,443,000",
+            "correct_value": "$1,442,500",
+            "explanation": "The sum of individual Total Costs is $1,442,500, not $1,443,000."
+        },
+        {
+            "location": "Sheet 3, Equipment Detail, Total Cost",
+            "current_value": "$79,400",
+            "correct_value": "$79,400",
+            "explanation": "While the individual line items are correctly calculated, the total is not explicitly calculated using a formula in the spreadsheet.  This should be corrected to ensure accuracy and auditable calculations."
+        },
+        {
+            "location": "Sheet 1, Department Summary, Total row",
+            "current_value": "$2,502,000",
+            "correct_value": "$2,501,500",
+            "explanation": "The sum of the individual budget categories is $2,501,500, not $2,502,000. This error propagates to Sheet 4."
+        },
+        {
+            "location": "Sheet 4, Quarterly Allocation, Total row",
+            "current_value": "$2,502,000",
+            "correct_value": "$2,501,500",
+            "explanation": "The sum of the quarterly totals should match the Department Summary total, which is $2,501,500."
+        },
+        {
+            "location": "Sheet 4, Quarterly Allocation, Equipment, Q1",
+            "current_value": "$150,500",
+            "correct_value": "$53,750",
+            "explanation": "The Q1 allocation for Equipment is incorrect. It should be 25% of $215,000 which is $53,750."
+        }
+    ],
+    "missing_information": [
+        {
+            "requirement_id": "REQ-006",
+            "description": "Signature Page is missing.",
+            "impact": "This is crucial for accountability and formal approval of the budget."
+        },
+        {
+            "requirement_id": "REQ-007",
+            "description": "Supporting documentation is not referenced.",
+            "impact": "This makes it impossible to verify the accuracy and justification of certain budget items, particularly large purchases and professional services."
+        }
+    ],
+    "compliance_issues": [
+        {
+            "regulation_id": "REG-102",
+            "location": "Entire Spreadsheet",
+            "issue": "The spreadsheet includes values with decimal places, violating the requirement for rounding to the nearest dollar.",
+            "recommendation": "Round all monetary values to the nearest dollar."
+        },
+        {
+            "regulation_id": "REG-104",
+            "location": "Sheet 1, Department Summary, Equipment Category",
+            "issue": "The Equipment category shows a 14.7% increase, exceeding the 10% threshold requiring detailed justification.",
+            "recommendation": "Provide detailed justification for the 14.7% increase in the Equipment budget."
+        },
+        {
+            "regulation_id": "REG-203",
+            "location": "Sheet 4, Quarterly Allocation, Equipment Category",
+            "issue": "Equipment is not allocated equally across quarters, despite not having an approved exception.",
+            "recommendation": "Re-allocate Equipment budget equally across quarters unless a justified exception is provided."
+        },
+        {
+            "regulation_id": "REG-304",
+            "location": "Sheet 1, Department Summary, Miscellaneous Category",
+            "issue": "The Miscellaneous expense of $52,000 exceeds 3% of the total budget request ($2,501,500), which is approximately $75,045.",
+            "recommendation": "Reduce the Miscellaneous budget or provide justification for the higher amount."
+        },
+        {
+            "regulation_id": "REG-402",
+            "location": "Sheet 2, Personnel Detail",
+            "issue": "Account codes are not consistently applied to the most specific level.  For example, both 'New Position: Data Specialist' and 'New Position: Junior Analyst' use the general '1030' code instead of the more specific '1050' for the Data Specialist.",
+            "recommendation": "Review and correct account codes to ensure they align with the most specific available code."
+        }
+    ]
+}

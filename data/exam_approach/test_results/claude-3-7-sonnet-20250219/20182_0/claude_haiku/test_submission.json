@@ -1,0 +1,21 @@
+{
+    "candidateId": "GPT-4-turbo",
+    "scenario1": {
+        "emergencyFund": 11000,
+        "monthlyDiscretionaryIncome": 850,
+        "debtPriorityId": "D3",
+        "savingsVehicleId": "SV2"
+    },
+    "scenario2": {
+        "lifeInsuranceCoverage": 750000,
+        "disabilityMonthlyBenefit": 3500,
+        "healthPlanId": "HP3",
+        "bundlingSavings": 450
+    },
+    "scenario3": {
+        "monthlySavingsRequired": 1250,
+        "assetAllocationId": "AA4",
+        "accountTypeId": "AT2",
+        "projectedValue10Years": 325000
+    }
+}

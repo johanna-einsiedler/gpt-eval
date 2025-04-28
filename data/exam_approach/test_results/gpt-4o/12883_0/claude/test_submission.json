@@ -1,9 +1,0 @@
-{
-    "candidate_id": "GPT-4-turbo",
-    "task_1": {
-        "updated_csv": "updated_transactions.csv"
-    },
-    "task_2": {
-        "report_pdf": "completed_report.pdf"
-    }
-}

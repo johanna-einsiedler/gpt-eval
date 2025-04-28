@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "excess_inventory_value": 30096.25,
+        "stockout_risk_skus": [
+            "SKU106",
+            "SKU108"
+        ],
+        "optimal_reorder_point_sku123": 60,
+        "highest_carrying_cost_category": "Electronics"
+    },
+    "task2": {
+        "carrier_cost_per_mile": {
+            "CarrierA": 1.5,
+            "CarrierB": 1.7,
+            "CarrierC": 1.2
+        },
+        "most_efficient_carrier": "CarrierC",
+        "potential_annual_savings": 8400.0,
+        "optimal_shipment_size": 6000
+    },
+    "task3": {
+        "worst_performing_region": "West",
+        "on_time_delivery_percentage": 55.0,
+        "correlation_coefficient": -0.85,
+        "priority_improvement_metric": "Delivery Time"
+    }
+}

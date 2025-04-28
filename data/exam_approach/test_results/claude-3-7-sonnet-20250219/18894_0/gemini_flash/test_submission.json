@@ -1,0 +1,124 @@
+{
+    "candidate_id": "GPT-4o",
+    "schedule": [
+        {
+            "case_number": "GR-2023-048",
+            "date": "2023-11-09",
+            "start_time": "09:00",
+            "end_time": "11:00",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: S. Patel",
+                "HR: T. Williams",
+                "Security Officer: O. Diaz",
+                "Witness: L. Washington"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-044",
+            "date": "2023-11-13",
+            "start_time": "13:00",
+            "end_time": "15:00",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: B. Taylor",
+                "HR: D. Rodriguez",
+                "Witness: C. Lee",
+                "Witness: F. Ahmed"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-042",
+            "date": "2023-11-08",
+            "start_time": "09:00",
+            "end_time": "10:30",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: A. Johnson",
+                "HR: T. Williams",
+                "Safety Officer: P. Nguyen",
+                "Witness: M. Garcia"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-046",
+            "date": "2023-11-07",
+            "start_time": "09:00",
+            "end_time": "10:30",
+            "meeting_room": "Meeting Room C",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: A. Johnson",
+                "HR: D. Rodriguez"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-043",
+            "date": "2023-11-07",
+            "start_time": "13:00",
+            "end_time": "14:30",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: S. Patel",
+                "HR: T. Williams",
+                "Department Scheduler: L. Washington"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-045",
+            "date": "2023-11-15",
+            "start_time": "09:00",
+            "end_time": "10:30",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: E. Cooper",
+                "HR: T. Williams"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-049",
+            "date": "2023-11-20",
+            "start_time": "09:00",
+            "end_time": "10:00",
+            "meeting_room": "Meeting Room C",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: E. Cooper",
+                "HR: D. Rodriguez",
+                "Department Scheduler: L. Washington"
+            ],
+            "priority_level": "Low"
+        },
+        {
+            "case_number": "GR-2023-047",
+            "date": "2023-11-21",
+            "start_time": "09:00",
+            "end_time": "10:00",
+            "meeting_room": "Meeting Room C",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: M. Thompson",
+                "HR: D. Rodriguez",
+                "Benefits Coordinator: S. Kim"
+            ],
+            "priority_level": "Low"
+        }
+    ],
+    "conflict_resolutions": {
+        "overlapping_high_priority": "GR-2023-048 and GR-2023-044 both required J. Smith and had approaching deadlines. GR-2023-048 was scheduled for 2023-11-09 in Conference Room A. GR-2023-044 was scheduled for 2023-11-13 in Conference Room A. This allowed J. Smith to attend both hearings and met the contractual deadlines.",
+        "conference_room_limitation": "Conference Room A was in high demand. Cases with fewer participants (6 or less) were scheduled in Conference Room B or Meeting Room C to free up Conference Room A for cases requiring more space or privacy features. This ensured all cases had appropriate meeting spaces.",
+        "key_witness_accommodation": "M. Garcia was only available on certain days. GR-2023-042 was scheduled for 2023-11-08 at 09:00 in Conference Room B to accommodate M. Garcia's availability. This ensured all required participants could attend the hearing."
+    },
+    "special_accommodations": []
+}

@@ -1,0 +1,74 @@
+{
+  "candidate_id": "GPT-4o",
+  "overall_score": 53.45,
+  "passed": false,
+  "task1": {
+    "passed": false,
+    "score": 0.4647435897435897,
+    "details": {
+      "critical_path": {
+        "passed": false,
+        "score": 0.625,
+        "message": "Critical path has insufficient overlap (5/8)"
+      },
+      "project_duration": {
+        "passed": false,
+        "score": 0.0,
+        "message": "Project duration off by more than 10 days (20)"
+      },
+      "slack_values": {
+        "passed": true,
+        "score": 0.7692307692307693,
+        "message": "10/13 slack values correct"
+      }
+    }
+  },
+  "task2": {
+    "passed": false,
+    "score": 0.34375,
+    "details": {
+      "optimal_crash_plan": {
+        "passed": true,
+        "score": 1.0,
+        "message": "5/5 crash activities correct"
+      },
+      "crashed_duration": {
+        "passed": false,
+        "score": 0.0,
+        "message": "Project duration off by more than 10 days (22)"
+      },
+      "total_crash_cost": {
+        "passed": false,
+        "score": 0,
+        "message": "Crash cost off by $98000"
+      },
+      "new_critical_path": {
+        "passed": false,
+        "score": 0.375,
+        "message": "Critical path has insufficient overlap (3/8)"
+      }
+    }
+  },
+  "task3": {
+    "passed": false,
+    "score": 0.7948717948717948,
+    "details": {
+      "resource_leveled_schedule": {
+        "passed": false,
+        "score": 0.38461538461538464,
+        "message": "5/13 reasonable start times"
+      },
+      "project_duration_after_leveling": {
+        "passed": true,
+        "score": 1.0,
+        "message": "Project duration within tolerance (\u00b10 days)"
+      },
+      "max_resource_usage": {
+        "passed": true,
+        "score": 1.0,
+        "message": "Optimal resource usage (10 \u2264 12)"
+      }
+    }
+  },
+  "tasks_passed": "0/3"
+}

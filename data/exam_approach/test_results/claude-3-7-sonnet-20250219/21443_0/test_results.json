@@ -1,0 +1,62 @@
+{
+  "section_scores": {
+    "section1": {
+      "points_earned": 14,
+      "points_possible": 12
+    },
+    "section2": {
+      "points_earned": 6,
+      "points_possible": 6
+    },
+    "section3": {
+      "points_earned": 11,
+      "points_possible": 12
+    }
+  },
+  "task_scores": {
+    "task1_1": {
+      "points_earned": 8,
+      "points_possible": 8
+    },
+    "task1_2": {
+      "points_earned": 4,
+      "points_possible": 4
+    },
+    "task1_3": {
+      "points_earned": 2,
+      "points_possible": 2
+    },
+    "task2_1": {
+      "points_earned": 2,
+      "points_possible": 2
+    },
+    "task2_2": {
+      "points_earned": 2,
+      "points_possible": 2
+    },
+    "task2_3": {
+      "points_earned": 2,
+      "points_possible": 2
+    },
+    "task3_1": {
+      "points_earned": 7,
+      "points_possible": 7
+    },
+    "task3_2": {
+      "points_earned": 2,
+      "points_possible": 2
+    },
+    "task3_3": {
+      "points_earned": 2,
+      "points_possible": 2
+    }
+  },
+  "critical_elements": {
+    "task1_3": true,
+    "task3_3": true
+  },
+  "points_earned": 31,
+  "points_possible": 30,
+  "overall_score": 103.33333333333334,
+  "passed": true
+}

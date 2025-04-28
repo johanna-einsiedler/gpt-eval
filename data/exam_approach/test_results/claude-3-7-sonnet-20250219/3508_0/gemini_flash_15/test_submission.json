@@ -1,0 +1,87 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "fire_probability_table": {
+            "Residential": [
+                0.0045,
+                0.0042,
+                0.0038,
+                0.004,
+                0.0043,
+                0.0047
+            ],
+            "Commercial": [
+                0.0048,
+                0.004,
+                0.0044,
+                0.0052,
+                0.0048,
+                0.0056
+            ],
+            "Industrial": [
+                0.008,
+                0.009,
+                0.007,
+                0.01,
+                0.008,
+                0.011
+            ],
+            "Healthcare": [
+                0.006,
+                0.004,
+                0.008,
+                0.006,
+                0.004,
+                0.008
+            ],
+            "Educational": [
+                0.0025,
+                0.00375,
+                0.0025,
+                0.00125,
+                0.00375,
+                0.0025
+            ]
+        },
+        "highest_risk_property_type": "Industrial",
+        "lowest_risk_property_type": "Educational",
+        "average_monthly_fire_probability": 0.0052
+    },
+    "task2": {
+        "disaster_probability_matrix": {
+            "North": [
+                0.4667,
+                0.2667,
+                0.2667
+            ],
+            "South": [
+                0.1667,
+                0.1667,
+                0.6667
+            ],
+            "East": [
+                0.5,
+                0.1667,
+                0.3333
+            ],
+            "West": [
+                0.4,
+                0.2,
+                0.4
+            ]
+        },
+        "region_with_highest_severe_disaster_probability": "South",
+        "conditional_probability_severe_given_disaster": 0.3167
+    },
+    "task3": {
+        "unemployment_transition_matrix": {
+            "employed_to_employed": 0.8767,
+            "employed_to_unemployed": 0.0767,
+            "unemployed_to_employed": 0.2,
+            "unemployed_to_unemployed": 0.8
+        },
+        "probability_remain_unemployed": 0.8,
+        "expected_unemployment_duration": 5.0,
+        "demographic_highest_recovery_rate": "Urban Youth"
+    }
+}

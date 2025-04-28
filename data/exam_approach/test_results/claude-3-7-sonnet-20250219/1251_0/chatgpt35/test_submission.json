@@ -1,0 +1,77 @@
+{
+    "candidate_id": "GPT-4o",
+    "financial_ratios": {
+        "current_ratio": {
+            "year1": 2.04,
+            "year2": 1.9,
+            "year3": 1.82
+        },
+        "quick_ratio": {
+            "year1": 1.1,
+            "year2": 0.95,
+            "year3": 0.85
+        },
+        "debt_to_equity": {
+            "year1": 0.63,
+            "year2": 0.71,
+            "year3": 0.81
+        },
+        "interest_coverage": {
+            "year1": 2.75,
+            "year2": 1.42,
+            "year3": 0.23
+        },
+        "return_on_assets": {
+            "year1": 0.03,
+            "year2": 0.01,
+            "year3": -0.02
+        },
+        "gross_profit_margin": {
+            "year1": 30.0,
+            "year2": 28.0,
+            "year3": 26.0
+        },
+        "net_profit_margin": {
+            "year1": 2.04,
+            "year2": 0.52,
+            "year3": -1.48
+        },
+        "inventory_turnover": {
+            "year1": 5.71,
+            "year2": 4.92,
+            "year3": 4.29
+        },
+        "accounts_receivable_turnover": {
+            "year1": 8.57,
+            "year2": 7.5,
+            "year3": 6.59
+        },
+        "days_sales_outstanding": {
+            "year1": 42.57,
+            "year2": 48.6,
+            "year3": 55.29
+        }
+    },
+    "industry_comparison": {
+        "significant_deviations": [
+            "current_ratio",
+            "quick_ratio",
+            "debt_to_equity",
+            "interest_coverage",
+            "return_on_assets",
+            "gross_profit_margin",
+            "net_profit_margin",
+            "inventory_turnover",
+            "accounts_receivable_turnover",
+            "days_sales_outstanding"
+        ]
+    },
+    "top_risk_factors": [
+        "declining_profitability",
+        "high_leverage",
+        "poor_liquidity"
+    ],
+    "debt_service_coverage_ratio": 1.67,
+    "risk_rating": 4,
+    "recommendation": "Decline"
+}

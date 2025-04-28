@@ -1,0 +1,39 @@
+{
+    "financial_position": {
+        "net_worth": 703500,
+        "debt_to_income_ratio": 0.33,
+        "emergency_fund_months": 1.9
+    },
+    "retirement_planning": {
+        "projected_gap": 300000,
+        "required_monthly_savings": 2900
+    },
+    "goal_prioritization": {
+        "ranked_goals": [
+            "Goal_B",
+            "Goal_D",
+            "Goal_A",
+            "Goal_C"
+        ],
+        "top_priority_strategies": [
+            "Strategy_1",
+            "Strategy_4",
+            "Strategy_6"
+        ]
+    },
+    "investment_assessment": {
+        "current_allocation": {
+            "stocks": 0.74,
+            "bonds": 0.19,
+            "cash": 0.07,
+            "other": 0.0
+        },
+        "aligned_with_risk_profile": false,
+        "average_expense_ratio": 0.0012
+    },
+    "recommendations": {
+        "emergency_fund": "EF_Option_3",
+        "debt_management": "Debt_Option_1",
+        "investment_allocation": "Invest_Option_2"
+    }
+}

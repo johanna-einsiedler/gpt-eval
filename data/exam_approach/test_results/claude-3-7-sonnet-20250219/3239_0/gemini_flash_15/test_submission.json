@@ -1,0 +1,31 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "budget_variance_total": 10450.0,
+        "highest_overspend_category": "Social Media"
+    },
+    "task2": {
+        "response_rate": 0.000977,
+        "cost_per_acquisition": 21.57,
+        "roi": 2.57
+    },
+    "task3": {
+        "best_performing_channel": "Channel2",
+        "worst_performing_channel": "Channel4"
+    },
+    "task4": {
+        "benchmark_comparison": {
+            "ctr_variance": -1.0,
+            "cpa_variance": 8.5,
+            "roi_variance": -14.0
+        }
+    },
+    "task5": {
+        "budget_reallocation": {
+            "channel1": 25000,
+            "channel2": 35000,
+            "channel3": 15000,
+            "channel4": 25000
+        }
+    }
+}

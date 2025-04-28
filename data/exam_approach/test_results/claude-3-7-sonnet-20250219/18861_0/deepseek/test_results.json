@@ -1,0 +1,105 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "section1": {
+    "question1": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question2": {
+      "score": 0,
+      "max": 6,
+      "feedback": "Incorrect. Expected: Bereavement Leave Request Form and documentation of death (obituary, funeral program, or death certificate) within 7 calendar days of returning to work"
+    },
+    "question3": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question4": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question5": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    }
+  },
+  "section2": {
+    "question1": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question2": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question3": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question4": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    },
+    "question5": {
+      "score": 6,
+      "max": 6,
+      "feedback": "Correct"
+    }
+  },
+  "section3": {
+    "question1": {
+      "score": 8,
+      "max": 8,
+      "feedback": "Correct"
+    },
+    "question2": {
+      "score": 8,
+      "max": 8,
+      "feedback": "Correct"
+    },
+    "question3": {
+      "score": 8,
+      "max": 8,
+      "feedback": "Correct"
+    },
+    "question4": {
+      "score": 8,
+      "max": 8,
+      "feedback": "Correct"
+    },
+    "question5": {
+      "score": 8,
+      "max": 8,
+      "feedback": "Correct"
+    }
+  },
+  "section_scores": {
+    "section1": {
+      "points": 24,
+      "max_points": 30,
+      "percentage": 80.0
+    },
+    "section2": {
+      "points": 30,
+      "max_points": 30,
+      "percentage": 100.0
+    },
+    "section3": {
+      "points": 40,
+      "max_points": 40,
+      "percentage": 100.0
+    }
+  },
+  "total_points": 94,
+  "max_points": 100,
+  "overall_score": 94.0,
+  "pass_fail": "PASS"
+}

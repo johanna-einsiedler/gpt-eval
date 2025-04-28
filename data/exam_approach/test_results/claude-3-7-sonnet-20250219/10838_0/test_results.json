@@ -1,0 +1,243 @@
+{
+  "candidate_id": "Unknown",
+  "overall_score": 100.0,
+  "total_points": 100.0,
+  "max_points": 100,
+  "section_scores": {
+    "section1": {
+      "score": 25,
+      "max_score": 25,
+      "details": {
+        "location1": {
+          "submitted": "F",
+          "correct": "F",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "location2": {
+          "submitted": "D",
+          "correct": "D",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "location3": {
+          "submitted": "A",
+          "correct": "A",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "location4": {
+          "submitted": "G",
+          "correct": "G",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "location5": {
+          "submitted": "E",
+          "correct": "E",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        }
+      }
+    },
+    "section2": {
+      "score": 25,
+      "max_score": 25,
+      "details": {
+        "method1": {
+          "submitted": "A",
+          "correct": "A",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "method2": {
+          "submitted": "C",
+          "correct": "C",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "method3": {
+          "submitted": "D",
+          "correct": "D",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "method4": {
+          "submitted": "B",
+          "correct": "B",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "method5": {
+          "submitted": "E",
+          "correct": "E",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        }
+      }
+    },
+    "section3": {
+      "score": 25.0,
+      "max_score": 25,
+      "details": {
+        "parameter1": {
+          "submitted": {
+            "container": "D",
+            "preservation": "5"
+          },
+          "correct": {
+            "container": "D",
+            "preservation": "5"
+          },
+          "is_correct": {
+            "container": true,
+            "preservation": true
+          },
+          "points_earned": 5.0,
+          "points_possible": 5
+        },
+        "parameter2": {
+          "submitted": {
+            "container": "B",
+            "preservation": "2"
+          },
+          "correct": {
+            "container": "B",
+            "preservation": "2"
+          },
+          "is_correct": {
+            "container": true,
+            "preservation": true
+          },
+          "points_earned": 5.0,
+          "points_possible": 5
+        },
+        "parameter3": {
+          "submitted": {
+            "container": "C",
+            "preservation": "1"
+          },
+          "correct": {
+            "container": "C",
+            "preservation": "1"
+          },
+          "is_correct": {
+            "container": true,
+            "preservation": true
+          },
+          "points_earned": 5.0,
+          "points_possible": 5
+        },
+        "parameter4": {
+          "submitted": {
+            "container": "B",
+            "preservation": "3"
+          },
+          "correct": {
+            "container": "B",
+            "preservation": "3"
+          },
+          "is_correct": {
+            "container": true,
+            "preservation": true
+          },
+          "points_earned": 5.0,
+          "points_possible": 5
+        },
+        "parameter5": {
+          "submitted": {
+            "container": "B",
+            "preservation": "4"
+          },
+          "correct": {
+            "container": "B",
+            "preservation": "4"
+          },
+          "is_correct": {
+            "container": true,
+            "preservation": true
+          },
+          "points_earned": 5.0,
+          "points_possible": 5
+        }
+      }
+    },
+    "section4": {
+      "score": 25,
+      "max_score": 25,
+      "details": {
+        "question1": {
+          "submitted": "b",
+          "correct": "b",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "question2": {
+          "submitted": "c",
+          "correct": "c",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "question3": {
+          "submitted": "b",
+          "correct": "b",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "question4": {
+          "submitted": "d",
+          "correct": "d",
+          "is_correct": true,
+          "points_earned": 5,
+          "points_possible": 5
+        },
+        "question5": {
+          "submitted": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ],
+          "correct": [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e"
+          ],
+          "correct_items": [
+            "c",
+            "e",
+            "a",
+            "d",
+            "b"
+          ],
+          "incorrect_items": [],
+          "missing_items": [],
+          "points_earned": 5,
+          "points_possible": 5
+        }
+      }
+    }
+  },
+  "pass_fail": {
+    "passed": true,
+    "minimum_required": 70,
+    "automatic_failure": false,
+    "failure_reasons": []
+  }
+}

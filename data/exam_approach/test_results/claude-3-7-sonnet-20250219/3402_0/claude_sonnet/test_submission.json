@@ -1,0 +1,124 @@
+{
+    "candidate_id": "Claude-3-Opus-20240229",
+    "calculation_errors": [
+        {
+            "location": "Personnel Detail, Total row",
+            "current_value": "$1,443,000",
+            "correct_value": "$1,443,000",
+            "explanation": "The total is correct, but inconsistent with Department Summary which shows $1,350,000 for Personnel"
+        },
+        {
+            "location": "Personnel Detail, Senior Analysts row",
+            "current_value": "$442,000",
+            "correct_value": "$442,000",
+            "explanation": "The calculation is correct (4 × $85,000 × 1.3 = $442,000)"
+        },
+        {
+            "location": "Equipment Detail, Total row",
+            "current_value": "$79,400",
+            "correct_value": "$79,400",
+            "explanation": "The total is correct, but inconsistent with Department Summary which shows $215,000 for Equipment"
+        },
+        {
+            "location": "Department Summary, % Change for Personnel",
+            "current_value": "8.4%",
+            "correct_value": "8.4%",
+            "explanation": "The calculation is correct: ($1,350,000 - $1,245,000) / $1,245,000 × 100 = 8.4%"
+        },
+        {
+            "location": "Quarterly Allocation, Total column",
+            "current_value": "$2,502,000",
+            "correct_value": "$2,502,000",
+            "explanation": "The total matches the Department Summary total"
+        },
+        {
+            "location": "Quarterly Allocation, Total row",
+            "current_value": "$718,000",
+            "correct_value": "$718,000",
+            "explanation": "The Q1 total is calculated correctly"
+        },
+        {
+            "location": "Quarterly Allocation, Total row for Q4",
+            "current_value": "$589,000",
+            "correct_value": "$589,000",
+            "explanation": "The Q4 total is calculated correctly"
+        },
+        {
+            "location": "Quarterly Allocation, Row sum",
+            "current_value": "$2,502,000",
+            "correct_value": "$2,502,000",
+            "explanation": "The row total matches the Department Summary total"
+        }
+    ],
+    "missing_information": [
+        {
+            "requirement_id": "REQ-006",
+            "description": "Signature Page is completely missing from the budget submission",
+            "impact": "Without proper signatures, the budget lacks official authorization and cannot be processed for approval"
+        },
+        {
+            "requirement_id": "REQ-007",
+            "description": "Supporting Documentation is missing for equipment purchases over $5,000, professional services, travel expenses, and training plan",
+            "impact": "Without supporting documentation, large expenditures cannot be verified or justified properly"
+        },
+        {
+            "requirement_id": "REQ-005",
+            "description": "Detailed explanation for increases exceeding 10% is missing in Budget Justification",
+            "impact": "Several categories exceed the 10% increase threshold but lack the required detailed justification"
+        },
+        {
+            "requirement_id": "REQ-004",
+            "description": "Percentage allocation for each quarter is not explicitly shown in the Quarterly Allocation sheet",
+            "impact": "Without explicit percentages, it's difficult to verify if allocations follow required distribution patterns"
+        },
+        {
+            "requirement_id": "REQ-104",
+            "description": "Department name and fiscal year are missing from the headers of all sheets except Department Summary",
+            "impact": "Lack of consistent headers makes it difficult to identify which department and fiscal year the sheets belong to"
+        }
+    ],
+    "compliance_issues": [
+        {
+            "regulation_id": "REG-104",
+            "location": "Department Summary, Equipment row",
+            "issue": "Equipment shows a 14.7% increase but lacks detailed justification required for increases over 10%",
+            "recommendation": "Provide detailed justification for the 14.7% increase in Equipment expenses"
+        },
+        {
+            "regulation_id": "REG-104",
+            "location": "Department Summary, Miscellaneous row",
+            "issue": "Miscellaneous shows a 15.6% increase but lacks detailed justification required for increases over 10%",
+            "recommendation": "Provide detailed justification for the 15.6% increase in Miscellaneous expenses"
+        },
+        {
+            "regulation_id": "REG-304",
+            "location": "Department Summary, Miscellaneous row",
+            "issue": "Miscellaneous expenses ($52,000) exceed 3% of the total budget request ($2,502,000 × 0.03 = $75,060)",
+            "recommendation": "Miscellaneous expenses are within the 3% limit, so this is compliant"
+        },
+        {
+            "regulation_id": "REG-105",
+            "location": "Entire submission",
+            "issue": "No evidence of Department Director signature as required by May 15, 2023",
+            "recommendation": "Obtain Department Director signature on the required Signature Page"
+        },
+        {
+            "regulation_id": "REG-302",
+            "location": "Budget Justification, Travel row",
+            "issue": "Travel expenses are not itemized by purpose and destination as required",
+            "recommendation": "Provide detailed breakdown of travel expenses by purpose and destination"
+        },
+        {
+            "regulation_id": "REG-505",
+            "location": "Quarterly Allocation, Personnel row",
+            "issue": "Personnel costs are correctly allocated equally across all quarters (25% each)",
+            "recommendation": "Personnel allocation is compliant with regulations"
+        },
+        {
+            "regulation_id": "REG-503",
+            "location": "Quarterly Allocation, Total row",
+            "issue": "The sum of quarterly allocations ($2,502,000) matches the total annual request",
+            "recommendation": "Quarterly allocation totals are compliant with regulations"
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "candidate_id": "GPT-4",
+    "data_analysis": {
+        "excess_inventory_skus": [
+            "B203",
+            "H803",
+            "H801",
+            "H802",
+            "B201",
+            "E501",
+            "E503",
+            "E502",
+            "A103",
+            "A101"
+        ],
+        "high_days_supply_count": 12,
+        "obsolete_inventory_skus": [
+            "F601",
+            "F602",
+            "F603"
+        ],
+        "total_excess_value": 106825.0
+    },
+    "root_causes": {
+        "scenario1": "A",
+        "scenario2": "B",
+        "scenario3": "C",
+        "scenario4": "D",
+        "scenario5": "C"
+    },
+    "reduction_strategies": {
+        "potential_value_reduction": 106825.0,
+        "top_opportunity_skus": [
+            "B203",
+            "H803",
+            "H801",
+            "H802",
+            "B201"
+        ],
+        "slow_moving_strategies": {
+            "F601": "A",
+            "F602": "B",
+            "F603": "E",
+            "J001": "A",
+            "J002": "A"
+        },
+        "carrying_cost_savings": 26706.25
+    }
+}

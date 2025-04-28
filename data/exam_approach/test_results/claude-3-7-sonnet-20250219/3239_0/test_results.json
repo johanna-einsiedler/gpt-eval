@@ -1,0 +1,43 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "task1_evaluation": {
+    "budget_variance_correct": true,
+    "highest_overspend_category_correct": true,
+    "passed": true,
+    "comments": "Both answers must be correct to pass this task."
+  },
+  "task2_evaluation": {
+    "response_rate_within_tolerance": true,
+    "cpa_within_tolerance": true,
+    "roi_within_tolerance": true,
+    "passed": true,
+    "comments": "All three metrics must be within \u00b15% of the correct values to pass this task."
+  },
+  "task3_evaluation": {
+    "best_channel_correct": true,
+    "worst_channel_correct": true,
+    "passed": true,
+    "comments": "Both channel identifications must be correct to pass this task."
+  },
+  "task4_evaluation": {
+    "ctr_variance_correct": true,
+    "cpa_variance_correct": true,
+    "roi_variance_correct": true,
+    "correct_count": 3,
+    "passed": true,
+    "comments": "At least 2 out of 3 variance calculations must be within \u00b10.05 of the correct values to pass this task."
+  },
+  "task5_evaluation": {
+    "total_budget_correct": true,
+    "minimum_allocation_correct": true,
+    "increments_correct": true,
+    "logical_allocation": true,
+    "passed": true,
+    "comments": "Budget allocation must sum to $100,000, allocate at least $10,000 to each channel, use increments of $5,000, and show a logical relationship to performance."
+  },
+  "passed_tasks": 5,
+  "total_tasks": 5,
+  "overall_score": 100.0,
+  "overall_passed": true,
+  "overall_comments": "Candidate must successfully complete at least 4 out of the 5 tasks to pass the exam."
+}

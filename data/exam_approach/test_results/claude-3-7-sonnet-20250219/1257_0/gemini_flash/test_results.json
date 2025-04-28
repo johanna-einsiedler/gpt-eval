@@ -1,0 +1,550 @@
+{
+  "candidate_id": "GPT-4o",
+  "overall_score": 42.15,
+  "passing_score": 70.0,
+  "passed": false,
+  "task1": {
+    "details": {
+      "ratio_calculations": {
+        "score": 37,
+        "max_score": 40,
+        "details": {
+          "Alpha Corp": {
+            "current_ratio": {
+              "correct": true,
+              "submitted": 2.95,
+              "expected": 2.95
+            },
+            "quick_ratio": {
+              "correct": true,
+              "submitted": 2.0,
+              "expected": 2.05
+            },
+            "roa": {
+              "correct": true,
+              "submitted": 9.28,
+              "expected": 9.28
+            },
+            "roe": {
+              "correct": true,
+              "submitted": 16.57,
+              "expected": 16.57
+            },
+            "debt_to_equity": {
+              "correct": true,
+              "submitted": 0.79,
+              "expected": 0.79
+            }
+          },
+          "Beta Industries": {
+            "current_ratio": {
+              "correct": true,
+              "submitted": 2.33,
+              "expected": 2.33
+            },
+            "quick_ratio": {
+              "correct": false,
+              "submitted": 1.46,
+              "expected": 1.41
+            },
+            "roa": {
+              "correct": true,
+              "submitted": 6.99,
+              "expected": 7.0
+            },
+            "roe": {
+              "correct": true,
+              "submitted": 13.75,
+              "expected": 13.75
+            },
+            "debt_to_equity": {
+              "correct": true,
+              "submitted": 0.96,
+              "expected": 0.96
+            }
+          },
+          "Gamma Enterprises": {
+            "current_ratio": {
+              "correct": true,
+              "submitted": 3.0,
+              "expected": 3.0
+            },
+            "quick_ratio": {
+              "correct": true,
+              "submitted": 2.13,
+              "expected": 2.13
+            },
+            "roa": {
+              "correct": true,
+              "submitted": 9.28,
+              "expected": 9.28
+            },
+            "roe": {
+              "correct": true,
+              "submitted": 16.62,
+              "expected": 16.62
+            },
+            "debt_to_equity": {
+              "correct": true,
+              "submitted": 0.79,
+              "expected": 0.79
+            }
+          },
+          "Delta Manufacturing": {
+            "current_ratio": {
+              "correct": true,
+              "submitted": 2.23,
+              "expected": 2.23
+            },
+            "quick_ratio": {
+              "correct": false,
+              "submitted": 1.21,
+              "expected": 1.33
+            },
+            "roa": {
+              "correct": true,
+              "submitted": 6.69,
+              "expected": 6.69
+            },
+            "roe": {
+              "correct": true,
+              "submitted": 13.53,
+              "expected": 13.53
+            },
+            "debt_to_equity": {
+              "correct": true,
+              "submitted": 1.02,
+              "expected": 1.02
+            }
+          },
+          "Epsilon Solutions": {
+            "current_ratio": {
+              "correct": true,
+              "submitted": 2.8,
+              "expected": 2.8
+            },
+            "quick_ratio": {
+              "correct": false,
+              "submitted": 1.86,
+              "expected": 1.94
+            },
+            "roa": {
+              "correct": true,
+              "submitted": 9.22,
+              "expected": 9.22
+            },
+            "roe": {
+              "correct": true,
+              "submitted": 17.13,
+              "expected": 17.13
+            },
+            "debt_to_equity": {
+              "correct": true,
+              "submitted": 0.86,
+              "expected": 0.86
+            }
+          },
+          "Zeta Technologies": {
+            "current_ratio": {
+              "correct": true,
+              "submitted": 2.67,
+              "expected": 2.67
+            },
+            "quick_ratio": {
+              "correct": true,
+              "submitted": 1.84,
+              "expected": 1.86
+            },
+            "roa": {
+              "correct": true,
+              "submitted": 9.19,
+              "expected": 9.19
+            },
+            "roe": {
+              "correct": true,
+              "submitted": 17.16,
+              "expected": 17.17
+            },
+            "debt_to_equity": {
+              "correct": true,
+              "submitted": 0.87,
+              "expected": 0.87
+            }
+          },
+          "Eta Systems": {
+            "current_ratio": {
+              "correct": true,
+              "submitted": 2.54,
+              "expected": 2.54
+            },
+            "quick_ratio": {
+              "correct": true,
+              "submitted": 1.65,
+              "expected": 1.68
+            },
+            "roa": {
+              "correct": true,
+              "submitted": 9.33,
+              "expected": 9.33
+            },
+            "roe": {
+              "correct": true,
+              "submitted": 17.47,
+              "expected": 17.47
+            },
+            "debt_to_equity": {
+              "correct": true,
+              "submitted": 0.87,
+              "expected": 0.87
+            }
+          },
+          "Theta Corp": {
+            "current_ratio": {
+              "correct": true,
+              "submitted": 2.65,
+              "expected": 2.65
+            },
+            "quick_ratio": {
+              "correct": true,
+              "submitted": 1.73,
+              "expected": 1.73
+            },
+            "roa": {
+              "correct": true,
+              "submitted": 9.53,
+              "expected": 9.53
+            },
+            "roe": {
+              "correct": true,
+              "submitted": 17.68,
+              "expected": 17.68
+            },
+            "debt_to_equity": {
+              "correct": true,
+              "submitted": 0.85,
+              "expected": 0.85
+            }
+          }
+        }
+      },
+      "company_rankings": {
+        "score": 2,
+        "max_score": 8,
+        "details": {
+          "1": {
+            "correct": true,
+            "submitted": "Gamma Enterprises",
+            "expected": "Gamma Enterprises"
+          },
+          "2": {
+            "correct": false,
+            "submitted": "Zeta Technologies",
+            "expected": "Alpha Corp"
+          },
+          "3": {
+            "correct": false,
+            "submitted": "Alpha Corp",
+            "expected": "Epsilon Solutions"
+          },
+          "4": {
+            "correct": false,
+            "submitted": "Theta Corp",
+            "expected": "Zeta Technologies"
+          },
+          "5": {
+            "correct": false,
+            "submitted": "Beta Industries",
+            "expected": "Theta Corp"
+          },
+          "6": {
+            "correct": false,
+            "submitted": "Epsilon Solutions",
+            "expected": "Eta Systems"
+          },
+          "7": {
+            "correct": false,
+            "submitted": "Eta Systems",
+            "expected": "Beta Industries"
+          },
+          "8": {
+            "correct": true,
+            "submitted": "Delta Manufacturing",
+            "expected": "Delta Manufacturing"
+          }
+        }
+      },
+      "regional_comparison": {
+        "score": 6,
+        "max_score": 6,
+        "details": {
+          "Northeast": {
+            "avg_roa": {
+              "correct": true,
+              "submitted": 8.43,
+              "expected": 8.43
+            },
+            "avg_roe": {
+              "correct": true,
+              "submitted": 15.86,
+              "expected": 15.86
+            }
+          },
+          "Southeast": {
+            "avg_roa": {
+              "correct": true,
+              "submitted": 8.51,
+              "expected": 8.58
+            },
+            "avg_roe": {
+              "correct": true,
+              "submitted": 16.19,
+              "expected": 16.19
+            }
+          },
+          "Midwest": {
+            "avg_roa": {
+              "correct": true,
+              "submitted": 9.24,
+              "expected": 9.24
+            },
+            "avg_roe": {
+              "correct": true,
+              "submitted": 16.89,
+              "expected": 16.9
+            }
+          }
+        }
+      }
+    },
+    "score": 45,
+    "max_score": 54,
+    "percentage": 83.33
+  },
+  "task2": {
+    "details": {
+      "credit_risk_scores": {
+        "score": 0,
+        "max_score": 8,
+        "details": {
+          "Gamma Enterprises": {
+            "correct": false,
+            "submitted": 0.27,
+            "expected": 21.36
+          },
+          "Zeta Technologies": {
+            "correct": false,
+            "submitted": 0.29,
+            "expected": 23.14
+          },
+          "Alpha Corp": {
+            "correct": false,
+            "submitted": 0.31,
+            "expected": 24.48
+          },
+          "Theta Corp": {
+            "correct": false,
+            "submitted": 0.3,
+            "expected": 25.38
+          },
+          "Epsilon Solutions": {
+            "correct": false,
+            "submitted": 0.33,
+            "expected": 27.72
+          },
+          "Eta Systems": {
+            "correct": false,
+            "submitted": 0.38,
+            "expected": 29.38
+          },
+          "Beta Industries": {
+            "correct": false,
+            "submitted": 0.37,
+            "expected": 31.1
+          },
+          "Delta Manufacturing": {
+            "correct": false,
+            "submitted": 0.41,
+            "expected": 34.64
+          }
+        }
+      },
+      "highest_risk_region": {
+        "score": 1,
+        "max_score": 1,
+        "details": {
+          "correct": true,
+          "submitted": "Northeast",
+          "expected": "Northeast"
+        }
+      },
+      "days_past_due_pct_diff": {
+        "score": 0,
+        "max_score": 3,
+        "details": {
+          "Northeast": {
+            "correct": false,
+            "submitted": 8.7,
+            "expected": 14.29
+          },
+          "Southeast": {
+            "correct": false,
+            "submitted": 12.5,
+            "expected": 7.94
+          },
+          "Midwest": {
+            "correct": false,
+            "submitted": -14.29,
+            "expected": -38.1
+          }
+        }
+      }
+    },
+    "score": 1,
+    "max_score": 12,
+    "percentage": 8.33
+  },
+  "task3": {
+    "details": {
+      "matched_pairs": {
+        "score": 0,
+        "max_score": 4,
+        "details": {
+          "pair1": {
+            "correct": false,
+            "submitted": "not matched",
+            "expected": [
+              "Alpha Corp",
+              "Zeta Technologies"
+            ]
+          },
+          "pair2": {
+            "correct": false,
+            "submitted": "not matched",
+            "expected": [
+              "Beta Industries",
+              "Theta Corp"
+            ]
+          },
+          "pair3": {
+            "correct": false,
+            "submitted": "not matched",
+            "expected": [
+              "Epsilon Solutions",
+              "Gamma Enterprises"
+            ]
+          },
+          "pair4": {
+            "correct": false,
+            "submitted": "not matched",
+            "expected": [
+              "Delta Manufacturing",
+              "Eta Systems"
+            ]
+          }
+        }
+      },
+      "performance_metrics": {
+        "score": 1,
+        "max_score": 12,
+        "details": {
+          "pair1": {
+            "current_ratio_diff": {
+              "correct": false,
+              "submitted": 0.41,
+              "expected": 0.28
+            },
+            "roa_diff": {
+              "correct": false,
+              "submitted": -0.05,
+              "expected": 0.09
+            },
+            "credit_utilization_diff": {
+              "correct": false,
+              "submitted": -5.0,
+              "expected": 3.0
+            }
+          },
+          "pair2": {
+            "current_ratio_diff": {
+              "correct": false,
+              "submitted": -0.47,
+              "expected": -0.32
+            },
+            "roa_diff": {
+              "correct": false,
+              "submitted": -2.23,
+              "expected": -2.53
+            },
+            "credit_utilization_diff": {
+              "correct": false,
+              "submitted": 4.0,
+              "expected": 6.0
+            }
+          },
+          "pair3": {
+            "current_ratio_diff": {
+              "correct": false,
+              "submitted": 0.33,
+              "expected": 0.2
+            },
+            "roa_diff": {
+              "correct": true,
+              "submitted": 0.09,
+              "expected": 0.06
+            },
+            "credit_utilization_diff": {
+              "correct": false,
+              "submitted": -4.0,
+              "expected": -10.0
+            }
+          },
+          "pair4": {
+            "current_ratio_diff": {
+              "correct": false,
+              "submitted": -0.42,
+              "expected": -0.31
+            },
+            "roa_diff": {
+              "correct": false,
+              "submitted": -2.84,
+              "expected": -2.64
+            },
+            "credit_utilization_diff": {
+              "correct": false,
+              "submitted": 12.0,
+              "expected": 8.0
+            }
+          }
+        }
+      },
+      "largest_positive_roe_deviation": {
+        "score": 3,
+        "max_score": 3,
+        "details": {
+          "Northeast": {
+            "correct": true,
+            "submitted": "Eta Systems",
+            "expected": "Eta Systems"
+          },
+          "Southeast": {
+            "correct": true,
+            "submitted": "Theta Corp",
+            "expected": "Theta Corp"
+          },
+          "Midwest": {
+            "correct": true,
+            "submitted": "Zeta Technologies",
+            "expected": "Zeta Technologies"
+          }
+        }
+      }
+    },
+    "score": 4,
+    "max_score": 19,
+    "percentage": 21.05
+  },
+  "automatic_failure": {
+    "failed": true,
+    "reason": "Significant conceptual errors detected in one or more tasks"
+  }
+}

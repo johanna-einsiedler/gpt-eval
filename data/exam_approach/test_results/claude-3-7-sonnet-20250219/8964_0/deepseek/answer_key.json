@@ -1,0 +1,50 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "task1": {
+        "sample_ids": [
+            2458,
+            8501,
+            3690,
+            9072,
+            1835,
+            4387,
+            6930,
+            5308,
+            7572,
+            9154
+        ],
+        "sample_mean": 73850.25,
+        "sample_variance": 324562500.0,
+        "sampling_error": 1580.45
+    },
+    "task2": {
+        "strata_counts": {
+            "North": 2500,
+            "South": 2500,
+            "East": 2500,
+            "West": 2500
+        },
+        "sample_ids": [
+            1,
+            5,
+            9,
+            13
+        ],
+        "stratum_means": {
+            "North": 7.48,
+            "South": 6.82,
+            "East": 8.17,
+            "West": 7.03
+        }
+    },
+    "task3": {
+        "required_sample_size": 384,
+        "cluster_ids": [
+            "Technology",
+            "Finance",
+            "Healthcare"
+        ],
+        "total_respondents": 1875,
+        "design_effect": 1.6
+    }
+}

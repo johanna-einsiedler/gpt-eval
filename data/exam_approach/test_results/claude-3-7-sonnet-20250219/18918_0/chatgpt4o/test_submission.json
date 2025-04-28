@@ -1,0 +1,23 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "budget_variance_total": 14500,
+    "largest_expense_category": "Staff Salaries",
+    "expense_trend_direction": "increasing",
+    "donor_retention_rate": 0.68,
+    "cost_per_dollar_raised": 0.31,
+    "over_budget_categories": [
+        "Event Costs",
+        "Marketing Materials"
+    ],
+    "month_with_highest_revenue": "May",
+    "fundraising_roi": 2.23,
+    "expense_category_percentages": {
+        "Staff Salaries": 0.3,
+        "Event Costs": 0.34,
+        "Marketing Materials": 0.15,
+        "Office Supplies": 0.03,
+        "Travel Expenses": 0.08,
+        "Technology": 0.1
+    },
+    "budget_status": "on_track"
+}

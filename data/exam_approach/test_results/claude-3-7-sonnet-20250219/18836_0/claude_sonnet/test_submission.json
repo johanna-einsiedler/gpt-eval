@@ -1,0 +1,44 @@
+{
+    "candidate_id": "GPT-4o",
+    "negotiation_strategy": {
+        "selected_approach": "B",
+        "justification": "Given Margaret's concerns about 'being taken advantage of' and her price sensitivity, a transparent approach that explains value while remaining flexible is most appropriate. Strategy B acknowledges her concerns, offers detailed explanations of services, and allows for customization to meet her budget while respecting her wishes - all important factors for a retired teacher who values detailed information."
+    },
+    "package_details": {
+        "selected_services": [
+            "S1",
+            "S3",
+            "S4",
+            "S5",
+            "S7",
+            "S9"
+        ],
+        "selected_merchandise": [
+            "M7"
+        ],
+        "selected_additional_services": [
+            "A2",
+            "A7",
+            "A9"
+        ],
+        "total_package_price": 5995.0,
+        "profit_margin_percentage": 39.7
+    },
+    "objection_responses": {
+        "objection1": "B",
+        "objection2": "C",
+        "objection3": "A"
+    },
+    "contract_completion": {
+        "client_name": "Margaret Wilson",
+        "payment_plan_selected": "P5",
+        "payment_terms": "24 monthly installments with 3% interest and 5% service fee applied to total package price",
+        "price_guarantee": "Yes",
+        "required_disclosures": [
+            "Prepaid funds are held in a state-regulated trust account or insurance policy, not by the funeral home directly",
+            "Client has right to transfer contract to another funeral home if they relocate",
+            "Modifications to arrangements can be made, though price guarantees only apply to original selections",
+            "Cancellation may result in penalties as specified by state law and contract terms"
+        ]
+    }
+}
