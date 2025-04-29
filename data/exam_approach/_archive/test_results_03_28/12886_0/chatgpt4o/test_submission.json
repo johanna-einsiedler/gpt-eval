@@ -1,0 +1,31 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "question1": {
+        "answer": "The standard quota calculation formula used by the Federal Grain Authority is Q = P × AF, where Q represents the quota allocation, P is the production volume, and AF is the adjustment factor that accounts for specific crop types or government regulations."
+    },
+    "question2": {
+        "answer": {
+            "part_a": {
+                "wheat": 6000,
+                "corn": 2400
+            },
+            "part_b": 8400
+        }
+    },
+    "question3": {
+        "answer": 8765
+    },
+    "question4": {
+        "answer": 13200
+    },
+    "question5": {
+        "answer": {
+            "incorrect_farms": [
+                "B-456"
+            ],
+            "correct_values": {
+                "B-456": 13387.5
+            }
+        }
+    }
+}

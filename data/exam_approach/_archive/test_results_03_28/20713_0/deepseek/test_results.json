@@ -1,0 +1,138 @@
+{
+  "section1": {
+    "points": 3,
+    "max_points": 3,
+    "questions": {
+      "q1": {
+        "correct": true,
+        "points_earned": 1,
+        "max_points": 1,
+        "candidate_answer": "$77.78",
+        "correct_answer": "$77.78"
+      },
+      "q2": {
+        "correct": true,
+        "points_earned": 1,
+        "max_points": 1,
+        "candidate_answer": "$100.80",
+        "correct_answer": "$100.80"
+      },
+      "q3": {
+        "correct": true,
+        "points_earned": 1,
+        "max_points": 1,
+        "candidate_answer": "$143.55",
+        "correct_answer": "$143.55"
+      }
+    },
+    "percentage": 100.0
+  },
+  "section2": {
+    "points": 2,
+    "max_points": 3,
+    "questions": {
+      "q1": {
+        "correct": false,
+        "points_earned": 0,
+        "max_points": 1,
+        "candidate_answer": "39.9%",
+        "correct_answer": "25.0%"
+      },
+      "q2": {
+        "correct": true,
+        "points_earned": 1,
+        "max_points": 1,
+        "candidate_answer": {
+          "price": "$90.99",
+          "margin": "26.4%"
+        },
+        "correct_answer": {
+          "price": "$90.99",
+          "margin": "26.4%"
+        }
+      },
+      "q3": {
+        "correct": true,
+        "points_earned": 1,
+        "max_points": 1,
+        "candidate_answer": "40.0%",
+        "correct_answer": "40.0%"
+      }
+    },
+    "percentage": 66.66666666666666
+  },
+  "section3": {
+    "points": 0,
+    "max_points": 2,
+    "questions": {
+      "q1": {
+        "correct": false,
+        "points_earned": 0,
+        "max_points": 1,
+        "candidate_answer": "No, $105.77",
+        "correct_answer": "Yes, $129.99"
+      },
+      "q2": {
+        "correct": false,
+        "points_earned": 0,
+        "max_points": 1,
+        "candidate_answer": "Yes, $59.99-$74.99",
+        "correct_answer": "Yes, $63.18-$74.99"
+      }
+    },
+    "percentage": 0.0
+  },
+  "section4": {
+    "points": 0,
+    "max_points": 2,
+    "questions": {
+      "q1": {
+        "correct": false,
+        "points_earned": 0,
+        "max_points": 1,
+        "candidate_answer": "$31.25",
+        "correct_answer": "$41.67"
+      },
+      "q2": {
+        "correct": false,
+        "points_earned": 0,
+        "max_points": 1,
+        "candidate_answer": {
+          "current_margin": "49.3%",
+          "recommended_markup": "54.3%"
+        },
+        "correct_answer": {
+          "current_margin": "45.3%",
+          "recommended_markup": "55.4%"
+        }
+      }
+    },
+    "percentage": 0.0
+  },
+  "section5": {
+    "points": 3,
+    "max_points": 5,
+    "questions": {
+      "q1": {
+        "correct": false,
+        "points_earned": 0,
+        "max_points": 2,
+        "candidate_answer": "Option A, $8998 vs $8995",
+        "correct_answer": "Option B, $4644 vs $4648"
+      },
+      "q2": {
+        "correct": true,
+        "points_earned": 3,
+        "max_points": 3,
+        "candidate_answer": "Vendor B",
+        "correct_answer": "Vendor B"
+      }
+    },
+    "percentage": 60.0
+  },
+  "overall_score": 53.3,
+  "total_points": 8,
+  "max_points": 15,
+  "passed": false,
+  "candidate_id": "GPT-4-turbo"
+}

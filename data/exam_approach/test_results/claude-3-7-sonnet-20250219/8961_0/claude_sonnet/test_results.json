@@ -16,12 +16,12 @@
       },
       "stratification_variables": {
         "submitted": [
-          "age",
-          "hypertension_history"
+          "hypertension_history",
+          "age"
         ],
         "correct": [
-          "age",
-          "hypertension_history"
+          "hypertension_history",
+          "age"
         ],
         "points": 1
       },
@@ -120,12 +120,12 @@
       },
       "matching_variables": {
         "submitted": [
-          "age",
-          "baseline_bp"
+          "baseline_bp",
+          "age"
         ],
         "correct": [
-          "age",
-          "hypertension_history"
+          "hypertension_history",
+          "age"
         ],
         "points": 0
       }

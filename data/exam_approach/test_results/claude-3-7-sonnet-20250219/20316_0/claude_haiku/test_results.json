@@ -33,9 +33,9 @@
           "correct": "partial",
           "submitted": [
             "Nutrition Workshop",
-            "Smoking Cessation",
             "Diabetes Management",
-            "Mental Health Awareness"
+            "Mental Health Awareness",
+            "Smoking Cessation"
           ],
           "expected": [
             "Smoking Cessation"
@@ -82,13 +82,13 @@
         "cost_effective_programs": {
           "correct": "partial",
           "submitted": [
-            "Smoking Cessation",
+            "Fitness Challenge",
             "Stress Management",
-            "Fitness Challenge"
+            "Smoking Cessation"
           ],
           "expected": [
-            "Stress Management",
-            "Fitness Challenge"
+            "Fitness Challenge",
+            "Stress Management"
           ]
         }
       }

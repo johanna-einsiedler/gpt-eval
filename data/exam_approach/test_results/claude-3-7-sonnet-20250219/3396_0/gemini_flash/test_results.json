@@ -57,13 +57,13 @@
           "change_id": "PC001",
           "correct_lines": [
             "BL-IT-1004",
-            "BL-IT-1003",
-            "BL-IT-1002"
+            "BL-IT-1002",
+            "BL-IT-1003"
           ],
           "submitted_lines": [
             "BL-IT-1004",
-            "BL-IT-1003",
-            "BL-IT-1002"
+            "BL-IT-1002",
+            "BL-IT-1003"
           ],
           "missing_lines": [],
           "extra_lines": [],
@@ -74,12 +74,12 @@
         {
           "change_id": "PC002",
           "correct_lines": [
-            "BL-MKT-2001",
-            "BL-MKT-2002"
+            "BL-MKT-2002",
+            "BL-MKT-2001"
           ],
           "submitted_lines": [
-            "BL-MKT-2001",
-            "BL-MKT-2002"
+            "BL-MKT-2002",
+            "BL-MKT-2001"
           ],
           "missing_lines": [],
           "extra_lines": [],
@@ -90,14 +90,14 @@
         {
           "change_id": "PC003",
           "correct_lines": [
+            "BL-CS-4003",
             "BL-CS-4001",
-            "BL-CS-4002",
-            "BL-CS-4003"
+            "BL-CS-4002"
           ],
           "submitted_lines": [
+            "BL-CS-4003",
             "BL-CS-4001",
-            "BL-CS-4002",
-            "BL-CS-4003"
+            "BL-CS-4002"
           ],
           "missing_lines": [],
           "extra_lines": [],
@@ -108,15 +108,15 @@
         {
           "change_id": "PC004",
           "correct_lines": [
-            "BL-RD-3004",
             "BL-RD-3022",
-            "BL-RD-3045"
+            "BL-RD-3045",
+            "BL-RD-3004"
           ],
           "submitted_lines": [
-            "BL-RD-3004",
-            "BL-RD-3005",
             "BL-RD-3022",
-            "BL-RD-3045"
+            "BL-RD-3045",
+            "BL-RD-3004",
+            "BL-RD-3005"
           ],
           "missing_lines": [],
           "extra_lines": [

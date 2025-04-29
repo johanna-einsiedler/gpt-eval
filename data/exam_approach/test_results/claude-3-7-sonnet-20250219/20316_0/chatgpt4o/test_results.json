@@ -32,8 +32,8 @@
         "participation_threshold_programs": {
           "correct": "partial",
           "submitted": [
-            "Nutrition Workshop",
-            "Smoking Cessation"
+            "Smoking Cessation",
+            "Nutrition Workshop"
           ],
           "expected": [
             "Smoking Cessation"

@@ -1,0 +1,73 @@
+{
+    "candidateID": "GPT-4o",
+    "section1": {
+        "q1": {
+            "a": "A Blanket Purchase Order is a long-term agreement between an organization and a vendor to supply goods or services at predetermined prices on a recurring basis.",
+            "b": "A Request for Proposal (RFP) is a document issued by a buyer to solicit proposals from potential suppliers for goods or services.",
+            "c": "Terms and Conditions are the detailed legal provisions that outline the rights and responsibilities of the parties involved in a contract.",
+            "d": "FOB (Free on Board) is a shipping term indicating that the seller is responsible for the goods until they are loaded onto a shipping vessel.",
+            "e": "Net 30 is a payment term indicating that the buyer must pay the seller within 30 days of the invoice date."
+        },
+        "q2": "b",
+        "q3": "c",
+        "q4": true,
+        "q5": "c"
+    },
+    "section2": {
+        "q1": [
+            "Purchase order number",
+            "Vendor information",
+            "Item description",
+            "Quantity",
+            "Price"
+        ],
+        "q2": {
+            "a": 3750,
+            "b": 187.5,
+            "c": 3712.5
+        },
+        "q3": {
+            "a": "header",
+            "b": "line item",
+            "c": "footer",
+            "d": "header",
+            "e": "line item"
+        },
+        "q4": 14650,
+        "q5": "a"
+    },
+    "section3": {
+        "q1": [
+            "Project scope",
+            "Evaluation criteria",
+            "Submission deadline",
+            "Budget constraints"
+        ],
+        "q2": {
+            "selectedVendor": "C",
+            "justification": "Vendor C offers the longest warranty of 3 years, which is the primary criterion, despite having a higher price and longer delivery time."
+        },
+        "q3": "d",
+        "q4": false,
+        "q5": [
+            "Experience in similar projects",
+            "Financial stability",
+            "References from previous clients"
+        ]
+    },
+    "section4": {
+        "q1": [
+            "Requisition number",
+            "Description of goods/services",
+            "Quantity needed",
+            "Budget allocation"
+        ],
+        "q2": "c",
+        "q3": {
+            "isCorrect": false,
+            "correctTotal": 912.5
+        },
+        "q4": "c",
+        "q5": false
+    }
+}

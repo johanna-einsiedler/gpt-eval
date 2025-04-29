@@ -1,0 +1,51 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "section1": {
+        "question1": "b",
+        "question2": "a",
+        "question3": "b",
+        "question4": "c"
+    },
+    "section2": {
+        "question5": {
+            "date_of_loss": "03/15/2023",
+            "policy_number": "HO-768123",
+            "property_address": "123 Oak Lane, Springfield, IL 62704",
+            "loss_type": "Water damage from broken pipe",
+            "estimated_damage": 7800,
+            "deductible": 1000
+        },
+        "question6": {
+            "policy_active": true,
+            "reasoning": "The date of loss (03/15/2023) falls within the policy period of 01/10/2023 to 01/10/2024."
+        }
+    },
+    "section3": {
+        "question7": {
+            "roof_replacement": "partially covered",
+            "roof_reasoning": "Evidence indicates both storm damage (covered) and pre-existing wear and tear (excluded). Only the storm-related portion would be covered.",
+            "interior_damage": "covered",
+            "interior_reasoning": "The water damage resulted from a covered peril (storm damage to roof)."
+        },
+        "question8": {
+            "calculation": "The storm damage portion of roof replacement ($3,100) + interior water damage ($2,550) - deductible ($1,500) = $4,150",
+            "payment_amount": 4150
+        }
+    },
+    "section4": {
+        "question9": [
+            "Police report",
+            "Medical evaluation of reported injuries",
+            "Statement from other driver",
+            "Witness statements if available",
+            "Repair estimate from approved auto shop"
+        ],
+        "question10": {
+            "Police report": "Verifies accident details, establishes fault determination, and documents official record of incident",
+            "Medical evaluation": "Documents extent of injuries claimed, establishes treatment plan, and determines potential bodily injury coverage needs",
+            "Statement from other driver": "Provides alternative perspective on accident cause, helps determine liability",
+            "Witness statements": "Offers independent verification of traffic light status and accident circumstances",
+            "Repair estimate": "Quantifies vehicle damage amount for coverage determination and payment calculation"
+        }
+    }
+}

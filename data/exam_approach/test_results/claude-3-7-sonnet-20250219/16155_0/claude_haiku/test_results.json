@@ -150,9 +150,9 @@
         "points": 0,
         "max_points": 6,
         "submitted": [
+          "Sarah Johnson, CFO",
           "Jennifer Williams, Sales Director",
-          "Michael Chen, CIO",
-          "Sarah Johnson, CFO"
+          "Michael Chen, CIO"
         ],
         "expected": [
           "Michael Chen",
@@ -181,13 +181,13 @@
         "max_points": 6,
         "submitted": [
           "System performance metrics",
-          "User satisfaction rating",
-          "Feature request frequency"
+          "Feature request frequency",
+          "User satisfaction rating"
         ],
         "expected": [
-          "Implementation progress",
+          "Feature priority scores",
           "Satisfaction ratings",
-          "Feature priority scores"
+          "Implementation progress"
         ],
         "note": "Reasonable alternatives are accepted"
       },

@@ -56,14 +56,14 @@
         {
           "change_id": "PC001",
           "correct_lines": [
-            "BL-IT-1003",
+            "BL-IT-1004",
             "BL-IT-1002",
-            "BL-IT-1004"
+            "BL-IT-1003"
           ],
           "submitted_lines": [
-            "BL-IT-1003",
+            "BL-IT-1004",
             "BL-IT-1002",
-            "BL-IT-1004"
+            "BL-IT-1003"
           ],
           "missing_lines": [],
           "extra_lines": [],
@@ -74,12 +74,12 @@
         {
           "change_id": "PC002",
           "correct_lines": [
-            "BL-MKT-2002",
-            "BL-MKT-2001"
+            "BL-MKT-2001",
+            "BL-MKT-2002"
           ],
           "submitted_lines": [
-            "BL-MKT-2002",
-            "BL-MKT-2001"
+            "BL-MKT-2001",
+            "BL-MKT-2002"
           ],
           "missing_lines": [],
           "extra_lines": [],

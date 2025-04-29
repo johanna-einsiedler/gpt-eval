@@ -9,6 +9,18 @@
         "expected_count": 7,
         "matches": [
           [
+            "experience with digital marketing campaigns",
+            "experience with digital marketing campaigns"
+          ],
+          [
+            "proficiency in microsoft office suite (word, excel, powerpoint)",
+            "proficiency in microsoft office suite (word, excel, powerpoint)"
+          ],
+          [
+            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
+            "experience with social media platforms for business"
+          ],
+          [
             "ability to manage multiple projects simultaneously with attention to detail",
             "ability to manage multiple projects simultaneously with attention to detail"
           ],
@@ -17,24 +29,12 @@
             "minimum 2 years of experience in a marketing role"
           ],
           [
-            "strong written and verbal communication skills",
-            "strong written and verbal communication skills"
-          ],
-          [
-            "proficiency in microsoft office suite (word, excel, powerpoint)",
-            "proficiency in microsoft office suite (word, excel, powerpoint)"
-          ],
-          [
             "bachelor's degree in marketing, communications, business, or related field",
             "bachelor's degree in marketing, communications, business, or related field"
           ],
           [
-            "experience with digital marketing campaigns",
-            "experience with digital marketing campaigns"
-          ],
-          [
-            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
-            "experience with social media platforms for business"
+            "strong written and verbal communication skills",
+            "strong written and verbal communication skills"
           ]
         ]
       }
@@ -51,12 +51,12 @@
             "knowledge of graphic design software (adobe creative suite)"
           ],
           [
-            "experience with content management systems (wordpress)",
-            "experience with content management systems (wordpress)"
-          ],
-          [
             "experience with marketing automation tools (hubspot, marketo, or similar)",
             "experience with marketing automation tools (hubspot, marketo, or similar)"
+          ],
+          [
+            "experience with content management systems (wordpress)",
+            "experience with content management systems (wordpress)"
           ]
         ]
       }

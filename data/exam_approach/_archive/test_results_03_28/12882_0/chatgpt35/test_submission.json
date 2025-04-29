@@ -1,0 +1,98 @@
+{
+    "candidate_id": "GPT-4o",
+    "question1": {
+        "requiredProducts": [
+            {
+                "product": "Red Delicious apples",
+                "quantity": 203,
+                "unit": "cases"
+            },
+            {
+                "product": "Gala apples",
+                "quantity": 172,
+                "unit": "cases"
+            },
+            {
+                "product": "Granny Smith apples",
+                "quantity": 140,
+                "unit": "cases"
+            }
+        ],
+        "reasoning": "I calculated the number of cases by dividing the requested weight by the case weight and rounding up to the nearest whole case.",
+        "additionalNotes": "This order will result in a small amount of excess product that should be accounted for in inventory."
+    },
+    "question2": {
+        "requiredProducts": [
+            {
+                "product": "Roma tomatoes from Supplier A",
+                "quantity": 12000,
+                "unit": "lbs"
+            },
+            {
+                "product": "Roma tomatoes from Supplier B",
+                "quantity": 6500,
+                "unit": "lbs"
+            }
+        ],
+        "reasoning": "I selected suppliers meeting the minimum 6.2% solids requirement, prioritizing by lowest cost while fulfilling the total 18,500 lbs needed.",
+        "additionalNotes": "Supplier C's tomatoes do not meet the minimum solids requirement."
+    },
+    "question3": {
+        "requiredProducts": [
+            {
+                "product": "Organic corn feed from primary supplier",
+                "quantity": 40,
+                "unit": "tons"
+            },
+            {
+                "product": "Organic corn feed from secondary supplier",
+                "quantity": 25,
+                "unit": "tons"
+            }
+        ],
+        "reasoning": "With 14 tons in inventory and a total requirement of 79 tons, I needed to source 65 additional tons while ensuring timely delivery.",
+        "additionalNotes": "Orders are scheduled to maximize use of the primary supplier due to shorter lead time."
+    },
+    "question4": {
+        "requiredProducts": [
+            {
+                "product": "Strawberry flats",
+                "quantity": 53,
+                "unit": "8-lb flats"
+            },
+            {
+                "product": "Blueberry containers",
+                "quantity": 56,
+                "unit": "5-lb containers"
+            },
+            {
+                "product": "Raspberry containers",
+                "quantity": 40,
+                "unit": "4-lb containers"
+            }
+        ],
+        "reasoning": "I calculated the number of containers by dividing the weekly requirement by the container size and rounding up to the nearest whole container.",
+        "additionalNotes": "Weekly delivery is essential due to the 7-day shelf life."
+    },
+    "question5": {
+        "requiredProducts": [
+            {
+                "product": "Extra Virgin olive oil",
+                "quantity": 16,
+                "unit": "55-gallon drums"
+            },
+            {
+                "product": "Virgin olive oil",
+                "quantity": 15,
+                "unit": "35-gallon drums"
+            },
+            {
+                "product": "Pure olive oil",
+                "quantity": 9,
+                "unit": "55-gallon drums"
+            }
+        ],
+        "reasoning": "I selected container sizes to minimize the total number of containers while meeting the volume requirements for each grade.",
+        "additionalNotes": "This configuration uses 40 containers exactly, maximizing our storage capacity."
+    }
+}

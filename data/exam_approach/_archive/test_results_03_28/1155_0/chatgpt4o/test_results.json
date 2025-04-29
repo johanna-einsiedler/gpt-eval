@@ -1,0 +1,60 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "overall_score": 70.0,
+  "total_questions": 10,
+  "correct_answers": 7,
+  "calculation_questions_correct": 1,
+  "question_results": {
+    "q1": {
+      "candidate_answer": "a",
+      "correct_answer": "a",
+      "is_correct": true
+    },
+    "q2": {
+      "candidate_answer": 1625.0,
+      "correct_answer": 1625.0,
+      "is_correct": true
+    },
+    "q3": {
+      "candidate_answer": "e",
+      "correct_answer": "e",
+      "is_correct": true
+    },
+    "q4": {
+      "candidate_answer": 40000.0,
+      "correct_answer": 1890.0,
+      "is_correct": false
+    },
+    "q5": {
+      "candidate_answer": "a",
+      "correct_answer": "a",
+      "is_correct": true
+    },
+    "q6": {
+      "candidate_answer": "a",
+      "correct_answer": "a",
+      "is_correct": true
+    },
+    "q7": {
+      "candidate_answer": 14175.0,
+      "correct_answer": 14025.0,
+      "is_correct": false
+    },
+    "q8": {
+      "candidate_answer": "b",
+      "correct_answer": "b",
+      "is_correct": true
+    },
+    "q9": {
+      "candidate_answer": true,
+      "correct_answer": true,
+      "is_correct": true
+    },
+    "q10": {
+      "candidate_answer": 1051.1,
+      "correct_answer": 866.85,
+      "is_correct": false
+    }
+  },
+  "passed": false
+}

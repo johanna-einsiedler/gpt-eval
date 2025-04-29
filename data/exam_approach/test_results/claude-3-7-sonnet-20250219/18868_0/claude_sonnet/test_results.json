@@ -9,32 +9,32 @@
         "expected_count": 7,
         "matches": [
           [
-            "strong written and verbal communication skills",
-            "strong written and verbal communication skills"
+            "proficiency in microsoft office suite (word, excel, powerpoint)",
+            "proficiency in microsoft office suite (word, excel, powerpoint)"
           ],
           [
             "experience with digital marketing campaigns",
             "experience with digital marketing campaigns"
           ],
           [
-            "bachelor's degree in marketing, communications, business, or related field",
-            "bachelor's degree in marketing, communications, business, or related field"
+            "minimum 2 years of experience in a marketing role",
+            "minimum 2 years of experience in a marketing role"
           ],
           [
             "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
             "experience with social media platforms for business"
           ],
           [
-            "proficiency in microsoft office suite (word, excel, powerpoint)",
-            "proficiency in microsoft office suite (word, excel, powerpoint)"
-          ],
-          [
             "ability to manage multiple projects simultaneously with attention to detail",
             "ability to manage multiple projects simultaneously with attention to detail"
           ],
           [
-            "minimum 2 years of experience in a marketing role",
-            "minimum 2 years of experience in a marketing role"
+            "bachelor's degree in marketing, communications, business, or related field",
+            "bachelor's degree in marketing, communications, business, or related field"
+          ],
+          [
+            "strong written and verbal communication skills",
+            "strong written and verbal communication skills"
           ]
         ]
       }
@@ -47,24 +47,24 @@
         "expected_count": 6,
         "matches": [
           [
-            "knowledge of graphic design software (adobe creative suite)",
-            "knowledge of graphic design software (adobe creative suite)"
-          ],
-          [
             "experience with content management systems (wordpress)",
             "experience with content management systems (wordpress)"
+          ],
+          [
+            "knowledge of graphic design software (adobe creative suite)",
+            "knowledge of graphic design software (adobe creative suite)"
           ],
           [
             "data analysis skills",
             "data analysis skills"
           ],
           [
-            "event planning experience",
-            "event planning experience"
-          ],
-          [
             "seo/sem knowledge",
             "seo/sem knowledge"
+          ],
+          [
+            "event planning experience",
+            "event planning experience"
           ],
           [
             "experience with marketing automation tools (hubspot, marketo, or similar)",
@@ -138,21 +138,21 @@
             "C001"
           ],
           "common_candidates": [
+            "C006",
             "C001",
-            "C003",
-            "C006"
+            "C003"
           ]
         },
         "strengths_evaluation": {
+          "C006": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          },
           "C001": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
           "C003": {
-            "has_minimum_strengths": true,
-            "relevance_score": 1.0
-          },
-          "C006": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           }

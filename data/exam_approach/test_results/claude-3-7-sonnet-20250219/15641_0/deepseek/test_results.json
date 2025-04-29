@@ -23,20 +23,20 @@
         "case3_action": "Correct",
         "precedent_case_ids": {
           "submitted": [
-            "CV-2022-007",
-            "CV-2021-001"
+            "CV-2021-001",
+            "CV-2022-007"
           ],
           "valid_matches": [
             "CV-2022-007"
           ],
           "expected": [
-            "CV-2022-044",
             "CV-2023-015",
-            "CV-2023-022",
-            "CV-2023-002",
+            "CV-2022-044",
             "CV-2022-007",
             "CV-2022-019",
-            "CV-2022-013"
+            "CV-2022-013",
+            "CV-2023-002",
+            "CV-2023-022"
           ],
           "status": "Partially Correct"
         }

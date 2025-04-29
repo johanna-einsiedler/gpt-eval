@@ -1,0 +1,56 @@
+{
+    "candidate_id": "evaluator_key",
+    "section1": {
+        "question1": "Manufacturing PMI, Industrial Production, Capacity Utilization",
+        "question2": "rise, because the Producer Price Index increased by 2.5 points, indicating inflationary pressure on production inputs despite manufacturing slowdown",
+        "question3": "The increase in Inventory-to-Sales Ratio from 1.34 to 1.42 suggests a buildup of unsold inventory relative to sales. This typically indicates weakening demand or businesses overstocking in anticipation of future shortages or price increases.",
+        "question4": [
+            "Secure longer-term contracts for critical manufacturing inputs to mitigate potential supply constraints indicated by declining manufacturing indicators.",
+            "Consider negotiating volume discounts now as increased inventory levels suggest suppliers may be willing to offer favorable terms to reduce their stock."
+        ]
+    },
+    "section2": {
+        "question1": {
+            "2021": 2498.17,
+            "2022": 2736.08,
+            "2023": 2324.56
+        },
+        "question2": "March with 7.50%",
+        "question3": -15.42,
+        "question4": {
+            "predicted_range": [
+                2150.0,
+                2250.0
+            ],
+            "justification": "Based on the 2023 downward trend (-15.42% from January to September), we can expect continued mild decline. The last three months show stabilization (2188-2223), and fourth quarter data from previous years shows modest rebounds. The predicted range accounts for continuation of the current stabilization pattern with seasonal factors."
+        }
+    },
+    "section3": {
+        "question1": [
+            "Category 4 typhoon predicted in 7 days",
+            "Industry reports showing semiconductor inventory at 15-year lows",
+            "Labor unions at three major ports authorizing potential strike",
+            "Political tensions with neighboring countries",
+            "Competitor's new product launch in 45 days"
+        ],
+        "question2": 21000,
+        "question3": [
+            "Typhoon path and severity forecasts",
+            "Port labor negotiation updates",
+            "Supplier production capacity and shipping status"
+        ],
+        "question4": {
+            "percentage_range": [
+                15.0,
+                30.0
+            ],
+            "rationale": "With critically low industry inventory levels (15-year lows) combined with multiple imminent supply disruption risks (typhoon, port strikes), semiconductor prices will likely increase significantly. The 15-30% range reflects the severity of combined disruptions, with the high-end scenario representing typhoon damage to manufacturing facilities coupled with port strikes."
+        }
+    },
+    "section4": {
+        "question1": "The market is in contango, with futures prices rising for the next 3 months then declining for longer-term contracts. This indicates the market expects near-term supply constraints or increased demand, followed by equilibrium returning to the market in the medium to long term.",
+        "question2": -11.04,
+        "question3": "The declining open interest and volume across contract months indicates decreasing liquidity and market participation in longer-dated contracts. This suggests greater uncertainty about future market conditions and that most traders are focused on near-term price movements rather than taking long-term positions.",
+        "question4": "I recommend a layered hedging strategy utilizing futures contracts across different time periods. Purchase 40% of requirements using Month+3 contracts to secure near-term needs, 30% with Month+6 contracts, and 30% with Month+12 contracts to take advantage of the price discount in longer-dated futures. This balances price risk while capitalizing on the market's contango structure, avoiding locking in all purchases at current higher prices."
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4o",
+    "section1": {
+        "question1": "Men's Casual",
+        "question2": "-2.9%",
+        "question3": "Accessories - 85.3%"
+    },
+    "section2": {
+        "question1": "Electronics - Shows steady growth throughout the year with a significant spike during the holiday season (November-December)",
+        "question2": "1990.00",
+        "question3": "November - There is a significant jump in sales from October to November, followed by another increase in December, indicating strong holiday season demand"
+    },
+    "section3": {
+        "question1": "Consumer Confidence Index - When it increased in Q2-Q3 2023, sales improved across departments, and when it declined in Q4 2023-Q1 2024, corresponding changes in sales patterns occurred",
+        "question2": "Positive impact with an estimated 3.5% increase in sales",
+        "question3": "Accessories - This department showed the highest volatility in previous data and represents discretionary spending that consumers might reduce first when economic conditions change"
+    },
+    "section4": {
+        "question1": "Product A: 12.0 weeks, Product B: 6.7 weeks, Product C: 20.0 weeks, Product D: 5.6 weeks, Product E: 8.7 weeks",
+        "question2": "Product D - should place order in 3.6 weeks (considering 5.6 weeks of supply and 2-week lead time)",
+        "question3": "Product A: 200 units, Product B: 120 units, Product C: 290 units, Product D: 100 units, Product E: 100 units - prioritized based on weeks of supply and allocated $14,940 of the $15,000 budget"
+    },
+    "section5": {
+        "question1": "$312258",
+        "question2": "Up by 4.5%",
+        "question3": "$130500 - Based on the adjusted sales forecast of $326,310 and inventory turnover rate of 2.5 times per quarter"
+    }
+}

@@ -297,8 +297,8 @@
       "details": {
         "increasing_types": {
           "submission": [
-            "Promotion Denial",
-            "Hiring Discrimination"
+            "Hiring Discrimination",
+            "Promotion Denial"
           ],
           "correct": [],
           "is_correct": false,

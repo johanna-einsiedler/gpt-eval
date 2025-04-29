@@ -218,7 +218,7 @@
             "constraint_1": {
               "status": "incorrect",
               "submitted": "Staffing",
-              "expected": "One of Infrastructure, Technology"
+              "expected": "One of Technology, Infrastructure"
             },
             "constraint_2": {
               "status": "correct",
@@ -237,24 +237,6 @@
           "score": 0.0,
           "max_score": 15,
           "details": {
-            "IT Services": {
-              "status": "partially correct",
-              "submitted": {
-                "budgeted": 157320,
-                "actual_projected": 180000,
-                "variance_percent": 0.14
-              },
-              "expected": {
-                "budgeted": 157320,
-                "actual_projected": 193333,
-                "variance_percent": 0.23
-              },
-              "details": {
-                "budgeted": "correct",
-                "actual_projected": "incorrect",
-                "variance_percent": "incorrect"
-              }
-            },
             "Equipment": {
               "status": "partially correct",
               "submitted": {
@@ -273,12 +255,22 @@
                 "variance_percent": "incorrect"
               }
             },
-            "Travel": {
-              "status": "missing",
+            "IT Services": {
+              "status": "partially correct",
+              "submitted": {
+                "budgeted": 157320,
+                "actual_projected": 180000,
+                "variance_percent": 0.14
+              },
               "expected": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
+                "budgeted": 157320,
+                "actual_projected": 193333,
                 "variance_percent": 0.23
+              },
+              "details": {
+                "budgeted": "correct",
+                "actual_projected": "incorrect",
+                "variance_percent": "incorrect"
               }
             },
             "Marketing": {
@@ -287,6 +279,14 @@
                 "budgeted": 80011,
                 "actual_projected": 96000,
                 "variance_percent": 0.2
+              }
+            },
+            "Travel": {
+              "status": "missing",
+              "expected": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
               }
             }
           }

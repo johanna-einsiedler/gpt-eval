@@ -1,0 +1,57 @@
+{
+    "candidate_id": "GPT-4o",
+    "candidate_name": "OpenAI GPT-4o",
+    "exam_date": "2023-10-15",
+    "answers": [
+        {
+            "question_number": 1,
+            "selected_option": "b",
+            "justification": "Supplier B offers the lowest price per unit at $2.30, which is the most cost-effective option. While the delivery time is slightly longer, the price difference compensates for this, and the 1-year warranty is sufficient for most applications."
+        },
+        {
+            "question_number": 2,
+            "selected_option": "a",
+            "justification": "The shipment meets all required quality standards, with a high pass rate, acceptable cosmetic defects, and a component lifespan exceeding the minimum requirement. The slight deviation in mean time between failures is negligible and does not warrant rejection or a discount."
+        },
+        {
+            "question_number": 3,
+            "selected_option": "b",
+            "justification": "Using the Economic Order Quantity (EOQ) formula, the most economical order quantity is calculated to be approximately 1,549 units. This minimizes the total cost by balancing ordering and holding costs."
+        },
+        {
+            "question_number": 4,
+            "selected_option": "a",
+            "justification": "Supplier X offers the best balance of on-time delivery (95%) and quality compliance (98%) at a reasonable price index (105). While Supplier Y has better delivery, its higher price index makes it less favorable for critical components."
+        },
+        {
+            "question_number": 5,
+            "selected_option": "c",
+            "justification": "The '2/10 net 30' term offers a 2% discount for payment within 10 days. Annualizing this discount over 12 months results in a 36.5% annualized savings percentage, making it the most beneficial option."
+        },
+        {
+            "question_number": 6,
+            "selected_option": "b",
+            "justification": "Accepting a consultant fee from a supplier is unethical and could lead to conflicts of interest. The appropriate action is to decline the offer and report it to ensure transparency and maintain professional integrity."
+        },
+        {
+            "question_number": 7,
+            "selected_option": "a",
+            "justification": "Option 1 provides a lower total cost due to the 3% volume discount on 10,000 units, making it more economical than purchasing in two separate batches at higher prices in Option 2."
+        },
+        {
+            "question_number": 8,
+            "selected_option": "c",
+            "justification": "Given the political instability and increased shipping times, the best strategy is to both increase safety stock and begin qualifying alternative suppliers. This dual approach mitigates immediate risks while preparing for long-term supply chain stability."
+        },
+        {
+            "question_number": 9,
+            "selected_option": "b",
+            "justification": "Ordering every 4 weeks aligns with the supplier's minimum order quantity of 3,000 units and ensures sufficient stock without exceeding the component's 6-month shelf life. This minimizes holding costs while meeting production needs."
+        },
+        {
+            "question_number": 10,
+            "selected_option": "b",
+            "justification": "Supplier profit margin is not typically included in a purchase order. Purchase orders focus on payment terms, delivery timeframe, and quality specifications, which are essential for the transaction but do not involve disclosing the supplier's internal financial details."
+        }
+    ]
+}

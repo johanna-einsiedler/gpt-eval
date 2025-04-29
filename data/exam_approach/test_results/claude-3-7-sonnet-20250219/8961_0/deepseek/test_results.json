@@ -109,19 +109,19 @@
           "hypertension_history"
         ],
         "correct": [
-          "diabetes",
-          "age"
+          "age",
+          "diabetes"
         ],
         "alternative_correct": [
-          "age",
-          "bmi"
+          "bmi",
+          "age"
         ],
         "points": 0
       },
       "matching_variables": {
         "submitted": [
-          "age",
-          "bmi"
+          "bmi",
+          "age"
         ],
         "correct": [
           "age",

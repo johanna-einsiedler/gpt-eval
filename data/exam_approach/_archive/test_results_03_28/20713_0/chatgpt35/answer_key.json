@@ -1,0 +1,66 @@
+{
+    "section1": {
+        "q1": {
+            "answer": "$77.78",
+            "reasoning": "Using retail method formula: Retail Price = Cost ÷ (1 - Markup%) = $35 ÷ (1 - 0.55) = $35 ÷ 0.45 = $77.78"
+        },
+        "q2": {
+            "answer": "$100.80",
+            "reasoning": "Retail Price = Cost × Markup Multiplier = $42 × 2.4 = $100.80"
+        },
+        "q3": {
+            "answer": "$143.55",
+            "reasoning": "Selling Price = Cost ÷ (1 - Desired Margin%) = $89 ÷ (1 - 0.38) = $89 ÷ 0.62 = $143.55"
+        }
+    },
+    "section2": {
+        "q1": {
+            "answer": "25.0%",
+            "reasoning": "Min. selling price = $48 × 1.25 = $60. Original price is $79.99. Max markdown = ($79.99 - $60) ÷ $79.99 = 25.0%"
+        },
+        "q2": {
+            "answer": {
+                "price": "$90.99",
+                "margin": "26.4%"
+            },
+            "reasoning": "New price after 30% markdown = $129.99 × (1 - 0.3) = $90.99. Margin = ($90.99 - $72) ÷ $90.99 = 26.4%"
+        },
+        "q3": {
+            "answer": "40.0%",
+            "reasoning": "Need to clear 75% at markdown while maintaining 15% margin. Min. sale price = $46,800 ÷ (0.75 × 0.85) = $73.26 per $100 retail. Required markdown = ($100 - $73.26) ÷ $100 = 26.74%. However, this doesn't account for clearance goal. Testing 40% markdown: $78,000 × (1 - 0.4) = $46,800 ÷ 0.85, which confirms 40% markdown is appropriate"
+        }
+    },
+    "section3": {
+        "q1": {
+            "answer": "Yes, $129.99",
+            "reasoning": "Minimum selling price = $82.50 ÷ (1 - 0.22) = $105.77. Competitor's price is $129.99, which exceeds our minimum, so we can match it"
+        },
+        "q2": {
+            "answer": "Yes, $63.18-$74.99",
+            "reasoning": "Standard markup yields price = $34.75 ÷ (1 - 0.45) = $63.18, which falls within competitor range of $59.99-$74.99. Recommend staying in this range"
+        }
+    },
+    "section4": {
+        "q1": {
+            "answer": "$41.67",
+            "reasoning": "For break-even: 0.7 × Full Price + 0.3 × (Full Price × 0.25) = Cost. Solving for Initial Price with 60% markup: Initial Price = $12.50 ÷ (0.7 + 0.3 × 0.25) = $12.50 ÷ 0.775 = $16.13 ÷ 0.4 = $41.67"
+        },
+        "q2": {
+            "answer": {
+                "current_margin": "45.3%",
+                "recommended_markup": "55.4%"
+            },
+            "reasoning": "Total sales = $89,400 × 0.75 + ($89,400 × 0.25 × 0.6) = $67,050 + $13,410 = $80,460. Effective margin = ($80,460 - $45,300) ÷ $80,460 = 45.3%. To improve by 5 points: New markup = 50.3% on selling price, which is 55.4% initial markup"
+        }
+    },
+    "section5": {
+        "q1": {
+            "answer": "Option B, $4644 vs $4648",
+            "reasoning": "Option A: Profit = 300 × ($39.99 - $18) + 150 × ($29.99 - $18) = $6,597 + $1,798.50 = $8,395.50. Total cost = 500 × $18 = $9,000. Net = $8,395.50 - $9,000 = -$604.50. Option B: Profit = 300 × ($39.99 - $18) + 100 × ($34.99 - $18) + 80 × ($24.99 - $18) = $6,597 + $1,699 + $559.20 = $8,855.20. Net = $8,855.20 - $9,000 = -$144.80. Option B maximizes profit (or minimizes loss)"
+        },
+        "q2": {
+            "answer": "Vendor B",
+            "reasoning": "Vendor A requires $22,500 capital outlay (1000 × $22.50) for inventory that exceeds 4-month demand. Vendor B requires just $12,375 (500 × $24.75) and offers reorder discount. Despite higher unit cost, Vendor B provides better inventory management, cash flow, and long-term savings with the 6% discount on reorders"
+        }
+    }
+}

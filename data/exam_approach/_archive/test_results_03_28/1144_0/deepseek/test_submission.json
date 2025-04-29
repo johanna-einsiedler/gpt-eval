@@ -1,0 +1,232 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "section1": {
+        "question1_1_1": {
+            "supplier_a_total_cost": 62500.0,
+            "supplier_b_total_cost": 74800.0,
+            "supplier_c_total_cost": 52500.0,
+            "calculations": "Total cost = Initial purchase + Replacement cost over 5 years. Replacement rate = 10% annually. For Supplier A: Initial cost = 200 * $250 = $50,000. Annual replacement = 20 chairs * $250 = $5,000. Total replacement over 5 years = $5,000 * 5 = $25,000. Total cost = $50,000 + $25,000 = $75,000. Similarly for Supplier B: Initial cost = 200 * $299 = $59,800. Annual replacement = 20 chairs * $299 = $5,980. Total replacement over 5 years = $5,980 * 5 = $29,900. Total cost = $59,800 + $29,900 = $89,700. For Supplier C: Initial cost = 200 * $210 = $42,000. Annual replacement = 20 chairs * $210 = $4,200. Total replacement over 5 years = $4,200 * 5 = $21,000. Total cost = $42,000 + $21,000 = $63,000."
+        },
+        "question1_1_2": {
+            "ranking": "B,A,C",
+            "justification": "Supplier B is ranked first due to the highest quality rating (4.8/5) and fastest delivery (1 week). Supplier A is second with a good quality rating (4.2/5) and moderate delivery time (2-3 weeks). Supplier C is last due to the lowest quality rating (3.5/5) and longest delivery time (4-6 weeks)."
+        },
+        "question1_2_1": {
+            "supplier_x_landed_cost": 2.85,
+            "supplier_y_landed_cost": 3.15,
+            "supplier_z_landed_cost": 2.75,
+            "calculations": "Landed cost = Price + Transportation cost. For Supplier X: $2.75 + $0.10 = $2.85. For Supplier Y: $3.10 + $0.05 = $3.15. For Supplier Z: $2.60 + $0.15 = $2.75."
+        },
+        "question1_2_2": {
+            "most_economical_supplier": "Y",
+            "total_6month_cost": 75600.0,
+            "calculations": "Monthly requirement = 4,000 kg. Storage capacity = 15,000 kg. For Supplier Y: Order quantity = 4,000 kg * 6 = 24,000 kg. Total cost = 24,000 kg * $3.15 = $75,600. Supplier Y is most economical due to lower minimum order and higher on-time delivery rate."
+        }
+    },
+    "section2": {
+        "question2_1": {
+            "criteria": [
+                {
+                    "criterion": "Price",
+                    "explanation": "Cost efficiency is crucial for maintaining profitability."
+                },
+                {
+                    "criterion": "Quality",
+                    "explanation": "High-quality components reduce defects and improve product reliability."
+                },
+                {
+                    "criterion": "Delivery reliability",
+                    "explanation": "Ensures timely production schedules and avoids delays."
+                },
+                {
+                    "criterion": "Supplier stability",
+                    "explanation": "Indicates long-term reliability and risk of supply chain disruptions."
+                },
+                {
+                    "criterion": "Technical support",
+                    "explanation": "Provides necessary assistance for integration and troubleshooting."
+                }
+            ]
+        },
+        "question2_2": {
+            "method_explanation": "Weighted scoring method assigns weights to each criterion based on importance. Scores are multiplied by weights and summed to get a total score.",
+            "supplier1_calculation": {
+                "weighted_scores": {
+                    "price": 2.8,
+                    "quality": 2.7,
+                    "delivery": 1.4,
+                    "stability": 1.0,
+                    "support": 0.3
+                },
+                "total_score": 8.2
+            },
+            "supplier2_calculation": {
+                "weighted_scores": {
+                    "price": 3.5,
+                    "quality": 2.1,
+                    "delivery": 1.6,
+                    "stability": 0.6,
+                    "support": 0.45
+                },
+                "total_score": 8.25
+            },
+            "selected_supplier": "Supplier 2"
+        },
+        "question2_3": [
+            {
+                "indicator": "Current Ratio",
+                "explanation": "Measures liquidity and ability to cover short-term liabilities."
+            },
+            {
+                "indicator": "Debt-to-Equity Ratio",
+                "explanation": "Indicates financial leverage and risk level."
+            },
+            {
+                "indicator": "Profit Margin",
+                "explanation": "Shows profitability and operational efficiency."
+            }
+        ]
+    },
+    "section3": {
+        "question3_1": [
+            "Customer reviews and ratings",
+            "Industry reports and publications",
+            "Third-party audit reports",
+            "Supplier financial statements",
+            "Case studies and white papers"
+        ],
+        "question3_2": {
+            "supplier_site_visits": {
+                "strength": "Direct observation of operations and facilities.",
+                "limitation": "Time-consuming and may not reveal hidden issues."
+            },
+            "third_party_audits": {
+                "strength": "Objective and comprehensive assessment.",
+                "limitation": "Can be costly and may not cover all areas."
+            },
+            "customer_references": {
+                "strength": "Provides real-world performance insights.",
+                "limitation": "May be biased or selective."
+            },
+            "industry_certifications": {
+                "strength": "Indicates compliance with standards.",
+                "limitation": "Does not guarantee ongoing performance."
+            },
+            "sample_testing": {
+                "strength": "Direct evaluation of product quality.",
+                "limitation": "Limited scope and may not represent bulk quality."
+            }
+        },
+        "question3_3": {
+            "steps": [
+                "Review the methodology of both reports.",
+                "Contact the supplier for clarification.",
+                "Request additional data or third-party verification.",
+                "Conduct an independent assessment if necessary."
+            ]
+        }
+    },
+    "section4": {
+        "question4_1": {
+            "medical_devices": {
+                "ranking": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                ],
+                "factors_in_order": [
+                    "Quality certifications",
+                    "Financial stability",
+                    "Production capacity",
+                    "References from current customers",
+                    "Geographic location",
+                    "Price"
+                ],
+                "justification": "Quality and reliability are paramount for medical devices."
+            },
+            "consumer_electronics": {
+                "ranking": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                ],
+                "factors_in_order": [
+                    "Price",
+                    "Production capacity",
+                    "Geographic location",
+                    "Quality certifications",
+                    "Financial stability",
+                    "References from current customers"
+                ],
+                "justification": "Cost efficiency and production capacity are critical for consumer electronics."
+            },
+            "military_equipment": {
+                "ranking": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                ],
+                "factors_in_order": [
+                    "Quality certifications",
+                    "Financial stability",
+                    "References from current customers",
+                    "Production capacity",
+                    "Geographic location",
+                    "Price"
+                ],
+                "justification": "Quality and supplier stability are crucial for military applications."
+            }
+        },
+        "question4_2": {
+            "supplier_p_calculation": {
+                "price_weighted": 1.2,
+                "quality_weighted": 1.25,
+                "delivery_weighted": 0.6,
+                "technical_weighted": 0.75,
+                "stability_weighted": 0.4,
+                "total_score": 4.2
+            },
+            "supplier_q_calculation": {
+                "price_weighted": 1.5,
+                "quality_weighted": 0.75,
+                "delivery_weighted": 0.8,
+                "technical_weighted": 0.45,
+                "stability_weighted": 0.3,
+                "total_score": 3.8
+            },
+            "supplier_r_calculation": {
+                "price_weighted": 0.9,
+                "quality_weighted": 1.0,
+                "delivery_weighted": 1.0,
+                "technical_weighted": 0.6,
+                "stability_weighted": 0.5,
+                "total_score": 4.0
+            },
+            "selected_supplier": "P",
+            "justification": "Supplier P has the highest total weighted score, excelling in quality and technical capability."
+        },
+        "question4_3": [
+            {
+                "scenario": "High-risk industry (e.g., aerospace)",
+                "factors_outweighing_price": "Quality and reliability are critical to ensure safety and compliance with stringent regulations."
+            },
+            {
+                "scenario": "Just-in-time manufacturing",
+                "factors_outweighing_price": "Delivery reliability and supplier stability are essential to avoid production disruptions."
+            },
+            {
+                "scenario": "Custom or specialized components",
+                "factors_outweighing_price": "Technical capability and support are necessary to meet specific requirements and ensure proper integration."
+            }
+        ]
+    }
+}

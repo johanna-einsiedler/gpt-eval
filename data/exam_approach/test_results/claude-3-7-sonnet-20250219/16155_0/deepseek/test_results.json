@@ -151,8 +151,8 @@
         "max_points": 6,
         "submitted": [
           "Jennifer Williams",
-          "Sarah Johnson",
-          "Michael Chen"
+          "Michael Chen",
+          "Sarah Johnson"
         ],
         "expected": [
           "Michael Chen",
@@ -181,8 +181,8 @@
         "max_points": 6,
         "submitted": [
           "Feature priority scores",
-          "Pain point frequency",
-          "Satisfaction rating"
+          "Satisfaction rating",
+          "Pain point frequency"
         ],
         "expected": [
           "Feature priority scores",

@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "question1": {
+        "answer": "The standard quota calculation formula used by the Federal Grain Authority is: Quota = Production Volume × Adjustment Factor. \n\n- **Quota**: Represents the allocated or allowable amount of grain that can be purchased or sold under government regulations. It is the result of the calculation.\n- **Production Volume**: This is the total quantity of grain produced by a farm or region, usually measured in bushels or tons. It is the input to the formula.\n- **Adjustment Factor**: A multiplier set by the Federal Grain Authority to adjust quotas based on various factors such as grain type, market conditions, or government policies. It scales the production volume to determine the final quota."
+    },
+    "question2": {
+        "answer": {
+            "part_a": {
+                "wheat": 6000,
+                "corn": 2400
+            },
+            "part_b": 8400
+        }
+    },
+    "question3": {
+        "answer": 8635
+    },
+    "question4": {
+        "answer": 13080
+    },
+    "question5": {
+        "answer": {
+            "incorrect_farms": [
+                "B-456",
+                "C-789",
+                "E-345"
+            ],
+            "correct_values": {
+                "B-456": 13387.5,
+                "C-789": 28050,
+                "E-345": 6800
+            }
+        }
+    }
+}

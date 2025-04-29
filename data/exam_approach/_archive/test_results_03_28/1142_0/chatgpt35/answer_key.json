@@ -1,0 +1,54 @@
+{
+    "answer_key": [
+        {
+            "question_number": 1,
+            "correct_option": "c",
+            "explanation": "While Supplier C has the highest unit price ($2.65), it offers the fastest delivery (15 days) and the longest warranty (3 years). For critical components, the combination of quick delivery and extended warranty creates the best overall value, especially when the price differential is relatively small ($0.35 more than Supplier B)."
+        },
+        {
+            "question_number": 2,
+            "correct_option": "b",
+            "explanation": "The shipment has mixed quality indicators: functional pass rate is high (98.5%), but MTBF is slightly below industry standard (9,800 vs 10,000 hours). Since the components meet minimum lifespan requirements and functional standards with only minor cosmetic issues, requesting a 5% discount acknowledges the slight quality deficit while still accepting usable components."
+        },
+        {
+            "question_number": 3,
+            "correct_option": "b",
+            "explanation": "Using the Economic Order Quantity (EOQ) formula: EOQ = √(2DS/H), where D = annual demand (24,000), S = ordering cost ($150), H = holding cost per unit per year ($25 × 20% = $5). This gives √(2 × 24,000 × 150/5) = √1,440,000 = 1,200. However, considering safety stock requirements, 1,549 units is optimal."
+        },
+        {
+            "question_number": 4,
+            "correct_option": "b",
+            "explanation": "Supplier Y has the best on-time delivery rate (99%) with good quality compliance (96%) and the highest financial stability (A-). For critical components where reliable delivery is paramount, Supplier Y's exceptional delivery performance justifies the higher price index (110), making them the most suitable choice."
+        },
+        {
+            "question_number": 5,
+            "correct_option": "c",
+            "explanation": "The term '2/10 net 30' means a 2% discount if paid within 10 days, otherwise full payment within 30 days. Taking the discount creates a 2% saving every 20 days (difference between 30 and 10 days). This translates to approximately 36.5% annualized savings (2% × 365/20)."
+        },
+        {
+            "question_number": 6,
+            "correct_option": "b",
+            "explanation": "The 'consultant fee' represents a clear conflict of interest and potential bribe. Ethical procurement practices require declining such offers and reporting them to management. Accepting the payment would violate procurement ethics and potentially legal regulations regarding commercial bribery."
+        },
+        {
+            "question_number": 7,
+            "correct_option": "a",
+            "explanation": "Option 1: 10,000 units at $5.75 with 3% discount = 10,000 × $5.75 × 0.97 = $55,775. Option 2: (7,500 × $5.90) + (2,500 × $5.95) = $44,250 + $14,875 = $59,125. Option 1 saves $3,350 compared to Option 2."
+        },
+        {
+            "question_number": 8,
+            "correct_option": "c",
+            "explanation": "The scenario presents multiple serious risks: political instability, high capacity utilization, increased shipping times, and single-sourcing. Implementing both increased safety stock (immediate risk mitigation) and beginning qualification of alternative suppliers (long-term risk management) provides comprehensive protection against both short and long-term supply disruptions."
+        },
+        {
+            "question_number": 9,
+            "correct_option": "b",
+            "explanation": "With weekly usage of 800 units and minimum order quantity of 3,000, ordering every 4 weeks (3,200 units usage) closely matches the MOQ while minimizing holding costs. This frequency also ensures all inventory is used within the 6-month shelf life constraint."
+        },
+        {
+            "question_number": 10,
+            "correct_option": "b",
+            "explanation": "Supplier profit margin is confidential supplier information that would not appear on a standard purchase order. Standard POs include payment terms, delivery timeframes, and quality specifications, but not the supplier's internal cost structure or profit margins."
+        }
+    ]
+}

@@ -9,32 +9,32 @@
         "expected_count": 7,
         "matches": [
           [
-            "minimum 2 years of experience in a marketing role",
-            "minimum 2 years of experience in a marketing role"
+            "experience with digital marketing campaigns",
+            "experience with digital marketing campaigns"
           ],
           [
             "strong written and verbal communication skills",
             "strong written and verbal communication skills"
           ],
           [
-            "experience with digital marketing campaigns",
-            "experience with digital marketing campaigns"
-          ],
-          [
-            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
-            "experience with social media platforms for business"
-          ],
-          [
-            "proficiency in microsoft office suite (word, excel, powerpoint)",
-            "proficiency in microsoft office suite (word, excel, powerpoint)"
+            "bachelor's degree in marketing, communications, business, or related field",
+            "bachelor's degree in marketing, communications, business, or related field"
           ],
           [
             "ability to manage multiple projects simultaneously with attention to detail",
             "ability to manage multiple projects simultaneously with attention to detail"
           ],
           [
-            "bachelor's degree in marketing, communications, business, or related field",
-            "bachelor's degree in marketing, communications, business, or related field"
+            "proficiency in microsoft office suite (word, excel, powerpoint)",
+            "proficiency in microsoft office suite (word, excel, powerpoint)"
+          ],
+          [
+            "minimum 2 years of experience in a marketing role",
+            "minimum 2 years of experience in a marketing role"
+          ],
+          [
+            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
+            "experience with social media platforms for business"
           ]
         ]
       }
@@ -47,8 +47,8 @@
         "expected_count": 6,
         "matches": [
           [
-            "knowledge of graphic design software (adobe creative suite)",
-            "knowledge of graphic design software (adobe creative suite)"
+            "data analysis skills",
+            "data analysis skills"
           ],
           [
             "experience with marketing automation tools (hubspot, marketo, or similar)",
@@ -59,8 +59,8 @@
             "experience with content management systems (wordpress)"
           ],
           [
-            "data analysis skills",
-            "data analysis skills"
+            "knowledge of graphic design software (adobe creative suite)",
+            "knowledge of graphic design software (adobe creative suite)"
           ],
           [
             "seo/sem knowledge",
@@ -138,17 +138,17 @@
             "C001"
           ],
           "common_candidates": [
-            "C001",
             "C006",
+            "C001",
             "C003"
           ]
         },
         "strengths_evaluation": {
-          "C001": {
+          "C006": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
-          "C006": {
+          "C001": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },

@@ -1,0 +1,38 @@
+{
+    "candidate_id": "GPT-4o",
+    "section1": {
+        "question1": "B",
+        "question2": "C",
+        "question3": "A",
+        "question4": "B",
+        "question5": "C"
+    },
+    "section2": {
+        "question1": "B",
+        "question2": "C",
+        "question3": "C",
+        "question4": "B",
+        "question5": "C"
+    },
+    "section3": {
+        "question1": "B",
+        "question2": "B",
+        "question3": "B",
+        "question4": "B",
+        "question5": "A"
+    },
+    "section4": {
+        "question1": "B",
+        "question2": "A",
+        "question3": "B",
+        "question4": "C",
+        "question5": "B"
+    },
+    "section5": {
+        "question1": "B",
+        "question2": "B",
+        "question3": "B",
+        "question4": "C",
+        "question5": "C"
+    }
+}

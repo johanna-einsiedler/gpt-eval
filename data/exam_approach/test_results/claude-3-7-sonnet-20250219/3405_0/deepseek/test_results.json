@@ -222,7 +222,7 @@
             "constraint_2": {
               "status": "incorrect",
               "submitted": "Staffing",
-              "expected": "One of Technology, Infrastructure"
+              "expected": "One of Infrastructure, Technology"
             }
           }
         }
@@ -237,55 +237,6 @@
           "score": 11.25,
           "max_score": 15,
           "details": {
-            "Equipment": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 254581,
-                "actual_projected": 306667,
-                "variance_percent": 0.2
-              },
-              "expected": {
-                "budgeted": 254581,
-                "actual_projected": 306667,
-                "variance_percent": 0.2
-              }
-            },
-            "Miscellaneous": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 40517,
-                "actual_projected": 37333,
-                "variance_percent": -0.08
-              },
-              "expected": "Not a significant variance"
-            },
-            "Training": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 94559,
-                "actual_projected": 86667,
-                "variance_percent": -0.08
-              },
-              "expected": "Not a significant variance"
-            },
-            "Consulting": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 174570,
-                "actual_projected": 206667,
-                "variance_percent": 0.18
-              },
-              "expected": "Not a significant variance"
-            },
-            "Facilities": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 173644,
-                "actual_projected": 180000,
-                "variance_percent": 0.04
-              },
-              "expected": "Not a significant variance"
-            },
             "IT Services": {
               "status": "correct",
               "submitted": {
@@ -308,6 +259,46 @@
               },
               "expected": "Not a significant variance"
             },
+            "Training": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 94559,
+                "actual_projected": 86667,
+                "variance_percent": -0.08
+              },
+              "expected": "Not a significant variance"
+            },
+            "Miscellaneous": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 40517,
+                "actual_projected": 37333,
+                "variance_percent": -0.08
+              },
+              "expected": "Not a significant variance"
+            },
+            "Equipment": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 254581,
+                "actual_projected": 306667,
+                "variance_percent": 0.2
+              },
+              "expected": {
+                "budgeted": 254581,
+                "actual_projected": 306667,
+                "variance_percent": 0.2
+              }
+            },
+            "Consulting": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 174570,
+                "actual_projected": 206667,
+                "variance_percent": 0.18
+              },
+              "expected": "Not a significant variance"
+            },
             "Marketing": {
               "status": "correct",
               "submitted": {
@@ -320,6 +311,15 @@
                 "actual_projected": 96000,
                 "variance_percent": 0.2
               }
+            },
+            "Facilities": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 173644,
+                "actual_projected": 180000,
+                "variance_percent": 0.04
+              },
+              "expected": "Not a significant variance"
             },
             "Travel": {
               "status": "missing",

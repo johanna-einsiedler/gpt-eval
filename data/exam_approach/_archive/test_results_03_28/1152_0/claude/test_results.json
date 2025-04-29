@@ -1,0 +1,199 @@
+{
+  "candidate_id": "GPT-4o",
+  "section_scores": {
+    "section1": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0
+    },
+    "section2": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0
+    },
+    "section3": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0
+    },
+    "section4": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0
+    },
+    "section5": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0
+    }
+  },
+  "question_results": {
+    "section1": {
+      "question1": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question2": {
+        "candidate_answer": "C",
+        "correct_answer": "C",
+        "is_correct": true,
+        "score": 4
+      },
+      "question3": {
+        "candidate_answer": "A",
+        "correct_answer": "A",
+        "is_correct": true,
+        "score": 4
+      },
+      "question4": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question5": {
+        "candidate_answer": "C",
+        "correct_answer": "C",
+        "is_correct": true,
+        "score": 4
+      }
+    },
+    "section2": {
+      "question1": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question2": {
+        "candidate_answer": "C",
+        "correct_answer": "C",
+        "is_correct": true,
+        "score": 4
+      },
+      "question3": {
+        "candidate_answer": "C",
+        "correct_answer": "C",
+        "is_correct": true,
+        "score": 4
+      },
+      "question4": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question5": {
+        "candidate_answer": "C",
+        "correct_answer": "C",
+        "is_correct": true,
+        "score": 4
+      }
+    },
+    "section3": {
+      "question1": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question2": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question3": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question4": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question5": {
+        "candidate_answer": "A",
+        "correct_answer": "A",
+        "is_correct": true,
+        "score": 4
+      }
+    },
+    "section4": {
+      "question1": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question2": {
+        "candidate_answer": "A",
+        "correct_answer": "A",
+        "is_correct": true,
+        "score": 4
+      },
+      "question3": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question4": {
+        "candidate_answer": "C",
+        "correct_answer": "C",
+        "is_correct": true,
+        "score": 4
+      },
+      "question5": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      }
+    },
+    "section5": {
+      "question1": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question2": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question3": {
+        "candidate_answer": "B",
+        "correct_answer": "B",
+        "is_correct": true,
+        "score": 4
+      },
+      "question4": {
+        "candidate_answer": "C",
+        "correct_answer": "C",
+        "is_correct": true,
+        "score": 4
+      },
+      "question5": {
+        "candidate_answer": "C",
+        "correct_answer": "C",
+        "is_correct": true,
+        "score": 4
+      }
+    }
+  },
+  "performance_summary": {
+    "total_score": 100,
+    "max_possible_score": 100,
+    "overall_score": 100.0,
+    "performance_level": "Excellent",
+    "passing_grade": true
+  }
+}

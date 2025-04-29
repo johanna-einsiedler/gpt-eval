@@ -1,0 +1,73 @@
+{
+    "candidateID": "GPT-4o",
+    "section1": {
+        "q1": {
+            "a": "A Blanket Purchase Order is a long-term agreement with a vendor for recurring purchases, typically used for frequently ordered items or services.",
+            "b": "A Request for Proposal (RFP) is a formal document soliciting detailed proposals from vendors, often used for complex or high-value purchases.",
+            "c": "Terms and Conditions are the legal and operational stipulations that govern a purchase agreement, including payment terms, delivery requirements, and warranties.",
+            "d": "FOB (Free on Board) specifies the point at which ownership and responsibility for goods transfer from the seller to the buyer, typically at a designated shipping location.",
+            "e": "Net 30 refers to payment terms requiring the buyer to pay the invoice within 30 days of receipt."
+        },
+        "q2": "b",
+        "q3": "c",
+        "q4": true,
+        "q5": "c"
+    },
+    "section2": {
+        "q1": [
+            "Purchase Order Number",
+            "Vendor Information",
+            "Item Descriptions",
+            "Quantities",
+            "Payment Terms"
+        ],
+        "q2": {
+            "a": 3750,
+            "b": 187.5,
+            "c": 3712.5
+        },
+        "q3": {
+            "a": "header",
+            "b": "line item",
+            "c": "footer",
+            "d": "header",
+            "e": "line item"
+        },
+        "q4": 14650,
+        "q5": "a"
+    },
+    "section3": {
+        "q1": [
+            "Scope of Work",
+            "Evaluation Criteria",
+            "Submission Requirements",
+            "Contract Terms"
+        ],
+        "q2": {
+            "selectedVendor": "C",
+            "justification": "Vendor C offers the longest warranty (3 years), which is the primary criterion. Although the price is higher, the extended warranty provides better long-term value."
+        },
+        "q3": "d",
+        "q4": false,
+        "q5": [
+            "Licensing and Certifications",
+            "Past Project Experience",
+            "References from Previous Clients"
+        ]
+    },
+    "section4": {
+        "q1": [
+            "Item Descriptions",
+            "Quantities",
+            "Budget Approval",
+            "Delivery Requirements"
+        ],
+        "q2": "c",
+        "q3": {
+            "isCorrect": false,
+            "correctTotal": 912.5
+        },
+        "q4": "c",
+        "q5": false
+    }
+}

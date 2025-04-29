@@ -1,0 +1,93 @@
+{
+    "candidate_id": "GPT-4o",
+    "section1": {
+        "q1": {
+            "average_consumption": {
+                "printer_paper": 150,
+                "ink_cartridges": 46,
+                "staplers": 11.67,
+                "pens": 35
+            },
+            "strongest_upward_trend": "printer_paper",
+            "justification": "Printer paper shows consistent month-over-month increases (120→150→180), representing a 50% increase from January to March."
+        },
+        "q2": {
+            "percentage_changes": {
+                "engineering": 28.13,
+                "administration": -2.78,
+                "operations": 14.81
+            },
+            "priority_department": "engineering",
+            "justification": "Engineering shows the highest percentage increase in expenses from Q1 to Q4, indicating a need for cost review."
+        },
+        "q3": {
+            "predicted_replacement": "safety_glasses",
+            "calculation": "Safety glasses will need replacement in 1.8 months (30 units / (200 uses/month * (1/12 lifespan)))",
+            "justification": "Safety glasses have the highest usage frequency relative to inventory and shortest lifespan, leading to the earliest replacement need."
+        }
+    },
+    "section2": {
+        "q4": {
+            "items_needing_reorder": [
+                "clipboards"
+            ],
+            "optimal_quantities": {
+                "clipboards": 30
+            },
+            "justification": "Clipboards are below the minimum level. Optimal order quantity is 75% of maximum level (40 * 0.75 = 30)."
+        },
+        "q5": {
+            "turnover_rates": {
+                "paper_products": 8.0,
+                "writing_instruments": 5.0,
+                "filing_supplies": 3.0,
+                "technology_accessories": 3.5
+            },
+            "healthiest_category": "paper_products",
+            "justification": "Paper products have the highest turnover rate (8.0), indicating efficient inventory management and faster sales cycles."
+        },
+        "q6": {
+            "service_levels": {
+                "whiteboard_markers": 90.0,
+                "copy_paper": 92.5,
+                "staples": 95.0,
+                "highlighters": 83.33
+            },
+            "urgent_improvement_needed": "highlighters",
+            "justification": "Highlighters have the lowest service level (83.33%) due to frequent stockouts, requiring immediate inventory management improvement."
+        }
+    },
+    "section3": {
+        "q7": {
+            "potential_monthly_savings": 318.0,
+            "department_priority_order": [
+                "marketing",
+                "finance",
+                "customer_service"
+            ],
+            "justification": "Marketing has the highest per-employee supply cost and would benefit most from controls. Total savings calculated as 20% of current costs."
+        },
+        "q8": {
+            "supplier_scores": {
+                "supplier_a": 82.5,
+                "supplier_b": 77.5,
+                "supplier_c": 86.25,
+                "supplier_d": 74.25
+            },
+            "recommended_supplier": "supplier_c",
+            "justification": "Supplier C has the highest weighted score (86.25) due to excellent delivery time and quality, despite higher price."
+        },
+        "q9": {
+            "projected_annual_consumption": 1815,
+            "budgeted_expenditure": 23947.5,
+            "optimal_purchasing_frequency": 6,
+            "justification": "Annual consumption projected at 1650 units + 10% growth. Budget accounts for 3% price increase. Optimal frequency calculated using EOQ formula."
+        },
+        "q10": {
+            "current_monthly_processing_cost": 3946.25,
+            "potential_savings": 1183.88,
+            "optimal_approval_threshold": 2800.0,
+            "justification": "Current cost calculated at $35/hour. 30% time reduction yields savings. Threshold set at $2,800 to capture 80% of PO value (Pareto principle)."
+        }
+    }
+}

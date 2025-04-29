@@ -1,0 +1,33 @@
+{
+    "candidate_id": "GPT-4o",
+    "section1": {
+        "q1": "8625.00",
+        "q2": "SUP-442",
+        "q3": "15.0",
+        "q4": "750"
+    },
+    "section2": {
+        "q1": "[\"PO-2023-2002\": \"Invoice quantity is 45 instead of 50\", \"PO-2023-2003\": \"Invoice unit price is $16.25 instead of $15.75\", \"PO-2023-2008\": \"Invoice quantity is 100 instead of 90\"]",
+        "q2": "100.00",
+        "q3": "357.50",
+        "q4": "[\"PO-2023-2003\", \"PO-2023-2008\"]"
+    },
+    "section3": {
+        "q1": "1.58",
+        "q2": "4812.50",
+        "q3": "February: 16.88 days",
+        "q4": "900"
+    },
+    "section4": {
+        "q1": "[\"SUP-001\": \"86.67%\", \"SUP-002\": \"92.11%\", \"SUP-003\": \"78.57%\"]",
+        "q2": "[\"SUP-001\": \"28\", \"SUP-002\": \"31\", \"SUP-003\": \"21\"]",
+        "q3": "I would recommend SUP-002 because they have the highest on-time delivery rate and a low defect rate, which aligns with the priority on quality.",
+        "q4": "SUP-003 offers the best value as they have the lowest price per unit, which is beneficial for cost reduction, despite their longer lead time."
+    },
+    "section5": {
+        "q1": "[\"Invalid date (June 31 doesn't exist)\", \"Missing Supplier ID\", \"Unit price for Office Paper is in text format instead of numerical\", \"Calculation error in extended price for toner cartridges\"]",
+        "q2": "[\"Date: 06/30/2023\", \"Supplier ID: [appropriate ID]\", \"Unit Price: $22.50\", \"Toner Extended: $1,140.00\"]",
+        "q3": "[\"Purchase order approval status\", \"Delivery date/schedule\", \"Item codes/SKUs\"]",
+        "q4": "7 years"
+    }
+}

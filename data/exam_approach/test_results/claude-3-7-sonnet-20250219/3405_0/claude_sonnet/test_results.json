@@ -236,17 +236,17 @@
           "score": 15,
           "max_score": 15,
           "details": {
-            "Marketing": {
+            "Travel": {
               "status": "correct",
               "submitted": {
-                "budgeted": 80011,
-                "actual_projected": 96000,
-                "variance_percent": 0.2
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
               },
               "expected": {
-                "budgeted": 80011,
-                "actual_projected": 96000,
-                "variance_percent": 0.2
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
               }
             },
             "IT Services": {
@@ -262,6 +262,19 @@
                 "variance_percent": 0.23
               }
             },
+            "Marketing": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 80011,
+                "actual_projected": 96000,
+                "variance_percent": 0.2
+              },
+              "expected": {
+                "budgeted": 80011,
+                "actual_projected": 96000,
+                "variance_percent": 0.2
+              }
+            },
             "Equipment": {
               "status": "correct",
               "submitted": {
@@ -273,19 +286,6 @@
                 "budgeted": 254581,
                 "actual_projected": 306667,
                 "variance_percent": 0.2
-              }
-            },
-            "Travel": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
-              },
-              "expected": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
               }
             }
           }

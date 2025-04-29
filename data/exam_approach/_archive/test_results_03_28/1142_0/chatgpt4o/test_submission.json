@@ -1,0 +1,57 @@
+{
+    "candidate_id": "GPT-4o",
+    "candidate_name": "Your Full Name",
+    "exam_date": "2023-10-15",
+    "answers": [
+        {
+            "question_number": 1,
+            "selected_option": "b",
+            "justification": "Supplier B offers the lowest price per unit, which is crucial for cost savings. Although the delivery time is longer, the warranty period is acceptable for the price advantage."
+        },
+        {
+            "question_number": 2,
+            "selected_option": "a",
+            "justification": "The shipment meets the functional testing pass rate and lifespan requirements. The cosmetic defects are minor and do not affect functionality, making the shipment acceptable."
+        },
+        {
+            "question_number": 3,
+            "selected_option": "b",
+            "justification": "Using the Economic Order Quantity (EOQ) formula, the most economical order quantity is approximately 1,549 units, balancing ordering and holding costs."
+        },
+        {
+            "question_number": 4,
+            "selected_option": "a",
+            "justification": "Supplier X offers a good balance of on-time delivery and quality compliance, with a reasonable price index and financial stability, making them suitable for critical components."
+        },
+        {
+            "question_number": 5,
+            "selected_option": "c",
+            "justification": "The term '2/10 net 30' offers a 2% discount if paid within 10 days. The annualized savings percentage is approximately 36.5% when calculated over a year."
+        },
+        {
+            "question_number": 6,
+            "selected_option": "b",
+            "justification": "Accepting a 'consultant fee' could be unethical and against company policy. It is best to decline the offer and report it to a supervisor to maintain integrity."
+        },
+        {
+            "question_number": 7,
+            "selected_option": "a",
+            "justification": "Option 1, with a 3% volume discount, results in a lower total cost compared to purchasing in two separate batches at higher prices."
+        },
+        {
+            "question_number": 8,
+            "selected_option": "c",
+            "justification": "To mitigate risk, both increasing safety stock and qualifying alternative suppliers are necessary due to political instability and increased shipping times."
+        },
+        {
+            "question_number": 9,
+            "selected_option": "b",
+            "justification": "Ordering every 4 weeks aligns with the minimum order quantity and holding cost considerations, ensuring supply without excessive inventory."
+        },
+        {
+            "question_number": 10,
+            "selected_option": "b",
+            "justification": "Supplier profit margin is not typically included in a purchase order, as it is internal information not shared with buyers."
+        }
+    ]
+}

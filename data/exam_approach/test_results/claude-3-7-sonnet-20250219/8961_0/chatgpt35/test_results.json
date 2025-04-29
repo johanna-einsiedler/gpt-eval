@@ -16,12 +16,12 @@
       },
       "stratification_variables": {
         "submitted": [
-          "baseline_bp",
-          "age"
+          "age",
+          "baseline_bp"
         ],
         "correct": [
-          "hypertension_history",
-          "age"
+          "age",
+          "hypertension_history"
         ],
         "points": 0
       },
@@ -105,27 +105,27 @@
       },
       "confounders_identified": {
         "submitted": [
-          "hypertension_history",
-          "age"
+          "age",
+          "hypertension_history"
         ],
         "correct": [
-          "diabetes",
-          "age"
+          "age",
+          "diabetes"
         ],
         "alternative_correct": [
-          "bmi",
-          "age"
+          "age",
+          "bmi"
         ],
         "points": 0
       },
       "matching_variables": {
         "submitted": [
-          "hypertension_history",
-          "baseline_bp"
+          "baseline_bp",
+          "hypertension_history"
         ],
         "correct": [
-          "hypertension_history",
-          "age"
+          "age",
+          "hypertension_history"
         ],
         "points": 0
       }

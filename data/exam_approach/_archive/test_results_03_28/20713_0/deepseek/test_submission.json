@@ -1,0 +1,67 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "section1": {
+        "q1": {
+            "answer": "$77.78",
+            "reasoning": "To achieve a 55% markup on retail price, the formula is: Retail Price = Cost / (1 - Markup). $35 / (1 - 0.55) = $77.78."
+        },
+        "q2": {
+            "answer": "$100.80",
+            "reasoning": "Standard markup is 2.4 times cost. $42 * 2.4 = $100.80."
+        },
+        "q3": {
+            "answer": "$143.55",
+            "reasoning": "To achieve a 38% profit margin on selling price, the formula is: Selling Price = Cost / (1 - Margin). $89 / (1 - 0.38) = $143.55."
+        }
+    },
+    "section2": {
+        "q1": {
+            "answer": "39.9%",
+            "reasoning": "To achieve a 25% margin on cost, the minimum selling price is $48 * 1.25 = $60. The markdown percentage is ($79.99 - $60) / $79.99 = 39.9%."
+        },
+        "q2": {
+            "answer": {
+                "price": "$90.99",
+                "margin": "26.4%"
+            },
+            "reasoning": "First markdown of 30% on $129.99 results in $90.99. Margin is ($90.99 - $72) / $90.99 = 26.4%."
+        },
+        "q3": {
+            "answer": "40.0%",
+            "reasoning": "To clear 75% of $78,000 inventory while maintaining 15% margin, the average markdown percentage is calculated to ensure the remaining inventory covers costs and desired margin."
+        }
+    },
+    "section3": {
+        "q1": {
+            "answer": "No, $105.77",
+            "reasoning": "To maintain a 22% margin, the minimum price is $82.50 / (1 - 0.22) = $105.77. Cannot match $129.99."
+        },
+        "q2": {
+            "answer": "Yes, $59.99-$74.99",
+            "reasoning": "Standard markup of 45% on selling price results in a price range of $59.99 to $74.99, which aligns with market research."
+        }
+    },
+    "section4": {
+        "q1": {
+            "answer": "$31.25",
+            "reasoning": "Initial retail price is calculated to ensure break-even after 30% of merchandise is sold at clearance. $12.50 / (1 - 0.60) = $31.25."
+        },
+        "q2": {
+            "answer": {
+                "current_margin": "49.3%",
+                "recommended_markup": "54.3%"
+            },
+            "reasoning": "Current margin is ($89,400 - $45,300) / $89,400 = 49.3%. To improve by 5 percentage points, recommended markup is 54.3%."
+        }
+    },
+    "section5": {
+        "q1": {
+            "answer": "Option A, $8998 vs $8995",
+            "reasoning": "Option A: 300 units at $39.99 and 150 units at $29.99. Total profit = $8998. Option B: 300 units at $39.99, 100 units at $34.99, and 80 units at $24.99. Total profit = $8995."
+        },
+        "q2": {
+            "answer": "Vendor B",
+            "reasoning": "Vendor B offers better cash flow with 60-day payment terms and a 6% discount on reorders, despite slightly higher cost per unit."
+        }
+    }
+}

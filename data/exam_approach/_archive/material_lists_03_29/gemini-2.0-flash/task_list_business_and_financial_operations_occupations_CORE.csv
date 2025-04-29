@@ -1,0 +1,2657 @@
+,row,prompt,task_id,occupation,task_description,can_be_performed_remotely,feasiblity_practical,chain_of_thought,tools.Coding,tools.Spreadsheets,tools.Text editor,tools.PDF viewer,tools.Presentation software,tools.Web Browser,tools.Image Generator,tools.Other.name,tools.Other.classification,materials.Text,materials.Data,materials.Images,materials.Audio files,materials.Video files,materials.Virtual labs or sandbox environments,materials.Other.name,materials.Other.classification,required_tools,required_materials,required_tools_standard,required_materials_standard
+0,0,"
+Task ID: 12865.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Collect fees, commissions, or other payments, according to contract terms.) for the role of Agents and Business Managers of Artists, Performers, and Athletes. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Agents and Business Managers of Artists, Performers, and Athletes's ability to perform the task (Collect fees, commissions, or other payments, according to contract terms.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""12865.0"",
+  ""occupation"": ""Agents and Business Managers of Artists, Performers, and Athletes"",
+  ""task_description"": ""Collect fees, commissions, or other payments, according to contract terms."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",12865.0,"Agents and Business Managers of Artists, Performers, and Athletes","Collect fees, commissions, or other payments, according to contract terms.",True,True,"The task of collecting fees according to contract terms can be evaluated remotely by providing candidates with simulated contracts (PDF, Text), payment schedules (Data in spreadsheets or text), and requiring them to demonstrate calculation of fees, tracking of payments, and communication related to payment collection using spreadsheets, text editors, and web browsers for accessing simulated banking or communication platforms.  A practical exam can be designed around realistic scenarios and tasks performed by Agents and Business Managers.",Not Required,Required,Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not required,Example contracts/invoices,Required,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Example contracts/invoices']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+1,1,"
+Task ID: 21163.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Send samples of clients' work and other promotional material to potential employers to obtain auditions, sponsorships, or endorsement deals.) for the role of Agents and Business Managers of Artists, Performers, and Athletes. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Agents and Business Managers of Artists, Performers, and Athletes's ability to perform the task (Send samples of clients' work and other promotional material to potential employers to obtain auditions, sponsorships, or endorsement deals.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21163.0"",
+  ""occupation"": ""Agents and Business Managers of Artists, Performers, and Athletes"",
+  ""task_description"": ""Send samples of clients' work and other promotional material to potential employers to obtain auditions, sponsorships, or endorsement deals."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21163.0,"Agents and Business Managers of Artists, Performers, and Athletes","Send samples of clients' work and other promotional material to potential employers to obtain auditions, sponsorships, or endorsement deals.",True,True,"The task involves sending digital promotional materials, which is inherently a remote activity.  Tools required include a web browser for email and online platforms, a text editor for crafting messages, and a PDF viewer for reviewing documents. Materials needed are text for emails, and potentially images, audio, and video files representing client work samples. A practical exam can be designed by simulating a scenario where candidates need to send these materials to provided contacts.",Not Required,Not Required,Required,Required,Not Required,Required,Not Required,Email Client,Required,Required,Not Required,Required,Required,Required,Not Required,Client Portfolio (simulated),Required,"['Text editor', 'PDF viewer', 'Web Browser', 'Email Client']","['Text', 'Images', 'Audio files', 'Video files', 'Client Portfolio (simulated)']","['Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Images', 'Audio files', 'Video files']"
+2,2,"
+Task ID: 12870.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Keep informed of industry trends and deals.) for the role of Agents and Business Managers of Artists, Performers, and Athletes. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Agents and Business Managers of Artists, Performers, and Athletes's ability to perform the task (Keep informed of industry trends and deals.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""12870.0"",
+  ""occupation"": ""Agents and Business Managers of Artists, Performers, and Athletes"",
+  ""task_description"": ""Keep informed of industry trends and deals."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",12870.0,"Agents and Business Managers of Artists, Performers, and Athletes",Keep informed of industry trends and deals.,True,True,"Keeping informed about industry trends and deals is primarily a research-based task. This can be effectively evaluated remotely by asking candidates to identify and summarize recent trends and deals using online resources.  Essential tools include a web browser for research and a PDF viewer for accessing industry reports. Text and data in the form of articles, reports, and deal information are necessary materials. Coding, spreadsheets, presentation software, and image generators are not directly required for demonstrating this specific task in a practical exam setting.",Not Required,Not Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['PDF viewer', 'Web Browser']","['Text', 'Data']","['PDF viewer', 'Web Browser']","['Text', 'Data']"
+3,3,"
+Task ID: 12883.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Maintain records of business transactions and product inventories, reporting data to companies or government agencies as necessary.) for the role of Buyers and Purchasing Agents, Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Buyers and Purchasing Agents, Farm Products's ability to perform the task (Maintain records of business transactions and product inventories, reporting data to companies or government agencies as necessary.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""12883.0"",
+  ""occupation"": ""Buyers and Purchasing Agents, Farm Products"",
+  ""task_description"": ""Maintain records of business transactions and product inventories, reporting data to companies or government agencies as necessary."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",12883.0,"Buyers and Purchasing Agents, Farm Products","Maintain records of business transactions and product inventories, reporting data to companies or government agencies as necessary.",True,True,"This task primarily involves data management and reporting, which can be effectively assessed remotely. Spreadsheets are essential for record-keeping and inventory management. A web browser is needed for accessing online resources or reporting portals. PDF viewers are necessary for viewing instructions or report templates. Data and text instructions are crucial materials to simulate real-world scenarios. Therefore, a practical remote exam is feasible.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,"Report Templates (e.g., Spreadsheet or PDF)",Required,"['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Report Templates (e.g., Spreadsheet or PDF)']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+4,4,"
+Task ID: 12882.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Review orders to determine product types and quantities required to meet demand.) for the role of Buyers and Purchasing Agents, Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Buyers and Purchasing Agents, Farm Products's ability to perform the task (Review orders to determine product types and quantities required to meet demand.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""12882.0"",
+  ""occupation"": ""Buyers and Purchasing Agents, Farm Products"",
+  ""task_description"": ""Review orders to determine product types and quantities required to meet demand."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",12882.0,"Buyers and Purchasing Agents, Farm Products",Review orders to determine product types and quantities required to meet demand.,True,True,"The task involves analyzing order information to determine product needs. This can be effectively simulated remotely by providing order data in digital formats. Spreadsheets are essential for data analysis and calculations in this role. PDF viewers are needed to access potential order documents. A web browser is necessary for accessing the online exam platform and potentially online order systems or documentation. Therefore, a practical, remote exam is feasible.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+5,5,"
+Task ID: 20713.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Recommend mark-up rates, mark-down rates, or merchandise selling prices.) for the role of Wholesale and Retail Buyers, Except Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Wholesale and Retail Buyers, Except Farm Products's ability to perform the task (Recommend mark-up rates, mark-down rates, or merchandise selling prices.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""20713.0"",
+  ""occupation"": ""Wholesale and Retail Buyers, Except Farm Products"",
+  ""task_description"": ""Recommend mark-up rates, mark-down rates, or merchandise selling prices."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",20713.0,"Wholesale and Retail Buyers, Except Farm Products","Recommend mark-up rates, mark-down rates, or merchandise selling prices.",True,True,"The task involves analyzing data and making pricing recommendations, which can be effectively simulated in a remote exam. Spreadsheets are essential for calculations. Text and data materials are needed to provide realistic scenarios and information. A web browser is needed for exam access and potentially research. PDF viewer might be needed for supporting documents. Coding, presentation software, image generators, and virtual labs are not necessary for this practical task. A practical exam is feasible by presenting realistic buying scenarios with cost and market data, requiring candidates to calculate and justify mark-up/down rates and selling prices.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+6,6,"
+Task ID: 66.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Monitor and analyze sales records, trends, or economic conditions to anticipate consumer buying patterns, company sales, and needed inventory.) for the role of Wholesale and Retail Buyers, Except Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Wholesale and Retail Buyers, Except Farm Products's ability to perform the task (Monitor and analyze sales records, trends, or economic conditions to anticipate consumer buying patterns, company sales, and needed inventory.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""66.0"",
+  ""occupation"": ""Wholesale and Retail Buyers, Except Farm Products"",
+  ""task_description"": ""Monitor and analyze sales records, trends, or economic conditions to anticipate consumer buying patterns, company sales, and needed inventory."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",66.0,"Wholesale and Retail Buyers, Except Farm Products","Monitor and analyze sales records, trends, or economic conditions to anticipate consumer buying patterns, company sales, and needed inventory.",True,True,"The task involves data analysis, which is inherently practical and can be assessed remotely. Candidates can be provided with sales data (e.g., in CSV or spreadsheet format) and asked to analyze it using spreadsheet software to identify trends, predict consumer behavior, and determine inventory needs. A web browser is needed to access the exam and potentially online spreadsheet tools. Other tools like coding, image generators, or presentation software are not essential for this specific practical task.",Not Required,Required,Not Required,Not Required,Not Required,Required,Not Required,,,Not Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'Web Browser']",['Data'],"['Spreadsheets', 'Web Browser']",['Data']
+7,7,"
+Task ID: 1146.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Monitor and follow applicable laws and regulations.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Monitor and follow applicable laws and regulations.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1146.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Monitor and follow applicable laws and regulations."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1146.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",Monitor and follow applicable laws and regulations.,True,True,"Monitoring and following laws and regulations is primarily a research and comprehension task, which can be effectively assessed remotely. A practical exam can present scenarios requiring the candidate to identify, interpret, and apply relevant regulations.  Web browser and PDF viewer are essential for accessing and reviewing legal documents. Text-based materials outlining scenarios and regulations are necessary. Links to online legal resources would enhance the practical aspect. Coding, spreadsheets, presentation software, and image generators are not directly relevant to this task.",Not Required,Not Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Not Required,Not Required,Not Required,Not Required,Not Required,Links to legal databases/government websites,Required,"['PDF viewer', 'Web Browser']","['Text', 'Links to legal databases/government websites']","['PDF viewer', 'Web Browser']",['Text']
+8,8,"
+Task ID: 1143.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Prepare purchase orders, solicit bid proposals, and review requisitions for goods and services.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Prepare purchase orders, solicit bid proposals, and review requisitions for goods and services.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1143.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Prepare purchase orders, solicit bid proposals, and review requisitions for goods and services."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1143.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products","Prepare purchase orders, solicit bid proposals, and review requisitions for goods and services.",True,True,"The tasks involve document creation, data analysis, and communication, all of which can be effectively simulated and assessed remotely using standard software like spreadsheets, text editors, PDF viewers, and web browsers.  Candidates can be provided with digital requisitions, supplier information, and asked to prepare purchase orders and bid proposals.  No in-person presence or specialized tools are necessary for a practical evaluation of these core purchasing agent skills.",Not Required,Required,Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+9,9,"
+Task ID: 1142.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Purchase the highest quality merchandise at the lowest possible price and in correct amounts.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Purchase the highest quality merchandise at the lowest possible price and in correct amounts.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1142.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Purchase the highest quality merchandise at the lowest possible price and in correct amounts."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1142.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",Purchase the highest quality merchandise at the lowest possible price and in correct amounts.,True,True,"The task can be simulated remotely by providing scenarios requiring candidates to research products online (Web Browser), compare prices and analyze data in spreadsheets, prepare purchase orders and communicate via email/text editor. Materials would include product specifications, vendor data, and pricing information in text, data, and image formats. A practical exam focusing on these actions is feasible remotely.",Not Required,Required,Required,Required,Not Required,Required,Not Required,Email Client,Required,Required,Required,Required,Not Required,Not Required,Not Required,Purchase Scenarios/Case Studies,Required,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser', 'Email Client']","['Text', 'Data', 'Images', 'Purchase Scenarios/Case Studies']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images']"
+10,10,"
+Task ID: 1145.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Analyze price proposals, financial reports, and other data and information to determine reasonable prices.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Analyze price proposals, financial reports, and other data and information to determine reasonable prices.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1145.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Analyze price proposals, financial reports, and other data and information to determine reasonable prices."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1145.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products","Analyze price proposals, financial reports, and other data and information to determine reasonable prices.",True,True,"The task involves analyzing documents and data, which can be effectively done remotely. Spreadsheets are crucial for analyzing numerical data in price proposals and financial reports. PDF viewers are necessary to access these documents. A web browser is useful for researching market prices or supplier information. The exam can be designed using realistic scenarios and data provided digitally, making it a practical and remote assessment.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+11,11,"
+Task ID: 1159.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Formulate policies and procedures for bid proposals and procurement of goods and services.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Formulate policies and procedures for bid proposals and procurement of goods and services.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1159.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Formulate policies and procedures for bid proposals and procurement of goods and services."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1159.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",Formulate policies and procedures for bid proposals and procurement of goods and services.,True,True,"The task of formulating policies and procedures is primarily a document creation and cognitive task, which can be effectively assessed remotely.  A text editor is essential for drafting the policies. A PDF viewer is needed to review provided materials like existing policies or guidelines. A web browser is necessary for accessing the exam platform and potentially for research. Text-based scenarios and instructions are sufficient materials to set the context for the task. Therefore, a practical remote exam is feasible.",Not Required,Not Required,Required,Required,Not Required,Required,Not Required,,,Required,Not Required,Not Required,Not Required,Not Required,Not Required,,,"['Text editor', 'PDF viewer', 'Web Browser']",['Text'],"['Text editor', 'PDF viewer', 'Web Browser']",['Text']
+12,12,"
+Task ID: 1151.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Maintain and review computerized or manual records of purchased items, costs, deliveries, product performance, and inventories.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Maintain and review computerized or manual records of purchased items, costs, deliveries, product performance, and inventories.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1151.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Maintain and review computerized or manual records of purchased items, costs, deliveries, product performance, and inventories."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1151.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products","Maintain and review computerized or manual records of purchased items, costs, deliveries, product performance, and inventories.",True,True,"The task involves managing and reviewing records, which is fundamentally a data management task. This can be effectively assessed remotely using spreadsheets to simulate computerized records and provided data sets. Candidates can be asked to organize, analyze, and report on provided purchasing data. PDF viewers are needed for reviewing documents, and a web browser for accessing the exam and potentially online spreadsheet tools. Therefore, a practical remote exam is feasible.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,Sample Reports/Templates,Required,"['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Sample Reports/Templates']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+13,13,"
+Task ID: 1144.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Research and evaluate suppliers, based on price, quality, selection, service, support, availability, reliability, production and distribution capabilities, and the supplier's reputation and history.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Research and evaluate suppliers, based on price, quality, selection, service, support, availability, reliability, production and distribution capabilities, and the supplier's reputation and history.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1144.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Research and evaluate suppliers, based on price, quality, selection, service, support, availability, reliability, production and distribution capabilities, and the supplier's reputation and history."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1144.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products","Research and evaluate suppliers, based on price, quality, selection, service, support, availability, reliability, production and distribution capabilities, and the supplier's reputation and history.",True,True,"The task involves online research and data analysis, which can be effectively simulated remotely.  Purchasing agents use spreadsheets to compare supplier data, web browsers for research, PDF viewers to review documents, and presentation software to report findings.  The exam would require textual and data materials representing supplier information. Coding and image generation are not relevant to this task.",Not Required,Required,Not Required,Required,Required,Required,Not Required,,,Required,Required,Not required,Not required,Not required,Not required,,,"['Spreadsheets', 'PDF viewer', 'Presentation software', 'Web Browser']","['Text', 'Data']","['Spreadsheets', 'PDF viewer', 'Presentation software', 'Web Browser']","['Text', 'Data']"
+14,14,"
+Task ID: 1153.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Study sales records and inventory levels of current stock to develop strategic purchasing programs that facilitate employee access to supplies.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Study sales records and inventory levels of current stock to develop strategic purchasing programs that facilitate employee access to supplies.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1153.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Study sales records and inventory levels of current stock to develop strategic purchasing programs that facilitate employee access to supplies."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1153.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",Study sales records and inventory levels of current stock to develop strategic purchasing programs that facilitate employee access to supplies.,True,True,"The task involves analyzing sales and inventory data and developing a purchasing program. This can be effectively assessed remotely by providing candidates with data files (e.g., spreadsheets) and asking them to create a strategic purchasing plan, potentially presented as a document or presentation. Tools like spreadsheets for analysis, PDF viewer for data reports, presentation software to present the plan, and a web browser for exam access are necessary. Coding and image generation are not relevant. The exam can be practical by simulating real-world data analysis and planning scenarios.",Not Required,Required,Not Required,Required,Required,Required,Not Required,,,Not Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'PDF viewer', 'Presentation software', 'Web Browser']",['Data'],"['Spreadsheets', 'PDF viewer', 'Presentation software', 'Web Browser']",['Data']
+15,15,"
+Task ID: 1157.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Write and review product specifications, maintaining a working technical knowledge of the goods or services to be purchased.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Write and review product specifications, maintaining a working technical knowledge of the goods or services to be purchased.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1157.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Write and review product specifications, maintaining a working technical knowledge of the goods or services to be purchased."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1157.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products","Write and review product specifications, maintaining a working technical knowledge of the goods or services to be purchased.",True,True,"The task of writing and reviewing product specifications is document-based and analytical, perfectly suited for remote evaluation.  Candidates can use standard office tools like text editors and spreadsheets to create and manage specifications. A web browser is essential for research and accessing online resources.  Providing text, data, and images as materials allows for realistic scenarios and evaluation of their technical understanding and specification writing skills. A practical exam can be designed by asking candidates to create or review specifications for a given product or service based on provided information.",Not Required,Required,Required,Required,Not Required,Required,Not Required,,,Required,Required,Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images']"
+16,16,"
+Task ID: 1152.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Review catalogs, industry periodicals, directories, trade journals, and Internet sites and consult with other department personnel to locate necessary goods and services.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Review catalogs, industry periodicals, directories, trade journals, and Internet sites and consult with other department personnel to locate necessary goods and services.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1152.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Review catalogs, industry periodicals, directories, trade journals, and Internet sites and consult with other department personnel to locate necessary goods and services."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1152.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products","Review catalogs, industry periodicals, directories, trade journals, and Internet sites and consult with other department personnel to locate necessary goods and services.",True,True,"The task primarily involves online research and communication, making it suitable for remote assessment.  A practical exam can simulate the process of locating goods and services by providing access to digital catalogs, online resources, and a simulated communication channel to represent consultation with other departments.  Tools like a web browser and PDF viewer are essential for accessing online resources. Materials would include digital representations of catalogs, journals, and potentially simulated communication logs.",Not Required,Not Required,Not Required,Required,Not Required,Required,Not Required,"Communication Tool (e.g., Email, Chat)",Required,Required,Required,Required,Not Required,Not Required,Not Required,"Simulated Catalogs, Industry Periodicals, Directories, Trade Journals, Internet Sites",Required,"['PDF viewer', 'Web Browser', 'Communication Tool (e.g., Email, Chat)']","['Text', 'Data', 'Images', 'Simulated Catalogs, Industry Periodicals, Directories, Trade Journals, Internet Sites']","['PDF viewer', 'Web Browser']","['Text', 'Data', 'Images']"
+17,17,"
+Task ID: 1158.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Monitor changes affecting supply and demand, tracking market conditions, price trends, or futures markets.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Monitor changes affecting supply and demand, tracking market conditions, price trends, or futures markets.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1158.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Monitor changes affecting supply and demand, tracking market conditions, price trends, or futures markets."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1158.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products","Monitor changes affecting supply and demand, tracking market conditions, price trends, or futures markets.",True,True,"The task involves monitoring market data, which is inherently a remote activity. A practical exam can be designed by providing market data (e.g., price trends, supply reports) in text and data formats. Candidates can use spreadsheets and web browsers to analyze this data, identify trends, and demonstrate their monitoring skills. PDF viewers are needed for potential report documents. Coding, image generators, presentation software, and virtual labs are not essential for this practical assessment.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+18,18,"
+Task ID: 1155.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Arrange the payment of duty and freight charges.) for the role of Purchasing Agents, Except Wholesale, Retail, and Farm Products. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Purchasing Agents, Except Wholesale, Retail, and Farm Products's ability to perform the task (Arrange the payment of duty and freight charges.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""1155.0"",
+  ""occupation"": ""Purchasing Agents, Except Wholesale, Retail, and Farm Products"",
+  ""task_description"": ""Arrange the payment of duty and freight charges."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",1155.0,"Purchasing Agents, Except Wholesale, Retail, and Farm Products",Arrange the payment of duty and freight charges.,True,True,"Arranging payment of duty and freight charges primarily involves reviewing documents (invoices, shipping documents, duty assessments), communicating with freight forwarders/customs brokers, and potentially using online banking or payment platforms. This can be simulated remotely by providing candidates with digital documents and asking them to outline the steps and communication required to arrange payment.  A web browser is needed to access instructions and potentially simulated online resources, a PDF viewer to review documents, and email client for simulated communication.  Spreadsheets, coding, presentation software, and image generators are not directly necessary for this task in a practical exam setting. Simulated documents are crucial materials.",Not Required,Not Required,Not Required,Required,Not Required,Required,Not Required,Email Client (or Web-based Email),Required,Required,Required,Not Required,Not Required,Not Required,Not Required,"Simulated Invoices, Shipping Documents, Duty Assessment Documents",Required,"['PDF viewer', 'Web Browser', 'Email Client (or Web-based Email)']","['Text', 'Data', 'Simulated Invoices, Shipping Documents, Duty Assessment Documents']","['PDF viewer', 'Web Browser']","['Text', 'Data']"
+19,19,"
+Task ID: 21417.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Examine claims forms and other records to determine insurance coverage.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Examine claims forms and other records to determine insurance coverage.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21417.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Examine claims forms and other records to determine insurance coverage."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21417.0,"Claims Adjusters, Examiners, and Investigators",Examine claims forms and other records to determine insurance coverage.,True,True,"Claims forms and records are typically digital, making remote examination feasible.  Claims adjusters routinely use tools like PDF viewers to review documents, spreadsheets to analyze data, text editors for notes, and web browsers for policy lookups.  A practical exam can be designed using digital claim files (text and data) to assess coverage determination skills remotely.",Not Required,Required,Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Not Required,,,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data']"
+20,20,"
+Task ID: 21418.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Analyze information gathered by investigation and report findings and recommendations.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Analyze information gathered by investigation and report findings and recommendations.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21418.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Analyze information gathered by investigation and report findings and recommendations."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21418.0,"Claims Adjusters, Examiners, and Investigators",Analyze information gathered by investigation and report findings and recommendations.,True,True,"The task involves analyzing information and reporting findings, which are desk-based activities suitable for remote assessment.  Claims Adjusters, Examiners, and Investigators routinely use spreadsheets for data analysis, text editors for reports, PDF viewers for documents, and presentation software to communicate findings.  Realistic investigation materials can be provided digitally in text, data, image, audio, and video formats to simulate real-world scenarios for a practical exam.",Not Required,Required,Required,Required,Required,Not Required,Not Required,,,Required,Required,Required,Required,Required,Not Required,,,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Presentation software']","['Text', 'Data', 'Images', 'Audio files', 'Video files']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Presentation software']","['Text', 'Data', 'Images', 'Audio files', 'Video files']"
+21,21,"
+Task ID: 21426.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Pay and process claims within designated authority level.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Pay and process claims within designated authority level.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21426.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Pay and process claims within designated authority level."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21426.0,"Claims Adjusters, Examiners, and Investigators",Pay and process claims within designated authority level.,True,True,"Claims processing is largely a digital task. A remote practical exam can simulate real-world scenarios using a simulated claims management system accessible via a web browser.  Spreadsheets are useful for calculations and analysis. PDF viewers are needed for reviewing claim documents.  The exam requires various digital materials like text descriptions of claims, data sets, images of damage, and potentially audio/video evidence. A virtual lab environment can host the simulated claims system and data. Authority level guidelines are crucial to assess if the candidate operates within their limits.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,Claims Management System (Simulated),Required,Required,Required,Required,Required,Required,Required,Authority Level Guidelines,Required,"['Spreadsheets', 'PDF viewer', 'Web Browser', 'Claims Management System (Simulated)']","['Text', 'Data', 'Images', 'Audio files', 'Video files', 'Virtual labs or sandbox environments', 'Authority Level Guidelines']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Audio files', 'Video files', 'Virtual labs or sandbox environments']"
+22,22,"
+Task ID: 21423.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Investigate, evaluate, and settle claims, applying technical knowledge and human relations skills to effect fair and prompt disposal of cases and to contribute to a reduced loss ratio.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Investigate, evaluate, and settle claims, applying technical knowledge and human relations skills to effect fair and prompt disposal of cases and to contribute to a reduced loss ratio.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21423.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Investigate, evaluate, and settle claims, applying technical knowledge and human relations skills to effect fair and prompt disposal of cases and to contribute to a reduced loss ratio."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21423.0,"Claims Adjusters, Examiners, and Investigators","Investigate, evaluate, and settle claims, applying technical knowledge and human relations skills to effect fair and prompt disposal of cases and to contribute to a reduced loss ratio.",True,True,"Claims adjusting tasks involve document review, data analysis, communication, and decision-making, all of which can be simulated in a remote environment. Tools like spreadsheets, text editors, PDF viewers, and web browsers are essential for these tasks. Realistic claim scenarios can be presented using text, data, images, audio, and video files. A virtual claim management system would provide a practical environment for candidates to demonstrate their skills in a simulated real-world setting. Therefore, a meaningful practical remote exam is feasible.",Not Required,Required,Required,Required,Not Required,Required,Not Required,Communication Platform,Required,Required,Required,Required,Required,Required,Required,Virtual Claim Management System,Required,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser', 'Communication Platform']","['Text', 'Data', 'Images', 'Audio files', 'Video files', 'Virtual labs or sandbox environments', 'Virtual Claim Management System']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Audio files', 'Video files', 'Virtual labs or sandbox environments']"
+23,23,"
+Task ID: 21428.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Verify and analyze data used in settling claims to ensure that claims are valid and that settlements are made according to company practices and procedures.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Verify and analyze data used in settling claims to ensure that claims are valid and that settlements are made according to company practices and procedures.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21428.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Verify and analyze data used in settling claims to ensure that claims are valid and that settlements are made according to company practices and procedures."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21428.0,"Claims Adjusters, Examiners, and Investigators",Verify and analyze data used in settling claims to ensure that claims are valid and that settlements are made according to company practices and procedures.,True,True,"The task involves data analysis and verification, which are core functions of Claims Adjusters, Examiners, and Investigators. These tasks are routinely performed using digital tools and data, making a remote practical exam feasible.  Spreadsheets are essential for data analysis, PDF viewers for document review, and web browsers for accessing information and company systems.  The exam would require various data formats like text documents, datasets, images, audio, and video files representing claim-related information to be analyzed.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Required,Required,Required,Not Required,,,"['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Audio files', 'Video files']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Audio files', 'Video files']"
+24,24,"
+Task ID: 21419.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Review police reports, medical treatment records, medical bills, or physical property damage to determine the extent of liability.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Review police reports, medical treatment records, medical bills, or physical property damage to determine the extent of liability.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21419.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Review police reports, medical treatment records, medical bills, or physical property damage to determine the extent of liability."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21419.0,"Claims Adjusters, Examiners, and Investigators","Review police reports, medical treatment records, medical bills, or physical property damage to determine the extent of liability.",True,True,"The task involves reviewing documents and images to determine liability, which can be effectively assessed remotely using digital versions of these materials.  A PDF viewer is essential to read reports and medical records. A web browser is needed to access the exam platform and materials. Text, data, and images are the core content of the documents to be reviewed. Coding, spreadsheets, presentation software, image generators, audio/video files, and virtual labs are not necessary for this specific practical assessment.",Not Required,Not Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Required,Not Required,Not Required,Not Required,,,"['PDF viewer', 'Web Browser']","['Text', 'Data', 'Images']","['PDF viewer', 'Web Browser']","['Text', 'Data', 'Images']"
+25,25,"
+Task ID: 21429.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Enter claim payments, reserves and new claims on computer system, inputting concise yet sufficient file documentation.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Enter claim payments, reserves and new claims on computer system, inputting concise yet sufficient file documentation.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21429.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Enter claim payments, reserves and new claims on computer system, inputting concise yet sufficient file documentation."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21429.0,"Claims Adjusters, Examiners, and Investigators","Enter claim payments, reserves and new claims on computer system, inputting concise yet sufficient file documentation.",True,True,"The task involves interacting with a computer system, which can be simulated remotely using a virtual lab environment.  A web browser is needed to access the system. PDF viewer is required to review claim documents provided as part of the exam materials. Claim scenarios, text instructions, and data for input are necessary materials.  Coding, spreadsheets, presentation software, and image generators are not directly required for this data entry and documentation task. Therefore, a practical remote exam is feasible.",Not Required,Not Required,Not Required,Required,Not Required,Required,Not Required,Claim System Interface (Virtual),Required,Required,Required,Not Required,Not Required,Not Required,Required,Claim Scenarios,Required,"['PDF viewer', 'Web Browser', 'Claim System Interface (Virtual)']","['Text', 'Data', 'Virtual labs or sandbox environments', 'Claim Scenarios']","['PDF viewer', 'Web Browser']","['Text', 'Data', 'Virtual labs or sandbox environments']"
+26,26,"
+Task ID: 21425.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Resolve complex, severe exposure claims, using high service oriented file handling.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Resolve complex, severe exposure claims, using high service oriented file handling.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21425.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Resolve complex, severe exposure claims, using high service oriented file handling."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21425.0,"Claims Adjusters, Examiners, and Investigators","Resolve complex, severe exposure claims, using high service oriented file handling.",True,True,"Claims adjusting, examining, and investigating tasks are primarily office-based and information-driven. A practical exam can be designed remotely by simulating a complex claim scenario using digital documents, data, and a virtual claim environment. Candidates can demonstrate their skills in analysis, communication, and resolution using standard office software and a simulated claim file, making remote evaluation feasible.",Not Required,Required,Required,Required,Not Required,Required,Not Required,Claim Management System/Software,Required,Required,Required,Required,Not Required,Required,Required,Simulated Claim File,Required,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser', 'Claim Management System/Software']","['Text', 'Data', 'Images', 'Video files', 'Virtual labs or sandbox environments', 'Simulated Claim File']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Video files', 'Virtual labs or sandbox environments']"
+27,27,"
+Task ID: 21424.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Adjust reserves or provide reserve recommendations to ensure that reserve activities are consistent with corporate policies.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Adjust reserves or provide reserve recommendations to ensure that reserve activities are consistent with corporate policies.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21424.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Adjust reserves or provide reserve recommendations to ensure that reserve activities are consistent with corporate policies."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21424.0,"Claims Adjusters, Examiners, and Investigators",Adjust reserves or provide reserve recommendations to ensure that reserve activities are consistent with corporate policies.,True,True,"Claims adjusting tasks are primarily office-based and involve reviewing claim files, analyzing data, and applying corporate policies. A remote exam can simulate this by providing digital claim files (text, data, images, audio, video), corporate policy documents (text, PDF), and requiring candidates to use spreadsheets for calculations and potentially a simulated claims management system to input reserve adjustments or recommendations. A web browser is needed to access the exam platform and potentially online resources. Therefore, a practical remote exam is feasible.",Not Required,Required,Not Required,Required,Not Required,Required,Not Required,Claims Management System (Simulated),Required,Required,Required,Required,Required,Required,Required,Corporate Policy Documents,Required,"['Spreadsheets', 'PDF viewer', 'Web Browser', 'Claims Management System (Simulated)']","['Text', 'Data', 'Images', 'Audio files', 'Video files', 'Virtual labs or sandbox environments', 'Corporate Policy Documents']","['Spreadsheets', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Audio files', 'Video files', 'Virtual labs or sandbox environments']"
+28,28,"
+Task ID: 21427.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Examine claims investigated by insurance adjusters, further investigating questionable claims to determine whether to authorize payments.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Examine claims investigated by insurance adjusters, further investigating questionable claims to determine whether to authorize payments.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21427.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Examine claims investigated by insurance adjusters, further investigating questionable claims to determine whether to authorize payments."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21427.0,"Claims Adjusters, Examiners, and Investigators","Examine claims investigated by insurance adjusters, further investigating questionable claims to determine whether to authorize payments.",True,True,"The task involves examining digital claim files, analyzing data, reviewing reports (text and potentially images), and making decisions. This can be effectively simulated remotely using digital documents and tools like spreadsheets for analysis, text editors for reports, PDF viewers for documents, and web browsers for research or accessing simulated databases.  Audio and video files are less critical for a basic practical exam but images are relevant. A virtual lab is not strictly necessary, as the exam can be designed with provided data and documents. Therefore, a practical remote exam is feasible.",Not Required,Required,Required,Required,Not Required,Required,Not Required,,,Required,Required,Required,Not Required,Not Required,Not required,Claim Files (Digital),Required,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Claim Files (Digital)']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Images']"
+29,29,"
+Task ID: 21434.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Maintain claim files, such as records of settled claims and an inventory of claims requiring detailed analysis.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Maintain claim files, such as records of settled claims and an inventory of claims requiring detailed analysis.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21434.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Maintain claim files, such as records of settled claims and an inventory of claims requiring detailed analysis."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21434.0,"Claims Adjusters, Examiners, and Investigators","Maintain claim files, such as records of settled claims and an inventory of claims requiring detailed analysis.",True,True,"Maintaining claim files is inherently a digital task, making remote evaluation feasible.  Spreadsheets and text editors are essential for organizing and documenting claims. PDF viewers are needed for reviewing claim documents. A web browser is necessary for accessing online systems or resources. Ideally, a simulated CMS or database would be used for a practical exam.  Test materials should include text and data representing claim information, and potentially example claim files to work with. Images, audio, and video are less critical for the core task of file maintenance in this context, but could be included for a more comprehensive assessment. A virtual lab environment simulating a claims processing system would be highly effective for a practical exam.",Not Required,Required,Required,Required,Not Required,Required,Not Required,Claim Management System (CMS) or Database Software,Required,Required,Required,Not Required,Not Required,Not Required,Required,Example Claim Files (various formats),Required,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser', 'Claim Management System (CMS) or Database Software']","['Text', 'Data', 'Virtual labs or sandbox environments', 'Example Claim Files (various formats)']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Virtual labs or sandbox environments']"
+30,30,"
+Task ID: 21430.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Refer questionable claims to investigator or claims adjuster for investigation or settlement.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Refer questionable claims to investigator or claims adjuster for investigation or settlement.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21430.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Refer questionable claims to investigator or claims adjuster for investigation or settlement."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21430.0,"Claims Adjusters, Examiners, and Investigators",Refer questionable claims to investigator or claims adjuster for investigation or settlement.,True,True,"The task involves reviewing claim information and making a decision, which can be simulated remotely.  Candidates need to access claim files (text, data, images, audio, video) likely in PDF format via a web browser within a virtual environment.  They will need a PDF viewer to review documents and a web browser to access the exam platform. No coding, spreadsheets, presentation software or image generators are needed for this task. A practical exam is feasible by presenting simulated claim scenarios and evaluating referral decisions.",Not Required,Not Required,Not Required,Required,Not Required,Required,Not Required,,,Required,Required,Required,Required,Required,Required,,,"['PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Audio files', 'Video files', 'Virtual labs or sandbox environments']","['PDF viewer', 'Web Browser']","['Text', 'Data', 'Images', 'Audio files', 'Video files', 'Virtual labs or sandbox environments']"
+31,31,"
+Task ID: 21439.0
+
+Your assignment is to determine if it is possible to design a meaningful, **practical** exam for this task that can be performed remotely and to identify the required tools and materials for the evaluation. 
+
+**Definitions:**
+- **Tools:** Software or applications (e.g., coding languages, code editor, spreadsheets, text editor, presentation software, image generator), that the candidate needs to use to complete the test.
+- **Materials:** Digital content (e.g., data files, PDFs, images, audio files, virtual lab environments) that form part of the test content.
+- **Practical exam:** A practical exam is a an exam actually testing whether the described task can be performed successfully. An exam testing the knowledge about the task is NOT a practical exam.
+
+**Instructions:**
+1. **Remote Feasibility:**  
+   Evaluate whether the task can be performed online/remotely or if it requires in-person presence.
+   - **If in-person required:** Output `""can_be_performed_remotely"": false` and set all other fields (tools and materials) to `""NA""`.
+   - **If remote:** Output `""can_be_performed_remotely"": true` and continue with the evaluation.
+
+2. **Tools Required:**  
+   For each tool, assess whether it is needed for the task (Report overpayments, underpayments, and other irregularities.) for the role of Claims Adjusters, Examiners, and Investigators. Options are: ""Required"" or ""Not Required"". The tools include:
+   - ""Coding""
+   - ""Spreadsheets""
+   - ""Text editor""
+   - ""PDF viewer""
+   - ""Presentation software""
+   - ""Image Generator""
+   - ""Web Browser""
+   - ""Other"" (specify tool name and classification if needed; otherwise ""NA"")
+
+3. **Materials Required:**  
+   For each material, determine if it is necessary as part of the test to evaluate Claims Adjusters, Examiners, and Investigators's ability to perform the task (Report overpayments, underpayments, and other irregularities.). Options are: ""Required""or ""Not required"" The materials include:
+   - ""Text""
+   - ""Data""
+   - ""Images""
+   - ""Audio files""
+   - ""Video files""
+   - ""Virtual labs or sandbox environments""
+   - ""Other"" (specify material name and classification if needed; otherwise ""NA"")
+
+4. **Feasability of a practical exam:**
+    Evaluate whether the task can meaningfuly be tested in a practical, remote exam.
+    - If you think this is possible, answer True,
+    - Otherwise answer False
+
+5. **Chain-of-Thought Reasoning:**  
+   Optionally, include a brief chain-of-thought explanation (no more than 150 words) for your evaluations in a field called `""chain_of_thought""`.
+
+**Output Requirement:**  
+Return a JSON object strictly adhering to the provided structure, without any extra commentary outside of the JSON fields.
+
+**Expected JSON Structure:**
+{
+  ""task_id"": ""21439.0"",
+  ""occupation"": ""Claims Adjusters, Examiners, and Investigators"",
+  ""task_description"": ""Report overpayments, underpayments, and other irregularities."",
+  ""can_be_performed_remotely"": true/false,
+  ""tools"": {
+    ""Coding"": ""Not Required/Required/NA"",
+    ""Spreadsheets"": ""Not Required/Required/NA"",
+    ""Text editor"": ""Not Required/Required/NA"",
+    ""PDF viewer"": ""Not Required/Required/NA"", 
+    ""Presentation software"": ""Not Required/Required/NA"",
+    ""Web Browser"": ""Not Required/Required/NA"",
+    ""Image Generator"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Tool Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""materials"": {
+    ""Text"": ""Not Required/Required/NA"",
+    ""Data"": ""Not Required/Required/NA"",
+    ""Images"": ""Not Required/Required/NA"",
+    ""Audio files"": ""Not Required/Required/NA"",
+    ""Video files"": ""Not Required/Required/NA"",
+    ""Virtual labs or sandbox environments"": ""Not Required/Required/NA"",
+    ""Other"": {
+      ""name"": ""Material Name/NA"",
+      ""classification"": ""Not Required/Required/NA""
+    }
+  },
+  ""feasiblity_practical"": true/false
+  ""chain_of_thought"": ""Brief explanation (no more than 150 words).""
+}
+",21439.0,"Claims Adjusters, Examiners, and Investigators","Report overpayments, underpayments, and other irregularities.",True,True,"The task of reporting irregularities can be effectively evaluated remotely by providing candidates with simulated case files (text and data) within a virtual environment.  Spreadsheets are useful for data analysis, text editors for report writing, PDF viewers for document review, and web browsers for accessing simulated reporting systems or guidelines.  A virtual lab can simulate a claims processing environment where irregularities can be identified and reported. Reporting templates are essential materials for a practical reporting task.",Not Required,Required,Required,Required,Not Required,Required,Not Required,,,Required,Required,Not Required,Not Required,Not Required,Required,Reporting templates/forms,Required,"['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Virtual labs or sandbox environments', 'Reporting templates/forms']","['Spreadsheets', 'Text editor', 'PDF viewer', 'Web Browser']","['Text', 'Data', 'Virtual labs or sandbox environments']"

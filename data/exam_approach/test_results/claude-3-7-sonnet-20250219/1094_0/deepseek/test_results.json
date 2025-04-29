@@ -75,24 +75,24 @@
       "correctly_identified": 5,
       "incorrectly_identified": 0,
       "expected_items": [
-        "E004",
-        "E007",
-        "A007",
         "E008",
+        "A007",
+        "E004",
         "B008",
+        "A006",
         "D005",
-        "A006"
+        "E007"
       ],
       "submitted_items": [
-        "E007",
-        "A007",
         "E008",
+        "A007",
+        "A006",
         "D005",
-        "A006"
+        "E007"
       ],
       "missed_items": [
-        "E004",
-        "B008"
+        "B008",
+        "E004"
       ]
     },
     "price_adjustments": {
@@ -101,11 +101,11 @@
       "correct_adjustments": 3,
       "total_adjustments": 5,
       "items_with_errors": [
-        "A006",
-        "E006"
+        "E006",
+        "A006"
       ],
       "error_details": [
-        "Missing price adjustments for items: A006, E006"
+        "Missing price adjustments for items: E006, A006"
       ]
     }
   },

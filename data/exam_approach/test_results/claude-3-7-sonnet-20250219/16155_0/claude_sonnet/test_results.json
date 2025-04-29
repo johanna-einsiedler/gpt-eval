@@ -150,9 +150,9 @@
         "points": 6,
         "max_points": 6,
         "submitted": [
-          "Robert Kim",
           "Michael Chen",
-          "Sarah Johnson"
+          "Sarah Johnson",
+          "Robert Kim"
         ],
         "expected": [
           "Michael Chen",
@@ -185,9 +185,9 @@
           "System performance metrics"
         ],
         "expected": [
-          "Implementation progress",
           "Feature priority scores",
-          "Satisfaction ratings"
+          "Satisfaction ratings",
+          "Implementation progress"
         ],
         "note": "Reasonable alternatives are accepted"
       },
