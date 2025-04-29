@@ -387,29 +387,30 @@ if __name__ == "__main__":
     #     existing_df = pd.read_csv('../../data/exam_approach/test_results/{model}/test_results_61.csv')
     #     df = df[~df['task_id'].isin(existing_df['task_id'])]
     #print('Processing ', df.shape[0], ' new tasks.')
-    occ='management_occupations'
-    df = pd.read_csv(f'../../data/exam_approach/test_results/{model}/exams_{occ}.csv')
+    occ='computer_and_mathematical_occupations'
+    # df = pd.read_csv(f'../../data/exam_approach/test_results/{model}/exams_{occ}.csv')
     
 
-    #test models
-    for idx, row in df.iterrows():
-        if idx >=21:
-            print(row['task_id'])
-            if row['exam'] !='Exam not valid':
+    # #test models
+    # for idx, row in df.iterrows():
+    #     if idx >=21:
+    #         print(row['task_id'])
+    #         if row['exam'] !='Exam not valid':
 
-                df.at[idx,'test_answers_gemini_flash_15'] = take_test(row, system_prompt_template, row['exam'], 'gemini-1.5-flash')
-                df.at[idx,'test_answers_gemini_flash'] = take_test(row, system_prompt_template, row['exam'], 'gemini-2.0-flash')
-                df.at[idx,'test_answers_claude_sonnet'] = take_test(row, system_prompt_template, row['exam'], 'claude-3-7-sonnet-20250219')
-                df.at[idx,'test_answers_claude_haiku'] = take_test(row, system_prompt_template, row['exam'], 'claude-3-5-haiku-20241022')
-                df.at[idx,'test_answers_chatgpt4o'] = take_test(row, system_prompt_template, row['exam'], 'gpt-4o')
-                df.at[idx,'test_answers_chatgpt35'] = take_test(row, system_prompt_template, row['exam'],'gpt-3.5-turbo-0125')
-                df.at[idx,'test_answers_deepseek'] = take_test(row, system_prompt_template, row['exam'],'deepseek-chat')
+    #             df.at[idx,'test_answers_gemini_flash_15'] = take_test(row, system_prompt_template, row['exam'], 'gemini-1.5-flash')
+    #             df.at[idx,'test_answers_gemini_flash'] = take_test(row, system_prompt_template, row['exam'], 'gemini-2.0-flash')
+    #             df.at[idx,'test_answers_claude_sonnet'] = take_test(row, system_prompt_template, row['exam'], 'claude-3-7-sonnet-20250219')
+    #             df.at[idx,'test_answers_claude_haiku'] = take_test(row, system_prompt_template, row['exam'], 'claude-3-5-haiku-20241022')
+    #             df.at[idx,'test_answers_chatgpt4o'] = take_test(row, system_prompt_template, row['exam'], 'gpt-4o')
+    #             df.at[idx,'test_answers_chatgpt35'] = take_test(row, system_prompt_template, row['exam'],'gpt-3.5-turbo-0125')
+    #             df.at[idx,'test_answers_deepseek'] = take_test(row, system_prompt_template, row['exam'],'deepseek-chat')
                     
-                df.to_csv(f'../../data/exam_approach/test_results/{model}/test_answers_{occ}.csv')
+    #             df.to_csv(f'../../data/exam_approach/test_results/{model}/test_answers_{occ}.csv')
 
     model_folder_path = f'../../data/exam_approach/test_results/{model}/'
     # # save answers as json files
     df = pd.read_csv(f'../../data/exam_approach/test_results/{model}/test_answers_{occ}.csv')
+    df['answer_empty'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'empty_submission'))
     print('saving answer files')
     df['answer_valid_chatgpt4o'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'chatgpt4o'))
     df['answer_valid_chatgpt35'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'chatgpt35'))
@@ -419,7 +420,6 @@ if __name__ == "__main__":
     df['answer_valid_gemini_flash_15'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'gemini_flash_15'))
     df['answer_valid_gemini_flash'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'gemini_flash'))
 
-
     print('saving evaluation files and answer keys')
     # save evaluation script and answer key in appropriate folders
     df['evaluation_python'] = df.apply(save_evaluation, axis=1, args=(model_folder_path,))
@@ -427,7 +427,7 @@ if __name__ == "__main__":
     df.apply(copy_answer_key, axis=1, args=(model_folder_path,))
 
 
-#     # # run evaluation and document potential errors
+# #     # # run evaluation and document potential errors
     print('running evaluation')
     df['errors_chatgpt35'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'chatgpt35',))
     df['errors_chatgpt4o'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'chatgpt4o',))
@@ -436,6 +436,7 @@ if __name__ == "__main__":
     df['errors_deepseek'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'deepseek',))
     df['errors_gemini_flash_15'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'gemini_flash_15',))
     df['errors_gemini_flash'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'gemini_flash',))
+    df['errors_empty'] =df.apply(run_evaluation, axis=1, args=(model_folder_path,'empty_submission',))
 
     print('collecting scores')
     df['scores'] =  df.apply(collect_overall_scores,axis=1, args= (model_folder_path,))
@@ -444,8 +445,8 @@ if __name__ == "__main__":
     # Combine the original DataFrame with the new columns
     df_expanded = pd.concat([df.drop('scores', axis=1), scores_df], axis=1)
     
-    df_expanded.to_csv(f'../../data/exam_approach/test_results/{model}/scores_only_{occ}.csv', index=False)
+    df_expanded.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_{occ}.csv', index=False)
 
     scores_df = pd.concat([df[['task_id','occupation','task_description']],scores_df], axis=1)
-    scores_df.to_csv(f'../../data/exam_approach/test_results/{model}/test_results_{occ}.csv')
-# # 
+    scores_df.to_csv(f'../../data/exam_approach/test_results/{model}/scores_only_{occ}.csv')
+# # # 

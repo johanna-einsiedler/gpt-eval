@@ -209,7 +209,7 @@ def node_system_prompt(state: ExamState) -> ExamState:
 def node_overview(state: ExamState) -> ExamState:
     # NOTE - Maybe we want to in the overview prentively prompt the LLM to have trick questions or things that are
     # not obvious, so that the evaluator knows this, but the candidate doesn't
-    prompt_overview ='''### Your assignment
+    prompt_overview ='''### Your assignment:
     Provide a brief explanation of the exam's purpose and structure for the evaluator.
     '''
     print('creating exam overview')
