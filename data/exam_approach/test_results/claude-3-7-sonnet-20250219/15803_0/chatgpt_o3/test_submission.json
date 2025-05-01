@@ -1,0 +1,26 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "store_with_highest_loss": "S0XX",
+        "loss_amount": 12345.67
+    },
+    "task2": {
+        "suspicious_employee_id": "E1XXX",
+        "transaction_count": 42,
+        "average_transaction_value": 7.93
+    },
+    "task3": {
+        "department_with_highest_shrinkage": "Electronics",
+        "shrinkage_percentage": 5.14
+    },
+    "task4": {
+        "date_with_highest_voids": "2023-02-15",
+        "void_count": 37,
+        "void_value": 2840.55
+    },
+    "task5": {
+        "pattern_timeframe_start": "2023-02-01",
+        "pattern_timeframe_end": "2023-02-14",
+        "total_estimated_loss": 8190.4
+    }
+}

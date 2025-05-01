@@ -1,0 +1,32 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "annual_budget": {
+            "total_income": 1100324,
+            "total_expenses": 737775,
+            "net_operating_income": 362549,
+            "expense_categories": {
+                "utilities": 166837,
+                "maintenance": 112238,
+                "administrative": 253080,
+                "taxes_insurance": 205620
+            }
+        }
+    },
+    "task2": {
+        "variance_analysis": {
+            "largest_variance_category": "Legal/Professional",
+            "largest_variance_amount": 2250,
+            "total_expense_variance_percentage": 1.6,
+            "utility_expense_variance": -300
+        }
+    },
+    "task3": {
+        "financial_summary": {
+            "operating_expense_ratio": 67.1,
+            "expense_per_square_foot": 11.8,
+            "income_per_unit": 14671,
+            "maintenance_reserve_allocation": 55016
+        }
+    }
+}

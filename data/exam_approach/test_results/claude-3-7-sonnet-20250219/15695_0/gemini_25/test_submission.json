@@ -1,0 +1,173 @@
+{
+    "candidate_id": "GPT-4o",
+    "scenario_analyses": [
+        {
+            "scenario_id": 1,
+            "key_metrics": [
+                {
+                    "metric_name": "Inventory Turnover Ratio (Annualized)",
+                    "calculation": "Calculated monthly COGS (Sum(Issues * Unit_Cost) = $175,170) and Average Inventory Value (Sum(((Beginning_Inventory + Ending_Inventory) / 2) * Unit_Cost) = $62,567.50). Monthly Turnover = COGS / Avg Inv Value = 2.8. Annualized = Monthly Turnover * 12.",
+                    "current_value": 33.6,
+                    "target_value": 12.0,
+                    "gap": -21.6,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Days of Supply",
+                    "calculation": "Calculated Total Average Inventory in Units (Sum((Beginning_Inventory + Ending_Inventory) / 2) = 6550) and Average Daily Issues (Sum(Issues) / 30 days = 18700 / 30 = 623.3). DOS = Total Avg Inv Units / Avg Daily Issues.",
+                    "current_value": 10.5,
+                    "target_value": 30.0,
+                    "gap": 19.5,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Unit Fill Rate",
+                    "calculation": "Calculated using Order_Fulfillment sheet: Sum(Fulfilled_Quantity) / Sum(Order_Quantity) * 100 = (1320 / 1370) * 100.",
+                    "current_value": 96.4,
+                    "target_value": 98.0,
+                    "gap": 1.6,
+                    "impact": "High"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Inventory Turnover Ratio",
+                    "formula": "Cost of Goods Sold / Average Inventory Value",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Days of Supply",
+                    "formula": "Average Inventory Units / Average Daily Usage Units",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Unit Fill Rate",
+                    "formula": "(Total Units Shipped / Total Units Ordered) * 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Inventory Holding Cost",
+                    "formula": "Average Inventory Value * Inventory Holding Cost Rate",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Safety Stock Coverage",
+                    "formula": "Ending Inventory Units / Safety Stock Units",
+                    "frequency": "Weekly"
+                }
+            ]
+        },
+        {
+            "scenario_id": 2,
+            "key_metrics": [
+                {
+                    "metric_name": "Perfect Order Rate",
+                    "calculation": "Calculated using Order_Fulfillment sheet: Count(Perfect_Order = 1) / Total Orders * 100 = (5 / 10) * 100.",
+                    "current_value": 50.0,
+                    "target_value": 95.0,
+                    "gap": 45.0,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "On-Time Delivery Rate",
+                    "calculation": "Calculated using Transportation_Data sheet: Count(On_Time_Delivery = 1) / Total Shipments * 100 = (7 / 10) * 100.",
+                    "current_value": 70.0,
+                    "target_value": 98.0,
+                    "gap": 28.0,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Unit Fill Rate",
+                    "calculation": "Calculated using Order_Fulfillment sheet: Sum(Fulfilled_Quantity) / Sum(Order_Quantity) * 100 = (1320 / 1370) * 100.",
+                    "current_value": 96.4,
+                    "target_value": 99.0,
+                    "gap": 2.6,
+                    "impact": "Medium"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Perfect Order Rate",
+                    "formula": "(Number of Perfect Orders / Total Orders) * 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "On-Time Delivery Rate",
+                    "formula": "(Number of On-Time Deliveries / Total Deliveries) * 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Unit Fill Rate",
+                    "formula": "(Total Units Shipped / Total Units Ordered) * 100",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Order Cycle Time",
+                    "formula": "Average(Delivery Date - Order Date) or Average(Ship Date - Order Date)",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Transportation Cost per Shipment",
+                    "formula": "Total Transportation Cost / Total Shipments",
+                    "frequency": "Monthly"
+                }
+            ]
+        },
+        {
+            "scenario_id": 3,
+            "key_metrics": [
+                {
+                    "metric_name": "Supplier On-Time Delivery Rate",
+                    "calculation": "Calculated using Supplier_Performance sheet: Sum(On_Time_Orders) / Sum(Total_Orders) * 100 = (178 / 207) * 100.",
+                    "current_value": 86.0,
+                    "target_value": 95.0,
+                    "gap": 9.0,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Supplier Quality Compliance Rate",
+                    "calculation": "Calculated weighted average defect rate: Sum(Total_Orders * Quality_Defect_Rate) / Sum(Total_Orders) = 375.2 / 207 = 1.81%. Compliance Rate = 100% - Weighted Avg Defect Rate.",
+                    "current_value": 98.2,
+                    "target_value": 99.0,
+                    "gap": 0.8,
+                    "impact": "Medium"
+                },
+                {
+                    "metric_name": "Average Supplier Lead Time (Weighted)",
+                    "calculation": "Calculated weighted average lead time: Sum(Total_Orders * Lead_Time_Days) / Sum(Total_Orders) = 2758 / 207.",
+                    "current_value": 13.3,
+                    "target_value": 14.0,
+                    "gap": 0.7,
+                    "impact": "Low"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Supplier On-Time Delivery Rate",
+                    "formula": "(Total On-Time Orders from Supplier / Total Orders from Supplier) * 100",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Quality Defect Rate",
+                    "formula": "(Total Defective Units from Supplier / Total Units Received from Supplier) * 100",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Lead Time",
+                    "formula": "Average(Receipt Date - Order Date) for Supplier",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Cost Variance",
+                    "formula": "((Actual Price - Standard/Contract Price) / Standard/Contract Price) * 100",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Responsiveness Score",
+                    "formula": "Score based on defined criteria (e.g., communication time, issue resolution speed)",
+                    "frequency": "Quarterly"
+                }
+            ]
+        }
+    ]
+}

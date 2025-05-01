@@ -1,0 +1,185 @@
+{
+  "exercise1": {
+    "max_points": 35,
+    "points": 35,
+    "details": {
+      "discrepancies": {
+        "score": 20,
+        "max_score": 20,
+        "feedback": [
+          {
+            "account": "Accounts Receivable",
+            "status": "correct",
+            "points": 5
+          },
+          {
+            "account": "Inventory",
+            "status": "correct",
+            "points": 5
+          },
+          {
+            "account": "Other Assets",
+            "status": "correct",
+            "points": 5
+          },
+          {
+            "account": "Accrued Expenses",
+            "status": "correct",
+            "points": 5
+          }
+        ]
+      },
+      "total_assets_difference": {
+        "score": 7,
+        "max_score": 7,
+        "feedback": {
+          "status": "correct",
+          "points": 7
+        }
+      },
+      "liquidity_ratio": {
+        "score": 8,
+        "max_score": 8,
+        "feedback": {
+          "status": "correct",
+          "points": 8
+        }
+      }
+    }
+  },
+  "exercise2": {
+    "max_points": 35,
+    "points": 28,
+    "details": {
+      "misclassified_items": {
+        "score": 20,
+        "max_score": 20,
+        "feedback": [
+          {
+            "item": {
+              "account": "Product Sales",
+              "amount": 175000,
+              "correct_category": "Other Income"
+            },
+            "status": "correct",
+            "points": 5
+          },
+          {
+            "item": {
+              "account": "Marketing and Advertising",
+              "amount": 450000,
+              "correct_category": "Travel Expense"
+            },
+            "status": "correct",
+            "points": 5
+          },
+          {
+            "item": {
+              "account": "Office Supplies",
+              "amount": 125000,
+              "correct_category": "Property and Equipment"
+            },
+            "status": "correct",
+            "points": 5
+          },
+          {
+            "item": {
+              "account": "Travel Expense",
+              "amount": 275000,
+              "correct_category": "Marketing and Advertising"
+            },
+            "status": "correct",
+            "points": 5
+          }
+        ]
+      },
+      "adjusted_net_income": {
+        "score": 0,
+        "max_score": 7,
+        "feedback": {
+          "status": "incorrect",
+          "points": 0,
+          "expected": 1875000,
+          "submitted": 2000000,
+          "percent_diff": 0.06666666666666667
+        }
+      },
+      "expense_ratio": {
+        "score": 8,
+        "max_score": 8,
+        "feedback": {
+          "status": "correct",
+          "points": 8
+        }
+      }
+    }
+  },
+  "exercise3": {
+    "max_points": 30,
+    "points": 20.0,
+    "details": {
+      "loan_to_value_ratio": {
+        "score": 10,
+        "max_score": 10,
+        "feedback": {
+          "status": "correct",
+          "points": 10
+        }
+      },
+      "missing_documents": {
+        "score": 0,
+        "max_score": 10,
+        "feedback": [
+          {
+            "document": "Property Insurance",
+            "status": "missing",
+            "points": 0
+          },
+          {
+            "document": "Environmental Assessment",
+            "status": "missing",
+            "points": 0
+          },
+          {
+            "document": "environmental assessment",
+            "status": "extra",
+            "points": 0
+          }
+        ]
+      },
+      "compliance_issues": {
+        "score": 10.0,
+        "max_score": 10,
+        "feedback": [
+          {
+            "issue_id": 1,
+            "status": "correct",
+            "points": 3.3333333333333335
+          },
+          {
+            "issue_id": 2,
+            "status": "correct",
+            "points": 3.3333333333333335
+          },
+          {
+            "issue_id": 5,
+            "status": "correct",
+            "points": 3.3333333333333335
+          },
+          {
+            "issue_id": 4,
+            "status": "extra",
+            "points": 0,
+            "submitted": {
+              "issue_id": 4,
+              "description": "Inadequate collateral documentation"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "overall_score": 83.0,
+  "passed": false,
+  "candidate_id": "GPT-4"
+}

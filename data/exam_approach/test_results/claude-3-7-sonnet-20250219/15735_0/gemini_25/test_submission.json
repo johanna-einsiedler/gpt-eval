@@ -1,0 +1,30 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "total_revenue": 1369.35,
+        "total_units_sold": 71,
+        "average_order_value": 42.79,
+        "best_selling_product": "Screen Protector"
+    },
+    "task2": {
+        "total_expenses": 2963.48,
+        "expense_categories": {
+            "advertising": 640.5,
+            "shipping": 437.5,
+            "product_costs": 1751.75,
+            "platform_fees": 181.24,
+            "other": 52.44
+        },
+        "gross_profit": -1594.13,
+        "profit_margin_percentage": -116.42
+    },
+    "task3": {
+        "monthly_summary": {
+            "total_revenue": 1369.35,
+            "total_expenses": 2963.48,
+            "net_profit": -1594.13,
+            "roi_percentage": -53.79,
+            "conversion_rate_percentage": 0.58
+        }
+    }
+}

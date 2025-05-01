@@ -1,0 +1,43 @@
+{
+    "candidate_id": "GPT-4o",
+    "scenario_1": {
+        "base_fee": 175.0,
+        "time_charge": 184.38,
+        "complexity_adjustment": 46.88,
+        "additional_forms_fee": 85.0,
+        "total_fee": 444.38,
+        "calculation_notes": "Base 1040 fee $175. Time cost: 2.5 h × $125 = $312.50. First-time client multiplier 1.15 → $312.50 × 1.15 = $359.38. Complexity adjustment = $46.88. Time-charge = $359.38 − $175 = $184.38. Added Schedule A ($50) + Schedule B ($35) = $85. Total = $175 + $184.38 + $85 = $444.38."
+    },
+    "scenario_2": {
+        "base_fee": 650.0,
+        "time_charge": 0.0,
+        "complexity_adjustment": 125.0,
+        "additional_forms_fee": 310.0,
+        "total_fee": 960.0,
+        "calculation_notes": "Base 1120S fee $650. Time cost: 4 h × $125 = $500. Prior-year amendment multiplier 1.25 → $625.00. Complexity add = $125. Since $625 − base $650 = −$25, time-charge set to $0 per rules. Forms: 3 K-1s ($225) + Form 4562 ($85) = $310. Final fee: $650 + $0 + $310 = $960."
+    },
+    "scenario_3": {
+        "base_fee": 175.0,
+        "time_charge": 365.0,
+        "complexity_adjustment": 165.0,
+        "additional_forms_fee": 210.0,
+        "total_fee": 750.0,
+        "calculation_notes": "Base 1040 fee $175. Time: 3 h × $125 = $375. Two-state return multiplier: 1.20 × 1.20 = 1.44 → $375 × 1.44 = $540. Complexity add $165. Time-charge: $540 − $175 = $365. Forms: Sch C ($125) + Sch SE ($40) + 8829 ($45) = $210. Total = $175 + $365 + $210 = $750."
+    },
+    "scenario_4": {
+        "base_fee": 550.0,
+        "time_charge": 378.13,
+        "complexity_adjustment": 240.63,
+        "additional_forms_fee": 470.0,
+        "total_fee": 1398.13,
+        "calculation_notes": "Base 1065 fee $550. Time: 5.5 h × $125 = $687.50. Complex asset dispositions multiplier 1.35 → $928.13. Complexity add $240.63. Time-charge: $928.13 − $550 = $378.13. Forms: 5 K-1s ($375) + Form 4797 ($95) = $470. Final fee: $550 + $378.13 + $470 = $1,398.13."
+    },
+    "scenario_5": {
+        "base_fee": 175.0,
+        "time_charge": 393.75,
+        "complexity_adjustment": 131.25,
+        "additional_forms_fee": 375.0,
+        "total_fee": 943.75,
+        "calculation_notes": "Base 1040 fee $175. Time: 3.5 h × $125 = $437.50. Foreign income multiplier 1.30 → $568.75. Complexity add $131.25. Time-charge: $568.75 − $175 = $393.75. Forms: Sch D ($75) + Sch E 3 properties ($300) = $375. Total fee = $175 + $393.75 + $375 = $943.75."
+    }
+}

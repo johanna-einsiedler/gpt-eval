@@ -1,0 +1,47 @@
+{
+  "task1": {
+    "score": 35,
+    "max_score": 50,
+    "percentage": 70.0,
+    "feedback": [
+      "All days of the week are included",
+      "Missing positions on Monday: Host",
+      "Missing positions on Tuesday: Manager, Host",
+      "Missing positions on Thursday: Manager",
+      "Missing positions on Saturday: Head Chef",
+      "Missing positions on Sunday: Head Chef, Prep Cook",
+      "Minimum staffing levels appear to be maintained",
+      "Shift too long: E007 on Monday (8.5 hours)",
+      "Shift too long: E009 on Monday (8.5 hours)",
+      "Shift too long: E013 on Monday (8.5 hours)",
+      "...and 19 more labor regulation issues",
+      "Staff utilization appears appropriate (simplified check)",
+      "Schedule efficiency appears appropriate (simplified check)"
+    ]
+  },
+  "task2": {
+    "score": 27,
+    "max_score": 25,
+    "percentage": 108.0,
+    "feedback": [
+      "Correctly removed sick employee E003 from schedule",
+      "Added additional server for the private event",
+      "Accommodated early kitchen opening at 07:00",
+      "Staffing levels and labor regulations appear maintained (simplified check)"
+    ]
+  },
+  "task3": {
+    "score": 25,
+    "max_score": 25,
+    "percentage": 100.0,
+    "feedback": [
+      "All required duties are assigned",
+      "Duty qualifications appear to be matched appropriately (simplified check)",
+      "Duty assignments appear to be integrated with regular schedule (simplified check)"
+    ]
+  },
+  "overall_score": 87.0,
+  "total_points": 87,
+  "max_points": 100,
+  "pass_fail": "PASS"
+}

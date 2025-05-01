@@ -1,0 +1,34 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "current_ratio_2022": 2.11,
+        "current_ratio_2023": 2.0,
+        "quick_ratio_2022": 1.25,
+        "quick_ratio_2023": 1.17,
+        "debt_to_equity_2022": 0.71,
+        "debt_to_equity_2023": 0.78,
+        "interest_coverage_2022": 5.47,
+        "interest_coverage_2023": 4.04,
+        "roa_2022": 0.08,
+        "roa_2023": 0.06
+    },
+    "task2": {
+        "operating_cash_flow_2023": 803000,
+        "free_cash_flow_2023": 53000,
+        "cash_flow_to_debt_ratio_2023": 0.23,
+        "sufficient_cash_flow": "Yes"
+    },
+    "task3": {
+        "declining_profit_margins": "Yes",
+        "increasing_accounts_receivable_days": "Yes",
+        "declining_current_ratio": "Yes",
+        "increasing_debt_to_ebitda": "Yes",
+        "negative_free_cash_flow": "No"
+    },
+    "task4": {
+        "max_loan_amount": 4380000,
+        "debt_service_coverage_ratio": 5.18,
+        "meets_minimum_dscr": "Yes",
+        "loan_recommendation": "Approve"
+    }
+}

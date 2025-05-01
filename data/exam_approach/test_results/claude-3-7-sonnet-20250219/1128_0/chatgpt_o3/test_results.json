@@ -1,0 +1,122 @@
+{
+  "candidate_id": "GPT-4o",
+  "evaluation_results": {
+    "budget_task": {
+      "total_projected_expenses": {
+        "correct": true,
+        "submitted": 1070000,
+        "expected": 1070000,
+        "points": 1
+      },
+      "variance_percentage": {
+        "correct": true,
+        "submitted": 8.08,
+        "expected": 8.08,
+        "points": 1
+      },
+      "largest_expense_category": {
+        "correct": true,
+        "submitted": "Staff Salaries",
+        "expected": "Staff Salaries",
+        "points": 1
+      },
+      "cost_per_client": {
+        "correct": true,
+        "submitted": 1163.04,
+        "expected": 1163.04,
+        "points": 1
+      }
+    },
+    "personnel_task": {
+      "total_staff": {
+        "correct": true,
+        "submitted": 20,
+        "expected": 20,
+        "points": 1
+      },
+      "certification_expiring": {
+        "correct": false,
+        "submitted": [
+          "S005",
+          "S011"
+        ],
+        "expected": [
+          "S005",
+          "S011",
+          "S017"
+        ],
+        "points": 0
+      },
+      "average_years_experience": {
+        "correct": true,
+        "submitted": 5.71,
+        "expected": 5.71,
+        "points": 1
+      },
+      "staff_to_supervisor_ratio": {
+        "correct": true,
+        "submitted": 5.67,
+        "expected": 5.67,
+        "points": 1
+      }
+    },
+    "training_task": {
+      "section_title": {
+        "correct": true,
+        "submitted": "Client Intake Procedures",
+        "expected": "Client Intake Procedures",
+        "points": 1
+      },
+      "word_count": {
+        "correct": false,
+        "submitted": 129,
+        "expected": 169,
+        "points": 0
+      },
+      "key_points": {
+        "correct": true,
+        "submitted": [
+          "Client confidentiality must be maintained at all times",
+          "Demographic information must be complete and accurate",
+          "Eligibility determination must follow current program guidelines",
+          "All clients must receive service orientation during intake",
+          "Referrals to other services must be documented appropriately"
+        ],
+        "expected": [
+          "Client confidentiality must be maintained at all times",
+          "Demographic information must be complete and accurate",
+          "Eligibility determination must follow current program guidelines",
+          "All clients must receive service orientation during intake",
+          "Referrals to other services must be documented appropriately"
+        ],
+        "points": 1
+      },
+      "procedure_steps": {
+        "correct": true,
+        "submitted": [
+          "Greet client and explain intake process",
+          "Complete demographic information form",
+          "Verify client identification and eligibility documentation",
+          "Conduct needs assessment interview",
+          "Explain available services and client rights",
+          "Obtain required consent signatures",
+          "Schedule follow-up appointment"
+        ],
+        "expected": [
+          "Greet client and explain intake process",
+          "Complete demographic information form",
+          "Verify client identification and eligibility documentation",
+          "Conduct needs assessment interview",
+          "Explain available services and client rights",
+          "Obtain required consent signatures",
+          "Schedule follow-up appointment"
+        ],
+        "points": 1
+      }
+    }
+  },
+  "overall_score": 83.33,
+  "critical_items_passed": false,
+  "task_minimums_passed": true,
+  "passed": false
+}

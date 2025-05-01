@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "debt_payoff_order": [
+        "CC1",
+        "CC2",
+        "PL1",
+        "AL1",
+        "SL1"
+    ],
+    "total_months_to_debt_freedom": 49,
+    "monthly_payment_allocation": {
+        "CC1": 499.0,
+        "CC2": 96.0,
+        "PL1": 320.0,
+        "AL1": 375.0,
+        "SL1": 210.0
+    },
+    "interest_saved_vs_minimum_payments": 7990.0,
+    "first_debt_paid_off": {
+        "debt_id": "CC1",
+        "month_number": 21
+    },
+    "last_debt_paid_off": {
+        "debt_id": "SL1",
+        "month_number": 49
+    },
+    "strategy_explanation": "Extra cash is applied with an avalanche approach: attack the highest-interest card (CC1) first, then roll its freed payment to the next-highest rate, keeping all minimums current. This shrinks total interest and delivers debt-freedom in just over 4 years."
+}

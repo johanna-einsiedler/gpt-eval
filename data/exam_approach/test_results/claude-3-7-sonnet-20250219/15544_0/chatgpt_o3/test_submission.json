@@ -1,0 +1,76 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "total_participants_per_event": {
+            "E001": 10,
+            "E002": 12,
+            "E003": 15,
+            "E004": 13,
+            "E005": 10
+        },
+        "attendance_rates": {
+            "E001": 0.84,
+            "E002": 0.83,
+            "E003": 0.82,
+            "E004": 0.8,
+            "E005": 0.81
+        }
+    },
+    "task2": {
+        "highest_attendance_event": "Team Walking Challenge",
+        "average_attendance_rate": 0.82,
+        "highest_participation_week": 7,
+        "highest_participation_department": "HR"
+    },
+    "task3": {
+        "week_over_week_changes": {
+            "E001": [
+                0.0,
+                0.0,
+                0.0,
+                0.13,
+                -0.11,
+                0.13,
+                0.0
+            ],
+            "E002": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "E003": [
+                0.08,
+                -0.08,
+                0.0,
+                0.0,
+                0.0,
+                0.08,
+                -0.08
+            ],
+            "E004": [
+                0.1,
+                -0.09,
+                0.0,
+                0.1,
+                -0.09,
+                0.1,
+                -0.09
+            ],
+            "E005": [
+                0.0,
+                0.0,
+                0.13,
+                -0.11,
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "most_consistent_event": "Nutrition Workshop",
+        "age_group_with_highest_attendance": "30-39"
+    }
+}

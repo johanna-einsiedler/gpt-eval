@@ -1,0 +1,49 @@
+{
+    "candidate_id": "GPT-4o",
+    "total_personnel_budget": 5043776.15,
+    "department_budgets": {
+        "HR": 590712.42,
+        "Finance": 604541.82,
+        "Operations": 1100645.77,
+        "Sales": 1474070.5,
+        "IT": 1273805.64
+    },
+    "salary_totals": {
+        "HR": 488192.08,
+        "Finance": 499621.34,
+        "Operations": 909624.6,
+        "Sales": 1218240.08,
+        "IT": 1052731.93
+    },
+    "benefits_totals": {
+        "HR": 102520.34,
+        "Finance": 104920.48,
+        "Operations": 191021.17,
+        "Sales": 255830.42,
+        "IT": 221073.71
+    },
+    "year_over_year_change_percentage": {
+        "HR": 29.49,
+        "Finance": -2.99,
+        "Operations": 8.16,
+        "Sales": 13.75,
+        "IT": 18.42,
+        "Total": 12.87
+    },
+    "benefits_to_salary_ratio": {
+        "HR": 0.21,
+        "Finance": 0.21,
+        "Operations": 0.21,
+        "Sales": 0.21,
+        "IT": 0.21,
+        "Company_Average": 0.21
+    },
+    "headcount_by_department": {
+        "HR": 6,
+        "Finance": 6,
+        "Operations": 13,
+        "Sales": 16,
+        "IT": 11,
+        "Total": 52
+    }
+}

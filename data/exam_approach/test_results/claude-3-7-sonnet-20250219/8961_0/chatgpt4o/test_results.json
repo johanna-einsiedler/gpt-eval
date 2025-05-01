@@ -105,16 +105,16 @@
       },
       "confounders_identified": {
         "submitted": [
-          "age",
-          "bmi"
+          "bmi",
+          "age"
         ],
         "correct": [
           "age",
           "diabetes"
         ],
         "alternative_correct": [
-          "age",
-          "bmi"
+          "bmi",
+          "age"
         ],
         "points": 1
       },

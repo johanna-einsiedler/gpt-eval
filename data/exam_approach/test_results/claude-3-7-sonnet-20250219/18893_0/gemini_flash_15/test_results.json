@@ -12,8 +12,8 @@
           "max_points": 3,
           "correct_answers": [
             "E011",
-            "E012",
-            "E006"
+            "E006",
+            "E012"
           ],
           "submitted_answers": [],
           "explanation": "Identified 0 out of 3 overtime violations correctly."
@@ -23,17 +23,17 @@
           "max_points": 4,
           "correct_answers": [
             "E011",
-            "E020",
+            "E006",
             "E012",
-            "E006"
+            "E020"
           ],
           "submitted_answers": [
-            "E008",
-            "E014",
+            "E015",
             "E020",
             "E016",
+            "E014",
             "E009",
-            "E015"
+            "E008"
           ],
           "explanation": "Identified 1 out of 4 shift differential violations correctly."
         },
@@ -41,20 +41,20 @@
           "score": 3.0,
           "max_points": 3,
           "correct_answers": [
-            "E008",
-            "E014",
+            "E015",
             "E016",
+            "E014",
             "E009",
-            "E010",
-            "E015"
+            "E008",
+            "E010"
           ],
           "submitted_answers": [
-            "E008",
-            "E014",
+            "E015",
             "E016",
+            "E014",
             "E009",
-            "E010",
-            "E015"
+            "E008",
+            "E010"
           ],
           "explanation": "Identified 6 out of 6 break period violations correctly (0.5 points each)."
         },
@@ -77,17 +77,17 @@
           "score": 4,
           "max_points": 4,
           "correct_answers": [
-            "SV-04",
             "SV-07",
             "SV-02",
-            "SV-03"
+            "SV-03",
+            "SV-04"
           ],
           "submitted_answers": [
-            "SV-04",
             "SV-02",
-            "SV-06",
+            "SV-07",
             "SV-03",
-            "SV-07"
+            "SV-06",
+            "SV-04"
           ],
           "explanation": "Identified 4 out of 4 safety violations correctly."
         },
@@ -132,10 +132,10 @@
           ],
           "submitted_answers": [
             "E004",
-            "E005",
-            "E020",
-            "E012",
             "E019",
+            "E012",
+            "E020",
+            "E005",
             "E006"
           ],
           "explanation": "Identified 1 out of 5 misclassified employees correctly."
@@ -147,22 +147,22 @@
             "E011"
           ],
           "submitted_answers": [
-            "E017",
-            "E001",
             "E004",
-            "E014",
-            "E005",
-            "E013",
-            "E020",
-            "E016",
             "E019",
-            "E002",
+            "E013",
+            "E001",
             "E007",
             "E012",
-            "E011",
-            "E010",
             "E015",
-            "E006"
+            "E017",
+            "E016",
+            "E020",
+            "E005",
+            "E002",
+            "E014",
+            "E011",
+            "E006",
+            "E010"
           ],
           "explanation": "Incorrect"
         },
@@ -170,8 +170,8 @@
           "score": 0,
           "max_points": 2,
           "correct_answers": [
-            "WE-01",
-            "WE-04"
+            "WE-04",
+            "WE-01"
           ],
           "submitted_answers": [
             "WE-02"

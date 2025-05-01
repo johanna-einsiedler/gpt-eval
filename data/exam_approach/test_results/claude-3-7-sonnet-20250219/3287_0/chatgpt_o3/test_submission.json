@@ -1,0 +1,49 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "total_personnel_budget": 4866306.61,
+    "department_budgets": {
+        "HR": 553066.8,
+        "Finance": 589622.11,
+        "Operations": 1075448.0,
+        "Sales": 1438702.1,
+        "IT": 1209467.6
+    },
+    "salary_totals": {
+        "HR": 457080.0,
+        "Finance": 487291.0,
+        "Operations": 888800.0,
+        "Sales": 1189010.0,
+        "IT": 999560.0
+    },
+    "benefits_totals": {
+        "HR": 95986.8,
+        "Finance": 102331.11,
+        "Operations": 186648.0,
+        "Sales": 249692.1,
+        "IT": 209907.6
+    },
+    "year_over_year_change_percentage": {
+        "HR": 21.25,
+        "Finance": -5.38,
+        "Operations": 5.81,
+        "Sales": 9.49,
+        "IT": 12.44,
+        "Total": 8.49
+    },
+    "benefits_to_salary_ratio": {
+        "HR": 0.21,
+        "Finance": 0.21,
+        "Operations": 0.21,
+        "Sales": 0.21,
+        "IT": 0.21,
+        "Company_Average": 0.21
+    },
+    "headcount_by_department": {
+        "HR": 6,
+        "Finance": 6,
+        "Operations": 13,
+        "Sales": 16,
+        "IT": 11,
+        "Total": 52
+    }
+}

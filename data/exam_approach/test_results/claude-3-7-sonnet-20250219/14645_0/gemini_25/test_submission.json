@@ -1,0 +1,305 @@
+{
+    "candidateId": "claude-3-opus-20240229",
+    "testSchedule": [
+        {
+            "phase": "Phase 1: Planning & Early Integration",
+            "startDate": "2024-07-15",
+            "endDate": "2024-08-02",
+            "resources": [
+                "QA1",
+                "QA2",
+                "QA3",
+                "BA1"
+            ],
+            "deliverables": [
+                "Test Plan v1.0",
+                "Initial Test Cases (Auth, Core)",
+                "Early Integration Test Report",
+                "Test Environment Setup Verification"
+            ]
+        },
+        {
+            "phase": "Phase 2: Core Feature Testing",
+            "startDate": "2024-07-29",
+            "endDate": "2024-08-16",
+            "resources": [
+                "QA1",
+                "QA2",
+                "QA3",
+                "DEV1",
+                "BA1"
+            ],
+            "deliverables": [
+                "Feature Test Reports (Auth, Catalog, Cart)",
+                "Defect Reports",
+                "Updated Test Cases",
+                "Payment Gateway Initial Test Report"
+            ]
+        },
+        {
+            "phase": "Phase 3: System & End-to-End Testing",
+            "startDate": "2024-08-12",
+            "endDate": "2024-08-23",
+            "resources": [
+                "QA1",
+                "QA2",
+                "QA3",
+                "DEV1",
+                "BA1"
+            ],
+            "deliverables": [
+                "System Test Report",
+                "E2E Test Report",
+                "Performance Test Report",
+                "Security Test Report",
+                "Usability Test Report",
+                "Regression Test Report v1"
+            ]
+        },
+        {
+            "phase": "Phase 4: Final Validation & Release Prep",
+            "startDate": "2024-08-26",
+            "endDate": "2024-09-06",
+            "resources": [
+                "QA1",
+                "QA2",
+                "QA3",
+                "DEV1",
+                "BA1"
+            ],
+            "deliverables": [
+                "Final Test Summary Report",
+                "Test Coverage Report",
+                "UAT Support Log",
+                "Final Regression Test Report",
+                "Release Sign-off Recommendation"
+            ]
+        }
+    ],
+    "riskAssessment": [
+        {
+            "riskId": 1,
+            "probability": 4,
+            "impact": 5,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 3,
+            "probability": 3,
+            "impact": 5,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 8,
+            "probability": 4,
+            "impact": 4,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 5,
+            "probability": 3,
+            "impact": 5,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 6,
+            "probability": 4,
+            "impact": 3,
+            "mitigationPlan": "A"
+        }
+    ],
+    "testCoverage": {
+        "functionalCoverage": 50,
+        "performanceCoverage": 20,
+        "securityCoverage": 20,
+        "usabilityCoverage": 10
+    },
+    "resourceAllocation": [
+        {
+            "resourceId": "QA1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 50
+                },
+                {
+                    "week": 2,
+                    "percentage": 50
+                },
+                {
+                    "week": 3,
+                    "percentage": 75
+                },
+                {
+                    "week": 4,
+                    "percentage": 75
+                },
+                {
+                    "week": 5,
+                    "percentage": 100
+                },
+                {
+                    "week": 6,
+                    "percentage": 100
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "QA2",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 25
+                },
+                {
+                    "week": 2,
+                    "percentage": 50
+                },
+                {
+                    "week": 3,
+                    "percentage": 50
+                },
+                {
+                    "week": 4,
+                    "percentage": 75
+                },
+                {
+                    "week": 5,
+                    "percentage": 75
+                },
+                {
+                    "week": 6,
+                    "percentage": 100
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "QA3",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 0
+                },
+                {
+                    "week": 2,
+                    "percentage": 25
+                },
+                {
+                    "week": 3,
+                    "percentage": 50
+                },
+                {
+                    "week": 4,
+                    "percentage": 50
+                },
+                {
+                    "week": 5,
+                    "percentage": 75
+                },
+                {
+                    "week": 6,
+                    "percentage": 75
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "DEV1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 0
+                },
+                {
+                    "week": 2,
+                    "percentage": 0
+                },
+                {
+                    "week": 3,
+                    "percentage": 10
+                },
+                {
+                    "week": 4,
+                    "percentage": 10
+                },
+                {
+                    "week": 5,
+                    "percentage": 20
+                },
+                {
+                    "week": 6,
+                    "percentage": 20
+                },
+                {
+                    "week": 7,
+                    "percentage": 30
+                },
+                {
+                    "week": 8,
+                    "percentage": 30
+                }
+            ]
+        },
+        {
+            "resourceId": "BA1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 50
+                },
+                {
+                    "week": 2,
+                    "percentage": 25
+                },
+                {
+                    "week": 3,
+                    "percentage": 25
+                },
+                {
+                    "week": 4,
+                    "percentage": 25
+                },
+                {
+                    "week": 5,
+                    "percentage": 25
+                },
+                {
+                    "week": 6,
+                    "percentage": 25
+                },
+                {
+                    "week": 7,
+                    "percentage": 50
+                },
+                {
+                    "week": 8,
+                    "percentage": 50
+                }
+            ]
+        }
+    ],
+    "testingApproach": "A"
+}

@@ -1,0 +1,92 @@
+{
+    "candidate_name": "GPT-4o",
+    "date": "07/26/2024",
+    "task1": {
+        "selection_rates": {
+            "gender": {
+                "male": 10.92,
+                "female": 6.88
+            },
+            "race_ethnicity": {
+                "white": 9.59,
+                "black": 5.71,
+                "hispanic": 3.92,
+                "asian": 11.36
+            }
+        },
+        "adverse_impact_identified": {
+            "gender": {
+                "group_with_lowest_rate": "female",
+                "adverse_impact_ratio": 0.63,
+                "adverse_impact_exists": true
+            },
+            "race_ethnicity": {
+                "group_with_lowest_rate": "hispanic",
+                "adverse_impact_ratio": 0.35,
+                "adverse_impact_exists": true
+            }
+        },
+        "qualified_applicant_hire_percentages": {
+            "gender": {
+                "male": 14.62,
+                "female": 9.32
+            },
+            "race_ethnicity": {
+                "white": 12.73,
+                "black": 7.84,
+                "hispanic": 5.56,
+                "asian": 15.15
+            }
+        }
+    },
+    "task2": {
+        "policy_sections": {
+            "recruitment": [
+                4
+            ],
+            "hiring": [
+                4
+            ],
+            "promotion": [
+                5
+            ]
+        },
+        "policy_implementation_assessment": {
+            "policy_followed": false,
+            "justification": "The hiring data indicates potential adverse impact against female, Black, and Hispanic applicants, as their selection rates fall below the 80% threshold relative to the highest group rate, contradicting the aim stated in policy section 4.6.",
+            "specific_violations": [
+                "Section 4.6"
+            ],
+            "recommended_actions": [
+                "Conduct a thorough investigation into the hiring process stages (screening, interviews, offers) to identify barriers causing disparities for female, Black, and Hispanic applicants.",
+                "Review and validate selection criteria (Section 4.2) and interview processes (Section 4.3) to ensure job-relatedness and consistent application, minimizing potential bias.",
+                "Enhance targeted recruitment strategies (Section 4.1) and provide additional EEO/bias training for hiring managers and interviewers (Section 10.2)."
+            ]
+        }
+    },
+    "task3": {
+        "complaints_by_department": {
+            "sales": 8,
+            "it": 5,
+            "hr": 3,
+            "finance": 4
+        },
+        "most_common_complaint": "Hiring Discrimination",
+        "average_resolution_time": 34.5,
+        "disproportionate_departments": [
+            "Sales"
+        ],
+        "complaint_trends": {
+            "increasing_types": [
+                "Promotion Denial",
+                "Retaliation",
+                "Hostile Work Environment"
+            ],
+            "decreasing_types": [
+                "Harassment",
+                "Pay Discrimination"
+            ],
+            "seasonal_patterns": "No clear seasonal pattern observed with the available data spanning approximately 8 months."
+        }
+    }
+}

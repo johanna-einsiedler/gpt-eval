@@ -282,8 +282,8 @@
       "max_score": 8,
       "details": {
         "submission": [
-          "HR",
-          "Finance"
+          "Finance",
+          "HR"
         ],
         "correct": [
           "sales"

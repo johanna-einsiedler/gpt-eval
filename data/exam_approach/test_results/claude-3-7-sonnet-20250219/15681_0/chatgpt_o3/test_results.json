@@ -1,0 +1,35 @@
+{
+  "candidate_id": "GPT-4o",
+  "overall_score": 53.0,
+  "total_points": 53.0,
+  "max_points": 100,
+  "passed": false,
+  "task1": {
+    "score": 13,
+    "max_score": 30,
+    "feedback": [
+      "Entity count mismatch. Expected 10, got 11: 8/10 points",
+      "Flow representation: 0/15 points",
+      "Returns process clearly shown: 5/5 points"
+    ]
+  },
+  "task2": {
+    "score": 20.0,
+    "max_score": 30,
+    "feedback": [
+      "Inventory flow representation: 0/10 points",
+      "Trend representation: 10/10 points",
+      "Percentage calculations: 10.0/10 points"
+    ]
+  },
+  "task3": {
+    "score": 20,
+    "max_score": 40,
+    "feedback": [
+      "Production flow diagram: 10/10 points",
+      "Bottleneck not correctly identified: 0/10 points",
+      "Maximum throughput correctly calculated: 10/10 points",
+      "Incorrect over-capacity stages. Expected {'Filling & Packaging'}, got {'Filling & Packaging', 'Quality Testing'}: 0/10 points"
+    ]
+  }
+}

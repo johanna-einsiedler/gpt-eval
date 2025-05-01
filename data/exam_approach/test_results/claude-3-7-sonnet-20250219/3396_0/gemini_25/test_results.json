@@ -1,0 +1,271 @@
+{
+  "candidate_id": "GPT-4o",
+  "overall_score": 85.33,
+  "passed": true,
+  "total_points": 85.33,
+  "max_points": 100,
+  "section_scores": {
+    "financial_impact": {
+      "points_earned": 37.0,
+      "points_possible": 40,
+      "percentage": 92.5,
+      "details": [
+        {
+          "change_id": "PC001",
+          "correct_impact": 59000,
+          "submitted_impact": 56000,
+          "error_percentage": 5.08,
+          "points_possible": 10.0,
+          "points_earned": 7.0,
+          "explanation": "Error of 5.08%"
+        },
+        {
+          "change_id": "PC002",
+          "correct_impact": -64500,
+          "submitted_impact": -64500,
+          "error_percentage": 0.0,
+          "points_possible": 10.0,
+          "points_earned": 10.0,
+          "explanation": "Correct"
+        },
+        {
+          "change_id": "PC003",
+          "correct_impact": 71333,
+          "submitted_impact": 71333,
+          "error_percentage": 0.0,
+          "points_possible": 10.0,
+          "points_earned": 10.0,
+          "explanation": "Correct"
+        },
+        {
+          "change_id": "PC004",
+          "correct_impact": 60000,
+          "submitted_impact": 60000,
+          "error_percentage": 0.0,
+          "points_possible": 10.0,
+          "points_earned": 10.0,
+          "explanation": "Correct"
+        }
+      ]
+    },
+    "budget_lines": {
+      "points_earned": 18.33,
+      "points_possible": 20,
+      "percentage": 91.65,
+      "details": [
+        {
+          "change_id": "PC001",
+          "correct_lines": [
+            "BL-IT-1004",
+            "BL-IT-1003",
+            "BL-IT-1002"
+          ],
+          "submitted_lines": [
+            "BL-IT-1003",
+            "BL-IT-1002"
+          ],
+          "missing_lines": [
+            "BL-IT-1004"
+          ],
+          "extra_lines": [],
+          "points_possible": 5.0,
+          "points_earned": 3.333333333333333,
+          "explanation": "Identified 2/3 correct lines, missed 1"
+        },
+        {
+          "change_id": "PC002",
+          "correct_lines": [
+            "BL-MKT-2001",
+            "BL-MKT-2002"
+          ],
+          "submitted_lines": [
+            "BL-MKT-2001",
+            "BL-MKT-2002"
+          ],
+          "missing_lines": [],
+          "extra_lines": [],
+          "points_possible": 5.0,
+          "points_earned": 5.0,
+          "explanation": "Identified 2/2 correct lines"
+        },
+        {
+          "change_id": "PC003",
+          "correct_lines": [
+            "BL-CS-4001",
+            "BL-CS-4002",
+            "BL-CS-4003"
+          ],
+          "submitted_lines": [
+            "BL-CS-4001",
+            "BL-CS-4002",
+            "BL-CS-4003"
+          ],
+          "missing_lines": [],
+          "extra_lines": [],
+          "points_possible": 5.0,
+          "points_earned": 5.0,
+          "explanation": "Identified 3/3 correct lines"
+        },
+        {
+          "change_id": "PC004",
+          "correct_lines": [
+            "BL-RD-3022",
+            "BL-RD-3045",
+            "BL-RD-3004"
+          ],
+          "submitted_lines": [
+            "BL-RD-3022",
+            "BL-RD-3045",
+            "BL-RD-3004"
+          ],
+          "missing_lines": [],
+          "extra_lines": [],
+          "points_possible": 5.0,
+          "points_earned": 5.0,
+          "explanation": "Identified 3/3 correct lines"
+        }
+      ]
+    },
+    "policy_compliance": {
+      "points_earned": 15.0,
+      "points_possible": 20,
+      "percentage": 75.0,
+      "details": [
+        {
+          "change_id": "PC001",
+          "correct_assessments": 2,
+          "total_assessments": 3,
+          "assessment_details": [
+            {
+              "budget_line": "BL-IT-1002",
+              "correct": true,
+              "explanation": "Correct compliance assessment"
+            },
+            {
+              "budget_line": "BL-IT-1003",
+              "correct": true,
+              "explanation": "Correct compliance assessment"
+            },
+            {
+              "budget_line": "BL-IT-1004",
+              "correct": false,
+              "explanation": "Budget line not found in submission"
+            }
+          ],
+          "points_possible": 5.0,
+          "points_earned": 3.333333333333333,
+          "explanation": "Correctly assessed 2/3 budget lines"
+        },
+        {
+          "change_id": "PC002",
+          "correct_assessments": 2,
+          "total_assessments": 2,
+          "assessment_details": [
+            {
+              "budget_line": "BL-MKT-2001",
+              "correct": true,
+              "explanation": "Correct compliance assessment"
+            },
+            {
+              "budget_line": "BL-MKT-2002",
+              "correct": true,
+              "explanation": "Correct compliance assessment"
+            }
+          ],
+          "points_possible": 5.0,
+          "points_earned": 5.0,
+          "explanation": "Correctly assessed 2/2 budget lines"
+        },
+        {
+          "change_id": "PC003",
+          "correct_assessments": 2,
+          "total_assessments": 3,
+          "assessment_details": [
+            {
+              "budget_line": "BL-CS-4001",
+              "correct": true,
+              "explanation": "Correct compliance assessment"
+            },
+            {
+              "budget_line": "BL-CS-4002",
+              "correct": false,
+              "explanation": "Incorrect compliance assessment: should be True"
+            },
+            {
+              "budget_line": "BL-CS-4003",
+              "correct": true,
+              "explanation": "Correct compliance assessment"
+            }
+          ],
+          "points_possible": 5.0,
+          "points_earned": 3.333333333333333,
+          "explanation": "Correctly assessed 2/3 budget lines"
+        },
+        {
+          "change_id": "PC004",
+          "correct_assessments": 2,
+          "total_assessments": 3,
+          "assessment_details": [
+            {
+              "budget_line": "BL-RD-3022",
+              "correct": true,
+              "explanation": "Correct compliance assessment"
+            },
+            {
+              "budget_line": "BL-RD-3045",
+              "correct": true,
+              "explanation": "Correct compliance assessment"
+            },
+            {
+              "budget_line": "BL-RD-3004",
+              "correct": false,
+              "explanation": "Incorrect compliance assessment: should be True"
+            }
+          ],
+          "points_possible": 5.0,
+          "points_earned": 3.333333333333333,
+          "explanation": "Correctly assessed 2/3 budget lines"
+        }
+      ]
+    },
+    "notifications": {
+      "points_earned": 15.0,
+      "points_possible": 20,
+      "percentage": 75.0,
+      "details": [
+        {
+          "change_id": "PC001",
+          "correct_template": "BN-101",
+          "submitted_template": "BN-101",
+          "points_possible": 5.0,
+          "points_earned": 5.0,
+          "explanation": "Correct notification template selected"
+        },
+        {
+          "change_id": "PC002",
+          "correct_template": "BN-101",
+          "submitted_template": "BN-101",
+          "points_possible": 5.0,
+          "points_earned": 5.0,
+          "explanation": "Correct notification template selected"
+        },
+        {
+          "change_id": "PC003",
+          "correct_template": "BN-104",
+          "submitted_template": "BN-103",
+          "points_possible": 5.0,
+          "points_earned": 0,
+          "explanation": "Incorrect template: selected BN-103, should be BN-104"
+        },
+        {
+          "change_id": "PC004",
+          "correct_template": "BN-103",
+          "submitted_template": "BN-103",
+          "points_possible": 5.0,
+          "points_earned": 5.0,
+          "explanation": "Correct notification template selected"
+        }
+      ]
+    }
+  }
+}

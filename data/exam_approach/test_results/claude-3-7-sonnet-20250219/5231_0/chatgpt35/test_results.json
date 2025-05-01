@@ -77,8 +77,8 @@
       "points": 1.5,
       "max_points": 3,
       "feedback": [
-        "Correctly cited policy reference 4.4.3.",
         "Failed to cite policy reference 4.4.6.",
+        "Correctly cited policy reference 4.4.3.",
         "Incorrectly included policy reference 4.5.1."
       ]
     },

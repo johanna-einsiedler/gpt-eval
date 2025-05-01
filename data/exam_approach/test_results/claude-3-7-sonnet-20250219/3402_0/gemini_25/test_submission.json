@@ -1,0 +1,52 @@
+{
+    "candidate_id": "Claude-3.5-Sonnet",
+    "calculation_errors": [
+        {
+            "location": "Department Summary, Personnel row vs Personnel Detail, Total row",
+            "current_value": "$1,350,000 (Summary) / $1,443,000 (Detail)",
+            "correct_value": "Needs reconciliation - either Summary should be $1,443,000 or Detail should sum to $1,350,000",
+            "explanation": "The total personnel cost calculated on the Personnel Detail sheet ($1,443,000) does not match the amount requested on the Department Summary sheet ($1,350,000). REQ-205 requires summary totals to equal the sum of detailed line items."
+        },
+        {
+            "location": "Department Summary, Equipment row vs Equipment Detail, Total row",
+            "current_value": "$215,000 (Summary) / $79,400 (Detail)",
+            "correct_value": "Needs reconciliation - either Summary should be $79,400 or Detail should sum to $215,000",
+            "explanation": "The total equipment cost calculated on the Equipment Detail sheet ($79,400) does not match the amount requested on the Department Summary sheet ($215,000). REQ-205 requires summary totals to equal the sum of detailed line items."
+        }
+    ],
+    "missing_information": [
+        {
+            "requirement_id": "REQ-005 / REG-104",
+            "description": "Detailed justification for budget category increases exceeding 10% is missing or insufficient for Equipment (14.7%), Professional Services (11.1%), Training (10.8%), and Miscellaneous (15.6%).",
+            "impact": "Prevents assessment of the necessity for significant funding increases and verification of compliance with REG-104 requiring detailed justification."
+        },
+        {
+            "requirement_id": "REQ-005",
+            "description": "Explanation for non-standard quarterly allocation patterns is missing in the Budget Justification for Equipment (70% Q1) and Travel (20% Q1/4, 30% Q2/3).",
+            "impact": "The rationale for deviating from the standard 25% quarterly allocation (REG-502) is unclear, hindering cash flow planning and review."
+        },
+        {
+            "requirement_id": "REQ-006",
+            "description": "The required Signature Page, including Department Director signature and submission date, is missing.",
+            "impact": "The budget submission is incomplete and lacks formal authorization and date verification as required by REG-105."
+        },
+        {
+            "requirement_id": "REQ-007",
+            "description": "References to required supporting documentation are missing. This includes quotes for equipment items over $5,000 (Servers), contracts or estimates for Professional Services, a detailed breakdown of Travel expenses, and the Training plan.",
+            "impact": "Prevents verification of costs, necessity, and compliance for significant expenditures in these categories."
+        },
+        {
+            "requirement_id": "REQ-005 / REG-302",
+            "description": "Detailed breakdown of Travel expenses by purpose and destination is missing from the Budget Justification section.",
+            "impact": "Compliance with REG-302 cannot be verified, and the necessity and allocation of travel funds are not fully supported or transparent."
+        }
+    ],
+    "compliance_issues": [
+        {
+            "regulation_id": "REG-303",
+            "location": "Budget Justification, Professional Services",
+            "issue": "The Professional Services request of $250,000 exceeds the $50,000 threshold requiring competitive bidding, but the justification does not mention compliance with bidding procedures or reference an approved exception.",
+            "recommendation": "Provide documentation of the competitive bidding process conducted or obtain and reference an approved exception waiver."
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+{
+  "candidate_id": "GPT-4o",
+  "task1": {
+    "score": 1,
+    "max_score": 4,
+    "details": {
+      "design_choice": {
+        "submitted": "randomized controlled trial",
+        "correct": "randomized controlled trial",
+        "points": 1
+      },
+      "sample_size": {
+        "submitted": 4,
+        "correct": 52,
+        "points": 0
+      },
+      "stratification_variables": {
+        "submitted": [
+          "baseline_bp",
+          "age"
+        ],
+        "correct": [
+          "hypertension_history",
+          "age"
+        ],
+        "points": 0
+      },
+      "expected_effect_size": {
+        "submitted": 4.47,
+        "correct": 0.8,
+        "points": 0
+      }
+    }
+  },
+  "task2": {
+    "score": 1,
+    "max_score": 4,
+    "details": {
+      "minimum_sample_size": {
+        "submitted": 198,
+        "correct": 100,
+        "points": 0
+      },
+      "power_at_sample_sizes": {
+        "details": [
+          {
+            "sample_size": {
+              "submitted": 100,
+              "correct": 100,
+              "matches": true
+            },
+            "power": {
+              "submitted": 0.51,
+              "correct": 0.8,
+              "matches": false
+            }
+          },
+          {
+            "sample_size": {
+              "submitted": 200,
+              "correct": 200,
+              "matches": true
+            },
+            "power": {
+              "submitted": 0.81,
+              "correct": 0.98,
+              "matches": false
+            }
+          },
+          {
+            "sample_size": {
+              "submitted": 300,
+              "correct": 300,
+              "matches": true
+            },
+            "power": {
+              "submitted": 0.94,
+              "correct": 0.99,
+              "matches": false
+            }
+          }
+        ],
+        "points": 0
+      },
+      "optimal_allocation_ratio": {
+        "submitted": "1:1",
+        "correct": "1:1",
+        "points": 1
+      }
+    }
+  },
+  "task3": {
+    "score": 0,
+    "max_score": 4,
+    "details": {
+      "control_group_mean": {
+        "submitted": 156.1,
+        "correct": 155.0,
+        "points": 0
+      },
+      "treatment_effect_estimate": {
+        "submitted": 13.0,
+        "correct": 17.0,
+        "points": 0
+      },
+      "confounders_identified": {
+        "submitted": [
+          "baseline_bp",
+          "bmi"
+        ],
+        "correct": [
+          "diabetes",
+          "age"
+        ],
+        "alternative_correct": [
+          "bmi",
+          "age"
+        ],
+        "points": 0
+      },
+      "matching_variables": {
+        "submitted": [
+          "baseline_bp",
+          "age"
+        ],
+        "correct": [
+          "hypertension_history",
+          "age"
+        ],
+        "points": 0
+      }
+    }
+  },
+  "overall_score": 16.67,
+  "passed": false,
+  "critical_errors": [
+    "Calculated severely underpowered sample size"
+  ]
+}

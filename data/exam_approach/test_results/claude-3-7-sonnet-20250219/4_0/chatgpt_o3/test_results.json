@@ -1,0 +1,207 @@
+{
+  "section_scores": {
+    "product_margins": {
+      "score": 10.0,
+      "max_score": 10,
+      "details": {
+        "techpro_basic": {
+          "submitted": 0.5,
+          "expected": 0.5,
+          "correct": true,
+          "message": "Correct within tolerance"
+        },
+        "techpro_professional": {
+          "submitted": 0.44,
+          "expected": 0.44,
+          "correct": true,
+          "message": "Correct within tolerance"
+        },
+        "techpro_enterprise": {
+          "submitted": 0.47,
+          "expected": 0.47,
+          "correct": true,
+          "message": "Correct within tolerance"
+        }
+      }
+    },
+    "minimum_prices": {
+      "score": 10.0,
+      "max_score": 10,
+      "details": {
+        "techpro_basic": {
+          "submitted": 50.0,
+          "expected": 50.0,
+          "correct": true,
+          "message": "Correct within tolerance"
+        },
+        "techpro_professional": {
+          "submitted": 83.33,
+          "expected": 83.33,
+          "correct": true,
+          "message": "Correct within tolerance"
+        },
+        "techpro_enterprise": {
+          "submitted": 133.33,
+          "expected": 133.33,
+          "correct": true,
+          "message": "Correct within tolerance"
+        }
+      }
+    },
+    "tiered_pricing": {
+      "score": 15.0,
+      "max_score": 15,
+      "details": {
+        "techpro_basic": {
+          "tier_1_1_9": {
+            "submitted": 56.0,
+            "expected": 59.99,
+            "correct": true,
+            "message": "Margin of 46.43% meets requirement"
+          },
+          "tier_2_10_49": {
+            "submitted": 52.0,
+            "expected": 53.99,
+            "correct": true,
+            "message": "Margin of 42.31% meets requirement"
+          },
+          "tier_3_50plus": {
+            "submitted": 50.0,
+            "expected": 50.99,
+            "correct": true,
+            "message": "Margin of 40.00% meets requirement"
+          }
+        },
+        "techpro_professional": {
+          "tier_1_1_9": {
+            "submitted": 92.0,
+            "expected": 89.99,
+            "correct": true,
+            "message": "Margin of 45.65% meets requirement"
+          },
+          "tier_2_10_49": {
+            "submitted": 87.0,
+            "expected": 85.49,
+            "correct": true,
+            "message": "Margin of 42.53% meets requirement"
+          },
+          "tier_3_50plus": {
+            "submitted": 84.0,
+            "expected": 83.69,
+            "correct": true,
+            "message": "Margin of 40.48% meets requirement"
+          }
+        },
+        "techpro_enterprise": {
+          "tier_1_1_9": {
+            "submitted": 152.0,
+            "expected": 149.99,
+            "correct": true,
+            "message": "Margin of 47.37% meets requirement"
+          },
+          "tier_2_10_49": {
+            "submitted": 140.0,
+            "expected": 134.99,
+            "correct": true,
+            "message": "Margin of 42.86% meets requirement"
+          },
+          "tier_3_50plus": {
+            "submitted": 134.0,
+            "expected": 134.99,
+            "correct": true,
+            "message": "Margin of 40.30% meets requirement"
+          }
+        }
+      }
+    },
+    "discount_rates": {
+      "score": 8.33,
+      "max_score": 10,
+      "details": {
+        "enterprise": {
+          "submitted": 0.12,
+          "expected": 0.18,
+          "correct": false,
+          "message": "Different from expected but aligns with segment characteristics"
+        },
+        "mid_market": {
+          "submitted": 0.08,
+          "expected": 0.12,
+          "correct": true,
+          "message": "Within acceptable range"
+        },
+        "small_business": {
+          "submitted": 0.05,
+          "expected": 0.08,
+          "correct": true,
+          "message": "Within acceptable range"
+        }
+      }
+    },
+    "volume_thresholds": {
+      "score": 10.0,
+      "max_score": 10,
+      "details": {
+        "discount_tier_1": {
+          "submitted": 10,
+          "expected": 10,
+          "correct": true,
+          "message": "Within acceptable range"
+        },
+        "discount_tier_2": {
+          "submitted": 50,
+          "expected": 50,
+          "correct": true,
+          "message": "Within acceptable range"
+        },
+        "discount_tier_3": {
+          "submitted": 100,
+          "expected": 100,
+          "correct": true,
+          "message": "Within acceptable range"
+        }
+      }
+    },
+    "competitive_price_index": {
+      "score": 3.33,
+      "max_score": 5,
+      "details": {
+        "techpro_basic": {
+          "submitted": 0.99,
+          "expected": 1.06,
+          "correct": false,
+          "message": "Outside tolerance of 0.05"
+        },
+        "techpro_professional": {
+          "submitted": 0.99,
+          "expected": 0.96,
+          "correct": true,
+          "message": "Correct within tolerance"
+        },
+        "techpro_enterprise": {
+          "submitted": 0.97,
+          "expected": 0.96,
+          "correct": true,
+          "message": "Correct within tolerance"
+        }
+      }
+    },
+    "pricing_strategy_rationale": {
+      "score": 8,
+      "max_score": 10,
+      "details": {
+        "word_count": {
+          "correct": true,
+          "message": "Acceptable length (127 words)"
+        },
+        "content": {
+          "message": "Rationale addresses 9 of 10 key pricing concepts"
+        }
+      }
+    }
+  },
+  "overall_score": 92.37,
+  "passing_score": 75.0,
+  "passed": true,
+  "failing_conditions": []
+}

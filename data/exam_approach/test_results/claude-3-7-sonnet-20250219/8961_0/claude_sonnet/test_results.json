@@ -109,8 +109,8 @@
           "bmi"
         ],
         "correct": [
-          "age",
-          "diabetes"
+          "diabetes",
+          "age"
         ],
         "alternative_correct": [
           "age",

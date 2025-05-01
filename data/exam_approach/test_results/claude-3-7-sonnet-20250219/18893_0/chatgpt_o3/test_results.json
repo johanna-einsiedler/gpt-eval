@@ -1,0 +1,251 @@
+{
+  "candidate_id": "GPT-4o",
+  "tasks": {
+    "task1": {
+      "name": "Contract Compliance Analysis",
+      "score": 10.0,
+      "max_points": 12,
+      "percentage": 83.33,
+      "details": {
+        "overtime_violations": {
+          "score": 3,
+          "max_points": 3,
+          "correct_answers": [
+            "E011",
+            "E006",
+            "E012"
+          ],
+          "submitted_answers": [
+            "E005",
+            "E017",
+            "E019",
+            "E007",
+            "E010",
+            "E018",
+            "E013",
+            "E011",
+            "E006",
+            "E012"
+          ],
+          "explanation": "Identified 3 out of 3 overtime violations correctly."
+        },
+        "shift_differential_violations": {
+          "score": 4,
+          "max_points": 4,
+          "correct_answers": [
+            "E020",
+            "E011",
+            "E006",
+            "E012"
+          ],
+          "submitted_answers": [
+            "E005",
+            "E017",
+            "E015",
+            "E020",
+            "E011",
+            "E006",
+            "E012"
+          ],
+          "explanation": "Identified 4 out of 4 shift differential violations correctly."
+        },
+        "break_period_violations": {
+          "score": 3.0,
+          "max_points": 3,
+          "correct_answers": [
+            "E009",
+            "E016",
+            "E008",
+            "E015",
+            "E014",
+            "E010"
+          ],
+          "submitted_answers": [
+            "E009",
+            "E019",
+            "E016",
+            "E008",
+            "E007",
+            "E015",
+            "E010",
+            "E014",
+            "E013"
+          ],
+          "explanation": "Identified 6 out of 6 break period violations correctly (0.5 points each)."
+        },
+        "total_unpaid_wages": {
+          "score": 0,
+          "max_points": 2,
+          "correct_answer": 64.25,
+          "submitted_answer": 91.45,
+          "explanation": "More than $10 from correct amount."
+        }
+      }
+    },
+    "task2": {
+      "name": "Working Conditions Assessment",
+      "score": 7,
+      "max_points": 8,
+      "percentage": 87.5,
+      "details": {
+        "safety_violations": {
+          "score": 4,
+          "max_points": 4,
+          "correct_answers": [
+            "SV-02",
+            "SV-07",
+            "SV-04",
+            "SV-03"
+          ],
+          "submitted_answers": [
+            "SV-02",
+            "SV-04",
+            "SV-03",
+            "SV-06",
+            "SV-07"
+          ],
+          "explanation": "Identified 4 out of 4 safety violations correctly."
+        },
+        "reporting_compliance": {
+          "score": 0,
+          "max_points": 1,
+          "correct_answer": false,
+          "submitted_answer": true,
+          "explanation": "Incorrect"
+        },
+        "remediation_status": {
+          "score": 1,
+          "max_points": 1,
+          "correct_answer": "RS-01",
+          "submitted_answer": "RS-01",
+          "explanation": "Correct"
+        },
+        "days_since_last_safety_meeting": {
+          "score": 2,
+          "max_points": 2,
+          "correct_answer": 28,
+          "submitted_answer": 28,
+          "explanation": "Correct"
+        }
+      }
+    },
+    "task3": {
+      "name": "Wage Structure Compliance",
+      "score": 7,
+      "max_points": 10,
+      "percentage": 70.0,
+      "details": {
+        "misclassified_employees": {
+          "score": 5,
+          "max_points": 5,
+          "correct_answers": [
+            "E003",
+            "E016",
+            "E020",
+            "E013",
+            "E011"
+          ],
+          "submitted_answers": [
+            "E003",
+            "E005",
+            "E009",
+            "E017",
+            "E019",
+            "E016",
+            "E002",
+            "E007",
+            "E015",
+            "E004",
+            "E001",
+            "E010",
+            "E014",
+            "E018",
+            "E020",
+            "E013",
+            "E011",
+            "E012"
+          ],
+          "explanation": "Identified 5 out of 5 misclassified employees correctly."
+        },
+        "seniority_violations": {
+          "score": 0,
+          "max_points": 1,
+          "correct_answers": [
+            "E011"
+          ],
+          "submitted_answers": [
+            "E009",
+            "E017",
+            "E019",
+            "E001",
+            "E018",
+            "E006",
+            "E012",
+            "E005",
+            "E016",
+            "E004",
+            "E010",
+            "E007",
+            "E015",
+            "E014",
+            "E003",
+            "E002",
+            "E020",
+            "E013",
+            "E011"
+          ],
+          "explanation": "Incorrect"
+        },
+        "wage_scale_errors": {
+          "score": 2,
+          "max_points": 2,
+          "correct_answers": [
+            "WE-04",
+            "WE-01"
+          ],
+          "submitted_answers": [
+            "WE-02",
+            "WE-01",
+            "WE-05",
+            "WE-03",
+            "WE-04"
+          ],
+          "explanation": "Identified 2 out of 2 wage scale errors correctly."
+        },
+        "total_wage_discrepancy": {
+          "score": 0,
+          "max_points": 2,
+          "correct_answer": 18.16,
+          "submitted_answer": 96.35,
+          "explanation": "More than $5 from correct amount."
+        }
+      }
+    }
+  },
+  "overall_score": 80.0,
+  "total_points": 24.0,
+  "total_possible": 30,
+  "passed": true,
+  "pass_criteria": {
+    "overall": {
+      "required": "70% of total points (21/30)",
+      "achieved": "80.0% (24.0/30)",
+      "passed": true
+    },
+    "task1": {
+      "required": "50% of task points (6/12)",
+      "achieved": "83.33% (10.0/12)",
+      "passed": true
+    },
+    "task2": {
+      "required": "50% of task points (4/8)",
+      "achieved": "87.5% (7/8)",
+      "passed": true
+    },
+    "task3": {
+      "required": "50% of task points (5/10)",
+      "achieved": "70.0% (7/10)",
+      "passed": true
+    }
+  }
+}

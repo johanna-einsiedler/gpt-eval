@@ -9,12 +9,16 @@
         "expected_count": 7,
         "matches": [
           [
-            "experience with digital marketing campaigns",
-            "experience with digital marketing campaigns"
+            "minimum 2 years of experience in a marketing role",
+            "minimum 2 years of experience in a marketing role"
           ],
           [
             "proficiency in microsoft office suite (word, excel, powerpoint)",
             "proficiency in microsoft office suite (word, excel, powerpoint)"
+          ],
+          [
+            "experience with digital marketing campaigns",
+            "experience with digital marketing campaigns"
           ],
           [
             "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
@@ -23,10 +27,6 @@
           [
             "ability to manage multiple projects simultaneously with attention to detail",
             "ability to manage multiple projects simultaneously with attention to detail"
-          ],
-          [
-            "minimum 2 years of experience in a marketing role",
-            "minimum 2 years of experience in a marketing role"
           ],
           [
             "bachelor's degree in marketing, communications, business, or related field",
@@ -126,13 +126,13 @@
             "C001"
           ],
           "common_candidates": [
-            "C001",
+            "C006",
             "C003",
-            "C006"
+            "C001"
           ]
         },
         "strengths_evaluation": {
-          "C001": {
+          "C006": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
@@ -140,7 +140,7 @@
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
-          "C006": {
+          "C001": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           }

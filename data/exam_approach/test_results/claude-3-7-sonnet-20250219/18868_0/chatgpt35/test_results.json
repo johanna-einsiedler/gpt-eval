@@ -9,24 +9,24 @@
         "expected_count": 7,
         "matches": [
           [
-            "strong written and verbal communication skills",
-            "strong written and verbal communication skills"
-          ],
-          [
-            "minimum 2 years of experience in a marketing role",
-            "minimum 2 years of experience in a marketing role"
+            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
+            "experience with social media platforms for business"
           ],
           [
             "bachelor's degree in marketing, communications, business, or related field",
             "bachelor's degree in marketing, communications, business, or related field"
           ],
           [
-            "proficiency in microsoft office suite (word, excel, powerpoint)",
-            "proficiency in microsoft office suite (word, excel, powerpoint)"
+            "minimum 2 years of experience in a marketing role",
+            "minimum 2 years of experience in a marketing role"
           ],
           [
-            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
-            "experience with social media platforms for business"
+            "strong written and verbal communication skills",
+            "strong written and verbal communication skills"
+          ],
+          [
+            "proficiency in microsoft office suite (word, excel, powerpoint)",
+            "proficiency in microsoft office suite (word, excel, powerpoint)"
           ]
         ]
       }
@@ -39,12 +39,12 @@
         "expected_count": 6,
         "matches": [
           [
-            "experience with marketing automation tools (hubspot, marketo, or similar)",
-            "experience with marketing automation tools (hubspot, marketo, or similar)"
-          ],
-          [
             "experience with content management systems (wordpress)",
             "experience with content management systems (wordpress)"
+          ],
+          [
+            "experience with marketing automation tools (hubspot, marketo, or similar)",
+            "experience with marketing automation tools (hubspot, marketo, or similar)"
           ],
           [
             "knowledge of graphic design software (adobe creative suite)",
@@ -118,21 +118,21 @@
             "C001"
           ],
           "common_candidates": [
+            "C006",
             "C003",
-            "C001",
-            "C006"
+            "C001"
           ]
         },
         "strengths_evaluation": {
+          "C006": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          },
           "C003": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
           "C001": {
-            "has_minimum_strengths": true,
-            "relevance_score": 1.0
-          },
-          "C006": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           }

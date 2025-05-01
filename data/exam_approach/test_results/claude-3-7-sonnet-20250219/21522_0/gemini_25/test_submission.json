@@ -1,0 +1,43 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "total_annual_interest": 4505.0,
+        "taxable_interest_income": 3875.0,
+        "effective_yields": {
+            "corporate_bond": 0.0456,
+            "certificate_of_deposit": 0.0266,
+            "municipal_bond": 0.042
+        }
+    },
+    "task2": {
+        "fair_market_value": 97033.57,
+        "annual_taxable_interest": 6093.29,
+        "amortizable_amount": 593.29,
+        "adjusted_tax_basis": 98220.15
+    },
+    "task3": {
+        "present_value_annuity": 453169.5,
+        "better_economic_value": "lump_sum",
+        "tax_liability": {
+            "lump_sum": 160000.0,
+            "annuity_total_present_value": 108760.68
+        },
+        "after_tax_present_value": {
+            "lump_sum": 340000.0,
+            "annuity": 344208.82
+        }
+    },
+    "task4": {
+        "cost_basis": 18000.0,
+        "capital_gain_loss": 6000.0,
+        "dividend_income": 1000.0,
+        "total_tax_liability": 1590.0
+    },
+    "task5": {
+        "cost_depletion": 60000.0,
+        "percentage_depletion": 168750.0,
+        "maximum_depletion_deduction": 168750.0,
+        "adjusted_basis": 631250.0,
+        "taxable_income": 456250.0
+    }
+}

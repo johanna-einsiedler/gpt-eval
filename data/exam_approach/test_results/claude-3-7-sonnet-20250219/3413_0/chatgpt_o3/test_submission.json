@@ -1,0 +1,87 @@
+{
+    "candidate_id": "GPT-4o",
+    "Agreement_A": [
+        {
+            "issue_id": 1,
+            "issue_type": "missing_information",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "Required Truth-in-Lending (TIL) disclosure is not included anywhere in the agreement, violating general consumer-loan disclosure standards."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "missing_information",
+            "location": "Property Information section",
+            "description": "Appraisal date is not stated; policy requires evidence that the appraisal is dated within 90 days of closing."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "compliance_issue",
+            "location": "Entire document",
+            "description": "No privacy notice is provided, contrary to the compliance requirement for consumer loans."
+        },
+        {
+            "issue_id": 4,
+            "issue_type": "missing_information",
+            "location": "Borrower Information section",
+            "description": "Document does not indicate that borrower and co-borrower incomes have been verified (e.g., pay-stubs, W-2s) as required under residential mortgage documentation standards."
+        }
+    ],
+    "Agreement_B": [
+        {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Loan Summary / Loan Terms section",
+            "description": "Monthly P&I shown as $14,557.23; a 25-year amortization at 5.75% on $1,750,000 should be ≈$11,020, indicating miscalculation."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "Payment amount aligns with a 15-year amortization, yet Amortization Period is stated as 25 years, creating internal inconsistency."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Covenants and Conditions section",
+            "description": "Policy requires demonstration of DSCR ≥1.25; agreement sets covenant but provides no actual DSCR calculation or supporting cash-flow data."
+        },
+        {
+            "issue_id": 4,
+            "issue_type": "compliance_issue",
+            "location": "Entire document",
+            "description": "Privacy notice absent; required for all borrowers under institutional compliance guidelines."
+        },
+        {
+            "issue_id": 5,
+            "issue_type": "missing_information",
+            "location": "Borrower Information section",
+            "description": "No reference to entity formation documents or certificate of good standing, which must be verified for LLC borrowers per commercial loan standards."
+        }
+    ],
+    "Agreement_C": [
+        {
+            "issue_id": 1,
+            "issue_type": "missing_information",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "Truth-in-Lending disclosure statement is not provided, violating consumer HELOC disclosure requirements."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms vs. Additional Provisions",
+            "description": "Loan Terms set a $500 minimum draw, while Additional Provisions require at least $10,000 in the first 12 months, presenting conflicting draw requirements."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "compliance_issue",
+            "location": "Entire document",
+            "description": "No privacy notice included, contrary to general compliance requirements for consumer credit products."
+        },
+        {
+            "issue_id": 4,
+            "issue_type": "missing_information",
+            "location": "Property Information section",
+            "description": "Outstanding first-mortgage lender name and loan number are not identified, leaving lien position verification incomplete."
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "client_summary": {
+            "bmi_over_25": [
+                "CL001",
+                "CL003",
+                "CL005",
+                "CL007",
+                "CL009",
+                "CL011",
+                "CL013",
+                "CL015"
+            ],
+            "elevated_heart_rate": [],
+            "low_attendance": [
+                "CL003",
+                "CL007",
+                "CL009",
+                "CL013",
+                "CL015"
+            ]
+        },
+        "client_flags": {
+            "consecutive_misses": [
+                "CL003",
+                "CL007",
+                "CL013"
+            ],
+            "reassessment_due": [
+                "CL001",
+                "CL003",
+                "CL005",
+                "CL007",
+                "CL010",
+                "CL012",
+                "CL013",
+                "CL015"
+            ]
+        }
+    },
+    "task2": {
+        "resolved_conflicts": {
+            "monday_0930": "John",
+            "tuesday_1200": "Maria",
+            "wednesday_1430": "Sarah",
+            "thursday_1045": "John",
+            "friday_0930": "Maria"
+        },
+        "program_hours": {
+            "cardio": 30,
+            "strength": 27,
+            "flexibility": 20,
+            "weight_management": 18
+        },
+        "utilization": {
+            "room_a": 87.5,
+            "room_b": 75.0,
+            "room_c": 75.0
+        },
+        "instructor_load": {
+            "maria": 35,
+            "john": 31,
+            "sarah": 29
+        }
+    },
+    "task3": {
+        "participation": {
+            "unique_participants": {
+                "cardio": 55,
+                "strength": 34,
+                "flexibility": 33,
+                "weight_management": 28
+            },
+            "day_attendance_rate": {
+                "monday": 85.6,
+                "tuesday": 69.6,
+                "wednesday": 68.8,
+                "thursday": 89.4,
+                "friday": 63.3
+            },
+            "peak_times": [
+                "Thursday, 10:45-11:45, CF121",
+                "Monday, 07:00-08:00, CF101",
+                "Tuesday, 07:00-08:00, CF107"
+            ]
+        },
+        "program_analysis": {
+            "declining_attendance": [
+                "CF107",
+                "YF105",
+                "YF110",
+                "YF119"
+            ],
+            "attendance_satisfaction_correlation": 0.82
+        }
+    }
+}

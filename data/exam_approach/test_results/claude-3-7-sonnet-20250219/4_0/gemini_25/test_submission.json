@@ -1,0 +1,46 @@
+{
+    "candidate_id": "GPT-4o",
+    "product_margins": {
+        "techpro_basic": 0.41,
+        "techpro_professional": 0.37,
+        "techpro_enterprise": 0.35
+    },
+    "minimum_prices": {
+        "techpro_basic": 50.0,
+        "techpro_professional": 83.34,
+        "techpro_enterprise": 133.34
+    },
+    "tiered_pricing": {
+        "techpro_basic": {
+            "tier_1_1_9": 58.0,
+            "tier_2_10_49": 53.5,
+            "tier_3_50plus": 50.5
+        },
+        "techpro_professional": {
+            "tier_1_1_9": 95.0,
+            "tier_2_10_49": 85.5,
+            "tier_3_50plus": 83.75
+        },
+        "techpro_enterprise": {
+            "tier_1_1_9": 155.0,
+            "tier_2_10_49": 142.5,
+            "tier_3_50plus": 134.5
+        }
+    },
+    "discount_rates": {
+        "enterprise": 0.15,
+        "mid_market": 0.1,
+        "small_business": 0.05
+    },
+    "volume_thresholds": {
+        "discount_tier_1": 1,
+        "discount_tier_2": 10,
+        "discount_tier_3": 50
+    },
+    "competitive_price_index": {
+        "techpro_basic": 1.02,
+        "techpro_professional": 1.02,
+        "techpro_enterprise": 0.99
+    },
+    "pricing_strategy_rationale": "The revised pricing strategy focuses on achieving a minimum 40% profit margin across all products, which required increasing effective prices for Professional and Enterprise tiers based on current average selling prices falling below this threshold. A three-tier volume-based pricing structure (1-9, 10-49, 50+ units) was implemented to incentivize larger purchases, aligning with typical Mid-Market and Enterprise volumes. Tier 1 prices were set competitively, close to the industry average (CPIs of 1.02, 1.02, 0.99 for Basic, Pro, Enterprise respectively), balancing margin goals with market positioning. Subsequent tiers offer progressive discounts while strictly maintaining the 40% margin floor. Segment-specific maximum discount guidelines (5% SMB, 10% Mid-Market, 15% Enterprise) provide sales flexibility for strategic deals, reflecting differences in price sensitivity, volume, and CLV, always ensuring profitability targets are met on the final negotiated price."
+}

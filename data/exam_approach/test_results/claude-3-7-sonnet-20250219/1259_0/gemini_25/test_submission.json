@@ -1,0 +1,24 @@
+{
+    "candidate_id": "GPT-4o",
+    "income_growth_analysis": {
+        "cagr_revenue": 0.1,
+        "cagr_net_income": 0.1,
+        "revenue_growth_consistency_score": 4
+    },
+    "management_quality": {
+        "executive_turnover_rate": 0.12,
+        "compensation_to_revenue_ratio": 0.08,
+        "roi_score": 2
+    },
+    "market_position": {
+        "market_share_percentage": 0.06,
+        "market_share_trend": 1,
+        "competitive_position_score": 3.42
+    },
+    "loan_profitability": {
+        "debt_service_coverage_ratio": 2.01,
+        "interest_coverage_ratio": 4.0,
+        "probability_of_default": 0.08,
+        "expected_loan_profitability_score": 8.55
+    }
+}

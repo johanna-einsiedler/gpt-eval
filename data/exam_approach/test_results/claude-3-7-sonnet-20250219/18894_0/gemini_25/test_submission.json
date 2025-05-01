@@ -1,0 +1,133 @@
+{
+    "candidate_id": "GPT-4o",
+    "schedule": [
+        {
+            "case_number": "GR-2023-042",
+            "date": "2023-11-08",
+            "start_time": "13:00",
+            "end_time": "14:30",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: A. Johnson",
+                "HR: T. Williams",
+                "Safety Officer: P. Nguyen",
+                "Witness: M. Garcia"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-046",
+            "date": "2023-11-09",
+            "start_time": "13:00",
+            "end_time": "14:30",
+            "meeting_room": "Meeting Room C",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: A. Johnson",
+                "HR: D. Rodriguez"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-044",
+            "date": "2023-11-13",
+            "start_time": "09:00",
+            "end_time": "11:00",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: B. Taylor",
+                "HR: D. Rodriguez",
+                "Witness: C. Lee",
+                "Witness: F. Ahmed"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-048",
+            "date": "2023-11-14",
+            "start_time": "09:00",
+            "end_time": "11:00",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: S. Patel",
+                "HR: T. Williams",
+                "Security Officer: O. Diaz",
+                "Witness: L. Washington"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-043",
+            "date": "2023-11-15",
+            "start_time": "13:00",
+            "end_time": "14:30",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: S. Patel",
+                "HR: T. Williams",
+                "Department Scheduler: L. Washington"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-049",
+            "date": "2023-11-20",
+            "start_time": "13:00",
+            "end_time": "14:00",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: E. Cooper",
+                "HR: D. Rodriguez",
+                "Department Scheduler: L. Washington"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-045",
+            "date": "2023-11-21",
+            "start_time": "09:00",
+            "end_time": "10:30",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: E. Cooper",
+                "HR: T. Williams"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-047",
+            "date": "2023-11-22",
+            "start_time": "13:00",
+            "end_time": "14:00",
+            "meeting_room": "Meeting Room C",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: M. Thompson",
+                "HR: D. Rodriguez",
+                "Benefits Coordinator: S. Kim"
+            ],
+            "priority_level": "Low"
+        }
+    ],
+    "conflict_resolutions": {
+        "overlapping_high_priority": "High-priority termination cases GR-048 (deadline 11/11) and GR-044 (deadline 11/14) could not be scheduled by their guideline latest hearing dates (11/8 and 11/9 respectively) due to participant unavailability conflicts. Resolution involved scheduling them early in Week 2 (GR-044 on Mon 11/13 09:00-11:00, GR-048 on Tue 11/14 09:00-11:00) in Conference Room A. This prioritized these critical cases while accommodating key participants like J. Smith (needed for both) and witnesses, although it required scheduling closer to the deadline than the 3-day guideline suggested.",
+        "conference_room_limitation": "Conference Room A, required for termination cases GR-044 and GR-048 due to privacy needs and participant count (5 each), had several pre-existing bookings. Scheduling was managed by utilizing available morning slots in Week 2 (Mon 11/13 09:00-11:00 for GR-044, Tue 11/14 09:00-11:00 for GR-048). Case GR-042 (5 participants) was scheduled into an available afternoon slot in Conf A (Wed 11/8 13:00-14:30). Other cases with fewer participants or not requiring privacy were assigned to Conference Room B or Meeting Room C based on availability and capacity (e.g., GR-046 in C, GR-043 in B).",
+        "key_witness_accommodation": "Witness C. Lee, required for high-priority termination case GR-044, had limited availability (unavailable Fri 11/10, Wed 11/15, Tue 11/21). Initial attempts to schedule GR-044 within Week 1 failed partly due to C. Lee's unavailability on 11/10. The case was successfully scheduled for Monday, November 13th from 09:00 to 11:00 in Conference Room A, a date and time when C. Lee and all other required participants were available, thereby accommodating this key witness's constraints."
+    },
+    "special_accommodations": [
+        {
+            "case_number": "GR-2023-044",
+            "accommodation": "Requires a room with privacy features due to termination status. Assigned Conference Room A."
+        },
+        {
+            "case_number": "GR-2023-048",
+            "accommodation": "Requires a room with privacy features due to termination status. Assigned Conference Room A."
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "candidate_id": "Gemini",
+    "task1": {
+        "data_errors": [
+            "Cost per employee calculation is incorrect. Reported as $3,850.00, but should be $57,750.00 / 13 employees = $4,442.31."
+        ],
+        "total_correct_expenses": 57750.0,
+        "efficiency_score": 100
+    },
+    "task2": {
+        "coverage_gaps": [
+            "Reception: Understaffed during multiple hours daily, including peak hours (11am-2pm, need 5, have 3) and non-peak hours (e.g., Mon 8am-11am, need 3, have 1-2; Mon 4pm-5pm, need 3, have 2).",
+            "Finance: Understaffed during multiple hours daily, including peak hours (1pm-4pm, need 6, have 4-5) and non-peak hours (e.g., Mon 9am-10am, need 4, have 2; Mon 5pm-6pm, need 4, have 2).",
+            "HR: Understaffed during peak hours (9am-12pm, need 3, have 2) on Monday, Tuesday, Thursday, Friday."
+        ],
+        "optimal_staff_count": 16,
+        "schedule_conflicts": [
+            "E004 scheduled Mon 5:00 PM - 7:00 PM after Reception closes at 5:00 PM",
+            "E004 scheduled Fri 5:00 PM - 7:00 PM after Reception closes at 5:00 PM",
+            "E003 scheduled Tue 5:00 PM - 6:00 PM after Reception closes at 5:00 PM",
+            "E003 scheduled Wed 5:00 PM - 6:00 PM after Reception closes at 5:00 PM",
+            "E003 scheduled Thu 5:00 PM - 6:00 PM after Reception closes at 5:00 PM",
+            "E003 scheduled Fri 5:00 PM - 6:00 PM after Reception closes at 5:00 PM"
+        ]
+    },
+    "task3": {
+        "report_frequency": "weekly",
+        "key_metrics": [
+            "M001",
+            "M003",
+            "M004",
+            "M005",
+            "M006"
+        ],
+        "selected_report_format": "Summary"
+    }
+}

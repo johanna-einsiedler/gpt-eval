@@ -1,0 +1,57 @@
+{
+    "candidate_id": "GPT-4o",
+    "budget_analysis": {
+        "average_monthly_revenue_by_category": {
+            "massage_services": 54891.67,
+            "facial_services": 36550.0,
+            "body_treatments": 23650.0,
+            "nail_services": 16166.67,
+            "retail_products": 10958.33
+        },
+        "top_expense_categories": [
+            "Staff Wages",
+            "Benefits",
+            "Rent"
+        ],
+        "previous_year_profit_margin": 0.31
+    },
+    "revenue_projection": {
+        "projected_annual_revenue": {
+            "massage_services": 711396.0,
+            "facial_services": 482460.0,
+            "body_treatments": 317856.0,
+            "nail_services": 205640.0,
+            "retail_products": 151225.0,
+            "total": 1868577.0
+        },
+        "projected_revenue_mix": {
+            "massage_services": 0.38,
+            "facial_services": 0.26,
+            "body_treatments": 0.17,
+            "nail_services": 0.11,
+            "retail_products": 0.08
+        }
+    },
+    "expense_budget": {
+        "annual_expenses_by_category": {
+            "staff_wages": 654001.95,
+            "benefits": 130800.39,
+            "supplies": 93428.85,
+            "products": 74743.08,
+            "utilities": 56057.31,
+            "marketing": 74743.08,
+            "maintenance": 37371.54,
+            "admin": 56057.31,
+            "rent": 112114.62
+        },
+        "total_annual_expenses": 1289318.13,
+        "expense_to_revenue_ratio": 0.69,
+        "projected_annual_profit": 579258.87
+    },
+    "financial_goals": {
+        "revenue_per_treatment_room": 12976.23,
+        "revenue_per_therapist": 8651.93,
+        "product_sales_percentage": 0.09,
+        "target_profit_margin": 0.31
+    }
+}
