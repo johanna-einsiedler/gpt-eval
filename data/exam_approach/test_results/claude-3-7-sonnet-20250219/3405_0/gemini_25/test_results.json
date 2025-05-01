@@ -237,41 +237,6 @@
           "score": 15,
           "max_score": 15,
           "details": {
-            "IT Services": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 157320,
-                "actual_projected": 193333,
-                "variance_percent": 0.23
-              },
-              "expected": {
-                "budgeted": 157320,
-                "actual_projected": 193333,
-                "variance_percent": 0.23
-              }
-            },
-            "Travel": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
-              },
-              "expected": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
-              }
-            },
-            "Consulting": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 174570,
-                "actual_projected": 206667,
-                "variance_percent": 0.18
-              },
-              "expected": "Not a significant variance"
-            },
             "Equipment": {
               "status": "correct",
               "submitted": {
@@ -296,6 +261,41 @@
                 "budgeted": 80011,
                 "actual_projected": 96000,
                 "variance_percent": 0.2
+              }
+            },
+            "Travel": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
+              },
+              "expected": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
+              }
+            },
+            "Consulting": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 174570,
+                "actual_projected": 206667,
+                "variance_percent": 0.18
+              },
+              "expected": "Not a significant variance"
+            },
+            "IT Services": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 157320,
+                "actual_projected": 193333,
+                "variance_percent": 0.23
+              },
+              "expected": {
+                "budgeted": 157320,
+                "actual_projected": 193333,
+                "variance_percent": 0.23
               }
             }
           }

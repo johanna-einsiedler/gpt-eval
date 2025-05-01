@@ -33,9 +33,9 @@
           "correct": "partial",
           "submitted": [
             "Nutrition Workshop",
+            "Mental Health Awareness",
             "Diabetes Management",
-            "Smoking Cessation",
-            "Mental Health Awareness"
+            "Smoking Cessation"
           ],
           "expected": [
             "Smoking Cessation"

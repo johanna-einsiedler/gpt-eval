@@ -128,12 +128,12 @@
         "max_score": 10,
         "feedback": [
           {
-            "document": "Property Insurance",
+            "document": "Environmental Assessment",
             "status": "correct",
             "points": 5
           },
           {
-            "document": "Environmental Assessment",
+            "document": "Property Insurance",
             "status": "correct",
             "points": 5
           }

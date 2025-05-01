@@ -218,7 +218,7 @@
             "constraint_1": {
               "status": "incorrect",
               "submitted": "Staffing",
-              "expected": "One of Infrastructure, Technology"
+              "expected": "One of Technology, Infrastructure"
             },
             "constraint_2": {
               "status": "correct",
@@ -237,19 +237,6 @@
           "score": 7.5,
           "max_score": 15,
           "details": {
-            "Travel": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
-              },
-              "expected": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
-              }
-            },
             "Equipment": {
               "status": "correct",
               "submitted": {
@@ -261,6 +248,19 @@
                 "budgeted": 254581,
                 "actual_projected": 306667,
                 "variance_percent": 0.2
+              }
+            },
+            "Travel": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
+              },
+              "expected": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
               }
             },
             "Marketing": {

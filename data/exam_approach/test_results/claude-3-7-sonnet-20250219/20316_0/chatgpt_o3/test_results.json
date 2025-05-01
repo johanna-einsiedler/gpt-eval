@@ -77,12 +77,12 @@
         "cost_effective_programs": {
           "correct": "partial",
           "submitted": [
-            "Fitness Challenge",
-            "Nutrition Workshop"
+            "Nutrition Workshop",
+            "Fitness Challenge"
           ],
           "expected": [
-            "Fitness Challenge",
-            "Stress Management"
+            "Stress Management",
+            "Fitness Challenge"
           ]
         }
       }

@@ -1,0 +1,44 @@
+{
+  "task1": {
+    "score": 46,
+    "max_score": 50,
+    "percentage": 92.0,
+    "feedback": [
+      "All days of the week are included",
+      "Missing positions on Thursday: Head Chef",
+      "Missing positions on Saturday: Head Chef",
+      "Minimum staffing levels appear to be maintained",
+      "Missing break: E005 on Monday (shift > 5 hours)",
+      "Missing break: E005 on Tuesday (shift > 5 hours)",
+      "Missing break: E006 on Wednesday (shift > 5 hours)",
+      "...and 4 more labor regulation issues",
+      "Staff utilization appears appropriate (simplified check)",
+      "Schedule efficiency appears appropriate (simplified check)"
+    ]
+  },
+  "task2": {
+    "score": 22,
+    "max_score": 25,
+    "percentage": 88.0,
+    "feedback": [
+      "Correctly removed sick employee E003 from schedule",
+      "Failed to add additional server for private event (found 3 servers)",
+      "Accommodated early kitchen opening at 07:00",
+      "Staffing levels and labor regulations appear maintained (simplified check)"
+    ]
+  },
+  "task3": {
+    "score": 25,
+    "max_score": 25,
+    "percentage": 100.0,
+    "feedback": [
+      "All required duties are assigned",
+      "Duty qualifications appear to be matched appropriately (simplified check)",
+      "Duty assignments appear to be integrated with regular schedule (simplified check)"
+    ]
+  },
+  "overall_score": 93.0,
+  "total_points": 93,
+  "max_points": 100,
+  "pass_fail": "PASS"
+}

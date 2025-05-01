@@ -150,9 +150,9 @@
         "points": 0,
         "max_points": 6,
         "submitted": [
-          "Sarah Johnson, CFO (Finance)",
+          "Robert Kim, IT Operations Manager",
           "Michael Chen, CIO (IT)",
-          "Robert Kim, IT Operations Manager"
+          "Sarah Johnson, CFO (Finance)"
         ],
         "expected": [
           "Michael Chen",
@@ -180,14 +180,14 @@
         "points": 0,
         "max_points": 6,
         "submitted": [
+          "Pain Point Frequency",
           "Satisfaction Rating",
-          "Feature Request Priority",
-          "Pain Point Frequency"
+          "Feature Request Priority"
         ],
         "expected": [
-          "Satisfaction ratings",
+          "Feature priority scores",
           "Implementation progress",
-          "Feature priority scores"
+          "Satisfaction ratings"
         ],
         "note": "Reasonable alternatives are accepted"
       },

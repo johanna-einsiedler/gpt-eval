@@ -29,7 +29,7 @@
       "Production flow diagram: 10/10 points",
       "Bottleneck not correctly identified: 0/10 points",
       "Maximum throughput correctly calculated: 10/10 points",
-      "Incorrect over-capacity stages. Expected {'Filling & Packaging'}, got {'Filling & Packaging', 'Quality Testing'}: 0/10 points"
+      "Incorrect over-capacity stages. Expected {'Filling & Packaging'}, got {'Quality Testing', 'Filling & Packaging'}: 0/10 points"
     ]
   }
 }

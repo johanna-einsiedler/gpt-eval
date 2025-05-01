@@ -1,0 +1,21 @@
+{
+    "candidateId": "Claude-3_7-Sonnet",
+    "scenario1": {
+        "emergencyFund": 9000,
+        "monthlyDiscretionaryIncome": 1220,
+        "debtPriorityId": "D3",
+        "savingsVehicleId": "SV2"
+    },
+    "scenario2": {
+        "lifeInsuranceCoverage": 1560000,
+        "disabilityMonthlyBenefit": 7583,
+        "healthPlanId": "HP4",
+        "bundlingSavings": 1170
+    },
+    "scenario3": {
+        "monthlySavingsRequired": 1458,
+        "assetAllocationId": "AA3",
+        "accountTypeId": "AT2",
+        "projectedValue10Years": 846632
+    }
+}

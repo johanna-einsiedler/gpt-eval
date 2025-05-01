@@ -180,14 +180,14 @@
         "points": 0,
         "max_points": 6,
         "submitted": [
-          "Satisfaction rating",
           "Pain point occurrence",
+          "Satisfaction rating",
           "Feature request frequency"
         ],
         "expected": [
-          "Implementation progress",
           "Satisfaction ratings",
-          "Feature priority scores"
+          "Feature priority scores",
+          "Implementation progress"
         ],
         "note": "Reasonable alternatives are accepted"
       },

@@ -105,23 +105,23 @@
       },
       "confounders_identified": {
         "submitted": [
-          "age",
-          "bmi"
-        ],
-        "correct": [
-          "diabetes",
+          "bmi",
           "age"
         ],
-        "alternative_correct": [
+        "correct": [
           "age",
-          "bmi"
+          "diabetes"
+        ],
+        "alternative_correct": [
+          "bmi",
+          "age"
         ],
         "points": 1
       },
       "matching_variables": {
         "submitted": [
-          "baseline_bp",
-          "age"
+          "age",
+          "baseline_bp"
         ],
         "correct": [
           "hypertension_history",

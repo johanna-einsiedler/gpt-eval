@@ -1,0 +1,41 @@
+{
+  "candidate_id": "GPT-4",
+  "results": {
+    "annual_budget_total": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct (within 2% margin)"
+    },
+    "q1_variance_percentage": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "fuel_cost_adjustment": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "maintenance_allocation": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "priority_ranking": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "cost_per_mile": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct (within $0.02 margin)"
+    }
+  },
+  "total_score": 6,
+  "max_score": 6,
+  "overall_score": 100.0,
+  "correct_answers": 6,
+  "critical_elements_passed": true,
+  "passed": true
+}

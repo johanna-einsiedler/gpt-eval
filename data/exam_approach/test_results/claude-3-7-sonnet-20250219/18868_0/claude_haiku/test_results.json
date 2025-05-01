@@ -13,20 +13,20 @@
             "minimum 2 years of experience in a marketing role"
           ],
           [
-            "experience with social media platforms for business",
-            "experience with social media platforms for business"
-          ],
-          [
-            "proficiency in microsoft office suite",
-            "proficiency in microsoft office suite (word, excel, powerpoint)"
-          ],
-          [
             "strong written and verbal communication skills",
             "strong written and verbal communication skills"
           ],
           [
             "bachelor's degree in marketing, communications, business, or related field",
             "bachelor's degree in marketing, communications, business, or related field"
+          ],
+          [
+            "experience with social media platforms for business",
+            "experience with social media platforms for business"
+          ],
+          [
+            "proficiency in microsoft office suite",
+            "proficiency in microsoft office suite (word, excel, powerpoint)"
           ]
         ]
       }
@@ -39,16 +39,16 @@
         "expected_count": 6,
         "matches": [
           [
+            "experience with marketing automation tools",
+            "experience with marketing automation tools (hubspot, marketo, or similar)"
+          ],
+          [
             "knowledge of graphic design software",
             "knowledge of graphic design software (adobe creative suite)"
           ],
           [
             "experience with content management systems",
             "experience with content management systems (wordpress)"
-          ],
-          [
-            "experience with marketing automation tools",
-            "experience with marketing automation tools (hubspot, marketo, or similar)"
           ]
         ]
       }

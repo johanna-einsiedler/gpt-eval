@@ -1,0 +1,99 @@
+{
+  "overall_score": 34.46,
+  "passed": false,
+  "section_scores": {
+    "trends": {
+      "score": 18,
+      "percentage": 60.0,
+      "max_score": 30,
+      "feedback": {
+        "Trend 1": {
+          "departments": "Score: 2/2",
+          "categories": "Score: 2/2",
+          "percentage_change": "Score: 3/3 (Expected: 66.67, Got: 66.67)",
+          "growth_rate": "Score: 3/3 (Expected: 3.9, Got: 4.25)",
+          "description": "Score: 2/2",
+          "trend_score": "12/10.0 (120.00%)"
+        },
+        "Trend 2": {
+          "departments": "Score: 2/2",
+          "categories": "Score: 2/2",
+          "percentage_change": "Score: 0/3 (Expected: -36.0, Got: -60.8)",
+          "growth_rate": "Score: 0/3 (Expected: -3.0, Got: -5.75)",
+          "description": "Score: 2/2",
+          "trend_score": "6/10.0 (60.00%)"
+        },
+        "Trend 3": {
+          "feedback": "Trend not identified."
+        },
+        "overall": "18/30 (60.00%)"
+      }
+    },
+    "variances": {
+      "score": 10,
+      "percentage": 40.0,
+      "max_score": 25,
+      "feedback": {
+        "Variance 1": {
+          "identification": "Score: 3/3",
+          "variance_amount": "Score: 3/3 (Expected: 12800.0, Got: 12800.0)",
+          "variance_percentage": "Score: 2/2 (Expected: 10.24, Got: 10.24)",
+          "primary_cause": "Score: 2/2",
+          "variance_score": "10/8.333333333333334 (120.00%)"
+        },
+        "Variance 2": {
+          "feedback": "Variance not identified."
+        },
+        "Variance 3": {
+          "feedback": "Variance not identified."
+        },
+        "overall": "10/25 (40.00%)"
+      }
+    },
+    "forecasts": {
+      "score": 4.46,
+      "percentage": 17.86,
+      "max_score": 25,
+      "feedback": {
+        "Q1-2023": {
+          "IT": {
+            "Personnel": "Score: 0.89/0.89 (Expected: 305000.0, Got: 306500.0, Diff: 0.49%)",
+            "Equipment": "Score: 0.45/0.89 (Expected: 130000.0, Got: 144400.0, Diff: 11.08%)",
+            "Software": "Score: 0.45/0.89 (Expected: 100000.0, Got: 111600.0, Diff: 11.60%)",
+            "Services": "Score: 0.89/0.89 (Expected: 57000.0, Got: 57800.0, Diff: 1.40%)"
+          },
+          "HR": {
+            "Personnel": "Score: 0.89/0.89 (Expected: 210000.0, Got: 210500.0, Diff: 0.24%)",
+            "Training": "Score: 0.00/0.89 (Expected: 14000.0, Got: 7400.0, Diff: 47.14%)",
+            "Services": "Score: 0.89/0.89 (Expected: 26000.0, Got: 25800.0, Diff: 0.77%)"
+          },
+          "Finance": "Department forecasts missing",
+          "Operations": "Department forecasts missing"
+        },
+        "Q2-2023": "Quarter forecasts missing",
+        "overall": "4.46/25 (17.86%)"
+      }
+    },
+    "cost_reduction": {
+      "score": 2,
+      "percentage": 10.0,
+      "max_score": 20,
+      "feedback": {
+        "Target 1": {
+          "identification": "Score: 0/2",
+          "current_expense": "Score: 0/2 (Expected: 137800.0, Got: 9800.0)",
+          "savings_percentage": "Score: 0/2 (Expected: 10.0, Got: 20.0)",
+          "justification": "Score: 2/2",
+          "target_score": "2/6.666666666666667 (30.00%)"
+        },
+        "Target 2": {
+          "feedback": "Target not identified."
+        },
+        "Target 3": {
+          "feedback": "Target not identified."
+        },
+        "overall": "2/20 (10.00%)"
+      }
+    }
+  }
+}

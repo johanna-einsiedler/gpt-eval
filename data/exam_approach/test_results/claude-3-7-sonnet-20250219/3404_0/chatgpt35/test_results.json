@@ -79,7 +79,7 @@
         "max_points": 5
       },
       {
-        "status": "Department-level adjustments: Directive 2, Dept DEPT-IT-01: Incorrect adjustment; Directive 2, Dept DEPT-IT-02: Incorrect adjustment; Directive 2, Dept DEPT-SEC-01: Incorrect adjustment; Directive 3, Dept DEPT-ADM-01: Incorrect adjustment; Directive 3, Dept DEPT-ADM-02: Incorrect adjustment; Directive 3, Dept DEPT-OPS-01: Incorrect adjustment; Directive 3, Dept DEPT-OPS-02: Incorrect adjustment; Directive 3, Dept DEPT-OPS-03: Incorrect adjustment; Directive 3, Dept DEPT-OPS-04: Incorrect adjustment; Directive 4: Missing departments DEPT-MKT-01, DEPT-MKT-02; Directive 5: Missing departments DEPT-EXEC-01, DEPT-FIN-01, DEPT-FIN-02",
+        "status": "Department-level adjustments: Directive 2, Dept DEPT-IT-01: Incorrect adjustment; Directive 2, Dept DEPT-IT-02: Incorrect adjustment; Directive 2, Dept DEPT-SEC-01: Incorrect adjustment; Directive 3, Dept DEPT-ADM-01: Incorrect adjustment; Directive 3, Dept DEPT-ADM-02: Incorrect adjustment; Directive 3, Dept DEPT-OPS-01: Incorrect adjustment; Directive 3, Dept DEPT-OPS-02: Incorrect adjustment; Directive 3, Dept DEPT-OPS-03: Incorrect adjustment; Directive 3, Dept DEPT-OPS-04: Incorrect adjustment; Directive 4: Missing departments DEPT-MKT-02, DEPT-MKT-01; Directive 5: Missing departments DEPT-FIN-02, DEPT-FIN-01, DEPT-EXEC-01",
         "points": 0,
         "max_points": 5
       },

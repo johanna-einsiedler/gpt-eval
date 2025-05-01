@@ -1,0 +1,53 @@
+{
+    "candidate_id": "GPT-4",
+    "exercise1": {
+        "case1_classification": "Level 2",
+        "case1_action": "Written warning, mandatory remedial training, performance improvement plan",
+        "case2_classification": "Level 3",
+        "case2_action": "Final written warning, suspension without pay (1-5 days), demotion, removal of supervisory responsibilities",
+        "case3_classification": "Level 3",
+        "case3_action": "Final written warning, suspension without pay (1-5 days), demotion, removal of supervisory responsibilities",
+        "precedent_case_ids": [
+            "CV-2022-007",
+            "CV-2022-013"
+        ]
+    },
+    "exercise2": {
+        "workflow_steps": [
+            "Step 1: Initial report documented by Compliance Specialist",
+            "Step 2: Evidence collected and interviews conducted",
+            "Step 3: Investigation report completed by Compliance Manager",
+            "Step 4: Joint assessment performed by Compliance and HR",
+            "Step 5: Legal review conducted",
+            "Step 6: Department Head consultation",
+            "Step 7: Final approval obtained from HR Director and Compliance Director",
+            "Step 8: Employee notification and meeting scheduled",
+            "Step 9: Disciplinary action delivered and documentation signed",
+            "Step 10: Records updated and case closed in system"
+        ],
+        "required_documentation": [
+            "Final Warning Form",
+            "Investigation Report",
+            "Suspension Notice",
+            "HR-Compliance Joint Assessment"
+        ],
+        "approval_sequence": [
+            "Compliance Manager",
+            "Compliance Director",
+            "HR Manager - Employee Relations",
+            "HR Director",
+            "Department Director"
+        ]
+    },
+    "exercise3": {
+        "communication_template": "COMPLIANCE VIOLATION NOTIFICATION\nDate: [CURRENT_DATE]\nCase ID: CV-2023-XXX\nViolation Level: 3\nConfidentiality Rating: Sensitive\n\nIncident Description:\nAn employee shared non-public financial data with a colleague who had no business need for the information.\n\nApplicable Policy/Regulation:\nCode of Conduct Section on Confidential Information Handling\n\nRecommended Action:\nFinal written warning, suspension without pay (1-5 days)\n\nRequired Stakeholders:\nDepartment Director, HR Manager, Compliance Director, Legal Representative\n\nResponse Timeline:\n48 hours\n\nAttachments:\nInvestigation Report, Final Warning Form, Suspension Notice\n\nROUTING INFORMATION\nPrimary Contact: Compliance Director\nEscalation Contact: Chief Compliance Officer\nEscalation Threshold: Immediate escalation required for any Level 3 violation",
+        "escalation_threshold": "Immediate Escalation Required: Any Level 3 or 4 violation; any violation involving a Director or above; any violation with potential regulatory impact; any violation with potential financial impact exceeding $10,000",
+        "confidentiality_rating": "Sensitive",
+        "required_stakeholders": [
+            "Department Director",
+            "HR Manager",
+            "Compliance Director",
+            "Legal Representative"
+        ]
+    }
+}

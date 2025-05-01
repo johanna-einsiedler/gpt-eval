@@ -1,0 +1,59 @@
+{
+  "candidate_id": "Claude-3_7-Sonnet",
+  "overall_score": 93.99000000000001,
+  "passed": true,
+  "section_scores": {
+    "negotiation_strategy": 70.0,
+    "package_details": 99.97500000000001,
+    "objection_responses": 100.0,
+    "contract_completion": 100.0
+  },
+  "total_points": "93.99000000000001/100",
+  "section_details": {
+    "negotiation_strategy": {
+      "score": 14,
+      "max_score": 20,
+      "percentage": 70.0,
+      "feedback": [
+        "Correct negotiation approach selected.",
+        "Justification lacks sufficient explanation of why this approach is appropriate for the client's needs and concerns."
+      ]
+    },
+    "package_details": {
+      "score": 39.99,
+      "max_score": 40,
+      "percentage": 99.97500000000001,
+      "feedback": [
+        "Package includes essential basic services and embalming.",
+        "Package includes all specifically requested elements: religious service, military honors, and music.",
+        "Package price ($5990.00) is within client's budget range ($4,000-$6,000).",
+        "Profit margin (24.8%) meets or exceeds the minimum requirement of 22%."
+      ],
+      "critical_failures": []
+    },
+    "objection_responses": {
+      "score": 25.0,
+      "max_score": 25,
+      "percentage": 100.0,
+      "feedback": [
+        "Correct response to price concerns objection.",
+        "Correct response to prepayment concerns objection.",
+        "Correct response to family involvement objection."
+      ],
+      "critical_failures": []
+    },
+    "contract_completion": {
+      "score": 15,
+      "max_score": 15,
+      "percentage": 100.0,
+      "feedback": [
+        "Correct client name identified.",
+        "Selected an appropriate installment payment plan.",
+        "Included comprehensive required disclosures that address key consumer protections."
+      ],
+      "critical_failures": []
+    }
+  },
+  "critical_failures": [],
+  "section_minimums_met": true
+}

@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "quarterly_budget": {
+      "points": 25,
+      "max_points": 25,
+      "percentage": 100.0,
+      "comments": [
+        "Incorrect utilities budget: 230000 (expected 241500)"
+      ]
+    },
+    "financial_metrics": {
+      "points": 10,
+      "max_points": 20,
+      "percentage": 50.0,
+      "comments": [
+        "Incorrect projected_profit: 563500 (expected 552000)",
+        "Incorrect profit_margin_percentage: 0.23 (expected 0.22)"
+      ]
+    },
+    "top_expenses": {
+      "points": 15,
+      "max_points": 15,
+      "percentage": 100.0,
+      "comments": []
+    },
+    "cost_reduction": {
+      "points": 10,
+      "max_points": 10,
+      "percentage": 100.0,
+      "comments": []
+    },
+    "variance_response": {
+      "points": 15,
+      "max_points": 20,
+      "percentage": 75.0,
+      "comments": [
+        "Incorrect new_profit_margin_percentage: 0.2 (expected 0.19)"
+      ]
+    },
+    "contingency_allocation": {
+      "points": 10,
+      "max_points": 10,
+      "percentage": 100.0,
+      "comments": []
+    }
+  },
+  "overall_score": 85.0,
+  "comments": [
+    "Incorrect utilities budget: 230000 (expected 241500)",
+    "Incorrect projected_profit: 563500 (expected 552000)",
+    "Incorrect profit_margin_percentage: 0.23 (expected 0.22)",
+    "Incorrect new_profit_margin_percentage: 0.2 (expected 0.19)"
+  ],
+  "passing_threshold": 75,
+  "total_points": 85,
+  "max_points": 100,
+  "passed": true
+}

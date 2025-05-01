@@ -151,8 +151,8 @@
         "max_points": 6,
         "submitted": [
           "Jennifer Williams",
-          "Michael Chen",
-          "Sarah Johnson"
+          "Sarah Johnson",
+          "Michael Chen"
         ],
         "expected": [
           "Michael Chen",
@@ -180,9 +180,9 @@
         "points": 0,
         "max_points": 6,
         "submitted": [
-          "Average satisfaction rating",
+          "Feature request completion rate",
           "Number of resolved pain points",
-          "Feature request completion rate"
+          "Average satisfaction rating"
         ],
         "expected": [
           "Implementation progress",

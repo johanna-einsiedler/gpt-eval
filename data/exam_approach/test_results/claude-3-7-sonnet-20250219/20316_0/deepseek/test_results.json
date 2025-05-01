@@ -32,8 +32,8 @@
         "participation_threshold_programs": {
           "correct": "partial",
           "submitted": [
-            "Sleep Improvement",
             "Nutrition Workshop",
+            "Sleep Improvement",
             "Smoking Cessation"
           ],
           "expected": [
@@ -81,9 +81,9 @@
         "cost_effective_programs": {
           "correct": "partial",
           "submitted": [
+            "Smoking Cessation",
             "Stress Management",
-            "Fitness Challenge",
-            "Smoking Cessation"
+            "Fitness Challenge"
           ],
           "expected": [
             "Stress Management",

@@ -75,24 +75,24 @@
       "correctly_identified": 5,
       "incorrectly_identified": 0,
       "expected_items": [
+        "E004",
         "E008",
         "D005",
         "E007",
-        "E004",
-        "A007",
         "B008",
+        "A007",
         "A006"
       ],
       "submitted_items": [
+        "E008",
         "E007",
         "D005",
-        "E008",
         "A007",
         "A006"
       ],
       "missed_items": [
-        "B008",
-        "E004"
+        "E004",
+        "B008"
       ]
     },
     "price_adjustments": {

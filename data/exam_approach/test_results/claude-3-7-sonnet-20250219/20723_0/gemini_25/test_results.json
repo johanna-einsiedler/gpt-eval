@@ -296,9 +296,9 @@
       "details": {
         "increasing_types": {
           "submission": [
+            "Hostile Work Environment",
             "Promotion Denial",
-            "Retaliation",
-            "Hostile Work Environment"
+            "Retaliation"
           ],
           "correct": [],
           "is_correct": false,

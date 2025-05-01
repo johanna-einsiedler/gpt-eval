@@ -185,9 +185,9 @@
           "User satisfaction rating"
         ],
         "expected": [
+          "Satisfaction ratings",
           "Implementation progress",
-          "Feature priority scores",
-          "Satisfaction ratings"
+          "Feature priority scores"
         ],
         "note": "Reasonable alternatives are accepted"
       },

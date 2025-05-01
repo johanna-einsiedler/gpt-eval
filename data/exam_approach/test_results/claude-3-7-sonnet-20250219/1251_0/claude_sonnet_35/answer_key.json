@@ -1,0 +1,72 @@
+{
+    "financial_ratios": {
+        "current_ratio": {
+            "year1": 2.04,
+            "year2": 1.91,
+            "year3": 1.82
+        },
+        "quick_ratio": {
+            "year1": 1.14,
+            "year2": 1.07,
+            "year3": 1.03
+        },
+        "debt_to_equity": {
+            "year1": 0.84,
+            "year2": 0.94,
+            "year3": 1.05
+        },
+        "interest_coverage": {
+            "year1": 2.75,
+            "year2": 1.42,
+            "year3": 0.23
+        },
+        "return_on_assets": {
+            "year1": 0.03,
+            "year2": 0.01,
+            "year3": -0.02
+        },
+        "gross_profit_margin": {
+            "year1": 0.3,
+            "year2": 0.28,
+            "year3": 0.26
+        },
+        "net_profit_margin": {
+            "year1": 0.02,
+            "year2": 0.01,
+            "year3": -0.01
+        },
+        "inventory_turnover": {
+            "year1": 4.8,
+            "year2": 4.83,
+            "year3": 4.76
+        },
+        "accounts_receivable_turnover": {
+            "year1": 8.57,
+            "year2": 7.5,
+            "year3": 6.59
+        },
+        "days_sales_outstanding": {
+            "year1": 42.59,
+            "year2": 48.67,
+            "year3": 55.39
+        }
+    },
+    "industry_comparison": {
+        "significant_deviations": [
+            "interest_coverage",
+            "return_on_assets",
+            "net_profit_margin",
+            "gross_profit_margin",
+            "inventory_turnover",
+            "days_sales_outstanding"
+        ]
+    },
+    "top_risk_factors": [
+        "declining_profitability",
+        "weak_cash_flow",
+        "high_debt_service_burden"
+    ],
+    "debt_service_coverage_ratio": 0.45,
+    "risk_rating": 5,
+    "recommendation": "Decline"
+}

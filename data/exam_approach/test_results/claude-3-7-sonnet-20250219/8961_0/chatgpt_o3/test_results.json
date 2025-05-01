@@ -16,8 +16,8 @@
       },
       "stratification_variables": {
         "submitted": [
-          "baseline_bp",
-          "age"
+          "age",
+          "baseline_bp"
         ],
         "correct": [
           "hypertension_history",
@@ -105,12 +105,12 @@
       },
       "confounders_identified": {
         "submitted": [
-          "baseline_bp",
-          "diabetes"
+          "diabetes",
+          "baseline_bp"
         ],
         "correct": [
-          "diabetes",
-          "age"
+          "age",
+          "diabetes"
         ],
         "alternative_correct": [
           "bmi",
@@ -120,8 +120,8 @@
       },
       "matching_variables": {
         "submitted": [
-          "baseline_bp",
-          "age"
+          "age",
+          "baseline_bp"
         ],
         "correct": [
           "hypertension_history",

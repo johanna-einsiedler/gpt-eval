@@ -1,0 +1,94 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "identified_risks": [
+        {
+            "risk_id": 1,
+            "risk_description": "Strike risk due to significant gap between initial wage positions (union's 5% vs company's 1.5%), new aggressive union negotiator, declining employee satisfaction, and recent unfair labor practice charge.",
+            "probability": 4,
+            "impact": 5,
+            "risk_score": 20,
+            "risk_category": "Operational",
+            "justification": "Multiple factors indicate high strike probability: large wage gap, new aggressive negotiator, 65% satisfaction (down from 78%), and recent ULP charge. Impact would be severe during critical Q4 deliveries."
+        },
+        {
+            "risk_id": 2,
+            "risk_description": "Financial strain from union's comprehensive economic package (5% wages, 90% healthcare coverage, dental benefits, increased 401(k) match) when company is already below industry profit margins and recently lost 8% of revenue.",
+            "probability": 5,
+            "impact": 4,
+            "risk_score": 20,
+            "risk_category": "Financial",
+            "justification": "Union demands would significantly increase labor costs when company's profit margin (4.2%) is already below industry average (5.8%) and after losing a major customer representing 8% of revenue."
+        },
+        {
+            "risk_id": 3,
+            "risk_description": "Operational disruption during critical Q4 customer deliveries if negotiations extend beyond contract expiration or result in work slowdowns, overtime refusals, or work stoppages.",
+            "probability": 4,
+            "impact": 5,
+            "risk_score": 20,
+            "risk_category": "Operational",
+            "justification": "Contract expires during critical Q4 delivery period. Given the gap in positions and recent labor tensions, work disruptions are highly likely and would severely impact key customer commitments."
+        },
+        {
+            "risk_id": 4,
+            "risk_description": "Talent retention risk from below-market wage offer (1.5%) compared to competitors' recent 3% settlements, potentially increasing turnover and worsening existing quality issues.",
+            "probability": 4,
+            "impact": 3,
+            "risk_score": 12,
+            "risk_category": "Operational",
+            "justification": "Company's 1.5% wage offer is half of the 3% recently negotiated by competitors in the region, creating high probability of talent loss. This would exacerbate the 15% increase in quality issues."
+        },
+        {
+            "risk_id": 5,
+            "risk_description": "Reputational damage from potential media coverage if negotiations focus on safety committee structure while local media has recently published stories about workplace safety in manufacturing.",
+            "probability": 3,
+            "impact": 4,
+            "risk_score": 12,
+            "risk_category": "Reputational",
+            "justification": "Recent local media focus on manufacturing safety combined with the company's resistance to union's enhanced safety committee proposal creates moderate probability of negative publicity with major impact."
+        },
+        {
+            "risk_id": 6,
+            "risk_description": "Legal compliance risk from potential additional unfair labor practice charges during negotiations, especially given recent ULP filing and new Operations Director's lack of union experience.",
+            "probability": 3,
+            "impact": 3,
+            "risk_score": 9,
+            "risk_category": "Legal",
+            "justification": "Recent ULP charge and new Operations Director from non-union background increase likelihood of bargaining missteps. Multiple ULPs could delay negotiations and increase legal costs."
+        },
+        {
+            "risk_id": 7,
+            "risk_description": "Bargaining impasse risk due to significant gaps on multiple issues (wages, healthcare, job security, temporary workers) potentially leading to mediation, fact-finding, or imposed implementation.",
+            "probability": 4,
+            "impact": 4,
+            "risk_score": 16,
+            "risk_category": "Operational",
+            "justification": "Wide gaps exist on multiple critical issues with seemingly little room for compromise. Impasse would extend uncertainty, potentially delay resolution beyond contract expiration, and damage labor relations."
+        },
+        {
+            "risk_id": 8,
+            "risk_description": "Strategic risk from potential leakage of company's consideration of a new facility in a right-to-work state, which could be perceived as a threat and significantly damage negotiations.",
+            "probability": 2,
+            "impact": 5,
+            "risk_score": 10,
+            "risk_category": "Reputational",
+            "justification": "While probability is low-moderate, discovery of plans for a right-to-work facility would be perceived as union avoidance, severely damaging trust and potentially triggering immediate labor actions."
+        }
+    ],
+    "priority_risks": [
+        {
+            "risk_id": 1,
+            "mitigation_strategy": "Develop a comprehensive strike contingency plan including identification of critical operations, cross-training of management personnel, security protocols, and customer communication strategy. Simultaneously, engage in early good-faith bargaining on non-economic issues to build momentum before addressing wages. Consider bringing in a respected third-party mediator proactively rather than waiting for impasse.",
+            "expected_outcome": "Reduced operational vulnerability to potential work stoppage while creating positive negotiation momentum that decreases strike probability. Early resolution of non-economic issues narrows the focus to economic items where phased implementation might bridge the gap."
+        },
+        {
+            "risk_id": 2,
+            "mitigation_strategy": "Prepare comprehensive financial analysis showing impact of union demands on company viability, with transparent sharing of financial data under confidentiality agreement. Develop creative alternative economic package that addresses union priorities through phased implementation, one-time bonuses instead of base wage increases, and cost-sharing approaches to healthcare that maintain total compensation while controlling fixed costs.",
+            "expected_outcome": "Increased union understanding of financial constraints while demonstrating good faith through transparency. Alternative package structure allows union to achieve some priority gains while giving company needed financial flexibility and time to recover from lost customer revenue."
+        },
+        {
+            "risk_id": 3,
+            "mitigation_strategy": "Propose an interim agreement extending the current contract terms for 90 days beyond expiration to move critical negotiation period past Q4 delivery commitments. Include no-strike/no-lockout provisions and potential retroactive application of economic terms. Simultaneously, develop customer communication plan and identify critical production that could be advanced ahead of potential disruption.",
+            "expected_outcome": "Protection of critical Q4 deliveries regardless of negotiation timeline, reducing pressure on both parties during bargaining. Customers remain insulated from potential disruption, preserving relationships, while allowing more time to bridge significant gaps in bargaining positions."
+        }
+    ]
+}

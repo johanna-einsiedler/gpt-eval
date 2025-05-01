@@ -1,0 +1,118 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "scenarios": [
+        {
+            "scenario_number": 1,
+            "missing_information": [
+                "Exact amount earned from side jobs",
+                "Dates and nature of side job work performed",
+                "Names and contact information of side job clients"
+            ],
+            "interview_questions": [
+                "Can you provide an estimate of how much you earned in total from your weekend handyman jobs?",
+                "What specific types of work did you perform for these side jobs?",
+                "Do you have any records of the dates you performed this work and for whom?",
+                "Were any of your side job earnings over $600 from a single client?",
+                "Did you incur any expenses related to these side jobs that you paid out of pocket?"
+            ],
+            "tax_form": "Form 1040 Schedule C",
+            "documentation_needed": [
+                "Detailed log of side job income and expenses",
+                "Any 1099-MISC or 1099-NEC forms received",
+                "Receipts for expenses related to side jobs"
+            ]
+        },
+        {
+            "scenario_number": 2,
+            "missing_information": [
+                "Total health insurance premiums paid",
+                "Amounts reimbursed by insurance",
+                "Mileage for medical-related travel",
+                "Cost of Medicare Part B premiums"
+            ],
+            "interview_questions": [
+                "Do you have documentation showing the total amount you paid for health insurance premiums this year?",
+                "How much of your medical expenses were reimbursed by your insurance?",
+                "Did you travel to receive any medical care? If so, how many miles did you drive?",
+                "Can you provide documentation of your Medicare Part B premium payments?",
+                "Were there any other medical expenses you incurred that aren't reflected in these receipts?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Annual health insurance premium statement",
+                "Explanation of Benefits (EOB) forms from insurance company",
+                "Mileage log for medical-related travel",
+                "Medicare Part B premium statements"
+            ]
+        },
+        {
+            "scenario_number": 3,
+            "missing_information": [
+                "Exact dates Tyler lived at home",
+                "Total amount paid for Tyler's support",
+                "Tyler's total income for the year",
+                "Amount of Tyler's education expenses"
+            ],
+            "interview_questions": [
+                "Can you provide the exact dates that Tyler lived in your home during the tax year?",
+                "What was the total amount you paid for Tyler's support, including education expenses?",
+                "Did Tyler have any income of his own this year? If so, how much?",
+                "How much did you pay specifically for Tyler's tuition and other education expenses?",
+                "Did Tyler's mother provide any financial support at all during the year?"
+            ],
+            "tax_form": "Form 1040",
+            "documentation_needed": [
+                "School records showing Tyler's enrollment dates",
+                "Receipts for tuition and education expenses paid",
+                "Documentation of Tyler's income (if any)",
+                "Detailed breakdown of support provided to Tyler"
+            ]
+        },
+        {
+            "scenario_number": 4,
+            "missing_information": [
+                "Percentage of home used exclusively for work",
+                "Total home expenses (mortgage/rent, utilities, etc.)",
+                "Employer's policy on remote work requirements",
+                "Frequency of working outside the home office"
+            ],
+            "interview_questions": [
+                "What percentage of your home is used exclusively for your work?",
+                "Can you provide a breakdown of your total home expenses, including mortgage or rent, utilities, and insurance?",
+                "Do you have any written documentation from your employer about their work-from-home requirements?",
+                "How often do you work outside of your home office, such as at coffee shops?",
+                "Are there any other home office expenses you incurred that aren't reflected in these receipts?"
+            ],
+            "tax_form": "Form 8829",
+            "documentation_needed": [
+                "Floor plan or measurements of home office space",
+                "Employer's written remote work policy",
+                "Itemized list of all home expenses",
+                "Log of days worked in home office vs. other locations"
+            ]
+        },
+        {
+            "scenario_number": 5,
+            "missing_information": [
+                "Fair market value of donated furniture",
+                "Dates of furniture donations",
+                "Detailed description of donated furniture items",
+                "Tax ID number for Children's Hospital"
+            ],
+            "interview_questions": [
+                "Can you provide a detailed description of each piece of furniture you donated?",
+                "On what date(s) did you make the furniture donations?",
+                "How did you determine the $2,000 value for the donated furniture?",
+                "Do you have any photos or other documentation of the furniture before donation?",
+                "Can you contact the Children's Hospital to get their tax ID number and a proper donation receipt?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Detailed list of donated furniture with fair market values",
+                "Photos of donated furniture (if available)",
+                "Proper donation receipt from Children's Hospital with tax ID",
+                "IRS Form 8283 for non-cash charitable contributions"
+            ]
+        }
+    ]
+}

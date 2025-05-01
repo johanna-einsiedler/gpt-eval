@@ -11,9 +11,9 @@
           "score": 1,
           "max_points": 3,
           "correct_answers": [
-            "E011",
             "E006",
-            "E012"
+            "E012",
+            "E011"
           ],
           "submitted_answers": [
             "E007",
@@ -26,10 +26,10 @@
           "score": 0,
           "max_points": 4,
           "correct_answers": [
-            "E011",
             "E006",
             "E020",
-            "E012"
+            "E012",
+            "E011"
           ],
           "submitted_answers": [
             "E014",
@@ -41,12 +41,12 @@
           "score": 1.0,
           "max_points": 3,
           "correct_answers": [
-            "E010",
-            "E016",
-            "E009",
             "E014",
+            "E015",
+            "E016",
+            "E010",
             "E008",
-            "E015"
+            "E009"
           ],
           "submitted_answers": [
             "E014",
@@ -74,15 +74,15 @@
           "score": 2,
           "max_points": 4,
           "correct_answers": [
-            "SV-02",
-            "SV-07",
+            "SV-04",
             "SV-03",
-            "SV-04"
+            "SV-02",
+            "SV-07"
           ],
           "submitted_answers": [
-            "SV-02",
+            "SV-04",
             "SV-06",
-            "SV-04"
+            "SV-02"
           ],
           "explanation": "Identified 2 out of 4 safety violations correctly."
         },
@@ -119,16 +119,16 @@
           "score": 1,
           "max_points": 5,
           "correct_answers": [
-            "E003",
+            "E013",
             "E011",
             "E016",
-            "E013",
+            "E003",
             "E020"
           ],
           "submitted_answers": [
             "E003",
-            "E008",
-            "E018"
+            "E018",
+            "E008"
           ],
           "explanation": "Identified 1 out of 5 misclassified employees correctly."
         },
@@ -140,8 +140,8 @@
           ],
           "submitted_answers": [
             "E003",
-            "E008",
-            "E018"
+            "E018",
+            "E008"
           ],
           "explanation": "Incorrect"
         },

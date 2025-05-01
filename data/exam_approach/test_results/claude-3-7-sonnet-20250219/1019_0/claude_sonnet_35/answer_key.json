@@ -1,0 +1,38 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "total_budget": 175000,
+    "department_allocations": {
+        "engineering": 61250,
+        "sales": 35000,
+        "marketing": 26250,
+        "customer_support": 35000,
+        "administration": 17500
+    },
+    "training_category_costs": {
+        "technical_skills": 52500,
+        "soft_skills": 26250,
+        "compliance": 26250,
+        "leadership": 35000,
+        "onboarding": 35000
+    },
+    "per_employee_costs": {
+        "engineering": 720.59,
+        "sales": 777.78,
+        "marketing": 875.0,
+        "customer_support": 538.46,
+        "administration": 700.0
+    },
+    "roi_calculations": {
+        "technical_skills": 2.1,
+        "soft_skills": 1.8,
+        "compliance": 1.2,
+        "leadership": 2.4,
+        "onboarding": 2.0
+    },
+    "budget_variance_percentage": 0.0613,
+    "cost_saving_opportunities": [
+        "CO-03",
+        "TS-01",
+        "SS-02"
+    ]
+}

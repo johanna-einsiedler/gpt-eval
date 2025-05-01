@@ -1,0 +1,98 @@
+{
+    "Agreement_A": [
+        {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The monthly payment of $1,574.35 is incorrect. For a $320,000 loan at 4.25% for 30 years, the correct payment should be approximately $1,574.95."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Loan Summary section and Borrower Information section",
+            "description": "The property address is listed as a purchase in the Loan Purpose, but the borrowers' current address is already listed as the same property address."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The PMI section states 'Not required' but doesn't provide justification for why PMI is not required despite the 80% LTV ratio."
+        },
+        {
+            "issue_id": 4,
+            "issue_type": "policy_violation",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The Default Interest Rate is 9.25%, which exceeds the initial rate (4.25%) by 5%, violating the policy that default rate cannot exceed initial rate by more than 5%."
+        },
+        {
+            "issue_id": 5,
+            "issue_type": "compliance_issue",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The Right of Rescission is mentioned, but the specific dates of the rescission period are not provided as required by compliance standards."
+        }
+    ],
+    "Agreement_B": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Property Information section",
+            "description": "The LTV ratio is stated as 70%, which exceeds the maximum 65% allowed for commercial properties according to policy."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The balloon payment is listed as approximately $1,250,000.00 but based on a 15-year loan with 25-year amortization, this figure is incorrect."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Closing Costs section",
+            "description": "The environmental assessment is mentioned in the closing costs, but the results or findings of this assessment are not documented as required by policy."
+        },
+        {
+            "issue_id": 4,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "The loan purpose is stated as 'Refinance' but there's no information about the existing loan being refinanced."
+        },
+        {
+            "issue_id": 5,
+            "issue_type": "compliance_issue",
+            "location": "Covenants and Conditions section",
+            "description": "The DSCR requirement is listed as 1.25x, but there's no calculation showing the current DSCR to verify compliance."
+        }
+    ],
+    "Agreement_C": [
+        {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Property Information section",
+            "description": "The Combined LTV Ratio calculation of 77.27% is correct (($275,000 + $150,000) / $550,000 = 77.27%), but this exceeds the maximum CLTV of 80% allowed by policy."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The initial advance amount is $75,000, which is 50% of the credit line amount ($150,000). This violates the policy that states 'Minimum initial draw amount cannot exceed 50% of credit line.'"
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "The loan purpose includes 'debt consolidation' but there are no details about existing debts to be consolidated."
+        },
+        {
+            "issue_id": 4,
+            "issue_type": "missing_information",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The agreement mentions that the property is in Zone X (minimal flood risk) but doesn't include the required flood insurance determination documentation reference."
+        },
+        {
+            "issue_id": 5,
+            "issue_type": "compliance_issue",
+            "location": "Additional Provisions section",
+            "description": "The agreement includes a 'Minimum Draw Requirement' of $10,000 within the first 12 months, which contradicts the 'Minimum Draw Amount' of $500 stated elsewhere."
+        }
+    ]
+}
