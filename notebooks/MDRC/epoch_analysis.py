@@ -11,6 +11,9 @@ from matplotlib.dates import YearLocator, MonthLocator, DateFormatter
 from scipy import stats
 import numpy as np
 import pandas as pd
+import matplotlib.ticker as ticker
+import matplotlib.lines as mlines
+from adjustText import adjust_text
 # current_directory = os.getcwd()
 
 path_test_data = '../../data/exam_approach/test_results/claude-3-7-sonnet-20250219/'
@@ -40,7 +43,20 @@ for category, file_name in files_score.items():
 
 # Concatenate all DataFrames into one
 all_exams = pd.concat(dataframes, ignore_index=True)
-all_exams
+all_exams.head()
+
+reverse_mapping = {
+    'score_claude_sonnet': 'Claude 3.7 Sonnet',
+    'score_chatgpt4o': 'GPT-4o',
+    'score_deepseek': 'DeepSeek Chat',
+    'score_gemini_flash_15': 'Gemini 1.5 Flash',
+    'score_gemini_flash': 'Gemini 2.0 Flash',
+    'score_claude_haiku': 'Claude 3.5 Haiku',
+    'score_chatgpt35': 'GPT-3.5 Turbo',
+    'score_claude_sonnet_35': 'Claude 3.5 Sonnet',
+    'score_gemini_25': 'Gemini 2.5',
+    'score_chatgpt_o3': 'GPT o3'
+}
 
 
 # # List of columns to calculate the mean for
@@ -74,13 +90,17 @@ print(df_model_info['Model'].to_list())
 df_model_info[['Model', 'Training compute (FLOP)']]
 
 df_model_benchmark = pd.read_csv(path_epoch + 'benchmark_data/benchmarks_runs.csv')
+df_model_benchmark.tail(20)
+
 model_family_lower = [model.lower() for model in model_family]
 
 # Filter the DataFrame based on whether any keyword is in the 'model' column
 df_model_benchmark = df_model_benchmark[
-    df_model_benchmark['model'].str.lower().str.contains('|'.join(model_family_lower), na=False)
+    df_model_benchmark['model'].str.lower().str.contains('|'.join(model_family_lower), na=False) |
+    (df_model_benchmark['model'] == 'o3-2025-04-16_high')
 ]
 
+'o3-2025-04-16_high' in df_model_benchmark['model'].to_list()
 
 df_model_benchmark = df_model_benchmark.sort_values(by='model', ascending=True)
 df_model_benchmark
@@ -94,9 +114,11 @@ model_dict = {
     "deepseek-chat": ["DeepSeek-V3", "DeepSeek-V3"],
     "gemini-1.5-flash": ["gemini-1.5-flash-002", "Gemini 1.5 Pro"],
     "gemini-2.0-flash": ["gemini-2.0-flash-001", "NA"],
-    "claude-3-5-haiku-202410": ["claude-3-5-haiku-20241022", "Claude 3.5 Sonnet"],
+    # "claude-3-5-haiku-202410": ["claude-3-5-haiku-20241022", "Claude 3.5 Sonnet"],
+    "claude-3-5-sonnet-202410": ["claude-3-5-sonnet-20241022", "Claude 3.5 Sonnet"],
     "gpt-3.5-turbo-0125": ['gpt-3.5-turbo-0125', "GPT-3.5 Turbo"],
-    "gemini-2.5-pro-preview-03-25": ["gemini-2.5-pro-preview-03-25", "NA"],
+    "gemini-2.5-pro-preview-03-25": ["gemini-2.5-flash-preview-04-17", "NA"],
+    "o3-2025-04-16": ["o3-2025-04-16_high", "NA"]
 }
 
 
@@ -167,13 +189,27 @@ for model_key, values in model_dict.items():
 # Create the new DataFrame
 df_model_bench = pd.DataFrame(data, columns=columns)
 
-# Update the publication date for 'gemini-2.0-flash' in the new DataFrame
+# Update the publication date and FLOPs that are nor available in latest csv file (check notion from sources)
 df_model_bench.loc[df_model_bench['model'] == "gemini-2.0-flash", "Publication date"] = "2025-02-05"
-# Update the training compute (FLOP) for gemini-2.0-flash
 df_model_bench.loc[df_model_bench['model'] == "gemini-2.0-flash", "Training compute (FLOP)"] = 2.43e+25
-# Update the training compute (FLOP) for gpt-3.5-turbo-0125
 df_model_bench.loc[df_model_bench['model'] == "gpt-3.5-turbo-0125", "Training compute (FLOP)"] = 2.58e+24
+df_model_bench.loc[df_model_bench['model'] == "gpt-3.5-turbo-0125", "Training compute (FLOP)"] = 2.58e+24
+df_model_bench.loc[df_model_bench['model'] == "gemini-2.5-pro-preview-03-25", "Publication date"] = "2025-03-01"
+df_model_bench.loc[df_model_bench['model'] == "o3-2025-04-16", "Publication date"] = "2025-01-31"
+df_model_bench.loc[df_model_bench['model'] == "gemini-2.5-pro-preview-03-25", "Training compute (FLOP)"] = 5.6e+25
+df_model_bench.loc[df_model_bench['model'] == "o3-2025-04-16", "Training compute (FLOP)"] = 8e+25 # taken from https://www.lesswrong.com/posts/NXTkEiaLA4JdS5vSZ/what-o3-becomes-by-2028
 
+df_model_bench.loc[df_model_bench['model'] == "gemini-2.0-flash", "Organization"] = 'Google DeepMind'
+df_model_bench.loc[df_model_bench['model'] == "gemini-2.5-pro-preview-03-25", "Organization"] = 'Google DeepMind'
+df_model_bench.loc[df_model_bench['model'] == "o3-2025-04-16", "Organization"] = 'OpenAI'
+
+
+organization_markers = {
+    "Anthropic": "o",  # Circle
+    "OpenAI": "s",     # Square
+    "Google DeepMind": "D",  # Diamond
+    "DeepSeek": "^"       # Triangle
+}
 
 df_model_bench
 
@@ -188,6 +224,7 @@ sns.set_palette("viridis")
 # Color palette for the plots
 color_palette = ['#FFBD59', '#38B6FF', '#8E3B46', '#E0777D','#739E82']
 
+
 # 1. First, let's map the model names between dataframes
 model_mapping = {
     'claude-3-7-sonnet-20250219': 'score_claude_sonnet',
@@ -195,11 +232,15 @@ model_mapping = {
     'deepseek-chat': 'score_deepseek',
     'gemini-1.5-flash': 'score_gemini_flash_15',
     'gemini-2.0-flash': 'score_gemini_flash',
+    "claude-3-5-sonnet-202410": 'score_claude_sonnet_35',
     'claude-3-5-haiku-202410': 'score_claude_haiku',
     'gpt-3.5-turbo-0125': 'score_chatgpt35',
     'gemini-2.5-pro-preview-03-25': 'score_gemini_25',
     'o3-2025-04-16': 'score_chatgpt_o3'
 }
+
+
+
 
 # Reverse mapping for display names
 reverse_mapping = {
@@ -209,7 +250,10 @@ reverse_mapping = {
     'score_gemini_flash_15': 'Gemini 1.5 Flash',
     'score_gemini_flash': 'Gemini 2.0 Flash',
     'score_claude_haiku': 'Claude 3.5 Haiku',
-    'score_chatgpt35': 'GPT-3.5 Turbo'
+    'score_chatgpt35': 'GPT-3.5 Turbo',
+    'score_claude_sonnet_35': 'Claude 3.5 Sonnet',
+    'score_gemini_25': 'Gemini 2.5',
+    'score_chatgpt_o3': 'GPT o3'
 }
 color_palette = ['#FFBD59', '#38B6FF', '#8E3B46', '#E0777D', '#739E82']
 
@@ -274,10 +318,12 @@ for model_name, score_col in model_mapping.items():
 # Create dataframe from the collected data
 category_scores_df = pd.DataFrame(category_scores_data)
 
+df_model_bench
+
 # Add publication date and FLOP info
 category_scores_df = pd.merge(
     category_scores_df,
-    df_model_bench[['model', 'Publication date', 'Training compute (FLOP)', 'MATH level 5']],
+    df_model_bench[['model', 'Publication date', 'Training compute (FLOP)', 'MATH level 5', 'Organization']],
     on='model',
     how='left'
 )
@@ -299,7 +345,7 @@ for model_name in df_model_bench['model']:
                     df_model_bench.loc[df_model_bench['model'] == model_name, col_name] = category_subset['mean_score'].values[0]
 
 
-df_model_bench.columns
+df_model_bench
 
 columns_of_interest = [
     "MATH level 5", "GPQA diamond", "OTIS Mock AIME 2024-2025", "FrontierMath-2025-02-28-Private",
@@ -318,6 +364,54 @@ plt.figure(figsize=(10, 8))
 sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", cbar=True)
 plt.title("Correlation Heatmap")
 plt.show()
+
+# Define the two groups of columns
+group_1 = ["avg_all_tasks_score", "avg_score_business_and_financial_operations", 
+           "avg_score_computer_and_mathematical", "avg_score_management"]
+group_2 = ["MATH level 5", "GPQA diamond", "OTIS Mock AIME 2024-2025", "FrontierMath-2025-02-28-Private"]
+
+# Filter the DataFrame to include only the columns of interest
+df_filtered = df_model_bench[group_1 + group_2]
+
+# Compute the correlation matrix
+correlation_matrix = df_filtered.corr()
+
+correlation_matrix
+
+y_labels = ["All tasks", "Business and Finance tasks", "Computer and Mathematical tasks", "Management tasks"]
+x_labels = ["Math level 5", "GPQA diamond\n(PhD level science)", "OTIS\n(Math Olympiad)", "Frontier Math"]
+
+# Select only the correlations between group_1 and group_2
+correlation_subset = correlation_matrix.loc[group_1, group_2]
+
+# Plot the heatmap
+plt.figure(figsize=(10, 8))
+heatmap = sns.heatmap(
+    correlation_subset, 
+    annot=True, 
+    cmap="seismic_r",  # Red for negative, blue for positive, white for zero
+    fmt=".2f", 
+    cbar=True, 
+    center=0,  # Center the colormap at zero
+    linewidths=0.5,  # Add gridlines for better readability
+    annot_kws={"fontsize": 20},
+    cbar_kws={"label": "Correlation"}
+)
+colorbar = heatmap.collections[0].colorbar
+colorbar.ax.yaxis.label.set_size(16)
+colorbar.ax.tick_params(labelsize=16)
+
+plt.xticks(ticks=range(len(x_labels)), labels=x_labels, fontsize=16, rotation=45, ha="center")
+# Adjust the y-axis tick positions to move them down
+ax = heatmap
+y_ticks = ax.get_yticks()  # Get current y-tick positions
+ax.set_yticks([tick + 0.05 for tick in y_ticks])  # Shift ticks down by 0.5
+ax.set_yticklabels(y_labels, fontsize=16, va="center")  # Set labels with vertical alignment
+
+plt.title("Correlation Between Task Exam Performance and Previous Benchmarks\n", fontsize=16)
+plt.savefig('../../results/figures/correlation_task_benchmarks.png',bbox_inches='tight')
+plt.show()
+
 
 # 7. Get proper model ordering for plots based on publication date
 models_with_dates = df_model_bench.dropna(subset=['Publication date']).copy()
@@ -381,6 +475,14 @@ def plot_category_performance():
     
     return None
 
+category_scores_df.columns
+
+marker_legend_handles = [
+    mlines.Line2D([], [], color='black', marker='o', linestyle='None', markersize=10, label='Anthropic'),
+    mlines.Line2D([], [], color='black', marker='s', linestyle='None', markersize=10, label='OpenAI'),
+    mlines.Line2D([], [], color='black', marker='D', linestyle='None', markersize=10, label='Google DeepMind'),
+    mlines.Line2D([], [], color='black', marker='^', linestyle='None', markersize=10, label='DeepSeek')
+]
 
 # VISUALIZATION 7: Scatter performance vs time by category
 def plot_scatter_performance_vs_time_by_category():
@@ -394,6 +496,7 @@ def plot_scatter_performance_vs_time_by_category():
     
     # Track which models we've already labeled to avoid duplicates
     labeled_models = set()
+    texts = [] 
     
     # Plot each category with a different color
     categories = time_data['category'].unique()
@@ -406,17 +509,22 @@ def plot_scatter_performance_vs_time_by_category():
         for model in models:
             model_data = category_subset[category_subset['model'] == model]
             
+            # Determine the marker type based on the organization
+            organization = model_data['Organization'].iloc[0] if not model_data.empty else "Other"
+            marker = organization_markers.get(organization, "o")  # Default to circle if not found
+            
             # Check if we should label this model
             should_label = model not in labeled_models
             if should_label:
                 labeled_models.add(model)
-                
+            
             # Scatter plot for this category and model
             plt.scatter(
                 model_data['Publication date'], 
                 model_data['mean_score'],
                 s=150,
                 c=color_palette[i % len(color_palette)],
+                marker=marker,  # Use the marker type based on the organization
                 label=category.replace('_', ' ').title() if model == models[0] else "",  # Only label once per category
                 alpha=0.7
             )
@@ -435,16 +543,14 @@ def plot_scatter_performance_vs_time_by_category():
             # Add model labels, but only once per model
             if should_label:
                 for _, row in model_data.iterrows():
-                    plt.annotate(
+                    text = plt.text(
+                        row['Publication date'], 
+                        row['mean_score'], 
                         get_display_name(row['model']),
-                        (row['Publication date'], row['mean_score']),
-                        fontsize=12,
-                        xytext=(5, 5),
-                        textcoords='offset points'
+                        fontsize=12
                     )
-                    # Only label the first instance of this model
-                    break
-    
+                    texts.append(text)  # Add text to the list for adjustment
+    adjust_text(texts, arrowprops=dict(arrowstyle='-', color='gray', alpha=0.5), fontsize=12)
     # Add trend lines for each category
     for i, category in enumerate(categories):
         category_subset = time_data[time_data['category'] == category]
@@ -468,27 +574,34 @@ def plot_scatter_performance_vs_time_by_category():
     plt.xlabel('Publication Date', fontsize=14)
     plt.ylabel('Average Score by Category', fontsize=14)
     plt.title('Model Performance Over Time by Occupation Category', fontsize=16)
-    # plt.grid(True, alpha=0.3)
     
     # Format x-axis to show dates nicely
     plt.gca().xaxis.set_major_formatter(DateFormatter('%Y-%m'))
     plt.gca().xaxis.set_major_locator(MonthLocator(interval=3))
-    plt.xticks(rotation=45, fontsize=12)  # Increased tick fontsize
-    plt.yticks(fontsize=12)  # Increased tick fontsize
+    plt.xticks(rotation=45, fontsize=12)
+    plt.yticks(fontsize=12)
     
     # Despine - remove top and right spines
     plt.gca().spines['top'].set_visible(False)
     plt.gca().spines['right'].set_visible(False)
     
     # Add legend
-    plt.legend(title='Occupation Category', fontsize=12)
+    # Add the marker legend
+    # Add the marker legend for organizations
+    organization_legend = plt.legend(handles=marker_legend_handles, title='Organization', fontsize=12, loc='lower right')
+
+    # Add the color legend for categories
+    category_legend = plt.legend(title='Occupation Category', fontsize=12, loc='upper left')
+
+    # Ensure both legends are displayed
+    plt.gca().add_artist(organization_legend)
     
     plt.tight_layout()
     
     return plt
 
 
-
+# VISUALIZATION 8: Scatter performance vs compute by category
 def plot_scatter_performance_vs_compute_by_category():
     # We'll use category-level data instead of average scores
     compute_data = category_scores_df.dropna(subset=['Training compute (FLOP)']).copy()
@@ -500,6 +613,7 @@ def plot_scatter_performance_vs_compute_by_category():
     
     # Track which models we've already labeled to avoid duplicates
     labeled_models = set()
+    texts = [] 
     
     # Plot each category with a different color
     categories = compute_data['category'].unique()
@@ -512,17 +626,22 @@ def plot_scatter_performance_vs_compute_by_category():
         for model in models:
             model_data = category_subset[category_subset['model'] == model]
             
+            # Determine the marker type based on the organization
+            organization = model_data['Organization'].iloc[0] if not model_data.empty else "Other"
+            marker = organization_markers.get(organization, "o")  # Default to circle if not found
+            
             # Check if we should label this model
             should_label = model not in labeled_models
             if should_label:
                 labeled_models.add(model)
-                
+            
             # Scatter plot for this category and model
             plt.scatter(
                 model_data['Training compute (FLOP)'], 
                 model_data['mean_score'],
                 s=150,
                 c=color_palette[i % len(color_palette)],
+                marker=marker,  # Use the marker type based on the organization
                 label=category.replace('_', ' ').title() if model == models[0] else "",  # Only label once per category
                 alpha=0.7
             )
@@ -539,18 +658,17 @@ def plot_scatter_performance_vs_compute_by_category():
             )
             
             # Add model labels, but only once per model
+
             if should_label:
                 for _, row in model_data.iterrows():
-                    plt.annotate(
+                    text = plt.text(
+                        row['Training compute (FLOP)'], 
+                        row['mean_score'], 
                         get_display_name(row['model']),
-                        (row['Training compute (FLOP)'], row['mean_score']),
-                        fontsize=12,
-                        xytext=(5, 5),
-                        textcoords='offset points'
+                        fontsize=12
                     )
-                    # Only label the first instance of this model
-                    break
-    
+                    texts.append(text)  # Add text to the list for adjustment
+    adjust_text(texts, arrowprops=dict(arrowstyle='-', color='gray', alpha=0.5), fontsize=12)
     plt.xlabel('Training Compute (FLOP)', fontsize=14)
     plt.ylabel('Average Score by Category', fontsize=14)
     plt.title('Model Performance vs Training Compute by Occupation Category', fontsize=16)
@@ -561,7 +679,6 @@ def plot_scatter_performance_vs_compute_by_category():
     plt.yticks(fontsize=10)
     
     # Format x-axis to show scientific notation nicely
-    import matplotlib.ticker as ticker
     formatter = ticker.LogFormatter(10, labelOnlyBase=False)
     plt.gca().xaxis.set_major_formatter(formatter)
     
@@ -570,12 +687,17 @@ def plot_scatter_performance_vs_compute_by_category():
     plt.gca().spines['right'].set_visible(False)
     
     # Add legend
-    plt.legend(title='Occupation Category')
+    organization_legend = plt.legend(handles=marker_legend_handles, title='Organization', fontsize=12, loc='lower right')
+
+    # Add the color legend for categories
+    category_legend = plt.legend(title='Occupation Category', fontsize=12, loc='upper left')
+
+    # Ensure both legends are displayed
+    plt.gca().add_artist(organization_legend)
     
     plt.tight_layout()
     
     return plt
-
 
 
 
@@ -722,12 +844,15 @@ results_df
 
 # Plot 1: Bar plot of model performance by category
 plot1 = plot_category_performance()
+plt.savefig('../../results/figures/bar_plot_performance_by_category.png', bbox_inches='tight')
 plt.show()
 
 plot7 = plot_scatter_performance_vs_time_by_category()
+plt.savefig('../../results/figures/scatter_performace_vs_time_by_occcategory.png', bbox_inches='tight')
 plt.show()
 
 plot_scatter_performance_vs_compute_by_category()
+plt.savefig('../../results/figures/scatter_performace_vs_compute_by_occcategory.png', bbox_inches='tight')
 plt.show()
 
 
