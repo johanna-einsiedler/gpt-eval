@@ -1,0 +1,74 @@
+{
+    "candidateId": "Claude-v1.3",
+    "task1": {
+        "keyRequirements": [
+            "Improved strategic thinking and decision-making",
+            "Enhanced team management and delegation skills",
+            "Effective communication across departments",
+            "Conflict resolution and negotiation techniques",
+            "Change management capabilities"
+        ],
+        "potentialChallenges": [
+            "Accommodating participants across multiple time zones",
+            "Customizing content to company's specific industry and challenges",
+            "Ensuring practical application and skill transfer"
+        ],
+        "nonNegotiablePoints": [
+            "Maximum budget of $75,000",
+            "Completion of training by December 2023",
+            "Blended learning approach (in-person and virtual)",
+            "Individual coaching sessions for each participant",
+            "Post-training support for 3 months"
+        ],
+        "flexiblePoints": [
+            "Specific number of in-person vs. virtual sessions",
+            "Exact format of coaching sessions (individual or group)",
+            "Depth of customization and needs analysis",
+            "Specific trainers assigned to the project"
+        ]
+    },
+    "task2": {
+        "proposedFee": 75000.0,
+        "breakdownOfCosts": {
+            "trainerFees": 30000.0,
+            "materials": 10000.0,
+            "travelExpenses": 8000.0,
+            "administrativeCosts": 11250.0
+        },
+        "profitMargin": 25.0,
+        "valueJustification": [
+            "Experienced trainers with technology industry expertise",
+            "Customized content tailored to company's challenges",
+            "Blended learning approach for optimal skill transfer",
+            "Comprehensive support including coaching and post-training follow-up"
+        ]
+    },
+    "task3": {
+        "objection1Response": "D",
+        "objection2Response": "B",
+        "objection3Response": "A",
+        "objection4Response": "B",
+        "objection5Response": "B"
+    },
+    "task4": {
+        "deliverables": [
+            "Customized leadership development curriculum",
+            "Interactive in-person workshops",
+            "Virtual training sessions",
+            "Individual coaching sessions",
+            "Post-training support and implementation plan"
+        ],
+        "timeline": {
+            "startDate": "2023-09-01",
+            "completionDate": "2023-12-15",
+            "milestoneCode": "MS-002"
+        },
+        "paymentStructure": {
+            "initialPayment": 24750.0,
+            "milestone1Payment": 24750.0,
+            "finalPayment": 25500.0
+        },
+        "contractTermCode": "CT-003",
+        "cancellationTerms": "CAN-002"
+    }
+}

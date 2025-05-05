@@ -1,0 +1,189 @@
+{
+  "candidate_name": "Claude-3_7-Sonnet",
+  "task_results": {
+    "task1": {
+      "score": 0,
+      "max_score": 2,
+      "feedback": "Incorrect",
+      "submitted_value": 1342.05,
+      "correct_value": 1266.71
+    },
+    "task2": {
+      "score": 0,
+      "max_score": 6,
+      "months": {
+        "month_1": {
+          "score": 0,
+          "max_score": 2,
+          "fields": {
+            "payment_amount": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1342.05,
+              "correct_value": 1266.71
+            },
+            "principal_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 277.78,
+              "correct_value": 329.21
+            },
+            "interest_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1064.27,
+              "correct_value": 937.5
+            },
+            "remaining_balance": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 249722.22,
+              "correct_value": 249670.79
+            }
+          }
+        },
+        "month_6": {
+          "score": 0,
+          "max_score": 2,
+          "fields": {
+            "payment_amount": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1342.05,
+              "correct_value": 1266.71
+            },
+            "principal_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 293.89,
+              "correct_value": 336.55
+            },
+            "interest_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1048.16,
+              "correct_value": 930.16
+            },
+            "remaining_balance": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 247485.93,
+              "correct_value": 247706.4
+            }
+          }
+        },
+        "month_12": {
+          "score": 0,
+          "max_score": 2,
+          "fields": {
+            "payment_amount": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1342.05,
+              "correct_value": 1266.71
+            },
+            "principal_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 311.32,
+              "correct_value": 343.96
+            },
+            "interest_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1030.73,
+              "correct_value": 922.75
+            },
+            "remaining_balance": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 245174.61,
+              "correct_value": 245723.39
+            }
+          }
+        }
+      }
+    },
+    "task3": {
+      "score": 2,
+      "max_score": 4,
+      "fields": {
+        "new_loan_term_years": {
+          "score": 1,
+          "feedback": "Correct",
+          "submitted_value": 22,
+          "correct_value": 22
+        },
+        "new_loan_term_months": {
+          "score": 1,
+          "feedback": "Correct",
+          "submitted_value": 6,
+          "correct_value": 6
+        },
+        "total_interest_saved": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 37924.9,
+          "correct_value": 64686.48
+        },
+        "balance_after_5_years": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 211249.1,
+          "correct_value": 213767.32
+        }
+      }
+    },
+    "task4": {
+      "score": 0,
+      "max_score": 4,
+      "fields": {
+        "monthly_payment": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 843.88,
+          "correct_value": 966.28
+        },
+        "balloon_payment_amount": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 134375.52,
+          "correct_value": 162092.93
+        }
+      }
+    },
+    "task5": {
+      "score": 0,
+      "max_score": 4,
+      "fields": {
+        "new_monthly_payment": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 1432.25,
+          "correct_value": 1433.94
+        },
+        "monthly_payment_savings": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 167.75,
+          "correct_value": 337.95
+        },
+        "breakeven_months": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 27,
+          "correct_value": 14
+        }
+      }
+    }
+  },
+  "total_score": 2,
+  "max_score": 20,
+  "overall_score": 10.0,
+  "critical_tasks_status": {
+    "task1_requirement_met": false,
+    "task2_requirement_met": false,
+    "all_critical_requirements_met": false
+  },
+  "passed": false
+}

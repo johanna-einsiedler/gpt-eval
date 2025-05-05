@@ -1,0 +1,33 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "cost_per_participant": 212.5,
+        "highest_cost_program": "Weight Loss Program",
+        "lowest_cost_program": "Sleep Improvement",
+        "participation_threshold_programs": [
+            "Stress Management",
+            "Diabetes Management"
+        ]
+    },
+    "task2": {
+        "program_roi_values": {
+            "Fitness Challenge": 1.33,
+            "Nutrition Workshop": 0.82,
+            "Stress Management": 1.08,
+            "Weight Loss Program": 0.56,
+            "Smoking Cessation": 1.11
+        },
+        "highest_roi_program": "Fitness Challenge",
+        "cost_effective_programs": [
+            "Fitness Challenge",
+            "Stress Management",
+            "Smoking Cessation"
+        ]
+    },
+    "task3": {
+        "quarterly_cost_trend": 5.88,
+        "projected_annual_savings": 30000,
+        "cost_reduction_percentage": 14.29,
+        "break_even_month": 6
+    }
+}

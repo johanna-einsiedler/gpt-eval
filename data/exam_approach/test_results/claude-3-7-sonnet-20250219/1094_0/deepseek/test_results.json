@@ -75,11 +75,11 @@
       "correctly_identified": 5,
       "incorrectly_identified": 0,
       "expected_items": [
-        "E004",
         "E008",
-        "D005",
-        "E007",
+        "E004",
         "B008",
+        "E007",
+        "D005",
         "A007",
         "A006"
       ],
@@ -101,11 +101,11 @@
       "correct_adjustments": 3,
       "total_adjustments": 5,
       "items_with_errors": [
-        "A006",
-        "E006"
+        "E006",
+        "A006"
       ],
       "error_details": [
-        "Missing price adjustments for items: A006, E006"
+        "Missing price adjustments for items: E006, A006"
       ]
     }
   },

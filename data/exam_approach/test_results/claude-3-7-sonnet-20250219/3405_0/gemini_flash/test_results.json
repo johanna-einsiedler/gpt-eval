@@ -237,19 +237,6 @@
           "score": 7.5,
           "max_score": 15,
           "details": {
-            "Equipment": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 254581,
-                "actual_projected": 306667,
-                "variance_percent": 0.2
-              },
-              "expected": {
-                "budgeted": 254581,
-                "actual_projected": 306667,
-                "variance_percent": 0.2
-              }
-            },
             "Travel": {
               "status": "correct",
               "submitted": {
@@ -261,6 +248,19 @@
                 "budgeted": 34628,
                 "actual_projected": 42667,
                 "variance_percent": 0.23
+              }
+            },
+            "Equipment": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 254581,
+                "actual_projected": 306667,
+                "variance_percent": 0.2
+              },
+              "expected": {
+                "budgeted": 254581,
+                "actual_projected": 306667,
+                "variance_percent": 0.2
               }
             },
             "Marketing": {

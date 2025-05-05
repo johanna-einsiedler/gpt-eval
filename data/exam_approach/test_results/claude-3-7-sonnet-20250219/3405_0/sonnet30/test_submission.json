@@ -1,0 +1,76 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "average_growth_rates": {
+            "Personnel": 0.05,
+            "Equipment": 0.12,
+            "Supplies": 0.04,
+            "Training": 0.12,
+            "Facilities": 0.05,
+            "IT Services": 0.17,
+            "Travel": -0.08,
+            "Consulting": 0.12,
+            "Marketing": 0.12,
+            "Miscellaneous": 0.05
+        },
+        "projected_costs": {
+            "Personnel": 496710,
+            "Equipment": 247492,
+            "Supplies": 96391,
+            "Training": 92136,
+            "Facilities": 173533,
+            "IT Services": 153636,
+            "Travel": 35274,
+            "Consulting": 170166,
+            "Marketing": 77651,
+            "Miscellaneous": 40518,
+            "Total": 1583507
+        },
+        "top_growth_categories": [
+            "IT Services",
+            "Equipment",
+            "Training",
+            "Consulting",
+            "Marketing"
+        ]
+    },
+    "task2": {
+        "total_resources_needed": 1020000,
+        "departmental_allocation": {
+            "Operations": 408000,
+            "Administration": 153000,
+            "Development": 306000,
+            "Support": 153000
+        },
+        "cost_per_unit": {
+            "Operations": 163.2,
+            "Administration": 153.0,
+            "Development": 170.0,
+            "Support": 127.5
+        },
+        "resource_constraints": [
+            "Infrastructure",
+            "Technology"
+        ]
+    },
+    "task3": {
+        "significant_variances": {
+            "Equipment": {
+                "budgeted": 254581,
+                "actual_projected": 320000,
+                "variance_percent": 0.26
+            },
+            "Training": {
+                "budgeted": 94559,
+                "actual_projected": 86667,
+                "variance_percent": -0.08
+            }
+        },
+        "additional_resources_needed": 39432,
+        "recommended_adjustments": {
+            "Equipment": 46800,
+            "Training": -4267,
+            "Personnel": 6360
+        }
+    }
+}

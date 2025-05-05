@@ -1,0 +1,39 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "on_time_delivery": {
+        "overall_rate": 0.83,
+        "monthly_rates": {
+            "Jan": 1.0,
+            "Feb": 0.8,
+            "Mar": 0.8,
+            "Apr": 0.75
+        },
+        "highest_month": "Jan",
+        "lowest_month": "Apr"
+    },
+    "order_fulfillment": {
+        "overall_rate": 0.94,
+        "category_rates": {
+            "Electronics": 0.97,
+            "Furniture": 0.83,
+            "Apparel": 0.96
+        },
+        "lowest_category": "Furniture"
+    },
+    "inventory_turns": {
+        "average_turns": 5.83,
+        "sku_turns": {
+            "E001": 6.0,
+            "E002": 3.0,
+            "F001": 6.0,
+            "F002": 8.0,
+            "A001": 7.5,
+            "A002": 5.0
+        },
+        "top_performers": [
+            "F002",
+            "A001",
+            "E001"
+        ]
+    }
+}

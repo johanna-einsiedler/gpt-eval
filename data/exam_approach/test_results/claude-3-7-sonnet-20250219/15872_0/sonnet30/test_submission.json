@@ -1,0 +1,31 @@
+{
+    "candidate_id": "GPT-4_v1",
+    "current_cost_per_mile": {
+        "vehicle_type_A": 1.38,
+        "vehicle_type_B": 1.25,
+        "vehicle_type_C": 1.57
+    },
+    "top_cost_components": [
+        "Driver Wages",
+        "Fuel Cost",
+        "Maintenance Cost"
+    ],
+    "cost_component_percentages": {
+        "Driver Wages": 0.38,
+        "Fuel Cost": 0.2,
+        "Maintenance Cost": 0.09
+    },
+    "six_month_forecast": {
+        "total_cost": 4892345.0,
+        "percentage_change": 0.12
+    },
+    "sensitivity_analysis": {
+        "fuel_impact_percentage": 0.02,
+        "wage_impact_percentage": 0.04,
+        "most_sensitive_factor": "Driver Wages"
+    },
+    "methodology": {
+        "cost_model_approach": "Developed a comprehensive cost model using historical data and vehicle specifications to calculate cost per mile for each vehicle type.",
+        "forecast_assumptions": "Forecasted costs based on provided expected changes in fuel prices, labor rates, maintenance costs, and utilization."
+    }
+}

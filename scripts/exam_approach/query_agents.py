@@ -27,8 +27,10 @@ def take_test(row, system_prompt_template, exam, model):
 
         system_prompt = system_prompt_template.format(occupation=row['occupation'])
         response = query_agent(system_prompt, exam, model)
-
-        return response
+        try:
+            return response[0]
+        except:
+            return ''
 
 
 
@@ -37,31 +39,32 @@ def query_agent(system_prompt, user_prompt, model):
         if 'gemini' in model:
             #client = ggenai.Client()
             #if model in client.models.list():
-            response =query_gemini(system_prompt, user_prompt, model)
+            response = query_gemini(system_prompt, user_prompt, model)
             #else:
              #   response =query_gemini(system_prompt, user_prompt)
-
+        if 'o3' in model:
+            response = query_o3(system_prompt, user_prompt, model)
         if 'gpt' in model:
             # Retrieve the list of available models
             #client = OpenAI()
             # Extract model IDs
             #model_ids =client.models.list()
             #if model in model_ids:
-            response =query_chatgpt(system_prompt, user_prompt, model)
+            response = query_chatgpt(system_prompt, user_prompt, model)
             #else:
              #   response =query_chatgpt(system_prompt, user_prompt)
         if 'deepseek' in model:
             #client = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
             #model_ids = client.models.list()
             #if model in model_ids:
-            response =query_deepseek(system_prompt, user_prompt, model)
+            response = query_deepseek(system_prompt, user_prompt, model)
             #else:
              #   response =query_deepseek(system_prompt, user_prompt)
         if 'claude' in model:
             #client = anthropic.Anthropic()
             #model_ids = client.models.list(limit=20)
             #if model in model_ids:
-            response =query_claude(system_prompt, user_prompt, model)
+            response = query_claude(system_prompt, user_prompt, model)
             #else:
              #   response =query_claude(system_prompt, user_prompt)
         try:
@@ -95,10 +98,10 @@ def query_gemini(system_prompt, user_prompt, model='gemini-2.0-flash-thinking-ex
         
         response = model_gen.generate_content(
             contents=[system_prompt, user_prompt],
-            generation_config=genai.GenerationConfig(temperature=temperature, max_output_tokens=4096)
+            generation_config=genai.GenerationConfig(temperature=temperature)
         )
 
-        return response.text
+        return [response.text, response.usage_metadata]
 
     except Exception as e:
         print(f"Error: {e}")
@@ -111,7 +114,7 @@ def query_deepseek(system_prompt, user_prompt, model="deepseek-chat", temperatur
 
 
         
-        message = client.chat.completions.create(
+        response = client.chat.completions.create(
             model=model,
             messages=[
                 {"role": "system", "content": system_prompt},
@@ -120,7 +123,7 @@ def query_deepseek(system_prompt, user_prompt, model="deepseek-chat", temperatur
             temperature=temperature
         )
 
-        return message.choices[0].message.content
+        return [response.choices[0].message.content, response.usage]
     except Exception as e:
         print(f"Error: {e}")
         return None
@@ -136,7 +139,7 @@ def query_chatgpt(system_prompt, user_prompt, model="gpt-4o", temperature=0):
             api_key=OPENAI_API_KEY
         )
 
-        message = client.chat.completions.create(
+        response = client.chat.completions.create(
             messages=[
                 {"role": "developer", "content": system_prompt},
                 {
@@ -145,34 +148,64 @@ def query_chatgpt(system_prompt, user_prompt, model="gpt-4o", temperature=0):
                 }
             ],
             model=model,
-            temperature=temperature,
-            max_tokens =4096
+            temperature=temperature
+
         )
-        return message.choices[0].message.content
+        return [response.choices[0].message.content, response.usage]
+    except Exception as e:
+        print(f"Error: {e}")
+        return None
+
+def query_o3(system_prompt, user_prompt, model="o3-2025-04-16", temperature=1):
+    print("Quering ChatGPT: ", model)
+
+    try:
+
+        client = OpenAI(
+            api_key=OPENAI_API_KEY
+        )
+
+        response = client.chat.completions.create(
+            messages=[
+                {"role": "developer", "content": system_prompt},
+                {
+                    "role": "user",
+                    "content": user_prompt
+                }
+            ],
+            model=model,
+            temperature=temperature
+
+        )
+        return [response.choices[0].message.content, response.usage]
     except Exception as e:
         print(f"Error: {e}")
         return None
 
 def query_claude(system_prompt, user_prompt, model="claude-3-7-sonnet-20250219", temperature=0):
     print("Querying Claude: ", model)
-
+    if model== 'claude-3-sonnet-20240229':
+        max_tokens = 4096
+    else:
+        max_tokens = 8192
     try:
         client = anthropic.Anthropic(
         # defaults to os.environ.get("ANTHROPIC_API_KEY")
         api_key=ANTHROPIC_API_KEY
         )
 
-        message = client.messages.create(
+        response = client.messages.create(
             model=model,
-            max_tokens=8192,
             system = system_prompt,
             messages=[
                 {"role": "user", "content": user_prompt}
             ],
+            max_tokens=max_tokens,
             temperature=temperature,
         )
-        out = message.content[0].text
-        return out
+        print(response.content[0].text)
+        return [response.content[0].text, response.usage]
+
     except Exception as e:
         print(f"Error: {e}")
         return None

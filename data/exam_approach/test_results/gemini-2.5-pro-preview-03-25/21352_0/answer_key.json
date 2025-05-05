@@ -1,0 +1,28 @@
+{
+    "exam_submission": {
+        "candidate_id": "EVALUATOR_KEY",
+        "exam_part": "basic_budgeting",
+        "budget_data": {
+            "q2_actual_costs": {
+                "fuel": 29700.0,
+                "warehouse_labour": 143250.0,
+                "driver_labour": 114750.0,
+                "vehicle_maintenance": 33000.0,
+                "packaging_materials": 16500.0,
+                "warehouse_lease": 30000.0,
+                "utilities": 6000.0,
+                "total_q2_actual": 373200.0
+            },
+            "q3_budgeted_costs": {
+                "fuel": 34848.0,
+                "warehouse_labour": 157575.0,
+                "driver_labour": 124650.0,
+                "vehicle_maintenance": 36300.0,
+                "packaging_materials": 18150.0,
+                "warehouse_lease": 33000.0,
+                "utilities": 6000.0,
+                "total_q3_budget": 410523.0
+            }
+        }
+    }
+}

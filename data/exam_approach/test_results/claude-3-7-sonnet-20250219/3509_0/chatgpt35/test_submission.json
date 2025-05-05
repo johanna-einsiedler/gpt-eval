@@ -1,1 +1,77 @@
-"{}"
+{
+    "task1": {
+        "incontestability_periods": {
+            "life_insurance": 24,
+            "health_insurance": 36,
+            "property_insurance": 12,
+            "auto_insurance": 6
+        },
+        "provisions_present": {
+            "life_insurance": {
+                "free_look_period": true,
+                "grace_period": true,
+                "waiver_of_premium": true,
+                "exclusions_for_pre_existing_conditions": false
+            },
+            "health_insurance": {
+                "free_look_period": true,
+                "grace_period": true,
+                "waiver_of_premium": false,
+                "exclusions_for_pre_existing_conditions": true
+            },
+            "property_insurance": {
+                "free_look_period": true,
+                "grace_period": true,
+                "waiver_of_premium": false,
+                "exclusions_for_pre_existing_conditions": false
+            },
+            "auto_insurance": {
+                "free_look_period": true,
+                "grace_period": true,
+                "waiver_of_premium": false,
+                "exclusions_for_pre_existing_conditions": false
+            }
+        },
+        "cancellation_provisions": {
+            "life_insurance": "5.1 CANCELLATION BY OWNER: The owner may cancel this policy at any time by returning it to the company with a written request for cancellation...",
+            "health_insurance": "5.1 CANCELLATION BY INSURED: The insured may cancel this policy at any time by written notice delivered or mailed to the company...",
+            "property_insurance": "6.1 CANCELLATION BY INSURED: The named insured may cancel this policy at any time by returning it to the company or by notifying the company in writing of the date cancellation is to take effect...",
+            "auto_insurance": "7.1 CANCELLATION BY INSURED: The named insured may cancel this policy at any time by returning it to the company or by notifying the company in writing of the date cancellation is to take effect..."
+        }
+    },
+    "task2": {
+        "non_compliant_provisions": [
+            {
+                "policy_section": "Section 1.5",
+                "regulatory_requirement": "Section D.3"
+            }
+        ],
+        "minimum_coverage_limits": {
+            "bodily_injury_per_person": 25000,
+            "bodily_injury_per_accident": 50000,
+            "property_damage": 25000
+        }
+    },
+    "task3": {
+        "scenario1": {
+            "provision_name": "Misstatement of Age or Sex",
+            "policy_section": "Section 1.7"
+        },
+        "scenario2": {
+            "provision_name": "Duties After Loss",
+            "policy_section": "Section 5.1"
+        },
+        "scenario3": {
+            "provision_name": "Adding Dependents",
+            "policy_section": "Section 6.3"
+        },
+        "scenario4": {
+            "provision_name": "Changes in Residence",
+            "policy_section": "Section 8.2"
+        },
+        "scenario5": {
+            "provision_name": "Change of Beneficiary",
+            "policy_section": "Section 3.4"
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "annual_growth_rates": [
+            7.3,
+            6.7
+        ],
+        "cost_categories_ranking": [
+            "Materials",
+            "Labor",
+            "Overhead",
+            "Equipment",
+            "Administrative"
+        ],
+        "projected_total_costs": 4270000,
+        "efficiency_score": 1.31
+    },
+    "task2": {
+        "total_variance": 130300,
+        "variance_percentages": [
+            5.0,
+            2.0,
+            4.0,
+            -7.0,
+            10.0
+        ],
+        "highest_variance_category": "Administrative",
+        "cost_saving_opportunity": 172500
+    },
+    "task3": {
+        "q1_budget": 264000,
+        "q2_budget": 336000,
+        "q3_budget": 360000,
+        "q4_budget": 240000,
+        "total_annual_budget": 1200000,
+        "allocation_percentages": [
+            42.0,
+            30.0,
+            15.0,
+            10.0,
+            3.0
+        ]
+    }
+}

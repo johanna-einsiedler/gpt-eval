@@ -281,8 +281,8 @@
       "max_score": 8,
       "details": {
         "submission": [
-          "hr",
-          "sales"
+          "sales",
+          "hr"
         ],
         "correct": [
           "sales"
@@ -297,8 +297,8 @@
       "details": {
         "increasing_types": {
           "submission": [
-            "Promotion Denial",
-            "Hiring Discrimination"
+            "Hiring Discrimination",
+            "Promotion Denial"
           ],
           "correct": [],
           "is_correct": false,

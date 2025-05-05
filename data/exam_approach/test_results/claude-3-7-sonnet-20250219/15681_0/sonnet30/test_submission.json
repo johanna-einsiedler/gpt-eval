@@ -1,0 +1,23 @@
+{
+    "candidate_id": "Claude-v1.0",
+    "task1": {
+        "diagram": "[S] --> [W] --> [M] --> [M] --> [M] --> [DC] <-- [C]\n                |    |    |    |    |\n                v    v    v    v    v\n                [R] [R] [R] [R]",
+        "entities_count": 10
+    },
+    "task2": {
+        "diagram": "Raw Materials --> Work-in-Progress --> Finished Goods --> Distribution Center\n\n   1200           800                 500                 1500  (Jan)\n   1000           850                 600                 1300  (Feb)\n   1100           900                 650                 1200  (Mar)\n    950           950                 700                 1100  (Apr)\n    850          1000                 750                 1000  (May)\n    800          1050                 800                  900  (Jun)\n    \\             /                    /                    /\n     \\___________/                    /                    /\n          \\                          /                    /\n           \\________________________/                    /\n                        \\                              /\n                         \\____________________________/",
+        "percentage_changes": {
+            "raw_materials": -33.3,
+            "work_in_progress": 31.3,
+            "finished_goods": 60.0,
+            "distribution_center": -40.0
+        }
+    },
+    "task3": {
+        "diagram": "Ingredient Mixing (500 u/hr, 65%) --> [!] Filling & Packaging (400 u/hr, 90%) --> Quality Testing (450 u/hr, 70%) --> Labeling (600 u/hr, 50%) --> Palletizing (550 u/hr, 60%)",
+        "max_throughput": 400,
+        "over_capacity_stages": [
+            "Filling & Packaging"
+        ]
+    }
+}

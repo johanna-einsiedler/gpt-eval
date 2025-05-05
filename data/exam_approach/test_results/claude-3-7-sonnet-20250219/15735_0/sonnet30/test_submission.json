@@ -1,0 +1,30 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "total_revenue": 4499.37,
+        "total_units_sold": 75,
+        "average_order_value": 59.99,
+        "best_selling_product": "Screen Protector"
+    },
+    "task2": {
+        "total_expenses": 3927.68,
+        "expense_categories": {
+            "advertising": 640.5,
+            "shipping": 437.5,
+            "product_costs": 1751.5,
+            "platform_fees": 181.24,
+            "other": 52.44
+        },
+        "gross_profit": 571.69,
+        "profit_margin_percentage": 12.71
+    },
+    "task3": {
+        "monthly_summary": {
+            "total_revenue": 4499.37,
+            "total_expenses": 3927.68,
+            "net_profit": 571.69,
+            "roi_percentage": 14.55,
+            "conversion_rate_percentage": 10.53
+        }
+    }
+}

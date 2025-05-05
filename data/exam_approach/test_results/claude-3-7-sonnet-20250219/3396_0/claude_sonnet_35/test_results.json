@@ -90,14 +90,14 @@
         {
           "change_id": "PC003",
           "correct_lines": [
-            "BL-CS-4003",
             "BL-CS-4002",
-            "BL-CS-4001"
+            "BL-CS-4001",
+            "BL-CS-4003"
           ],
           "submitted_lines": [
-            "BL-CS-4003",
             "BL-CS-4002",
-            "BL-CS-4001"
+            "BL-CS-4001",
+            "BL-CS-4003"
           ],
           "missing_lines": [],
           "extra_lines": [],
@@ -108,13 +108,13 @@
         {
           "change_id": "PC004",
           "correct_lines": [
-            "BL-RD-3004",
             "BL-RD-3022",
+            "BL-RD-3004",
             "BL-RD-3045"
           ],
           "submitted_lines": [
-            "BL-RD-3004",
             "BL-RD-3022",
+            "BL-RD-3004",
             "BL-RD-3045"
           ],
           "missing_lines": [],

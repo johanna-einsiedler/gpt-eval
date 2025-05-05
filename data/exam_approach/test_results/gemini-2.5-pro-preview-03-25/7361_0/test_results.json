@@ -1,0 +1,67 @@
+{
+    "submission_file": "answer_key.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "EVALUATOR_REFERENCE_KEY",
+    "exam_version_submitted": "BASIC_INTERVIEW_V1.0",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 8,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Could you please provide the full details from your DesignCorp W-2 form? Specifically, I need the amounts for Box 1 (Wages), Box 2 (Federal income tax withheld), Box 17 (State income tax withheld), and any codes and amounts listed in Box 12."
+            },
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "matched_submission_question_id": 2,
+                "matched_submission_question_text": "Regarding the cash payments for tutoring: Could you please confirm the exact total amount you received during the tax year based on your log? Also, did you have any expenses directly related to this tutoring work, such as supplies, software, or mileage driven for tutoring sessions?"
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 3,
+                "matched_submission_question_text": "You mentioned paying student loan interest. Did you receive a Form 1098-E (Student Loan Interest Statement) from your loan provider? If so, could you provide the exact amount of interest reported on that form?"
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "matched_submission_question_id": 4,
+                "matched_submission_question_text": "For your condo purchased in March: Could you please provide the amount of mortgage interest paid, which is usually reported on Form 1098 from your lender? Also, what was the exact amount of property taxes you paid during the tax year?"
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 5,
+                "matched_submission_question_text": "Regarding the clothing and items donated to Goodwill: You mentioned having the receipt, which is great. Could you please provide your estimate of the fair market value of those items at the time you donated them?"
+            },
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 6,
+                "matched_submission_question_text": "For the $100 cash donation to your church: Do you have bank records (like cancelled checks or bank statements showing the donations) or a written acknowledgement from the church confirming these contributions?"
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "matched_submission_question_id": 7,
+                "matched_submission_question_text": "You mentioned about $300 in out-of-pocket medical costs. To see if you might qualify for a medical expense deduction, could you provide a list of *all* your unreimbursed medical, dental, and vision expenses for the year? This includes co-pays, prescriptions, payments for doctor/dentist visits, and potentially health insurance premiums if paid with after-tax money, or mileage for medical travel."
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "matched_submission_question_id": 8,
+                "matched_submission_question_text": "You mentioned receiving a tax form from your bank for savings interest. Was this a Form 1099-INT? Could you please provide the amount of interest income reported on that form?"
+            }
+        ],
+        "missed_areas": []
+    },
+    "overall_score": 100.0
+}

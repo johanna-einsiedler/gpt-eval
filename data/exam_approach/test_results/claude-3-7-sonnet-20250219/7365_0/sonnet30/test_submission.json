@@ -1,0 +1,43 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "scenario_1": {
+        "base_fee": 175.0,
+        "time_charge": 131.25,
+        "complexity_adjustment": 35.0,
+        "additional_forms_fee": 85.0,
+        "total_fee": 426.25,
+        "calculation_notes": "Base fee for 1040 is $175. Time charge is 2.5 hours * $125/hr * 1.15 complexity multiplier (first-time client) - $175 = $131.25. Additional forms are Schedule A ($50) and Schedule B ($35). Total fee is the sum of all components."
+    },
+    "scenario_2": {
+        "base_fee": 650.0,
+        "time_charge": 375.0,
+        "complexity_adjustment": 256.25,
+        "additional_forms_fee": 285.0,
+        "total_fee": 1566.25,
+        "calculation_notes": "Base fee for 1120S is $650. Time charge is 4 hours * $125/hr * 1.25 complexity multiplier (prior year amendments) - $650 = $375. Additional forms are 3 Schedule K-1s ($225) and Form 4562 ($85). Complexity adjustment is $650 * 1.25 - $650 = $256.25."
+    },
+    "scenario_3": {
+        "base_fee": 175.0,
+        "time_charge": 195.0,
+        "complexity_adjustment": 70.0,
+        "additional_forms_fee": 310.0,
+        "total_fee": 750.0,
+        "calculation_notes": "Base fee for 1040 is $175. Time charge is 3 hours * $125/hr * 1.4 complexity multiplier (2 state returns) - $175 = $195. Additional forms are Schedule C ($125), Schedule SE ($40), and Form 8829 ($45). Complexity adjustment is $175 * 1.4 - $175 = $70."
+    },
+    "scenario_4": {
+        "base_fee": 550.0,
+        "time_charge": 618.75,
+        "complexity_adjustment": 192.5,
+        "additional_forms_fee": 470.0,
+        "total_fee": 1831.25,
+        "calculation_notes": "Base fee for 1065 is $550. Time charge is 5.5 hours * $125/hr * 1.35 complexity multiplier (complex asset dispositions) - $550 = $618.75. Additional forms are 5 Schedule K-1s ($375) and Form 4797 ($95). Complexity adjustment is $550 * 1.35 - $550 = $192.50."
+    },
+    "scenario_5": {
+        "base_fee": 175.0,
+        "time_charge": 306.25,
+        "complexity_adjustment": 52.5,
+        "additional_forms_fee": 375.0,
+        "total_fee": 908.75,
+        "calculation_notes": "Base fee for 1040 is $175. Time charge is 3.5 hours * $125/hr * 1.3 complexity multiplier (foreign income) - $175 = $306.25. Additional forms are Schedule D ($75) and Schedule E for 3 properties ($300). Complexity adjustment is $175 * 1.3 - $175 = $52.50."
+    }
+}

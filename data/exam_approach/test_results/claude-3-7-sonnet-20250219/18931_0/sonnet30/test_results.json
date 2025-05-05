@@ -1,0 +1,79 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "overall_score": 90.0,
+  "total_points": 90,
+  "max_points": 100,
+  "letters": {
+    "donor_4_letter": {
+      "points": 29,
+      "max_points": 33,
+      "feedback": [
+        "Missing specific donation date"
+      ],
+      "required_elements": {
+        "points": 13,
+        "max_points": 15
+      },
+      "personalization": {
+        "points": 8,
+        "max_points": 10
+      },
+      "writing_quality": {
+        "points": 8,
+        "max_points": 8
+      },
+      "critical_failures": [
+        "Missing specific donation date"
+      ]
+    },
+    "donor_7_letter": {
+      "points": 31,
+      "max_points": 33,
+      "feedback": [
+        "Missing specific donation date"
+      ],
+      "required_elements": {
+        "points": 13,
+        "max_points": 15
+      },
+      "personalization": {
+        "points": 10,
+        "max_points": 10
+      },
+      "writing_quality": {
+        "points": 8,
+        "max_points": 8
+      },
+      "critical_failures": [
+        "Missing specific donation date"
+      ]
+    },
+    "donor_12_letter": {
+      "points": 29,
+      "max_points": 33,
+      "feedback": [
+        "Missing specific donation date"
+      ],
+      "required_elements": {
+        "points": 11,
+        "max_points": 15
+      },
+      "personalization": {
+        "points": 10,
+        "max_points": 10
+      },
+      "writing_quality": {
+        "points": 8,
+        "max_points": 8
+      },
+      "critical_failures": [
+        "Missing specific donation date"
+      ]
+    }
+  },
+  "json_format": {
+    "points": 1,
+    "max_points": 1
+  },
+  "status": "Not passing - Critical requirements not met"
+}

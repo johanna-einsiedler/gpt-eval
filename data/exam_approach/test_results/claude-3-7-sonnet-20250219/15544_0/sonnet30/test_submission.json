@@ -1,0 +1,76 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "total_participants_per_event": {
+            "E001": 10,
+            "E002": 22,
+            "E003": 37,
+            "E004": 50,
+            "E005": 60
+        },
+        "attendance_rates": {
+            "E001": 0.92,
+            "E002": 0.93,
+            "E003": 0.92,
+            "E004": 0.92,
+            "E005": 0.92
+        }
+    },
+    "task2": {
+        "highest_attendance_event": "Meditation Sessions",
+        "average_attendance_rate": 0.92,
+        "highest_participation_week": 1,
+        "highest_participation_department": "Operations"
+    },
+    "task3": {
+        "week_over_week_changes": {
+            "E001": [
+                0.0,
+                0.0,
+                -0.09,
+                0.09,
+                0.0,
+                0.09,
+                0.0
+            ],
+            "E002": [
+                0.0,
+                -0.09,
+                0.09,
+                0.0,
+                -0.09,
+                0.09,
+                0.0
+            ],
+            "E003": [
+                0.0,
+                -0.06,
+                0.0,
+                -0.06,
+                -0.06,
+                0.0,
+                -0.06
+            ],
+            "E004": [
+                0.0,
+                -0.08,
+                0.0,
+                0.0,
+                -0.08,
+                0.0,
+                0.0
+            ],
+            "E005": [
+                0.0,
+                0.0,
+                -0.08,
+                0.08,
+                -0.08,
+                0.0,
+                0.0
+            ]
+        },
+        "most_consistent_event": "Morning Yoga",
+        "age_group_with_highest_attendance": "30-39"
+    }
+}

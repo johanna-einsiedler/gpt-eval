@@ -80,12 +80,12 @@
         "cost_effective_programs": {
           "correct": "partial",
           "submitted": [
-            "Fitness Challenge",
-            "Smoking Cessation"
+            "Smoking Cessation",
+            "Fitness Challenge"
           ],
           "expected": [
-            "Fitness Challenge",
-            "Stress Management"
+            "Stress Management",
+            "Fitness Challenge"
           ]
         }
       }

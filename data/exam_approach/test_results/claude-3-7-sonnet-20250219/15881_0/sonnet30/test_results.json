@@ -1,0 +1,193 @@
+{
+  "overall_score": 24.0,
+  "total_points_earned": 24.0,
+  "total_points_possible": 100,
+  "sections": {
+    "data_analysis": {
+      "points_earned": 6.0,
+      "points_possible": 30,
+      "details": {
+        "excess_inventory_skus": {
+          "points_earned": 1.0,
+          "points_possible": 10,
+          "correct_answer": [
+            "F601",
+            "F602",
+            "F603",
+            "J001",
+            "J002",
+            "J003",
+            "D401",
+            "D402",
+            "D403",
+            "E501"
+          ],
+          "submitted_answer": [
+            "B203",
+            "E501",
+            "E502",
+            "E503",
+            "H801",
+            "H803",
+            "A103",
+            "B201",
+            "A101",
+            "B202"
+          ],
+          "comments": "Identified 1 out of 10 correct SKUs."
+        },
+        "high_days_supply_count": {
+          "points_earned": 0,
+          "points_possible": 5,
+          "correct_answer": 10,
+          "submitted_answer": 7,
+          "comments": "Incorrect count"
+        },
+        "obsolete_inventory_skus": {
+          "points_earned": 5.0,
+          "points_possible": 5,
+          "correct_answer": [
+            "F601",
+            "F602",
+            "F603"
+          ],
+          "submitted_answer": [
+            "F601",
+            "F602",
+            "F603"
+          ],
+          "comments": "Identified 3 out of 3 correct obsolete SKUs."
+        },
+        "total_excess_value": {
+          "points_earned": 0,
+          "points_possible": 10,
+          "correct_answer": 159662.5,
+          "submitted_answer": 193837.5,
+          "comments": "More than 10% deviation from correct value"
+        }
+      }
+    },
+    "root_causes": {
+      "points_earned": 12,
+      "points_possible": 30,
+      "details": {
+        "scenario1": {
+          "points_earned": 0,
+          "points_possible": 6,
+          "correct_answer": "A",
+          "submitted_answer": "B",
+          "comments": "Incorrect"
+        },
+        "scenario2": {
+          "points_earned": 0,
+          "points_possible": 6,
+          "correct_answer": "B",
+          "submitted_answer": "A",
+          "comments": "Incorrect"
+        },
+        "scenario3": {
+          "points_earned": 0,
+          "points_possible": 6,
+          "correct_answer": "C",
+          "submitted_answer": "E",
+          "comments": "Incorrect"
+        },
+        "scenario4": {
+          "points_earned": 6,
+          "points_possible": 6,
+          "correct_answer": "D",
+          "submitted_answer": "D",
+          "comments": "Correct"
+        },
+        "scenario5": {
+          "points_earned": 6,
+          "points_possible": 6,
+          "correct_answer": "C",
+          "submitted_answer": "C",
+          "comments": "Correct"
+        }
+      }
+    },
+    "reduction_strategies": {
+      "points_earned": 6.0,
+      "points_possible": 40,
+      "details": {
+        "potential_value_reduction": {
+          "points_earned": 0,
+          "points_possible": 10,
+          "correct_answer": 79831.25,
+          "submitted_answer": 92400.0,
+          "comments": "More than 10% deviation from correct value"
+        },
+        "top_opportunity_skus": {
+          "points_earned": 0.0,
+          "points_possible": 10,
+          "correct_answer": [
+            "D402",
+            "D401",
+            "D403",
+            "F601",
+            "F602"
+          ],
+          "submitted_answer": [
+            "B203",
+            "E501",
+            "E502",
+            "E503",
+            "H801"
+          ],
+          "comments": "Identified 0 out of 5 correct opportunity SKUs."
+        },
+        "slow_moving_strategies": {
+          "points_earned": 6,
+          "points_possible": 15,
+          "details": {
+            "F601": {
+              "points_earned": 0,
+              "points_possible": 3,
+              "correct_answer": "D",
+              "submitted_answer": "E",
+              "comments": "Incorrect"
+            },
+            "F602": {
+              "points_earned": 3,
+              "points_possible": 3,
+              "correct_answer": "E",
+              "submitted_answer": "E",
+              "comments": "Correct"
+            },
+            "F603": {
+              "points_earned": 3,
+              "points_possible": 3,
+              "correct_answer": "H",
+              "submitted_answer": "H",
+              "comments": "Correct"
+            },
+            "J001": {
+              "points_earned": 0,
+              "points_possible": 3,
+              "correct_answer": "B",
+              "submitted_answer": "A",
+              "comments": "Incorrect"
+            },
+            "J002": {
+              "points_earned": 0,
+              "points_possible": 3,
+              "correct_answer": "B",
+              "submitted_answer": "A",
+              "comments": "Incorrect"
+            }
+          },
+          "comments": "Correctly matched 2.0 out of 5 strategies."
+        },
+        "carrying_cost_savings": {
+          "points_earned": 0,
+          "points_possible": 5,
+          "correct_answer": 21553.44,
+          "submitted_answer": 24300.0,
+          "comments": "More than 10% deviation from correct value"
+        }
+      }
+    }
+  }
+}

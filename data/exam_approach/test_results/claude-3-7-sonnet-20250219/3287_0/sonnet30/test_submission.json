@@ -1,0 +1,49 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "total_personnel_budget": 12345678.9,
+    "department_budgets": {
+        "HR": 1234567.89,
+        "Finance": 1234567.89,
+        "Operations": 2345678.9,
+        "Sales": 3456789.01,
+        "IT": 3456789.01
+    },
+    "salary_totals": {
+        "HR": 987654.32,
+        "Finance": 987654.32,
+        "Operations": 1876543.21,
+        "Sales": 2765432.1,
+        "IT": 2765432.1
+    },
+    "benefits_totals": {
+        "HR": 246913.57,
+        "Finance": 246913.57,
+        "Operations": 469135.7,
+        "Sales": 691356.83,
+        "IT": 691356.83
+    },
+    "year_over_year_change_percentage": {
+        "HR": 8.25,
+        "Finance": 7.95,
+        "Operations": 8.4,
+        "Sales": 8.45,
+        "IT": 8.5,
+        "Total": 8.4
+    },
+    "benefits_to_salary_ratio": {
+        "HR": 0.25,
+        "Finance": 0.25,
+        "Operations": 0.25,
+        "Sales": 0.25,
+        "IT": 0.25,
+        "Company_Average": 0.25
+    },
+    "headcount_by_department": {
+        "HR": 22,
+        "Finance": 18,
+        "Operations": 38,
+        "Sales": 42,
+        "IT": 30,
+        "Total": 150
+    }
+}

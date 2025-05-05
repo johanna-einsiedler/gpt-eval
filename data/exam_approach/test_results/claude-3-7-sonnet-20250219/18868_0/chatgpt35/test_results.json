@@ -9,12 +9,8 @@
         "expected_count": 7,
         "matches": [
           [
-            "strong written and verbal communication skills",
-            "strong written and verbal communication skills"
-          ],
-          [
-            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
-            "experience with social media platforms for business"
+            "proficiency in microsoft office suite (word, excel, powerpoint)",
+            "proficiency in microsoft office suite (word, excel, powerpoint)"
           ],
           [
             "bachelor's degree in marketing, communications, business, or related field",
@@ -25,8 +21,12 @@
             "minimum 2 years of experience in a marketing role"
           ],
           [
-            "proficiency in microsoft office suite (word, excel, powerpoint)",
-            "proficiency in microsoft office suite (word, excel, powerpoint)"
+            "strong written and verbal communication skills",
+            "strong written and verbal communication skills"
+          ],
+          [
+            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
+            "experience with social media platforms for business"
           ]
         ]
       }
@@ -39,12 +39,12 @@
         "expected_count": 6,
         "matches": [
           [
-            "experience with content management systems (wordpress)",
-            "experience with content management systems (wordpress)"
-          ],
-          [
             "experience with marketing automation tools (hubspot, marketo, or similar)",
             "experience with marketing automation tools (hubspot, marketo, or similar)"
+          ],
+          [
+            "experience with content management systems (wordpress)",
+            "experience with content management systems (wordpress)"
           ],
           [
             "knowledge of graphic design software (adobe creative suite)",
@@ -118,17 +118,17 @@
             "C001"
           ],
           "common_candidates": [
-            "C001",
             "C006",
+            "C001",
             "C003"
           ]
         },
         "strengths_evaluation": {
-          "C001": {
+          "C006": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
-          "C006": {
+          "C001": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },

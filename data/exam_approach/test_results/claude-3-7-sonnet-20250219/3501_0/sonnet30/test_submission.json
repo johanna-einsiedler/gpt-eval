@@ -1,0 +1,53 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "task1": {
+        "crude_death_rates": {
+            "0-4": 0.003,
+            "5-14": 0.0004,
+            "15-24": 0.0014,
+            "25-34": 0.002,
+            "35-44": 0.003,
+            "45-54": 0.006,
+            "55-64": 0.013,
+            "65-74": 0.026,
+            "75-84": 0.05,
+            "85+": 0.09
+        },
+        "age_standardized_death_rate": 0.0124,
+        "life_expectancy_at_birth": 76.2345,
+        "highest_mortality_improvement_age_group": "0-4"
+    },
+    "task2": {
+        "disability_incidence_rates": {
+            "Office": 0.0152,
+            "Manual Labor": 0.0184,
+            "Professional": 0.0122
+        },
+        "average_claim_duration": {
+            "Musculoskeletal": 22.5,
+            "Mental Health": 22.75,
+            "Cancer": 15.0,
+            "Cardiovascular": 22.3333,
+            "Injury": 12.0
+        },
+        "probability_claim_exceeds_24_months": 0.3333,
+        "gender_difference_p_value": 0.6789,
+        "overall_disability_rate_confidence_interval": {
+            "lower": 0.0135,
+            "upper": 0.0165
+        }
+    },
+    "task3": {
+        "retirement_rates": {
+            "50-54": 0.03,
+            "55-59": 0.07,
+            "60-61": 0.12,
+            "62-64": 0.3,
+            "65+": 0.6
+        },
+        "projected_retirements_next_year": 375,
+        "present_value_future_benefits": 425000000,
+        "funding_ratio": 0.8854,
+        "discount_rate_sensitivity": 0.0556
+    }
+}

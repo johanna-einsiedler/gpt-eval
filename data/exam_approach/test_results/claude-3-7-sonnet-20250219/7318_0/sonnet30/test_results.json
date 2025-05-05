@@ -1,0 +1,541 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "overall_score": 71.0,
+  "passed": true,
+  "performance_level": "Satisfactory",
+  "total_points": 71,
+  "total_possible": 100,
+  "critical_elements_passed": true,
+  "critical_elements_details": {
+    "correct_approval_thresholds": {
+      "passed": true,
+      "note": "Correctly identified 5/5 positions' independent approval thresholds (minimum 3 required)"
+    },
+    "correct_authorizations": {
+      "passed": true,
+      "note": "Correctly determined proper authorization for 7/10 transactions (minimum 7 required)"
+    },
+    "correct_governance_issues": {
+      "passed": true,
+      "note": "Correctly identified 7/10 governance issues as present or not present (minimum 7 required)"
+    }
+  },
+  "section_scores": {
+    "section1_authority_identification": {
+      "score": 18,
+      "max_score": 30,
+      "percentage": 60.0
+    },
+    "section2_compliance_assessment": {
+      "score": 32,
+      "max_score": 40,
+      "percentage": 80.0
+    },
+    "section3_governance_gap_analysis": {
+      "score": 21,
+      "max_score": 30,
+      "percentage": 70.0
+    }
+  },
+  "detailed_results": {
+    "section1_authority_identification": {
+      "CEO": {
+        "score": 4,
+        "max_score": 6,
+        "details": {
+          "independent_approval_threshold": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          },
+          "secondary_approval_threshold": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: 1000000, Got: 5000000"
+          },
+          "board_notification_requirement": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "CFO": {
+        "score": 4,
+        "max_score": 6,
+        "details": {
+          "independent_approval_threshold": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          },
+          "secondary_approval_threshold": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: 500000, Got: 3000000"
+          },
+          "board_notification_requirement": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "Treasurer": {
+        "score": 2,
+        "max_score": 6,
+        "details": {
+          "independent_approval_threshold": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          },
+          "secondary_approval_threshold": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: 250000, Got: 1000000"
+          },
+          "board_notification_requirement": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: 1500000, Got: 0"
+          }
+        }
+      },
+      "Controller": {
+        "score": 4,
+        "max_score": 6,
+        "details": {
+          "independent_approval_threshold": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          },
+          "secondary_approval_threshold": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: 100000, Got: 500000"
+          },
+          "board_notification_requirement": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "Department_Heads": {
+        "score": 4,
+        "max_score": 6,
+        "details": {
+          "independent_approval_threshold": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          },
+          "secondary_approval_threshold": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: 0, Got: 250000"
+          },
+          "board_notification_requirement": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      }
+    },
+    "section2_compliance_assessment": {
+      "TX-2023-0127-A": {
+        "score": 4,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "TX-2023-0205-B": {
+        "score": 3,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 0,
+            "max_score": 1,
+            "correct": false,
+            "note": "Incorrect value. Expected: No, Got: Yes"
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "TX-2023-0212-C": {
+        "score": 2,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 0,
+            "max_score": 1,
+            "correct": false,
+            "note": "Incorrect value. Expected: No, Got: Yes"
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 1,
+            "max_score": 2,
+            "correct": false,
+            "note": "Partial credit: partially correct approval level. Expected: CFO plus Executive Committee notification, Got: CFO"
+          }
+        }
+      },
+      "TX-2023-0220-D": {
+        "score": 4,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "TX-2023-0228-E": {
+        "score": 2,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: Above Treasurer authority, Got: Treasurer"
+          }
+        }
+      },
+      "TX-2023-0305-F": {
+        "score": 4,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "TX-2023-0312-G": {
+        "score": 4,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "TX-2023-0318-H": {
+        "score": 4,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "TX-2023-0325-I": {
+        "score": 4,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "TX-2023-0330-J": {
+        "score": 1,
+        "max_score": 4,
+        "details": {
+          "properly_authorized": {
+            "score": 0,
+            "max_score": 1,
+            "correct": false,
+            "note": "Incorrect value. Expected: No, Got: Yes"
+          },
+          "authority_reference": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "approval_level_required": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: Above Treasurer authority, Got: Treasurer plus CFO"
+          }
+        }
+      }
+    },
+    "section3_governance_gap_analysis": {
+      "insufficient_secondary_approval": {
+        "score": 0,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 0,
+            "max_score": 1,
+            "correct": false,
+            "note": "Incorrect value. Expected: Yes, Got: No"
+          },
+          "reference": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: February 10, 2023 Executive Committee Meeting, Resolution EC-2023-02, Got: "
+          }
+        }
+      },
+      "exceeded_authority_limits": {
+        "score": 0,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 0,
+            "max_score": 1,
+            "correct": false,
+            "note": "Incorrect value. Expected: Yes, Got: No"
+          },
+          "reference": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: March 5, 2023 Finance Committee Meeting, Resolution FC-2023-02, Got: "
+          }
+        }
+      },
+      "missing_board_notification": {
+        "score": 3,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "reference": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "improper_committee_authorization": {
+        "score": 3,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "reference": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "conflicting_authority_delegations": {
+        "score": 0,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 0,
+            "max_score": 1,
+            "correct": false,
+            "note": "Incorrect value. Expected: Yes, Got: No"
+          },
+          "reference": {
+            "score": 0,
+            "max_score": 2,
+            "correct": false,
+            "note": "Incorrect value. Expected: February 10, 2023 Executive Committee Meeting, Resolution EC-2023-01, Got: "
+          }
+        }
+      },
+      "temporary_authority_not_properly_terminated": {
+        "score": 3,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "reference": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "retroactive_approval": {
+        "score": 3,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "reference": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "absent_quorum_for_key_decisions": {
+        "score": 3,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "reference": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "delegation_without_reporting_requirements": {
+        "score": 3,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "reference": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      },
+      "special_project_authority_without_sunset_provision": {
+        "score": 3,
+        "max_score": 3,
+        "details": {
+          "present": {
+            "score": 1,
+            "max_score": 1,
+            "correct": true
+          },
+          "reference": {
+            "score": 2,
+            "max_score": 2,
+            "correct": true
+          }
+        }
+      }
+    }
+  }
+}

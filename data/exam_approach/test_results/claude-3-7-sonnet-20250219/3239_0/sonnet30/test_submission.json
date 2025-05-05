@@ -1,0 +1,31 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "budget_variance_total": 10450.0,
+        "highest_overspend_category": "Social Media"
+    },
+    "task2": {
+        "response_rate": 0.0923,
+        "cost_per_acquisition": 21.58,
+        "roi": 2.56
+    },
+    "task3": {
+        "best_performing_channel": "Channel2 (Search)",
+        "worst_performing_channel": "Channel4 (Display)"
+    },
+    "task4": {
+        "benchmark_comparison": {
+            "ctr_variance": -0.67,
+            "cpa_variance": 0.08,
+            "roi_variance": 0.02
+        }
+    },
+    "task5": {
+        "budget_reallocation": {
+            "channel1": 25000,
+            "channel2": 35000,
+            "channel3": 15000,
+            "channel4": 25000
+        }
+    }
+}

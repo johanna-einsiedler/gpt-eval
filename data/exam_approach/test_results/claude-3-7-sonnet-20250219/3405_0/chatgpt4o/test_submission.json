@@ -1,1 +1,74 @@
-"{}"
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "average_growth_rates": {
+            "Personnel": 0.06,
+            "Equipment": 0.12,
+            "Supplies": 0.04,
+            "Training": 0.13,
+            "Facilities": 0.05,
+            "IT Services": 0.17,
+            "Travel": -0.07,
+            "Consulting": 0.13,
+            "Marketing": 0.13,
+            "Miscellaneous": 0.05
+        },
+        "projected_costs": {
+            "Personnel": 501406,
+            "Equipment": 247940,
+            "Supplies": 96533,
+            "Training": 92914,
+            "Facilities": 173644,
+            "IT Services": 153387,
+            "Travel": 35796,
+            "Consulting": 171534,
+            "Marketing": 78620,
+            "Miscellaneous": 40517,
+            "Total": 1591291
+        },
+        "top_growth_categories": [
+            "IT Services",
+            "Training",
+            "Consulting"
+        ]
+    },
+    "task2": {
+        "total_resources_needed": 1020000,
+        "departmental_allocation": {
+            "Operations": 408000,
+            "Administration": 153000,
+            "Development": 306000,
+            "Support": 153000
+        },
+        "cost_per_unit": {
+            "Operations": 163.2,
+            "Administration": 153.0,
+            "Development": 170.0,
+            "Support": 127.5
+        },
+        "resource_constraints": [
+            "Technology",
+            "Infrastructure"
+        ]
+    },
+    "task3": {
+        "significant_variances": {
+            "Personnel": {
+                "budgeted": 496676,
+                "actual_projected": 513333,
+                "variance_percent": 0.03
+            },
+            "Equipment": {
+                "budgeted": 254581,
+                "actual_projected": 306667,
+                "variance_percent": 0.2
+            }
+        },
+        "additional_resources_needed": 0,
+        "recommended_adjustments": {
+            "Equipment": 80013,
+            "Personnel": 0,
+            "Training": 0
+        }
+    }
+}

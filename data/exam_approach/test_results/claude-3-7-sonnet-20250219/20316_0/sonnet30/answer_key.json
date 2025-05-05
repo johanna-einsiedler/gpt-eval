@@ -1,0 +1,31 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "task1": {
+        "cost_per_participant": 117.5,
+        "highest_cost_program": "Smoking Cessation",
+        "lowest_cost_program": "Ergonomics Training",
+        "participation_threshold_programs": [
+            "Smoking Cessation"
+        ]
+    },
+    "task2": {
+        "program_roi_values": {
+            "Fitness Challenge": 0.47,
+            "Nutrition Workshop": 0.1,
+            "Stress Management": 0.66,
+            "Weight Loss Program": 0.1,
+            "Smoking Cessation": 0.96
+        },
+        "highest_roi_program": "Smoking Cessation",
+        "cost_effective_programs": [
+            "Fitness Challenge",
+            "Stress Management"
+        ]
+    },
+    "task3": {
+        "quarterly_cost_trend": -3.92,
+        "projected_annual_savings": 30000,
+        "cost_reduction_percentage": 14.29,
+        "break_even_month": 12
+    }
+}

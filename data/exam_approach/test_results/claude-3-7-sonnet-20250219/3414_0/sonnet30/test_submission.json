@@ -1,0 +1,44 @@
+{
+    "candidate_name": "Claude-3_7-Sonnet",
+    "task1": {
+        "monthly_payment": 1342.05
+    },
+    "task2": {
+        "month_1": {
+            "payment_number": 1,
+            "payment_amount": 1342.05,
+            "principal_portion": 277.78,
+            "interest_portion": 1064.27,
+            "remaining_balance": 249722.22
+        },
+        "month_6": {
+            "payment_number": 6,
+            "payment_amount": 1342.05,
+            "principal_portion": 293.89,
+            "interest_portion": 1048.16,
+            "remaining_balance": 247485.93
+        },
+        "month_12": {
+            "payment_number": 12,
+            "payment_amount": 1342.05,
+            "principal_portion": 311.32,
+            "interest_portion": 1030.73,
+            "remaining_balance": 245174.61
+        }
+    },
+    "task3": {
+        "new_loan_term_years": 22,
+        "new_loan_term_months": 6,
+        "total_interest_saved": 37924.9,
+        "balance_after_5_years": 211249.1
+    },
+    "task4": {
+        "monthly_payment": 843.88,
+        "balloon_payment_amount": 134375.52
+    },
+    "task5": {
+        "new_monthly_payment": 1432.25,
+        "monthly_payment_savings": 167.75,
+        "breakeven_months": 27
+    }
+}

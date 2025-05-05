@@ -1,0 +1,40 @@
+{
+  "overall_score": 97.0,
+  "details": {
+    "structure_and_validity": {
+      "score": 10,
+      "feedback": [
+        "Base structure (candidate_id, level, risk_register list) is valid."
+      ]
+    },
+    "risk_identification": {
+      "score": 25,
+      "feedback": [
+        "Sufficient risks identified (7 >= 4).",
+        "Sufficient key risks identified (6 >= 2). Mapped IDs: ['KeyRisk_Budget', 'KeyRisk_DeploymentTime', 'KeyRisk_UAT', 'KeyRisk_DBA', 'KeyRisk_AppBugs', 'KeyRisk_TechLead']"
+      ]
+    },
+    "risk_analysis": {
+      "score": 22.0,
+      "feedback": [
+        "L/I Reasonableness: 4/5 mapped risks assessed reasonably (+/- 1 level).",
+        "Risk 1 (Mapped to KeyRisk_TechLead): L/I assessment deviates significantly from key. Candidate L='high'(3), I='medium'(2). Key L='Low'(1), I='Medium'(2).",
+        "Score Calculation: 7/7 risks calculated score correctly based on own L*I."
+      ]
+    },
+    "prioritization_and_response": {
+      "score": 30.0,
+      "feedback": [
+        "Top Risk Identification: 4/4 top risks had response fields populated.",
+        "Null Handling: 3/3 non-top risks correctly had null response fields.",
+        "Response Logic: 4/4 top risks had valid response type, description, and owner."
+      ]
+    },
+    "formatting_adherence": {
+      "score": 10.0,
+      "feedback": [
+        "Formatting: All checked fields adhere to specified formats and constraints."
+      ]
+    }
+  }
+}

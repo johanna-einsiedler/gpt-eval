@@ -1,0 +1,134 @@
+{
+  "overall_score": 53.0,
+  "total_points": 53.0,
+  "max_points": 100,
+  "client1": {
+    "budget_analysis": {
+      "income_expense_calculations": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Income diff: $0.00, Expense diff: $200.00"
+      },
+      "expense_reductions": {
+        "score": 0,
+        "max_score": 5,
+        "notes": "Discretionary income difference: $200.00"
+      },
+      "category_allocations": {
+        "score": 4.0,
+        "max_score": 5,
+        "notes": "savings: $50.00 vs expected ~$100.00, other: $50.00 vs expected ~$100.00"
+      },
+      "balanced_budget": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Budget is balanced"
+      }
+    },
+    "debt_management": {
+      "debt_prioritization": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Correct prioritization"
+      },
+      "monthly_payment": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Payment $690.00 is within acceptable range ($600.00-$750.00)"
+      },
+      "payoff_timeline": {
+        "score": 0,
+        "max_score": 5,
+        "notes": "Timeline 24 months is outside acceptable range (12-18 months)"
+      },
+      "mathematical_accuracy": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Total debt calculation accurate"
+      }
+    },
+    "savings_plan": {
+      "emergency_fund_target": {
+        "score": 0,
+        "max_score": 3,
+        "notes": "Target $10140.00 is outside acceptable range ($6000.00-$7000.00)"
+      },
+      "monthly_contribution": {
+        "score": 0,
+        "max_score": 3,
+        "notes": "Contribution $50.00 is outside acceptable range ($75.00-$150.00)"
+      },
+      "timeline_calculation": {
+        "score": 0,
+        "max_score": 4,
+        "notes": "Timeline calculation difference: 152 months"
+      }
+    },
+    "total_score": 29.0
+  },
+  "client2": {
+    "budget_analysis": {
+      "income_expense_calculations": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Income diff: $0.00, Expense diff: $645.00"
+      },
+      "expense_reductions": {
+        "score": 0,
+        "max_score": 5,
+        "notes": "Discretionary income difference: $645.00"
+      },
+      "category_allocations": {
+        "score": 4.0,
+        "max_score": 5,
+        "notes": "food: $450.00 vs expected ~$600.00, savings: $200.00 vs expected ~$400.00"
+      },
+      "balanced_budget": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Budget is balanced"
+      }
+    },
+    "debt_management": {
+      "debt_prioritization": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Correct prioritization"
+      },
+      "monthly_payment": {
+        "score": 0,
+        "max_score": 5,
+        "notes": "Payment $895.00 is outside acceptable range ($1300.00-$1700.00)"
+      },
+      "payoff_timeline": {
+        "score": 0,
+        "max_score": 5,
+        "notes": "Timeline 56 months is outside acceptable range (30-42 months)"
+      },
+      "mathematical_accuracy": {
+        "score": 5,
+        "max_score": 5,
+        "notes": "Total debt calculation accurate"
+      }
+    },
+    "savings_plan": {
+      "emergency_fund_target": {
+        "score": 0,
+        "max_score": 3,
+        "notes": "Target $13770.00 is outside acceptable range ($7000.00-$8500.00)"
+      },
+      "monthly_contribution": {
+        "score": 0,
+        "max_score": 3,
+        "notes": "Contribution $200.00 is outside acceptable range ($300.00-$500.00)"
+      },
+      "timeline_calculation": {
+        "score": 0,
+        "max_score": 4,
+        "notes": "Timeline calculation difference: 61 months"
+      }
+    },
+    "total_score": 24.0
+  },
+  "rating": "Fail"
+}

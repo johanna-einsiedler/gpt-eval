@@ -1,0 +1,138 @@
+{
+    "candidate_file": "answer_key.json",
+    "answer_key_file": "answer_key.json",
+    "overall_score": 100.0,
+    "total_score": 100,
+    "max_total_points": 100,
+    "scoring_details": {
+        "formatting": {
+            "total_score": 10,
+            "max_points": 10,
+            "details": {
+                "valid_json_structure": {
+                    "score": 3,
+                    "max": 3,
+                    "comment": "JSON loaded successfully."
+                },
+                "basic_structure_compliance": {
+                    "score": 3,
+                    "max": 3,
+                    "comment": "All required top-level keys present with correct types and basic values."
+                },
+                "array_ordering": {
+                    "score": 3,
+                    "max": 3,
+                    "comment": "All arrays correctly ordered."
+                },
+                "file_naming": {
+                    "score": 1,
+                    "max": 1,
+                    "comment": "Assumed correct filename used based on script execution."
+                }
+            }
+        },
+        "prioritization": {
+            "total_score": 35,
+            "max_points": 35,
+            "details": {
+                "correctly_prioritized": [
+                    "T01 (Prio: 1)",
+                    "T07 (Prio: 2)",
+                    "T04 (Prio: 3)",
+                    "T03 (Prio: 5)",
+                    "T12 (Prio: 6)",
+                    "T06 (Prio: 10)",
+                    "T08 (Prio: 11)",
+                    "T09 (Prio: 12)",
+                    "T11 (Prio: 4)",
+                    "T02 (Prio: 7)",
+                    "T05 (Prio: 8)",
+                    "T10 (Prio: 9)"
+                ],
+                "incorrectly_prioritized": [],
+                "summary": "Correctly prioritized 12 out of 12 tasks."
+            }
+        },
+        "allocation": {
+            "total_score": 40,
+            "max_points": 40,
+            "details": {
+                "resource_assignment": {
+                    "score": 20,
+                    "max": 20,
+                    "details": {
+                        "correct": [
+                            "T01 -> R01",
+                            "T07 -> R02",
+                            "T04 -> R02",
+                            "T03 -> R03",
+                            "T12 -> R03",
+                            "T06 -> R03",
+                            "T08 -> R01",
+                            "T09 -> R01"
+                        ],
+                        "incorrect": []
+                    }
+                },
+                "unallocated_identification": {
+                    "score": 10,
+                    "max": 10,
+                    "details": {
+                        "correct": [
+                            "T02",
+                            "T10",
+                            "T05",
+                            "T11"
+                        ],
+                        "incorrect": [],
+                        "missed": [],
+                        "wrongly_marked": []
+                    }
+                },
+                "unallocated_reason": {
+                    "score": 10,
+                    "max": 10,
+                    "details": {
+                        "correct": [
+                            "T02 (Reason: RESOURCE_OVERLOADED)",
+                            "T10 (Reason: RESOURCE_OVERLOADED)",
+                            "T05 (Reason: RESOURCE_OVERLOADED)",
+                            "T11 (Reason: NO_MATCHING_EXPERTISE)"
+                        ],
+                        "incorrect": []
+                    }
+                }
+            }
+        },
+        "resource_summary": {
+            "total_score": 15,
+            "max_points": 15,
+            "details": {
+                "total_allocated_days": {
+                    "score": 9,
+                    "max": 9,
+                    "details": {
+                        "correct": [
+                            "R01 (Days: 15)",
+                            "R02 (Days: 16)",
+                            "R03 (Days: 15)"
+                        ],
+                        "incorrect": []
+                    }
+                },
+                "workload_status": {
+                    "score": 6,
+                    "max": 6,
+                    "details": {
+                        "correct": [
+                            "R01 (Status: Under-allocated)",
+                            "R02 (Status: Within Capacity)",
+                            "R03 (Status: Within Capacity)"
+                        ],
+                        "incorrect": []
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "task_results": {
+    "task1": {
+      "max_points": 20,
+      "points_earned": 20,
+      "feedback": [
+        "Correct store identified.",
+        "Correct loss amount (within 5% margin)."
+      ]
+    },
+    "task2": {
+      "max_points": 20,
+      "points_earned": 0,
+      "feedback": [
+        "Incorrect employee. Submitted: E2218, Expected: E1078",
+        "Incorrect transaction count. Submitted: 87, Expected: 27 (\u00b12)",
+        "Incorrect average transaction value. Submitted: 7.42, Expected: 8.42 (\u00b15%)"
+      ]
+    },
+    "task3": {
+      "max_points": 20,
+      "points_earned": 10,
+      "feedback": [
+        "Correct department identified.",
+        "Incorrect shrinkage percentage. Submitted: 8.25, Expected: 4.75 (\u00b10.5%)"
+      ]
+    },
+    "task4": {
+      "max_points": 20,
+      "points_earned": 7,
+      "feedback": [
+        "Correct date identified.",
+        "Incorrect void count. Submitted: 62, Expected: 42",
+        "Incorrect void value. Submitted: 4567.89, Expected: 3245.67 (\u00b15%)"
+      ]
+    },
+    "task5": {
+      "max_points": 20,
+      "points_earned": 7,
+      "feedback": [
+        "Incorrect pattern start date. Submitted: 2023-01-15, Expected: 2023-02-01 (\u00b13 days)",
+        "Correct pattern end date (within \u00b13 days).",
+        "Incorrect estimated loss. Submitted: 23456.78, Expected: 8750.25 (\u00b110%)"
+      ]
+    }
+  },
+  "overall_score": 44.0,
+  "passing_threshold": 60,
+  "passed": false
+}

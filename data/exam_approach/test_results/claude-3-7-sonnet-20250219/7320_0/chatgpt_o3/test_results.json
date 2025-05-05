@@ -131,12 +131,12 @@
         "max_score": 10,
         "feedback": [
           {
-            "document": "Property Insurance",
+            "document": "Environmental Assessment",
             "status": "missing",
             "points": 0
           },
           {
-            "document": "Environmental Assessment",
+            "document": "Property Insurance",
             "status": "missing",
             "points": 0
           },

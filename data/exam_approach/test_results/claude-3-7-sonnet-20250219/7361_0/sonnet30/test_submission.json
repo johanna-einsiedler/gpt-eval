@@ -1,0 +1,110 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "scenarios": [
+        {
+            "scenario_number": 1,
+            "missing_information": [
+                "Details about the nature and scope of the 'handyman' work performed",
+                "Documentation or records of income received from the 'handyman' work",
+                "Information on any expenses related to the 'handyman' business activities"
+            ],
+            "interview_questions": [
+                "Can you provide more details about the types of handyman services you provided and for whom?",
+                "How did you typically get paid for the handyman work - cash, check, electronic payment?",
+                "Do you have any records, invoices, or documentation for the income you received from the handyman jobs?",
+                "Did you incur any expenses related to the handyman work, such as tools, materials, or transportation costs?",
+                "Approximately how much total income did you receive from the handyman jobs during the tax year?"
+            ],
+            "tax_form": "Form 1040 Schedule C",
+            "documentation_needed": [
+                "Detailed income records or log for handyman jobs",
+                "Receipts or documentation for any related business expenses",
+                "Bank statements showing deposits from handyman income"
+            ]
+        },
+        {
+            "scenario_number": 2,
+            "missing_information": [
+                "Details about Maria's health insurance coverage and premiums paid",
+                "Confirmation of whether Maria's medical expenses exceeded 7.5% of her AGI",
+                "Information on any reimbursements received from insurance or other sources"
+            ],
+            "interview_questions": [
+                "Can you provide details about your health insurance coverage during the tax year, including any premiums you paid?",
+                "Were any portions of your medical expenses reimbursed by your insurance or another source?",
+                "Do you have documentation showing the premiums you paid for Medicare Part B or other supplemental insurance?",
+                "Can you confirm your total adjusted gross income (AGI) for the tax year?",
+                "Were there any other significant medical expenses you incurred that are not included in the receipts provided?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Statements or documentation for health insurance premiums paid",
+                "Explanation of Benefits statements from insurance providers",
+                "Records of any reimbursements received for medical expenses"
+            ]
+        },
+        {
+            "scenario_number": 3,
+            "missing_information": [
+                "Confirmation of the specific dates Tyler lived with Robert during the tax year",
+                "Details about Tyler's income sources and amounts",
+                "Information on any support or expenses paid by Tyler's other parent"
+            ],
+            "interview_questions": [
+                "Can you provide the exact dates during the tax year when Tyler lived with you?",
+                "Did Tyler have any income from employment, investments, or other sources during the tax year?",
+                "How much financial support or expenses did you provide for Tyler's education, housing, and living costs?",
+                "Did Tyler's other parent provide any financial support or pay any expenses for Tyler during the tax year?",
+                "Was Tyler a full-time student for the entire tax year, or were there any breaks in enrollment?"
+            ],
+            "tax_form": "Form 1040",
+            "documentation_needed": [
+                "Records or documentation of Tyler's residence dates with Robert",
+                "Tyler's income information (W-2s, 1099s, bank statements)",
+                "Receipts or documentation for expenses paid for Tyler's support"
+            ]
+        },
+        {
+            "scenario_number": 4,
+            "missing_information": [
+                "Confirmation from Jennifer's employer about work-from-home requirements",
+                "Details on the specific use of the home office space",
+                "Information on any reimbursements received from the employer for home office expenses"
+            ],
+            "interview_questions": [
+                "Can you provide documentation from your employer confirming the requirement to work from home during the tax year?",
+                "Is the home office space used exclusively for your employment-related activities, or is it also used for personal purposes?",
+                "Approximately what percentage of time did you work from the home office versus other locations like coffee shops?",
+                "Did your employer provide any reimbursement or allowance for home office expenses or equipment purchases?",
+                "Were there any other significant expenses related to your home office setup or operation that you haven't mentioned?"
+            ],
+            "tax_form": "Form 8829",
+            "documentation_needed": [
+                "Letter or statement from employer about work-from-home policy",
+                "Detailed records or log of home office use and expenses",
+                "Receipts or documentation for home office equipment and supplies"
+            ]
+        },
+        {
+            "scenario_number": 5,
+            "missing_information": [
+                "Confirmation of the fair market value of the donated household items",
+                "Details on the condition and age of the donated household items",
+                "Documentation or acknowledgment from Goodwill for the donated household items"
+            ],
+            "interview_questions": [
+                "Can you provide more details about the condition and approximate age of the furniture and household items you donated?",
+                "How did you determine the $2,000 value for the donated household items?",
+                "Do you have any documentation or receipt from Goodwill acknowledging the donation of the household items?",
+                "Were there any other non-cash donations you made during the tax year that are not included in the receipts provided?",
+                "Can you confirm your total adjusted gross income (AGI) for the tax year?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Detailed list or description of donated household items",
+                "Documentation or receipt from Goodwill for the donated items",
+                "Appraisal or valuation documentation for high-value donated items"
+            ]
+        }
+    ]
+}

@@ -249,6 +249,19 @@
                 "variance_percent": 0.2
               }
             },
+            "Travel": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
+              },
+              "expected": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
+              }
+            },
             "Marketing": {
               "status": "correct",
               "submitted": {
@@ -272,19 +285,6 @@
               "expected": {
                 "budgeted": 157320,
                 "actual_projected": 193333,
-                "variance_percent": 0.23
-              }
-            },
-            "Travel": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
-              },
-              "expected": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
                 "variance_percent": 0.23
               }
             }

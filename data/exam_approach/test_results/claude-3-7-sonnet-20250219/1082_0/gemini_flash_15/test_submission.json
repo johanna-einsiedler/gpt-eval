@@ -1,1 +1,287 @@
-"{}"
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "weekly_schedule": [
+            {
+                "day": "Monday",
+                "shifts": [
+                    {
+                        "employee_id": "E001",
+                        "start_time": "08:00",
+                        "end_time": "16:00",
+                        "position": "Head Chef",
+                        "break_start": "12:00",
+                        "break_end": "12:30"
+                    },
+                    {
+                        "employee_id": "E002",
+                        "start_time": "08:00",
+                        "end_time": "16:00",
+                        "position": "Sous Chef",
+                        "break_start": "12:00",
+                        "break_end": "12:30"
+                    },
+                    {
+                        "employee_id": "E003",
+                        "start_time": "08:00",
+                        "end_time": "16:00",
+                        "position": "Line Cook",
+                        "break_start": "12:00",
+                        "break_end": "12:30"
+                    },
+                    {
+                        "employee_id": "E005",
+                        "start_time": "06:00",
+                        "end_time": "14:00",
+                        "position": "Prep Cook"
+                    },
+                    {
+                        "employee_id": "E007",
+                        "start_time": "10:00",
+                        "end_time": "22:00",
+                        "position": "Server",
+                        "break_start": "15:00",
+                        "break_end": "15:30"
+                    },
+                    {
+                        "employee_id": "E009",
+                        "start_time": "10:00",
+                        "end_time": "22:00",
+                        "position": "Server",
+                        "break_start": "15:00",
+                        "break_end": "15:30"
+                    },
+                    {
+                        "employee_id": "E011",
+                        "start_time": "10:00",
+                        "end_time": "22:00",
+                        "position": "Host",
+                        "break_start": "15:00",
+                        "break_end": "15:30"
+                    },
+                    {
+                        "employee_id": "E013",
+                        "start_time": "08:00",
+                        "end_time": "22:00",
+                        "position": "Dishwasher",
+                        "break_start": "12:00",
+                        "break_end": "12:30"
+                    },
+                    {
+                        "employee_id": "E015",
+                        "start_time": "08:00",
+                        "end_time": "16:00",
+                        "position": "Manager",
+                        "break_start": "12:00",
+                        "break_end": "12:30"
+                    }
+                ]
+            },
+            {
+                "day": "Sunday",
+                "shifts": [
+                    {
+                        "employee_id": "E001",
+                        "start_time": "09:00",
+                        "end_time": "17:00",
+                        "position": "Head Chef",
+                        "break_start": "12:30",
+                        "break_end": "13:00"
+                    },
+                    {
+                        "employee_id": "E002",
+                        "start_time": "09:00",
+                        "end_time": "17:00",
+                        "position": "Sous Chef",
+                        "break_start": "12:30",
+                        "break_end": "13:00"
+                    },
+                    {
+                        "employee_id": "E004",
+                        "start_time": "09:00",
+                        "end_time": "17:00",
+                        "position": "Line Cook",
+                        "break_start": "12:30",
+                        "break_end": "13:00"
+                    },
+                    {
+                        "employee_id": "E006",
+                        "start_time": "06:00",
+                        "end_time": "14:00",
+                        "position": "Prep Cook"
+                    },
+                    {
+                        "employee_id": "E008",
+                        "start_time": "11:00",
+                        "end_time": "21:00",
+                        "position": "Server",
+                        "break_start": "16:00",
+                        "break_end": "16:30"
+                    },
+                    {
+                        "employee_id": "E009",
+                        "start_time": "11:00",
+                        "end_time": "21:00",
+                        "position": "Server",
+                        "break_start": "16:00",
+                        "break_end": "16:30"
+                    },
+                    {
+                        "employee_id": "E012",
+                        "start_time": "11:00",
+                        "end_time": "21:00",
+                        "position": "Host",
+                        "break_start": "16:00",
+                        "break_end": "16:30"
+                    },
+                    {
+                        "employee_id": "E013",
+                        "start_time": "09:00",
+                        "end_time": "21:00",
+                        "position": "Dishwasher",
+                        "break_start": "13:00",
+                        "break_end": "13:30"
+                    },
+                    {
+                        "employee_id": "E015",
+                        "start_time": "09:00",
+                        "end_time": "17:00",
+                        "position": "Manager",
+                        "break_start": "12:30",
+                        "break_end": "13:00"
+                    }
+                ]
+            }
+        ]
+    },
+    "task2": {
+        "adjusted_schedule": {
+            "day": "Wednesday",
+            "shifts": [
+                {
+                    "employee_id": "E001",
+                    "start_time": "07:00",
+                    "end_time": "15:00",
+                    "position": "Head Chef",
+                    "break_start": "10:30",
+                    "break_end": "11:00"
+                },
+                {
+                    "employee_id": "E002",
+                    "start_time": "07:00",
+                    "end_time": "15:00",
+                    "position": "Sous Chef",
+                    "break_start": "10:30",
+                    "break_end": "11:00"
+                },
+                {
+                    "employee_id": "E004",
+                    "start_time": "07:00",
+                    "end_time": "15:00",
+                    "position": "Line Cook",
+                    "break_start": "10:30",
+                    "break_end": "11:00"
+                },
+                {
+                    "employee_id": "E006",
+                    "start_time": "06:00",
+                    "end_time": "14:00",
+                    "position": "Prep Cook"
+                },
+                {
+                    "employee_id": "E007",
+                    "start_time": "11:00",
+                    "end_time": "22:00",
+                    "position": "Server",
+                    "break_start": "16:00",
+                    "break_end": "16:30"
+                },
+                {
+                    "employee_id": "E008",
+                    "start_time": "11:00",
+                    "end_time": "22:00",
+                    "position": "Server",
+                    "break_start": "16:00",
+                    "break_end": "16:30"
+                },
+                {
+                    "employee_id": "E009",
+                    "start_time": "11:00",
+                    "end_time": "22:00",
+                    "position": "Server",
+                    "break_start": "16:00",
+                    "break_end": "16:30"
+                },
+                {
+                    "employee_id": "E010",
+                    "start_time": "18:00",
+                    "end_time": "22:00",
+                    "position": "Server"
+                },
+                {
+                    "employee_id": "E011",
+                    "start_time": "11:00",
+                    "end_time": "22:00",
+                    "position": "Host",
+                    "break_start": "16:00",
+                    "break_end": "16:30"
+                },
+                {
+                    "employee_id": "E013",
+                    "start_time": "08:00",
+                    "end_time": "22:00",
+                    "position": "Dishwasher",
+                    "break_start": "13:00",
+                    "break_end": "13:30"
+                },
+                {
+                    "employee_id": "E015",
+                    "start_time": "07:00",
+                    "end_time": "15:00",
+                    "position": "Manager",
+                    "break_start": "10:30",
+                    "break_end": "11:00"
+                }
+            ]
+        }
+    },
+    "task3": {
+        "duty_assignments": [
+            {
+                "duty_id": "D001",
+                "employee_id": "E005",
+                "day": "Thursday",
+                "start_time": "08:00",
+                "end_time": "10:00"
+            },
+            {
+                "duty_id": "D002",
+                "employee_id": "E001",
+                "day": "Thursday",
+                "start_time": "09:00",
+                "end_time": "10:30"
+            },
+            {
+                "duty_id": "D003",
+                "employee_id": "E015",
+                "day": "Thursday",
+                "start_time": "14:00",
+                "end_time": "15:00"
+            },
+            {
+                "duty_id": "D004",
+                "employee_id": "E003",
+                "day": "Thursday",
+                "start_time": "08:00",
+                "end_time": "10:00"
+            },
+            {
+                "duty_id": "D005",
+                "employee_id": "E001",
+                "day": "Thursday",
+                "start_time": "15:00",
+                "end_time": "16:00"
+            }
+        ]
+    }
+}

@@ -1,0 +1,53 @@
+{
+  "candidateId": "Claude-v1.0",
+  "overall_score": 86.0,
+  "pass_level": "MERIT PASS",
+  "total_points": 86,
+  "max_points": 100,
+  "automatic_failures": [],
+  "section_scores": {
+    "testSchedule": {
+      "score": 30,
+      "max_score": 30,
+      "feedback": [
+        "Provided at least 4 distinct testing phases.",
+        "Test schedule shows logical sequencing aligned with development schedule.",
+        "Appropriate resource allocation based on expertise.",
+        "Clear and relevant deliverables for each phase."
+      ]
+    },
+    "riskAssessment": {
+      "score": 16,
+      "max_score": 20,
+      "feedback": [
+        "Selected exactly 5 risks as required.",
+        "Selected 3 of the appropriate top risks.",
+        "Provided reasonable probability and impact ratings."
+      ]
+    },
+    "testCoverage": {
+      "score": 15,
+      "max_score": 15,
+      "feedback": [
+        "Test coverage percentages sum to 100% as required.",
+        "Balanced allocation reflecting project priorities."
+      ]
+    },
+    "resourceAllocation": {
+      "score": 25,
+      "max_score": 25,
+      "feedback": [
+        "Allocated all 5 resources as required.",
+        "Resource allocation respects availability constraints.",
+        "Resources appropriately assigned based on expertise."
+      ]
+    },
+    "testingApproach": {
+      "score": 0,
+      "max_score": 10,
+      "feedback": [
+        "Selected approach 'B' instead of the more appropriate 'A'."
+      ]
+    }
+  }
+}

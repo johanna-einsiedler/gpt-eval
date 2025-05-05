@@ -9,6 +9,10 @@
         "expected_count": 7,
         "matches": [
           [
+            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
+            "experience with social media platforms for business"
+          ],
+          [
             "strong written and verbal communication skills",
             "strong written and verbal communication skills"
           ],
@@ -17,24 +21,20 @@
             "minimum 2 years of experience in a marketing role"
           ],
           [
-            "experience with digital marketing campaigns",
-            "experience with digital marketing campaigns"
-          ],
-          [
-            "bachelor's degree in marketing, communications, business, or related field",
-            "bachelor's degree in marketing, communications, business, or related field"
-          ],
-          [
-            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
-            "experience with social media platforms for business"
-          ],
-          [
             "proficiency in microsoft office suite (word, excel, powerpoint)",
             "proficiency in microsoft office suite (word, excel, powerpoint)"
           ],
           [
             "ability to manage multiple projects simultaneously with attention to detail",
             "ability to manage multiple projects simultaneously with attention to detail"
+          ],
+          [
+            "bachelor's degree in marketing, communications, business, or related field",
+            "bachelor's degree in marketing, communications, business, or related field"
+          ],
+          [
+            "experience with digital marketing campaigns",
+            "experience with digital marketing campaigns"
           ]
         ]
       }
@@ -46,14 +46,6 @@
         "identified_count": 3,
         "expected_count": 6,
         "matches": [
-          [
-            "experience with marketing automation tools (hubspot, marketo, or similar)",
-            "experience with marketing automation tools (hubspot, marketo, or similar)"
-          ],
-          [
-            "seo/sem knowledge",
-            "seo/sem knowledge"
-          ],
           [
             "data analysis skills",
             "data analysis skills"
@@ -69,6 +61,14 @@
           [
             "experience with content management systems (wordpress)",
             "experience with content management systems (wordpress)"
+          ],
+          [
+            "experience with marketing automation tools (hubspot, marketo, or similar)",
+            "experience with marketing automation tools (hubspot, marketo, or similar)"
+          ],
+          [
+            "seo/sem knowledge",
+            "seo/sem knowledge"
           ]
         ]
       }
@@ -138,17 +138,17 @@
             "C001"
           ],
           "common_candidates": [
-            "C001",
             "C003",
+            "C001",
             "C006"
           ]
         },
         "strengths_evaluation": {
-          "C001": {
+          "C003": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
-          "C003": {
+          "C001": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },

@@ -1,0 +1,94 @@
+{
+  "task1": {
+    "client_summary": {
+      "bmi_over_25": {
+        "score": 5,
+        "max_points": 5,
+        "details": "Identified 8/8 correct clients"
+      },
+      "elevated_heart_rate": {
+        "score": 0,
+        "max_points": 5,
+        "details": "Incorrect"
+      },
+      "low_attendance": {
+        "score": 3,
+        "max_points": 5,
+        "details": "Identified 4/5 correct clients"
+      }
+    },
+    "client_flags": {
+      "consecutive_misses": {
+        "score": 3,
+        "max_points": 7,
+        "details": "Identified 3/3 correct clients"
+      },
+      "reassessment_due": {
+        "score": 5.0,
+        "max_points": 8,
+        "details": "Identified 4/6 correct clients"
+      }
+    },
+    "total_score": 16.0,
+    "max_points": 30
+  },
+  "task2": {
+    "resolved_conflicts": {
+      "score": 10,
+      "max_points": 10,
+      "details": "Correctly resolved 5/5 conflicts"
+    },
+    "program_hours": {
+      "score": 8,
+      "max_points": 8,
+      "details": "Correctly calculated 4/4 program hours"
+    },
+    "utilization": {
+      "score": 9,
+      "max_points": 9,
+      "details": "Correctly calculated 3/3 room utilizations"
+    },
+    "instructor_load": {
+      "score": 8,
+      "max_points": 8,
+      "details": "Correct balanced load"
+    },
+    "total_score": 35,
+    "max_points": 35
+  },
+  "task3": {
+    "unique_participants": {
+      "score": 8,
+      "max_points": 8,
+      "details": "Correctly calculated 4/4 program participants"
+    },
+    "day_attendance_rate": {
+      "score": 10,
+      "max_points": 10,
+      "details": "Correctly calculated 5/5 day attendance rates"
+    },
+    "peak_times": {
+      "score": 7,
+      "max_points": 7,
+      "details": "Identified 3/3 correct peak times"
+    },
+    "declining_attendance": {
+      "score": 2.5,
+      "max_points": 5,
+      "details": "Identified 2/4 programs with declining attendance"
+    },
+    "attendance_satisfaction_correlation": {
+      "score": 5,
+      "max_points": 5,
+      "details": "Correct correlation"
+    },
+    "total_score": 32.5,
+    "max_points": 35
+  },
+  "total_score": 83.5,
+  "max_points": 100,
+  "overall_score": 83.5,
+  "passed": true,
+  "performance_level": "Passed",
+  "critical_failures": []
+}

@@ -9,6 +9,10 @@
         "expected_count": 7,
         "matches": [
           [
+            "experience with social media platforms for business",
+            "experience with social media platforms for business"
+          ],
+          [
             "minimum 2 years of experience in a marketing role",
             "minimum 2 years of experience in a marketing role"
           ],
@@ -23,10 +27,6 @@
           [
             "strong written and verbal communication skills",
             "strong written and verbal communication skills"
-          ],
-          [
-            "experience with social media platforms for business",
-            "experience with social media platforms for business"
           ]
         ]
       }
@@ -39,16 +39,16 @@
         "expected_count": 6,
         "matches": [
           [
-            "experience with content management systems",
-            "experience with content management systems (wordpress)"
+            "experience with marketing automation tools",
+            "experience with marketing automation tools (hubspot, marketo, or similar)"
           ],
           [
             "knowledge of graphic design software",
             "knowledge of graphic design software (adobe creative suite)"
           ],
           [
-            "experience with marketing automation tools",
-            "experience with marketing automation tools (hubspot, marketo, or similar)"
+            "experience with content management systems",
+            "experience with content management systems (wordpress)"
           ]
         ]
       }
@@ -118,21 +118,21 @@
             "C001"
           ],
           "common_candidates": [
+            "C001",
             "C006",
-            "C003",
-            "C001"
+            "C003"
           ]
         },
         "strengths_evaluation": {
+          "C001": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          },
           "C006": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
           "C003": {
-            "has_minimum_strengths": true,
-            "relevance_score": 1.0
-          },
-          "C001": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           }

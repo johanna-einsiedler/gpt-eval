@@ -1,0 +1,202 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "total_points_possible": 100,
+  "total_points_earned": 58.266666666666666,
+  "tasks": {
+    "task1": {
+      "points_possible": 15,
+      "points_earned": 8.166666666666668,
+      "details": {
+        "total_annual_interest": {
+          "points_possible": 5,
+          "points_earned": 2.5,
+          "candidate_answer": 4950.0,
+          "correct_answer": 4505.0
+        },
+        "taxable_interest_income": {
+          "points_possible": 5,
+          "points_earned": 1.5,
+          "candidate_answer": 4537.5,
+          "correct_answer": 3875.0
+        },
+        "effective_yields": {
+          "points_possible": 5,
+          "points_earned": 4.166666666666667,
+          "details": {
+            "corporate_bond": {
+              "points_possible": 1.6666666666666667,
+              "points_earned": 0.8333333333333334,
+              "candidate_answer": 0.048,
+              "correct_answer": 0.0456
+            },
+            "certificate_of_deposit": {
+              "points_possible": 1.6666666666666667,
+              "points_earned": 1.6666666666666667,
+              "candidate_answer": 0.0266,
+              "correct_answer": 0.0266
+            },
+            "municipal_bond": {
+              "points_possible": 1.6666666666666667,
+              "points_earned": 1.6666666666666667,
+              "candidate_answer": 0.042,
+              "correct_answer": 0.042
+            }
+          }
+        }
+      }
+    },
+    "task2": {
+      "points_possible": 20,
+      "points_earned": 13.599999999999998,
+      "details": {
+        "fair_market_value": {
+          "points_possible": 6,
+          "points_earned": 4.199999999999999,
+          "candidate_answer": 94528.92,
+          "correct_answer": 96830.0
+        },
+        "annual_taxable_interest": {
+          "points_possible": 4,
+          "points_earned": 4,
+          "candidate_answer": 5500.0,
+          "correct_answer": 5500.0
+        },
+        "amortizable_amount": {
+          "points_possible": 4,
+          "points_earned": 1.2,
+          "candidate_answer": 5471.08,
+          "correct_answer": 3170.0
+        },
+        "adjusted_tax_basis": {
+          "points_possible": 6,
+          "points_earned": 4.199999999999999,
+          "candidate_answer": 99142.16,
+          "correct_answer": 98098.0
+        }
+      }
+    },
+    "task3": {
+      "points_possible": 20,
+      "points_earned": 16.7,
+      "details": {
+        "present_value_annuity": {
+          "points_possible": 5,
+          "points_earned": 3.5,
+          "candidate_answer": 471524.41,
+          "correct_answer": 453169.5
+        },
+        "better_economic_value": {
+          "points_possible": 3,
+          "points_earned": 3,
+          "candidate_answer": "lump_sum",
+          "correct_answer": "lump_sum"
+        },
+        "tax_liability": {
+          "points_possible": 6,
+          "points_earned": 5.1,
+          "details": {
+            "lump_sum": {
+              "points_possible": 3.0,
+              "points_earned": 3.0,
+              "candidate_answer": 160000.0,
+              "correct_answer": 160000.0
+            },
+            "annuity_total_present_value": {
+              "points_possible": 3.0,
+              "points_earned": 2.0999999999999996,
+              "candidate_answer": 113166.66,
+              "correct_answer": 108760.68
+            }
+          }
+        },
+        "after_tax_present_value": {
+          "points_possible": 6,
+          "points_earned": 5.1,
+          "details": {
+            "lump_sum": {
+              "points_possible": 3.0,
+              "points_earned": 3.0,
+              "candidate_answer": 340000.0,
+              "correct_answer": 340000.0
+            },
+            "annuity": {
+              "points_possible": 3.0,
+              "points_earned": 2.0999999999999996,
+              "candidate_answer": 358357.75,
+              "correct_answer": 344408.82
+            }
+          }
+        }
+      }
+    },
+    "task4": {
+      "points_possible": 20,
+      "points_earned": 8.8,
+      "details": {
+        "cost_basis": {
+          "points_possible": 5,
+          "points_earned": 1.5,
+          "candidate_answer": 39000.0,
+          "correct_answer": 18000.0
+        },
+        "capital_gain_loss": {
+          "points_possible": 5,
+          "points_earned": 1.5,
+          "candidate_answer": 15000.0,
+          "correct_answer": 6000.0
+        },
+        "dividend_income": {
+          "points_possible": 4,
+          "points_earned": 4,
+          "candidate_answer": 1000.0,
+          "correct_answer": 1000.0
+        },
+        "total_tax_liability": {
+          "points_possible": 6,
+          "points_earned": 1.7999999999999998,
+          "candidate_answer": 4250.0,
+          "correct_answer": 1590.0
+        }
+      }
+    },
+    "task5": {
+      "points_possible": 25,
+      "points_earned": 11.0,
+      "details": {
+        "cost_depletion": {
+          "points_possible": 5,
+          "points_earned": 5,
+          "candidate_answer": 60000.0,
+          "correct_answer": 60000.0
+        },
+        "percentage_depletion": {
+          "points_possible": 5,
+          "points_earned": 1.5,
+          "candidate_answer": 11250.0,
+          "correct_answer": 168750.0
+        },
+        "maximum_depletion_deduction": {
+          "points_possible": 5,
+          "points_earned": 1.5,
+          "candidate_answer": 11250.0,
+          "correct_answer": 168750.0
+        },
+        "adjusted_basis": {
+          "points_possible": 5,
+          "points_earned": 1.5,
+          "candidate_answer": 738750.0,
+          "correct_answer": 631250.0
+        },
+        "taxable_income": {
+          "points_possible": 5,
+          "points_earned": 1.5,
+          "candidate_answer": 52500.0,
+          "correct_answer": 456250.0
+        }
+      }
+    }
+  },
+  "overall_score": 58.266666666666666,
+  "passed": false,
+  "performance": "Needs Improvement"
+}

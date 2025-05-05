@@ -1,0 +1,177 @@
+{
+    "candidate_id": "ANSWER_KEY",
+    "overall_score": 100.0,
+    "max_score": 19,
+    "total_points_achieved": 19,
+    "evaluation_details": {
+        "Set 1": {
+            "points_achieved": 9,
+            "max_points_for_set": 9,
+            "assumption_set_match": {
+                "correct": true,
+                "points": 1,
+                "submitted": [
+                    "A1",
+                    "A3"
+                ],
+                "expected": [
+                    "A1",
+                    "A3"
+                ]
+            },
+            "consequences": {
+                "C1": {
+                    "expected_derivable": true,
+                    "submitted_derivable": true,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": true,
+                    "points_minimal_assumptions": 1,
+                    "submitted_minimal_assumptions": [
+                        "A3"
+                    ],
+                    "expected_minimal_assumptions": [
+                        "A3"
+                    ]
+                },
+                "C2": {
+                    "expected_derivable": false,
+                    "submitted_derivable": false,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": null,
+                    "points_minimal_assumptions": 0,
+                    "submitted_minimal_assumptions": null,
+                    "expected_minimal_assumptions": null
+                },
+                "C3": {
+                    "expected_derivable": true,
+                    "submitted_derivable": true,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": true,
+                    "points_minimal_assumptions": 1,
+                    "submitted_minimal_assumptions": [
+                        "A3"
+                    ],
+                    "expected_minimal_assumptions": [
+                        "A3"
+                    ]
+                },
+                "C4": {
+                    "expected_derivable": false,
+                    "submitted_derivable": false,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": null,
+                    "points_minimal_assumptions": 0,
+                    "submitted_minimal_assumptions": null,
+                    "expected_minimal_assumptions": null
+                },
+                "C5": {
+                    "expected_derivable": false,
+                    "submitted_derivable": false,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": null,
+                    "points_minimal_assumptions": 0,
+                    "submitted_minimal_assumptions": null,
+                    "expected_minimal_assumptions": null
+                },
+                "C6": {
+                    "expected_derivable": false,
+                    "submitted_derivable": false,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": null,
+                    "points_minimal_assumptions": 0,
+                    "submitted_minimal_assumptions": null,
+                    "expected_minimal_assumptions": null
+                }
+            }
+        },
+        "Set 2": {
+            "points_achieved": 10,
+            "max_points_for_set": 10,
+            "assumption_set_match": {
+                "correct": true,
+                "points": 1,
+                "submitted": [
+                    "A1",
+                    "A2",
+                    "A4"
+                ],
+                "expected": [
+                    "A1",
+                    "A2",
+                    "A4"
+                ]
+            },
+            "consequences": {
+                "C1": {
+                    "expected_derivable": false,
+                    "submitted_derivable": false,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": null,
+                    "points_minimal_assumptions": 0,
+                    "submitted_minimal_assumptions": null,
+                    "expected_minimal_assumptions": null
+                },
+                "C2": {
+                    "expected_derivable": true,
+                    "submitted_derivable": true,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": true,
+                    "points_minimal_assumptions": 1,
+                    "submitted_minimal_assumptions": [
+                        "A4"
+                    ],
+                    "expected_minimal_assumptions": [
+                        "A4"
+                    ]
+                },
+                "C3": {
+                    "expected_derivable": false,
+                    "submitted_derivable": false,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": null,
+                    "points_minimal_assumptions": 0,
+                    "submitted_minimal_assumptions": null,
+                    "expected_minimal_assumptions": null
+                },
+                "C4": {
+                    "expected_derivable": true,
+                    "submitted_derivable": true,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": true,
+                    "points_minimal_assumptions": 1,
+                    "submitted_minimal_assumptions": [
+                        "A4"
+                    ],
+                    "expected_minimal_assumptions": [
+                        "A4"
+                    ]
+                },
+                "C5": {
+                    "expected_derivable": true,
+                    "submitted_derivable": true,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": true,
+                    "points_minimal_assumptions": 1,
+                    "submitted_minimal_assumptions": [
+                        "A1",
+                        "A2"
+                    ],
+                    "expected_minimal_assumptions": [
+                        "A1",
+                        "A2"
+                    ]
+                },
+                "C6": {
+                    "expected_derivable": false,
+                    "submitted_derivable": false,
+                    "points_derivable": 1,
+                    "minimal_assumptions_match": null,
+                    "points_minimal_assumptions": 0,
+                    "submitted_minimal_assumptions": null,
+                    "expected_minimal_assumptions": null
+                }
+            }
+        }
+    },
+    "warning": "Calculated max score (19) != configured MAX_SCORE (18)"
+}

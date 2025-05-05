@@ -1,0 +1,88 @@
+{
+  "exercise1": {
+    "budget_variance": {
+      "score": 1.0,
+      "points": 1.0,
+      "correct_answer": 29300.0
+    },
+    "overspent_categories": {
+      "score": 1.0,
+      "points": 1.0,
+      "correct_answer": [
+        "Launch Event",
+        "Manufacturing Setup",
+        "Marketing Materials",
+        "Product Design",
+        "Prototyping",
+        "Regulatory Compliance",
+        "Research & Development"
+      ]
+    },
+    "underspent_categories": {
+      "score": 1.0,
+      "points": 1.0,
+      "correct_answer": [
+        "Market Research"
+      ]
+    },
+    "total_rd_percentage": {
+      "score": 1.0,
+      "points": 1.0,
+      "correct_answer": 0.21
+    }
+  },
+  "exercise2": {
+    "campaign_roi": {
+      "score": 1.0,
+      "points": 1.0,
+      "correct_answer": 1.28
+    },
+    "most_efficient_channel": {
+      "score": 1.0,
+      "points": 1.0,
+      "correct_answer": "Email Marketing"
+    },
+    "breakeven_point": {
+      "score": 1.0,
+      "points": 1.0,
+      "correct_answer": 5000
+    }
+  },
+  "exercise3": {
+    "year1_profit": {
+      "score": 1.0,
+      "points": 1.5,
+      "correct_answer": 346437.5
+    },
+    "projected_roi": {
+      "score": 1.0,
+      "points": 1.5,
+      "correct_answer": 1.39
+    },
+    "payback_period_months": {
+      "score": 1.0,
+      "points": 1.5,
+      "correct_answer": 8
+    },
+    "profit_margin_percentage": {
+      "score": 1.0,
+      "points": 1.5,
+      "correct_answer": 0.11
+    }
+  },
+  "points_earned": {
+    "exercise1": 4.0,
+    "exercise2": 3.0,
+    "exercise3": 6.0
+  },
+  "points_possible": {
+    "exercise1": 4,
+    "exercise2": 3,
+    "exercise3": 6
+  },
+  "passed_critical_elements": true,
+  "total_points": 13.0,
+  "total_possible": 13,
+  "overall_score": 100.0,
+  "passed": true
+}
