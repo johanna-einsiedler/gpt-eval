@@ -1,9 +1,0 @@
-{
-  "overall_score": 0,
-  "format_errors": [
-    "Missing required field: candidate_id",
-    "Missing required field: identified_risks",
-    "Missing required field: priority_risks"
-  ],
-  "message": "Submission format is invalid. Please correct the errors and resubmit."
-}
