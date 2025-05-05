@@ -1,0 +1,99 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "schedule": {
+        "project_duration": 90,
+        "critical_path": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "H",
+            "J",
+            "K",
+            "L"
+        ],
+        "task_dates": {
+            "A": {
+                "earliest_start": "2023-01-01",
+                "latest_start": "2023-01-01"
+            },
+            "B": {
+                "earliest_start": "2023-01-16",
+                "latest_start": "2023-01-16"
+            },
+            "C": {
+                "earliest_start": "2023-02-07",
+                "latest_start": "2023-02-07"
+            },
+            "D": {
+                "earliest_start": "2023-02-23",
+                "latest_start": "2023-02-23"
+            },
+            "E": {
+                "earliest_start": "2023-03-23",
+                "latest_start": "2023-03-23"
+            },
+            "F": {
+                "earliest_start": "2023-03-23",
+                "latest_start": "2023-03-27"
+            },
+            "G": {
+                "earliest_start": "2023-03-23",
+                "latest_start": "2023-03-25"
+            },
+            "H": {
+                "earliest_start": "2023-04-04",
+                "latest_start": "2023-04-04"
+            },
+            "I": {
+                "earliest_start": "2023-04-04",
+                "latest_start": "2023-04-04"
+            },
+            "J": {
+                "earliest_start": "2023-04-13",
+                "latest_start": "2023-04-13"
+            },
+            "K": {
+                "earliest_start": "2023-04-20",
+                "latest_start": "2023-04-20"
+            },
+            "L": {
+                "earliest_start": "2023-04-28",
+                "latest_start": "2023-04-28"
+            }
+        }
+    },
+    "budget": {
+        "total_budget": 448917.5,
+        "labor_costs": 146250.0,
+        "equipment_costs": 179250.0,
+        "other_expenses": 20500.0,
+        "contingency": 40810.68,
+        "phase_allocation": {
+            "Phase 1": 41700.0,
+            "Phase 2": 244800.0,
+            "Phase 3": 121600.0
+        }
+    },
+    "cost_control": {
+        "planned_value": {
+            "25%_completion": 100000.0,
+            "50%_completion": 200000.0,
+            "75%_completion": 300000.0,
+            "100%_completion": 400000.0
+        },
+        "variance_thresholds": {
+            "acceptable_cv_percentage": 8.0,
+            "acceptable_sv_percentage": 10.0,
+            "corrective_action_trigger": "CV or SV exceeds threshold for 2 consecutive reporting periods"
+        }
+    },
+    "variance_analysis": {
+        "schedule_variance": -20000.0,
+        "cost_variance": -15000.0,
+        "spi": 0.917,
+        "cpi": 0.936,
+        "eac": 427350.32
+    }
+}

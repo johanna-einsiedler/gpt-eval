@@ -1,0 +1,44 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "negotiation_strategy": {
+        "selected_approach": "B",
+        "justification": "Margaret values detailed explanations and transparency. A collaborative approach that addresses her concerns about value and flexibility would be most effective."
+    },
+    "package_details": {
+        "selected_services": [
+            "S1",
+            "S3",
+            "S5",
+            "S6",
+            "S7",
+            "S9"
+        ],
+        "selected_merchandise": [
+            "M7"
+        ],
+        "selected_additional_services": [
+            "A1",
+            "A3",
+            "A7",
+            "A9"
+        ],
+        "total_package_price": 5995.0,
+        "profit_margin_percentage": 24.2
+    },
+    "objection_responses": {
+        "objection1": "B",
+        "objection2": "C",
+        "objection3": "A"
+    },
+    "contract_completion": {
+        "client_name": "Margaret Wilson",
+        "payment_plan_selected": "P4",
+        "payment_terms": "12 monthly installments with 0% interest and 5% service fee",
+        "price_guarantee": "Yes",
+        "required_disclosures": [
+            "Cancellation Policy",
+            "Trust Account Details",
+            "Merchandise Substitution Policy"
+        ]
+    }
+}

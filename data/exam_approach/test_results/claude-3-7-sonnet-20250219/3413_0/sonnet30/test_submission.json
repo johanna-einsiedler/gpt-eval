@@ -1,0 +1,63 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "Agreement_A": [
+        {
+            "issue_id": 1,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "The loan term is listed as 30 years, but the monthly payment calculation is based on 360 months (30.5 years)."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "policy_violation",
+            "location": "Property Information section",
+            "description": "The LTV ratio of 80% exceeds the maximum allowed 80% without requiring private mortgage insurance (PMI)."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Escrow Information section",
+            "description": "The initial escrow deposit amount is missing, which is required for loans with LTV > 80%."
+        }
+    ],
+    "Agreement_B": [
+        {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The balloon payment amount is incorrectly calculated; it should be approximately $1,275,000 based on the given terms."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "The amortization period of 25 years is inconsistent with the loan term of 15 years, which implies a balloon payment."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "policy_violation",
+            "location": "Property Information section",
+            "description": "The LTV ratio of 70% exceeds the maximum allowed 75% for most commercial real estate loans."
+        }
+    ],
+    "Agreement_C": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The minimum initial draw amount of $75,000 exceeds the maximum allowed 50% of the credit line amount."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "calculation_error",
+            "location": "Property Information section",
+            "description": "The combined LTV ratio is incorrectly calculated at 77.27%; it should be 75% based on the provided figures."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "compliance_issue",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The Truth in Lending disclosures required for consumer loans are missing from the agreement."
+        }
+    ]
+}

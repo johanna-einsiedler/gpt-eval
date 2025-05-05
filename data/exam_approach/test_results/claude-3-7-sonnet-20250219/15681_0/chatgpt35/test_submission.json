@@ -1,0 +1,23 @@
+{
+    "candidate_id": "SupplyChainExpert-1",
+    "task1": {
+        "diagram": "[S] --> [W] --> [M1] --> [DC] --> [R1]\n              +\n              --> [M2] --> [DC] --> [R2]\n              --> [M3] --> [DC] --> [R3]\n              --> [M1] --> [DC] --> [R4]\n              <-- [DC]",
+        "entities_count": 10
+    },
+    "task2": {
+        "diagram": "Raw Materials --> Work-in-Progress --> Finished Goods --> Distribution Center\nJan: 1200 --> 800 --> 500 --> 1500\nFeb: 1000 --> 850 --> 600 --> 1300\nMar: 1100 --> 900 --> 650 --> 1200\nApr: 950 --> 950 --> 700 --> 1100\nMay: 850 --> 1000 --> 750 --> 1000\nJun: 800 --> 1050 --> 800 --> 900",
+        "percentage_changes": {
+            "raw_materials": -33.3,
+            "work_in_progress": 31.3,
+            "finished_goods": 60.0,
+            "distribution_center": -40.0
+        }
+    },
+    "task3": {
+        "diagram": "[S] --> [W] --> (Ingredient Mixing) --> [Filling & Packaging] --> [!Quality Testing] --> [Labeling] --> [Palletizing]",
+        "max_throughput": 400,
+        "over_capacity_stages": [
+            "Filling & Packaging"
+        ]
+    }
+}

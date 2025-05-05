@@ -1,0 +1,407 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "schedule": {
+        "critical_path_tasks": [
+            "T001",
+            "T003",
+            "T008",
+            "T010",
+            "T014",
+            "T015"
+        ],
+        "project_duration_days": 60,
+        "earliest_completion_date": "2024-05-29",
+        "task_schedule": [
+            {
+                "task_id": "T001",
+                "start_date": "2024-03-31",
+                "end_date": "2024-04-06",
+                "duration_days": 7
+            },
+            {
+                "task_id": "T002",
+                "start_date": "2024-03-31",
+                "end_date": "2024-04-09",
+                "duration_days": 10
+            },
+            {
+                "task_id": "T003",
+                "start_date": "2024-04-07",
+                "end_date": "2024-04-20",
+                "duration_days": 14
+            },
+            {
+                "task_id": "T004",
+                "start_date": "2024-04-07",
+                "end_date": "2024-04-18",
+                "duration_days": 12
+            },
+            {
+                "task_id": "T005",
+                "start_date": "2024-04-07",
+                "end_date": "2024-04-14",
+                "duration_days": 8
+            },
+            {
+                "task_id": "T006",
+                "start_date": "2024-04-07",
+                "end_date": "2024-04-11",
+                "duration_days": 5
+            },
+            {
+                "task_id": "T007",
+                "start_date": "2024-04-10",
+                "end_date": "2024-04-13",
+                "duration_days": 4
+            },
+            {
+                "task_id": "T008",
+                "start_date": "2024-04-21",
+                "end_date": "2024-05-05",
+                "duration_days": 15
+            },
+            {
+                "task_id": "T009",
+                "start_date": "2024-04-14",
+                "end_date": "2024-04-19",
+                "duration_days": 6
+            },
+            {
+                "task_id": "T010",
+                "start_date": "2024-05-06",
+                "end_date": "2024-05-15",
+                "duration_days": 10
+            },
+            {
+                "task_id": "T011",
+                "start_date": "2024-05-06",
+                "end_date": "2024-05-13",
+                "duration_days": 8
+            },
+            {
+                "task_id": "T012",
+                "start_date": "2024-05-06",
+                "end_date": "2024-05-10",
+                "duration_days": 5
+            },
+            {
+                "task_id": "T013",
+                "start_date": "2024-05-16",
+                "end_date": "2024-05-19",
+                "duration_days": 4
+            },
+            {
+                "task_id": "T014",
+                "start_date": "2024-05-16",
+                "end_date": "2024-05-22",
+                "duration_days": 7
+            },
+            {
+                "task_id": "T015",
+                "start_date": "2024-05-23",
+                "end_date": "2024-05-25",
+                "duration_days": 3
+            }
+        ]
+    },
+    "responsibility": {
+        "task_owners": [
+            {
+                "task_id": "T001",
+                "responsible": "EMP001",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP002",
+                    "EMP005"
+                ],
+                "informed": [
+                    "EMP003",
+                    "EMP004",
+                    "EMP006",
+                    "EMP007",
+                    "EMP008"
+                ]
+            },
+            {
+                "task_id": "T002",
+                "responsible": "EMP003",
+                "accountable": "EMP002",
+                "consulted": [
+                    "EMP001"
+                ],
+                "informed": [
+                    "EMP005"
+                ]
+            },
+            {
+                "task_id": "T003",
+                "responsible": "EMP008",
+                "accountable": "EMP002",
+                "consulted": [
+                    "EMP001",
+                    "EMP005"
+                ],
+                "informed": [
+                    "EMP003"
+                ]
+            },
+            {
+                "task_id": "T004",
+                "responsible": "EMP004",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP002"
+                ],
+                "informed": [
+                    "EMP005"
+                ]
+            },
+            {
+                "task_id": "T005",
+                "responsible": "EMP007",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP002"
+                ],
+                "informed": [
+                    "EMP003",
+                    "EMP004",
+                    "EMP005",
+                    "EMP008"
+                ]
+            },
+            {
+                "task_id": "T006",
+                "responsible": "EMP002",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP003"
+                ],
+                "informed": [
+                    "EMP005"
+                ]
+            },
+            {
+                "task_id": "T007",
+                "responsible": "EMP002",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP003",
+                    "EMP005"
+                ],
+                "informed": [
+                    "EMP004",
+                    "EMP007",
+                    "EMP008"
+                ]
+            },
+            {
+                "task_id": "T008",
+                "responsible": "EMP005",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP002",
+                    "EMP008"
+                ],
+                "informed": [
+                    "EMP003",
+                    "EMP004",
+                    "EMP006"
+                ]
+            },
+            {
+                "task_id": "T009",
+                "responsible": "EMP003",
+                "accountable": "EMP002",
+                "consulted": [
+                    "EMP001"
+                ],
+                "informed": [
+                    "EMP005"
+                ]
+            },
+            {
+                "task_id": "T010",
+                "responsible": "EMP008",
+                "accountable": "EMP005",
+                "consulted": [
+                    "EMP001",
+                    "EMP002"
+                ],
+                "informed": [
+                    "EMP003",
+                    "EMP004"
+                ]
+            },
+            {
+                "task_id": "T011",
+                "responsible": "EMP004",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP002"
+                ],
+                "informed": [
+                    "EMP005"
+                ]
+            },
+            {
+                "task_id": "T012",
+                "responsible": "EMP003",
+                "accountable": "EMP002",
+                "consulted": [
+                    "EMP001",
+                    "EMP005"
+                ],
+                "informed": [
+                    "EMP004",
+                    "EMP008"
+                ]
+            },
+            {
+                "task_id": "T013",
+                "responsible": "EMP004",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP002",
+                    "EMP005"
+                ],
+                "informed": [
+                    "EMP003",
+                    "EMP008"
+                ]
+            },
+            {
+                "task_id": "T014",
+                "responsible": "EMP006",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP002",
+                    "EMP005"
+                ],
+                "informed": [
+                    "EMP003",
+                    "EMP004",
+                    "EMP008"
+                ]
+            },
+            {
+                "task_id": "T015",
+                "responsible": "EMP001",
+                "accountable": "EMP001",
+                "consulted": [
+                    "EMP002",
+                    "EMP003",
+                    "EMP004",
+                    "EMP005"
+                ],
+                "informed": [
+                    "EMP006",
+                    "EMP007",
+                    "EMP008"
+                ]
+            }
+        ],
+        "most_assigned_team_member": "EMP001",
+        "unassigned_tasks": []
+    },
+    "compliance": {
+        "total_requirements": 8,
+        "highest_priority_item": "CR001",
+        "requirements_by_status": {
+            "not_started": 5,
+            "in_progress": 3,
+            "complete": 0,
+            "overdue": 0
+        },
+        "requirement_details": [
+            {
+                "req_id": "CR001",
+                "status": "not_started",
+                "linked_tasks": [
+                    "T008",
+                    "T014"
+                ],
+                "deadline_date": "2024-05-14"
+            },
+            {
+                "req_id": "CR002",
+                "status": "not_started",
+                "linked_tasks": [
+                    "T008",
+                    "T014"
+                ],
+                "deadline_date": "2024-05-19"
+            },
+            {
+                "req_id": "CR003",
+                "status": "in_progress",
+                "linked_tasks": [
+                    "T008",
+                    "T014"
+                ],
+                "deadline_date": "2024-05-09"
+            },
+            {
+                "req_id": "CR004",
+                "status": "in_progress",
+                "linked_tasks": [
+                    "T004",
+                    "T011",
+                    "T014"
+                ],
+                "deadline_date": "2024-05-04"
+            },
+            {
+                "req_id": "CR005",
+                "status": "in_progress",
+                "linked_tasks": [
+                    "T008",
+                    "T014"
+                ],
+                "deadline_date": "2024-04-29"
+            },
+            {
+                "req_id": "CR006",
+                "status": "not_started",
+                "linked_tasks": [
+                    "T010",
+                    "T014"
+                ],
+                "deadline_date": "2024-05-11"
+            },
+            {
+                "req_id": "CR007",
+                "status": "not_started",
+                "linked_tasks": [
+                    "T008",
+                    "T014"
+                ],
+                "deadline_date": "2024-05-24"
+            },
+            {
+                "req_id": "CR008",
+                "status": "not_started",
+                "linked_tasks": [
+                    "T002",
+                    "T012"
+                ],
+                "deadline_date": "2024-04-24"
+            }
+        ]
+    },
+    "integration": {
+        "overall_completion_percentage": 0,
+        "high_risk_tasks": [
+            "T008",
+            "T010",
+            "T014"
+        ],
+        "next_deadline": "2024-04-24",
+        "task_status_summary": {
+            "not_started": 15,
+            "in_progress": 0,
+            "complete": 0,
+            "overdue": 0
+        }
+    }
+}

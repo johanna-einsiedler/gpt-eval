@@ -1,0 +1,131 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "section1": {
+        "form1040_client_a_errors": [
+            {
+                "error_type": "value_discrepancy",
+                "field": "Line 1 (Wages, salaries, tips)",
+                "reported_value": "72,500",
+                "correct_value": "75,500",
+                "explanation": "Wages reported on Form 1040 do not match the W-2 form."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Line 9 (Total income)",
+                "reported_value": "73,275",
+                "correct_value": "76,275",
+                "explanation": "Total income should be $75,500 (Wages) + $350 (Interest) + $425 (Dividends) = $76,275"
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Line 25a (Federal income tax withheld)",
+                "reported_value": "8,100",
+                "correct_value": "8,700",
+                "explanation": "Federal income tax withheld on Form 1040 does not match the W-2 form."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Line 37 (Amount you owe)",
+                "reported_value": "1,274",
+                "correct_value": "674",
+                "explanation": "Tax is $9,374 and withholding is $8,700. $9,374 - $8,700 = $674"
+            }
+        ],
+        "schedule_c_client_b_errors": [
+            {
+                "error_type": "math_error",
+                "field": "Line 28 (Total expenses)",
+                "reported_value": "35,150",
+                "correct_value": "32,300",
+                "explanation": "Total expenses should be $2,400 + $3,750 + $1,200 + $2,800 + $1,950 + $12,000 + $3,450 + $4,200 + $2,800 + $0 + $1,800 = $36,350. The provided total is incorrect."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Line 31 (Net profit)",
+                "reported_value": "49,100",
+                "correct_value": "47,900",
+                "explanation": "Net profit should be $84,250 (Gross income) - $36,350 (Total expenses) = $47,900. The provided net profit is incorrect."
+            }
+        ],
+        "form_8949_client_c_missing_fields": [
+            {
+                "field": "Part I: (f) Code",
+                "explanation": "If box is checked on line 1, code must be entered."
+            },
+            {
+                "field": "Part I: (g) Adjustment amount",
+                "explanation": "If code is entered in column (f), adjustment amount must be entered."
+            },
+            {
+                "field": "Part II: (f) Code",
+                "explanation": "If box is checked on line 1, code must be entered."
+            },
+            {
+                "field": "Part II: (g) Adjustment amount",
+                "explanation": "If code is entered in column (f), adjustment amount must be entered."
+            }
+        ]
+    },
+    "section2": {
+        "tax_calculation_client_d_errors": [
+            {
+                "field": "Income Tax",
+                "reported_value": 15719.0,
+                "correct_value": 12673.0,
+                "explanation": "Taxable income is $114,650. Using the 2022 tax brackets for Married Filing Jointly, the tax is $20,550 + 22% of the excess over $83,550. $114,650 - $83,550 = $31,100. $31,100 * 0.22 = $6,842. $5,050 + $6,842 = $12,673."
+            },
+            {
+                "field": "Total Tax",
+                "reported_value": 20662.0,
+                "correct_value": 17616.0,
+                "explanation": "Total tax should be $12,673 (Income Tax) + $4,943 (Self-employment Tax) = $17,616."
+            },
+            {
+                "field": "Tax After Credits",
+                "reported_value": 16662.0,
+                "correct_value": 13616.0,
+                "explanation": "Tax after credits should be $17,616 (Total Tax) - $4,000 (Total Credits) = $13,616."
+            }
+        ],
+        "income_reconciliation_client_e": {
+            "discrepancy_found": false,
+            "discrepancy_amount": 0.0,
+            "explanation": "Total income on Form 1040 matches the total income from the supporting documents."
+        },
+        "estimated_tax_client_f": {
+            "reported_payments": 9500.0,
+            "correct_payments": 10000.0,
+            "discrepancy_amount": 500.0,
+            "explanation": "The estimated tax payments reported on Form 1040 is $9,500, but the correct amount from the spreadsheet is $10,000. There is a $500 discrepancy."
+        }
+    },
+    "section3": {
+        "client_g_discrepancies": [
+            {
+                "field": "Occupation",
+                "reported_value": "Marketing Director",
+                "correct_value": "Marketing Manager"
+            },
+            {
+                "field": "Address Zip Code",
+                "reported_value": "60601",
+                "correct_value": "60611"
+            }
+        ],
+        "client_h_dependent_errors": [
+            {
+                "dependent_name": "Margaret Wilson",
+                "field": "SSN",
+                "reported_value": "123-45-6788",
+                "correct_value": "123-45-6789"
+            }
+        ],
+        "client_i_contact_errors": [
+            {
+                "field": "Address Zip Code",
+                "reported_value": "94103",
+                "correct_value": "94105"
+            }
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "budget_variance_total": 11850,
+    "largest_expense_category": "Event Costs",
+    "expense_trend_direction": "increasing",
+    "donor_retention_rate": 0.84,
+    "cost_per_dollar_raised": 0.71,
+    "over_budget_categories": [
+        "Event Costs",
+        "Marketing Materials",
+        "Office Supplies",
+        "Travel Expenses"
+    ],
+    "month_with_highest_revenue": "May",
+    "fundraising_roi": 0.41,
+    "expense_category_percentages": {
+        "Staff Salaries": 0.31,
+        "Event Costs": 0.26,
+        "Marketing Materials": 0.13,
+        "Office Supplies": 0.03,
+        "Travel Expenses": 0.06,
+        "Technology": 0.07
+    },
+    "budget_status": "critical"
+}

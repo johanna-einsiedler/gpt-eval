@@ -1,0 +1,31 @@
+{
+    "candidate_id": "LogisticsEngineer2022",
+    "current_cost_per_mile": {
+        "vehicle_type_A": 2.45,
+        "vehicle_type_B": 2.15,
+        "vehicle_type_C": 2.85
+    },
+    "top_cost_components": [
+        "Driver Wages",
+        "Fuel Cost",
+        "Maintenance Cost"
+    ],
+    "cost_component_percentages": {
+        "Driver Wages": 0.35,
+        "Fuel Cost": 0.3,
+        "Maintenance Cost": 0.2
+    },
+    "six_month_forecast": {
+        "total_cost": 1250000.0,
+        "percentage_change": 0.18
+    },
+    "sensitivity_analysis": {
+        "fuel_impact_percentage": 0.15,
+        "wage_impact_percentage": 0.1,
+        "most_sensitive_factor": "Fuel Cost"
+    },
+    "methodology": {
+        "cost_model_approach": "Utilized historical data to calculate cost per mile for each vehicle type and identified top cost components.",
+        "forecast_assumptions": "Assumed linear changes in fuel prices, labor rates, and utilization for the 6-month forecast."
+    }
+}

@@ -1,0 +1,113 @@
+{
+  "task1": {
+    "details": {
+      "sample_size_per_group": {
+        "candidate_answer": 272,
+        "correct_answer": 329,
+        "is_correct": false,
+        "points": 0
+      },
+      "total_sample_size": {
+        "candidate_answer": 544,
+        "correct_answer": 658,
+        "is_correct": false,
+        "points": 0
+      },
+      "power_calculation": {
+        "candidate_answer": 0.97,
+        "correct_answer": 0.6,
+        "is_correct": false,
+        "points": 0
+      }
+    },
+    "total_points": 0,
+    "max_points": 3,
+    "passed_requirement": false
+  },
+  "task2": {
+    "details": {
+      "sample_size_per_group": {
+        "candidate_answer": 346,
+        "correct_answer": 191,
+        "is_correct": false,
+        "points": 0
+      },
+      "total_sample_size": {
+        "candidate_answer": 692,
+        "correct_answer": 382,
+        "is_correct": false,
+        "points": 0
+      },
+      "detectable_difference": {
+        "candidate_answer": 3.68,
+        "correct_answer": 4.89,
+        "is_correct": false,
+        "points": 0
+      }
+    },
+    "total_points": 0,
+    "max_points": 3,
+    "passed_requirement": false
+  },
+  "task3": {
+    "details": {
+      "initial_sample_size": {
+        "candidate_answer": 300,
+        "correct_answer": 300,
+        "is_correct": true,
+        "points": 1
+      },
+      "adjusted_sample_size": {
+        "candidate_answer": 375,
+        "correct_answer": 375,
+        "is_correct": true,
+        "points": 1
+      },
+      "percentage_increase": {
+        "candidate_answer": 25.0,
+        "correct_answer": 25.0,
+        "is_correct": true,
+        "points": 1
+      }
+    },
+    "total_points": 3,
+    "max_points": 3,
+    "passed_requirement": true
+  },
+  "task4": {
+    "details": {
+      "scenario_a_correct": {
+        "candidate_answer": false,
+        "correct_answer": true,
+        "is_correct": false,
+        "points": 0
+      },
+      "scenario_b_correct": {
+        "candidate_answer": true,
+        "correct_answer": true,
+        "is_correct": true,
+        "points": 1
+      },
+      "scenario_c_correct": {
+        "candidate_answer": false,
+        "correct_answer": false,
+        "is_correct": true,
+        "points": 1
+      },
+      "scenario_d_correct": {
+        "candidate_answer": false,
+        "correct_answer": true,
+        "is_correct": false,
+        "points": 0
+      }
+    },
+    "total_points": 2,
+    "max_points": 4,
+    "passed_requirement": false
+  },
+  "total_points": 5,
+  "max_points": 13,
+  "overall_score": 38.46153846153847,
+  "all_requirements_passed": false,
+  "passed_exam": false
+}

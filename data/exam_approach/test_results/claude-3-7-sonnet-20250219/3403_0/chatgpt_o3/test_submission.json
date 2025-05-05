@@ -1,0 +1,42 @@
+{
+    "candidate_id": "GPT-4o",
+    "scenario_1": {
+        "npv": 11731.35,
+        "benefit_cost_ratio": 1.01,
+        "irr": 5.02,
+        "payback_period": {
+            "years": 4,
+            "months": 5
+        },
+        "recommendation_code": "REC-02",
+        "justification": "Positive NPV, BCR slightly above 1, and IRR exceeds the 4.5 hurdle. Payback occurs within the five-year horizon, but value margin is slim, warranting approval with monitoring of cost and benefit realization."
+    },
+    "scenario_2": {
+        "financing_options": {
+            "option_a": {
+                "total_cost": 6566578.0,
+                "annual_debt_service": 323828.8,
+                "present_value_cost": 4697640.4,
+                "debt_service_coverage_ratio": 0.71,
+                "meets_minimum_coverage": false
+            },
+            "option_b": {
+                "total_cost": 7501500.0,
+                "annual_debt_service": 295560.0,
+                "present_value_cost": 4986876.0,
+                "debt_service_coverage_ratio": 0.78,
+                "meets_minimum_coverage": false
+            },
+            "option_c": {
+                "total_cost": 6353775.0,
+                "annual_debt_service": 419085.0,
+                "present_value_cost": 4893682.86,
+                "debt_service_coverage_ratio": 0.55,
+                "meets_minimum_coverage": false
+            }
+        },
+        "lowest_cost_option": "FIN-A",
+        "recommended_option": "FIN-X",
+        "justification": "Option A has the lowest PV cost, yet all choices fall well below the 1.25 DSCR standard (best 0.78). Without additional revenue or cost reductions, none are fiscally viable; financing should be deferred until coverage is adequate."
+    }
+}

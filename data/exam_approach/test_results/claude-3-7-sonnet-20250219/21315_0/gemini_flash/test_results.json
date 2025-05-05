@@ -1,0 +1,244 @@
+{
+  "task1": {
+    "points_earned": 15,
+    "points_possible": 15,
+    "details": {
+      "annual_growth_rates": {
+        "points_earned": 4,
+        "points_possible": 4,
+        "item_details": [
+          {
+            "expected": 7.3,
+            "submitted": 7.3,
+            "points": 2,
+            "comment": "Correct"
+          },
+          {
+            "expected": 6.7,
+            "submitted": 6.7,
+            "points": 2,
+            "comment": "Correct"
+          }
+        ]
+      },
+      "cost_categories_ranking": {
+        "points_earned": 5,
+        "points_possible": 5,
+        "item_details": [
+          {
+            "position": 1,
+            "expected": "Materials",
+            "submitted": "Materials",
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "position": 2,
+            "expected": "Labor",
+            "submitted": "Labor",
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "position": 3,
+            "expected": "Overhead",
+            "submitted": "Overhead",
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "position": 4,
+            "expected": "Equipment",
+            "submitted": "Equipment",
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "position": 5,
+            "expected": "Administrative",
+            "submitted": "Administrative",
+            "points": 1,
+            "comment": "Correct"
+          }
+        ]
+      },
+      "projected_total_costs": {
+        "points_earned": 3,
+        "points_possible": 3,
+        "expected": 4288870,
+        "submitted": 4276832,
+        "comment": "Correct"
+      },
+      "efficiency_score": {
+        "points_earned": 3,
+        "points_possible": 3,
+        "expected": 1.31,
+        "submitted": 1.31,
+        "comment": "Correct"
+      }
+    }
+  },
+  "task2": {
+    "points_earned": 15,
+    "points_possible": 15,
+    "details": {
+      "total_variance": {
+        "points_earned": 3,
+        "points_possible": 3,
+        "expected": 130300,
+        "submitted": 130300,
+        "comment": "Correct"
+      },
+      "variance_percentages": {
+        "points_earned": 5,
+        "points_possible": 5,
+        "item_details": [
+          {
+            "category_index": 0,
+            "expected": 5.0,
+            "submitted": 5.0,
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "category_index": 1,
+            "expected": 2.0,
+            "submitted": 2.0,
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "category_index": 2,
+            "expected": 4.0,
+            "submitted": 4.0,
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "category_index": 3,
+            "expected": -7.0,
+            "submitted": -7.0,
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "category_index": 4,
+            "expected": 10.0,
+            "submitted": 10.0,
+            "points": 1,
+            "comment": "Correct"
+          }
+        ]
+      },
+      "highest_variance_category": {
+        "points_earned": 3,
+        "points_possible": 3,
+        "expected": "Administrative",
+        "submitted": "Administrative",
+        "comment": "Correct"
+      },
+      "cost_saving_opportunity": {
+        "points_earned": 4,
+        "points_possible": 4,
+        "expected": 159700,
+        "submitted": 160200,
+        "comment": "Correct"
+      }
+    }
+  },
+  "task3": {
+    "points_earned": 10,
+    "points_possible": 10,
+    "details": {
+      "quarterly_budget": {
+        "points_earned": 4,
+        "points_possible": 4,
+        "item_details": [
+          {
+            "quarter": "q1_budget",
+            "expected": 264000,
+            "submitted": 264000,
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "quarter": "q2_budget",
+            "expected": 336000,
+            "submitted": 336000,
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "quarter": "q3_budget",
+            "expected": 360000,
+            "submitted": 360000,
+            "points": 1,
+            "comment": "Correct"
+          },
+          {
+            "quarter": "q4_budget",
+            "expected": 240000,
+            "submitted": 240000,
+            "points": 1,
+            "comment": "Correct"
+          }
+        ]
+      },
+      "total_annual_budget": {
+        "points_earned": 1,
+        "points_possible": 1,
+        "expected": 1200000,
+        "submitted": 1200000,
+        "comment": "Correct"
+      },
+      "allocation_percentages": {
+        "points_earned": 5,
+        "points_possible": 5,
+        "item_details": [
+          {
+            "category": "Materials",
+            "minimum_required": 35.0,
+            "submitted": 35.0,
+            "points": 1,
+            "comment": "Meets minimum requirement"
+          },
+          {
+            "category": "Labor",
+            "minimum_required": 25.0,
+            "submitted": 25.0,
+            "points": 1,
+            "comment": "Meets minimum requirement"
+          },
+          {
+            "category": "Overhead",
+            "minimum_required": 15.0,
+            "submitted": 15.0,
+            "points": 1,
+            "comment": "Meets minimum requirement"
+          },
+          {
+            "category": "Equipment",
+            "minimum_required": 10.0,
+            "submitted": 20.0,
+            "points": 1,
+            "comment": "Meets minimum requirement"
+          },
+          {
+            "category": "Administrative",
+            "minimum_required": 5.0,
+            "submitted": 5.0,
+            "points": 1,
+            "comment": "Meets minimum requirement"
+          }
+        ]
+      }
+    },
+    "critical_errors": []
+  },
+  "overall_score": 100.0,
+  "total_points_earned": 40,
+  "total_points_possible": 40,
+  "passed_minimum_requirements": true,
+  "passed_exam": true,
+  "candidate_id": "GPT-4o"
+}

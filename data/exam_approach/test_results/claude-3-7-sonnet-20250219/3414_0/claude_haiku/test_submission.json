@@ -1,0 +1,44 @@
+{
+    "candidate_name": "GPT-4-Loan-Officer",
+    "task1": {
+        "monthly_payment": 1266.71
+    },
+    "task2": {
+        "month_1": {
+            "payment_number": 1,
+            "payment_amount": 1266.71,
+            "principal_portion": 329.21,
+            "interest_portion": 937.5,
+            "remaining_balance": 249670.79
+        },
+        "month_6": {
+            "payment_number": 6,
+            "payment_amount": 1266.71,
+            "principal_portion": 330.44,
+            "interest_portion": 936.27,
+            "remaining_balance": 249340.35
+        },
+        "month_12": {
+            "payment_number": 12,
+            "payment_amount": 1266.71,
+            "principal_portion": 332.18,
+            "interest_portion": 934.53,
+            "remaining_balance": 249008.17
+        }
+    },
+    "task3": {
+        "new_loan_term_years": 25,
+        "new_loan_term_months": 3,
+        "total_interest_saved": 41892.45,
+        "balance_after_5_years": 203456.78
+    },
+    "task4": {
+        "monthly_payment": 966.43,
+        "balloon_payment_amount": 159375.22
+    },
+    "task5": {
+        "new_monthly_payment": 1435.68,
+        "monthly_payment_savings": 156.32,
+        "breakeven_months": 29
+    }
+}

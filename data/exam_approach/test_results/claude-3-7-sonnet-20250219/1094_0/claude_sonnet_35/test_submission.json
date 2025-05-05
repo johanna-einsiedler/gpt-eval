@@ -1,0 +1,59 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "item_metrics": [
+        {
+            "item_id": "A001",
+            "total_quantity": 375,
+            "total_revenue": 3371.25,
+            "total_food_cost": 918.75,
+            "gross_profit": 2452.5,
+            "profit_margin_percentage": 72.7,
+            "popularity_rank": 8,
+            "profit_rank": 10
+        },
+        {
+            "item_id": "A002",
+            "total_quantity": 590,
+            "total_revenue": 7074.1,
+            "total_food_cost": 2271.5,
+            "gross_profit": 4802.6,
+            "profit_margin_percentage": 67.9,
+            "popularity_rank": 4,
+            "profit_rank": 5
+        }
+    ],
+    "underperforming_items": [
+        "A007",
+        "E005",
+        "E007",
+        "D005",
+        "B008"
+    ],
+    "price_adjustments": [
+        {
+            "item_id": "A007",
+            "current_price": 13.99,
+            "new_price": 17.86
+        },
+        {
+            "item_id": "E005",
+            "current_price": 15.99,
+            "new_price": 11.86
+        },
+        {
+            "item_id": "E007",
+            "current_price": 16.99,
+            "new_price": 14.14
+        },
+        {
+            "item_id": "D005",
+            "current_price": 8.99,
+            "new_price": 8.43
+        },
+        {
+            "item_id": "B008",
+            "current_price": 3.99,
+            "new_price": 2.43
+        }
+    ]
+}

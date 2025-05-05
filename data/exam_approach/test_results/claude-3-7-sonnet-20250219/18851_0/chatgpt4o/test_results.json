@@ -1,0 +1,65 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "overall_score": 95.0,
+  "total_points": 95,
+  "passing_score": 80,
+  "passed": true,
+  "essential_requirements": {
+    "All services staffed": true,
+    "No availability constraints violated": true,
+    "All conflicts resolved": true,
+    "No full-time overtime": true,
+    "Part-time minimum hours met": true
+  },
+  "all_essential_requirements_met": true,
+  "section_scores": {
+    "service_coverage": {
+      "score": 30,
+      "max_points": 30,
+      "feedback": [
+        "All services properly staffed (+26 points)",
+        "No coverage gaps detected (+4 points)"
+      ]
+    },
+    "schedule_compliance": {
+      "score": 30,
+      "max_points": 30,
+      "feedback": [
+        "All employee availability constraints respected (+10 points)",
+        "Breaks and rest periods properly scheduled (+10 points)",
+        "No violations of maximum consecutive working hours (+10 points)"
+      ]
+    },
+    "hour_requirements": {
+      "score": 18,
+      "max_points": 20,
+      "feedback": [
+        "4/5 full-time employees scheduled for exactly 40 hours (+8/10 points)",
+        "4/4 part-time employees met their hour requirements (+10/10 points)"
+      ]
+    },
+    "conflict_resolution": {
+      "score": 12,
+      "max_points": 15,
+      "feedback": [
+        "conflict1 resolved optimally with SOLUTION_CODE_B (+5 points)",
+        "conflict2 resolved optimally with SOLUTION_CODE_C (+5 points)",
+        "conflict3 resolved with SOLUTION_CODE_C, but SOLUTION_CODE_B would be optimal (+2/5 points)"
+      ]
+    },
+    "json_submission": {
+      "score": 5,
+      "max_points": 5,
+      "feedback": [
+        "JSON submission correctly formatted (+5 points)"
+      ]
+    }
+  },
+  "submission_analysis": {
+    "total_scheduled_hours": 320,
+    "expected_total_hours": 335,
+    "employees_with_overtime": [],
+    "unassigned_services": [],
+    "coverage_gaps": []
+  }
+}

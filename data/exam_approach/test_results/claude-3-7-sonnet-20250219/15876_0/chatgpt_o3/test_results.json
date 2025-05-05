@@ -1,0 +1,95 @@
+{
+  "task1": {
+    "excess_inventory_value": {
+      "candidate_answer": 22090.6,
+      "correct_answer": 16331.5,
+      "score": 0.0
+    },
+    "stockout_risk_skus": {
+      "candidate_answer": [
+        "SKU104",
+        "SKU106",
+        "SKU108",
+        "SKU110"
+      ],
+      "correct_answer": [
+        "SKU102",
+        "SKU104",
+        "SKU106",
+        "SKU108",
+        "SKU110"
+      ],
+      "score": 0.5
+    },
+    "optimal_reorder_point_sku123": {
+      "candidate_answer": 75,
+      "correct_answer": 75,
+      "score": 1.0
+    },
+    "highest_carrying_cost_category": {
+      "candidate_answer": "Electronics",
+      "correct_answer": "Electronics",
+      "score": 1.0
+    }
+  },
+  "task2": {
+    "carrier_cost_per_mile": {
+      "candidate_answer": {
+        "CarrierA": 1.47,
+        "CarrierB": 1.73,
+        "CarrierC": 1.31
+      },
+      "correct_answer": {
+        "CarrierA": 1.47,
+        "CarrierB": 1.73,
+        "CarrierC": 1.31
+      },
+      "score": 1.0
+    },
+    "most_efficient_carrier": {
+      "candidate_answer": "CarrierC",
+      "correct_answer": "CarrierC",
+      "score": 1.0
+    },
+    "potential_annual_savings": {
+      "candidate_answer": 35187.0,
+      "correct_answer": 6000.0,
+      "score": 0.0
+    },
+    "optimal_shipment_size": {
+      "candidate_answer": 8000,
+      "correct_answer": 6500,
+      "score": 0.0
+    }
+  },
+  "task3": {
+    "worst_performing_region": {
+      "candidate_answer": "West",
+      "correct_answer": "West",
+      "score": 1.0
+    },
+    "on_time_delivery_percentage": {
+      "candidate_answer": 55.0,
+      "correct_answer": 60.0,
+      "score": 0.0
+    },
+    "correlation_coefficient": {
+      "candidate_answer": -0.96,
+      "correct_answer": -0.95,
+      "score": 0.5
+    },
+    "priority_improvement_metric": {
+      "candidate_answer": "Delivery Time",
+      "correct_answer": "Delivery Time",
+      "score": 1.0
+    }
+  },
+  "scores": {
+    "task1": 2.5,
+    "task2": 2.0,
+    "task3": 2.5,
+    "total": 7.0
+  },
+  "overall_score": 58.33,
+  "candidate_id": "GPT-4o"
+}

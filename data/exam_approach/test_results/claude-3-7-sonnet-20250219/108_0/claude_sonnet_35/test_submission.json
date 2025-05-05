@@ -1,0 +1,74 @@
+{
+    "candidateId": "Claude-3_7-Sonnet",
+    "task1": {
+        "keyRequirements": [
+            "Leadership development program for 25 mid-level managers",
+            "Blended learning approach (in-person and virtual)",
+            "Training completed within 4 months (September-December 2023)",
+            "Maximum budget of $75,000",
+            "Pre and post-training assessments required"
+        ],
+        "potentialChallenges": [
+            "Meeting all requirements within $75,000 budget constraint",
+            "Completing comprehensive program in 4-month timeline",
+            "Accommodating participants across multiple time zones"
+        ],
+        "nonNegotiablePoints": [
+            "Training must be completed by December 2023",
+            "In-person sessions at San Francisco headquarters only",
+            "Maximum of 2 consecutive days for in-person training",
+            "Customization with company branding required",
+            "Confidentiality agreement must be signed"
+        ],
+        "flexiblePoints": [
+            "Exact mix of in-person vs. virtual sessions",
+            "Number of individual coaching sessions",
+            "Specific content of training modules",
+            "Duration of post-training support"
+        ]
+    },
+    "task2": {
+        "proposedFee": 75000.0,
+        "breakdownOfCosts": {
+            "trainerFees": 35000.0,
+            "materials": 13750.0,
+            "travelExpenses": 6250.0,
+            "administrativeCosts": 5000.0
+        },
+        "profitMargin": 25.0,
+        "valueJustification": [
+            "Customized program addressing specific company needs",
+            "Blended approach maximizes learning while minimizing disruption",
+            "Experienced trainers with technology industry background",
+            "Comprehensive evaluation process to demonstrate ROI"
+        ]
+    },
+    "task3": {
+        "objection1Response": "A",
+        "objection2Response": "B",
+        "objection3Response": "A",
+        "objection4Response": "A",
+        "objection5Response": "B"
+    },
+    "task4": {
+        "deliverables": [
+            "4 in-person workshop days",
+            "8 virtual training sessions",
+            "50 individual coaching sessions (2 per participant)",
+            "Customized training materials and assessments",
+            "Final impact and ROI analysis report"
+        ],
+        "timeline": {
+            "startDate": "2023-09-01",
+            "completionDate": "2023-12-15",
+            "milestoneCode": "MS-001"
+        },
+        "paymentStructure": {
+            "initialPayment": 18750.0,
+            "milestone1Payment": 37500.0,
+            "finalPayment": 18750.0
+        },
+        "contractTermCode": "CT-003",
+        "cancellationTerms": "CAN-002"
+    }
+}

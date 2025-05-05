@@ -1,0 +1,42 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "design_choice": "randomized controlled trial",
+        "sample_size": 64,
+        "stratification_variables": [
+            "age",
+            "baseline_bp"
+        ],
+        "expected_effect_size": 0.85
+    },
+    "task2": {
+        "minimum_sample_size": 52,
+        "power_at_sample_sizes": [
+            {
+                "sample_size": 100,
+                "power": 0.92
+            },
+            {
+                "sample_size": 200,
+                "power": 0.98
+            },
+            {
+                "sample_size": 300,
+                "power": 0.99
+            }
+        ],
+        "optimal_allocation_ratio": "1:1"
+    },
+    "task3": {
+        "control_group_mean": 157.0,
+        "treatment_effect_estimate": 15.0,
+        "confounders_identified": [
+            "age",
+            "bmi"
+        ],
+        "matching_variables": [
+            "age",
+            "baseline_bp"
+        ]
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "candidate_id": "GPT-4",
+    "Agreement_A": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Escrow Information section",
+            "description": "The monthly escrow payment of $450.00 is not supported by the provided annual property taxes ($3,600.00) and homeowner's insurance ($1,800.00).  The calculation should be approximately $400.00."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "policy_violation",
+            "location": "Loan Summary section",
+            "description": "First payment due date (August 1, 2023) is more than 60 days after the closing date (June 15, 2023), violating policy for residential mortgages."
+        }
+    ],
+    "Agreement_B": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The LTV ratio of 70% exceeds the maximum allowed 75% for most commercial properties."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The loan agreement lacks a clear statement of the amortization schedule and the exact amount of the balloon payment due at maturity."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Borrower Information section",
+            "description": "The state of formation for Greenfield Enterprises LLC is abbreviated as 'ST' and needs to be fully spelled out."
+        },
+        {
+            "issue_id": 4,
+            "issue_type": "policy_violation",
+            "location": "Guarantor Information section",
+            "description": "While personal guarantees are required, the agreement doesn't specify the extent of the guarantee (e.g., full recourse or limited recourse)."
+        }
+    ],
+    "Agreement_C": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The initial advance amount of $75,000 exceeds the 50% maximum allowed for the initial draw on a HELOC."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "policy_violation",
+            "location": "Additional Provisions section",
+            "description": "The minimum draw requirement of $10,000 within the first 12 months is not considered reasonable according to policy."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The combined LTV ratio of 77.27% exceeds the maximum 80% allowed for HELOCs."
+        },
+        {
+            "issue_id": 4,
+            "issue_type": "missing_information",
+            "location": "Loan Terms section",
+            "description": "The minimum monthly payment during the repayment period is not clearly defined beyond 'fully amortizing payment of principal and interest'."
+        }
+    ]
+}

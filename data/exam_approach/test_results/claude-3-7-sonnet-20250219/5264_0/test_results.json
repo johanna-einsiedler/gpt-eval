@@ -1,0 +1,58 @@
+{
+  "schedule_compliance": {
+    "score": 50,
+    "max_score": 60,
+    "percentage": 83.3,
+    "feedback": [
+      "\u2713 At least one supervisor scheduled for all operating hours",
+      "\u2713 Minimum staffing levels met for all days",
+      "\u2713 All employee availability constraints respected",
+      "\u2713 Proper lunch breaks scheduled for all employees",
+      "Sarah Williams does not have 2 consecutive days off"
+    ]
+  },
+  "weekly_hours": {
+    "score": 10,
+    "max_score": 15,
+    "percentage": 66.7,
+    "feedback": [
+      "Incorrect weekly hours for John Smith: submitted 24.0, calculated 27.0",
+      "Incorrect weekly hours for Maria Garcia: submitted 24.0, calculated 22.0",
+      "Incorrect weekly hours for Robert Johnson: submitted 40.0, calculated 36.0",
+      "Incorrect weekly hours for Sarah Williams: submitted 36.0, calculated 31.0",
+      "Incorrect weekly hours for David Brown: submitted 24.0, calculated 27.0",
+      "Incorrect weekly hours for James Wilson: submitted 20.0, calculated 24.0",
+      "Incorrect weekly hours for Michael Davis: submitted 14.0, calculated 16.0",
+      "\u2713 Full-time employees do not exceed 40 hours",
+      "\u2713 Part-time employees do not exceed 20 hours"
+    ]
+  },
+  "coverage_analysis": {
+    "score": 15,
+    "max_score": 15,
+    "percentage": 100.0,
+    "feedback": [
+      "\u2713 Peak hour counts calculated correctly",
+      "\u2713 Adequate coverage assessed correctly"
+    ]
+  },
+  "json_format": {
+    "score": 7,
+    "max_score": 10,
+    "percentage": 70.0,
+    "feedback": [
+      "\u2713 All required days present in schedule",
+      "\u2713 All employees present in weekly_hours",
+      "\u2713 Time formats are correct",
+      "scheduling_challenges exceeds 250 characters: 256 characters"
+    ]
+  },
+  "overall_score": 82.0,
+  "passed": true,
+  "pass_criteria": {
+    "overall_score_requirement": "\u2265 80%",
+    "schedule_compliance_requirement": "\u2265 70%",
+    "overall_score_achieved": "82.0%",
+    "schedule_compliance_achieved": "83.3%"
+  }
+}

@@ -1,0 +1,46 @@
+{
+    "candidate_id": "GPT-4o",
+    "product_margins": {
+        "techpro_basic": 0.5,
+        "techpro_professional": 0.44,
+        "techpro_enterprise": 0.47
+    },
+    "minimum_prices": {
+        "techpro_basic": 50.0,
+        "techpro_professional": 83.33,
+        "techpro_enterprise": 133.33
+    },
+    "tiered_pricing": {
+        "techpro_basic": {
+            "tier_1_1_9": 56.0,
+            "tier_2_10_49": 52.0,
+            "tier_3_50plus": 50.0
+        },
+        "techpro_professional": {
+            "tier_1_1_9": 92.0,
+            "tier_2_10_49": 87.0,
+            "tier_3_50plus": 84.0
+        },
+        "techpro_enterprise": {
+            "tier_1_1_9": 152.0,
+            "tier_2_10_49": 140.0,
+            "tier_3_50plus": 134.0
+        }
+    },
+    "discount_rates": {
+        "enterprise": 0.12,
+        "mid_market": 0.08,
+        "small_business": 0.05
+    },
+    "volume_thresholds": {
+        "discount_tier_1": 10,
+        "discount_tier_2": 50,
+        "discount_tier_3": 100
+    },
+    "competitive_price_index": {
+        "techpro_basic": 0.99,
+        "techpro_professional": 0.99,
+        "techpro_enterprise": 0.97
+    },
+    "pricing_strategy_rationale": "The proposed structure starts by ensuring a 40%+ margin using a cost/0.60 floor. Tier-1 prices are then positioned just below the industry average (1–3 % under) to strengthen competitive appeal without eroding margin. Tier-2 and Tier-3 provide meaningful but controlled step-downs that reflect historical volume bands (10-49, 50+) while respecting the 40 % margin floor—protecting profitability even on large deals. Segment discounts mirror buying power and price sensitivity: enterprises negotiate hardest and purchase largest volumes, mid-market receives moderate concessions, and small businesses get a modest 5 % break to offset high sensitivity. Additional volume thresholds (10/50/100) trigger automatic discounts and align with past sales distribution, simplifying messaging for reps and buyers. Overall, the strategy balances competitiveness, clear scaling incentives, and healthy contribution margins to drive sustainable growth."
+}

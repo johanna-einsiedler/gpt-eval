@@ -1,0 +1,26 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "average_compensation": 88700.25,
+        "highest_cost_benefit": "Health_Benefits",
+        "tenure_cost_correlation": 0.92,
+        "projected_increase": 2.66
+    },
+    "task2": {
+        "scenario1_total_cost": 450772.2,
+        "scenario2_total_cost": 451843.58,
+        "scenario3_total_cost": 449999.95,
+        "lowest_cost_scenario": 3,
+        "percentage_difference": 0.17,
+        "tenure_restricted_cost": 324999.96
+    },
+    "task3": {
+        "group_a_compensation_ratio": 0.38,
+        "group_b_compensation_ratio": 0.32,
+        "group_c_compensation_ratio": 0.3,
+        "highest_benefit_group": "Group_A",
+        "cost_to_90_percent": 108570.0,
+        "retirement_benefit_difference": 50.0,
+        "cost_parity_adjustment": 108570.0
+    }
+}

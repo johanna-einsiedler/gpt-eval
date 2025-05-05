@@ -1,0 +1,130 @@
+{
+    "candidate_id": "GPT-4o",
+    "calculation_errors": [
+        {
+            "location": "Department Summary (Sheet 1), Personnel – Current Request (cell C3)",
+            "current_value": "$1,350,000",
+            "correct_value": "$1,443,000",
+            "explanation": "The total in Personnel Detail is $1,443,000, therefore the summary value should match that total."
+        },
+        {
+            "location": "Department Summary (Sheet 1), Equipment – Current Request (cell C4)",
+            "current_value": "$215,000",
+            "correct_value": "$79,400",
+            "explanation": "Equipment Detail totals $79,400, so the summary figure is overstated."
+        },
+        {
+            "location": "Department Summary (Sheet 1), TOTAL – Current Request (cell C11)",
+            "current_value": "$2,502,000",
+            "correct_value": "$2,459,400",
+            "explanation": "Corrected Personnel and Equipment figures change the overall total."
+        },
+        {
+            "location": "Department Summary (Sheet 1), Personnel – % Change (cell D3)",
+            "current_value": "8.4%",
+            "correct_value": "15.9%",
+            "explanation": "((1,443,000-1,245,000)/1,245,000)×100 = 15.9%."
+        },
+        {
+            "location": "Department Summary (Sheet 1), Equipment – % Change (cell D4)",
+            "current_value": "14.7%",
+            "correct_value": "-57.7%",
+            "explanation": "((79,400-187,500)/187,500)×100 = ‑57.7%."
+        },
+        {
+            "location": "Department Summary (Sheet 1), TOTAL – % Change (cell D11)",
+            "current_value": "9.2%",
+            "correct_value": "7.4%",
+            "explanation": "((2,459,400-2,291,000)/2,291,000)×100 = 7.4%."
+        },
+        {
+            "location": "Quarterly Allocation (Sheet 4), Personnel – Quarterly amounts and Total (row 2)",
+            "current_value": "Each quarter $337,500; annual $1,350,000",
+            "correct_value": "Each quarter $360,750; annual $1,443,000",
+            "explanation": "Personnel total must equal $1,443,000 and be spread 25% per quarter in compliance with REG-203."
+        },
+        {
+            "location": "Quarterly Allocation (Sheet 4), Equipment – Quarterly amounts and Total (row 3)",
+            "current_value": "Q1 $150,500; Q2–Q4 $21,500; annual $215,000",
+            "correct_value": "Q1 $19,850; Q2 $19,850; Q3 $19,850; Q4 $19,850; annual $79,400 (or another distribution justified)\n",
+            "explanation": "Quarterly allocation must tie to the corrected Equipment total of $79,400 and REG-503 requires quarterly totals to equal the annual amount."
+        },
+        {
+            "location": "Quarterly Allocation (Sheet 4), TOTAL row – Annual total (cell F10)",
+            "current_value": "$2,502,000",
+            "correct_value": "$2,459,400",
+            "explanation": "Total of quarterly allocations must match the corrected Department Summary total."
+        }
+    ],
+    "missing_information": [
+        {
+            "requirement_id": "REQ-006",
+            "description": "Signature page (Department Director signature, date, Budget Director approval, Finance verification) is not included.",
+            "impact": "Without required signatures the submission is not legally authorized and cannot be processed."
+        },
+        {
+            "requirement_id": "REQ-007",
+            "description": "Quotes or supporting documentation for the $15,000 server purchase (> $5,000 item).",
+            "impact": "Lack of supporting quotes violates procurement rules and delays approval of capital purchases."
+        },
+        {
+            "requirement_id": "REQ-007",
+            "description": "Contracts/estimates or competitive-bid documentation for $250,000 Professional Services request.",
+            "impact": "Professional Services above $50,000 must undergo competitive bidding; missing documentation risks non-compliance with procurement policy."
+        },
+        {
+            "requirement_id": "REQ-007",
+            "description": "Detailed travel breakdown by purpose and destination.",
+            "impact": "Travel expenses cannot be evaluated for necessity or reasonableness without itemization, hindering review against REG-302."
+        },
+        {
+            "requirement_id": "REQ-005",
+            "description": "Detailed justification for Personnel cost increase >10% after correction.",
+            "impact": "REG-104 requires Budget Director approval for increases over 10%; missing detail will delay approval."
+        }
+    ],
+    "compliance_issues": [
+        {
+            "regulation_id": "REG-103",
+            "location": "Equipment values across sheets",
+            "issue": "Department Summary and Quarterly Allocation use a parent code total ($2000) of $215,000 that does not agree with detailed line-item total ($79,400).",
+            "recommendation": "Update summary and allocation sheets to equal the detailed equipment total or revise Equipment Detail to capture all requested items."
+        },
+        {
+            "regulation_id": "REG-203",
+            "location": "Quarterly Allocation – Personnel",
+            "issue": "After correcting Personnel total, quarters are no longer an equal 25% of the annual amount.",
+            "recommendation": "Recalculate quarterly personnel amounts so each quarter is exactly 25% of $1,443,000 ($360,750)."
+        },
+        {
+            "regulation_id": "REG-303",
+            "location": "Professional Services request (Department Summary row)",
+            "issue": "Professional Services total $250,000 exceeds $50,000 but no competitive bidding exception or documentation provided.",
+            "recommendation": "Attach competitive bid results or approved sole-source exception before submission."
+        },
+        {
+            "regulation_id": "REG-302",
+            "location": "Budget Justification – Travel",
+            "issue": "Travel expenses are not itemized by purpose and destination.",
+            "recommendation": "Provide a breakdown of trips (conference names, locations, dates, estimated costs) to meet REG-302."
+        },
+        {
+            "regulation_id": "REG-104",
+            "location": "Department Summary – Personnel, Training, Miscellaneous rows",
+            "issue": "Year-over-year increases >10% (Personnel 15.9% after correction, Training 10.8%, Miscellaneous 15.6%) lack documented Budget Director approval.",
+            "recommendation": "Obtain approval memos and attach to submission as required."
+        },
+        {
+            "regulation_id": "REG-501 / REG-503",
+            "location": "Quarterly Allocation – Equipment and Total rows",
+            "issue": "Quarterly allocations do not sum to the corrected annual totals, violating REG-503, and Equipment allocation does not match REG-501 standard or contain justification for exception.",
+            "recommendation": "Revise quarterly figures to match annual totals and include justification if uneven distribution is required."
+        },
+        {
+            "regulation_id": "REG-105",
+            "location": "Entire submission",
+            "issue": "Required signature of Department Director dated before 15 May 2023 is missing.",
+            "recommendation": "Add signed signature page to finalize compliance with submission deadline and authorization requirement."
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4",
+    "debt_payoff_order": [
+        "CC1",
+        "CC2",
+        "PL1",
+        "AL1",
+        "SL1"
+    ],
+    "total_months_to_debt_freedom": 60,
+    "monthly_payment_allocation": {
+        "CC1": 700.0,
+        "CC2": 200.0,
+        "PL1": 320.0,
+        "AL1": 375.0,
+        "SL1": 210.0
+    },
+    "interest_saved_vs_minimum_payments": 12875.23,
+    "first_debt_paid_off": {
+        "debt_id": "CC1",
+        "month_number": 12
+    },
+    "last_debt_paid_off": {
+        "debt_id": "SL1",
+        "month_number": 60
+    },
+    "strategy_explanation": "The debt payoff strategy prioritizes high-interest debts first (Avalanche method) to minimize total interest paid.  This focuses on CC1 and CC2 initially, then moves to the lower-interest loans.  Minimum payments are made on all debts until the highest interest debt is paid off."
+}

@@ -1,0 +1,26 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "store_with_highest_loss": "S003",
+        "loss_amount": 4520.75
+    },
+    "task2": {
+        "suspicious_employee_id": "E1078",
+        "transaction_count": 15,
+        "average_transaction_value": 8.67
+    },
+    "task3": {
+        "department_with_highest_shrinkage": "Electronics",
+        "shrinkage_percentage": 5.32
+    },
+    "task4": {
+        "date_with_highest_voids": "2023-02-18",
+        "void_count": 37,
+        "void_value": 2890.5
+    },
+    "task5": {
+        "pattern_timeframe_start": "2023-01-15",
+        "pattern_timeframe_end": "2023-02-15",
+        "total_estimated_loss": 10250.0
+    }
+}

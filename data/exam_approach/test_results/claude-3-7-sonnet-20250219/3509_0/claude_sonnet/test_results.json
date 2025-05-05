@@ -1,0 +1,351 @@
+{
+  "overall_score": 94.97500000000001,
+  "total_points": 37.99,
+  "max_possible_points": 40,
+  "passing_score": 28,
+  "passed": true,
+  "critical_elements_met": true,
+  "critical_elements_details": {
+    "incontestability_periods": {
+      "requirement": "Correctly identifying at least 3 of 4 incontestability periods",
+      "correct": 4,
+      "required": 3,
+      "met": true
+    },
+    "non_compliant_provisions": {
+      "requirement": "Correctly identifying at least 2 of 3 non-compliant provisions",
+      "correct": 2,
+      "required": 2,
+      "met": true
+    },
+    "scenarios": {
+      "requirement": "Correctly identifying the provisions for at least 3 of 5 scenarios in Task 3",
+      "correct": 5,
+      "required": 3,
+      "met": true
+    }
+  },
+  "task_scores": {
+    "task1": {
+      "incontestability_periods": {
+        "score": 4,
+        "max_score": 4,
+        "details": {
+          "life_insurance": {
+            "submitted": 24,
+            "correct": 24,
+            "is_correct": true,
+            "points": 1
+          },
+          "health_insurance": {
+            "submitted": 36,
+            "correct": 36,
+            "is_correct": true,
+            "points": 1
+          },
+          "property_insurance": {
+            "submitted": 12,
+            "correct": 12,
+            "is_correct": true,
+            "points": 1
+          },
+          "auto_insurance": {
+            "submitted": 6,
+            "correct": 6,
+            "is_correct": true,
+            "points": 1
+          }
+        }
+      },
+      "provisions_present": {
+        "score": 12.0,
+        "max_score": 12,
+        "details": {
+          "life_insurance": {
+            "free_look_period": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "grace_period": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "waiver_of_premium": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "exclusions_for_pre_existing_conditions": {
+              "submitted": false,
+              "correct": false,
+              "is_correct": true,
+              "points": 0.75
+            }
+          },
+          "health_insurance": {
+            "free_look_period": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "grace_period": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "waiver_of_premium": {
+              "submitted": false,
+              "correct": false,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "exclusions_for_pre_existing_conditions": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            }
+          },
+          "property_insurance": {
+            "free_look_period": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "grace_period": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "waiver_of_premium": {
+              "submitted": false,
+              "correct": false,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "exclusions_for_pre_existing_conditions": {
+              "submitted": false,
+              "correct": false,
+              "is_correct": true,
+              "points": 0.75
+            }
+          },
+          "auto_insurance": {
+            "free_look_period": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "grace_period": {
+              "submitted": true,
+              "correct": true,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "waiver_of_premium": {
+              "submitted": false,
+              "correct": false,
+              "is_correct": true,
+              "points": 0.75
+            },
+            "exclusions_for_pre_existing_conditions": {
+              "submitted": false,
+              "correct": false,
+              "is_correct": true,
+              "points": 0.75
+            }
+          }
+        }
+      },
+      "cancellation_provisions": {
+        "score": 4,
+        "max_score": 4,
+        "details": {
+          "life_insurance": {
+            "submitted": "5.1 CANCELLATION BY OWNER: The owner may cancel this policy at any time by returning it to the company with a written request for cancellation. The effective date of cancellation will be the date the request is received by the company. Upon cancellation, the company will refund any unearned premium.",
+            "correct": "5.1 CANCELLATION BY OWNER: The owner may cancel this policy at any time by returning it to the company with a written request for cancellation. The effective date of cancellation will be the date the request is received by the company. Upon cancellation, the company will refund any unearned premium.",
+            "is_correct": true,
+            "partial_credit": false,
+            "points": 1
+          },
+          "health_insurance": {
+            "submitted": "5.1 CANCELLATION BY INSURED: The insured may cancel this policy at any time by written notice delivered or mailed to the company. In the event of such cancellation, the company will promptly return the unearned portion of any premium paid. The earned premium shall be computed on a pro-rata basis. Cancellation shall be without prejudice to any claim originating prior to the effective date of cancellation.",
+            "correct": "5.1 CANCELLATION BY INSURED: The insured may cancel this policy at any time by written notice delivered or mailed to the company. In the event of such cancellation, the company will promptly return the unearned portion of any premium paid. The earned premium shall be computed on a pro-rata basis. Cancellation shall be without prejudice to any claim originating prior to the effective date of cancellation.",
+            "is_correct": true,
+            "partial_credit": false,
+            "points": 1
+          },
+          "property_insurance": {
+            "submitted": "6.1 CANCELLATION BY INSURED: The named insured may cancel this policy at any time by returning it to the company or by notifying the company in writing of the date cancellation is to take effect. The company will refund any unearned premium on a short-rate basis.",
+            "correct": "6.1 CANCELLATION BY INSURED: The named insured may cancel this policy at any time by returning it to the company or by notifying the company in writing of the date cancellation is to take effect. The company will refund any unearned premium on a short-rate basis.",
+            "is_correct": true,
+            "partial_credit": false,
+            "points": 1
+          },
+          "auto_insurance": {
+            "submitted": "7.1 CANCELLATION BY INSURED: The named insured may cancel this policy at any time by returning it to the company or by notifying the company in writing of the date cancellation is to take effect. The company will refund any unearned premium on a pro-rata basis.",
+            "correct": "7.1 CANCELLATION BY INSURED: The named insured may cancel this policy at any time by returning it to the company or by notifying the company in writing of the date cancellation is to take effect. The company will refund any unearned premium on a pro-rata basis.",
+            "is_correct": true,
+            "partial_credit": false,
+            "points": 1
+          }
+        }
+      },
+      "total_score": 20.0,
+      "max_score": 20
+    },
+    "task2": {
+      "non_compliant_provisions": {
+        "score": 4,
+        "max_score": 6,
+        "details": [
+          {
+            "submitted": {
+              "policy_section": "Section 1.4",
+              "regulatory_requirement": "Section E.3"
+            },
+            "is_correct": true,
+            "partial_credit": false,
+            "points": 2
+          },
+          {
+            "submitted": {
+              "policy_section": "Section 2.3",
+              "regulatory_requirement": "Section E.4"
+            },
+            "is_correct": true,
+            "partial_credit": false,
+            "points": 2
+          },
+          {
+            "submitted": null,
+            "correct": {
+              "policy_section": "Section 7",
+              "regulatory_requirement": "Section E.6"
+            },
+            "is_correct": false,
+            "partial_credit": false,
+            "points": 0
+          }
+        ]
+      },
+      "minimum_coverage_limits": {
+        "score": 3.99,
+        "max_score": 4,
+        "details": {
+          "bodily_injury_per_person": {
+            "submitted": 25000,
+            "correct": 25000,
+            "is_correct": true,
+            "points": 1.33
+          },
+          "bodily_injury_per_accident": {
+            "submitted": 50000,
+            "correct": 50000,
+            "is_correct": true,
+            "points": 1.33
+          },
+          "property_damage": {
+            "submitted": 25000,
+            "correct": 25000,
+            "is_correct": true,
+            "points": 1.33
+          }
+        }
+      },
+      "total_score": 7.99,
+      "max_score": 10
+    },
+    "task3": {
+      "scenarios": {
+        "scenario1": {
+          "provision_name": {
+            "submitted": "Incontestability",
+            "correct": "Incontestability",
+            "is_correct": true,
+            "points": 1
+          },
+          "policy_section": {
+            "submitted": "Section 1.2",
+            "correct": "Section 1.2",
+            "is_correct": true,
+            "points": 1
+          },
+          "total_points": 2
+        },
+        "scenario2": {
+          "provision_name": {
+            "submitted": "Grace Period",
+            "correct": "Grace Period",
+            "is_correct": true,
+            "points": 1
+          },
+          "policy_section": {
+            "submitted": "Section 1.4",
+            "correct": "Section 1.4",
+            "is_correct": true,
+            "points": 1
+          },
+          "total_points": 2
+        },
+        "scenario3": {
+          "provision_name": {
+            "submitted": "Adding Dependents",
+            "correct": "Adding Dependents",
+            "is_correct": true,
+            "points": 1
+          },
+          "policy_section": {
+            "submitted": "Section 6.3",
+            "correct": "Section 6.3",
+            "is_correct": true,
+            "points": 1
+          },
+          "total_points": 2
+        },
+        "scenario4": {
+          "provision_name": {
+            "submitted": "Changes in Residence",
+            "correct": "Changes in Residence",
+            "is_correct": true,
+            "points": 1
+          },
+          "policy_section": {
+            "submitted": "Section 8.2",
+            "correct": "Section 8.2",
+            "is_correct": true,
+            "points": 1
+          },
+          "total_points": 2
+        },
+        "scenario5": {
+          "provision_name": {
+            "submitted": "Change of Beneficiary",
+            "correct": "Change of Beneficiary",
+            "is_correct": true,
+            "points": 1
+          },
+          "policy_section": {
+            "submitted": "Section 3.4",
+            "correct": "Section 3.4",
+            "is_correct": true,
+            "points": 1
+          },
+          "total_points": 2
+        }
+      },
+      "total_score": 10,
+      "max_score": 10
+    }
+  }
+}

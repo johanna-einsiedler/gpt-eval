@@ -1,0 +1,25 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "forecast_values": [
+            250,
+            255,
+            260,
+            265
+        ],
+        "accuracy_metric": 0.0,
+        "cost_driver": "quantity",
+        "correlation_value": 1.0
+    },
+    "task2": {
+        "fixed_cost": 3000.0,
+        "variable_cost_coefficient": 5.0,
+        "total_estimated_cost": 28000.0,
+        "cost_breakdown": {
+            "labor": 15600.0,
+            "transportation": 6000.0,
+            "handling": 4000.0,
+            "other": 2400.0
+        }
+    }
+}

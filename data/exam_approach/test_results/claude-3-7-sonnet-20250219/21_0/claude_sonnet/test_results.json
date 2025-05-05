@@ -1,0 +1,138 @@
+{
+  "candidate_id": "GPT-4o",
+  "task1": {
+    "score": 30,
+    "max_score": 30,
+    "feedback": [
+      "\u2713 Correctly identified the cost per employee calculation error",
+      "\u2713 Correctly calculated the total expenses",
+      "\u2713 Correctly calculated the efficiency score"
+    ],
+    "details": {
+      "data_errors": {
+        "submitted": [
+          "Cost per employee calculation is incorrect - should be $4,442.31 instead of $3,850.00"
+        ],
+        "expected": [
+          "Cost per employee calculation is incorrect: should be $4,442.31 (57750/13), not $3,850.00"
+        ],
+        "score": 10,
+        "max_score": 10
+      },
+      "total_correct_expenses": {
+        "submitted": 57750.0,
+        "expected": 57750.0,
+        "score": 10,
+        "max_score": 10
+      },
+      "efficiency_score": {
+        "submitted": 100,
+        "expected": 100,
+        "score": 10,
+        "max_score": 10
+      }
+    }
+  },
+  "task2": {
+    "score": 30,
+    "max_score": 40,
+    "feedback": [
+      "\u26a0 Identified 2 out of 3 coverage gaps",
+      "\u2713 Correctly determined the optimal staff count",
+      "\u26a0 Identified 1 out of 2 schedule conflicts"
+    ],
+    "details": {
+      "coverage_gaps": {
+        "submitted": [
+          "Reception: Monday 4:00 PM - 5:00 PM (only 2 staff when minimum required is 3)",
+          "Reception: Wednesday 4:00 PM - 5:00 PM (only 2 staff when minimum required is 3)",
+          "Reception: Friday 4:00 PM - 5:00 PM (only 2 staff when minimum required is 3)",
+          "Reception: Monday-Friday 11:00 AM - 2:00 PM (peak hours require 5 staff, but only 3-4 are scheduled)",
+          "Finance: Monday 9:00 AM - 10:00 AM (only 3 staff when minimum required is 4)",
+          "Finance: Tuesday 9:00 AM - 10:00 AM (only 3 staff when minimum required is 4)",
+          "Finance: Wednesday 9:00 AM - 10:00 AM (only 2 staff when minimum required is 4)",
+          "Finance: Monday-Friday 1:00 PM - 4:00 PM (peak hours require 6 staff, but only 4-5 are scheduled)"
+        ],
+        "expected": [
+          "Reception: Only 2 staff on Wednesday mornings (8:00-9:00 AM) when minimum is 3",
+          "Finance: Only 3 staff during peak hours (1:00-4:00 PM) on Mondays when 6 are required",
+          "HR: Only 1 staff member on Mondays and Tuesdays when minimum is 2"
+        ],
+        "score": 10,
+        "max_score": 15
+      },
+      "optimal_staff_count": {
+        "submitted": 14,
+        "expected": 14,
+        "score": 15,
+        "max_score": 15
+      },
+      "schedule_conflicts": {
+        "submitted": [
+          "E011 (Joseph Jackson) is scheduled to work on Thursday despite availability constraints stating cannot work Thursdays",
+          "E012 (Margaret White) is scheduled to work on Monday and Tuesday despite availability constraints stating cannot work those days"
+        ],
+        "expected": [
+          "E004 (Patricia Davis) is scheduled for 4 days when availability states maximum 3 days per week",
+          "E011 (Joseph Jackson) is scheduled on Thursday despite availability constraints stating cannot work Thursdays"
+        ],
+        "score": 5,
+        "max_score": 10
+      }
+    }
+  },
+  "task3": {
+    "score": 6,
+    "max_score": 30,
+    "feedback": [
+      "\u2717 Incorrect report frequency: submitted 'weekly', expected 'monthly'",
+      "\u26a0 Selected 3 out of 5 appropriate key metrics",
+      "\u2717 Incorrect report format: submitted 'Summary', expected 'Trend'"
+    ],
+    "details": {
+      "report_frequency": {
+        "submitted": "weekly",
+        "expected": "monthly",
+        "score": 0,
+        "max_score": 10
+      },
+      "key_metrics": {
+        "submitted": [
+          "M001",
+          "M003",
+          "M004",
+          "M007",
+          "M010"
+        ],
+        "expected": [
+          "M001",
+          "M003",
+          "M006",
+          "M004",
+          "M005"
+        ],
+        "matches": [
+          "M003",
+          "M004",
+          "M001"
+        ],
+        "score": 6,
+        "max_score": 10
+      },
+      "selected_report_format": {
+        "submitted": "Summary",
+        "expected": "Trend",
+        "score": 0,
+        "max_score": 10
+      }
+    }
+  },
+  "overall_score": 66.0,
+  "performance_assessment": {
+    "score": 66,
+    "max_score": 100,
+    "percentage": 66.0,
+    "rating": "Satisfactory",
+    "summary": "The candidate scored 66/100 (66.0%), which is rated as 'Satisfactory'."
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "candidate_name": "GPT-4-turbo",
+  "task_results": {
+    "task1": {
+      "score": 0,
+      "max_score": 2,
+      "feedback": "Incorrect",
+      "submitted_value": 1265.28,
+      "correct_value": 1266.71
+    },
+    "task2": {
+      "score": 0.75,
+      "max_score": 6,
+      "months": {
+        "month_1": {
+          "score": 0.75,
+          "max_score": 2,
+          "fields": {
+            "payment_amount": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1265.28,
+              "correct_value": 1266.71
+            },
+            "principal_portion": {
+              "score": 0.25,
+              "feedback": "Partially correct (within $1.00)",
+              "submitted_value": 328.53,
+              "correct_value": 329.21
+            },
+            "interest_portion": {
+              "score": 0.25,
+              "feedback": "Partially correct (within $1.00)",
+              "submitted_value": 936.75,
+              "correct_value": 937.5
+            },
+            "remaining_balance": {
+              "score": 0.25,
+              "feedback": "Partially correct (within $1.00)",
+              "submitted_value": 249671.47,
+              "correct_value": 249670.79
+            }
+          }
+        },
+        "month_6": {
+          "score": 0,
+          "max_score": 2,
+          "fields": {
+            "payment_amount": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1265.28,
+              "correct_value": 1266.71
+            },
+            "principal_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 339.02,
+              "correct_value": 336.55
+            },
+            "interest_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 926.26,
+              "correct_value": 930.16
+            },
+            "remaining_balance": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 247954.83,
+              "correct_value": 247706.4
+            }
+          }
+        },
+        "month_12": {
+          "score": 0,
+          "max_score": 2,
+          "fields": {
+            "payment_amount": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 1265.28,
+              "correct_value": 1266.71
+            },
+            "principal_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 350.04,
+              "correct_value": 343.96
+            },
+            "interest_portion": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 915.24,
+              "correct_value": 922.75
+            },
+            "remaining_balance": {
+              "score": 0,
+              "feedback": "Incorrect",
+              "submitted_value": 245800.11,
+              "correct_value": 245723.39
+            }
+          }
+        }
+      }
+    },
+    "task3": {
+      "score": 0.5,
+      "max_score": 4,
+      "fields": {
+        "new_loan_term_years": {
+          "score": 0.5,
+          "feedback": "Partially correct (within 1 unit)",
+          "submitted_value": 23,
+          "correct_value": 22
+        },
+        "new_loan_term_months": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 1,
+          "correct_value": 6
+        },
+        "total_interest_saved": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 59147.41,
+          "correct_value": 64686.48
+        },
+        "balance_after_5_years": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 222244.48,
+          "correct_value": 213767.32
+        }
+      }
+    },
+    "task4": {
+      "score": 0,
+      "max_score": 4,
+      "fields": {
+        "monthly_payment": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 965.17,
+          "correct_value": 966.28
+        },
+        "balloon_payment_amount": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 153149.84,
+          "correct_value": 162092.93
+        }
+      }
+    },
+    "task5": {
+      "score": 0,
+      "max_score": 4,
+      "fields": {
+        "new_monthly_payment": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 1530.44,
+          "correct_value": 1433.94
+        },
+        "monthly_payment_savings": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 286.54,
+          "correct_value": 337.95
+        },
+        "breakeven_months": {
+          "score": 0,
+          "feedback": "Incorrect",
+          "submitted_value": 16,
+          "correct_value": 14
+        }
+      }
+    }
+  },
+  "total_score": 1.25,
+  "max_score": 20,
+  "overall_score": 6.25,
+  "critical_tasks_status": {
+    "task1_requirement_met": false,
+    "task2_requirement_met": false,
+    "all_critical_requirements_met": false
+  },
+  "passed": false
+}

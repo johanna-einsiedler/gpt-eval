@@ -1,0 +1,56 @@
+{
+    "candidateId": "GPT-4-turbo",
+    "exercise1": {
+        "cashCountTotal": 986.23,
+        "ledgerBalance": 1000.0,
+        "discrepancyAmount": 13.77,
+        "discrepancyType": "shortage"
+    },
+    "exercise2": {
+        "note1": {
+            "isCorrectlyRecorded": false,
+            "discrepancyField": "interest",
+            "correctValue": "5.5%"
+        },
+        "note2": {
+            "isCorrectlyRecorded": true,
+            "discrepancyField": "none",
+            "correctValue": ""
+        }
+    },
+    "exercise3": {
+        "security1": {
+            "isAuthentic": true,
+            "isCorrectlyValued": false,
+            "correctBookValue": 9850.0
+        },
+        "security2": {
+            "isAuthentic": true,
+            "isCorrectlyValued": false,
+            "correctBookValue": 32500.0
+        }
+    },
+    "exercise4": {
+        "check1": {
+            "isProperlyEndorsed": true,
+            "isProperlyAuthorized": true,
+            "isCorrectlyRecorded": true,
+            "discrepancyType": "none"
+        },
+        "check2": {
+            "isProperlyEndorsed": true,
+            "isProperlyAuthorized": true,
+            "isCorrectlyRecorded": false,
+            "discrepancyType": "amount"
+        }
+    },
+    "exercise5": {
+        "totalDiscrepancyAmount": 3750.0,
+        "affectedAccounts": [
+            "Cash on Hand",
+            "Professional Services Expense"
+        ],
+        "adjustmentRequired": true,
+        "fraudIndicatorsPresent": false
+    }
+}

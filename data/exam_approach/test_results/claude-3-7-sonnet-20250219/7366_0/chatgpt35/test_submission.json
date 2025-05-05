@@ -1,0 +1,86 @@
+{
+    "candidate_id": "GPT-3.5-turbo",
+    "section1": {
+        "form1040_client_a_errors": [
+            {
+                "error_type": "value_discrepancy",
+                "field": "Wages, salaries, tips (Line 1)",
+                "reported_value": "$72,500",
+                "correct_value": "$75,500",
+                "explanation": "Discrepancy in reported wages"
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Total income (Line 9)",
+                "reported_value": "$73,275",
+                "correct_value": "$76,275",
+                "explanation": "Incorrect total income calculation"
+            }
+        ],
+        "schedule_c_client_b_errors": [
+            {
+                "error_type": "math_error",
+                "field": "Gross income (Line 7)",
+                "reported_value": "$84,250",
+                "correct_value": "$84,750",
+                "explanation": "Math error in gross income calculation"
+            }
+        ],
+        "form_8949_client_c_missing_fields": [
+            {
+                "field": "Date acquired for 75 shares DEF Corp",
+                "explanation": "Missing date acquired information"
+            }
+        ]
+    },
+    "section2": {
+        "tax_calculation_client_d_errors": [
+            {
+                "field": "Total Tax",
+                "reported_value": 20662.0,
+                "correct_value": 20719.0,
+                "explanation": "Incorrect total tax calculation"
+            }
+        ],
+        "income_reconciliation_client_e": {
+            "discrepancy_found": true,
+            "discrepancy_amount": 50.0,
+            "explanation": "Discrepancy in total income calculation"
+        },
+        "estimated_tax_client_f": {
+            "reported_payments": 9500.0,
+            "correct_payments": 10000.0,
+            "discrepancy_amount": 500.0,
+            "explanation": "Mismatch in reported estimated tax payments"
+        }
+    },
+    "section3": {
+        "client_g_discrepancies": [
+            {
+                "field": "Occupation",
+                "reported_value": "Marketing Director",
+                "correct_value": "Marketing Manager"
+            },
+            {
+                "field": "Total income (Line 9)",
+                "reported_value": "$94,130",
+                "correct_value": "$93,130"
+            }
+        ],
+        "client_h_dependent_errors": [
+            {
+                "dependent_name": "Margaret Wilson",
+                "field": "SSN",
+                "reported_value": "123-45-6788",
+                "correct_value": "123-45-6789"
+            }
+        ],
+        "client_i_contact_errors": [
+            {
+                "field": "Zip Code",
+                "reported_value": "94103",
+                "correct_value": "94105"
+            }
+        ]
+    }
+}

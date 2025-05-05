@@ -1,0 +1,96 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "task1": {
+        "client_summary": {
+            "bmi_over_25": [
+                "CL001",
+                "CL003",
+                "CL005",
+                "CL007",
+                "CL009",
+                "CL013",
+                "CL015"
+            ],
+            "elevated_heart_rate": [
+                "CL009",
+                "CL011"
+            ],
+            "low_attendance": [
+                "CL003",
+                "CL007",
+                "CL009",
+                "CL013",
+                "CL015"
+            ]
+        },
+        "client_flags": {
+            "consecutive_misses": [
+                "CL003",
+                "CL007",
+                "CL013"
+            ],
+            "reassessment_due": [
+                "CL003",
+                "CL005",
+                "CL007",
+                "CL010",
+                "CL013"
+            ]
+        }
+    },
+    "task2": {
+        "resolved_conflicts": {
+            "monday_0930": "Sarah",
+            "tuesday_1200": "John",
+            "wednesday_1430": "Maria",
+            "thursday_1045": "John",
+            "friday_0930": "Maria"
+        },
+        "program_hours": {
+            "cardio": 30,
+            "strength": 27,
+            "flexibility": 20,
+            "weight_management": 18
+        },
+        "utilization": {
+            "room_a": 95.0,
+            "room_b": 87.5,
+            "room_c": 87.5
+        },
+        "instructor_load": {
+            "maria": 32,
+            "john": 32,
+            "sarah": 31
+        }
+    },
+    "task3": {
+        "participation": {
+            "unique_participants": {
+                "cardio": 4,
+                "strength": 2,
+                "flexibility": 3,
+                "weight_management": 2
+            },
+            "day_attendance_rate": {
+                "monday": 83.3,
+                "tuesday": 75.0,
+                "wednesday": 70.4,
+                "thursday": 91.7,
+                "friday": 63.3
+            },
+            "peak_times": [
+                "Thursday, 10:45-11:45, CF121",
+                "Monday, 07:00-08:00, CF101",
+                "Thursday, 13:15-14:15, ST121"
+            ]
+        },
+        "program_analysis": {
+            "declining_attendance": [
+                "YF105",
+                "YF110",
+                "YF119"
+            ],
+            "attendance_satisfaction_correlation": 0.89
+        }
+    }
+}

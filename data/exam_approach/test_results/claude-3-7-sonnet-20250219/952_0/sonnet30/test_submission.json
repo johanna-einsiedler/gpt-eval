@@ -1,0 +1,53 @@
+{
+    "candidate_id": "Claude-v1.2",
+    "exercise1": {
+        "errors": [
+            {
+                "row": "Prototype Manufacturing",
+                "column": "Q4 Actual",
+                "incorrect_value": 18000,
+                "correct_value": 19000
+            },
+            {
+                "row": "Testing & Quality Assurance",
+                "column": "Q3 Actual",
+                "incorrect_value": 66000,
+                "correct_value": 63000
+            },
+            {
+                "row": "Regulatory Compliance",
+                "column": "Q4 Actual",
+                "incorrect_value": 27500,
+                "correct_value": 23500
+            },
+            {
+                "row": "Packaging Development",
+                "column": "Q1 Budget",
+                "incorrect_value": 10000,
+                "correct_value": 15000
+            },
+            {
+                "row": "TOTAL",
+                "column": "Annual Actual",
+                "incorrect_value": 1538500,
+                "correct_value": 1533500
+            }
+        ],
+        "correct_total_cost": 1533500,
+        "rd_percentage": 23.07
+    },
+    "exercise2": {
+        "campaign_a_roi": 1.5,
+        "campaign_b_roi": 1.62,
+        "campaign_c_roi": 1.8,
+        "highest_roi_campaign": "C",
+        "blended_roi": 1.64,
+        "campaign_b_breakeven_units": 5718
+    },
+    "exercise3": {
+        "total_annual_revenue": 2399400,
+        "total_annual_profit": 436900,
+        "breakeven_month": 7,
+        "annual_profit_margin_percentage": 18.21
+    }
+}

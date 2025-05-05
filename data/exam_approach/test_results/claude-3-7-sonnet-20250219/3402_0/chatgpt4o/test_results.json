@@ -1,0 +1,174 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "format_score": 5,
+  "categories": {
+    "calculation_errors": {
+      "matches": [],
+      "unmatched_candidate": [
+        {
+          "location": "Department Summary, % Change column for Personnel",
+          "current_value": "8.4%",
+          "correct_value": "8.4%",
+          "explanation": "The percentage change is calculated correctly as (1,350,000 - 1,245,000) / 1,245,000 * 100."
+        },
+        {
+          "location": "Department Summary, % Change column for Travel",
+          "current_value": "8.3%",
+          "correct_value": "8.3%",
+          "explanation": "The percentage change is calculated correctly as (85,000 - 78,500) / 78,500 * 100."
+        },
+        {
+          "location": "Quarterly Allocation, Equipment Q1",
+          "current_value": "$150,500",
+          "correct_value": "$53,750",
+          "explanation": "The Q1 allocation should be 25% of the total $215,000, which is $53,750."
+        },
+        {
+          "location": "Quarterly Allocation, Total Q4",
+          "current_value": "$589,000",
+          "correct_value": "$597,500",
+          "explanation": "The total for Q4 should be the sum of all Q4 allocations, which is $597,500."
+        }
+      ],
+      "unmatched_key": [
+        {
+          "location": "Personnel Detail, TOTAL row",
+          "current_value": "$1,443,000",
+          "correct_value": "$1,350,000",
+          "explanation": "The Personnel Detail total ($1,443,000) doesn't match the Department Summary Personnel amount ($1,350,000). The detail sheet shows a $93,000 discrepancy."
+        },
+        {
+          "location": "Equipment Detail, TOTAL row",
+          "current_value": "$79,400",
+          "correct_value": "$215,000",
+          "explanation": "The Equipment Detail total ($79,400) doesn't match the Department Summary Equipment amount ($215,000). The detail sheet is missing $135,600 worth of equipment items."
+        },
+        {
+          "location": "Quarterly Allocation, TOTAL row",
+          "current_value": "$718,000 + $597,500 + $597,500 + $589,000 = $2,502,000",
+          "correct_value": "$718,000 + $597,500 + $597,500 + $589,000 = $2,502,000",
+          "explanation": "The quarterly totals add up correctly, but the distribution across quarters is uneven without justification."
+        },
+        {
+          "location": "Personnel Detail, Senior Analysts row",
+          "current_value": "$442,000",
+          "correct_value": "$442,000",
+          "explanation": "The calculation is correct: 4 \u00d7 ($85,000 + $25,500) = 4 \u00d7 $110,500 = $442,000"
+        }
+      ],
+      "earned_points": 0,
+      "max_points": 20
+    },
+    "missing_information": {
+      "matches": [
+        {
+          "candidate_item": {
+            "requirement_id": "REQ-006",
+            "description": "Signature Page",
+            "impact": "Without the signature page, the budget submission lacks official approval and verification, which is necessary for accountability and compliance."
+          },
+          "key_item": {
+            "requirement_id": "REQ-006",
+            "description": "Signature Page is completely missing from the budget submission",
+            "impact": "Without the required signatures, the budget lacks proper authorization and cannot be officially approved"
+          },
+          "similarity": 0.85
+        },
+        {
+          "candidate_item": {
+            "requirement_id": "REQ-007",
+            "description": "Supporting Documentation for Equipment Purchases",
+            "impact": "Lack of quotes for equipment purchases over $5,000 means there is no verification of cost estimates, which could lead to budget inaccuracies."
+          },
+          "key_item": {
+            "requirement_id": "REQ-007",
+            "description": "Supporting Documentation is missing (quotes for equipment purchases over $5,000, contracts for Professional Services, etc.)",
+            "impact": "Without supporting documentation, large expenditures cannot be verified or justified properly"
+          },
+          "similarity": 0.5
+        }
+      ],
+      "unmatched_candidate": [],
+      "unmatched_key": [
+        {
+          "requirement_id": "REQ-005",
+          "description": "Detailed explanation for increases exceeding 10% is missing for Equipment (14.7%) and Miscellaneous (15.6%)",
+          "impact": "Significant budget increases require detailed justification to ensure proper fiscal oversight"
+        },
+        {
+          "requirement_id": "REQ-004",
+          "description": "The quarterly allocation percentages are not specified for each category",
+          "impact": "Without specified allocation percentages, it's difficult to verify if the quarterly distribution follows requirements"
+        },
+        {
+          "requirement_id": "REQ-104",
+          "description": "Department name and fiscal year are missing from the header of each sheet",
+          "impact": "Without consistent headers, sheets may be misidentified or separated from the complete budget package"
+        }
+      ],
+      "earned_points": 4.05,
+      "max_points": 15
+    },
+    "compliance_issues": {
+      "matches": [],
+      "unmatched_candidate": [
+        {
+          "regulation_id": "REG-102",
+          "location": "Department Summary, % Change column",
+          "issue": "Percentages are displayed with one decimal place, but the requirement is to round to the nearest whole number.",
+          "recommendation": "Round all percentage changes to the nearest whole number."
+        },
+        {
+          "regulation_id": "REG-104",
+          "location": "Department Summary, Miscellaneous category",
+          "issue": "Year-over-year increase exceeds 10% without detailed justification.",
+          "recommendation": "Provide a detailed justification for the 15.6% increase in Miscellaneous expenses."
+        },
+        {
+          "regulation_id": "REG-304",
+          "location": "Department Summary, Miscellaneous category",
+          "issue": "Miscellaneous expenses exceed 3% of the total budget request.",
+          "recommendation": "Reduce Miscellaneous expenses to comply with the 3% cap or provide justification for the excess."
+        }
+      ],
+      "unmatched_key": [
+        {
+          "regulation_id": "REG-104",
+          "location": "Department Summary, Equipment row and Miscellaneous row",
+          "issue": "Year-over-year increases exceeding 10% (Equipment at 14.7%, Miscellaneous at 15.6%) lack the detailed justification required",
+          "recommendation": "Provide detailed justification for these increases in the Budget Justification section"
+        },
+        {
+          "regulation_id": "REG-402",
+          "location": "Department Summary",
+          "issue": "Parent account codes (1000, 2000, etc.) are used instead of the most specific account codes available",
+          "recommendation": "Use the most specific account codes available for each expense category"
+        },
+        {
+          "regulation_id": "REG-502",
+          "location": "Quarterly Allocation sheet",
+          "issue": "Equipment allocation is heavily weighted to Q1 (70%) without explanation for the non-standard allocation",
+          "recommendation": "Either adjust to standard 25% allocation or provide justification for the front-loaded allocation"
+        },
+        {
+          "regulation_id": "REG-501",
+          "location": "Quarterly Allocation sheet",
+          "issue": "The quarterly totals are uneven ($718,000, $597,500, $597,500, $589,000) without explanation",
+          "recommendation": "Provide justification for the uneven quarterly distribution in the Budget Justification section"
+        },
+        {
+          "regulation_id": "REG-101",
+          "location": "Overall budget submission",
+          "issue": "Missing required Signature Page component",
+          "recommendation": "Add the required Signature Page with Department Director signature and approval sections"
+        }
+      ],
+      "earned_points": 0,
+      "max_points": 15
+    }
+  },
+  "overall_score": 16.5,
+  "total_earned_points": 9.05,
+  "total_possible_points": 55,
+  "passed": false
+}

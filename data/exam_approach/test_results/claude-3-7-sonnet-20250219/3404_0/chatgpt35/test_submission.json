@@ -1,0 +1,249 @@
+{
+    "candidateInfo": {
+        "name": "John Doe",
+        "date": "2023-10-20"
+    },
+    "exercise1": {
+        "keyDirectives": [
+            {
+                "directiveNumber": 1,
+                "directiveText": "Implement a 12% reduction in discretionary spending across all operational departments (DEPT-OPS-01, DEPT-OPS-02, DEPT-OPS-03, DEPT-OPS-04) while maintaining current service levels.",
+                "priority": "High",
+                "implementationDeadline": "September 30, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-OPS-01",
+                    "DEPT-OPS-02",
+                    "DEPT-OPS-03",
+                    "DEPT-OPS-04"
+                ]
+            },
+            {
+                "directiveNumber": 2,
+                "directiveText": "Allocate 5% of total budget to cybersecurity infrastructure upgrades, with priority given to customer data protection systems.",
+                "priority": "Critical",
+                "implementationDeadline": "August 15, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-IT-01",
+                    "DEPT-IT-02",
+                    "DEPT-SEC-01"
+                ]
+            },
+            {
+                "directiveNumber": 3,
+                "directiveText": "Consolidate vendor contracts for administrative supplies to achieve minimum 8% cost savings, while ensuring all contracts include sustainability requirements.",
+                "priority": "Medium",
+                "implementationDeadline": "December 1, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-ADM-01",
+                    "DEPT-ADM-02",
+                    "DEPT-OPS-01",
+                    "DEPT-OPS-02",
+                    "DEPT-OPS-03",
+                    "DEPT-OPS-04"
+                ]
+            },
+            {
+                "directiveNumber": 4,
+                "directiveText": "Implement zero-based budgeting for all marketing initiatives (DEPT-MKT-01, DEPT-MKT-02) with quarterly performance reviews tied to ROI metrics.",
+                "priority": "High",
+                "implementationDeadline": "October 15, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-MKT-01",
+                    "DEPT-MKT-02"
+                ]
+            },
+            {
+                "directiveNumber": 5,
+                "directiveText": "Establish a contingency reserve fund equal to 3% of total operating budget to address potential economic uncertainties in Q3 and Q4.",
+                "priority": "Critical",
+                "implementationDeadline": "July 31, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-FIN-01",
+                    "DEPT-FIN-02",
+                    "DEPT-EXEC-01"
+                ]
+            }
+        ]
+    },
+    "exercise2": {
+        "budgetImpacts": [
+            {
+                "directiveNumber": 1,
+                "totalCost": 431880,
+                "affectedDepartments": [
+                    {
+                        "departmentCode": "DEPT-OPS-01",
+                        "currentAllocation": 2500000,
+                        "requiredAdjustment": -120000
+                    },
+                    {
+                        "departmentCode": "DEPT-OPS-02",
+                        "currentAllocation": 2200000,
+                        "requiredAdjustment": -110000
+                    },
+                    {
+                        "departmentCode": "DEPT-OPS-03",
+                        "currentAllocation": 1800000,
+                        "requiredAdjustment": -90000
+                    },
+                    {
+                        "departmentCode": "DEPT-OPS-04",
+                        "currentAllocation": 2100000,
+                        "requiredAdjustment": -105000
+                    }
+                ]
+            },
+            {
+                "directiveNumber": 2,
+                "totalCost": 100000,
+                "affectedDepartments": [
+                    {
+                        "departmentCode": "DEPT-IT-01",
+                        "currentAllocation": 1500000,
+                        "requiredAdjustment": 75000
+                    },
+                    {
+                        "departmentCode": "DEPT-IT-02",
+                        "currentAllocation": 1300000,
+                        "requiredAdjustment": 65000
+                    },
+                    {
+                        "departmentCode": "DEPT-SEC-01",
+                        "currentAllocation": 900000,
+                        "requiredAdjustment": 45000
+                    }
+                ]
+            },
+            {
+                "directiveNumber": 3,
+                "totalCost": 80000,
+                "affectedDepartments": [
+                    {
+                        "departmentCode": "DEPT-ADM-01",
+                        "currentAllocation": 850000,
+                        "requiredAdjustment": -68000
+                    },
+                    {
+                        "departmentCode": "DEPT-ADM-02",
+                        "currentAllocation": 1200000,
+                        "requiredAdjustment": -96000
+                    },
+                    {
+                        "departmentCode": "DEPT-OPS-01",
+                        "currentAllocation": 2500000,
+                        "requiredAdjustment": -200000
+                    },
+                    {
+                        "departmentCode": "DEPT-OPS-02",
+                        "currentAllocation": 2200000,
+                        "requiredAdjustment": -176000
+                    },
+                    {
+                        "departmentCode": "DEPT-OPS-03",
+                        "currentAllocation": 1800000,
+                        "requiredAdjustment": -144000
+                    },
+                    {
+                        "departmentCode": "DEPT-OPS-04",
+                        "currentAllocation": 2100000,
+                        "requiredAdjustment": -168000
+                    }
+                ]
+            },
+            {
+                "directiveNumber": 4,
+                "totalCost": 0,
+                "affectedDepartments": []
+            },
+            {
+                "directiveNumber": 5,
+                "totalCost": 0,
+                "affectedDepartments": []
+            }
+        ],
+        "complianceCalculations": {
+            "totalBudgetAdjustment": 611880,
+            "percentageOfTotalBudget": 3.06,
+            "highestImpactDirectiveNumber": 1,
+            "lowestImpactDirectiveNumber": 3
+        }
+    },
+    "exercise3": {
+        "policies": [
+            {
+                "directiveNumber": 2,
+                "policyCode": "POL-SEC-01",
+                "implementationSteps": [
+                    "STEP-ANALYSIS-01",
+                    "STEP-ADJUST-01",
+                    "STEP-MONITOR-01"
+                ],
+                "requiredResources": {
+                    "personnelHours": 240,
+                    "systemChanges": [
+                        "SYS-SECURITY-01",
+                        "SYS-TRACKING-01"
+                    ],
+                    "trainingRequirements": [
+                        "TRAIN-SYSTEM-01",
+                        "TRAIN-COMPLIANCE-01"
+                    ]
+                },
+                "monitoringMetrics": [
+                    "METRIC-SECURITY-01",
+                    "METRIC-TIMELINE-01",
+                    "METRIC-COMPLY-01"
+                ]
+            },
+            {
+                "directiveNumber": 1,
+                "policyCode": "POL-RED-01",
+                "implementationSteps": [
+                    "STEP-ANALYSIS-01",
+                    "STEP-REVIEW-01",
+                    "STEP-ADJUST-01"
+                ],
+                "requiredResources": {
+                    "personnelHours": 180,
+                    "systemChanges": [
+                        "SYS-FIN-01",
+                        "SYS-TRACKING-01"
+                    ],
+                    "trainingRequirements": [
+                        "TRAIN-BUDGET-01",
+                        "TRAIN-POLICY-01"
+                    ]
+                },
+                "monitoringMetrics": [
+                    "METRIC-SPEND-01",
+                    "METRIC-SAVE-01",
+                    "METRIC-COMPLY-01"
+                ]
+            },
+            {
+                "directiveNumber": 3,
+                "policyCode": "POL-VEN-01",
+                "implementationSteps": [
+                    "STEP-ANALYSIS-01",
+                    "STEP-REVIEW-01",
+                    "STEP-ADJUST-01"
+                ],
+                "requiredResources": {
+                    "personnelHours": 120,
+                    "systemChanges": [
+                        "SYS-VENDOR-01"
+                    ],
+                    "trainingRequirements": [
+                        "TRAIN-BUDGET-01",
+                        "TRAIN-COMPLIANCE-01"
+                    ]
+                },
+                "monitoringMetrics": [
+                    "METRIC-SAVE-01",
+                    "METRIC-COMPLY-01",
+                    "METRIC-QUALITY-01"
+                ]
+            }
+        ]
+    }
+}

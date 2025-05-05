@@ -1,0 +1,354 @@
+{
+  "candidate_name": "GPT-4-turbo",
+  "date": "06/15/2024",
+  "task1": {
+    "selection_rates": {
+      "score": 1.67,
+      "max_score": 10,
+      "details": {
+        "gender": {
+          "male": {
+            "submission": 10.0,
+            "correct": 8.3,
+            "is_correct": false,
+            "points": 0
+          },
+          "female": {
+            "submission": 6.25,
+            "correct": 5.58,
+            "is_correct": false,
+            "points": 0
+          }
+        },
+        "race_ethnicity": {
+          "white": {
+            "submission": 9.09,
+            "correct": 9.18,
+            "is_correct": false,
+            "points": 0
+          },
+          "black": {
+            "submission": 4.0,
+            "correct": 5.32,
+            "is_correct": false,
+            "points": 0
+          },
+          "hispanic": {
+            "submission": 3.85,
+            "correct": 3.85,
+            "is_correct": true,
+            "points": 1.6666666666666667
+          },
+          "asian": {
+            "submission": 7.69,
+            "correct": 6.58,
+            "is_correct": false,
+            "points": 0
+          }
+        }
+      }
+    },
+    "adverse_impact": {
+      "score": 10.0,
+      "max_score": 10,
+      "details": {
+        "gender": {
+          "group_with_lowest_rate": {
+            "submission": "female",
+            "correct": "female",
+            "is_correct": true,
+            "points": 1.6666666666666667
+          },
+          "adverse_impact_ratio": {
+            "submission": 0.63,
+            "correct": 0.67,
+            "is_correct": true,
+            "points": 1.6666666666666667
+          },
+          "adverse_impact_exists": {
+            "submission": true,
+            "correct": true,
+            "is_correct": true,
+            "points": 1.6666666666666667
+          }
+        },
+        "race_ethnicity": {
+          "group_with_lowest_rate": {
+            "submission": "hispanic",
+            "correct": "hispanic",
+            "is_correct": true,
+            "points": 1.6666666666666667
+          },
+          "adverse_impact_ratio": {
+            "submission": 0.42,
+            "correct": 0.42,
+            "is_correct": true,
+            "points": 1.6666666666666667
+          },
+          "adverse_impact_exists": {
+            "submission": true,
+            "correct": true,
+            "is_correct": true,
+            "points": 1.6666666666666667
+          }
+        }
+      }
+    },
+    "qualified_hire_percentages": {
+      "score": 0,
+      "max_score": 10,
+      "details": {
+        "gender": {
+          "male": {
+            "submission": 14.29,
+            "correct": 11.8,
+            "is_correct": false,
+            "points": 0
+          },
+          "female": {
+            "submission": 9.09,
+            "correct": 8.16,
+            "is_correct": false,
+            "points": 0
+          }
+        },
+        "race_ethnicity": {
+          "white": {
+            "submission": 13.33,
+            "correct": 12.41,
+            "is_correct": false,
+            "points": 0
+          },
+          "black": {
+            "submission": 6.67,
+            "correct": 7.46,
+            "is_correct": false,
+            "points": 0
+          },
+          "hispanic": {
+            "submission": 5.56,
+            "correct": 5.77,
+            "is_correct": false,
+            "points": 0
+          },
+          "asian": {
+            "submission": 11.76,
+            "correct": 11.36,
+            "is_correct": false,
+            "points": 0
+          }
+        }
+      }
+    }
+  },
+  "task2": {
+    "policy_sections": {
+      "score": 10.0,
+      "max_score": 10,
+      "details": {
+        "recruitment": {
+          "submission": [
+            4
+          ],
+          "correct": [
+            4
+          ],
+          "correctness": 1.0,
+          "points": 3.3333333333333335
+        },
+        "hiring": {
+          "submission": [
+            4
+          ],
+          "correct": [
+            4
+          ],
+          "correctness": 1.0,
+          "points": 3.3333333333333335
+        },
+        "promotion": {
+          "submission": [
+            5
+          ],
+          "correct": [
+            5
+          ],
+          "correctness": 1.0,
+          "points": 3.3333333333333335
+        }
+      }
+    },
+    "policy_implementation": {
+      "score": 13.33,
+      "max_score": 20,
+      "details": {
+        "policy_followed": {
+          "submission": false,
+          "correct": false,
+          "is_correct": true,
+          "points": 5
+        },
+        "justification": {
+          "submission": "The data shows adverse impact in hiring for females and Hispanic applicants, with selection rates below 80% of the highest group, violating section 4.6 of the policy.",
+          "correct": "The hiring data shows clear disparate impact against females and racial/ethnic minorities, violating section 4.6 which requires selection rates for protected groups to be at least 80% of the rate for the group with the highest selection rate.",
+          "points": 3.3333333333333335,
+          "max_points": 5
+        },
+        "specific_violations": {
+          "submission": [
+            "Section 4.6 - Selection rate for protected groups below 80% of highest group rate"
+          ],
+          "correct": [
+            "Female selection rate (5.58%) is only 67% of male selection rate (8.30%), below the 80% threshold",
+            "Hispanic selection rate (3.85%) is only 42% of white selection rate (9.18%), well below the 80% threshold",
+            "Black selection rate (5.32%) is only 58% of white selection rate (9.18%), below the 80% threshold",
+            "Asian selection rate (6.58%) is only 72% of white selection rate (9.18%), below the 80% threshold"
+          ],
+          "points": 1.25,
+          "max_points": 5
+        },
+        "recommended_actions": {
+          "submission": [
+            "Conduct a thorough review of hiring practices in departments with the largest disparities",
+            "Implement targeted recruitment strategies for underrepresented groups",
+            "Provide additional training to hiring managers on unbiased selection processes"
+          ],
+          "correct": [
+            "Review recruitment and selection processes to identify and eliminate potential barriers for female and minority applicants",
+            "Implement diverse interview panels as required by policy section 4.3",
+            "Conduct training for hiring managers on avoiding unconscious bias in selection decisions",
+            "Develop a corrective action plan as required by policy section 8.4 to address the identified disparities"
+          ],
+          "points": 3.75,
+          "max_points": 5
+        }
+      }
+    }
+  },
+  "task3": {
+    "complaints_by_department": {
+      "score": 4.0,
+      "max_score": 8,
+      "details": {
+        "sales": {
+          "submission": 8,
+          "correct": 8,
+          "is_correct": true,
+          "points": 2.0
+        },
+        "it": {
+          "submission": 6,
+          "correct": 5,
+          "is_correct": false,
+          "points": 0
+        },
+        "hr": {
+          "submission": 3,
+          "correct": 3,
+          "is_correct": true,
+          "points": 2.0
+        },
+        "finance": {
+          "submission": 3,
+          "correct": 4,
+          "is_correct": false,
+          "points": 0
+        }
+      }
+    },
+    "most_common_complaint": {
+      "score": 8,
+      "max_score": 8,
+      "details": {
+        "submission": "Hiring Discrimination",
+        "correct": "Hiring Discrimination",
+        "is_correct": true,
+        "points": 8
+      }
+    },
+    "average_resolution_time": {
+      "score": 0,
+      "max_score": 8,
+      "details": {
+        "submission": 34.85,
+        "correct": 36.0,
+        "is_correct": false,
+        "points": 0
+      }
+    },
+    "disproportionate_departments": {
+      "score": 4.0,
+      "max_score": 8,
+      "details": {
+        "submission": [
+          "sales",
+          "hr"
+        ],
+        "correct": [
+          "sales"
+        ],
+        "correctness": 0.5,
+        "points": 4.0
+      }
+    },
+    "complaint_trends": {
+      "score": 4,
+      "max_score": 8,
+      "details": {
+        "increasing_types": {
+          "submission": [
+            "Hiring Discrimination",
+            "Promotion Denial"
+          ],
+          "correct": [],
+          "is_correct": false,
+          "points": 0
+        },
+        "decreasing_types": {
+          "submission": [
+            "Harassment"
+          ],
+          "correct": [],
+          "is_correct": false,
+          "points": 0
+        },
+        "seasonal_patterns": {
+          "submission": "No clear seasonal patterns observed in the complaint data.",
+          "correct": "No clear seasonal patterns are evident in the complaint data over the time period provided.",
+          "points": 4
+        }
+      }
+    }
+  },
+  "summary": {
+    "task1": {
+      "score": 11.67,
+      "max_score": 30,
+      "percentage": 38.9
+    },
+    "task2": {
+      "score": 23.33,
+      "max_score": 30,
+      "percentage": 77.77
+    },
+    "task3": {
+      "score": 20.0,
+      "max_score": 40,
+      "percentage": 50.0
+    },
+    "total": {
+      "score": 55.0,
+      "max_score": 100,
+      "percentage": 55.0
+    },
+    "passed": false,
+    "critical_elements": {
+      "adverse_impact_gender": true,
+      "adverse_impact_race": true,
+      "policy_not_followed": true,
+      "most_common_complaint": true,
+      "all_critical_passed": true
+    }
+  },
+  "overall_score": 55.0
+}

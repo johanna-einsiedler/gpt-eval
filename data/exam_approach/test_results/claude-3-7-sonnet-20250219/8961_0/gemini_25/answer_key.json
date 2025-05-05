@@ -1,0 +1,41 @@
+{
+    "task1": {
+        "design_choice": "randomized controlled trial",
+        "sample_size": 52,
+        "stratification_variables": [
+            "age",
+            "hypertension_history"
+        ],
+        "expected_effect_size": 0.8
+    },
+    "task2": {
+        "minimum_sample_size": 100,
+        "power_at_sample_sizes": [
+            {
+                "sample_size": 100,
+                "power": 0.8
+            },
+            {
+                "sample_size": 200,
+                "power": 0.98
+            },
+            {
+                "sample_size": 300,
+                "power": 0.99
+            }
+        ],
+        "optimal_allocation_ratio": "1:1"
+    },
+    "task3": {
+        "control_group_mean": 155.0,
+        "treatment_effect_estimate": 17.0,
+        "confounders_identified": [
+            "age",
+            "diabetes"
+        ],
+        "matching_variables": [
+            "age",
+            "hypertension_history"
+        ]
+    }
+}

@@ -1,0 +1,150 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "task1": {
+    "score": 20,
+    "max_score": 30,
+    "feedback": [
+      "\u2717 Failed to identify the cost per employee calculation error",
+      "\u2713 Correctly calculated the total expenses",
+      "\u2713 Correctly calculated the efficiency score"
+    ],
+    "details": {
+      "data_errors": {
+        "submitted": [
+          "Subtotal for Office Supplies is incorrectly calculated (should be $2,750.00 but components add up to $2,750.00 - no error)",
+          "Subtotal for Equipment is incorrectly calculated (should be $3,250.00 but components add up to $3,250.00 - no error)",
+          "Subtotal for Travel & Training is incorrectly calculated (should be $1,850.00 but components add up to $1,850.00 - no error)",
+          "Total expenses are incorrectly calculated (should be $57,750.00 but sum of subtotals is $57,750.00 - no error)"
+        ],
+        "expected": [
+          "Cost per employee calculation is incorrect: should be $4,442.31 (57750/13), not $3,850.00"
+        ],
+        "score": 0,
+        "max_score": 10
+      },
+      "total_correct_expenses": {
+        "submitted": 57750.0,
+        "expected": 57750.0,
+        "score": 10,
+        "max_score": 10
+      },
+      "efficiency_score": {
+        "submitted": 100,
+        "expected": 100,
+        "score": 10,
+        "max_score": 10
+      }
+    }
+  },
+  "task2": {
+    "score": 35,
+    "max_score": 40,
+    "feedback": [
+      "\u26a0 Identified 2 out of 3 coverage gaps",
+      "\u2713 Correctly determined the optimal staff count",
+      "\u2713 Correctly identified all schedule conflicts"
+    ],
+    "details": {
+      "coverage_gaps": {
+        "submitted": [
+          "Reception: Monday 8:00-9:00 AM (only 1 staff when 3 required)",
+          "Reception: Tuesday 8:00-9:00 AM (only 1 staff when 3 required)",
+          "Reception: Thursday 8:00-9:00 AM (only 1 staff when 3 required)",
+          "Reception: Friday 8:00-9:00 AM (only 1 staff when 3 required)",
+          "Reception: Peak hours (11:00 AM - 2:00 PM) on Monday (only 3 staff when 5 required)",
+          "Reception: Peak hours (11:00 AM - 2:00 PM) on Tuesday (only 3 staff when 5 required)",
+          "Reception: Peak hours (11:00 AM - 2:00 PM) on Thursday (only 3 staff when 5 required)",
+          "Reception: Peak hours (11:00 AM - 2:00 PM) on Friday (only 3 staff when 5 required)",
+          "Finance: Peak hours (1:00 PM - 4:00 PM) on Monday (only 4 staff when 6 required)",
+          "Finance: Peak hours (1:00 PM - 4:00 PM) on Tuesday (only 4 staff when 6 required)",
+          "Finance: Peak hours (1:00 PM - 4:00 PM) on Wednesday (only 4 staff when 6 required)",
+          "Finance: Peak hours (1:00 PM - 4:00 PM) on Thursday (only 4 staff when 6 required)",
+          "Finance: Peak hours (1:00 PM - 4:00 PM) on Friday (only 4 staff when 6 required)",
+          "HR: Monday 8:30-9:00 AM (only 1 staff when 2 required)",
+          "HR: Tuesday 8:30-9:00 AM (only 1 staff when 2 required)"
+        ],
+        "expected": [
+          "Reception: Only 2 staff on Wednesday mornings (8:00-9:00 AM) when minimum is 3",
+          "Finance: Only 3 staff during peak hours (1:00-4:00 PM) on Mondays when 6 are required",
+          "HR: Only 1 staff member on Mondays and Tuesdays when minimum is 2"
+        ],
+        "score": 10,
+        "max_score": 15
+      },
+      "optimal_staff_count": {
+        "submitted": 14,
+        "expected": 14,
+        "score": 15,
+        "max_score": 15
+      },
+      "schedule_conflicts": {
+        "submitted": [
+          "E004: Working more than 3 days per week (violates part-time constraint)",
+          "E011: Working only 3 days per week (should be 5 days for full-time)",
+          "E012: Working only 3 days per week (should be 5 days for full-time)"
+        ],
+        "expected": [
+          "E004 (Patricia Davis) is scheduled for 4 days when availability states maximum 3 days per week",
+          "E011 (Joseph Jackson) is scheduled on Thursday despite availability constraints stating cannot work Thursdays"
+        ],
+        "score": 10,
+        "max_score": 10
+      }
+    }
+  },
+  "task3": {
+    "score": 8,
+    "max_score": 30,
+    "feedback": [
+      "\u2717 Incorrect report frequency: submitted 'weekly', expected 'monthly'",
+      "\u26a0 Selected 4 out of 5 appropriate key metrics",
+      "\u2717 Incorrect report format: submitted 'Summary', expected 'Trend'"
+    ],
+    "details": {
+      "report_frequency": {
+        "submitted": "weekly",
+        "expected": "monthly",
+        "score": 0,
+        "max_score": 10
+      },
+      "key_metrics": {
+        "submitted": [
+          "M001",
+          "M003",
+          "M004",
+          "M006",
+          "M010"
+        ],
+        "expected": [
+          "M001",
+          "M003",
+          "M006",
+          "M004",
+          "M005"
+        ],
+        "matches": [
+          "M001",
+          "M004",
+          "M003",
+          "M006"
+        ],
+        "score": 8,
+        "max_score": 10
+      },
+      "selected_report_format": {
+        "submitted": "Summary",
+        "expected": "Trend",
+        "score": 0,
+        "max_score": 10
+      }
+    }
+  },
+  "overall_score": 63.0,
+  "performance_assessment": {
+    "score": 63,
+    "max_score": 100,
+    "percentage": 63.0,
+    "rating": "Satisfactory",
+    "summary": "The candidate scored 63/100 (63.0%), which is rated as 'Satisfactory'."
+  }
+}

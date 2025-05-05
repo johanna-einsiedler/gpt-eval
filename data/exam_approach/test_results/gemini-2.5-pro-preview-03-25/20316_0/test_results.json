@@ -1,0 +1,55 @@
+{
+  "overall_score": 90.0,
+  "max_points_total": 10,
+  "score_details": {
+    "structure": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": [
+        "JSON structure is valid and all required keys are present."
+      ]
+    },
+    "year_1_metrics": {
+      "score": 2,
+      "max_score": 2,
+      "feedback": [
+        "Year 1 Total Attendance: Correct.",
+        "Year 1 Total Cost & Cost Per Attendance: Correct."
+      ]
+    },
+    "year_2_metrics": {
+      "score": 2,
+      "max_score": 2,
+      "feedback": [
+        "Year 2 Total Attendance: Correct.",
+        "Year 2 Total Cost & Cost Per Attendance: Correct."
+      ]
+    },
+    "year_over_year_change": {
+      "score": 3,
+      "max_score": 3,
+      "feedback": [
+        "Total Cost Change %: Correct.",
+        "Total Attendance Change %: Correct.",
+        "Cost Per Attendance Change %: Correct."
+      ]
+    },
+    "evaluation_summary": {
+      "score": 1,
+      "max_score": 2,
+      "feedback": [
+        "Did not clearly state the overall cost-effectiveness trend.",
+        "Correctly mentioned contributing factors (cost/attendance changes) objectively.",
+        "Summary length (5 sentences) is outside the recommended 1-2 sentences."
+      ]
+    }
+  },
+  "feedback": [],
+  "critical_failure": false,
+  "critical_failure_reason": null,
+  "final_score_points": 9,
+  "input_files": {
+    "submission": "answer_key.json",
+    "answer_key": "answer_key.json"
+  }
+}

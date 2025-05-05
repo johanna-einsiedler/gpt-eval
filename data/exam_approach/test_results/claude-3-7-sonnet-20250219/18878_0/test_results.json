@@ -1,0 +1,82 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "evaluation_date": "2025-04-25 19:02:01",
+  "overall_score": 98.0,
+  "total_points": 98.0,
+  "max_points": 100,
+  "passed": true,
+  "task_results": {
+    "task1": {
+      "score": 20.0,
+      "max_score": 20,
+      "breakdown": {
+        "key_issues": 10,
+        "relevant_clauses": 5,
+        "priority_ranking": 5.0
+      },
+      "feedback": []
+    },
+    "task2": {
+      "score": 20.0,
+      "max_score": 20,
+      "breakdown": {
+        "meeting_agenda": 6,
+        "prepared_questions": 8,
+        "documentation_needed": 6.0
+      },
+      "feedback": []
+    },
+    "task3": {
+      "score": 18,
+      "max_score": 20,
+      "breakdown": {
+        "email_subject": 5,
+        "email_body": 13
+      },
+      "feedback": []
+    },
+    "task4": {
+      "score": 20,
+      "max_score": 20,
+      "breakdown": {
+        "scenario1_response": 6,
+        "scenario2_response": 7,
+        "scenario3_response": 7
+      },
+      "feedback": []
+    },
+    "task5": {
+      "score": 20,
+      "max_score": 20,
+      "breakdown": {
+        "meeting_summary": 6,
+        "action_items": 8,
+        "follow_up_timeline": 6
+      },
+      "feedback": []
+    }
+  },
+  "task_thresholds": {
+    "task1": {
+      "percentage": 100.0,
+      "passed": true
+    },
+    "task2": {
+      "percentage": 100.0,
+      "passed": true
+    },
+    "task3": {
+      "percentage": 90.0,
+      "passed": true
+    },
+    "task4": {
+      "percentage": 100.0,
+      "passed": true
+    },
+    "task5": {
+      "percentage": 100.0,
+      "passed": true
+    }
+  },
+  "critical_failures": []
+}

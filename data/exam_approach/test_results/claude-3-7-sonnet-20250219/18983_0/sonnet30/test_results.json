@@ -1,0 +1,100 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "overall_score": 64.34,
+  "passed": false,
+  "section_scores": {
+    "schedule": {
+      "score": 10,
+      "max": 30,
+      "percentage": 33.33,
+      "passed_minimum": false,
+      "details": {
+        "project_duration": {
+          "score": 0,
+          "max": 10,
+          "comment": "Project duration off by 17 days"
+        },
+        "critical_path": {
+          "score": 10,
+          "max": 10,
+          "comment": "Identified 9/10 tasks correctly, with 9 in correct order"
+        },
+        "task_dates": {
+          "score": 0,
+          "max": 10,
+          "comment": "Found 11.0 errors in task dates"
+        }
+      }
+    },
+    "budget": {
+      "score": 17.34,
+      "max": 30,
+      "percentage": 57.8,
+      "passed_minimum": false,
+      "details": {
+        "total_budget": {
+          "score": 10,
+          "max": 10,
+          "comment": "Total budget within 5% of correct amount"
+        },
+        "labor_costs": {
+          "score": 4.340498997549566,
+          "max": 7,
+          "comment": "Labor costs off by 12.32%"
+        },
+        "equipment_costs": {
+          "score": 0,
+          "max": 7,
+          "comment": "Equipment costs off by 24.23%"
+        },
+        "phase_allocation": {
+          "score": 6,
+          "max": 6,
+          "comment": "Phase allocations directionally correct"
+        }
+      }
+    },
+    "cost_control": {
+      "score": 20.0,
+      "max": 20,
+      "percentage": 100.0,
+      "passed_minimum": true,
+      "details": {
+        "variance_thresholds": {
+          "score": 10,
+          "max": 10,
+          "comment": "Variance thresholds identified with 0 points deducted"
+        },
+        "planned_value": {
+          "score": 10.0,
+          "max": 10,
+          "comment": "Planned value calculations had 0 significant errors"
+        }
+      }
+    },
+    "variance_analysis": {
+      "score": 17.0,
+      "max": 20,
+      "percentage": 85.0,
+      "passed_minimum": true,
+      "details": {
+        "sv_cv": {
+          "score": 5.0,
+          "max": 8,
+          "comment": "SV off by $5000.00, CV off by $0.00"
+        },
+        "spi_cpi": {
+          "score": 6,
+          "max": 6,
+          "comment": "SPI off by 0.006, CPI off by 0.000"
+        },
+        "eac": {
+          "score": 6,
+          "max": 6,
+          "comment": "EAC off by 5.17%"
+        }
+      }
+    }
+  },
+  "feedback": "The candidate has failed the exam. The following sections did not meet the minimum 60% requirement: schedule, budget."
+}

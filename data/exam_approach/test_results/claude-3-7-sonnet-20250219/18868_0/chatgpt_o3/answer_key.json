@@ -1,0 +1,176 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "required_qualifications": [
+        "Bachelor's degree in Marketing, Communications, Business, or related field",
+        "Minimum 2 years of experience in a marketing role",
+        "Proficiency in Microsoft Office Suite (Word, Excel, PowerPoint)",
+        "Experience with social media platforms for business",
+        "Strong written and verbal communication skills",
+        "Ability to manage multiple projects simultaneously with attention to detail",
+        "Experience with digital marketing campaigns"
+    ],
+    "preferred_qualifications": [
+        "Experience with marketing automation tools (HubSpot, Marketo, or similar)",
+        "Knowledge of graphic design software (Adobe Creative Suite)",
+        "Experience with content management systems (WordPress)",
+        "SEO/SEM knowledge",
+        "Event planning experience",
+        "Data analysis skills"
+    ],
+    "candidate_evaluations": [
+        {
+            "candidate_id": "C001",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true,
+                false,
+                true,
+                false
+            ],
+            "match_score": 85
+        },
+        {
+            "candidate_id": "C002",
+            "required_met": [
+                true,
+                false,
+                true,
+                true,
+                true,
+                true,
+                false
+            ],
+            "preferred_met": [
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+            ],
+            "match_score": 55
+        },
+        {
+            "candidate_id": "C003",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "match_score": 100
+        },
+        {
+            "candidate_id": "C004",
+            "required_met": [
+                true,
+                false,
+                true,
+                true,
+                true,
+                false,
+                false
+            ],
+            "preferred_met": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+            ],
+            "match_score": 40
+        },
+        {
+            "candidate_id": "C005",
+            "required_met": [
+                true,
+                false,
+                true,
+                false,
+                true,
+                false,
+                false
+            ],
+            "preferred_met": [
+                false,
+                false,
+                false,
+                false,
+                true,
+                false
+            ],
+            "match_score": 35
+        },
+        {
+            "candidate_id": "C006",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true,
+                true,
+                false,
+                true
+            ],
+            "match_score": 95
+        }
+    ],
+    "top_candidates": [
+        "C003",
+        "C006",
+        "C001"
+    ],
+    "top_candidate_strengths": {
+        "C003": [
+            "4 years of marketing experience exceeding minimum requirement",
+            "Experience with all preferred marketing tools (HubSpot, Marketo, Adobe, WordPress)",
+            "Proven track record of increasing engagement and conversion rates",
+            "Strong digital marketing campaign management experience",
+            "Comprehensive SEO/SEM and data analysis skills"
+        ],
+        "C006": [
+            "2.5 years of relevant marketing specialist experience",
+            "Strong data analytics background with marketing focus",
+            "Experience with digital marketing campaign development and execution",
+            "Proficiency with multiple marketing automation tools",
+            "Certified in Google Analytics and content marketing"
+        ],
+        "C001": [
+            "3 years of experience in digital marketing and content creation",
+            "Proven social media management across multiple platforms",
+            "Experience tracking campaign performance with analytics tools",
+            "WordPress content management experience",
+            "HubSpot Social Media Marketing certification"
+        ]
+    }
+}

@@ -1,0 +1,127 @@
+{
+  "candidate_id": "Claude-v1.2",
+  "exercise1": {
+    "points_earned": 4,
+    "points_possible": 7,
+    "details": {
+      "errors_identified": {
+        "points_earned": 1,
+        "points_possible": 3,
+        "correct_count": 1,
+        "total_count": 5
+      },
+      "correct_total_cost": {
+        "points_earned": 1,
+        "points_possible": 2,
+        "submitted_value": 1533500,
+        "correct_value": 1520000,
+        "percent_difference": 0.888157894736842
+      },
+      "rd_percentage": {
+        "points_earned": 2,
+        "points_possible": 2,
+        "submitted_value": 23.07,
+        "correct_value": 23.03,
+        "absolute_difference": 0.03999999999999915
+      }
+    }
+  },
+  "exercise2": {
+    "points_earned": 6,
+    "points_possible": 7,
+    "details": {
+      "campaign_a_roi": {
+        "submitted_value": 1.5,
+        "correct_value": 1.5,
+        "absolute_difference": 0.0,
+        "accuracy": "correct"
+      },
+      "campaign_b_roi": {
+        "submitted_value": 1.62,
+        "correct_value": 1.62,
+        "absolute_difference": 0.0,
+        "accuracy": "correct"
+      },
+      "campaign_c_roi": {
+        "submitted_value": 1.8,
+        "correct_value": 1.8,
+        "absolute_difference": 0.0,
+        "accuracy": "correct"
+      },
+      "roi_calculations": {
+        "points_earned": 3,
+        "points_possible": 3
+      },
+      "highest_roi_campaign": {
+        "points_earned": 1,
+        "points_possible": 1,
+        "submitted_value": "C",
+        "correct_value": "C",
+        "accuracy": "correct"
+      },
+      "blended_roi": {
+        "points_earned": 1,
+        "points_possible": 2,
+        "submitted_value": 1.64,
+        "correct_value": 1.63,
+        "absolute_difference": 0.010000000000000009,
+        "accuracy": "partially_correct"
+      },
+      "campaign_b_breakeven_units": {
+        "points_earned": 1,
+        "points_possible": 1,
+        "submitted_value": 5718,
+        "correct_value": 5716,
+        "percent_difference": 0.03498950314905528,
+        "accuracy": "correct"
+      }
+    }
+  },
+  "exercise3": {
+    "points_earned": 3.0,
+    "points_possible": 6,
+    "details": {
+      "total_annual_revenue": {
+        "points_earned": 0.75,
+        "points_possible": 1.5,
+        "submitted_value": 2399400,
+        "correct_value": 2384523,
+        "percent_difference": 0.6238983645785761,
+        "accuracy": "partially_correct"
+      },
+      "total_annual_profit": {
+        "points_earned": 0,
+        "points_possible": 1.5,
+        "submitted_value": 436900,
+        "correct_value": 421273,
+        "percent_difference": 3.7094710555862824,
+        "accuracy": "incorrect"
+      },
+      "breakeven_month": {
+        "points_earned": 1.5,
+        "points_possible": 1.5,
+        "submitted_value": 7,
+        "correct_value": 7,
+        "difference": 0,
+        "accuracy": "correct"
+      },
+      "annual_profit_margin_percentage": {
+        "points_earned": 0.75,
+        "points_possible": 1.5,
+        "submitted_value": 18.21,
+        "correct_value": 17.67,
+        "absolute_difference": 0.5399999999999991,
+        "accuracy": "partially_correct"
+      }
+    }
+  },
+  "summary": {
+    "total_points_earned": 13.0,
+    "total_points_possible": 20,
+    "overall_score": 65.0,
+    "passing_threshold": 70,
+    "passed": false,
+    "critical_failures": []
+  },
+  "overall_score": 65.0
+}

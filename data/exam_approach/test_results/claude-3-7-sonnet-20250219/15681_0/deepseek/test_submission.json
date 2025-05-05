@@ -1,0 +1,23 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "diagram": "[Supplier A] --> [W]\n[Supplier B] --> [W]\n[W] --> [M1]\n[W] --> [M2]\n[W] --> [M3]\n[M1] --> [DC]\n[M2] --> [DC]\n[M3] --> [DC]\n[DC] --> [R1]\n[DC] --> [R2]\n[DC] --> [R3]\n[DC] --> [R4]\n[R1] <-- [DC]\n[R2] <-- [DC]\n[R3] <-- [DC]\n[R4] <-- [DC]",
+        "entities_count": 11
+    },
+    "task2": {
+        "diagram": "Inventory Flow:\n[Raw Materials] --> [Work-in-Progress] --> [Finished Goods] --> [Distribution Center]\n\nTrend Diagram:\nJan: RM=1200 | WIP=800 | FG=500 | DC=1500\nFeb: RM=1000 | WIP=850 | FG=600 | DC=1300\nMar: RM=1100 | WIP=900 | FG=650 | DC=1200\nApr: RM=950  | WIP=950 | FG=700 | DC=1100\nMay: RM=850  | WIP=1000| FG=750 | DC=1000\nJun: RM=800  | WIP=1050| FG=800 | DC=900\n\nTrend Indicators:\nRaw Materials: ▼▼▲▼▼▼\nWork-in-Progress: ▲▲▲▲▲▲\nFinished Goods: ▲▲▲▲▲▲\nDistribution Center: ▼▼▼▼▼▼",
+        "percentage_changes": {
+            "raw_materials": -33.3,
+            "work_in_progress": 31.3,
+            "finished_goods": 60.0,
+            "distribution_center": -40.0
+        }
+    },
+    "task3": {
+        "diagram": "Production Flow:\n(Ingredient Mixing) --> (Filling & Packaging [!]) --> (Quality Testing) --> (Labeling) --> (Palletizing)\n\nBottleneck marked with [!]\n\nAfter 15% demand increase:\n(Filling & Packaging [!][OVER]) - would be at 103.5% capacity",
+        "max_throughput": 400,
+        "over_capacity_stages": [
+            "Filling & Packaging"
+        ]
+    }
+}

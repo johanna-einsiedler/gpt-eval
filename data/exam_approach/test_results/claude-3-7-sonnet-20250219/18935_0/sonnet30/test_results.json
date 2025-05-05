@@ -1,0 +1,161 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "overall_result": {
+    "passed": false,
+    "total_correct": 2,
+    "total_fields": 18,
+    "passed_overall_minimum": false,
+    "passed_per_scenario": false,
+    "passed_critical_skill": false
+  },
+  "scenarios": {
+    "scenario1": {
+      "correct_count": 1,
+      "total_count": 6,
+      "fields": {
+        "total_monthly_income": {
+          "status": "incorrect",
+          "candidate_value": 3975.0,
+          "correct_value": 3225.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "total_necessary_expenses": {
+          "status": "correct",
+          "candidate_value": 2060.0,
+          "correct_value": 2060.0,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "available_monthly_income": {
+          "status": "incorrect",
+          "candidate_value": 1915.0,
+          "correct_value": 1165.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "debt_to_income_ratio": {
+          "status": "incorrect",
+          "candidate_value": 0.23,
+          "correct_value": 0.17,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "recommended_monthly_debt_payment": {
+          "status": "incorrect",
+          "candidate_value": 1723.5,
+          "correct_value": 1048.5,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "debt_free_timeline_months": {
+          "status": "incorrect",
+          "candidate_value": 12,
+          "correct_value": 17,
+          "points_earned": 0,
+          "points_possible": 1
+        }
+      },
+      "passed": false
+    },
+    "scenario2": {
+      "correct_count": 0,
+      "total_count": 6,
+      "fields": {
+        "total_monthly_income": {
+          "status": "incorrect",
+          "candidate_value": 8000.0,
+          "correct_value": 8850.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "total_necessary_expenses": {
+          "status": "incorrect",
+          "candidate_value": 5360.0,
+          "correct_value": 4760.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "available_monthly_income": {
+          "status": "incorrect",
+          "candidate_value": 2640.0,
+          "correct_value": 4090.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "debt_to_income_ratio": {
+          "status": "incorrect",
+          "candidate_value": 0.4,
+          "correct_value": 0.14,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "recommended_monthly_debt_payment": {
+          "status": "incorrect",
+          "candidate_value": 2376.0,
+          "correct_value": 3681.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "debt_free_timeline_months": {
+          "status": "incorrect",
+          "candidate_value": 24,
+          "correct_value": 13,
+          "points_earned": 0,
+          "points_possible": 1
+        }
+      },
+      "passed": false
+    },
+    "scenario3": {
+      "correct_count": 1,
+      "total_count": 6,
+      "fields": {
+        "total_monthly_income": {
+          "status": "incorrect",
+          "candidate_value": 8033.33,
+          "correct_value": 6650.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "total_necessary_expenses": {
+          "status": "correct",
+          "candidate_value": 3630.0,
+          "correct_value": 3630.0,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "available_monthly_income": {
+          "status": "incorrect",
+          "candidate_value": 4403.33,
+          "correct_value": 3020.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "debt_to_income_ratio": {
+          "status": "incorrect",
+          "candidate_value": 0.46,
+          "correct_value": 0.29,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "recommended_monthly_debt_payment": {
+          "status": "incorrect",
+          "candidate_value": 3963.0,
+          "correct_value": 2718.0,
+          "points_earned": 0,
+          "points_possible": 1
+        },
+        "debt_free_timeline_months": {
+          "status": "incorrect",
+          "candidate_value": 24,
+          "correct_value": 34,
+          "points_earned": 0,
+          "points_possible": 1
+        }
+      },
+      "passed": false
+    }
+  },
+  "overall_score": 11.11
+}

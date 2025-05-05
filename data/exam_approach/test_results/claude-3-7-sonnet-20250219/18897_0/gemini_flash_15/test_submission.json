@@ -1,0 +1,67 @@
+{
+    "candidate_id": "GPT-4",
+    "financial_impact": {
+        "wage_increase_total_cost": 4382340.0,
+        "benefit_cost_percentage_increase": 27.8,
+        "per_unit_cost_impact": 2.12
+    },
+    "operational_impact": {
+        "work_rule_1": 2,
+        "work_rule_2": 3,
+        "work_rule_3": 1
+    },
+    "compliance_precedent": {
+        "proposal_item_1": {
+            "precedent_concern": true,
+            "compliance_issue": false
+        },
+        "proposal_item_2": {
+            "precedent_concern": true,
+            "compliance_issue": true
+        },
+        "proposal_item_3": {
+            "precedent_concern": true,
+            "compliance_issue": true
+        },
+        "proposal_item_4": {
+            "precedent_concern": true,
+            "compliance_issue": true
+        },
+        "proposal_item_5": {
+            "precedent_concern": false,
+            "compliance_issue": false
+        },
+        "proposal_item_6": {
+            "precedent_concern": true,
+            "compliance_issue": true
+        },
+        "proposal_item_7": {
+            "precedent_concern": true,
+            "compliance_issue": true
+        },
+        "proposal_item_8": {
+            "precedent_concern": true,
+            "compliance_issue": false
+        },
+        "proposal_item_9": {
+            "precedent_concern": true,
+            "compliance_issue": false
+        },
+        "proposal_item_10": {
+            "precedent_concern": true,
+            "compliance_issue": true
+        }
+    },
+    "impact_ranking": {
+        "proposal_item_1": 2,
+        "proposal_item_2": 3,
+        "proposal_item_3": 4,
+        "proposal_item_4": 5,
+        "proposal_item_5": 8,
+        "proposal_item_6": 1,
+        "proposal_item_7": 6,
+        "proposal_item_8": 7,
+        "proposal_item_9": 9,
+        "proposal_item_10": 10
+    }
+}

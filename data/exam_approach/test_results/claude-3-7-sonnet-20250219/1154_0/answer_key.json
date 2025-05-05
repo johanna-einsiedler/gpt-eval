@@ -1,0 +1,35 @@
+{
+    "task1_critical_questions": [
+        1,
+        3,
+        5,
+        6,
+        9
+    ],
+    "task2_requirements_met": {
+        "requirement1": "Yes",
+        "requirement2": "Insufficient Information",
+        "requirement3": "No",
+        "requirement4": "Yes",
+        "requirement5": "Yes"
+    },
+    "task3_pricing": {
+        "total_cost": 77300.0,
+        "per_unit_cost": 374.0,
+        "percentage_difference": -5.32
+    },
+    "task4_vendor_capabilities": {
+        "capability1": "Yes",
+        "capability2": "Yes",
+        "capability3": "Insufficient Information",
+        "capability4": "Yes",
+        "capability5": "Insufficient Information"
+    },
+    "task5_documentation_items": [
+        1,
+        3,
+        4,
+        6,
+        7
+    ]
+}

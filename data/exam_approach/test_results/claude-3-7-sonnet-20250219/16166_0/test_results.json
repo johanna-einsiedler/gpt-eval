@@ -1,0 +1,108 @@
+{
+  "overall_score": 68.0,
+  "passed": false,
+  "task_scores": {
+    "task1": {
+      "score": 32.0,
+      "max_score": 40,
+      "percentage": 80.0,
+      "feedback": [
+        "Total budget is correctly set to $450,000.",
+        "All allocations correctly sum to $450,000.",
+        "Hardware allocation ($135000) is within recommended range ($112500-$135000).",
+        "Software allocation ($180000) is within recommended range ($157500-$180000).",
+        "Personnel allocation ($90000) is outside recommended range ($112500-$135000).",
+        "Services allocation ($22500) is outside recommended range ($67500-$90000).",
+        "Contingency allocation ($22500) is within recommended range ($22500-$45000)."
+      ]
+    },
+    "task2": {
+      "score": 10,
+      "max_score": 30,
+      "percentage": 33.33333333333333,
+      "feedback": [
+        "Hardware variance correctly calculated as $13500.",
+        "Software variance correctly calculated as $-13500.",
+        "Personnel variance incorrectly calculated as $-2250, expected $-36000.",
+        "Services variance incorrectly calculated as $-4500, expected $-38250.",
+        "Contingency variance incorrectly calculated as $13500, expected $2250.",
+        "Total variance incorrectly calculated as $6750, expected $-72000.",
+        "Incorrectly identified Hardware as the category with largest absolute variance. Expected one of: Services."
+      ]
+    },
+    "task3": {
+      "score": 26,
+      "max_score": 30,
+      "percentage": 86.66666666666667,
+      "feedback": [
+        "Selected Option A.",
+        "Hardware correctly reallocated to $121500.",
+        "Software correctly reallocated to $207000.",
+        "Personnel correctly reallocated to $90000.",
+        "Services correctly reallocated to $22500.",
+        "Contingency incorrectly reallocated to $9000, expected $22500.",
+        "Total budget correctly maintained at $450,000."
+      ]
+    }
+  },
+  "submission": {
+    "task1": {
+      "total_budget": 450000,
+      "hardware_allocation": 135000,
+      "software_allocation": 180000,
+      "personnel_allocation": 90000,
+      "services_allocation": 22500,
+      "contingency_allocation": 22500
+    },
+    "task2": {
+      "variance_hardware": 13500,
+      "variance_software": -13500,
+      "variance_personnel": -2250,
+      "variance_services": -4500,
+      "variance_contingency": 13500,
+      "variance_total": 6750,
+      "largest_variance_category": "Hardware"
+    },
+    "task3": {
+      "selected_option": "A",
+      "reallocated_budget": {
+        "hardware": 121500,
+        "software": 207000,
+        "personnel": 90000,
+        "services": 22500,
+        "contingency": 9000
+      },
+      "total_unchanged": true
+    }
+  },
+  "answer_key": {
+    "task1": {
+      "total_budget": 450000,
+      "hardware_allocation": 135000,
+      "software_allocation": 180000,
+      "personnel_allocation": 90000,
+      "services_allocation": 22500,
+      "contingency_allocation": 22500
+    },
+    "task2": {
+      "variance_hardware": 13500,
+      "variance_software": -13500,
+      "variance_personnel": -2250,
+      "variance_services": -4500,
+      "variance_contingency": 13500,
+      "variance_total": 6750,
+      "largest_variance_category": "Hardware"
+    },
+    "task3": {
+      "selected_option": "A",
+      "reallocated_budget": {
+        "hardware": 121500,
+        "software": 207000,
+        "personnel": 90000,
+        "services": 22500,
+        "contingency": 9000
+      },
+      "total_unchanged": true
+    }
+  }
+}

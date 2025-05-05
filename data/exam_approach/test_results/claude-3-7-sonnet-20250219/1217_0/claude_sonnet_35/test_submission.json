@@ -1,0 +1,20 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "total_expenses": 71750.0,
+    "total_revenue": 61000.0,
+    "net_profit_loss": -10750.0,
+    "largest_expense_category": "VEN",
+    "largest_expense_amount": 25000.0,
+    "outstanding_payments": 15000.0,
+    "duplicate_transactions": [
+        "T008",
+        "T018"
+    ],
+    "errors_identified": [
+        "Duplicate charge T008 for marketing materials printing of $1850.00",
+        "Duplicate venue final payment T018 of $10000.00",
+        "Staff accommodations T010 charged $3200.00 instead of budgeted $3500.00"
+    ],
+    "budget_variance_percentage": -5.59,
+    "most_over_budget_category": "VEN"
+}

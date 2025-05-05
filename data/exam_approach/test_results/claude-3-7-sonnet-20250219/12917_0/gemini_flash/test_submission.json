@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "debt_payoff_order": [
+        "CC1",
+        "CC2",
+        "PL1",
+        "AL1",
+        "SL1"
+    ],
+    "total_months_to_debt_freedom": 64,
+    "monthly_payment_allocation": {
+        "CC1": 889.0,
+        "CC2": 96.0,
+        "PL1": 320.0,
+        "AL1": 375.0,
+        "SL1": 210.0
+    },
+    "interest_saved_vs_minimum_payments": 0,
+    "first_debt_paid_off": {
+        "debt_id": "CC2",
+        "month_number": 37
+    },
+    "last_debt_paid_off": {
+        "debt_id": "SL1",
+        "month_number": 64
+    },
+    "strategy_explanation": "Debt Avalanche prioritizes debts with the highest interest rates. Extra payments are allocated to the highest interest debt after minimums are met, minimizing total interest paid."
+}

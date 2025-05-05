@@ -1,0 +1,20 @@
+{
+    "scenario1": {
+        "emergencyFund": 13880,
+        "monthlyDiscretionaryIncome": 450,
+        "debtPriorityId": "D3",
+        "savingsVehicleId": "SV2"
+    },
+    "scenario2": {
+        "lifeInsuranceCoverage": 850000,
+        "disabilityMonthlyBenefit": 4600,
+        "healthPlanId": "HP3",
+        "bundlingSavings": 450
+    },
+    "scenario3": {
+        "monthlySavingsRequired": 2100,
+        "assetAllocationId": "AA3",
+        "accountTypeId": "AT2",
+        "projectedValue10Years": 1380000
+    }
+}

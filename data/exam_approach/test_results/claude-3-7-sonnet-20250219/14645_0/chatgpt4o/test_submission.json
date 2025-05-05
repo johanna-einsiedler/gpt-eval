@@ -1,0 +1,289 @@
+{
+    "candidateId": "GPT-4-turbo",
+    "testSchedule": [
+        {
+            "phase": "Functional Testing",
+            "startDate": "2023-10-09",
+            "endDate": "2023-10-20",
+            "resources": [
+                "QA1",
+                "QA2"
+            ],
+            "deliverables": [
+                "Test cases for user authentication, product catalog, and shopping cart"
+            ]
+        },
+        {
+            "phase": "Performance Testing",
+            "startDate": "2023-10-23",
+            "endDate": "2023-10-27",
+            "resources": [
+                "QA3"
+            ],
+            "deliverables": [
+                "Performance test results for app load time, search results, and checkout process"
+            ]
+        },
+        {
+            "phase": "Security Testing",
+            "startDate": "2023-10-30",
+            "endDate": "2023-11-03",
+            "resources": [
+                "QA1"
+            ],
+            "deliverables": [
+                "Security test results for PCI DSS compliance and vulnerability assessment"
+            ]
+        },
+        {
+            "phase": "Usability Testing",
+            "startDate": "2023-11-06",
+            "endDate": "2023-11-10",
+            "resources": [
+                "QA2"
+            ],
+            "deliverables": [
+                "Usability test report and feedback on navigation and accessibility compliance"
+            ]
+        },
+        {
+            "phase": "UAT Support",
+            "startDate": "2023-11-13",
+            "endDate": "2023-11-24",
+            "resources": [
+                "QA1",
+                "QA2",
+                "QA3"
+            ],
+            "deliverables": [
+                "Support for UAT, final adjustments, and defect reports"
+            ]
+        }
+    ],
+    "riskAssessment": [
+        {
+            "riskId": 1,
+            "probability": 4,
+            "impact": 5,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 3,
+            "probability": 3,
+            "impact": 4,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 5,
+            "probability": 3,
+            "impact": 5,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 6,
+            "probability": 4,
+            "impact": 4,
+            "mitigationPlan": "A"
+        },
+        {
+            "riskId": 8,
+            "probability": 3,
+            "impact": 4,
+            "mitigationPlan": "A"
+        }
+    ],
+    "testCoverage": {
+        "functionalCoverage": 40,
+        "performanceCoverage": 20,
+        "securityCoverage": 20,
+        "usabilityCoverage": 20
+    },
+    "resourceAllocation": [
+        {
+            "resourceId": "QA1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 50
+                },
+                {
+                    "week": 2,
+                    "percentage": 50
+                },
+                {
+                    "week": 3,
+                    "percentage": 75
+                },
+                {
+                    "week": 4,
+                    "percentage": 75
+                },
+                {
+                    "week": 5,
+                    "percentage": 100
+                },
+                {
+                    "week": 6,
+                    "percentage": 100
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "QA2",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 25
+                },
+                {
+                    "week": 2,
+                    "percentage": 50
+                },
+                {
+                    "week": 3,
+                    "percentage": 50
+                },
+                {
+                    "week": 4,
+                    "percentage": 75
+                },
+                {
+                    "week": 5,
+                    "percentage": 75
+                },
+                {
+                    "week": 6,
+                    "percentage": 100
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "QA3",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 0
+                },
+                {
+                    "week": 2,
+                    "percentage": 25
+                },
+                {
+                    "week": 3,
+                    "percentage": 50
+                },
+                {
+                    "week": 4,
+                    "percentage": 50
+                },
+                {
+                    "week": 5,
+                    "percentage": 75
+                },
+                {
+                    "week": 6,
+                    "percentage": 75
+                },
+                {
+                    "week": 7,
+                    "percentage": 100
+                },
+                {
+                    "week": 8,
+                    "percentage": 100
+                }
+            ]
+        },
+        {
+            "resourceId": "DEV1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 0
+                },
+                {
+                    "week": 2,
+                    "percentage": 0
+                },
+                {
+                    "week": 3,
+                    "percentage": 10
+                },
+                {
+                    "week": 4,
+                    "percentage": 10
+                },
+                {
+                    "week": 5,
+                    "percentage": 20
+                },
+                {
+                    "week": 6,
+                    "percentage": 20
+                },
+                {
+                    "week": 7,
+                    "percentage": 30
+                },
+                {
+                    "week": 8,
+                    "percentage": 30
+                }
+            ]
+        },
+        {
+            "resourceId": "BA1",
+            "allocation": [
+                {
+                    "week": 1,
+                    "percentage": 50
+                },
+                {
+                    "week": 2,
+                    "percentage": 25
+                },
+                {
+                    "week": 3,
+                    "percentage": 25
+                },
+                {
+                    "week": 4,
+                    "percentage": 25
+                },
+                {
+                    "week": 5,
+                    "percentage": 25
+                },
+                {
+                    "week": 6,
+                    "percentage": 25
+                },
+                {
+                    "week": 7,
+                    "percentage": 50
+                },
+                {
+                    "week": 8,
+                    "percentage": 50
+                }
+            ]
+        }
+    ],
+    "testingApproach": "A"
+}

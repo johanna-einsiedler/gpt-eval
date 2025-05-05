@@ -1,0 +1,39 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "on_time_delivery": {
+        "overall_rate": 0.67,
+        "monthly_rates": {
+            "Jan": 0.67,
+            "Feb": 0.67,
+            "Mar": 0.67,
+            "Apr": 0.67
+        },
+        "highest_month": "Jan",
+        "lowest_month": "Jan"
+    },
+    "order_fulfillment": {
+        "overall_rate": 0.92,
+        "category_rates": {
+            "Electronics": 0.97,
+            "Furniture": 0.77,
+            "Apparel": 0.95
+        },
+        "lowest_category": "Furniture"
+    },
+    "inventory_turns": {
+        "average_turns": 1.87,
+        "sku_turns": {
+            "E001": 2.3,
+            "E002": 1.22,
+            "F001": 1.56,
+            "F002": 1.2,
+            "A001": 3.1,
+            "A002": 1.85
+        },
+        "top_performers": [
+            "A001",
+            "E001",
+            "A002"
+        ]
+    }
+}

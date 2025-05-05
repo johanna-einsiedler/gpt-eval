@@ -1,0 +1,214 @@
+{
+  "task1": {
+    "score": 66.66666666666666,
+    "max_score": 100,
+    "details": {
+      "correlation_coefficients": {
+        "correct": 12,
+        "total": 36,
+        "errors": [
+          {
+            "pair": "age_height_cm",
+            "submitted": 0.79,
+            "expected": 0.87
+          },
+          {
+            "pair": "weight_kg_blood_pressure_systolic",
+            "submitted": 0.86,
+            "expected": 0.75
+          },
+          {
+            "pair": "weight_kg_blood_pressure_diastolic",
+            "submitted": 0.86,
+            "expected": 0.75
+          },
+          {
+            "pair": "weight_kg_cholesterol",
+            "submitted": 0.87,
+            "expected": 0.77
+          },
+          {
+            "pair": "weight_kg_exercise_hours_per_week",
+            "submitted": -0.84,
+            "expected": -0.72
+          },
+          {
+            "pair": "weight_kg_sleep_hours_per_day",
+            "submitted": -0.84,
+            "expected": -0.71
+          },
+          {
+            "pair": "weight_kg_stress_level",
+            "submitted": 0.85,
+            "expected": 0.72
+          },
+          {
+            "pair": "height_cm_blood_pressure_systolic",
+            "submitted": 0.82,
+            "expected": 0.75
+          },
+          {
+            "pair": "height_cm_blood_pressure_diastolic",
+            "submitted": 0.82,
+            "expected": 0.75
+          },
+          {
+            "pair": "height_cm_cholesterol",
+            "submitted": 0.83,
+            "expected": 0.77
+          },
+          {
+            "pair": "height_cm_exercise_hours_per_week",
+            "submitted": -0.8,
+            "expected": -0.72
+          },
+          {
+            "pair": "height_cm_sleep_hours_per_day",
+            "submitted": -0.8,
+            "expected": -0.71
+          },
+          {
+            "pair": "height_cm_stress_level",
+            "submitted": 0.81,
+            "expected": 0.72
+          },
+          {
+            "pair": "blood_pressure_systolic_exercise_hours_per_week",
+            "submitted": -0.97,
+            "expected": -0.87
+          },
+          {
+            "pair": "blood_pressure_systolic_sleep_hours_per_day",
+            "submitted": -0.97,
+            "expected": -0.86
+          },
+          {
+            "pair": "blood_pressure_systolic_stress_level",
+            "submitted": 0.98,
+            "expected": 0.87
+          },
+          {
+            "pair": "blood_pressure_diastolic_exercise_hours_per_week",
+            "submitted": -0.97,
+            "expected": -0.87
+          },
+          {
+            "pair": "blood_pressure_diastolic_sleep_hours_per_day",
+            "submitted": -0.97,
+            "expected": -0.86
+          },
+          {
+            "pair": "blood_pressure_diastolic_stress_level",
+            "submitted": 0.98,
+            "expected": 0.87
+          },
+          {
+            "pair": "cholesterol_exercise_hours_per_week",
+            "submitted": -0.99,
+            "expected": -0.88
+          },
+          {
+            "pair": "cholesterol_sleep_hours_per_day",
+            "submitted": -0.99,
+            "expected": -0.87
+          },
+          {
+            "pair": "cholesterol_stress_level",
+            "submitted": 1.0,
+            "expected": 0.88
+          },
+          {
+            "pair": "exercise_hours_per_week_stress_level",
+            "submitted": -0.99,
+            "expected": -0.8
+          },
+          {
+            "pair": "sleep_hours_per_day_stress_level",
+            "submitted": -0.99,
+            "expected": -0.79
+          }
+        ]
+      },
+      "strongest_relationship": {
+        "correct": true,
+        "submitted": "blood_pressure_systolic_blood_pressure_diastolic",
+        "expected": "blood_pressure_systolic_blood_pressure_diastolic",
+        "alternative_acceptable": "age_cholesterol"
+      },
+      "relationship_direction": {
+        "correct": true,
+        "submitted": "positive",
+        "expected": "positive"
+      }
+    },
+    "passes": false
+  },
+  "task2": {
+    "score": 100,
+    "max_score": 100,
+    "details": {
+      "overall_trend": {
+        "correct": true,
+        "submitted": "increasing",
+        "expected": "increasing"
+      },
+      "trend_magnitude": {
+        "correct": true,
+        "submitted": 2708.33,
+        "expected": 2916.67,
+        "tolerance": 500
+      },
+      "seasonal_pattern": {
+        "correct": true,
+        "submitted": true,
+        "expected": true
+      },
+      "peak_month": {
+        "correct": true,
+        "submitted": "December",
+        "expected": "December"
+      },
+      "trough_month": {
+        "correct": true,
+        "submitted": "February",
+        "expected": "February"
+      }
+    },
+    "passes": true
+  },
+  "task3": {
+    "score": 100,
+    "max_score": 100,
+    "details": {
+      "primary_predictor": {
+        "correct": true,
+        "submitted": "study_hours_per_week",
+        "expected": "study_hours_per_week"
+      },
+      "confounding_variable": {
+        "correct": true,
+        "acceptable_alternative": false,
+        "submitted": "parent_education_level",
+        "expected": "parent_education_level",
+        "alternative_acceptable": "socioeconomic_status"
+      },
+      "unadjusted_relationship": {
+        "correct": true,
+        "submitted": 0.95,
+        "expected": 0.95,
+        "tolerance": 0.1
+      },
+      "adjusted_relationship": {
+        "correct": true,
+        "submitted": 0.85,
+        "expected": 0.75,
+        "tolerance": 0.1
+      }
+    },
+    "passes": true,
+    "partially_correct": true
+  },
+  "overall_score": 88.89,
+  "passes_exam": true,
+  "candidate_id": "GPT-4o"
+}

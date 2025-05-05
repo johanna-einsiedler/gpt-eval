@@ -1,0 +1,49 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "data_analysis": {
+        "excess_inventory_skus": [
+            "H803",
+            "H801",
+            "H802",
+            "B203",
+            "B201",
+            "E501",
+            "E503",
+            "E502",
+            "A103",
+            "A101"
+        ],
+        "high_days_supply_count": 5,
+        "obsolete_inventory_skus": [
+            "F601",
+            "F602",
+            "F603"
+        ],
+        "total_excess_value": 123456.78
+    },
+    "root_causes": {
+        "scenario1": "B",
+        "scenario2": "A",
+        "scenario3": "C",
+        "scenario4": "D",
+        "scenario5": "C"
+    },
+    "reduction_strategies": {
+        "potential_value_reduction": 98765.43,
+        "top_opportunity_skus": [
+            "H803",
+            "H801",
+            "H802",
+            "B203",
+            "B201"
+        ],
+        "slow_moving_strategies": {
+            "F601": "E",
+            "F602": "H",
+            "F603": "H",
+            "J001": "A",
+            "J002": "A"
+        },
+        "carrying_cost_savings": 5432.1
+    }
+}

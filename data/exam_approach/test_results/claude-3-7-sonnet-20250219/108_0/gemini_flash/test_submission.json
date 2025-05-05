@@ -1,0 +1,74 @@
+{
+    "candidateId": "GPT-4-turbo",
+    "task1": {
+        "keyRequirements": [
+            "Improved strategic thinking and decision-making",
+            "Enhanced team management and delegation skills",
+            "Effective communication across departments",
+            "Conflict resolution and negotiation techniques",
+            "Change management capabilities"
+        ],
+        "potentialChallenges": [
+            "Meeting budget constraints of $75,000",
+            "Completing training within the 4-month timeline",
+            "Ensuring trainers have relevant technology industry experience"
+        ],
+        "nonNegotiablePoints": [
+            "Training completion by December 15, 2023",
+            "Customization with company branding",
+            "Signing confidentiality agreement",
+            "Meeting the specified training outcomes",
+            "Blended learning approach"
+        ],
+        "flexiblePoints": [
+            "Number of in-person vs. virtual sessions",
+            "Specific trainers assigned",
+            "Depth of customization",
+            "Payment schedule"
+        ]
+    },
+    "task2": {
+        "proposedFee": 75000.0,
+        "breakdownOfCosts": {
+            "trainerFees": 30000.0,
+            "materials": 9375.0,
+            "travelExpenses": 5625.0,
+            "administrativeCosts": 14999.99
+        },
+        "profitMargin": 25.0,
+        "valueJustification": [
+            "Comprehensive leadership development program tailored to Global Innovations' needs",
+            "Experienced trainers with technology industry expertise",
+            "Blended learning approach for maximum engagement and retention",
+            "Measurable results through pre/post assessments and ROI analysis"
+        ]
+    },
+    "task3": {
+        "objection1Response": "A",
+        "objection2Response": "B",
+        "objection3Response": "A",
+        "objection4Response": "D",
+        "objection5Response": "B"
+    },
+    "task4": {
+        "deliverables": [
+            "Leadership skills assessment for 25 mid-level managers",
+            "Customized leadership development program curriculum",
+            "Interactive workshops (in-person and virtual)",
+            "Individual coaching sessions (2 per participant)",
+            "Post-training support for 3 months"
+        ],
+        "timeline": {
+            "startDate": "2023-09-01",
+            "completionDate": "2023-12-15",
+            "milestoneCode": "MS-001"
+        },
+        "paymentStructure": {
+            "initialPayment": 18750.0,
+            "milestone1Payment": 37500.0,
+            "finalPayment": 18750.0
+        },
+        "contractTermCode": "CT-003",
+        "cancellationTerms": "CAN-002"
+    }
+}

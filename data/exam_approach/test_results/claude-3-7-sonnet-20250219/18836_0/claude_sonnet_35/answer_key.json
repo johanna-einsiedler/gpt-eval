@@ -1,0 +1,43 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "negotiation_strategy": {
+        "selected_approach": "B",
+        "justification": "A transparent, educational approach is most appropriate for Margaret given her direct communication style, concerns about 'being taken advantage of,' and her price sensitivity. This approach acknowledges her concerns while providing clear information about value and options, building trust through transparency rather than pressure tactics."
+    },
+    "package_details": {
+        "selected_services": [
+            "S1",
+            "S3",
+            "S5",
+            "S7",
+            "S9"
+        ],
+        "selected_merchandise": [
+            "M4"
+        ],
+        "selected_additional_services": [
+            "A2",
+            "A7",
+            "A9"
+        ],
+        "total_package_price": 5950.0,
+        "profit_margin_percentage": 31.2
+    },
+    "objection_responses": {
+        "objection1": "B",
+        "objection2": "C",
+        "objection3": "A"
+    },
+    "contract_completion": {
+        "client_name": "Margaret Wilson",
+        "payment_plan_selected": "P5",
+        "payment_terms": "24 monthly installments with 3% interest and 5% service fee",
+        "price_guarantee": "Yes",
+        "required_disclosures": [
+            "Prepaid funds are held in a state-regulated trust/insurance policy, not by the funeral home directly",
+            "Right to transfer the contract to another funeral home if client relocates",
+            "Right to modify arrangements with potential price adjustments",
+            "Cancellation terms and applicable fees or refunds"
+        ]
+    }
+}

@@ -1,0 +1,166 @@
+{
+  "candidate_id": "GPT-4o",
+  "evaluation_sections": {
+    "required_qualifications": {
+      "score": 15.0,
+      "max_score": 15,
+      "details": {
+        "identified_count": 5,
+        "expected_count": 7,
+        "matches": [
+          [
+            "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
+            "experience with social media platforms for business"
+          ],
+          [
+            "strong written and verbal communication skills",
+            "strong written and verbal communication skills"
+          ],
+          [
+            "minimum 2 years of experience in a marketing role",
+            "minimum 2 years of experience in a marketing role"
+          ],
+          [
+            "proficiency in microsoft office suite (word, excel, powerpoint)",
+            "proficiency in microsoft office suite (word, excel, powerpoint)"
+          ],
+          [
+            "ability to manage multiple projects simultaneously with attention to detail",
+            "ability to manage multiple projects simultaneously with attention to detail"
+          ],
+          [
+            "bachelor's degree in marketing, communications, business, or related field",
+            "bachelor's degree in marketing, communications, business, or related field"
+          ],
+          [
+            "experience with digital marketing campaigns",
+            "experience with digital marketing campaigns"
+          ]
+        ]
+      }
+    },
+    "preferred_qualifications": {
+      "score": 15.0,
+      "max_score": 15,
+      "details": {
+        "identified_count": 3,
+        "expected_count": 6,
+        "matches": [
+          [
+            "data analysis skills",
+            "data analysis skills"
+          ],
+          [
+            "event planning experience",
+            "event planning experience"
+          ],
+          [
+            "knowledge of graphic design software (adobe creative suite)",
+            "knowledge of graphic design software (adobe creative suite)"
+          ],
+          [
+            "experience with content management systems (wordpress)",
+            "experience with content management systems (wordpress)"
+          ],
+          [
+            "experience with marketing automation tools (hubspot, marketo, or similar)",
+            "experience with marketing automation tools (hubspot, marketo, or similar)"
+          ],
+          [
+            "seo/sem knowledge",
+            "seo/sem knowledge"
+          ]
+        ]
+      }
+    },
+    "candidate_evaluations": {
+      "score": 37.702564102564104,
+      "max_score": 40,
+      "details": {
+        "qualification_match_accuracy": 0.9615384615384616,
+        "score_calculation_accuracy": 0.8666666666666667,
+        "candidate_evaluations": {
+          "C001": {
+            "required_qualification_accuracy": 1.0,
+            "preferred_qualification_accuracy": 0.8333333333333334,
+            "score_deviation": 20,
+            "meets_minimum_requirements_correct": true
+          },
+          "C002": {
+            "required_qualification_accuracy": 1.0,
+            "preferred_qualification_accuracy": 1.0,
+            "score_deviation": 0,
+            "meets_minimum_requirements_correct": true
+          },
+          "C003": {
+            "required_qualification_accuracy": 1.0,
+            "preferred_qualification_accuracy": 1.0,
+            "score_deviation": 20,
+            "meets_minimum_requirements_correct": true
+          },
+          "C004": {
+            "required_qualification_accuracy": 0.8571428571428571,
+            "preferred_qualification_accuracy": 1.0,
+            "score_deviation": 10,
+            "meets_minimum_requirements_correct": true
+          },
+          "C005": {
+            "required_qualification_accuracy": 0.8571428571428571,
+            "preferred_qualification_accuracy": 1.0,
+            "score_deviation": 10,
+            "meets_minimum_requirements_correct": true
+          },
+          "C006": {
+            "required_qualification_accuracy": 1.0,
+            "preferred_qualification_accuracy": 1.0,
+            "score_deviation": 20,
+            "meets_minimum_requirements_correct": true
+          }
+        }
+      }
+    },
+    "candidate_selection": {
+      "score": 30.0,
+      "max_score": 30,
+      "details": {
+        "top_candidates_accuracy": 1.0,
+        "ranking_accuracy": 1.0,
+        "strengths_relevance": 1.0,
+        "top_candidates_comparison": {
+          "submission": [
+            "C003",
+            "C006",
+            "C001"
+          ],
+          "answer_key": [
+            "C003",
+            "C006",
+            "C001"
+          ],
+          "common_candidates": [
+            "C003",
+            "C001",
+            "C006"
+          ]
+        },
+        "strengths_evaluation": {
+          "C003": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          },
+          "C001": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          },
+          "C006": {
+            "has_minimum_strengths": true,
+            "relevance_score": 1.0
+          }
+        }
+      }
+    }
+  },
+  "overall_score": 97.70256410256411,
+  "passing_threshold": 75,
+  "passed": true
+}

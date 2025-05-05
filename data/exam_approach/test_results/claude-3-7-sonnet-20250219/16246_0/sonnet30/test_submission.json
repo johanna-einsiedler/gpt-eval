@@ -1,0 +1,24 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "sample_size_per_group": 199,
+        "total_sample_size": 398,
+        "power_calculation": 0.8
+    },
+    "task2": {
+        "sample_size_per_group": 142,
+        "total_sample_size": 284,
+        "detectable_difference": 3.75
+    },
+    "task3": {
+        "initial_sample_size": 300,
+        "adjusted_sample_size": 375,
+        "percentage_increase": 25.0
+    },
+    "task4": {
+        "scenario_a_correct": true,
+        "scenario_b_correct": true,
+        "scenario_c_correct": false,
+        "scenario_d_correct": true
+    }
+}

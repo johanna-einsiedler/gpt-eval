@@ -1,0 +1,34 @@
+{
+  "candidate_id": "Claude-3_7-Sonnet",
+  "evaluation_date": "2025-05-05 15:44:10",
+  "task1": {
+    "score": 20,
+    "max_score": 20,
+    "feedback": [
+      "Correctly identified that there are no transaction amount discrepancies.",
+      "Correctly verified the final account balance."
+    ]
+  },
+  "task2": {
+    "score": 40,
+    "max_score": 40,
+    "feedback": [
+      "Correctly identified all over-budget categories.",
+      "Correctly calculated the total variance within acceptable margin.",
+      "Correctly calculated the percent over budget within acceptable margin."
+    ]
+  },
+  "task3": {
+    "score": 10,
+    "max_score": 40,
+    "feedback": [
+      "Failed to identify any missing entries correctly.",
+      "Correctly verified the total collection amount."
+    ]
+  },
+  "total_score": 70,
+  "max_score": 100,
+  "overall_score": 70.0,
+  "performance_level": "Pass",
+  "pass_fail": "Pass"
+}

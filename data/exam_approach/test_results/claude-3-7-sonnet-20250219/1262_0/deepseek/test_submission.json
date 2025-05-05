@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "recipient": "Dr. Sarah Johnson, Citywide Medical Center",
+        "subject": "Request for Additional Medical Information - Applicant James Rodriguez (APP-2023-45871)",
+        "body": "Dear Dr. Johnson,\n\nWe are reviewing the life insurance application for James Rodriguez (Reference Number: APP-2023-45871) and require additional information regarding his diagnosis of spinal stenosis (Code M47.26) noted in his medical records from January 15, 2023. Per our underwriting guidelines section 3.2.14, we kindly request the following details:\n\n1. Date of diagnosis\n2. Specific diagnosis and affected area of spine\n3. Severity classification (mild, moderate, severe)\n4. Treatment plan and current status\n5. Impact on activities of daily living (ADL) and occupational duties\n6. Prognosis from treating physician\n7. Any surgical interventions (planned or completed)\n8. Current pain management regimen\n9. Results of any imaging studies (X-ray, MRI, CT scan)\n\nPlease provide this information by October 30, 2023 (15 days from today). Your prompt response will help us process this application efficiently.\n\nThank you for your assistance.\n\nSincerely,\n[Your Name]\nInsurance Underwriter",
+        "reference_number": "APP-2023-45871",
+        "response_deadline": "October 30, 2023"
+    },
+    "task2": {
+        "recipient": "Thomas Wilson",
+        "subject": "Auto Insurance Rate Quote for Rebecca Chen (APP-2023-67392)",
+        "body": "Dear Mr. Wilson,\n\nAs requested, please find below the rate quote for Rebecca Chen's auto insurance policy (Reference Number: APP-2023-67392). The premium has been calculated using Base Rate Table 1.3 and Rating Factors Table 2.1 as follows:\n\nBase Rate (Standard vehicle class): $1,400\n\nRating Factors:\n- Driver Age (25-65): 1.00\n- Years Licensed (10+): 1.00\n- Driving Record (1 minor violation): 1.20\n- Credit-Based Score (Excellent - 745): 0.85\n- Annual Mileage (7,500-15,000): 1.00\n- Territory (Suburban): 1.00\n- Multi-Policy Discount (No): 1.00\n\nCalculation: $1,400 x 1.00 x 1.00 x 1.20 x 0.85 x 1.00 x 1.00 x 1.00 = $1,428 annually\n\nThe speeding ticket from 2 years ago resulted in a 20% surcharge, while the excellent credit score provided a 15% discount. The final quoted rate is $1,428 annually.\n\nPlease let me know if you require any further clarification or if the client has additional questions.\n\nBest regards,\n[Your Name]\nInsurance Underwriter",
+        "quoted_rate": "$1,428 annually",
+        "calculation_breakdown": {
+            "base_rate": "$1,400",
+            "age_factor": "1.00",
+            "license_factor": "1.00",
+            "driving_record_factor": "1.20",
+            "credit_factor": "0.85",
+            "mileage_factor": "1.00",
+            "territory_factor": "1.00",
+            "multi_policy_factor": "1.00",
+            "final_calculation": "$1,428"
+        }
+    },
+    "task3": {
+        "recipient": "Maria Garcia",
+        "subject": "Life Insurance Rating Decision for Michael Thompson (APP-2023-89123)",
+        "body": "Dear Ms. Garcia,\n\nRegarding Michael Thompson's life insurance application (Reference Number: APP-2023-89123), we have determined that a Rated A classification with a 25% premium adjustment is required per guideline UW-LI-5.3.27. This decision is based on the following health factors:\n\n- Type 2 Diabetes diagnosed at age 45 (within 40-50 range)\n- HbA1c of 7.4% (within 7.0-7.5% range)\n- Additional cardiovascular risk factors: Borderline hypertension (142/92) and elevated LDL cholesterol (148 mg/dL)\n- BMI of 31.2 (within 30-32 range)\n\nAs outlined in Table 7.2, Rated A classification carries a +25% premium adjustment from the Standard rate. This reflects the moderate health issues present while acknowledging that his conditions appear to be controlled with medication.\n\nPlease inform the applicant that we would be happy to review this rating if his health indicators improve in the future. Should you require any additional information, please don't hesitate to contact me.\n\nBest regards,\n[Your Name]\nInsurance Underwriter",
+        "policy_classification": "Rated A",
+        "premium_adjustment": "+25% from Standard",
+        "guideline_reference": "UW-LI-5.3.27"
+    }
+}

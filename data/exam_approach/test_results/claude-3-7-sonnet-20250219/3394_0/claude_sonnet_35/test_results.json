@@ -1,0 +1,70 @@
+{
+  "overall_score": 75.8,
+  "max_possible_score": 120,
+  "sections": {
+    "q1_variance": {
+      "score": 40,
+      "max_score": 40,
+      "details": [],
+      "accuracy": 100.0
+    },
+    "q1_top_overbudget_categories": {
+      "score": 15,
+      "max_score": 15,
+      "details": [],
+      "accuracy": 100.0
+    },
+    "june_forecast": {
+      "score": 19,
+      "max_score": 20,
+      "details": [
+        "Unreasonable June forecast for Marketing - Events: got 38000, expected around 30000"
+      ],
+      "accuracy": 95.0
+    },
+    "projected_yearend_variance": {
+      "score": 0,
+      "max_score": 10,
+      "details": [
+        "Incorrect year-end dollar variance: got -215000, expected around -180000",
+        "Incorrect year-end percentage variance: got -4.5, expected around -3.2"
+      ],
+      "accuracy": 0.0
+    },
+    "categories_exceeding_budget": {
+      "score": 6,
+      "max_score": 10,
+      "details": [
+        "Failed to identify 2 categories that exceed budget"
+      ],
+      "accuracy": 60.0
+    },
+    "best_budget_adherence_department": {
+      "score": 0,
+      "max_score": 5,
+      "details": [
+        "Incorrect best adherence department: got Finance, expected Marketing"
+      ],
+      "accuracy": 0.0
+    },
+    "q1_average_monthly_expenditure": {
+      "score": 10,
+      "max_score": 10,
+      "details": [],
+      "accuracy": 100.0
+    },
+    "unusual_monthly_fluctuations": {
+      "score": 1,
+      "max_score": 10,
+      "details": [
+        "Incorrectly identified 1 fluctuations that weren't unusual",
+        "Failed to identify 6 unusual fluctuations"
+      ],
+      "accuracy": 11.0
+    }
+  },
+  "total_score": 91,
+  "passed": false,
+  "critical_failure": "Failed critical section: best_budget_adherence_department",
+  "section_failure": "Unusual monthly fluctuations below minimum requirement"
+}

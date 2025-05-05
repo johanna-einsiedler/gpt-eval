@@ -1,0 +1,78 @@
+{
+  "overall_score": 71.7,
+  "max_possible_score": 120,
+  "sections": {
+    "q1_variance": {
+      "score": 40,
+      "max_score": 40,
+      "details": [],
+      "accuracy": 100.0
+    },
+    "q1_top_overbudget_categories": {
+      "score": 15,
+      "max_score": 15,
+      "details": [],
+      "accuracy": 100.0
+    },
+    "june_forecast": {
+      "score": 12,
+      "max_score": 20,
+      "details": [
+        "Unreasonable June forecast for Operations - Travel: got 3500, expected around 4000",
+        "Unreasonable June forecast for Operations - Training: got 6850, expected around 7900",
+        "Unreasonable June forecast for IT - Equipment: got 33500, expected around 38000",
+        "Unreasonable June forecast for IT - Consulting: got 12750, expected around 15000",
+        "Unreasonable June forecast for IT - Cloud Services: got 14500, expected around 17500",
+        "Unreasonable June forecast for Marketing - Advertising: got 31500, expected around 42000",
+        "Unreasonable June forecast for Marketing - Events: got 18500, expected around 30000",
+        "Unreasonable June forecast for Marketing - Promotional Materials: got 6850, expected around 7900"
+      ],
+      "accuracy": 60.0
+    },
+    "projected_yearend_variance": {
+      "score": 0,
+      "max_score": 10,
+      "details": [
+        "Incorrect year-end dollar variance: got -364600, expected around -180000",
+        "Incorrect year-end percentage variance: got -6.5, expected around -3.2"
+      ],
+      "accuracy": 0.0
+    },
+    "categories_exceeding_budget": {
+      "score": 6,
+      "max_score": 10,
+      "details": [
+        "Incorrectly identified 3 categories as exceeding budget",
+        "Failed to identify 1 categories that exceed budget"
+      ],
+      "accuracy": 65.0
+    },
+    "best_budget_adherence_department": {
+      "score": 5,
+      "max_score": 5,
+      "details": [],
+      "accuracy": 100.0
+    },
+    "q1_average_monthly_expenditure": {
+      "score": 8,
+      "max_score": 10,
+      "details": [
+        "Incorrect average expenditure for IT: got 168667, expected 168000"
+      ],
+      "accuracy": 75.0
+    },
+    "unusual_monthly_fluctuations": {
+      "score": 0,
+      "max_score": 10,
+      "details": [
+        "Incorrectly identified 3 fluctuations that weren't unusual",
+        "Failed to identify 6 unusual fluctuations"
+      ],
+      "accuracy": 5.0
+    }
+  },
+  "total_score": 86,
+  "passed": false,
+  "critical_failure": "Failed critical section: june_forecast",
+  "section_failure": "Unusual monthly fluctuations below minimum requirement"
+}

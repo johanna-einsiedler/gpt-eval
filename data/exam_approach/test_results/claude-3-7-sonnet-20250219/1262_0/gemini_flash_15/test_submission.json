@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "recipient": "Dr. Sarah Johnson, Citywide Medical Center",
+        "subject": "Information Request - Life Insurance Application APP-2023-45871 - James Rodriguez",
+        "body": "Dear Dr. Johnson,\n\nThis letter concerns the life insurance application of Mr. James Rodriguez (Application Number: APP-2023-45871).  Our initial review of his medical records from your office indicated a diagnosis of spinal stenosis (Code M47.26) on 01/15/2023. \n\nTo complete our underwriting process, we require additional information as outlined in our underwriting guidelines, section 3.2.14.  Specifically, we need the following details:\n\n1. Date of diagnosis\n2. Specific diagnosis and affected area of spine\n3. Severity classification (mild, moderate, severe)\n4. Treatment plan and current status\n5. Impact on activities of daily living (ADL) and occupational duties\n6. Prognosis from treating physician\n7. Any surgical interventions (planned or completed)\n8. Current pain management regimen\n9. Results of any imaging studies (X-ray, MRI, CT scan)\n\nPlease provide this information within 15 days of today's date, October 27, 2023.  Your prompt response is greatly appreciated.\n\nSincerely,\nThe Underwriting Department",
+        "reference_number": "APP-2023-45871",
+        "response_deadline": "November 11, 2023"
+    },
+    "task2": {
+        "recipient": "Thomas Wilson",
+        "subject": "Auto Insurance Rate Quote - APP-2023-67392 - Rebecca Chen",
+        "body": "Dear Thomas,\n\nThis email provides the rate quote for Rebecca Chen's auto insurance application (APP-2023-67392), as requested.  The calculation is based on Section 4.5 of our underwriting guidelines and utilizes Table 1.3 and Table 2.1.\n\nBase Rate (Table 1.3 - Standard Vehicle): $1,400\n\nRating Factors (Table 2.1):\n- Driver Age (25-65): 1.00\n- Years Licensed (10+): 1.00\n- Driving Record (1 minor violation): 1.20\n- Credit-Based Score (Excellent, 740+): 0.85\n- Annual Mileage (7,500-15,000): 1.00\n- Territory (Suburban): 1.00\n\nCalculation:\n$1,400 (Base Rate) * 1.00 (Age) * 1.00 (License) * 1.20 (Driving Record) * 0.85 (Credit) * 1.00 (Mileage) * 1.00 (Territory) = $1,428\n\nRounded to the nearest dollar, the annual premium is $1,428.\n\nPlease let me know if you have any questions.\n\nSincerely,\nThe Underwriting Department",
+        "quoted_rate": "$1,428.00 annually",
+        "calculation_breakdown": {
+            "base_rate": "$1,400",
+            "age_factor": "1.00",
+            "license_factor": "1.00",
+            "driving_record_factor": "1.20",
+            "credit_factor": "0.85",
+            "mileage_factor": "1.00",
+            "territory_factor": "1.00",
+            "multi_policy_factor": "1.00",
+            "final_calculation": "$1,428.00"
+        }
+    },
+    "task3": {
+        "recipient": "Maria Garcia",
+        "subject": "Life Insurance Policy Decision - APP-2023-89123 - Michael Thompson",
+        "body": "Dear Maria,\n\nThis email explains the rating decision for Michael Thompson's life insurance application (APP-2023-89123).  Due to a combination of factors, his application has been rated up in accordance with guideline UW-LI-5.3.27.\n\nMr. Thompson's Type 2 Diabetes, elevated BMI (31.2), and borderline hypertension (142/92) meet the criteria for a 'Rated A' classification according to Table 7.2.  Specifically, his diagnosis between ages 40-50, HbA1c between 7.0-7.5%, and one additional cardiovascular risk factor (elevated cholesterol) all contribute to this classification.\n\nThis results in a 25% premium increase from the standard rate.\n\nPlease let me know if you require further clarification.\n\nSincerely,\nThe Underwriting Department",
+        "policy_classification": "Rated A",
+        "premium_adjustment": "+25% from Standard",
+        "guideline_reference": "UW-LI-5.3.27"
+    }
+}

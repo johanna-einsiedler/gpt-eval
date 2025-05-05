@@ -1,0 +1,43 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "negotiation_strategy": {
+        "selected_approach": "B",
+        "justification": "Margaret values detailed explanations and is concerned about being taken advantage of. Approach B allows for a transparent breakdown of costs, aligning with her need for clarity and ensuring her wishes are respected. This strategy also offers flexibility to adjust the package, addressing her budget concerns and desire for good value."
+    },
+    "package_details": {
+        "selected_services": [
+            "S1",
+            "S3",
+            "S5",
+            "S7",
+            "S9"
+        ],
+        "selected_merchandise": [
+            "M7"
+        ],
+        "selected_additional_services": [
+            "A3",
+            "A7",
+            "A8",
+            "A9"
+        ],
+        "total_package_price": 5795.0,
+        "profit_margin_percentage": 23.4
+    },
+    "objection_responses": {
+        "objection1": "B",
+        "objection2": "C",
+        "objection3": "A"
+    },
+    "contract_completion": {
+        "client_name": "Margaret Wilson",
+        "payment_plan_selected": "P4",
+        "payment_terms": "Monthly payments over 12 months with 0% interest and a 5% service fee",
+        "price_guarantee": "Yes",
+        "required_disclosures": [
+            "D2: All prepaid funds are held in a state-regulated trust",
+            "D5: The contract is transferable to another funeral home",
+            "D7: The client can modify arrangements at any time"
+        ]
+    }
+}

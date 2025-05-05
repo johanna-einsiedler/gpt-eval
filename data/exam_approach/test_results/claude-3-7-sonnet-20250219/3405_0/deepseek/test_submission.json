@@ -1,0 +1,107 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "average_growth_rates": {
+            "Personnel": 0.05,
+            "Equipment": 0.12,
+            "Supplies": 0.04,
+            "Training": 0.12,
+            "Facilities": 0.05,
+            "IT Services": 0.17,
+            "Travel": -0.08,
+            "Consulting": 0.12,
+            "Marketing": 0.12,
+            "Miscellaneous": 0.05
+        },
+        "projected_costs": {
+            "Personnel": 496676,
+            "Equipment": 254581,
+            "Supplies": 96533,
+            "Training": 94559,
+            "Facilities": 173644,
+            "IT Services": 157320,
+            "Travel": 34628,
+            "Consulting": 174570,
+            "Marketing": 80011,
+            "Miscellaneous": 40517,
+            "Total": 1603039
+        },
+        "top_growth_categories": [
+            "IT Services",
+            "Equipment",
+            "Training"
+        ]
+    },
+    "task2": {
+        "total_resources_needed": 1020000,
+        "departmental_allocation": {
+            "Operations": 408000,
+            "Administration": 153000,
+            "Development": 306000,
+            "Support": 153000
+        },
+        "cost_per_unit": {
+            "Operations": 163.2,
+            "Administration": 153.0,
+            "Development": 170.0,
+            "Support": 127.5
+        },
+        "resource_constraints": [
+            "Technology",
+            "Staffing"
+        ]
+    },
+    "task3": {
+        "significant_variances": {
+            "Personnel": {
+                "budgeted": 496676,
+                "actual_projected": 513333,
+                "variance_percent": 0.03
+            },
+            "Equipment": {
+                "budgeted": 254581,
+                "actual_projected": 306667,
+                "variance_percent": 0.2
+            },
+            "Training": {
+                "budgeted": 94559,
+                "actual_projected": 86667,
+                "variance_percent": -0.08
+            },
+            "Facilities": {
+                "budgeted": 173644,
+                "actual_projected": 180000,
+                "variance_percent": 0.04
+            },
+            "IT Services": {
+                "budgeted": 157320,
+                "actual_projected": 193333,
+                "variance_percent": 0.23
+            },
+            "Consulting": {
+                "budgeted": 174570,
+                "actual_projected": 206667,
+                "variance_percent": 0.18
+            },
+            "Marketing": {
+                "budgeted": 80011,
+                "actual_projected": 96000,
+                "variance_percent": 0.2
+            },
+            "Miscellaneous": {
+                "budgeted": 40517,
+                "actual_projected": 37333,
+                "variance_percent": -0.08
+            }
+        },
+        "additional_resources_needed": 166667,
+        "recommended_adjustments": {
+            "Equipment": 46000,
+            "IT Services": 29000,
+            "Consulting": 31000,
+            "Marketing": 14400,
+            "Training": -4333,
+            "Miscellaneous": -1867
+        }
+    }
+}

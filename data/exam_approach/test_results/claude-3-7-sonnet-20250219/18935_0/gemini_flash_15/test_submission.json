@@ -1,0 +1,27 @@
+{
+    "candidate_id": "GPT-4",
+    "scenario1": {
+        "total_monthly_income": 3925.0,
+        "total_necessary_expenses": 1820.0,
+        "available_monthly_income": 2105.0,
+        "debt_to_income_ratio": 0.36,
+        "recommended_monthly_debt_payment": 1894.5,
+        "debt_free_timeline_months": 11
+    },
+    "scenario2": {
+        "total_monthly_income": 9000.0,
+        "total_necessary_expenses": 4040.0,
+        "available_monthly_income": 4960.0,
+        "debt_to_income_ratio": 0.48,
+        "recommended_monthly_debt_payment": 4464.0,
+        "debt_free_timeline_months": 28
+    },
+    "scenario3": {
+        "total_monthly_income": 15235.0,
+        "total_necessary_expenses": 3685.0,
+        "available_monthly_income": 11550.0,
+        "debt_to_income_ratio": 0.52,
+        "recommended_monthly_debt_payment": 10395.0,
+        "debt_free_timeline_months": 20
+    }
+}

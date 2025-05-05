@@ -1,0 +1,39 @@
+{
+  "criteria_results": [
+    {
+      "passed": false,
+      "score": 56.616444964144804,
+      "details": "Total Personnel Budget: FAIL - Difference: 56.62%"
+    },
+    {
+      "passed": false,
+      "score": 0,
+      "details": "Department Budgets: FAIL - 0/5 correct\nHR: FAIL - Difference: 170.38%\nFinance: FAIL - Difference: 102.44%\nOperations: FAIL - Difference: 108.23%\nSales: FAIL - Difference: 158.18%\nIT: FAIL - Difference: 155.89%"
+    },
+    {
+      "passed": false,
+      "score": 0,
+      "details": "Salary and Benefits Totals: FAIL - 0/10 correct\nSalary HR: FAIL - Difference: 149.84%\nSalary Finance: FAIL - Difference: 87.06%\nSalary Operations: FAIL - Difference: 92.29%\nSalary Sales: FAIL - Difference: 138.38%\nSalary IT: FAIL - Difference: 136.36%\nBenefits HR: FAIL - Difference: 302.81%\nBenefits Finance: FAIL - Difference: 201.70%\nBenefits Operations: FAIL - Difference: 211.54%\nBenefits Sales: FAIL - Difference: 286.63%\nBenefits IT: FAIL - Difference: 282.18%"
+    },
+    {
+      "passed": false,
+      "score": 3,
+      "details": "Year-Over-Year Change Percentages: FAIL - 3/6 correct\nHR: PASS - Absolute Difference: 0.60 percentage points\nFinance: FAIL - Absolute Difference: 2.05 percentage points\nOperations: FAIL - Absolute Difference: 2.20 percentage points\nSales: PASS - Absolute Difference: 0.95 percentage points\nIT: PASS - Absolute Difference: 0.20 percentage points\nTotal: FAIL - Absolute Difference: 1.29 percentage points"
+    },
+    {
+      "passed": false,
+      "score": 0,
+      "details": "Benefits-to-Salary Ratios: FAIL - 0/6 correct\nHR: FAIL - Absolute Difference: 0.040\nFinance: FAIL - Absolute Difference: 0.040\nOperations: FAIL - Absolute Difference: 0.040\nSales: FAIL - Absolute Difference: 0.040\nIT: FAIL - Absolute Difference: 0.040\nCompany_Average: FAIL - Absolute Difference: 0.040"
+    },
+    {
+      "passed": false,
+      "score": 0,
+      "details": "Headcount: FAIL - 0/6 correct\nHR: FAIL - Submitted: 22, Expected: 6\nFinance: FAIL - Submitted: 18, Expected: 6\nOperations: FAIL - Submitted: 38, Expected: 12\nSales: FAIL - Submitted: 42, Expected: 15\nIT: FAIL - Submitted: 30, Expected: 11\nTotal: FAIL - Submitted: 150, Expected: 50"
+    }
+  ],
+  "passed_criteria_count": 0,
+  "total_criteria_count": 6,
+  "overall_score": 0.0,
+  "passed": false,
+  "exceptional_performance": false
+}

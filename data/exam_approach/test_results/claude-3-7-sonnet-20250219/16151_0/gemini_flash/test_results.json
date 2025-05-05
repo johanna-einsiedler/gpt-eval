@@ -1,0 +1,44 @@
+{
+  "risk_identification": {
+    "num_risks_identified": 10,
+    "min_risks_score": 10.0,
+    "category_coverage": 0.8,
+    "category_score": 8.0,
+    "description_quality_score": 15.0,
+    "total_score": 33.0,
+    "max_possible": 40,
+    "percentage": 82.5
+  },
+  "risk_analysis": {
+    "score_accuracy": 1.0,
+    "score_accuracy_points": 15.0,
+    "matrix_accuracy": 0.75,
+    "matrix_score": 7.5,
+    "total_score": 22.5,
+    "max_possible": 25,
+    "percentage": 90.0
+  },
+  "response_strategies": {
+    "strategy_appropriateness": 0.65,
+    "strategy_points": 9.75,
+    "priority_accuracy": 1.0,
+    "priority_points": 10.0,
+    "total_score": 19.75,
+    "max_possible": 25,
+    "percentage": 79.0
+  },
+  "contingency_budget": {
+    "submitted_budget": 76500,
+    "correct_budget": 115500.0,
+    "budget_accuracy": 0.6623376623376623,
+    "total_score": 6.623376623376624,
+    "max_possible": 10,
+    "percentage": 66.23376623376623
+  },
+  "total_score": 81.87337662337663,
+  "max_possible": 100,
+  "overall_score": 81.87337662337663,
+  "passed_minimum_section_requirements": true,
+  "passed_overall_threshold": true,
+  "passed": true
+}

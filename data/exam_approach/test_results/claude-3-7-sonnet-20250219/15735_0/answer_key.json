@@ -1,0 +1,30 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "task1": {
+        "total_revenue": 2134.52,
+        "total_units_sold": 75,
+        "average_order_value": 66.7,
+        "best_selling_product": "Screen Protector"
+    },
+    "task2": {
+        "total_expenses": 3063.43,
+        "expense_categories": {
+            "advertising": 640.5,
+            "shipping": 437.5,
+            "product_costs": 1751.75,
+            "platform_fees": 181.24,
+            "other": 52.44
+        },
+        "gross_profit": -928.91,
+        "profit_margin_percentage": -43.52
+    },
+    "task3": {
+        "monthly_summary": {
+            "total_revenue": 2134.52,
+            "total_expenses": 3063.43,
+            "net_profit": -928.91,
+            "roi_percentage": -30.32,
+            "conversion_rate_percentage": 5.51
+        }
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "candidate_id": "EXPECTED_SOLUTION",
+    "comparison_details": {
+        "total_exposure": {
+            "submitted": 20.56,
+            "expected": 20.56,
+            "correct": true
+        },
+        "total_deaths": {
+            "submitted": 8,
+            "expected": 8,
+            "correct": true
+        },
+        "crude_mortality_rate": {
+            "submitted": 0.389082,
+            "expected": 0.389082,
+            "correct": true
+        },
+        "age_band_40_59.exposure": {
+            "submitted": 8.33,
+            "expected": 8.33,
+            "correct": true
+        },
+        "age_band_40_59.deaths": {
+            "submitted": 2,
+            "expected": 2,
+            "correct": true
+        },
+        "age_band_40_59.mortality_rate": {
+            "submitted": 0.240132,
+            "expected": 0.240132,
+            "correct": true
+        },
+        "age_band_60_79.exposure": {
+            "submitted": 9.4,
+            "expected": 9.4,
+            "correct": true
+        },
+        "age_band_60_79.deaths": {
+            "submitted": 6,
+            "expected": 6,
+            "correct": true
+        },
+        "age_band_60_79.mortality_rate": {
+            "submitted": 0.638356,
+            "expected": 0.638356,
+            "correct": true
+        }
+    },
+    "summary": {
+        "correct_answers": 9,
+        "total_fields_checked": 9,
+        "result_status": "Pass"
+    },
+    "overall_score": 100.0
+}

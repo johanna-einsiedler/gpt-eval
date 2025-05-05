@@ -1,0 +1,20 @@
+{
+    "candidate_id": "GPT-4o",
+    "total_expenses": 73050.0,
+    "total_revenue": 46000.0,
+    "net_profit_loss": -27050.0,
+    "largest_expense_category": "VEN",
+    "largest_expense_amount": 25000.0,
+    "outstanding_payments": 15000.0,
+    "duplicate_transactions": [
+        "T008",
+        "T018"
+    ],
+    "errors_identified": [
+        "Duplicate marketing charge T008 duplicates T007",
+        "Duplicate venue payment T018 duplicates T009",
+        "Staff accommodations T010 posted 3200 should be 3500"
+    ],
+    "budget_variance_percentage": -3.88,
+    "most_over_budget_category": "VEN"
+}

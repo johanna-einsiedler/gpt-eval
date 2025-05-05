@@ -1,0 +1,53 @@
+{
+    "candidate_id": "GPT-4.5.1",
+    "exercise1": {
+        "errors": [
+            {
+                "row": "Contingency Fund",
+                "column": "Annual Actual",
+                "incorrect_value": 63000,
+                "correct_value": 63000
+            },
+            {
+                "row": "Research & Development",
+                "column": "Q2 Actual",
+                "incorrect_value": 118750,
+                "correct_value": 120000
+            },
+            {
+                "row": "Prototype Manufacturing",
+                "column": "Q4 Budget",
+                "incorrect_value": 18000,
+                "correct_value": 18500
+            },
+            {
+                "row": "Packaging Development",
+                "column": "Q2 Actual",
+                "incorrect_value": 38500,
+                "correct_value": 38500
+            },
+            {
+                "row": "TOTAL",
+                "column": "Annual Budget",
+                "incorrect_value": 1520000,
+                "correct_value": 1530000
+            }
+        ],
+        "correct_total_cost": 1530000,
+        "rd_percentage": 22.88
+    },
+    "exercise2": {
+        "campaign_a_roi": 1.5,
+        "campaign_b_roi": 1.62,
+        "campaign_c_roi": 1.8,
+        "highest_roi_campaign": "C",
+        "blended_roi": 1.64,
+        "campaign_b_breakeven_units": 5952
+    },
+    "exercise3": {
+        "total_annual_revenue": 719880,
+        "total_annual_profit": 269880,
+        "breakeven_month": 6,
+        "annual_profit_margin_percentage": 37.48
+    }
+}

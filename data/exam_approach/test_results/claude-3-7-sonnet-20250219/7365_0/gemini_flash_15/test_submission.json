@@ -1,0 +1,43 @@
+{
+    "candidate_id": "GPT-4",
+    "scenario_1": {
+        "base_fee": 175.0,
+        "time_charge": 113.75,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 85.0,
+        "total_fee": 373.75,
+        "calculation_notes": "Base fee for an individual return is $175.  The complexity multiplier for a first-time client is 1.15. Time charge: (2.5 hours * $125/hour * 1.15) - $175 = $113.75. Additional forms fees: Schedule A ($50) + Schedule B ($35) = $85. Total fee: $175 + $113.75 + $85 = $373.75"
+    },
+    "scenario_2": {
+        "base_fee": 650.0,
+        "time_charge": 250.0,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 320.0,
+        "total_fee": 1220.0,
+        "calculation_notes": "Base fee for an S-Corporation return is $650. The complexity multiplier for needing prior year amendments is 1.25. Time charge: (4 hours * $125/hour * 1.25) - $650 = $250. Additional forms fees: 3 Schedule K-1s ($75 * 3) + Form 4562 ($85) = $320. Total fee: $650 + $250 + $320 = $1220.00"
+    },
+    "scenario_3": {
+        "base_fee": 175.0,
+        "time_charge": 225.0,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 210.0,
+        "total_fee": 610.0,
+        "calculation_notes": "Base fee for an individual return is $175. The complexity multiplier for multiple state returns (2 states) is 1.20 * 1.20 = 1.44. Time charge: (3 hours * $125/hour * 1.44) - $175 = $225.00. Additional forms fees: Schedule C ($125) + Schedule SE ($40) + Form 8829 ($45) = $210. Total fee: $175 + $225 + $210 = $610.00"
+    },
+    "scenario_4": {
+        "base_fee": 550.0,
+        "time_charge": 468.75,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 460.0,
+        "total_fee": 1478.75,
+        "calculation_notes": "Base fee for a partnership return is $550. The complexity multiplier for complex asset dispositions is 1.35. Time charge: (5.5 hours * $125/hour * 1.35) - $550 = $468.75. Additional forms fees: 5 Schedule K-1s ($75 * 5) + Form 4797 ($95) = $460. Total fee: $550 + $468.75 + $460 = $1478.75"
+    },
+    "scenario_5": {
+        "base_fee": 175.0,
+        "time_charge": 325.0,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 375.0,
+        "total_fee": 875.0,
+        "calculation_notes": "Base fee for an individual return is $175. The complexity multiplier for foreign income reporting is 1.30. Time charge: (3.5 hours * $125/hour * 1.30) - $175 = $325.00. Additional forms fees: Schedule D ($75) + Schedule E ($100/property * 3 properties) = $375. Total fee: $175 + $325 + $375 = $875.00"
+    }
+}

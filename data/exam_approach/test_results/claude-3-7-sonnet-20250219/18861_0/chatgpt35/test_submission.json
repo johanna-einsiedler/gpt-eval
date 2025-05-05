@@ -1,0 +1,37 @@
+{
+    "candidate_id": "HR-Expert-1",
+    "section1": {
+        "question1": "60 days",
+        "question2": "Bereavement Leave Request Form, documentation of the death (obituary, funeral program, or death certificate)",
+        "question3": [
+            "Verbal Warning",
+            "Written Warning",
+            "Final Written Warning/Performance Improvement Plan"
+        ],
+        "question4": "8 days",
+        "question5": "Employee submits Overtime Request Form to supervisor, supervisor approves and signs the form, approved form submitted to Payroll before the end of the pay period"
+    },
+    "section2": {
+        "question1": "12 weeks",
+        "question2": [
+            "Request Initiation",
+            "Documentation and Discussion",
+            "Assessment and Determination",
+            "Implementation and Monitoring"
+        ],
+        "question3": "15 business days",
+        "question4": [
+            "State Minimum Wage Poster",
+            "Workers' Compensation Notice",
+            "State and Federal Equal Employment Opportunity Posters"
+        ],
+        "question5": "30 minutes"
+    },
+    "section3": {
+        "question1": "yes",
+        "question2": "c",
+        "question3": "90 calendar days",
+        "question4": "Family and Medical Leave",
+        "question5": "30 minutes"
+    }
+}

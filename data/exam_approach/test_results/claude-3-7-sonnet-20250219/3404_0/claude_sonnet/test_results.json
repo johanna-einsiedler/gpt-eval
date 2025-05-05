@@ -1,0 +1,139 @@
+{
+  "candidateInfo": {
+    "name": "Budget Analyst",
+    "candidateId": "GPT-4o",
+    "date": "2023-06-15"
+  },
+  "exercise1": {
+    "points_possible": 30,
+    "points_earned": 30,
+    "details": [
+      {
+        "directive": 1,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 2,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 3,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 4,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 5,
+        "status": "Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Complete accuracy across all directives",
+        "points": 5,
+        "max_points": 5
+      }
+    ]
+  },
+  "exercise2": {
+    "points_possible": 40,
+    "points_earned": 18.5,
+    "details": [
+      {
+        "directive": 1,
+        "status": "Correct total cost",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 2,
+        "status": "Incorrect total cost (should be 400000)",
+        "points": 1,
+        "max_points": 5
+      },
+      {
+        "directive": 3,
+        "status": "Incorrect total cost (should be 160000)",
+        "points": 1,
+        "max_points": 5
+      },
+      {
+        "directive": 4,
+        "status": "Correct total cost",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "directive": 5,
+        "status": "Correct total cost",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Department-level adjustments: Directive 2, Dept DEPT-IT-01: Incorrect adjustment; Directive 2, Dept DEPT-IT-02: Incorrect adjustment; Directive 2, Dept DEPT-SEC-01: Incorrect adjustment; Directive 3, Dept DEPT-ADM-01: Incorrect adjustment; Directive 3, Dept DEPT-ADM-02: Incorrect adjustment; Directive 3, Dept DEPT-OPS-01: Incorrect adjustment; Directive 3, Dept DEPT-OPS-02: Incorrect adjustment; Directive 3, Dept DEPT-OPS-03: Incorrect adjustment; Directive 3, Dept DEPT-OPS-04: Incorrect adjustment",
+        "points": 0.5,
+        "max_points": 5
+      },
+      {
+        "status": "Compliance calculations: Incorrect total budget adjustment (should be 1591880); Incorrect percentage of total budget (should be 7.96); Incorrect highest impact directive (should be 5); Incorrect lowest impact directive (should be 4)",
+        "points": 1,
+        "max_points": 5
+      },
+      {
+        "status": "Identification of highest/lowest impact directives: Incorrect",
+        "points": 0.0,
+        "max_points": 5
+      }
+    ]
+  },
+  "exercise3": {
+    "points_possible": 30,
+    "points_earned": 30,
+    "details": [
+      {
+        "status": "Selection of highest-priority directives: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Selection of appropriate policy codes: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Selection of logical implementation steps: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Specification of appropriate required resources: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Selection of relevant monitoring metrics: Correct",
+        "points": 5,
+        "max_points": 5
+      },
+      {
+        "status": "Overall policy coherence and alignment with directives",
+        "points": 5,
+        "max_points": 5
+      }
+    ]
+  },
+  "overall_score": 78.5,
+  "total_points_earned": 78.5,
+  "total_points_possible": 100,
+  "pass_fail": "PASS"
+}

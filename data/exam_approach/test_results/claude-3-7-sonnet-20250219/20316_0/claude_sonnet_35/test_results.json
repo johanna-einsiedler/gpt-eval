@@ -1,0 +1,120 @@
+{
+  "candidate_id": "Claude-3_7-Sonnet",
+  "overall_score": 65.38,
+  "total_points_earned": 8.5,
+  "total_points_possible": 13,
+  "passed": false,
+  "critical_elements": {
+    "roi_calculations": false,
+    "average_cost_per_participant": false,
+    "projected_annual_savings": true
+  },
+  "task_results": {
+    "task1": {
+      "points_possible": 4,
+      "points_earned": 1.5,
+      "details": {
+        "cost_per_participant": {
+          "correct": false,
+          "submitted": 159.29,
+          "expected": 117.5
+        },
+        "highest_cost_program": {
+          "correct": true,
+          "submitted": "Smoking Cessation",
+          "expected": "Smoking Cessation"
+        },
+        "lowest_cost_program": {
+          "correct": false,
+          "submitted": "Sleep Improvement",
+          "expected": "Ergonomics Training"
+        },
+        "participation_threshold_programs": {
+          "correct": "partial",
+          "submitted": [
+            "Nutrition Workshop",
+            "Smoking Cessation"
+          ],
+          "expected": [
+            "Smoking Cessation"
+          ]
+        }
+      }
+    },
+    "task2": {
+      "points_possible": 5,
+      "points_earned": 4,
+      "details": {
+        "program_roi_values": {
+          "Fitness Challenge": {
+            "correct": true,
+            "submitted": 0.47,
+            "expected": 0.47
+          },
+          "Nutrition Workshop": {
+            "correct": false,
+            "submitted": 0.0,
+            "expected": 0.1
+          },
+          "Stress Management": {
+            "correct": false,
+            "submitted": 0.52,
+            "expected": 0.66
+          },
+          "Weight Loss Program": {
+            "correct": false,
+            "submitted": 0.19,
+            "expected": 0.1
+          },
+          "Smoking Cessation": {
+            "correct": true,
+            "submitted": 0.96,
+            "expected": 0.96
+          }
+        },
+        "highest_roi_program": {
+          "correct": true,
+          "submitted": "Smoking Cessation",
+          "expected": "Smoking Cessation"
+        },
+        "cost_effective_programs": {
+          "correct": true,
+          "submitted": [
+            "Stress Management",
+            "Fitness Challenge"
+          ],
+          "expected": [
+            "Stress Management",
+            "Fitness Challenge"
+          ]
+        }
+      }
+    },
+    "task3": {
+      "points_possible": 4,
+      "points_earned": 3,
+      "details": {
+        "quarterly_cost_trend": {
+          "correct": true,
+          "submitted": -4.08,
+          "expected": -3.92
+        },
+        "projected_annual_savings": {
+          "correct": true,
+          "submitted": 30000,
+          "expected": 30000
+        },
+        "cost_reduction_percentage": {
+          "correct": true,
+          "submitted": 14.29,
+          "expected": 14.29
+        },
+        "break_even_month": {
+          "correct": false,
+          "submitted": 5,
+          "expected": 12
+        }
+      }
+    }
+  }
+}

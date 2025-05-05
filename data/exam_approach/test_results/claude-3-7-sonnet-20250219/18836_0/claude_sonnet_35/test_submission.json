@@ -1,0 +1,46 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "negotiation_strategy": {
+        "selected_approach": "B",
+        "justification": "This approach addresses Margaret's budget concerns while emphasizing value and flexibility. It aligns with her direct communication style, desire for detailed explanations, and concern about getting good value. By offering to adjust the package, it shows willingness to work within her budget while still respecting her wishes."
+    },
+    "package_details": {
+        "selected_services": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S7",
+            "S9"
+        ],
+        "selected_merchandise": [
+            "M7"
+        ],
+        "selected_additional_services": [
+            "A2",
+            "A7",
+            "A9"
+        ],
+        "total_package_price": 5990.0,
+        "profit_margin_percentage": 24.8
+    },
+    "objection_responses": {
+        "objection1": "B",
+        "objection2": "C",
+        "objection3": "A"
+    },
+    "contract_completion": {
+        "client_name": "Margaret Wilson",
+        "payment_plan_selected": "P4",
+        "payment_terms": "12 monthly installments, 0% interest, 5% service fee added",
+        "price_guarantee": "Yes",
+        "required_disclosures": [
+            "Funds held in state-regulated trust or insurance policy",
+            "Right to transfer contract to another funeral home",
+            "Ability to modify arrangements with potential price adjustments",
+            "Cancellation and refund policy",
+            "Itemized list of all services and merchandise included"
+        ]
+    }
+}

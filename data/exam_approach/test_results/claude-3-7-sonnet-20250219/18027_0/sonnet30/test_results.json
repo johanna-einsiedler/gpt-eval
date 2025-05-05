@@ -1,0 +1,94 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "prioritization": {
+    "points_earned": 38,
+    "points_possible": 35,
+    "details": {
+      "critical_projects": {
+        "earned": 9,
+        "possible": 9
+      },
+      "high_projects": {
+        "earned": 8,
+        "possible": 8
+      },
+      "medium_projects": {
+        "earned": 5,
+        "possible": 5
+      },
+      "low_projects": {
+        "earned": 3,
+        "possible": 3
+      },
+      "primary_reasons": {
+        "earned": 13,
+        "possible": 10
+      }
+    },
+    "feedback": [
+      "Project P003 primary reason should be Strategic alignment",
+      "Project P012 primary reason should be Submission deadline"
+    ],
+    "passed": true
+  },
+  "budget_allocation": {
+    "points_earned": 16,
+    "points_possible": 30,
+    "details": {
+      "quarterly_distribution": {
+        "earned": 5,
+        "possible": 5
+      },
+      "personnel_costs": {
+        "earned": 5,
+        "possible": 5
+      },
+      "training_allocation": {
+        "earned": 0,
+        "possible": 5
+      },
+      "consultant_allocation": {
+        "earned": 3,
+        "possible": 5
+      },
+      "contingency_planning": {
+        "earned": 3,
+        "possible": 5
+      },
+      "total_budget": {
+        "earned": 0,
+        "possible": 5
+      }
+    },
+    "feedback": [
+      "Total budget should be $1,200,000, found $1450000",
+      "Training budget should be highest in Q1"
+    ],
+    "passed": false
+  },
+  "resource_allocation": {
+    "points_earned": 28,
+    "points_possible": 35,
+    "details": {
+      "expertise_matching": {
+        "earned": 10,
+        "possible": 16
+      },
+      "workload_balancing": {
+        "earned": 16,
+        "possible": 16
+      },
+      "resource_gaps": {
+        "earned": 2,
+        "possible": 3
+      }
+    },
+    "feedback": [
+      "TM004 should be assigned to projects matching their expertise: ['P003', 'P012', 'P014']",
+      "TM007 should be assigned to projects matching their expertise: ['P002', 'P006', 'P012']"
+    ],
+    "passed": true
+  },
+  "overall_score": 82.0,
+  "passed": false
+}

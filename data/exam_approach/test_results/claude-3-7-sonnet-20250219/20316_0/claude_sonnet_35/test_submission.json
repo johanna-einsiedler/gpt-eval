@@ -1,0 +1,32 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "task1": {
+        "cost_per_participant": 159.29,
+        "highest_cost_program": "Smoking Cessation",
+        "lowest_cost_program": "Sleep Improvement",
+        "participation_threshold_programs": [
+            "Nutrition Workshop",
+            "Smoking Cessation"
+        ]
+    },
+    "task2": {
+        "program_roi_values": {
+            "Fitness Challenge": 0.47,
+            "Nutrition Workshop": 0.0,
+            "Stress Management": 0.52,
+            "Weight Loss Program": 0.19,
+            "Smoking Cessation": 0.96
+        },
+        "highest_roi_program": "Smoking Cessation",
+        "cost_effective_programs": [
+            "Fitness Challenge",
+            "Stress Management"
+        ]
+    },
+    "task3": {
+        "quarterly_cost_trend": -4.08,
+        "projected_annual_savings": 30000,
+        "cost_reduction_percentage": 14.29,
+        "break_even_month": 5
+    }
+}

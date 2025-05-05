@@ -1,0 +1,223 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "company_rankings": [
+            {
+                "rank": 1,
+                "company": "Gamma Enterprises"
+            },
+            {
+                "rank": 2,
+                "company": "Zeta Technologies"
+            },
+            {
+                "rank": 3,
+                "company": "Alpha Corp"
+            },
+            {
+                "rank": 4,
+                "company": "Theta Corp"
+            },
+            {
+                "rank": 5,
+                "company": "Epsilon Solutions"
+            },
+            {
+                "rank": 6,
+                "company": "Eta Systems"
+            },
+            {
+                "rank": 7,
+                "company": "Beta Industries"
+            },
+            {
+                "rank": 8,
+                "company": "Delta Manufacturing"
+            }
+        ],
+        "ratio_calculations": {
+            "Alpha Corp": {
+                "current_ratio": 2.95,
+                "quick_ratio": 2.05,
+                "roa": 9.28,
+                "roe": 16.57,
+                "debt_to_equity": 0.79
+            },
+            "Beta Industries": {
+                "current_ratio": 2.33,
+                "quick_ratio": 1.41,
+                "roa": 8.75,
+                "roe": 13.75,
+                "debt_to_equity": 0.96
+            },
+            "Gamma Enterprises": {
+                "current_ratio": 3.0,
+                "quick_ratio": 2.13,
+                "roa": 9.28,
+                "roe": 16.62,
+                "debt_to_equity": 0.79
+            },
+            "Delta Manufacturing": {
+                "current_ratio": 2.23,
+                "quick_ratio": 1.32,
+                "roa": 6.69,
+                "roe": 13.52,
+                "debt_to_equity": 1.02
+            },
+            "Epsilon Solutions": {
+                "current_ratio": 2.8,
+                "quick_ratio": 1.94,
+                "roa": 9.22,
+                "roe": 17.12,
+                "debt_to_equity": 0.86
+            },
+            "Zeta Technologies": {
+                "current_ratio": 2.67,
+                "quick_ratio": 1.87,
+                "roa": 9.19,
+                "roe": 17.17,
+                "debt_to_equity": 0.87
+            },
+            "Eta Systems": {
+                "current_ratio": 2.54,
+                "quick_ratio": 1.62,
+                "roa": 9.33,
+                "roe": 17.47,
+                "debt_to_equity": 0.87
+            },
+            "Theta Corp": {
+                "current_ratio": 2.65,
+                "quick_ratio": 1.75,
+                "roa": 9.52,
+                "roe": 17.68,
+                "debt_to_equity": 0.85
+            }
+        },
+        "regional_comparison": {
+            "Northeast": {
+                "avg_roa": 8.43,
+                "avg_roe": 15.85
+            },
+            "Southeast": {
+                "avg_roa": 9.16,
+                "avg_roe": 16.85
+            },
+            "Midwest": {
+                "avg_roa": 9.24,
+                "avg_roe": 16.9
+            }
+        }
+    },
+    "task2": {
+        "credit_risk_scores": [
+            {
+                "company": "Gamma Enterprises",
+                "risk_score": 20.1
+            },
+            {
+                "company": "Zeta Technologies",
+                "risk_score": 20.9
+            },
+            {
+                "company": "Alpha Corp",
+                "risk_score": 22.2
+            },
+            {
+                "company": "Theta Corp",
+                "risk_score": 22.5
+            },
+            {
+                "company": "Epsilon Solutions",
+                "risk_score": 23.4
+            },
+            {
+                "company": "Eta Systems",
+                "risk_score": 24.1
+            },
+            {
+                "company": "Beta Industries",
+                "risk_score": 25.9
+            },
+            {
+                "company": "Delta Manufacturing",
+                "risk_score": 28.7
+            }
+        ],
+        "regional_patterns": {
+            "highest_risk_region": "Northeast",
+            "regional_avg_risk_scores": {
+                "Northeast": 25.0,
+                "Southeast": 23.1,
+                "Midwest": 20.5
+            },
+            "days_past_due_pct_diff": {
+                "Northeast": 8.7,
+                "Southeast": 16.67,
+                "Midwest": -33.33
+            }
+        }
+    },
+    "task3": {
+        "matched_pairs": [
+            {
+                "company1": "Alpha Corp",
+                "company2": "Gamma Enterprises"
+            },
+            {
+                "company1": "Beta Industries",
+                "company2": "Epsilon Solutions"
+            },
+            {
+                "company1": "Delta Manufacturing",
+                "company2": "Eta Systems"
+            },
+            {
+                "company1": "Zeta Technologies",
+                "company2": "Theta Corp"
+            }
+        ],
+        "performance_metrics": {
+            "pair1": {
+                "companies": [
+                    "Alpha Corp",
+                    "Gamma Enterprises"
+                ],
+                "current_ratio_diff": -0.05,
+                "roa_diff": 0.0,
+                "credit_utilization_diff": 7.0
+            },
+            "pair2": {
+                "companies": [
+                    "Beta Industries",
+                    "Epsilon Solutions"
+                ],
+                "current_ratio_diff": -0.47,
+                "roa_diff": -0.47,
+                "credit_utilization_diff": 4.0
+            },
+            "pair3": {
+                "companies": [
+                    "Delta Manufacturing",
+                    "Eta Systems"
+                ],
+                "current_ratio_diff": -0.31,
+                "roa_diff": -2.64,
+                "credit_utilization_diff": 8.0
+            },
+            "pair4": {
+                "companies": [
+                    "Zeta Technologies",
+                    "Theta Corp"
+                ],
+                "current_ratio_diff": 0.02,
+                "roa_diff": -0.33,
+                "credit_utilization_diff": -4.0
+            },
+            "largest_positive_roe_deviation": {
+                "Northeast": "Eta Systems",
+                "Southeast": "Theta Corp",
+                "Midwest": "Zeta Technologies"
+            }
+        }
+    }
+}

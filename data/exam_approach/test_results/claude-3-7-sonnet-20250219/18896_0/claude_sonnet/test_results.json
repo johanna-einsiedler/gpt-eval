@@ -1,0 +1,235 @@
+{
+  "overall_score": 98.0,
+  "performance_level": "Excellent",
+  "sections": {
+    "risk_identification": {
+      "score": 25,
+      "max_points": 25,
+      "percentage": 100.0,
+      "feedback": [
+        {
+          "risk_id": 1,
+          "points": 5,
+          "max_points": 5,
+          "comments": [
+            "Risk description is substantive",
+            "Risk appears relevant to the case",
+            "Risk is distinct from other identified risks"
+          ]
+        },
+        {
+          "risk_id": 2,
+          "points": 5,
+          "max_points": 5,
+          "comments": [
+            "Risk description is substantive",
+            "Risk appears relevant to the case",
+            "Risk is distinct from other identified risks"
+          ]
+        },
+        {
+          "risk_id": 3,
+          "points": 5,
+          "max_points": 5,
+          "comments": [
+            "Risk description is substantive",
+            "Risk appears relevant to the case",
+            "Risk is distinct from other identified risks"
+          ]
+        },
+        {
+          "risk_id": 4,
+          "points": 5,
+          "max_points": 5,
+          "comments": [
+            "Risk description is substantive",
+            "Risk appears relevant to the case",
+            "Risk is distinct from other identified risks"
+          ]
+        },
+        {
+          "risk_id": 5,
+          "points": 5,
+          "max_points": 5,
+          "comments": [
+            "Risk description is substantive",
+            "Risk appears relevant to the case",
+            "Risk is distinct from other identified risks"
+          ]
+        }
+      ]
+    },
+    "risk_assessment": {
+      "score": 20,
+      "max_points": 20,
+      "percentage": 100.0,
+      "feedback": [
+        {
+          "risk_id": 1,
+          "points": 4,
+          "max_points": 4,
+          "comments": [
+            "Probability and impact ratings are within valid ranges",
+            "Risk score calculation is correct",
+            "Justification is substantive and appears to reference case details"
+          ]
+        },
+        {
+          "risk_id": 2,
+          "points": 4,
+          "max_points": 4,
+          "comments": [
+            "Probability and impact ratings are within valid ranges",
+            "Risk score calculation is correct",
+            "Justification is substantive and appears to reference case details"
+          ]
+        },
+        {
+          "risk_id": 3,
+          "points": 4,
+          "max_points": 4,
+          "comments": [
+            "Probability and impact ratings are within valid ranges",
+            "Risk score calculation is correct",
+            "Justification is substantive and appears to reference case details"
+          ]
+        },
+        {
+          "risk_id": 4,
+          "points": 4,
+          "max_points": 4,
+          "comments": [
+            "Probability and impact ratings are within valid ranges",
+            "Risk score calculation is correct",
+            "Justification is substantive and appears to reference case details"
+          ]
+        },
+        {
+          "risk_id": 5,
+          "points": 4,
+          "max_points": 4,
+          "comments": [
+            "Probability and impact ratings are within valid ranges",
+            "Risk score calculation is correct",
+            "Justification is substantive and appears to reference case details"
+          ]
+        }
+      ]
+    },
+    "risk_categorization": {
+      "score": 8,
+      "max_points": 10,
+      "percentage": 80.0,
+      "feedback": [
+        {
+          "risk_id": 1,
+          "points": 1,
+          "max_points": 2,
+          "comments": [
+            "Risk category is valid",
+            "Risk category may not be the most appropriate for this risk"
+          ]
+        },
+        {
+          "risk_id": 2,
+          "points": 2,
+          "max_points": 2,
+          "comments": [
+            "Risk category is valid",
+            "Risk category appears appropriate for the description"
+          ]
+        },
+        {
+          "risk_id": 3,
+          "points": 1,
+          "max_points": 2,
+          "comments": [
+            "Risk category is valid",
+            "Risk category may not be the most appropriate for this risk"
+          ]
+        },
+        {
+          "risk_id": 4,
+          "points": 2,
+          "max_points": 2,
+          "comments": [
+            "Risk category is valid",
+            "Risk category appears appropriate for the description"
+          ]
+        },
+        {
+          "risk_id": 5,
+          "points": 2,
+          "max_points": 2,
+          "comments": [
+            "Risk category is valid",
+            "Risk category appears appropriate for the description"
+          ]
+        }
+      ]
+    },
+    "priority_selection": {
+      "score": 15,
+      "max_points": 15,
+      "percentage": 100.0,
+      "feedback": {
+        "points": 15,
+        "max_points": 15,
+        "comments": [
+          "Correct number of priority risks selected (3)",
+          "All priority risks are among the highest-scoring risks"
+        ]
+      }
+    },
+    "mitigation_strategies": {
+      "score": 30,
+      "max_points": 30,
+      "percentage": 100.0,
+      "feedback": [
+        {
+          "risk_id": 1,
+          "points": 10,
+          "max_points": 10,
+          "comments": [
+            "Mitigation strategy is detailed and specific",
+            "Mitigation strategy appears comprehensive",
+            "Expected outcome is well-articulated"
+          ]
+        },
+        {
+          "risk_id": 2,
+          "points": 10,
+          "max_points": 10,
+          "comments": [
+            "Mitigation strategy is detailed and specific",
+            "Mitigation strategy appears comprehensive",
+            "Expected outcome is well-articulated"
+          ]
+        },
+        {
+          "risk_id": 3,
+          "points": 10,
+          "max_points": 10,
+          "comments": [
+            "Mitigation strategy is detailed and specific",
+            "Mitigation strategy appears comprehensive",
+            "Expected outcome is well-articulated"
+          ]
+        }
+      ]
+    }
+  },
+  "summary": {
+    "strengths": [
+      "Risk identification (scored 100.0%)",
+      "Risk assessment (scored 100.0%)",
+      "Risk categorization (scored 80.0%)",
+      "Priority risk selection (scored 100.0%)",
+      "Mitigation strategies (scored 100.0%)"
+    ],
+    "areas_for_improvement": [
+      "No significant areas for improvement identified."
+    ],
+    "overall_assessment": "The candidate demonstrated exceptional ability to assess risks in collective bargaining scenarios, with strong performance across all evaluation areas."
+  }
+}

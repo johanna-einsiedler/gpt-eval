@@ -1,0 +1,90 @@
+{
+  "candidate_id": "GPT-4o",
+  "task1": {
+    "forecast_values": {
+      "score": 1.0,
+      "feedback": "Excellent forecast with correct trend and minimal deviation.",
+      "submission": [
+        250,
+        255,
+        260,
+        265
+      ],
+      "expected": [
+        250,
+        255,
+        260,
+        265
+      ]
+    },
+    "accuracy_metric": {
+      "score": 0.8,
+      "feedback": "Good MAPE calculation, within acceptable range.",
+      "submission": 0.0,
+      "expected": 0.02
+    },
+    "cost_driver": {
+      "score": 0.9,
+      "feedback": "Quantity is an acceptable alternative, though weight is the more logical causal factor.",
+      "submission": "quantity",
+      "expected": "weight_lbs"
+    },
+    "correlation_value": {
+      "score": 1.0,
+      "feedback": "Excellent correlation calculation, very close to expected value.",
+      "submission": 1.0,
+      "expected": 1.0
+    }
+  },
+  "task2": {
+    "fixed_cost": {
+      "score": 0.3,
+      "feedback": "Fixed cost calculation is outside the acceptable range.",
+      "submission": 3000.0,
+      "expected": 2400.0
+    },
+    "variable_cost_coefficient": {
+      "score": 0.6,
+      "feedback": "Acceptable variable cost calculation.",
+      "submission": 5.0,
+      "expected": 4.8
+    },
+    "total_estimated_cost": {
+      "score": 0.3,
+      "feedback": "Total cost estimation has significant deviation.",
+      "submission": 28000.0,
+      "expected": 26400.0
+    },
+    "cost_breakdown": {
+      "score": 0.4,
+      "feedback": "Cost breakdown has significant deviations but correct proportions.",
+      "submission": {
+        "labor": 15600.0,
+        "transportation": 6000.0,
+        "handling": 4000.0,
+        "other": 2400.0
+      },
+      "expected": {
+        "labor": 15000.0,
+        "transportation": 6000.0,
+        "handling": 4000.0,
+        "other": 1400.0
+      }
+    }
+  },
+  "scores": {
+    "forecast_values": 15.0,
+    "accuracy_metric": 8.0,
+    "cost_driver": 9.0,
+    "correlation_value": 5.0,
+    "fixed_cost": 4.5,
+    "variable_cost_coefficient": 9.0,
+    "total_estimated_cost": 4.5,
+    "cost_breakdown": 6.0
+  },
+  "overall_score": 61.0,
+  "assessment": "FAILED: Failure to separate fixed and variable costs",
+  "critical_errors": [
+    "Failure to separate fixed and variable costs"
+  ]
+}

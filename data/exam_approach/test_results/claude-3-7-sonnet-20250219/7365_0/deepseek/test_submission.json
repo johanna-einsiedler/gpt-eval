@@ -1,0 +1,43 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "scenario_1": {
+        "base_fee": 175.0,
+        "time_charge": 156.25,
+        "complexity_adjustment": 81.25,
+        "additional_forms_fee": 85.0,
+        "total_fee": 416.25,
+        "calculation_notes": "Base fee for individual return is $175. Time charge is (2.5 hours * $125 * 1.15) - $175 = $156.25. Additional forms: Schedule A ($50) + Schedule B ($35) = $85. Complexity multiplier of 1.15 applied for first-time client."
+    },
+    "scenario_2": {
+        "base_fee": 650.0,
+        "time_charge": 0.0,
+        "complexity_adjustment": 187.5,
+        "additional_forms_fee": 330.0,
+        "total_fee": 980.0,
+        "calculation_notes": "Base fee for S-Corp is $650. Time charge is (4 hours * $125 * 1.25) - $650 = -$25 → $0 (negative becomes 0). Additional forms: 3 K-1s ($225) + Form 4562 ($85) = $310. Complexity multiplier of 1.25 for prior year amendments."
+    },
+    "scenario_3": {
+        "base_fee": 175.0,
+        "time_charge": 275.0,
+        "complexity_adjustment": 200.0,
+        "additional_forms_fee": 315.0,
+        "total_fee": 765.0,
+        "calculation_notes": "Base fee $175. Time charge (3 hours * $125 * 1.20) - $175 = $275. Additional forms: Schedule C ($125) + Schedule SE ($40) + Form 8829 ($45) = $210. Complexity multiplier 1.20 for multiple states (2 states)."
+    },
+    "scenario_4": {
+        "base_fee": 550.0,
+        "time_charge": 378.13,
+        "complexity_adjustment": 378.13,
+        "additional_forms_fee": 470.0,
+        "total_fee": 1398.13,
+        "calculation_notes": "Base fee $550. Time charge (5.5 hours * $125 * 1.35) - $550 = $378.13. Additional forms: 5 K-1s ($375) + Form 4797 ($95) = $470. Complexity multiplier 1.35 for complex asset dispositions."
+    },
+    "scenario_5": {
+        "base_fee": 175.0,
+        "time_charge": 393.75,
+        "complexity_adjustment": 218.75,
+        "additional_forms_fee": 375.0,
+        "total_fee": 943.75,
+        "calculation_notes": "Base fee $175. Time charge (3.5 hours * $125 * 1.30) - $175 = $393.75. Additional forms: Schedule D ($75) + 3 Schedule E properties ($300) = $375. Complexity multiplier 1.30 for foreign income reporting."
+    }
+}

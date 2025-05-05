@@ -1,0 +1,53 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "exercise1": {
+        "errors": [
+            {
+                "row": "Research & Development",
+                "column": "Q2 Actual",
+                "incorrect_value": 118750,
+                "correct_value": 120000
+            },
+            {
+                "row": "Product Design",
+                "column": "Annual Actual",
+                "incorrect_value": 180000,
+                "correct_value": 179000
+            },
+            {
+                "row": "Prototype Manufacturing",
+                "column": "Q3 Actual",
+                "incorrect_value": 61750,
+                "correct_value": 62000
+            },
+            {
+                "row": "Testing & Quality Assurance",
+                "column": "Annual Actual",
+                "incorrect_value": 175250,
+                "correct_value": 175000
+            },
+            {
+                "row": "TOTAL",
+                "column": "Annual Actual",
+                "incorrect_value": 1538500,
+                "correct_value": 1539000
+            }
+        ],
+        "correct_total_cost": 1539000,
+        "rd_percentage": 22.99
+    },
+    "exercise2": {
+        "campaign_a_roi": 1.5,
+        "campaign_b_roi": 1.62,
+        "campaign_c_roi": 1.8,
+        "highest_roi_campaign": "C",
+        "blended_roi": 1.63,
+        "campaign_b_breakeven_units": 5716
+    },
+    "exercise3": {
+        "total_annual_revenue": 2399520,
+        "total_annual_profit": 425000,
+        "breakeven_month": 6,
+        "annual_profit_margin_percentage": 17.71
+    }
+}

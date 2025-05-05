@@ -1,0 +1,57 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "budget_analysis": {
+        "average_monthly_revenue_by_category": {
+            "massage_services": 54891.67,
+            "facial_services": 36550.0,
+            "body_treatments": 23650.0,
+            "nail_services": 16166.67,
+            "retail_products": 10958.33
+        },
+        "top_expense_categories": [
+            "Staff Wages",
+            "Benefits",
+            "Supplies"
+        ],
+        "previous_year_profit_margin": 0.31
+    },
+    "revenue_projection": {
+        "projected_annual_revenue": {
+            "massage_services": 711582.16,
+            "facial_services": 484650.0,
+            "body_treatments": 317880.0,
+            "nail_services": 205936.48,
+            "retail_products": 150021.55,
+            "total": 1870070.19
+        },
+        "projected_revenue_mix": {
+            "massage_services": 0.38,
+            "facial_services": 0.26,
+            "body_treatments": 0.17,
+            "nail_services": 0.11,
+            "retail_products": 0.08
+        }
+    },
+    "expense_budget": {
+        "annual_expenses_by_category": {
+            "staff_wages": 592023.06,
+            "benefits": 118404.61,
+            "supplies": 84574.72,
+            "utilities": 56383.14,
+            "marketing": 74844.81,
+            "maintenance": 37422.4,
+            "admin": 56383.14,
+            "rent": 112766.28,
+            "products": 74844.81
+        },
+        "total_annual_expenses": 1207646.97,
+        "expense_to_revenue_ratio": 0.65,
+        "projected_annual_profit": 662423.22
+    },
+    "financial_goals": {
+        "revenue_per_treatment_room": 12922.92,
+        "revenue_per_therapist": 8681.51,
+        "product_sales_percentage": 0.08,
+        "target_profit_margin": 0.35
+    }
+}

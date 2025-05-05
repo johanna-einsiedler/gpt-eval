@@ -1,0 +1,35 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "task1": {
+        "recipient": "Dr. Sarah Johnson, Citywide Medical Center",
+        "subject": "Request for Additional Medical Information - James Rodriguez (APP-2023-45871)",
+        "body": "Dear Dr. Johnson,\n\nI am writing to request additional medical information regarding your patient, James Rodriguez (Reference Number: APP-2023-45871), who has applied for a Term Life Insurance policy with our company.\n\nOur initial review of the medical records indicates a diagnosis of spinal stenosis (Code M47.26 - Spondylosis with radiculopathy, lumbar region) from January 15, 2023. To properly assess this application, we require the following specific information about this condition:\n\n1. Date of diagnosis\n2. Specific diagnosis and affected area of spine\n3. Severity classification (mild, moderate, severe)\n4. Treatment plan and current status\n5. Impact on activities of daily living (ADL) and occupational duties\n6. Prognosis from your medical perspective\n7. Any surgical interventions (planned or completed)\n8. Current pain management regimen\n9. Results of any imaging studies (X-ray, MRI, CT scan)\n\nPlease provide this information within 15 days from today's date. You can submit your response via our secure provider portal at [portal address] or by fax to [fax number], referencing the applicant's number APP-2023-45871.\n\nIf you have any questions or need clarification, please contact our underwriting department at [phone number] or [email address].\n\nThank you for your assistance in this matter.\n\nSincerely,\n\n[Underwriter Name]\nUnderwriting Department\n[Insurance Company Name]\n[Contact Information]",
+        "reference_number": "APP-2023-45871",
+        "response_deadline": "15 days from today"
+    },
+    "task2": {
+        "recipient": "Thomas Wilson",
+        "subject": "Auto Insurance Quote Explanation - Rebecca Chen (APP-2023-67392)",
+        "body": "Dear Thomas Wilson,\n\nI am writing regarding the auto insurance application for Rebecca Chen (Reference Number: APP-2023-67392) for her 2020 Toyota Camry. Below is a detailed explanation of the premium calculation based on our standard rating procedures outlined in Section 4.5 of our underwriting guidelines.\n\nThe base rate for a standard vehicle like the 2020 Toyota Camry is $1,400 annually. The following rating factors were applied to this base rate:\n\n- Driver Age (29 years): 1.00 multiplier (25-65 age category)\n- Years Licensed (11 years): 1.00 multiplier (10+ years category)\n- Driving Record (one speeding ticket): 1.20 multiplier (1 minor violation)\n- Credit-Based Score (745): 0.85 multiplier (Excellent category)\n- Annual Mileage (12,000): 1.00 multiplier (7,500-15,000 category)\n- Territory (Suburban): 1.00 multiplier\n- Multi-Policy Discount: 1.00 multiplier (No discount applied)\n\nCalculation:\n$1,400 (base rate) × 1.00 × 1.00 × 1.20 × 0.85 × 1.00 × 1.00 × 1.00 = $1,428\n\nThe final premium for Rebecca Chen's policy is $1,428 annually, which equals $119 monthly if she chooses the monthly payment option.\n\nPlease note that the speeding ticket from two years ago resulted in a 20% increase (1.20 multiplier), but her excellent credit score provided a 15% reduction (0.85 multiplier), resulting in a net premium that is only slightly higher than the base rate.\n\nIf you have any questions or if Rebecca would like to discuss potential discounts such as bundling with other policies, please let me know.\n\nSincerely,\n\n[Underwriter Name]\nUnderwriting Department\n[Insurance Company Name]\n[Contact Information]",
+        "quoted_rate": "$1,428.00 annually",
+        "calculation_breakdown": {
+            "base_rate": "$1,400",
+            "age_factor": "1.00",
+            "license_factor": "1.00",
+            "driving_record_factor": "1.20",
+            "credit_factor": "0.85",
+            "mileage_factor": "1.00",
+            "territory_factor": "1.00",
+            "multi_policy_factor": "1.00",
+            "final_calculation": "$1,428.00"
+        }
+    },
+    "task3": {
+        "recipient": "Maria Garcia",
+        "subject": "Life Insurance Rating Decision - Michael Thompson (APP-2023-89123)",
+        "body": "Dear Maria Garcia,\n\nI am writing regarding the Whole Life Insurance application for Michael Thompson (Reference Number: APP-2023-89123). After careful review of the medical information provided, we have determined that this application qualifies for our Rated A classification, which includes a premium adjustment of +25% from our Standard rates.\n\nThis decision is based on guideline UW-LI-5.3.27 regarding Diabetes Risk Assessment. Mr. Thompson meets the criteria for Rated A classification for the following reasons:\n\n1. Type 2 Diabetes diagnosed at age 45 (falls within the 40-50 age range criterion)\n2. Current HbA1c of 7.4% (falls within the 7.0-7.5% range criterion)\n3. BMI of 31.2 (falls within the 30-32 range criterion)\n4. Blood pressure of 142/92 (meets the \"controlled but elevated\" criterion)\n5. Presence of additional cardiovascular risk factors (elevated cholesterol and history of smoking)\n\nAccording to Table 7.2 of our underwriting guidelines, the Rated A classification carries a premium adjustment of +25% from our Standard rates. This rating allows us to offer coverage while appropriately accounting for the slightly elevated risk factors present in Mr. Thompson's medical profile.\n\nPlease note that if Mr. Thompson's health metrics improve in the future (particularly his HbA1c, blood pressure, and BMI), he may qualify for reconsideration of this rating. We recommend a review in 12 months if these factors show improvement.\n\nIf you or Mr. Thompson have any questions about this decision or would like to discuss options, please don't hesitate to contact me.\n\nSincerely,\n\n[Underwriter Name]\nUnderwriting Department\n[Insurance Company Name]\n[Contact Information]",
+        "policy_classification": "Rated A",
+        "premium_adjustment": "+25% from Standard",
+        "guideline_reference": "UW-LI-5.3.27"
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "total_annual_interest": 4950.0,
+        "taxable_interest_income": 4537.5,
+        "effective_yields": {
+            "corporate_bond": 0.048,
+            "certificate_of_deposit": 0.0266,
+            "municipal_bond": 0.042
+        }
+    },
+    "task2": {
+        "fair_market_value": 94528.92,
+        "annual_taxable_interest": 5500.0,
+        "amortizable_amount": 5471.08,
+        "adjusted_tax_basis": 99142.16
+    },
+    "task3": {
+        "present_value_annuity": 471524.41,
+        "better_economic_value": "lump_sum",
+        "tax_liability": {
+            "lump_sum": 160000.0,
+            "annuity_total_present_value": 113166.66
+        },
+        "after_tax_present_value": {
+            "lump_sum": 340000.0,
+            "annuity": 358357.75
+        }
+    },
+    "task4": {
+        "cost_basis": 39000.0,
+        "capital_gain_loss": 15000.0,
+        "dividend_income": 1000.0,
+        "total_tax_liability": 4250.0
+    },
+    "task5": {
+        "cost_depletion": 60000.0,
+        "percentage_depletion": 11250.0,
+        "maximum_depletion_deduction": 11250.0,
+        "adjusted_basis": 738750.0,
+        "taxable_income": 52500.0
+    }
+}

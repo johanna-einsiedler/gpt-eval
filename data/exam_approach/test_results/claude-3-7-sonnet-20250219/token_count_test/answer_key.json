@@ -1,0 +1,29 @@
+{
+    "exercise1": {
+        "budget_variance": 29300.0,
+        "overspent_categories": [
+            "Launch Event",
+            "Manufacturing Setup",
+            "Marketing Materials",
+            "Product Design",
+            "Prototyping",
+            "Regulatory Compliance",
+            "Research & Development"
+        ],
+        "underspent_categories": [
+            "Market Research"
+        ],
+        "total_rd_percentage": 0.21
+    },
+    "exercise2": {
+        "campaign_roi": 1.28,
+        "most_efficient_channel": "Email Marketing",
+        "breakeven_point": 5000
+    },
+    "exercise3": {
+        "year1_profit": 346437.5,
+        "projected_roi": 1.39,
+        "payback_period_months": 8,
+        "profit_margin_percentage": 0.11
+    }
+}

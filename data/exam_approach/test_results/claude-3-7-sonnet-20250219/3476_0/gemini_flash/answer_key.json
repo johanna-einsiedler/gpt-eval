@@ -1,0 +1,268 @@
+{
+    "candidateId": "EVALUATOR_REFERENCE",
+    "task1": {
+        "systemGoals": [
+            {
+                "id": "G1",
+                "description": "Implement a centralized appointment scheduling system accessible to all 5 clinics to standardize the scheduling process across the healthcare provider network, replacing the current disparate methods (phone calls, paper calendars, spreadsheets).",
+                "priority": 1,
+                "measurableOutcome": "100% adoption across all 5 clinics within 3 months of implementation, with all appointments being processed through the new system."
+            },
+            {
+                "id": "G2",
+                "description": "Reduce appointment no-show rates by implementing automated reminder notifications through multiple channels (SMS, email, phone) at configurable intervals before scheduled appointments.",
+                "priority": 2,
+                "measurableOutcome": "Decrease no-show rates by at least 30% within 6 months of system implementation compared to baseline measurements."
+            },
+            {
+                "id": "G3",
+                "description": "Optimize resource utilization by providing real-time visibility of provider availability across all clinics, enabling efficient scheduling and redistribution of appointments based on demand and capacity.",
+                "priority": 2,
+                "measurableOutcome": "Increase average provider utilization rate from current baseline to at least 85% within 4 months of implementation."
+            },
+            {
+                "id": "G4",
+                "description": "Enable patient self-scheduling through a user-friendly online portal that integrates with the central scheduling system, reducing administrative workload while improving patient satisfaction.",
+                "priority": 3,
+                "measurableOutcome": "At least 40% of all appointments booked through self-service channels within 6 months of implementation."
+            },
+            {
+                "id": "G5",
+                "description": "Implement data analytics capabilities to track appointment patterns, cancellation rates, and resource utilization across clinics to support continuous improvement of scheduling processes.",
+                "priority": 4,
+                "measurableOutcome": "Generate monthly utilization reports with actionable insights that lead to at least 3 process improvements within the first year."
+            },
+            {
+                "id": "G6",
+                "description": "Ensure seamless integration with existing electronic health record (EHR) systems to maintain continuity of patient care information and avoid duplicate data entry.",
+                "priority": 3,
+                "measurableOutcome": "Zero reported incidents of patient data inconsistency between scheduling system and EHR within 3 months of implementation."
+            }
+        ],
+        "constraints": [
+            {
+                "id": "C1",
+                "description": "The system must comply with HIPAA regulations and other healthcare data privacy requirements to protect sensitive patient information.",
+                "impact": "Requires secure authentication, encryption, audit trails, and access controls that may increase development complexity and limit certain functionality."
+            },
+            {
+                "id": "C2",
+                "description": "The system must accommodate varying scheduling protocols and resource types across the five different clinic locations.",
+                "impact": "Necessitates a flexible configuration system that can handle different appointment types, durations, and provider specialties without requiring custom code for each clinic."
+            },
+            {
+                "id": "C3",
+                "description": "The system must be accessible to users with varying levels of technical proficiency, including staff from clinics currently using paper-based systems.",
+                "impact": "Requires intuitive interface design, comprehensive training programs, and possibly maintaining limited support for legacy scheduling methods during transition."
+            }
+        ]
+    },
+    "task2": {
+        "flowchartDescription": "This flowchart represents the end-to-end appointment scheduling process for a healthcare provider network. It begins with a patient requesting an appointment and covers all major paths including new patient registration, appointment selection, confirmation, reminders, and completion. The flowchart includes error handling for scenarios such as unavailable time slots, patient no-shows, and scheduling conflicts. It also shows integration points with the patient records system and provider availability database. Decision points ensure proper routing based on patient status, appointment availability, and confirmation responses.",
+        "flowchartSteps": [
+            {
+                "stepId": "S1",
+                "stepType": "start",
+                "description": "Begin appointment scheduling process",
+                "nextStepIds": [
+                    "S2"
+                ]
+            },
+            {
+                "stepId": "S2",
+                "stepType": "input/output",
+                "description": "Receive appointment request (via phone, website, or in-person)",
+                "nextStepIds": [
+                    "S3"
+                ]
+            },
+            {
+                "stepId": "S3",
+                "stepType": "process",
+                "description": "Collect patient identifier (name, DOB, phone number)",
+                "nextStepIds": [
+                    "S4"
+                ]
+            },
+            {
+                "stepId": "S4",
+                "stepType": "decision",
+                "description": "Is patient registered in system?",
+                "nextStepIds": [
+                    "S6",
+                    "S5"
+                ]
+            },
+            {
+                "stepId": "S5",
+                "stepType": "process",
+                "description": "Register new patient and collect required information",
+                "nextStepIds": [
+                    "S6"
+                ]
+            },
+            {
+                "stepId": "S6",
+                "stepType": "database",
+                "description": "Retrieve patient records from EHR system",
+                "nextStepIds": [
+                    "S7"
+                ]
+            },
+            {
+                "stepId": "S7",
+                "stepType": "process",
+                "description": "Determine appointment type and duration needed",
+                "nextStepIds": [
+                    "S8"
+                ]
+            },
+            {
+                "stepId": "S8",
+                "stepType": "process",
+                "description": "Identify preferred location, provider, and date/time",
+                "nextStepIds": [
+                    "S9"
+                ]
+            },
+            {
+                "stepId": "S9",
+                "stepType": "database",
+                "description": "Query available appointment slots based on criteria",
+                "nextStepIds": [
+                    "S10"
+                ]
+            },
+            {
+                "stepId": "S10",
+                "stepType": "decision",
+                "description": "Are suitable appointment slots available?",
+                "nextStepIds": [
+                    "S12",
+                    "S11"
+                ]
+            },
+            {
+                "stepId": "S11",
+                "stepType": "process",
+                "description": "Modify search criteria (different provider, location, or time)",
+                "nextStepIds": [
+                    "S9"
+                ]
+            },
+            {
+                "stepId": "S12",
+                "stepType": "input/output",
+                "description": "Display available appointment options to patient/staff",
+                "nextStepIds": [
+                    "S13"
+                ]
+            },
+            {
+                "stepId": "S13",
+                "stepType": "process",
+                "description": "Patient selects preferred appointment slot",
+                "nextStepIds": [
+                    "S14"
+                ]
+            },
+            {
+                "stepId": "S14",
+                "stepType": "process",
+                "description": "Reserve selected appointment slot temporarily",
+                "nextStepIds": [
+                    "S15"
+                ]
+            },
+            {
+                "stepId": "S15",
+                "stepType": "process",
+                "description": "Provide appointment details and confirm with patient",
+                "nextStepIds": [
+                    "S16"
+                ]
+            },
+            {
+                "stepId": "S16",
+                "stepType": "decision",
+                "description": "Does patient confirm appointment?",
+                "nextStepIds": [
+                    "S17",
+                    "S9"
+                ]
+            },
+            {
+                "stepId": "S17",
+                "stepType": "database",
+                "description": "Save confirmed appointment to scheduling database",
+                "nextStepIds": [
+                    "S18"
+                ]
+            },
+            {
+                "stepId": "S18",
+                "stepType": "process",
+                "description": "Send appointment confirmation to patient via preferred method",
+                "nextStepIds": [
+                    "S19"
+                ]
+            },
+            {
+                "stepId": "S19",
+                "stepType": "process",
+                "description": "Schedule automated reminders at 7 days, 2 days, and 4 hours before appointment",
+                "nextStepIds": [
+                    "S20"
+                ]
+            },
+            {
+                "stepId": "S20",
+                "stepType": "decision",
+                "description": "Does patient request to cancel/reschedule before appointment?",
+                "nextStepIds": [
+                    "S21",
+                    "S22"
+                ]
+            },
+            {
+                "stepId": "S21",
+                "stepType": "process",
+                "description": "Process cancellation/reschedule request and update system",
+                "nextStepIds": [
+                    "S9"
+                ]
+            },
+            {
+                "stepId": "S22",
+                "stepType": "decision",
+                "description": "Does patient attend appointment?",
+                "nextStepIds": [
+                    "S23",
+                    "S24"
+                ]
+            },
+            {
+                "stepId": "S23",
+                "stepType": "process",
+                "description": "Mark appointment as completed in system",
+                "nextStepIds": [
+                    "S25"
+                ]
+            },
+            {
+                "stepId": "S24",
+                "stepType": "process",
+                "description": "Record no-show, notify appropriate staff, and follow up with patient",
+                "nextStepIds": [
+                    "S25"
+                ]
+            },
+            {
+                "stepId": "S25",
+                "stepType": "end",
+                "description": "End appointment scheduling process",
+                "nextStepIds": []
+            }
+        ]
+    }
+}

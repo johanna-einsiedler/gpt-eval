@@ -1,0 +1,51 @@
+{
+  "candidate_id": "GPT-4o",
+  "task_results": {
+    "task1": {
+      "max_points": 20,
+      "points_earned": 10,
+      "feedback": [
+        "Incorrect store. Submitted: S0XX, Expected: S003",
+        "Correct loss amount (within 5% margin)."
+      ]
+    },
+    "task2": {
+      "max_points": 20,
+      "points_earned": 0,
+      "feedback": [
+        "Incorrect employee. Submitted: E1XXX, Expected: E1078",
+        "Incorrect transaction count. Submitted: 42, Expected: 27 (\u00b12)",
+        "Incorrect average transaction value. Submitted: 7.93, Expected: 8.42 (\u00b15%)"
+      ]
+    },
+    "task3": {
+      "max_points": 20,
+      "points_earned": 20,
+      "feedback": [
+        "Correct department identified.",
+        "Correct shrinkage percentage (within \u00b10.5% margin)."
+      ]
+    },
+    "task4": {
+      "max_points": 20,
+      "points_earned": 7,
+      "feedback": [
+        "Correct date identified.",
+        "Incorrect void count. Submitted: 37, Expected: 42",
+        "Incorrect void value. Submitted: 2840.55, Expected: 3245.67 (\u00b15%)"
+      ]
+    },
+    "task5": {
+      "max_points": 20,
+      "points_earned": 13,
+      "feedback": [
+        "Correct pattern start date (within \u00b13 days).",
+        "Incorrect pattern end date. Submitted: 2023-02-14, Expected: 2023-02-28 (\u00b13 days)",
+        "Correct estimated loss (within 10% margin)."
+      ]
+    }
+  },
+  "overall_score": 50.0,
+  "passing_threshold": 60,
+  "passed": false
+}

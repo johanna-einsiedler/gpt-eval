@@ -1,0 +1,78 @@
+{
+    "candidate_id": "Claude-3-Sonnet-v3.0",
+    "calculation_errors": [
+        {
+            "location": "Department Summary, Personnel row",
+            "current_value": "$1,350,000",
+            "correct_value": "$1,443,000",
+            "explanation": "The Personnel total should match the total from the Personnel Detail sheet"
+        },
+        {
+            "location": "Department Summary, % Change column",
+            "current_value": "9.2%",
+            "correct_value": "9.6%",
+            "explanation": "The overall % change should be (2,502,000 - 2,291,000) / 2,291,000 * 100 = 9.6%"
+        },
+        {
+            "location": "Personnel Detail, Senior Analysts row",
+            "current_value": "$442,000",
+            "correct_value": "$441,000",
+            "explanation": "Total cost should be 4 * ($85,000 + $25,500) = $441,000"
+        },
+        {
+            "location": "Equipment Detail, Total row",
+            "current_value": "$79,400",
+            "correct_value": "$215,000",
+            "explanation": "The Equipment total should match the amount in the Department Summary"
+        },
+        {
+            "location": "Quarterly Allocation, Q1 Equipment row",
+            "current_value": "$150,500",
+            "correct_value": "$53,750",
+            "explanation": "Q1 Equipment should be 25% of $215,000 total, which is $53,750"
+        }
+    ],
+    "missing_information": [
+        {
+            "requirement_id": "REQ-006",
+            "description": "Signature Page is missing from the budget submission",
+            "impact": "Without proper signatures, the budget lacks official departmental approval and cannot be processed"
+        },
+        {
+            "requirement_id": "REQ-007",
+            "description": "Supporting documentation for equipment purchases over $5,000 and Professional Services contracts is not provided",
+            "impact": "Lack of supporting documentation prevents verification of large expenses and contract terms"
+        },
+        {
+            "requirement_id": "REQ-005",
+            "description": "Detailed explanation for increases exceeding 10% is missing for several categories",
+            "impact": "Without justification for large increases, it's difficult to assess the necessity and reasonableness of the budget growth"
+        }
+    ],
+    "compliance_issues": [
+        {
+            "regulation_id": "REG-102",
+            "location": "All sheets",
+            "issue": "Some monetary values include cents instead of being rounded to the nearest dollar",
+            "recommendation": "Round all monetary values to the nearest dollar throughout the budget"
+        },
+        {
+            "regulation_id": "REG-304",
+            "location": "Department Summary, Miscellaneous row",
+            "issue": "Miscellaneous expenses ($52,000) exceed 3% of the total budget request ($2,502,000)",
+            "recommendation": "Reduce Miscellaneous expenses to a maximum of $75,060 (3% of $2,502,000) or reclassify some expenses"
+        },
+        {
+            "regulation_id": "REG-502",
+            "location": "Quarterly Allocation sheet",
+            "issue": "Equipment is not allocated equally across quarters (25% each) without explanation",
+            "recommendation": "Either allocate Equipment equally or provide justification for the uneven distribution"
+        },
+        {
+            "regulation_id": "REG-505",
+            "location": "Quarterly Allocation sheet, Personnel row",
+            "issue": "Personnel costs are not allocated equally across all quarters",
+            "recommendation": "Adjust Personnel allocation to exactly $337,500 per quarter based on the $1,350,000 total"
+        }
+    ]
+}

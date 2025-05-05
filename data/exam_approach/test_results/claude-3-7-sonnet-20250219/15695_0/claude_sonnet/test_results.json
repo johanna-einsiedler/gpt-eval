@@ -1,0 +1,246 @@
+{
+  "metric_selection": {
+    "correct_metrics": 9,
+    "accurate_calculations": 4,
+    "correct_formulas": 2,
+    "total_metrics": 9,
+    "details": [
+      {
+        "scenario_id": 1,
+        "metric_name": "Inventory Turnover Ratio",
+        "identified": true,
+        "calculation_accurate": false,
+        "formula_correct": true
+      },
+      {
+        "scenario_id": 1,
+        "metric_name": "Days of Supply",
+        "identified": true,
+        "calculation_accurate": false,
+        "formula_correct": false
+      },
+      {
+        "scenario_id": 1,
+        "metric_name": "Fill Rate",
+        "identified": true,
+        "calculation_accurate": true,
+        "formula_correct": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "Perfect Order Rate",
+        "identified": true,
+        "calculation_accurate": true,
+        "formula_correct": false
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "On-Time Delivery Rate",
+        "identified": true,
+        "calculation_accurate": false,
+        "formula_correct": false
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "Order Fill Rate",
+        "identified": true,
+        "calculation_accurate": false,
+        "formula_correct": false
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier On-Time Delivery Rate",
+        "identified": true,
+        "calculation_accurate": true,
+        "formula_correct": false
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier Quality Compliance",
+        "identified": true,
+        "calculation_accurate": true,
+        "formula_correct": false
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Average Supplier Lead Time",
+        "identified": true,
+        "calculation_accurate": false,
+        "formula_correct": false
+      }
+    ],
+    "score": 24.88888888888889,
+    "max_score": 40
+  },
+  "gap_analysis": {
+    "correct_gaps": 3,
+    "reasonable_impacts": 9,
+    "total_gaps": 9,
+    "details": [
+      {
+        "scenario_id": 1,
+        "metric_name": "Inventory Turnover Ratio",
+        "gap_correct": false,
+        "impact_reasonable": true
+      },
+      {
+        "scenario_id": 1,
+        "metric_name": "Days of Supply",
+        "gap_correct": false,
+        "impact_reasonable": true
+      },
+      {
+        "scenario_id": 1,
+        "metric_name": "Fill Rate",
+        "gap_correct": false,
+        "impact_reasonable": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "Perfect Order Rate",
+        "gap_correct": true,
+        "impact_reasonable": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "On-Time Delivery Rate",
+        "gap_correct": false,
+        "impact_reasonable": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "Order Fill Rate",
+        "gap_correct": false,
+        "impact_reasonable": true
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier On-Time Delivery Rate",
+        "gap_correct": true,
+        "impact_reasonable": true
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier Quality Compliance",
+        "gap_correct": true,
+        "impact_reasonable": true
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Average Supplier Lead Time",
+        "gap_correct": false,
+        "impact_reasonable": true
+      }
+    ],
+    "score": 18.0,
+    "max_score": 30
+  },
+  "monitoring_recommendations": {
+    "appropriate_metrics": 15,
+    "logical_frequencies": 14,
+    "total_metrics": 15,
+    "details": [
+      {
+        "scenario_id": 1,
+        "metric_name": "Inventory Turnover Ratio",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 1,
+        "metric_name": "Days of Supply",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 1,
+        "metric_name": "Inventory Carrying Cost",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 1,
+        "metric_name": "Stockout Rate",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 1,
+        "metric_name": "Inventory Accuracy",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "Perfect Order Rate",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "On-Time Delivery Rate",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "Order Fill Rate",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "Order Cycle Time",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 2,
+        "metric_name": "Transportation Cost per Order",
+        "appropriate": true,
+        "frequency_logical": false
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier On-Time Delivery Rate",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier Quality Compliance",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier Cost Variance",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier Lead Time",
+        "appropriate": true,
+        "frequency_logical": true
+      },
+      {
+        "scenario_id": 3,
+        "metric_name": "Supplier Responsiveness",
+        "appropriate": true,
+        "frequency_logical": true
+      }
+    ],
+    "score": 19.46666666666667,
+    "max_score": 20
+  },
+  "format_structure": {
+    "format_correct": true,
+    "missing_fields": [],
+    "details": [],
+    "score": 10,
+    "max_score": 10
+  },
+  "overall_score": 72.4,
+  "passed": true
+}

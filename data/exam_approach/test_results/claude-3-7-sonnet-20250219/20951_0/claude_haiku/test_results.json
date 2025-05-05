@@ -1,0 +1,58 @@
+{
+  "overall_score": 20.08,
+  "sections": {
+    "treaty_analysis": {
+      "score": 0.0,
+      "max_score": 25,
+      "feedback": [
+        "Term premium_rate was not identified as a key term in the answer key.",
+        "Term gulf_storm_exclusion was not identified as a key term in the answer key.",
+        "Term reinstatement_provisions was not identified as a key term in the answer key.",
+        "Term claims_notification was not identified as a key term in the answer key.",
+        "Term special_termination was not identified as a key term in the answer key.",
+        "Only identified 0 of the 5 key terms correctly."
+      ]
+    },
+    "financial_assessment": {
+      "score": 8.88888888888889,
+      "max_score": 25,
+      "feedback": [
+        "Expected ceded losses calculation is off by 1201.8%.",
+        "Correctly assessed overall market rating as above_market.",
+        "Correctly calculated financial impact for Alternative 1.",
+        "Pros for Alternative 1 could be improved.",
+        "Cons for Alternative 1 could be improved.",
+        "Correctly calculated financial impact for Alternative 2.",
+        "Pros for Alternative 2 could be improved.",
+        "Cons for Alternative 2 could be improved.",
+        "Incorrect financial impact calculation for Alternative 3.",
+        "Pros for Alternative 3 could be improved.",
+        "Cons for Alternative 3 could be improved."
+      ]
+    },
+    "negotiation_strategy": {
+      "score": 5.444444444444445,
+      "max_score": 25,
+      "feedback": [
+        "Priority ranking needs significant improvement.",
+        "Target and minimum positions need significant improvement.",
+        "Concessions are reasonable and well justified."
+      ]
+    },
+    "counterparty_response": {
+      "score": 5.75,
+      "max_score": 25,
+      "feedback": [
+        "Key points need significant improvement.",
+        "Term premium_rate was not identified as a key modification in the answer key.",
+        "Term gulf_storm_exclusion was not identified as a key modification in the answer key.",
+        "Correctly identified current language for portfolio_protection.",
+        "Proposed reasonable alternative language for portfolio_protection.",
+        "Provided good justification for portfolio_protection modification.",
+        "Proposed modifications need significant improvement."
+      ]
+    }
+  },
+  "passed": false,
+  "overall_feedback": "Not passing. Significant improvement needed across multiple areas."
+}

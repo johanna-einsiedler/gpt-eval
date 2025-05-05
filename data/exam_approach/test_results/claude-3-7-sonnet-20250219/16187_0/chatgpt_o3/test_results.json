@@ -1,0 +1,136 @@
+{
+  "roi_model": {
+    "total_points": 6,
+    "points_earned": 6,
+    "details": {
+      "campaign_a_current_roi": {
+        "candidate_value": 1.23,
+        "expected_value": 1.23,
+        "is_correct": true
+      },
+      "campaign_b_current_roi": {
+        "candidate_value": 0.69,
+        "expected_value": 0.69,
+        "is_correct": true
+      },
+      "campaign_c_current_roi": {
+        "candidate_value": 0.25,
+        "expected_value": 0.25,
+        "is_correct": true
+      },
+      "projected_3month_roi_campaign_a": {
+        "candidate_value": 1.2,
+        "expected_value": 1.23,
+        "is_correct": true
+      },
+      "projected_3month_roi_campaign_b": {
+        "candidate_value": 0.67,
+        "expected_value": 0.69,
+        "is_correct": true
+      },
+      "projected_3month_roi_campaign_c": {
+        "candidate_value": 0.25,
+        "expected_value": 0.25,
+        "is_correct": true
+      }
+    }
+  },
+  "revenue_forecast": {
+    "total_points": 3,
+    "points_earned": 0,
+    "details": {
+      "baseline_next_quarter_revenue": {
+        "candidate_value": 517830.0,
+        "expected_value": 267900.0,
+        "is_correct": false
+      },
+      "revenue_with_10pct_search_traffic_increase": {
+        "candidate_value": 543930.0,
+        "expected_value": 276150.0,
+        "is_correct": false
+      },
+      "revenue_with_15pct_conversion_improvement": {
+        "candidate_value": 595504.5,
+        "expected_value": 308085.0,
+        "is_correct": false
+      }
+    }
+  },
+  "cpa_analysis": {
+    "total_points": 7,
+    "points_earned": 7,
+    "details": {
+      "search_cpa": {
+        "candidate_value": 20.83,
+        "expected_value": 20.83,
+        "is_correct": true
+      },
+      "social_cpa": {
+        "candidate_value": 30.49,
+        "expected_value": 30.49,
+        "is_correct": true
+      },
+      "display_cpa": {
+        "candidate_value": 43.67,
+        "expected_value": 43.67,
+        "is_correct": true
+      },
+      "email_cpa": {
+        "candidate_value": 16.26,
+        "expected_value": 16.26,
+        "is_correct": true
+      },
+      "lowest_cpa_channel": {
+        "candidate_value": "Email",
+        "expected_value": "Email",
+        "is_correct": true
+      },
+      "highest_cpa_channel": {
+        "candidate_value": "Display",
+        "expected_value": "Display",
+        "is_correct": true
+      },
+      "blended_cpa": {
+        "candidate_value": 25.19,
+        "expected_value": 25.19,
+        "is_correct": true
+      }
+    }
+  },
+  "budget_allocation": {
+    "total_points": 5,
+    "points_earned": 0,
+    "details": {
+      "search_budget_percentage": {
+        "candidate_value": 0.61,
+        "expected_value": 0.4,
+        "is_correct": false
+      },
+      "social_budget_percentage": {
+        "candidate_value": 0.11,
+        "expected_value": 0.25,
+        "is_correct": false
+      },
+      "display_budget_percentage": {
+        "candidate_value": 0.0,
+        "expected_value": 0.15,
+        "is_correct": false
+      },
+      "email_budget_percentage": {
+        "candidate_value": 0.28,
+        "expected_value": 0.2,
+        "is_correct": false
+      },
+      "projected_roi_improvement": {
+        "candidate_value": 0.63,
+        "expected_value": 0.12,
+        "is_correct": false
+      }
+    },
+    "budget_sum_correct": true
+  },
+  "overall_score": 61.9,
+  "total_points": 21,
+  "points_earned": 13,
+  "candidate_id": "GPT-4o"
+}

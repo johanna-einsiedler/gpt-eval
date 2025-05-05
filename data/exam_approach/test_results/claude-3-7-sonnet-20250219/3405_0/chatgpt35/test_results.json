@@ -1,0 +1,334 @@
+{
+  "candidate_id": "GPT-4o",
+  "overall_score": 16.583333333333332,
+  "result": "FAIL",
+  "task_scores": {
+    "task1": {
+      "score": 10.333333333333332,
+      "max_score": 30,
+      "percentage": 34.444444444444436,
+      "details": {
+        "average_growth_rates": {
+          "score": 5,
+          "max_score": 10,
+          "details": {
+            "Personnel": {
+              "status": "correct",
+              "submitted": 0.05,
+              "expected": 0.05
+            },
+            "Equipment": {
+              "status": "incorrect",
+              "submitted": 0.1,
+              "expected": 0.13
+            },
+            "Supplies": {
+              "status": "correct",
+              "submitted": 0.05,
+              "expected": 0.05
+            },
+            "Training": {
+              "status": "incorrect",
+              "submitted": 0.1,
+              "expected": 0.13
+            },
+            "Facilities": {
+              "status": "correct",
+              "submitted": 0.05,
+              "expected": 0.05
+            },
+            "IT Services": {
+              "status": "incorrect",
+              "submitted": 0.1,
+              "expected": 0.18
+            },
+            "Travel": {
+              "status": "incorrect",
+              "submitted": -0.1,
+              "expected": -0.05
+            },
+            "Consulting": {
+              "status": "correct",
+              "submitted": 0.1,
+              "expected": 0.1
+            },
+            "Marketing": {
+              "status": "incorrect",
+              "submitted": 0.15,
+              "expected": 0.1
+            },
+            "Miscellaneous": {
+              "status": "correct",
+              "submitted": 0.05,
+              "expected": 0.05
+            }
+          }
+        },
+        "projected_costs": {
+          "score": 2,
+          "max_score": 10,
+          "details": {
+            "Personnel": {
+              "status": "correct",
+              "submitted": 496676,
+              "expected": 496676
+            },
+            "Equipment": {
+              "status": "incorrect",
+              "submitted": 279939,
+              "expected": 254581
+            },
+            "Supplies": {
+              "status": "incorrect",
+              "submitted": 101354,
+              "expected": 96533
+            },
+            "Training": {
+              "status": "incorrect",
+              "submitted": 104015,
+              "expected": 94559
+            },
+            "Facilities": {
+              "status": "incorrect",
+              "submitted": 182326,
+              "expected": 173644
+            },
+            "IT Services": {
+              "status": "incorrect",
+              "submitted": 173052,
+              "expected": 157320
+            },
+            "Travel": {
+              "status": "incorrect",
+              "submitted": 31065,
+              "expected": 34628
+            },
+            "Consulting": {
+              "status": "incorrect",
+              "submitted": 192027,
+              "expected": 174570
+            },
+            "Marketing": {
+              "status": "incorrect",
+              "submitted": 92012,
+              "expected": 80011
+            },
+            "Miscellaneous": {
+              "status": "incorrect",
+              "submitted": 39488,
+              "expected": 40517
+            },
+            "Total": {
+              "status": "correct",
+              "submitted": 1613039,
+              "expected": 1603039
+            }
+          }
+        },
+        "top_growth_categories": {
+          "score": 3.333333333333333,
+          "max_score": 10,
+          "details": {
+            "category_1": {
+              "status": "incorrect",
+              "submitted": "Marketing",
+              "expected": "One of Equipment, IT Services, Training"
+            },
+            "category_2": {
+              "status": "incorrect",
+              "submitted": "Consulting",
+              "expected": "One of Equipment, IT Services, Training"
+            },
+            "category_3": {
+              "status": "correct",
+              "submitted": "IT Services"
+            }
+          }
+        }
+      }
+    },
+    "task2": {
+      "score": 2.5,
+      "max_score": 35,
+      "percentage": 7.142857142857142,
+      "details": {
+        "total_resources_needed": {
+          "score": 0,
+          "max_score": 10,
+          "details": {
+            "status": "incorrect",
+            "submitted": 1100000,
+            "expected": 944500
+          }
+        },
+        "departmental_allocation": {
+          "score": 0.0,
+          "max_score": 10,
+          "details": {
+            "Operations": {
+              "status": "incorrect",
+              "submitted": 440000,
+              "expected": 377800
+            },
+            "Administration": {
+              "status": "incorrect",
+              "submitted": 165000,
+              "expected": 141675
+            },
+            "Development": {
+              "status": "incorrect",
+              "submitted": 330000,
+              "expected": 283350
+            },
+            "Support": {
+              "status": "incorrect",
+              "submitted": 165000,
+              "expected": 141675
+            }
+          }
+        },
+        "cost_per_unit": {
+          "score": 0.0,
+          "max_score": 10,
+          "details": {
+            "Operations": {
+              "status": "incorrect",
+              "submitted": 176.0,
+              "expected": 151.12
+            },
+            "Administration": {
+              "status": "incorrect",
+              "submitted": 165.0,
+              "expected": 141.68
+            },
+            "Development": {
+              "status": "incorrect",
+              "submitted": 183.33,
+              "expected": 157.42
+            },
+            "Support": {
+              "status": "incorrect",
+              "submitted": 137.5,
+              "expected": 118.06
+            }
+          }
+        },
+        "resource_constraints": {
+          "score": 2.5,
+          "max_score": 5,
+          "details": {
+            "constraint_1": {
+              "status": "incorrect",
+              "submitted": "Staffing",
+              "expected": "One of Technology, Infrastructure"
+            },
+            "constraint_2": {
+              "status": "correct",
+              "submitted": "Infrastructure"
+            }
+          }
+        }
+      }
+    },
+    "task3": {
+      "score": 3.75,
+      "max_score": 35,
+      "percentage": 10.714285714285714,
+      "details": {
+        "significant_variances": {
+          "score": 3.75,
+          "max_score": 15,
+          "details": {
+            "Personnel": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 496676,
+                "actual_projected": 647222,
+                "variance_percent": 0.3
+              },
+              "expected": "Not a significant variance"
+            },
+            "Equipment": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 254581,
+                "actual_projected": 305000,
+                "variance_percent": 0.2
+              },
+              "expected": {
+                "budgeted": 254581,
+                "actual_projected": 306667,
+                "variance_percent": 0.2
+              }
+            },
+            "Travel": {
+              "status": "missing",
+              "expected": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
+              }
+            },
+            "IT Services": {
+              "status": "missing",
+              "expected": {
+                "budgeted": 157320,
+                "actual_projected": 193333,
+                "variance_percent": 0.23
+              }
+            },
+            "Marketing": {
+              "status": "missing",
+              "expected": {
+                "budgeted": 80011,
+                "actual_projected": 96000,
+                "variance_percent": 0.2
+              }
+            }
+          }
+        },
+        "additional_resources_needed": {
+          "score": 0,
+          "max_score": 10,
+          "details": {
+            "status": "incorrect",
+            "submitted": 277222,
+            "expected": 112127
+          }
+        },
+        "recommended_adjustments": {
+          "score": 0.0,
+          "max_score": 10,
+          "details": {
+            "Equipment": {
+              "status": "incorrect",
+              "submitted": 254581,
+              "expected": 59899
+            },
+            "IT Services": {
+              "status": "missing",
+              "expected": 41415
+            },
+            "Travel": {
+              "status": "missing",
+              "expected": 9245
+            },
+            "Marketing": {
+              "status": "missing",
+              "expected": 18387
+            },
+            "Personnel": {
+              "status": "extra",
+              "submitted": 742635
+            },
+            "Supplies": {
+              "status": "extra",
+              "submitted": 91456
+            }
+          }
+        }
+      }
+    }
+  },
+  "critical_errors": []
+}

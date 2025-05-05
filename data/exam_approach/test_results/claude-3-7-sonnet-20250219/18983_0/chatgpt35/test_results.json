@@ -1,0 +1,100 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "overall_score": 57.48,
+  "passed": false,
+  "section_scores": {
+    "schedule": {
+      "score": 10,
+      "max": 30,
+      "percentage": 33.33,
+      "passed_minimum": false,
+      "details": {
+        "project_duration": {
+          "score": 0,
+          "max": 10,
+          "comment": "Project duration off by 11 days"
+        },
+        "critical_path": {
+          "score": 10,
+          "max": 10,
+          "comment": "Identified 9/10 tasks correctly, with 9 in correct order"
+        },
+        "task_dates": {
+          "score": 0,
+          "max": 10,
+          "comment": "Found 11.0 errors in task dates"
+        }
+      }
+    },
+    "budget": {
+      "score": 16.16,
+      "max": 30,
+      "percentage": 53.87,
+      "passed_minimum": false,
+      "details": {
+        "total_budget": {
+          "score": 10,
+          "max": 10,
+          "comment": "Total budget within 5% of correct amount"
+        },
+        "labor_costs": {
+          "score": 3.1598351525952326,
+          "max": 7,
+          "comment": "Labor costs off by 14.68%"
+        },
+        "equipment_costs": {
+          "score": 0,
+          "max": 7,
+          "comment": "Equipment costs off by 43.65%"
+        },
+        "phase_allocation": {
+          "score": 6,
+          "max": 6,
+          "comment": "Phase allocations directionally correct"
+        }
+      }
+    },
+    "cost_control": {
+      "score": 12.0,
+      "max": 20,
+      "percentage": 60.0,
+      "passed_minimum": true,
+      "details": {
+        "variance_thresholds": {
+          "score": 2,
+          "max": 10,
+          "comment": "Variance thresholds identified with 8 points deducted"
+        },
+        "planned_value": {
+          "score": 10.0,
+          "max": 10,
+          "comment": "Planned value calculations had 0 significant errors"
+        }
+      }
+    },
+    "variance_analysis": {
+      "score": 19.32,
+      "max": 20,
+      "percentage": 96.6,
+      "passed_minimum": true,
+      "details": {
+        "sv_cv": {
+          "score": 8,
+          "max": 8,
+          "comment": "SV off by $0.00, CV off by $0.00"
+        },
+        "spi_cpi": {
+          "score": 6,
+          "max": 6,
+          "comment": "SPI off by 0.040, CPI off by 0.001"
+        },
+        "eac": {
+          "score": 5.320103732119541,
+          "max": 6,
+          "comment": "EAC off by 8.36%"
+        }
+      }
+    }
+  },
+  "feedback": "The candidate has failed the exam. The following sections did not meet the minimum 60% requirement: schedule, budget."
+}

@@ -1,0 +1,174 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "scenario1": {
+        "identified_requirements": [
+            {
+                "requirement_id": "S1-REQ-01",
+                "requirement_type": "BANDWIDTH",
+                "description": "Upgrade from current 100 Mbps connection to at least 500 Mbps or 1 Gbps at each location to address slowdowns during peak hours.",
+                "priority": "HIGH",
+                "source": "Paragraph 3, mentions current 100 Mbps connection and need for 500 Mbps or 1 Gbps"
+            },
+            {
+                "requirement_id": "S1-REQ-02",
+                "requirement_type": "RELIABILITY",
+                "description": "Implement solution to prevent network outages that have directly impacted sales, with maximum acceptable downtime of 15 minutes per incident.",
+                "priority": "CRITICAL",
+                "source": "Paragraph 2 mentions three outages in past month; Paragraph 5 states reliability is top priority; Paragraph 6 specifies 15-minute maximum downtime"
+            },
+            {
+                "requirement_id": "S1-REQ-03",
+                "requirement_type": "SCALABILITY",
+                "description": "Network must support expansion to 15 new retail locations across North America within 6 months and ensure seamless connectivity between all sites.",
+                "priority": "HIGH",
+                "source": "Paragraph 2, mentions opening 15 new retail locations in next 6 months"
+            },
+            {
+                "requirement_id": "S1-REQ-04",
+                "requirement_type": "LATENCY",
+                "description": "Network must provide low latency connectivity to support new cloud-based inventory management system being implemented next quarter.",
+                "priority": "HIGH",
+                "source": "Paragraph 4, mentions cloud-based inventory system with 'low latency requirements'"
+            },
+            {
+                "requirement_id": "S1-REQ-05",
+                "requirement_type": "SECURITY",
+                "description": "Implement robust security measures to protect customer payment information and address board concerns about retail data breaches.",
+                "priority": "CRITICAL",
+                "source": "Paragraph 5, mentions security as major concern and board's concern about protecting customer payment information"
+            },
+            {
+                "requirement_id": "S1-REQ-06",
+                "requirement_type": "COMPLIANCE",
+                "description": "Ensure network meets all PCI DSS requirements for handling payment card information.",
+                "priority": "CRITICAL",
+                "source": "Paragraph 5, explicitly mentions need to meet PCI DSS requirements"
+            },
+            {
+                "requirement_id": "S1-REQ-07",
+                "requirement_type": "RELIABILITY",
+                "description": "Implement backup solution that ensures business continuity even if primary connection fails.",
+                "priority": "HIGH",
+                "source": "Paragraph 6, mentions need for backup solution for business continuity"
+            },
+            {
+                "requirement_id": "S1-REQ-08",
+                "requirement_type": "BUDGET",
+                "description": "Total project budget is approximately $1.2 million, with cost being a factor but secondary to reliability.",
+                "priority": "MEDIUM",
+                "source": "Paragraph 7, mentions budget of $1.2 million; Paragraph 3 notes cost is a factor but reliability is top priority"
+            },
+            {
+                "requirement_id": "S1-REQ-09",
+                "requirement_type": "TIMELINE",
+                "description": "Complete implementation of network upgrade within 4 months.",
+                "priority": "HIGH",
+                "source": "Paragraph 7, mentions completion timeline of 4 months"
+            },
+            {
+                "requirement_id": "S1-REQ-10",
+                "requirement_type": "COMPATIBILITY",
+                "description": "Network must support integration with new cloud-based inventory management system being implemented next quarter.",
+                "priority": "HIGH",
+                "source": "Paragraph 4, mentions implementation of cloud-based inventory management system"
+            }
+        ],
+        "response": "Dear Sarah Johnson,\n\nThank you for reaching out regarding your network infrastructure upgrade project. Based on the information you've provided, I've analyzed your requirements and prepared a comprehensive response to address your needs.\n\n**Network Capacity and Performance**\nYour current 100 Mbps connections are insufficient for your growing business needs, especially during peak hours (2-5 PM). To support your expansion to 15 new locations and eliminate the slowdowns you're experiencing, I recommend implementing 1 Gbps connections at all sites. This tenfold increase in bandwidth will provide ample capacity for your current operations and future growth.\n\n**Reliability and Business Continuity**\nUnderstanding that reliability is your top priority, I recommend implementing a dual-carrier solution with automatic failover capabilities. This design will provide redundant connections at each location, ensuring that if one connection fails, traffic automatically routes through the secondary connection within seconds—well within your 15-minute maximum downtime requirement. This approach has proven highly effective for our retail clients with similar uptime demands.\n\n**Cloud Connectivity and Latency**\nYour new cloud-based inventory management system will require consistent, low-latency connectivity. I recommend implementing dedicated cloud connectivity options (such as AWS Direct Connect or Azure ExpressRoute) combined with SD-WAN technology to optimize routing and prioritize inventory management traffic. This solution typically delivers latency under 20ms, which exceeds requirements for most cloud-based inventory systems.\n\n**Security and Compliance**\nTo address your board's concerns about data breaches and PCI DSS compliance, I recommend implementing a comprehensive security solution including:\n- Next-generation firewalls at all locations\n- Network segmentation to isolate payment processing systems\n- Encrypted VPN tunnels between all locations\n- Advanced threat protection and monitoring\n- Regular security audits and compliance assessments\n\nThis multi-layered approach will protect customer payment information and ensure PCI DSS compliance.\n\n**Implementation Timeline and Budget**\nBased on your requirements, we can complete this implementation within your 4-month timeframe. The solution I've outlined fits within your $1.2 million budget while prioritizing reliability and security. We would begin with a detailed assessment of your current infrastructure, followed by a phased implementation starting with your most critical locations.\n\nI would appreciate the opportunity to discuss these recommendations in more detail and address any questions you might have. To better tailor this solution to your specific needs, I have a few clarification questions below.\n\nBest regards,\n[Network Architect]",
+        "clarification_questions": [
+            "Could you provide more specific details about your cloud-based inventory management system, including vendor name, expected data transfer volumes, and any technical specifications they've provided regarding network requirements?",
+            "What is your current network topology and equipment inventory across existing locations? This information would help us design a solution that integrates with your current infrastructure where appropriate.",
+            "Beyond the 15 new locations planned in the next 6 months, what is your projected growth over the next 2-3 years in terms of additional sites, users, and applications?"
+        ]
+    },
+    "scenario2": {
+        "technical_translation": {
+            "QoS_MPLS": "A premium business network service that prioritizes your critical applications (like video consultations) over less important traffic, ensuring your telemedicine sessions remain smooth and uninterrupted even during busy periods.",
+            "IPsec_AES256": "Bank-grade encryption technology that protects patient information as it travels across the network, ensuring that sensitive medical data remains private and compliant with healthcare regulations.",
+            "network_topology": "The connection design between your hospitals - we can either connect all locations through a central hub (simpler but less direct) or connect each location directly to every other location (faster but more complex to manage).",
+            "BGP_routing": "An advanced traffic management system that ensures your network automatically finds the fastest path for data and can quickly adapt if any connection issues occur, minimizing disruption to your telemedicine services.",
+            "IPv6_support": "Next-generation internet addressing that provides virtually unlimited connection capacity for future growth and enhanced security features, ensuring your network remains compatible with emerging technologies."
+        },
+        "missing_information": [
+            "Specific details about existing network infrastructure at each hospital location, including current bandwidth, equipment, and connectivity methods",
+            "Expected growth in video consultation volume beyond initial implementation and how quickly they anticipate scaling up usage",
+            "Disaster recovery requirements and acceptable recovery time objectives (RTOs) for the telemedicine platform",
+            "Requirements for remote/mobile access to the telemedicine platform for doctors or patients outside hospital networks",
+            "Technical specifications of video quality requirements (resolution, frame rate) and any specific codecs or protocols required by their telemedicine software"
+        ],
+        "requirement_mapping": {
+            "concurrent_video_sessions": "BANDWIDTH",
+            "HIPAA_compliance": "COMPLIANCE",
+            "EMR_integration": "COMPATIBILITY",
+            "DDoS_concerns": "SECURITY",
+            "clinic_expansion": "SCALABILITY"
+        }
+    },
+    "scenario3": {
+        "requirement_mapping": {
+            "BN-1": [
+                "REQ-01",
+                "REQ-04",
+                "REQ-09",
+                "REQ-10"
+            ],
+            "BN-2": [
+                "REQ-02",
+                "REQ-05",
+                "REQ-08",
+                "REQ-13"
+            ],
+            "BN-3": [
+                "REQ-03",
+                "REQ-07",
+                "REQ-13",
+                "REQ-14"
+            ],
+            "BN-4": [
+                "REQ-06",
+                "REQ-10",
+                "REQ-12",
+                "REQ-14"
+            ],
+            "BN-5": [
+                "REQ-01",
+                "REQ-11",
+                "REQ-15",
+                "REQ-07"
+            ]
+        },
+        "priority_conflicts": [
+            {
+                "conflict_description": "IPv6 support (REQ-11) is marked as LOW priority but is essential for the 'innovative leader' market positioning (BN-5) and future-proofing the service for sophisticated enterprise customers.",
+                "requirement_id": "REQ-11",
+                "current_priority": "LOW",
+                "suggested_priority": "MEDIUM",
+                "resolution": "COMPROMISE",
+                "justification": "While IPv6 may not be immediately critical for initial service launch, it represents an important future-facing capability. Raising to MEDIUM priority allows for implementation in the initial release but with resources allocated proportionately, balancing technical debt against immediate market needs."
+            },
+            {
+                "conflict_description": "Traffic prioritization and QoS (REQ-10) is marked as LOW priority but is directly tied to the 'Real-time traffic optimization' key selling point prominently featured in marketing materials.",
+                "requirement_id": "REQ-10",
+                "current_priority": "LOW",
+                "suggested_priority": "HIGH",
+                "resolution": "MARKETING_PRIORITY",
+                "justification": "Since real-time traffic optimization is explicitly listed as a key selling point, the technical implementation must support this claim to maintain marketing integrity and customer trust. The feature should be prioritized to match the prominence given in marketing materials."
+            },
+            {
+                "conflict_description": "Custom BGP routing options (REQ-15) is marked as LOW priority but is likely essential for enterprise customers with complex existing networks who need granular control over routing between their infrastructure and cloud providers.",
+                "requirement_id": "REQ-15",
+                "current_priority": "LOW",
+                "suggested_priority": "MEDIUM",
+                "resolution": "TECHNICAL_PRIORITY",
+                "justification": "While not prominently featured in marketing materials, BGP routing capabilities represent a technical differentiator for sophisticated enterprise customers. Raising to MEDIUM priority acknowledges its importance for target customers while balancing resource allocation for initial release."
+            },
+            {
+                "conflict_description": "Bandwidth options (REQ-04) is marked as MEDIUM priority but is central to the 'Bandwidth on demand - scale up to 10 Gbps instantly' key selling point, which is a primary market differentiator.",
+                "requirement_id": "REQ-04",
+                "current_priority": "MEDIUM",
+                "suggested_priority": "HIGH",
+                "resolution": "MARKETING_PRIORITY",
+                "justification": "The ability to scale bandwidth on demand is positioned as a core capability of the service and directly supports the market differentiation business need (BN-1). The technical priority should be elevated to match its prominence in the marketing positioning."
+            }
+        ]
+    }
+}

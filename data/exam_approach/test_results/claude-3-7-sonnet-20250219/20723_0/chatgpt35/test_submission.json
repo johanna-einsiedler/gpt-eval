@@ -1,0 +1,12 @@
+{
+    "candidate_name": "YOUR_ID_HERE",
+    "date": "05/15/2024",
+    "task1": {
+        "selection_rates": {
+            "gender": {
+                "male": 8.3,
+                "female": 5.6
+            }
+        }
+    }
+}

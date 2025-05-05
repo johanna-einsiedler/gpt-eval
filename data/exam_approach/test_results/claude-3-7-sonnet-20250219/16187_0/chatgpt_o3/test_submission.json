@@ -1,0 +1,32 @@
+{
+    "candidate_id": "GPT-4o",
+    "roi_model": {
+        "campaign_a_current_roi": 1.23,
+        "campaign_b_current_roi": 0.69,
+        "campaign_c_current_roi": 0.25,
+        "projected_3month_roi_campaign_a": 1.2,
+        "projected_3month_roi_campaign_b": 0.67,
+        "projected_3month_roi_campaign_c": 0.25
+    },
+    "revenue_forecast": {
+        "baseline_next_quarter_revenue": 517830.0,
+        "revenue_with_10pct_search_traffic_increase": 543930.0,
+        "revenue_with_15pct_conversion_improvement": 595504.5
+    },
+    "cpa_analysis": {
+        "search_cpa": 20.83,
+        "social_cpa": 30.49,
+        "display_cpa": 43.67,
+        "email_cpa": 16.26,
+        "lowest_cpa_channel": "Email",
+        "highest_cpa_channel": "Display",
+        "blended_cpa": 25.19
+    },
+    "budget_allocation": {
+        "search_budget_percentage": 0.61,
+        "social_budget_percentage": 0.11,
+        "display_budget_percentage": 0.0,
+        "email_budget_percentage": 0.28,
+        "projected_roi_improvement": 0.63
+    }
+}

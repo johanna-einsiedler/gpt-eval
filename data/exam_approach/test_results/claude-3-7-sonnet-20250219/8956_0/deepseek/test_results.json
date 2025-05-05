@@ -1,0 +1,114 @@
+{
+  "overall_score": 70.78,
+  "passing_threshold": 70,
+  "passed": true,
+  "critical_errors": [],
+  "section_scores": {
+    "data_exploration": {
+      "score": 17.0,
+      "max_score": 20,
+      "percentage": 85.0,
+      "feedback": {
+        "summary_statistics": {
+          "score": 4.5,
+          "max_score": 5,
+          "feedback": [
+            "Campaign A std_dev is outside acceptable range"
+          ]
+        },
+        "outliers": {
+          "score": 5.0,
+          "max_score": 5,
+          "feedback": "Correct"
+        },
+        "visualization_insights": {
+          "score": 7.5,
+          "max_score": 10,
+          "feedback": [
+            "Missing some key insights about distributions"
+          ]
+        }
+      }
+    },
+    "hypothesis_testing": {
+      "score": 15.83,
+      "max_score": 30,
+      "percentage": 52.78,
+      "feedback": {
+        "campaign_difference": {
+          "score": 7.5,
+          "max_score": 15,
+          "feedback": [
+            "Inappropriate statistical test selected",
+            "P-value is incorrect"
+          ]
+        },
+        "regional_differences": {
+          "score": 8.333333333333332,
+          "max_score": 15,
+          "feedback": [
+            "Inappropriate statistical test selected for regional analysis",
+            "Regional interpretation missing key points"
+          ]
+        }
+      }
+    },
+    "relationship_analysis": {
+      "score": 20.0,
+      "max_score": 30,
+      "percentage": 66.67,
+      "feedback": {
+        "demographics_impact": {
+          "score": 10.0,
+          "max_score": 10,
+          "feedback": "Correct"
+        },
+        "satisfaction_correlation": {
+          "score": 10.0,
+          "max_score": 10,
+          "feedback": "Correct"
+        },
+        "strongest_predictors": {
+          "score": 0.0,
+          "max_score": 10,
+          "feedback": [
+            "Top predictor is incorrect",
+            "Second predictor is incorrect",
+            "Some predictors are in incorrect order"
+          ]
+        }
+      }
+    },
+    "conclusions": {
+      "score": 17.95,
+      "max_score": 20,
+      "percentage": 89.75,
+      "feedback": {
+        "most_effective_campaign": {
+          "score": 5.0,
+          "max_score": 5,
+          "feedback": "Correct"
+        },
+        "regional_insights": {
+          "score": 3.75,
+          "max_score": 5,
+          "feedback": [
+            "Regional insights are incomplete"
+          ]
+        },
+        "demographic_insights": {
+          "score": 5.0,
+          "max_score": 5,
+          "feedback": "Good insights"
+        },
+        "recommendations": {
+          "score": 4.2,
+          "max_score": 5,
+          "feedback": [
+            "Recommendations missing key themes from the analysis"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "task1": {
+    "retention_recommendations": {
+      "points": 6,
+      "max_points": 6,
+      "feedback": [
+        "Correctly identified T401 for non-renewal.",
+        "Correctly identified T205 for non-renewal.",
+        "Correctly identified T118 for non-renewal."
+      ]
+    },
+    "reassignment_recommendations": {
+      "points": 6,
+      "max_points": 6,
+      "feedback": [
+        "Correctly identified T287 for reassignment from STEM Focus to General Education.",
+        "Provided appropriate rationale for T287 reassignment.",
+        "Correctly identified T298 for reassignment from Humanities Focus to General Education.",
+        "Provided appropriate rationale for T298 reassignment."
+      ]
+    },
+    "priority_hiring_needs": {
+      "points": 8,
+      "max_points": 8,
+      "feedback": [
+        "Correctly identified English as a priority hiring need.",
+        "Justification for English correctly references specific teachers.",
+        "Correctly identified Mathematics as a priority hiring need.",
+        "Justification for Mathematics correctly references specific teachers.",
+        "Correctly identified Science as a priority hiring need.",
+        "Justification for Science correctly references specific teachers."
+      ]
+    }
+  },
+  "task2": {
+    "staffing_plan": {
+      "points": 7,
+      "max_points": 7,
+      "feedback": [
+        "Correctly included STEM-COORD with 1.0 FTE.",
+        "Correctly included STEM-MATH with 2.0 FTE.",
+        "Correctly included STEM-SCI with 2.0 FTE.",
+        "Correctly included STEM-TECH with 1.0 FTE.",
+        "Correctly included STEM-ENG with 1.0 FTE.",
+        "Correctly included STEM-PARA with 1.0 FTE.",
+        "Correctly included STEM-COUNSEL with 0.5 FTE."
+      ]
+    },
+    "budget_allocation": {
+      "points": 7,
+      "max_points": 8,
+      "feedback": [
+        "Incorrect personnel budget. Expected 360000, got 359000.",
+        "Correctly allocated equipment and supplies budget.",
+        "Correctly allocated professional development budget.",
+        "Correctly identified and explained the budget shortfall."
+      ]
+    },
+    "implementation_timeline": {
+      "points": 4,
+      "max_points": 5,
+      "feedback": [
+        "Incorrect date for Position postings published. Expected 2023-02-15, got 2024-02-15.",
+        "Incorrect date for Initial application review. Expected 2023-03-10, got 2024-03-10.",
+        "Incorrect date for First round interviews. Expected 2023-03-25, got 2024-03-25.",
+        "Incorrect date for Second round interviews. Expected 2023-04-15, got 2024-04-15.",
+        "Incorrect date for Hiring decisions finalized. Expected 2023-05-01, got 2024-05-01.",
+        "Incorrect date for Contracts issued. Expected 2023-05-15, got 2024-05-15.",
+        "Incorrect date for New staff orientation. Expected 2023-08-01, got 2024-08-01.",
+        "Incorrect date for Program launch. Expected 2023-08-15, got 2024-08-15.",
+        "Provided appropriate action items for most milestones."
+      ]
+    }
+  },
+  "task3": {
+    "action_recommendation": {
+      "points": 3,
+      "max_points": 3,
+      "feedback": [
+        "Correctly recommended 'Performance improvement plan'."
+      ]
+    },
+    "policy_references": {
+      "points": 3.0,
+      "max_points": 3,
+      "feedback": [
+        "Correctly cited policy reference 4.4.3.",
+        "Correctly cited policy reference 4.4.6."
+      ]
+    },
+    "documentation_requirements": {
+      "points": 4.0,
+      "max_points": 4,
+      "feedback": [
+        "Correctly included documentation requirement 4.5.1.",
+        "Correctly included documentation requirement 4.5.2.",
+        "Correctly included documentation requirement 4.5.3.",
+        "Correctly included documentation requirement 4.5.4.",
+        "Correctly included documentation requirement 4.5.5.",
+        "Correctly included documentation requirement 4.5.6.",
+        "Correctly included documentation requirement 4.5.7.",
+        "Correctly included documentation requirement 4.5.8."
+      ]
+    }
+  },
+  "critical_elements": {
+    "identified_low_performers": true,
+    "recognized_budget_shortfall": true,
+    "correct_action_for_chen": true
+  },
+  "overall_score": 96.0,
+  "passed": true
+}

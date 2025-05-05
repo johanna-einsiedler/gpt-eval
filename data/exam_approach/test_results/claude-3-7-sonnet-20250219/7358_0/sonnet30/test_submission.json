@@ -1,0 +1,26 @@
+{
+    "candidateId": "Claude-v1.3",
+    "scenario1": {
+        "adjustedGrossIncome": 52500,
+        "taxableIncome": 38650,
+        "federalTaxWithheld": 6300,
+        "taxLiability": 6532,
+        "refundOrAmountDue": -232
+    },
+    "scenario2": {
+        "adjustedGrossIncome": 114200,
+        "taxableIncome": 86500,
+        "federalTaxWithheld": 13560,
+        "taxLiability": 14294,
+        "refundOrAmountDue": -734
+    },
+    "scenario3": {
+        "adjustedGrossIncome": 48300,
+        "taxableIncome": 27500,
+        "federalTaxWithheld": 4441,
+        "taxLiability": 4570,
+        "refundOrAmountDue": -129,
+        "childTaxCredit": 4000,
+        "earnedIncomeTaxCredit": 3000
+    }
+}

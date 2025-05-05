@@ -1,0 +1,25 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "forecast_values": [
+            250,
+            255,
+            260,
+            265
+        ],
+        "accuracy_metric": 0.03,
+        "cost_driver": "weight_lbs",
+        "correlation_value": 1.0
+    },
+    "task2": {
+        "fixed_cost": 2400.0,
+        "variable_cost_coefficient": 5.2,
+        "total_estimated_cost": 28400.0,
+        "cost_breakdown": {
+            "labor": 13200.0,
+            "transportation": 6000.0,
+            "handling": 4000.0,
+            "other": 5200.0
+        }
+    }
+}

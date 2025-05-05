@@ -1,0 +1,39 @@
+{
+  "criteria_results": [
+    {
+      "passed": false,
+      "score": 30.030804614761543,
+      "details": "Total Personnel Budget: FAIL - Difference: 30.03%"
+    },
+    {
+      "passed": false,
+      "score": 0,
+      "details": "Department Budgets: FAIL - 0/5 correct\nHR: FAIL - Difference: 97.11%\nFinance: FAIL - Difference: 96.77%\nOperations: FAIL - Difference: 121.93%\nSales: FAIL - Difference: 124.06%\nIT: FAIL - Difference: 96.17%"
+    },
+    {
+      "passed": false,
+      "score": 0,
+      "details": "Salary and Benefits Totals: FAIL - 0/10 correct\nSalary HR: FAIL - Difference: 89.72%\nSalary Finance: FAIL - Difference: 89.39%\nSalary Operations: FAIL - Difference: 115.19%\nSalary Sales: FAIL - Difference: 115.50%\nSalary IT: FAIL - Difference: 88.03%\nBenefits HR: FAIL - Difference: 144.71%\nBenefits Finance: FAIL - Difference: 144.38%\nBenefits Operations: FAIL - Difference: 165.63%\nBenefits Sales: FAIL - Difference: 179.62%\nBenefits IT: FAIL - Difference: 148.76%"
+    },
+    {
+      "passed": true,
+      "score": 6,
+      "details": "Year-Over-Year Change Percentages: PASS - 6/6 correct\nHR: PASS - Absolute Difference: 0.15 percentage points\nFinance: PASS - Absolute Difference: 0.90 percentage points\nOperations: PASS - Absolute Difference: 1.00 percentage points\nSales: PASS - Absolute Difference: 0.50 percentage points\nIT: PASS - Absolute Difference: 0.20 percentage points\nTotal: PASS - Absolute Difference: 0.49 percentage points"
+    },
+    {
+      "passed": true,
+      "score": 6,
+      "details": "Benefits-to-Salary Ratios: PASS - 6/6 correct\nHR: PASS - Absolute Difference: 0.010\nFinance: PASS - Absolute Difference: 0.010\nOperations: PASS - Absolute Difference: 0.020\nSales: PASS - Absolute Difference: 0.010\nIT: PASS - Absolute Difference: 0.010\nCompany_Average: PASS - Absolute Difference: 0.010"
+    },
+    {
+      "passed": true,
+      "score": 6,
+      "details": "Headcount: PASS - 6/6 correct\nHR: PASS - Submitted: 6, Expected: 6\nFinance: PASS - Submitted: 6, Expected: 6\nOperations: PASS - Submitted: 12, Expected: 12\nSales: PASS - Submitted: 15, Expected: 15\nIT: PASS - Submitted: 11, Expected: 11\nTotal: PASS - Submitted: 50, Expected: 50"
+    }
+  ],
+  "passed_criteria_count": 3,
+  "total_criteria_count": 6,
+  "overall_score": 50.0,
+  "passed": false,
+  "exceptional_performance": false
+}

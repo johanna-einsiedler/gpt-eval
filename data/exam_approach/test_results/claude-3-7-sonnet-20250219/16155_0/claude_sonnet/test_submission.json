@@ -1,0 +1,51 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "top_pain_points": [
+            "Slow system response",
+            "Difficult navigation",
+            "Poor data export"
+        ],
+        "pain_point_percentages": [
+            40.0,
+            35.0,
+            35.0
+        ],
+        "highest_dissatisfaction_department": "Sales",
+        "average_satisfaction_rating": 2.3,
+        "common_feature_request": "CRM integration"
+    },
+    "task2": {
+        "scenario1": "B",
+        "scenario2": "C",
+        "scenario3": "A",
+        "scenario4": "B"
+    },
+    "task3": {
+        "top5_features": [
+            "CRM integration",
+            "Sales pipeline visualization",
+            "API improvements",
+            "Employee self-service portal",
+            "Mobile app integration"
+        ],
+        "high_impact_low_frequency": "System monitoring dashboard",
+        "average_urgency": 7.75,
+        "highest_priority_department": "Sales"
+    },
+    "task4": {
+        "key_stakeholders": [
+            "Michael Chen",
+            "Sarah Johnson",
+            "Robert Kim"
+        ],
+        "executive_communication_method": "C",
+        "steering_committee_frequency": "C",
+        "top_metrics": [
+            "User satisfaction ratings",
+            "Feature implementation progress",
+            "System performance metrics"
+        ],
+        "development_team_format": "C"
+    }
+}

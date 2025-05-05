@@ -1,0 +1,88 @@
+{
+    "candidate_name": "GPT-4o",
+    "date": "05/16/2024",
+    "task1": {
+        "selection_rates": {
+            "gender": {
+                "male": 8.25,
+                "female": 5.56
+            },
+            "race_ethnicity": {
+                "white": 9.72,
+                "black": 4.17,
+                "hispanic": 5.0,
+                "asian": 7.14
+            }
+        },
+        "adverse_impact_identified": {
+            "gender": {
+                "group_with_lowest_rate": "female",
+                "adverse_impact_ratio": 0.67,
+                "adverse_impact_exists": true
+            },
+            "race_ethnicity": {
+                "group_with_lowest_rate": "black",
+                "adverse_impact_ratio": 0.43,
+                "adverse_impact_exists": true
+            }
+        },
+        "qualified_applicant_hire_percentages": {
+            "gender": {
+                "male": 10.23,
+                "female": 7.35
+            },
+            "race_ethnicity": {
+                "white": 12.82,
+                "black": 5.56,
+                "hispanic": 6.94,
+                "asian": 9.09
+            }
+        }
+    },
+    "task2": {
+        "policy_sections": {
+            "recruitment": [
+                4
+            ],
+            "hiring": [
+                4
+            ],
+            "promotion": [
+                5
+            ]
+        },
+        "policy_implementation_assessment": {
+            "policy_followed": false,
+            "justification": "The selection rates for female and Black applicants are less than 80% of the highest selection rate (White). This indicates a potential failure to meet the EEO policy's goal of maintaining a selection rate for protected groups of at least 80% of the rate for the group with the highest selection rate.",
+            "specific_violations": [
+                "Section 4.6"
+            ],
+            "recommended_actions": [
+                "Review recruitment and hiring practices to identify and eliminate potential barriers to female and Black applicants.",
+                "Implement targeted outreach programs to increase the number of qualified female and Black applicants.",
+                "Provide additional training to hiring managers on EEO policies and best practices for fair hiring decisions."
+            ]
+        }
+    },
+    "task3": {
+        "complaints_by_department": {
+            "sales": 7,
+            "it": 5,
+            "hr": 3,
+            "finance": 5
+        },
+        "most_common_complaint": "Hiring Discrimination",
+        "average_resolution_time": 35.65,
+        "disproportionate_departments": [
+            "Sales"
+        ],
+        "complaint_trends": {
+            "increasing_types": [
+                "Hiring Discrimination",
+                "Retaliation"
+            ],
+            "decreasing_types": [],
+            "seasonal_patterns": "Complaints appear to be slightly higher in the first half of the year (January-June) compared to the second half (July-August), but more data is needed to confirm a strong seasonal pattern."
+        }
+    }
+}

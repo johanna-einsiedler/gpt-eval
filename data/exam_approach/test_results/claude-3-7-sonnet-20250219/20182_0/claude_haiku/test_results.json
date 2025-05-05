@@ -1,0 +1,88 @@
+{
+  "candidateId": "GPT-4-turbo",
+  "total_points": 8,
+  "max_points": 12,
+  "scenario_scores": {
+    "scenario1": {
+      "points": 3,
+      "max_points": 4,
+      "details": {
+        "emergencyFund": {
+          "submitted": 11000,
+          "expected": 13880,
+          "correct": true
+        },
+        "monthlyDiscretionaryIncome": {
+          "submitted": 850,
+          "expected": 450,
+          "correct": false
+        },
+        "debtPriorityId": {
+          "submitted": "D3",
+          "expected": "D3",
+          "correct": true
+        },
+        "savingsVehicleId": {
+          "submitted": "SV2",
+          "expected": "SV2",
+          "correct": true
+        }
+      }
+    },
+    "scenario2": {
+      "points": 3,
+      "max_points": 4,
+      "details": {
+        "lifeInsuranceCoverage": {
+          "submitted": 750000,
+          "expected": 850000,
+          "correct": true
+        },
+        "disabilityMonthlyBenefit": {
+          "submitted": 3500,
+          "expected": 4600,
+          "correct": false
+        },
+        "healthPlanId": {
+          "submitted": "HP3",
+          "expected": "HP3",
+          "correct": true
+        },
+        "bundlingSavings": {
+          "submitted": 450,
+          "expected": 450,
+          "correct": true
+        }
+      }
+    },
+    "scenario3": {
+      "points": 2,
+      "max_points": 4,
+      "details": {
+        "monthlySavingsRequired": {
+          "submitted": 1250,
+          "expected": 2100,
+          "correct": false
+        },
+        "assetAllocationId": {
+          "submitted": "AA4",
+          "expected": "AA3",
+          "correct": true
+        },
+        "accountTypeId": {
+          "submitted": "AT2",
+          "expected": "AT2",
+          "correct": true
+        },
+        "projectedValue10Years": {
+          "submitted": 325000,
+          "expected": 1380000,
+          "correct": false
+        }
+      }
+    }
+  },
+  "critical_elements_passed": true,
+  "passed": false,
+  "overall_score": 66.66666666666666
+}

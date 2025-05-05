@@ -1,0 +1,47 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "personnel_costs": 523750.0,
+        "equipment_maintenance_costs": 28360.0,
+        "consumables_costs": 87762.76,
+        "training_costs": 20265.0,
+        "total_budget": 660137.76
+    },
+    "task2": {
+        "category_variances": {
+            "Personnel": {
+                "dollar_variance": 23750.0,
+                "percentage_variance": 3.79
+            },
+            "Equipment Maintenance": {
+                "dollar_variance": -2550.0,
+                "percentage_variance": -6.0
+            },
+            "Consumables": {
+                "dollar_variance": 7410.0,
+                "percentage_variance": 9.5
+            },
+            "Training": {
+                "dollar_variance": -2220.0,
+                "percentage_variance": -12.0
+            },
+            "Utilities": {
+                "dollar_variance": 2450.0,
+                "percentage_variance": 7.0
+            }
+        },
+        "largest_variance_categories": [
+            "Consumables",
+            "Personnel",
+            "Utilities"
+        ],
+        "total_variance_dollars": 25840.0,
+        "total_variance_percentage": 4.13
+    },
+    "task3": {
+        "total_cost_of_ownership": 227500.0,
+        "annual_cost_savings": 61500.0,
+        "roi_percentage": 27.11,
+        "payback_period_months": 4
+    }
+}

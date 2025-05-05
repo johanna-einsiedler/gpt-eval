@@ -1,0 +1,24 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "sample_size_per_group": 393,
+        "total_sample_size": 786,
+        "power_calculation": 0.99
+    },
+    "task2": {
+        "sample_size_per_group": 63,
+        "total_sample_size": 126,
+        "detectable_difference": 5.0
+    },
+    "task3": {
+        "initial_sample_size": 150,
+        "adjusted_sample_size": 188,
+        "percentage_increase": 25.33
+    },
+    "task4": {
+        "scenario_a_correct": false,
+        "scenario_b_correct": true,
+        "scenario_c_correct": false,
+        "scenario_d_correct": true
+    }
+}

@@ -1,0 +1,63 @@
+{
+  "overall_score": 40.37,
+  "sections": {
+    "treaty_analysis": {
+      "score": 5.137218045112781,
+      "max_score": 25,
+      "feedback": [
+        "Term premium_rate was not identified as a key term in the answer key.",
+        "Correctly identified reinstatements as unfavorable.",
+        "Rationale for reinstatements could be improved.",
+        "Correctly identified gulf_exclusion as unfavorable.",
+        "Rationale for gulf_exclusion could be improved.",
+        "Incorrectly assessed portfolio_protection as favorable.",
+        "Rationale for portfolio_protection could be improved.",
+        "Term claims_notification was not identified as a key term in the answer key.",
+        "Only identified 3 of the 5 key terms correctly."
+      ]
+    },
+    "financial_assessment": {
+      "score": 8.88888888888889,
+      "max_score": 25,
+      "feedback": [
+        "Expected ceded losses calculation is off by 1163.3%.",
+        "Correctly assessed overall market rating as above_market.",
+        "Correctly calculated financial impact for Alternative 1.",
+        "Pros for Alternative 1 could be improved.",
+        "Cons for Alternative 1 could be improved.",
+        "Incorrect financial impact calculation for Alternative 2.",
+        "Pros for Alternative 2 could be improved.",
+        "Cons for Alternative 2 could be improved.",
+        "Correctly calculated financial impact for Alternative 3.",
+        "Pros for Alternative 3 could be improved.",
+        "Cons for Alternative 3 could be improved."
+      ]
+    },
+    "negotiation_strategy": {
+      "score": 12.844444444444445,
+      "max_score": 25,
+      "feedback": [
+        "Priority ranking needs significant improvement.",
+        "Some target and minimum positions need refinement.",
+        "Concessions are reasonable and well justified."
+      ]
+    },
+    "counterparty_response": {
+      "score": 13.5,
+      "max_score": 25,
+      "feedback": [
+        "Some key points need refinement to better address counterparty concerns.",
+        "Term premium_rate was not identified as a key modification in the answer key.",
+        "Correctly identified current language for reinstatements.",
+        "Proposed reasonable alternative language for reinstatements.",
+        "Provided good justification for reinstatements modification.",
+        "Correctly identified current language for gulf_exclusion.",
+        "Proposed reasonable alternative language for gulf_exclusion.",
+        "Provided good justification for gulf_exclusion modification.",
+        "Some proposed modifications need better justification or language."
+      ]
+    }
+  },
+  "passed": false,
+  "overall_feedback": "Not passing. Significant improvement needed across multiple areas."
+}

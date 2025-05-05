@@ -1,0 +1,319 @@
+{
+    "candidate_id": "GPT-4",
+    "item_metrics": [
+        {
+            "item_id": "A001",
+            "total_quantity": 323,
+            "total_revenue": 2902.77,
+            "total_food_cost": 792.35,
+            "gross_profit": 2110.42,
+            "profit_margin_percentage": 72.7,
+            "popularity_rank": 6,
+            "profit_rank": 4
+        },
+        {
+            "item_id": "A002",
+            "total_quantity": 538,
+            "total_revenue": 6448.62,
+            "total_food_cost": 2076.9,
+            "gross_profit": 4371.72,
+            "profit_margin_percentage": 67.8,
+            "popularity_rank": 2,
+            "profit_rank": 2
+        },
+        {
+            "item_id": "A003",
+            "total_quantity": 409,
+            "total_revenue": 4500.91,
+            "total_food_cost": 1329.25,
+            "gross_profit": 3171.66,
+            "profit_margin_percentage": 70.5,
+            "popularity_rank": 4,
+            "profit_rank": 3
+        },
+        {
+            "item_id": "A004",
+            "total_quantity": 212,
+            "total_revenue": 2117.88,
+            "total_food_cost": 583.0,
+            "gross_profit": 1534.88,
+            "profit_margin_percentage": 72.5,
+            "popularity_rank": 16,
+            "profit_rank": 5
+        },
+        {
+            "item_id": "A005",
+            "total_quantity": 622,
+            "total_revenue": 3727.78,
+            "total_food_cost": 713.3,
+            "gross_profit": 3014.48,
+            "profit_margin_percentage": 80.9,
+            "popularity_rank": 1,
+            "profit_rank": 1
+        },
+        {
+            "item_id": "A006",
+            "total_quantity": 176,
+            "total_revenue": 2286.24,
+            "total_food_cost": 853.4,
+            "gross_profit": 1432.84,
+            "profit_margin_percentage": 62.7,
+            "popularity_rank": 17,
+            "profit_rank": 8
+        },
+        {
+            "item_id": "A007",
+            "total_quantity": 120,
+            "total_revenue": 1678.8,
+            "total_food_cost": 750.0,
+            "gross_profit": 928.8,
+            "profit_margin_percentage": 55.3,
+            "popularity_rank": 21,
+            "profit_rank": 11
+        },
+        {
+            "item_id": "E001",
+            "total_quantity": 707,
+            "total_revenue": 10600.93,
+            "total_food_cost": 3004.75,
+            "gross_profit": 7596.18,
+            "profit_margin_percentage": 71.7,
+            "popularity_rank": 3,
+            "profit_rank": 6
+        },
+        {
+            "item_id": "E002",
+            "total_quantity": 402,
+            "total_revenue": 8035.98,
+            "total_food_cost": 3153.7,
+            "gross_profit": 4882.28,
+            "profit_margin_percentage": 60.8,
+            "popularity_rank": 5,
+            "profit_rank": 7
+        },
+        {
+            "item_id": "E003",
+            "total_quantity": 516,
+            "total_revenue": 8773.04,
+            "total_food_cost": 2812.2,
+            "gross_profit": 5960.84,
+            "profit_margin_percentage": 67.9,
+            "popularity_rank": 4,
+            "profit_rank": 1
+        },
+        {
+            "item_id": "E004",
+            "total_quantity": 348,
+            "total_revenue": 8700.52,
+            "total_food_cost": 3742.5,
+            "gross_profit": 4958.02,
+            "profit_margin_percentage": 56.9,
+            "popularity_rank": 7,
+            "profit_rank": 6
+        },
+        {
+            "item_id": "E005",
+            "total_quantity": 242,
+            "total_revenue": 3869.58,
+            "total_food_cost": 1010.9,
+            "gross_profit": 2858.68,
+            "profit_margin_percentage": 73.8,
+            "popularity_rank": 13,
+            "profit_rank": 1
+        },
+        {
+            "item_id": "E006",
+            "total_quantity": 298,
+            "total_revenue": 5372.02,
+            "total_food_cost": 1896.7,
+            "gross_profit": 3475.32,
+            "profit_margin_percentage": 64.7,
+            "popularity_rank": 8,
+            "profit_rank": 9
+        },
+        {
+            "item_id": "E007",
+            "total_quantity": 198,
+            "total_revenue": 3366.42,
+            "total_food_cost": 985.05,
+            "gross_profit": 2381.37,
+            "profit_margin_percentage": 70.7,
+            "popularity_rank": 15,
+            "profit_rank": 2
+        },
+        {
+            "item_id": "E008",
+            "total_quantity": 276,
+            "total_revenue": 6332.34,
+            "total_food_cost": 2387.1,
+            "gross_profit": 3945.24,
+            "profit_margin_percentage": 62.3,
+            "popularity_rank": 9,
+            "profit_rank": 10
+        },
+        {
+            "item_id": "D001",
+            "total_quantity": 426,
+            "total_revenue": 3402.74,
+            "total_food_cost": 919.1,
+            "gross_profit": 2483.64,
+            "profit_margin_percentage": 73.0,
+            "popularity_rank": 5,
+            "profit_rank": 5
+        },
+        {
+            "item_id": "D002",
+            "total_quantity": 348,
+            "total_revenue": 3128.52,
+            "total_food_cost": 923.7,
+            "gross_profit": 2204.82,
+            "profit_margin_percentage": 70.4,
+            "popularity_rank": 7,
+            "profit_rank": 4
+        },
+        {
+            "item_id": "D003",
+            "total_quantity": 298,
+            "total_revenue": 2077.02,
+            "total_food_cost": 549.5,
+            "gross_profit": 1527.52,
+            "profit_margin_percentage": 73.6,
+            "popularity_rank": 10,
+            "profit_rank": 6
+        },
+        {
+            "item_id": "D004",
+            "total_quantity": 538,
+            "total_revenue": 3223.62,
+            "total_food_cost": 781.1,
+            "gross_profit": 2442.52,
+            "profit_margin_percentage": 75.8,
+            "popularity_rank": 2,
+            "profit_rank": 3
+        },
+        {
+            "item_id": "D005",
+            "total_quantity": 212,
+            "total_revenue": 1906.78,
+            "total_food_cost": 629.9,
+            "gross_profit": 1276.88,
+            "profit_margin_percentage": 67.0,
+            "popularity_rank": 16,
+            "profit_rank": 12
+        },
+        {
+            "item_id": "B001",
+            "total_quantity": 1335,
+            "total_revenue": 3996.65,
+            "total_food_cost": 467.25,
+            "gross_profit": 3529.4,
+            "profit_margin_percentage": 88.3,
+            "popularity_rank": 1,
+            "profit_rank": 1
+        },
+        {
+            "item_id": "B002",
+            "total_quantity": 1035,
+            "total_revenue": 3096.65,
+            "total_food_cost": 310.5,
+            "gross_profit": 2786.15,
+            "profit_margin_percentage": 89.9,
+            "popularity_rank": 1,
+            "profit_rank": 1
+        },
+        {
+            "item_id": "B003",
+            "total_quantity": 900,
+            "total_revenue": 3145.5,
+            "total_food_cost": 405.0,
+            "gross_profit": 2740.5,
+            "profit_margin_percentage": 87.0,
+            "popularity_rank": 1,
+            "profit_rank": 1
+        },
+        {
+            "item_id": "B004",
+            "total_quantity": 580,
+            "total_revenue": 3472.2,
+            "total_food_cost": 957.0,
+            "gross_profit": 2515.2,
+            "profit_margin_percentage": 72.4,
+            "popularity_rank": 2,
+            "profit_rank": 5
+        },
+        {
+            "item_id": "B005",
+            "total_quantity": 725,
+            "total_revenue": 2531.25,
+            "total_food_cost": 396.25,
+            "gross_profit": 2135.0,
+            "profit_margin_percentage": 84.4,
+            "popularity_rank": 2,
+            "profit_rank": 2
+        },
+        {
+            "item_id": "B006",
+            "total_quantity": 1200,
+            "total_revenue": 2388.0,
+            "total_food_cost": 300.0,
+            "gross_profit": 2088.0,
+            "profit_margin_percentage": 87.4,
+            "popularity_rank": 1,
+            "profit_rank": 1
+        },
+        {
+            "item_id": "B007",
+            "total_quantity": 348,
+            "total_revenue": 2262.52,
+            "total_food_cost": 676.5,
+            "gross_profit": 1586.02,
+            "profit_margin_percentage": 70.1,
+            "popularity_rank": 7,
+            "profit_rank": 7
+        },
+        {
+            "item_id": "B008",
+            "total_quantity": 242,
+            "total_revenue": 966.58,
+            "total_food_cost": 205.7,
+            "gross_profit": 760.88,
+            "profit_margin_percentage": 78.8,
+            "popularity_rank": 13,
+            "profit_rank": 11
+        }
+    ],
+    "underperforming_items": [
+        "A007",
+        "E002",
+        "A006",
+        "D005",
+        "E008"
+    ],
+    "price_adjustments": [
+        {
+            "item_id": "A006",
+            "current_price": 12.99,
+            "new_price": 22.52
+        },
+        {
+            "item_id": "E008",
+            "current_price": 22.99,
+            "new_price": 39.63
+        },
+        {
+            "item_id": "E002",
+            "current_price": 19.99,
+            "new_price": 34.63
+        },
+        {
+            "item_id": "D005",
+            "current_price": 8.99,
+            "new_price": 15.58
+        },
+        {
+            "item_id": "A007",
+            "current_price": 13.99,
+            "new_price": 24.55
+        }
+    ]
+}

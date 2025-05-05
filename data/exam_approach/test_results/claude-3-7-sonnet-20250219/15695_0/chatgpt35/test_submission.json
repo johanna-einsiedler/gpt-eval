@@ -1,0 +1,173 @@
+{
+    "candidate_id": "GPT-4o",
+    "scenario_analyses": [
+        {
+            "scenario_id": 1,
+            "key_metrics": [
+                {
+                    "metric_name": "Inventory Turnover Ratio",
+                    "calculation": "Cost of Goods Sold / Average Inventory Value",
+                    "current_value": 10.2,
+                    "target_value": 12.0,
+                    "gap": 1.8,
+                    "impact": "Medium"
+                },
+                {
+                    "metric_name": "Fill Rate",
+                    "calculation": "Ending Inventory / (Beginning Inventory + Receipts - Issues)",
+                    "current_value": 0.92,
+                    "target_value": 0.98,
+                    "gap": 0.06,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Days of Supply",
+                    "calculation": "Ending Inventory / (Cost of Goods Sold / 365)",
+                    "current_value": 36.5,
+                    "target_value": 30.0,
+                    "gap": -6.5,
+                    "impact": "High"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Inventory Turnover Ratio",
+                    "formula": "Cost of Goods Sold / Average Inventory Value",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Fill Rate",
+                    "formula": "Ending Inventory / (Beginning Inventory + Receipts - Issues)",
+                    "frequency": "Daily"
+                },
+                {
+                    "metric_name": "Days of Supply",
+                    "formula": "Ending Inventory / (Cost of Goods Sold / 365)",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Reorder Point Variability",
+                    "formula": "Standard Deviation of Daily Demand during Lead Time",
+                    "frequency": "Daily"
+                },
+                {
+                    "metric_name": "Safety Stock Level",
+                    "formula": "Z-score × Standard Deviation of Demand during Lead Time",
+                    "frequency": "Weekly"
+                }
+            ]
+        },
+        {
+            "scenario_id": 2,
+            "key_metrics": [
+                {
+                    "metric_name": "Perfect Order Rate",
+                    "calculation": "Perfect Orders / Total Orders",
+                    "current_value": 0.85,
+                    "target_value": 0.95,
+                    "gap": 0.1,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "On-Time Delivery Rate",
+                    "calculation": "On-Time Deliveries / Total Deliveries",
+                    "current_value": 0.88,
+                    "target_value": 0.98,
+                    "gap": 0.1,
+                    "impact": "High"
+                },
+                {
+                    "metric_name": "Order Fill Rate",
+                    "calculation": "Fulfilled Quantity / Order Quantity",
+                    "current_value": 0.93,
+                    "target_value": 0.99,
+                    "gap": 0.06,
+                    "impact": "Medium"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Perfect Order Rate",
+                    "formula": "Perfect Orders / Total Orders",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "On-Time Delivery Rate",
+                    "formula": "On-Time Deliveries / Total Deliveries",
+                    "frequency": "Daily"
+                },
+                {
+                    "metric_name": "Order Fill Rate",
+                    "formula": "Fulfilled Quantity / Order Quantity",
+                    "frequency": "Daily"
+                },
+                {
+                    "metric_name": "Order Cycle Time",
+                    "formula": "Ship Date - Order Date",
+                    "frequency": "Daily"
+                },
+                {
+                    "metric_name": "Customer Satisfaction Score",
+                    "formula": "Average Customer Ratings",
+                    "frequency": "Monthly"
+                }
+            ]
+        },
+        {
+            "scenario_id": 3,
+            "key_metrics": [
+                {
+                    "metric_name": "Supplier On-Time Delivery",
+                    "calculation": "On-Time Orders / Total Orders",
+                    "current_value": 0.88,
+                    "target_value": 0.95,
+                    "gap": 0.07,
+                    "impact": "Medium"
+                },
+                {
+                    "metric_name": "Supplier Quality Compliance",
+                    "calculation": "Good Quality Orders / Total Orders",
+                    "current_value": 0.94,
+                    "target_value": 0.99,
+                    "gap": 0.05,
+                    "impact": "Medium"
+                },
+                {
+                    "metric_name": "Supplier Cost Variance",
+                    "calculation": "Sum of Price Variances / Total Orders",
+                    "current_value": 1.2,
+                    "target_value": 2.0,
+                    "gap": 0.8,
+                    "impact": "High"
+                }
+            ],
+            "monitoring_metrics": [
+                {
+                    "metric_name": "Supplier On-Time Delivery",
+                    "formula": "On-Time Orders / Total Orders",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Supplier Quality Compliance",
+                    "formula": "Good Quality Orders / Total Orders",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Supplier Cost Variance",
+                    "formula": "Sum of Price Variances / Total Orders",
+                    "frequency": "Monthly"
+                },
+                {
+                    "metric_name": "Supplier Responsiveness Score",
+                    "formula": "Total Orders / (Total Orders - Late Deliveries)",
+                    "frequency": "Weekly"
+                },
+                {
+                    "metric_name": "Supplier Lead Time",
+                    "formula": "Average Lead Time for Orders",
+                    "frequency": "Daily"
+                }
+            ]
+        }
+    ]
+}

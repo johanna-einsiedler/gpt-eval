@@ -1,0 +1,30 @@
+{
+    "task1": {
+        "total_budget": 450000,
+        "hardware_allocation": 135000,
+        "software_allocation": 180000,
+        "personnel_allocation": 90000,
+        "services_allocation": 22500,
+        "contingency_allocation": 22500
+    },
+    "task2": {
+        "variance_hardware": 13500,
+        "variance_software": -13500,
+        "variance_personnel": -2250,
+        "variance_services": -4500,
+        "variance_contingency": 13500,
+        "variance_total": 6750,
+        "largest_variance_category": "Hardware"
+    },
+    "task3": {
+        "selected_option": "A",
+        "reallocated_budget": {
+            "hardware": 121500,
+            "software": 207000,
+            "personnel": 90000,
+            "services": 22500,
+            "contingency": 9000
+        },
+        "total_unchanged": true
+    }
+}

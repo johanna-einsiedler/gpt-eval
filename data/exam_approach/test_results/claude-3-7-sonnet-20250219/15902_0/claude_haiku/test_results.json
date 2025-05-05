@@ -1,0 +1,134 @@
+{
+  "candidate_id": "Claude-3-Opus",
+  "scores": {
+    "on_time_delivery": {
+      "overall_rate": 0,
+      "monthly_rates": 7.5,
+      "highest_lowest": 0,
+      "total": 7.5
+    },
+    "order_fulfillment": {
+      "overall_rate": 0,
+      "category_rates": 0,
+      "lowest_category": 5,
+      "total": 5
+    },
+    "inventory_turns": {
+      "average_turns": 0,
+      "sku_turns": 3.33,
+      "top_performers": 0,
+      "total": 3.33
+    }
+  },
+  "overall_score": 15.83,
+  "details": {
+    "on_time_delivery": {
+      "monthly_rates": {
+        "Jan": {
+          "submitted": 0.67,
+          "expected": 0.67,
+          "correct": true
+        },
+        "Feb": {
+          "submitted": 0.5,
+          "expected": 0.67,
+          "correct": false
+        },
+        "Mar": {
+          "submitted": 0.67,
+          "expected": 0.67,
+          "correct": true
+        },
+        "Apr": {
+          "submitted": 0.83,
+          "expected": 0.67,
+          "correct": false
+        }
+      },
+      "highest_lowest": {
+        "highest": {
+          "submitted": "Apr",
+          "expected": "Jan",
+          "correct": false
+        },
+        "lowest": {
+          "submitted": "Feb",
+          "expected": "Jan",
+          "correct": false
+        }
+      }
+    },
+    "order_fulfillment": {
+      "category_rates": {
+        "Electronics": {
+          "submitted": 0.9,
+          "expected": 0.97,
+          "correct": false
+        },
+        "Furniture": {
+          "submitted": 0.71,
+          "expected": 0.77,
+          "correct": false
+        },
+        "Apparel": {
+          "submitted": 0.91,
+          "expected": 0.95,
+          "correct": false
+        }
+      },
+      "lowest_category": {
+        "submitted": "Furniture",
+        "expected": "Furniture",
+        "correct": true
+      }
+    },
+    "inventory_turns": {
+      "sku_turns": {
+        "E001": {
+          "submitted": 1.76,
+          "expected": 2.3,
+          "correct": false
+        },
+        "E002": {
+          "submitted": 1.24,
+          "expected": 1.22,
+          "correct": true
+        },
+        "F001": {
+          "submitted": 1.32,
+          "expected": 1.56,
+          "correct": false
+        },
+        "F002": {
+          "submitted": 1.08,
+          "expected": 1.2,
+          "correct": false
+        },
+        "A001": {
+          "submitted": 1.84,
+          "expected": 3.1,
+          "correct": false
+        },
+        "A002": {
+          "submitted": 1.44,
+          "expected": 1.85,
+          "correct": false
+        }
+      },
+      "top_performers": {
+        "submitted": [
+          "A001",
+          "E001",
+          "E002"
+        ],
+        "expected": [
+          "A001",
+          "E001",
+          "A002"
+        ],
+        "correct": false
+      }
+    }
+  },
+  "pass": false
+}

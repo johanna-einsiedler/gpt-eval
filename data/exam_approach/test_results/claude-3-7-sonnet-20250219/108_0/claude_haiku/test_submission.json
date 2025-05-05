@@ -1,0 +1,74 @@
+{
+    "candidateId": "GPT-4o",
+    "task1": {
+        "keyRequirements": [
+            "Leadership development for 25 mid-level managers",
+            "Blended learning approach with in-person and virtual sessions",
+            "Individual coaching sessions (minimum 2 per participant)",
+            "Technology industry-relevant content",
+            "Comprehensive skill development in strategic thinking, team management, communication, and change management"
+        ],
+        "potentialChallenges": [
+            "Tight budget constraints of $75,000",
+            "Complex scheduling across multiple time zones",
+            "High customization requirements"
+        ],
+        "nonNegotiablePoints": [
+            "Training must be completed by December 2023",
+            "Minimum of 2 individual coaching sessions per participant",
+            "In-person sessions at San Francisco headquarters",
+            "Pre and post-training assessments",
+            "Customized branding and content"
+        ],
+        "flexiblePoints": [
+            "Exact number of in-person vs. virtual sessions",
+            "Specific training methodologies",
+            "Detailed curriculum design",
+            "Timing of individual coaching sessions"
+        ]
+    },
+    "task2": {
+        "proposedFee": 75000.0,
+        "breakdownOfCosts": {
+            "trainerFees": 35000.0,
+            "materials": 12500.0,
+            "travelExpenses": 8500.0,
+            "administrativeCosts": 14000.0
+        },
+        "profitMargin": 25.0,
+        "valueJustification": [
+            "Comprehensive leadership development tailored to technology sector",
+            "Experienced trainers with industry-specific expertise",
+            "Blended learning approach maximizing knowledge retention",
+            "Ongoing support and coaching for sustained skill development"
+        ]
+    },
+    "task3": {
+        "objection1Response": "A",
+        "objection2Response": "B",
+        "objection3Response": "A",
+        "objection4Response": "A",
+        "objection5Response": "B"
+    },
+    "task4": {
+        "deliverables": [
+            "Comprehensive leadership skills assessment",
+            "Customized training materials with Global Innovations branding",
+            "Interactive in-person and virtual workshop sessions",
+            "Individual executive coaching sessions",
+            "Final ROI and impact report"
+        ],
+        "timeline": {
+            "startDate": "2023-09-01",
+            "completionDate": "2023-12-15",
+            "milestoneCode": "MS-001"
+        },
+        "paymentStructure": {
+            "initialPayment": 18750.0,
+            "milestone1Payment": 37500.0,
+            "finalPayment": 18750.0
+        },
+        "contractTermCode": "CT-003",
+        "cancellationTerms": "CAN-002"
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "excess_inventory_value": 1737.5,
+        "stockout_risk_skus": [
+            "SKU102",
+            "SKU104",
+            "SKU106",
+            "SKU108",
+            "SKU110",
+            "SKU112"
+        ],
+        "optimal_reorder_point_sku123": 285,
+        "highest_carrying_cost_category": "Electronics"
+    },
+    "task2": {
+        "carrier_cost_per_mile": {
+            "CarrierA": 1.5,
+            "CarrierB": 1.75,
+            "CarrierC": 2.0
+        },
+        "most_efficient_carrier": "CarrierA",
+        "potential_annual_savings": 10350.0,
+        "optimal_shipment_size": 0
+    },
+    "task3": {
+        "worst_performing_region": "West",
+        "on_time_delivery_percentage": 0.7,
+        "correlation_coefficient": -0.72,
+        "priority_improvement_metric": "Delivery Time"
+    }
+}

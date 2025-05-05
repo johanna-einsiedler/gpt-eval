@@ -1,0 +1,61 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "total_annual_budget": 2100000.0,
+        "cost_per_MW": 42000.0,
+        "largest_expense_category": "Staff Costs",
+        "largest_expense_amount": 637500.0,
+        "quarterly_distribution": {
+            "Q1": 25.0,
+            "Q2": 25.0,
+            "Q3": 25.0,
+            "Q4": 25.0
+        }
+    },
+    "task2": {
+        "variance_contributors": [
+            {
+                "category": "Unscheduled Repairs",
+                "amount": 153000.0,
+                "root_cause": "Increased failures due to aging components"
+            },
+            {
+                "category": "Subcontractor Services",
+                "amount": 37500.0,
+                "root_cause": "Higher costs from emergency repairs"
+            },
+            {
+                "category": "Spare Parts Inventory",
+                "amount": 15000.0,
+                "root_cause": "Underestimation of required inventory"
+            }
+        ],
+        "revised_budget_total": 1900000.0,
+        "contingency_amount": 228000.0,
+        "contingency_percentage": 12.0
+    },
+    "task3": {
+        "key_budget_priorities": [
+            "Enhanced preventive maintenance",
+            "Investment in staff training",
+            "Optimizing spare parts management"
+        ],
+        "cost_saving_measures": [
+            "Implement predictive maintenance programs",
+            "Utilize condition monitoring systems"
+        ],
+        "major_maintenance_ROI": {
+            "item": "Gearbox Inspection",
+            "cost": 27000.0,
+            "expected_return": 100000.0,
+            "payback_period": 4.0
+        },
+        "five_year_projection": {
+            "year1": 2000000.0,
+            "year2": 2050000.0,
+            "year3": 2100000.0,
+            "year4": 2150000.0,
+            "year5": 2200000.0
+        }
+    }
+}

@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "quarterly_budget": {
+      "points": 30,
+      "max_points": 25,
+      "percentage": 120.0,
+      "comments": []
+    },
+    "financial_metrics": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0,
+      "comments": []
+    },
+    "top_expenses": {
+      "points": 15,
+      "max_points": 15,
+      "percentage": 100.0,
+      "comments": []
+    },
+    "cost_reduction": {
+      "points": 10,
+      "max_points": 10,
+      "percentage": 100.0,
+      "comments": []
+    },
+    "variance_response": {
+      "points": 20,
+      "max_points": 20,
+      "percentage": 100.0,
+      "comments": []
+    },
+    "contingency_allocation": {
+      "points": 10,
+      "max_points": 10,
+      "percentage": 100.0,
+      "comments": []
+    }
+  },
+  "overall_score": 105.0,
+  "comments": [],
+  "passing_threshold": 75,
+  "total_points": 105,
+  "max_points": 100,
+  "passed": true
+}

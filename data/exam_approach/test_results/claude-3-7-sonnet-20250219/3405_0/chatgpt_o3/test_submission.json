@@ -1,0 +1,74 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "average_growth_rates": {
+            "Personnel": 0.06,
+            "Equipment": 0.13,
+            "Supplies": 0.05,
+            "Training": 0.13,
+            "Facilities": 0.05,
+            "IT Services": 0.18,
+            "Travel": -0.08,
+            "Consulting": 0.13,
+            "Marketing": 0.13,
+            "Miscellaneous": 0.05
+        },
+        "projected_costs": {
+            "Personnel": 501407,
+            "Equipment": 250154,
+            "Supplies": 97461,
+            "Training": 92914,
+            "Facilities": 173644,
+            "IT Services": 154698,
+            "Travel": 35407,
+            "Consulting": 171534,
+            "Marketing": 78630,
+            "Miscellaneous": 40517,
+            "Total": 1596366
+        },
+        "top_growth_categories": [
+            "IT Services",
+            "Equipment",
+            "Training"
+        ]
+    },
+    "task2": {
+        "total_resources_needed": 944500,
+        "departmental_allocation": {
+            "Operations": 377800,
+            "Administration": 141675,
+            "Development": 283350,
+            "Support": 141675
+        },
+        "cost_per_unit": {
+            "Operations": 151.12,
+            "Administration": 141.68,
+            "Development": 157.42,
+            "Support": 118.06
+        },
+        "resource_constraints": [
+            "Staffing",
+            "Technology"
+        ]
+    },
+    "task3": {
+        "significant_variances": {
+            "Travel": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
+            },
+            "IT Services": {
+                "budgeted": 157320,
+                "actual_projected": 193333,
+                "variance_percent": 0.23
+            }
+        },
+        "additional_resources_needed": 174704,
+        "recommended_adjustments": {
+            "Travel": 9245,
+            "IT Services": 41415,
+            "Training": -395
+        }
+    }
+}

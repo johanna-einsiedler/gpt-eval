@@ -1,0 +1,110 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "scenarios": [
+        {
+            "scenario_number": 1,
+            "missing_information": [
+                "Exact amounts received from side jobs",
+                "Nature of side jobs (business or hobby)",
+                "Any expenses related to side jobs"
+            ],
+            "interview_questions": [
+                "Can you provide details about the side jobs you did, including the types of services you provided?",
+                "Do you have records of how much you earned from each side job throughout the year?",
+                "Did you incur any expenses for tools, materials, or transportation related to these side jobs?",
+                "Were these side jobs part of an ongoing business or just occasional work?",
+                "Can you provide the names and contact information of the people who paid you for these side jobs?"
+            ],
+            "tax_form": "Form 1040 Schedule C",
+            "documentation_needed": [
+                "Detailed records of side job income",
+                "Receipts for any business expenses",
+                "Mileage logs if vehicle was used"
+            ]
+        },
+        {
+            "scenario_number": 2,
+            "missing_information": [
+                "Medicare Part B premium amounts paid",
+                "Details of what insurance did/did not cover",
+                "Any other qualifying medical expenses"
+            ],
+            "interview_questions": [
+                "Can you provide your Medicare Part B premium statements for the year?",
+                "Do you have documentation showing what portions of your medical expenses were covered by insurance?",
+                "Did you have any other medical expenses not included in these receipts, like mileage to medical appointments?",
+                "Were any of these medical expenses reimbursed by insurance or any other source?",
+                "Did you pay any long-term care insurance premiums or have any other qualifying medical expenses?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Medicare Part B premium statements",
+                "Insurance explanation of benefits statements",
+                "Mileage logs for medical travel"
+            ]
+        },
+        {
+            "scenario_number": 3,
+            "missing_information": [
+                "Exact dates child lived at home",
+                "Details of child's educational expenses",
+                "Information about support provided by other parent"
+            ],
+            "interview_questions": [
+                "Can you provide the exact dates Tyler lived with you versus at college during the tax year?",
+                "Do you have documentation showing you provided more than half of Tyler's total support for the year?",
+                "Can you provide receipts for tuition payments and other educational expenses you paid?",
+                "Did Tyler have any income of his own during the year?",
+                "Can you confirm that Tyler's mother did not claim him as a dependent on her tax return?"
+            ],
+            "tax_form": "Form 1040",
+            "documentation_needed": [
+                "College enrollment records showing dates",
+                "Receipts for tuition and support expenses",
+                "Written statement about other parent's support"
+            ]
+        },
+        {
+            "scenario_number": 4,
+            "missing_information": [
+                "Employer documentation of work-from-home requirement",
+                "Percentage of home used exclusively for business",
+                "Details of coffee shop work frequency"
+            ],
+            "interview_questions": [
+                "Can you provide written documentation from your employer requiring you to work from home?",
+                "What percentage of your home is used exclusively for your home office?",
+                "How often did you work from coffee shops versus your home office?",
+                "Do you have records of the exact dates you worked from home versus other locations?",
+                "Did your employer reimburse you for any of these home office expenses?"
+            ],
+            "tax_form": "Form 8829",
+            "documentation_needed": [
+                "Employer work-from-home policy document",
+                "Home office square footage measurements",
+                "Calendar/log of work locations"
+            ]
+        },
+        {
+            "scenario_number": 5,
+            "missing_information": [
+                "Proper documentation for furniture donation",
+                "Valuation method for donated furniture",
+                "Tax ID for Children's Hospital donation"
+            ],
+            "interview_questions": [
+                "Can you provide a detailed description and photos of the furniture you donated?",
+                "How did you determine the $2,000 value for the donated furniture?",
+                "Can you obtain a proper receipt from Goodwill with their tax ID number?",
+                "Can you get the tax ID number for Children's Hospital for their donation receipt?",
+                "Did you make any other charitable contributions not included in these receipts?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Detailed inventory of donated furniture",
+                "Written appraisal for high-value items",
+                "Proper receipts with tax ID numbers"
+            ]
+        }
+    ]
+}

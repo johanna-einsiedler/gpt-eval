@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "debt_payoff_order": [
+        "CC1",
+        "CC2",
+        "PL1",
+        "AL1",
+        "SL1"
+    ],
+    "total_months_to_debt_freedom": 48,
+    "monthly_payment_allocation": {
+        "CC1": 655.0,
+        "CC2": 296.0,
+        "PL1": 320.0,
+        "AL1": 375.0,
+        "SL1": 210.0
+    },
+    "interest_saved_vs_minimum_payments": 6750.5,
+    "first_debt_paid_off": {
+        "debt_id": "CC2",
+        "month_number": 12
+    },
+    "last_debt_paid_off": {
+        "debt_id": "SL1",
+        "month_number": 48
+    },
+    "strategy_explanation": "Utilize debt avalanche method by targeting highest interest debts first. Allocate extra funds to credit card debts while maintaining minimum payments on all other obligations to minimize total interest paid."
+}

@@ -1,0 +1,62 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "total_annual_budget": 2744700.0,
+        "cost_per_MW": 54894.0,
+        "largest_expense_category": "Scheduled Maintenance",
+        "largest_expense_amount": 918000.0,
+        "quarterly_distribution": {
+            "Q1": 25.0,
+            "Q2": 30.0,
+            "Q3": 22.0,
+            "Q4": 23.0
+        }
+    },
+    "task2": {
+        "variance_contributors": [
+            {
+                "category": "Unscheduled Repairs",
+                "amount": 153000.0,
+                "root_cause": "Unexpected main‐component failures (gearbox, generator, blade) drove crane mobilisation and extended downtime; lack of predictive diagnostics meant issues were detected only after failure, inflating both labour and parts costs."
+            },
+            {
+                "category": "Subcontractor Services",
+                "amount": 37500.0,
+                "root_cause": "Emergency call-outs required premium hourly rates and repeat crane hires; no umbrella service agreement in place, so spot pricing and duplicated mobilisation charges increased costs beyond budget."
+            },
+            {
+                "category": "Spare Parts Inventory",
+                "amount": 15000.0,
+                "root_cause": "Inventory levels were below minimum; urgent purchases at short notice attracted air-freight surcharges and rush-order mark-ups, raising average part prices and carrying costs over plan."
+            }
+        ],
+        "revised_budget_total": 2600000.0,
+        "contingency_amount": 312000.0,
+        "contingency_percentage": 12.0
+    },
+    "task3": {
+        "key_budget_priorities": [
+            "Complete 5-year gearbox and blade inspections to prevent high-cost failures",
+            "Shift to predictive maintenance to cut unscheduled repair spending",
+            "Align cost/MW with industry benchmark while safeguarding availability targets"
+        ],
+        "cost_saving_measures": [
+            "Install continuous vibration and oil-analysis sensors on all drivetrains",
+            "Negotiate multi-year framework contracts for cranes and specialised labour",
+            "Bulk-purchase high-turnover spares jointly with neighbouring wind farms"
+        ],
+        "major_maintenance_ROI": {
+            "item": "Control System Upgrade (15 turbines)",
+            "cost": 127500.0,
+            "expected_return": 140000.0,
+            "payback_period": 11.0
+        },
+        "five_year_projection": {
+            "year1": 2744700.0,
+            "year2": 2854488.0,
+            "year3": 2968667.52,
+            "year4": 3102257.56,
+            "year5": 3242454.68
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "candidateId": "GPT-4o",
+    "task1": {
+        "keyRequirements": [
+            "Leadership development program for 25 mid-level managers",
+            "Blended learning approach (in-person and virtual)",
+            "Individual coaching sessions (at least 2 per participant)",
+            "Training must be completed within 4 months (September-December 2023)",
+            "Budget allocation: $75,000 maximum for entire program"
+        ],
+        "potentialChallenges": [
+            "Accommodating participants across multiple time zones for virtual sessions",
+            "Completing comprehensive leadership training within the 4-month timeframe",
+            "Balancing quality training delivery with the strict budget constraints",
+            "Finding trainers with specific technology industry experience"
+        ],
+        "nonNegotiablePoints": [
+            "Training completion by December 2023 (fiscal year end)",
+            "Maximum budget of $75,000",
+            "Minimum of 2 coaching sessions per participant",
+            "In-person sessions must be at San Francisco headquarters",
+            "Trainers must have technology industry experience"
+        ],
+        "flexiblePoints": [
+            "Distribution between in-person and virtual sessions",
+            "Specific content delivery methods within the blended approach",
+            "Scheduling of sessions (as long as completed by December)",
+            "Structure of the post-training support"
+        ]
+    },
+    "task2": {
+        "proposedFee": 75000.0,
+        "breakdownOfCosts": {
+            "trainerFees": 35000.0,
+            "materials": 13750.0,
+            "travelExpenses": 6250.0,
+            "administrativeCosts": 5000.0
+        },
+        "profitMargin": 25.0,
+        "valueJustification": [
+            "Customized program addressing specific leadership gaps in technical managers",
+            "Experienced trainers with technology industry background ensuring relevant content",
+            "Blended learning approach maximizing engagement while minimizing disruption",
+            "Comprehensive measurement system to demonstrate clear ROI on training investment"
+        ]
+    },
+    "task3": {
+        "objection1Response": "A",
+        "objection2Response": "B",
+        "objection3Response": "A",
+        "objection4Response": "A",
+        "objection5Response": "B"
+    },
+    "task4": {
+        "deliverables": [
+            "Customized leadership curriculum for 25 mid-level technology managers",
+            "8 interactive workshops (4 in-person, 4 virtual) covering strategic thinking, team management, communication, conflict resolution, and change management",
+            "50 individual coaching sessions (2 per participant) with technology-experienced executive coaches",
+            "Comprehensive participant workbooks and digital resources with Global Innovations branding",
+            "Pre/post assessments and final ROI analysis report"
+        ],
+        "timeline": {
+            "startDate": "2023-09-01",
+            "completionDate": "2023-12-15",
+            "milestoneCode": "MS-001"
+        },
+        "paymentStructure": {
+            "initialPayment": 18750.0,
+            "milestone1Payment": 37500.0,
+            "finalPayment": 18750.0
+        },
+        "contractTermCode": "CT-004",
+        "cancellationTerms": "CAN-002"
+    }
+}

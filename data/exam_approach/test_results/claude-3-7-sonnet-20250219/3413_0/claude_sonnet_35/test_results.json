@@ -1,0 +1,301 @@
+{
+  "candidate_id": "Claude-3_7-Sonnet",
+  "total_score": 3.5,
+  "max_possible_score": 15,
+  "agreements": {
+    "Agreement_A": {
+      "score": 2.0,
+      "max_score": 5,
+      "issues_identified": 3,
+      "total_issues": 5,
+      "detailed_results": [
+        {
+          "candidate_issue": {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The monthly payment calculation is incorrect. For a $320,000 loan at 4.25% for 30 years, the correct monthly payment should be $1,574.45, not $1,574.35."
+          },
+          "matched_to": {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The monthly payment of $1,574.35 is incorrect. For a $320,000 loan at 4.25% for 30 years, the correct payment should be approximately $1,574.95."
+          },
+          "similarity": 0.92,
+          "points": 1.0,
+          "feedback": "Excellent identification of the issue."
+        },
+        {
+          "candidate_issue": {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Borrower Information section",
+            "description": "The property address listed for both borrowers (123 Main Street) is inconsistent with the Property Address in the Loan Summary section (123 Main Street)."
+          },
+          "matched_to": {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Loan Summary section and Borrower Information section",
+            "description": "The property address is listed as a purchase in the Loan Purpose, but the borrowers' current address is already listed as the same property address."
+          },
+          "similarity": 0.7555555555555555,
+          "points": 0.5,
+          "feedback": "Issue partially identified. Description could be more precise."
+        },
+        {
+          "candidate_issue": {
+            "issue_id": 3,
+            "issue_type": "policy_violation",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The default interest rate of 9.25% exceeds the policy limit of no more than 5% above the initial rate (4.25%). The maximum allowed would be 9.25%."
+          },
+          "matched_to": {
+            "issue_id": 4,
+            "issue_type": "policy_violation",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The Default Interest Rate is 9.25%, which exceeds the initial rate (4.25%) by 5%, violating the policy that default rate cannot exceed initial rate by more than 5%."
+          },
+          "similarity": 0.7714285714285714,
+          "points": 0.5,
+          "feedback": "Issue partially identified. Description could be more precise."
+        },
+        {
+          "candidate_issue": null,
+          "matched_to": {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The PMI section states 'Not required' but doesn't provide justification for why PMI is not required despite the 80% LTV ratio."
+          },
+          "similarity": 0,
+          "points": 0,
+          "feedback": "Issue not identified by candidate."
+        },
+        {
+          "candidate_issue": null,
+          "matched_to": {
+            "issue_id": 5,
+            "issue_type": "compliance_issue",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The Right of Rescission is mentioned, but the specific dates of the rescission period are not provided as required by compliance standards."
+          },
+          "similarity": 0,
+          "points": 0,
+          "feedback": "Issue not identified by candidate."
+        }
+      ]
+    },
+    "Agreement_B": {
+      "score": 1.0,
+      "max_score": 5,
+      "issues_identified": 3,
+      "total_issues": 5,
+      "detailed_results": [
+        {
+          "candidate_issue": {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The LTV ratio of 70% exceeds the maximum allowed 75% for commercial properties as per the policy reference."
+          },
+          "matched_to": {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Property Information section",
+            "description": "The LTV ratio is stated as 70%, which exceeds the maximum 65% allowed for commercial properties according to policy."
+          },
+          "similarity": 0.5222222222222223,
+          "points": 0.5,
+          "feedback": "Issue partially identified. Description could be more precise."
+        },
+        {
+          "candidate_issue": {
+            "issue_id": 2,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The monthly payment calculation is incorrect. For a $1,750,000 loan at 5.75% for 25 years (300 months), the correct payment should be $10,981.54, not $14,557.23."
+          },
+          "matched_to": {
+            "issue_id": 2,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The balloon payment is listed as approximately $1,250,000.00 but based on a 15-year loan with 25-year amortization, this figure is incorrect."
+          },
+          "similarity": 0.7090909090909091,
+          "points": 0.5,
+          "feedback": "Issue partially identified. Description could be more precise."
+        },
+        {
+          "candidate_issue": {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Covenants and Conditions section",
+            "description": "The agreement lacks a clear statement on reporting requirements for ongoing monitoring, which is required as per the policy reference."
+          },
+          "matched_to": {
+            "issue_id": 3,
+            "issue_type": "missing_information",
+            "location": "Closing Costs section",
+            "description": "The environmental assessment is mentioned in the closing costs, but the results or findings of this assessment are not documented as required by policy."
+          },
+          "similarity": 0.3761904761904762,
+          "points": 0.0,
+          "feedback": "Issue poorly identified. The description does not clearly explain the problem."
+        },
+        {
+          "candidate_issue": null,
+          "matched_to": {
+            "issue_id": 4,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "The loan purpose is stated as 'Refinance' but there's no information about the existing loan being refinanced."
+          },
+          "similarity": 0,
+          "points": 0,
+          "feedback": "Issue not identified by candidate."
+        },
+        {
+          "candidate_issue": null,
+          "matched_to": {
+            "issue_id": 5,
+            "issue_type": "compliance_issue",
+            "location": "Covenants and Conditions section",
+            "description": "The DSCR requirement is listed as 1.25x, but there's no calculation showing the current DSCR to verify compliance."
+          },
+          "similarity": 0,
+          "points": 0,
+          "feedback": "Issue not identified by candidate."
+        }
+      ]
+    },
+    "Agreement_C": {
+      "score": 0.5,
+      "max_score": 5,
+      "issues_identified": 3,
+      "total_issues": 5,
+      "detailed_results": [
+        {
+          "candidate_issue": {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The minimum initial draw amount of $75,000 exceeds 50% of the credit line ($150,000), violating the policy maximum of 50%."
+          },
+          "matched_to": {
+            "issue_id": 2,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The initial advance amount is $75,000, which is 50% of the credit line amount ($150,000). This violates the policy that states 'Minimum initial draw amount cannot exceed 50% of credit line.'"
+          },
+          "similarity": 0.7636363636363637,
+          "points": 0.5,
+          "feedback": "Issue partially identified. Description could be more precise."
+        },
+        {
+          "candidate_issue": {
+            "issue_id": 2,
+            "issue_type": "inconsistency",
+            "location": "Property Information section",
+            "description": "The Combined LTV Ratio is stated as 77.27%, but based on the provided figures ($150,000 + $275,000) / $550,000, it should be 77.27%."
+          },
+          "matched_to": {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Property Information section",
+            "description": "The Combined LTV Ratio calculation of 77.27% is correct (($275,000 + $150,000) / $550,000 = 77.27%), but this exceeds the maximum CLTV of 80% allowed by policy."
+          },
+          "similarity": 0.428,
+          "points": 0.0,
+          "feedback": "Issue poorly identified. The description does not clearly explain the problem."
+        },
+        {
+          "candidate_issue": {
+            "issue_id": 3,
+            "issue_type": "compliance_issue",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The agreement lacks required Truth in Lending disclosures for consumer loans as specified in the Compliance Requirements section of the policy."
+          },
+          "matched_to": {
+            "issue_id": 4,
+            "issue_type": "missing_information",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "The agreement mentions that the property is in Zone X (minimal flood risk) but doesn't include the required flood insurance determination documentation reference."
+          },
+          "similarity": 0.38,
+          "points": 0.0,
+          "feedback": "Issue poorly identified. The description does not clearly explain the problem."
+        },
+        {
+          "candidate_issue": null,
+          "matched_to": {
+            "issue_id": 3,
+            "issue_type": "inconsistency",
+            "location": "Loan Terms section",
+            "description": "The loan purpose includes 'debt consolidation' but there are no details about existing debts to be consolidated."
+          },
+          "similarity": 0,
+          "points": 0,
+          "feedback": "Issue not identified by candidate."
+        },
+        {
+          "candidate_issue": null,
+          "matched_to": {
+            "issue_id": 5,
+            "issue_type": "compliance_issue",
+            "location": "Additional Provisions section",
+            "description": "The agreement includes a 'Minimum Draw Requirement' of $10,000 within the first 12 months, which contradicts the 'Minimum Draw Amount' of $500 stated elsewhere."
+          },
+          "similarity": 0,
+          "points": 0,
+          "feedback": "Issue not identified by candidate."
+        }
+      ]
+    }
+  },
+  "issue_type_coverage": {
+    "calculation_error": 2,
+    "inconsistency": 1,
+    "policy_violation": 3
+  },
+  "critical_issues_identified": 0,
+  "critical_issues_total": 5,
+  "issues_by_agreement": {
+    "Agreement_A": 3,
+    "Agreement_B": 2,
+    "Agreement_C": 1
+  },
+  "detailed_feedback": [],
+  "overall_score": 23.333333333333332,
+  "passing_criteria": {
+    "minimum_correct_identifications": {
+      "required": 10,
+      "achieved": 3.5,
+      "passed": false
+    },
+    "distribution_requirement": {
+      "required": "At least 2 issues in each agreement",
+      "achieved": {
+        "Agreement_A": 3,
+        "Agreement_B": 2,
+        "Agreement_C": 1
+      },
+      "passed": false
+    },
+    "issue_type_coverage": {
+      "required": "At least one issue of each type",
+      "achieved": {
+        "calculation_error": 2,
+        "inconsistency": 1,
+        "policy_violation": 3
+      },
+      "passed": false
+    },
+    "critical_issues": {
+      "required": "At least 3 of 5 critical issues",
+      "achieved": 0,
+      "passed": false
+    }
+  },
+  "passed": false
+}

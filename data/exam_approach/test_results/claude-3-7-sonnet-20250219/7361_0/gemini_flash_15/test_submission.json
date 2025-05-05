@@ -1,0 +1,108 @@
+{
+    "candidate_id": "GPT-4",
+    "scenarios": [
+        {
+            "scenario_number": 1,
+            "missing_information": [
+                "Details of the client's self-employment income, including the names of clients, dates of service, and amounts received for each job.",
+                "Supporting documentation for the unreported cash income shown on the bank statements."
+            ],
+            "interview_questions": [
+                "Can you please provide a list of the individuals you performed handyman work for, including their names, addresses, and the dates and amounts of each payment?",
+                "Could you please explain the source of the additional deposits shown on your bank statements that are not reflected on your W-2 forms?",
+                "Do you have any records, such as invoices or receipts, documenting the handyman work you performed?",
+                "Did you receive any payments via methods other than cash, such as checks or electronic transfers?",
+                "What is the total amount of income you received from these side jobs during the tax year?"
+            ],
+            "tax_form": "Form 1040 Schedule C",
+            "documentation_needed": [
+                "Itemized list of clients and payments received for handyman services",
+                "Copies of any invoices or receipts for handyman services",
+                "Bank statements showing all deposits for the tax year"
+            ]
+        },
+        {
+            "scenario_number": 2,
+            "missing_information": [
+                "Details of Maria's health insurance coverage, including the insurer's name, policy number, and the amount of premiums paid.",
+                "Documentation of the amount of medical expenses reimbursed by her insurance."
+            ],
+            "interview_questions": [
+                "Can you please provide the name and policy number of your health insurance provider?",
+                "What is the total amount of medical expenses that were reimbursed by your insurance company?",
+                "Do you have any documentation, such as Explanation of Benefits (EOB) statements, showing the amounts your insurance company paid?",
+                "Can you provide copies of your Medicare Part B premium statements?",
+                "Did you pay any other medical expenses not listed on the receipts provided?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Health insurance policy information (name of insurer, policy number)",
+                "Explanation of Benefits (EOB) statements from your insurance company",
+                "Copies of Medicare Part B premium statements",
+                "Receipts for any additional unreimbursed medical expenses"
+            ]
+        },
+        {
+            "scenario_number": 3,
+            "missing_information": [
+                "The number of months Tyler lived with his father during the tax year.",
+                "Details of Tyler's support, including whether he earned any income and the amount of his expenses paid by his mother.",
+                "Documentation of Tyler's total support expenses paid by Robert."
+            ],
+            "interview_questions": [
+                "For how many months during the tax year did Tyler live with you?",
+                "Did Tyler work or receive any other financial support during the tax year?",
+                "What portion of Tyler's support did his mother provide?",
+                "Can you provide documentation showing the total amount you paid for Tyler's tuition, housing, and other expenses?",
+                "What were Tyler's total expenses for the year?"
+            ],
+            "tax_form": "Form 1040 Schedule 1",
+            "documentation_needed": [
+                "Documentation of Tyler's living arrangements (lease agreements, utility bills, etc.)",
+                "Proof of Tyler's income (W-2s, pay stubs, etc.)",
+                "Documentation of expenses paid for Tyler (bank statements, tuition bills, etc.)"
+            ]
+        },
+        {
+            "scenario_number": 4,
+            "missing_information": [
+                "Documentation from Jennifer's employer confirming the work-from-home arrangement and specifying the percentage of time she worked from home.",
+                "A detailed breakdown of her home office expenses, separating those used exclusively for business from those used for personal purposes."
+            ],
+            "interview_questions": [
+                "Can you provide documentation from your employer confirming your work-from-home arrangement, including the dates and percentage of time you worked from home?",
+                "Can you provide a detailed list of your home office expenses, specifying which expenses are exclusively for business use?",
+                "What percentage of your home is used exclusively for business?",
+                "How many days did you work from coffee shops during the tax year?",
+                "Did you incur any expenses while working from coffee shops?"
+            ],
+            "tax_form": "Form 8829",
+            "documentation_needed": [
+                "Letter from employer confirming work-from-home arrangement and percentage of time worked from home",
+                "Detailed list of home office expenses with supporting documentation (receipts, bills)",
+                "Photographs or diagrams showing the designated home office space"
+            ]
+        },
+        {
+            "scenario_number": 5,
+            "missing_information": [
+                "A properly documented receipt from Children's Hospital with their tax ID number.",
+                "Documentation supporting the claimed $2,000 value of the donated furniture, including a detailed description of the items and their fair market value.",
+                "Confirmation that the donated furniture was in good condition."
+            ],
+            "interview_questions": [
+                "Can you please provide a receipt from Children's Hospital with their tax ID number?",
+                "Can you provide a more detailed description of the furniture you donated to Goodwill, including the make, model, age, and condition of each item?",
+                "How did you determine the $2,000 value of the donated furniture?",
+                "Do you have any photographs or appraisals of the furniture?",
+                "Was the furniture in good condition at the time of donation?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Properly documented receipt from Children's Hospital with tax ID",
+                "Detailed description and appraisal of donated furniture",
+                "Photographs of the donated furniture"
+            ]
+        }
+    ]
+}

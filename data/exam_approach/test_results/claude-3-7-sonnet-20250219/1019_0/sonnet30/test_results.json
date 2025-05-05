@@ -1,0 +1,189 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "total_points_possible": 100,
+  "total_points_earned": 33,
+  "passing_threshold": 75,
+  "distinction_threshold": 90,
+  "department_allocations": {
+    "points_possible": 25,
+    "points_earned": 10,
+    "details": {
+      "engineering": {
+        "expected": 61250,
+        "submitted": 63000,
+        "points_earned": 5,
+        "status": "correct"
+      },
+      "sales": {
+        "expected": 35000,
+        "submitted": 28000,
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "marketing": {
+        "expected": 26250,
+        "submitted": 21000,
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "customer_support": {
+        "expected": 35000,
+        "submitted": 35000,
+        "points_earned": 5,
+        "status": "correct"
+      },
+      "administration": {
+        "expected": 17500,
+        "submitted": 28000,
+        "points_earned": 0,
+        "status": "incorrect"
+      }
+    },
+    "critical_error": false
+  },
+  "training_category_costs": {
+    "points_possible": 25,
+    "points_earned": 5,
+    "details": {
+      "technical_skills": {
+        "expected": 52500,
+        "submitted": 70000,
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "soft_skills": {
+        "expected": 26250,
+        "submitted": 26250,
+        "points_earned": 5,
+        "status": "correct"
+      },
+      "compliance": {
+        "expected": 26250,
+        "submitted": 35000,
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "leadership": {
+        "expected": 35000,
+        "submitted": 21000,
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "onboarding": {
+        "expected": 35000,
+        "submitted": 22750,
+        "points_earned": 0,
+        "status": "incorrect"
+      }
+    },
+    "critical_error": false
+  },
+  "per_employee_costs": {
+    "points_possible": 15,
+    "points_earned": 3,
+    "details": {
+      "engineering": {
+        "expected": 720.59,
+        "submitted": 741.18,
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "sales": {
+        "expected": 777.78,
+        "submitted": 622.22,
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "marketing": {
+        "expected": 875.0,
+        "submitted": 700.0,
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "customer_support": {
+        "expected": 538.46,
+        "submitted": 538.46,
+        "points_earned": 3,
+        "status": "correct"
+      },
+      "administration": {
+        "expected": 700.0,
+        "submitted": 1120.0,
+        "points_earned": 0,
+        "status": "incorrect"
+      }
+    }
+  },
+  "roi_calculations": {
+    "points_possible": 15,
+    "points_earned": 15,
+    "details": {
+      "technical_skills": {
+        "expected": 2.1,
+        "submitted": 2.3,
+        "points_earned": 3,
+        "status": "correct"
+      },
+      "soft_skills": {
+        "expected": 1.8,
+        "submitted": 1.8,
+        "points_earned": 3,
+        "status": "correct"
+      },
+      "compliance": {
+        "expected": 1.2,
+        "submitted": 1.2,
+        "points_earned": 3,
+        "status": "correct"
+      },
+      "leadership": {
+        "expected": 2.4,
+        "submitted": 2.5,
+        "points_earned": 3,
+        "status": "correct"
+      },
+      "onboarding": {
+        "expected": 2.0,
+        "submitted": 2.1,
+        "points_earned": 3,
+        "status": "correct"
+      }
+    },
+    "critical_error": false
+  },
+  "budget_variance_percentage": {
+    "points_possible": 5,
+    "points_earned": 0,
+    "details": {
+      "expected": 0.0613,
+      "submitted": 0.0938,
+      "status": "incorrect"
+    }
+  },
+  "cost_saving_opportunities": {
+    "points_possible": 15,
+    "points_earned": 0,
+    "details": {
+      "opportunity_1": {
+        "expected": "CO-03",
+        "submitted": "OB-05",
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "opportunity_2": {
+        "expected": "TS-01",
+        "submitted": "SS-02",
+        "points_earned": 0,
+        "status": "incorrect"
+      },
+      "opportunity_3": {
+        "expected": "SS-02",
+        "submitted": "LD-04",
+        "points_earned": 0,
+        "status": "incorrect"
+      }
+    }
+  },
+  "overall_score": 33.0,
+  "result": "FAIL"
+}

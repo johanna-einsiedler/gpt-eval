@@ -1,0 +1,94 @@
+{
+    "candidateId": "GPT-4",
+    "task1": {
+        "keyRequirements": [
+            "Improved strategic thinking and decision-making",
+            "Enhanced team management and delegation skills",
+            "Effective communication across departments",
+            "Conflict resolution and negotiation techniques",
+            "Change management capabilities",
+            "Blended learning approach (in-person and virtual)",
+            "Interactive workshops with practical exercises",
+            "Real-world case studies relevant to our industry",
+            "Individual coaching sessions (at least 2 per participant)",
+            "Post-training support for 3 months",
+            "Pre and post-training assessments",
+            "Monthly progress reports",
+            "Final ROI analysis and impact report",
+            "360-degree feedback integration"
+        ],
+        "potentialChallenges": [
+            "Meeting the client's tight 4-month timeline",
+            "Balancing in-person and virtual sessions across multiple time zones",
+            "Ensuring trainer availability and expertise",
+            "Managing the client's budget constraints",
+            "Achieving the desired ROI"
+        ],
+        "nonNegotiablePoints": [
+            "Training must be completed within 4 months (September-December 2023)",
+            "In-person sessions must be conducted at their San Francisco headquarters",
+            "All training materials must be customized with their branding",
+            "Pre and post-training assessments are required",
+            "Final ROI analysis and impact report is required",
+            "All invoicing must be completed by December 15, 2023",
+            "Minimum 25% profit margin"
+        ],
+        "flexiblePoints": [
+            "Number of in-person vs. virtual sessions",
+            "Specific dates for in-person sessions",
+            "Exact format of coaching sessions",
+            "Specific details of post-training support",
+            "Specific content of training materials"
+        ]
+    },
+    "task2": {
+        "proposedFee": 75000.0,
+        "breakdownOfCosts": {
+            "trainerFees": 25000.0,
+            "materials": 12500.0,
+            "travelExpenses": 5000.0,
+            "administrativeCosts": 22500.0
+        },
+        "profitMargin": 25.0,
+        "valueJustification": [
+            "Experienced trainers with technology industry expertise",
+            "Comprehensive and engaging blended learning approach",
+            "Customized materials tailored to client's needs",
+            "Robust assessment and evaluation methods",
+            "Strong post-training support to ensure lasting impact"
+        ]
+    },
+    "task3": {
+        "objection1Response": "A",
+        "objection2Response": "B",
+        "objection3Response": "A",
+        "objection4Response": "A",
+        "objection5Response": "B"
+    },
+    "task4": {
+        "deliverables": [
+            "Comprehensive leadership development program for 25 mid-level managers",
+            "Blended learning modules (in-person and virtual)",
+            "Interactive workshops with practical exercises",
+            "Real-world case studies relevant to the technology industry",
+            "Individual coaching sessions (2 per participant)",
+            "Pre and post-training assessments",
+            "Monthly progress reports",
+            "Final ROI analysis and impact report",
+            "360-degree feedback integration",
+            "Customized training materials with Global Innovations branding"
+        ],
+        "timeline": {
+            "startDate": "2023-09-01",
+            "completionDate": "2023-12-15",
+            "milestoneCode": "MS-001"
+        },
+        "paymentStructure": {
+            "initialPayment": 18750.0,
+            "milestone1Payment": 37500.0,
+            "finalPayment": 18750.0
+        },
+        "contractTermCode": "CT-003",
+        "cancellationTerms": "CAN-002"
+    }
+}

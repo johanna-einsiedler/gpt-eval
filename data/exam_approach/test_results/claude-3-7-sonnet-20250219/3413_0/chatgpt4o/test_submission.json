@@ -1,0 +1,63 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "Agreement_A": [
+        {
+            "issue_id": 1,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "The monthly payment of $1,574.35 does not match the calculated payment for a $320,000 loan at 4.25% over 30 years."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "policy_violation",
+            "location": "Escrow Information section",
+            "description": "Escrow account is required for taxes and insurance as LTV is 80%, but it is not clearly stated."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "policy_violation",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "Default interest rate of 9.25% exceeds the initial rate by more than 5%, violating policy."
+        }
+    ],
+    "Agreement_B": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "LTV ratio is 70%, which is within policy limits, but the DSCR is not explicitly stated as meeting the 1.25x requirement."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "missing_information",
+            "location": "Covenants and Conditions section",
+            "description": "Environmental assessment is required but not mentioned in the document."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "inconsistency",
+            "location": "Closing Costs section",
+            "description": "Total closing costs are listed as $33,000, but itemized costs sum to $33,000.00, which is correct."
+        }
+    ],
+    "Agreement_C": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "The initial draw amount of $75,000 exceeds 50% of the credit line, violating policy."
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "calculation_error",
+            "location": "Property Information section",
+            "description": "Combined LTV ratio is incorrectly calculated as 77.27%; it should be 77.27% based on the provided values."
+        },
+        {
+            "issue_id": 3,
+            "issue_type": "compliance_issue",
+            "location": "Disclosures and Acknowledgments section",
+            "description": "Truth in Lending disclosures are required but not explicitly mentioned in the document."
+        }
+    ]
+}

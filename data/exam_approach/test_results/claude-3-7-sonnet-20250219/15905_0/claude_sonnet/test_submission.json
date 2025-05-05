@@ -1,0 +1,44 @@
+{
+    "candidate_id": "Claude-3-Sonnet",
+    "task1": {
+        "late_deliveries_percentage": 40.0,
+        "most_common_carrier": "SecureShip,EcoLogistics",
+        "average_shipping_cost": 1081.5
+    },
+    "task2": {
+        "route_with_highest_cost_per_km": "Boston-Washington DC",
+        "cost_per_km": 0.5,
+        "total_distance_all_shipments": 118150
+    },
+    "task3": {
+        "carrier_on_time_rates": {
+            "FastExpress": 62.5,
+            "SecureShip": 58.82,
+            "EcoLogistics": 58.82
+        },
+        "most_efficient_carrier": "FastExpress",
+        "efficiency_score": 0.0577
+    },
+    "task4": {
+        "monthly_shipping_costs": [
+            3075.0,
+            2885.0,
+            3757.5,
+            5535.0,
+            5265.0,
+            4995.0,
+            5220.0,
+            3307.5,
+            6165.0,
+            4860.0,
+            3622.5,
+            5387.5
+        ],
+        "peak_shipping_month": "September",
+        "lowest_shipping_month": "February"
+    },
+    "task5": {
+        "potential_savings": 4026.66,
+        "recommended_carrier": "FastExpress"
+    }
+}

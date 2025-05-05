@@ -1,0 +1,25 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "total_compensation_budget": 8465808,
+        "total_benefits_budget": 1606300,
+        "total_training_budget": 181800,
+        "total_hr_budget": 10253908
+    },
+    "task2": {
+        "variance_category_1": "Certifications",
+        "variance_percentage_1": -55.0,
+        "variance_category_2": "Agency Fees",
+        "variance_percentage_2": 40.4
+    },
+    "task3": {
+        "option_selected": "Option C",
+        "projected_savings": 244800
+    },
+    "task4": {
+        "department_1_allocation": 42901,
+        "department_2_allocation": 31865,
+        "department_3_allocation": 27202,
+        "department_4_allocation": 18032
+    }
+}

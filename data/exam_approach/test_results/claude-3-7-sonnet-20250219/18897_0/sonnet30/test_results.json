@@ -1,0 +1,270 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "overall_score": 48.0,
+  "total_points": 48.0,
+  "possible_points": 100,
+  "passed": false,
+  "sections": {
+    "financial_impact": {
+      "score": 10,
+      "possible": 30,
+      "details": {
+        "wage_increase_total_cost": {
+          "submitted": 2367600.0,
+          "correct": 1211184.0,
+          "percent_diff": 95.47814370070938,
+          "points_earned": 0,
+          "points_possible": 10
+        },
+        "benefit_cost_percentage_increase": {
+          "submitted": 14.5,
+          "correct": 30.8,
+          "absolute_diff": 16.3,
+          "points_earned": 0,
+          "points_possible": 10
+        },
+        "per_unit_cost_impact": {
+          "submitted": 0.97,
+          "correct": 1.05,
+          "absolute_diff": 0.08000000000000007,
+          "points_earned": 10,
+          "points_possible": 10
+        }
+      }
+    },
+    "operational_impact": {
+      "score": 0,
+      "possible": 15,
+      "details": {
+        "work_rule_1": {
+          "submitted": 3,
+          "correct": 2,
+          "points_earned": 0,
+          "points_possible": 5
+        },
+        "work_rule_2": {
+          "submitted": 2,
+          "correct": 3,
+          "points_earned": 0,
+          "points_possible": 5
+        },
+        "work_rule_3": {
+          "submitted": 1,
+          "correct": 2,
+          "points_earned": 0,
+          "points_possible": 5
+        }
+      }
+    },
+    "compliance_precedent": {
+      "score": 18.0,
+      "possible": 30,
+      "details": {
+        "proposal_item_1": {
+          "precedent_concern": {
+            "submitted": true,
+            "correct": true,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": false,
+            "correct": false,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_2": {
+          "precedent_concern": {
+            "submitted": false,
+            "correct": true,
+            "points_earned": 0,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": true,
+            "correct": false,
+            "points_earned": 0,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_3": {
+          "precedent_concern": {
+            "submitted": false,
+            "correct": true,
+            "points_earned": 0,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": true,
+            "correct": false,
+            "points_earned": 0,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_4": {
+          "precedent_concern": {
+            "submitted": false,
+            "correct": true,
+            "points_earned": 0,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": false,
+            "correct": false,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_5": {
+          "precedent_concern": {
+            "submitted": false,
+            "correct": false,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": false,
+            "correct": false,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_6": {
+          "precedent_concern": {
+            "submitted": true,
+            "correct": true,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": true,
+            "correct": true,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_7": {
+          "precedent_concern": {
+            "submitted": true,
+            "correct": true,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": true,
+            "correct": false,
+            "points_earned": 0,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_8": {
+          "precedent_concern": {
+            "submitted": true,
+            "correct": true,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": false,
+            "correct": true,
+            "points_earned": 0,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_9": {
+          "precedent_concern": {
+            "submitted": true,
+            "correct": true,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": false,
+            "correct": false,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          }
+        },
+        "proposal_item_10": {
+          "precedent_concern": {
+            "submitted": true,
+            "correct": true,
+            "points_earned": 1.5,
+            "points_possible": 1.5
+          },
+          "compliance_issue": {
+            "submitted": true,
+            "correct": false,
+            "points_earned": 0,
+            "points_possible": 1.5
+          }
+        }
+      }
+    },
+    "impact_ranking": {
+      "score": 20,
+      "possible": 25,
+      "items_within_range": 8,
+      "details": {
+        "proposal_item_1": {
+          "submitted": 2,
+          "correct": 6,
+          "within_range": false
+        },
+        "proposal_item_2": {
+          "submitted": 4,
+          "correct": 5,
+          "within_range": true
+        },
+        "proposal_item_3": {
+          "submitted": 5,
+          "correct": 4,
+          "within_range": true
+        },
+        "proposal_item_4": {
+          "submitted": 8,
+          "correct": 9,
+          "within_range": true
+        },
+        "proposal_item_5": {
+          "submitted": 9,
+          "correct": 10,
+          "within_range": true
+        },
+        "proposal_item_6": {
+          "submitted": 1,
+          "correct": 2,
+          "within_range": true
+        },
+        "proposal_item_7": {
+          "submitted": 3,
+          "correct": 3,
+          "within_range": true
+        },
+        "proposal_item_8": {
+          "submitted": 7,
+          "correct": 8,
+          "within_range": true
+        },
+        "proposal_item_9": {
+          "submitted": 6,
+          "correct": 7,
+          "within_range": true
+        },
+        "proposal_item_10": {
+          "submitted": 10,
+          "correct": 1,
+          "within_range": false
+        }
+      }
+    }
+  },
+  "critical_elements": {
+    "most_severe_impact": false,
+    "financial_impact": false,
+    "compliance_issues": true
+  },
+  "passed_score_threshold": false,
+  "passed_critical_elements": false
+}

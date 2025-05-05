@@ -1,0 +1,69 @@
+{
+    "candidateInfo": {
+        "name": "AI Budget Analyst",
+        "candidateId": "GPT-4-turbo",
+        "date": "2024-02-15"
+    },
+    "exercise1": {
+        "keyDirectives": [
+            {
+                "directiveNumber": 1,
+                "directiveText": "Implement a 12% reduction in discretionary spending across all operational departments (DEPT-OPS-01, DEPT-OPS-02, DEPT-OPS-03, DEPT-OPS-04) while maintaining current service levels.",
+                "priority": "High",
+                "implementationDeadline": "September 30, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-OPS-01",
+                    "DEPT-OPS-02",
+                    "DEPT-OPS-03",
+                    "DEPT-OPS-04"
+                ]
+            },
+            {
+                "directiveNumber": 2,
+                "directiveText": "Allocate 5% of total budget to cybersecurity infrastructure upgrades, with priority given to customer data protection systems.",
+                "priority": "Critical",
+                "implementationDeadline": "August 15, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-IT-01",
+                    "DEPT-IT-02",
+                    "DEPT-SEC-01"
+                ]
+            },
+            {
+                "directiveNumber": 3,
+                "directiveText": "Consolidate vendor contracts for administrative supplies to achieve minimum 8% cost savings, while ensuring all contracts include sustainability requirements.",
+                "priority": "Medium",
+                "implementationDeadline": "December 1, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-ADM-01",
+                    "DEPT-ADM-02",
+                    "DEPT-OPS-01",
+                    "DEPT-OPS-02",
+                    "DEPT-OPS-03",
+                    "DEPT-OPS-04"
+                ]
+            },
+            {
+                "directiveNumber": 4,
+                "directiveText": "Implement zero-based budgeting for all marketing initiatives (DEPT-MKT-01, DEPT-MKT-02) with quarterly performance reviews tied to ROI metrics.",
+                "priority": "High",
+                "implementationDeadline": "October 15, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-MKT-01",
+                    "DEPT-MKT-02"
+                ]
+            },
+            {
+                "directiveNumber": 5,
+                "directiveText": "Establish a contingency reserve fund equal to 3% of total operating budget to address potential economic uncertainties in Q3 and Q4.",
+                "priority": "Critical",
+                "implementationDeadline": "July 31, 2023",
+                "affectedDepartmentCodes": [
+                    "DEPT-FIN-01",
+                    "DEPT-FIN-02",
+                    "DEPT-EXEC-01"
+                ]
+            }
+        ]
+    }
+}

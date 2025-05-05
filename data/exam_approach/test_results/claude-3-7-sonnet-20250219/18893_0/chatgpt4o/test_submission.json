@@ -1,0 +1,51 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "overtime_violations": [
+            "E007",
+            "E013",
+            "E019"
+        ],
+        "shift_differential_violations": [
+            "E006",
+            "E011",
+            "E012"
+        ],
+        "break_period_violations": [
+            "E008",
+            "E009",
+            "E010",
+            "E014",
+            "E016"
+        ],
+        "total_unpaid_wages": 150.0
+    },
+    "task2": {
+        "safety_violations": [
+            "SV-02",
+            "SV-03",
+            "SV-04",
+            "SV-06",
+            "SV-07"
+        ],
+        "reporting_compliance": false,
+        "remediation_status": "RS-01",
+        "days_since_last_safety_meeting": 28
+    },
+    "task3": {
+        "misclassified_employees": [
+            "E003",
+            "E004"
+        ],
+        "seniority_violations": [
+            "E001",
+            "E002"
+        ],
+        "wage_scale_errors": [
+            "WE-01",
+            "WE-02",
+            "WE-04"
+        ],
+        "total_wage_discrepancy": 200.0
+    }
+}

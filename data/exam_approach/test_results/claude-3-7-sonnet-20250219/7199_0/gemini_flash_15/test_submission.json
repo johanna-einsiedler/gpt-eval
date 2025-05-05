@@ -1,0 +1,96 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "discrepancies_found": [
+            {
+                "transaction_id": "TX-4508",
+                "description": "Incorrect Jackpot Payout",
+                "recorded_amount": 3750.0,
+                "correct_amount": 3500.0
+            }
+        ],
+        "running_balance_errors": [
+            {
+                "transaction_id": "TX-4508",
+                "recorded_balance": 53297.3,
+                "correct_balance": 53797.3
+            },
+            {
+                "transaction_id": "TX-4509",
+                "recorded_balance": 58187.9,
+                "correct_balance": 58687.9
+            },
+            {
+                "transaction_id": "TX-4510",
+                "recorded_balance": 52468.9,
+                "correct_balance": 52968.9
+            }
+        ],
+        "total_discrepancy_amount": 250.0,
+        "account_balance_correct": false,
+        "corrected_balance": 52968.9
+    },
+    "task2": {
+        "over_budget_categories": [
+            {
+                "category": "Equipment Maintenance",
+                "budget_amount": 4500.0,
+                "actual_amount": 5875.0,
+                "variance": -1375.0,
+                "percent_variance": -30.56
+            },
+            {
+                "category": "Utilities",
+                "budget_amount": 3200.0,
+                "actual_amount": 3450.75,
+                "variance": -250.75,
+                "percent_variance": -7.84
+            },
+            {
+                "category": "Marketing & Promotions",
+                "budget_amount": 6000.0,
+                "actual_amount": 7245.8,
+                "variance": -1245.8,
+                "percent_variance": -20.76
+            },
+            {
+                "category": "Regulatory Fees",
+                "budget_amount": 5500.0,
+                "actual_amount": 5719.0,
+                "variance": -219.0,
+                "percent_variance": -3.98
+            }
+        ],
+        "total_budget": 69500.0,
+        "total_actual": 72215.8,
+        "total_variance": -2715.8,
+        "total_variance_error": 0.0,
+        "percent_over_budget": -3.91
+    },
+    "task3": {
+        "incorrect_daily_totals": [
+            {
+                "date": "22/04/2023",
+                "game_id": "SLT-003",
+                "reported_total": 3890.6,
+                "correct_total": 3890.6
+            },
+            {
+                "date": "05/04/2023",
+                "game_id": null,
+                "reported_total": 5245.8,
+                "correct_total": 3781.25
+            },
+            {
+                "date": "28/04/2023",
+                "game_id": null,
+                "reported_total": 35508.5,
+                "correct_total": 35508.25
+            }
+        ],
+        "missing_entries": [],
+        "total_collection_reported": 35508.5,
+        "total_collection_correct": 35508.25,
+        "total_collection_error": 0.25
+    }
+}

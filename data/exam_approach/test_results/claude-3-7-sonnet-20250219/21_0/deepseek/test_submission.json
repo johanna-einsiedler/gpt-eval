@@ -1,0 +1,49 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "data_errors": [
+            "Subtotal for Office Supplies is incorrectly calculated (should be $2,750.00 but components add up to $2,750.00 - no error)",
+            "Subtotal for Equipment is incorrectly calculated (should be $3,250.00 but components add up to $3,250.00 - no error)",
+            "Subtotal for Travel & Training is incorrectly calculated (should be $1,850.00 but components add up to $1,850.00 - no error)",
+            "Total expenses are incorrectly calculated (should be $57,750.00 but sum of subtotals is $57,750.00 - no error)"
+        ],
+        "total_correct_expenses": 57750.0,
+        "efficiency_score": 100
+    },
+    "task2": {
+        "coverage_gaps": [
+            "Reception: Monday 8:00-9:00 AM (only 1 staff when 3 required)",
+            "Reception: Tuesday 8:00-9:00 AM (only 1 staff when 3 required)",
+            "Reception: Thursday 8:00-9:00 AM (only 1 staff when 3 required)",
+            "Reception: Friday 8:00-9:00 AM (only 1 staff when 3 required)",
+            "Reception: Peak hours (11:00 AM - 2:00 PM) on Monday (only 3 staff when 5 required)",
+            "Reception: Peak hours (11:00 AM - 2:00 PM) on Tuesday (only 3 staff when 5 required)",
+            "Reception: Peak hours (11:00 AM - 2:00 PM) on Thursday (only 3 staff when 5 required)",
+            "Reception: Peak hours (11:00 AM - 2:00 PM) on Friday (only 3 staff when 5 required)",
+            "Finance: Peak hours (1:00 PM - 4:00 PM) on Monday (only 4 staff when 6 required)",
+            "Finance: Peak hours (1:00 PM - 4:00 PM) on Tuesday (only 4 staff when 6 required)",
+            "Finance: Peak hours (1:00 PM - 4:00 PM) on Wednesday (only 4 staff when 6 required)",
+            "Finance: Peak hours (1:00 PM - 4:00 PM) on Thursday (only 4 staff when 6 required)",
+            "Finance: Peak hours (1:00 PM - 4:00 PM) on Friday (only 4 staff when 6 required)",
+            "HR: Monday 8:30-9:00 AM (only 1 staff when 2 required)",
+            "HR: Tuesday 8:30-9:00 AM (only 1 staff when 2 required)"
+        ],
+        "optimal_staff_count": 14,
+        "schedule_conflicts": [
+            "E004: Working more than 3 days per week (violates part-time constraint)",
+            "E011: Working only 3 days per week (should be 5 days for full-time)",
+            "E012: Working only 3 days per week (should be 5 days for full-time)"
+        ]
+    },
+    "task3": {
+        "report_frequency": "weekly",
+        "key_metrics": [
+            "M001",
+            "M003",
+            "M004",
+            "M006",
+            "M010"
+        ],
+        "selected_report_format": "Summary"
+    }
+}

@@ -1,0 +1,74 @@
+{
+  "candidate_id": "GPT-4o",
+  "overall_score": 65.87,
+  "passed": false,
+  "task1": {
+    "passed": false,
+    "score": 0.8044871794871794,
+    "details": {
+      "critical_path": {
+        "passed": true,
+        "score": 0.875,
+        "message": "Critical path has 7/8 correct elements"
+      },
+      "project_duration": {
+        "passed": true,
+        "score": 1.0,
+        "message": "Project duration within tolerance (\u00b10 days)"
+      },
+      "slack_values": {
+        "passed": false,
+        "score": 0.5384615384615384,
+        "message": "7/13 slack values correct"
+      }
+    }
+  },
+  "task2": {
+    "passed": false,
+    "score": 0.55625,
+    "details": {
+      "optimal_crash_plan": {
+        "passed": false,
+        "score": 0.6,
+        "message": "3/5 crash activities correct"
+      },
+      "crashed_duration": {
+        "passed": true,
+        "score": 0.75,
+        "message": "Project duration within tolerance (\u00b11 days)"
+      },
+      "total_crash_cost": {
+        "passed": false,
+        "score": 0,
+        "message": "Crash cost off by $13000"
+      },
+      "new_critical_path": {
+        "passed": true,
+        "score": 0.875,
+        "message": "Critical path has 7/8 correct elements"
+      }
+    }
+  },
+  "task3": {
+    "passed": false,
+    "score": 0.6153846153846154,
+    "details": {
+      "resource_leveled_schedule": {
+        "passed": true,
+        "score": 0.8461538461538461,
+        "message": "11/13 reasonable start times"
+      },
+      "project_duration_after_leveling": {
+        "passed": true,
+        "score": 1.0,
+        "message": "Project duration within tolerance (\u00b10 days)"
+      },
+      "max_resource_usage": {
+        "passed": false,
+        "score": 0,
+        "message": "Suboptimal resource usage (19 > 14)"
+      }
+    }
+  },
+  "tasks_passed": "0/3"
+}

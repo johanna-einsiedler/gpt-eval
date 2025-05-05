@@ -1,0 +1,47 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "exercise1": {
+        "case1_classification": "Level 1",
+        "case1_action": "Verbal warning, additional training",
+        "case2_classification": "Level 3",
+        "case2_action": "Final written warning, suspension without pay (1-5 days), demotion, removal of supervisory responsibilities",
+        "case3_classification": "Level 3",
+        "case3_action": "Final written warning, suspension without pay (1-5 days), demotion, removal of supervisory responsibilities",
+        "precedent_case_ids": [
+            "CV-2021-001",
+            "CV-2021-034"
+        ]
+    },
+    "exercise2": {
+        "workflow_steps": [
+            "Step 1: Compliance investigation and recommendation",
+            "Step 2: HR assessment of recommendation against policies",
+            "Step 3: Legal review of case details",
+            "Step 4: Department Head consultation",
+            "Step 5: Final approval by HR Director and Compliance Director"
+        ],
+        "required_documentation": [
+            "Final Warning Form",
+            "Investigation Report",
+            "Suspension Notice",
+            "HR-Compliance Joint Assessment"
+        ],
+        "approval_sequence": [
+            "Compliance Director",
+            "HR Director",
+            "Department Director",
+            "Legal Representative"
+        ]
+    },
+    "exercise3": {
+        "communication_template": "COMPLIANCE VIOLATION NOTIFICATION\nDate: [TODAY'S DATE]\nCase ID: [UNIQUE ID]\nViolation Level: 3\nConfidentiality Rating: Sensitive\n\nIncident Description:\n[PROVIDE FACTUAL DESCRIPTION OF VIOLATION]\n\nApplicable Policy/Regulation:\n[SPECIFY POLICY OR REGULATION VIOLATED]\n\nRecommended Action:\nFinal written warning, suspension without pay (1-5 days), demotion, removal of supervisory responsibilities\n\nRequired Stakeholders:\nDepartment Director, HR Manager, Compliance Director, Legal Representative\n\nResponse Timeline:\n[5 BUSINESS DAYS]\n\nAttachments:\n[LIST OF SUPPORTING DOCUMENTS]",
+        "escalation_threshold": "Immediate Escalation Required: Any Level 3 or 4 violation; any violation involving a Director or above; any violation with potential regulatory impact; any violation with potential financial impact exceeding $10,000",
+        "confidentiality_rating": "Sensitive",
+        "required_stakeholders": [
+            "Department Director",
+            "HR Manager",
+            "Compliance Director",
+            "Legal Representative"
+        ]
+    }
+}

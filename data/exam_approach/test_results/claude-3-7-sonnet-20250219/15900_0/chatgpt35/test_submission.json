@@ -1,0 +1,25 @@
+{
+    "candidate_id": "LogiModel-3.0",
+    "task1": {
+        "forecast_values": [
+            230,
+            235,
+            240,
+            245
+        ],
+        "accuracy_metric": 0.03,
+        "cost_driver": "weight_lbs",
+        "correlation_value": 0.98
+    },
+    "task2": {
+        "fixed_cost": 2000.0,
+        "variable_cost_coefficient": 3.0,
+        "total_estimated_cost": 21500.0,
+        "cost_breakdown": {
+            "labor": 2700.0,
+            "transportation": 900.0,
+            "handling": 600.0,
+            "other": 400.0
+        }
+    }
+}

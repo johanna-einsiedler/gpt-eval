@@ -1,0 +1,67 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "identified_risks": [
+        {
+            "risk_id": 1,
+            "risk_description": "The union's demand for a 5% annual wage increase significantly exceeds the company's offer of 1.5%, risking a strike or prolonged negotiations.",
+            "probability": 4,
+            "impact": 4,
+            "risk_score": 16,
+            "risk_category": "Financial",
+            "justification": "The large gap in wage increase proposals could lead to financial strain or a strike, impacting revenue and operations."
+        },
+        {
+            "risk_id": 2,
+            "risk_description": "The union's demand for increased healthcare premium coverage to 90% could further strain the company's already high healthcare costs.",
+            "probability": 4,
+            "impact": 3,
+            "risk_score": 12,
+            "risk_category": "Financial",
+            "justification": "With healthcare costs rising 8% annually, increasing premium coverage could significantly impact financial stability."
+        },
+        {
+            "risk_id": 3,
+            "risk_description": "The union's demand for stronger job security provisions, including a 60-day layoff notice, conflicts with the company's need for operational flexibility.",
+            "probability": 3,
+            "impact": 4,
+            "risk_score": 12,
+            "risk_category": "Operational",
+            "justification": "This demand could limit the company's ability to adapt to market changes, affecting operational efficiency."
+        },
+        {
+            "risk_id": 4,
+            "risk_description": "The union's demand for restrictions on temporary workers could hinder the company's ability to manage production surges effectively.",
+            "probability": 3,
+            "impact": 3,
+            "risk_score": 9,
+            "risk_category": "Operational",
+            "justification": "Limiting temporary workers could reduce flexibility in meeting production demands, impacting delivery schedules."
+        },
+        {
+            "risk_id": 5,
+            "risk_description": "The union's demand for an enhanced safety committee with union co-chair could lead to increased operational costs and potential conflicts.",
+            "probability": 3,
+            "impact": 3,
+            "risk_score": 9,
+            "risk_category": "Operational",
+            "justification": "While safety is crucial, increased union involvement could lead to higher costs and operational inefficiencies."
+        }
+    ],
+    "priority_risks": [
+        {
+            "risk_id": 1,
+            "mitigation_strategy": "Propose a compromise on wage increases, such as a tiered approach starting at 2.5% with performance-based bonuses. This could align more closely with industry standards and reduce the risk of a strike.",
+            "expected_outcome": "This strategy could lead to a more amicable negotiation process, reducing the likelihood of a strike and maintaining operational continuity."
+        },
+        {
+            "risk_id": 3,
+            "mitigation_strategy": "Negotiate a balanced approach to job security, offering a 30-day notice period with severance packages, while maintaining some flexibility for performance-based layoffs.",
+            "expected_outcome": "This compromise could satisfy union demands for job security while preserving some operational flexibility for the company."
+        },
+        {
+            "risk_id": 2,
+            "mitigation_strategy": "Introduce a high-deductible health plan option with health savings accounts to manage rising healthcare costs while offering employees more choices.",
+            "expected_outcome": "This could help control healthcare expenses while providing employees with flexible options, potentially satisfying both parties."
+        }
+    ]
+}

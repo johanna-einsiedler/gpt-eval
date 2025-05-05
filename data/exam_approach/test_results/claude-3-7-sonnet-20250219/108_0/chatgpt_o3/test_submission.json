@@ -1,0 +1,74 @@
+{
+    "candidateId": "GPT-4o",
+    "task1": {
+        "keyRequirements": [
+            "Leadership development for 25 high-potential managers covering strategic thinking, team management, communication, conflict resolution and change management",
+            "Blended learning design with in-person workshops in San Francisco and virtual sessions that suit three U.S. time zones",
+            "Minimum of two individual coaching sessions per participant plus three-month post-training support",
+            "Program must run between September 1 and December 15 2023 with all invoices issued by December 15",
+            "Total cost may not exceed the $75,000 budget and all content must be customized with Global Innovations branding under a confidentiality agreement"
+        ],
+        "potentialChallenges": [
+            "Delivering a high-touch, customized program while meeting both the $75,000 cap and a 25 % profit margin",
+            "Coordinating dates across multiple locations and time zones within the four-month window and two-consecutive-day limit for in-person sessions",
+            "Securing technology-sector-experienced trainers who are available on the tightened schedule"
+        ],
+        "nonNegotiablePoints": [
+            "Budget ceiling of $75,000",
+            "Completion and invoicing no later than December 15 2023",
+            "At least two individual coaching sessions per participant",
+            "All in-person training to take place at the San Francisco headquarters with no more than two consecutive training days at a time",
+            "Client-specific customization and execution of the client’s confidentiality agreement"
+        ],
+        "flexiblePoints": [
+            "Exact mix of in-person versus virtual workshop hours",
+            "Depth and format of post-training support beyond the required three months",
+            "Choice of milestone payment schedule provided it aligns with fiscal-year constraints",
+            "Allocation of senior versus associate trainers for virtual components"
+        ]
+    },
+    "task2": {
+        "proposedFee": 75000.0,
+        "breakdownOfCosts": {
+            "trainerFees": 35000.0,
+            "materials": 7500.0,
+            "travelExpenses": 5000.0,
+            "administrativeCosts": 8750.0
+        },
+        "profitMargin": 25.0,
+        "valueJustification": [
+            "Re-balanced delivery (fewer in-person days, more virtual time) keeps costs within budget while maintaining engagement quality",
+            "Includes two individual coaching sessions per participant, maximizing behavioral transfer and ROI",
+            "Facilitators have deep technology-sector expertise, ensuring immediate relevance for participants",
+            "Robust measurement package (pre/post assessments, 360° feedback and ROI report) demonstrates tangible business impact"
+        ]
+    },
+    "task3": {
+        "objection1Response": "A",
+        "objection2Response": "B",
+        "objection3Response": "A",
+        "objection4Response": "D",
+        "objection5Response": "B"
+    },
+    "task4": {
+        "deliverables": [
+            "Three 2-day in-person leadership workshops at San Francisco HQ",
+            "Three half-day virtual interactive sessions for cross-site participation",
+            "Two one-hour individual coaching sessions for each of the 25 participants",
+            "Customized participant workbooks, digital resources and branded slide decks",
+            "Pre-/post-program assessments, monthly progress reports and a final ROI & impact analysis"
+        ],
+        "timeline": {
+            "startDate": "2023-09-01",
+            "completionDate": "2023-12-15",
+            "milestoneCode": "MS-001"
+        },
+        "paymentStructure": {
+            "initialPayment": 18750.0,
+            "milestone1Payment": 37500.0,
+            "finalPayment": 18750.0
+        },
+        "contractTermCode": "CT-003",
+        "cancellationTerms": "CAN-002"
+    }
+}

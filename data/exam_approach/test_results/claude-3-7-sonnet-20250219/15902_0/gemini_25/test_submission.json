@@ -1,0 +1,39 @@
+{
+    "candidate_id": "GPT-4o",
+    "on_time_delivery": {
+        "overall_rate": 0.58,
+        "monthly_rates": {
+            "Jan": 0.5,
+            "Feb": 0.67,
+            "Mar": 0.5,
+            "Apr": 0.67
+        },
+        "highest_month": "Feb",
+        "lowest_month": "Jan"
+    },
+    "order_fulfillment": {
+        "overall_rate": 0.93,
+        "category_rates": {
+            "Electronics": 0.96,
+            "Furniture": 0.82,
+            "Apparel": 0.95
+        },
+        "lowest_category": "Furniture"
+    },
+    "inventory_turns": {
+        "average_turns": 209.1,
+        "sku_turns": {
+            "E001": 236.84,
+            "E002": 163.76,
+            "F001": 386.3,
+            "F002": 300.0,
+            "A001": 98.41,
+            "A002": 69.3
+        },
+        "top_performers": [
+            "F001",
+            "F002",
+            "E001"
+        ]
+    }
+}

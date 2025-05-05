@@ -1,0 +1,123 @@
+{
+  "candidate_id": "GPT-4-turbo",
+  "overall_score": 23.08,
+  "total_points_earned": 3.0,
+  "total_points_possible": 13,
+  "passed": false,
+  "critical_elements": {
+    "roi_calculations": false,
+    "average_cost_per_participant": false,
+    "projected_annual_savings": true
+  },
+  "task_results": {
+    "task1": {
+      "points_possible": 4,
+      "points_earned": 0.5,
+      "details": {
+        "cost_per_participant": {
+          "correct": false,
+          "submitted": 209.09,
+          "expected": 117.5
+        },
+        "highest_cost_program": {
+          "correct": false,
+          "submitted": "Weight Loss Program",
+          "expected": "Smoking Cessation"
+        },
+        "lowest_cost_program": {
+          "correct": false,
+          "submitted": "Sleep Improvement",
+          "expected": "Ergonomics Training"
+        },
+        "participation_threshold_programs": {
+          "correct": "partial",
+          "submitted": [
+            "Nutrition Workshop",
+            "Mental Health Awareness",
+            "Smoking Cessation",
+            "Diabetes Management"
+          ],
+          "expected": [
+            "Smoking Cessation"
+          ]
+        }
+      }
+    },
+    "task2": {
+      "points_possible": 5,
+      "points_earned": 1.5,
+      "details": {
+        "program_roi_values": {
+          "Fitness Challenge": {
+            "correct": false,
+            "submitted": 0.67,
+            "expected": 0.47
+          },
+          "Nutrition Workshop": {
+            "correct": false,
+            "submitted": 0.13,
+            "expected": 0.1
+          },
+          "Stress Management": {
+            "correct": false,
+            "submitted": 0.5,
+            "expected": 0.66
+          },
+          "Weight Loss Program": {
+            "correct": false,
+            "submitted": 0.17,
+            "expected": 0.1
+          },
+          "Smoking Cessation": {
+            "correct": false,
+            "submitted": 1.33,
+            "expected": 0.96
+          }
+        },
+        "highest_roi_program": {
+          "correct": true,
+          "submitted": "Smoking Cessation",
+          "expected": "Smoking Cessation"
+        },
+        "cost_effective_programs": {
+          "correct": "partial",
+          "submitted": [
+            "Fitness Challenge",
+            "Stress Management",
+            "Smoking Cessation"
+          ],
+          "expected": [
+            "Fitness Challenge",
+            "Stress Management"
+          ]
+        }
+      }
+    },
+    "task3": {
+      "points_possible": 4,
+      "points_earned": 1,
+      "details": {
+        "quarterly_cost_trend": {
+          "correct": false,
+          "submitted": -14.29,
+          "expected": -3.92
+        },
+        "projected_annual_savings": {
+          "correct": true,
+          "submitted": 30000,
+          "expected": 30000
+        },
+        "cost_reduction_percentage": {
+          "correct": false,
+          "submitted": -14.29,
+          "expected": 14.29
+        },
+        "break_even_month": {
+          "correct": false,
+          "submitted": 10,
+          "expected": 12
+        }
+      }
+    }
+  }
+}

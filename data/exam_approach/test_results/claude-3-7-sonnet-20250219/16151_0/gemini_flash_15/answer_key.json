@@ -1,0 +1,152 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "identified_risks": [
+        {
+            "risk_id": "R1",
+            "risk_description": "Limited cloud expertise within the current IT team",
+            "risk_category": "Resource",
+            "probability_score": 5,
+            "impact_score": 4,
+            "risk_score": 20,
+            "response_strategy": "Mitigate",
+            "response_actions": "Accelerate AWS training for key team members, extend cloud architect contract, and implement knowledge transfer sessions from experienced to inexperienced staff"
+        },
+        {
+            "risk_id": "R2",
+            "risk_description": "Database migration exceeds 4-hour downtime window",
+            "risk_category": "Technical",
+            "probability_score": 4,
+            "impact_score": 5,
+            "risk_score": 20,
+            "response_strategy": "Mitigate",
+            "response_actions": "Implement data replication solution, conduct multiple practice migrations, develop detailed rollback plan, and schedule migration during lowest usage period"
+        },
+        {
+            "risk_id": "R3",
+            "risk_description": "Cloud architect only available for 4 months of 6-month project",
+            "risk_category": "Resource",
+            "probability_score": 5,
+            "impact_score": 4,
+            "risk_score": 20,
+            "response_strategy": "Mitigate",
+            "response_actions": "Front-load architectural decisions, create detailed documentation, implement knowledge transfer plan, and identify backup resources for final 2 months"
+        },
+        {
+            "risk_id": "R4",
+            "risk_description": "Legacy applications incompatible with cloud environment",
+            "risk_category": "Technical",
+            "probability_score": 3,
+            "impact_score": 5,
+            "risk_score": 15,
+            "response_strategy": "Mitigate",
+            "response_actions": "Conduct early compatibility testing, identify refactoring needs, prepare containerization strategy, and allocate additional development resources if needed"
+        },
+        {
+            "risk_id": "R5",
+            "risk_description": "Business analyst leaving company during critical project phase",
+            "risk_category": "Resource",
+            "probability_score": 5,
+            "impact_score": 3,
+            "risk_score": 15,
+            "response_strategy": "Avoid",
+            "response_actions": "Accelerate knowledge transfer, complete critical BA tasks before departure, document all requirements thoroughly, and identify internal resource to assume responsibilities"
+        },
+        {
+            "risk_id": "R6",
+            "risk_description": "Regulatory compliance requirements not met in cloud environment",
+            "risk_category": "External",
+            "probability_score": 3,
+            "impact_score": 5,
+            "risk_score": 15,
+            "response_strategy": "Mitigate",
+            "response_actions": "Engage compliance officer early, document all regulatory requirements, implement AWS compliance tools, and conduct pre-migration compliance audit"
+        },
+        {
+            "risk_id": "R7",
+            "risk_description": "Project exceeds fixed 6-month timeline",
+            "risk_category": "Schedule",
+            "probability_score": 4,
+            "impact_score": 4,
+            "risk_score": 16,
+            "response_strategy": "Mitigate",
+            "response_actions": "Implement aggressive schedule monitoring, identify schedule optimization opportunities, prepare contingency plans for critical path activities, and add buffer to high-risk tasks"
+        },
+        {
+            "risk_id": "R8",
+            "risk_description": "Integration with third-party financial services fails",
+            "risk_category": "Technical",
+            "probability_score": 3,
+            "impact_score": 5,
+            "risk_score": 15,
+            "response_strategy": "Mitigate",
+            "response_actions": "Engage third-party vendors early, conduct integration testing in phases, develop detailed integration specifications, and prepare fallback options"
+        },
+        {
+            "risk_id": "R9",
+            "risk_description": "AWS contract finalization delayed",
+            "risk_category": "External",
+            "probability_score": 3,
+            "impact_score": 4,
+            "risk_score": 12,
+            "response_strategy": "Mitigate",
+            "response_actions": "Escalate to executive sponsor, establish interim agreement for development environments, prepare alternative cloud provider assessment, and develop contract contingency plan"
+        },
+        {
+            "risk_id": "R10",
+            "risk_description": "Project exceeds fixed budget of $450,000",
+            "risk_category": "Financial",
+            "probability_score": 3,
+            "impact_score": 4,
+            "risk_score": 12,
+            "response_strategy": "Mitigate",
+            "response_actions": "Implement strict cost controls, prioritize expenditures, identify cost-saving opportunities, monitor AWS resource usage closely, and establish approval process for unplanned expenses"
+        },
+        {
+            "risk_id": "R11",
+            "risk_description": "Security requirements not properly implemented in cloud environment",
+            "risk_category": "Technical",
+            "probability_score": 3,
+            "impact_score": 5,
+            "risk_score": 15,
+            "response_strategy": "Mitigate",
+            "response_actions": "Engage security officer throughout project, implement AWS security best practices, conduct security testing at each phase, and perform third-party security audit"
+        },
+        {
+            "risk_id": "R12",
+            "risk_description": "Insufficient testing time leads to undetected issues",
+            "risk_category": "Schedule",
+            "probability_score": 4,
+            "impact_score": 4,
+            "risk_score": 16,
+            "response_strategy": "Mitigate",
+            "response_actions": "Implement continuous testing throughout project, automate testing where possible, prioritize critical functionality testing, and develop comprehensive test scenarios early"
+        }
+    ],
+    "priority_risks": [
+        "R1",
+        "R2",
+        "R3"
+    ],
+    "risk_matrix": {
+        "high_impact_high_probability": [
+            "R1",
+            "R2",
+            "R3",
+            "R7",
+            "R12"
+        ],
+        "high_impact_low_probability": [
+            "R4",
+            "R6",
+            "R8",
+            "R9",
+            "R10",
+            "R11"
+        ],
+        "low_impact_high_probability": [
+            "R5"
+        ],
+        "low_impact_low_probability": []
+    },
+    "contingency_budget": 182500
+}

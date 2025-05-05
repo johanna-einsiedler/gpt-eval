@@ -1,0 +1,154 @@
+{
+  "candidate_id": "GPT-4o",
+  "task1": {
+    "points": 10.0,
+    "max_points": 40,
+    "details": {
+      "total_annual_budget": {
+        "points": 0,
+        "max": 10,
+        "note": "Outside acceptable range"
+      },
+      "cost_per_MW": {
+        "points": 0,
+        "max": 5,
+        "note": "Outside acceptable range"
+      },
+      "largest_expense_category": {
+        "points": 0,
+        "max": 5,
+        "note": "Incorrectly identified"
+      },
+      "largest_expense_amount": {
+        "points": 0,
+        "max": 10,
+        "note": "Outside acceptable range"
+      },
+      "quarterly_distribution": {
+        "Q1": {
+          "points": 2.5,
+          "max": 2.5,
+          "note": "Within 5 percentage points"
+        },
+        "Q2": {
+          "points": 2.5,
+          "max": 2.5,
+          "note": "Within 5 percentage points"
+        },
+        "Q3": {
+          "points": 2.5,
+          "max": 2.5,
+          "note": "Within 5 percentage points"
+        },
+        "Q4": {
+          "points": 2.5,
+          "max": 2.5,
+          "note": "Within 5 percentage points"
+        }
+      }
+    }
+  },
+  "task2": {
+    "points": 25,
+    "max_points": 30,
+    "details": {
+      "variance_contributors": {
+        "contributor_1": {
+          "points": 5,
+          "max": 5,
+          "note": "Correctly identified category; Provided plausible root cause"
+        },
+        "contributor_2": {
+          "points": 5,
+          "max": 5,
+          "note": "Correctly identified category; Provided plausible root cause"
+        },
+        "contributor_3": {
+          "points": 5,
+          "max": 5,
+          "note": "Correctly identified category; Provided plausible root cause"
+        }
+      },
+      "revised_budget_total": {
+        "points": 0,
+        "max": 5,
+        "note": "Outside acceptable range"
+      },
+      "contingency": {
+        "points": 10,
+        "max": 10,
+        "note": "Within recommended range (8-12%)"
+      }
+    }
+  },
+  "task3": {
+    "points": 26,
+    "max_points": 30,
+    "details": {
+      "key_budget_priorities": {
+        "priority_1": {
+          "points": 3,
+          "max": 3,
+          "note": "Addresses critical maintenance needs"
+        },
+        "priority_2": {
+          "points": 3,
+          "max": 3,
+          "note": "Addresses critical maintenance needs"
+        },
+        "priority_3": {
+          "points": 3,
+          "max": 3,
+          "note": "Addresses critical maintenance needs"
+        }
+      },
+      "cost_saving_measures": {
+        "measure_1": {
+          "points": 0,
+          "max": 2,
+          "note": "Unrealistic or counterproductive"
+        },
+        "measure_2": {
+          "points": 2,
+          "max": 2,
+          "note": "Realistic and aligned with benchmarks"
+        },
+        "measure_3": {
+          "points": 2,
+          "max": 2,
+          "note": "Realistic and aligned with benchmarks"
+        }
+      },
+      "major_maintenance_ROI": {
+        "item": {
+          "points": 2,
+          "max": 2,
+          "note": "Valid maintenance item"
+        },
+        "cost": {
+          "points": 2,
+          "max": 2,
+          "note": "Realistic cost calculation"
+        },
+        "return": {
+          "points": 0,
+          "max": 2,
+          "note": "Unrealistic return or payback period"
+        }
+      },
+      "five_year_projection": {
+        "points": 9,
+        "max": 9,
+        "note": "Appropriate annual increases (3-5%)"
+      }
+    }
+  },
+  "total_points": 61.0,
+  "max_points": 100,
+  "overall_score": 61.0,
+  "passed_minimum_requirements": false,
+  "passed": false,
+  "task1_percent": 25.0,
+  "task2_percent": 83.33,
+  "task3_percent": 86.67
+}

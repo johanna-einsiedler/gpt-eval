@@ -1,0 +1,487 @@
+{
+  "candidate_name": "EVALUATOR_KEY",
+  "exam_date": "2023-06-15",
+  "task1_purchase_order_review": {
+    "evaluations": [
+      {
+        "po_number": "PO-001",
+        "compliant_determination": {
+          "correct": true,
+          "points_earned": 2,
+          "points_possible": 2
+        },
+        "violations": {
+          "identified": [
+            {
+              "violation_code": "V01",
+              "policy_section": "PUR-1.1.2",
+              "corrective_action": {
+                "candidate": "CA01",
+                "correct": true,
+                "expected": "CA01"
+              },
+              "points_earned": 2
+            },
+            {
+              "violation_code": "V03",
+              "policy_section": "PUR-1.2.3",
+              "corrective_action": {
+                "candidate": "CA03",
+                "correct": true,
+                "expected": "CA03"
+              },
+              "points_earned": 2
+            },
+            {
+              "violation_code": "V06",
+              "policy_section": "PUR-2.1.1",
+              "corrective_action": {
+                "candidate": "CA06",
+                "correct": true,
+                "expected": "CA06"
+              },
+              "points_earned": 2
+            }
+          ],
+          "missed": [],
+          "incorrect": [],
+          "points_earned": 6,
+          "points_possible": 6
+        },
+        "total_points_earned": 8,
+        "total_points_possible": 8
+      },
+      {
+        "po_number": "PO-002",
+        "compliant_determination": {
+          "correct": true,
+          "points_earned": 2,
+          "points_possible": 2
+        },
+        "violations": {
+          "identified": [
+            {
+              "violation_code": "V01",
+              "policy_section": "PUR-1.1.3",
+              "corrective_action": {
+                "candidate": "CA01",
+                "correct": true,
+                "expected": "CA01"
+              },
+              "points_earned": 2
+            }
+          ],
+          "missed": [],
+          "incorrect": [],
+          "points_earned": 2,
+          "points_possible": 2
+        },
+        "total_points_earned": 4,
+        "total_points_possible": 4
+      },
+      {
+        "po_number": "PO-003",
+        "compliant_determination": {
+          "correct": true,
+          "points_earned": 2,
+          "points_possible": 2
+        },
+        "violations": {
+          "identified": [
+            {
+              "violation_code": "V02",
+              "policy_section": "PUR-1.2.1",
+              "corrective_action": {
+                "candidate": "CA02",
+                "correct": true,
+                "expected": "CA02"
+              },
+              "points_earned": 2
+            },
+            {
+              "violation_code": "V03",
+              "policy_section": "PUR-1.2.3",
+              "corrective_action": {
+                "candidate": "CA03",
+                "correct": true,
+                "expected": "CA03"
+              },
+              "points_earned": 2
+            },
+            {
+              "violation_code": "V06",
+              "policy_section": "PUR-2.1.1",
+              "corrective_action": {
+                "candidate": "CA06",
+                "correct": true,
+                "expected": "CA06"
+              },
+              "points_earned": 2
+            }
+          ],
+          "missed": [],
+          "incorrect": [],
+          "points_earned": 6,
+          "points_possible": 6
+        },
+        "total_points_earned": 8,
+        "total_points_possible": 8
+      },
+      {
+        "po_number": "PO-004",
+        "compliant_determination": {
+          "correct": true,
+          "points_earned": 2,
+          "points_possible": 2
+        },
+        "violations": {
+          "identified": [
+            {
+              "violation_code": "V04",
+              "policy_section": "PUR-1.3.3",
+              "corrective_action": {
+                "candidate": "CA04",
+                "correct": true,
+                "expected": "CA04"
+              },
+              "points_earned": 2
+            }
+          ],
+          "missed": [],
+          "incorrect": [],
+          "points_earned": 2,
+          "points_possible": 2
+        },
+        "total_points_earned": 4,
+        "total_points_possible": 4
+      },
+      {
+        "po_number": "PO-005",
+        "compliant_determination": {
+          "correct": true,
+          "points_earned": 2,
+          "points_possible": 2
+        },
+        "violations": {
+          "identified": [
+            {
+              "violation_code": "V01",
+              "policy_section": "PUR-1.1.4",
+              "corrective_action": {
+                "candidate": "CA01",
+                "correct": true,
+                "expected": "CA01"
+              },
+              "points_earned": 2
+            },
+            {
+              "violation_code": "V06",
+              "policy_section": "PUR-2.1.1",
+              "corrective_action": {
+                "candidate": "CA06",
+                "correct": true,
+                "expected": "CA06"
+              },
+              "points_earned": 2
+            }
+          ],
+          "missed": [],
+          "incorrect": [],
+          "points_earned": 4,
+          "points_possible": 4
+        },
+        "total_points_earned": 6,
+        "total_points_possible": 6
+      }
+    ],
+    "points_earned": 30,
+    "points_possible": 40,
+    "non_compliant_identified_count": 5,
+    "violations_identified_count": 10,
+    "total_violations_count": 10
+  },
+  "task2_contract_clause_analysis": {
+    "evaluations": [
+      {
+        "contract": "CONTRACT SAMPLE 1",
+        "clause_number": 1,
+        "compliance_determination": {
+          "candidate": "NC",
+          "expected": "NC",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "PUR-2.1.1",
+          "expected": "PUR-2.1.1",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "corrective_action": {
+          "candidate": "CA06",
+          "expected": "CA06",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "total_points_earned": 3,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 1",
+        "clause_number": 2,
+        "compliance_determination": {
+          "candidate": "NC",
+          "expected": "NC",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "PUR-2.1.2",
+          "expected": "PUR-2.1.2",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "corrective_action": {
+          "candidate": "CA06",
+          "expected": "CA06",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "total_points_earned": 3,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 1",
+        "clause_number": 3,
+        "compliance_determination": {
+          "candidate": "C",
+          "expected": "C",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "corrective_action": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "total_points_earned": 1,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 1",
+        "clause_number": 4,
+        "compliance_determination": {
+          "candidate": "C",
+          "expected": "C",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "corrective_action": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "total_points_earned": 1,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 2",
+        "clause_number": 5,
+        "compliance_determination": {
+          "candidate": "C",
+          "expected": "C",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "corrective_action": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "total_points_earned": 1,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 2",
+        "clause_number": 6,
+        "compliance_determination": {
+          "candidate": "NC",
+          "expected": "NC",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "PUR-2.2.4",
+          "expected": "PUR-2.2.4",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "corrective_action": {
+          "candidate": "CA07",
+          "expected": "CA07",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "total_points_earned": 3,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 2",
+        "clause_number": 7,
+        "compliance_determination": {
+          "candidate": "NC",
+          "expected": "NC",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "PUR-2.3.1",
+          "expected": "PUR-2.3.1",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "corrective_action": {
+          "candidate": "CA08",
+          "expected": "CA08",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "total_points_earned": 3,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 3",
+        "clause_number": 8,
+        "compliance_determination": {
+          "candidate": "C",
+          "expected": "C",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "corrective_action": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "total_points_earned": 1,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 3",
+        "clause_number": 9,
+        "compliance_determination": {
+          "candidate": "C",
+          "expected": "C",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "corrective_action": {
+          "candidate": "",
+          "expected": "",
+          "correct": false,
+          "points_earned": 0,
+          "points_possible": 0
+        },
+        "total_points_earned": 1,
+        "total_points_possible": 3
+      },
+      {
+        "contract": "CONTRACT SAMPLE 3",
+        "clause_number": 10,
+        "compliance_determination": {
+          "candidate": "NC",
+          "expected": "NC",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "policy_section": {
+          "candidate": "PUR-2.3.4",
+          "expected": "PUR-2.3.4",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "corrective_action": {
+          "candidate": "CA08",
+          "expected": "CA08",
+          "correct": true,
+          "points_earned": 1,
+          "points_possible": 1
+        },
+        "total_points_earned": 3,
+        "total_points_possible": 3
+      }
+    ],
+    "points_earned": 20,
+    "points_possible": 30,
+    "correct_compliance_assessments": 10
+  },
+  "critical_requirements": {
+    "identified_3_of_5_non_compliant_pos": true,
+    "identified_7_of_10_violations": true,
+    "correctly_assessed_7_of_10_clauses": true,
+    "all_met": true
+  },
+  "overall_score": 71.43
+}

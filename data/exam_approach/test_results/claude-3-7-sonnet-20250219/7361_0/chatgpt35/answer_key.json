@@ -1,0 +1,130 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "scenarios": [
+        {
+            "scenario_number": 1,
+            "missing_information": [
+                "Total amount of self-employment income from side jobs",
+                "Types of services provided in side jobs",
+                "Business expenses related to side jobs",
+                "Whether any 1099 forms were received for the side work",
+                "Mileage or vehicle expenses related to side jobs"
+            ],
+            "interview_questions": [
+                "Can you estimate the total amount you earned from these weekend handyman jobs during the tax year?",
+                "What specific types of services did you provide in these side jobs?",
+                "Did you incur any expenses related to these jobs, such as tools, materials, or transportation costs?",
+                "Did any of your clients issue you a 1099-MISC or 1099-NEC form for the work you performed?",
+                "Did you keep track of the mileage when driving to these side jobs?"
+            ],
+            "tax_form": "Form 1040 Schedule C",
+            "documentation_needed": [
+                "Records of all side job income (payment receipts, invoices, bank statements)",
+                "Receipts for any business expenses related to side work",
+                "Mileage log if vehicle was used for business purposes",
+                "Any 1099 forms received from clients",
+                "Calendar or appointment book showing dates of side jobs"
+            ]
+        },
+        {
+            "scenario_number": 2,
+            "missing_information": [
+                "Medicare Part B premium amounts",
+                "Health insurance coverage details and premiums paid",
+                "Medical expenses reimbursed by insurance",
+                "Whether client itemizes deductions",
+                "Other potential itemized deductions (mortgage interest, taxes, etc.)"
+            ],
+            "interview_questions": [
+                "How much did you pay in Medicare Part B premiums during the tax year?",
+                "Did you have any other health insurance coverage besides Medicare, and if so, how much were the premiums?",
+                "Were any of these medical expenses reimbursed by your insurance company?",
+                "Do you have a mortgage on your home or pay property taxes that might qualify for itemized deductions?",
+                "Do you have records of any other potential itemized deductions such as state taxes or charitable contributions?"
+            ],
+            "tax_form": "Form 1040 Schedule A",
+            "documentation_needed": [
+                "Medicare Part B premium statements (SSA-1099)",
+                "Health insurance premium statements",
+                "Insurance reimbursement statements",
+                "Explanation of Benefits (EOB) forms from insurance company",
+                "Documentation of other potential itemized deductions"
+            ]
+        },
+        {
+            "scenario_number": 3,
+            "missing_information": [
+                "Exact dates Tyler lived with client during the year",
+                "Tyler's student status (full-time or part-time)",
+                "Tyler's age at the end of the tax year",
+                "Amount of support provided by client versus total support",
+                "Tyler's income for the year"
+            ],
+            "interview_questions": [
+                "What specific dates did Tyler live with you during the tax year?",
+                "Is Tyler enrolled as a full-time or part-time student at State University?",
+                "How old was Tyler at the end of the tax year?",
+                "What was the total amount you spent supporting Tyler this year, including education, housing, food, and other expenses?",
+                "Did Tyler have any income of his own during the tax year?"
+            ],
+            "tax_form": "Form 1040 (dependent section)",
+            "documentation_needed": [
+                "University enrollment verification showing full-time status",
+                "Records of tuition and education expenses paid",
+                "Documentation of support provided (housing, food, etc.)",
+                "Copy of divorce decree addressing dependent claims",
+                "Tyler's income records (if any)"
+            ]
+        },
+        {
+            "scenario_number": 4,
+            "missing_information": [
+                "Employer verification of work-from-home requirement",
+                "Square footage of home office space versus total home",
+                "Exclusive use status of the home office space",
+                "Employment status (W-2 employee vs. self-employed)",
+                "Dates the home office was in use during the tax year"
+            ],
+            "interview_questions": [
+                "Do you have any written documentation from your employer requiring you to work from home?",
+                "What is the square footage of your home office space, and what is the total square footage of your home?",
+                "Is the spare bedroom used exclusively for work, or is it used for other purposes as well?",
+                "Are you classified as a W-2 employee or as an independent contractor?",
+                "What specific dates did you begin using the home office, and how many days per week did you work from home?"
+            ],
+            "tax_form": "Form 8829",
+            "documentation_needed": [
+                "Employer letter verifying work-from-home requirement",
+                "Floor plan or measurements of home and office space",
+                "Utility bills and other home-related expenses",
+                "Receipts for all home office furniture and equipment",
+                "Calendar showing days worked from home versus elsewhere"
+            ]
+        },
+        {
+            "scenario_number": 5,
+            "missing_information": [
+                "Tax ID number for Children's Hospital donation",
+                "Detailed description of donated furniture items",
+                "Fair market value determination method for furniture",
+                "Original purchase price and condition of furniture",
+                "Date of furniture donation"
+            ],
+            "interview_questions": [
+                "Do you have or can you obtain a proper receipt with tax ID number from the Children's Hospital?",
+                "Can you provide a detailed description of each furniture item you donated to Goodwill?",
+                "How did you determine the $2,000 value for the donated furniture?",
+                "When did you originally purchase these furniture items and what was their condition when donated?",
+                "What was the exact date you made the furniture donation to Goodwill?"
+            ],
+            "tax_form": "Form 1040 Schedule A and Form 8283",
+            "documentation_needed": [
+                "Proper acknowledgment letter from Children's Hospital with tax ID",
+                "Detailed itemized receipt for furniture donation with Goodwill's tax ID",
+                "Photos of donated furniture (if available)",
+                "Original purchase receipts for donated furniture",
+                "Written appraisal if total non-cash donations exceed $5,000"
+            ]
+        }
+    ]
+}

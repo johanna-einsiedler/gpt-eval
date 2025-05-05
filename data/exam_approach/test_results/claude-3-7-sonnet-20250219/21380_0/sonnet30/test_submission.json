@@ -1,0 +1,123 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "task1": {
+        "monthly_expense_totals": {
+            "January": {
+                "Feed": 2450.75,
+                "Equipment": 875.5,
+                "Seed": 1200.0,
+                "Fertilizer": 3200.0,
+                "Labor": 1450.0,
+                "Utilities": 325.75,
+                "Fuel": 950.25,
+                "Total": 10452.25
+            },
+            "February": {
+                "Feed": 850.25,
+                "Equipment": 1575.0,
+                "Veterinary": 925.5,
+                "Fertilizer": 2800.0,
+                "Labor": 2100.0,
+                "Utilities": 275.5,
+                "Fuel": 875.25,
+                "Total": 9401.5
+            },
+            "March": {
+                "Feed": 1250.75,
+                "Equipment": 2250.0,
+                "Seed": 950.0,
+                "Fertilizer": 2100.0,
+                "Labor": 3200.0,
+                "Utilities": 425.5,
+                "Fuel": 1350.75,
+                "Total": 11527.0
+            }
+        },
+        "profit_loss_calculation": {
+            "January": {
+                "Income": 10250.0,
+                "Expenses": 10452.25,
+                "Profit_Loss": -202.25
+            },
+            "February": {
+                "Income": 4850.0,
+                "Expenses": 9401.5,
+                "Profit_Loss": -4551.5
+            },
+            "March": {
+                "Income": 7000.0,
+                "Expenses": 11527.0,
+                "Profit_Loss": -4527.0
+            }
+        },
+        "highest_expense_category": "Fertilizer"
+    },
+    "task2": {
+        "total_production": {
+            "Corn": 970000.0,
+            "Soybeans": 320000.0,
+            "Wheat": 403000.0,
+            "Alfalfa": 261000.0
+        },
+        "yield_calculations": {
+            "Field-A": 7000.0,
+            "Field-B": 3000.0,
+            "Field-C": 3500.0,
+            "Field-D": 8000.0,
+            "Field-E": 3300.0,
+            "Field-F": 3800.0,
+            "Field-G": 4500.0,
+            "Field-H": 7500.0,
+            "Field-I": 2800.0,
+            "Field-J": 4950.0
+        },
+        "highest_yield_field": "Field-H"
+    },
+    "task3": {
+        "employee_hours": {
+            "EMP001": {
+                "Week1": 43.0,
+                "Week2": 41.0,
+                "Total": 84.0
+            },
+            "EMP002": {
+                "Week1": 40.0,
+                "Week2": 40.0,
+                "Total": 80.0
+            },
+            "EMP003": {
+                "Week1": 40.5,
+                "Week2": 39.0,
+                "Total": 79.5
+            },
+            "EMP004": {
+                "Week1": 43.0,
+                "Week2": 42.0,
+                "Total": 85.0
+            }
+        },
+        "payroll_calculations": {
+            "EMP001": {
+                "Regular_Pay": 2000.0,
+                "Overtime_Pay": 700.0,
+                "Gross_Pay": 2700.0
+            },
+            "EMP002": {
+                "Regular_Pay": 1480.0,
+                "Overtime_Pay": 0.0,
+                "Gross_Pay": 1480.0
+            },
+            "EMP003": {
+                "Regular_Pay": 1568.75,
+                "Overtime_Pay": 0.0,
+                "Gross_Pay": 1568.75
+            },
+            "EMP004": {
+                "Regular_Pay": 1760.0,
+                "Overtime_Pay": 330.0,
+                "Gross_Pay": 2090.0
+            }
+        },
+        "total_labor_cost": 7838.75
+    }
+}

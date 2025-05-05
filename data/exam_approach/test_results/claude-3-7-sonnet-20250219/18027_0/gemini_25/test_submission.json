@@ -1,0 +1,279 @@
+{
+    "candidate_id": "GPT-4o",
+    "prioritization": {
+        "project_ranking": [
+            {
+                "project_id": "P001",
+                "priority_level": "Critical",
+                "primary_reason": "Strategic alignment"
+            },
+            {
+                "project_id": "P002",
+                "priority_level": "Medium",
+                "primary_reason": "Submission deadline"
+            },
+            {
+                "project_id": "P003",
+                "priority_level": "Low",
+                "primary_reason": "Compliance requirement"
+            },
+            {
+                "project_id": "P004",
+                "priority_level": "Critical",
+                "primary_reason": "Strategic alignment"
+            },
+            {
+                "project_id": "P005",
+                "priority_level": "Medium",
+                "primary_reason": "Compliance requirement"
+            },
+            {
+                "project_id": "P006",
+                "priority_level": "Low",
+                "primary_reason": "Compliance requirement"
+            },
+            {
+                "project_id": "P007",
+                "priority_level": "Critical",
+                "primary_reason": "Strategic alignment"
+            },
+            {
+                "project_id": "P008",
+                "priority_level": "Medium",
+                "primary_reason": "Compliance requirement"
+            },
+            {
+                "project_id": "P009",
+                "priority_level": "High",
+                "primary_reason": "Strategic alignment"
+            },
+            {
+                "project_id": "P010",
+                "priority_level": "Medium",
+                "primary_reason": "Market impact"
+            },
+            {
+                "project_id": "P011",
+                "priority_level": "High",
+                "primary_reason": "Market impact"
+            },
+            {
+                "project_id": "P012",
+                "priority_level": "Medium",
+                "primary_reason": "Submission deadline"
+            },
+            {
+                "project_id": "P013",
+                "priority_level": "High",
+                "primary_reason": "Strategic alignment"
+            },
+            {
+                "project_id": "P014",
+                "priority_level": "Low",
+                "primary_reason": "Resource efficiency"
+            },
+            {
+                "project_id": "P015",
+                "priority_level": "Critical",
+                "primary_reason": "Compliance requirement"
+            }
+        ]
+    },
+    "budget_allocation": {
+        "quarterly_breakdown": [
+            {
+                "quarter": "Q1",
+                "personnel": 150000,
+                "submissions": 70000,
+                "training": 25000,
+                "consultants": 15000,
+                "contingency": 40000
+            },
+            {
+                "quarter": "Q2",
+                "personnel": 150000,
+                "submissions": 110000,
+                "training": 20000,
+                "consultants": 25000,
+                "contingency": 20000
+            },
+            {
+                "quarter": "Q3",
+                "personnel": 150000,
+                "submissions": 100000,
+                "training": 15000,
+                "consultants": 25000,
+                "contingency": 10000
+            },
+            {
+                "quarter": "Q4",
+                "personnel": 150000,
+                "submissions": 80000,
+                "training": 20000,
+                "consultants": 15000,
+                "contingency": 10000
+            }
+        ]
+    },
+    "resource_allocation": {
+        "team_assignments": [
+            {
+                "team_member_id": "TM001",
+                "assigned_projects": [
+                    "P001",
+                    "P004",
+                    "P013",
+                    "P015"
+                ],
+                "allocation_percentage": [
+                    35,
+                    25,
+                    25,
+                    15
+                ]
+            },
+            {
+                "team_member_id": "TM002",
+                "assigned_projects": [
+                    "P007",
+                    "P004",
+                    "P008",
+                    "P011"
+                ],
+                "allocation_percentage": [
+                    35,
+                    25,
+                    20,
+                    20
+                ]
+            },
+            {
+                "team_member_id": "TM003",
+                "assigned_projects": [
+                    "P001",
+                    "P007",
+                    "P009",
+                    "P013",
+                    "P005"
+                ],
+                "allocation_percentage": [
+                    20,
+                    20,
+                    20,
+                    20,
+                    20
+                ]
+            },
+            {
+                "team_member_id": "TM004",
+                "assigned_projects": [
+                    "P001",
+                    "P004",
+                    "P007",
+                    "P013",
+                    "P003"
+                ],
+                "allocation_percentage": [
+                    20,
+                    20,
+                    20,
+                    20,
+                    20
+                ]
+            },
+            {
+                "team_member_id": "TM005",
+                "assigned_projects": [
+                    "P004",
+                    "P008",
+                    "P014",
+                    "P009"
+                ],
+                "allocation_percentage": [
+                    40,
+                    30,
+                    20,
+                    10
+                ]
+            },
+            {
+                "team_member_id": "TM006",
+                "assigned_projects": [
+                    "P001",
+                    "P005",
+                    "P007",
+                    "P011",
+                    "P013"
+                ],
+                "allocation_percentage": [
+                    25,
+                    20,
+                    20,
+                    15,
+                    20
+                ]
+            },
+            {
+                "team_member_id": "TM007",
+                "assigned_projects": [
+                    "P002",
+                    "P001",
+                    "P007",
+                    "P013",
+                    "P005"
+                ],
+                "allocation_percentage": [
+                    30,
+                    20,
+                    20,
+                    20,
+                    10
+                ]
+            },
+            {
+                "team_member_id": "TM008",
+                "assigned_projects": [
+                    "P012",
+                    "P006",
+                    "P001",
+                    "P004",
+                    "P007"
+                ],
+                "allocation_percentage": [
+                    30,
+                    20,
+                    20,
+                    15,
+                    15
+                ]
+            }
+        ],
+        "resource_gaps": [
+            {
+                "project_id": "P010",
+                "gap_type": "Expertise",
+                "solution": "External consultant"
+            },
+            {
+                "project_id": "P001",
+                "gap_type": "Capacity",
+                "solution": "Temporary staff"
+            },
+            {
+                "project_id": "P004",
+                "gap_type": "Capacity",
+                "solution": "Temporary staff"
+            },
+            {
+                "project_id": "P007",
+                "gap_type": "Capacity",
+                "solution": "Project timeline adjustment"
+            },
+            {
+                "project_id": "N/A - Dept Wide",
+                "gap_type": "Expertise",
+                "solution": "Internal training"
+            }
+        ]
+    }
+}

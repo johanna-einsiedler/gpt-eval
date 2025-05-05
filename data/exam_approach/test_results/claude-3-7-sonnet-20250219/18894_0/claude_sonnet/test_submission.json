@@ -1,0 +1,133 @@
+{
+    "candidate_id": "GPT-4o",
+    "schedule": [
+        {
+            "case_number": "GR-2023-048",
+            "date": "2023-11-08",
+            "start_time": "09:00",
+            "end_time": "11:00",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: S. Patel",
+                "HR: T. Williams",
+                "Security Officer: O. Diaz",
+                "Witness: L. Washington"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-044",
+            "date": "2023-11-09",
+            "start_time": "13:00",
+            "end_time": "15:00",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: B. Taylor",
+                "HR: D. Rodriguez",
+                "Witness: C. Lee",
+                "Witness: F. Ahmed"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-046",
+            "date": "2023-11-13",
+            "start_time": "13:00",
+            "end_time": "14:30",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: A. Johnson",
+                "HR: D. Rodriguez"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-042",
+            "date": "2023-11-15",
+            "start_time": "13:00",
+            "end_time": "14:30",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: J. Smith",
+                "Manager: A. Johnson",
+                "HR: T. Williams",
+                "Safety Officer: P. Nguyen",
+                "Witness: M. Garcia"
+            ],
+            "priority_level": "High"
+        },
+        {
+            "case_number": "GR-2023-043",
+            "date": "2023-11-16",
+            "start_time": "09:00",
+            "end_time": "10:30",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: S. Patel",
+                "HR: T. Williams",
+                "Department Scheduler: L. Washington"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-049",
+            "date": "2023-11-20",
+            "start_time": "09:00",
+            "end_time": "10:00",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: E. Cooper",
+                "HR: D. Rodriguez",
+                "Department Scheduler: L. Washington"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-045",
+            "date": "2023-11-21",
+            "start_time": "09:00",
+            "end_time": "10:30",
+            "meeting_room": "Conference Room B",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: E. Cooper",
+                "HR: T. Williams"
+            ],
+            "priority_level": "Medium"
+        },
+        {
+            "case_number": "GR-2023-047",
+            "date": "2023-11-22",
+            "start_time": "13:00",
+            "end_time": "14:00",
+            "meeting_room": "Conference Room A",
+            "required_participants": [
+                "Union Rep: R. Chen",
+                "Manager: M. Thompson",
+                "HR: D. Rodriguez",
+                "Benefits Coordinator: S. Kim"
+            ],
+            "priority_level": "Low"
+        }
+    ],
+    "conflict_resolutions": {
+        "overlapping_high_priority": "For the two termination cases (GR-2023-048 and GR-2023-044), I scheduled GR-2023-048 on 11/8 and GR-2023-044 on 11/9 to accommodate Union Rep J. Smith who is required for both. This prioritization ensured both cases were heard well before their contractual deadlines while respecting the availability of all required participants.",
+        "conference_room_limitation": "I reserved Conference Room A primarily for termination cases (GR-2023-048 and GR-2023-044) due to their privacy requirements and larger participant count. For cases with fewer participants like GR-2023-046 and GR-2023-045, I utilized Conference Room B which adequately accommodates smaller groups while meeting all procedural requirements.",
+        "key_witness_accommodation": "Witness M. Garcia had limited availability but was essential for case GR-2023-042. I scheduled this case on 11/15 from 13:00-14:30 when all participants including M. Garcia were available, ensuring this disciplinary case could proceed with all required testimony while still meeting the contractual deadline of 11/19."
+    },
+    "special_accommodations": [
+        {
+            "case_number": "GR-2023-048",
+            "accommodation": "Requires Conference Room A with privacy features due to termination case involving alleged theft. Security Officer must be present."
+        },
+        {
+            "case_number": "GR-2023-044",
+            "accommodation": "Requires Conference Room A with privacy features due to termination case. Multiple witnesses must be accommodated with adequate seating."
+        }
+    ]
+}

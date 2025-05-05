@@ -1,0 +1,25 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "total_compensation_budget": 1015000,
+        "total_benefits_budget": 292500,
+        "total_training_budget": 30600,
+        "total_hr_budget": 1355100
+    },
+    "task2": {
+        "variance_category_1": "Certifications",
+        "variance_percentage_1": -55.0,
+        "variance_category_2": "External Training",
+        "variance_percentage_2": -28.7
+    },
+    "task3": {
+        "option_selected": "Option B",
+        "projected_savings": 38250
+    },
+    "task4": {
+        "department_1_allocation": 54000,
+        "department_2_allocation": 36000,
+        "department_3_allocation": 24000,
+        "department_4_allocation": 6000
+    }
+}

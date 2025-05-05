@@ -1,0 +1,302 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "candidate_name": "Answer Key",
+    "part1_survey_design": {
+        "survey_introduction": "The introduction should explain the purpose of assessing employee wellness needs, mention that the company is planning new wellness initiatives, explain how the data will be used to design programs that meet employee needs, assure confidentiality, and thank participants. It should be professionally written, clear, and 100-150 words.",
+        "survey_questions": [
+            {
+                "question_number": 1,
+                "question_text": "How would you rate your current overall physical fitness level?",
+                "question_type": "rating scale",
+                "options": [
+                    "1 - Poor",
+                    "2 - Fair",
+                    "3 - Average",
+                    "4 - Good",
+                    "5 - Excellent"
+                ],
+                "category": "current habits"
+            },
+            {
+                "question_number": 2,
+                "question_text": "How often do you currently engage in physical exercise?",
+                "question_type": "multiple choice",
+                "options": [
+                    "Never",
+                    "1-2 times per month",
+                    "1-2 times per week",
+                    "3-4 times per week",
+                    "5+ times per week"
+                ],
+                "category": "current habits"
+            },
+            {
+                "question_number": 3,
+                "question_text": "Which wellness activities do you currently participate in? (Select all that apply)",
+                "question_type": "checkbox",
+                "options": [
+                    "Cardio/aerobic exercise",
+                    "Strength training",
+                    "Yoga/stretching",
+                    "Meditation/mindfulness",
+                    "Nutrition planning",
+                    "Walking/running",
+                    "Team sports",
+                    "None of the above",
+                    "Other (please specify)"
+                ],
+                "category": "current habits"
+            },
+            {
+                "question_number": 4,
+                "question_text": "What are your primary wellness goals? (Select up to 3)",
+                "question_type": "checkbox",
+                "options": [
+                    "Weight management",
+                    "Stress reduction",
+                    "Improved fitness",
+                    "Better sleep",
+                    "Increased energy",
+                    "Disease prevention",
+                    "Mental health support",
+                    "Social connection",
+                    "Other (please specify)"
+                ],
+                "category": "current habits"
+            },
+            {
+                "question_number": 5,
+                "question_text": "Please rate your interest in the following potential fitness programs:",
+                "question_type": "rating scale",
+                "options": [
+                    "1 - Not interested",
+                    "2 - Slightly interested",
+                    "3 - Moderately interested",
+                    "4 - Very interested",
+                    "5 - Extremely interested"
+                ],
+                "category": "program interest",
+                "sub_items": [
+                    "Group fitness classes",
+                    "Personal training",
+                    "Running/walking club",
+                    "Sports leagues",
+                    "Fitness challenges"
+                ]
+            },
+            {
+                "question_number": 6,
+                "question_text": "Please rate your interest in the following potential wellness programs:",
+                "question_type": "rating scale",
+                "options": [
+                    "1 - Not interested",
+                    "2 - Slightly interested",
+                    "3 - Moderately interested",
+                    "4 - Very interested",
+                    "5 - Extremely interested"
+                ],
+                "category": "program interest",
+                "sub_items": [
+                    "Nutrition workshops",
+                    "Stress management",
+                    "Meditation/mindfulness",
+                    "Sleep improvement",
+                    "Financial wellness"
+                ]
+            },
+            {
+                "question_number": 7,
+                "question_text": "What types of fitness classes would you be most interested in attending?",
+                "question_type": "checkbox",
+                "options": [
+                    "Yoga",
+                    "Pilates",
+                    "High-intensity interval training (HIIT)",
+                    "Zumba/dance",
+                    "Strength training",
+                    "Cycling/spin",
+                    "Martial arts",
+                    "Other (please specify)"
+                ],
+                "category": "program interest"
+            },
+            {
+                "question_number": 8,
+                "question_text": "What days of the week would you prefer to participate in wellness activities? (Select all that apply)",
+                "question_type": "checkbox",
+                "options": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "category": "scheduling preferences"
+            },
+            {
+                "question_number": 9,
+                "question_text": "What times of day would you prefer to participate in wellness activities?",
+                "question_type": "multiple choice",
+                "options": [
+                    "Before work (6-8am)",
+                    "Morning break (10-11am)",
+                    "Lunch hour (12-1pm)",
+                    "Afternoon break (2-3pm)",
+                    "After work (5-7pm)",
+                    "Weekends only"
+                ],
+                "category": "scheduling preferences"
+            },
+            {
+                "question_number": 10,
+                "question_text": "What is your preferred format for wellness programs?",
+                "question_type": "multiple choice",
+                "options": [
+                    "In-person group sessions",
+                    "Virtual live sessions",
+                    "On-demand/recorded sessions",
+                    "Hybrid (combination of formats)",
+                    "Self-guided with resources"
+                ],
+                "category": "scheduling preferences"
+            },
+            {
+                "question_number": 11,
+                "question_text": "What is your preferred session duration for wellness activities?",
+                "question_type": "multiple choice",
+                "options": [
+                    "15-20 minutes",
+                    "30 minutes",
+                    "45 minutes",
+                    "60 minutes",
+                    "More than 60 minutes"
+                ],
+                "category": "scheduling preferences"
+            },
+            {
+                "question_number": 12,
+                "question_text": "What barriers prevent you from participating in wellness activities? (Select all that apply)",
+                "question_type": "checkbox",
+                "options": [
+                    "Lack of time",
+                    "Inconvenient scheduling",
+                    "Lack of interest in current offerings",
+                    "Lack of confidence/skill",
+                    "Health limitations",
+                    "Family responsibilities",
+                    "Work demands",
+                    "Privacy concerns",
+                    "Other (please specify)"
+                ],
+                "category": "participation barriers"
+            },
+            {
+                "question_number": 13,
+                "question_text": "What would motivate you to participate in wellness programs? (Select all that apply)",
+                "question_type": "checkbox",
+                "options": [
+                    "Health insurance discounts",
+                    "Company recognition",
+                    "Prizes/incentives",
+                    "Paid time for participation",
+                    "Social aspects/team building",
+                    "Improved health metrics",
+                    "Stress reduction",
+                    "Other (please specify)"
+                ],
+                "category": "participation barriers"
+            },
+            {
+                "question_number": 14,
+                "question_text": "What additional wellness resources or support would you like to see offered?",
+                "question_type": "open-ended",
+                "options": [],
+                "category": "program interest"
+            },
+            {
+                "question_number": 15,
+                "question_text": "Which department do you work in?",
+                "question_type": "dropdown",
+                "options": [
+                    "Marketing",
+                    "IT",
+                    "HR",
+                    "Finance",
+                    "Operations",
+                    "Sales",
+                    "Customer Service",
+                    "Research & Development",
+                    "Executive",
+                    "Other"
+                ],
+                "category": "demographics"
+            },
+            {
+                "question_number": 16,
+                "question_text": "What is your age range?",
+                "question_type": "multiple choice",
+                "options": [
+                    "18-24",
+                    "25-34",
+                    "35-44",
+                    "45-54",
+                    "55-64",
+                    "65+",
+                    "Prefer not to say"
+                ],
+                "category": "demographics"
+            },
+            {
+                "question_number": 17,
+                "question_text": "How long is your typical commute to the office?",
+                "question_type": "multiple choice",
+                "options": [
+                    "Less than 15 minutes",
+                    "15-30 minutes",
+                    "31-45 minutes",
+                    "46-60 minutes",
+                    "More than 60 minutes",
+                    "I work remotely"
+                ],
+                "category": "demographics"
+            }
+        ]
+    },
+    "part2_data_analysis": {
+        "key_findings": "Analysis of the wellness program satisfaction data reveals distinct departmental preferences: HR employees consistently rate yoga (5.0/5.0) and walking groups (5.0/5.0) highest; IT employees value stress management sessions (5.0/5.0); Finance employees prefer nutrition workshops (5.0/5.0); Marketing employees favor fitness challenges (4.7/5.0); and Operations employees rate fitness challenges (4.0/5.0) and walking groups (4.0/5.0) highest. There's a clear correlation between attendance frequency and satisfaction—weekly attendees report higher satisfaction (4.2/5.0 average) than those who rarely attend (2.7/5.0 average). Major barriers to participation include scheduling conflicts (particularly for yoga classes) and skill level concerns (yoga classes being too advanced for beginners, especially noted by IT department). Program-specific feedback indicates walking groups need more varied routes (Marketing), nutrition workshops are valued for practical information (Finance), stress management sessions are particularly beneficial (IT), and fitness challenges are appreciated for motivation (Marketing and Operations). Overall, the data suggests that tailoring programs to departmental preferences, offering beginner-friendly options, and addressing scheduling conflicts could significantly improve participation and satisfaction.",
+        "recommendations": [
+            {
+                "recommendation_number": 1,
+                "recommendation": "Introduce multi-level yoga classes, including a dedicated beginner-friendly option",
+                "justification": "Data shows that 20 participants, particularly from IT department, mentioned yoga classes being too advanced for beginners. Creating beginner-level classes would address this significant barrier to participation and potentially increase satisfaction scores among departments currently rating yoga lowest (Operations at 1.6/5.0 and IT at 2.2/5.0)."
+            },
+            {
+                "recommendation_number": 2,
+                "recommendation": "Implement flexible scheduling options for yoga classes, including early morning, lunch hour, and evening sessions",
+                "justification": "15 participants specifically mentioned yoga timing as problematic, with comments about classes being 'too early' or 'inconvenient.' Offering multiple time slots would address the most frequently mentioned barrier to participation and potentially increase attendance frequency, which strongly correlates with higher satisfaction (weekly attendees average 4.2/5.0 satisfaction versus 2.7/5.0 for rare attendees)."
+            },
+            {
+                "recommendation_number": 3,
+                "recommendation": "Develop department-targeted wellness initiatives based on identified preferences",
+                "justification": "Clear departmental preferences emerged: HR (yoga/walking), IT (stress management), Finance (nutrition), Marketing (fitness challenges), and Operations (fitness challenges/walking). Creating department-specific programs or marketing existing programs to target departments would leverage these preferences, potentially increasing both participation and satisfaction by aligning offerings with demonstrated interests."
+            },
+            {
+                "recommendation_number": 4,
+                "recommendation": "Redesign walking group routes with greater variety and different intensity levels",
+                "justification": "Marketing department participants consistently mentioned needing 'more varied routes' and 'interesting locations' for walking groups, which currently receive their lowest program rating (2.2/5.0). Implementing varied routes with different terrain and intensity options would address these specific concerns while maintaining the high satisfaction among departments that already value this program (HR at 5.0/5.0)."
+            },
+            {
+                "recommendation_number": 5,
+                "recommendation": "Create an incentive program to increase attendance frequency across all wellness offerings",
+                "justification": "Data shows a strong correlation between attendance frequency and satisfaction ratings. Implementing an incentive system that rewards consistent participation could help convert monthly (3.5/5.0 avg satisfaction) and rare attendees (2.7/5.0 avg satisfaction) into weekly attendees (4.2/5.0 avg satisfaction), thereby improving overall program effectiveness and participant outcomes."
+            }
+        ],
+        "visual_presentation": {
+            "chart_type": "Heat map",
+            "data_represented": "Program satisfaction ratings by department (5x5 grid showing departments on one axis, programs on the other, with color intensity representing satisfaction levels)",
+            "purpose": "This visualization would immediately highlight the department-specific preferences for different wellness programs, showing which programs are most effective for each department. It would help stakeholders quickly identify where to focus resources and which departments might benefit from targeted program marketing or modifications."
+        }
+    }
+}

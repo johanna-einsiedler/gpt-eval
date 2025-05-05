@@ -1,0 +1,24 @@
+{
+    "candidate_id": "GPT-4",
+    "budget_variance_total": 23350,
+    "largest_expense_category": "Event Costs",
+    "expense_trend_direction": "increasing",
+    "donor_retention_rate": 0.65,
+    "cost_per_dollar_raised": 0.36,
+    "over_budget_categories": [
+        "Event Costs",
+        "Marketing Materials",
+        "Travel Expenses"
+    ],
+    "month_with_highest_revenue": "May",
+    "fundraising_roi": 1.01,
+    "expense_category_percentages": {
+        "Staff Salaries": 0.29,
+        "Event Costs": 0.34,
+        "Marketing Materials": 0.16,
+        "Office Supplies": 0.05,
+        "Travel Expenses": 0.1,
+        "Technology": 0.06
+    },
+    "budget_status": "at_risk"
+}

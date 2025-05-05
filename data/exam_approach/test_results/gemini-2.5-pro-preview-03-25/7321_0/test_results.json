@@ -1,0 +1,151 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "scores": {
+    "internal_audit_report_review": {
+      "report_identifier": {
+        "score": 1,
+        "max_score": 1,
+        "match": true
+      },
+      "scope_analysis": {
+        "stated_scope": {
+          "score": 1,
+          "max_score": 1,
+          "match": true
+        },
+        "procedures_summary": {
+          "score": 7,
+          "max_score": 7
+        },
+        "explicit_scope_limitations": {
+          "score": 1,
+          "max_score": 1,
+          "match": true
+        }
+      },
+      "weakness_identification": {
+        "findings": [
+          {
+            "finding_reference": "Finding 1",
+            "score": 3,
+            "max_score": 3,
+            "fields": {
+              "weakness_description": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              },
+              "recommendation_summary": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              }
+            }
+          },
+          {
+            "finding_reference": "Finding 2",
+            "score": 3,
+            "max_score": 3,
+            "fields": {
+              "weakness_description": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              },
+              "recommendation_summary": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              }
+            }
+          }
+        ],
+        "summary_score": 6,
+        "summary_max_score": 6
+      }
+    },
+    "external_audit_report_section_review": {
+      "report_section_identifier": {
+        "score": 1,
+        "max_score": 1,
+        "match": true
+      },
+      "scope_analysis": {
+        "stated_purpose_or_scope": {
+          "score": 1,
+          "max_score": 1,
+          "match": true
+        },
+        "scope_limitation_language": {
+          "score": 1,
+          "max_score": 1,
+          "match": true
+        },
+        "areas_with_findings": {
+          "score": 3,
+          "max_score": 3
+        }
+      },
+      "weakness_identification": {
+        "findings": [
+          {
+            "finding_reference": "Observation 1",
+            "score": 3,
+            "max_score": 3,
+            "fields": {
+              "weakness_description": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              },
+              "classification_if_stated": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              }
+            }
+          },
+          {
+            "finding_reference": "Observation 2",
+            "score": 3,
+            "max_score": 3,
+            "fields": {
+              "weakness_description": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              },
+              "classification_if_stated": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              }
+            }
+          },
+          {
+            "finding_reference": "Observation 3",
+            "score": 3,
+            "max_score": 3,
+            "fields": {
+              "weakness_description": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              },
+              "classification_if_stated": {
+                "score": 1,
+                "max_score": 1,
+                "match": true
+              }
+            }
+          }
+        ],
+        "summary_score": 9,
+        "summary_max_score": 9
+      }
+    }
+  },
+  "overall_score": 100.0,
+  "max_score": 31,
+  "achieved_score": 31
+}

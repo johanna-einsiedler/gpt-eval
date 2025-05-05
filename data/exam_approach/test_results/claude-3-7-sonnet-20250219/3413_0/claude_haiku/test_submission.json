@@ -1,0 +1,45 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "Agreement_A": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Property Information section",
+            "description": "LTV ratio of 80% requires Private Mortgage Insurance (PMI), but document states 'Private Mortgage Insurance: Not required'"
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "calculation_error",
+            "location": "Loan Terms section",
+            "description": "Monthly payment of $1,574.35 needs verification to confirm accuracy based on loan amount, interest rate, and term"
+        }
+    ],
+    "Agreement_B": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "Balloon payment of $1,250,000 at maturity with 25-year amortization period violates commercial loan policy requirements"
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "missing_information",
+            "location": "Guarantor Information section",
+            "description": "Missing detailed verification of guarantors' financial statements and income documentation"
+        }
+    ],
+    "Agreement_C": [
+        {
+            "issue_id": 1,
+            "issue_type": "policy_violation",
+            "location": "Loan Terms section",
+            "description": "Minimum initial draw of $75,000 exceeds 50% of credit line, violating HELOC policy requirement"
+        },
+        {
+            "issue_id": 2,
+            "issue_type": "compliance_issue",
+            "location": "Disclosures section",
+            "description": "Early termination fee of $500 exceeds the maximum allowed $500, potentially violating regulatory guidelines"
+        }
+    ]
+}

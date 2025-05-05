@@ -1,0 +1,86 @@
+{
+    "candidateId": "GPT-4o",
+    "task1": {
+        "keyRequirements": [
+            "Leadership development for 25 mid-level managers",
+            "Blended learning approach (in-person SF, virtual multi-zone)",
+            "Specific outcomes: strategic thinking, team management, communication, conflict resolution, change management",
+            "Completion by December 2023 (within 4 months: Sept-Dec)",
+            "Budget maximum of $75,000",
+            "Minimum 2 individual coaching sessions per participant",
+            "Pre/post assessments, progress reports, ROI analysis, 360-feedback integration",
+            "Customized materials with company branding and industry relevance",
+            "Post-training support for 3 months"
+        ],
+        "potentialChallenges": [
+            "Meeting all requirements within the $75,000 budget, especially given the initial $92.5k proposal.",
+            "Compressing the program into a 4-month timeline (Sept-Dec) while ensuring effectiveness and accommodating schedules.",
+            "Ensuring trainers have sufficient technology industry experience as preferred by the client.",
+            "Delivering impactful virtual sessions across multiple time zones.",
+            "Achieving deep customization and practical application to avoid past training failures."
+        ],
+        "nonNegotiablePoints": [
+            "Target audience: 25 mid-level managers",
+            "Maximum budget: $75,000",
+            "Completion deadline: December 15, 2023 (for invoicing)",
+            "Requirement for pre/post assessments and ROI analysis",
+            "Confidentiality agreement signature",
+            "Core training outcomes (strategic thinking, team management, etc.)"
+        ],
+        "flexiblePoints": [
+            "Specific number of in-person vs. virtual days (within blended requirement)",
+            "Exact structure of post-training support (format, frequency)",
+            "Specific assessment tools used (if outcomes are met)",
+            "Assignment of specific trainers (if alternatives meet experience criteria)",
+            "Minor adjustments to content modules if core outcomes are covered"
+        ]
+    },
+    "task2": {
+        "proposedFee": 75000.0,
+        "breakdownOfCosts": {
+            "trainerFees": 25000.0,
+            "materials": 13750.0,
+            "travelExpenses": 4200.0,
+            "administrativeCosts": 13300.0
+        },
+        "profitMargin": 25.0,
+        "valueJustification": [
+            "Comprehensive blended program addressing all key leadership competencies within the required timeframe.",
+            "Includes 2 individual coaching sessions per participant to ensure personalized development and application.",
+            "Utilizes trainers with relevant industry experience (or confirmed availability of such trainers).",
+            "Provides robust measurement including pre/post assessments, 360-integration, and ROI analysis.",
+            "Offers enhanced customization with company-specific case studies and stakeholder input included within the proposed fee."
+        ]
+    },
+    "task3": {
+        "objection1Response": "A",
+        "objection2Response": "B",
+        "objection3Response": "A",
+        "objection4Response": "A",
+        "objection5Response": "D"
+    },
+    "task4": {
+        "deliverables": [
+            "Blended Leadership Development Program delivery (In-person workshops & Virtual sessions)",
+            "Individual Executive Coaching (2 one-hour sessions per participant)",
+            "Customized Participant Materials (Workbooks, Digital Resources with Client Branding)",
+            "Pre-program and Post-program Leadership Assessments",
+            "360-Degree Feedback Integration Support",
+            "Monthly Progress Reports during program delivery",
+            "3-Month Post-Training Support Mechanism (e.g., resource portal, group check-ins)",
+            "Final Program Report including ROI Analysis and Impact Assessment"
+        ],
+        "timeline": {
+            "startDate": "2023-09-01",
+            "completionDate": "2023-12-15",
+            "milestoneCode": "MS-001"
+        },
+        "paymentStructure": {
+            "initialPayment": 18750.0,
+            "milestone1Payment": 37500.0,
+            "finalPayment": 18750.0
+        },
+        "contractTermCode": "CT-003",
+        "cancellationTerms": "CAN-002"
+    }
+}

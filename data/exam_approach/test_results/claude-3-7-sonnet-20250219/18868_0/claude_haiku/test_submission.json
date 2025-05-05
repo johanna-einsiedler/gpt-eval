@@ -1,0 +1,135 @@
+{
+    "candidate_id": "Claude-3-Sonnet",
+    "required_qualifications": [
+        "Bachelor's degree in Marketing, Communications, Business, or related field",
+        "Minimum 2 years of experience in a marketing role",
+        "Proficiency in Microsoft Office Suite",
+        "Experience with social media platforms for business",
+        "Strong written and verbal communication skills"
+    ],
+    "preferred_qualifications": [
+        "Experience with marketing automation tools",
+        "Knowledge of graphic design software",
+        "Experience with content management systems"
+    ],
+    "candidate_evaluations": [
+        {
+            "candidate_id": "C001",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true
+            ],
+            "match_score": 80
+        },
+        {
+            "candidate_id": "C002",
+            "required_met": [
+                true,
+                false,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                false,
+                false,
+                true
+            ],
+            "match_score": 45
+        },
+        {
+            "candidate_id": "C003",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true
+            ],
+            "match_score": 80
+        },
+        {
+            "candidate_id": "C004",
+            "required_met": [
+                true,
+                false,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                false,
+                false,
+                false
+            ],
+            "match_score": 40
+        },
+        {
+            "candidate_id": "C005",
+            "required_met": [
+                true,
+                false,
+                true,
+                false,
+                true
+            ],
+            "preferred_met": [
+                false,
+                false,
+                false
+            ],
+            "match_score": 30
+        },
+        {
+            "candidate_id": "C006",
+            "required_met": [
+                true,
+                true,
+                true,
+                true,
+                true
+            ],
+            "preferred_met": [
+                true,
+                true,
+                true
+            ],
+            "match_score": 80
+        }
+    ],
+    "top_candidates": [
+        "C003",
+        "C001",
+        "C006"
+    ],
+    "top_candidate_strengths": {
+        "C003": [
+            "Comprehensive digital marketing experience",
+            "Advanced marketing automation tool knowledge",
+            "Multiple professional marketing certifications"
+        ],
+        "C001": [
+            "Strong social media management skills",
+            "Experience with multiple marketing platforms",
+            "Proven content creation and campaign tracking"
+        ],
+        "C006": [
+            "Data-driven marketing approach",
+            "Extensive digital campaign management",
+            "Advanced analytics and performance optimization skills"
+        ]
+    }
+}

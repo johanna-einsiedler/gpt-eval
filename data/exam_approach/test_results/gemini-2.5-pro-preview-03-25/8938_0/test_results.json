@@ -1,0 +1,108 @@
+{
+  "candidate_file": "answer_key.json",
+  "key_file": "answer_key.json",
+  "overall_score": 100,
+  "total_points_achieved": 90,
+  "total_max_points": 90,
+  "evaluation_details": {
+    "structure_check": {
+      "passed": true,
+      "points": 15,
+      "max_points": 15,
+      "details": [
+        "Basic structure and types are correct."
+      ]
+    },
+    "project_schedule_check": {
+      "passed": true,
+      "points": 30,
+      "max_points": 30,
+      "details": [
+        "Met minimum task requirement (>= 5). Found 7 tasks.",
+        "All schedule tasks have correct structure and types.",
+        "All task_ids have correct format and are unique.",
+        "All task durations are valid (non-negative integers).",
+        "Project finishes on Day 8, meeting the Day 10 deadline.",
+        "Basic schedule logic (start day vs predecessor end day, end day calculation) appears consistent."
+      ],
+      "task_map": {
+        "T01": {
+          "task_id": "T01",
+          "task_name": "Finalize Warehouse Layout & Requirements Definition",
+          "duration_days": 1,
+          "predecessors": "",
+          "start_day": 1,
+          "end_day": 1
+        },
+        "T02": {
+          "task_id": "T02",
+          "task_name": "Order Shelving, Tables, and Signage",
+          "duration_days": 1,
+          "predecessors": "T01",
+          "start_day": 2,
+          "end_day": 2
+        },
+        "T03": {
+          "task_id": "T03",
+          "task_name": "Coordinate Volunteer Availability for Setup",
+          "duration_days": 1,
+          "predecessors": "T01",
+          "start_day": 2,
+          "end_day": 2
+        },
+        "T04": {
+          "task_id": "T04",
+          "task_name": "Receive Shelving, Tables, and Signage Delivery",
+          "duration_days": 2,
+          "predecessors": "T02",
+          "start_day": 3,
+          "end_day": 4
+        },
+        "T05": {
+          "task_id": "T05",
+          "task_name": "Install Shelving Units",
+          "duration_days": 3,
+          "predecessors": "T03,T04",
+          "start_day": 5,
+          "end_day": 7
+        },
+        "T06": {
+          "task_id": "T06",
+          "task_name": "Set up Receiving/Sorting Tables and Signage",
+          "duration_days": 1,
+          "predecessors": "T03,T04",
+          "start_day": 5,
+          "end_day": 5
+        },
+        "T07": {
+          "task_id": "T07",
+          "task_name": "Final Warehouse Readiness Check & Walkthrough",
+          "duration_days": 1,
+          "predecessors": "T05,T06",
+          "start_day": 8,
+          "end_day": 8
+        }
+      }
+    },
+    "responsibility_matrix_check": {
+      "passed": true,
+      "points": 40,
+      "max_points": 40,
+      "details": [
+        "Matrix items have correct structure and types.",
+        "All RACI codes used are valid.",
+        "Single 'Accountable' rule followed for all tasks.",
+        "Task IDs and Names are consistent between schedule and matrix.",
+        "Compliance check methods are present for all tasks."
+      ]
+    },
+    "assumptions_check": {
+      "passed": true,
+      "points": 5,
+      "max_points": 5,
+      "details": [
+        "Assumptions list is present and contains strings."
+      ]
+    }
+  }
+}

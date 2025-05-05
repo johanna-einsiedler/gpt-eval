@@ -1,0 +1,26 @@
+{
+    "candidateId": "Claude-3_7-Sonnet",
+    "scenario1": {
+        "adjustedGrossIncome": 52500,
+        "taxableIncome": 38650,
+        "federalTaxWithheld": 6300,
+        "taxLiability": 4411,
+        "refundOrAmountDue": 1889
+    },
+    "scenario2": {
+        "adjustedGrossIncome": 114200,
+        "taxableIncome": 86500,
+        "federalTaxWithheld": 13560,
+        "taxLiability": 9974,
+        "refundOrAmountDue": 3586
+    },
+    "scenario3": {
+        "adjustedGrossIncome": 48300,
+        "taxableIncome": 27500,
+        "federalTaxWithheld": 3825,
+        "taxLiability": 3068,
+        "refundOrAmountDue": 4757,
+        "childTaxCredit": 4000,
+        "earnedIncomeTaxCredit": 0
+    }
+}

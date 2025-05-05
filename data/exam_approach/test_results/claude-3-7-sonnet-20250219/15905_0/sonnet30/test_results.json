@@ -1,0 +1,145 @@
+{
+  "task_scores": {
+    "task1": 5,
+    "task2": 10,
+    "task3": 6.666666666666667,
+    "task4": 1.0,
+    "task5": 2.5,
+    "total": 25.166666666666668
+  },
+  "detailed_feedback": {
+    "task1": {
+      "late_deliveries_percentage": {
+        "points": 0,
+        "comment": "Incorrect. Expected: 40.0"
+      },
+      "most_common_carrier": {
+        "points": 5,
+        "comment": "Correct"
+      },
+      "average_shipping_cost": {
+        "points": 0,
+        "comment": "Incorrect. Expected: 1063.95"
+      }
+    },
+    "task2": {
+      "route_with_highest_cost_per_km": {
+        "points": 0,
+        "comment": "Incorrect. Expected: Washington DC-Seattle"
+      },
+      "cost_per_km": {
+        "points": 5,
+        "comment": "Correct"
+      },
+      "total_distance_all_shipments": {
+        "points": 5,
+        "comment": "Correct"
+      }
+    },
+    "task3": {
+      "carrier_on_time_rates": {
+        "FastExpress": {
+          "points": 1.67,
+          "comment": "Close (within 5%)"
+        },
+        "SecureShip": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 64.71"
+        },
+        "EcoLogistics": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 56.25"
+        }
+      },
+      "most_efficient_carrier": {
+        "points": 5,
+        "comment": "Correct"
+      },
+      "efficiency_score": {
+        "points": 0,
+        "comment": "Incorrect. Expected: 0.0005"
+      }
+    },
+    "task4": {
+      "monthly_shipping_costs": {
+        "January": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 3075.0"
+        },
+        "February": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 2885.0"
+        },
+        "March": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 3757.5"
+        },
+        "April": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 5535.0"
+        },
+        "May": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 5265.0"
+        },
+        "June": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 4995.0"
+        },
+        "July": {
+          "points": 0.5,
+          "comment": "Close (within 5%)"
+        },
+        "August": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 3307.5"
+        },
+        "September": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 6165.0"
+        },
+        "October": {
+          "points": 0.5,
+          "comment": "Close (within 5%)"
+        },
+        "November": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 3622.5"
+        },
+        "December": {
+          "points": 0,
+          "comment": "Incorrect. Expected: 6030.0"
+        }
+      },
+      "peak_shipping_month": {
+        "points": 0,
+        "comment": "Incorrect. Expected: September"
+      },
+      "lowest_shipping_month": {
+        "points": 0,
+        "comment": "Incorrect. Expected: February"
+      }
+    },
+    "task5": {
+      "potential_savings": {
+        "points": 0,
+        "comment": "Incorrect. Expected: 0.0"
+      },
+      "recommended_carrier": {
+        "points": 2.5,
+        "comment": "Partially correct"
+      }
+    }
+  },
+  "passing_criteria": {
+    "minimum_score_required": 56,
+    "minimum_task3_score_required": 10,
+    "at_least_one_correct_per_task": true,
+    "at_least_one_correct_per_task_met": false,
+    "minimum_score_met": false,
+    "task3_minimum_met": false
+  },
+  "overall_score": 31.46,
+  "passed": false,
+  "candidate_id": "Claude-v1.3"
+}

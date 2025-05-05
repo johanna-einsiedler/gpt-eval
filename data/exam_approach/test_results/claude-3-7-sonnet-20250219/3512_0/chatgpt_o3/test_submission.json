@@ -1,0 +1,423 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "total_divisible_surplus": 50000000,
+    "sources_of_surplus": {
+        "mortality": 12500000,
+        "expense": 8750000,
+        "investment": 15200000,
+        "lapse": 3550000
+    },
+    "policy_dividends": [
+        {
+            "policy_id": "P001",
+            "dividend_amount": 767
+        },
+        {
+            "policy_id": "P002",
+            "dividend_amount": 1275
+        },
+        {
+            "policy_id": "P003",
+            "dividend_amount": 225
+        },
+        {
+            "policy_id": "P004",
+            "dividend_amount": 2441
+        },
+        {
+            "policy_id": "P005",
+            "dividend_amount": 861
+        },
+        {
+            "policy_id": "P006",
+            "dividend_amount": 402
+        },
+        {
+            "policy_id": "P007",
+            "dividend_amount": 1314
+        },
+        {
+            "policy_id": "P008",
+            "dividend_amount": 332
+        },
+        {
+            "policy_id": "P009",
+            "dividend_amount": 2015
+        },
+        {
+            "policy_id": "P010",
+            "dividend_amount": 918
+        },
+        {
+            "policy_id": "P011",
+            "dividend_amount": 838
+        },
+        {
+            "policy_id": "P012",
+            "dividend_amount": 267
+        },
+        {
+            "policy_id": "P013",
+            "dividend_amount": 1545
+        },
+        {
+            "policy_id": "P014",
+            "dividend_amount": 877
+        },
+        {
+            "policy_id": "P015",
+            "dividend_amount": 330
+        },
+        {
+            "policy_id": "P016",
+            "dividend_amount": 1726
+        },
+        {
+            "policy_id": "P017",
+            "dividend_amount": 488
+        },
+        {
+            "policy_id": "P018",
+            "dividend_amount": 2136
+        },
+        {
+            "policy_id": "P019",
+            "dividend_amount": 984
+        },
+        {
+            "policy_id": "P020",
+            "dividend_amount": 1221
+        },
+        {
+            "policy_id": "P021",
+            "dividend_amount": 809
+        },
+        {
+            "policy_id": "P022",
+            "dividend_amount": 1081
+        },
+        {
+            "policy_id": "P023",
+            "dividend_amount": 431
+        },
+        {
+            "policy_id": "P024",
+            "dividend_amount": 2051
+        },
+        {
+            "policy_id": "P025",
+            "dividend_amount": 1012
+        },
+        {
+            "policy_id": "P026",
+            "dividend_amount": 267
+        },
+        {
+            "policy_id": "P027",
+            "dividend_amount": 1659
+        },
+        {
+            "policy_id": "P028",
+            "dividend_amount": 526
+        },
+        {
+            "policy_id": "P029",
+            "dividend_amount": 2342
+        },
+        {
+            "policy_id": "P030",
+            "dividend_amount": 1048
+        },
+        {
+            "policy_id": "P031",
+            "dividend_amount": 910
+        },
+        {
+            "policy_id": "P032",
+            "dividend_amount": 367
+        },
+        {
+            "policy_id": "P033",
+            "dividend_amount": 1922
+        },
+        {
+            "policy_id": "P034",
+            "dividend_amount": 1315
+        },
+        {
+            "policy_id": "P035",
+            "dividend_amount": 371
+        },
+        {
+            "policy_id": "P036",
+            "dividend_amount": 1896
+        },
+        {
+            "policy_id": "P037",
+            "dividend_amount": 627
+        },
+        {
+            "policy_id": "P038",
+            "dividend_amount": 2015
+        },
+        {
+            "policy_id": "P039",
+            "dividend_amount": 1048
+        },
+        {
+            "policy_id": "P040",
+            "dividend_amount": 1416
+        },
+        {
+            "policy_id": "P041",
+            "dividend_amount": 967
+        },
+        {
+            "policy_id": "P042",
+            "dividend_amount": 1269
+        },
+        {
+            "policy_id": "P043",
+            "dividend_amount": 496
+        },
+        {
+            "policy_id": "P044",
+            "dividend_amount": 2258
+        },
+        {
+            "policy_id": "P045",
+            "dividend_amount": 1184
+        },
+        {
+            "policy_id": "P046",
+            "dividend_amount": 304
+        },
+        {
+            "policy_id": "P047",
+            "dividend_amount": 1905
+        },
+        {
+            "policy_id": "P048",
+            "dividend_amount": 609
+        },
+        {
+            "policy_id": "P049",
+            "dividend_amount": 2631
+        },
+        {
+            "policy_id": "P050",
+            "dividend_amount": 1219
+        },
+        {
+            "policy_id": "P051",
+            "dividend_amount": 1065
+        },
+        {
+            "policy_id": "P052",
+            "dividend_amount": 424
+        },
+        {
+            "policy_id": "P053",
+            "dividend_amount": 2117
+        },
+        {
+            "policy_id": "P054",
+            "dividend_amount": 1539
+        },
+        {
+            "policy_id": "P055",
+            "dividend_amount": 418
+        },
+        {
+            "policy_id": "P056",
+            "dividend_amount": 2258
+        },
+        {
+            "policy_id": "P057",
+            "dividend_amount": 731
+        },
+        {
+            "policy_id": "P058",
+            "dividend_amount": 2399
+        },
+        {
+            "policy_id": "P059",
+            "dividend_amount": 1219
+        },
+        {
+            "policy_id": "P060",
+            "dividend_amount": 1657
+        },
+        {
+            "policy_id": "P061",
+            "dividend_amount": 892
+        },
+        {
+            "policy_id": "P062",
+            "dividend_amount": 1020
+        },
+        {
+            "policy_id": "P063",
+            "dividend_amount": 338
+        },
+        {
+            "policy_id": "P064",
+            "dividend_amount": 1953
+        },
+        {
+            "policy_id": "P065",
+            "dividend_amount": 1004
+        },
+        {
+            "policy_id": "P066",
+            "dividend_amount": 503
+        },
+        {
+            "policy_id": "P067",
+            "dividend_amount": 1478
+        },
+        {
+            "policy_id": "P068",
+            "dividend_amount": 442
+        },
+        {
+            "policy_id": "P069",
+            "dividend_amount": 1847
+        },
+        {
+            "policy_id": "P070",
+            "dividend_amount": 853
+        },
+        {
+            "policy_id": "P071",
+            "dividend_amount": 838
+        },
+        {
+            "policy_id": "P072",
+            "dividend_amount": 374
+        },
+        {
+            "policy_id": "P073",
+            "dividend_amount": 1716
+        },
+        {
+            "policy_id": "P074",
+            "dividend_amount": 1012
+        },
+        {
+            "policy_id": "P075",
+            "dividend_amount": 424
+        },
+        {
+            "policy_id": "P076",
+            "dividend_amount": 1334
+        },
+        {
+            "policy_id": "P077",
+            "dividend_amount": 596
+        },
+        {
+            "policy_id": "P078",
+            "dividend_amount": 1561
+        },
+        {
+            "policy_id": "P079",
+            "dividend_amount": 918
+        },
+        {
+            "policy_id": "P080",
+            "dividend_amount": 1150
+        },
+        {
+            "policy_id": "P081",
+            "dividend_amount": 1012
+        },
+        {
+            "policy_id": "P082",
+            "dividend_amount": 1261
+        },
+        {
+            "policy_id": "P083",
+            "dividend_amount": 503
+        },
+        {
+            "policy_id": "P084",
+            "dividend_amount": 2307
+        },
+        {
+            "policy_id": "P085",
+            "dividend_amount": 1214
+        },
+        {
+            "policy_id": "P086",
+            "dividend_amount": 334
+        },
+        {
+            "policy_id": "P087",
+            "dividend_amount": 1896
+        },
+        {
+            "policy_id": "P088",
+            "dividend_amount": 601
+        },
+        {
+            "policy_id": "P089",
+            "dividend_amount": 2602
+        },
+        {
+            "policy_id": "P090",
+            "dividend_amount": 1240
+        },
+        {
+            "policy_id": "P091",
+            "dividend_amount": 1113
+        },
+        {
+            "policy_id": "P092",
+            "dividend_amount": 441
+        },
+        {
+            "policy_id": "P093",
+            "dividend_amount": 2179
+        },
+        {
+            "policy_id": "P094",
+            "dividend_amount": 1517
+        },
+        {
+            "policy_id": "P095",
+            "dividend_amount": 433
+        },
+        {
+            "policy_id": "P096",
+            "dividend_amount": 2133
+        },
+        {
+            "policy_id": "P097",
+            "dividend_amount": 706
+        },
+        {
+            "policy_id": "P098",
+            "dividend_amount": 2252
+        },
+        {
+            "policy_id": "P099",
+            "dividend_amount": 1240
+        },
+        {
+            "policy_id": "P100",
+            "dividend_amount": 1618
+        }
+    ],
+    "dividend_metrics": {
+        "average_dividend": 1175.99,
+        "highest_dividend": 2631,
+        "lowest_dividend": 225,
+        "dividend_concentration_ratio": 0.1987
+    },
+    "three_factor_formula_parameters": {
+        "interest_rate": 0.045,
+        "expense_adjustment": 0.92,
+        "mortality_adjustment": 0.85
+    }
+}

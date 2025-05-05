@@ -1,0 +1,93 @@
+{
+    "candidate_id": "GPT-4",
+    "client1": {
+        "monthly_budget": {
+            "total_income": 3800.0,
+            "total_expenses": 3380.0,
+            "discretionary_income": 420.0,
+            "expense_categories": {
+                "housing": 1200.0,
+                "utilities": 250.0,
+                "food": 600.0,
+                "transportation": 300.0,
+                "healthcare": 180.0,
+                "debt_payments": 500.0,
+                "savings": 250.0,
+                "other": 100.0
+            }
+        },
+        "debt_management": {
+            "total_debt": 16550.0,
+            "monthly_debt_payment": 500.0,
+            "debt_payoff_timeline_months": 48,
+            "prioritized_debts": [
+                {
+                    "account_name": "Credit Card 3 (Store Card)",
+                    "priority": 1
+                },
+                {
+                    "account_name": "Credit Card 1 (Visa)",
+                    "priority": 2
+                },
+                {
+                    "account_name": "Credit Card 2 (MasterCard)",
+                    "priority": 3
+                },
+                {
+                    "account_name": "Car Loan",
+                    "priority": 4
+                }
+            ]
+        },
+        "savings_goal": {
+            "emergency_fund_target": 3380.0,
+            "monthly_contribution": 250.0,
+            "months_to_complete": 14
+        }
+    },
+    "client2": {
+        "monthly_budget": {
+            "total_income": 5400.0,
+            "total_expenses": 4170.0,
+            "discretionary_income": 1230.0,
+            "expense_categories": {
+                "housing": 1600.0,
+                "utilities": 200.0,
+                "food": 600.0,
+                "transportation": 300.0,
+                "healthcare": 220.0,
+                "debt_payments": 700.0,
+                "savings": 400.0,
+                "other": 150.0
+            }
+        },
+        "debt_management": {
+            "total_debt": 49800.0,
+            "monthly_debt_payment": 700.0,
+            "debt_payoff_timeline_months": 84,
+            "prioritized_debts": [
+                {
+                    "account_name": "Credit Card (Visa)",
+                    "priority": 1
+                },
+                {
+                    "account_name": "Student Loan 2 (Private)",
+                    "priority": 2
+                },
+                {
+                    "account_name": "Student Loan 1 (Federal)",
+                    "priority": 3
+                },
+                {
+                    "account_name": "Car Loan",
+                    "priority": 4
+                }
+            ]
+        },
+        "savings_goal": {
+            "emergency_fund_target": 4170.0,
+            "monthly_contribution": 400.0,
+            "months_to_complete": 11
+        }
+    }
+}

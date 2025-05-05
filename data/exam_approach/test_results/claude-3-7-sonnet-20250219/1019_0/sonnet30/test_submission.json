@@ -1,0 +1,38 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "total_budget": 175000,
+    "department_allocations": {
+        "engineering": 63000,
+        "sales": 28000,
+        "marketing": 21000,
+        "customer_support": 35000,
+        "administration": 28000
+    },
+    "training_category_costs": {
+        "technical_skills": 70000,
+        "soft_skills": 26250,
+        "compliance": 35000,
+        "leadership": 21000,
+        "onboarding": 22750
+    },
+    "per_employee_costs": {
+        "engineering": 741.18,
+        "sales": 622.22,
+        "marketing": 700.0,
+        "customer_support": 538.46,
+        "administration": 1120.0
+    },
+    "roi_calculations": {
+        "technical_skills": 2.3,
+        "soft_skills": 1.8,
+        "compliance": 1.2,
+        "leadership": 2.5,
+        "onboarding": 2.1
+    },
+    "budget_variance_percentage": 0.0938,
+    "cost_saving_opportunities": [
+        "OB-05",
+        "SS-02",
+        "LD-04"
+    ]
+}

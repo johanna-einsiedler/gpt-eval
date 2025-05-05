@@ -1,0 +1,36 @@
+{
+    "candidate_id": "EVALUATOR_CHECK",
+    "exam_id": "BA_Basic_01",
+    "program_name": "Community Tech Literacy Workshop",
+    "total_estimated_cost": 2640.0,
+    "cost_breakdown": [
+        {
+            "category": "Venue Rental",
+            "estimated_cost": 600.0,
+            "calculation_basis": "4 workshops * $150/workshop (from Venue_Quote.txt)"
+        },
+        {
+            "category": "Instructor Fees",
+            "estimated_cost": 600.0,
+            "calculation_basis": "4 workshops * 3 hours/workshop * $50/hour (from Standard_Costs.xlsx)"
+        },
+        {
+            "category": "Training Materials",
+            "estimated_cost": 800.0,
+            "calculation_basis": "4 workshops * 20 participants/workshop * $10/participant (from Standard_Costs.xlsx)"
+        },
+        {
+            "category": "Refreshments",
+            "estimated_cost": 400.0,
+            "calculation_basis": "4 workshops * 20 participants/workshop * $5/participant (from Standard_Costs.xlsx)"
+        },
+        {
+            "category": "Admin Support",
+            "estimated_cost": 240.0,
+            "calculation_basis": "10% of ($600 + $600 + $800 + $400) direct costs (rate from Standard_Costs.xlsx)"
+        }
+    ],
+    "notes_or_assumptions": [
+        "Used venue quote rate ($150/session) instead of standard hourly rate ($60/hour) as per instructions and Venue_Quote.txt."
+    ]
+}

@@ -1,0 +1,283 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "task1": {
+    "details": {
+      "record_count": {
+        "points_earned": 0,
+        "points_possible": 5,
+        "correct": false,
+        "submitted_value": 95,
+        "expected_value": 99
+      },
+      "missing_values_count": {
+        "points_earned": 0,
+        "points_possible": 5,
+        "correct": false,
+        "submitted_value": 3,
+        "expected_value": 1
+      },
+      "duplicate_records_removed": {
+        "points_earned": 10,
+        "points_possible": 10,
+        "correct": true,
+        "submitted_value": 1,
+        "expected_value": 1
+      },
+      "outliers_identified": {
+        "points_earned": 10,
+        "points_possible": 10,
+        "correct": true,
+        "submitted_value": [
+          105000,
+          104000,
+          103000,
+          102000,
+          101000
+        ],
+        "expected_value": [
+          102000,
+          101000,
+          103000,
+          104000,
+          105000
+        ],
+        "details": "5 out of 5 outliers correctly identified"
+      }
+    },
+    "points_earned": 20,
+    "points_possible": 30,
+    "requirements_met": false
+  },
+  "task2": {
+    "details": {
+      "inconsistent_entries": {
+        "points_earned": 10,
+        "points_possible": 10,
+        "correct": true,
+        "submitted_value": [
+          {
+            "row_id": "1006",
+            "field": "age",
+            "value": "-5"
+          },
+          {
+            "row_id": "1009",
+            "field": "employment_status",
+            "value": "Unemployed"
+          },
+          {
+            "row_id": "1021",
+            "field": "employment_status",
+            "value": "Unemployed"
+          },
+          {
+            "row_id": "1028",
+            "field": "education",
+            "value": "High School"
+          },
+          {
+            "row_id": "1034",
+            "field": "employment_status",
+            "value": "Unemployed"
+          },
+          {
+            "row_id": "1040",
+            "field": "education",
+            "value": "High School"
+          },
+          {
+            "row_id": "1046",
+            "field": "employment_status",
+            "value": "Unemployed"
+          },
+          {
+            "row_id": "1052",
+            "field": "education",
+            "value": "High School"
+          },
+          {
+            "row_id": "1058",
+            "field": "employment_status",
+            "value": "Unemployed"
+          },
+          {
+            "row_id": "1064",
+            "field": "education",
+            "value": "High School"
+          },
+          {
+            "row_id": "1070",
+            "field": "employment_status",
+            "value": "Unemployed"
+          },
+          {
+            "row_id": "1076",
+            "field": "education",
+            "value": "High School"
+          },
+          {
+            "row_id": "1082",
+            "field": "employment_status",
+            "value": "Unemployed"
+          },
+          {
+            "row_id": "1088",
+            "field": "education",
+            "value": "High School"
+          },
+          {
+            "row_id": "1094",
+            "field": "employment_status",
+            "value": "Unemployed"
+          },
+          {
+            "row_id": "1100",
+            "field": "education",
+            "value": "High School"
+          }
+        ],
+        "expected_value": [
+          {
+            "row_id": "1006",
+            "field": "age",
+            "value": "-5"
+          }
+        ]
+      },
+      "corrected_values": {
+        "points_earned": 0,
+        "points_possible": 10,
+        "correct": false,
+        "submitted_value": {
+          "1006": {
+            "age": 35
+          },
+          "1009": {
+            "employment_status": "Part-time"
+          },
+          "1021": {
+            "employment_status": "Part-time"
+          },
+          "1028": {
+            "education": "Unknown"
+          },
+          "1034": {
+            "employment_status": "Part-time"
+          },
+          "1040": {
+            "education": "Unknown"
+          },
+          "1046": {
+            "employment_status": "Part-time"
+          },
+          "1052": {
+            "education": "Unknown"
+          },
+          "1058": {
+            "employment_status": "Part-time"
+          },
+          "1064": {
+            "education": "Unknown"
+          },
+          "1070": {
+            "employment_status": "Part-time"
+          },
+          "1076": {
+            "education": "Unknown"
+          },
+          "1082": {
+            "employment_status": "Part-time"
+          },
+          "1088": {
+            "education": "Unknown"
+          },
+          "1094": {
+            "employment_status": "Part-time"
+          },
+          "1100": {
+            "education": "Unknown"
+          }
+        },
+        "expected_value": {
+          "1006": {
+            "age": "5"
+          }
+        }
+      },
+      "data_validation_rules": {
+        "points_earned": 7,
+        "points_possible": 10,
+        "correct": false,
+        "submitted_value": [
+          "Age must be between 18 and 100 years",
+          "Education level must be one of the predefined categories or 'Unknown'",
+          "Employment status must be one of the predefined categories"
+        ],
+        "expected_value": [
+          "Age must be between 18 and 100",
+          "Education must be one of: High School, Associate, Bachelor, Master, Doctorate",
+          "Income must be a positive number less than 500000"
+        ],
+        "details": "2 valid rules provided"
+      }
+    },
+    "points_earned": 17,
+    "points_possible": 30,
+    "requirements_met": true
+  },
+  "task3": {
+    "details": {
+      "weighted_average_income": {
+        "points_earned": 15,
+        "points_possible": 15,
+        "correct": true,
+        "submitted_value": 68523.81,
+        "expected_value": 67500.0,
+        "details": "Within acceptable range"
+      },
+      "weighted_proportion_category_a": {
+        "points_earned": 10,
+        "points_possible": 10,
+        "correct": true,
+        "submitted_value": 0.2857,
+        "expected_value": 0.3333,
+        "details": "Within acceptable range"
+      },
+      "post_stratification_weights": {
+        "points_earned": 0,
+        "points_possible": 5,
+        "correct": false,
+        "submitted_value": [
+          0.0571,
+          0.0857,
+          0.1143,
+          0.0857,
+          0.1
+        ],
+        "expected_value": [
+          0.8,
+          1.0,
+          0.8571,
+          0.8,
+          1.0
+        ]
+      },
+      "effective_sample_size": {
+        "points_earned": 0,
+        "points_possible": 10,
+        "correct": false,
+        "submitted_value": 35.71,
+        "expected_value": 87.5,
+        "details": "Outside acceptable range"
+      }
+    },
+    "points_earned": 25,
+    "points_possible": 40,
+    "requirements_met": true
+  },
+  "overall_score": 62.0,
+  "total_points_earned": 62,
+  "total_points_possible": 100,
+  "requirements_met": 2,
+  "passed": false
+}

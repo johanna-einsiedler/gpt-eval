@@ -1,0 +1,42 @@
+{
+    "candidate_id": "GPT-4o",
+    "negotiation_strategy": {
+        "selected_approach": "B",
+        "justification": "A collaborative, needs-based strategy best addresses Margaret’s price sensitivity and desire for transparency. By walking her through each service’s purpose and cost, then inviting her to prioritize what matters most, we reduce fears of being over-charged, demonstrate respect for her values, and keep the conversation solution-focused. This approach builds trust, allows flexible tailoring within budget, and aligns with industry best-practice ethics."
+    },
+    "package_details": {
+        "selected_services": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S7",
+            "S9"
+        ],
+        "selected_merchandise": [
+            "M1"
+        ],
+        "selected_additional_services": [
+            "A1",
+            "A7"
+        ],
+        "total_package_price": 5932.5,
+        "profit_margin_percentage": 23.1
+    },
+    "objection_responses": {
+        "objection1": "B",
+        "objection2": "C",
+        "objection3": "A"
+    },
+    "contract_completion": {
+        "client_name": "Margaret Wilson",
+        "payment_plan_selected": "P4",
+        "payment_terms": "12 equal monthly payments of $494.38 (includes 5% plan fee), no interest",
+        "price_guarantee": "Yes",
+        "required_disclosures": [
+            "Itemized Statement of Funeral Goods and Services Selected provided under the FTC Funeral Rule",
+            "Client’s right to cancel a revocable pre-need contract and applicable refund policy",
+            "Notice that cash-advance items (e.g., cemetery fees, death certificates) are estimates and may change at time of need"
+        ]
+    }
+}

@@ -1,0 +1,75 @@
+{
+  "overall_score": 71.7,
+  "max_possible_score": 120,
+  "sections": {
+    "q1_variance": {
+      "score": 40,
+      "max_score": 40,
+      "details": [],
+      "accuracy": 100.0
+    },
+    "q1_top_overbudget_categories": {
+      "score": 15,
+      "max_score": 15,
+      "details": [],
+      "accuracy": 100.0
+    },
+    "june_forecast": {
+      "score": 17,
+      "max_score": 20,
+      "details": [
+        "Unreasonable June forecast for IT - Cloud Services: got 15000, expected around 17500",
+        "Unreasonable June forecast for Marketing - Advertising: got 35000, expected around 42000",
+        "Unreasonable June forecast for Marketing - Events: got 25000, expected around 30000"
+      ],
+      "accuracy": 85.0
+    },
+    "projected_yearend_variance": {
+      "score": 5,
+      "max_score": 10,
+      "details": [
+        "Incorrect year-end dollar variance: got -100000, expected around -180000"
+      ],
+      "accuracy": 50.0
+    },
+    "categories_exceeding_budget": {
+      "score": 6,
+      "max_score": 10,
+      "details": [
+        "Failed to identify 2 categories that exceed budget"
+      ],
+      "accuracy": 60.0
+    },
+    "best_budget_adherence_department": {
+      "score": 0,
+      "max_score": 5,
+      "details": [
+        "Incorrect best adherence department: got Finance, expected Marketing"
+      ],
+      "accuracy": 0.0
+    },
+    "q1_average_monthly_expenditure": {
+      "score": 0,
+      "max_score": 10,
+      "details": [
+        "Incorrect average expenditure for Operations: got 109667, expected 148667",
+        "Incorrect average expenditure for IT: got 144000, expected 168000",
+        "Incorrect average expenditure for Marketing: got 69740, expected 86233",
+        "Incorrect average expenditure for Finance: got 70140, expected 102067"
+      ],
+      "accuracy": 0.0
+    },
+    "unusual_monthly_fluctuations": {
+      "score": 3,
+      "max_score": 10,
+      "details": [
+        "Failed to identify 5 unusual fluctuations"
+      ],
+      "accuracy": 28.0
+    }
+  },
+  "total_score": 86,
+  "passed": false,
+  "critical_failure": "Failed critical section: best_budget_adherence_department",
+  "section_failure": "Unusual monthly fluctuations below minimum requirement"
+}

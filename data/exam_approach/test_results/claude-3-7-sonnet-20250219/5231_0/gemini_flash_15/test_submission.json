@@ -1,0 +1,175 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "retention_recommendations": [
+            {
+                "teacher_id": "T401",
+                "reason": "Nicole White has the lowest combined performance metrics, including the lowest evaluation score (2.4), student growth percentile (32), and attendance rate (84%), coupled with an incomplete professional development record and provisional certification status."
+            },
+            {
+                "teacher_id": "T205",
+                "reason": "Thomas Smith shows low performance metrics with an evaluation score of 2.5, a student growth percentile of 35, and incomplete professional development.  His attendance rate is acceptable, but the low performance across other metrics warrants consideration for non-renewal."
+            },
+            {
+                "teacher_id": "T298",
+                "reason": "Amanda Miller demonstrates consistently low performance with an evaluation score of 2.7, a student growth percentile of 40, and partial professional development completion. Her low evaluation score and student growth percentile are particularly concerning."
+            }
+        ],
+        "reassignment_recommendations": [
+            {
+                "teacher_id": "T103",
+                "current_program": "General Education",
+                "recommended_program": "STEM Focus",
+                "rationale": "James Wilson's mathematics expertise could be better utilized in the STEM program, given his experience and the need for additional math teachers in that program. His performance metrics are slightly above average."
+            },
+            {
+                "teacher_id": "T287",
+                "current_program": "STEM Focus",
+                "recommended_program": "General Education",
+                "rationale": "Michael Brown's performance in the STEM program is below expectations, suggesting a reassignment to a general education setting might be beneficial for both him and the students. His low student growth percentile and evaluation score indicate a need for a change of environment."
+            }
+        ],
+        "priority_hiring_needs": [
+            {
+                "subject_area": "Mathematics",
+                "justification": "Based on the data, there is a clear need for additional qualified mathematics teachers, particularly within the STEM program, to support student growth and program expansion."
+            },
+            {
+                "subject_area": "Science",
+                "justification": "The STEM program requires additional science teachers to meet the increased demand for STEM education.  The current science teachers' performance is mixed, highlighting the need for additional qualified staff."
+            },
+            {
+                "subject_area": "Special Education",
+                "justification": "While Emily Davis performs well, additional special education teachers are needed to support inclusion programs and meet the diverse needs of the student population."
+            }
+        ]
+    },
+    "task2": {
+        "staffing_plan": [
+            {
+                "position_code": "STEM-COORD",
+                "fte": 1.0,
+                "rationale": "Required for program coordination and oversight."
+            },
+            {
+                "position_code": "STEM-MATH",
+                "fte": 2.0,
+                "rationale": "Two FTEs are needed to teach mathematics courses within the STEM Academy."
+            },
+            {
+                "position_code": "STEM-SCI",
+                "fte": 2.0,
+                "rationale": "Two FTEs are needed to teach science courses within the STEM Academy."
+            },
+            {
+                "position_code": "STEM-TECH",
+                "fte": 1.0,
+                "rationale": "One FTE is needed to teach technology courses within the STEM Academy."
+            },
+            {
+                "position_code": "STEM-ENG",
+                "fte": 1.0,
+                "rationale": "One FTE is needed to teach engineering courses within the STEM Academy."
+            },
+            {
+                "position_code": "STEM-PARA",
+                "fte": 1.0,
+                "rationale": "One FTE paraprofessional is needed to support instruction."
+            },
+            {
+                "position_code": "STEM-COUNSEL",
+                "fte": 0.5,
+                "rationale": "Half-time guidance counselor needed to support students in the STEM Academy."
+            }
+        ],
+        "budget_allocation": {
+            "personnel_total": 360000,
+            "equipment_supplies": 67500,
+            "professional_development": 22500,
+            "adjustments_needed": "The budget appears sufficient based on the provided salary ranges and FTE requirements.  Minor adjustments may be needed depending on the final salaries offered."
+        },
+        "implementation_timeline": [
+            {
+                "milestone": "Position postings published",
+                "date": "2024-02-15",
+                "action_items": "Draft and post job descriptions for all positions."
+            },
+            {
+                "milestone": "Initial application review",
+                "date": "2024-03-10",
+                "action_items": "Screen applications and select candidates for interviews."
+            },
+            {
+                "milestone": "First round interviews",
+                "date": "2024-03-25",
+                "action_items": "Conduct first-round interviews with shortlisted candidates."
+            },
+            {
+                "milestone": "Second round interviews",
+                "date": "2024-04-15",
+                "action_items": "Conduct second-round interviews with top candidates."
+            },
+            {
+                "milestone": "Hiring decisions finalized",
+                "date": "2024-05-01",
+                "action_items": "Make final hiring decisions and notify candidates."
+            },
+            {
+                "milestone": "Contracts issued",
+                "date": "2024-05-15",
+                "action_items": "Issue employment contracts to successful candidates."
+            },
+            {
+                "milestone": "New staff orientation",
+                "date": "2024-08-01",
+                "action_items": "Conduct new staff orientation and training."
+            },
+            {
+                "milestone": "Program launch",
+                "date": "2024-08-15",
+                "action_items": "Launch the STEM Academy program."
+            }
+        ]
+    },
+    "task3": {
+        "action_recommendation": "Performance improvement plan",
+        "policy_references": [
+            "4.4.3",
+            "4.4.5"
+        ],
+        "documentation_requirements": [
+            {
+                "requirement_id": "4.5.1",
+                "description": "Attendance record"
+            },
+            {
+                "requirement_id": "4.5.2",
+                "description": "Record of prior warnings"
+            },
+            {
+                "requirement_id": "4.5.3",
+                "description": "Evidence of policy adherence"
+            },
+            {
+                "requirement_id": "4.5.4",
+                "description": "Impact on education"
+            },
+            {
+                "requirement_id": "4.5.5",
+                "description": "Employee's response"
+            },
+            {
+                "requirement_id": "4.5.6",
+                "description": "Corrective action"
+            },
+            {
+                "requirement_id": "4.5.7",
+                "description": "Improvement timeline"
+            },
+            {
+                "requirement_id": "4.5.8",
+                "description": "Signatures of parties"
+            }
+        ]
+    }
+}

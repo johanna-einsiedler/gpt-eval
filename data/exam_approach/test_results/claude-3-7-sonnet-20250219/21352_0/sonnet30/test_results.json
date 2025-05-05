@@ -1,0 +1,41 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "results": {
+    "annual_budget_total": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct (within 2% margin)"
+    },
+    "q1_variance_percentage": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "fuel_cost_adjustment": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "maintenance_allocation": {
+      "score": 1,
+      "max_score": 1,
+      "feedback": "Correct"
+    },
+    "priority_ranking": {
+      "score": 0,
+      "max_score": 1,
+      "feedback": "Incorrect"
+    },
+    "cost_per_mile": {
+      "score": 0.5,
+      "max_score": 1,
+      "feedback": "Partially correct (within $0.05 margin)"
+    }
+  },
+  "total_score": 4.5,
+  "max_score": 6,
+  "overall_score": 75.0,
+  "correct_answers": 5,
+  "critical_elements_passed": true,
+  "passed": true
+}

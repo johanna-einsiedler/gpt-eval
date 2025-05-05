@@ -1,0 +1,43 @@
+{
+    "candidate_id": "GPT-4o",
+    "scenario_1": {
+        "base_fee": 175.0,
+        "time_charge": 43.75,
+        "complexity_adjustment": 20.0,
+        "additional_forms_fee": 85.0,
+        "total_fee": 323.75,
+        "calculation_notes": "For Scenario 1, the time charge is calculated as (2.5 * 125 * 1.15) - 175 = 43.75. Complexity adjustment of 20.00 is added for first-time client. Additional forms fee of 85.00 is added for Schedule A and Schedule B."
+    },
+    "scenario_2": {
+        "base_fee": 650.0,
+        "time_charge": 187.5,
+        "complexity_adjustment": 81.25,
+        "additional_forms_fee": 160.0,
+        "total_fee": 1078.75,
+        "calculation_notes": "For Scenario 2, the time charge is calculated as (4 * 125 * 1.25) - 650 = 187.50. Complexity adjustment of 81.25 is added for prior year amendments needed. Additional forms fee of 160.00 is added for Form 4562 and 3 Schedule K-1 forms."
+    },
+    "scenario_3": {
+        "base_fee": 175.0,
+        "time_charge": 112.5,
+        "complexity_adjustment": 24.0,
+        "additional_forms_fee": 210.0,
+        "total_fee": 521.5,
+        "calculation_notes": "For Scenario 3, the time charge is calculated as (3 * 125 * 1.20) - 175 = 112.50. Complexity adjustment of 24.00 is added for multiple state returns. Additional forms fee of 210.00 is added for Schedule C, Schedule SE, and Form 8829."
+    },
+    "scenario_4": {
+        "base_fee": 550.0,
+        "time_charge": 412.5,
+        "complexity_adjustment": 140.25,
+        "additional_forms_fee": 95.0,
+        "total_fee": 1197.75,
+        "calculation_notes": "For Scenario 4, the time charge is calculated as (5.5 * 125 * 1.35) - 550 = 412.50. Complexity adjustment of 140.25 is added for complex asset dispositions. Additional forms fee of 95.00 is added for Form 4797."
+    },
+    "scenario_5": {
+        "base_fee": 175.0,
+        "time_charge": 136.25,
+        "complexity_adjustment": 39.0,
+        "additional_forms_fee": 275.0,
+        "total_fee": 625.25,
+        "calculation_notes": "For Scenario 5, the time charge is calculated as (3.5 * 125 * 1.30) - 175 = 136.25. Complexity adjustment of 39.00 is added for foreign income reporting. Additional forms fee of 275.00 is added for Schedule D and 3 Schedule E forms."
+    }
+}

@@ -1,0 +1,191 @@
+{
+  "candidate_id": "Claude-v1.3",
+  "format_score": 5,
+  "categories": {
+    "calculation_errors": {
+      "matches": [
+        {
+          "candidate_item": {
+            "location": "Equipment Detail, Total row",
+            "current_value": "$79,400",
+            "correct_value": "$79,400",
+            "explanation": "No calculation error found in the Equipment Detail totals."
+          },
+          "key_item": {
+            "location": "Equipment Detail, TOTAL row",
+            "current_value": "$79,400",
+            "correct_value": "$215,000",
+            "explanation": "The Equipment Detail total ($79,400) doesn't match the Department Summary Equipment amount ($215,000). The detail sheet is missing $135,600 worth of equipment items."
+          },
+          "similarity": 0.6666666666666666
+        },
+        {
+          "candidate_item": {
+            "location": "Personnel Detail, Total row",
+            "current_value": "$1,443,000",
+            "correct_value": "$1,442,000",
+            "explanation": "The Total Cost column does not calculate correctly for the New Position: Junior Analyst row. It should be $71,500 (Salary $55,000 + Benefits $16,500)."
+          },
+          "key_item": {
+            "location": "Personnel Detail, TOTAL row",
+            "current_value": "$1,443,000",
+            "correct_value": "$1,350,000",
+            "explanation": "The Personnel Detail total ($1,443,000) doesn't match the Department Summary Personnel amount ($1,350,000). The detail sheet shows a $93,000 discrepancy."
+          },
+          "similarity": 0.6666666666666666
+        }
+      ],
+      "unmatched_candidate": [
+        {
+          "location": "Department Summary, Total row",
+          "current_value": "$2,502,000",
+          "correct_value": "$2,501,000",
+          "explanation": "The Total row value should be the sum of the individual category amounts, which is $2,501,000."
+        },
+        {
+          "location": "Quarterly Allocation, Q4 Total row",
+          "current_value": "$589,000",
+          "correct_value": "$588,000",
+          "explanation": "The Q4 Total should be $588,000, which is the sum of the individual category amounts for Q4."
+        }
+      ],
+      "unmatched_key": [
+        {
+          "location": "Quarterly Allocation, TOTAL row",
+          "current_value": "$718,000 + $597,500 + $597,500 + $589,000 = $2,502,000",
+          "correct_value": "$718,000 + $597,500 + $597,500 + $589,000 = $2,502,000",
+          "explanation": "The quarterly totals add up correctly, but the distribution across quarters is uneven without justification."
+        },
+        {
+          "location": "Personnel Detail, Senior Analysts row",
+          "current_value": "$442,000",
+          "correct_value": "$442,000",
+          "explanation": "The calculation is correct: 4 \u00d7 ($85,000 + $25,500) = 4 \u00d7 $110,500 = $442,000"
+        }
+      ],
+      "earned_points": 6.666666666666666,
+      "max_points": 20
+    },
+    "missing_information": {
+      "matches": [
+        {
+          "candidate_item": {
+            "requirement_id": "REQ-007",
+            "description": "Supporting documentation for equipment purchases over $5,000, professional services contracts, travel expenses, and training plan",
+            "impact": "The supporting documentation is required to verify the accuracy and necessity of the requested expenses in these categories."
+          },
+          "key_item": {
+            "requirement_id": "REQ-007",
+            "description": "Supporting Documentation is missing (quotes for equipment purchases over $5,000, contracts for Professional Services, etc.)",
+            "impact": "Without supporting documentation, large expenditures cannot be verified or justified properly"
+          },
+          "similarity": 0.5
+        },
+        {
+          "candidate_item": {
+            "requirement_id": "REQ-006",
+            "description": "Signature Page with Department Director signature, submission date, and approval sections",
+            "impact": "Without a signed signature page, the budget submission is incomplete and cannot be properly reviewed or approved."
+          },
+          "key_item": {
+            "requirement_id": "REQ-006",
+            "description": "Signature Page is completely missing from the budget submission",
+            "impact": "Without the required signatures, the budget lacks proper authorization and cannot be officially approved"
+          },
+          "similarity": 0.5
+        }
+      ],
+      "unmatched_candidate": [],
+      "unmatched_key": [
+        {
+          "requirement_id": "REQ-005",
+          "description": "Detailed explanation for increases exceeding 10% is missing for Equipment (14.7%) and Miscellaneous (15.6%)",
+          "impact": "Significant budget increases require detailed justification to ensure proper fiscal oversight"
+        },
+        {
+          "requirement_id": "REQ-004",
+          "description": "The quarterly allocation percentages are not specified for each category",
+          "impact": "Without specified allocation percentages, it's difficult to verify if the quarterly distribution follows requirements"
+        },
+        {
+          "requirement_id": "REQ-104",
+          "description": "Department name and fiscal year are missing from the header of each sheet",
+          "impact": "Without consistent headers, sheets may be misidentified or separated from the complete budget package"
+        }
+      ],
+      "earned_points": 3.0,
+      "max_points": 15
+    },
+    "compliance_issues": {
+      "matches": [
+        {
+          "candidate_item": {
+            "regulation_id": "REG-104",
+            "location": "Department Summary",
+            "issue": "The Professional Services category shows an 11.1% increase over the previous year, exceeding the 10% threshold, but no detailed justification is provided.",
+            "recommendation": "Add a detailed justification for the 11.1% increase in the Professional Services category, or obtain approval from the Budget Director."
+          },
+          "key_item": {
+            "regulation_id": "REG-104",
+            "location": "Department Summary, Equipment row and Miscellaneous row",
+            "issue": "Year-over-year increases exceeding 10% (Equipment at 14.7%, Miscellaneous at 15.6%) lack the detailed justification required",
+            "recommendation": "Provide detailed justification for these increases in the Budget Justification section"
+          },
+          "similarity": 0.5666666666666667
+        }
+      ],
+      "unmatched_candidate": [
+        {
+          "regulation_id": "REG-202",
+          "location": "Personnel Detail",
+          "issue": "The two new positions (Data Specialist and Junior Analyst) are listed, but no detailed justification is provided for these additions.",
+          "recommendation": "Include a detailed justification for the need and responsibilities of the two new positions in the Personnel Detail section or supporting documentation."
+        },
+        {
+          "regulation_id": "REG-304",
+          "location": "Department Summary",
+          "issue": "The Miscellaneous category request of $52,000 exceeds 3% of the total budget request of $2,501,000 (3% would be $75,030).",
+          "recommendation": "Reduce the Miscellaneous category request to comply with the 3% limit, or provide justification for exceeding the limit."
+        },
+        {
+          "regulation_id": "REG-505",
+          "location": "Quarterly Allocation",
+          "issue": "The Personnel category is not allocated equally across all four quarters, which is required by this regulation.",
+          "recommendation": "Adjust the quarterly allocation for the Personnel category to be 25% in each quarter."
+        }
+      ],
+      "unmatched_key": [
+        {
+          "regulation_id": "REG-402",
+          "location": "Department Summary",
+          "issue": "Parent account codes (1000, 2000, etc.) are used instead of the most specific account codes available",
+          "recommendation": "Use the most specific account codes available for each expense category"
+        },
+        {
+          "regulation_id": "REG-502",
+          "location": "Quarterly Allocation sheet",
+          "issue": "Equipment allocation is heavily weighted to Q1 (70%) without explanation for the non-standard allocation",
+          "recommendation": "Either adjust to standard 25% allocation or provide justification for the front-loaded allocation"
+        },
+        {
+          "regulation_id": "REG-501",
+          "location": "Quarterly Allocation sheet",
+          "issue": "The quarterly totals are uneven ($718,000, $597,500, $597,500, $589,000) without explanation",
+          "recommendation": "Provide justification for the uneven quarterly distribution in the Budget Justification section"
+        },
+        {
+          "regulation_id": "REG-101",
+          "location": "Overall budget submission",
+          "issue": "Missing required Signature Page component",
+          "recommendation": "Add the required Signature Page with Department Director signature and approval sections"
+        }
+      ],
+      "earned_points": 1.7,
+      "max_points": 15
+    }
+  },
+  "overall_score": 29.8,
+  "total_earned_points": 16.366666666666667,
+  "total_possible_points": 55,
+  "passed": false
+}

@@ -1,0 +1,122 @@
+{
+  "candidate_id": "Claude-3-Opus",
+  "evaluation_details": {
+    "budget_variance_total": {
+      "points_earned": 0,
+      "points_possible": 1,
+      "is_correct": false,
+      "submitted_answer": 19000,
+      "correct_answer": 13800,
+      "feedback": "Incorrect. The correct budget variance is 13800."
+    },
+    "largest_expense_category": {
+      "points_earned": 1,
+      "points_possible": 1,
+      "is_correct": true,
+      "submitted_answer": "Staff Salaries",
+      "correct_answer": "Staff Salaries",
+      "feedback": "Correct"
+    },
+    "expense_trend_direction": {
+      "points_earned": 0,
+      "points_possible": 1,
+      "is_correct": false,
+      "submitted_answer": "fluctuating",
+      "correct_answer": "increasing",
+      "feedback": "Incorrect. The expense trend is 'increasing'."
+    },
+    "donor_retention_rate": {
+      "points_earned": 0,
+      "points_possible": 1,
+      "is_correct": false,
+      "submitted_answer": 0.76,
+      "correct_answer": 0.84,
+      "feedback": "Incorrect. The donor retention rate is 0.84."
+    },
+    "cost_per_dollar_raised": {
+      "points_earned": 1,
+      "points_possible": 1,
+      "is_correct": true,
+      "submitted_answer": 0.68,
+      "correct_answer": 0.71,
+      "feedback": "Correct"
+    },
+    "over_budget_categories": {
+      "points_earned": 1,
+      "points_possible": 1,
+      "is_correct": true,
+      "percentage_correct": 100.0,
+      "submitted_answer": [
+        "Event Costs",
+        "Marketing Materials",
+        "Office Supplies",
+        "Travel Expenses"
+      ],
+      "correct_answer": [
+        "Event Costs",
+        "Marketing Materials",
+        "Office Supplies",
+        "Travel Expenses"
+      ],
+      "feedback": "Correct"
+    },
+    "month_with_highest_revenue": {
+      "points_earned": 1,
+      "points_possible": 1,
+      "is_correct": true,
+      "submitted_answer": "May",
+      "correct_answer": "May",
+      "feedback": "Correct"
+    },
+    "fundraising_roi": {
+      "points_earned": 0,
+      "points_possible": 1,
+      "is_correct": false,
+      "submitted_answer": 0.47,
+      "correct_answer": 0.4,
+      "feedback": "Incorrect. The fundraising ROI is 0.4."
+    },
+    "expense_category_percentages": {
+      "points_earned": 0,
+      "points_possible": 1,
+      "is_correct": false,
+      "percentage_correct": 50.0,
+      "submitted_answer": {
+        "Staff Salaries": 0.38,
+        "Event Costs": 0.32,
+        "Marketing Materials": 0.16,
+        "Office Supplies": 0.03,
+        "Travel Expenses": 0.08,
+        "Technology": 0.08
+      },
+      "correct_answer": {
+        "Staff Salaries": 0.36,
+        "Event Costs": 0.31,
+        "Marketing Materials": 0.15,
+        "Office Supplies": 0.03,
+        "Travel Expenses": 0.07,
+        "Technology": 0.08
+      },
+      "feedback": "Incorrect. At least 80% of expense percentages must be within 5% of the correct values."
+    },
+    "budget_status": {
+      "points_earned": 1,
+      "points_possible": 1,
+      "is_correct": true,
+      "submitted_answer": "at_risk",
+      "correct_answer": "at_risk",
+      "feedback": "Correct"
+    }
+  },
+  "overall_score": 50.0,
+  "critical_questions_score": 60.0,
+  "passed": false,
+  "summary": {
+    "total_questions": 10,
+    "correct_answers": 5,
+    "critical_questions_correct": 3,
+    "overall_score_percentage": 50.0,
+    "critical_questions_score_percentage": 60.0,
+    "passed": false
+  }
+}

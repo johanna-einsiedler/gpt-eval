@@ -1,0 +1,53 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "crude_death_rates": {
+            "0-4": 0.003,
+            "5-14": 0.0004,
+            "15-24": 0.0014,
+            "25-34": 0.002,
+            "35-44": 0.003,
+            "45-54": 0.006,
+            "55-64": 0.013,
+            "65-74": 0.026,
+            "75-84": 0.05,
+            "85+": 0.09
+        },
+        "age_standardized_death_rate": 0.0077,
+        "life_expectancy_at_birth": 74.1996,
+        "highest_mortality_improvement_age_group": "0-4"
+    },
+    "task2": {
+        "disability_incidence_rates": {
+            "Office": 0.3891,
+            "Manual Labor": 0.6173,
+            "Professional": 0.5
+        },
+        "average_claim_duration": {
+            "Musculoskeletal": 24.75,
+            "Mental Health": 21.1429,
+            "Cancer": 16.8,
+            "Cardiovascular": 20.8,
+            "Injury": 10.8
+        },
+        "probability_claim_exceeds_24_months": 0.3333,
+        "gender_difference_p_value": 0.9265,
+        "overall_disability_rate_confidence_interval": {
+            "lower": 0.3113,
+            "upper": 0.658
+        }
+    },
+    "task3": {
+        "retirement_rates": {
+            "50-54": 0.03,
+            "55-59": 0.07,
+            "60-61": 0.12,
+            "62-64": 0.3,
+            "65+": 0.6
+        },
+        "projected_retirements_next_year": 720,
+        "present_value_future_benefits": 689145348,
+        "funding_ratio": 0.8854,
+        "discount_rate_sensitivity": 0.042
+    }
+}

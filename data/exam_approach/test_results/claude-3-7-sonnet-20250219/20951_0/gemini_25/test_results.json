@@ -1,0 +1,59 @@
+{
+  "overall_score": 21.53,
+  "sections": {
+    "treaty_analysis": {
+      "score": 0.9226190476190477,
+      "max_score": 25,
+      "feedback": [
+        "Term premium_rols was not identified as a key term in the answer key.",
+        "Correctly identified reinstatements as unfavorable.",
+        "Rationale for reinstatements could be improved.",
+        "Term exclusion_gulf_storm was not identified as a key term in the answer key.",
+        "Term exclusion_flood was not identified as a key term in the answer key.",
+        "Term profit_commission was not identified as a key term in the answer key.",
+        "Only identified 1 of the 5 key terms correctly."
+      ]
+    },
+    "financial_assessment": {
+      "score": 5.777777777777778,
+      "max_score": 25,
+      "feedback": [
+        "Expected ceded losses calculation is off by 180.8%.",
+        "Incorrectly assessed overall market rating as at_market instead of above_market.",
+        "Correctly calculated financial impact for Alternative 1.",
+        "Pros for Alternative 1 could be improved.",
+        "Identified relevant cons for Alternative 1.",
+        "Correctly calculated financial impact for Alternative 2.",
+        "Pros for Alternative 2 could be improved.",
+        "Cons for Alternative 2 could be improved.",
+        "Correctly calculated financial impact for Alternative 3.",
+        "Pros for Alternative 3 could be improved.",
+        "Cons for Alternative 3 could be improved."
+      ]
+    },
+    "negotiation_strategy": {
+      "score": 4.333333333333333,
+      "max_score": 25,
+      "feedback": [
+        "Priority ranking needs significant improvement.",
+        "Target and minimum positions need significant improvement.",
+        "Concessions need significant improvement."
+      ]
+    },
+    "counterparty_response": {
+      "score": 10.5,
+      "max_score": 25,
+      "feedback": [
+        "Key points effectively address the counterparty's concerns.",
+        "Proposed reasonable alternative language for reinstatements.",
+        "Provided good justification for reinstatements modification.",
+        "Term premium_rols was not identified as a key modification in the answer key.",
+        "Term exclusion_gulf_storm was not identified as a key modification in the answer key.",
+        "Term exclusion_flood was not identified as a key modification in the answer key.",
+        "Proposed modifications need significant improvement."
+      ]
+    }
+  },
+  "passed": false,
+  "overall_feedback": "Not passing. Significant improvement needed across multiple areas."
+}

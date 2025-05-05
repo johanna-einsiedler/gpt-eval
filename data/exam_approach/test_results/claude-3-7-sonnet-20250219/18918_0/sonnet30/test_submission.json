@@ -1,0 +1,23 @@
+{
+    "candidate_id": "Claude-v1.3",
+    "budget_variance_total": 11950,
+    "largest_expense_category": "Event Costs",
+    "expense_trend_direction": "increasing",
+    "donor_retention_rate": 0.84,
+    "cost_per_dollar_raised": 0.28,
+    "over_budget_categories": [
+        "Event Costs",
+        "Marketing Materials"
+    ],
+    "month_with_highest_revenue": "May",
+    "fundraising_roi": 2.14,
+    "expense_category_percentages": {
+        "Staff Salaries": 0.27,
+        "Event Costs": 0.35,
+        "Marketing Materials": 0.15,
+        "Office Supplies": 0.03,
+        "Travel Expenses": 0.09,
+        "Technology": 0.07
+    },
+    "budget_status": "at_risk"
+}

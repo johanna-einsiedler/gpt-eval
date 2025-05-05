@@ -1,0 +1,28 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "debt_payoff_order": [
+        "CC1",
+        "CC2",
+        "PL1",
+        "AL1",
+        "SL1"
+    ],
+    "total_months_to_debt_freedom": 48,
+    "monthly_payment_allocation": {
+        "CC1": 600.0,
+        "CC2": 300.0,
+        "PL1": 350.0,
+        "AL1": 150.0,
+        "SL1": 100.0
+    },
+    "interest_saved_vs_minimum_payments": 12547.32,
+    "first_debt_paid_off": {
+        "debt_id": "CC1",
+        "month_number": 16
+    },
+    "last_debt_paid_off": {
+        "debt_id": "SL1",
+        "month_number": 48
+    },
+    "strategy_explanation": "Prioritized debts by highest interest rate first (avalanche method) to minimize total interest paid. Allocated maximum available funds to the highest interest debt (CC1 at 22.99%) while meeting minimum payments on others. As each debt is paid off, its payment is rolled into the next highest interest debt."
+}

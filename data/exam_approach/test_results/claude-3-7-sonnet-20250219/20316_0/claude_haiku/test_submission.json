@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4-turbo",
+    "task1": {
+        "cost_per_participant": 209.09,
+        "highest_cost_program": "Weight Loss Program",
+        "lowest_cost_program": "Sleep Improvement",
+        "participation_threshold_programs": [
+            "Nutrition Workshop",
+            "Smoking Cessation",
+            "Mental Health Awareness",
+            "Diabetes Management"
+        ]
+    },
+    "task2": {
+        "program_roi_values": {
+            "Fitness Challenge": 0.67,
+            "Nutrition Workshop": 0.13,
+            "Stress Management": 0.5,
+            "Weight Loss Program": 0.17,
+            "Smoking Cessation": 1.33
+        },
+        "highest_roi_program": "Smoking Cessation",
+        "cost_effective_programs": [
+            "Fitness Challenge",
+            "Stress Management",
+            "Smoking Cessation"
+        ]
+    },
+    "task3": {
+        "quarterly_cost_trend": -14.29,
+        "projected_annual_savings": 30000,
+        "cost_reduction_percentage": -14.29,
+        "break_even_month": 10
+    }
+}

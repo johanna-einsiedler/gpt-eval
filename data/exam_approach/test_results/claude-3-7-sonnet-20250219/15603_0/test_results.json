@@ -1,0 +1,73 @@
+{
+  "candidate_id": "EVALUATOR_KEY",
+  "task1_results": {
+    "identified_issues_count": 10,
+    "critical_issues_identified": 3,
+    "major_issues_identified": 4,
+    "minor_issues_identified": 3,
+    "correct_classifications": 10,
+    "issue_types_identified": [
+      "Safety Concern",
+      "Inconsistency",
+      "Regulatory Non-compliance",
+      "Procedural Gap",
+      "Scientific Validity Issue",
+      "Ambiguity",
+      "Operational Feasibility",
+      "Administrative Error",
+      "Data Quality Issue",
+      "Ethical Concern"
+    ],
+    "severity_distribution": {
+      "critical": 3,
+      "major": 4,
+      "minor": 3
+    },
+    "issues_with_clear_descriptions": 2,
+    "score": 37,
+    "max_score": 40,
+    "feedback": [
+      "Successfully identified at least 5 protocol issues.",
+      "Excellent job identifying all critical issues.",
+      "Successfully classified 10 issues correctly.",
+      "2 issues had clear, specific descriptions."
+    ]
+  },
+  "task2_results": {
+    "has_professional_subject_line": true,
+    "focuses_on_critical_issues": true,
+    "has_three_actionable_recommendations": true,
+    "subject_line_word_count": 10,
+    "key_issues_summary_word_count": 102,
+    "recommended_actions_count": 3,
+    "score": 30,
+    "max_score": 30,
+    "feedback": [
+      "Subject line is professional and appropriate.",
+      "Key issues summary effectively focuses on critical issues.",
+      "Provided 3 specific, actionable recommendations."
+    ]
+  },
+  "task3_results": {
+    "revision_proposals_count": 3,
+    "critical_issues_addressed": 3,
+    "appropriate_rationale_codes": 3,
+    "revisions_that_address_problems": 2,
+    "score": 28.34,
+    "max_score": 30,
+    "feedback": [
+      "Provided the required 3 revision proposals.",
+      "Successfully addressed 3 critical issues.",
+      "Used appropriate rationale codes for 3 revisions.",
+      "2 revisions effectively address the identified problems."
+    ]
+  },
+  "total_score": 95.34,
+  "max_score": 100,
+  "overall_score": 95.34,
+  "performance_level": "Excellent",
+  "passed": true,
+  "summary_feedback": [
+    "PASSED with an overall score of 95.34% (Excellent)."
+  ]
+}

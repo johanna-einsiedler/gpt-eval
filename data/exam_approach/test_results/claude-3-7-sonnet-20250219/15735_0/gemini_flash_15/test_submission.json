@@ -1,0 +1,30 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "total_revenue": 6833.67,
+        "total_units_sold": 56,
+        "average_order_value": 68.34,
+        "best_selling_product": "Wireless Earbuds"
+    },
+    "task2": {
+        "total_expenses": 2266.49,
+        "expense_categories": {
+            "advertising": 640.5,
+            "shipping": 462.05,
+            "product_costs": 2026.0,
+            "platform_fees": 137.24,
+            "other": 50.7
+        },
+        "gross_profit": 4567.18,
+        "profit_margin_percentage": 66.82
+    },
+    "task3": {
+        "monthly_summary": {
+            "total_revenue": 6833.67,
+            "total_expenses": 2266.49,
+            "net_profit": 4567.18,
+            "roi_percentage": 201.4,
+            "conversion_rate_percentage": 3.62
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+  "schedule": {
+    "score": 30,
+    "max_score": 30,
+    "feedback": [
+      "Critical path identification: 10.0/10 points",
+      "  - Correctly identified 6 of 6 critical path tasks",
+      "Project duration calculation: 10.0/10 points",
+      "  - Calculated duration: 60 days (correct: 56 days)",
+      "Task schedule creation: 10.0/10 points",
+      "  - Created logical schedule for 15 of 15 tasks"
+    ]
+  },
+  "responsibility": {
+    "score": 22.5,
+    "max_score": 25,
+    "feedback": [
+      "RACI matrix creation: 12.5/15 points",
+      "  - Created appropriate assignments for 10 of 15 tasks",
+      "Most assigned team member identification: 5/5 points",
+      "  - Identified: EMP001 (correct: EMP001)",
+      "Task assignment completeness: 5/5 points",
+      "  - 0 unassigned tasks (should be 0)"
+    ]
+  },
+  "compliance": {
+    "score": 10.0,
+    "max_score": 25,
+    "feedback": [
+      "Highest priority compliance item: 0/5 points",
+      "  - Identified: CR001 (correct: CR004)",
+      "Compliance requirements linking: 10.0/10 points",
+      "  - Properly linked 8 of 8 requirements to tasks",
+      "Compliance deadline calculation: 0.0/10 points",
+      "  - Calculated accurate deadlines for 0 of 8 requirements"
+    ]
+  },
+  "integration": {
+    "score": 8.333333333333334,
+    "max_score": 20,
+    "feedback": [
+      "High-risk task identification: 3.3/10 points",
+      "  - Correctly identified 1 of 5 high-risk tasks",
+      "Next deadline identification: 0/5 points",
+      "  - Identified: 2022-12-07 (correct: 2024-06-11)",
+      "Task status tracking framework: 5/5 points",
+      "  - Included 4 of 4 required status categories"
+    ]
+  },
+  "overall_score": 71,
+  "automatic_failures": [],
+  "passed": true
+}

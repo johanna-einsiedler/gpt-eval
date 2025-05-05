@@ -1,0 +1,122 @@
+{
+  "task1": {
+    "average_compensation": {
+      "candidate_answer": 71835.25,
+      "correct_answer": 89359.75,
+      "is_correct": false
+    },
+    "highest_cost_benefit": {
+      "candidate_answer": "Health_Benefits",
+      "correct_answer": "Health_Benefits",
+      "is_correct": true
+    },
+    "tenure_cost_correlation": {
+      "candidate_answer": 0.89,
+      "correct_answer": 0.91,
+      "is_correct": false
+    },
+    "projected_increase": {
+      "candidate_answer": 3.0,
+      "correct_answer": 2.3,
+      "is_correct": false
+    }
+  },
+  "task2": {
+    "scenario1_total_cost": {
+      "candidate_answer": 471053.0,
+      "correct_answer": 454125.0,
+      "is_correct": false
+    },
+    "scenario2_total_cost": {
+      "candidate_answer": 453371.0,
+      "correct_answer": 452855.25,
+      "is_correct": false
+    },
+    "scenario3_total_cost": {
+      "candidate_answer": 444595.0,
+      "correct_answer": 450665.55,
+      "is_correct": false
+    },
+    "lowest_cost_scenario": {
+      "candidate_answer": 3,
+      "correct_answer": 3,
+      "is_correct": true
+    },
+    "percentage_difference": {
+      "candidate_answer": 5.95,
+      "correct_answer": 0.77,
+      "is_correct": false
+    },
+    "tenure_restricted_cost": {
+      "candidate_answer": 195020.0,
+      "correct_answer": 321843.9,
+      "is_correct": false
+    }
+  },
+  "task3": {
+    "group_a_compensation_ratio": {
+      "candidate_answer": 0.32,
+      "correct_answer": 0.37,
+      "is_correct": true
+    },
+    "group_b_compensation_ratio": {
+      "candidate_answer": 0.3,
+      "correct_answer": 0.39,
+      "is_correct": false
+    },
+    "group_c_compensation_ratio": {
+      "candidate_answer": 0.31,
+      "correct_answer": 0.41,
+      "is_correct": false
+    },
+    "highest_benefit_group": {
+      "candidate_answer": "Group_C",
+      "correct_answer": "Group_C",
+      "is_correct": true
+    },
+    "cost_to_90_percent": {
+      "candidate_answer": 10440.0,
+      "correct_answer": 29474.5,
+      "is_correct": false
+    },
+    "retirement_benefit_difference": {
+      "candidate_answer": 105.13,
+      "correct_answer": 100.0,
+      "is_correct": false
+    },
+    "cost_parity_adjustment": {
+      "candidate_answer": 44555.0,
+      "correct_answer": 38329.0,
+      "is_correct": false
+    }
+  },
+  "section_scores": {
+    "task1": {
+      "correct": 1,
+      "total": 4,
+      "percentage": 25.0
+    },
+    "task2": {
+      "correct": 1,
+      "total": 6,
+      "percentage": 16.67
+    },
+    "task3": {
+      "correct": 2,
+      "total": 7,
+      "percentage": 28.57
+    }
+  },
+  "critical_analysis": {
+    "highest_cost_benefit": true,
+    "lowest_cost_scenario": true,
+    "compensation_ratio": true
+  },
+  "overall_score": 23.53,
+  "passed": false,
+  "pass_criteria": {
+    "min_score_requirement": false,
+    "min_section_requirement": false,
+    "critical_requirement": true
+  }
+}

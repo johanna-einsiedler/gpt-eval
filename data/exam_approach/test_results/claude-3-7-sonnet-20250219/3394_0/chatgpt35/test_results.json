@@ -1,0 +1,107 @@
+{
+  "overall_score": 33.3,
+  "max_possible_score": 120,
+  "sections": {
+    "q1_variance": {
+      "score": 19,
+      "max_score": 40,
+      "details": [
+        "Incorrect dollar variance for Operations - Equipment: got 12000, expected -12000",
+        "Incorrect percentage variance for Operations - Equipment: got 15.0, expected -15.0",
+        "Incorrect dollar variance for Operations - Supplies: got -1500, expected 1500",
+        "Incorrect percentage variance for Operations - Supplies: got -5.0, expected 5.0",
+        "Incorrect dollar variance for Operations - Travel: got -3500, expected 3500",
+        "Incorrect percentage variance for Operations - Travel: got -29.2, expected 29.2",
+        "Incorrect dollar variance for Operations - Training: got -3000, expected 3000",
+        "Incorrect percentage variance for Operations - Training: got -20.0, expected 20.0",
+        "Incorrect dollar variance for IT - Equipment: got 25000, expected -25000",
+        "Incorrect percentage variance for IT - Equipment: got 20.8, expected -20.8",
+        "Incorrect dollar variance for Marketing - Advertising: got -8000, expected 8000",
+        "Incorrect percentage variance for Marketing - Advertising: got -13.3, expected 13.3",
+        "Incorrect dollar variance for Marketing - Events: got -7000, expected 7000",
+        "Incorrect percentage variance for Marketing - Events: got -28.0, expected 28.0",
+        "Incorrect dollar variance for Marketing - Market Research: got 2500, expected -2500",
+        "Incorrect percentage variance for Marketing - Market Research: got 12.5, expected -12.5",
+        "Incorrect percentage variance for Marketing - Promotional Materials: got -7.4, expected -8.0",
+        "Incorrect dollar variance for Finance - Training: got -1800, expected 1500",
+        "Incorrect percentage variance for Finance - Training: got -9.0, expected 7.5",
+        "Incorrect dollar variance for Finance - Office Supplies: got -200, expected 300",
+        "Incorrect percentage variance for Finance - Office Supplies: got -8.0, expected 4.0"
+      ],
+      "accuracy": 47.5
+    },
+    "q1_top_overbudget_categories": {
+      "score": 2,
+      "max_score": 15,
+      "details": [
+        "Missing or incorrect overbudget category: IT - Equipment",
+        "Missing or incorrect overbudget category: IT - Software",
+        "Overbudget categories are not sorted correctly from most negative to least negative"
+      ],
+      "accuracy": 16.7
+    },
+    "june_forecast": {
+      "score": 13,
+      "max_score": 20,
+      "details": [
+        "Unreasonable June forecast for Operations - Salaries: got 308000, expected around 105000",
+        "Unreasonable June forecast for Operations - Training: got 4800, expected around 7900",
+        "Unreasonable June forecast for IT - Consulting: got 9000, expected around 15000",
+        "Unreasonable June forecast for Marketing - Market Research: got 8000, expected around 9000",
+        "Unreasonable June forecast for Marketing - Promotional Materials: got 6800, expected around 7900",
+        "Unreasonable June forecast for Finance - Software: got 7500, expected around 9000",
+        "Unreasonable June forecast for Finance - Office Supplies: got 2500, expected around 2200"
+      ],
+      "accuracy": 65.0
+    },
+    "projected_yearend_variance": {
+      "score": 0,
+      "max_score": 10,
+      "details": [
+        "Incorrect year-end dollar variance: got -15700, expected around -180000",
+        "Incorrect year-end percentage variance: got -1.4, expected around -3.2"
+      ],
+      "accuracy": 0.0
+    },
+    "categories_exceeding_budget": {
+      "score": 4,
+      "max_score": 10,
+      "details": [
+        "Failed to identify 3 categories that exceed budget"
+      ],
+      "accuracy": 40.0
+    },
+    "best_budget_adherence_department": {
+      "score": 0,
+      "max_score": 5,
+      "details": [
+        "Incorrect best adherence department: got IT, expected Marketing"
+      ],
+      "accuracy": 0.0
+    },
+    "q1_average_monthly_expenditure": {
+      "score": 0,
+      "max_score": 10,
+      "details": [
+        "Incorrect average expenditure for Operations: got 94500, expected 148667",
+        "Incorrect average expenditure for IT: got 67500, expected 168000",
+        "Incorrect average expenditure for Marketing: got 33000, expected 86233",
+        "Incorrect average expenditure for Finance: got 15500, expected 102067"
+      ],
+      "accuracy": 0.0
+    },
+    "unusual_monthly_fluctuations": {
+      "score": 2,
+      "max_score": 10,
+      "details": [
+        "Incorrectly identified 1 fluctuations that weren't unusual",
+        "Failed to identify 5 unusual fluctuations"
+      ],
+      "accuracy": 25.0
+    }
+  },
+  "total_score": 40,
+  "passed": false,
+  "critical_failure": "Failed critical section: q1_variance",
+  "section_failure": "Unusual monthly fluctuations below minimum requirement"
+}

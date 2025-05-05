@@ -1,0 +1,193 @@
+{
+    "candidate_id": "GPT-4o",
+    "q1_variance": {
+        "Operations": {
+            "Salaries": {
+                "dollar_variance": -5000,
+                "percentage_variance": -1.7
+            },
+            "Equipment": {
+                "dollar_variance": 12000,
+                "percentage_variance": 15.0
+            },
+            "Supplies": {
+                "dollar_variance": -1500,
+                "percentage_variance": -5.0
+            },
+            "Travel": {
+                "dollar_variance": -3500,
+                "percentage_variance": -29.2
+            },
+            "Training": {
+                "dollar_variance": -3000,
+                "percentage_variance": -20.0
+            }
+        },
+        "IT": {
+            "Salaries": {
+                "dollar_variance": 0,
+                "percentage_variance": 0.0
+            },
+            "Equipment": {
+                "dollar_variance": 25000,
+                "percentage_variance": 20.8
+            },
+            "Software": {
+                "dollar_variance": -12000,
+                "percentage_variance": -20.0
+            },
+            "Consulting": {
+                "dollar_variance": 3000,
+                "percentage_variance": 12.0
+            },
+            "Cloud Services": {
+                "dollar_variance": -4500,
+                "percentage_variance": -12.0
+            }
+        },
+        "Marketing": {
+            "Salaries": {
+                "dollar_variance": 0,
+                "percentage_variance": 0.0
+            },
+            "Advertising": {
+                "dollar_variance": -8000,
+                "percentage_variance": -13.3
+            },
+            "Events": {
+                "dollar_variance": -7000,
+                "percentage_variance": -28.0
+            },
+            "Market Research": {
+                "dollar_variance": 2500,
+                "percentage_variance": 12.5
+            },
+            "Promotional Materials": {
+                "dollar_variance": -1200,
+                "percentage_variance": -7.4
+            }
+        },
+        "Finance": {
+            "Salaries": {
+                "dollar_variance": 0,
+                "percentage_variance": 0.0
+            },
+            "Software": {
+                "dollar_variance": -5000,
+                "percentage_variance": -12.5
+            },
+            "Professional Services": {
+                "dollar_variance": -3000,
+                "percentage_variance": -6.7
+            },
+            "Training": {
+                "dollar_variance": -1800,
+                "percentage_variance": -9.0
+            },
+            "Office Supplies": {
+                "dollar_variance": -200,
+                "percentage_variance": -8.0
+            }
+        }
+    },
+    "q1_top_overbudget_categories": [
+        {
+            "category": "Equipment",
+            "department": "Operations",
+            "dollar_variance": 12000,
+            "percentage_variance": 15.0
+        },
+        {
+            "category": "Consulting",
+            "department": "IT",
+            "dollar_variance": 3000,
+            "percentage_variance": 12.0
+        },
+        {
+            "category": "Market Research",
+            "department": "Marketing",
+            "dollar_variance": 2500,
+            "percentage_variance": 12.5
+        }
+    ],
+    "june_forecast": {
+        "Operations": {
+            "Salaries": 308000,
+            "Equipment": 21000,
+            "Supplies": 10500,
+            "Travel": 4200,
+            "Training": 4800,
+            "Total": 348500
+        },
+        "IT": {
+            "Salaries": 76500,
+            "Equipment": 40000,
+            "Software": 18000,
+            "Consulting": 9000,
+            "Cloud Services": 16500,
+            "Total": 160000
+        },
+        "Marketing": {
+            "Salaries": 50000,
+            "Advertising": 40000,
+            "Events": 30000,
+            "Market Research": 8000,
+            "Promotional Materials": 6800,
+            "Total": 134800
+        },
+        "Finance": {
+            "Salaries": 62500,
+            "Software": 7500,
+            "Professional Services": 11000,
+            "Training": 2500,
+            "Office Supplies": 2500,
+            "Total": 86000
+        }
+    },
+    "projected_yearend_variance": {
+        "dollar_variance": -15700,
+        "percentage_variance": -1.4
+    },
+    "categories_exceeding_budget": [
+        {
+            "category": "Equipment",
+            "department": "Operations",
+            "projected_percentage_over": 10.5
+        },
+        {
+            "category": "Software",
+            "department": "IT",
+            "projected_percentage_over": 10.0
+        }
+    ],
+    "best_budget_adherence_department": {
+        "department": "IT",
+        "q1_variance_percentage": 0.0
+    },
+    "q1_average_monthly_expenditure": {
+        "Operations": 94500,
+        "IT": 67500,
+        "Marketing": 33000,
+        "Finance": 15500
+    },
+    "unusual_monthly_fluctuations": [
+        {
+            "period": "Jan-Feb",
+            "category": "Equipment",
+            "department": "Operations",
+            "percentage_change": 6.3
+        },
+        {
+            "period": "Feb-Mar",
+            "category": "Equipment",
+            "department": "Operations",
+            "percentage_change": 14.3
+        },
+        {
+            "period": "Feb-Mar",
+            "category": "Software",
+            "department": "IT",
+            "percentage_change": 20.0
+        }
+    ]
+}

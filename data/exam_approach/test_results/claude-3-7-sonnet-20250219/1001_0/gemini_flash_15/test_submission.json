@@ -1,0 +1,25 @@
+{
+    "candidate_id": "GPT-4",
+    "task1": {
+        "total_compensation_budget": 7288800,
+        "total_benefits_budget": 1673600,
+        "total_training_budget": 216000,
+        "total_hr_budget": 9178400
+    },
+    "task2": {
+        "variance_category_1": "Overtime",
+        "variance_percentage_1": 32.3,
+        "variance_category_2": "Agency Fees",
+        "variance_percentage_2": 40.4
+    },
+    "task3": {
+        "option_selected": "Option C",
+        "projected_savings": 244800
+    },
+    "task4": {
+        "department_1_allocation": 41472,
+        "department_2_allocation": 32256,
+        "department_3_allocation": 26640,
+        "department_4_allocation": 19632
+    }
+}

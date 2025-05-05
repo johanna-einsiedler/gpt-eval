@@ -1,0 +1,42 @@
+{
+    "candidate_id": "DeepSeekR1",
+    "task1": {
+        "design_choice": "randomized controlled trial",
+        "sample_size": 80,
+        "stratification_variables": [
+            "age",
+            "baseline_bp"
+        ],
+        "expected_effect_size": 0.72
+    },
+    "task2": {
+        "minimum_sample_size": 128,
+        "power_at_sample_sizes": [
+            {
+                "sample_size": 100,
+                "power": 0.63
+            },
+            {
+                "sample_size": 200,
+                "power": 0.89
+            },
+            {
+                "sample_size": 300,
+                "power": 0.97
+            }
+        ],
+        "optimal_allocation_ratio": "1:1"
+    },
+    "task3": {
+        "control_group_mean": 158.1,
+        "treatment_effect_estimate": -14.2,
+        "confounders_identified": [
+            "age",
+            "hypertension_history"
+        ],
+        "matching_variables": [
+            "baseline_bp",
+            "hypertension_history"
+        ]
+    }
+}

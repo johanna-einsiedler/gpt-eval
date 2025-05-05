@@ -1,0 +1,596 @@
+{
+  "candidate_id": "GPT-4",
+  "overall_score": 20.0,
+  "passing_threshold": 70,
+  "passed": false,
+  "sections": {
+    "total_divisible_surplus": {
+      "points_earned": 0,
+      "points_possible": 10,
+      "details": "Incorrect. Expected: 50000000, Got: 50000"
+    },
+    "sources_of_surplus": {
+      "points_earned": 0,
+      "points_possible": 15,
+      "details": {
+        "mortality": {
+          "points_earned": 0,
+          "points_possible": 3.75,
+          "details": "Incorrect. Expected: 12500000, Got: 12500"
+        },
+        "expense": {
+          "points_earned": 0,
+          "points_possible": 3.75,
+          "details": "Incorrect. Expected: 8750000, Got: 8750"
+        },
+        "investment": {
+          "points_earned": 0,
+          "points_possible": 3.75,
+          "details": "Incorrect. Expected: 15200000, Got: 15200"
+        },
+        "lapse": {
+          "points_earned": 0,
+          "points_possible": 3.75,
+          "details": "Incorrect. Expected: 3550000, Got: 3550"
+        }
+      }
+    },
+    "three_factor_formula": {
+      "points_earned": 15,
+      "points_possible": 15,
+      "details": {
+        "interest_rate": {
+          "points_earned": 5,
+          "points_possible": 5,
+          "details": "Correct"
+        },
+        "expense_adjustment": {
+          "points_earned": 5,
+          "points_possible": 5,
+          "details": "Correct"
+        },
+        "mortality_adjustment": {
+          "points_earned": 5,
+          "points_possible": 5,
+          "details": "Correct"
+        }
+      }
+    },
+    "policy_dividends": {
+      "points_earned": 0,
+      "points_possible": 40,
+      "correct_count": 0,
+      "total_policies": 100,
+      "details": {
+        "P001": {
+          "expected": 767,
+          "submitted": 1766,
+          "is_correct": false
+        },
+        "P002": {
+          "expected": 1033,
+          "submitted": 3532,
+          "is_correct": false
+        },
+        "P003": {
+          "expected": 217,
+          "submitted": 466,
+          "is_correct": false
+        },
+        "P004": {
+          "expected": 2682,
+          "submitted": 11062,
+          "is_correct": false
+        },
+        "P005": {
+          "expected": 865,
+          "submitted": 2649,
+          "is_correct": false
+        },
+        "P006": {
+          "expected": 254,
+          "submitted": 578,
+          "is_correct": false
+        },
+        "P007": {
+          "expected": 1517,
+          "submitted": 5531,
+          "is_correct": false
+        },
+        "P008": {
+          "expected": 322,
+          "submitted": 873,
+          "is_correct": false
+        },
+        "P009": {
+          "expected": 2370,
+          "submitted": 9780,
+          "is_correct": false
+        },
+        "P010": {
+          "expected": 815,
+          "submitted": 3966,
+          "is_correct": false
+        },
+        "P011": {
+          "expected": 867,
+          "submitted": 3266,
+          "is_correct": false
+        },
+        "P012": {
+          "expected": 232,
+          "submitted": 722,
+          "is_correct": false
+        },
+        "P013": {
+          "expected": 1857,
+          "submitted": 7261,
+          "is_correct": false
+        },
+        "P014": {
+          "expected": 810,
+          "submitted": 4470,
+          "is_correct": false
+        },
+        "P015": {
+          "expected": 217,
+          "submitted": 787,
+          "is_correct": false
+        },
+        "P016": {
+          "expected": 1904,
+          "submitted": 8261,
+          "is_correct": false
+        },
+        "P017": {
+          "expected": 487,
+          "submitted": 1633,
+          "is_correct": false
+        },
+        "P018": {
+          "expected": 2464,
+          "submitted": 10280,
+          "is_correct": false
+        },
+        "P019": {
+          "expected": 872,
+          "submitted": 5070,
+          "is_correct": false
+        },
+        "P020": {
+          "expected": 1224,
+          "submitted": 6649,
+          "is_correct": false
+        },
+        "P021": {
+          "expected": 845,
+          "submitted": 1325,
+          "is_correct": false
+        },
+        "P022": {
+          "expected": 1022,
+          "submitted": 2078,
+          "is_correct": false
+        },
+        "P023": {
+          "expected": 382,
+          "submitted": 525,
+          "is_correct": false
+        },
+        "P024": {
+          "expected": 2797,
+          "submitted": 8820,
+          "is_correct": false
+        },
+        "P025": {
+          "expected": 1105,
+          "submitted": 2977,
+          "is_correct": false
+        },
+        "P026": {
+          "expected": 254,
+          "submitted": 394,
+          "is_correct": false
+        },
+        "P027": {
+          "expected": 2097,
+          "submitted": 6158,
+          "is_correct": false
+        },
+        "P028": {
+          "expected": 493,
+          "submitted": 922,
+          "is_correct": false
+        },
+        "P029": {
+          "expected": 3236,
+          "submitted": 10280,
+          "is_correct": false
+        },
+        "P030": {
+          "expected": 1050,
+          "submitted": 3966,
+          "is_correct": false
+        },
+        "P031": {
+          "expected": 1000,
+          "submitted": 2977,
+          "is_correct": false
+        },
+        "P032": {
+          "expected": 356,
+          "submitted": 693,
+          "is_correct": false
+        },
+        "P033": {
+          "expected": 2622,
+          "submitted": 8261,
+          "is_correct": false
+        },
+        "P034": {
+          "expected": 1437,
+          "submitted": 5070,
+          "is_correct": false
+        },
+        "P035": {
+          "expected": 254,
+          "submitted": 466,
+          "is_correct": false
+        },
+        "P036": {
+          "expected": 2397,
+          "submitted": 7560,
+          "is_correct": false
+        },
+        "P037": {
+          "expected": 644,
+          "submitted": 1260,
+          "is_correct": false
+        },
+        "P038": {
+          "expected": 2553,
+          "submitted": 8261,
+          "is_correct": false
+        },
+        "P039": {
+          "expected": 1050,
+          "submitted": 3966,
+          "is_correct": false
+        },
+        "P040": {
+          "expected": 1547,
+          "submitted": 5531,
+          "is_correct": false
+        },
+        "P041": {
+          "expected": 1023,
+          "submitted": 1633,
+          "is_correct": false
+        },
+        "P042": {
+          "expected": 1334,
+          "submitted": 2449,
+          "is_correct": false
+        },
+        "P043": {
+          "expected": 475,
+          "submitted": 578,
+          "is_correct": false
+        },
+        "P044": {
+          "expected": 3294,
+          "submitted": 10280,
+          "is_correct": false
+        },
+        "P045": {
+          "expected": 1444,
+          "submitted": 3966,
+          "is_correct": false
+        },
+        "P046": {
+          "expected": 237,
+          "submitted": 466,
+          "is_correct": false
+        },
+        "P047": {
+          "expected": 2695,
+          "submitted": 7261,
+          "is_correct": false
+        },
+        "P048": {
+          "expected": 647,
+          "submitted": 873,
+          "is_correct": false
+        },
+        "P049": {
+          "expected": 3959,
+          "submitted": 11062,
+          "is_correct": false
+        },
+        "P050": {
+          "expected": 1360,
+          "submitted": 4470,
+          "is_correct": false
+        },
+        "P051": {
+          "expected": 1300,
+          "submitted": 3966,
+          "is_correct": false
+        },
+        "P052": {
+          "expected": 429,
+          "submitted": 722,
+          "is_correct": false
+        },
+        "P053": {
+          "expected": 3092,
+          "submitted": 9780,
+          "is_correct": false
+        },
+        "P054": {
+          "expected": 1877,
+          "submitted": 6158,
+          "is_correct": false
+        },
+        "P055": {
+          "expected": 237,
+          "submitted": 578,
+          "is_correct": false
+        },
+        "P056": {
+          "expected": 3294,
+          "submitted": 10280,
+          "is_correct": false
+        },
+        "P057": {
+          "expected": 845,
+          "submitted": 1260,
+          "is_correct": false
+        },
+        "P058": {
+          "expected": 3505,
+          "submitted": 10280,
+          "is_correct": false
+        },
+        "P059": {
+          "expected": 1360,
+          "submitted": 4470,
+          "is_correct": false
+        },
+        "P060": {
+          "expected": 2021,
+          "submitted": 6158,
+          "is_correct": false
+        },
+        "P061": {
+          "expected": 895,
+          "submitted": 2977,
+          "is_correct": false
+        },
+        "P062": {
+          "expected": 870,
+          "submitted": 4470,
+          "is_correct": false
+        },
+        "P063": {
+          "expected": 256,
+          "submitted": 787,
+          "is_correct": false
+        },
+        "P064": {
+          "expected": 2146,
+          "submitted": 8820,
+          "is_correct": false
+        },
+        "P065": {
+          "expected": 1007,
+          "submitted": 5070,
+          "is_correct": false
+        },
+        "P066": {
+          "expected": 317,
+          "submitted": 1260,
+          "is_correct": false
+        },
+        "P067": {
+          "expected": 1706,
+          "submitted": 7261,
+          "is_correct": false
+        },
+        "P068": {
+          "expected": 429,
+          "submitted": 1260,
+          "is_correct": false
+        },
+        "P069": {
+          "expected": 2175,
+          "submitted": 8261,
+          "is_correct": false
+        },
+        "P070": {
+          "expected": 758,
+          "submitted": 4470,
+          "is_correct": false
+        },
+        "P071": {
+          "expected": 867,
+          "submitted": 3966,
+          "is_correct": false
+        },
+        "P072": {
+          "expected": 325,
+          "submitted": 1260,
+          "is_correct": false
+        },
+        "P073": {
+          "expected": 2064,
+          "submitted": 9780,
+          "is_correct": false
+        },
+        "P074": {
+          "expected": 935,
+          "submitted": 5531,
+          "is_correct": false
+        },
+        "P075": {
+          "expected": 279,
+          "submitted": 1260,
+          "is_correct": false
+        },
+        "P076": {
+          "expected": 1471,
+          "submitted": 6649,
+          "is_correct": false
+        },
+        "P077": {
+          "expected": 595,
+          "submitted": 2449,
+          "is_correct": false
+        },
+        "P078": {
+          "expected": 1800,
+          "submitted": 7873,
+          "is_correct": false
+        },
+        "P079": {
+          "expected": 815,
+          "submitted": 3966,
+          "is_correct": false
+        },
+        "P080": {
+          "expected": 1152,
+          "submitted": 5531,
+          "is_correct": false
+        },
+        "P081": {
+          "expected": 1055,
+          "submitted": 2977,
+          "is_correct": false
+        },
+        "P082": {
+          "expected": 1192,
+          "submitted": 4470,
+          "is_correct": false
+        },
+        "P083": {
+          "expected": 446,
+          "submitted": 1260,
+          "is_correct": false
+        },
+        "P084": {
+          "expected": 3147,
+          "submitted": 10280,
+          "is_correct": false
+        },
+        "P085": {
+          "expected": 1326,
+          "submitted": 5070,
+          "is_correct": false
+        },
+        "P086": {
+          "expected": 318,
+          "submitted": 693,
+          "is_correct": false
+        },
+        "P087": {
+          "expected": 2397,
+          "submitted": 7560,
+          "is_correct": false
+        },
+        "P088": {
+          "expected": 564,
+          "submitted": 1260,
+          "is_correct": false
+        },
+        "P089": {
+          "expected": 3596,
+          "submitted": 11062,
+          "is_correct": false
+        },
+        "P090": {
+          "expected": 1242,
+          "submitted": 5531,
+          "is_correct": false
+        },
+        "P091": {
+          "expected": 1221,
+          "submitted": 4470,
+          "is_correct": false
+        },
+        "P092": {
+          "expected": 427,
+          "submitted": 922,
+          "is_correct": false
+        },
+        "P093": {
+          "expected": 2973,
+          "submitted": 8261,
+          "is_correct": false
+        },
+        "P094": {
+          "expected": 1659,
+          "submitted": 6158,
+          "is_correct": false
+        },
+        "P095": {
+          "expected": 297,
+          "submitted": 693,
+          "is_correct": false
+        },
+        "P096": {
+          "expected": 2697,
+          "submitted": 8820,
+          "is_correct": false
+        },
+        "P097": {
+          "expected": 725,
+          "submitted": 1633,
+          "is_correct": false
+        },
+        "P098": {
+          "expected": 2848,
+          "submitted": 9780,
+          "is_correct": false
+        },
+        "P099": {
+          "expected": 1242,
+          "submitted": 5531,
+          "is_correct": false
+        },
+        "P100": {
+          "expected": 1768,
+          "submitted": 6158,
+          "is_correct": false
+        }
+      }
+    },
+    "dividend_metrics": {
+      "points_earned": 5,
+      "points_possible": 20,
+      "details": {
+        "average_dividend": {
+          "points_earned": 0,
+          "points_possible": 5,
+          "details": "Incorrect. Expected: 1242.97, Got: 4236.76"
+        },
+        "highest_dividend": {
+          "points_earned": 0,
+          "points_possible": 5,
+          "details": "Incorrect. Expected: 3959, Got: 11062"
+        },
+        "lowest_dividend": {
+          "points_earned": 0,
+          "points_possible": 5,
+          "details": "Incorrect. Expected: 217, Got: 394"
+        },
+        "dividend_concentration_ratio": {
+          "points_earned": 5,
+          "points_possible": 5,
+          "details": "Correct"
+        }
+      }
+    }
+  },
+  "total_points_earned": 20,
+  "total_points_possible": 100
+}

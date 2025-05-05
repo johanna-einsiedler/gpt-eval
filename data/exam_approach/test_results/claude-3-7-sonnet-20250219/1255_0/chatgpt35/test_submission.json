@@ -1,0 +1,87 @@
+{
+    "candidate_name": "CreditAnalyst2023",
+    "task1_ratios": {
+        "liquidity_ratios": {
+            "current_ratio": {
+                "2020": 1.76,
+                "2021": 1.78,
+                "2022": 1.89
+            },
+            "quick_ratio": {
+                "2020": 1.33,
+                "2021": 1.35,
+                "2022": 1.47
+            },
+            "cash_ratio": {
+                "2020": 0.53,
+                "2021": 0.57,
+                "2022": 0.63
+            }
+        },
+        "solvency_ratios": {
+            "debt_to_equity_ratio": {
+                "2020": 1.56,
+                "2021": 1.45,
+                "2022": 1.18
+            },
+            "debt_to_assets_ratio": {
+                "2020": 0.61,
+                "2021": 0.59,
+                "2022": 0.54
+            },
+            "interest_coverage_ratio": {
+                "2020": 3.0,
+                "2021": 4.31,
+                "2022": 6.0
+            }
+        },
+        "profitability_ratios": {
+            "return_on_assets": {
+                "2020": 0.06,
+                "2021": 0.08,
+                "2022": 0.11
+            },
+            "return_on_equity": {
+                "2020": 0.15,
+                "2021": 0.2,
+                "2022": 0.24
+            },
+            "net_profit_margin": {
+                "2020": 0.05,
+                "2021": 0.07,
+                "2022": 0.08
+            },
+            "gross_profit_margin": {
+                "2020": 0.4,
+                "2021": 0.41,
+                "2022": 0.42
+            }
+        },
+        "efficiency_ratios": {
+            "inventory_turnover_ratio": {
+                "2020": 4.69,
+                "2021": 4.86,
+                "2022": 5.16
+            },
+            "accounts_receivable_turnover_ratio": {
+                "2020": 10.87,
+                "2021": 10.38,
+                "2022": 12.5
+            },
+            "total_asset_turnover_ratio": {
+                "2020": 1.22,
+                "2021": 1.27,
+                "2022": 1.32
+            }
+        }
+    },
+    "task2_analysis": {
+        "trend_analysis": {
+            "liquidity_trend": "Improving",
+            "solvency_trend": "Improving",
+            "profitability_trend": "Improving",
+            "efficiency_trend": "Improving"
+        },
+        "credit_risk_assessment": "Low"
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "average_growth_rates": {
+            "Personnel": 0.06,
+            "Equipment": 0.13,
+            "Supplies": 0.04,
+            "Training": 0.13,
+            "Facilities": 0.05,
+            "IT Services": 0.18,
+            "Travel": -0.08,
+            "Consulting": 0.12,
+            "Marketing": 0.12,
+            "Miscellaneous": 0.04
+        },
+        "projected_costs": {
+            "Personnel": 526458,
+            "Equipment": 250155,
+            "Supplies": 100225,
+            "Training": 93114,
+            "Facilities": 182063,
+            "IT Services": 154708,
+            "Travel": 35400,
+            "Consulting": 169776,
+            "Marketing": 78123,
+            "Miscellaneous": 40131,
+            "Total": 1729953
+        },
+        "top_growth_categories": [
+            "IT Services",
+            "Equipment",
+            "Training"
+        ]
+    },
+    "task2": {
+        "total_resources_needed": 949375,
+        "departmental_allocation": {
+            "Operations": 379750,
+            "Administration": 142406,
+            "Development": 284812,
+            "Support": 142406
+        },
+        "cost_per_unit": {
+            "Operations": 151.9,
+            "Administration": 142.41,
+            "Development": 158.23,
+            "Support": 118.67
+        },
+        "resource_constraints": [
+            "Staffing",
+            "Infrastructure"
+        ]
+    },
+    "task3": {
+        "significant_variances": {
+            "Equipment": {
+                "budgeted": 254581,
+                "actual_projected": 306667,
+                "variance_percent": 0.2
+            },
+            "Travel": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
+                "variance_percent": 0.23
+            }
+        },
+        "additional_resources_needed": 49825,
+        "recommended_adjustments": {
+            "Equipment": 5652,
+            "Travel": -3200
+        }
+    }
+}
