@@ -27,25 +27,13 @@ from IPython.display import Image, display
 
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
-
+from query_agents import *
 # load openai api key
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
 
-model = 'claude-3-7-sonnet-20250219'
 # Initialize Claude Sonnet
-llm = ChatAnthropic(
-    model= 'claude-3-7-sonnet-20250219',  # Claude Haiku model
-    anthropic_api_key=ANTHROPIC_API_KEY,
-    temperature=0,
-    max_tokens=8192
-)
-
-# 1. Using __call__ (direct function call)
-#response_via_call = llm(prompt)
-#response_via_call.content
-
 def safe_eval(value, default=[]):
     """
     Safely evaluates a string as a Python literal.
@@ -180,6 +168,7 @@ class ExamState(TypedDict):
     answer_key_count: int
     check_overall_makes_sense: bool
     explanation_overall_makes_sense:str
+    metadata: dict
     
 
 def node_system_prompt(state: ExamState) -> ExamState:
@@ -207,18 +196,23 @@ def node_system_prompt(state: ExamState) -> ExamState:
 
 # 2. Query overview
 def node_overview(state: ExamState) -> ExamState:
+  
+
     # NOTE - Maybe we want to in the overview prentively prompt the LLM to have trick questions or things that are
     # not obvious, so that the evaluator knows this, but the candidate doesn't
     prompt_overview ='''### Your assignment:
     Provide a brief explanation of the exam's purpose and structure for the evaluator.
     '''
     print('creating exam overview')
-    messages = [
-    SystemMessage(content=state["system_prompt"]),
-    HumanMessage(content=prompt_overview)
-    ]
-
-    state["overview"] = llm(messages).content
+    # messages = [
+    # SystemMessage(content=state["system_prompt"]),
+    # HumanMessage(content=prompt_overview)
+    # ]
+    #print(state['exam_author_model'])
+    content, metadata = query_agent(state["system_prompt"], prompt_overview, state["exam_author_model"])
+    #rint(response)
+    state["overview"] = content
+    state['metadata']['overview'] = metadata
     return state
 
 def node_instructions(state: ExamState) -> ExamState:
@@ -239,13 +233,14 @@ def node_instructions(state: ExamState) -> ExamState:
     '''
     prompt = prompt_template_instructions.format(answer_overview=state["overview"])
     
-    messages = [
-    SystemMessage(content=state["system_prompt"]),
-    HumanMessage(content=prompt)
-    ]
+    # messages = [
+    # SystemMessage(content=state["system_prompt"]),
+    # HumanMessage(content=prompt)
+    # ]
 
-
-    state["instructions"] = llm(messages).content
+    content, metadata = query_agent(state["system_prompt"], prompt, state["exam_author_model"])
+    state["instructions"] = content
+    state['metadata']['instructions'] = metadata
     return state
 
 def node_materials(state: ExamState) -> ExamState:
@@ -279,13 +274,14 @@ def node_materials(state: ExamState) -> ExamState:
 
     prompt = prompt_template_materials.format(answer_overview=state["overview"], answer_instructions=state["instructions"])
     
-    messages = [
-    SystemMessage(content=state["system_prompt"]),
-    HumanMessage(content=prompt)
-    ]
+    # messages = [
+    # SystemMessage(content=state["system_prompt"]),
+    # HumanMessage(content=prompt)
+    # ]
+    content, metadata = query_agent(state["system_prompt"], prompt, state["exam_author_model"])
 
-    msg = llm(messages).content
-    state["materials_all"] = msg
+    state['metadata']['materials'] = metadata
+    state["materials_all"] = content
     try:
         state["materials_candidate"] = re.search(r'<MATERIALS_FOR_CANDIDATE>(.*?)</MATERIALS_FOR_CANDIDATE>', state["materials_all"], re.DOTALL).group(1)
     except:
@@ -316,11 +312,14 @@ def node_submission(state: ExamState) -> ExamState:
         answer_instructions=state["instructions"],
         answer_materials=state["materials_all"]
     )
-    messages = [
-        SystemMessage(content=state["system_prompt"]),
-        HumanMessage(content=prompt)
-    ]
-    state["submission"] = llm(messages).content
+    # messages = [
+    #     SystemMessage(content=state["system_prompt"]),
+    #     HumanMessage(content=prompt)
+    # ]
+    content, metadata = query_agent(state["system_prompt"], prompt, state["exam_author_model"])
+    state["submission"] = content
+    state['metadata']['submission'] = metadata
+
     return state
 
 
@@ -345,12 +344,15 @@ def node_evaluation(state: ExamState) -> ExamState:
         answer_materials=state["materials_all"],
         answer_submission=state["submission"]
     )
-    messages = [
-        SystemMessage(content=state["system_prompt"]),
-        HumanMessage(content=prompt)
-    ]
-    state['evaluation']= llm(messages).content
+    # messages = [
+    #     SystemMessage(content=state["system_prompt"]),
+    #     HumanMessage(content=prompt)
+    # ]
+    content, metadata = query_agent(state["system_prompt"], prompt, state["exam_author_model"])
+    state['evaluation']= content
     state["answer_key_count"] += 1
+    state['metadata']['evaluation'] = metadata
+
     return state
 
 def node_grading(state: ExamState) -> ExamState:
@@ -383,11 +385,14 @@ def node_grading(state: ExamState) -> ExamState:
         answer_submission=state["submission"],
         answer_evaluation=state["evaluation"]
     )
-    messages = [
-        SystemMessage(content=state["system_prompt"]),
-        HumanMessage(content=prompt)
-    ]
-    state["grading"] = llm(messages).content
+    # messages = [
+    #     SystemMessage(content=state["system_prompt"]),
+    #     HumanMessage(content=prompt)
+    # ]
+    content, metadata = query_agent(state["system_prompt"], prompt, state["exam_author_model"])
+    state["grading"] = content
+    state['metadata']['grading'] = metadata
+
     return state
 
 
@@ -434,12 +439,15 @@ def node_check_materials_fake_image(state: ExamState) -> ExamState:
     Return only "Y" or "N".
     """
 
-    messages = [
-        SystemMessage(content=prompt_check_fake_image),
-        HumanMessage(content=state['instructions'] + state["materials_all"])
-    ]
+    # messages = [
+    #     SystemMessage(content=prompt_check_fake_image),
+    #     HumanMessage(content=state['instructions'] + state["materials_all"])
+    # ]
+    content, metadata = query_agent(prompt_check_fake_image, state['instructions'] + state["materials_all"], state["exam_author_model"])
 
-    if llm(messages).content == "Y":
+    state['metadata']['check_materials'] = metadata
+
+    if content == "Y":
         state["check_real_materials"] = False
     else:
         state["check_real_materials"] = True
@@ -455,12 +463,14 @@ def node_check_materials_fake_website(state: ExamState) -> ExamState:
     Return only "Y" or "N".
     """
     
-    messages = [
-        SystemMessage(content=prompt_check_fake_website),
-        HumanMessage(content= state["instructions"] + state["materials_all"])
-    ]
+    # messages = [
+    #     SystemMessage(content=prompt_check_fake_website),
+    #     HumanMessage(content= state["instructions"] + state["materials_all"])
+    # ]
+    content, metadata = query_agent(prompt_check_fake_website, state["instructions"] + state["materials_all"], state["exam_author_model"])
+    state['metadata']['check_website'] = metadata
 
-    if llm(messages).content == "Y":
+    if content == "Y":
         state["check_no_internet"] = False
     else:
         state["check_no_internet"] = True
@@ -599,12 +609,15 @@ def node_overall_makes_sense(state: ExamState) -> ExamState:
     (Note: The answer key is passed to the grading script as 'answer_key.json'.)
     """
 
-    messages = [
-        SystemMessage(content=system_prompt),
-        HumanMessage(content=user_message.strip())
-    ]
+    # messages = [
+    #     SystemMessage(content=system_prompt),
+    #     HumanMessage(content=user_message.strip())
+    # ]
+    content, metadata = query_agent(system_prompt, user_message.strip(), state["exam_author_model"])
 
-    response = llm(messages).content.strip()
+    state['metadata']['check_sense'] = metadata
+
+    response= content.strip()
 
     try:
         result = json.loads(response)
@@ -674,24 +687,32 @@ def route_after_key_check(state: ExamState) -> str:
 
 
 if __name__ == "__main__":
+    occ = 'computer_and_mathematical_occupations'
+    print(occ)
     #file_answers = "../../data/exam_approach/test_results/{}/test_results_business_and_financial_operations_occupations_CORE_automatable.csv".format(model)
-    tasks_file = '/Users/htr365/Documents/PhD/21_automatisation/gpt_eval/data/exam_approach/material_lists/claude-3-7-sonnet-20250219/task_list_management_occupations_CORE.csv'
+    tasks_file = f'/Users/htr365/Documents/PhD/21_automatisation/gpt_eval/data/exam_approach/material_lists/claude-3-7-sonnet-20250219/task_list_{occ}_CORE.csv'
     df_tasks = pd.read_csv(tasks_file)
     df_tasks  = df_tasks.loc[:, ~df_tasks .columns.str.contains('^Unnamed')]
     print('overall data shape',df_tasks.shape)
 
     #already_done = pd.read_csv('/Users/htr365/Documents/PhD/21_automatisation/gpt_eval/data/exam_approach/test_results/claude-3-7-sonnet-20250219/scores_61.csv')
     # remove according to exclusion list
-    exclusion_list = pd.read_csv('../../data/exam_approach/exclusion_lists/management_occupations_only_data_text_CORE.csv',index_col=0).rename(columns={'0':'task_id'})
+    exclusion_list = pd.read_csv(f'../../data/exam_approach/exclusion_lists/{occ}_only_data_text_CORE.csv',index_col=0).rename(columns={'0':'task_id'})
     df_tasks = df_tasks[~df_tasks['task_id'].isin(exclusion_list['task_id'])]
     print('data after filtering for tools/materials', df_tasks.shape)
    # df_tasks = df_tasks[~df_tasks['task_id'].isin(already_done['task_id'])]
    # print('data after filtering for already existing exams', df_tasks.shape)
-
-
+    #model = 'claude-3-7-sonnet-20250219'
+    model = 'gemini-2.5-pro-preview-03-25'
+    print(model)
     #df_tasks = df_tasks[df_tasks['task_id']==12882]
     df_tasks = df_tasks[['occupation', 'task_description', 'task_id', 'required_tools_standard', 'required_materials_standard']]
+    seed = 42
+
+    # Assume df is your DataFrame
+    df_tasks = df_tasks.sample(n=10, random_state=seed)
     print(df_tasks.shape)
+    #print(df_tasks)
     # Initialize an empty list to store result states
     result_states = []
 
@@ -737,7 +758,7 @@ if __name__ == "__main__":
     graph_builder.add_conditional_edges("node_check_answer_key", route_after_key_check)
     graph_builder.add_edge("node_overall_makes_sense", "node_end")
     graph_builder.add_edge("node_end", END)
-
+    print('compiling graph')
     graph = graph_builder.compile()
   
     # row = {
@@ -814,67 +835,67 @@ if __name__ == "__main__":
 
 # ##### Now run on a real dataframe
 
-# Iterate over each row in the DataFrame
-for _, row in df_tasks.iterrows():  # Use iterrows() to iterate over rows
-    # Initialize the state for the current row
-    
-    init_state: ExamState = {
-        "occupation": row["occupation"],
-        "task_id": str(row["task_id"]),  # Convert task_id to a string
-        "task_description": row["task_description"],
-        "exam_author_model": model,
-
-        # Map your row fields to the typed dict fields
-        "tools": safe_eval(row["required_tools_standard"]),
-        "materials": safe_eval(row["required_materials_standard"]),
-
-        # Provide defaults or placeholders for the rest
-        "exam": {},
-        "system_prompt": "",
-        "overview": "",
-        "instructions": "",
-        "materials_all": "",
-        "materials_candidate": "",
-        "submission": "",
-        "evaluation": "",
-        "grading": "",
-        "answer_key": "",
-
-        "errors": [],
-        "check_real_materials": True,
-        "check_no_internet": True,
-        "failed_candidate_materials": 0,
-        "key_grade_threshold": 99.0,
-        "key_grade": 0.0,
-        "answer_key_count": 0,
-        "check_overall_makes_sense": True,
-        "explanation_overall_makes_sense": ""
-    }
-    print(init_state['task_id'])
-    try:
-        # Invoke the compiled graph with the initial state
-        result_state = graph.invoke(init_state)
-        # Append the result_state to the list
-        result_states.append(result_state)
-    except Exception as e:
-        # Handle any errors during graph invocation
-        print(f"Error processing task_id {row['task_id']}: {e}")
-        # Append an error state to the list for debugging
-        result_states.append({
+    # Iterate over each row in the DataFrame
+    for _, row in df_tasks.iterrows():  # Use iterrows() to iterate over rows
+        # Initialize the state for the current row
+        
+        init_state: ExamState = {
             "occupation": row["occupation"],
-            "task_id": row["task_id"],
+            "task_id": str(row["task_id"]),  # Convert task_id to a string
             "task_description": row["task_description"],
             "exam_author_model": model,
-            "errors": [str(e)]
-        })
 
-# # Convert the list of result states into a DataFrame
-    #result_states.append(result_state)
-    #result_states.append(result_state)
+            # Map your row fields to the typed dict fields
+            "tools": safe_eval(row["required_tools_standard"]),
+            "materials": safe_eval(row["required_materials_standard"]),
 
-    df_result_states = pd.DataFrame(result_states)
+            # Provide defaults or placeholders for the rest
+            "exam": {},
+            "system_prompt": "",
+            "overview": "",
+            "instructions": "",
+            "materials_all": "",
+            "materials_candidate": "",
+            "submission": "",
+            "evaluation": "",
+            "grading": "",
+            "answer_key": "",
 
-    df_result_states.to_csv("../../data/exam_approach/test_results/{}/management_occupations_exams.csv".format(model), index=False)
+            "errors": [],
+            "check_real_materials": True,
+            "check_no_internet": True,
+            "failed_candidate_materials": 0,
+            "key_grade_threshold": 99.0,
+            "key_grade": 0.0,
+            "answer_key_count": 0,
+            "check_overall_makes_sense": True,
+            "explanation_overall_makes_sense": "",
+            "metadata": {}
+            
+        }
+        print(init_state['task_id'])
 
-# # # Save the resulting DataFrame to a CSV file (optional)
-    df_result_states.to_csv("../../data/exam_approach/test_results/management_occupations_exams.csv", index=False)
+        try:
+            # Invoke the compiled graph with the initial state
+            result_state = graph.invoke(init_state)
+            # Append the result_state to the list
+            result_states.append(result_state)
+        except Exception as e:
+            # Handle any errors during graph invocation
+            print(f"Error processing task_id {row['task_id']}: {e}")
+            # Append an error state to the list for debugging
+            result_states.append({
+                "occupation": row["occupation"],
+                "task_id": row["task_id"],
+                "task_description": row["task_description"],
+                "exam_author_model": model,
+                "errors": [str(e)]
+            })
+
+
+        df_result_states = pd.DataFrame(result_states)
+
+        df_result_states.to_csv(f"../../data/exam_approach/test_results/{model}/exams_{occ}.csv", index=False)
+
+    # # # Save the resulting DataFrame to a CSV file (optional)
+        #df_result_states.to_csv("../../data/exam_approach/test_results/{model}/exams_management_occupations.csv", index=False)

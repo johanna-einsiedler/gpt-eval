@@ -44,18 +44,39 @@ def save_answer_json(row, path, model):
     """
     folder = os.path.join(path, str(row['task_id']).replace(".", "_"))
     try:
-        answer_file = json.loads(re.search(r'```json(.*?)```', row['test_answers_'+model], re.DOTALL).group(1).strip())
+        text = re.search(r'```json(.*?)```', row['test_answers_'+model], re.DOTALL).group(1).strip()
+        answer_file = json.loads(text)
+    
     except:
         try:
-            answer_file =  json.loads(row['test_answers_'+model])
-        except:
-            answer_file = '''{}'''
-            json_path = os.path.join(path, str(row['task_id']),'/')
-            os.makedirs(folder+'/'+model, exist_ok=True)
+            text = re.search(r'```json(.*?)```', row['test_answers_'+model], re.DOTALL).group(1).strip()
 
-            with open(folder+'/'+model+"/test_submission.json", "w") as json_file:
-                json.dump(answer_file, json_file, ensure_ascii=False, indent=4)
-            return False
+            # Step 1: Remove comment lines manually or using regex
+            cleaned = "\n".join(line for line in text.splitlines() if not line.strip().startswith("//"))
+
+            # Step 2: Remove outer quotes if present
+            if cleaned.startswith("'") and cleaned.endswith("'"):
+                cleaned = cleaned[1:-1]
+            cleaned = re.sub(r'(?<=: )(-?\d{1,3}(?:,\d{3})+)', lambda m: m.group().replace(',', ''), cleaned)
+            cleaned = ast.literal_eval(f'''"""{cleaned}"""''')  # Converts escaped \n etc. to real chars
+
+            # Step 4: Parse to JSON
+            answer_file = json.loads(cleaned)
+        except:
+            try:
+                cleaned = "\n".join(line for line in row['test_answers_'+model].splitlines() if not line.strip().startswith("//"))
+                if cleaned.startswith("'") and cleaned.endswith("'"):
+                    cleaned = cleaned[1:-1]
+                cleaned = re.sub(r'(?<=: )(-?\d{1,3}(?:,\d{3})+)', lambda m: m.group().replace(',', ''), cleaned)
+                answer_file =  json.loads(cleaned)
+            except:
+                answer_file = '''{}'''
+                json_path = os.path.join(path, str(row['task_id']),'/')
+                os.makedirs(folder+'/'+model, exist_ok=True)
+
+                with open(folder+'/'+model+"/test_submission.json", "w") as json_file:
+                    json.dump(answer_file, json_file, ensure_ascii=False, indent=4)
+                return False
     json_path = os.path.join(path, str(row['task_id']),'/')
     os.makedirs(folder+'/'+model, exist_ok=True)
 
@@ -387,29 +408,32 @@ if __name__ == "__main__":
     #     existing_df = pd.read_csv('../../data/exam_approach/test_results/{model}/test_results_61.csv')
     #     df = df[~df['task_id'].isin(existing_df['task_id'])]
     #print('Processing ', df.shape[0], ' new tasks.')
-    occ='computer_and_mathematical_occupations'
-    # df = pd.read_csv(f'../../data/exam_approach/test_results/{model}/exams_{occ}.csv')
+    occ='computer_and_mathematical_occupations'    
+    #occ='management_occupations'
+    #occ='business_and_financial_operations_occupations'
+    df = pd.read_csv(f'../../data/exam_approach/test_results/{model}/test_answers_{occ}.csv')
     
-
-    # #test models
+    # print(df.shape)
+    # # #test models
     # for idx, row in df.iterrows():
-    #     if idx >=21:
-    #         print(row['task_id'])
-    #         if row['exam'] !='Exam not valid':
+    #     #if idx >=21:
+    #      #   print(row['task_id'])
+    #     if row['exam'] !='Exam not valid':
 
-    #             df.at[idx,'test_answers_gemini_flash_15'] = take_test(row, system_prompt_template, row['exam'], 'gemini-1.5-flash')
-    #             df.at[idx,'test_answers_gemini_flash'] = take_test(row, system_prompt_template, row['exam'], 'gemini-2.0-flash')
-    #             df.at[idx,'test_answers_claude_sonnet'] = take_test(row, system_prompt_template, row['exam'], 'claude-3-7-sonnet-20250219')
-    #             df.at[idx,'test_answers_claude_haiku'] = take_test(row, system_prompt_template, row['exam'], 'claude-3-5-haiku-20241022')
-    #             df.at[idx,'test_answers_chatgpt4o'] = take_test(row, system_prompt_template, row['exam'], 'gpt-4o')
-    #             df.at[idx,'test_answers_chatgpt35'] = take_test(row, system_prompt_template, row['exam'],'gpt-3.5-turbo-0125')
-    #             df.at[idx,'test_answers_deepseek'] = take_test(row, system_prompt_template, row['exam'],'deepseek-chat')
-                    
-    #             df.to_csv(f'../../data/exam_approach/test_results/{model}/test_answers_{occ}.csv')
+    #         # df.at[idx,'test_answers_gemini_flash_15']= take_test(row, system_prompt_template, row['exam'], 'gemini-1.5-flash')
+    #         # df.at[idx,'test_answers_gemini_flash'] = take_test(row, system_prompt_template, row['exam'], 'gemini-2.0-flash')
+    #         # df.at[idx,'test_answers_claude_sonnet'] = take_test(row, system_prompt_template, row['exam'], 'claude-3-7-sonnet-20250219')
+    #         # df.at[idx,'test_answers_claude_haiku'] = take_test(row, system_prompt_template, row['exam'], 'claude-3-5-haiku-20241022')
+    #         # df.at[idx,'test_answers_chatgpt4o'] = take_test(row, system_prompt_template, row['exam'], 'gpt-4o')
+    #         # df.at[idx,'test_answers_chatgpt35'] = take_test(row, system_prompt_template, row['exam'],'gpt-3.5-turbo-0125')
+    #         # df.at[idx,'test_answers_deepseek'] = take_test(row, system_prompt_template, row['exam'],'deepseek-chat')
+    #         df.at[idx,'test_answers_sonnet30'] = take_test(row, system_prompt_template, row['exam'],'claude-3-sonnet-20240229')
+    #         df.to_csv(f'../../data/exam_approach/test_results/{model}/test_answers_{occ}.csv')
 
     model_folder_path = f'../../data/exam_approach/test_results/{model}/'
     # # save answers as json files
     df = pd.read_csv(f'../../data/exam_approach/test_results/{model}/test_answers_{occ}.csv')
+    print(df.columns)
     df['answer_empty'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'empty_submission'))
     print('saving answer files')
     df['answer_valid_chatgpt4o'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'chatgpt4o'))
@@ -419,6 +443,10 @@ if __name__ == "__main__":
     df['answer_valid_claude_haiku'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'claude_haiku'))
     df['answer_valid_gemini_flash_15'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'gemini_flash_15'))
     df['answer_valid_gemini_flash'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'gemini_flash'))
+    df['answer_valid_claude_sonnet_35'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'claude_sonnet_35'))
+    df['answer_valid_chatgpt_o3'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'chatgpt_o3'))
+    df['answer_valid_gemini_25'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'gemini_25'))
+    df['answer_valid_sonnet30'] = df.apply(save_answer_json, axis=1, args=(model_folder_path, 'sonnet30'))
 
     print('saving evaluation files and answer keys')
     # save evaluation script and answer key in appropriate folders
@@ -436,6 +464,11 @@ if __name__ == "__main__":
     df['errors_deepseek'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'deepseek',))
     df['errors_gemini_flash_15'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'gemini_flash_15',))
     df['errors_gemini_flash'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'gemini_flash',))
+    df['errors_gemini_25'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'gemini_25',))
+    df['errors_chatgpt_o3'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'chatgpt_o3',))
+    df['errors_claude_sonnet_35'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'claude_sonnet_35',))
+    df['errors_sonnet30'] = df.apply(run_evaluation, axis=1, args=(model_folder_path,'sonnet30',))
+
     df['errors_empty'] =df.apply(run_evaluation, axis=1, args=(model_folder_path,'empty_submission',))
 
     print('collecting scores')
