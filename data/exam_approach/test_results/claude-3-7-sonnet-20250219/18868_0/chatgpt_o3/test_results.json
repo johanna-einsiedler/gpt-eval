@@ -17,16 +17,16 @@
             "strong written and verbal communication skills"
           ],
           [
-            "experience with digital marketing campaigns",
-            "experience with digital marketing campaigns"
-          ],
-          [
             "experience with social media platforms for business (facebook, instagram, linkedin, twitter)",
             "experience with social media platforms for business"
           ],
           [
             "proficiency in microsoft office suite (word, excel, powerpoint)",
             "proficiency in microsoft office suite (word, excel, powerpoint)"
+          ],
+          [
+            "experience with digital marketing campaigns",
+            "experience with digital marketing campaigns"
           ]
         ]
       }
@@ -43,12 +43,12 @@
             "experience with marketing automation tools (hubspot, marketo, or similar)"
           ],
           [
-            "knowledge of graphic design software (adobe creative suite)",
-            "knowledge of graphic design software (adobe creative suite)"
-          ],
-          [
             "experience with content management systems (wordpress)",
             "experience with content management systems (wordpress)"
+          ],
+          [
+            "knowledge of graphic design software (adobe creative suite)",
+            "knowledge of graphic design software (adobe creative suite)"
           ]
         ]
       }
@@ -118,13 +118,13 @@
             "C001"
           ],
           "common_candidates": [
-            "C001",
+            "C003",
             "C006",
-            "C003"
+            "C001"
           ]
         },
         "strengths_evaluation": {
-          "C001": {
+          "C003": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           },
@@ -132,7 +132,7 @@
             "has_minimum_strengths": true,
             "relevance_score": 0.6666666666666666
           },
-          "C003": {
+          "C001": {
             "has_minimum_strengths": true,
             "relevance_score": 1.0
           }

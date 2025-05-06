@@ -140,7 +140,7 @@
             "category_3": {
               "status": "incorrect",
               "submitted": "Consulting",
-              "expected": "One of Equipment, IT Services, Training"
+              "expected": "One of IT Services, Equipment, Training"
             }
           }
         }
@@ -259,14 +259,6 @@
               },
               "expected": "Not a significant variance"
             },
-            "Marketing": {
-              "status": "missing",
-              "expected": {
-                "budgeted": 80011,
-                "actual_projected": 96000,
-                "variance_percent": 0.2
-              }
-            },
             "IT Services": {
               "status": "missing",
               "expected": {
@@ -281,6 +273,14 @@
                 "budgeted": 34628,
                 "actual_projected": 42667,
                 "variance_percent": 0.23
+              }
+            },
+            "Marketing": {
+              "status": "missing",
+              "expected": {
+                "budgeted": 80011,
+                "actual_projected": 96000,
+                "variance_percent": 0.2
               }
             }
           }

@@ -1,1 +1,191 @@
-"{}"
+{
+    "candidate_id": "AI_Tax_Preparer_Model_v1.0",
+    "section1": {
+        "form1040_client_a_errors": [
+            {
+                "error_type": "value_discrepancy",
+                "field": "Wages, salaries, tips (Line 1)",
+                "reported_value": "72500.00",
+                "correct_value": "75500.00",
+                "explanation": "Wages on Form 1040 ($72,500) do not match Box 1 of W-2 ($75,500)."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Dividend income (Line 3b)",
+                "reported_value": "425.00",
+                "correct_value": "0.00",
+                "explanation": "Dividend income of $425 is reported on Form 1040, but no supporting 1099-DIV was provided with Client_A_W2.pdf and Client_A_1099.pdf (which is a 1099-INT)."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Total income (Line 9)",
+                "reported_value": "73275.00",
+                "correct_value": "75850.00",
+                "explanation": "Total income is incorrect. Based on corrected W-2 wages ($75,500), 1099-INT interest ($350), and $0 dividend (no 1099-DIV provided), correct total income is $75,850."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Adjusted Gross Income (Line 11)",
+                "reported_value": "69775.00",
+                "correct_value": "72350.00",
+                "explanation": "AGI is incorrect. Corrected Total Income $75,850 - Adjustments $3,500 = $72,350 (assuming adjustments are correct and no other income/adjustments)."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Taxable income (Line 15)",
+                "reported_value": "56825.00",
+                "correct_value": "59400.00",
+                "explanation": "Taxable income is incorrect. Corrected AGI $72,350 - Standard Deduction $12,950 (Single 2022) = $59,400."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Tax (Line 16)",
+                "reported_value": "9374.00",
+                "correct_value": "8118.50",
+                "explanation": "Tax calculation is incorrect for the reported taxable income of $56,825 (Single, 2022). Correct tax on this income should be $8,118.50. (The fully corrected tax on corrected taxable income $59,400 would be $8,685.00)."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Total tax (Line 24)",
+                "reported_value": "9374.00",
+                "correct_value": "8685.00",
+                "explanation": "Total tax is incorrect. Based on fully corrected taxable income of $59,400, the tax is $8,685.00 (assuming $0 credits and $0 other taxes from lines 17-23)."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Federal income tax withheld (Line 25a)",
+                "reported_value": "8100.00",
+                "correct_value": "8700.00",
+                "explanation": "Federal income tax withheld on Form 1040 ($8,100) does not match Box 2 of W-2 ($8,700)."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Refund (Line 34)",
+                "reported_value": "0.00",
+                "correct_value": "15.00",
+                "explanation": "Incorrect. Based on fully corrected total tax ($8,685.00) and corrected withholding ($8,700.00), a refund of $15.00 is due."
+            },
+            {
+                "error_type": "value_discrepancy",
+                "field": "Amount you owe (Line 37)",
+                "reported_value": "1274.00",
+                "correct_value": "0.00",
+                "explanation": "Incorrect. Based on fully corrected total tax and withholding, no amount is owed; a refund of $15.00 is due."
+            }
+        ],
+        "schedule_c_client_b_errors": [
+            {
+                "error_type": "math_error",
+                "field": "Total expenses (Line 28)",
+                "reported_value": "35150.00",
+                "correct_value": "36350.00",
+                "explanation": "Sum of listed expenses ($2,400+$3,750+$1,200+$2,800+$1,950+$12,000+$3,450+$4,200+$2,800+$0+$1,800) is $36,350, not $35,150."
+            },
+            {
+                "error_type": "math_error",
+                "field": "Net profit (Line 31)",
+                "reported_value": "49100.00",
+                "correct_value": "47900.00",
+                "explanation": "Net profit is incorrect due to error in total expenses. Correct net profit is Gross Income $84,250 - Corrected Total Expenses $36,350 = $47,900."
+            }
+        ],
+        "form_8949_client_c_missing_fields": [
+            {
+                "field": "Part I - Checkbox for type of transaction (Box A, B, or C)",
+                "explanation": "Required at the top of Part I to indicate how transactions were reported to the IRS (e.g., basis reported on Form 1099-B)."
+            },
+            {
+                "field": "Part I - Totals for columns (d) Proceeds, (e) Cost basis, (g) Adjustments, and (h) Gain or loss",
+                "explanation": "Required to summarize short-term transactions and carry these totals to Schedule D."
+            },
+            {
+                "field": "Part II - Checkbox for type of transaction (Box D, E, or F)",
+                "explanation": "Required at the top of Part II to indicate how transactions were reported to the IRS (e.g., basis reported on Form 1099-B)."
+            },
+            {
+                "field": "Part II - Totals for columns (d) Proceeds, (e) Cost basis, (g) Adjustments, and (h) Gain or loss",
+                "explanation": "Required to summarize long-term transactions and carry these totals to Schedule D."
+            }
+        ]
+    },
+    "section2": {
+        "tax_calculation_client_d_errors": [
+            {
+                "field": "Student Loan Interest Deduction",
+                "reported_value": 2500.0,
+                "correct_value": 2495.83,
+                "explanation": "The student loan interest deduction is subject to phaseout based on MAGI. With a MAGI of $150,050 for this purpose (calculated as $158,700 Total Income - $3,650 HSA - $5,000 SEP), the deductible amount is $2,495.83, not $2,500."
+            },
+            {
+                "field": "Adjusted Gross Income",
+                "reported_value": 147550.0,
+                "correct_value": 147554.17,
+                "explanation": "AGI is incorrect due to the error in the student loan interest deduction. Correct AGI: $158,700 (Total Income) - ($2,495.83 (Corrected SLI) + $3,650 (HSA) + $5,000 (SEP)) = $147,554.17."
+            },
+            {
+                "field": "Taxable Income",
+                "reported_value": 114650.0,
+                "correct_value": 114654.17,
+                "explanation": "Taxable income is incorrect due to the error in AGI. Correct Taxable Income: $147,554.17 (Corrected AGI) - $25,900 (Standard Deduction MFJ 2022) - $7,000 (QBID) = $114,654.17."
+            },
+            {
+                "field": "Income Tax",
+                "reported_value": 15719.0,
+                "correct_value": 16457.92,
+                "explanation": "Income tax calculation is incorrect. Tax on corrected taxable income $114,654.17 (MFJ, 2022 rates) is $16,457.92. (The reported tax of $15,719 is also incorrect for the reported taxable income of $114,650, for which tax should be $16,457.00)."
+            },
+            {
+                "field": "Self-employment Tax",
+                "reported_value": 4943.0,
+                "correct_value": 4945.34,
+                "explanation": "Self-employment tax calculation is incorrect. SE Tax on $35,000 business income ($35,000 * 0.9235 * 0.153) is $4,945.34."
+            },
+            {
+                "field": "Total Tax",
+                "reported_value": 20662.0,
+                "correct_value": 21403.26,
+                "explanation": "Total tax is incorrect. Sum of corrected Income Tax ($16,457.92) and corrected Self-employment Tax ($4,945.34) is $21,403.26."
+            }
+        ],
+        "income_reconciliation_client_e": {
+            "discrepancy_found": false,
+            "discrepancy_amount": 0.0,
+            "explanation": "Total income reported on Form 1040 ($81,570) matches the total income calculated from Income_Sources_ClientE.xlsx ($81,570)."
+        },
+        "estimated_tax_client_f": {
+            "reported_payments": 9500.0,
+            "correct_payments": 10000.0,
+            "discrepancy_amount": 500.0,
+            "explanation": "Form 1040_ClientF.pdf reports $9,500 in estimated tax payments (Line 26), while EstimatedTax_ClientF.xlsx shows total estimated payments of $10,000. The discrepancy is $500.00."
+        }
+    },
+    "section3": {
+        "client_g_discrepancies": [
+            {
+                "field": "Occupation",
+                "reported_value": "Marketing Director",
+                "correct_value": "Marketing Manager"
+            },
+            {
+                "field": "Address - ZIP Code",
+                "reported_value": "60601",
+                "correct_value": "60611"
+            }
+        ],
+        "client_h_dependent_errors": [
+            {
+                "dependent_name": "Margaret Wilson",
+                "field": "SSN",
+                "reported_value": "123-45-6788",
+                "correct_value": "123-45-6789"
+            }
+        ],
+        "client_i_contact_errors": [
+            {
+                "field": "Address - ZIP Code",
+                "reported_value": "94103",
+                "correct_value": "94105"
+            }
+        ]
+    }
+}

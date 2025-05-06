@@ -1,1 +1,20 @@
-"{}"
+{
+    "candidate_id": "Claude-3.5-Sonnet",
+    "total_expenses": 73050.0,
+    "total_revenue": 46000.0,
+    "net_profit_loss": -27050.0,
+    "largest_expense_category": "VEN",
+    "largest_expense_amount": 25000.0,
+    "outstanding_payments": 15000.0,
+    "duplicate_transactions": [
+        "T008",
+        "T018"
+    ],
+    "errors_identified": [
+        "Duplicate transaction T008 for marketing materials (INV-MKT-567).",
+        "Duplicate transaction T018 for venue final payment (INV-V23-789).",
+        "Incorrect T010 amount (Staff Accomm); corrected $3200 to $3500 per quote."
+    ],
+    "budget_variance_percentage": -4.51,
+    "most_over_budget_category": "VEN"
+}

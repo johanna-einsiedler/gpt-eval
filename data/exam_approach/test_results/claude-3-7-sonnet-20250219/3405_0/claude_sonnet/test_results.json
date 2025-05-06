@@ -262,19 +262,6 @@
                 "variance_percent": 0.23
               }
             },
-            "Marketing": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 80011,
-                "actual_projected": 96000,
-                "variance_percent": 0.2
-              },
-              "expected": {
-                "budgeted": 80011,
-                "actual_projected": 96000,
-                "variance_percent": 0.2
-              }
-            },
             "IT Services": {
               "status": "correct",
               "submitted": {
@@ -286,6 +273,19 @@
                 "budgeted": 157320,
                 "actual_projected": 193333,
                 "variance_percent": 0.23
+              }
+            },
+            "Marketing": {
+              "status": "correct",
+              "submitted": {
+                "budgeted": 80011,
+                "actual_projected": 96000,
+                "variance_percent": 0.2
+              },
+              "expected": {
+                "budgeted": 80011,
+                "actual_projected": 96000,
+                "variance_percent": 0.2
               }
             }
           }

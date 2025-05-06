@@ -296,8 +296,8 @@
       "details": {
         "increasing_types": {
           "submission": [
-            "Hiring Discrimination",
-            "Retaliation"
+            "Retaliation",
+            "Hiring Discrimination"
           ],
           "correct": [],
           "is_correct": false,

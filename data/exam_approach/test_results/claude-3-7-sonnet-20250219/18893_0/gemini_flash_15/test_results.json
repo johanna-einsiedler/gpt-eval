@@ -28,12 +28,12 @@
             "E006"
           ],
           "submitted_answers": [
-            "E014",
-            "E008",
             "E015",
             "E020",
-            "E009",
-            "E016"
+            "E016",
+            "E014",
+            "E008",
+            "E009"
           ],
           "explanation": "Identified 1 out of 4 shift differential violations correctly."
         },
@@ -41,19 +41,19 @@
           "score": 3.0,
           "max_points": 3,
           "correct_answers": [
-            "E014",
-            "E010",
-            "E008",
             "E015",
+            "E010",
             "E016",
+            "E014",
+            "E008",
             "E009"
           ],
           "submitted_answers": [
-            "E014",
-            "E010",
-            "E008",
             "E015",
+            "E010",
             "E016",
+            "E014",
+            "E008",
             "E009"
           ],
           "explanation": "Identified 6 out of 6 break period violations correctly (0.5 points each)."
@@ -78,16 +78,16 @@
           "max_points": 4,
           "correct_answers": [
             "SV-02",
-            "SV-03",
             "SV-07",
-            "SV-04"
+            "SV-04",
+            "SV-03"
           ],
           "submitted_answers": [
-            "SV-03",
-            "SV-04",
+            "SV-06",
             "SV-07",
+            "SV-04",
             "SV-02",
-            "SV-06"
+            "SV-03"
           ],
           "explanation": "Identified 4 out of 4 safety violations correctly."
         },
@@ -125,16 +125,16 @@
           "max_points": 5,
           "correct_answers": [
             "E013",
-            "E003",
-            "E011",
             "E020",
-            "E016"
+            "E016",
+            "E011",
+            "E003"
           ],
           "submitted_answers": [
-            "E005",
-            "E006",
             "E019",
             "E020",
+            "E005",
+            "E006",
             "E012",
             "E004"
           ],
@@ -148,21 +148,21 @@
           ],
           "submitted_answers": [
             "E013",
+            "E015",
+            "E010",
+            "E019",
+            "E017",
+            "E016",
+            "E020",
+            "E001",
+            "E005",
+            "E011",
+            "E007",
             "E014",
             "E002",
-            "E005",
-            "E010",
             "E006",
-            "E017",
-            "E015",
-            "E011",
-            "E019",
-            "E020",
             "E012",
-            "E007",
-            "E001",
-            "E004",
-            "E016"
+            "E004"
           ],
           "explanation": "Incorrect"
         },
@@ -170,8 +170,8 @@
           "score": 0,
           "max_points": 2,
           "correct_answers": [
-            "WE-01",
-            "WE-04"
+            "WE-04",
+            "WE-01"
           ],
           "submitted_answers": [
             "WE-02"

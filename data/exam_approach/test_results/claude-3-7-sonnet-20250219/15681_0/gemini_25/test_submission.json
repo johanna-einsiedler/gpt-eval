@@ -1,1 +1,23 @@
-"{}"
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "diagram": "[S_A] --\\\\         [M_1] --\\\\\n         +->[W_C]-+->[M_2]--+->[DC]-+->[R_1]\n[S_B] --/         |         |       |->[R_2]\n                  +->[M_3]--/       |->[R_3]\n                                    |->[R_4]\n\nReturns to DC:\n[DC] <-- [R_1]\n[DC] <-- [R_2]\n[DC] <-- [R_3]\n[DC] <-- [R_4]",
+        "entities_count": 11
+    },
+    "task2": {
+        "diagram": "Inventory Flow & Trends (Jan -> Jun):\n\n[Raw Materials] (RM)\nJan: 1200 | Feb: 1000 | Mar: 1100 | Apr:  950 | May:  850 | Jun:  800\nTrend: 1200 --> 800 (DECREASE)\n% Change (Jan-Jun): -33.3%\n    |\n    V (Material Flow)\n[Work-in-Progress] (WIP)\nJan:  800 | Feb:  850 | Mar:  900 | Apr:  950 | May: 1000 | Jun: 1050\nTrend:  800 --> 1050 (INCREASE)\n% Change (Jan-Jun): +31.3%\n    |\n    V (Material Flow)\n[Finished Goods] (FG)\nJan:  500 | Feb:  600 | Mar:  650 | Apr:  700 | May:  750 | Jun:  800\nTrend:  500 --> 800 (INCREASE)\n% Change (Jan-Jun): +60.0%\n    |\n    V (Material Flow)\n[Distribution Center] (DC_Inv)\nJan: 1500 | Feb: 1300 | Mar: 1200 | Apr: 1100 | May: 1000 | Jun:  900\nTrend: 1500 --> 900 (DECREASE)\n% Change (Jan-Jun): -40.0%",
+        "percentage_changes": {
+            "raw_materials": -33.3,
+            "work_in_progress": 31.3,
+            "finished_goods": 60.0,
+            "distribution_center": -40.0
+        }
+    },
+    "task3": {
+        "diagram": "Production Flow Diagram:\n\n(Ingredient Mixing) --> (Filling & Packaging) [!] --> (Quality Testing) --> (Labeling) --> (Palletizing)\nCapacity:   500 u/hr        Capacity:   400 u/hr          Capacity:   450 u/hr    Capacity:   600 u/hr  Capacity:   550 u/hr\nCurrent Util: 65%           Current Util: 90%             Current Util: 70%       Current Util: 50%     Current Util: 60%\nNew Util*:  82.8%           New Util*: 103.5%             New Util*:  92.0%       New Util*:  69.0%     New Util*:  75.3%\n                              (!!! OVER CAPACITY !!!)\n\n* New Util based on +15% demand increase (current system output 360 u/hr, new target 414 u/hr).\n  Bottleneck [!] is 'Filling & Packaging' with capacity 400 u/hr.",
+        "max_throughput": 400,
+        "over_capacity_stages": [
+            "Filling & Packaging"
+        ]
+    }
+}

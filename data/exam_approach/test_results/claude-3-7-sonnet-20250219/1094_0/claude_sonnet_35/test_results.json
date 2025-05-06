@@ -39,7 +39,7 @@
         "B008"
       ],
       "error_details": [
-        "Missing items in submission: B008, B005, B006, E003, E002, E008, D005, B003, D002, B001, A007, A005, E004, D004, A004, E005, E006, E007, B004, A003, B007, D001, B002, D003, A006, E001",
+        "Missing items in submission: B003, E001, B005, A003, E003, A006, B002, A007, B001, E006, D005, D004, E005, D002, E007, E008, E004, E002, A004, B006, B007, B004, A005, D003, D001, B008",
         "Item A001 errors: popularity_rank: 8 (expected 10)",
         "Item A002 errors: total_quantity: 590.0 (expected 585.0), total_revenue: 7074.1 (expected 7014.15), total_food_cost: 2271.5 (expected 2252.25), gross_profit: 4802.6 (expected 4761.9), popularity_rank: 4 (expected 5)"
       ]
@@ -50,25 +50,25 @@
       "correctly_identified": 4,
       "incorrectly_identified": 1,
       "expected_items": [
-        "B008",
         "E007",
-        "D005",
         "E008",
-        "A007",
+        "E004",
+        "B008",
         "A006",
-        "E004"
+        "A007",
+        "D005"
       ],
       "submitted_items": [
-        "B008",
-        "E005",
         "E007",
-        "D005",
-        "A007"
+        "B008",
+        "A007",
+        "E005",
+        "D005"
       ],
       "missed_items": [
-        "A006",
         "E008",
-        "E004"
+        "E004",
+        "A006"
       ]
     },
     "price_adjustments": {
@@ -77,13 +77,13 @@
       "correct_adjustments": 1,
       "total_adjustments": 5,
       "items_with_errors": [
-        "A006",
-        "E006",
         "E008",
-        "E004"
+        "E004",
+        "A006",
+        "E006"
       ],
       "error_details": [
-        "Missing price adjustments for items: A006, E006, E008, E004"
+        "Missing price adjustments for items: E008, E004, A006, E006"
       ]
     }
   },
