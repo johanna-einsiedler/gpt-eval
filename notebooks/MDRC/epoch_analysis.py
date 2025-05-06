@@ -68,7 +68,6 @@ exam_list.loc[exam_list['key_grade']>100,'exam'] = 'Exam not valid'
 
 exams = exam_list[exam_list['exam'] !='Exam not valid']
 
-exams
 
 # replace to align with Johanna
 all_exams = exams
@@ -83,7 +82,8 @@ reverse_mapping = {
     'score_chatgpt35': 'GPT-3.5 Turbo',
     'score_claude_sonnet_35': 'Claude 3.5 Sonnet',
     'score_gemini_25': 'Gemini 2.5',
-    'score_chatgpt_o3': 'GPT o3'
+    'score_chatgpt_o3': 'GPT o3',
+    'score_sonnet30': 'Claude 3 Sonnet'
 }
 
 #####
@@ -131,7 +131,9 @@ model_dict = {
     "claude-3-5-sonnet-202410": ["claude-3-5-sonnet-20241022", "Claude 3.5 Sonnet"],
     "gpt-3.5-turbo-0125": ['gpt-3.5-turbo-0125', "GPT-3.5 Turbo"],
     "gemini-2.5-pro-preview-03-25": ["gemini-2.5-flash-preview-04-17", "NA"],
-    "o3-2025-04-16": ["o3-2025-04-16_high", "NA"]
+    "o3-2025-04-16": ["o3-2025-04-16_high", "NA"],
+    # to check below with Johanna
+    "claude-3-sonnet":[ 'claude-3-sonnet-20240229','Claude 3 Sonnet']
 }
 
 
@@ -204,11 +206,12 @@ df_model_bench = pd.DataFrame(data, columns=columns)
 
 # Update the publication date and FLOPs that are nor available in latest csv file (check notion from sources)
 df_model_bench.loc[df_model_bench['model'] == "gemini-2.0-flash", "Publication date"] = "2025-02-05"
+df_model_bench.loc[df_model_bench['model'] == "gemini-2.5-pro-preview-03-25", "Publication date"] = "2025-03-01"
+df_model_bench.loc[df_model_bench['model'] == "o3-2025-04-16", "Publication date"] = "2025-01-31"
+
 df_model_bench.loc[df_model_bench['model'] == "gemini-2.0-flash", "Training compute (FLOP)"] = 2.43e+25
 df_model_bench.loc[df_model_bench['model'] == "gpt-3.5-turbo-0125", "Training compute (FLOP)"] = 2.58e+24
 df_model_bench.loc[df_model_bench['model'] == "gpt-3.5-turbo-0125", "Training compute (FLOP)"] = 2.58e+24
-df_model_bench.loc[df_model_bench['model'] == "gemini-2.5-pro-preview-03-25", "Publication date"] = "2025-03-01"
-df_model_bench.loc[df_model_bench['model'] == "o3-2025-04-16", "Publication date"] = "2025-01-31"
 df_model_bench.loc[df_model_bench['model'] == "gemini-2.5-pro-preview-03-25", "Training compute (FLOP)"] = 5.6e+25
 df_model_bench.loc[df_model_bench['model'] == "o3-2025-04-16", "Training compute (FLOP)"] = 8e+25 # taken from https://www.lesswrong.com/posts/NXTkEiaLA4JdS5vSZ/what-o3-becomes-by-2028
 
@@ -249,10 +252,9 @@ model_mapping = {
     'claude-3-5-haiku-202410': 'score_claude_haiku',
     'gpt-3.5-turbo-0125': 'score_chatgpt35',
     'gemini-2.5-pro-preview-03-25': 'score_gemini_25',
-    'o3-2025-04-16': 'score_chatgpt_o3'
+    'o3-2025-04-16': 'score_chatgpt_o3',
+    'claude-3-sonnet': 'score_sonnet30'
 }
-
-
 
 
 # Reverse mapping for display names
@@ -266,7 +268,8 @@ reverse_mapping = {
     'score_chatgpt35': 'GPT-3.5 Turbo',
     'score_claude_sonnet_35': 'Claude 3.5 Sonnet',
     'score_gemini_25': 'Gemini 2.5',
-    'score_chatgpt_o3': 'GPT o3'
+    'score_chatgpt_o3': 'GPT o3',
+    'score_sonnet30': 'Claude 3 Sonnet'
 }
 color_palette = ['#FFBD59', '#38B6FF', '#8E3B46', '#E0777D', '#739E82']
 
@@ -534,7 +537,7 @@ def plot_scatter_performance_vs_time_by_category():
             marker = organization_markers.get(organization, "o")  # Default to circle if not found
             
             # Check if we should label this model
-            should_label = model not in labeled_models
+            should_label = model not in labeled_models and category =='computer_and_mathematical_occupations'
             if should_label:
                 labeled_models.add(model)
             
@@ -897,15 +900,17 @@ reverse_mapping = {
     'score_deepseek': 'DeepSeek Chat',
     'score_gemini_flash_15': 'Gemini 1.5 Flash',
     'score_gemini_flash': 'Gemini 2.0 Flash',
-    'score_claude_haiku': 'Claude 3.5 Haiku',
+    # 'score_claude_haiku': 'Claude 3.5 Haiku',
     'score_chatgpt35': 'GPT-3.5 Turbo',
     'score_claude_sonnet_35': 'Claude 3.5 Sonnet',
     'score_gemini_25': 'Gemini 2.5',
-    'score_chatgpt_o3': 'GPT o3'
+    'score_chatgpt_o3': 'GPT o3',
+    'score_sonnet30': 'Claude 3 Sonnet'
 }
 
 # Group models by family
 claude_models = {k: v for k, v in reverse_mapping.items() if 'claude' in k.lower()}
+claude_models['score_sonnet30'] = 'Claude 3 Sonnet'
 gemini_models = {k: v for k, v in reverse_mapping.items() if 'gemini' in k.lower()}
 gpt_models = {k: v for k, v in reverse_mapping.items() if 'gpt' in k.lower() or 'chatgpt' in k.lower()}
 
@@ -913,7 +918,7 @@ gpt_models = {k: v for k, v in reverse_mapping.items() if 'gpt' in k.lower() or 
 def create_alluvial_plot(mf, family_name, ci):
     # sort by version
     if family_name=="Claude":
-        order={'score_claude_haiku':0,'score_claude_sonnet_35':1,'score_claude_sonnet':2}
+        order={'score_sonnet30':0,'score_claude_sonnet_35':1,'score_claude_sonnet':2}
     elif family_name=="Gemini":
         order={'score_gemini_flash_15':0,'score_gemini_flash':1,'score_gemini_25':2}
     else:
@@ -1089,7 +1094,7 @@ def plot_family_with_hist(all_exams, mf, family_name, order, bins=40):
 
 # define the version orders
 orders = {
-    'Claude': {'score_claude_haiku':0, 'score_claude_sonnet_35':1, 'score_claude_sonnet':2},
+    'Claude':{'score_sonnet30':0,'score_claude_sonnet_35':1,'score_claude_sonnet':2},
     'Gemini': {'score_gemini_flash_15':0, 'score_gemini_flash':1, 'score_gemini_25':2},
     'GPT':    {'score_chatgpt35':0, 'score_chatgpt4o':1, 'score_chatgpt_o3':2}
 }

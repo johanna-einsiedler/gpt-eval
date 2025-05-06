@@ -201,7 +201,7 @@ def plot_forecast_simulated(trace, time_points, y_obs, time_idx, task_idx,
     ax1.plot(future_times,  c_mean, 'g-')
     ax1.fill_between(future_times,  c_lo,  c_hi,  color='g', alpha=0.2)
     ax1.axvline(time_points[-1], color='r', ls='--', label='Forecast start')
-    ax1.set_title('Capability Forecast')
+    ax1.set_title('Capability Forecast', fontsize=14)
     ax1.grid(alpha=0.3); ax1.legend()
 
     # ---- Right: score history + fit + forecast ----
@@ -230,7 +230,9 @@ def plot_forecast_simulated(trace, time_points, y_obs, time_idx, task_idx,
                          color='g', alpha=0.2)
 
     ax2.axvline(time_points[-1], color='r', ls='--')
-    ax2.set_title('Score Forecast')
+    ax2.set_title('Score Forecast', fontsize=14)
+    ax2.set_xticks(time_points)
+    ax2.set_xticklabels([d.strftime('%Y-%m') for d in dates], rotation=45, ha='right')
     ax2.grid(alpha=0.3)
     ax2.legend()
 
@@ -246,6 +248,7 @@ df = pd.read_csv('../../results/tables/df_model_test_scores.csv')
 
 # choose tasks
 tasks = [21522, 16246]
+tasks = [21522]
 
 # prepare & plot raw
 tp, y_obs, t_idx, task_idx, dates = prepare_data_multi(df, tasks)
