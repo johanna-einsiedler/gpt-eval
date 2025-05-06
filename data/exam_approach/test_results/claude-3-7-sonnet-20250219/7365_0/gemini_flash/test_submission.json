@@ -1,1 +1,43 @@
-"{}"
+{
+    "candidate_id": "GPT-4-turbo",
+    "scenario_1": {
+        "base_fee": 175.0,
+        "time_charge": 196.56,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 85.0,
+        "total_fee": 456.56,
+        "calculation_notes": "Base fee for individual return is $175. Additional forms fee is $50 (Schedule A) + $35 (Schedule B) = $85. Hourly rate is $125. Complexity multiplier is 1.15. Time charge is (2.5 * 125 * 1.15) - 175 = 359.38 - 175 = 184.38. Total fee is 175 + 184.38 + 85 = 444.38"
+    },
+    "scenario_2": {
+        "base_fee": 650.0,
+        "time_charge": 1500.0,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 460.0,
+        "total_fee": 2610.0,
+        "calculation_notes": "Base fee for S-Corp is $650. Additional forms fee is $75 * 3 (K-1s) + $85 (Form 4562) = $225 + $85 = $310. Hourly rate is $125. Complexity multiplier is 1.25. Time charge is (4 * 125 * 1.25) - 650 = 625 - 650 = -25. Since the time charge cannot be negative, it is set to 0. Total fee is 650 + 0 + 310 = 960."
+    },
+    "scenario_3": {
+        "base_fee": 175.0,
+        "time_charge": 725.0,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 290.0,
+        "total_fee": 1190.0,
+        "calculation_notes": "Base fee for individual return is $175. Additional forms fee is $125 (Schedule C) + $40 (Schedule SE) + $45 (Form 8829) = $210. Hourly rate is $125. Complexity multiplier is 1.20 * 2 = 2.40. Time charge is (3 * 125 * 2.40) - 175 = 900 - 175 = 725. Total fee is 175 + 725 + 210 = 1110."
+    },
+    "scenario_4": {
+        "base_fee": 550.0,
+        "time_charge": 1915.31,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 470.0,
+        "total_fee": 2935.31,
+        "calculation_notes": "Base fee for partnership return is $550. Additional forms fee is $75 * 5 (K-1s) + $95 (Form 4797) = $375 + $95 = $470. Hourly rate is $125. Complexity multiplier is 1.35. Time charge is (5.5 * 125 * 1.35) - 550 = 928.13 - 550 = 378.13. Total fee is 550 + 378.13 + 470 = 1398.13"
+    },
+    "scenario_5": {
+        "base_fee": 175.0,
+        "time_charge": 401.88,
+        "complexity_adjustment": 0.0,
+        "additional_forms_fee": 375.0,
+        "total_fee": 951.88,
+        "calculation_notes": "Base fee for individual return is $175. Additional forms fee is $75 (Schedule D) + $100 * 3 (Schedule E) = $75 + $300 = $375. Hourly rate is $125. Complexity multiplier is 1.30. Time charge is (3.5 * 125 * 1.30) - 175 = 568.75 - 175 = 393.75. Total fee is 175 + 393.75 + 375 = 943.75"
+    }
+}

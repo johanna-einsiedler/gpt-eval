@@ -132,12 +132,12 @@
             "category_1": {
               "status": "incorrect",
               "submitted": "Marketing",
-              "expected": "One of Equipment, IT Services, Training"
+              "expected": "One of Training, Equipment, IT Services"
             },
             "category_2": {
               "status": "incorrect",
               "submitted": "Consulting",
-              "expected": "One of Equipment, IT Services, Training"
+              "expected": "One of Training, Equipment, IT Services"
             },
             "category_3": {
               "status": "correct",
@@ -220,7 +220,7 @@
             "constraint_1": {
               "status": "incorrect",
               "submitted": "Staffing",
-              "expected": "One of Technology, Infrastructure"
+              "expected": "One of Infrastructure, Technology"
             },
             "constraint_2": {
               "status": "correct",
@@ -261,19 +261,19 @@
                 "variance_percent": 0.2
               }
             },
-            "Travel": {
-              "status": "missing",
-              "expected": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
-              }
-            },
             "IT Services": {
               "status": "missing",
               "expected": {
                 "budgeted": 157320,
                 "actual_projected": 193333,
+                "variance_percent": 0.23
+              }
+            },
+            "Travel": {
+              "status": "missing",
+              "expected": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
                 "variance_percent": 0.23
               }
             },

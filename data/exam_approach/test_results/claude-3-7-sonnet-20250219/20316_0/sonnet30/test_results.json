@@ -81,8 +81,8 @@
           "correct": "partial",
           "submitted": [
             "Fitness Challenge",
-            "Stress Management",
-            "Smoking Cessation"
+            "Smoking Cessation",
+            "Stress Management"
           ],
           "expected": [
             "Fitness Challenge",

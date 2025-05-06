@@ -225,6 +225,15 @@
           "score": 0.0,
           "max_score": 15,
           "details": {
+            "Training": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 94559,
+                "actual_projected": 86667,
+                "variance_percent": -0.08
+              },
+              "expected": "Not a significant variance"
+            },
             "Equipment": {
               "status": "partially correct",
               "submitted": {
@@ -243,20 +252,19 @@
                 "variance_percent": "incorrect"
               }
             },
-            "Training": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 94559,
-                "actual_projected": 86667,
-                "variance_percent": -0.08
-              },
-              "expected": "Not a significant variance"
-            },
             "IT Services": {
               "status": "missing",
               "expected": {
                 "budgeted": 157320,
                 "actual_projected": 193333,
+                "variance_percent": 0.23
+              }
+            },
+            "Travel": {
+              "status": "missing",
+              "expected": {
+                "budgeted": 34628,
+                "actual_projected": 42667,
                 "variance_percent": 0.23
               }
             },
@@ -266,14 +274,6 @@
                 "budgeted": 80011,
                 "actual_projected": 96000,
                 "variance_percent": 0.2
-              }
-            },
-            "Travel": {
-              "status": "missing",
-              "expected": {
-                "budgeted": 34628,
-                "actual_projected": 42667,
-                "variance_percent": 0.23
               }
             }
           }

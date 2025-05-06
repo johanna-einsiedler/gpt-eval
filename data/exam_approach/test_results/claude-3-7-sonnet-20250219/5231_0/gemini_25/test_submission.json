@@ -1,1 +1,176 @@
-"{}"
+{
+    "candidate_id": "GPT-4o",
+    "task1": {
+        "retention_recommendations": [
+            {
+                "teacher_id": "T401",
+                "reason": "Consistently lowest scores across all performance metrics including evaluation (2.4), student growth (32), attendance (84%), incomplete PD, and provisional certification status."
+            },
+            {
+                "teacher_id": "T205",
+                "reason": "Significantly below-average evaluation score (2.5) and student growth (35), incomplete professional development, low attendance (88%), and certification pending renewal."
+            },
+            {
+                "teacher_id": "T118",
+                "reason": "Low evaluation score (2.8) and student growth (38), incomplete professional development, and critically low attendance rate (85%)."
+            }
+        ],
+        "reassignment_recommendations": [
+            {
+                "teacher_id": "T287",
+                "current_program": "STEM Focus",
+                "recommended_program": "General Education",
+                "rationale": "Evaluation (3.0) and student growth (42) are below STEM program peers. Reassignment to General Education Mathematics may offer a better fit or development opportunity."
+            },
+            {
+                "teacher_id": "T298",
+                "current_program": "Humanities Focus",
+                "recommended_program": "General Education",
+                "rationale": "Low evaluation (2.7) and student growth (40) in a specialized program. Reassignment to General Education English may provide broader support and address performance."
+            }
+        ],
+        "priority_hiring_needs": [
+            {
+                "subject_area": "Mathematics",
+                "justification": "Vacancy in STEM Focus created by T287's reassignment. The STEM program requires a dedicated and high-performing mathematics teacher."
+            },
+            {
+                "subject_area": "English",
+                "justification": "Vacancy in Humanities Focus created by T298's reassignment. The Humanities program requires a dedicated English teacher."
+            },
+            {
+                "subject_area": "Science",
+                "justification": "Vacancy in General Education due to non-renewal of T205. This is an essential core subject teacher needed for the general student population."
+            }
+        ]
+    },
+    "task2": {
+        "staffing_plan": [
+            {
+                "position_code": "STEM-COORD",
+                "fte": 1.0,
+                "rationale": "Required full-time coordinator for program oversight and leadership as per STEM Academy guidelines."
+            },
+            {
+                "position_code": "STEM-MATH",
+                "fte": 2.0,
+                "rationale": "Required two full-time mathematics teachers to cover STEM curriculum needs as per guidelines."
+            },
+            {
+                "position_code": "STEM-SCI",
+                "fte": 2.0,
+                "rationale": "Required two full-time science teachers to cover STEM curriculum needs as per guidelines."
+            },
+            {
+                "position_code": "STEM-TECH",
+                "fte": 1.0,
+                "rationale": "Required full-time technology teacher for specialized STEM instruction as per guidelines."
+            },
+            {
+                "position_code": "STEM-ENG",
+                "fte": 1.0,
+                "rationale": "Required full-time engineering teacher for specialized STEM instruction as per guidelines."
+            },
+            {
+                "position_code": "STEM-PARA",
+                "fte": 1.0,
+                "rationale": "Required full-time instructional paraprofessional to support STEM teaching and learning as per guidelines."
+            },
+            {
+                "position_code": "STEM-COUNSEL",
+                "fte": 0.5,
+                "rationale": "Required half-time guidance counselor for student support within the STEM Academy as per guidelines."
+            }
+        ],
+        "budget_allocation": {
+            "personnel_total": 523000,
+            "equipment_supplies": 67500,
+            "professional_development": 22500,
+            "adjustments_needed": "Calculated personnel costs ($523,000 using mid-range salaries) exceed the $360,000 personnel limit and total program budget ($450,000). Revise staffing, salaries, or secure more funds."
+        },
+        "implementation_timeline": [
+            {
+                "milestone": "Position postings published",
+                "date": "2025-02-15",
+                "action_items": "Finalize job descriptions and publish all STEM Academy positions on district and external job boards."
+            },
+            {
+                "milestone": "Initial application review",
+                "date": "2025-03-10",
+                "action_items": "Hiring committee reviews applications, screens for qualifications, and selects candidates for first interviews."
+            },
+            {
+                "milestone": "First round interviews",
+                "date": "2025-03-25",
+                "action_items": "Conduct first-round interviews (March 25-April 5) with candidates selected from initial application review."
+            },
+            {
+                "milestone": "Second round interviews",
+                "date": "2025-04-15",
+                "action_items": "Conduct second-round interviews (April 15-20) with top candidates advancing from the first round."
+            },
+            {
+                "milestone": "Hiring decisions finalized",
+                "date": "2025-05-01",
+                "action_items": "Hiring committee makes final selection of candidates for all positions; reference checks completed."
+            },
+            {
+                "milestone": "Contracts issued",
+                "date": "2025-05-15",
+                "action_items": "Extend official offers of employment and issue contracts to selected candidates."
+            },
+            {
+                "milestone": "New staff orientation",
+                "date": "2025-08-01",
+                "action_items": "Conduct orientation (August 1-5) for new STEM Academy staff covering program goals, policies, and curriculum."
+            },
+            {
+                "milestone": "Program launch",
+                "date": "2025-08-15",
+                "action_items": "STEM Academy officially opens and begins instruction for the inaugural student cohort."
+            }
+        ]
+    },
+    "task3": {
+        "action_recommendation": "Performance improvement plan",
+        "policy_references": [
+            "4.4.3",
+            "4.4.6",
+            "4.1"
+        ],
+        "documentation_requirements": [
+            {
+                "requirement_id": "4.5.1",
+                "description": "Attendance record showing dates and reasons for all absences."
+            },
+            {
+                "requirement_id": "4.5.2",
+                "description": "Record of prior conversations or warnings (verbal, written) about attendance."
+            },
+            {
+                "requirement_id": "4.5.3",
+                "description": "Evidence that district progressive discipline policies were followed correctly."
+            },
+            {
+                "requirement_id": "4.5.4",
+                "description": "Documentation of impact on educational services (e.g., sub costs, lesson plans)."
+            },
+            {
+                "requirement_id": "4.5.5",
+                "description": "Employee's (Mr. Chen's) response or explanation from the conference."
+            },
+            {
+                "requirement_id": "4.5.6",
+                "description": "Specific corrective action: Performance Improvement Plan details."
+            },
+            {
+                "requirement_id": "4.5.7",
+                "description": "Timeline for improvement, including goals, check-in dates, and final review."
+            },
+            {
+                "requirement_id": "4.5.8",
+                "description": "Signatures of Mr. Chen and supervisor on the PIP document."
+            }
+        ]
+    }
+}

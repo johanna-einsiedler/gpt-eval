@@ -250,24 +250,6 @@
                 "variance_percent": 0.23
               }
             },
-            "Miscellaneous": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 40517,
-                "actual_projected": 37333,
-                "variance_percent": -0.08
-              },
-              "expected": "Not a significant variance"
-            },
-            "Training": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 94559,
-                "actual_projected": 86667,
-                "variance_percent": -0.08
-              },
-              "expected": "Not a significant variance"
-            },
             "Travel": {
               "status": "correct",
               "submitted": {
@@ -281,6 +263,15 @@
                 "variance_percent": 0.23
               }
             },
+            "Miscellaneous": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 40517,
+                "actual_projected": 37333,
+                "variance_percent": -0.08
+              },
+              "expected": "Not a significant variance"
+            },
             "Equipment": {
               "status": "correct",
               "submitted": {
@@ -293,6 +284,15 @@
                 "actual_projected": 306667,
                 "variance_percent": 0.2
               }
+            },
+            "Training": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 94559,
+                "actual_projected": 86667,
+                "variance_percent": -0.08
+              },
+              "expected": "Not a significant variance"
             },
             "Marketing": {
               "status": "missing",

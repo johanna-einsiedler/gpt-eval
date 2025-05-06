@@ -109,12 +109,12 @@
           "baseline_bp"
         ],
         "correct": [
-          "diabetes",
-          "age"
+          "age",
+          "diabetes"
         ],
         "alternative_correct": [
-          "age",
-          "bmi"
+          "bmi",
+          "age"
         ],
         "points": 0
       },

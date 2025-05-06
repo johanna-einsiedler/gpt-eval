@@ -297,8 +297,8 @@
         "increasing_types": {
           "submission": [
             "Promotion Denial",
-            "Retaliation",
-            "Hostile Work Environment"
+            "Hostile Work Environment",
+            "Retaliation"
           ],
           "correct": [],
           "is_correct": false,
@@ -306,8 +306,8 @@
         },
         "decreasing_types": {
           "submission": [
-            "Harassment",
-            "Pay Discrimination"
+            "Pay Discrimination",
+            "Harassment"
           ],
           "correct": [],
           "is_correct": false,

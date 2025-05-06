@@ -181,13 +181,13 @@
         "max_points": 6,
         "submitted": [
           "System performance metrics",
-          "Feature implementation progress",
-          "User satisfaction ratings"
+          "User satisfaction ratings",
+          "Feature implementation progress"
         ],
         "expected": [
-          "Satisfaction ratings",
+          "Feature priority scores",
           "Implementation progress",
-          "Feature priority scores"
+          "Satisfaction ratings"
         ],
         "note": "Reasonable alternatives are accepted"
       },

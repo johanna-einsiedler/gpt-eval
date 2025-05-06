@@ -181,12 +181,12 @@
         "max_points": 6,
         "submitted": [
           "Average satisfaction rating",
-          "Feature implementation progress",
-          "Number of unresolved top pain points"
+          "Number of unresolved top pain points",
+          "Feature implementation progress"
         ],
         "expected": [
-          "Feature priority scores",
           "Implementation progress",
+          "Feature priority scores",
           "Satisfaction ratings"
         ],
         "note": "Reasonable alternatives are accepted"

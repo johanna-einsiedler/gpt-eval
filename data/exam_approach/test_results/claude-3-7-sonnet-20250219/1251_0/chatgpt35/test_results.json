@@ -227,24 +227,24 @@
     "max_score": 10,
     "correct_deviations": 6,
     "expected_deviations": [
-      "gross_profit_margin",
-      "inventory_turnover",
       "net_profit_margin",
-      "return_on_assets",
+      "inventory_turnover",
       "interest_coverage",
+      "gross_profit_margin",
+      "return_on_assets",
       "days_sales_outstanding"
     ],
     "submitted_deviations": [
-      "gross_profit_margin",
-      "debt_to_equity",
-      "inventory_turnover",
-      "return_on_assets",
-      "interest_coverage",
       "net_profit_margin",
-      "days_sales_outstanding",
-      "quick_ratio",
+      "inventory_turnover",
       "current_ratio",
-      "accounts_receivable_turnover"
+      "interest_coverage",
+      "accounts_receivable_turnover",
+      "return_on_assets",
+      "gross_profit_margin",
+      "days_sales_outstanding",
+      "debt_to_equity",
+      "quick_ratio"
     ]
   },
   "risk_factors": {
@@ -252,9 +252,9 @@
     "max_score": 15,
     "correct_factors": 1,
     "expected_factors": [
-      "weak_cash_flow",
+      "declining_profitability",
       "high_debt_service_burden",
-      "declining_profitability"
+      "weak_cash_flow"
     ],
     "submitted_factors": [
       "declining_profitability",

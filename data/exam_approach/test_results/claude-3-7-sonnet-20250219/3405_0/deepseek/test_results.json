@@ -222,7 +222,7 @@
             "constraint_2": {
               "status": "incorrect",
               "submitted": "Staffing",
-              "expected": "One of Technology, Infrastructure"
+              "expected": "One of Infrastructure, Technology"
             }
           }
         }
@@ -237,14 +237,18 @@
           "score": 11.25,
           "max_score": 15,
           "details": {
-            "Consulting": {
-              "status": "incorrect",
+            "IT Services": {
+              "status": "correct",
               "submitted": {
-                "budgeted": 174570,
-                "actual_projected": 206667,
-                "variance_percent": 0.18
+                "budgeted": 157320,
+                "actual_projected": 193333,
+                "variance_percent": 0.23
               },
-              "expected": "Not a significant variance"
+              "expected": {
+                "budgeted": 157320,
+                "actual_projected": 193333,
+                "variance_percent": 0.23
+              }
             },
             "Marketing": {
               "status": "correct",
@@ -257,28 +261,6 @@
                 "budgeted": 80011,
                 "actual_projected": 96000,
                 "variance_percent": 0.2
-              }
-            },
-            "Training": {
-              "status": "incorrect",
-              "submitted": {
-                "budgeted": 94559,
-                "actual_projected": 86667,
-                "variance_percent": -0.08
-              },
-              "expected": "Not a significant variance"
-            },
-            "IT Services": {
-              "status": "correct",
-              "submitted": {
-                "budgeted": 157320,
-                "actual_projected": 193333,
-                "variance_percent": 0.23
-              },
-              "expected": {
-                "budgeted": 157320,
-                "actual_projected": 193333,
-                "variance_percent": 0.23
               }
             },
             "Equipment": {
@@ -294,12 +276,21 @@
                 "variance_percent": 0.2
               }
             },
-            "Miscellaneous": {
+            "Training": {
               "status": "incorrect",
               "submitted": {
-                "budgeted": 40517,
-                "actual_projected": 37333,
+                "budgeted": 94559,
+                "actual_projected": 86667,
                 "variance_percent": -0.08
+              },
+              "expected": "Not a significant variance"
+            },
+            "Consulting": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 174570,
+                "actual_projected": 206667,
+                "variance_percent": 0.18
               },
               "expected": "Not a significant variance"
             },
@@ -318,6 +309,15 @@
                 "budgeted": 173644,
                 "actual_projected": 180000,
                 "variance_percent": 0.04
+              },
+              "expected": "Not a significant variance"
+            },
+            "Miscellaneous": {
+              "status": "incorrect",
+              "submitted": {
+                "budgeted": 40517,
+                "actual_projected": 37333,
+                "variance_percent": -0.08
               },
               "expected": "Not a significant variance"
             },

@@ -150,9 +150,9 @@
         "points": 6,
         "max_points": 6,
         "submitted": [
+          "Michael Chen",
           "Jennifer Williams",
-          "Sarah Johnson",
-          "Michael Chen"
+          "Sarah Johnson"
         ],
         "expected": [
           "Michael Chen",
@@ -185,8 +185,8 @@
           "Feature request completion rate"
         ],
         "expected": [
-          "Satisfaction ratings",
           "Implementation progress",
+          "Satisfaction ratings",
           "Feature priority scores"
         ],
         "note": "Reasonable alternatives are accepted"
