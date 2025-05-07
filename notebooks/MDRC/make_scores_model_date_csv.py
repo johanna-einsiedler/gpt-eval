@@ -49,6 +49,7 @@ for occ in occupations_file_names:
 exam_list.loc[exam_list['exam']=='','exam'] = 'Exam not valid'
 exam_list['exam'] = exam_list['exam'].fillna('Exam not valid')
 exam_list.loc[exam_list['key_grade']>100,'exam'] = 'Exam not valid'
+exam_list.loc[exam_list['check_overall_makes_sense']==False, 'exam'] = 'Exam not valid'
 
 exams = exam_list[exam_list['exam'] !='Exam not valid']
 
@@ -58,10 +59,12 @@ columns_to_plot = ['score_chatgpt_o3', 'score_claude_sonnet', 'score_gemini_25']
 columns_to_plot = ['score_gemini_25', 'score_claude_sonnet',
        'score_chatgpt_o3', 'score_deepseek']
 
+all_exams=exams
+
 # Create a histogram for each column
 for column in columns_to_plot:
     plt.figure(figsize=(8, 6))
-    all_exams = all_exams.fillna(0)
+    # all_exams = all_exams.fillna(0)
     plt.hist(all_exams[column], bins=10, color='blue', edgecolor='black', alpha=0.7)
     plt.title(f'Histogram of {column}', fontsize=16)
     plt.xlabel('Score', fontsize=14)
@@ -85,11 +88,11 @@ model_dict = {
     "deepseek-chat": ["DeepSeek-V3", "DeepSeek-V3"],
     "gemini-1.5-flash": ["gemini-1.5-flash-002", "Gemini 1.5 Pro"],
     "gemini-2.0-flash": ["gemini-2.0-flash-001", "NA"],
-    # "claude-3-5-haiku-202410": ["claude-3-5-haiku-20241022", "Claude 3.5 Sonnet"],
     "claude-3-5-sonnet-202410": ["claude-3-5-sonnet-20241022", "Claude 3.5 Sonnet"],
     "gpt-3.5-turbo-0125": ['gpt-3.5-turbo-0125', "GPT-3.5 Turbo"],
     "gemini-2.5-pro-preview-03-25": ["gemini-2.5-flash-preview-04-17", "NA"],
-    "o3-2025-04-16": ["o3-2025-04-16_high", "NA"]
+    "o3-2025-04-16": ["o3-2025-04-16_high", "NA"],
+    "claude-3-sonnet": ['claude-3-sonnet-20240229', 'Claude 3 Sonnet']
 }
 
 data = []
@@ -142,12 +145,13 @@ full_mapping = {
     "claude-3-5-sonnet-202410": "score_claude_sonnet_35",
     "gpt-3.5-turbo-0125": "score_chatgpt35",
     "gemini-2.5-pro-preview-03-25": "score_gemini_25",
-    "o3-2025-04-16": "score_chatgpt_o3"
+    "o3-2025-04-16": "score_chatgpt_o3",
+    "claude-3-sonnet": 'score_sonnet30'
 }
 
 df_model_data_score = df_model_bench[['model', 'Publication date', 'Organization']]
 df_model_data_score.head()
-all_exams.head()
+all_exams.columns
 
 
 # Prepare a list to collect individual model test score DataFrames
@@ -159,7 +163,7 @@ for model_key, score_col in full_mapping.items():
         continue
 
     # Extract just the relevant columns from all_exams for this model
-    temp = all_exams[['task_id', 'occupation', 'occupation_category', score_col]].copy()
+    temp = all_exams[['task_id', 'occupation', 'occupation_group', 'task_description', score_col]].copy()
     temp = temp.rename(columns={score_col: 'score'})
 
     # Add model metadata
@@ -182,8 +186,12 @@ df_model_test_scores['Publication date'] = pd.to_datetime(df_model_test_scores['
 df_model_test_scores = df_model_test_scores.sort_values(by='Publication date').reset_index(drop=True)
 
 
+df_model_test_scores 
+
 df_model_test_scores.to_csv( '../../results/tables/df_model_test_scores.csv', index=False)
 
-
+df_model_test_scores
 
 df_model_test_scores[df_model_test_scores['task_id'] == 21522]
+df_model_test_scores[df_model_test_scores['task_id'] == 21315]
+len(df_model_test_scores[df_model_test_scores['task_id'] == 21522])
