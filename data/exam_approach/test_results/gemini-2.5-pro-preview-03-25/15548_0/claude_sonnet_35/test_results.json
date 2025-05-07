@@ -1,0 +1,59 @@
+{
+  "candidate_name": "N/A",
+  "candidate_id": "N/A",
+  "overall_score": 0.0,
+  "task_1_scores": {
+    "total_task_1_score": 0,
+    "max_score": 40.0,
+    "survey_title": {
+      "score": 0,
+      "max_score": 2.0,
+      "comment": "Title: Missing or empty."
+    },
+    "target_audience_description": {
+      "score": 0,
+      "max_score": 2.0,
+      "comment": "Target Audience: Missing or empty."
+    },
+    "survey_introduction_text": {
+      "score": 0,
+      "max_score": 6.0,
+      "comment": "Introduction: Introduction missing, too short, or not a string."
+    },
+    "survey_questions": {
+      "score": 0,
+      "max_score": 30.0,
+      "comment": "Survey questions not provided as a list.",
+      "num_questions_provided": 0,
+      "num_questions_expected": "5-7",
+      "question_details": []
+    }
+  },
+  "task_2_scores": {
+    "total_task_2_score": 0,
+    "max_score": 60.0,
+    "satisfaction_rating_summary": {
+      "score": 0,
+      "max_score": 20.0,
+      "comment": "Satisfaction summary not provided as a dictionary.",
+      "details": {}
+    },
+    "top_enjoyed_aspects": {
+      "score": 0,
+      "max_score": 15.0,
+      "comment": "Top Enjoyed Aspects: Not a list of 2 items."
+    },
+    "top_improvement_suggestions": {
+      "score": 0,
+      "max_score": 15.0,
+      "comment": "Top Improvement Suggestions: Not a list of 2 items."
+    },
+    "recommendation_for_next_year": {
+      "score": 0,
+      "max_score": 10.0,
+      "comment": "Recommendation: Missing or empty."
+    }
+  },
+  "total_exam_score": 0,
+  "max_exam_score": 100.0
+}

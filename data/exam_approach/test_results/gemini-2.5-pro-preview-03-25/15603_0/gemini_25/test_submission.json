@@ -1,0 +1,86 @@
+{
+    "candidate_id": "GPT-4o",
+    "identified_issues": [
+        {
+            "issue_id": "ISSUE_01",
+            "source_description": "Protocol Section 4.1 Inclusion Criteria",
+            "protocol_reference": "Section 4.1.3",
+            "problem_summary": "Inclusion criterion 4.1.3 'Subject must have a prior history of treatment for hypertension' is unclear. It does not specify the nature (e.g., pharmacological, lifestyle), duration, or timing (e.g., current vs. past, washout period if any) of 'treatment'.",
+            "potential_impact": "Inconsistent subject screening and eligibility determination, potentially enrolling ineligible subjects or excluding eligible ones.",
+            "recommended_next_step": "Inform PI and request clarification from sponsor on the specific definition of 'prior history of treatment for hypertension'.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_02",
+            "source_description": "Protocol Section 4.2 Exclusion Criteria",
+            "protocol_reference": "Section 4.2.6",
+            "problem_summary": "Exclusion criterion 4.2.6 states female subjects of childbearing potential must use 'a highly effective method of contraception', but the protocol excerpt does not define or provide examples of what methods are considered 'highly effective' for this study.",
+            "potential_impact": "Inconsistent application of contraceptive requirements across subjects and sites, risk of non-compliance, and potential for subject pregnancy.",
+            "recommended_next_step": "Inform PI and request clarification from sponsor on the list of acceptable 'highly effective' contraceptive methods.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_03",
+            "source_description": "Schedule of Assessments Table",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "The Schedule of Assessments lists 'Inclusion/Exclusion Check' at both Screening (Day -14 to -1) and Visit 1 (Day 1). The purpose, scope, and specific criteria to be re-checked at Visit 1, after eligibility is presumably established at Screening, are unclear.",
+            "potential_impact": "Confusion in site procedures, potential for unnecessary duplication of effort, or uncertainty on how to manage eligibility changes between Screening and Visit 1.",
+            "recommended_next_step": "Inform PI and request clarification from sponsor on the specific requirements and procedures for the 'Inclusion/Exclusion Check' scheduled at Visit 1.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_04",
+            "source_description": "Schedule of Assessments Table Footnote 2",
+            "protocol_reference": "Section 6.2 Table 1, Footnote 2",
+            "problem_summary": "Footnote 2 for PK sample collection at Visit 2 states it should be collected 'approximately 2 hours' post-dose. This lacks a specific acceptable time window (e.g., +/- 15 minutes) and clear instructions on whether the dose is taken at home prior to the visit or at the clinic.",
+            "potential_impact": "Variability in PK sample timing relative to dosing, potentially affecting PK data quality, consistency, and interpretability.",
+            "recommended_next_step": "Inform PI and request clarification from sponsor on the acceptable time window for 'approximately 2 hours' and specific subject instructions for dosing and clinic arrival on Visit 2 day.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_05",
+            "source_description": "Schedule of Assessments Table Footnotes 1 and 2",
+            "protocol_reference": "Section 6.2 Table 1, Footnote 1 and Footnote 2",
+            "problem_summary": "Visit 2 requires fasting safety labs (Footnote 1) and a PK sample ~2 hours post-dose of Drug X (Footnote 2). The protocol excerpt does not specify if Drug X can or should be taken without food, which is critical information for the subject who must be fasting for labs at the time of dosing for the PK sample.",
+            "potential_impact": "Difficulty in coordinating subject compliance with both fasting and post-dose PK timing, potential for protocol deviation (e.g., subject eats with drug, non-fasting labs), or compromised lab/PK samples.",
+            "recommended_next_step": "Inform PI and request clarification from sponsor on whether Drug X can/should be administered in a fasting state (e.g., with water only) to align with Visit 2 procedures.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_06",
+            "source_description": "Schedule of Assessments Table / Exclusion Criteria",
+            "protocol_reference": "Section 6.2 Table 1 and Section 4.2.6",
+            "problem_summary": "The Schedule of Assessments (Section 6.2 Table 1) does not include scheduled pregnancy testing for female subjects of childbearing potential, despite an exclusion criterion for pregnancy (4.2.6) and a requirement for such subjects to use highly effective contraception.",
+            "potential_impact": "Risk of enrolling or continuing pregnant subjects in the trial, non-compliance with Good Clinical Practice, and potential subject/fetal safety risk.",
+            "recommended_next_step": "Inform PI and query sponsor about the absence of scheduled pregnancy testing for FOCBP and request guidance or a protocol clarification/amendment.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_07",
+            "source_description": "Scenario 1",
+            "protocol_reference": "Section 4.1.2, Section 4.2.2",
+            "problem_summary": "A potential subject took pseudoephedrine (an OTC medication that can elevate blood pressure) the day before their screening BP assessment. While pseudoephedrine is not an 'anti-hypertensive medication' (per exclusion 4.2.2), its use may confound the BP readings required for eligibility (4.1.2).",
+            "potential_impact": "Inaccurate screening BP assessment, potentially leading to incorrect eligibility determination (i.e., enrolling an ineligible subject whose BP is transiently elevated, or excluding an eligible subject).",
+            "recommended_next_step": "Inform PI about the subject's use of pseudoephedrine and its potential to confound the screening BP measurement, and seek PI guidance on whether to proceed, re-screen BP after a washout, or if the subject is ineligible.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_08",
+            "source_description": "Scenario 2",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "Patient 002 called the site after Visit 2 (Day 15) to report they forgot to complete their paper patient diary for three days (Day 13, 14, and 15). Patient Diary Review was scheduled for Visit 2.",
+            "potential_impact": "Incomplete source data for patient-reported outcomes/compliance, constituting a minor protocol deviation regarding data collection procedures.",
+            "recommended_next_step": "Advise the patient to complete the missed diary entries for Day 13, 14, and 15 now, to the best of their recollection, ensuring they date the entries accurately and note they are late/recalled entries. Document this communication and event thoroughly in site records and inform the PI.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_09",
+            "source_description": "Scenario 3",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "During Visit 3, an ECG performed on Patient 003 yielded an automated machine interpretation of 'Sinus Rhythm. Borderline QT interval. Clinical correlation recommended.' The patient is asymptomatic.",
+            "potential_impact": "Potential subject safety risk if the 'Borderline QT interval' is clinically significant and not promptly evaluated and managed by the Principal Investigator.",
+            "recommended_next_step": "Immediately notify the Principal Investigator of the ECG finding and the machine's recommendation for clinical correlation. Provide the ECG tracing to the PI for their expert review and assessment.",
+            "communication_point_person": "Principal Investigator"
+        }
+    ]
+}

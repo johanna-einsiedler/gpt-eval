@@ -1,0 +1,29 @@
+{
+    "candidate_id": "MISSING_OR_INVALID",
+    "overall_score": 0.0,
+    "max_score": 19,
+    "total_points_achieved": 0,
+    "evaluation_details": {
+        "Set 1": {
+            "points_achieved": 0,
+            "max_points_for_set": 9,
+            "assumption_set_match": {
+                "correct": false,
+                "points": 0
+            },
+            "consequences": {},
+            "error": "Submission data for 'Set 1' not found or invalid."
+        },
+        "Set 2": {
+            "points_achieved": 0,
+            "max_points_for_set": 10,
+            "assumption_set_match": {
+                "correct": false,
+                "points": 0
+            },
+            "consequences": {},
+            "error": "Submission data for 'Set 2' not found or invalid."
+        }
+    },
+    "warning": "Calculated max score (19) != configured MAX_SCORE (18)"
+}

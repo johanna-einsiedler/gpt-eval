@@ -1,0 +1,26 @@
+{
+    "candidate_id": "GPT-4o",
+    "detailed_comparison": {
+        "on_time_delivery_rate_percentage": {
+            "submitted": 86.0,
+            "expected": 86.0,
+            "correct": true
+        },
+        "order_fulfillment_rate_percentage": {
+            "submitted": 85.0,
+            "expected": 85.0,
+            "correct": true
+        },
+        "average_inventory_value": {
+            "submitted": 200000.0,
+            "expected": 200000.0,
+            "correct": true
+        },
+        "inventory_turns": {
+            "submitted": 4.3,
+            "expected": 4.3,
+            "correct": true
+        }
+    },
+    "overall_score": 100.0
+}

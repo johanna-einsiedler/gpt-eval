@@ -1,0 +1,54 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "Need complete W-2 information for accurate reporting of wages, taxes withheld, and retirement contributions.",
+            "question_text": "Can you please provide your full W-2 form from DesignCorp? I need to see all the information, particularly the amounts in Boxes 1, 2, 12, and 17."
+        },
+        {
+            "id": 2,
+            "category": "Income - Self-Employment",
+            "reasoning": "Require exact tutoring income for Schedule C reporting and to determine if estimated tax payments were necessary.",
+            "question_text": "What was the total amount you earned from tutoring in the tax year? Can you provide your payment log or any other records of this income?"
+        },
+        {
+            "id": 3,
+            "category": "Deductions - Education",
+            "reasoning": "Need official document to verify student loan interest paid for potential deduction.",
+            "question_text": "Could you please log into your student loan account and provide the Form 1098-E, which shows the exact amount of student loan interest you paid during the tax year?"
+        },
+        {
+            "id": 4,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Mortgage interest and property taxes may be deductible; need official documentation for accurate amounts.",
+            "question_text": "Can you provide your Form 1098 from your mortgage lender, as well as any property tax statements for the condo you purchased in March?"
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Charitable",
+            "reasoning": "Need documentation and specific values for potential charitable contribution deductions.",
+            "question_text": "For your charitable donations, can you provide the Goodwill receipt and estimate the fair market value of the items donated? Also, do you have any documentation for the $100 cash donation to your church?"
+        },
+        {
+            "id": 6,
+            "category": "Deductions - Medical",
+            "reasoning": "Medical expenses may be deductible if they exceed a certain percentage of income; need exact amounts.",
+            "question_text": "Regarding your medical expenses, can you provide a detailed breakdown of the approximately $300 spent on doctor's appointments and prescriptions? Do you have receipts or statements for these expenses?"
+        },
+        {
+            "id": 7,
+            "category": "Income - Other",
+            "reasoning": "Interest income needs to be reported; Form 1099-INT contains necessary details.",
+            "question_text": "You mentioned receiving a tax form from your bank related to savings interest. Can you please provide the Form 1099-INT from your bank?"
+        },
+        {
+            "id": 8,
+            "category": "General/Missing Forms",
+            "reasoning": "Ensure all relevant tax documents are collected for comprehensive tax preparation.",
+            "question_text": "Besides the documents we've discussed, are there any other financial statements, tax forms, or relevant documents you've received that might be important for your tax return?"
+        }
+    ]
+}

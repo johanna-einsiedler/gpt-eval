@@ -1,0 +1,100 @@
+{
+    "exam_level": "basic",
+    "candidate_id": "GPT-4",
+    "planning_period_weeks": 4,
+    "prioritized_allocation": [
+        {
+            "task_id": "T01",
+            "assigned_priority": 1,
+            "assigned_resource_id": "R01",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T07",
+            "assigned_priority": 2,
+            "assigned_resource_id": "R02",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T11",
+            "assigned_priority": 3,
+            "assigned_resource_id": "R03",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T04",
+            "assigned_priority": 4,
+            "assigned_resource_id": "R02",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T03",
+            "assigned_priority": 5,
+            "assigned_resource_id": "R03",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T12",
+            "assigned_priority": 6,
+            "assigned_resource_id": "R03",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T02",
+            "assigned_priority": 7,
+            "assigned_resource_id": "R02",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T06",
+            "assigned_priority": 8,
+            "assigned_resource_id": "R03",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T08",
+            "assigned_priority": 9,
+            "assigned_resource_id": "R01",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T09",
+            "assigned_priority": 10,
+            "assigned_resource_id": "R01",
+            "status": "Allocated"
+        }
+    ],
+    "unallocated_tasks": [
+        {
+            "task_id": "T05",
+            "assigned_priority": 11,
+            "reason": "INSUFFICIENT_CAPACITY"
+        },
+        {
+            "task_id": "T10",
+            "assigned_priority": 12,
+            "reason": "INSUFFICIENT_CAPACITY"
+        }
+    ],
+    "resource_summary": [
+        {
+            "resource_id": "R01",
+            "total_available_days": 20,
+            "total_allocated_days": 15,
+            "workload_status": "Within Capacity"
+        },
+        {
+            "resource_id": "R02",
+            "total_available_days": 18,
+            "total_allocated_days": 17,
+            "workload_status": "Within Capacity"
+        },
+        {
+            "resource_id": "R03",
+            "total_available_days": 15,
+            "total_allocated_days": 15,
+            "workload_status": "Within Capacity"
+        }
+    ],
+    "overall_comments": "Tasks T05 and T10 could not be allocated due to insufficient capacity. All other tasks were successfully allocated within resource capacities."
+}

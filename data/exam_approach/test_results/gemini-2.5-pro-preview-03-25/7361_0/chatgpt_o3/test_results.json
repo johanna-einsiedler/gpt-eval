@@ -1,0 +1,67 @@
+{
+    "submission_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "GPT-4",
+    "exam_version_submitted": "BASIC_INTERVIEW_V1.0",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 8,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Could you please upload a complete copy of your DesignCorp Form W-2, including all boxes (Boxes 1\u201314 and the state information in Boxes 15\u201317)?"
+            },
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "matched_submission_question_id": 3,
+                "matched_submission_question_text": "Based on your payment log, what is the exact total amount you earned from tutoring during the tax year?"
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 7,
+                "matched_submission_question_text": "Could you download or forward your 2023 Form 1098-E from your loan servicer showing the total student loan interest you paid?"
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "matched_submission_question_id": 8,
+                "matched_submission_question_text": "Please provide the Form 1098 from your mortgage lender for the condo, including any amount listed for mortgage insurance premiums (PMI)."
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 11,
+                "matched_submission_question_text": "For your Goodwill donation, could you provide the drop-off receipt along with a list of the items donated and their estimated fair-market values?"
+            },
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 12,
+                "matched_submission_question_text": "Besides the $100 given to your church, did you make any other cash or non-cash charitable donations in 2023? If so, please list amounts, dates, and provide receipts or bank confirmations."
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "matched_submission_question_id": 13,
+                "matched_submission_question_text": "Please provide the total unreimbursed medical, dental, vision, and prescription expenses you paid out-of-pocket in 2023, including any after-tax health insurance premiums."
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "matched_submission_question_id": 6,
+                "matched_submission_question_text": "Please provide the Form 1099-INT (or bank year-end statement) showing the amount of savings interest you earned and the bank\u2019s details."
+            }
+        ],
+        "missed_areas": []
+    },
+    "overall_score": 100.0
+}

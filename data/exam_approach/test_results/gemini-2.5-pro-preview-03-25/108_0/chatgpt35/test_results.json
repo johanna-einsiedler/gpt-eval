@@ -1,0 +1,85 @@
+{
+    "overall_score": 80.0,
+    "pass_status": "Fail",
+    "pass_fail_reason": "Candidate failed to meet critical requirements: Grossly incorrect fee calculation (>5% deviation).",
+    "score_details": {
+        "structure": 10,
+        "issues_identified": 15,
+        "fee_proposal": 10,
+        "date_proposal": 20,
+        "travel_cost_proposal": 15,
+        "surcharge_handling": 10
+    },
+    "evaluation_details": {
+        "structure": {
+            "structure_check": "All main sections present and have correct basic types."
+        },
+        "issues": {
+            "identified_issues": {
+                "budget_fee": "Correctly identified (Client budget ($4,500) is below the calculated min...)",
+                "date_conflict": "Correctly identified (Client preferred dates conflict with trainer unava...)",
+                "surcharge_trigger": "Correctly identified (Requested participant number (18) exceeds the stan...)",
+                "travel_costs": "Not identified or description insufficient."
+            },
+            "issues_summary": "Identified 3 out of 4 core issues."
+        },
+        "fee": {
+            "fee_amount": "Incorrect or missing fee amount. Expected approx. $7302.50, Found: $5750 in 'Propose a total training fee of $5,750 (includes base fee + surcharge). Separately state travel cost of $400.'.",
+            "fee_reference": "Supporting reference includes relevant keywords (rates, surcharge, etc.)."
+        },
+        "date": {
+            "date_proposal": "Valid date pair proposed: ('2024-09-16', '2024-09-17').",
+            "date_reference": "Supporting reference includes relevant keywords (Section 4, availability, etc.)."
+        },
+        "travel": {
+            "travel_check": "Travel cost mentioned within Fee/Budget proposal.",
+            "travel_amount": "Correct travel amount ($400) mentioned.",
+            "travel_reference": "Supporting reference includes relevant keywords (Section 3, travel, etc.)."
+        },
+        "surcharge": {
+            "surcharge_issue": "Surcharge trigger correctly identified as an issue.",
+            "surcharge_proposal": "Surcharge correctly mentioned/referenced in proposed terms."
+        }
+    },
+    "submission_data_preview": {
+        "scenario_analysis": {
+            "client_needs_summary": "Beta Corp requires a training program on Effective Communication Skills for 18 junior managers, to be conducted on-site over two consecutive weekdays in the first half of September 2024, with a budget of $4,500.",
+            "potential_issues_or_deviations": [
+                "Client budget ($4,500) is below the calculated minimum fee ($5,000) based on standard rates for 18 participants.",
+                "Client preferred dates conflict with trainer unavailability in the first half of September 2024.",
+                "Requested participant number (18) exceeds the standard maximum of 15, triggering the Large Group Surcharge."
+            ]
+        },
+        "negotiation_points": [
+            {
+                "point": "Fee/Budget",
+                "details": "Client budget vs. Calculated standard fee including surcharge."
+            },
+            {
+                "point": "Training Dates",
+                "details": "Client preferred dates unavailable due to trainer unavailability."
+            },
+            {
+                "point": "Participant Numbers",
+                "details": "Requested participant number exceeds the standard maximum."
+            }
+        ],
+        "proposed_terms": [
+            {
+                "point": "Fee/Budget",
+                "proposal": "Propose a total training fee of $5,750 (includes base fee + surcharge). Separately state travel cost of $400.",
+                "supporting_data_reference": "Based on Section 2: Facilitator Daily Rate ($2,500/day) * 2 days + Digital Materials Fee ($75/participant) * 18 participants + Large Group Surcharge (15% of subtotal). Calculation: ($5,000 + $1,350) * 1.15 = $5,750. Travel cost based on Section 3: Standard Travel Cost Estimate (TechCity) $400."
+            },
+            {
+                "point": "Training Dates",
+                "proposal": "Proposed dates: 2024-09-16 to 2024-09-17 or 2024-09-23 to 2024-09-24.",
+                "supporting_data_reference": "Based on Section 4: Trainer Availability for Dr. Alex Reed shows unavailability Sep 9-13 but availability on proposed dates."
+            },
+            {
+                "point": "Participant Numbers",
+                "proposal": "Accept 15 participants to avoid the Large Group Surcharge.",
+                "supporting_data_reference": "Based on Section 2: Standard Maximum Group Size is 15 participants. Large Group Surcharge applies for groups between 16 and 20 participants."
+            }
+        ]
+    }
+}

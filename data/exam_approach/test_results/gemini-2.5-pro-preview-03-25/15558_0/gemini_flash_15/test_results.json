@@ -1,0 +1,35 @@
+{
+    "candidate_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "GPT-4",
+    "evaluation_details": {
+        "task_1_scheduling": {
+            "score": 4,
+            "max_points": 5,
+            "details": {
+                "conflict_identified": "Correct (True). +1 points.",
+                "conflict_description": "Incorrect. Description does not match expectation based on conflict status. Expected logic based on 'Requested 'Gentle Stretching' on Thursday 10:00 in Studio B conflicts with existing 'Pilates Core' at the same time and location.', Got 'Requested 'Gentle Stretching' on Thursday at 10:00 in Studio B conflicts with existing 'Pilates Core' at the same time and location.'. +0 points.",
+                "updated_schedule": "Correct. Schedule matches expected content. +3 points."
+            }
+        },
+        "task_2_record_keeping": {
+            "score": 4,
+            "max_points": 4,
+            "details": {
+                "attendance_records_structure": "Correct number of records (3). +1 points.",
+                "attendance_records_content": "Found 3 correctly matching records out of 3. +3 points."
+            }
+        },
+        "task_3_reporting": {
+            "score": 4,
+            "max_points": 4,
+            "details": {
+                "attendance_summary_structure": "Correct number of summary items (3). +1 points.",
+                "attendance_summary_content": "Found 3 correctly matching summary items out of 3. +3 points."
+            }
+        }
+    },
+    "overall_score": 92.31,
+    "total_score_achieved": 12,
+    "total_possible_points": 13
+}

@@ -1,0 +1,56 @@
+{
+    "candidate_id": "GPT-4o",
+    "exam_version": "Basic_PaymentSchedule_v1.0",
+    "loan_scenarios": [
+        {
+            "loan_id": "LOAN_BASIC_001",
+            "monthly_payment": 1604.1,
+            "total_interest_paid": 302475.89,
+            "schedule_points": [
+                {
+                    "payment_number": 1,
+                    "interest_paid": 1322.92,
+                    "principal_paid": 281.18,
+                    "remaining_balance": 274718.82
+                },
+                {
+                    "payment_number": 12,
+                    "interest_paid": 1310.87,
+                    "principal_paid": 293.23,
+                    "remaining_balance": 271398.01
+                },
+                {
+                    "payment_number": 360,
+                    "interest_paid": 7.69,
+                    "principal_paid": 1596.41,
+                    "remaining_balance": -0.01
+                }
+            ]
+        },
+        {
+            "loan_id": "LOAN_BASIC_002",
+            "monthly_payment": 644.41,
+            "total_interest_paid": 9130.44,
+            "schedule_points": [
+                {
+                    "payment_number": 1,
+                    "interest_paid": 270.0,
+                    "principal_paid": 374.41,
+                    "remaining_balance": 44625.59
+                },
+                {
+                    "payment_number": 12,
+                    "interest_paid": 252.42,
+                    "principal_paid": 391.99,
+                    "remaining_balance": 40102.83
+                },
+                {
+                    "payment_number": 84,
+                    "interest_paid": 3.85,
+                    "principal_paid": 640.56,
+                    "remaining_balance": -0.01
+                }
+            ]
+        }
+    ]
+}

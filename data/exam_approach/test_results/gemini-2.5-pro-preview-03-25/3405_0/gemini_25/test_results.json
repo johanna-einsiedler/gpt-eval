@@ -1,0 +1,54 @@
+{
+  "checks": {
+    "valid_json": {
+      "passed": true,
+      "points": 5,
+      "message": "Submission is valid JSON."
+    },
+    "correct_structure": {
+      "passed": true,
+      "points": 15,
+      "message": "Core JSON structure is correct."
+    },
+    "correct_data_types_monetary": {
+      "passed": true,
+      "points": 15,
+      "message": "All monetary fields have correct numeric data types."
+    },
+    "total_cost_correct": {
+      "passed": true,
+      "points": 20,
+      "message": "Total estimated cost is correct (2640.00)."
+    },
+    "venue_cost_correct": {
+      "passed": true,
+      "points": 15,
+      "message": "'Venue Rental' cost is correct (600.00)."
+    },
+    "admin_cost_correct": {
+      "passed": true,
+      "points": 15,
+      "message": "'Admin Support' cost is correct (240.00)."
+    },
+    "instructor_cost_correct": {
+      "passed": true,
+      "points": 5,
+      "message": "'Instructor Fees' cost is correct (600.00)."
+    },
+    "materials_cost_correct": {
+      "passed": true,
+      "points": 5,
+      "message": "'Training Materials' cost is correct (800.00)."
+    },
+    "refreshments_cost_correct": {
+      "passed": true,
+      "points": 5,
+      "message": "'Refreshments' cost is correct (400.00)."
+    }
+  },
+  "achieved_points": 100,
+  "overall_score": 100.0,
+  "feedback": [
+    "Excellent! All checks passed."
+  ]
+}

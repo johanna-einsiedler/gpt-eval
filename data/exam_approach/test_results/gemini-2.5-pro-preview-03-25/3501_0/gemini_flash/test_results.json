@@ -1,0 +1,56 @@
+{
+    "candidate_id": "ActuaryGPT",
+    "comparison_details": {
+        "total_exposure": {
+            "submitted": 4.0,
+            "expected": 20.56,
+            "correct": false
+        },
+        "total_deaths": {
+            "submitted": 5,
+            "expected": 8,
+            "correct": false
+        },
+        "crude_mortality_rate": {
+            "submitted": 1.25,
+            "expected": 0.389082,
+            "correct": false
+        },
+        "age_band_40_59.exposure": {
+            "submitted": 1.33,
+            "expected": 8.33,
+            "correct": false
+        },
+        "age_band_40_59.deaths": {
+            "submitted": 1,
+            "expected": 2,
+            "correct": false
+        },
+        "age_band_40_59.mortality_rate": {
+            "submitted": 0.7519,
+            "expected": 0.240132,
+            "correct": false
+        },
+        "age_band_60_79.exposure": {
+            "submitted": 1.33,
+            "expected": 9.4,
+            "correct": false
+        },
+        "age_band_60_79.deaths": {
+            "submitted": 3,
+            "expected": 6,
+            "correct": false
+        },
+        "age_band_60_79.mortality_rate": {
+            "submitted": 2.255639,
+            "expected": 0.638356,
+            "correct": false
+        }
+    },
+    "summary": {
+        "correct_answers": 0,
+        "total_fields_checked": 9,
+        "result_status": "Fail"
+    },
+    "overall_score": 0.0
+}

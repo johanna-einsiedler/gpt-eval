@@ -1,0 +1,417 @@
+{
+    "candidate_id_submission": "GPT-4",
+    "file_validation": {
+        "errors": [],
+        "warnings": []
+    },
+    "structure_check": {
+        "base_prices_count": {
+            "actual": 10,
+            "expected": 10,
+            "correct": true
+        },
+        "volume_scenarios_count": {
+            "actual": 3,
+            "expected": 3,
+            "correct": true
+        },
+        "customer_scenarios_count": {
+            "actual": 3,
+            "expected": 3,
+            "correct": true
+        }
+    },
+    "base_price_check": {
+        "items": {
+            "P001": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P001",
+                        "actual": "P001"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 150.0,
+                        "actual": 150.0,
+                        "actual_rounded": 150.0,
+                        "expected_rounded": 150.0
+                    }
+                }
+            },
+            "P002": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P002",
+                        "actual": "P002"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 225.5,
+                        "actual": 225.5,
+                        "actual_rounded": 225.5,
+                        "expected_rounded": 225.5
+                    }
+                }
+            },
+            "P003": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P003",
+                        "actual": "P003"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 113.25,
+                        "actual": 113.25,
+                        "actual_rounded": 113.25,
+                        "expected_rounded": 113.25
+                    }
+                }
+            },
+            "P004": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P004",
+                        "actual": "P004"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 330.0,
+                        "actual": 330.0,
+                        "actual_rounded": 330.0,
+                        "expected_rounded": 330.0
+                    }
+                }
+            },
+            "P005": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P005",
+                        "actual": "P005"
+                    }
+                },
+                "base_price_check": {
+                    "correct": false,
+                    "details": {
+                        "expected": 502.01,
+                        "actual": 502.0,
+                        "error": "Numeric mismatch (Expected rounded: 502.01, Actual rounded: 502.00)"
+                    }
+                }
+            },
+            "P006": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P006",
+                        "actual": "P006"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 75.0,
+                        "actual": 75.0,
+                        "actual_rounded": 75.0,
+                        "expected_rounded": 75.0
+                    }
+                }
+            },
+            "P007": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P007",
+                        "actual": "P007"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 95.0,
+                        "actual": 95.0,
+                        "actual_rounded": 95.0,
+                        "expected_rounded": 95.0
+                    }
+                }
+            },
+            "P008": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P008",
+                        "actual": "P008"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 180.0,
+                        "actual": 180.0,
+                        "actual_rounded": 180.0,
+                        "expected_rounded": 180.0
+                    }
+                }
+            },
+            "P009": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P009",
+                        "actual": "P009"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 676.2,
+                        "actual": 676.2,
+                        "actual_rounded": 676.2,
+                        "expected_rounded": 676.2
+                    }
+                }
+            },
+            "P010": {
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P010",
+                        "actual": "P010"
+                    }
+                },
+                "base_price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 132.38,
+                        "actual": 132.38,
+                        "actual_rounded": 132.38,
+                        "expected_rounded": 132.38
+                    }
+                }
+            }
+        }
+    },
+    "volume_scenario_check": {
+        "items": {
+            "V1": {
+                "order_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "V1",
+                        "actual": "V1"
+                    }
+                },
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P002",
+                        "actual": "P002"
+                    }
+                },
+                "quantity_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 25,
+                        "actual": 25,
+                        "actual_rounded": 25.0,
+                        "expected_rounded": 25.0
+                    }
+                },
+                "price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 214.23,
+                        "actual": 214.23,
+                        "actual_rounded": 214.23,
+                        "expected_rounded": 214.23
+                    }
+                }
+            },
+            "V2": {
+                "order_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "V2",
+                        "actual": "V2"
+                    }
+                },
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P005",
+                        "actual": "P005"
+                    }
+                },
+                "quantity_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 60,
+                        "actual": 60,
+                        "actual_rounded": 60.0,
+                        "expected_rounded": 60.0
+                    }
+                },
+                "price_check": {
+                    "correct": false,
+                    "details": {
+                        "expected": 451.81,
+                        "actual": 451.8,
+                        "error": "Numeric mismatch (Expected rounded: 451.81, Actual rounded: 451.80)"
+                    }
+                }
+            },
+            "V3": {
+                "order_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "V3",
+                        "actual": "V3"
+                    }
+                },
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P008",
+                        "actual": "P008"
+                    }
+                },
+                "quantity_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 5,
+                        "actual": 5,
+                        "actual_rounded": 5.0,
+                        "expected_rounded": 5.0
+                    }
+                },
+                "price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 180.0,
+                        "actual": 180.0,
+                        "actual_rounded": 180.0,
+                        "expected_rounded": 180.0
+                    }
+                }
+            }
+        }
+    },
+    "customer_scenario_check": {
+        "items": {
+            "C1": {
+                "order_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "C1",
+                        "actual": "C1"
+                    }
+                },
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P001",
+                        "actual": "P001"
+                    }
+                },
+                "customer_type_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "Reseller",
+                        "actual": "Reseller"
+                    }
+                },
+                "price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 127.5,
+                        "actual": 127.5,
+                        "actual_rounded": 127.5,
+                        "expected_rounded": 127.5
+                    }
+                }
+            },
+            "C2": {
+                "order_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "C2",
+                        "actual": "C2"
+                    }
+                },
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P004",
+                        "actual": "P004"
+                    }
+                },
+                "customer_type_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "Education",
+                        "actual": "Education"
+                    }
+                },
+                "price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 297.0,
+                        "actual": 297.0,
+                        "actual_rounded": 297.0,
+                        "expected_rounded": 297.0
+                    }
+                }
+            },
+            "C3": {
+                "order_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "C3",
+                        "actual": "C3"
+                    }
+                },
+                "product_id_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "P007",
+                        "actual": "P007"
+                    }
+                },
+                "customer_type_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": "Standard",
+                        "actual": "Standard"
+                    }
+                },
+                "price_check": {
+                    "correct": true,
+                    "details": {
+                        "expected": 95.0,
+                        "actual": 95.0,
+                        "actual_rounded": 95.0,
+                        "expected_rounded": 95.0
+                    }
+                }
+            }
+        }
+    },
+    "score_summary": {
+        "points_achieved": 42,
+        "points_possible": 44
+    },
+    "overall_score": 95.45
+}

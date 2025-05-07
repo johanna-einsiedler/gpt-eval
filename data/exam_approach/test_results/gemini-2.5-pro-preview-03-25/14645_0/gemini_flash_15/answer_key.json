@@ -1,0 +1,113 @@
+{
+    "exam_type": "basic",
+    "candidate_id": "EVALUATION_KEY",
+    "project_feature": "Reading Goals Tracker",
+    "testing_scope": {
+        "in_scope": [
+            "RG-01: Navigate to 'My Reading Goals' page from dashboard",
+            "RG-02: Set annual 'Books to Read This Year' goal (positive integer, savable, one per year)",
+            "RG-03: Display goal number and current progress count on 'My Reading Goals' page",
+            "RG-04: Increment progress count when user marks a book as 'read' via existing functionality",
+            "RG-05: Progress display updates after marking book as read (auto or refresh)",
+            "RG-06: Edit/change saved goal number for the current year",
+            "Basic usability testing (clarity, intuitive flow)",
+            "Browser compatibility testing on latest stable Google Chrome",
+            "Browser compatibility testing on latest stable Mozilla Firefox"
+        ],
+        "out_of_scope": [
+            "Mobile application testing",
+            "Browser compatibility testing on browsers other than Chrome/Firefox (e.g., Safari, Edge, IE)",
+            "User authentication (login/logout/registration)",
+            "Performance / Load testing",
+            "Major UI redesign / Extensive usability testing",
+            "Data migration testing",
+            "Testing the existing 'mark book as read' functionality itself (only its effect on the goal count)"
+        ]
+    },
+    "test_approach_summary": {
+        "primary_focus": [
+            "Functional Testing",
+            "Browser Compatibility Testing",
+            "Basic Usability Testing",
+            "Integration Testing (related to RG-04)"
+        ],
+        "methodology": "Manual testing based on requirements, supplemented with exploratory testing."
+    },
+    "prioritized_requirements": [
+        {
+            "requirement_id": "RG-01",
+            "priority": 1
+        },
+        {
+            "requirement_id": "RG-02",
+            "priority": 2
+        },
+        {
+            "requirement_id": "RG-04",
+            "priority": 3
+        },
+        {
+            "requirement_id": "RG-03",
+            "priority": 4
+        },
+        {
+            "requirement_id": "RG-05",
+            "priority": 5
+        },
+        {
+            "requirement_id": "RG-06",
+            "priority": 6
+        }
+    ],
+    "test_schedule": [
+        {
+            "activity": "Test Planning & Test Case Design/Review",
+            "start": "2024-07-30",
+            "end": "2024-07-31"
+        },
+        {
+            "activity": "Functional Execution (RG-01, RG-02, RG-04 - Core)",
+            "start": "2024-08-01",
+            "end": "2024-08-02"
+        },
+        {
+            "activity": "Functional Execution (RG-03, RG-05, RG-06 - Supporting)",
+            "start": "2024-08-05",
+            "end": "2024-08-05"
+        },
+        {
+            "activity": "Browser Compatibility Checks (Chrome, Firefox)",
+            "start": "2024-08-06",
+            "end": "2024-08-06"
+        },
+        {
+            "activity": "Regression Testing (Focus on dashboard link & 'mark as read' integration)",
+            "start": "2024-08-07",
+            "end": "2024-08-07"
+        },
+        {
+            "activity": "Buffer / Defect Retesting",
+            "start": "2024-08-08",
+            "end": "2024-08-08"
+        },
+        {
+            "activity": "Final Test Summary Report Preparation",
+            "start": "2024-08-09",
+            "end": "2024-08-09"
+        }
+    ],
+    "risks_and_assumptions": {
+        "assumptions": [
+            "The development build containing the feature will be delivered and deployed to the test environment by the start of QA Testing (2024-07-30).",
+            "The test environment will be stable and representative of the production configuration.",
+            "The provided requirements (RG-01 to RG-06) are complete, unambiguous, and will not change significantly during the testing phase.",
+            "Access to necessary test accounts and tools will be available."
+        ],
+        "risks": [
+            "Delay in receiving the test build from development, compressing the test execution window.",
+            "Discovery of critical/blocking defects early in the cycle, preventing progress on other test activities.",
+            "Test environment instability or significant differences from production.",
+            "Underestimation of time required for testing or defect retesting within the 9-day window for a single QA resource."
+        ]
+    }
+}

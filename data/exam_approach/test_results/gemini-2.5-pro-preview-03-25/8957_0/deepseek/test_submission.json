@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4",
+    "exam_version": "Basic_DataPrep_v1",
+    "submission_timestamp": "2024-06-20T14:30:00Z",
+    "results": {
+        "task_1_load_combine": {
+            "merged_rows": 18,
+            "merged_columns": 7
+        },
+        "task_2_identify_issues": {
+            "missing_age_count": 2,
+            "missing_score_count": 2,
+            "unique_gender_values": [
+                "F",
+                "Female",
+                "M",
+                "Male",
+                "N/A",
+                "Other",
+                "female"
+            ],
+            "high_age_rows_count": 2,
+            "duplicate_rows_count": 1
+        },
+        "task_3_clean_adjust": {
+            "final_rows_count": 17,
+            "median_age_cleaned": 42.0,
+            "mean_score_cleaned": 76.29,
+            "date_conversion_failures": 3
+        },
+        "task_4_apply_weights": {
+            "mean_weighted_score": 76.71
+        }
+    }
+}

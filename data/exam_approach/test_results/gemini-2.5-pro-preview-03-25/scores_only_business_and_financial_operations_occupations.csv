@@ -1,0 +1,11 @@
+,task_id,occupation,task_description,score_gemini_flash,score_gemini_25,score_claude_sonnet,score_chatgpt_o3,score_sonnet30,score_deepseek,score_gemini_flash_15,score_chatgpt35,score_claude_haiku,score_sonnet_35,score_chatgpt4o,score_empty_submission,score_claude_sonnet_35
+0,3414.0,Loan Officers,Compute payment schedules.,13.64,27.27,22.73,27.27,22.73,18.18,18.18,9.09,,,,,
+1,108.0,Training and Development Specialists,"Negotiate contracts with clients for desired training outcomes, fees, or expenses.",95.0,95.0,100.0,85.0,85.0,100.0,95.0,80.0,95.0,100.0,95.0,,
+2,20719.0,Equal Opportunity Representatives and Officers,Prepare reports related to investigations of equal opportunity complaints.,86.36,100.0,81.82,86.36,86.36,86.36,86.36,,86.36,86.36,81.82,,
+3,7321.0,Financial Examiners,Review audit reports of internal and external auditors to monitor adequacy of scope of reports or to discover specific weaknesses in internal routines.,54.84,51.61,29.03,54.84,54.84,58.06,54.84,,41.94,45.16,58.06,,
+4,18868.0,Human Resources Specialists,Review employment applications and job orders to match applicants with job requirements.,100.0,100.0,100.0,100.0,100.0,100.0,100.0,0.0,100.0,0.0,100.0,0.0,0.0
+5,3396.0,Budget Analysts,Consult with managers to ensure that budget adjustments are made in accordance with program changes.,100.0,100.0,0.0,100.0,0.0,100.0,84.0,0.0,100.0,100.0,100.0,0.0,0.0
+6,15902.0,Logistics Analysts,"Compute reporting metrics, such as on-time delivery rates, order fulfillment rates, or inventory turns.",100.0,100.0,75.0,100.0,100.0,75.0,50.0,,50.0,25.0,50.0,,
+7,8938.0,Logisticians,"Develop and implement technical project management tools, such as plans, schedules, and responsibility and compliance matrices.",100.0,100.0,94.0,100.0,100.0,100.0,100.0,100.0,91.0,91.0,100.0,,
+8,7361.0,Tax Preparers,Interview clients to obtain additional information on taxable income and deductible expenses and allowances.,100.0,100.0,100.0,100.0,100.0,87.5,87.5,50.0,87.5,87.5,75.0,,
+9,3405.0,Budget Analysts,Compile and analyze accounting records and other data to determine the financial resources required to implement a program.,100.0,100.0,100.0,100.0,100.0,100.0,100.0,,100.0,,,,

@@ -1,0 +1,67 @@
+{
+    "submission_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "GPT-4o",
+    "exam_version_submitted": "BASIC_INTERVIEW_V1.0",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 8,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Could you please provide the complete W-2 form you received from DesignCorp, including all box amounts and codes?"
+            },
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "matched_submission_question_id": 3,
+                "matched_submission_question_text": "What is the exact total amount you earned from tutoring during the tax year, and did you receive any 1099-NEC or 1099-K forms related to this tutoring income?"
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 7,
+                "matched_submission_question_text": "Please download and forward your Form 1098-E (Student Loan Interest Statement) showing the exact amount of interest you paid during the year."
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "matched_submission_question_id": 9,
+                "matched_submission_question_text": "Please provide the Form 1098 from your mortgage lender showing the mortgage interest, mortgage insurance premiums, and any real estate taxes paid through escrow for the year."
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 12,
+                "matched_submission_question_text": "For the items you donated to Goodwill, can you provide the receipt and a list describing each item with its estimated fair-market value at the time of donation?"
+            },
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 13,
+                "matched_submission_question_text": "For the $100 cash you donated to your church over the year, do you have a record of each date and amount (e.g., cancelled checks, bank statements, or a year-end statement from the church)?"
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "matched_submission_question_id": 14,
+                "matched_submission_question_text": "Please provide a breakdown of your out-of-pocket medical and prescription expenses (dates, providers, amounts) and indicate whether any portion was reimbursed by insurance or paid with pre-tax funds such as an HSA or FSA."
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "matched_submission_question_id": 15,
+                "matched_submission_question_text": "You mentioned a bank tax form for savings interest\u2014could you forward the Form 1099-INT (or similar) showing the exact interest amount earned?"
+            }
+        ],
+        "missed_areas": []
+    },
+    "overall_score": 100.0
+}

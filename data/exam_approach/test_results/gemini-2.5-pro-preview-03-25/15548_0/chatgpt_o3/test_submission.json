@@ -1,0 +1,94 @@
+{
+    "candidate_name": "Fitness and Wellness AI Coordinator",
+    "candidate_id": "claude-3-opus-20240229",
+    "submission_date": "2024-07-29",
+    "exam_version": "Basic_FWC_NeedsAssessment_v1",
+    "task_1_interest_survey_design": {
+        "survey_title": "Innovatech Employee Wellness: Mid-day Mindfulness & Stretching Break Interest Survey",
+        "target_audience_description": "All employees of Innovatech Solutions",
+        "survey_introduction_text": "Innovatech Solutions is committed to enhancing employee well-being. We are considering introducing a 'Mid-day Mindfulness & Stretching Break' and would greatly appreciate your input to tailor this potential program to your needs. Please take a few minutes to complete this short survey; your feedback is valuable!",
+        "survey_questions": [
+            {
+                "question_text": "How interested are you in participating in a 15-20 minute guided 'Mid-day Mindfulness & Stretching Break' offered twice a week?",
+                "question_type": "Likert Scale (1-5)",
+                "options": [
+                    "1 - Not at all interested",
+                    "2 - Slightly interested",
+                    "3 - Moderately interested",
+                    "4 - Very interested",
+                    "5 - Extremely interested"
+                ]
+            },
+            {
+                "question_text": "Which days of the week would you most likely be able to attend such a session? (Select all that apply)",
+                "question_type": "Multiple Choice - Multiple Answers",
+                "options": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ]
+            },
+            {
+                "question_text": "What time of day would be most convenient for you to participate in a 15-20 minute session? (Select all that apply)",
+                "question_type": "Multiple Choice - Multiple Answers",
+                "options": [
+                    "Late Morning (e.g., 11:00 AM - 11:30 AM)",
+                    "Lunchtime (e.g., 12:30 PM - 1:00 PM)",
+                    "Early Afternoon (e.g., 2:00 PM - 2:30 PM)"
+                ]
+            },
+            {
+                "question_text": "What aspect of the 'Mid-day Mindfulness & Stretching Break' are you most interested in?",
+                "question_type": "Multiple Choice - Single Answer",
+                "options": [
+                    "Primarily Mindfulness",
+                    "Primarily Stretching",
+                    "An equal balance of both",
+                    "Not sure yet"
+                ]
+            },
+            {
+                "question_text": "What, if any, are your primary concerns or potential barriers to participating in such a program? (Select all that apply)",
+                "question_type": "Multiple Choice - Multiple Answers",
+                "options": [
+                    "Workload/Too busy",
+                    "Meeting conflicts",
+                    "Not interested in the activity",
+                    "Prefer to use my break differently",
+                    "Concerns about session length",
+                    "Other (please specify)"
+                ]
+            },
+            {
+                "question_text": "If you selected 'Other' for potential barriers in the previous question, please specify:",
+                "question_type": "Open-ended Text",
+                "options": []
+            },
+            {
+                "question_text": "Do you have any other suggestions or comments regarding the proposed 'Mid-day Mindfulness & Stretching Break' program?",
+                "question_type": "Open-ended Text",
+                "options": []
+            }
+        ]
+    },
+    "task_2_satisfaction_data_analysis": {
+        "satisfaction_rating_summary": {
+            "1": 1,
+            "2": 1,
+            "3": 3,
+            "4": 5,
+            "5": 5
+        },
+        "top_enjoyed_aspects": [
+            "Team competition",
+            "Tracking daily progress"
+        ],
+        "top_improvement_suggestions": [
+            "More prize categories",
+            "Better mobile app"
+        ],
+        "recommendation_for_next_year": "To improve next year's Step Challenge, consider offering more prize categories and enhancing the mobile app, as these were key suggestions. Continuing the popular team competition element is also recommended to maintain high engagement."
+    }
+}

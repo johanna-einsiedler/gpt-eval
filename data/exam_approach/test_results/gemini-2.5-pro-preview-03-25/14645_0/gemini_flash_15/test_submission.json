@@ -1,0 +1,99 @@
+{
+    "exam_type": "basic",
+    "candidate_id": "placeholder",
+    "project_feature": "Reading Goals Tracker",
+    "testing_scope": {
+        "in_scope": [
+            "RG-01: User must be able to navigate to a new 'My Reading Goals' page from their main user dashboard.",
+            "RG-02: On the 'My Reading Goals' page, if no goal is set for the current year, the user can input a number (positive integer > 0) as their 'Books to Read This Year' goal.",
+            "RG-03: Once a goal is set, the 'My Reading Goals' page must display the goal number and the current progress count.",
+            "RG-04: When a user marks a book as 'read', the progress count on the 'My Reading Goals' page must be incremented by one.",
+            "RG-05: The progress display on the 'My Reading Goals' page should update automatically or upon page refresh after a book is marked as read.",
+            "RG-06: The user must be able to edit/change their saved goal number for the current year."
+        ],
+        "out_of_scope": [
+            "Mobile app testing",
+            "User authentication flow",
+            "Performance testing",
+            "Testing on browsers other than Chrome and Firefox",
+            "Extensive UI/UX testing",
+            "Data migration testing"
+        ]
+    },
+    "test_approach_summary": {
+        "primary_focus": [
+            "Functional Testing",
+            "Browser Compatibility Testing (Chrome & Firefox)",
+            "Usability Testing (Basic)"
+        ],
+        "methodology": "Manual testing based on requirements and exploratory testing"
+    },
+    "prioritized_requirements": [
+        {
+            "requirement_id": "RG-02",
+            "priority": 1
+        },
+        {
+            "requirement_id": "RG-04",
+            "priority": 2
+        },
+        {
+            "requirement_id": "RG-01",
+            "priority": 3
+        },
+        {
+            "requirement_id": "RG-03",
+            "priority": 4
+        },
+        {
+            "requirement_id": "RG-05",
+            "priority": 5
+        },
+        {
+            "requirement_id": "RG-06",
+            "priority": 6
+        }
+    ],
+    "test_schedule": [
+        {
+            "activity": "Test Case Design",
+            "start": "2024-07-30",
+            "end": "2024-07-31"
+        },
+        {
+            "activity": "Functional Execution - Priority 1&2",
+            "start": "2024-08-01",
+            "end": "2024-08-03"
+        },
+        {
+            "activity": "Functional Execution - Priority 3,4,5,6",
+            "start": "2024-08-03",
+            "end": "2024-08-06"
+        },
+        {
+            "activity": "Browser Compatibility Checks (Chrome & Firefox)",
+            "start": "2024-08-06",
+            "end": "2024-08-07"
+        },
+        {
+            "activity": "Regression Testing",
+            "start": "2024-08-07",
+            "end": "2024-08-08"
+        },
+        {
+            "activity": "Final Report Preparation",
+            "start": "2024-08-08",
+            "end": "2024-08-09"
+        }
+    ],
+    "risks_and_assumptions": {
+        "assumptions": [
+            "The development team will deliver a stable build by the end of 2024-07-29.",
+            "The test environment will accurately reflect the production environment."
+        ],
+        "risks": [
+            "Unforeseen bugs or defects may require additional testing time.",
+            "Integration issues with existing SimpleReads functionality may arise."
+        ]
+    }
+}

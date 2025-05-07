@@ -1,0 +1,36 @@
+{
+    "exam_id": "BA_Basic_01",
+    "program_name": "Community Tech Literacy Workshop",
+    "total_estimated_cost": 2640.0,
+    "cost_breakdown": [
+        {
+            "category": "Venue Rental",
+            "estimated_cost": 600.0,
+            "calculation_basis": "4 workshops * $150.00/workshop (from quote VQ-CTL-483)"
+        },
+        {
+            "category": "Instructor Fees",
+            "estimated_cost": 600.0,
+            "calculation_basis": "4 workshops * 3 hours/workshop * $50.00/hour"
+        },
+        {
+            "category": "Training Materials",
+            "estimated_cost": 800.0,
+            "calculation_basis": "4 workshops * 20 participants/workshop * $10.00/participant"
+        },
+        {
+            "category": "Refreshments",
+            "estimated_cost": 400.0,
+            "calculation_basis": "4 workshops * 20 participants/workshop * $5.00/participant"
+        },
+        {
+            "category": "Admin Support",
+            "estimated_cost": 240.0,
+            "calculation_basis": "10% of $2400.00 (sum of Venue, Instructor, Materials, and Refreshments costs)"
+        }
+    ],
+    "notes_or_assumptions": [
+        "Used venue quote rate ($150.00/session) instead of standard hourly rate.",
+        "Assumed exactly 20 participants attended each workshop session."
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "exam_part": "basic_negotiation",
+    "candidate_id": "EVALUATOR_KEY",
+    "scenario_analysis": {
+        "client_needs_summary": "Client (Beta Corp) requires a 2-day on-site (TechCity) Effective Communication Skills training for 18 junior managers. Key outcomes: improve written clarity, active listening, and constructive disagreement handling. Preferred dates: First half of September 2024 (e.g., Sep 9-13). Indicated budget: Approx. $4,500. Requests pre-training call.",
+        "potential_issues_or_deviations": [
+            "Client budget ($4,500) is significantly below the calculated required fee ($7302.50) based on standard rates, participant number, and mandatory surcharge.",
+            "Client's preferred dates (first half of Sept, e.g., Sep 9-13) conflict with lead trainer (Dr. Alex Reed) unavailability as per Section 4 of provider_info.txt (Unavailable Sep 2-6 & Sep 9-13).",
+            "Requested participant number (18) exceeds the standard maximum group size (15) and triggers the mandatory 15% Large Group Surcharge as per Section 2 of provider_info.txt.",
+            "On-site training in TechCity incurs mandatory travel costs ($400) not explicitly mentioned in client budget, as per Section 3 of provider_info.txt."
+        ]
+    },
+    "negotiation_points": [
+        {
+            "point": "Fee/Budget",
+            "details": "Significant gap between client's stated budget ($4,500) and the calculated fee ($7302.50) required by provider based on standard pricing and surcharge."
+        },
+        {
+            "point": "Training Dates",
+            "details": "Client's preferred dates are unavailable due to trainer schedule constraints."
+        },
+        {
+            "point": "Participant Number Surcharge",
+            "details": "Client's request for 18 participants triggers a mandatory surcharge that increases the total fee."
+        },
+        {
+            "point": "Travel Costs",
+            "details": "Need to confirm client acceptance of the additional, mandatory travel costs ($400) for on-site delivery in TechCity."
+        }
+    ],
+    "proposed_terms": [
+        {
+            "point": "Fee/Budget",
+            "proposal": "Propose total training fee of $7302.50. This includes the standard facilitator rate, materials for 18 participants, and the mandatory 15% surcharge for groups over 15.",
+            "supporting_data_reference": "Based on Section 2: Facilitator Daily Rate ($2500/day) * 2 days = $5000. Digital Materials Fee ($75/participant) * 18 participants = $1350. Subtotal = $6350. Large Group Surcharge (16-20 participants) = 15% of Subtotal = 0.15 * $6350 = $952.50. Total Fee = $6350 + $952.50 = $7302.50."
+        },
+        {
+            "point": "Travel Costs",
+            "proposal": "State that standard travel costs of $400 will be added to the invoice for on-site training in TechCity.",
+            "supporting_data_reference": "Based on Section 3: Standard Travel Cost Estimate (TechCity) is $400, billed to client for on-site training outside Metroville."
+        },
+        {
+            "point": "Training Dates",
+            "proposal": "Propose alternative available dates based on trainer schedule: e.g., '2024-09-16 to 2024-09-17' or '2024-09-23 to 2024-09-24' or other available pairs in Sep.",
+            "supporting_data_reference": "Based on Section 4: Trainer Availability for Dr. Alex Reed shows unavailability Sep 2-6 and Sep 9-13, but availability on Sep 16-17, 18-20, 23-24, 25-27."
+        },
+        {
+            "point": "Participant Number Surcharge",
+            "proposal": "Confirm acceptance of 18 participants, noting that the proposed fee includes the mandatory 15% surcharge as per policy for groups of this size.",
+            "supporting_data_reference": "Based on Section 2: Standard Maximum Group Size is 15. Large Group Surcharge of 15% applies for groups between 16 and 20 participants."
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-occupation,task_id,task_description,exam_author_model,tools,materials,exam,system_prompt,overview,instructions,materials_all,materials_candidate,submission,evaluation,grading,answer_key,errors,check_real_materials,check_no_internet,failed_candidate_materials,key_grade_threshold,key_grade,answer_key_count,check_overall_makes_sense,explanation_overall_makes_sense,metadata
+occupation,task_id,task_description,exam_author_model,tools,materials,exam,system_prompt,overview,instructions,materials_all,materials_candidate,submission,evaluation,grading,answer_key,errors,check_real_materials,check_no_internet,failed_candidate_materials,key_grade_threshold,key_grade,answer_key_count,check_overall_makes_sense,explanation_overall_makes_sense,metadata,occupation_group
 Fitness and Wellness Coordinators,20316.0,Track cost-containment strategies and programs to evaluate effectiveness.,gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'Text editor', 'PDF viewer']","['Text', 'Data']",Exam not valid,"You are an excellent examiner of Fitness and Wellness Coordinators capabilities. Design a remote, **practical** exam to verify whether a Fitness and Wellness Coordinators can Track cost-containment strategies and programs to evaluate effectiveness..
     This exam will have two parts (basic and advanced). Your current task is **only** to design the basic exam.
 
@@ -991,8 +991,8 @@ total_token_count: 9323
 , 'grading': prompt_token_count: 8818
 candidates_token_count: 6940
 total_token_count: 17975
-}"
-Gambling Managers,7199.0,"Review operational expenses, budget estimates, betting accounts, or collection reports for accuracy.",gemini-2.5-pro-preview-03-25,,,,,,,,,,,,,"['Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT']",,,,,,,,,
+}",management_occupations
+Gambling Managers,7199.0,"Review operational expenses, budget estimates, betting accounts, or collection reports for accuracy.",gemini-2.5-pro-preview-03-25,,,,,,,,,,,,,"['Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT']",,,,,,,,,,management_occupations
 Clinical Research Coordinators,15603.0,"Identify protocol problems, inform investigators of problems, or assist in problem resolution efforts, such as protocol revisions.",gemini-2.5-pro-preview-03-25,"['Text editor', 'PDF viewer']","['Text', 'Data']","Okay, here are the candidate instructions for the Basic Level Practical Exam.
 
 ---
@@ -2152,8 +2152,363 @@ total_token_count: 17213
 , 'check_sense': prompt_token_count: 15264
 candidates_token_count: 227
 total_token_count: 18210
-}"
-Fitness and Wellness Coordinators,15548.0,"Conduct needs assessments or surveys to determine interest in, or satisfaction with, wellness and fitness programs, events, or services.",gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'Text editor']","['Text', 'Data']",Exam not valid,"You are an excellent examiner of Fitness and Wellness Coordinators capabilities. Design a remote, **practical** exam to verify whether a Fitness and Wellness Coordinators can Conduct needs assessments or surveys to determine interest in, or satisfaction with, wellness and fitness programs, events, or services..
+}",management_occupations
+Fitness and Wellness Coordinators,15548.0,"Conduct needs assessments or surveys to determine interest in, or satisfaction with, wellness and fitness programs, events, or services.",gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'Text editor']","['Text', 'Data']","Okay, here are the clear, concise instructions for the candidate for the Basic Practical Exam.
+
+---
+
+### Fitness and Wellness Coordinator: Basic Practical Exam
+
+**Welcome!**
+This exam is designed to assess your practical skills in conducting needs assessments and analyzing survey data relevant to fitness and wellness programs.
+
+**Exam Duration:** 90 minutes
+
+**Allowed Tools:**
+*   A Spreadsheet program (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc)
+*   A Text Editor (e.g., Notepad, TextEdit, VS Code)
+
+**Focus:**
+This is a practical exam. You will be assessed on your ability to perform the tasks successfully using the provided tools and information.
+
+---
+
+**Submission Requirements:**
+1.  Compile all your answers into a single JSON file named `test_submission.json`.
+2.  The JSON file must follow the structure provided below. Replace placeholder values with your actual answers.
+3.  Ensure your JSON is valid. You can use an online JSON validator to check your file before considering it complete.
+
+**JSON Submission File Structure (`test_submission.json`):**
+```json
+{
+  ""candidate_name"": ""Your Name"",
+  ""submission_date"": ""YYYY-MM-DD"",
+  ""exam_version"": ""Basic_FWC_NeedsAssessment_v1"",
+  ""task_1_interest_survey_design"": {
+    ""survey_title"": ""Placeholder Title"",
+    ""target_audience_description"": ""Placeholder Description"",
+    ""survey_introduction_text"": ""Placeholder Introduction"",
+    ""survey_questions"": [
+      {
+        ""question_text"": ""Placeholder Question 1 Text"",
+        ""question_type"": ""Placeholder Question Type"",
+        ""options"": [""Option A"", ""Option B""]
+      }
+      // ... add all your questions for Task 1 here
+    ]
+  },
+  ""task_2_satisfaction_data_analysis"": {
+    ""satisfaction_rating_summary"": {
+      ""1"": 0,
+      ""2"": 0,
+      ""3"": 0,
+      ""4"": 0,
+      ""5"": 0
+    },
+    ""top_enjoyed_aspects"": [
+      ""Placeholder Enjoyed Aspect 1"",
+      ""Placeholder Enjoyed Aspect 2""
+    ],
+    ""top_improvement_suggestions"": [
+      ""Placeholder Suggestion 1"",
+      ""Placeholder Suggestion 2""
+    ],
+    ""recommendation_for_next_year"": ""Placeholder Recommendation""
+  }
+}
+```
+*(Remember to replace `""Your Name""` and `""YYYY-MM-DD""` with your actual name and the date of submission.)*
+
+---
+
+**Scenario Context (Applies to both tasks):**
+You are a new Fitness and Wellness Coordinator at ""Innovatech Solutions,"" a tech company with 200 employees. Management is keen to improve employee well-being.
+
+---
+
+**Task 1: New Program Interest Survey Design (Suggested time: 45 minutes)**
+
+Innovatech Solutions is considering introducing a ""Mid-day Mindfulness & Stretching Break"" program. This would involve a 15-20 minute guided session offered twice a week. Before launching, they want to gauge employee interest and preferences.
+
+**Your Task:**
+Design a short survey to send to Innovatech employees. In the `task_1_interest_survey_design` section of your `test_submission.json` file, provide the following:
+
+1.  `survey_title`: A suitable title for your survey.
+2.  `target_audience_description`: A brief description of who this survey is for (e.g., ""All employees of Innovatech Solutions"").
+3.  `survey_introduction_text`: A brief introductory paragraph for the survey (2-3 sentences) explaining its purpose to employees and encouraging participation.
+4.  `survey_questions`: A list of **5 to 7 distinct questions**. For each question, you must specify:
+    *   `question_text`: The exact wording of the question.
+    *   `question_type`: Choose one type from the following list:
+        *   ""Multiple Choice - Single Answer""
+        *   ""Multiple Choice - Multiple Answers""
+        *   ""Likert Scale (1-5)"" (where 1 is low, 5 is high)
+        *   ""Open-ended Text""
+    *   `options`: A list of predefined answer options. This is required for ""Multiple Choice"" and ""Likert Scale"" questions. For ""Open-ended Text"" questions, provide an empty list `[]`.
+
+**Example Question Structure for your JSON:**
+```json
+// This is an example, do not include it as one of your actual questions unless appropriate.
+{
+    ""question_text"": ""How interested are you in participating in a mid-day mindfulness session?"",
+    ""question_type"": ""Likert Scale (1-5)"",
+    ""options"": [""1 - Not at all interested"", ""2 - Slightly interested"", ""3 - Moderately interested"", ""4 - Very interested"", ""5 - Extremely interested""]
+}
+```
+```json
+// Example for an open-ended question
+{
+    ""question_text"": ""What other wellness activities would you be interested in?"",
+    ""question_type"": ""Open-ended Text"",
+    ""options"": []
+}
+```
+
+---
+
+**Task 2: Existing Program Satisfaction Data Analysis (Suggested time: 45 minutes)**
+
+Innovatech Solutions recently concluded its annual ""Step Challenge."" 50 employees participated. A short satisfaction survey was sent out, and 30 responses were collected. The raw data from these 15 of these responses is provided below.
+
+**Provided Data (`step_challenge_satisfaction_data`):**
+The data is comma-separated (CSV format). The columns are: `ParticipantID`, `OverallSatisfaction(1-5 Likert; 5=Very Satisfied)`, `EnjoyedMost`, `SuggestionForImprovement`.
+
+```
+ParticipantID,OverallSatisfaction(1-5 Likert; 5=Very Satisfied),EnjoyedMost,SuggestionForImprovement
+P01,4,Team competition,More prize categories
+P02,5,Tracking daily progress,Clearer rules on activity conversion
+P03,3,Nothing specific,Too long
+P04,5,Team competition,Better mobile app
+P05,4,Tracking daily progress,More frequent updates on leaderboard
+P06,2,N/A,More prize categories
+P07,5,Team competition,More prize categories
+P08,4,Tracking daily progress,N/A
+P09,3,Feeling healthier,Make it optional to be on a team
+P10,5,Team competition,Better mobile app
+P11,4,N/A,Better mobile app
+P12,1,Nothing,Too competitive
+P13,5,Team competition,N/A
+P14,4,Tracking daily progress,More prize categories
+P15,3,Feeling healthier,Shorter duration
+```
+
+**Your Task:**
+1.  Import or copy this data into your spreadsheet program.
+2.  Analyze the data to identify the required information below.
+3.  In the `task_2_satisfaction_data_analysis` section of your `test_submission.json` file, provide the following:
+    *   `satisfaction_rating_summary`: An object where keys are the satisfaction ratings (""1"", ""2"", ""3"", ""4"", ""5"") and values are the **counts** of how many participants gave each rating.
+    *   `top_enjoyed_aspects`: A list containing the **top 2** most frequently mentioned aspects employees ""Enjoyed Most"". Use the exact phrasing as it appears in the data.
+    *   `top_improvement_suggestions`: A list containing the **top 2** most frequently mentioned ""Suggestions For Improvement"". Use the exact phrasing as it appears in the data. Exclude ""N/A"" from this list if it appears as a frequent suggestion.
+    *   `recommendation_for_next_year`: Based on your analysis of the provided data, formulate **one concrete recommendation** (1-2 sentences) for improving next year's Step Challenge.
+
+---
+
+**End of Exam Instructions. Good luck!**
+The following data is provided to the candidate for **Task 2: Existing Program Satisfaction Data Analysis**. This data should be presented to the candidate as `step_challenge_satisfaction_data`.
+
+```csv
+ParticipantID,OverallSatisfaction(1-5 Likert; 5=Very Satisfied),EnjoyedMost,SuggestionForImprovement
+P01,4,Team competition,More prize categories
+P02,5,Tracking daily progress,Clearer rules on activity conversion
+P03,3,Nothing specific,Too long
+P04,5,Team competition,Better mobile app
+P05,4,Feeling healthier,More frequent updates on leaderboard
+P06,2,N/A,Shorter duration
+P07,5,Team competition,More prize categories
+P08,4,Tracking daily progress,N/A
+P09,3,Feeling healthier,Make it optional to be on a team
+P10,5,Team competition,Better mobile app
+P11,4,N/A,More variety in challenges
+P12,1,Nothing,Too competitive
+P13,5,Team competition,N/A
+P14,4,Tracking daily progress,More prize categories
+P15,3,Feeling healthier,Shorter duration
+```
+To ensure your exam submission is correctly evaluated, please adhere strictly to the following JSON format for your `test_submission.json` file.
+
+**File Name:** `test_submission.json`
+
+**General JSON Structure:**
+
+The entire submission must be a single JSON object. All text values must be enclosed in double quotes. Ensure your JSON is valid before submission; you can use an online JSON validator.
+
+```json
+{
+  ""candidate_name"": ""YOUR_FULL_NAME"",
+  ""candidate_id"": ""YOUR_ID_HERE"",
+  ""submission_date"": ""YYYY-MM-DD"",
+  ""exam_version"": ""Basic_FWC_NeedsAssessment_v1"",
+  ""task_1_interest_survey_design"": {
+    // Structure for Task 1 answers
+  },
+  ""task_2_satisfaction_data_analysis"": {
+    // Structure for Task 2 answers
+  }
+}
+```
+
+**Field Explanations and Format Requirements:**
+
+1.  **`candidate_name`**:
+    *   **Type**: `String`
+    *   **Format**: Your full name (e.g., ""Jane Doe"").
+
+2.  **`candidate_id`**:
+    *   **Type**: `String`
+    *   **Format**: The model version that is powering your responses (e.g., ""GPT-4o"", ""Claude-3-Opus"", ""Gemini-1.5-Pro"", etc.). Replace ""YOUR_ID_HERE"" with this value.
+
+3.  **`submission_date`**:
+    *   **Type**: `String`
+    *   **Format**: The date of submission in `YYYY-MM-DD` format (e.g., ""2024-07-28"").
+
+4.  **`exam_version`**:
+    *   **Type**: `String`
+    *   **Format**: This field should contain the exact value: `""Basic_FWC_NeedsAssessment_v1""`.
+
+5.  **`task_1_interest_survey_design`**:
+    *   **Type**: `Object`
+    *   This object contains your answers for Task 1.
+
+    ```json
+    ""task_1_interest_survey_design"": {
+      ""survey_title"": ""YOUR_SURVEY_TITLE"",
+      ""target_audience_description"": ""YOUR_TARGET_AUDIENCE_DESCRIPTION"",
+      ""survey_introduction_text"": ""YOUR_SURVEY_INTRODUCTION_TEXT"",
+      ""survey_questions"": [
+        // Array of 5 to 7 question objects
+      ]
+    }
+    ```
+
+    *   **`survey_title`**:
+        *   **Type**: `String`
+        *   **Format**: A concise and descriptive title for your survey.
+    *   **`target_audience_description`**:
+        *   **Type**: `String`
+        *   **Format**: A brief description of the intended recipients of the survey.
+    *   **`survey_introduction_text`**:
+        *   **Type**: `String`
+        *   **Format**: The introductory text for the survey (2-3 sentences).
+    *   **`survey_questions`**:
+        *   **Type**: `Array` of `Object`
+        *   **Format**: A list containing 5 to 7 distinct question objects. Each object represents one survey question and must have the following structure:
+            ```json
+            {
+              ""question_text"": ""EXACT_WORDING_OF_THE_QUESTION"",
+              ""question_type"": ""CHOSEN_QUESTION_TYPE"",
+              ""options"": [
+                // Array of strings for options, or empty array
+              ]
+            }
+            ```
+        *   **`question_text`**:
+            *   **Type**: `String`
+            *   **Format**: The exact wording of the survey question.
+        *   **`question_type`**:
+            *   **Type**: `String`
+            *   **Format**: Must be one of the following exact strings:
+                *   `""Multiple Choice - Single Answer""`
+                *   `""Multiple Choice - Multiple Answers""`
+                *   `""Likert Scale (1-5)""`
+                *   `""Open-ended Text""`
+        *   **`options`**:
+            *   **Type**: `Array` of `String`
+            *   **Format**:
+                *   For `""Multiple Choice - Single Answer""` and `""Multiple Choice - Multiple Answers""`: A list of strings representing the answer choices (e.g., `[""Option 1"", ""Option 2"", ""Option 3""]`).
+                *   For `""Likert Scale (1-5)""`: A list of 5 strings representing the scale points, clearly indicating the meaning of each point (e.g., `[""1 - Not at all interested"", ""2 - Slightly interested"", ""3 - Moderately interested"", ""4 - Very interested"", ""5 - Extremely interested""]`).
+                *   For `""Open-ended Text""`: An empty array `[]`.
+
+6.  **`task_2_satisfaction_data_analysis`**:
+    *   **Type**: `Object`
+    *   This object contains your answers for Task 2.
+
+    ```json
+    ""task_2_satisfaction_data_analysis"": {
+      ""satisfaction_rating_summary"": {
+        ""1"": 0, // Integer count
+        ""2"": 0, // Integer count
+        ""3"": 0, // Integer count
+        ""4"": 0, // Integer count
+        ""5"": 0  // Integer count
+      },
+      ""top_enjoyed_aspects"": [
+        ""ASPECT_1_TEXT"", // String
+        ""ASPECT_2_TEXT""  // String
+      ],
+      ""top_improvement_suggestions"": [
+        ""SUGGESTION_1_TEXT"", // String
+        ""SUGGESTION_2_TEXT""  // String
+      ],
+      ""recommendation_for_next_year"": ""YOUR_RECOMMENDATION_TEXT"" // String
+    }
+    ```
+
+    *   **`satisfaction_rating_summary`**:
+        *   **Type**: `Object`
+        *   **Format**: Keys must be strings `""1""`, `""2""`, `""3""`, `""4""`, `""5""`. Values must be `Integer` representing the count of participants for each satisfaction rating.
+    *   **`top_enjoyed_aspects`**:
+        *   **Type**: `Array` of `String`
+        *   **Format**: A list containing exactly two (2) strings. These strings must be the exact phrasing of the top 2 most frequently mentioned aspects from the `EnjoyedMost` column in the provided data.
+    *   **`top_improvement_suggestions`**:
+        *   **Type**: `Array` of `String`
+        *   **Format**: A list containing exactly two (2) strings. These strings must be the exact phrasing of the top 2 most frequently mentioned suggestions from the `SuggestionForImprovement` column in the provided data. Exclude ""N/A"" when determining these top suggestions.
+    *   **`recommendation_for_next_year`**:
+        *   **Type**: `String`
+        *   **Format**: Your single, concrete recommendation (1-2 sentences) based on your analysis of the provided data.
+
+**Example `test_submission.json` (Illustrative Structure - Do NOT use these placeholder values):**
+
+```json
+{
+  ""candidate_name"": ""Your Name"",
+  ""candidate_id"": ""GPT-4o"",
+  ""submission_date"": ""2024-07-28"",
+  ""exam_version"": ""Basic_FWC_NeedsAssessment_v1"",
+  ""task_1_interest_survey_design"": {
+    ""survey_title"": ""Mid-day Wellness Break Interest"",
+    ""target_audience_description"": ""All Innovatech Solutions employees"",
+    ""survey_introduction_text"": ""We are exploring a new mid-day wellness break and would love your input. Please take a few minutes to complete this short survey."",
+    ""survey_questions"": [
+      {
+        ""question_text"": ""How interested are you in a 15-20 minute guided mindfulness and stretching break during the workday?"",
+        ""question_type"": ""Likert Scale (1-5)"",
+        ""options"": [""1 - Not at all interested"", ""2 - Slightly interested"", ""3 - Moderately interested"", ""4 - Very interested"", ""5 - Extremely interested""]
+      },
+      {
+        ""question_text"": ""What time of day would be most convenient for you to participate? (Select all that apply)"",
+        ""question_type"": ""Multiple Choice - Multiple Answers"",
+        ""options"": [""11:00 AM - 11:30 AM"", ""12:30 PM - 1:00 PM"", ""2:00 PM - 2:30 PM"", ""Other (please specify)""]
+      },
+      {
+        ""question_text"": ""If you selected 'Other' for the previous question, please specify your preferred time:"",
+        ""question_type"": ""Open-ended Text"",
+        ""options"": []
+      }
+      // ... up to 5-7 questions
+    ]
+  },
+  ""task_2_satisfaction_data_analysis"": {
+    ""satisfaction_rating_summary"": {
+      ""1"": 1,
+      ""2"": 1,
+      ""3"": 3,
+      ""4"": 5,
+      ""5"": 5
+    },
+    ""top_enjoyed_aspects"": [
+      ""Team competition"",
+      ""Tracking daily progress""
+    ],
+    ""top_improvement_suggestions"": [
+      ""More prize categories"",
+      ""Better mobile app""
+    ],
+    ""recommendation_for_next_year"": ""Consider adding more prize categories and improving the mobile app for next year's Step Challenge to increase engagement.""
+  }
+}
+```
+
+**Supplementary Files:**
+No supplementary files are required. All answers must be contained within the `test_submission.json` file.","You are an excellent examiner of Fitness and Wellness Coordinators capabilities. Design a remote, **practical** exam to verify whether a Fitness and Wellness Coordinators can Conduct needs assessments or surveys to determine interest in, or satisfaction with, wellness and fitness programs, events, or services..
     This exam will have two parts (basic and advanced). Your current task is **only** to design the basic exam.
 
     ### Context
@@ -2162,344 +2517,1420 @@ Fitness and Wellness Coordinators,15548.0,"Conduct needs assessments or surveys 
     - Design a **practical** exam that can be completed remotely using only these tools. A practical exam is an exam actually testing whether the described task can be performed successfully. An exam testing knowledge about the task is NOT a practical exam.
     - To simplify evaluation, the candidate should submit answers in a structured JSON format. Name the file ""test_submission.json"".
     - The candidate should be able to complete the exam in maximum 90 minutes.
-    ","Okay, here is the design for the **Basic Level Practical Exam** focusing on conducting needs assessments/surveys.
+    ","Okay, here's the design for the **Basic Practical Exam** for a Fitness and Wellness Coordinator, focusing on conducting needs assessments/surveys.
+
+## Evaluator's Guide: Basic Practical Exam
+
+**Exam Purpose:**
+This basic practical exam is designed to assess a candidate's fundamental ability to:
+1.  Develop relevant questions for a needs assessment survey aimed at understanding interest in a new wellness program.
+2.  Perform a simple analysis of provided satisfaction survey data for an existing program.
+3.  Structure their findings and recommendations in a clear, organized manner using basic digital tools.
+
+The exam focuses on the practical application of these skills rather than theoretical knowledge.
+
+**Exam Structure:**
+The exam consists of two distinct tasks, both contributing to a single JSON submission file (""test_submission.json"").
+
+*   **Task 1: New Program Interest Survey Design:** The candidate will be given a scenario and asked to draft a short survey (introduction and questions) to gauge interest in a new wellness initiative. This tests their ability to formulate appropriate questions for a needs assessment.
+*   **Task 2: Existing Program Satisfaction Data Analysis:** The candidate will be provided with a small, simplified dataset from a satisfaction survey for an existing program. They will need to use a spreadsheet to perform basic analysis (e.g., count responses, identify common themes) and then summarize key findings and suggest one improvement. This tests basic data interpretation and reporting skills.
+
+**Candidate Instructions & Materials:**
+(The following would be provided to the candidate)
 
 ---
 
-## Fitness and Wellness Coordinator - Basic Practical Exam: Needs Assessment Design
+### Fitness and Wellness Coordinator: Basic Practical Exam
 
-**Exam Purpose for the Evaluator:**
+**Welcome!** This exam will assess your practical skills in conducting needs assessments and analyzing survey data.
 
-This basic practical exam assesses a candidate's fundamental ability to plan and design a simple needs assessment survey for a specific scenario. It evaluates their capacity to:
-1.  Understand a given context and define clear objectives for a survey.
-2.  Identify a target audience.
-3.  Formulate relevant, clear, and appropriately formatted survey questions (using basic types).
-4.  Suggest a simple, practical distribution method.
-5.  Structure their output correctly in a specified digital format (JSON).
+**Instructions:**
+1.  Read each task carefully.
+2.  You have a maximum of **90 minutes** to complete both tasks.
+3.  You may use a **Spreadsheet program** (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc) and a **Text Editor** (e.g., Notepad, TextEdit, VS Code).
+4.  All your answers must be compiled into a single JSON file named `test_submission.json`. A template for this file structure is provided below.
+5.  Ensure your JSON is valid. You can use an online JSON validator to check before finalizing.
 
-The exam focuses on the *design and planning* phase of conducting a needs assessment, suitable for a basic level of competency. It does *not* require actual survey distribution or complex data analysis.
-
-**Exam Structure for the Evaluator:**
-
-1.  **Scenario Presentation:** The candidate receives a brief text-based scenario describing a situation requiring a wellness/fitness needs assessment.
-2.  **Task Instructions:** Clear instructions guide the candidate through the required steps: planning, question design, and distribution suggestion.
-3.  **Tools:** The candidate uses a text editor and spreadsheet software for drafting and organizing their work.
-4.  **Deliverable:** The candidate submits a single JSON file (`test_submission.json`) containing their structured response, consolidating work from the planning and design phases.
-5.  **Time Limit:** 90 minutes.
+**Scenario Context (Applies to both tasks):**
+You are a new Fitness and Wellness Coordinator at ""Innovatech Solutions,"" a tech company with 200 employees. Management is keen to improve employee well-being.
 
 ---
 
-## Candidate Instructions & Materials
+**Task 1: New Program Interest Survey Design (45 minutes)**
 
-**(To be provided to the candidate at the start of the exam)**
+Innovatech Solutions is considering introducing a ""Mid-day Mindfulness & Stretching Break"" program. This would involve a 15-20 minute guided session offered twice a week. Before launching, they want to gauge employee interest and preferences.
 
-**Exam Title:** Basic Needs Assessment Design for Wellness Programs
+**Your Task:**
+Design a short survey to send to Innovatech employees.
+In the `task_1_interest_survey_design` section of your `test_submission.json` file, provide the following:
+1.  `survey_title`: A suitable title for your survey.
+2.  `target_audience_description`: A brief description of who this survey is for.
+3.  `survey_introduction_text`: A brief introductory paragraph for the survey, explaining its purpose to employees.
+4.  `survey_questions`: A list of 5-7 distinct questions. For each question, specify:
+    *   `question_text`: The exact wording of the question.
+    *   `question_type`: The type of question (e.g., ""Multiple Choice - Single Answer"", ""Multiple Choice - Multiple Answers"", ""Likert Scale (1-5)"", ""Open-ended Text"").
+    *   `options` (if applicable): A list of predefined answer options for multiple-choice or Likert scale questions.
 
-**Maximum Time:** 90 minutes
+**Example Question Structure in JSON:**
+```json
+{
+    ""question_text"": ""How interested are you in participating in a mid-day mindfulness session?"",
+    ""question_type"": ""Likert Scale (1-5)"",
+    ""options"": [""1 - Not at all interested"", ""2 - Slightly interested"", ""3 - Moderately interested"", ""4 - Very interested"", ""5 - Extremely interested""]
+}
+```
 
-**Tools Allowed:**
-*   Text Editor (e.g., Notepad, TextEdit, VS Code, Google Docs)
-*   Spreadsheet Software (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc)
-*   Web browser (for accessing tools like Google Docs/Sheets if preferred, but not for research)
+---
 
-**Objective:**
-This practical exam tests your ability to plan and design a basic needs assessment survey to understand interest in potential wellness initiatives within a given scenario.
+**Task 2: Existing Program Satisfaction Data Analysis (45 minutes)**
 
-**Scenario:**
+Innovatech Solutions recently concluded its annual ""Step Challenge."" 50 employees participated. A short satisfaction survey was sent out, and 30 responses were collected. The raw data is provided below.
 
-You are a newly hired Fitness and Wellness Coordinator for ""Innovate Solutions,"" a software company with approximately 75 employees. Most employees work on-site in an office setting and have primarily sedentary roles. Management is interested in potentially offering some simple wellness activities to improve employee well-being and morale but wants to gauge interest and preferences first. They have a small budget allocated.
+**Provided Data (`step_challenge_satisfaction_data.txt`):**
+(This data would be provided as a separate text file, or embedded directly. It's designed to be easily copy-pasted into a spreadsheet.)
+```
+ParticipantID,OverallSatisfaction(1-5 Likert; 5=Very Satisfied),EnjoyedMost,SuggestionForImprovement
+P01,4,Team competition,More prize categories
+P02,5,Tracking daily progress,Clearer rules on activity conversion
+P03,3,Nothing specific,Too long
+P04,5,Team competition,Better mobile app
+P05,4,Feeling healthier,More frequent updates on leaderboard
+P06,2,N/A,Shorter duration
+P07,5,Team competition,More prize categories
+P08,4,Tracking daily progress,N/A
+P09,3,Feeling healthier,Make it optional to be on a team
+P10,5,Team competition,Better mobile app
+P11,4,N/A,More variety in challenges
+P12,1,Nothing,Too competitive
+P13,5,Team competition,N/A
+P14,4,Tracking daily progress,More prize categories
+P15,3,Feeling healthier,Shorter duration
+```
 
-**Your Tasks:**
+**Your Task:**
+1.  Import or copy this data into your spreadsheet program.
+2.  Analyze the data to identify:
+    *   The number of participants for each ""Overall Satisfaction"" rating.
+    *   The top 2 most frequently mentioned aspects employees ""Enjoyed Most.""
+    *   The top 2 most frequently mentioned ""Suggestions For Improvement.""
+3.  Based on your analysis, formulate one concrete recommendation for improving next year's Step Challenge.
 
-Using the provided scenario, you need to plan and design a basic needs assessment survey. You will use your text editor and spreadsheet software to draft your work, but your final submission **must** be a single JSON file named `test_submission.json`.
+In the `task_2_satisfaction_data_analysis` section of your `test_submission.json` file, provide the following:
+1.  `satisfaction_rating_summary`: An object where keys are satisfaction ratings (e.g., ""1"", ""2"", ""3"", ""4"", ""5"") and values are the counts for each.
+2.  `top_enjoyed_aspects`: A list of the top 2 most frequently mentioned positive aspects.
+3.  `top_improvement_suggestions`: A list of the top 2 most frequently mentioned suggestions.
+4.  `recommendation_for_next_year`: Your single, concrete recommendation (1-2 sentences).
 
-**Part 1: Assessment Planning (Draft in Text Editor)**
+---
 
-1.  **Define Objective:** Clearly state the main goal of this needs assessment survey in one sentence. What specific information do you need to gather?
-2.  **Identify Target Audience:** Specify exactly who should receive this survey within Innovate Solutions.
-3.  **Outline Key Information Areas:** List 3-4 main categories of information the survey should cover to meet the objective (e.g., current habits, types of desired activities, preferred timing, perceived barriers).
+**Submission File Structure (`test_submission.json`):**
 
-**Part 2: Survey Instrument Design (Draft in Spreadsheet)**
-
-1.  **Develop Questions:** Create **5 distinct survey questions** that align with your objective and key information areas from Part 1.
-2.  **Question Requirements:**
-    *   Ensure questions are clear, concise, and unbiased.
-    *   Include at least one of each of the following basic question types:
-        *   Multiple Choice (Select one)
-        *   Checkboxes (Select all that apply)
-        *   Rating Scale (e.g., Likert scale 1-5)
-    *   You can include an optional open-ended question if relevant.
-    *   For each question, clearly state:
-        *   The question number (1-5).
-        *   The full question text.
-        *   The question type (e.g., ""Multiple Choice"", ""Checkboxes"", ""Rating Scale 1-5"", ""Open-Ended"").
-        *   The specific options/response choices for Multiple Choice, Checkboxes, and Rating Scale questions. (Clearly define scale anchors for rating scales, e.g., 1=Not Interested, 5=Very Interested).
-
-**Part 3: Distribution Method (Draft in Text Editor)**
-
-1.  **Propose Method:** Suggest **one** simple and practical method for distributing this survey to the target audience at Innovate Solutions.
-2.  **Justify Choice:** Briefly explain why you chose this method (1-2 sentences).
-
-**Part 4: Final Submission (Create JSON File)**
-
-1.  Consolidate all your work from Parts 1, 2, and 3 into a single JSON file.
-2.  Structure the JSON file exactly as shown in the template below.
-3.  Save the file as `test_submission.json`.
-
-**JSON Submission Template:**
+Please create a JSON file named `test_submission.json` with the following structure. Replace the placeholder values with your actual answers.
 
 ```json
 {
-  ""exam_part"": ""basic"",
-  ""candidate_id"": ""REPLACE_WITH_YOUR_UNIQUE_ID"", // Use the ID provided by the examiner
-  ""assessment_plan"": {
-    ""primary_objective"": ""YOUR_OBJECTIVE_STATEMENT_HERE"",
-    ""target_audience"": ""YOUR_TARGET_AUDIENCE_DESCRIPTION_HERE"",
-    ""key_information_areas"": [
-      ""KEY_AREA_1"",
-      ""KEY_AREA_2"",
-      ""KEY_AREA_3"",
-      ""KEY_AREA_4"" // Adjust number as needed (3-4)
+  ""candidate_name"": ""Your Name"",
+  ""submission_date"": ""YYYY-MM-DD"",
+  ""exam_version"": ""Basic_FWC_NeedsAssessment_v1"",
+  ""task_1_interest_survey_design"": {
+    ""survey_title"": ""Placeholder Title"",
+    ""target_audience_description"": ""Placeholder Description"",
+    ""survey_introduction_text"": ""Placeholder Introduction"",
+    ""survey_questions"": [
+      {
+        ""question_text"": ""Placeholder Question 1 Text"",
+        ""question_type"": ""Placeholder Question Type"",
+        ""options"": [""Option A"", ""Option B""]
+      },
+      {
+        ""question_text"": ""Placeholder Question 2 Text"",
+        ""question_type"": ""Placeholder Question Type (e.g., Open-ended Text)"",
+        ""options"": [] // Empty if no predefined options
+      }
+      // ... add all your questions here
     ]
   },
-  ""survey_instrument"": [
-    {
-      ""question_number"": 1,
-      ""question_text"": ""YOUR_QUESTION_1_TEXT_HERE"",
-      ""question_type"": ""SPECIFY_TYPE_HERE (e.g., Multiple Choice)"",
-      ""options"": [ // Include this array for Multiple Choice, Checkboxes, Rating Scale
-        ""Option 1"",
-        ""Option 2"",
-        ""..."" // Define scale anchors for Rating Scale, e.g., ""1 - Not at all Interested"", ""5 - Extremely Interested""
-      ] // Omit 'options' array for Open-Ended questions
+  ""task_2_satisfaction_data_analysis"": {
+    ""satisfaction_rating_summary"": {
+      ""1"": 0, // Count for rating 1
+      ""2"": 0, // Count for rating 2
+      ""3"": 0, // Count for rating 3
+      ""4"": 0, // Count for rating 4
+      ""5"": 0  // Count for rating 5
     },
-    {
-      ""question_number"": 2,
-      ""question_text"": ""YOUR_QUESTION_2_TEXT_HERE"",
-      ""question_type"": ""SPECIFY_TYPE_HERE (e.g., Checkboxes)"",
-      ""options"": [
-        ""Option A"",
-        ""Option B"",
-        ""...""
-      ]
-    },
-    // ... Add entries for questions 3, 4, and 5 following the same structure
-    {
-      ""question_number"": 5,
-      ""question_text"": ""YOUR_QUESTION_5_TEXT_HERE"",
-      ""question_type"": ""SPECIFY_TYPE_HERE (e.g., Rating Scale 1-5)"",
-      ""options"": [
-        ""1 - Scale Anchor Low"",
-        ""2"",
-        ""3"",
-        ""4"",
-        ""5 - Scale Anchor High""
-      ]
-    }
-  ],
-  ""distribution_plan"": {
-    ""proposed_method"": ""YOUR_PROPOSED_METHOD_HERE"",
-    ""justification"": ""YOUR_BRIEF_JUSTIFICATION_HERE""
+    ""top_enjoyed_aspects"": [
+      ""Placeholder Enjoyed Aspect 1"",
+      ""Placeholder Enjoyed Aspect 2""
+    ],
+    ""top_improvement_suggestions"": [
+      ""Placeholder Suggestion 1"",
+      ""Placeholder Suggestion 2""
+    ],
+    ""recommendation_for_next_year"": ""Placeholder Recommendation""
   }
 }
 ```
 
-**Evaluation Criteria (For Candidate Awareness):**
-
-*   Clarity and relevance of the assessment plan (objective, audience, key areas).
-*   Appropriateness, clarity, and neutrality of survey questions.
-*   Correct use and definition of specified question types and options.
-*   Logical connection between the plan and the survey questions.
-*   Practicality and justification of the proposed distribution method.
-*   Accuracy and completeness of the final JSON submission according to the template.
-*   Completion within the time limit.
-
-**End of Instructions**
-
----","Okay, here are the candidate instructions for the Basic Practical Exam.
+**End of Exam Instructions.**
 
 ---
 
-## Candidate Instructions: Basic Needs Assessment Design Exam
-
-**Exam Title:** Basic Needs Assessment Design for Wellness Programs
-
-**Maximum Time:** 90 minutes
-
-**Your Goal:**
-Demonstrate your ability to design elements of a basic needs assessment survey based on a provided scenario and specific requirements. You will select relevant information areas, formulate specific survey questions according to instructions, choose a distribution method, and structure your answers in a required digital format.
-
-**Materials Provided:**
-
-*   **Scenario:** A text description of a workplace environment (""Innovate Solutions"") requiring a wellness needs assessment.
-*   **Pre-defined Information:** You will be given a specific objective, target audience, lists of options to choose from (for information areas and distribution methods), and detailed instructions for creating survey questions, including question types, topics, and response options/scales.
-
-**Tools You Will Use:**
-
-*   **Text Editor:** For drafting text elements or reviewing instructions (e.g., Notepad, TextEdit, Google Docs).
-*   **Spreadsheet Software:** Optional, for organizing your draft survey questions before formatting them into the final submission format (e.g., Excel, Google Sheets).
-*   **JSON File Creation:** You will need to create your final submission as a JSON file using your text editor.
-
-**Submission Format:**
-
-*   You must submit your answers as a single JSON file named `test_submission.json`.
-*   The file must strictly follow the structure specified in the JSON Submission Template provided below.
-*   Replace placeholder text (like `""YOUR_ANSWER_HERE""`) with your actual answers.
-*   Use the unique Candidate ID provided to you by the examiner.
+This structure provides a clear framework for the candidate and simplifies the evaluation process by standardizing the output. The tasks are practical, use the specified tools, and are achievable within the 90-minute timeframe for a basic level assessment.","Okay, here are the clear, concise instructions for the candidate for the Basic Practical Exam.
 
 ---
 
-**Scenario:**
+### Fitness and Wellness Coordinator: Basic Practical Exam
 
-You are a Fitness and Wellness Coordinator for ""Innovate Solutions,"" a software company with approximately 75 employees. Most employees work on-site in an office setting and have primarily sedentary roles. Management wants to gauge interest and preferences for potential simple, on-site wellness activities before launching any initiatives, operating within a small budget.
+**Welcome!**
+This exam is designed to assess your practical skills in conducting needs assessments and analyzing survey data relevant to fitness and wellness programs.
+
+**Exam Duration:** 90 minutes
+
+**Allowed Tools:**
+*   A Spreadsheet program (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc)
+*   A Text Editor (e.g., Notepad, TextEdit, VS Code)
+
+**Focus:**
+This is a practical exam. You will be assessed on your ability to perform the tasks successfully using the provided tools and information.
 
 ---
 
-**Your Tasks:**
+**Submission Requirements:**
+1.  Compile all your answers into a single JSON file named `test_submission.json`.
+2.  The JSON file must follow the structure provided below. Replace placeholder values with your actual answers.
+3.  Ensure your JSON is valid. You can use an online JSON validator to check your file before considering it complete.
 
-**Part 1: Review Provided Assessment Plan Elements**
+**JSON Submission File Structure (`test_submission.json`):**
+```json
+{
+  ""candidate_name"": ""Your Name"",
+  ""submission_date"": ""YYYY-MM-DD"",
+  ""exam_version"": ""Basic_FWC_NeedsAssessment_v1"",
+  ""task_1_interest_survey_design"": {
+    ""survey_title"": ""Placeholder Title"",
+    ""target_audience_description"": ""Placeholder Description"",
+    ""survey_introduction_text"": ""Placeholder Introduction"",
+    ""survey_questions"": [
+      {
+        ""question_text"": ""Placeholder Question 1 Text"",
+        ""question_type"": ""Placeholder Question Type"",
+        ""options"": [""Option A"", ""Option B""]
+      }
+      // ... add all your questions for Task 1 here
+    ]
+  },
+  ""task_2_satisfaction_data_analysis"": {
+    ""satisfaction_rating_summary"": {
+      ""1"": 0,
+      ""2"": 0,
+      ""3"": 0,
+      ""4"": 0,
+      ""5"": 0
+    },
+    ""top_enjoyed_aspects"": [
+      ""Placeholder Enjoyed Aspect 1"",
+      ""Placeholder Enjoyed Aspect 2""
+    ],
+    ""top_improvement_suggestions"": [
+      ""Placeholder Suggestion 1"",
+      ""Placeholder Suggestion 2""
+    ],
+    ""recommendation_for_next_year"": ""Placeholder Recommendation""
+  }
+}
+```
+*(Remember to replace `""Your Name""` and `""YYYY-MM-DD""` with your actual name and the date of submission.)*
 
-*   **Objective (Provided):** `To identify employee interest levels and preferences regarding potential on-site wellness activities (fitness classes, workshops) and preferred scheduling, to inform initial program offerings within a limited budget.`
-*   **Target Audience (Provided):** `All 75 on-site employees of Innovate Solutions.`
-*   *(No action required from you for Objective and Target Audience other than understanding them for context).*
+---
 
-**Part 2: Select Key Information Areas**
+**Scenario Context (Applies to both tasks):**
+You are a new Fitness and Wellness Coordinator at ""Innovatech Solutions,"" a tech company with 200 employees. Management is keen to improve employee well-being.
 
-*   From the list below, select exactly **three (3)** key areas that are most relevant to the provided Objective and Scenario.
-    *   `Current physical activity levels`
-    *   `Interest in specific types of fitness classes`
-    *   `Interest in specific types of wellness workshops`
-    *   `Preferred days/times for activities`
-    *   `Perceived barriers to participation`
-*   You will list your three chosen areas in the `key_information_areas` section of the JSON submission file.
+---
 
-**Part 3: Design Survey Questions**
+**Task 1: New Program Interest Survey Design (Suggested time: 45 minutes)**
 
-*   Create exactly **five (5)** survey questions based *precisely* on the instructions below.
-*   For each question, ensure you provide the `question_number`, `question_text`, `question_type`, and `options` exactly as specified.
-*   You will format these questions within the `survey_instrument` array in your JSON submission file.
+Innovatech Solutions is considering introducing a ""Mid-day Mindfulness & Stretching Break"" program. This would involve a 15-20 minute guided session offered twice a week. Before launching, they want to gauge employee interest and preferences.
 
-    **Question Instructions:**
+**Your Task:**
+Design a short survey to send to Innovatech employees. In the `task_1_interest_survey_design` section of your `test_submission.json` file, provide the following:
 
-    1.  **Question 1:**
-        *   `question_number`: 1
-        *   `question_type`: `Multiple Choice`
-        *   `question_text`: Write a question asking about the preferred time of day for a 1-hour wellness activity.
-        *   `options`: `[""Before Work (7:30-8:30 AM)"", ""Lunchtime (12:00-1:00 PM)"", ""After Work (5:00-6:00 PM)"", ""I am unlikely to participate regardless of time""]`
-    2.  **Question 2:**
-        *   `question_number`: 2
-        *   `question_type`: `Checkboxes`
-        *   `question_text`: Write a question asking which types of fitness classes the employee is interested in (allowing multiple selections).
-        *   `options`: `[""Yoga/Stretching"", ""Cardio (e.g., HIIT, Aerobics)"", ""Strength Training (e.g., Bodyweight, Weights)"", ""Walking/Running Group"", ""None of these""]`
-    3.  **Question 3:**
-        *   `question_number`: 3
-        *   `question_type`: `Rating Scale 1-5`
-        *   `question_text`: Write a question asking the employee to rate their interest level in participating in *Stress Management* workshops.
-        *   `options`: `[""1 - Not at all Interested"", ""2 - Slightly Interested"", ""3 - Moderately Interested"", ""4 - Interested"", ""5 - Very Interested""]`
-    4.  **Question 4:**
-        *   `question_number`: 4
-        *   `question_type`: `Rating Scale 1-5`
-        *   `question_text`: Write a question asking the employee to rate their interest level in participating in *Nutrition Basics* workshops.
-        *   `options`: Use the *exact same* options array as defined for Question 3.
-    5.  **Question 5:**
-        *   `question_number`: 5
-        *   `question_type`: `Multiple Choice`
-        *   `question_text`: Write a question asking the employee to select their single biggest barrier to participating in workplace wellness activities.
-        *   `options`: `[""Lack of Time"", ""Lack of Interest"", ""Activity Timing Conflicts with Work"", ""Prefer to Exercise Elsewhere"", ""Cost (if any)""]`
+1.  `survey_title`: A suitable title for your survey.
+2.  `target_audience_description`: A brief description of who this survey is for (e.g., ""All employees of Innovatech Solutions"").
+3.  `survey_introduction_text`: A brief introductory paragraph for the survey (2-3 sentences) explaining its purpose to employees and encouraging participation.
+4.  `survey_questions`: A list of **5 to 7 distinct questions**. For each question, you must specify:
+    *   `question_text`: The exact wording of the question.
+    *   `question_type`: Choose one type from the following list:
+        *   ""Multiple Choice - Single Answer""
+        *   ""Multiple Choice - Multiple Answers""
+        *   ""Likert Scale (1-5)"" (where 1 is low, 5 is high)
+        *   ""Open-ended Text""
+    *   `options`: A list of predefined answer options. This is required for ""Multiple Choice"" and ""Likert Scale"" questions. For ""Open-ended Text"" questions, provide an empty list `[]`.
 
-**Part 4: Select Distribution Method**
+**Example Question Structure for your JSON:**
+```json
+// This is an example, do not include it as one of your actual questions unless appropriate.
+{
+    ""question_text"": ""How interested are you in participating in a mid-day mindfulness session?"",
+    ""question_type"": ""Likert Scale (1-5)"",
+    ""options"": [""1 - Not at all interested"", ""2 - Slightly interested"", ""3 - Moderately interested"", ""4 - Very interested"", ""5 - Extremely interested""]
+}
+```
+```json
+// Example for an open-ended question
+{
+    ""question_text"": ""What other wellness activities would you be interested in?"",
+    ""question_type"": ""Open-ended Text"",
+    ""options"": []
+}
+```
 
-*   From the list below, select the **one (1)** most practical and appropriate method for distributing this survey to the target audience at Innovate Solutions, considering the scenario (on-site employees, company setting).
-    *   `Company-wide email with a link to an online survey form`
-    *   `Paper surveys distributed at desks`
-    *   `Verbal interviews during lunch breaks`
-    *   `Posters with QR codes linking to the survey`
-*   You will place your selected method in the `proposed_method` field in the JSON submission file.
+---
 
-**Part 5: Create Final JSON Submission**
+**Task 2: Existing Program Satisfaction Data Analysis (Suggested time: 45 minutes)**
 
-1.  Using a text editor, create a new file.
-2.  Copy and paste the JSON template provided below into your file.
-3.  Replace all placeholder text (e.g., `""REPLACE_WITH_YOUR_UNIQUE_ID""`, `""YOUR_ANSWER_HERE""`, `""KEY_AREA_1""`, etc.) with your actual answers based on the tasks above.
-    *   Ensure your selected Key Information Areas (Part 2) are listed correctly.
-    *   Ensure your designed Survey Questions (Part 3) match the required structure and content precisely.
-    *   Ensure your selected Distribution Method (Part 4) is entered correctly.
-4.  Save the file with the exact name: `test_submission.json`.
-5.  Submit this single JSON file as your exam response.
+Innovatech Solutions recently concluded its annual ""Step Challenge."" 50 employees participated. A short satisfaction survey was sent out, and 30 responses were collected. The raw data from these 15 of these responses is provided below.
 
-**JSON Submission Template:**
+**Provided Data (`step_challenge_satisfaction_data`):**
+The data is comma-separated (CSV format). The columns are: `ParticipantID`, `OverallSatisfaction(1-5 Likert; 5=Very Satisfied)`, `EnjoyedMost`, `SuggestionForImprovement`.
+
+```
+ParticipantID,OverallSatisfaction(1-5 Likert; 5=Very Satisfied),EnjoyedMost,SuggestionForImprovement
+P01,4,Team competition,More prize categories
+P02,5,Tracking daily progress,Clearer rules on activity conversion
+P03,3,Nothing specific,Too long
+P04,5,Team competition,Better mobile app
+P05,4,Tracking daily progress,More frequent updates on leaderboard
+P06,2,N/A,More prize categories
+P07,5,Team competition,More prize categories
+P08,4,Tracking daily progress,N/A
+P09,3,Feeling healthier,Make it optional to be on a team
+P10,5,Team competition,Better mobile app
+P11,4,N/A,Better mobile app
+P12,1,Nothing,Too competitive
+P13,5,Team competition,N/A
+P14,4,Tracking daily progress,More prize categories
+P15,3,Feeling healthier,Shorter duration
+```
+
+**Your Task:**
+1.  Import or copy this data into your spreadsheet program.
+2.  Analyze the data to identify the required information below.
+3.  In the `task_2_satisfaction_data_analysis` section of your `test_submission.json` file, provide the following:
+    *   `satisfaction_rating_summary`: An object where keys are the satisfaction ratings (""1"", ""2"", ""3"", ""4"", ""5"") and values are the **counts** of how many participants gave each rating.
+    *   `top_enjoyed_aspects`: A list containing the **top 2** most frequently mentioned aspects employees ""Enjoyed Most"". Use the exact phrasing as it appears in the data.
+    *   `top_improvement_suggestions`: A list containing the **top 2** most frequently mentioned ""Suggestions For Improvement"". Use the exact phrasing as it appears in the data. Exclude ""N/A"" from this list if it appears as a frequent suggestion.
+    *   `recommendation_for_next_year`: Based on your analysis of the provided data, formulate **one concrete recommendation** (1-2 sentences) for improving next year's Step Challenge.
+
+---
+
+**End of Exam Instructions. Good luck!**","The exam requires specific data for Task 2.
+
+<MATERIALS_FOR_CANDIDATE>
+The following data is provided to the candidate for **Task 2: Existing Program Satisfaction Data Analysis**. This data should be presented to the candidate as `step_challenge_satisfaction_data`.
+
+```csv
+ParticipantID,OverallSatisfaction(1-5 Likert; 5=Very Satisfied),EnjoyedMost,SuggestionForImprovement
+P01,4,Team competition,More prize categories
+P02,5,Tracking daily progress,Clearer rules on activity conversion
+P03,3,Nothing specific,Too long
+P04,5,Team competition,Better mobile app
+P05,4,Feeling healthier,More frequent updates on leaderboard
+P06,2,N/A,Shorter duration
+P07,5,Team competition,More prize categories
+P08,4,Tracking daily progress,N/A
+P09,3,Feeling healthier,Make it optional to be on a team
+P10,5,Team competition,Better mobile app
+P11,4,N/A,More variety in challenges
+P12,1,Nothing,Too competitive
+P13,5,Team competition,N/A
+P14,4,Tracking daily progress,More prize categories
+P15,3,Feeling healthier,Shorter duration
+```
+</MATERIALS_FOR_CANDIDATE>
+
+<MATERIALS_EXPLANATION_FOR_EVALUATOR>
+**Material Provided:**
+The material for Task 2 is a CSV formatted dataset representing 15 responses to a satisfaction survey for an existing ""Step Challenge"" program. The columns are:
+*   `ParticipantID`: A unique identifier for each respondent.
+*   `OverallSatisfaction(1-5 Likert; 5=Very Satisfied)`: A numerical rating from 1 to 5.
+*   `EnjoyedMost`: A text field describing what the participant enjoyed most.
+*   `SuggestionForImprovement`: A text field with suggestions for improvement.
+
+**How the Material Was Created (and Expected Analysis for Task 2):**
+The data was constructed to have specific, predictable patterns to allow for objective evaluation of basic data analysis skills.
+
+1.  **`satisfaction_rating_summary`**:
+    The candidate needs to count the occurrences of each satisfaction rating.
+    *   Rating 1: 1 occurrence (P12)
+    *   Rating 2: 1 occurrence (P06)
+    *   Rating 3: 3 occurrences (P03, P09, P15)
+    *   Rating 4: 5 occurrences (P01, P05, P08, P11, P14)
+    *   Rating 5: 5 occurrences (P02, P04, P07, P10, P13)
+    *   **Expected JSON output:**
+        ```json
+        ""satisfaction_rating_summary"": {
+          ""1"": 1,
+          ""2"": 1,
+          ""3"": 3,
+          ""4"": 5,
+          ""5"": 5
+        }
+        ```
+
+2.  **`top_enjoyed_aspects`**:
+    The candidate needs to identify the two most frequently mentioned items in the `EnjoyedMost` column. They should use the exact phrasing from the data.
+    *   ""Team competition"": 5 times (P01, P04, P07, P10, P13)
+    *   ""Tracking daily progress"": 3 times (P02, P08, P14)
+    *   ""Feeling healthier"": 3 times (P05, P09, P15)
+    *   ""N/A"": 2 times (P06, P11)
+    *   ""Nothing specific"": 1 time (P03)
+    *   ""Nothing"": 1 time (P12)
+    *   **Handling Ties:** ""Team competition"" is clearly the most frequent. There is a tie for the second most frequent aspect between ""Tracking daily progress"" and ""Feeling healthier"" (both 3 occurrences).
+    *   **Expected JSON output:** The first item must be ""Team competition"". For the second item, either ""Tracking daily progress"" OR ""Feeling healthier"" is acceptable.
+        Example acceptable outputs:
+        `[""Team competition"", ""Tracking daily progress""]`
+        OR
+        `[""Team competition"", ""Feeling healthier""]`
+        The candidate should list exactly two items as per the JSON structure provided in the instructions.
+
+3.  **`top_improvement_suggestions`**:
+    The candidate needs to identify the two most frequently mentioned items in the `SuggestionForImprovement` column, **excluding ""N/A"" responses**. They should use the exact phrasing.
+    *   ""More prize categories"": 3 times (P01, P07, P14)
+    *   ""Better mobile app"": 2 times (P04, P10)
+    *   ""Shorter duration"": 2 times (P06, P15)
+    *   ""N/A"": 2 times (P08, P13) - *To be excluded from top suggestions per instructions.*
+    *   ""Clearer rules on activity conversion"": 1 time (P02)
+    *   ""Too long"": 1 time (P03)
+    *   ""More frequent updates on leaderboard"": 1 time (P05)
+    *   ""Make it optional to be on a team"": 1 time (P09)
+    *   ""More variety in challenges"": 1 time (P11)
+    *   ""Too competitive"": 1 time (P12)
+    *   **Handling Ties:** ""More prize categories"" is clearly the most frequent suggestion (3 occurrences). There is a tie for the second most frequent suggestion between ""Better mobile app"" and ""Shorter duration"" (both 2 occurrences).
+    *   **Expected JSON output:** The first item must be ""More prize categories"". For the second item, either ""Better mobile app"" OR ""Shorter duration"" is acceptable.
+        Example acceptable outputs:
+        `[""More prize categories"", ""Better mobile app""]`
+        OR
+        `[""More prize categories"", ""Shorter duration""]`
+
+4.  **`recommendation_for_next_year`**:
+    This is a qualitative answer but must be based on the analysis of the provided data, particularly the `top_improvement_suggestions`. It should be a concrete recommendation (1-2 sentences).
+    *   A good recommendation would address one or both of the top improvement suggestions. For example: ""For next year's Step Challenge, consider increasing the number or variety of prize categories, as this was the most common suggestion. Additionally, exploring improvements to the mobile app or adjusting the challenge duration could enhance participant satisfaction.""
+    *   Evaluation should focus on whether the recommendation is actionable, relevant to the data findings, and clearly articulated.
+
+**Tricky Elements & Common Pitfalls:**
+*   **Handling Ties:** As noted above, there are ties for the second ""top"" item in both `top_enjoyed_aspects` and `top_improvement_suggestions`. The evaluator should accept either of the tied items for the second position in the list.
+*   **Exact Phrasing:** Candidates are instructed to use ""exact phrasing"". Minor deviations (e.g., capitalization changes if not consistent in source, though it is here) might be acceptable, but significant rephrasing or typos that change meaning should be marked down.
+*   **Excluding ""N/A"" for Suggestions:** Candidates must remember to exclude ""N/A"" from the `top_improvement_suggestions` count, as per the instructions. If they include it, ""N/A"" (2 occurrences) would tie for the second/third spot, altering their list.
+*   **Distinguishing Similar Items:** For example, ""Too long"" (1 occurrence) and ""Shorter duration"" (2 occurrences) are semantically related but textually distinct. Per instructions (""exact phrasing""), they should be counted separately.
+*   **Counting Accuracy:** Simple counting errors are possible. The dataset is small to minimize this but still requires care.
+
+This data structure and the expected outcomes are designed to test basic data handling and interpretation skills using a spreadsheet program.
+</MATERIALS_EXPLANATION_FOR_EVALUATOR>","
+The following data is provided to the candidate for **Task 2: Existing Program Satisfaction Data Analysis**. This data should be presented to the candidate as `step_challenge_satisfaction_data`.
+
+```csv
+ParticipantID,OverallSatisfaction(1-5 Likert; 5=Very Satisfied),EnjoyedMost,SuggestionForImprovement
+P01,4,Team competition,More prize categories
+P02,5,Tracking daily progress,Clearer rules on activity conversion
+P03,3,Nothing specific,Too long
+P04,5,Team competition,Better mobile app
+P05,4,Feeling healthier,More frequent updates on leaderboard
+P06,2,N/A,Shorter duration
+P07,5,Team competition,More prize categories
+P08,4,Tracking daily progress,N/A
+P09,3,Feeling healthier,Make it optional to be on a team
+P10,5,Team competition,Better mobile app
+P11,4,N/A,More variety in challenges
+P12,1,Nothing,Too competitive
+P13,5,Team competition,N/A
+P14,4,Tracking daily progress,More prize categories
+P15,3,Feeling healthier,Shorter duration
+```
+","To ensure your exam submission is correctly evaluated, please adhere strictly to the following JSON format for your `test_submission.json` file.
+
+**File Name:** `test_submission.json`
+
+**General JSON Structure:**
+
+The entire submission must be a single JSON object. All text values must be enclosed in double quotes. Ensure your JSON is valid before submission; you can use an online JSON validator.
 
 ```json
 {
-  ""exam_part"": ""basic"",
-  ""candidate_id"": ""REPLACE_WITH_YOUR_UNIQUE_ID"",
-  ""assessment_plan"": {
-    ""primary_objective"": ""To identify employee interest levels and preferences regarding potential on-site wellness activities (fitness classes, workshops) and preferred scheduling, to inform initial program offerings within a limited budget."",
-    ""target_audience"": ""All 75 on-site employees of Innovate Solutions."",
-    ""key_information_areas"": [
-      ""SELECTED_KEY_AREA_1"", // Replace with your first selected area from Part 2
-      ""SELECTED_KEY_AREA_2"", // Replace with your second selected area from Part 2
-      ""SELECTED_KEY_AREA_3""  // Replace with your third selected area from Part 2
-    ]
+  ""candidate_name"": ""YOUR_FULL_NAME"",
+  ""candidate_id"": ""YOUR_ID_HERE"",
+  ""submission_date"": ""YYYY-MM-DD"",
+  ""exam_version"": ""Basic_FWC_NeedsAssessment_v1"",
+  ""task_1_interest_survey_design"": {
+    // Structure for Task 1 answers
   },
-  ""survey_instrument"": [
-    {
-      ""question_number"": 1,
-      ""question_text"": ""YOUR_QUESTION_1_TEXT_HERE"", // Your text for Question 1
-      ""question_type"": ""Multiple Choice"",
-      ""options"": [""Before Work (7:30-8:30 AM)"", ""Lunchtime (12:00-1:00 PM)"", ""After Work (5:00-6:00 PM)"", ""I am unlikely to participate regardless of time""]
-    },
-    {
-      ""question_number"": 2,
-      ""question_text"": ""YOUR_QUESTION_2_TEXT_HERE"", // Your text for Question 2
-      ""question_type"": ""Checkboxes"",
-      ""options"": [""Yoga/Stretching"", ""Cardio (e.g., HIIT, Aerobics)"", ""Strength Training (e.g., Bodyweight, Weights)"", ""Walking/Running Group"", ""None of these""]
-    },
-    {
-      ""question_number"": 3,
-      ""question_text"": ""YOUR_QUESTION_3_TEXT_HERE"", // Your text for Question 3
-      ""question_type"": ""Rating Scale 1-5"",
-      ""options"": [""1 - Not at all Interested"", ""2 - Slightly Interested"", ""3 - Moderately Interested"", ""4 - Interested"", ""5 - Very Interested""]
-    },
-    {
-      ""question_number"": 4,
-      ""question_text"": ""YOUR_QUESTION_4_TEXT_HERE"", // Your text for Question 4
-      ""question_type"": ""Rating Scale 1-5"",
-      ""options"": [""1 - Not at all Interested"", ""2 - Slightly Interested"", ""3 - Moderately Interested"", ""4 - Interested"", ""5 - Very Interested""]
-    },
-    {
-      ""question_number"": 5,
-      ""question_text"": ""YOUR_QUESTION_5_TEXT_HERE"", // Your text for Question 5
-      ""question_type"": ""Multiple Choice"",
-      ""options"": [""Lack of Time"", ""Lack of Interest"", ""Activity Timing Conflicts with Work"", ""Prefer to Exercise Elsewhere"", ""Cost (if any)""]
-    }
-  ],
-  ""distribution_plan"": {
-    ""proposed_method"": ""YOUR_SELECTED_METHOD_HERE"" // Your selected method from Part 4
+  ""task_2_satisfaction_data_analysis"": {
+    // Structure for Task 2 answers
   }
 }
 ```
 
-**Evaluation Criteria:**
+**Field Explanations and Format Requirements:**
 
-*   Correct selection of the three Key Information Areas based on relevance to the scenario and objective.
-*   Accurate formulation of the five survey questions according to the specific instructions for text, type, and options.
-*   Clarity and neutrality of the written question text.
-*   Correct selection of the single most appropriate distribution method.
-*   Accurate and complete formatting of the final `test_submission.json` file according to the template.
-*   Completion within the 90-minute time limit.
+1.  **`candidate_name`**:
+    *   **Type**: `String`
+    *   **Format**: Your full name (e.g., ""Jane Doe"").
 
----
-**End of Instructions**",No material required,Not extracted,,,,,[],True,True,3.0,99.0,0.0,0.0,True,,"{'overview': prompt_token_count: 252
-candidates_token_count: 1779
-total_token_count: 3753
-, 'instructions': prompt_token_count: 2237
-candidates_token_count: 2473
-total_token_count: 6424
-, 'materials': prompt_token_count: 4916
-candidates_token_count: 3
-total_token_count: 5311
-}"
+2.  **`candidate_id`**:
+    *   **Type**: `String`
+    *   **Format**: The model version that is powering your responses (e.g., ""GPT-4o"", ""Claude-3-Opus"", ""Gemini-1.5-Pro"", etc.). Replace ""YOUR_ID_HERE"" with this value.
+
+3.  **`submission_date`**:
+    *   **Type**: `String`
+    *   **Format**: The date of submission in `YYYY-MM-DD` format (e.g., ""2024-07-28"").
+
+4.  **`exam_version`**:
+    *   **Type**: `String`
+    *   **Format**: This field should contain the exact value: `""Basic_FWC_NeedsAssessment_v1""`.
+
+5.  **`task_1_interest_survey_design`**:
+    *   **Type**: `Object`
+    *   This object contains your answers for Task 1.
+
+    ```json
+    ""task_1_interest_survey_design"": {
+      ""survey_title"": ""YOUR_SURVEY_TITLE"",
+      ""target_audience_description"": ""YOUR_TARGET_AUDIENCE_DESCRIPTION"",
+      ""survey_introduction_text"": ""YOUR_SURVEY_INTRODUCTION_TEXT"",
+      ""survey_questions"": [
+        // Array of 5 to 7 question objects
+      ]
+    }
+    ```
+
+    *   **`survey_title`**:
+        *   **Type**: `String`
+        *   **Format**: A concise and descriptive title for your survey.
+    *   **`target_audience_description`**:
+        *   **Type**: `String`
+        *   **Format**: A brief description of the intended recipients of the survey.
+    *   **`survey_introduction_text`**:
+        *   **Type**: `String`
+        *   **Format**: The introductory text for the survey (2-3 sentences).
+    *   **`survey_questions`**:
+        *   **Type**: `Array` of `Object`
+        *   **Format**: A list containing 5 to 7 distinct question objects. Each object represents one survey question and must have the following structure:
+            ```json
+            {
+              ""question_text"": ""EXACT_WORDING_OF_THE_QUESTION"",
+              ""question_type"": ""CHOSEN_QUESTION_TYPE"",
+              ""options"": [
+                // Array of strings for options, or empty array
+              ]
+            }
+            ```
+        *   **`question_text`**:
+            *   **Type**: `String`
+            *   **Format**: The exact wording of the survey question.
+        *   **`question_type`**:
+            *   **Type**: `String`
+            *   **Format**: Must be one of the following exact strings:
+                *   `""Multiple Choice - Single Answer""`
+                *   `""Multiple Choice - Multiple Answers""`
+                *   `""Likert Scale (1-5)""`
+                *   `""Open-ended Text""`
+        *   **`options`**:
+            *   **Type**: `Array` of `String`
+            *   **Format**:
+                *   For `""Multiple Choice - Single Answer""` and `""Multiple Choice - Multiple Answers""`: A list of strings representing the answer choices (e.g., `[""Option 1"", ""Option 2"", ""Option 3""]`).
+                *   For `""Likert Scale (1-5)""`: A list of 5 strings representing the scale points, clearly indicating the meaning of each point (e.g., `[""1 - Not at all interested"", ""2 - Slightly interested"", ""3 - Moderately interested"", ""4 - Very interested"", ""5 - Extremely interested""]`).
+                *   For `""Open-ended Text""`: An empty array `[]`.
+
+6.  **`task_2_satisfaction_data_analysis`**:
+    *   **Type**: `Object`
+    *   This object contains your answers for Task 2.
+
+    ```json
+    ""task_2_satisfaction_data_analysis"": {
+      ""satisfaction_rating_summary"": {
+        ""1"": 0, // Integer count
+        ""2"": 0, // Integer count
+        ""3"": 0, // Integer count
+        ""4"": 0, // Integer count
+        ""5"": 0  // Integer count
+      },
+      ""top_enjoyed_aspects"": [
+        ""ASPECT_1_TEXT"", // String
+        ""ASPECT_2_TEXT""  // String
+      ],
+      ""top_improvement_suggestions"": [
+        ""SUGGESTION_1_TEXT"", // String
+        ""SUGGESTION_2_TEXT""  // String
+      ],
+      ""recommendation_for_next_year"": ""YOUR_RECOMMENDATION_TEXT"" // String
+    }
+    ```
+
+    *   **`satisfaction_rating_summary`**:
+        *   **Type**: `Object`
+        *   **Format**: Keys must be strings `""1""`, `""2""`, `""3""`, `""4""`, `""5""`. Values must be `Integer` representing the count of participants for each satisfaction rating.
+    *   **`top_enjoyed_aspects`**:
+        *   **Type**: `Array` of `String`
+        *   **Format**: A list containing exactly two (2) strings. These strings must be the exact phrasing of the top 2 most frequently mentioned aspects from the `EnjoyedMost` column in the provided data.
+    *   **`top_improvement_suggestions`**:
+        *   **Type**: `Array` of `String`
+        *   **Format**: A list containing exactly two (2) strings. These strings must be the exact phrasing of the top 2 most frequently mentioned suggestions from the `SuggestionForImprovement` column in the provided data. Exclude ""N/A"" when determining these top suggestions.
+    *   **`recommendation_for_next_year`**:
+        *   **Type**: `String`
+        *   **Format**: Your single, concrete recommendation (1-2 sentences) based on your analysis of the provided data.
+
+**Example `test_submission.json` (Illustrative Structure - Do NOT use these placeholder values):**
+
+```json
+{
+  ""candidate_name"": ""Your Name"",
+  ""candidate_id"": ""GPT-4o"",
+  ""submission_date"": ""2024-07-28"",
+  ""exam_version"": ""Basic_FWC_NeedsAssessment_v1"",
+  ""task_1_interest_survey_design"": {
+    ""survey_title"": ""Mid-day Wellness Break Interest"",
+    ""target_audience_description"": ""All Innovatech Solutions employees"",
+    ""survey_introduction_text"": ""We are exploring a new mid-day wellness break and would love your input. Please take a few minutes to complete this short survey."",
+    ""survey_questions"": [
+      {
+        ""question_text"": ""How interested are you in a 15-20 minute guided mindfulness and stretching break during the workday?"",
+        ""question_type"": ""Likert Scale (1-5)"",
+        ""options"": [""1 - Not at all interested"", ""2 - Slightly interested"", ""3 - Moderately interested"", ""4 - Very interested"", ""5 - Extremely interested""]
+      },
+      {
+        ""question_text"": ""What time of day would be most convenient for you to participate? (Select all that apply)"",
+        ""question_type"": ""Multiple Choice - Multiple Answers"",
+        ""options"": [""11:00 AM - 11:30 AM"", ""12:30 PM - 1:00 PM"", ""2:00 PM - 2:30 PM"", ""Other (please specify)""]
+      },
+      {
+        ""question_text"": ""If you selected 'Other' for the previous question, please specify your preferred time:"",
+        ""question_type"": ""Open-ended Text"",
+        ""options"": []
+      }
+      // ... up to 5-7 questions
+    ]
+  },
+  ""task_2_satisfaction_data_analysis"": {
+    ""satisfaction_rating_summary"": {
+      ""1"": 1,
+      ""2"": 1,
+      ""3"": 3,
+      ""4"": 5,
+      ""5"": 5
+    },
+    ""top_enjoyed_aspects"": [
+      ""Team competition"",
+      ""Tracking daily progress""
+    ],
+    ""top_improvement_suggestions"": [
+      ""More prize categories"",
+      ""Better mobile app""
+    ],
+    ""recommendation_for_next_year"": ""Consider adding more prize categories and improving the mobile app for next year's Step Challenge to increase engagement.""
+  }
+}
+```
+
+**Supplementary Files:**
+No supplementary files are required. All answers must be contained within the `test_submission.json` file.","Okay, here are the evaluation materials for the Basic Practical Exam, including the JSON answer key, explanation of correct answers, and passing criteria.
+
+## 1. Complete Answer Key (JSON Format)
+
+Filename: `basic_exam_answer_key.json`
+
+```json
+{
+  ""candidate_name"": ""Official Answer Key"",
+  ""candidate_id"": ""Official_Answer_Key_v1.0"",
+  ""submission_date"": ""2024-07-29"",
+  ""exam_version"": ""Basic_FWC_NeedsAssessment_v1"",
+  ""task_1_interest_survey_design"": {
+    ""survey_title"": ""Interest in Mid-day Mindfulness & Stretching Breaks at Innovatech"",
+    ""target_audience_description"": ""All employees of Innovatech Solutions."",
+    ""survey_introduction_text"": ""Innovatech Solutions is exploring a new 'Mid-day Mindfulness & Stretching Break' program to support employee well-being. These 15-20 minute guided sessions would be offered twice a week. Your anonymous feedback is valuable in helping us understand interest and preferences. Please take a few minutes to complete this short survey."",
+    ""survey_questions"": [
+      {
+        ""question_text"": ""How interested are you in participating in a 15-20 minute guided 'Mid-day Mindfulness & Stretching Break' offered twice a week at Innovatech Solutions?"",
+        ""question_type"": ""Likert Scale (1-5)"",
+        ""options"": [
+          ""1 - Not at all interested"",
+          ""2 - Slightly interested"",
+          ""3 - Moderately interested"",
+          ""4 - Very interested"",
+          ""5 - Extremely interested""
+        ]
+      },
+      {
+        ""question_text"": ""Which days of the week would you most likely be able to attend such a session? (Select all that apply)"",
+        ""question_type"": ""Multiple Choice - Multiple Answers"",
+        ""options"": [""Monday"", ""Tuesday"", ""Wednesday"", ""Thursday"", ""Friday""]
+      },
+      {
+        ""question_text"": ""What time slot(s) during the mid-day (approx. 11 AM - 2 PM) would best suit you for these sessions? (Select all that apply)"",
+        ""question_type"": ""Multiple Choice - Multiple Answers"",
+        ""options"": [""11:30 AM - 11:50 AM"", ""12:30 PM - 12:50 PM"", ""1:30 PM - 1:50 PM"", ""Other (please specify if different)""]
+      },
+      {
+        ""question_text"": ""To what extent do you feel a mid-day break for mindfulness and stretching would help improve your personal well-being or productivity?"",
+        ""question_type"": ""Likert Scale (1-5)"",
+        ""options"": [
+          ""1 - Not at all helpful"",
+          ""2 - Slightly helpful"",
+          ""3 - Moderately helpful"",
+          ""4 - Very helpful"",
+          ""5 - Extremely helpful""
+        ]
+      },
+      {
+        ""question_text"": ""What, if any, are your primary concerns or potential barriers to participating in such a program? (e.g., workload, meeting schedules, not interested, physical limitations)"",
+        ""question_type"": ""Open-ended Text"",
+        ""options"": []
+      },
+      {
+        ""question_text"": ""If such sessions were offered, would you prefer more emphasis on mindfulness, stretching, or an equal balance of both?"",
+        ""question_type"": ""Multiple Choice - Single Answer"",
+        ""options"": [""Primarily Mindfulness"", ""Primarily Stretching"", ""Equal Balance of Both"", ""Unsure""]
+      }
+    ]
+  },
+  ""task_2_satisfaction_data_analysis"": {
+    ""satisfaction_rating_summary"": {
+      ""1"": 1,
+      ""2"": 1,
+      ""3"": 3,
+      ""4"": 5,
+      ""5"": 5
+    },
+    ""top_enjoyed_aspects"": [
+      ""Team competition"",
+      ""Tracking daily progress""
+    ],
+    ""top_improvement_suggestions"": [
+      ""More prize categories"",
+      ""Better mobile app""
+    ],
+    ""recommendation_for_next_year"": ""For next year's Step Challenge, Innovatech Solutions should consider increasing the number or variety of prize categories, as this was a prominent suggestion. Additionally, exploring improvements to the mobile app or offering a shorter challenge duration could enhance participant satisfaction and address other common feedback points.""
+  }
+}
+```
+
+## 2. Explanation of Correct Answers and How They Were Derived
+
+### Task 1: New Program Interest Survey Design
+
+The goal of Task 1 is to assess the candidate's ability to create a relevant, clear, and well-structured short survey to gauge interest in a new wellness program. The provided answer key offers an *exemplar* solution.
+
+*   **`survey_title`**: Should be concise, descriptive, and relevant to the ""Mid-day Mindfulness & Stretching Break"" and the company context (Innovatech).
+    *   *Exemplar Rationale*: ""Interest in Mid-day Mindfulness & Stretching Breaks at Innovatech"" is clear and informative.
+*   **`target_audience_description`**: Should accurately identify the survey recipients.
+    *   *Exemplar Rationale*: ""All employees of Innovatech Solutions."" is direct and correct given the scenario.
+*   **`survey_introduction_text`**: Should be welcoming, state the survey's purpose (gauging interest for the new program), mention anonymity if applicable (good practice), and encourage participation. It should be 2-3 sentences.
+    *   *Exemplar Rationale*: The exemplar text explains the program, its purpose, assures anonymity (implied by ""Your anonymous feedback""), and encourages participation.
+*   **`survey_questions`**: The candidate must provide 5-7 distinct questions. Each question is evaluated on:
+    *   **Relevance**: Does it help gauge interest or preferences for the ""Mid-day Mindfulness & Stretching Break""?
+    *   **Clarity**: Is the question easy to understand?
+    *   **Question Type**: Is the chosen type appropriate for the information sought?
+    *   **Options (if applicable)**: Are the options comprehensive and well-phrased?
+    *   **JSON Structure**: Is it correctly formatted?
+
+    **Rationale for Exemplar Questions:**
+    1.  **Interest Level (Likert Scale)**: Directly measures interest, which is the primary goal. Likert scale provides nuanced data.
+    2.  **Preferred Days (Multiple Choice - Multiple Answers)**: Practical for scheduling; allows multiple selections as preferences may vary.
+    3.  **Preferred Times (Multiple Choice - Multiple Answers)**: Crucial for logistics; allows multiple selections. ""Other"" option captures unlisted preferences.
+    4.  **Current Perceived Need/Benefit (Likert Scale)**: Helps understand the perceived value proposition from the employees' perspective.
+    5.  **Potential Barriers (Open-ended Text)**: Identifies potential obstacles to participation, allowing for proactive planning. Open-ended allows for diverse, unprompted feedback.
+    6.  **Focus Preference (Multiple Choice - Single Answer)**: Gathers input on program content, helping tailor sessions to employee preferences.
+
+    *Evaluation Notes for Task 1:*
+    *   The number of questions must be between 5 and 7.
+    *   A good mix of question types is desirable.
+    *   Questions should logically flow and cover key aspects like interest, logistics (timing/days), perceived benefits, and potential barriers.
+
+### Task 2: Existing Program Satisfaction Data Analysis
+
+The goal of Task 2 is to assess the candidate's ability to perform basic data analysis on a small dataset using a spreadsheet and report findings in the specified JSON format.
+
+**Provided Data for Analysis:**
+```csv
+ParticipantID,OverallSatisfaction(1-5 Likert; 5=Very Satisfied),EnjoyedMost,SuggestionForImprovement
+P01,4,Team competition,More prize categories
+P02,5,Tracking daily progress,Clearer rules on activity conversion
+P03,3,Nothing specific,Too long
+P04,5,Team competition,Better mobile app
+P05,4,Feeling healthier,More frequent updates on leaderboard
+P06,2,N/A,Shorter duration
+P07,5,Team competition,More prize categories
+P08,4,Tracking daily progress,N/A
+P09,3,Feeling healthier,Make it optional to be on a team
+P10,5,Team competition,Better mobile app
+P11,4,N/A,More variety in challenges
+P12,1,Nothing,Too competitive
+P13,5,Team competition,N/A
+P14,4,Tracking daily progress,More prize categories
+P15,3,Feeling healthier,Shorter duration
+```
+
+1.  **`satisfaction_rating_summary`**:
+    *   Count occurrences of each rating in the `OverallSatisfaction` column:
+        *   Rating ""1"": 1 (P12)
+        *   Rating ""2"": 1 (P06)
+        *   Rating ""3"": 3 (P03, P09, P15)
+        *   Rating ""4"": 5 (P01, P05, P08, P11, P14)
+        *   Rating ""5"": 5 (P02, P04, P07, P10, P13)
+    *   **Correct JSON**: `{""1"": 1, ""2"": 1, ""3"": 3, ""4"": 5, ""5"": 5}`
+
+2.  **`top_enjoyed_aspects`**:
+    *   Count frequencies in the `EnjoyedMost` column (using exact phrasing):
+        *   ""Team competition"": 5 times
+        *   ""Tracking daily progress"": 3 times
+        *   ""Feeling healthier"": 3 times
+        *   ""N/A"": 2 times
+        *   ""Nothing specific"": 1 time
+        *   ""Nothing"": 1 time
+    *   The top aspect is ""Team competition"" (5 occurrences).
+    *   There is a tie for the second top aspect: ""Tracking daily progress"" (3 occurrences) and ""Feeling healthier"" (3 occurrences).
+    *   **Correct JSON**: The list must contain ""Team competition"" and one of the tied second-place items.
+        *   Example 1 (used in key): `[""Team competition"", ""Tracking daily progress""]`
+        *   Example 2 (also correct): `[""Team competition"", ""Feeling healthier""]`
+        *   The order of the two items in the list does not strictly matter as long as both are correct top 2. However, listing the most frequent first is good practice.
+
+3.  **`top_improvement_suggestions`**:
+    *   Count frequencies in the `SuggestionForImprovement` column (using exact phrasing, **excluding ""N/A""**):
+        *   ""More prize categories"": 3 times
+        *   ""Better mobile app"": 2 times
+        *   ""Shorter duration"": 2 times
+        *   ""Clearer rules on activity conversion"": 1 time
+        *   ""Too long"": 1 time
+        *   ""More frequent updates on leaderboard"": 1 time
+        *   ""Make it optional to be on a team"": 1 time
+        *   ""More variety in challenges"": 1 time
+        *   ""Too competitive"": 1 time
+        *   (""N/A"" appeared 2 times but is excluded from this analysis per instructions).
+    *   The top suggestion is ""More prize categories"" (3 occurrences).
+    *   There is a tie for the second top suggestion: ""Better mobile app"" (2 occurrences) and ""Shorter duration"" (2 occurrences).
+    *   **Correct JSON**: The list must contain ""More prize categories"" and one of the tied second-place items.
+        *   Example 1 (used in key): `[""More prize categories"", ""Better mobile app""]`
+        *   Example 2 (also correct): `[""More prize categories"", ""Shorter duration""]`
+
+4.  **`recommendation_for_next_year`**:
+    *   Must be a concrete recommendation (1-2 sentences) based on the analysis, particularly the `top_improvement_suggestions`.
+    *   *Exemplar Rationale*: The key's recommendation directly addresses the top identified suggestions (""More prize categories,"" ""Better mobile app,"" and implicitly ""Shorter duration"" by mentioning it as an alternative). It is actionable and clearly linked to the data.
+    *   *Evaluation*: Should be logical, derived from the data, and practical.
+
+## 3. Passing Criteria
+
+**Total Possible Points: 100**
+
+**Task 1: New Program Interest Survey Design (Total 40 points)**
+*   `survey_title` (2 points): Relevant and clear.
+*   `target_audience_description` (2 points): Accurate.
+*   `survey_introduction_text` (6 points):
+    *   Clarity and purpose (3 points)
+    *   Tone and encouragement (3 points)
+*   `survey_questions` (30 points total):
+    *   **Quantity (Fulfilled if 5-7 questions)**: This is a prerequisite for full scoring of questions. If not met, deduct proportionally or cap points.
+    *   **For each question (e.g., 6 questions x 5 points each = 30 points; if 5 questions, 6 pts each; if 7 questions, approx 4.3 pts each):**
+        *   Relevance to scenario (2 points per question)
+        *   Appropriateness of question type & options (if applicable) (2 points per question)
+        *   Clarity of question text (1 point per question)
+    *   Correct JSON structure for all Task 1 elements is expected. Minor syntax errors might be penalized slightly, but focus is on content.
+
+**Task 2: Existing Program Satisfaction Data Analysis (Total 60 points)**
+*   `satisfaction_rating_summary` (20 points):
+    *   4 points for each correctly counted rating (""1"" through ""5""). (5 ratings x 4 points = 20 points)
+*   `top_enjoyed_aspects` (15 points):
+    *   Correct identification of ""Team competition"" as one of the top 2 (7.5 points).
+    *   Correct identification of either ""Tracking daily progress"" OR ""Feeling healthier"" as the other top 2 aspect (7.5 points).
+    *   Exact phrasing from data required.
+*   `top_improvement_suggestions` (15 points):
+    *   Correct identification of ""More prize categories"" as one of the top 2 (7.5 points).
+    *   Correct identification of either ""Better mobile app"" OR ""Shorter duration"" as the other top 2 aspect (7.5 points).
+    *   Exact phrasing from data required, and ""N/A"" must be correctly excluded from consideration.
+*   `recommendation_for_next_year` (10 points):
+    *   Directly based on and supported by the analyzed data (especially `top_improvement_suggestions`) (5 points).
+    *   Clear, concrete, and actionable (1-2 sentences) (5 points).
+*   Correct JSON structure for all Task 2 elements is expected.
+
+**Overall Passing Score:**
+*   **Pass:** 70 points or higher (out of 100).
+*   **Pass with Merit/Exceeds Expectations (Optional):** 85 points or higher.
+
+**General Evaluation Notes:**
+*   **JSON Validity:** The submitted `test_submission.json` file must be valid JSON. If it's not, the candidate may fail or receive a significant penalty, as this is a core requirement.
+*   **Adherence to Instructions:** Points may be deducted for not following specific instructions (e.g., number of questions, format of options, exact phrasing where required).
+*   **Practical Application:** The focus is on the practical ability to perform the tasks. Theoretical knowledge is not directly assessed but underpins practical execution.
+*   **Time Limit:** While not directly scored, the 90-minute time limit is a factor in assessing if the candidate can perform these basic tasks efficiently.","```python
+import json
+import sys
+import re
+import argparse
+
+# --- Configuration for Scoring ---
+TASK1_MAX_SCORE = 40.0
+TASK1_TITLE_MAX = 2.0
+TASK1_AUDIENCE_MAX = 2.0
+TASK1_INTRO_MAX = 6.0
+TASK1_QUESTIONS_MAX = 30.0
+
+TASK2_MAX_SCORE = 60.0
+TASK2_SATISFACTION_SUMMARY_MAX = 20.0
+TASK2_TOP_ENJOYED_MAX = 15.0
+TASK2_TOP_IMPROVEMENT_MAX = 15.0
+TASK2_RECOMMENDATION_MAX = 10.0
+
+TOTAL_EXAM_MAX_SCORE = TASK1_MAX_SCORE + TASK2_MAX_SCORE
+
+# Keywords for Task 1 (case-insensitive)
+TITLE_KEYWORDS = [""survey"", ""interest"", ""mindfulness"", ""stretching"", ""innovatech"", ""wellness"", ""feedback""]
+AUDIENCE_KEYWORDS = [""employee"", ""innovatech"", ""staff"", ""personnel"", ""all""]
+INTRO_PURPOSE_KEYWORDS = [""feedback"", ""purpose"", ""survey"", ""input"", ""opinion"", ""understand"", ""gauge"", ""assess"", ""mindfulness"", ""stretching"", ""wellness"", ""program"", ""initiative""]
+INTRO_TONE_KEYWORDS = [""please"", ""thank you"", ""valuable"", ""appreciate"", ""confidential"", ""anonymous"", ""help"", ""invite"", ""encourage""]
+QUESTION_RELEVANCE_KEYWORDS = [""mindfulness"", ""stretching"", ""break"", ""interest"", ""schedule"", ""barrier"", ""preference"", ""well-being"", ""time"", ""day"", ""frequency"", ""duration"", ""participate"", ""benefit"", ""concern"", ""content"", ""format""]
+ALLOWED_QUESTION_TYPES = [
+    ""Multiple Choice - Single Answer"",
+    ""Multiple Choice - Multiple Answers"",
+    ""Likert Scale (1-5)"",
+    ""Open-ended Text""
+]
+
+# Keywords for Task 2 Recommendation (case-insensitive)
+RECOMMENDATION_ACTION_KEYWORDS = [""consider"", ""improve"", ""add"", ""change"", ""explore"", ""recommend"", ""suggest"", ""implement"", ""offer"", ""provide"", ""ensure"", ""review"", ""adjust""]
+
+
+def get_nested_value(data_dict, path, default=None):
+    """"""Safely access nested dictionary values.""""""
+    current = data_dict
+    for key in path:
+        if isinstance(current, dict) and key in current:
+            current = current[key]
+        elif isinstance(current, list) and isinstance(key, int) and 0 <= key < len(current):
+            current = current[key]
+        else:
+            return default
+    return current
+
+def contains_keywords(text, keywords, N=1):
+    """"""Check if text contains at least N keywords (case-insensitive).""""""
+    if not isinstance(text, str) or not text:
+        return False
+    text_lower = text.lower()
+    found_count = 0
+    for kw in keywords:
+        if kw.lower() in text_lower:
+            found_count += 1
+            if found_count >= N:
+                return True
+    return False
+
+def score_task1_survey_title(candidate_title):
+    score = 0
+    comment = ""Title: ""
+    if candidate_title and isinstance(candidate_title, str) and len(candidate_title.strip()) > 0:
+        if contains_keywords(candidate_title, TITLE_KEYWORDS):
+            score = TASK1_TITLE_MAX
+            comment += ""Relevant and clear title.""
+        else:
+            score = TASK1_TITLE_MAX / 2
+            comment += ""Title present but could be more relevant or descriptive.""
+    else:
+        comment += ""Missing or empty.""
+    return score, comment
+
+def score_task1_target_audience(candidate_desc):
+    score = 0
+    comment = ""Target Audience: ""
+    if candidate_desc and isinstance(candidate_desc, str) and len(candidate_desc.strip()) > 0:
+        if contains_keywords(candidate_desc, AUDIENCE_KEYWORDS):
+            score = TASK1_AUDIENCE_MAX
+            comment += ""Accurate description.""
+        else:
+            score = TASK1_AUDIENCE_MAX / 2
+            comment += ""Description present but could be more specific or accurate.""
+    else:
+        comment += ""Missing or empty.""
+    return score, comment
+
+def score_task1_survey_introduction(candidate_intro):
+    score = 0
+    comments = []
+    # Clarity and purpose (3 points)
+    purpose_score = 0
+    if candidate_intro and isinstance(candidate_intro, str) and len(candidate_intro.strip()) > 15: # Min length
+        if contains_keywords(candidate_intro, INTRO_PURPOSE_KEYWORDS, N=2):
+            purpose_score = 3.0
+            comments.append(""Clear purpose."")
+        elif contains_keywords(candidate_intro, INTRO_PURPOSE_KEYWORDS, N=1):
+            purpose_score = 1.5
+            comments.append(""Purpose somewhat clear."")
+        else:
+            comments.append(""Purpose not clearly stated."")
+    else:
+        comments.append(""Introduction missing, too short, or not a string."")
+    score += purpose_score
+
+    # Tone and encouragement (3 points)
+    tone_score = 0
+    if candidate_intro and isinstance(candidate_intro, str): # Already checked for presence
+        if contains_keywords(candidate_intro, INTRO_TONE_KEYWORDS, N=1):
+            tone_score = 3.0
+            comments.append(""Good tone and encouragement."")
+        elif purpose_score > 0 : # If intro is somewhat valid
+            tone_score = 1.5
+            comments.append(""Tone could be more encouraging."")
+        else:
+            comments.append(""Tone and encouragement lacking."")
+    score += tone_score
+    
+    return score, ""Introduction: "" + "" "".join(comments)
+
+def score_task1_survey_questions(candidate_questions_list):
+    total_score = 0
+    question_details_report = []
+    num_q_submitted = 0
+    quantity_comment = """"
+
+    if not isinstance(candidate_questions_list, list):
+        quantity_comment = ""Survey questions not provided as a list.""
+        return 0, quantity_comment, question_details_report, num_q_submitted
+
+    num_q_submitted = len(candidate_questions_list)
+
+    if num_q_submitted == 0:
+        quantity_comment = ""No survey questions provided.""
+        return 0, quantity_comment, question_details_report, num_q_submitted
+
+    # Points per sub-criterion if 6 questions were submitted (ideal for 5 points per question)
+    # These are the max points for each sub-criterion for *each* question
+    base_relevance_max = 2.0
+    base_type_options_max = 2.0
+    base_clarity_max = 1.0
+
+    raw_achieved_score = 0
+
+    for i, q_data in enumerate(candidate_questions_list):
+        q_text = get_nested_value(q_data, (""question_text"",))
+        q_type = get_nested_value(q_data, (""question_type"",))
+        q_options = get_nested_value(q_data, (""options"",)) # Default is None, handle if not list
+
+        current_q_relevance_score = 0
+        current_q_type_options_score = 0
+        current_q_clarity_score = 0
+        
+        q_report = {
+            ""question_index"": i + 1,
+            ""text"": q_text if q_text else ""N/A"",
+            ""relevance_score"": 0, ""relevance_max"": base_relevance_max, ""relevance_comment"": """",
+            ""type_options_score"": 0, ""type_options_max"": base_type_options_max, ""type_options_comment"": """",
+            ""clarity_score"": 0, ""clarity_max"": base_clarity_max, ""clarity_comment"": """"
+        }
+
+        # Score Relevance
+        if q_text and isinstance(q_text, str) and contains_keywords(q_text, QUESTION_RELEVANCE_KEYWORDS):
+            current_q_relevance_score = base_relevance_max
+            q_report[""relevance_comment""] = ""Relevant.""
+        elif q_text and isinstance(q_text, str):
+            current_q_relevance_score = base_relevance_max / 2
+            q_report[""relevance_comment""] = ""Partially relevant or relevance unclear.""
+        else:
+            q_report[""relevance_comment""] = ""Question text missing or not relevant.""
+        q_report[""relevance_score""] = current_q_relevance_score
+        raw_achieved_score += current_q_relevance_score
+
+        # Score Type & Options
+        type_options_comments = []
+        if q_type and isinstance(q_type, str) and q_type in ALLOWED_QUESTION_TYPES:
+            valid_type = True
+            if q_type == ""Likert Scale (1-5)"":
+                if isinstance(q_options, list) and len(q_options) == 5:
+                    current_q_type_options_score = base_type_options_max
+                    type_options_comments.append(""Correct Likert scale format."")
+                else:
+                    current_q_type_options_score = base_type_options_max / 2
+                    type_options_comments.append(""Likert scale type, but options incorrect (expected 5)."")
+            elif ""Multiple Choice"" in q_type:
+                if isinstance(q_options, list) and len(q_options) > 0:
+                    current_q_type_options_score = base_type_options_max
+                    type_options_comments.append(""Correct Multiple Choice format."")
+                else:
+                    current_q_type_options_score = base_type_options_max / 2
+                    type_options_comments.append(""Multiple Choice type, but options missing or empty."")
+            elif q_type == ""Open-ended Text"":
+                if isinstance(q_options, list) and len(q_options) == 0:
+                    current_q_type_options_score = base_type_options_max
+                    type_options_comments.append(""Correct Open-ended format."")
+                else: # options should be an empty list
+                    current_q_type_options_score = base_type_options_max / 2
+                    type_options_comments.append(""Open-ended type, but options field not an empty list."")
+        else:
+            type_options_comments.append(f""Invalid or missing question type: '{q_type}'."")
+        
+        q_report[""type_options_score""] = current_q_type_options_score
+        q_report[""type_options_comment""] = "" "".join(type_options_comments)
+        raw_achieved_score += current_q_type_options_score
+
+        # Score Clarity
+        if q_text and isinstance(q_text, str) and len(q_text.split()) >= 5: # At least 5 words
+            current_q_clarity_score = base_clarity_max
+            q_report[""clarity_comment""] = ""Clear.""
+        elif q_text and isinstance(q_text, str) and len(q_text.strip()) > 0:
+            current_q_clarity_score = base_clarity_max / 2
+            q_report[""clarity_comment""] = ""Somewhat clear or too brief.""
+        else:
+            q_report[""clarity_comment""] = ""Question text missing or unclear.""
+        q_report[""clarity_score""] = current_q_clarity_score
+        raw_achieved_score += current_q_clarity_score
+        
+        question_details_report.append(q_report)
+
+    # Apply scaling based on number of questions
+    # The raw_achieved_score is sum of (up to) 5 points per question.
+    # Max possible raw score is num_q_submitted * 5.
+    # We need to scale this to the 30 point max for the question section.
+    
+    # If num_q_submitted is ideal (5, 6, or 7), the total score is capped at 30.
+    # Each question contributes proportionally.
+    if 5 <= num_q_submitted <= 7:
+        # Max possible score for these questions is num_q_submitted * 5.
+        # We want to scale this to 30.
+        # Example: 5 questions, max raw = 25. If they get 20 raw, final = (20/25)*30 = 24.
+        # Example: 7 questions, max raw = 35. If they get 28 raw, final = (28/35)*30 = 24.
+        if num_q_submitted * (base_relevance_max + base_type_options_max + base_clarity_max) > 0: # Avoid division by zero
+             total_score = (raw_achieved_score / (num_q_submitted * (base_relevance_max + base_type_options_max + base_clarity_max))) * TASK1_QUESTIONS_MAX
+        else:
+            total_score = 0
+        quantity_comment = f""Correct number of questions ({num_q_submitted}). Score scaled to fit {TASK1_QUESTIONS_MAX} points.""
+    elif num_q_submitted < 5 and num_q_submitted > 0:
+        # Proportional penalty for too few questions
+        # Calculate score as if they submitted 5 questions, then penalize.
+        # Max raw score if they had 5 questions = 5 * 5 = 25.
+        # Their score relative to this: raw_achieved_score / (num_q_submitted * 5)
+        # This proportion applied to 30 points, then penalized.
+        base_score_if_ideal_count = 0
+        if num_q_submitted * (base_relevance_max + base_type_options_max + base_clarity_max) > 0:
+            base_score_if_ideal_count = (raw_achieved_score / (num_q_submitted * (base_relevance_max + base_type_options_max + base_clarity_max))) * TASK1_QUESTIONS_MAX
+        
+        penalty_factor = num_q_submitted / 5.0
+        total_score = base_score_if_ideal_count * penalty_factor
+        quantity_comment = f""Too few questions ({num_q_submitted} vs 5-7 expected). Base score adjusted by factor {penalty_factor:.2f}.""
+    elif num_q_submitted > 7:
+        # Proportional penalty for too many questions
+        base_score_if_ideal_count = 0
+        if num_q_submitted * (base_relevance_max + base_type_options_max + base_clarity_max) > 0:
+            base_score_if_ideal_count = (raw_achieved_score / (num_q_submitted * (base_relevance_max + base_type_options_max + base_clarity_max))) * TASK1_QUESTIONS_MAX
+
+        penalty_factor = 7.0 / num_q_submitted
+        total_score = base_score_if_ideal_count * penalty_factor
+        quantity_comment = f""Too many questions ({num_q_submitted} vs 5-7 expected). Base score adjusted by factor {penalty_factor:.2f}.""
+
+    total_score = min(total_score, TASK1_QUESTIONS_MAX) # Cap at max
+    total_score = max(total_score, 0) # Ensure non-negative
+
+    return total_score, quantity_comment, question_details_report, num_q_submitted
+
+
+def score_task2_satisfaction_summary(candidate_summary, key_summary):
+    score = 0
+    comments = []
+    details = {}
+
+    if not isinstance(candidate_summary, dict):
+        return 0, ""Satisfaction summary not provided as a dictionary."", details
+
+    points_per_rating = TASK2_SATISFACTION_SUMMARY_MAX / 5.0 # 4 points per rating
+
+    for rating in [""1"", ""2"", ""3"", ""4"", ""5""]:
+        candidate_count = get_nested_value(candidate_summary, (rating,))
+        key_count = get_nested_value(key_summary, (rating,))
+        
+        details[f""rating_{rating}""] = {""candidate"": candidate_count, ""key"": key_count, ""score"": 0}
+
+        if isinstance(candidate_count, int) and candidate_count == key_count:
+            score += points_per_rating
+            details[f""rating_{rating}""][""score""] = points_per_rating
+            comments.append(f""Rating '{rating}': Correct count ({candidate_count})."")
+        elif candidate_count is not None:
+            comments.append(f""Rating '{rating}': Incorrect count (Candidate: {candidate_count}, Key: {key_count})."")
+            details[f""rating_{rating}""][""score""] = 0
+        else:
+            comments.append(f""Rating '{rating}': Missing in submission."")
+            details[f""rating_{rating}""][""score""] = 0
+            
+    return score, ""Satisfaction Summary: "" + "" "".join(comments) if comments else ""No valid ratings found."", details
+
+def score_task2_top_list(candidate_list, key_primary, key_secondary_options, list_name):
+    score = 0
+    comment = f""{list_name}: ""
+
+    if not isinstance(candidate_list, list) or len(candidate_list) != 2:
+        comment += ""Not a list of 2 items.""
+        return 0, comment
+
+    candidate_set = set(item.strip() if isinstance(item, str) else """" for item in candidate_list)
+    
+    # Remove empty strings that might result from stripping non-string items
+    candidate_set = {s for s in candidate_set if s}
+    if len(candidate_set) != 2 : # check if two distinct non-empty strings were provided
+        comment += ""Does not contain two distinct non-empty string items.""
+        return 0, comment
+
+
+    valid_sets = [{key_primary.strip(), opt.strip()} for opt in key_secondary_options]
+
+    if candidate_set in valid_sets:
+        score = TASK2_TOP_ENJOYED_MAX # Max score for this type of list (15 pts)
+        comment += ""Correctly identified top 2 items.""
+    else:
+        # Partial credit attempt: check if primary is there
+        partial_match = False
+        if key_primary.strip() in candidate_set:
+            score = TASK2_TOP_ENJOYED_MAX / 2
+            comment += f""Partially correct: '{key_primary}' identified, but the second item is incorrect or missing from valid options.""
+            partial_match = True
+        
+        # Check if one of the secondary options is there (if primary wasn't)
+        if not partial_match:
+            for opt in key_secondary_options:
+                if opt.strip() in candidate_set:
+                    score = TASK2_TOP_ENJOYED_MAX / 2 # Or a smaller partial credit
+                    comment += f""Partially correct: One valid item ('{opt}') identified, but the other is incorrect or missing.""
+                    partial_match = True
+                    break
+        if not partial_match:
+             comment += ""Incorrect items.""
+             
+    return score, comment
+
+def score_task2_recommendation(candidate_rec, key_top_improvement_suggestions):
+    score = 0
+    comments = []
+
+    if not isinstance(candidate_rec, str) or not candidate_rec.strip():
+        return 0, ""Recommendation: Missing or empty.""
+
+    # Data-driven (5 pts)
+    data_driven_score = 0
+    rec_lower = candidate_rec.lower()
+    
+    # Themes from top improvement suggestions (example themes)
+    # key_top_improvement_suggestions is a list like [""More prize categories"", ""Better mobile app""]
+    # We need to extract themes from these.
+    themes_found = 0
+    # Theme 1 (e.g., from ""More prize categories"")
+    if any(kw in rec_lower for kw in [""prize"", ""reward"", ""category"", ""categories""]):
+        data_driven_score += 2.5
+        themes_found +=1
+    
+    # Theme 2 (e.g., from ""Better mobile app"" or ""Shorter duration"")
+    if any(kw in rec_lower for kw in [""app"", ""mobile"", ""duration"", ""shorter"", ""length"", ""time""]):
+        if themes_found == 0: # First theme found
+             data_driven_score += 2.5
+        elif data_driven_score < 5.0: # Second distinct theme
+             data_driven_score = 5.0 
+        themes_found +=1
+
+    if data_driven_score > 0:
+        comments.append(f""Data-driven aspects identified (Score: {data_driven_score}/5)."")
+    else:
+        comments.append(""Recommendation does not clearly reflect data findings (Score: 0/5)."")
+    score += data_driven_score
+
+    # Clarity/Actionability (5 pts)
+    clarity_score = 0
+    word_count = len(candidate_rec.split())
+    if 10 <= word_count <= 70:
+        clarity_score += 2.5
+        comments.append(f""Appropriate length ({word_count} words)."")
+    else:
+        comments.append(f""Length not ideal ({word_count} words, expected 10-70)."")
+
+    if contains_keywords(candidate_rec, RECOMMENDATION_ACTION_KEYWORDS):
+        clarity_score += 2.5
+        comments.append(""Contains actionable language."")
+    else:
+        comments.append(""Lacks clear actionable language."")
+    score += clarity_score
+    
+    return score, ""Recommendation: "" + "" "".join(comments)
+
+
+def evaluate_submission(submission_data, key_data):
+    results = {
+        ""candidate_name"": get_nested_value(submission_data, (""candidate_name"",), ""N/A""),
+        ""candidate_id"": get_nested_value(submission_data, (""candidate_id"",), ""N/A""),
+        ""overall_score"": 0.0,
+        ""task_1_scores"": {
+            ""total_task_1_score"": 0,
+            ""max_score"": TASK1_MAX_SCORE
+        },
+        ""task_2_scores"": {
+            ""total_task_2_score"": 0,
+            ""max_score"": TASK2_MAX_SCORE
+        },
+        ""total_exam_score"": 0,
+        ""max_exam_score"": TOTAL_EXAM_MAX_SCORE
+    }
+
+    # --- Task 1 Evaluation ---
+    task1_submission = get_nested_value(submission_data, (""task_1_interest_survey_design"",), {})
+    
+    s, c = score_task1_survey_title(get_nested_value(task1_submission, (""survey_title"",)))
+    results[""task_1_scores""][""survey_title""] = {""score"": s, ""max_score"": TASK1_TITLE_MAX, ""comment"": c}
+    results[""task_1_scores""][""total_task_1_score""] += s
+
+    s, c = score_task1_target_audience(get_nested_value(task1_submission, (""target_audience_description"",)))
+    results[""task_1_scores""][""target_audience_description""] = {""score"": s, ""max_score"": TASK1_AUDIENCE_MAX, ""comment"": c}
+    results[""task_1_scores""][""total_task_1_score""] += s
+
+    s, c = score_task1_survey_introduction(get_nested_value(task1_submission, (""survey_introduction_text"",)))
+    results[""task_1_scores""][""survey_introduction_text""] = {""score"": s, ""max_score"": TASK1_INTRO_MAX, ""comment"": c}
+    results[""task_1_scores""][""total_task_1_score""] += s
+
+    s, c, q_details, num_q = score_task1_survey_questions(get_nested_value(task1_submission, (""survey_questions"",)))
+    results[""task_1_scores""][""survey_questions""] = {
+        ""score"": s, ""max_score"": TASK1_QUESTIONS_MAX, ""comment"": c,
+        ""num_questions_provided"": num_q, ""num_questions_expected"": ""5-7"",
+        ""question_details"": q_details
+    }
+    results[""task_1_scores""][""total_task_1_score""] += s
+
+    # --- Task 2 Evaluation ---
+    task2_submission = get_nested_value(submission_data, (""task_2_satisfaction_data_analysis"",), {})
+    task2_key = get_nested_value(key_data, (""task_2_satisfaction_data_analysis"",), {})
+
+    s, c, summary_details = score_task2_satisfaction_summary(
+        get_nested_value(task2_submission, (""satisfaction_rating_summary"",)),
+        get_nested_value(task2_key, (""satisfaction_rating_summary"",))
+    )
+    results[""task_2_scores""][""satisfaction_rating_summary""] = {""score"": s, ""max_score"": TASK2_SATISFACTION_SUMMARY_MAX, ""comment"": c, ""details"": summary_details}
+    results[""task_2_scores""][""total_task_2_score""] += s
+
+    # Top Enjoyed Aspects
+    # Key provides one valid pair, e.g., [""Team competition"", ""Tracking daily progress""]
+    # Alternative for 2nd item: ""Feeling healthier""
+    key_enjoyed_primary = get_nested_value(task2_key, (""top_enjoyed_aspects"", 0), """") # ""Team competition""
+    key_enjoyed_secondary_in_key = get_nested_value(task2_key, (""top_enjoyed_aspects"", 1), """") # ""Tracking daily progress""
+    # Based on evaluation guide, the alternative secondary is ""Feeling healthier""
+    enjoyed_alt_secondary = ""Feeling healthier"" 
+    key_enjoyed_secondary_options = [key_enjoyed_secondary_in_key, enjoyed_alt_secondary]
+    
+    s, c = score_task2_top_list(
+        get_nested_value(task2_submission, (""top_enjoyed_aspects"",)),
+        key_enjoyed_primary,
+        key_enjoyed_secondary_options,
+        ""Top Enjoyed Aspects""
+    )
+    results[""task_2_scores""][""top_enjoyed_aspects""] = {""score"": s, ""max_score"": TASK2_TOP_ENJOYED_MAX, ""comment"": c}
+    results[""task_2_scores""][""total_task_2_score""] += s
+    
+    # Top Improvement Suggestions
+    # Key provides one valid pair, e.g., [""More prize categories"", ""Better mobile app""]
+    # Alternative for 2nd item: ""Shorter duration""
+    key_improvement_primary = get_nested_value(task2_key, (""top_improvement_suggestions"", 0), """") # ""More prize categories""
+    key_improvement_secondary_in_key = get_nested_value(task2_key, (""top_improvement_suggestions"", 1), """") # ""Better mobile app""
+    improvement_alt_secondary = ""Shorter duration""
+    key_improvement_secondary_options = [key_improvement_secondary_in_key, improvement_alt_secondary]
+
+    s, c = score_task2_top_list(
+        get_nested_value(task2_submission, (""top_improvement_suggestions"",)),
+        key_improvement_primary,
+        key_improvement_secondary_options,
+        ""Top Improvement Suggestions""
+    )
+    results[""task_2_scores""][""top_improvement_suggestions""] = {""score"": s, ""max_score"": TASK2_TOP_IMPROVEMENT_MAX, ""comment"": c}
+    results[""task_2_scores""][""total_task_2_score""] += s
+
+    s, c = score_task2_recommendation(
+        get_nested_value(task2_submission, (""recommendation_for_next_year"",)),
+        # Pass the actual top suggestions from the key for keyword checking
+        [key_improvement_primary, key_improvement_secondary_in_key, improvement_alt_secondary] 
+    )
+    results[""task_2_scores""][""recommendation_for_next_year""] = {""score"": s, ""max_score"": TASK2_RECOMMENDATION_MAX, ""comment"": c}
+    results[""task_2_scores""][""total_task_2_score""] += s
+
+    # --- Final Scores ---
+    results[""total_exam_score""] = results[""task_1_scores""][""total_task_1_score""] + results[""task_2_scores""][""total_task_2_score""]
+    if TOTAL_EXAM_MAX_SCORE > 0:
+        results[""overall_score""] = round((results[""total_exam_score""] / TOTAL_EXAM_MAX_SCORE) * 100, 2)
+    else:
+        results[""overall_score""] = 0.0
+        
+    return results
+
+def main():
+    parser = argparse.ArgumentParser(description=""Evaluate Fitness and Wellness Coordinator exam submission."")
+    parser.add_argument(""submission_file"", help=""Path to the candidate's submission JSON file."")
+    parser.add_argument(""key_file"", help=""Path to the answer key JSON file."")
+    args = parser.parse_args()
+
+    try:
+        with open(args.submission_file, 'r') as f:
+            submission_data = json.load(f)
+    except FileNotFoundError:
+        print(f""Error: Submission file '{args.submission_file}' not found."")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f""Error: Could not decode JSON from submission file '{args.submission_file}'."")
+        sys.exit(1)
+
+    try:
+        with open(args.key_file, 'r') as f:
+            key_data = json.load(f)
+    except FileNotFoundError:
+        print(f""Error: Answer key file '{args.key_file}' not found."")
+        sys.exit(1)
+    except json.JSONDecodeError:
+        print(f""Error: Could not decode JSON from answer key file '{args.key_file}'."")
+        sys.exit(1)
+
+    evaluation_results = evaluate_submission(submission_data, key_data)
+
+    try:
+        with open(""test_results.json"", 'w') as f:
+            json.dump(evaluation_results, f, indent=2)
+        print(""Evaluation complete. Results saved to 'test_results.json'"")
+    except IOError:
+        print(""Error: Could not write results to 'test_results.json'."")
+        sys.exit(1)
+
+if __name__ == ""__main__"":
+    main()
+```","{'candidate_name': 'Official Answer Key', 'candidate_id': 'Official_Answer_Key_v1.0', 'submission_date': '2024-07-29', 'exam_version': 'Basic_FWC_NeedsAssessment_v1', 'task_1_interest_survey_design': {'survey_title': 'Interest in Mid-day Mindfulness & Stretching Breaks at Innovatech', 'target_audience_description': 'All employees of Innovatech Solutions.', 'survey_introduction_text': ""Innovatech Solutions is exploring a new 'Mid-day Mindfulness & Stretching Break' program to support employee well-being. These 15-20 minute guided sessions would be offered twice a week. Your anonymous feedback is valuable in helping us understand interest and preferences. Please take a few minutes to complete this short survey."", 'survey_questions': [{'question_text': ""How interested are you in participating in a 15-20 minute guided 'Mid-day Mindfulness & Stretching Break' offered twice a week at Innovatech Solutions?"", 'question_type': 'Likert Scale (1-5)', 'options': ['1 - Not at all interested', '2 - Slightly interested', '3 - Moderately interested', '4 - Very interested', '5 - Extremely interested']}, {'question_text': 'Which days of the week would you most likely be able to attend such a session? (Select all that apply)', 'question_type': 'Multiple Choice - Multiple Answers', 'options': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']}, {'question_text': 'What time slot(s) during the mid-day (approx. 11 AM - 2 PM) would best suit you for these sessions? (Select all that apply)', 'question_type': 'Multiple Choice - Multiple Answers', 'options': ['11:30 AM - 11:50 AM', '12:30 PM - 12:50 PM', '1:30 PM - 1:50 PM', 'Other (please specify if different)']}, {'question_text': 'To what extent do you feel a mid-day break for mindfulness and stretching would help improve your personal well-being or productivity?', 'question_type': 'Likert Scale (1-5)', 'options': ['1 - Not at all helpful', '2 - Slightly helpful', '3 - Moderately helpful', '4 - Very helpful', '5 - Extremely helpful']}, {'question_text': 'What, if any, are your primary concerns or potential barriers to participating in such a program? (e.g., workload, meeting schedules, not interested, physical limitations)', 'question_type': 'Open-ended Text', 'options': []}, {'question_text': 'If such sessions were offered, would you prefer more emphasis on mindfulness, stretching, or an equal balance of both?', 'question_type': 'Multiple Choice - Single Answer', 'options': ['Primarily Mindfulness', 'Primarily Stretching', 'Equal Balance of Both', 'Unsure']}]}, 'task_2_satisfaction_data_analysis': {'satisfaction_rating_summary': {'1': 1, '2': 1, '3': 3, '4': 5, '5': 5}, 'top_enjoyed_aspects': ['Team competition', 'Tracking daily progress'], 'top_improvement_suggestions': ['More prize categories', 'Better mobile app'], 'recommendation_for_next_year': ""For next year's Step Challenge, Innovatech Solutions should consider increasing the number or variety of prize categories, as this was a prominent suggestion. Additionally, exploring improvements to the mobile app or offering a shorter challenge duration could enhance participant satisfaction and address other common feedback points.""}}","[[None, 'loop of ufunc does not support argument 0 of type NoneType which has no callable rint method']]",True,True,0.0,99.0,100.0,2.0,True,"The exam is practical, testing real job tasks like survey design and basic data analysis, which are realistic for a Fitness and Wellness Coordinator in 2025. The instructions, materials, and submission requirements are generally unambiguous and well-detailed, especially the JSON submission format. 
+
+The grading script and answer key appear to correctly reflect the exam's intent. The answer key, when manually checked against the grading script's logic, should score 100%. The scoring weights and passing threshold (70/100) seem reasonable for a basic practical exam, and it's unlikely a candidate could pass by failing a major component entirely (e.g., getting zero on Task 1 or Task 2).
+
+Potential Weaknesses/Ambiguities:
+1.  **`candidate_id` Field**: The instruction for `candidate_id` in the `Submission Format` section asks for ""The model version that is powering your responses (e.g., 'GPT-4o', ...)"". This is confusing for a human candidate, for whom this exam seems intended. It should likely be a standard candidate identifier (e.g., employee ID, exam ID) or removed if not applicable to human test-takers.
+2.  **Order of Top Items in Task 2 Lists**: There's a slight internal inconsistency. The `MATERIALS_EXPLANATION_FOR_EVALUATOR` states for `top_enjoyed_aspects` and `top_improvement_suggestions` that ""The first item must be [the most frequent]"". However, the `Evaluation Info & Answer Key Explanation` (which likely dictates grading policy) says, ""The order of the two items in the list does not strictly matter"". The grading script correctly aligns with the latter (order doesn't matter) by using set comparisons. This internal documentation discrepancy should be resolved, but the current grading implementation is consistent with the stated grading policy.
+3.  **Task 2 Data Context**: A minor inconsistency exists where instructions mention ""30 responses were collected"" but then state ""raw data from these 15 of these responses is provided"". This doesn't affect the task itself as only 15 are provided and analyzed, but could be tidied up.
+
+Overall, the exam design is robust for its stated purpose.","{'overview': prompt_token_count: 252
+candidates_token_count: 2033
+total_token_count: 3820
+, 'instructions': prompt_token_count: 2491
+candidates_token_count: 1827
+total_token_count: 8416
+, 'materials': prompt_token_count: 4523
+candidates_token_count: 1866
+total_token_count: 13446
+, 'check_materials': prompt_token_count: 3797
+candidates_token_count: 1
+total_token_count: 4721
+, 'check_website': prompt_token_count: 3830
+candidates_token_count: 1
+total_token_count: 4211
+, 'submission': prompt_token_count: 6173
+candidates_token_count: 2286
+total_token_count: 9790
+, 'evaluation': prompt_token_count: 8380
+candidates_token_count: 3683
+total_token_count: 15705
+, 'grading': prompt_token_count: 12252
+candidates_token_count: 7395
+total_token_count: 27396
+, 'check_sense': prompt_token_count: 20365
+candidates_token_count: 509
+total_token_count: 28401
+}",
 Fitness and Wellness Coordinators,15558.0,"Maintain wellness- and fitness-related schedules, records, or reports.",gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'Text editor', 'PDF viewer']","['Text', 'Data']","Okay, here are the candidate instructions for the Basic Level Practical Exam.
 
 ---
@@ -3752,7 +5183,7 @@ total_token_count: 15817
 , 'check_sense': prompt_token_count: 13995
 candidates_token_count: 322
 total_token_count: 16620
-}"
+}",management_occupations
 Regulatory Affairs Managers,18027.0,Establish regulatory priorities or budgets and allocate resources and workloads.,gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'Text editor', 'PDF viewer']","['Text', 'Data']","Okay, here are the candidate instructions for the Basic Level practical exam.
 
 ---
@@ -5081,7 +6512,7 @@ total_token_count: 20596
 , 'check_sense': prompt_token_count: 18349
 candidates_token_count: 261
 total_token_count: 22178
-}"
+}",management_occupations
 Administrative Services Managers,21.0,Prepare and review operational reports and schedules to ensure accuracy and efficiency.,gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'Text editor', 'PDF viewer']","['Text', 'Data']","Okay, here are the candidate instructions for the Basic Level Practical Exam.
 
 ---
@@ -6510,8 +7941,8 @@ total_token_count: 17154
 , 'check_sense': prompt_token_count: 15281
 candidates_token_count: 318
 total_token_count: 18325
-}"
-"Transportation, Storage, and Distribution Managers",21352.0,Prepare and manage departmental budgets.,gemini-2.5-pro-preview-03-25,,,,,,,,,,,,,"['Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT']",,,,,,,,,
+}",management_occupations
+"Transportation, Storage, and Distribution Managers",21352.0,Prepare and manage departmental budgets.,gemini-2.5-pro-preview-03-25,,,,,,,,,,,,,"['Recursion limit of 25 reached without hitting a stop condition. You can increase the limit by setting the `recursion_limit` config key.\nFor troubleshooting, visit: https://python.langchain.com/docs/troubleshooting/errors/GRAPH_RECURSION_LIMIT']",,,,,,,,,,management_occupations
 Geothermal Production Managers,15445.0,Develop or manage budgets for geothermal operations.,gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'Text editor', 'PDF viewer']","['Text', 'Data']",Exam not valid,"You are an excellent examiner of Geothermal Production Managers capabilities. Design a remote, **practical** exam to verify whether a Geothermal Production Managers can Develop or manage budgets for geothermal operations..
     This exam will have two parts (basic and advanced). Your current task is **only** to design the basic exam.
 
@@ -6521,243 +7952,619 @@ Geothermal Production Managers,15445.0,Develop or manage budgets for geothermal 
     - Design a **practical** exam that can be completed remotely using only these tools. A practical exam is an exam actually testing whether the described task can be performed successfully. An exam testing knowledge about the task is NOT a practical exam.
     - To simplify evaluation, the candidate should submit answers in a structured JSON format. Name the file ""test_submission.json"".
     - The candidate should be able to complete the exam in maximum 90 minutes.
-    ","Okay, here is the design for the **Basic Exam** component, focusing on practical budget development skills for a Geothermal Production Manager.
+    ","Okay, here's the design for the **Basic Exam** on developing or managing budgets for geothermal operations, along with the explanation for the evaluator.
 
-**Examiner Explanation:**
+## Exam Explanation for the Evaluator
 
-*   **Exam Purpose:** This basic practical exam assesses the candidate's ability to construct a simple operational budget for a geothermal power plant for a specific period (e.g., one quarter) based on provided operational data and cost parameters. It tests fundamental skills in calculating projected revenue, categorizing and calculating operational expenditures (OpEx), and structuring this information into a standard budget format using a spreadsheet, ultimately submitting the results in a specified JSON format.
-*   **Exam Structure:**
-    1.  **Scenario:** The candidate is given a brief description of a fictional geothermal power plant and the requirement to prepare its operational budget for the upcoming quarter.
-    2.  **Input Data:** A set of operational parameters and cost data is provided (e.g., planned generation, electricity tariff, staffing levels, hourly rates, scheduled maintenance costs, consumable costs, fixed overheads). This data will be provided in a simple text format or embedded within the exam instructions PDF.
-    3.  **Tasks:** The candidate must use a spreadsheet application to:
-        *   Calculate projected monthly revenue.
-        *   Calculate projected monthly OpEx, broken down into predefined categories (e.g., Operations Labor, Maintenance Labor & Parts, Consumables, Fixed Overheads).
-        *   Summarize the monthly figures and calculate quarterly totals for revenue, total OpEx, and net operating income.
-    4.  **Submission:** The candidate must structure their final budget summary (monthly breakdown and quarterly totals) into a predefined JSON format and submit this single `test_submission.json` file.
-*   **Assessment Focus:** The evaluation focuses on the candidate's ability to correctly interpret the provided data, perform accurate calculations for revenue and costs, correctly allocate costs to predefined categories, and accurately format the output as per the JSON specification. It directly tests the practical application of basic budgeting principles in a relevant context.
-*   **Tools Required by Candidate:** Spreadsheet software, Text Editor/PDF Viewer.
-*   **Time Limit:** 90 minutes.
+**Exam Title:** Geothermal Production Manager - Basic Budgeting Skills Assessment
 
-**(End of Examiner Explanation)**
+**Purpose:**
+This practical exam is designed to assess a candidate's fundamental ability to perform core budgeting tasks relevant to geothermal production operations. It focuses on practical application rather than theoretical knowledge. The exam evaluates the candidate's skills in:
+1.  Identifying and categorizing operational (OpEx) and capital expenditures (CapEx).
+2.  Calculating basic budget totals.
+3.  Analyzing simple budget vs. actuals data to identify and explain variances.
+4.  Proposing adjustments to a budget based on new information and justifying those changes.
 
----
+**Structure:**
+The exam consists of three distinct tasks, simulating common scenarios a Geothermal Production Manager might encounter at a basic level.
 
-**(Optional - Example Snippets for Clarity - Not part of the final output, but showing the *kind* of content):**
+*   **Task 1: Monthly Operational Budget Preparation:** Candidates will be given a list of anticipated expenses for a small geothermal plant for one month. They must categorize these into OpEx and CapEx, calculate totals, and provide brief justifications.
+*   **Task 2: Variance Analysis:** Candidates will receive a simplified budget report showing budgeted vs. actual spending for a few key categories. They must calculate variances (both absolute and percentage) and provide plausible explanations for significant deviations.
+*   **Task 3: Budget Adjustment Request:** Candidates will be presented with a scenario requiring an unforeseen expenditure. They must identify the affected budget line, propose an adjustment, and briefly explain the impact and justification.
 
-*   ***Example Input Data Snippet (within instructions or separate text file):***
-    ```text
-    Scenario: GeoPlant Beta - Q4 2024 Budget Preparation
+**Candidate Deliverables:**
+The candidate will submit a single JSON file named `test_submission.json` containing structured answers for all three tasks.
 
-    Data:
-    - Plant: GeoPlant Beta
-    - Period: Q4 2024 (October, November, December)
-    - Planned Net Generation (MWh/month): [Oct: 4500, Nov: 4300, Dec: 4600]
-    - Electricity Sale Tariff: €90 / MWh
-    - Operations Staff: 4 personnel
-    - Avg. Ops Staff Hours per month per person: 160 hours
-    - Ops Staff Hourly Rate: €50 / hour
-    - Scheduled Maintenance:
-      - Oct: Well Pump Inspection (Parts: €3000, Labor: 50 hours)
-      - Nov: Turbine Minor Service (Parts: €8000, Labor: 100 hours)
-      - Dec: None
-    - Maintenance Labor Hourly Rate: €65 / hour
-    - Consumables Cost: €3.00 / MWh generated
-    - Monthly Fixed Overheads (Insurance, Lease, Admin): €30,000 / month
-    ```
-*   ***Example JSON Output Structure Snippet (to be defined in instructions):***
-    ```json
-    {
-      ""exam_part"": ""basic"",
-      ""candidate_id"": ""CANDIDATE_FILL_IN"",
-      ""budget_summary"": {
-        ""plant_name"": ""GeoPlant Beta"",
-        ""budget_period"": ""Q4 2024"",
-        ""monthly_breakdown"": [
-          {
-            ""month"": ""October"",
-            ""revenue_eur"": CALCULATED_VALUE,
-            ""opex"": {
-              ""labor_operations_eur"": CALCULATED_VALUE,
-              ""labor_maintenance_eur"": CALCULATED_VALUE,
-              ""maintenance_parts_eur"": CALCULATED_VALUE,
-              ""consumables_eur"": CALCULATED_VALUE,
-              ""fixed_overheads_eur"": CALCULATED_VALUE
-            },
-            ""total_opex_eur"": CALCULATED_VALUE,
-            ""net_operating_income_eur"": CALCULATED_VALUE
-          },
-          // ... November entry ...
-          // ... December entry ...
-        ],
-        ""quarterly_totals"": {
-          ""total_revenue_eur"": CALCULATED_VALUE,
-          ""total_opex_eur"": CALCULATED_VALUE,
-          ""total_net_operating_income_eur"": CALCULATED_VALUE
-        }
-      },
-      ""assumptions_notes"": ""Candidate can add brief notes here if needed.""
-    }
-    ```
+**Tools Allowed:**
+Spreadsheet software (e.g., Excel, Google Sheets, LibreOffice Calc), a text editor, and a PDF viewer.
 
----
-This design provides a clear, practical task focused on core budgeting skills, manageable within the time limit and constraints, and delivers a structured output for straightforward evaluation.","Okay, here are the candidate instructions for the Basic Practical Exam on Budget Development.
+**Time Limit:** 90 minutes.
+
+**Evaluation Focus:**
+*   **Accuracy:** Correctness of calculations (totals, variances).
+*   **Categorization:** Appropriate classification of costs as OpEx or CapEx.
+*   **Analytical Skills:** Logical and plausible explanations for variances and budget adjustments.
+*   **Clarity:** Clear and concise justifications.
+*   **Adherence to Format:** Correctly structured JSON output.
+
+This basic exam does *not* assess complex financial modeling, long-term forecasting, ROI calculations, or detailed knowledge of specific accounting standards, which would be reserved for an advanced assessment. It focuses on the foundational skills needed to understand, contribute to, and manage operational budgets.
 
 ---
 
-**Geothermal Production Manager Practical Exam: Basic Budget Development**
+## Geothermal Production Manager - Basic Budgeting Skills Assessment
 
-**Exam Duration:** 90 minutes
+**Instructions for the Candidate:**
 
-**Objective:** This practical exam assesses your ability to develop a basic quarterly operational budget for a geothermal power plant using provided data. You will calculate projected revenues and operational expenditures (OpEx), structure them into a monthly breakdown, calculate quarterly totals, and format the final summary into a specified JSON structure.
+Welcome to the Basic Budgeting Skills Assessment for Geothermal Production Managers.
 
-**Available Tools:**
+**Objective:** This exam will test your practical ability to perform fundamental budgeting tasks related to geothermal operations.
 
-*   Spreadsheet software (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc)
-*   Text editor (e.g., Notepad, VS Code, TextEdit)
-*   PDF viewer
+**Duration:** 90 minutes.
+
+**Tools:** You may use spreadsheet software (e.g., Excel, Google Sheets, LibreOffice Calc), a text editor, and a PDF viewer. Internet access should only be used if necessary to look up basic definitions (e.g., OpEx/CapEx) but not for finding solutions to the tasks.
+
+**Submission:**
+You must submit your answers in a single JSON file named `test_submission.json`. A template for the JSON structure is provided at the end of these instructions. Ensure your submission strictly adheres to this format.
+
+**Scenario Context:**
+You are the Assistant Production Manager for ""TerraFlow Unit 1,"" a small, established geothermal power plant. You are assisting the Production Manager with various budgeting tasks.
+
+---
 
 **Provided Materials:**
 
-You are provided with the following information embedded within these instructions:
+You will be given one digital file:
 
-1.  **Scenario Description:** Details of the fictional geothermal power plant and the budget period.
-2.  **Operational & Cost Data:** Specific figures required to calculate revenue and OpEx.
-3.  **Required JSON Output Structure:** A template defining the exact format for your submission file.
+1.  `plant_data.pdf`: This document contains:
+    *   **Section A:** A list of anticipated operational activities and associated costs for TerraFlow Unit 1 for the upcoming month.
+    *   **Section B:** A summary table of Budgeted vs. Actual expenditures for selected maintenance categories from the previous quarter.
+    *   **Section C:** A brief note regarding an unexpected equipment issue.
 
-**Task Requirements:**
-
-1.  **Analyze Data:** Carefully review the provided Scenario Description and Operational & Cost Data.
-2.  **Perform Calculations:** Using a spreadsheet application, calculate the following for each month (October, November, December) of the budget period:
-    *   Projected Revenue
-    *   Projected Operational Expenditures (OpEx) broken down into the *exact* categories specified below:
-        *   `labor_operations_eur`
-        *   `labor_maintenance_eur`
-        *   `maintenance_parts_eur`
-        *   `consumables_eur`
-        *   `fixed_overheads_eur`
-    *   Total Monthly OpEx (sum of the five categories above)
-    *   Monthly Net Operating Income (Calculated as: Monthly Revenue - Total Monthly OpEx)
-3.  **Calculate Quarterly Totals:** Calculate the sum of the three months for:
-    *   Total Revenue
-    *   Total OpEx
-    *   Total Net Operating Income
-4.  **Format Output:** Structure your final calculated budget summary (monthly breakdown and quarterly totals) into the precise JSON format specified below. Use a text editor to create this JSON file.
-    *   Ensure all currency values (`_eur`) are numbers, rounded to **two decimal places**. Do not include currency symbols (€) within the JSON values.
-    *   Use the exact keys (names) provided in the JSON structure template.
-    *   Replace `""CANDIDATE_FILL_IN""` with your unique Candidate ID.
-    *   Replace `CALCULATED_VALUE` placeholders with your calculated numerical results.
-    *   Leave the `assumptions_notes` field as an empty string (`""""`) unless you encounter a significant ambiguity in the provided data that requires clarification (keep any notes extremely brief and factual).
-5.  **Submit:** Save your completed JSON structure in a single file named `test_submission.json`. This file is your sole deliverable for this exam part.
+*(For the purpose of this design, the content of `plant_data.pdf` will be described below. In a real exam, this would be a separate file.)*
 
 ---
 
-**Exam Content**
+**Content of `plant_data.pdf` (Simulated):**
 
-**1. Scenario Description:**
+**Section A: Anticipated Monthly Costs for TerraFlow Unit 1**
 
-You are tasked with preparing the Q4 2024 operational budget for the ""GeoPlant Beta"" geothermal power plant. The budget should cover the months of October, November, and December 2024.
+| Item Description                      | Estimated Cost (USD) | Notes                                     |
+| :------------------------------------ | :------------------- | :---------------------------------------- |
+| Routine Wellhead Maintenance          | 7,500                | Scheduled inspection and minor repairs    |
+| Operator Salaries & Benefits          | 35,000               | Monthly payroll for operations staff      |
+| Scale Inhibitor Chemical Purchase     | 12,000               | Standard monthly supply                   |
+| Electricity for Plant Auxiliaries     | 18,000               | Powering pumps, cooling tower fans, etc.  |
+| Replacement of Damaged Flow Meter     | 6,000                | New meter, expected lifespan 7 years      |
+| Office Supplies & Admin Support       | 1,500                | General administrative costs              |
+| Safety Training for New Hires         | 2,500                | One-time training session                 |
+| Minor Repairs to Surface Pipelines    | 4,000                | Welding, gasket replacements              |
+| Purchase of New Laptop for Supervisor | 1,200                | Asset with >1 year lifespan             |
 
-**2. Operational & Cost Data:**
+**Section B: Previous Quarter Maintenance Budget vs. Actuals**
 
-*   **Plant Name:** GeoPlant Beta
-*   **Budget Period:** Q4 2024 (October, November, December)
-*   **Planned Net Generation (MWh/month):**
-    *   October: 4500 MWh
-    *   November: 4300 MWh
-    *   December: 4600 MWh
-*   **Electricity Sale Tariff:** €90.00 / MWh
-*   **Operations Staff:**
-    *   Number of Personnel: 4
-    *   Average Hours per Month per Person: 160 hours
-    *   Hourly Rate: €50.00 / hour
-*   **Scheduled Maintenance:**
-    *   October: Well Pump Inspection (Parts Cost: €3000.00, Labor Hours: 50 hours)
-    *   November: Turbine Minor Service (Parts Cost: €8000.00, Labor Hours: 100 hours)
-    *   December: No scheduled major maintenance parts or labor costs beyond routine operations.
-*   **Maintenance Labor Hourly Rate:** €65.00 / hour (Applies *only* to the specific scheduled maintenance labor hours listed above)
-*   **Consumables Cost:** €3.00 / MWh (Based on monthly planned net generation)
-*   **Monthly Fixed Overheads:** €30,000.00 / month (Covers insurance, lease, administration, etc.)
+| Maintenance Category        | Budgeted (USD) | Actual (USD) |
+| :-------------------------- | :------------- | :----------- |
+| Well Maintenance            | 20,000         | 23,500       |
+| Turbine & Generator Maint.  | 15,000         | 14,000       |
+| Surface Equipment Maint.    | 10,000         | 12,500       |
+| Predictive Maintenance Tools| 5,000          | 4,500        |
 
-**3. Required JSON Output Structure:**
+**Section C: Urgent Equipment Issue Note**
 
-Create a file named `test_submission.json` with the following exact structure and content, replacing placeholders with your calculated values and Candidate ID.
+""Memo: Production Manager
+Subject: Urgent Pump Repair
+
+The primary brine injection pump (Pump P-101A) has experienced a critical bearing failure. Immediate repair is necessary to avoid plant shutdown. The initial estimate for parts and specialized labor is $28,000. This was an unforeseen failure. The current annual budget allocation for 'Unforeseen Major Equipment Repairs' is $75,000, of which $30,000 has already been spent or committed this year prior to this incident.""
+
+---
+
+**Exam Tasks:**
+
+**Task 1: Monthly Operational Budget Preparation (30 minutes)**
+
+Based on the information in **Section A** of `plant_data.pdf`:
+1.  Identify each item as either Operational Expenditure (OpEx) or Capital Expenditure (CapEx).
+2.  Provide a brief justification for your OpEx/CapEx classification for each item.
+3.  Calculate the total OpEx for the month.
+4.  Calculate the total CapEx for the month.
+5.  Calculate the total budget request for the month.
+
+**Task 2: Variance Analysis (30 minutes)**
+
+Based on the information in **Section B** of `plant_data.pdf`:
+1.  For each maintenance category, calculate the variance (Actual - Budgeted).
+2.  For each maintenance category, calculate the variance percentage (((Actual - Budgeted) / Budgeted) * 100), rounded to two decimal places.
+3.  For any variance exceeding +/- 10%, provide a brief, plausible explanation for the deviation. If the variance is within +/-10%, state ""Within acceptable range.""
+4.  Provide a brief overall comment on the maintenance budget performance for the previous quarter.
+
+**Task 3: Budget Adjustment Proposal (30 minutes)**
+
+Based on the information in **Section C** of `plant_data.pdf`:
+1.  Identify the affected budget category (""Unforeseen Major Equipment Repairs"").
+2.  State the original annual budget for this category.
+3.  State the amount already spent/committed from this category *before* this new incident.
+4.  Calculate the remaining budget in this category *before* accounting for the new pump repair.
+5.  Determine if the remaining budget is sufficient for the estimated pump repair cost.
+6.  Propose the necessary budget adjustment (i.e., how much additional funding, if any, is needed for this repair beyond the current category's remaining balance).
+7.  Provide a brief justification for this adjustment request, highlighting the necessity of the repair.
+
+---
+
+**JSON Submission Structure (`test_submission.json`):**
 
 ```json
 {
-  ""exam_part"": ""basic"",
-  ""candidate_id"": ""CANDIDATE_FILL_IN"",
-  ""budget_summary"": {
-    ""plant_name"": ""GeoPlant Beta"",
-    ""budget_period"": ""Q4 2024"",
-    ""monthly_breakdown"": [
-      {
-        ""month"": ""October"",
-        ""revenue_eur"": CALCULATED_VALUE,
-        ""opex"": {
-          ""labor_operations_eur"": CALCULATED_VALUE,
-          ""labor_maintenance_eur"": CALCULATED_VALUE,
-          ""maintenance_parts_eur"": CALCULATED_VALUE,
-          ""consumables_eur"": CALCULATED_VALUE,
-          ""fixed_overheads_eur"": 30000.00
-        },
-        ""total_opex_eur"": CALCULATED_VALUE,
-        ""net_operating_income_eur"": CALCULATED_VALUE
-      },
-      {
-        ""month"": ""November"",
-        ""revenue_eur"": CALCULATED_VALUE,
-        ""opex"": {
-          ""labor_operations_eur"": CALCULATED_VALUE,
-          ""labor_maintenance_eur"": CALCULATED_VALUE,
-          ""maintenance_parts_eur"": CALCULATED_VALUE,
-          ""consumables_eur"": CALCULATED_VALUE,
-          ""fixed_overheads_eur"": 30000.00
-        },
-        ""total_opex_eur"": CALCULATED_VALUE,
-        ""net_operating_income_eur"": CALCULATED_VALUE
-      },
-      {
-        ""month"": ""December"",
-        ""revenue_eur"": CALCULATED_VALUE,
-        ""opex"": {
-          ""labor_operations_eur"": CALCULATED_VALUE,
-          ""labor_maintenance_eur"": CALCULATED_VALUE,
-          ""maintenance_parts_eur"": CALCULATED_VALUE,
-          ""consumables_eur"": CALCULATED_VALUE,
-          ""fixed_overheads_eur"": 30000.00
-        },
-        ""total_opex_eur"": CALCULATED_VALUE,
-        ""net_operating_income_eur"": CALCULATED_VALUE
-      }
-    ],
-    ""quarterly_totals"": {
-      ""total_revenue_eur"": CALCULATED_VALUE,
-      ""total_opex_eur"": CALCULATED_VALUE,
-      ""total_net_operating_income_eur"": CALCULATED_VALUE
+  ""candidate_id"": ""YOUR_CANDIDATE_ID_HERE"", // Replace with your assigned ID
+  ""exam_version"": ""Basic_Budget_V1"",
+  ""submission_timestamp"": ""YYYY-MM-DDTHH:MM:SSZ"", // ISO 8601 format
+  ""tasks"": {
+    ""task_1_monthly_budget"": {
+      ""cost_items"": [
+        {
+          ""item_description"": ""Routine Wellhead Maintenance"",
+          ""estimated_cost_usd"": 7500,
+          ""category"": ""OpEx_or_CapEx"", // ""OpEx"" or ""CapEx""
+          ""justification"": ""Brief reason for categorization""
+        }
+        // ... Add all items from Section A here
+      ],
+      ""total_opex_usd"": 0, // Calculated total
+      ""total_capex_usd"": 0, // Calculated total
+      ""total_monthly_budget_request_usd"": 0 // Calculated total
+    },
+    ""task_2_variance_analysis"": {
+      ""variances"": [
+        {
+          ""maintenance_category"": ""Well Maintenance"",
+          ""budgeted_usd"": 20000,
+          ""actual_usd"": 23500,
+          ""variance_usd"": 0, // Calculated (Actual - Budgeted)
+          ""variance_percentage"": 0.00, // Calculated, e.g., 17.50 for 17.50%
+          ""explanation"": ""Plausible explanation or 'Within acceptable range.'""
+        }
+        // ... Add all items from Section B here
+      ],
+      ""overall_performance_comment"": ""Brief overall comment.""
+    },
+    ""task_3_budget_adjustment"": {
+      ""affected_budget_category"": ""Unforeseen Major Equipment Repairs"",
+      ""original_annual_budget_usd"": 75000,
+      ""spent_committed_prior_usd"": 30000,
+      ""remaining_budget_before_incident_usd"": 0, // Calculated
+      ""estimated_repair_cost_usd"": 28000,
+      ""is_remaining_budget_sufficient"": false, // true or false
+      ""additional_funding_needed_usd"": 0, // Calculated, 0 if sufficient
+      ""justification_for_adjustment"": ""Brief justification for the request.""
     }
-  },
-  ""assumptions_notes"": """"
+  }
 }
 ```
 
-**Important Notes:**
-
-*   Focus on accuracy in your calculations.
-*   Adhere strictly to the specified JSON format, including key names and data types (numbers for currency values).
-*   Ensure all currency values are rounded to two decimal places.
-*   Manage your time effectively to complete all tasks within the 90-minute limit.
+**End of Exam Instructions.**","Okay, here are the clear, concise instructions for the candidate for the Basic Exam.
 
 ---
-**End of Exam Instructions**",No material required,Not extracted,,,,,[],True,True,3.0,99.0,0.0,0.0,True,,"{'overview': prompt_token_count: 237
-candidates_token_count: 1133
-total_token_count: 3361
-, 'instructions': prompt_token_count: 1576
-candidates_token_count: 1744
-total_token_count: 4846
-, 'materials': prompt_token_count: 3525
-candidates_token_count: 3
-total_token_count: 3900
-}"
+
+## Geothermal Production Manager - Basic Budgeting Skills Assessment
+
+**Instructions for the Candidate:**
+
+Welcome to the Basic Budgeting Skills Assessment for Geothermal Production Managers.
+
+**Objective:** This exam will test your practical ability to perform fundamental budgeting tasks related to geothermal operations. You will work with provided data to categorize costs, analyze budget variances, and assess the impact of unforeseen expenditures.
+
+**Duration:** 90 minutes.
+
+**Tools:** You may use spreadsheet software (e.g., Excel, Google Sheets, LibreOffice Calc), a text editor, and a PDF viewer. Internet access should only be used if necessary to look up basic definitions (e.g., OpEx/CapEx) but not for finding solutions to the tasks.
+
+**Scenario Context:**
+You are the Assistant Production Manager for ""TerraFlow Unit 1,"" a small, established geothermal power plant. You are assisting the Production Manager with various budgeting tasks.
+
+**Provided Materials:**
+
+You will be given one digital file:
+
+1.  `plant_data.pdf`: This document contains three sections:
+    *   **Section A:** A list of anticipated operational activities and associated costs for TerraFlow Unit 1 for the upcoming month.
+    *   **Section B:** A summary table of Budgeted vs. Actual expenditures for selected maintenance categories from the previous quarter.
+    *   **Section C:** A brief note regarding an unexpected equipment issue.
+
+*(The content of `plant_data.pdf` is detailed below for your reference during this exam design. In the actual exam, it would be a separate file.)*
+
+---
+
+**Simulated Content of `plant_data.pdf`:**
+
+**Section A: Anticipated Monthly Costs for TerraFlow Unit 1**
+
+| Item Description                      | Estimated Cost (USD) | Notes                                     |
+| :------------------------------------ | :------------------- | :---------------------------------------- |
+| Routine Wellhead Maintenance          | 7,500                | Scheduled inspection and minor repairs    |
+| Operator Salaries & Benefits          | 35,000               | Monthly payroll for operations staff      |
+| Scale Inhibitor Chemical Purchase     | 12,000               | Standard monthly supply                   |
+| Electricity for Plant Auxiliaries     | 18,000               | Powering pumps, cooling tower fans, etc.  |
+| Replacement of Damaged Flow Meter     | 6,000                | New meter, expected lifespan 7 years      |
+| Office Supplies & Admin Support       | 1,500                | General administrative costs              |
+| Safety Training for New Hires         | 2,500                | One-time training session                 |
+| Minor Repairs to Surface Pipelines    | 4,000                | Welding, gasket replacements              |
+| Purchase of New Laptop for Supervisor | 1,200                | Asset with >1 year lifespan             |
+
+**Section B: Previous Quarter Maintenance Budget vs. Actuals**
+
+| Maintenance Category        | Budgeted (USD) | Actual (USD) |
+| :-------------------------- | :------------- | :----------- |
+| Well Maintenance            | 20,000         | 23,500       |
+| Turbine & Generator Maint.  | 15,000         | 14,000       |
+| Surface Equipment Maint.    | 10,000         | 12,500       |
+| Predictive Maintenance Tools| 5,000          | 4,500        |
+
+**Section C: Urgent Equipment Issue Note**
+
+""Memo: Production Manager
+Subject: Urgent Pump Repair
+
+The primary brine injection pump (Pump P-101A) has experienced a critical bearing failure. Immediate repair is necessary to avoid plant shutdown. The initial estimate for parts and specialized labor is $28,000. This was an unforeseen failure. The current annual budget allocation for 'Unforeseen Major Equipment Repairs' is $75,000, of which $30,000 has already been spent or committed this year prior to this incident.""
+
+---
+
+**Exam Tasks:**
+
+**Task 1: Monthly Budget Preparation (Estimated time: 25 minutes)**
+
+Using the data from **Section A** of `plant_data.pdf` (""Anticipated Monthly Costs for TerraFlow Unit 1""):
+1.  For each item listed, determine if it is an Operational Expenditure (OpEx) or a Capital Expenditure (CapEx).
+2.  Calculate the total OpEx for the month.
+3.  Calculate the total CapEx for the month.
+4.  Calculate the total combined budget request for the month (Total OpEx + Total CapEx).
+
+    *Your answers for this task will be entered into the `task_1_monthly_budget` section of the JSON submission file.*
+
+**Task 2: Variance Analysis (Estimated time: 25 minutes)**
+
+Using the data from **Section B** of `plant_data.pdf` (""Previous Quarter Maintenance Budget vs. Actuals""):
+1.  For each maintenance category:
+    a.  Calculate the variance in USD (Actual USD - Budgeted USD).
+    b.  Calculate the variance percentage (((Actual USD - Budgeted USD) / Budgeted USD) * 100). Round this percentage to two decimal places.
+    c.  Determine the variance status. Use one of the following exact phrases:
+        *   ""Overspend"" if the variance percentage is greater than +10%.
+        *   ""Underspend"" if the variance percentage is less than -10%.
+        *   ""Within Tolerance"" if the variance percentage is between -10% and +10% (inclusive).
+
+    *Your answers for this task will be entered into the `task_2_variance_analysis` section of the JSON submission file.*
+
+**Task 3: Budget Adjustment Assessment (Estimated time: 20 minutes)**
+
+Using the data from **Section C** of `plant_data.pdf` (""Urgent Equipment Issue Note"") and the information provided within that note:
+1.  Identify the original annual budget allocated for ""Unforeseen Major Equipment Repairs"".
+2.  Identify the amount already spent or committed from this category *before* the new pump repair incident.
+3.  Calculate the remaining budget in this category *before* accounting for the new pump repair.
+4.  State the estimated cost for the new pump repair.
+5.  Determine if the remaining budget (calculated in step 3) is sufficient to cover the estimated pump repair cost. Answer `true` or `false`.
+6.  Calculate the additional funding (in USD) that would be needed for this repair if the remaining budget is insufficient. If the budget is sufficient, this value should be 0.
+7.  Based on the information in Section C, state the primary consequence if the pump repair is not performed. (Your answer should be a short phrase directly reflecting the information in the note).
+
+    *Your answers for this task will be entered into the `task_3_budget_adjustment` section of the JSON submission file.*
+
+---
+
+**Submission Format:**
+
+You must submit your answers in a single JSON file named `test_submission.json`.
+Use the structure provided below. Ensure all numerical values are numbers (e.g., `12000`, not `""12000""`) unless specified (e.g., variance percentage can be a number like `17.50`). Text values must be enclosed in double quotes.
+
+**JSON Submission Structure Template (`test_submission.json`):**
+
+```json
+{
+  ""candidate_id"": ""YOUR_CANDIDATE_ID_HERE"", // Replace with your assigned ID
+  ""exam_version"": ""Basic_Budget_V1"",
+  ""submission_timestamp"": ""YYYY-MM-DDTHH:MM:SSZ"", // Fill with submission time in ISO 8601 format
+  ""tasks"": {
+    ""task_1_monthly_budget"": {
+      ""cost_items"": [
+        {
+          ""item_description"": ""Routine Wellhead Maintenance"", // Match description from PDF
+          ""estimated_cost_usd"": 7500,
+          ""category"": ""OpEx_or_CapEx"" // Enter ""OpEx"" or ""CapEx""
+        },
+        {
+          ""item_description"": ""Operator Salaries & Benefits"",
+          ""estimated_cost_usd"": 35000,
+          ""category"": ""OpEx_or_CapEx""
+        },
+        {
+          ""item_description"": ""Scale Inhibitor Chemical Purchase"",
+          ""estimated_cost_usd"": 12000,
+          ""category"": ""OpEx_or_CapEx""
+        },
+        {
+          ""item_description"": ""Electricity for Plant Auxiliaries"",
+          ""estimated_cost_usd"": 18000,
+          ""category"": ""OpEx_or_CapEx""
+        },
+        {
+          ""item_description"": ""Replacement of Damaged Flow Meter"",
+          ""estimated_cost_usd"": 6000,
+          ""category"": ""OpEx_or_CapEx""
+        },
+        {
+          ""item_description"": ""Office Supplies & Admin Support"",
+          ""estimated_cost_usd"": 1500,
+          ""category"": ""OpEx_or_CapEx""
+        },
+        {
+          ""item_description"": ""Safety Training for New Hires"",
+          ""estimated_cost_usd"": 2500,
+          ""category"": ""OpEx_or_CapEx""
+        },
+        {
+          ""item_description"": ""Minor Repairs to Surface Pipelines"",
+          ""estimated_cost_usd"": 4000,
+          ""category"": ""OpEx_or_CapEx""
+        },
+        {
+          ""item_description"": ""Purchase of New Laptop for Supervisor"",
+          ""estimated_cost_usd"": 1200,
+          ""category"": ""OpEx_or_CapEx""
+        }
+      ],
+      ""total_opex_usd"": 0, // Your calculated total OpEx
+      ""total_capex_usd"": 0, // Your calculated total CapEx
+      ""total_monthly_budget_request_usd"": 0 // Your calculated total (OpEx + CapEx)
+    },
+    ""task_2_variance_analysis"": {
+      ""variances"": [
+        {
+          ""maintenance_category"": ""Well Maintenance"", // Match category from PDF
+          ""budgeted_usd"": 20000,
+          ""actual_usd"": 23500,
+          ""variance_usd"": 0, // Your calculated (Actual - Budgeted)
+          ""variance_percentage"": 0.00, // Your calculated percentage, e.g., 17.50 for 17.50%
+          ""variance_status"": ""Overspend_or_Underspend_or_Within_Tolerance"" // ""Overspend"", ""Underspend"", or ""Within Tolerance""
+        },
+        {
+          ""maintenance_category"": ""Turbine & Generator Maint."",
+          ""budgeted_usd"": 15000,
+          ""actual_usd"": 14000,
+          ""variance_usd"": 0,
+          ""variance_percentage"": 0.00,
+          ""variance_status"": ""Overspend_or_Underspend_or_Within_Tolerance""
+        },
+        {
+          ""maintenance_category"": ""Surface Equipment Maint."",
+          ""budgeted_usd"": 10000,
+          ""actual_usd"": 12500,
+          ""variance_usd"": 0,
+          ""variance_percentage"": 0.00,
+          ""variance_status"": ""Overspend_or_Underspend_or_Within_Tolerance""
+        },
+        {
+          ""maintenance_category"": ""Predictive Maintenance Tools"",
+          ""budgeted_usd"": 5000,
+          ""actual_usd"": 4500,
+          ""variance_usd"": 0,
+          ""variance_percentage"": 0.00,
+          ""variance_status"": ""Overspend_or_Underspend_or_Within_Tolerance""
+        }
+      ]
+    },
+    ""task_3_budget_adjustment"": {
+      ""affected_budget_category"": ""Unforeseen Major Equipment Repairs"", // Pre-filled
+      ""original_annual_budget_usd"": 75000, // Value from Section C
+      ""spent_committed_prior_usd"": 30000, // Value from Section C
+      ""remaining_budget_before_incident_usd"": 0, // Your calculation
+      ""estimated_repair_cost_usd"": 28000, // Value from Section C
+      ""is_remaining_budget_sufficient"": false, // Your determination: true or false
+      ""additional_funding_needed_usd"": 0, // Your calculation (0 if sufficient)
+      ""consequence_if_not_repaired"": ""Primary consequence phrase from Section C"" // e.g., ""Plant shutdown.""
+    }
+  }
+}
+```
+
+**End of Exam Instructions.**","<MATERIALS_FOR_CANDIDATE>
+The candidate will be provided with a single PDF file named `plant_data.pdf`. The content of this PDF is as follows:
+
+---
+**`plant_data.pdf`**
+
+**Document ID:** GPM_BasicBudget_Exam_Data_v1.0
+
+**TerraFlow Geothermal Operations - Budgeting Data**
+
+**Section A: Anticipated Monthly Costs for TerraFlow Unit 1 (Next Month)**
+
+This section lists anticipated costs for the upcoming operational month.
+
+| Item Description                      | Estimated Cost (USD) | Notes                                     |
+| :------------------------------------ | :------------------- | :---------------------------------------- |
+| Routine Wellhead Maintenance          | 7,500                | Scheduled inspection and minor repairs    |
+| Operator Salaries & Benefits          | 35,000               | Monthly payroll for operations staff      |
+| Scale Inhibitor Chemical Purchase     | 12,000               | Standard monthly supply                   |
+| Electricity for Plant Auxiliaries     | 18,000               | Powering pumps, cooling tower fans, etc.  |
+| Replacement of Damaged Flow Meter     | 6,000                | New meter, expected lifespan 7 years      |
+| Office Supplies & Admin Support       | 1,500                | General administrative costs              |
+| Safety Training for New Hires         | 2,500                | One-time training session                 |
+| Minor Repairs to Surface Pipelines    | 4,000                | Welding, gasket replacements              |
+| Purchase of New Laptop for Supervisor | 1,200                | Asset with >1 year lifespan             |
+
+**Section B: Previous Quarter Maintenance Budget vs. Actuals**
+
+This section provides a summary of budgeted versus actual expenditures for selected maintenance categories from the last completed quarter.
+
+| Maintenance Category        | Budgeted (USD) | Actual (USD) |
+| :-------------------------- | :------------- | :----------- |
+| Well Maintenance            | 20,000         | 23,500       |
+| Turbine & Generator Maint.  | 15,000         | 14,000       |
+| Surface Equipment Maint.    | 10,000         | 12,500       |
+| Predictive Maintenance Tools| 5,000          | 4,500        |
+
+**Section C: Urgent Equipment Issue Note**
+
+**MEMORANDUM**
+
+**To:** Production Manager
+**From:** Lead Operations Technician
+**Date:** [Current Date - 2 Days]
+**Subject:** Urgent Pump Repair - Brine Injection Pump P-101A
+
+The primary brine injection pump (Pump P-101A) has experienced a critical bearing failure. Immediate repair is necessary to avoid plant shutdown. The initial estimate for parts and specialized labor is $28,000. This was an unforeseen failure.
+
+*Reference: The current annual budget allocation for 'Unforeseen Major Equipment Repairs' is $75,000. Records show that $30,000 has already been spent or committed from this allocation this year, prior to this incident.*
+
+---
+</MATERIALS_FOR_CANDIDATE>
+
+<MATERIALS_EXPLANATION_FOR_EVALUATOR>
+**How Materials Were Created:**
+
+The data in `plant_data.pdf` is synthetic and designed to test basic budgeting skills relevant to geothermal operations. The values are chosen to be straightforward for calculation within the time limit and to produce clear outcomes for evaluation.
+
+*   **Section A (Anticipated Monthly Costs):**
+    *   Includes a mix of typical operational expenditures (OpEx) and capital expenditures (CapEx) for a geothermal plant.
+    *   Costs are whole numbers for easy summation.
+    *   ""Notes"" provide clues for OpEx/CapEx categorization (e.g., ""lifespan 7 years"" for CapEx, ""routine"" or ""monthly supply"" for OpEx).
+
+*   **Section B (Previous Quarter Maintenance Budget vs. Actuals):**
+    *   Provides simple budget vs. actual data for variance calculation.
+    *   Values are chosen to result in variances that are clearly ""Overspend,"" ""Underspend,"" or ""Within Tolerance"" based on the specified +/- 10% threshold.
+
+*   **Section C (Urgent Equipment Issue Note):**
+    *   Presents a common scenario of an unforeseen critical repair.
+    *   Provides all necessary figures (original budget, amount spent, repair cost) to assess budget sufficiency.
+    *   Clearly states the consequence of not performing the repair (""avoid plant shutdown"").
+
+**Cross-References and Connections:**
+*   Each section is self-contained for its respective task. There are no hidden cross-references *between* sections that are critical for solving a specific task, beyond using the correct section for the correct task.
+
+**Correct Answers/Expected Outcomes:**
+
+**Task 1: Monthly Budget Preparation**
+*   **Cost Item Categorization:**
+    1.  `Routine Wellhead Maintenance`: **OpEx** (Ongoing, repairs)
+    2.  `Operator Salaries & Benefits`: **OpEx** (Ongoing, operational staff costs)
+    3.  `Scale Inhibitor Chemical Purchase`: **OpEx** (Consumable, routine)
+    4.  `Electricity for Plant Auxiliaries`: **OpEx** (Utility, operational)
+    5.  `Replacement of Damaged Flow Meter`: **CapEx** (New asset, lifespan > 1 year)
+    6.  `Office Supplies & Admin Support`: **OpEx** (General admin, consumable)
+    7.  `Safety Training for New Hires`: **OpEx** (Service, not a tangible long-term asset for basic accounting)
+    8.  `Minor Repairs to Surface Pipelines`: **OpEx** (Repairs, not betterment)
+    9.  `Purchase of New Laptop for Supervisor`: **CapEx** (New asset, lifespan > 1 year)
+*   **Calculations:**
+    *   `total_opex_usd`: 7500 + 35000 + 12000 + 18000 + 1500 + 2500 + 4000 = **80,500**
+    *   `total_capex_usd`: 6000 + 1200 = **7,200**
+    *   `total_monthly_budget_request_usd`: 80500 + 7200 = **87,700**
+
+**Task 2: Variance Analysis**
+1.  **Well Maintenance:**
+    *   `variance_usd`: 23500 - 20000 = **3,500**
+    *   `variance_percentage`: (3500 / 20000) * 100 = **17.50**%
+    *   `variance_status`: **""Overspend""** (since 17.50% > 10%)
+2.  **Turbine & Generator Maint.:**
+    *   `variance_usd`: 14000 - 15000 = **-1,000**
+    *   `variance_percentage`: (-1000 / 15000) * 100 = **-6.67**% (rounded from -6.666...)
+    *   `variance_status`: **""Within Tolerance""** (since -10% <= -6.67% <= 10%)
+3.  **Surface Equipment Maint.:**
+    *   `variance_usd`: 12500 - 10000 = **2,500**
+    *   `variance_percentage`: (2500 / 10000) * 100 = **25.00**%
+    *   `variance_status`: **""Overspend""** (since 25.00% > 10%)
+4.  **Predictive Maintenance Tools:**
+    *   `variance_usd`: 4500 - 5000 = **-500**
+    *   `variance_percentage`: (-500 / 5000) * 100 = **-10.00**%
+    *   `variance_status`: **""Within Tolerance""** (since -10% is inclusive for ""Within Tolerance"")
+
+**Task 3: Budget Adjustment Assessment**
+1.  `original_annual_budget_usd`: **75,000** (from Section C)
+2.  `spent_committed_prior_usd`: **30,000** (from Section C)
+3.  `remaining_budget_before_incident_usd`: 75000 - 30000 = **45,000**
+4.  `estimated_repair_cost_usd`: **28,000** (from Section C)
+5.  `is_remaining_budget_sufficient`: **true** (since 45,000 >= 28,000)
+6.  `additional_funding_needed_usd`: **0** (since budget is sufficient)
+7.  `consequence_if_not_repaired`: **""Plant shutdown""** (or a very close paraphrase like ""Avoid plant shutdown"" implies not doing it leads to shutdown). The most direct answer is ""Plant shutdown.""
+
+**Tricky Elements or Common Pitfalls:**
+
+*   **Task 1 - OpEx/CapEx:**
+    *   ""Safety Training for New Hires"": Some might be tempted to call this CapEx (investment in human capital), but in standard operational budgeting, training is typically OpEx. The exam is ""basic,"" so the standard interpretation is expected.
+    *   ""Replacement of Damaged Flow Meter"" vs. ""Minor Repairs to Surface Pipelines"": The key is ""replacement"" of an asset with a defined lifespan (CapEx) versus ""minor repairs"" (OpEx).
+*   **Task 2 - Variance Percentage and Status:**
+    *   Ensuring correct sign for variance (positive for overspend, negative for underspend).
+    *   Correctly applying the +/- 10% threshold, especially the inclusive nature for ""Within Tolerance"" (e.g., exactly -10% is ""Within Tolerance"").
+    *   Rounding the percentage to two decimal places as instructed.
+*   **Task 3 - Budget Sufficiency:**
+    *   Carefully reading to extract the correct figures from the memo.
+    *   Correctly calculating the remaining budget *before* the new incident.
+    *   If the budget were insufficient, correctly calculating the shortfall. In this case, it is sufficient, so the shortfall is 0.
+
+**""Hidden"" Information:**
+*   There is no intentionally ""hidden"" information. All data required is explicitly provided. The main challenge is careful reading, correct interpretation of standard budgeting terms (OpEx/CapEx), and accurate calculation.
+*   The ""Notes"" column in Section A is crucial for Task 1 categorization.
+*   The specific wording ""avoid plant shutdown"" in Section C directly points to the consequence if the repair is not made.
+
+This design ensures that candidates are tested on practical application using provided data and structures, minimizing ambiguity and facilitating straightforward evaluation.
+</MATERIALS_EXPLANATION_FOR_EVALUATOR>","
+The candidate will be provided with a single PDF file named `plant_data.pdf`. The content of this PDF is as follows:
+
+---
+**`plant_data.pdf`**
+
+**Document ID:** GPM_BasicBudget_Exam_Data_v1.0
+
+**TerraFlow Geothermal Operations - Budgeting Data**
+
+**Section A: Anticipated Monthly Costs for TerraFlow Unit 1 (Next Month)**
+
+This section lists anticipated costs for the upcoming operational month.
+
+| Item Description                      | Estimated Cost (USD) | Notes                                     |
+| :------------------------------------ | :------------------- | :---------------------------------------- |
+| Routine Wellhead Maintenance          | 7,500                | Scheduled inspection and minor repairs    |
+| Operator Salaries & Benefits          | 35,000               | Monthly payroll for operations staff      |
+| Scale Inhibitor Chemical Purchase     | 12,000               | Standard monthly supply                   |
+| Electricity for Plant Auxiliaries     | 18,000               | Powering pumps, cooling tower fans, etc.  |
+| Replacement of Damaged Flow Meter     | 6,000                | New meter, expected lifespan 7 years      |
+| Office Supplies & Admin Support       | 1,500                | General administrative costs              |
+| Safety Training for New Hires         | 2,500                | One-time training session                 |
+| Minor Repairs to Surface Pipelines    | 4,000                | Welding, gasket replacements              |
+| Purchase of New Laptop for Supervisor | 1,200                | Asset with >1 year lifespan             |
+
+**Section B: Previous Quarter Maintenance Budget vs. Actuals**
+
+This section provides a summary of budgeted versus actual expenditures for selected maintenance categories from the last completed quarter.
+
+| Maintenance Category        | Budgeted (USD) | Actual (USD) |
+| :-------------------------- | :------------- | :----------- |
+| Well Maintenance            | 20,000         | 23,500       |
+| Turbine & Generator Maint.  | 15,000         | 14,000       |
+| Surface Equipment Maint.    | 10,000         | 12,500       |
+| Predictive Maintenance Tools| 5,000          | 4,500        |
+
+**Section C: Urgent Equipment Issue Note**
+
+**MEMORANDUM**
+
+**To:** Production Manager
+**From:** Lead Operations Technician
+**Date:** [Current Date - 2 Days]
+**Subject:** Urgent Pump Repair - Brine Injection Pump P-101A
+
+The primary brine injection pump (Pump P-101A) has experienced a critical bearing failure. Immediate repair is necessary to avoid plant shutdown. The initial estimate for parts and specialized labor is $28,000. This was an unforeseen failure.
+
+*Reference: The current annual budget allocation for 'Unforeseen Major Equipment Repairs' is $75,000. Records show that $30,000 has already been spent or committed from this allocation this year, prior to this incident.*
+
+---
+",,,,,[],False,True,0.0,99.0,0.0,0.0,True,,"{'overview': prompt_token_count: 237
+candidates_token_count: 2492
+total_token_count: 4648
+, 'instructions': prompt_token_count: 2935
+candidates_token_count: 2952
+total_token_count: 7631
+, 'materials': prompt_token_count: 6093
+candidates_token_count: 2547
+total_token_count: 10310
+, 'check_materials': prompt_token_count: 5603
+candidates_token_count: 1
+total_token_count: 8476
+}",
 Sales Managers,4.0,Determine price schedules and discount rates.,gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'PDF viewer']","['Text', 'Data']","Okay, here are the candidate instructions for the Basic Practical Exam on Determining Price Schedules and Discount Rates.
 
 ---
@@ -8016,4 +9823,4 @@ total_token_count: 16441
 , 'check_sense': prompt_token_count: 14524
 candidates_token_count: 353
 total_token_count: 17268
-}"
+}",management_occupations

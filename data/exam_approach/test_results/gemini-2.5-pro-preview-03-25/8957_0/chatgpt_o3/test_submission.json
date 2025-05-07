@@ -1,0 +1,34 @@
+{
+    "candidate_id": "GPT-4o",
+    "exam_version": "Basic_DataPrep_v1",
+    "submission_timestamp": "2024-07-27T15:30:00Z",
+    "results": {
+        "task_1_load_combine": {
+            "merged_rows": 20,
+            "merged_columns": 7
+        },
+        "task_2_identify_issues": {
+            "missing_age_count": 2,
+            "missing_score_count": 2,
+            "unique_gender_values": [
+                "",
+                "F",
+                "M",
+                "Male",
+                "Other",
+                "female"
+            ],
+            "high_age_rows_count": 2,
+            "duplicate_rows_count": 0
+        },
+        "task_3_clean_adjust": {
+            "final_rows_count": 20,
+            "median_age_cleaned": 43.3,
+            "mean_score_cleaned": 72.05,
+            "date_conversion_failures": 3
+        },
+        "task_4_apply_weights": {
+            "mean_weighted_score": 72.5
+        }
+    }
+}

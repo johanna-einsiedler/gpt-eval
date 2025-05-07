@@ -1,0 +1,11 @@
+,task_id,occupation,task_description,score_gemini_flash,score_gemini_25,score_claude_sonnet,score_chatgpt_o3,score_sonnet30,score_sonnet_35,score_chatgpt4o,score_deepseek,score_gemini_flash_15,score_claude_haiku,score_chatgpt35,score_empty_submission,score_claude_sonnet_35
+0,16255.0,Biostatisticians,"Develop or use mathematical models to track changes in biological phenomena, such as the spread of infectious diseases.",,,,,,,,,,,,,
+1,3501.0,Actuaries,"Analyze statistical information to estimate mortality, accident, sickness, disability, and retirement rates.",0.0,55.56,22.22,66.67,66.67,11.11,0.0,33.33,11.11,,,,
+2,8957.0,Statisticians,"Prepare data for processing by organizing information, checking for inaccuracies, and adjusting and weighting the raw data.",66.67,58.33,50.0,41.67,50.0,,,33.33,,,,,
+3,20951.0,Actuaries,Negotiate terms and conditions of reinsurance with other companies.,,,,,,,,,,,,,
+4,14645.0,Software Quality Assurance Analysts and Testers,Plan test schedules or strategies in accordance with project scope or delivery dates.,87.0,93.0,98.0,94.0,87.0,91.0,91.0,98.0,87.0,87.0,0.0,0.0,0.0
+5,16155.0,Information Technology Project Managers,"Assess current or future customer needs and priorities by communicating directly with customers, conducting surveys, or other methods.",100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,0.0,0.0,0.0
+6,3509.0,Actuaries,Determine policy contract provisions for each type of insurance.,,,,,,,,,,,,,
+7,7372.0,Mathematicians,"Assemble sets of assumptions, and explore the consequences of each set.",83.33,100.0,100.0,100.0,0.0,100.0,94.44,89.47,83.33,94.44,83.33,0.0,0.0
+8,16151.0,Information Technology Project Managers,Perform risk assessments to develop response strategies.,,,,,,,,,,,,,
+9,3476.0,Computer Systems Analysts,Define the goals of the system and devise flow charts and diagrams describing logical operational steps of programs.,,,,,,,,,,,,,

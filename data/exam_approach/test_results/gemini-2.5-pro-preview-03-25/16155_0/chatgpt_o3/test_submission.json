@@ -1,0 +1,173 @@
+{
+    "exam_candidate_id": "GPT-4o",
+    "assessment_area": "Customer Needs Assessment - Basic",
+    "task_1_feedback_analysis": {
+        "identified_themes": [
+            {
+                "theme_name": "Time-consuming and confusing time-entry workflow",
+                "supporting_feedback_snippets": [
+                    "[FDBK_01]: \"Logging my time at the end of the day takes way too long. I have to click through so many screens just to add time for one project task. It's easily 10-15 minutes wasted.\"",
+                    "[FDBK_02]: \"The overall look is very dated. It feels clunky, and sometimes I'm not sure which button I'm supposed to press to submit my timesheet.\"",
+                    "[FDBK_07]: \"Making corrections is a nightmare. If I accidentally submit my timesheet before it's complete, getting it back, editing it, and resubmitting involves way too many steps and approvals.\""
+                ],
+                "inferred_need_or_pain_point": "Employees need a simpler, more intuitive workflow with fewer steps for entering, submitting, and editing time."
+            },
+            {
+                "theme_name": "Lack of mobile access",
+                "supporting_feedback_snippets": [
+                    "[FDBK_03]: \"I travel a lot for client meetings. It's impossible to log time easily when I'm not at my desk. I wish I could just quickly add entries from my phone right after a meeting.\""
+                ],
+                "inferred_need_or_pain_point": "Employees need a mobile-friendly way (responsive site or app) to log time while away from their desks."
+            },
+            {
+                "theme_name": "System performance issues",
+                "supporting_feedback_snippets": [
+                    "[FDBK_04]: \"The system becomes incredibly slow, almost unusable, late in the afternoon, especially on Thursdays and Fridays. Trying to submit my timesheet before leaving is frustrating.\""
+                ],
+                "inferred_need_or_pain_point": "Users need the portal to remain fast and responsive, even during peak usage periods."
+            },
+            {
+                "theme_name": "Insufficient reporting / visibility of logged hours",
+                "supporting_feedback_snippets": [
+                    "[FDBK_05]: \"Why can't I easily see a summary of my hours for the week broken down by project? I need this for my own records, but the portal doesn't offer a simple view like that. Generating reports seems impossible for regular users.\""
+                ],
+                "inferred_need_or_pain_point": "Users need easy-to-access summaries and basic reporting features to review their own hours."
+            },
+            {
+                "theme_name": "Project code selection and availability problems",
+                "supporting_feedback_snippets": [
+                    "[FDBK_08]: \"The dropdown list for project codes is massive and in a random order. Finding the right code takes ages, and I've picked the wrong one by mistake more than once because I was rushing.\"",
+                    "[FDBK_10]: \"Sometimes the project codes I need aren't even in the system yet, especially for new projects. I have to chase finance to get them added.\""
+                ],
+                "inferred_need_or_pain_point": "Employees need faster ways to locate valid project codes and a smoother process for adding new codes."
+            },
+            {
+                "theme_name": "Procrastination and data-accuracy concerns due to hassle",
+                "supporting_feedback_snippets": [
+                    "[FDBK_09]: \"Honestly, the biggest issue is remembering to do it. Because it's such a hassle, I often put it off until Friday afternoon and then struggle to remember exactly what I worked on early in the week. My submitted hours are probably not very accurate sometimes.\""
+                ],
+                "inferred_need_or_pain_point": "Reducing friction and adding helpful reminders could improve on-time entries and data accuracy."
+            }
+        ]
+    },
+    "task_2_survey_design": {
+        "survey_goal": "To quantify how widespread each identified pain point is among employees and to determine the relative priority of potential improvements to the NovaTime portal.",
+        "survey_questions": [
+            {
+                "question_number": 1,
+                "question_text": "On a scale of 1 (very dissatisfied) to 5 (very satisfied), how satisfied are you with the overall process of logging and submitting your time in NovaTime?",
+                "question_type": "Rating Scale (1-5)",
+                "options": null,
+                "purpose": "Establishes a baseline satisfaction level with the current workflow."
+            },
+            {
+                "question_number": 2,
+                "question_text": "Which aspects of NovaTime cause you the most frustration or slow you down? (Select all that apply)",
+                "question_type": "Multiple Choice (Multi-Select)",
+                "options": [
+                    "Too many screens / complex workflow",
+                    "System performance / slowness",
+                    "Outdated or confusing interface",
+                    "Finding the correct project code",
+                    "Lack of mobile access",
+                    "Generating reports / viewing summaries",
+                    "Editing previously submitted time",
+                    "Other (please specify)"
+                ],
+                "purpose": "Identifies the most common pain points to target first."
+            },
+            {
+                "question_number": 3,
+                "question_text": "How important is the ability to log your time from a mobile device (phone or tablet)?",
+                "question_type": "Rating Scale (1-5)",
+                "options": null,
+                "purpose": "Measures demand for mobile access to justify investment."
+            },
+            {
+                "question_number": 4,
+                "question_text": "How often do you experience slow performance or system timeouts when using NovaTime?",
+                "question_type": "Multiple Choice (Single Select)",
+                "options": [
+                    "Never",
+                    "Rarely (less than once a week)",
+                    "Sometimes (1–2 times per week)",
+                    "Often (most afternoons)",
+                    "Always or nearly always"
+                ],
+                "purpose": "Assesses the frequency and impact of performance issues."
+            },
+            {
+                "question_number": 5,
+                "question_text": "Which types of time-tracking views or reports would you find most useful? (Select all that apply)",
+                "question_type": "Multiple Choice (Multi-Select)",
+                "options": [
+                    "Weekly summary by project",
+                    "Daily breakdown",
+                    "Monthly summary",
+                    "Billable vs. non-billable hours",
+                    "Downloadable CSV / Excel export",
+                    "Other (please specify)"
+                ],
+                "purpose": "Clarifies user reporting needs to improve self-service insights."
+            },
+            {
+                "question_number": 6,
+                "question_text": "If you could change one thing about NovaTime to make you more likely to enter your time promptly, what would it be?",
+                "question_type": "Open Text",
+                "options": null,
+                "purpose": "Collects open-ended ideas and highlights the single most impactful change for each user."
+            }
+        ]
+    },
+    "task_3_preliminary_prioritization": {
+        "prioritized_list": [
+            {
+                "item_id": 1,
+                "requirement_or_focus_area": "Streamline and modernize the time-entry workflow and UI",
+                "priority": "High",
+                "supporting_evidence": [
+                    "scenario_description.txt: Management believes the portal is \"cumbersome and inefficient\" and hurting adoption.",
+                    "initial_feedback.txt [FDBK_01]: Time entry takes 10–15 minutes with too many screens.",
+                    "initial_feedback.txt [FDBK_02]: Interface feels clunky and confusing.",
+                    "initial_feedback.txt [FDBK_07]: Editing submissions involves too many steps."
+                ]
+            },
+            {
+                "item_id": 2,
+                "requirement_or_focus_area": "Provide mobile-friendly access (responsive design or dedicated app)",
+                "priority": "High",
+                "supporting_evidence": [
+                    "initial_feedback.txt [FDBK_03]: User cannot log time while traveling and wants phone entry.",
+                    "scenario_description.txt: Goal includes increasing user adoption and data accuracy; mobile entry supports timely logging."
+                ]
+            },
+            {
+                "item_id": 3,
+                "requirement_or_focus_area": "Improve system performance and scalability during peak periods",
+                "priority": "High",
+                "supporting_evidence": [
+                    "initial_feedback.txt [FDBK_04]: System becomes \"incredibly slow\" on Thursday/Friday afternoons.",
+                    "scenario_description.txt: Reliable data capture depends on a responsive system."
+                ]
+            },
+            {
+                "item_id": 4,
+                "requirement_or_focus_area": "Add easy-to-use weekly summary and basic reporting capabilities for employees",
+                "priority": "Medium",
+                "supporting_evidence": [
+                    "initial_feedback.txt [FDBK_05]: Users cannot easily see a weekly project breakdown and find reports \"impossible\".",
+                    "scenario_description.txt: Improving data accuracy relies on users reviewing their own hours."
+                ]
+            },
+            {
+                "item_id": 5,
+                "requirement_or_focus_area": "Enhance project code search, ordering, and request workflow",
+                "priority": "Medium",
+                "supporting_evidence": [
+                    "initial_feedback.txt [FDBK_08]: Dropdown list is massive and unordered, leading to mistakes.",
+                    "initial_feedback.txt [FDBK_10]: Needed project codes are sometimes missing, forcing users to chase finance."
+                ]
+            }
+        ]
+    }
+}

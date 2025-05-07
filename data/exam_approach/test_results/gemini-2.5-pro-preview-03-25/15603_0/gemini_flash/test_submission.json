@@ -1,0 +1,50 @@
+{
+    "candidate_id": "GPT-4o",
+    "identified_issues": [
+        {
+            "issue_id": "ISSUE_01",
+            "source_description": "Protocol Section 4.1 Inclusion Criteria",
+            "protocol_reference": "Section 4.1.3",
+            "problem_summary": "Inclusion criterion 4.1.3 requires a prior history of treatment for hypertension. This may limit enrollment and does not specify duration or type of prior treatment.",
+            "potential_impact": "Reduced enrollment; potential for excluding eligible subjects who may have recently been diagnosed.",
+            "recommended_next_step": "Inform PI and request clarification on the rationale for this criterion and whether exceptions can be made.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_02",
+            "source_description": "Protocol Section 4.2 Exclusion Criteria",
+            "protocol_reference": "Section 4.2.5",
+            "problem_summary": "Exclusion criterion 4.2.5 defines significant renal impairment using eGFR, but does not specify the method for calculating eGFR (e.g., CKD-EPI, MDRD).",
+            "potential_impact": "Inconsistent application of the exclusion criterion across subjects and potential for excluding eligible subjects.",
+            "recommended_next_step": "Inform PI and request clarification on the specific eGFR calculation method to be used.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_03",
+            "source_description": "Scenario 1",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "The subject took pseudoephedrine, an over-the-counter medication, within 14 days of screening, which violates exclusion criterion 4.2.2. Pseudoephedrine can raise blood pressure.",
+            "potential_impact": "Subject ineligibility; potential for inaccurate baseline blood pressure measurement.",
+            "recommended_next_step": "Inform PI of the subject's medication use and confirm ineligibility based on exclusion criteria.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_04",
+            "source_description": "Scenario 2",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "Patient 002 forgot to complete their patient diary for three days leading up to Visit 2. This represents missing data for a key study assessment.",
+            "potential_impact": "Incomplete data collection; potential impact on efficacy analysis.",
+            "recommended_next_step": "Contact the patient immediately to attempt to retrieve the missing diary entries and notify the PI of the situation.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_05",
+            "source_description": "Scenario 3",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "The ECG interpretation indicates a 'borderline QT interval,' which may or may not be clinically significant. The protocol excerpt does not define 'clinically significant'.",
+            "potential_impact": "Uncertainty regarding whether the ECG finding requires further action or reporting.",
+            "recommended_next_step": "Inform PI of the ECG finding and request guidance on whether it is clinically significant and requires further investigation or reporting.",
+            "communication_point_person": "Principal Investigator"
+        }
+    ]
+}

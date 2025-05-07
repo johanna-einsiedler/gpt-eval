@@ -1,0 +1,102 @@
+{
+    "candidate_id": "GPT-4",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "The full Form W-2 is needed to report wages, withholding, and benefit details accurately.",
+            "question_text": "Could you please upload a complete copy of your DesignCorp Form W-2, including all boxes (Boxes 1–14 and the state information in Boxes 15–17)?"
+        },
+        {
+            "id": 2,
+            "category": "Income - W2/Employment",
+            "reasoning": "Retirement plan contributions reported in Box 12 reduce taxable wages and must be recorded correctly.",
+            "question_text": "What amount is listed in Box 12 with Code “D” (or any other retirement code) on your W-2 for 401(k) contributions?"
+        },
+        {
+            "id": 3,
+            "category": "Income - Self-Employment",
+            "reasoning": "Exact gross receipts are required to complete Schedule C and calculate self-employment tax.",
+            "question_text": "Based on your payment log, what is the exact total amount you earned from tutoring during the tax year?"
+        },
+        {
+            "id": 4,
+            "category": "Income - Self-Employment",
+            "reasoning": "Ordinary and necessary tutoring expenses can be deducted on Schedule C to reduce taxable income.",
+            "question_text": "Did you incur any tutoring-related expenses (e.g., art supplies, mileage, advertising, software, phone)? If so, please list each type of expense with the corresponding amount."
+        },
+        {
+            "id": 5,
+            "category": "Income - Self-Employment",
+            "reasoning": "Third-party reporting forms must be matched on the return to avoid IRS notices.",
+            "question_text": "Did you receive any Forms 1099-NEC, 1099-K, or other tax documents related to your tutoring work? If yes, please provide copies."
+        },
+        {
+            "id": 6,
+            "category": "Income - Other",
+            "reasoning": "Form 1099-INT provides the payer information and exact interest income that must be reported on Schedule B.",
+            "question_text": "Please provide the Form 1099-INT (or bank year-end statement) showing the amount of savings interest you earned and the bank’s details."
+        },
+        {
+            "id": 7,
+            "category": "Deductions - Education",
+            "reasoning": "Form 1098-E states the exact qualified student loan interest that may be deductible as an adjustment to income.",
+            "question_text": "Could you download or forward your 2023 Form 1098-E from your loan servicer showing the total student loan interest you paid?"
+        },
+        {
+            "id": 8,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Form 1098 lists deductible mortgage interest and any mortgage insurance premiums paid.",
+            "question_text": "Please provide the Form 1098 from your mortgage lender for the condo, including any amount listed for mortgage insurance premiums (PMI)."
+        },
+        {
+            "id": 9,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Real-estate taxes paid are deductible; amounts paid at closing or thereafter must be documented.",
+            "question_text": "How much property tax did you pay on the condo in 2023, including any amount paid at closing and subsequent tax bills? Please provide supporting statements or the closing disclosure showing these figures."
+        },
+        {
+            "id": 10,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Points paid at purchase may be deductible; the closing disclosure details the amount.",
+            "question_text": "Did you pay any mortgage points or loan-origination fees at your March 15th closing? If so, what amount appears on your closing disclosure?"
+        },
+        {
+            "id": 11,
+            "category": "Deductions - Charitable",
+            "reasoning": "Non-cash donations require a receipt, description, and fair-market value to substantiate the deduction.",
+            "question_text": "For your Goodwill donation, could you provide the drop-off receipt along with a list of the items donated and their estimated fair-market values?"
+        },
+        {
+            "id": 12,
+            "category": "Deductions - Charitable",
+            "reasoning": "Cash contributions must be substantiated, and the total amount determines deductibility limits.",
+            "question_text": "Besides the $100 given to your church, did you make any other cash or non-cash charitable donations in 2023? If so, please list amounts, dates, and provide receipts or bank confirmations."
+        },
+        {
+            "id": 13,
+            "category": "Deductions - Medical",
+            "reasoning": "Total unreimbursed medical expenses are needed to determine if they exceed the AGI threshold for Schedule A.",
+            "question_text": "Please provide the total unreimbursed medical, dental, vision, and prescription expenses you paid out-of-pocket in 2023, including any after-tax health insurance premiums."
+        },
+        {
+            "id": 14,
+            "category": "General/Missing Forms",
+            "reasoning": "Proof of health coverage or marketplace subsidy reconciliation is required to complete Form 8962 and avoid penalties.",
+            "question_text": "Did you receive a Form 1095-A, 1095-B, or 1095-C for your 2023 health insurance coverage? If yes, please provide a copy."
+        },
+        {
+            "id": 15,
+            "category": "General/Missing Forms",
+            "reasoning": "Any other tax forms (e.g., 1099-DIV, 1099-R) must be reported to prevent IRS matching issues.",
+            "question_text": "Other than the documents we have discussed, did you receive any additional 2023 tax forms such as 1099-DIV, 1099-B, 1099-R, 1099-G, or state tax documents? If yes, please forward copies."
+        },
+        {
+            "id": 16,
+            "category": "Deductions - Other",
+            "reasoning": "HSA or FSA contributions can affect adjustments to income and may require additional forms.",
+            "question_text": "Did you make any contributions to a Health Savings Account (HSA) or Flexible Spending Account (FSA) in 2023? If so, what were the contribution amounts?"
+        }
+    ]
+}

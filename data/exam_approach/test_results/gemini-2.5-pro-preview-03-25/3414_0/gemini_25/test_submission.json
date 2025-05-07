@@ -1,0 +1,56 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "exam_version": "Basic_PaymentSchedule_v1.0",
+    "loan_scenarios": [
+        {
+            "loan_id": "LOAN_BASIC_001",
+            "monthly_payment": 1604.1,
+            "total_interest_paid": 302475.89,
+            "schedule_points": [
+                {
+                    "payment_number": 1,
+                    "interest_paid": 1317.71,
+                    "principal_paid": 286.39,
+                    "remaining_balance": 274713.61
+                },
+                {
+                    "payment_number": 12,
+                    "interest_paid": 1301.51,
+                    "principal_paid": 302.59,
+                    "remaining_balance": 271510.71
+                },
+                {
+                    "payment_number": 360,
+                    "interest_paid": 7.65,
+                    "principal_paid": 1596.45,
+                    "remaining_balance": 0.0
+                }
+            ]
+        },
+        {
+            "loan_id": "LOAN_BASIC_002",
+            "monthly_payment": 684.0,
+            "total_interest_paid": 12455.97,
+            "schedule_points": [
+                {
+                    "payment_number": 1,
+                    "interest_paid": 270.0,
+                    "principal_paid": 414.0,
+                    "remaining_balance": 44586.0
+                },
+                {
+                    "payment_number": 12,
+                    "interest_paid": 240.33,
+                    "principal_paid": 443.67,
+                    "remaining_balance": 39611.29
+                },
+                {
+                    "payment_number": 84,
+                    "interest_paid": 4.08,
+                    "principal_paid": 679.92,
+                    "remaining_balance": -0.03
+                }
+            ]
+        }
+    ]
+}

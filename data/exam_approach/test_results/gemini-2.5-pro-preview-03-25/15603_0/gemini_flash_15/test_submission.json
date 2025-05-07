@@ -1,0 +1,59 @@
+{
+    "candidate_id": "GPT-4",
+    "identified_issues": [
+        {
+            "issue_id": "ISSUE_01",
+            "source_description": "Protocol Section 4.1 Inclusion Criteria",
+            "protocol_reference": "Section 4.1.2",
+            "problem_summary": "The definition of mild hypertension in 4.1.2 is unclear.  It uses 'OR' between SBP and DBP criteria, meaning a subject could qualify with only elevated SBP or only elevated DBP. This needs clarification on whether both must be met or either is sufficient for inclusion.",
+            "potential_impact": "Inconsistent subject inclusion; potential for enrolling subjects who do not meet the true definition of mild hypertension.",
+            "recommended_next_step": "Inform PI and request clarification on the intended logic (AND vs. OR) for the SBP and DBP criteria.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_02",
+            "source_description": "Protocol Section 4.1 Inclusion Criteria",
+            "protocol_reference": "Section 4.1.5",
+            "problem_summary": "Inclusion criterion 4.1.5 ('able and likely to comply...in the Investigator's opinion') is subjective and lacks specific, measurable criteria. This introduces bias and potential for inconsistent application across sites.",
+            "potential_impact": "Inconsistent subject inclusion; potential for bias in subject selection.",
+            "recommended_next_step": "Inform PI and request clarification on how this criterion will be objectively assessed and documented.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_03",
+            "source_description": "Protocol Section 4.2 Exclusion Criteria",
+            "protocol_reference": "Section 4.2.5",
+            "problem_summary": "Exclusion criterion 4.2.5 ('significant renal impairment') lacks a precise definition beyond eGFR < 45 mL/min/1.73m².  Further clarification is needed on whether other renal function parameters should be considered.",
+            "potential_impact": "Inconsistent subject exclusion; potential for enrolling subjects with significant renal issues.",
+            "recommended_next_step": "Inform PI and request clarification on the complete definition of significant renal impairment, including any additional criteria beyond eGFR.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_04",
+            "source_description": "Scenario 1",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "The subject in Scenario 1 took pseudoephedrine, which is not explicitly an anti-hypertensive medication.  Clarification is needed on whether this falls under the exclusion criteria.",
+            "potential_impact": "Incorrect exclusion of a potentially eligible subject.",
+            "recommended_next_step": "Inform PI and request clarification on whether pseudoephedrine use constitutes a violation of exclusion criterion 4.2.2.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_05",
+            "source_description": "Scenario 2",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "Patient 002 failed to complete their patient diary for three days.  The protocol does not specify a procedure for handling missed diary entries.",
+            "potential_impact": "Incomplete data collection; potential for bias in data analysis.",
+            "recommended_next_step": "Document the missed diary entries and discuss with the PI to determine the appropriate action (e.g., attempt to retrieve the missing data, document as missing data).",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_06",
+            "source_description": "Scenario 3",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "The ECG in Scenario 3 shows a 'borderline QT interval' which requires clinical correlation. The protocol does not define the process for handling borderline findings.",
+            "potential_impact": "Potential for delayed reporting of clinically significant findings.",
+            "recommended_next_step": "Document the ECG finding and immediately inform the PI for clinical correlation and determination of whether it needs to be reported as a clinically significant finding.",
+            "communication_point_person": "Principal Investigator"
+        }
+    ]
+}

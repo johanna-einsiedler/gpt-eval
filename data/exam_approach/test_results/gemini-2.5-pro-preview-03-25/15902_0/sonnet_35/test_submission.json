@@ -1,0 +1,7 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "on_time_delivery_rate_percentage": 0.0,
+    "order_fulfillment_rate_percentage": 0.0,
+    "average_inventory_value": 200000.0,
+    "inventory_turns": 0.0
+}

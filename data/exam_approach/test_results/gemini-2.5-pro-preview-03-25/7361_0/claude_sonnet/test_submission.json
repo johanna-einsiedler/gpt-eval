@@ -1,0 +1,84 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "Need the complete W-2 form to accurately report all income, withholdings, and retirement contributions.",
+            "question_text": "Could you please provide your complete W-2 form from DesignCorp? I need all the information from the official form, including gross wages, all tax withholdings, and retirement plan contribution details."
+        },
+        {
+            "id": 2,
+            "category": "Income - Self-Employment",
+            "reasoning": "Need exact tutoring income amount and documentation to accurately report self-employment income on Schedule C.",
+            "question_text": "For your tutoring income, could you provide your complete payment log showing the exact total amount earned during the tax year? This will be reported as self-employment income."
+        },
+        {
+            "id": 3,
+            "category": "Income - Self-Employment",
+            "reasoning": "Need information about business expenses to determine net self-employment income and potential deductions.",
+            "question_text": "Did you incur any expenses directly related to your tutoring work, such as art supplies, teaching materials, or transportation costs? If so, please provide itemized amounts and any available receipts."
+        },
+        {
+            "id": 4,
+            "category": "Income - Other",
+            "reasoning": "Need to verify interest income from bank accounts which must be reported on Schedule B if above threshold.",
+            "question_text": "You mentioned receiving a tax form from your bank. Could you please provide the Form 1099-INT showing your interest income for the year?"
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Education",
+            "reasoning": "Need official documentation of student loan interest paid to claim the student loan interest deduction.",
+            "question_text": "Please provide your Form 1098-E showing the exact amount of student loan interest you paid during the tax year. This is needed to claim the student loan interest deduction."
+        },
+        {
+            "id": 6,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Need mortgage interest statement to claim mortgage interest deduction as an itemized deduction.",
+            "question_text": "Since you purchased your condo in March, please provide your Form 1098 Mortgage Interest Statement showing the amount of mortgage interest you paid during the tax year."
+        },
+        {
+            "id": 7,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Need property tax payment records to claim real estate tax deduction as an itemized deduction.",
+            "question_text": "Please provide documentation showing the exact amount of property taxes you paid on your condo during the tax year. This could be on your Form 1098, property tax statements, or closing documents."
+        },
+        {
+            "id": 8,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Need closing documents to identify potential deductible closing costs and to verify property purchase details.",
+            "question_text": "Could you provide your closing documents from your condo purchase? I need to review for any potentially deductible closing costs and to verify the purchase date and property details."
+        },
+        {
+            "id": 9,
+            "category": "Deductions - Charitable",
+            "reasoning": "Need detailed documentation of non-cash charitable contributions to determine fair market value and eligibility for deduction.",
+            "question_text": "For your Goodwill donation, could you provide the receipt and a detailed list of the donated items with their estimated fair market values? For donations exceeding $250 in value, additional documentation is required."
+        },
+        {
+            "id": 10,
+            "category": "Deductions - Charitable",
+            "reasoning": "Need documentation for cash donations to religious organizations to verify eligibility for charitable deduction.",
+            "question_text": "Do you have any documentation, such as a year-end statement or acknowledgment letter from your church, for the $100 in cash donations you made during services?"
+        },
+        {
+            "id": 11,
+            "category": "Deductions - Medical",
+            "reasoning": "Need itemized medical expenses to determine if they exceed 7.5% of AGI threshold for medical expense deduction.",
+            "question_text": "Please provide an itemized list of all your medical expenses, including doctor visits and prescriptions, along with receipts or statements showing the exact amounts you paid out-of-pocket after any insurance reimbursements."
+        },
+        {
+            "id": 12,
+            "category": "Income - W2/Employment",
+            "reasoning": "Need details about retirement plan contributions to determine eligibility for retirement savings contributions credit or deductions.",
+            "question_text": "What type of retirement plan do you contribute to through DesignCorp (401(k), 403(b), etc.), and what was your total contribution amount for the tax year?"
+        },
+        {
+            "id": 13,
+            "category": "General/Missing Forms",
+            "reasoning": "Need to verify filing status and determine if any dependents should be claimed.",
+            "question_text": "To confirm your filing status as Single, did your marital status change at any point during the tax year, and do you have any dependents that you provide support for?"
+        }
+    ]
+}

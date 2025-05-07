@@ -1,0 +1,162 @@
+{
+    "exam_type": "basic_logistics_pm_tools",
+    "candidate_id": "Claude-3-Opus",
+    "project_schedule": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout & Operational Plan",
+            "duration_days": 1,
+            "predecessors": "",
+            "start_day": 1,
+            "end_day": 1
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Procure Shelving, Tables, and Essential Supplies",
+            "duration_days": 3,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 4
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Recruit & Schedule Volunteers",
+            "duration_days": 2,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 3
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Site Preparation (Cleaning, Marking Layout)",
+            "duration_days": 1,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 2
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Deliver Procured Items to Site",
+            "duration_days": 1,
+            "predecessors": "T02",
+            "start_day": 5,
+            "end_day": 5
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Install Shelving and Set Up Tables",
+            "duration_days": 3,
+            "predecessors": "T03,T04,T05",
+            "start_day": 6,
+            "end_day": 8
+        },
+        {
+            "task_id": "T07",
+            "task_name": "Install Signage & Organize Sorting Stations",
+            "duration_days": 1,
+            "predecessors": "T06",
+            "start_day": 9,
+            "end_day": 9
+        },
+        {
+            "task_id": "T08",
+            "task_name": "Final Walkthrough & Operational Readiness Confirmation",
+            "duration_days": 1,
+            "predecessors": "T07",
+            "start_day": 10,
+            "end_day": 10
+        }
+    ],
+    "responsibility_matrix": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout & Operational Plan",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Approved Layout & Ops Plan Doc"
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Procure Shelving, Tables, and Essential Supplies",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "R",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "N/A",
+            "compliance_check_method": "POs & Supplier Confirmations"
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Recruit & Schedule Volunteers",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Volunteer Roster & Schedule"
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Site Preparation (Cleaning, Marking Layout)",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Site Prep Photos & SC Sign-off"
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Deliver Procured Items to Site",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "R",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Signed Delivery Notes / GRNs"
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Install Shelving and Set Up Tables",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Installation Photos & SC Checklist"
+        },
+        {
+            "task_id": "T07",
+            "task_name": "Install Signage & Organize Sorting Stations",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Setup Photos & SC Checklist"
+        },
+        {
+            "task_id": "T08",
+            "task_name": "Final Walkthrough & Operational Readiness Confirmation",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Signed Readiness Checklist (LM)"
+        }
+    ],
+    "assumptions_made": [
+        "Working days are standard business days (e.g., Monday-Friday).",
+        "Procurement lead times for shelving, tables, and essential supplies are within the estimated 3-day duration for task T02.",
+        "Sufficient volunteers can be recruited and scheduled within the 2-day timeframe for task T03.",
+        "The designated site requires only basic cleaning and layout marking, with no major repairs or utility setup needed beyond access points.",
+        "Basic tools required for shelving installation and general setup are available or will be procured with the supplies.",
+        "The Transport Partner can complete delivery of all procured items to the site within a single working day (task T05) once items are ready.",
+        "There are no significant delays in internal approvals or external supplier responsiveness.",
+        "The 500 sq meter warehouse size allows for the setup tasks to be completed within the allocated durations with the available roles and volunteer support."
+    ]
+}

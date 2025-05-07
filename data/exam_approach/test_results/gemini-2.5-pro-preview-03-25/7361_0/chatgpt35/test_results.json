@@ -1,0 +1,64 @@
+{
+    "submission_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "Your_Provided_ID",
+    "exam_version_submitted": "PROVIDED_EXAM_VERSION",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 4,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Could you please provide the complete W-2 form from DesignCorp? I specifically need the amounts listed in Box 1 (Wages), Box 2 (Federal tax withheld), and any details from Box 12 (Codes and amounts)."
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 3,
+                "matched_submission_question_text": "Do you have the exact amount of interest paid on your student loans for the year? This information is crucial for potential education-related deductions."
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 4,
+                "matched_submission_question_text": "Could you provide more details on the cash donations you made to your local church's collection plate during services over the year? Specifically, the total amount and any documentation you have."
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "matched_submission_question_id": 2,
+                "matched_submission_question_text": "Regarding the tutoring income, what was the exact total amount you received during the tax year from tutoring high school students in art?"
+            }
+        ],
+        "missed_areas": [
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "reasoning": "The tutoring income amount is vague ('around $2,500, maybe more'). Need the exact total received for accurate reporting. Also need to inquire about potential deductible business expenses related to this income."
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "reasoning": "Client mentioned paying mortgage interest and property taxes after buying the condo, but amounts are missing. Need specific amounts for potential itemized deductions."
+            },
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "reasoning": "Cash donations require specific proof (bank record or written acknowledgement from the charity) for deductibility, especially if undocumented (like collection plate). Need to confirm if such proof exists."
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "reasoning": "The mentioned '$300' is likely below the deduction threshold, but other expenses might exist. Need a comprehensive list of all potential medical expenses to determine if the AGI threshold for deductibility could be met."
+            }
+        ]
+    },
+    "overall_score": 50.0
+}

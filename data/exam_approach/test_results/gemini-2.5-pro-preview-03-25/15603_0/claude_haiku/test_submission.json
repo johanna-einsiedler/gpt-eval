@@ -1,0 +1,50 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "identified_issues": [
+        {
+            "issue_id": "ISSUE_01",
+            "source_description": "Scenario 1: Screening Medication Interaction",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "Pseudoephedrine HCl 30mg may potentially violate the exclusion criterion prohibiting over-the-counter medications within 14 days of screening.",
+            "potential_impact": "Inconsistent subject screening and potential protocol deviation",
+            "recommended_next_step": "Inform PI and request clarification on medication eligibility",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_02",
+            "source_description": "Scenario 2: Patient Diary Compliance",
+            "protocol_reference": "Section 6.2 Schedule of Assessments",
+            "problem_summary": "Patient missed completing patient diary for three consecutive days (Day 13-15), which is not addressed in the protocol's documentation requirements",
+            "potential_impact": "Incomplete data collection and potential protocol deviation",
+            "recommended_next_step": "Notify PI about missed diary entries and discuss data recovery strategy",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_03",
+            "source_description": "Scenario 3: ECG Interpretation",
+            "protocol_reference": "Scenario Context",
+            "problem_summary": "ECG shows 'Borderline QT interval' with recommendation for clinical correlation, but protocol does not provide clear guidance on handling such findings",
+            "potential_impact": "Potential subject safety risk and unclear reporting requirements",
+            "recommended_next_step": "Inform PI of ECG finding and request clinical assessment",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_04",
+            "source_description": "Protocol Section 4.1 Inclusion Criteria",
+            "protocol_reference": "Section 4.1.2",
+            "problem_summary": "Blood pressure averaging method lacks specificity about measurement conditions, device type, or patient positioning",
+            "potential_impact": "Inconsistent subject screening and potential variability in BP measurements",
+            "recommended_next_step": "Inform PI and request clarification on BP measurement protocol",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_05",
+            "source_description": "Schedule of Assessments Table",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "Visit 3 (Day 28 +/- 3 days) window allows potential 6-day variation, which could impact data consistency and analysis",
+            "potential_impact": "Risk of protocol deviation and potential data variability",
+            "recommended_next_step": "Flag for discussion with PI about visit window implications",
+            "communication_point_person": "Principal Investigator"
+        }
+    ]
+}

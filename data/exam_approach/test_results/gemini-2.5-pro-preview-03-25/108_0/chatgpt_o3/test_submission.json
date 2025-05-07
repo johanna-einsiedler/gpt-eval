@@ -1,0 +1,53 @@
+{
+    "exam_part": "basic_negotiation",
+    "candidate_id": "GPT-4o",
+    "scenario_analysis": {
+        "client_needs_summary": "Beta Corp requests a 2-day on-site “Effective Communication Skills” program for 18 junior managers at their TechCity office during the first half of September 2024 (e.g., 9–10 Sep or 11–12 Sep). They indicate a budget of about $4,500 and would like a brief pre-training consultation call.",
+        "potential_issues_or_deviations": [
+            "Budget – Client budget ($4,500) is below LearnWell’s calculated fee of $7,702.50 for 18 participants (Section 2 rates + large-group surcharge + Section 3 travel).",
+            "Participant number – Requested 18 participants exceeds the standard maximum of 15 and therefore triggers the 15 % large-group surcharge (Section 2: “Large Group Surcharge”).",
+            "Preferred dates – Client’s preferred window (first half of September) conflicts with trainer Dr. Alex Reed’s unavailability 2–13 Sep 2024 (Section 4).",
+            "Travel cost – On-site delivery in TechCity requires the client to cover the $400 travel expense (Section 3) which is not mentioned in the client’s stated budget."
+        ]
+    },
+    "negotiation_points": [
+        {
+            "point": "Fee/Budget",
+            "details": "Client budget ($4,500) vs. calculated total fee including surcharge and travel ($7,702.50)."
+        },
+        {
+            "point": "Participant Number",
+            "details": "Client request for 18 participants exceeds standard maximum (15) and incurs surcharge."
+        },
+        {
+            "point": "Training Dates",
+            "details": "Client’s preferred dates (first half of September) are unavailable for lead facilitator."
+        },
+        {
+            "point": "Travel Costs",
+            "details": "Client must cover $400 TechCity travel charge which is not addressed in their budget."
+        }
+    ],
+    "proposed_terms": [
+        {
+            "point": "Fee/Budget",
+            "proposal": "Total training fee: $7,702.50 for 18 participants (includes large-group surcharge). 50 % ($3,851.25) deposit due upon contract signing; remaining 50 % due on Day 1. Travel cost of $400 billed as a separate line item. Printed materials optional at $25 per participant upon request.",
+            "supporting_data_reference": "Section 2 pricing: Facilitator Daily Rate $2,500 × 2 days = $5,000; Digital Materials $75 × 18 participants = $1,350; Sub-total = $6,350. Large Group Surcharge 15 % for 16–20 participants: $6,350 × 0.15 = $952.50. Total fee = $6,350 + $952.50 = $7,302.50. Section 3 travel: flat $400 TechCity. Payment terms 50 %/50 % (Section 2)."
+        },
+        {
+            "point": "Participant Number",
+            "proposal": "LearnWell can accommodate all 18 participants with the 15 % large-group surcharge applied as detailed above.",
+            "supporting_data_reference": "Section 2: ‘Large Group Surcharge’ applies to groups 16–20. Client group size 18 falls in this range."
+        },
+        {
+            "point": "Training Dates",
+            "proposal": "Proposed delivery dates: 2024-09-16 to 2024-09-17 (primary) or 2024-09-23 to 2024-09-24 (backup). Both options are consecutive weekdays and fall within September.",
+            "supporting_data_reference": "Section 4: Trainer availability shows Dr. Alex Reed AVAILABLE 16–17 Sep, 18–20 Sep, 23–24 Sep, 25–27 Sep; UNAVAILABLE 2–13 Sep."
+        },
+        {
+            "point": "Travel Costs",
+            "proposal": "Travel expense to TechCity will be invoiced at the standard flat rate of $400 in addition to the training fee.",
+            "supporting_data_reference": "Section 3: ‘Standard Travel Cost Estimate (TechCity): $400’ to be billed separately."
+        }
+    ]
+}

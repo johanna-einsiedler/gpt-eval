@@ -1,0 +1,179 @@
+{
+    "exam_type": "basic_logistics_pm_tools",
+    "candidate_id": "Claude-3-Opus",
+    "project_schedule": [
+        {
+            "task_id": "T01",
+            "task_name": "Site Assessment and Layout Planning",
+            "duration_days": 2,
+            "predecessors": "",
+            "start_day": 1,
+            "end_day": 2
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Procurement of Shelving and Equipment",
+            "duration_days": 3,
+            "predecessors": "T01",
+            "start_day": 3,
+            "end_day": 5
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Delivery of Shelving and Equipment",
+            "duration_days": 2,
+            "predecessors": "T02",
+            "start_day": 6,
+            "end_day": 7
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Installation of Shelving Units",
+            "duration_days": 2,
+            "predecessors": "T03",
+            "start_day": 8,
+            "end_day": 9
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Setup of Receiving/Sorting Tables",
+            "duration_days": 1,
+            "predecessors": "T03",
+            "start_day": 8,
+            "end_day": 8
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Installation of Signage and Zone Markings",
+            "duration_days": 1,
+            "predecessors": "T01",
+            "start_day": 3,
+            "end_day": 3
+        },
+        {
+            "task_id": "T07",
+            "task_name": "Inventory Management System Setup",
+            "duration_days": 2,
+            "predecessors": "T01",
+            "start_day": 3,
+            "end_day": 4
+        },
+        {
+            "task_id": "T08",
+            "task_name": "Staff/Volunteer Training",
+            "duration_days": 1,
+            "predecessors": "T04,T05,T06,T07",
+            "start_day": 10,
+            "end_day": 10
+        },
+        {
+            "task_id": "T09",
+            "task_name": "Final Inspection and Operational Readiness",
+            "duration_days": 1,
+            "predecessors": "T08",
+            "start_day": 10,
+            "end_day": 10
+        }
+    ],
+    "responsibility_matrix": [
+        {
+            "task_id": "T01",
+            "task_name": "Site Assessment and Layout Planning",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Approved Layout Plan Document"
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Procurement of Shelving and Equipment",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "R",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Purchase Orders and Receipts"
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Delivery of Shelving and Equipment",
+            "Logistics_Manager": "I",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "A",
+            "Transport_Partner": "R",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Signed Delivery Notes"
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Installation of Shelving Units",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Photos of Completed Installation"
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Setup of Receiving/Sorting Tables",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Setup Checklist Completion"
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Installation of Signage and Zone Markings",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Photos of Installed Signage"
+        },
+        {
+            "task_id": "T07",
+            "task_name": "Inventory Management System Setup",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "System Test Report"
+        },
+        {
+            "task_id": "T08",
+            "task_name": "Staff/Volunteer Training",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Training Attendance Records"
+        },
+        {
+            "task_id": "T09",
+            "task_name": "Final Inspection and Operational Readiness",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Signed Readiness Checklist"
+        }
+    ],
+    "assumptions_made": [
+        "All stakeholders are available throughout the 10-day period",
+        "Procurement can be completed within 3 days due to emergency situation",
+        "Suppliers can deliver within 2 days of order placement",
+        "Sufficient volunteers are available for installation and setup tasks",
+        "No delays due to weather conditions affecting site access",
+        "Basic utilities (power/water) remain functional throughout the setup period",
+        "Required permits/authorizations for warehouse operation are pre-approved"
+    ]
+}

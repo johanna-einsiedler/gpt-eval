@@ -1,0 +1,42 @@
+{
+    "candidate_id": "Your_Provided_ID",
+    "exam_version": "PROVIDED_EXAM_VERSION",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "To accurately report Sarah's wage income and withholding, we need specific details from her official W-2 form.",
+            "question_text": "Could you please provide the complete W-2 form from DesignCorp? I specifically need the amounts listed in Box 1 (Wages), Box 2 (Federal tax withheld), and any details from Box 12 (Codes and amounts)."
+        },
+        {
+            "id": 2,
+            "category": "Income - Other",
+            "reasoning": "To ensure all sources of income are accounted for, we need clarification on the total amount earned from tutoring.",
+            "question_text": "Regarding the tutoring income, what was the exact total amount you received during the tax year from tutoring high school students in art?"
+        },
+        {
+            "id": 3,
+            "category": "Deductions - Education",
+            "reasoning": "To determine eligibility for education-related deductions, we need details on the student loan interest paid.",
+            "question_text": "Do you have the exact amount of interest paid on your student loans for the year? This information is crucial for potential education-related deductions."
+        },
+        {
+            "id": 4,
+            "category": "Deductions - Charitable",
+            "reasoning": "For accurate reporting of charitable donations, we require specifics on the cash donations made.",
+            "question_text": "Could you provide more details on the cash donations you made to your local church's collection plate during services over the year? Specifically, the total amount and any documentation you have."
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Other",
+            "reasoning": "To ensure all deductible expenses are considered, we need information on medical expenses incurred.",
+            "question_text": "Regarding medical expenses, do you have a breakdown of the out-of-pocket costs you incurred, including doctor's appointments and prescriptions? This information is essential for potential medical deductions."
+        },
+        {
+            "id": 6,
+            "category": "General/Missing Forms",
+            "reasoning": "To complete the tax return accurately, we need details from the tax form received from your bank.",
+            "question_text": "You mentioned receiving a tax form from your bank related to savings interest. Could you provide more information on this form, including the type of form and any amounts reported?"
+        }
+    ]
+}

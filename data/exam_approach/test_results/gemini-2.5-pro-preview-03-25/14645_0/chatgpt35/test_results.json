@@ -1,0 +1,49 @@
+{
+  "evaluation_details": {
+    "json_validity_structure": {
+      "score": 0,
+      "max_score": 15,
+      "details": [
+        "FAIL: Missing required keys in section 'root': exam_type, candidate_id, project_feature, testing_scope, test_approach_summary, prioritized_requirements, test_schedule, risks_and_assumptions. Cannot proceed with detailed evaluation."
+      ]
+    },
+    "scope": {
+      "score": 0,
+      "max_score": 25,
+      "details": [
+        "FAIL: 'testing_scope' section missing or invalid in submission or key."
+      ]
+    },
+    "approach": {
+      "score": 0,
+      "max_score": 10,
+      "details": [
+        "FAIL: 'test_approach_summary' section missing or invalid in submission or key."
+      ]
+    },
+    "prioritization": {
+      "score": 0,
+      "max_score": 15,
+      "details": [
+        "FAIL: 'prioritized_requirements' section missing or invalid in submission or key."
+      ]
+    },
+    "schedule": {
+      "score": 0,
+      "max_score": 25,
+      "details": [
+        "FAIL: 'test_schedule' section missing or invalid in submission."
+      ]
+    },
+    "risks_assumptions": {
+      "score": 0,
+      "max_score": 10,
+      "details": [
+        "FAIL: 'risks_and_assumptions' section missing or invalid in submission."
+      ]
+    }
+  },
+  "overall_score": 0.0,
+  "total_score_achieved": 0,
+  "total_score_possible": 100
+}

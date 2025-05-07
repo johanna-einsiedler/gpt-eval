@@ -1,0 +1,55 @@
+{
+  "overall_score": 0.0,
+  "max_points_total": 10,
+  "score_details": {
+    "structure": {
+      "score": 0,
+      "max_score": 1,
+      "feedback": [
+        "JSON structure is invalid or missing required keys: program_name, analysis_period, year_1_metrics, year_2_metrics, year_over_year_change_percent, evaluation_summary, year_1_metrics keys, year_2_metrics keys, year_over_year_change_percent keys."
+      ]
+    },
+    "year_1_metrics": {
+      "score": 0,
+      "max_score": 2,
+      "feedback": [
+        "Year 1 Total Attendance: Incorrect (Submitted: None, Expected: 260).",
+        "Year 1 Total Cost: Incorrect (Submitted: None, Expected: 2730.0).",
+        "Year 1 Cost Per Attendance: Incorrect (Submitted: None, Expected: 10.5)."
+      ]
+    },
+    "year_2_metrics": {
+      "score": 0,
+      "max_score": 2,
+      "feedback": [
+        "Year 2 Total Attendance: Incorrect (Submitted: None, Expected: 410).",
+        "Year 2 Total Cost: Incorrect (Submitted: None, Expected: 3250.0).",
+        "Year 2 Cost Per Attendance: Incorrect (Submitted: None, Expected: 7.93)."
+      ]
+    },
+    "year_over_year_change": {
+      "score": 0,
+      "max_score": 3,
+      "feedback": [
+        "Total Cost Change %: Incorrect (Submitted: None, Expected: 19.05).",
+        "Total Attendance Change %: Incorrect (Submitted: None, Expected: 57.69).",
+        "Cost Per Attendance Change %: Incorrect (Submitted: None, Expected: -24.48)."
+      ]
+    },
+    "evaluation_summary": {
+      "score": 0,
+      "max_score": 2,
+      "feedback": [
+        "Summary is missing or not a string."
+      ]
+    }
+  },
+  "feedback": [],
+  "critical_failure": false,
+  "critical_failure_reason": null,
+  "final_score_points": 0,
+  "input_files": {
+    "submission": "test_submission.json",
+    "answer_key": "answer_key.json"
+  }
+}

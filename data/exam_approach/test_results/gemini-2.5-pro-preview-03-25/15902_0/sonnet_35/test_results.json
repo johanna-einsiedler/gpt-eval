@@ -1,0 +1,26 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "detailed_comparison": {
+        "on_time_delivery_rate_percentage": {
+            "submitted": 0.0,
+            "expected": 86.0,
+            "correct": false
+        },
+        "order_fulfillment_rate_percentage": {
+            "submitted": 0.0,
+            "expected": 85.0,
+            "correct": false
+        },
+        "average_inventory_value": {
+            "submitted": 200000.0,
+            "expected": 200000.0,
+            "correct": true
+        },
+        "inventory_turns": {
+            "submitted": 0.0,
+            "expected": 4.3,
+            "correct": false
+        }
+    },
+    "overall_score": 25.0
+}

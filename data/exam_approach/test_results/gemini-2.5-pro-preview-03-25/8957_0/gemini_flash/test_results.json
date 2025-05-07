@@ -1,0 +1,94 @@
+{
+  "candidate_id": "GPT-4o",
+  "submission_file": "test_submission.json",
+  "answer_key_file": "answer_key.json",
+  "overall_score": 66.67,
+  "correct_count": 8,
+  "total_checks": 12,
+  "detailed_results": {
+    "task_1_load_combine": {
+      "merged_rows": {
+        "expected": 20,
+        "actual": 20,
+        "correct": true
+      },
+      "merged_columns": {
+        "expected": 7,
+        "actual": 7,
+        "correct": true
+      }
+    },
+    "task_2_identify_issues": {
+      "missing_age_count": {
+        "expected": 2,
+        "actual": 2,
+        "correct": true
+      },
+      "missing_score_count": {
+        "expected": 2,
+        "actual": 2,
+        "correct": true
+      },
+      "unique_gender_values": {
+        "expected": [
+          "",
+          "F",
+          "M",
+          "Male",
+          "N/A",
+          "Other",
+          "female"
+        ],
+        "actual": [
+          "F",
+          "M",
+          "Male",
+          "N/A",
+          "Other",
+          "female",
+          "nan"
+        ],
+        "correct": false
+      },
+      "high_age_rows_count": {
+        "expected": 2,
+        "actual": 2,
+        "correct": true
+      },
+      "duplicate_rows_count": {
+        "expected": 2,
+        "actual": 2,
+        "correct": true
+      }
+    },
+    "task_3_clean_adjust": {
+      "final_rows_count": {
+        "expected": 18,
+        "actual": 18,
+        "correct": true
+      },
+      "median_age_cleaned": {
+        "expected": 44.5,
+        "actual": 44.5,
+        "correct": true
+      },
+      "mean_score_cleaned": {
+        "expected": 71.61,
+        "actual": 76.56,
+        "correct": false
+      },
+      "date_conversion_failures": {
+        "expected": 2,
+        "actual": 3,
+        "correct": false
+      }
+    },
+    "task_4_apply_weights": {
+      "mean_weighted_score": {
+        "expected": 77.41,
+        "actual": 80.02,
+        "correct": false
+      }
+    }
+  }
+}

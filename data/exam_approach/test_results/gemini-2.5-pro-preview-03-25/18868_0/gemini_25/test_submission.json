@@ -1,0 +1,57 @@
+{
+    "candidate_id": "GPT-4o",
+    "job_matches": [
+        {
+            "job_id": "JD001",
+            "job_title": "Marketing Coordinator",
+            "applicant_assessments": [
+                {
+                    "applicant_id": "APP101",
+                    "match_status": "Does Not Meet Essential Requirements"
+                },
+                {
+                    "applicant_id": "APP102",
+                    "match_status": "Meets Essential Requirements"
+                },
+                {
+                    "applicant_id": "APP103",
+                    "match_status": "Does Not Meet Essential Requirements"
+                },
+                {
+                    "applicant_id": "APP104",
+                    "match_status": "Does Not Meet Essential Requirements"
+                },
+                {
+                    "applicant_id": "APP105",
+                    "match_status": "Does Not Meet Essential Requirements"
+                }
+            ]
+        },
+        {
+            "job_id": "JD002",
+            "job_title": "Junior Data Analyst",
+            "applicant_assessments": [
+                {
+                    "applicant_id": "APP101",
+                    "match_status": "Does Not Meet Essential Requirements"
+                },
+                {
+                    "applicant_id": "APP102",
+                    "match_status": "Does Not Meet Essential Requirements"
+                },
+                {
+                    "applicant_id": "APP103",
+                    "match_status": "Meets Essential Requirements"
+                },
+                {
+                    "applicant_id": "APP104",
+                    "match_status": "Does Not Meet Essential Requirements"
+                },
+                {
+                    "applicant_id": "APP105",
+                    "match_status": "Meets Essential Requirements"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+{
+  "candidate_file": "test_submission.json",
+  "key_file": "answer_key.json",
+  "overall_score": 94,
+  "total_points_achieved": 85,
+  "total_max_points": 90,
+  "evaluation_details": {
+    "structure_check": {
+      "passed": true,
+      "points": 15,
+      "max_points": 15,
+      "details": [
+        "Basic structure and types are correct."
+      ]
+    },
+    "project_schedule_check": {
+      "passed": false,
+      "points": 25,
+      "max_points": 30,
+      "details": [
+        "Met minimum task requirement (>= 5). Found 9 tasks.",
+        "All schedule tasks have correct structure and types.",
+        "All task_ids have correct format and are unique.",
+        "All task durations are valid (non-negative integers).",
+        "Project finishes on Day 10, meeting the Day 10 deadline.",
+        "FAIL: Schedule logic errors found:",
+        "  - Task 'T09': Starts on Day 10 but latest predecessor ('['T08']') ends Day 10. Expected start >= Day 11."
+      ],
+      "task_map": {
+        "T01": {
+          "task_id": "T01",
+          "task_name": "Site Assessment and Layout Planning",
+          "duration_days": 2,
+          "predecessors": "",
+          "start_day": 1,
+          "end_day": 2
+        },
+        "T02": {
+          "task_id": "T02",
+          "task_name": "Procurement of Shelving and Equipment",
+          "duration_days": 3,
+          "predecessors": "T01",
+          "start_day": 3,
+          "end_day": 5
+        },
+        "T03": {
+          "task_id": "T03",
+          "task_name": "Delivery of Shelving and Equipment",
+          "duration_days": 2,
+          "predecessors": "T02",
+          "start_day": 6,
+          "end_day": 7
+        },
+        "T04": {
+          "task_id": "T04",
+          "task_name": "Installation of Shelving Units",
+          "duration_days": 2,
+          "predecessors": "T03",
+          "start_day": 8,
+          "end_day": 9
+        },
+        "T05": {
+          "task_id": "T05",
+          "task_name": "Setup of Receiving/Sorting Tables",
+          "duration_days": 1,
+          "predecessors": "T03",
+          "start_day": 8,
+          "end_day": 8
+        },
+        "T06": {
+          "task_id": "T06",
+          "task_name": "Installation of Signage and Zone Markings",
+          "duration_days": 1,
+          "predecessors": "T01",
+          "start_day": 3,
+          "end_day": 3
+        },
+        "T07": {
+          "task_id": "T07",
+          "task_name": "Inventory Management System Setup",
+          "duration_days": 2,
+          "predecessors": "T01",
+          "start_day": 3,
+          "end_day": 4
+        },
+        "T08": {
+          "task_id": "T08",
+          "task_name": "Staff/Volunteer Training",
+          "duration_days": 1,
+          "predecessors": "T04,T05,T06,T07",
+          "start_day": 10,
+          "end_day": 10
+        },
+        "T09": {
+          "task_id": "T09",
+          "task_name": "Final Inspection and Operational Readiness",
+          "duration_days": 1,
+          "predecessors": "T08",
+          "start_day": 10,
+          "end_day": 10
+        }
+      }
+    },
+    "responsibility_matrix_check": {
+      "passed": true,
+      "points": 40,
+      "max_points": 40,
+      "details": [
+        "Matrix items have correct structure and types.",
+        "All RACI codes used are valid.",
+        "Single 'Accountable' rule followed for all tasks.",
+        "Task IDs and Names are consistent between schedule and matrix.",
+        "Compliance check methods are present for all tasks."
+      ]
+    },
+    "assumptions_check": {
+      "passed": true,
+      "points": 5,
+      "max_points": 5,
+      "details": [
+        "Assumptions list is present and contains strings."
+      ]
+    }
+  }
+}

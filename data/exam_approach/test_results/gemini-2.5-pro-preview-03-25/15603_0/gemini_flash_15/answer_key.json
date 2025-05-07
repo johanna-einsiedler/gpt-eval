@@ -1,0 +1,59 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "identified_issues": [
+        {
+            "issue_id": "ISSUE_01",
+            "source_description": "Protocol Section 4.1 Inclusion Criteria",
+            "protocol_reference": "Section 4.1.3",
+            "problem_summary": "Inclusion criterion 4.1.3 'prior history of treatment for hypertension' is ambiguous. It lacks specifics on type, duration, timing, or required documentation of the prior treatment.",
+            "potential_impact": "Inconsistent subject screening and enrollment; difficulty verifying eligibility.",
+            "recommended_next_step": "Inform PI and request clarification or query sponsor for a more specific definition.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_02",
+            "source_description": "Schedule of Assessments Table Footnotes",
+            "protocol_reference": "Section 6.2 Table 1 Footnotes 1 and 2",
+            "problem_summary": "There is a conflict for Visit 2 procedures. Footnote 1 requires Safety Labs in a fasting state, while Footnote 2 requires the PK sample ~2 hours post-dose. These are contradictory requirements for the same visit.",
+            "potential_impact": "Inability to perform Visit 2 procedures as written; risk of protocol deviation; inconsistent sample collection.",
+            "recommended_next_step": "Notify PI of the protocol contradiction and request clarification from the sponsor.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_03",
+            "source_description": "Schedule of Assessments Table",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "The SoA lists 'Patient Diary Review' but the protocol excerpt provides no details on the diary's content, completion frequency, specific review process, or handling of missing entries.",
+            "potential_impact": "Inconsistent data collection; difficulty assessing compliance; unclear process for handling issues like missing data.",
+            "recommended_next_step": "Flag the lack of detail for discussion with PI/monitor; request clarification or check study manuals (if available).",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_04",
+            "source_description": "Scenario 1",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "Potential subject took pseudoephedrine. While not strictly an 'anti-hypertensive' (Exclusion 4.2.2), it can affect blood pressure. Eligibility is unclear due to potential confounding effect and ambiguity of exclusion criteria scope.",
+            "potential_impact": "Incorrect subject enrollment/exclusion; confounding factor for baseline BP assessment; potential protocol deviation if enrolled incorrectly.",
+            "recommended_next_step": "Inform PI about the medication use and request their assessment of eligibility before proceeding.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_05",
+            "source_description": "Scenario 2",
+            "protocol_reference": "Section 6.2 Table 1 / Scenario Context",
+            "problem_summary": "Patient forgot to complete the patient diary for 3 days prior to Visit 2 review. This represents missing source data.",
+            "potential_impact": "Incomplete or inaccurate data collection; potential protocol deviation regarding data completion.",
+            "recommended_next_step": "Instruct patient on proper procedure for documenting late/missed entries (if guidance exists) or document the missing data appropriately; inform PI of the issue.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_06",
+            "source_description": "Scenario 3",
+            "protocol_reference": "Section 6.2 Table 1 / Scenario Context",
+            "problem_summary": "ECG at Visit 3 shows 'Borderline QT interval' flagged by the machine. Although patient is asymptomatic, this is a potential safety signal requiring medical assessment.",
+            "potential_impact": "Potential subject safety risk if not assessed; delay in identifying clinically significant change.",
+            "recommended_next_step": "Immediately notify the Principal Investigator of the ECG finding for their review and assessment of clinical significance.",
+            "communication_point_person": "Principal Investigator"
+        }
+    ]
+}

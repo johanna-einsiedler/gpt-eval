@@ -1,0 +1,54 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "Need complete W-2 details to accurately report employment income and tax withholdings.",
+            "question_text": "Could you provide the complete W-2 form from DesignCorp? I noticed you mentioned having a summary page, but I'll need the full document to confirm the exact amounts in Boxes 1 (Wages), 2 (Federal Tax Withheld), and 12 (Retirement Plan Contributions)."
+        },
+        {
+            "id": 2,
+            "category": "Income - Self-Employment",
+            "reasoning": "Require precise documentation of cash tutoring income for accurate tax reporting.",
+            "question_text": "You mentioned earning around $2,500 from tutoring. Could you provide a detailed log or summary of these payments, including dates, amounts, and the names of students or services provided?"
+        },
+        {
+            "id": 3,
+            "category": "Income - Other",
+            "reasoning": "Need specific details about the bank interest income form mentioned.",
+            "question_text": "You noted receiving a tax form from your bank related to savings interest. Could you locate and provide that specific document so I can accurately report your interest income?"
+        },
+        {
+            "id": 4,
+            "category": "Deductions - Education",
+            "reasoning": "Verify potential student loan interest deduction eligibility.",
+            "question_text": "Regarding your student loan interest of approximately $500, can you provide documentation showing the total interest paid and the loan servicer's name to confirm the potential tax deduction?"
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Need exact mortgage interest and property tax amounts for potential deductions.",
+            "question_text": "Since you purchased your condo in March, could you provide the mortgage statement and property tax receipt to help calculate your potential mortgage interest and property tax deductions?"
+        },
+        {
+            "id": 6,
+            "category": "Deductions - Charitable",
+            "reasoning": "Confirm and document charitable contribution amounts for potential tax deduction.",
+            "question_text": "You mentioned donating clothing to Goodwill and giving $100 to your church. Could you provide the Goodwill donation receipt and any documentation from the church to substantiate these charitable contributions?"
+        },
+        {
+            "id": 7,
+            "category": "Deductions - Medical",
+            "reasoning": "Verify if medical expenses exceed threshold for potential itemized deduction.",
+            "question_text": "You estimated out-of-pocket medical expenses around $300. Could you provide receipts or a summary of these expenses, including doctor visits, prescription costs, and any other medical-related expenditures?"
+        },
+        {
+            "id": 8,
+            "category": "General/Missing Forms",
+            "reasoning": "Ensure all necessary tax documents are collected and reviewed.",
+            "question_text": "Do you have any additional tax-related documents or income sources that we haven't discussed, such as investment income, unemployment compensation, or other miscellaneous income?"
+        }
+    ]
+}

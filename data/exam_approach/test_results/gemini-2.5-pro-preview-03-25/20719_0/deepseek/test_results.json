@@ -1,0 +1,94 @@
+{
+  "candidate_id": "GPT-4o",
+  "evaluation_details": {
+    "format_valid_json": {
+      "description": "Submission file is valid JSON",
+      "points_earned": 5,
+      "max_points": 5,
+      "passed": true
+    },
+    "format_candidate_id_present": {
+      "description": "Candidate ID is present and not a placeholder",
+      "points_earned": 1,
+      "max_points": 1,
+      "passed": true
+    },
+    "format_case_reference_correct": {
+      "description": "Case Reference matches key ('EO-BASIC-001')",
+      "points_earned": 1,
+      "max_points": 1,
+      "passed": true,
+      "submitted_value": "EO-BASIC-001"
+    },
+    "core_facts_complainant_name": {
+      "description": "Complainant Name matches key ('Sarah Chen')",
+      "points_earned": 1,
+      "max_points": 1,
+      "passed": true,
+      "submitted_value": "Sarah Chen"
+    },
+    "core_facts_respondent_name": {
+      "description": "Respondent Name matches key ('David Miller')",
+      "points_earned": 1,
+      "max_points": 1,
+      "passed": true,
+      "submitted_value": "David Miller"
+    },
+    "core_facts_allegation_basis": {
+      "description": "Allegation Basis matches key ('Age')",
+      "points_earned": 1,
+      "max_points": 1,
+      "passed": true,
+      "submitted_value": "Age"
+    },
+    "core_facts_policy_name": {
+      "description": "Policy Name matches key ('Employee Development and Advancement Policy')",
+      "points_earned": 1,
+      "max_points": 1,
+      "passed": true,
+      "submitted_value": "Employee Development and Advancement Policy"
+    },
+    "summarization_complaint_desc": {
+      "description": "Complaint Description is summarized (non-empty, non-placeholder, >10 chars)",
+      "points_earned": 2,
+      "max_points": 2,
+      "passed": true,
+      "submitted_value": "Ms. Chen alleges she was unfairly denied selection for the 'Future Leaders Program' due to her age (52), citing comments made by Mr. Miller and the selection of a significantly younger colleague."
+    },
+    "summarization_policy_section": {
+      "description": "Policy Section is summarized (non-empty, non-placeholder, >10 chars)",
+      "points_earned": 2,
+      "max_points": 2,
+      "passed": true,
+      "submitted_value": "Selection for development programs must be non-discriminatory, based on factors like performance history, demonstrated potential, skills alignment, and business needs, without regard to protected characteristics such as age."
+    },
+    "key_statements_complainant_min_count": {
+      "description": "Complainant Key Statements meet minimum count (3)",
+      "points_earned": 2,
+      "max_points": 2,
+      "passed": true,
+      "submitted_count": 4
+    },
+    "key_statements_respondent_min_count": {
+      "description": "Respondent Key Statements meet minimum count (4)",
+      "points_earned": 2,
+      "max_points": 2,
+      "passed": true,
+      "submitted_count": 5
+    },
+    "key_issues_identified": {
+      "description": "Key inconsistencies/missing info identified (Comment contradiction AND Email issue)",
+      "points_earned": 0,
+      "max_points": 3,
+      "passed": false,
+      "submitted_value": [
+        "Ms. Chen mentioned sending a follow-up email to Mr. Miller, which she could not locate, and Mr. Miller did not recall receiving it.",
+        "None identified based on provided materials."
+      ]
+    }
+  },
+  "achieved_points": 19,
+  "total_possible_points": 22,
+  "overall_score": 86.36,
+  "errors": []
+}

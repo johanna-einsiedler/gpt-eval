@@ -1,0 +1,123 @@
+{
+    "exam_type": "basic_logistics_pm_tools",
+    "candidate_id": "GPT-4o",
+    "project_schedule": [
+        {
+            "task_id": "T01",
+            "task_name": "Site assessment and warehouse layout plan",
+            "duration_days": 1,
+            "predecessors": "",
+            "start_day": 1,
+            "end_day": 1
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order shelving units and tables",
+            "duration_days": 2,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 3
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Receive and transport equipment to site",
+            "duration_days": 2,
+            "predecessors": "T02",
+            "start_day": 4,
+            "end_day": 5
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Install shelving, tables and signage",
+            "duration_days": 3,
+            "predecessors": "T03",
+            "start_day": 6,
+            "end_day": 8
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Set up volunteer sorting workflow and training",
+            "duration_days": 1,
+            "predecessors": "T04",
+            "start_day": 9,
+            "end_day": 9
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Final readiness inspection and handover",
+            "duration_days": 1,
+            "predecessors": "T05",
+            "start_day": 10,
+            "end_day": 10
+        }
+    ],
+    "responsibility_matrix": [
+        {
+            "task_id": "T01",
+            "task_name": "Site assessment and warehouse layout plan",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Approved layout diagram"
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order shelving units and tables",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "R",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Purchase order confirmation"
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Receive and transport equipment to site",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "R",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Signed delivery note"
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Install shelving, tables and signage",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Photos of installed shelving"
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Set up volunteer sorting workflow and training",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Training attendance list"
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Final readiness inspection and handover",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Manager walkthrough checklist"
+        }
+    ],
+    "assumptions_made": [
+        "Assumed a standard 5-day working week starting on Day 1; Day 10 is the tenth working day.",
+        "Assumed suppliers can deliver shelving and tables within two working days after order placement.",
+        "Assumed on-site utilities (power, lighting) are functional and require no additional setup.",
+        "Assumed volunteers and the Site Coordinator are available on the scheduled days without shortages.",
+        "Assumed Transport Partner can schedule delivery within the Day 4-5 window."
+    ]
+}

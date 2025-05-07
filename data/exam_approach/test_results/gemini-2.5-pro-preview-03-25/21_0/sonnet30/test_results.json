@@ -1,0 +1,41 @@
+{
+  "overall_score": 0.0,
+  "pass_status": false,
+  "criteria_met": {
+    "valid_json_structure": false,
+    "report_findings_quantity_correct": false,
+    "report_findings_accuracy_met": false,
+    "schedule_meeting_count_correct": false,
+    "schedule_unscheduled_requests_match": false
+  },
+  "details": {
+    "report_review": {
+      "submitted_findings_count": 0,
+      "correct_findings_count": 0,
+      "max_correct_findings": 0,
+      "matched_findings": [],
+      "missed_findings": [],
+      "extra_findings": []
+    },
+    "schedule_preparation": {
+      "submitted_total_meetings": null,
+      "key_total_meetings": null,
+      "meeting_count_match": false,
+      "submitted_unscheduled_count": 0,
+      "key_unscheduled_count": 0,
+      "unscheduled_list_match": false,
+      "submitted_unscheduled_list": [],
+      "key_unscheduled_list": []
+    }
+  },
+  "scoring": {
+    "report_findings_points": 0,
+    "schedule_meeting_count_points": 0,
+    "schedule_unscheduled_match_points": 0,
+    "total_achieved_points": 0,
+    "max_possible_points": 0
+  },
+  "errors": [
+    "Invalid basic JSON structure in submission."
+  ]
+}

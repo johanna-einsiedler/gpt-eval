@@ -1,0 +1,77 @@
+{
+    "overall_score": 100.0,
+    "total_assessments": 10,
+    "correct_assessments": 10,
+    "details": [
+        {
+            "job_id": "JD001",
+            "applicant_id": "APP101",
+            "candidate_answer": "Does Not Meet Essential Requirements",
+            "correct_answer": "Does Not Meet Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD001",
+            "applicant_id": "APP102",
+            "candidate_answer": "Meets Essential Requirements",
+            "correct_answer": "Meets Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD001",
+            "applicant_id": "APP103",
+            "candidate_answer": "Does Not Meet Essential Requirements",
+            "correct_answer": "Does Not Meet Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD001",
+            "applicant_id": "APP104",
+            "candidate_answer": "Does Not Meet Essential Requirements",
+            "correct_answer": "Does Not Meet Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD001",
+            "applicant_id": "APP105",
+            "candidate_answer": "Does Not Meet Essential Requirements",
+            "correct_answer": "Does Not Meet Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD002",
+            "applicant_id": "APP101",
+            "candidate_answer": "Does Not Meet Essential Requirements",
+            "correct_answer": "Does Not Meet Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD002",
+            "applicant_id": "APP102",
+            "candidate_answer": "Does Not Meet Essential Requirements",
+            "correct_answer": "Does Not Meet Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD002",
+            "applicant_id": "APP103",
+            "candidate_answer": "Meets Essential Requirements",
+            "correct_answer": "Meets Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD002",
+            "applicant_id": "APP104",
+            "candidate_answer": "Does Not Meet Essential Requirements",
+            "correct_answer": "Does Not Meet Essential Requirements",
+            "is_correct": true
+        },
+        {
+            "job_id": "JD002",
+            "applicant_id": "APP105",
+            "candidate_answer": "Meets Essential Requirements",
+            "correct_answer": "Meets Essential Requirements",
+            "is_correct": true
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "submission_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "GPT-4",
+    "exam_version_submitted": "BASIC_INTERVIEW_V1.0",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 7,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Could you please provide your complete W-2 form from DesignCorp?  I need the information from all boxes to accurately complete your tax return."
+            },
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "matched_submission_question_id": 2,
+                "matched_submission_question_text": "You mentioned earning approximately $2500 from tutoring.  What was the exact total amount you received, and do you have records to support this amount?  Did you incur any expenses related to your tutoring business, such as supplies or mileage? If so, please provide details."
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 3,
+                "matched_submission_question_text": "You mentioned paying approximately $500 in student loan interest.  What was the exact amount paid, and can you provide documentation from your loan provider confirming the interest paid during the tax year?"
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "matched_submission_question_id": 4,
+                "matched_submission_question_text": "Regarding your condo purchase, can you provide me with your mortgage interest statement and property tax statement showing the amounts paid from March 15th to the end of the tax year?"
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 5,
+                "matched_submission_question_text": "You mentioned donating clothing and household items to Goodwill and cash to your church. Can you please provide any receipts or documentation you have for these donations?  For the cash donation to the church, did you receive a contribution statement?"
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "matched_submission_question_id": 6,
+                "matched_submission_question_text": "You mentioned approximately $300 in medical expenses.  What was the exact amount, and can you provide documentation such as receipts or explanation of benefits (EOB) statements from your healthcare providers?"
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "matched_submission_question_id": 7,
+                "matched_submission_question_text": "You mentioned receiving a tax form from your bank regarding savings interest. Could you please provide a copy of this form so I can determine if it needs to be included in your tax return?"
+            }
+        ],
+        "missed_areas": [
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "reasoning": "Cash donations require specific proof (bank record or written acknowledgement from the charity) for deductibility, especially if undocumented (like collection plate). Need to confirm if such proof exists."
+            }
+        ]
+    },
+    "overall_score": 87.5
+}

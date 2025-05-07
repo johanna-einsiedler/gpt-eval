@@ -1,0 +1,34 @@
+{
+    "candidate_id": "GPT-4o",
+    "case_reference": "EO-BASIC-001",
+    "complaint_summary": {
+        "complainant_name": "Sarah Chen",
+        "respondent_name": "David Miller",
+        "allegation_basis": "Age",
+        "brief_description": "Ms. Chen alleges she was unfairly denied selection for the internal 'Future Leaders Program' due to her age, believing her non-selection was discriminatory compared to a younger colleague's selection."
+    },
+    "key_statements": {
+        "complainant": [
+            "Applied for the 'Future Leaders Program' on 2024-02-10, meeting all eligibility criteria including 15 years tenure and 'Exceeds Expectations' performance rating.",
+            "Mr. Miller commented the program was intended to identify and groom 'younger employees who have a long runway ahead of them in the company'.",
+            "Ben Carter (age 28, 3 years tenure) was selected, despite believing her own experience and performance record are stronger.",
+            "Sent a follow-up email to Mr. Miller asking for clarification on selection criteria, but received no written response."
+        ],
+        "respondent": [
+            "Confirmed Ms. Chen met basic eligibility requirements for the program.",
+            "Selection process focused on identifying individuals with high potential for rapid advancement and innovation.",
+            "Denied specifically saying the program was for 'younger employees'.",
+            "Ben Carter was selected based on his lead role in the 'Project Innovate' campaign, demonstrating specific leadership competencies.",
+            "Claimed he verbally explained the selection decision to Ms. Chen, focusing on Mr. Carter's specific achievements."
+        ]
+    },
+    "relevant_policy": {
+        "policy_name": "Employee Development and Advancement Policy",
+        "relevant_section_summary": "Selection for development programs must be based on non-discriminatory factors including performance, potential, skills alignment, and business needs, without regard to protected characteristics."
+    },
+    "identified_inconsistencies_or_missing_info": [
+        "Discrepancy between Mr. Miller's recollection of his comments about the program and Ms. Chen's reported statement.",
+        "Unresolved status of Ms. Chen's follow-up email, with conflicting accounts of its existence and response.",
+        "Lack of detailed documentation of the specific selection criteria and scoring for the Future Leaders Program."
+    ]
+}

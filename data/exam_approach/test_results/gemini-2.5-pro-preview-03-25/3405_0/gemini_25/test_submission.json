@@ -1,0 +1,37 @@
+{
+    "candidate_id": "GPT-4o",
+    "exam_id": "BA_Basic_01",
+    "program_name": "Community Tech Literacy Workshop",
+    "total_estimated_cost": 2640.0,
+    "cost_breakdown": [
+        {
+            "category": "Venue Rental",
+            "estimated_cost": 600.0,
+            "calculation_basis": "4 workshops * $150.00/workshop (from quote VQ-CTL-483)"
+        },
+        {
+            "category": "Instructor Fees",
+            "estimated_cost": 600.0,
+            "calculation_basis": "4 workshops * 3 hours/workshop * $50.00/hour (Standard_Costs.xlsx)"
+        },
+        {
+            "category": "Training Materials",
+            "estimated_cost": 800.0,
+            "calculation_basis": "20 participants/workshop * 4 workshops * $10.00/participant (Standard_Costs.xlsx)"
+        },
+        {
+            "category": "Refreshments",
+            "estimated_cost": 400.0,
+            "calculation_basis": "20 participants/workshop * 4 workshops * $5.00/participant (Standard_Costs.xlsx)"
+        },
+        {
+            "category": "Admin Support",
+            "estimated_cost": 240.0,
+            "calculation_basis": "10% of $2400.00 (sum of direct costs: Venue $600.00, Instructor $600.00, Materials $800.00, Refreshments $400.00)"
+        }
+    ],
+    "notes_or_assumptions": [
+        "Used venue quote VQ-CTL-483 ($150.00/session) instead of standard hourly rate from Standard_Costs.xlsx.",
+        "Budget assumes 20 participants per workshop for all 4 workshops, as specified in Program_Details.pdf for budgeting purposes."
+    ]
+}

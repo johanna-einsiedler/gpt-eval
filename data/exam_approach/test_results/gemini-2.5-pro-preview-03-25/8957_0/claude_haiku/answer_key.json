@@ -1,0 +1,35 @@
+{
+    "candidate_id": "Candidate_Model_ID",
+    "exam_version": "Basic_DataPrep_v1",
+    "submission_timestamp": "YYYY-MM-DDTHH:MM:SSZ",
+    "results": {
+        "task_1_load_combine": {
+            "merged_rows": 20,
+            "merged_columns": 7
+        },
+        "task_2_identify_issues": {
+            "missing_age_count": 2,
+            "missing_score_count": 2,
+            "unique_gender_values": [
+                "",
+                "F",
+                "M",
+                "Male",
+                "N/A",
+                "Other",
+                "female"
+            ],
+            "high_age_rows_count": 2,
+            "duplicate_rows_count": 2
+        },
+        "task_3_clean_adjust": {
+            "final_rows_count": 18,
+            "median_age_cleaned": 44.5,
+            "mean_score_cleaned": 71.61,
+            "date_conversion_failures": 2
+        },
+        "task_4_apply_weights": {
+            "mean_weighted_score": 77.41
+        }
+    }
+}

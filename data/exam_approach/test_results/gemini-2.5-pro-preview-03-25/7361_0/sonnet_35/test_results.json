@@ -1,0 +1,67 @@
+{
+    "submission_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "Claude-3-Opus",
+    "exam_version_submitted": "BASIC_INTERVIEW_V1.0",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 7,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Can you please provide your full W-2 form from DesignCorp? I need to see all the information, particularly the amounts in Boxes 1, 2, 12, and 17."
+            },
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "matched_submission_question_id": 2,
+                "matched_submission_question_text": "What was the total amount you earned from tutoring in the tax year? Can you provide your payment log or any other records of this income?"
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 3,
+                "matched_submission_question_text": "Could you please log into your student loan account and provide the Form 1098-E, which shows the exact amount of student loan interest you paid during the tax year?"
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "matched_submission_question_id": 4,
+                "matched_submission_question_text": "Can you provide your Form 1098 from your mortgage lender, as well as any property tax statements for the condo you purchased in March?"
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 5,
+                "matched_submission_question_text": "For your charitable donations, can you provide the Goodwill receipt and estimate the fair market value of the items donated? Also, do you have any documentation for the $100 cash donation to your church?"
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "matched_submission_question_id": 6,
+                "matched_submission_question_text": "Regarding your medical expenses, can you provide a detailed breakdown of the approximately $300 spent on doctor's appointments and prescriptions? Do you have receipts or statements for these expenses?"
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "matched_submission_question_id": 7,
+                "matched_submission_question_text": "You mentioned receiving a tax form from your bank related to savings interest. Can you please provide the Form 1099-INT from your bank?"
+            }
+        ],
+        "missed_areas": [
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "reasoning": "Cash donations require specific proof (bank record or written acknowledgement from the charity) for deductibility, especially if undocumented (like collection plate). Need to confirm if such proof exists."
+            }
+        ]
+    },
+    "overall_score": 87.5
+}

@@ -8927,3 +8927,1494 @@ total_token_count: 14802
 candidates_token_count: 302
 total_token_count: 17444
 }"
+Information Technology Project Managers,16151.0,Perform risk assessments to develop response strategies.,gemini-2.5-pro-preview-03-25,"['Spreadsheets', 'Text editor', 'PDF viewer']","['Text', 'Data']",Exam not valid,"You are an excellent examiner of Information Technology Project Managers capabilities. Design a remote, **practical** exam to verify whether a Information Technology Project Managers can Perform risk assessments to develop response strategies..
+    This exam will have two parts (basic and advanced). Your current task is **only** to design the basic exam.
+
+    ### Context
+    - The candidate has access to a computer with the following tools: Spreadsheets, Text editor and PDF viewer
+    - The candidate can also be given digital materials such as Text or Data that must be used for the test.
+    - Design a **practical** exam that can be completed remotely using only these tools. A practical exam is an exam actually testing whether the described task can be performed successfully. An exam testing knowledge about the task is NOT a practical exam.
+    - To simplify evaluation, the candidate should submit answers in a structured JSON format. Name the file ""test_submission.json"".
+    - The candidate should be able to complete the exam in maximum 90 minutes.
+    ","Okay, here is the design for the **Basic Level Practical Exam** focusing on IT Project Manager Risk Assessment and Response Strategy Development capabilities.
+
+**Exam Title:** IT Project Manager Practical Exam: Basic Risk Assessment & Response
+
+**Purpose for Evaluator:**
+
+This exam assesses a candidate's fundamental ability to perform a practical risk assessment for a given IT project scenario and develop initial response strategies for key risks. It focuses on the core process: identifying risks from project documentation, performing qualitative analysis (likelihood/impact), prioritizing based on that analysis, and formulating appropriate basic response actions. The exam simulates a real-world task using standard office tools and requires the candidate to structure their findings in a machine-readable format (JSON) for ease of evaluation. It tests *application* of knowledge, not just recall.
+
+**Exam Structure for Evaluator:**
+
+1.  **Scenario Presentation:** The candidate receives a concise IT project scenario (e.g., implementing a standard off-the-shelf software, a small website migration) presented in a PDF document. This document includes:
+    *   Project Goal & Objectives
+    *   High-Level Scope Summary
+    *   Key Stakeholders (Roles, e.g., Sponsor, Technical Lead, End-User Rep)
+    *   High-Level Timeline & Budget Constraints
+    *   Known Assumptions & Constraints
+    *   (Optional: Short snippets of stakeholder concerns or known issues)
+2.  **Task Instructions:** Clear instructions (provided as text or PDF) guide the candidate through the required steps:
+    *   Read the project scenario carefully.
+    *   Identify potential risks based *only* on the provided materials.
+    *   Analyze each identified risk using a provided qualitative scale (e.g., Likelihood: Low/Medium/High; Impact: Low/Medium/High).
+    *   Calculate a simple Risk Score (guidance provided, e.g., mapping L/M/H to 1/2/3 and multiplying L * I).
+    *   Categorize each risk (e.g., Technical, Resource, Schedule, Budget, External).
+    *   Develop a specific response strategy (Avoid, Mitigate, Transfer, Accept) and a brief action description for the **Top 3** highest-scoring risks.
+    *   Assign a potential owner (by role) for the response strategy for those Top 3 risks.
+    *   Structure the entire output into the specified JSON format.
+3.  **Tools & Materials Provided:**
+    *   `Project_Scenario.pdf`: The case study document.
+    *   `Instructions_and_Scales.pdf`: Detailed instructions, Likelihood/Impact scales definition (e.g., Low=1, Medium=2, High=3), Risk Score calculation method, Risk Categories list, and the required JSON structure definition with field explanations.
+4.  **Candidate Task Execution:** The candidate uses the provided materials and standard tools:
+    *   **PDF Viewer:** To read the scenario and instructions.
+    *   **Spreadsheet (Optional but Recommended):** To list risks, perform analysis (assign L/I, calculate score), sort/prioritize, and draft response strategies before structuring the final JSON.
+    *   **Text Editor:** To construct the final `test_submission.json` file according to the specified format.
+5.  **Submission:** The candidate submits a single file named `test_submission.json`.
+6.  **Time Limit:** 90 minutes.
+
+**JSON Output Structure (`test_submission.json`):**
+
+```json
+{
+  ""exam_candidate_id"": ""CANDIDATE_UNIQUE_ID"", // Pre-filled or instructed for candidate to fill
+  ""exam_level"": ""Basic"",
+  ""risk_register"": [
+    {
+      ""risk_id"": 1, // Sequential identifier assigned by the candidate
+      ""description"": ""Clear and concise description of the identified risk."",
+      ""category"": ""Technical | Resource | Schedule | Budget | Scope | External"", // Choose one category based on provided list
+      ""likelihood"": ""Low | Medium | High"", // Based on provided scale definition
+      ""impact"": ""Low | Medium | High"", // Based on provided scale definition
+      ""risk_score"": 6, // Calculated based on instructions (e.g., L=2 * I=3 = 6)
+      ""response_strategy_type"": ""Mitigate | Avoid | Transfer | Accept | null"", // Required only for Top 3 risks, null otherwise
+      ""response_strategy_description"": ""Brief description of the planned response action(s). Required only for Top 3 risks, null otherwise."",
+      ""potential_owner_role"": ""Project Sponsor | Technical Lead | etc. | null"" // Role responsible for the response. Required only for Top 3 risks, null otherwise.
+    },
+    {
+      ""risk_id"": 2,
+      ""description"": ""Another identified risk description."",
+      ""category"": ""Schedule"",
+      ""likelihood"": ""Medium"",
+      ""impact"": ""Medium"",
+      ""risk_score"": 4, // e.g., L=2 * I=2 = 4
+      ""response_strategy_type"": null, // Assuming this is not a Top 3 risk
+      ""response_strategy_description"": null,
+      ""potential_owner_role"": null
+    },
+    // ... more risk objects identified by the candidate
+    {
+      ""risk_id"": 5, // Example of another Top 3 risk
+      ""description"": ""Risk related to stakeholder availability."",
+      ""category"": ""Resource"",
+      ""likelihood"": ""High"",
+      ""impact"": ""Medium"",
+      ""risk_score"": 6, // e.g., L=3 * I=2 = 6
+      ""response_strategy_type"": ""Mitigate"",
+      ""response_strategy_description"": ""Schedule regular check-ins; identify backup points of contact."",
+      ""potential_owner_role"": ""Project Manager""
+    }
+    // ... potentially more risks identified but without response strategies if not Top 3
+  ]
+}
+```
+
+**Key Practical Elements Tested:**
+
+*   **Information Synthesis:** Can the candidate extract potential problems (risks) from standard project documentation?
+*   **Analytical Thinking:** Can the candidate apply simple qualitative measures (Likelihood, Impact) logically to the identified risks based on the scenario context?
+*   **Prioritization:** Can the candidate use the analysis results (Risk Score) to determine which risks require immediate attention?
+*   **Problem Solving (Basic):** Can the candidate formulate relevant and actionable response strategies for the most critical risks?
+*   **Structured Communication:** Can the candidate organize and present their findings clearly in a predefined format (JSON)?
+*   **Tool Proficiency (Basic):** Can the candidate effectively use common office tools (PDF reader, spreadsheet for thinking/calculation, text editor for final output) to complete the task?
+
+This design provides a robust way to assess the candidate's practical ability to perform the foundational steps of risk management within a realistic time constraint and using commonly available tools, suitable for remote execution and structured evaluation.","Okay, here are the clear and concise instructions for the candidate for the Basic Level Practical Exam.
+
+---
+
+**IT Project Manager Practical Exam: Basic Risk Assessment & Response**
+
+**Welcome!**
+
+This practical exam assesses your ability to perform fundamental risk assessment tasks for an IT project scenario using standard tools.
+
+**Your Objective:**
+
+Your goal is to analyze a provided IT project scenario, identify potential risks, perform a qualitative risk analysis, prioritize the risks, and propose basic response strategies for the most critical ones. You will structure your findings in a specific JSON format for submission.
+
+**Provided Materials:**
+
+You will be provided with the following digital files:
+
+1.  **`Project_Scenario.pdf`**: This document contains the details of the IT project you need to analyze, including its goals, scope, stakeholders, timeline, budget constraints, assumptions, and potentially some known issues or concerns.
+2.  **`Instructions_and_Scales.pdf`**: This document contains:
+    *   Detailed definitions for the Likelihood scale (Low, Medium, High) and their corresponding numerical values (1, 2, 3).
+    *   Detailed definitions for the Impact scale (Low, Medium, High) and their corresponding numerical values (1, 2, 3).
+    *   The specific formula to calculate the `risk_score` (Likelihood value * Impact value).
+    *   A pre-defined list of `category` values you *must* use for classifying risks (e.g., Technical, Resource, Schedule, Budget, Scope, External).
+    *   A pre-defined list of `response_strategy_type` values you *must* use (Avoid, Mitigate, Transfer, Accept).
+    *   The exact required structure and field descriptions for the `test_submission.json` file.
+
+**Tools Required:**
+
+*   A PDF Viewer (to read the provided materials)
+*   A Spreadsheet application (recommended for organizing your work, optional)
+*   A Text Editor (to create the final `test_submission.json` file)
+
+**Time Limit:**
+
+You have a maximum of **90 minutes** to complete this exam and prepare your submission file.
+
+**Tasks to Perform:**
+
+1.  **Read and Understand:** Carefully read the `Project_Scenario.pdf` document to understand the project context.
+2.  **Identify Risks:** Based *only* on the information presented in `Project_Scenario.pdf`, identify potential risks that could affect the project's success.
+3.  **Analyze and Record Risks:** For *each* risk you identify, perform the following analysis and record the details (using a spreadsheet first is recommended):
+    *   Assign a unique sequential `risk_id` (number), starting from 1.
+    *   Write a clear and concise `description` of the risk.
+    *   Assign the most appropriate `category` using *only* the categories listed in `Instructions_and_Scales.pdf`.
+    *   Assess the `likelihood` as Low, Medium, or High, using the definitions provided in `Instructions_and_Scales.pdf`.
+    *   Assess the `impact` as Low, Medium, or High, using the definitions provided in `Instructions_and_Scales.pdf`.
+    *   Calculate the `risk_score` using the specific formula provided in `Instructions_and_Scales.pdf`.
+4.  **Prioritize:** Identify the **Top 3** risks based on the calculated `risk_score` (highest scores). If there is a tie for the third position, include all risks with that tied score.
+5.  **Develop Response Strategies (Top 3 Only):** For *only* the Top 3 identified risks (including any ties as per step 4):
+    *   Determine the most appropriate `response_strategy_type` using *only* the types listed in `Instructions_and_Scales.pdf` (Avoid, Mitigate, Transfer, Accept).
+    *   Write a brief `response_strategy_description` outlining the primary action(s) required for the chosen strategy. Keep this description concise (1-2 short sentences or bullet points).
+    *   Identify the most logical `potential_owner_role` for overseeing the response strategy, selecting from the stakeholder roles mentioned in the `Project_Scenario.pdf` or standard roles like 'Project Manager'.
+6.  **Format Output:** Structure all your findings (including risks *without* response strategies if they are not in the Top 3) into a single JSON file according to the exact structure specified in `Instructions_and_Scales.pdf`.
+    *   For risks *not* in the Top 3, the fields `response_strategy_type`, `response_strategy_description`, and `potential_owner_role` should have a value of `null`.
+
+**Submission Format:**
+
+*   You must submit a single file named **`test_submission.json`**.
+*   Fill in the `exam_candidate_id` field within the JSON file with the unique ID provided to you.
+*   Ensure the file is valid JSON and strictly adheres to the structure defined in `Instructions_and_Scales.pdf`. Failure to match the structure may result in evaluation errors.
+
+**Important Notes:**
+
+*   Base your risk identification and assessment *solely* on the information provided in `Project_Scenario.pdf`. Do not make assumptions beyond the provided text.
+*   You *must* use the exact Likelihood/Impact scales, Risk Score calculation formula, Risk Categories, and Response Strategy Types provided in `Instructions_and_Scales.pdf`.
+*   Focus on accurately applying the risk assessment process and structuring the output correctly.
+
+Good luck!","Okay, here are the materials required for the Basic Level Practical Exam.
+
+<MATERIALS_FOR_CANDIDATE>
+**(Content for `Project_Scenario.pdf`)**
+
+**Project Title:** Internal Employee Directory Web Application Deployment
+
+**Document Version:** 1.0
+
+**Date:** [Current Date]
+
+**1. Project Goal & Objectives**
+
+*   **Goal:** To deploy a simple, internally hosted web application that allows employees to look up contact information (name, department, email, phone extension) for other employees.
+*   **Objectives:**
+    *   Deploy the pre-built ""EmpDir"" web application software (provided by the IT Development team) onto a new internal web server.
+    *   Configure the application to connect to the existing employee database (read-only access).
+    *   Make the application accessible to all employees via the company intranet.
+    *   Complete the deployment within the specified timeline and budget.
+    *   Ensure basic user documentation (a one-page quick start guide) is available on the intranet.
+
+**2. High-Level Scope Summary**
+
+*   **In Scope:**
+    *   Provisioning of one new virtual web server.
+    *   Installation and configuration of the ""EmpDir"" web application software.
+    *   Establishing read-only connectivity to the existing employee database.
+    *   Basic functionality testing (search, view contact details).
+    *   Deployment to the production environment (internal intranet).
+    *   Creation and posting of a one-page quick start guide.
+*   **Out of Scope:**
+    *   Development of the ""EmpDir"" application itself (it's considered complete).
+    *   Modifications to the existing employee database schema.
+    *   User account management within the application (uses existing network logins).
+    *   Advanced features (e.g., profile pictures, org charts).
+    *   Data migration or data cleansing.
+    *   Formal user training sessions.
+
+**3. Key Stakeholders**
+
+*   **Project Sponsor:** Jane Doe (Head of HR) - Champion for the project, provides funding approval.
+*   **Technical Lead:** John Smith (Senior Systems Administrator) - Responsible for server provisioning, application installation, and technical troubleshooting. He is also working 50% on another critical infrastructure upgrade project.
+*   **Database Administrator (DBA):** Priya Khan - Responsible for granting database access and ensuring connectivity doesn't impact database performance. Her team is currently backlogged with requests.
+*   **End-User Representative:** David Lee (Internal Comms Specialist) - Will perform basic acceptance testing and review the quick start guide.
+
+**4. High-Level Timeline & Budget Constraints**
+
+*   **Target Go-Live Date:** 6 weeks from today.
+*   **Total Budget:** $5,000 (primarily for server resources and contingency). The budget is fixed and has no flexibility.
+
+**5. Known Assumptions & Constraints**
+
+*   **Assumptions:**
+    *   The ""EmpDir"" application provided by the IT Development team is bug-free and performs as expected.
+    *   The existing employee database contains accurate and up-to-date information.
+    *   Standard company virtual server templates are sufficient for the application's needs.
+    *   Network connectivity between the new web server and the database server is readily available.
+*   **Constraints:**
+    *   The Technical Lead (John Smith) has limited availability (50% allocation).
+    *   The DBA team has limited bandwidth for new requests.
+    *   The project budget is strictly fixed.
+    *   Deployment must occur outside of core business hours (requires coordination).
+
+**6. Additional Notes**
+
+*   The IT Development team who built ""EmpDir"" has been reassigned to another project and has limited availability for support if issues arise with the application code itself.
+*   Initial feedback suggests the ""EmpDir"" application documentation is minimal.
+
+---
+
+**(Content for `Instructions_and_Scales.pdf`)**
+
+**IT Project Manager Practical Exam: Basic Risk Assessment & Response - Instructions & Scales**
+
+**1. Exam Overview**
+
+Follow the tasks outlined in the main exam instructions document. Use the scales, categories, formulas, and JSON structure defined below.
+
+**2. Risk Identification**
+
+Identify potential risks based *only* on the information provided in `Project_Scenario.pdf`.
+
+**3. Risk Analysis Scales & Calculation**
+
+*   **Likelihood Scale:**
+    *   **High (3):** Very likely to occur based on the scenario details (e.g., explicitly stated constraints or high uncertainty).
+    *   **Medium (2):** Could occur; contributing factors are present but not guaranteed (e.g., dependencies, potential conflicts).
+    *   **Low (1):** Unlikely to occur, but still possible within the project context.
+
+*   **Impact Scale:** (Consider impact on project objectives: scope, schedule, budget, quality)
+    *   **High (3):** Could cause major disruption. May lead to project failure, significant delay (>2 weeks), budget overrun (>15%), or inability to meet core objectives.
+    *   **Medium (2):** Could cause noticeable disruption. May lead to missed milestones (delay <2 weeks), budget overrun (<15%), or reduced quality/scope.
+    *   **Low (1):** Could cause minor inconvenience. Minimal impact on schedule, budget, or scope; potentially requiring minor workarounds.
+
+*   **Risk Score Calculation:**
+    *   `risk_score` = Likelihood Value * Impact Value
+    *   Example: Likelihood = Medium (2), Impact = High (3) => `risk_score` = 2 * 3 = 6
+
+**4. Risk Categories**
+
+Use *only* one of the following categories for each risk:
+
+*   `Technical`: Risks related to technology, application stability, infrastructure, data connectivity, performance.
+*   `Resource`: Risks related to personnel availability, skills, stakeholder engagement.
+*   `Schedule`: Risks related to timelines, dependencies, delays, estimations.
+*   `Budget`: Risks related to funding, cost overruns, resource costs.
+*   `Scope`: Risks related to scope creep, unclear requirements, scope definition.
+*   `External`: Risks related to dependencies on external factors or teams not directly part of the core project team (e.g., other internal departments like IT Dev, DBA team in this context).
+
+**5. Response Strategy Types**
+
+For the Top 3 risks (highest `risk_score`), choose *only* one of the following strategy types:
+
+*   `Avoid`: Change the project plan to eliminate the risk or its impact.
+*   `Mitigate`: Take action to reduce the likelihood or impact of the risk.
+*   `Transfer`: Shift the risk or its impact to a third party (less common in this scenario, but possible).
+*   `Accept`: Acknowledge the risk and take no action unless it occurs (suitable for low-priority risks or when the response cost outweighs the risk).
+
+**6. JSON Output Structure (`test_submission.json`)**
+
+Create a single JSON file named `test_submission.json` with the following structure. Ensure all field names and value types match exactly. Use `null` for response fields if the risk is not in the Top 3.
+
+```json
+{
+  ""exam_candidate_id"": ""YOUR_UNIQUE_ID_HERE"", // Replace with the ID provided to you
+  ""exam_level"": ""Basic"",
+  ""risk_register"": [
+    {
+      ""risk_id"": 1, // Sequential number assigned by you
+      ""description"": ""String: Clear description of the risk."",
+      ""category"": ""String: One of [Technical, Resource, Schedule, Budget, Scope, External]"",
+      ""likelihood"": ""String: One of [Low, Medium, High]"",
+      ""impact"": ""String: One of [Low, Medium, High]"",
+      ""risk_score"": ""Number: Calculated Likelihood value * Impact value"",
+      ""response_strategy_type"": ""String: One of [Avoid, Mitigate, Transfer, Accept] or null"",
+      ""response_strategy_description"": ""String: Brief description of response action(s) or null."",
+      ""potential_owner_role"": ""String: Stakeholder role from scenario (e.g., Technical Lead, Project Sponsor, DBA) or 'Project Manager', or null.""
+    },
+    {
+      ""risk_id"": 2,
+      // ... other fields ...
+      ""response_strategy_type"": null, // Example for non-Top 3 risk
+      ""response_strategy_description"": null,
+      ""potential_owner_role"": null
+    }
+    // ... Add more risk objects as identified
+  ]
+}
+
+```
+
+**7. Submission**
+
+Ensure your final `test_submission.json` file is valid JSON and adheres strictly to the structure above. Submit only this file.
+
+</MATERIALS_FOR_CANDIDATE>
+
+<MATERIALS_EXPLANATION_FOR_EVALUATOR>
+
+**1. How Materials Were Created:**
+
+*   **Scenario (`Project_Scenario.pdf`):** A deliberately simple, common IT project (internal tool deployment) was chosen to be relatable and manageable within the time limit. Specific constraints and potential issues were embedded directly into the text to serve as clear triggers for risk identification. The scope is tightly defined to limit ambiguity. Stakeholder roles are explicitly listed to provide options for the `potential_owner_role`.
+*   **Instructions & Scales (`Instructions_and_Scales.pdf`):** These provide rigid structure to simplify evaluation.
+    *   The Likelihood/Impact scales are qualitative (L/M/H) but mapped to numbers (1/2/3) for a simple, objective `risk_score` calculation (L\*I). This tests basic analysis and prioritization.
+    *   Pre-defined Risk Categories and Response Strategy Types force the candidate to use a standard taxonomy, preventing subjective classifications and making automated checks easier.
+    *   The JSON structure is precisely defined to ensure consistent, machine-readable output.
+
+**2. Intended Risks and Expected Analysis (Examples - Candidate might identify others or analyze slightly differently, but these are the most obvious):**
+
+*   **Risk 1:** Technical Lead (John Smith) has limited availability (50%).
+    *   *Description:* Delay in server provisioning or issue resolution due to Technical Lead's limited availability (50% allocation).
+    *   *Category:* Resource
+    *   *Likelihood:* High (explicitly stated constraint) -> 3
+    *   *Impact:* Medium (could delay tasks, but maybe not derail the whole project if managed) -> 2
+    *   *Risk Score:* 6
+    *   *Potential Response (Mitigate):* Clarify priorities with John Smith and his manager; identify specific tasks needing his input early; explore if any tasks can be delegated.
+    *   *Potential Owner:* Project Manager / Technical Lead
+*   **Risk 2:** DBA team backlog may delay database access setup.
+    *   *Description:* Delay in obtaining necessary database connectivity due to DBA team backlog.
+    *   *Category:* External (Dependency on another team) or Schedule
+    *   *Likelihood:* Medium (stated backlog, but not guaranteed impact) -> 2
+    *   *Impact:* Medium (could delay configuration and testing) -> 2
+    *   *Risk Score:* 4
+    *   *Potential Response (Mitigate):* Submit DBA request immediately; follow up regularly; escalate to Sponsor if delays occur.
+    *   *Potential Owner:* Project Manager / DBA
+*   **Risk 3:** Fixed budget offers no contingency for unexpected issues.
+    *   *Description:* Project cost exceeds the fixed $5,000 budget due to unforeseen technical issues or resource time.
+    *   *Category:* Budget
+    *   *Likelihood:* Medium (fixed budgets are inherently risky, potential for issues exists) -> 2
+    *   *Impact:* High (no flexibility means potential project halt or scope reduction) -> 3
+    *   *Risk Score:* 6
+    *   *Potential Response (Mitigate):* Track expenses closely; identify potential cost-saving measures early; keep Sponsor informed of budget status. (Could also be Accept if analysis deems risk low enough, but Mitigate is more proactive).
+    *   *Potential Owner:* Project Manager / Project Sponsor
+*   **Risk 4:** Limited support available from the original ""EmpDir"" application developers.
+    *   *Description:* Inability to resolve application-specific bugs or issues quickly due to limited availability of the original development team.
+    *   *Category:* Technical or External
+    *   *Likelihood:* Medium (minimal documentation mentioned, team reassigned) -> 2
+    *   *Impact:* Medium (could delay deployment if bugs are found) -> 2
+    *   *Risk Score:* 4
+    *   *Potential Response (Mitigate):* Allocate extra time for testing; request any available documentation/contact point from Dev team upfront.
+    *   *Potential Owner:* Technical Lead / Project Manager
+*   **Risk 5:** Assumption that the ""EmpDir"" application is bug-free might be incorrect.
+    *   *Description:* The provided ""EmpDir"" application contains significant bugs requiring fixes, delaying deployment.
+    *   *Category:* Technical
+    *   *Likelihood:* Low/Medium (stated as assumption, but minimal docs/support increases risk) -> 1 or 2
+    *   *Impact:* High (if major bugs, could halt deployment or require unplanned dev work) -> 3
+    *   *Risk Score:* 3 or 6 (depends on Likelihood assessment)
+    *   *Potential Response (Mitigate):* Thorough testing early in the process; contingency planning for bug fixing time/resources (though budget is fixed).
+    *   *Potential Owner:* Technical Lead
+
+**3. Prioritization & Top 3:**
+
+Based on the example scores above, the Top 3 risks would likely be:
+1.  Technical Lead Availability (Score 6)
+2.  Fixed Budget Constraint (Score 6)
+3.  Potential Application Bugs (Score 6, if assessed as M/H) OR DBA Backlog / Limited Dev Support (Score 4, if bugs assessed L/H=3).
+
+The candidate needs to select the top 3 based on *their* calculated scores and provide responses only for those. Ties should be included.
+
+**4. Tricky Elements & Common Pitfalls:**
+
+*   **Distinguishing Assumptions vs. Risks:** Candidates might list an assumption (e.g., ""DB is accurate"") as a risk itself, rather than the risk stemming *from* the assumption being wrong (e.g., ""Inaccurate data in DB leads to user dissatisfaction""). The latter is the actual risk.
+*   **Overlooking Constraints:** Failing to identify risks directly linked to stated constraints (budget, resource availability).
+*   **Vague Descriptions:** Writing risk descriptions that are too generic (e.g., ""Project delay"") instead of specific causes (""Delay *due to* resource availability"").
+*   **Incorrect Categorization:** Using categories not on the provided list or misclassifying risks (e.g., calling DBA dependency 'Resource' instead of 'External' or 'Schedule').
+*   **Inappropriate Response Strategy:** Choosing 'Avoid' when it's not feasible, or 'Accept' for a high-impact/high-likelihood risk without justification. Response descriptions might be too vague.
+*   **JSON Formatting Errors:** Incorrect field names, data types (e.g., string instead of number for `risk_score`), missing commas, or incorrect nesting will break the structure.
+*   **Analyzing Risks Not Based *Solely* on Provided Text:** Bringing in outside knowledge or assumptions not supported by the scenario.
+
+**5. ""Hidden"" Information:**
+
+*   The limited availability of the *original developers* combined with *minimal documentation* strongly implies a higher risk associated with the assumption that the application is bug-free or easily deployable.
+*   The Technical Lead working on *another critical project* emphasizes the severity of their 50% allocation.
+*   The DBA team being *backlogged* is a direct pointer to a potential schedule dependency risk.
+
+**6. Evaluation Simplification:**
+
+*   The pre-defined scales, categories, response types, and JSON structure make evaluation significantly easier and more objective.
+*   The simple L\*I score provides a clear (though basic) prioritization mechanism to check.
+*   The focus is on applying the *process* correctly within the given constraints, rather than deep domain expertise.
+
+</MATERIALS_EXPLANATION_FOR_EVALUATOR>","
+**(Content for `Project_Scenario.pdf`)**
+
+**Project Title:** Internal Employee Directory Web Application Deployment
+
+**Document Version:** 1.0
+
+**Date:** [Current Date]
+
+**1. Project Goal & Objectives**
+
+*   **Goal:** To deploy a simple, internally hosted web application that allows employees to look up contact information (name, department, email, phone extension) for other employees.
+*   **Objectives:**
+    *   Deploy the pre-built ""EmpDir"" web application software (provided by the IT Development team) onto a new internal web server.
+    *   Configure the application to connect to the existing employee database (read-only access).
+    *   Make the application accessible to all employees via the company intranet.
+    *   Complete the deployment within the specified timeline and budget.
+    *   Ensure basic user documentation (a one-page quick start guide) is available on the intranet.
+
+**2. High-Level Scope Summary**
+
+*   **In Scope:**
+    *   Provisioning of one new virtual web server.
+    *   Installation and configuration of the ""EmpDir"" web application software.
+    *   Establishing read-only connectivity to the existing employee database.
+    *   Basic functionality testing (search, view contact details).
+    *   Deployment to the production environment (internal intranet).
+    *   Creation and posting of a one-page quick start guide.
+*   **Out of Scope:**
+    *   Development of the ""EmpDir"" application itself (it's considered complete).
+    *   Modifications to the existing employee database schema.
+    *   User account management within the application (uses existing network logins).
+    *   Advanced features (e.g., profile pictures, org charts).
+    *   Data migration or data cleansing.
+    *   Formal user training sessions.
+
+**3. Key Stakeholders**
+
+*   **Project Sponsor:** Jane Doe (Head of HR) - Champion for the project, provides funding approval.
+*   **Technical Lead:** John Smith (Senior Systems Administrator) - Responsible for server provisioning, application installation, and technical troubleshooting. He is also working 50% on another critical infrastructure upgrade project.
+*   **Database Administrator (DBA):** Priya Khan - Responsible for granting database access and ensuring connectivity doesn't impact database performance. Her team is currently backlogged with requests.
+*   **End-User Representative:** David Lee (Internal Comms Specialist) - Will perform basic acceptance testing and review the quick start guide.
+
+**4. High-Level Timeline & Budget Constraints**
+
+*   **Target Go-Live Date:** 6 weeks from today.
+*   **Total Budget:** $5,000 (primarily for server resources and contingency). The budget is fixed and has no flexibility.
+
+**5. Known Assumptions & Constraints**
+
+*   **Assumptions:**
+    *   The ""EmpDir"" application provided by the IT Development team is bug-free and performs as expected.
+    *   The existing employee database contains accurate and up-to-date information.
+    *   Standard company virtual server templates are sufficient for the application's needs.
+    *   Network connectivity between the new web server and the database server is readily available.
+*   **Constraints:**
+    *   The Technical Lead (John Smith) has limited availability (50% allocation).
+    *   The DBA team has limited bandwidth for new requests.
+    *   The project budget is strictly fixed.
+    *   Deployment must occur outside of core business hours (requires coordination).
+
+**6. Additional Notes**
+
+*   The IT Development team who built ""EmpDir"" has been reassigned to another project and has limited availability for support if issues arise with the application code itself.
+*   Initial feedback suggests the ""EmpDir"" application documentation is minimal.
+
+---
+
+**(Content for `Instructions_and_Scales.pdf`)**
+
+**IT Project Manager Practical Exam: Basic Risk Assessment & Response - Instructions & Scales**
+
+**1. Exam Overview**
+
+Follow the tasks outlined in the main exam instructions document. Use the scales, categories, formulas, and JSON structure defined below.
+
+**2. Risk Identification**
+
+Identify potential risks based *only* on the information provided in `Project_Scenario.pdf`.
+
+**3. Risk Analysis Scales & Calculation**
+
+*   **Likelihood Scale:**
+    *   **High (3):** Very likely to occur based on the scenario details (e.g., explicitly stated constraints or high uncertainty).
+    *   **Medium (2):** Could occur; contributing factors are present but not guaranteed (e.g., dependencies, potential conflicts).
+    *   **Low (1):** Unlikely to occur, but still possible within the project context.
+
+*   **Impact Scale:** (Consider impact on project objectives: scope, schedule, budget, quality)
+    *   **High (3):** Could cause major disruption. May lead to project failure, significant delay (>2 weeks), budget overrun (>15%), or inability to meet core objectives.
+    *   **Medium (2):** Could cause noticeable disruption. May lead to missed milestones (delay <2 weeks), budget overrun (<15%), or reduced quality/scope.
+    *   **Low (1):** Could cause minor inconvenience. Minimal impact on schedule, budget, or scope; potentially requiring minor workarounds.
+
+*   **Risk Score Calculation:**
+    *   `risk_score` = Likelihood Value * Impact Value
+    *   Example: Likelihood = Medium (2), Impact = High (3) => `risk_score` = 2 * 3 = 6
+
+**4. Risk Categories**
+
+Use *only* one of the following categories for each risk:
+
+*   `Technical`: Risks related to technology, application stability, infrastructure, data connectivity, performance.
+*   `Resource`: Risks related to personnel availability, skills, stakeholder engagement.
+*   `Schedule`: Risks related to timelines, dependencies, delays, estimations.
+*   `Budget`: Risks related to funding, cost overruns, resource costs.
+*   `Scope`: Risks related to scope creep, unclear requirements, scope definition.
+*   `External`: Risks related to dependencies on external factors or teams not directly part of the core project team (e.g., other internal departments like IT Dev, DBA team in this context).
+
+**5. Response Strategy Types**
+
+For the Top 3 risks (highest `risk_score`), choose *only* one of the following strategy types:
+
+*   `Avoid`: Change the project plan to eliminate the risk or its impact.
+*   `Mitigate`: Take action to reduce the likelihood or impact of the risk.
+*   `Transfer`: Shift the risk or its impact to a third party (less common in this scenario, but possible).
+*   `Accept`: Acknowledge the risk and take no action unless it occurs (suitable for low-priority risks or when the response cost outweighs the risk).
+
+**6. JSON Output Structure (`test_submission.json`)**
+
+Create a single JSON file named `test_submission.json` with the following structure. Ensure all field names and value types match exactly. Use `null` for response fields if the risk is not in the Top 3.
+
+```json
+{
+  ""exam_candidate_id"": ""YOUR_UNIQUE_ID_HERE"", // Replace with the ID provided to you
+  ""exam_level"": ""Basic"",
+  ""risk_register"": [
+    {
+      ""risk_id"": 1, // Sequential number assigned by you
+      ""description"": ""String: Clear description of the risk."",
+      ""category"": ""String: One of [Technical, Resource, Schedule, Budget, Scope, External]"",
+      ""likelihood"": ""String: One of [Low, Medium, High]"",
+      ""impact"": ""String: One of [Low, Medium, High]"",
+      ""risk_score"": ""Number: Calculated Likelihood value * Impact value"",
+      ""response_strategy_type"": ""String: One of [Avoid, Mitigate, Transfer, Accept] or null"",
+      ""response_strategy_description"": ""String: Brief description of response action(s) or null."",
+      ""potential_owner_role"": ""String: Stakeholder role from scenario (e.g., Technical Lead, Project Sponsor, DBA) or 'Project Manager', or null.""
+    },
+    {
+      ""risk_id"": 2,
+      // ... other fields ...
+      ""response_strategy_type"": null, // Example for non-Top 3 risk
+      ""response_strategy_description"": null,
+      ""potential_owner_role"": null
+    }
+    // ... Add more risk objects as identified
+  ]
+}
+
+```
+
+**7. Submission**
+
+Ensure your final `test_submission.json` file is valid JSON and adheres strictly to the structure above. Submit only this file.
+
+","Okay, here is the specification for the candidate's answer format.
+
+**Submission File:**
+
+*   You must submit a single file named **`test_submission.json`**. No other files are required.
+
+**File Content:**
+
+*   The file must contain a single JSON object.
+*   The JSON object must be well-formed and adhere strictly to the structure specified below. Invalid JSON or deviations from the structure may lead to evaluation errors.
+
+**JSON Structure and Field Formats:**
+
+The root JSON object must contain the following keys:
+
+1.  `exam_candidate_id`: (String) Replace the placeholder `""YOUR_ID_HERE""` with the specific model version identifier provided to you (e.g., `""GPT-4o""`, `""Claude-3_7-Sonnet""`).
+2.  `exam_level`: (String) Use the exact value `""Basic""`.
+3.  `risk_register`: (Array) An array containing JSON objects, where each object represents a single risk you have identified and analyzed.
+
+**Structure of Each Risk Object within the `risk_register` Array:**
+
+Each object in the `risk_register` array must contain the following keys in the specified order and format:
+
+1.  `risk_id`: (Number) An integer representing the unique sequential identifier you assigned to the risk, starting from 1.
+    *   *Example:* `1`, `2`, `3`
+2.  `description`: (String) A clear and concise text description of the identified risk.
+    *   *Example:* `""Delay in server provisioning due to Technical Lead's limited availability.""`
+3.  `category`: (String) Must be exactly one of the following predefined values: `""Technical""`, `""Resource""`, `""Schedule""`, `""Budget""`, `""Scope""`, `""External""`.
+    *   *Example:* `""Resource""`
+4.  `likelihood`: (String) Must be exactly one of the following predefined values: `""Low""`, `""Medium""`, `""High""`.
+    *   *Example:* `""High""`
+5.  `impact`: (String) Must be exactly one of the following predefined values: `""Low""`, `""Medium""`, `""High""`.
+    *   *Example:* `""Medium""`
+6.  `risk_score`: (Number) An integer representing the calculated risk score (Likelihood value * Impact value, based on Low=1, Medium=2, High=3). Do not include decimals.
+    *   *Example:* `6` (calculated from High=3 * Medium=2)
+7.  `response_strategy_type`: (String or Null)
+    *   For the **Top 3** risks (based on `risk_score`, including ties), this must be exactly one of the following predefined string values: `""Avoid""`, `""Mitigate""`, `""Transfer""`, `""Accept""`.
+    *   For risks **not** in the Top 3, this field must have the JSON value `null` (not the string `""null""`).
+    *   *Example (Top 3):* `""Mitigate""`
+    *   *Example (Not Top 3):* `null`
+8.  `response_strategy_description`: (String or Null)
+    *   For the **Top 3** risks, this must be a brief text description (String) of the planned response action(s).
+    *   For risks **not** in the Top 3, this field must have the JSON value `null`.
+    *   *Example (Top 3):* `""Confirm priorities with Tech Lead and manager; identify tasks for early input.""`
+    *   *Example (Not Top 3):* `null`
+9.  `potential_owner_role`: (String or Null)
+    *   For the **Top 3** risks, this must be a String representing the stakeholder role identified as the potential owner (e.g., `""Technical Lead""`, `""Project Sponsor""`, `""DBA""`, `""Project Manager""`). Use roles mentioned in the scenario or ""Project Manager"".
+    *   For risks **not** in the Top 3, this field must have the JSON value `null`.
+    *   *Example (Top 3):* `""Project Manager""`
+    *   *Example (Not Top 3):* `null`
+
+**Example `test_submission.json` Structure:**
+
+```json
+{
+  ""exam_candidate_id"": ""YOUR_ID_HERE"",
+  ""exam_level"": ""Basic"",
+  ""risk_register"": [
+    {
+      ""risk_id"": 1,
+      ""description"": ""Risk description text here."",
+      ""category"": ""Resource"",
+      ""likelihood"": ""High"",
+      ""impact"": ""Medium"",
+      ""risk_score"": 6,
+      ""response_strategy_type"": ""Mitigate"",
+      ""response_strategy_description"": ""Brief response actions description."",
+      ""potential_owner_role"": ""Project Manager""
+    },
+    {
+      ""risk_id"": 2,
+      ""description"": ""Another risk description text."",
+      ""category"": ""Schedule"",
+      ""likelihood"": ""Medium"",
+      ""impact"": ""Medium"",
+      ""risk_score"": 4,
+      ""response_strategy_type"": null,
+      ""response_strategy_description"": null,
+      ""potential_owner_role"": null
+    },
+    {
+      ""risk_id"": 3,
+      ""description"": ""A third risk description."",
+      ""category"": ""Budget"",
+      ""likelihood"": ""Medium"",
+      ""impact"": ""High"",
+      ""risk_score"": 6,
+      ""response_strategy_type"": ""Mitigate"",
+      ""response_strategy_description"": ""Track expenses closely; inform Sponsor."",
+      ""potential_owner_role"": ""Project Sponsor""
+    }
+    // ... potentially more risk objects
+  ]
+}
+```
+
+**Important:** Ensure your final JSON file is validated before submission. Use a text editor capable of handling JSON syntax correctly. Pay close attention to commas between elements/objects and the use of `null` where specified.","Okay, here are the evaluation materials for the Basic Level Practical Exam on IT Project Manager Risk Assessment & Response.
+
+---
+
+**1. Complete Answer Key (`evaluator_key.json`)**
+
+This JSON file represents an ideal answer based strictly on the provided scenario and instructions. Candidate answers may vary slightly in description wording or L/I assessment but should align closely with the core risks and analysis logic.
+
+```json
+{
+  ""exam_candidate_id"": ""EVALUATOR_KEY"",
+  ""exam_level"": ""Basic"",
+  ""risk_register"": [
+    {
+      ""risk_id"": 1,
+      ""description"": ""Delay in server provisioning or technical task completion due to Technical Lead's limited availability (50% allocation)."",
+      ""category"": ""Resource"",
+      ""likelihood"": ""High"",
+      ""impact"": ""Medium"",
+      ""risk_score"": 6,
+      ""response_strategy_type"": ""Mitigate"",
+      ""response_strategy_description"": ""Confirm project task priorities with Tech Lead and their manager; identify critical path tasks requiring Tech Lead input early; explore delegation options."",
+      ""potential_owner_role"": ""Project Manager""
+    },
+    {
+      ""risk_id"": 2,
+      ""description"": ""Project cost exceeds the fixed $5,000 budget due to unforeseen technical issues, scope changes, or resource time."",
+      ""category"": ""Budget"",
+      ""likelihood"": ""Medium"",
+      ""impact"": ""High"",
+      ""risk_score"": 6,
+      ""response_strategy_type"": ""Mitigate"",
+      ""response_strategy_description"": ""Implement strict change control; track expenses meticulously against budget; report budget status regularly to Project Sponsor; identify potential cost-saving measures proactively."",
+      ""potential_owner_role"": ""Project Manager""
+    },
+    {
+      ""risk_id"": 3,
+      ""description"": ""The provided 'EmpDir' application contains significant bugs requiring unplanned fixes, delaying deployment."",
+      ""category"": ""Technical"",
+      ""likelihood"": ""Medium"",
+      ""impact"": ""High"",
+      ""risk_score"": 6,
+      ""response_strategy_type"": ""Mitigate"",
+      ""response_strategy_description"": ""Allocate sufficient time for thorough testing early in the schedule; ensure Technical Lead performs code review/deployment dry-run if possible; document all bugs found."",
+      ""potential_owner_role"": ""Technical Lead""
+    },
+    {
+      ""risk_id"": 4,
+      ""description"": ""Inability to resolve application-specific bugs or deployment issues quickly due to limited availability and minimal documentation from the original development team."",
+      ""category"": ""External"",
+      ""likelihood"": ""High"",
+      ""impact"": ""Medium"",
+      ""risk_score"": 6,
+      ""response_strategy_type"": ""Mitigate"",
+      ""response_strategy_description"": ""Proactively request any available documentation or contact points from the development team lead; allocate contingency time in the schedule for potential troubleshooting."",
+      ""potential_owner_role"": ""Project Manager""
+    },
+    {
+      ""risk_id"": 5,
+      ""description"": ""Delay in obtaining necessary database connectivity or support due to the DBA team's backlog."",
+      ""category"": ""External"",
+      ""likelihood"": ""Medium"",
+      ""impact"": ""Medium"",
+      ""risk_score"": 4,
+      ""response_strategy_type"": null,
+      ""response_strategy_description"": null,
+      ""potential_owner_role"": null
+    },
+    {
+      ""risk_id"": 6,
+      ""description"": ""Deployment activities are delayed or cause disruption because coordination for deployment outside core business hours fails."",
+      ""category"": ""Schedule"",
+      ""likelihood"": ""Low"",
+      ""impact"": ""Medium"",
+      ""risk_score"": 2,
+      ""response_strategy_type"": null,
+      ""response_strategy_description"": null,
+      ""potential_owner_role"": null
+    },
+    {
+        ""risk_id"": 7,
+        ""description"": ""End-user acceptance testing is delayed or ineffective due to lack of engagement or availability of the End-User Representative."",
+        ""category"": ""Resource"",
+        ""likelihood"": ""Low"",
+        ""impact"": ""Medium"",
+        ""risk_score"": 2,
+        ""response_strategy_type"": null,
+        ""response_strategy_description"": null,
+        ""potential_owner_role"": null
+      }
+  ]
+}
+```
+
+---
+
+**2. Explanation of Correct Answers and Derivations**
+
+This section explains the reasoning behind the risks identified in the `evaluator_key.json`.
+
+*   **General Approach:** Risks were identified by reviewing the scenario for explicit constraints, assumptions, dependencies, and resource limitations mentioned in sections 3, 4, 5, and 6. The analysis (L/I/Score) uses the provided scales (L=1, M=2, H=3) and formula (L\*I). Categories and Response Types strictly adhere to the provided lists.
+
+*   **Risk 1: Technical Lead Availability**
+    *   *Source:* Section 3 & 5 explicitly state John Smith is the Technical Lead, responsible for key tasks, but only allocated 50% and working on another critical project.
+    *   *Category:* `Resource` (Personnel availability).
+    *   *Likelihood:* `High` (3) - Explicitly stated constraint.
+    *   *Impact:* `Medium` (2) - Could significantly delay tasks on a short 6-week project, but might not cause total failure if managed.
+    *   *Score:* 3 * 2 = 6.
+    *   *Response (Mitigate):* Action needed to reduce impact/likelihood. Proactive planning and communication are key. Owner: PM coordinates resources.
+
+*   **Risk 2: Fixed Budget Constraint**
+    *   *Source:* Section 4 & 5 state budget is $5k, fixed, with no flexibility.
+    *   *Category:* `Budget` (Funding constraint).
+    *   *Likelihood:* `Medium` (2) - While the budget is fixed, the *likelihood* of an *overrun* depends on unforeseen issues, which are reasonably possible in any IT project.
+    *   *Impact:* `High` (3) - ""No flexibility"" means any overrun could halt the project or force scope cuts.
+    *   *Score:* 2 * 3 = 6.
+    *   *Response (Mitigate):* Action needed to stay within budget. Close monitoring and control are essential. Owner: PM manages budget, Sponsor approves funding.
+
+*   **Risk 3: Application Bugs**
+    *   *Source:* Section 5 assumption (""app is bug-free"") combined with Section 6 (""minimal documentation"", ""dev team limited availability""). Challenging an assumption often reveals a risk.
+    *   *Category:* `Technical` (Software quality/stability).
+    *   *Likelihood:* `Medium` (2) - The lack of docs/support increases the chance the ""bug-free"" assumption is wrong.
+    *   *Impact:* `High` (3) - Significant bugs could require unplanned work (impacting fixed budget/schedule) or halt deployment.
+    *   *Score:* 2 * 3 = 6.
+    *   *Response (Mitigate):* Action to find bugs early or reduce their impact. Testing is the primary mitigation. Owner: Tech Lead executes testing.
+
+*   **Risk 4: Limited Developer Support**
+    *   *Source:* Section 6 explicitly states the original dev team has limited availability and documentation is minimal.
+    *   *Category:* `External` (Dependency on another team's availability/support) or `Technical`. `External` emphasizes the dependency aspect.
+    *   *Likelihood:* `High` (3) - Explicitly stated constraint.
+    *   *Impact:* `Medium` (2) - If issues arise that *require* dev support (e.g., complex bugs), resolution will be slow, impacting the schedule.
+    *   *Score:* 3 * 2 = 6.
+    *   *Response (Mitigate):* Action to reduce reliance or impact of delay. Getting info upfront and planning buffer time helps. Owner: PM coordinates external dependencies.
+
+*   **Risk 5: DBA Team Backlog**
+    *   *Source:* Section 3 & 5 state the DBA team is backlogged and has limited bandwidth.
+    *   *Category:* `External` (Dependency on another team) or `Schedule`. `External` chosen for consistency.
+    *   *Likelihood:* `Medium` (2) - Backlog is stated, increasing the chance of delay, but it's not guaranteed.
+    *   *Impact:* `Medium` (2) - Delay could impact configuration and testing phases, potentially pushing the schedule.
+    *   *Score:* 2 * 2 = 4.
+    *   *Response:* None required (not Top 3/4). `null` fields.
+
+*   **Risk 6: Off-Hours Deployment Coordination**
+    *   *Source:* Section 5 constraint (""Deployment must occur outside of core business hours""). This requires coordination.
+    *   *Category:* `Schedule` (Relates to timing and coordination).
+    *   *Likelihood:* `Low` (1) - Typically manageable, but still a coordination point that could fail.
+    *   *Impact:* `Medium` (2) - Failure could delay go-live or cause disruption if done during business hours.
+    *   *Score:* 1 * 2 = 2.
+    *   *Response:* None required. `null` fields.
+
+*   **Risk 7: End-User Rep Availability/Engagement**
+    *   *Source:* Section 3 lists David Lee for acceptance testing/review. Implicit risk that stakeholders may not be available/engaged when needed.
+    *   *Category:* `Resource` (Stakeholder engagement).
+    *   *Likelihood:* `Low` (1) - No specific indication of issues, but always a possibility.
+    *   *Impact:* `Medium` (2) - Could delay testing sign-off or result in missed user requirements/feedback.
+    *   *Score:* 1 * 2 = 2.
+    *   *Response:* None required. `null` fields.
+
+*   **Prioritization & Top 3 (Tie Handling):** The instructions state to develop responses for the Top 3 highest scores, including ties. In the key, risks 1, 2, 3, and 4 all score 6. Therefore, responses are required for all four. A candidate correctly following instructions should provide responses for all risks tied at the highest score level that falls within the ""Top 3"" concept.
+
+---
+
+**3. Passing Criteria**
+
+This is a basic level exam focusing on applying the fundamental process. A passing candidate should demonstrate competence in the core steps, even if their analysis isn't identical to the key.
+
+**Minimum Requirements for Passing:**
+
+A candidate must demonstrate proficiency in the following areas. Failure to meet the standard in **two or more** areas would generally constitute a fail.
+
+1.  **Risk Identification:**
+    *   **Standard:** Identifies at least **4** distinct, plausible risks based *only* on the scenario document.
+    *   **Must Include:** At least **2** of the high-priority risks (Score 6 in the key: Tech Lead Availability, Fixed Budget, App Bugs, Dev Support). Missing *all* major constraints/dependencies is a significant failure.
+    *   **Acceptable:** Descriptions are clear enough to understand the risk.
+
+2.  **Risk Analysis (L/I/Score):**
+    *   **Standard:** Assigns Likelihood and Impact values (Low/Medium/High) that are *reasonable* and justifiable based on the scenario for the majority (>50%) of identified risks. Calculates the `risk_score` correctly based on *their* assigned L/I values for all identified risks.
+    *   **Acceptable:** Minor deviations from the key's L/I assessment (e.g., Medium vs. High) are acceptable if the candidate's logic seems sound within the context. Gross misjudgments (e.g., rating 'Fixed Budget' impact as Low) are penalized.
+
+3.  **Prioritization & Response Strategy Application:**
+    *   **Standard:** Correctly identifies *their* Top 3 (or more, in case of ties) risks based on *their calculated* `risk_score` values. Provides the required response fields (`response_strategy_type`, `response_strategy_description`, `potential_owner_role`) *only* for these top risks, leaving them `null` for others.
+    *   **Acceptable:** The chosen `response_strategy_type` is logical for the risk (e.g., Mitigate for high-impact/high-likelihood risks). The `response_strategy_description` is relevant and suggests a concrete action (even if brief). The `potential_owner_role` is plausible based on the scenario.
+
+4.  **Adherence to Instructions & Formatting:**
+    *   **Standard:** Uses the specified Risk Categories and Response Strategy Types *exactly* as provided. Uses the correct stakeholder roles or 'Project Manager' for owners.
+    *   **Must Include:** Submits a single file named `test_submission.json`. The file must be **valid JSON** and strictly adhere to the specified structure (correct field names, data types - String/Number/null, array/object structure).
+    *   **Acceptable:** Minor typos in free-text `description` or `response_strategy_description` fields are generally acceptable unless they render the meaning unclear. Incorrect data types (e.g., `risk_score` as a string) or invalid JSON structure are significant failures.
+
+**Summary Evaluation:**
+
+*   **Pass:** Meets the standard in at least 3 out of the 4 areas above, including producing valid, correctly structured JSON. Demonstrates a clear understanding of the basic risk management process (Identify, Analyze, Prioritize, Plan Response).
+*   **Fail:** Fails to meet the standard in 2 or more areas. Common failure points include: missing major risks, fundamentally flawed analysis, incorrect prioritization logic, failure to follow formatting/instruction constraints (especially invalid JSON).","```python
+import json
+import argparse
+import sys
+from pathlib import Path
+import re
+from collections import defaultdict
+
+# --- Configuration ---
+
+# Define Likelihood/Impact mapping and predefined lists from instructions
+LIKELIHOOD_MAP = {""Low"": 1, ""Medium"": 2, ""High"": 3}
+IMPACT_MAP = {""Low"": 1, ""Medium"": 2, ""High"": 3}
+VALID_CATEGORIES = {""Technical"", ""Resource"", ""Schedule"", ""Budget"", ""Scope"", ""External""}
+VALID_RESPONSE_TYPES = {""Avoid"", ""Mitigate"", ""Transfer"", ""Accept""}
+REQUIRED_ROOT_KEYS = {""exam_candidate_id"", ""exam_level"", ""risk_register""}
+REQUIRED_RISK_KEYS = {
+    ""risk_id"", ""description"", ""category"", ""likelihood"", ""impact"",
+    ""risk_score"", ""response_strategy_type"", ""response_strategy_description"",
+    ""potential_owner_role""
+}
+
+# Define keywords for matching key risks (adjust based on key risk descriptions)
+# Using lowercase for case-insensitive matching
+KEY_RISK_KEYWORDS = {
+    ""Tech Lead Availability"": {""technical lead"", ""john smith"", ""availability"", ""50%"", ""allocation"", ""resource"", ""half""},
+    ""Fixed Budget"": {""budget"", ""fixed"", ""cost"", ""funding"", ""5000"", ""$5,000"", ""flexibility"", ""overrun""},
+    ""App Bugs"": {""bug"", ""error"", ""defect"", ""application"", ""empdir"", ""code"", ""quality"", ""assumption"", ""bug-free""},
+    ""Dev Support"": {""developer"", ""development team"", ""support"", ""documentation"", ""minimal"", ""reassigned""},
+    ""DBA Backlog"": {""dba"", ""database"", ""backlog"", ""priya khan"", ""connectivity"", ""access""},
+    # Add more key risks if needed from the key
+}
+
+# Scoring Weights
+MAX_POINTS = 100
+POINTS_CONFIG = {
+    ""formatting"": {
+        ""valid_json"": 5,
+        ""root_keys"": 5,
+        ""risk_keys"": 5,
+        ""data_types"": 5,
+        ""total"": 20
+    },
+    ""identification"": {
+        ""min_risk_count"": 10, # Points for identifying >= 4 risks
+        ""key_risk_coverage"": 10, # Points for identifying >= 2 high-priority key risks
+        ""total"": 20
+    },
+    ""analysis"": {
+        ""score_calculation"": 10, # Points for correct risk_score calculation (per risk)
+        ""li_reasonableness"": 10, # Points for reasonable L/I assessment (per matched risk)
+        ""category_correctness"": 10, # Points for correct category (per matched risk)
+        ""total"": 30
+    },
+    ""prioritization_response"": {
+        ""top_3_identification"": 10, # Points for correctly identifying own top risks for response
+        ""response_type_logic"": 10, # Points for logical response type (per matched top risk)
+        ""response_desc_relevance"": 5, # Points for non-empty description (per top risk)
+        ""owner_role_plausibility"": 5, # Points for plausible owner role (per top risk)
+        ""total"": 30
+    }
+}
+
+# --- Helper Functions ---
+
+def load_json(file_path):
+    """"""Loads JSON data from a file.""""""
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f""Error: File not found: {file_path}"", file=sys.stderr)
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f""Error: Invalid JSON format in {file_path}: {e}"", file=sys.stderr)
+        # Return a structure indicating failure, allowing partial grading if desired later
+        return {""error"": ""Invalid JSON"", ""details"": str(e)}
+    except Exception as e:
+        print(f""Error: Could not read file {file_path}: {e}"", file=sys.stderr)
+        sys.exit(1)
+
+def validate_string_enum(value, valid_set, field_name, risk_id):
+    """"""Checks if a string value is in a predefined set.""""""
+    if value is None: # Allow null where appropriate (checked later)
+        return True, """"
+    if not isinstance(value, str):
+        return False, f""Risk {risk_id}: Field '{field_name}' must be a string, got {type(value).__name__}.""
+    if value not in valid_set:
+        return False, f""Risk {risk_id}: Invalid value '{value}' for field '{field_name}'. Allowed: {valid_set}.""
+    return True, """"
+
+def calculate_expected_score(likelihood_str, impact_str):
+    """"""Calculates the expected risk score based on L/I strings.""""""
+    l_val = LIKELIHOOD_MAP.get(likelihood_str)
+    i_val = IMPACT_MAP.get(impact_str)
+    if l_val is None or i_val is None:
+        return None # Cannot calculate if L or I is invalid
+    return l_val * i_val
+
+def match_risks(candidate_risks, key_risks_data):
+    """"""Matches candidate risks to key risks based on keywords.""""""
+    matched_pairs = {} # key: candidate_risk_id, value: key_risk_id
+    key_risk_map = {r['risk_id']: r for r in key_risks_data}
+    key_risk_ids_by_concept = defaultdict(list)
+    for kr_id, kr in key_risk_map.items():
+         # Attempt to find a matching concept based on keywords
+         found_concept = None
+         kr_desc_lower = kr['description'].lower()
+         for concept, keywords in KEY_RISK_KEYWORDS.items():
+             # Simple keyword count matching - adjust threshold as needed
+             if sum(1 for keyword in keywords if keyword in kr_desc_lower) >= 2: # Require at least 2 keywords
+                 found_concept = concept
+                 break
+         if found_concept:
+             key_risk_ids_by_concept[found_concept].append(kr_id)
+
+    # Try to match candidate risks
+    candidate_matched_status = {r['risk_id']: False for r in candidate_risks}
+    key_matched_status = {kr_id: False for kr_id in key_risk_map}
+
+    for cr in candidate_risks:
+        cr_desc_lower = cr.get('description', '').lower()
+        best_match_concept = None
+        highest_keyword_count = 0
+
+        for concept, keywords in KEY_RISK_KEYWORDS.items():
+            current_keyword_count = sum(1 for keyword in keywords if keyword in cr_desc_lower)
+            # Prefer concepts with more matching keywords
+            if current_keyword_count >= 2 and current_keyword_count > highest_keyword_count:
+                 # Check if any key risks for this concept are still available
+                 available_key_risks = [kr_id for kr_id in key_risk_ids_by_concept.get(concept, []) if not key_matched_status[kr_id]]
+                 if available_key_risks:
+                     highest_keyword_count = current_keyword_count
+                     best_match_concept = concept
+
+        if best_match_concept:
+            # Find the first available key risk ID for the best matching concept
+            key_risk_id_to_match = None
+            for kr_id in key_risk_ids_by_concept[best_match_concept]:
+                if not key_matched_status[kr_id]:
+                    key_risk_id_to_match = kr_id
+                    break
+
+            if key_risk_id_to_match and not candidate_matched_status[cr['risk_id']]:
+                matched_pairs[cr['risk_id']] = key_risk_id_to_match
+                candidate_matched_status[cr['risk_id']] = True
+                key_matched_status[key_risk_id_to_match] = True
+
+    # Create reverse mapping for convenience
+    reverse_matched_pairs = {v: k for k, v in matched_pairs.items()}
+    return matched_pairs, reverse_matched_pairs
+
+def get_key_risk_by_id(key_risks_data, key_risk_id):
+    """"""Finds a key risk by its ID.""""""
+    for r in key_risks_data:
+        if r['risk_id'] == key_risk_id:
+            return r
+    return None
+
+# --- Evaluation Functions ---
+
+def evaluate_formatting(submission_data):
+    """"""Evaluates JSON structure, keys, and basic data types.""""""
+    score = 0
+    feedback = []
+    max_points = POINTS_CONFIG[""formatting""][""total""]
+
+    if submission_data.get(""error"") == ""Invalid JSON"":
+        feedback.append(f""Fatal Error: Submission is not valid JSON. {submission_data.get('details', '')}"")
+        return 0, feedback, max_points # Cannot proceed
+
+    score += POINTS_CONFIG[""formatting""][""valid_json""] # Assumed valid if no error
+
+    # Check root keys
+    submitted_root_keys = set(submission_data.keys())
+    if REQUIRED_ROOT_KEYS.issubset(submitted_root_keys):
+        score += POINTS_CONFIG[""formatting""][""root_keys""]
+    else:
+        missing = REQUIRED_ROOT_KEYS - submitted_root_keys
+        feedback.append(f""Formatting Error: Missing required root keys: {missing}"")
+
+    # Check risk register structure and keys (check first risk if available)
+    risk_register = submission_data.get(""risk_register"")
+    if isinstance(risk_register, list) and len(risk_register) > 0:
+        first_risk = risk_register[0]
+        if isinstance(first_risk, dict):
+            submitted_risk_keys = set(first_risk.keys())
+            if REQUIRED_RISK_KEYS.issubset(submitted_risk_keys):
+                score += POINTS_CONFIG[""formatting""][""risk_keys""]
+            else:
+                missing = REQUIRED_RISK_KEYS - submitted_risk_keys
+                feedback.append(f""Formatting Error: Missing required keys in risk objects: {missing} (checked first risk)"")
+
+            # Check basic data types (spot check first risk)
+            type_errors = []
+            if not isinstance(first_risk.get('risk_id'), int): type_errors.append(""'risk_id' not integer"")
+            if not isinstance(first_risk.get('description'), str): type_errors.append(""'description' not string"")
+            if not isinstance(first_risk.get('category'), str): type_errors.append(""'category' not string"")
+            if not isinstance(first_risk.get('likelihood'), str): type_errors.append(""'likelihood' not string"")
+            if not isinstance(first_risk.get('impact'), str): type_errors.append(""'impact' not string"")
+            if not isinstance(first_risk.get('risk_score'), int) and not isinstance(first_risk.get('risk_score'), float): type_errors.append(""'risk_score' not number"")
+            # Response fields can be null or string, harder to check type rigidly here, focus on enum validation later
+
+            if not type_errors:
+                score += POINTS_CONFIG[""formatting""][""data_types""]
+            else:
+                feedback.append(f""Formatting Error: Incorrect data types found (checked first risk): {', '.join(type_errors)}"")
+        else:
+            feedback.append(""Formatting Error: Items in 'risk_register' are not objects (dictionaries)."")
+            score += 0 # Penalize risk_keys and data_types if structure is wrong
+    elif not isinstance(risk_register, list):
+         feedback.append(""Formatting Error: 'risk_register' is not a list."")
+         score += 0 # Penalize risk_keys and data_types if structure is wrong
+    # else: risk_register is empty list, no keys/types to check
+
+    return min(score, max_points), feedback, max_points
+
+def evaluate_identification(candidate_risks, key_risks_data, matched_pairs):
+    """"""Evaluates the number and relevance of identified risks.""""""
+    score = 0
+    feedback = []
+    max_points = POINTS_CONFIG[""identification""][""total""]
+    candidate_risk_count = len(candidate_risks)
+
+    # Check minimum risk count
+    if candidate_risk_count >= 4:
+        score += POINTS_CONFIG[""identification""][""min_risk_count""]
+    else:
+        feedback.append(f""Identification: Identified {candidate_risk_count} risks, less than the minimum requirement of 4."")
+
+    # Check coverage of high-priority key risks
+    high_priority_key_risk_ids = {r['risk_id'] for r in key_risks_data if r['risk_score'] >= 6} # Example threshold
+    identified_high_priority_count = 0
+    identified_key_concepts = set()
+
+    for cr_id, kr_id in matched_pairs.items():
+        if kr_id in high_priority_key_risk_ids:
+            identified_high_priority_count += 1
+            # Find concept for feedback
+            key_risk = get_key_risk_by_id(key_risks_data, kr_id)
+            kr_desc_lower = key_risk['description'].lower()
+            for concept, keywords in KEY_RISK_KEYWORDS.items():
+                 if sum(1 for keyword in keywords if keyword in kr_desc_lower) >= 2:
+                     identified_key_concepts.add(concept)
+                     break
+
+
+    if identified_high_priority_count >= 2:
+        score += POINTS_CONFIG[""identification""][""key_risk_coverage""]
+    else:
+        feedback.append(f""Identification: Identified only {identified_high_priority_count} high-priority key risks (Score >= 6). Minimum requirement is 2."")
+        # List missing concepts for feedback
+        all_high_priority_concepts = set()
+        for kr in key_risks_data:
+            if kr['risk_id'] in high_priority_key_risk_ids:
+                 kr_desc_lower = kr['description'].lower()
+                 for concept, keywords in KEY_RISK_KEYWORDS.items():
+                     if sum(1 for keyword in keywords if keyword in kr_desc_lower) >= 2:
+                         all_high_priority_concepts.add(concept)
+                         break
+        missing_concepts = all_high_priority_concepts - identified_key_concepts
+        if missing_concepts:
+             feedback.append(f""Identification: Key high-priority concepts potentially missed: {', '.join(missing_concepts)}"")
+
+
+    return min(score, max_points), feedback, max_points
+
+def evaluate_analysis(candidate_risks, key_risks_data, matched_pairs):
+    """"""Evaluates risk score calculation, L/I reasonableness, and category correctness.""""""
+    score_calc_points = 0
+    li_points = 0
+    cat_points = 0
+    feedback = []
+    max_points = POINTS_CONFIG[""analysis""][""total""]
+    max_score_calc = POINTS_CONFIG[""analysis""][""score_calculation""]
+    max_li = POINTS_CONFIG[""analysis""][""li_reasonableness""]
+    max_cat = POINTS_CONFIG[""analysis""][""category_correctness""]
+
+    total_risks_evaluated = 0
+    matched_risks_evaluated = 0
+
+    for cr in candidate_risks:
+        total_risks_evaluated += 1
+        cr_id = cr.get('risk_id', 'N/A')
+        cr_l = cr.get('likelihood')
+        cr_i = cr.get('impact')
+        cr_score = cr.get('risk_score')
+
+        # 1. Score Calculation Check (for all candidate risks)
+        valid_l, msg_l = validate_string_enum(cr_l, LIKELIHOOD_MAP.keys(), 'likelihood', cr_id)
+        valid_i, msg_i = validate_string_enum(cr_i, IMPACT_MAP.keys(), 'impact', cr_id)
+        if not valid_l: feedback.append(msg_l)
+        if not valid_i: feedback.append(msg_i)
+
+        if valid_l and valid_i:
+            expected_score = calculate_expected_score(cr_l, cr_i)
+            if expected_score is not None and cr_score == expected_score:
+                score_calc_points += 1 # Increment points per correct calculation
+            else:
+                feedback.append(f""Analysis: Risk {cr_id}: Incorrect risk_score calculation. Expected {expected_score} based on L='{cr_l}', I='{cr_i}', but got {cr_score}."")
+        else:
+             feedback.append(f""Analysis: Risk {cr_id}: Cannot check risk_score calculation due to invalid Likelihood/Impact."")
+
+        # 2. L/I Reasonableness and Category Correctness (only for matched risks)
+        if cr_id in matched_pairs:
+            matched_risks_evaluated += 1
+            kr_id = matched_pairs[cr_id]
+            key_risk = get_key_risk_by_id(key_risks_data, kr_id)
+            if key_risk:
+                kr_l = key_risk['likelihood']
+                kr_i = key_risk['impact']
+                kr_cat = key_risk['category']
+                cr_cat = cr.get('category')
+
+                # L/I Reasonableness (Allow +/- 1 level difference)
+                l_diff = abs(LIKELIHOOD_MAP.get(cr_l, 0) - LIKELIHOOD_MAP.get(kr_l, 0))
+                i_diff = abs(IMPACT_MAP.get(cr_i, 0) - IMPACT_MAP.get(kr_i, 0))
+                if l_diff <= 1 and i_diff <= 1:
+                    li_points += 1
+                else:
+                    feedback.append(f""Analysis: Risk {cr_id} (Matched Key Risk {kr_id}): Likelihood/Impact assessment differs significantly from key. Candidate: L={cr_l}, I={cr_i}. Key: L={kr_l}, I={kr_i}."")
+
+                # Category Correctness
+                valid_cat, msg_cat = validate_string_enum(cr_cat, VALID_CATEGORIES, 'category', cr_id)
+                if not valid_cat:
+                    feedback.append(msg_cat)
+                elif cr_cat == kr_cat:
+                    cat_points += 1
+                else:
+                    feedback.append(f""Analysis: Risk {cr_id} (Matched Key Risk {kr_id}): Category mismatch. Candidate: '{cr_cat}'. Key: '{kr_cat}'."")
+            else:
+                 feedback.append(f""Internal Error: Could not find key risk data for matched ID {kr_id}"")
+
+
+    # Normalize scores based on number of risks evaluated
+    final_score_calc_points = (score_calc_points / total_risks_evaluated * max_score_calc) if total_risks_evaluated > 0 else 0
+    final_li_points = (li_points / matched_risks_evaluated * max_li) if matched_risks_evaluated > 0 else 0
+    final_cat_points = (cat_points / matched_risks_evaluated * max_cat) if matched_risks_evaluated > 0 else 0
+
+    total_score = round(final_score_calc_points + final_li_points + final_cat_points)
+
+    return min(total_score, max_points), feedback, max_points
+
+def evaluate_prioritization_response(candidate_risks, key_risks_data, matched_pairs, reverse_matched_pairs):
+    """"""Evaluates identification of top risks and the quality of their responses.""""""
+    score = 0
+    feedback = []
+    max_points = POINTS_CONFIG[""prioritization_response""][""total""]
+    max_top_3_id = POINTS_CONFIG[""prioritization_response""][""top_3_identification""]
+    max_resp_type = POINTS_CONFIG[""prioritization_response""][""response_type_logic""]
+    max_resp_desc = POINTS_CONFIG[""prioritization_response""][""response_desc_relevance""]
+    max_owner = POINTS_CONFIG[""prioritization_response""][""owner_role_plausibility""]
+
+    if not candidate_risks:
+        return 0, [""Prioritization/Response: No risks identified.""], max_points
+
+    # 1. Identify Candidate's Top Risks
+    candidate_risks.sort(key=lambda x: x.get('risk_score', 0), reverse=True)
+    top_score = candidate_risks[0].get('risk_score', 0) if candidate_risks else 0
+    top_risk_ids_candidate = set()
+    if top_score > 0:
+        # Find the score of the 3rd distinct highest score, handling ties
+        scores = sorted(list(set(r.get('risk_score', 0) for r in candidate_risks)), reverse=True)
+        cutoff_score = scores[2] if len(scores) >= 3 else (scores[-1] if scores else 0)
+        # Include all risks with score >= cutoff_score, ensuring at least top 3 scores are covered
+        # Refined logic: Get top 3 scores, find the minimum of these, include all risks >= that minimum
+        top_3_scores = scores[:3]
+        min_top_score = min(top_3_scores) if top_3_scores else 0
+        top_risk_ids_candidate = {r['risk_id'] for r in candidate_risks if r.get('risk_score', 0) >= min_top_score and r.get('risk_score', 0) > 0}
+
+
+    # 2. Check if response fields are correctly populated (null/non-null)
+    correct_population_count = 0
+    incorrect_population_details = []
+    for cr in candidate_risks:
+        cr_id = cr.get('risk_id')
+        is_top = cr_id in top_risk_ids_candidate
+        has_response = (cr.get('response_strategy_type') is not None or
+                        cr.get('response_strategy_description') is not None or
+                        cr.get('potential_owner_role') is not None)
+
+        if is_top and has_response:
+            correct_population_count += 1
+        elif not is_top and not has_response:
+            correct_population_count += 1
+        elif is_top and not has_response:
+            incorrect_population_details.append(f""Risk {cr_id} identified as top risk (score {cr.get('risk_score')}) but lacks response details."")
+        elif not is_top and has_response:
+             incorrect_population_details.append(f""Risk {cr_id} not identified as top risk (score {cr.get('risk_score')}) but has response details."")
+
+    if not incorrect_population_details:
+        score += max_top_3_id
+    else:
+        feedback.append(""Prioritization/Response: Mismatch between identified top risks and provided response details:"")
+        feedback.extend(incorrect_population_details)
+        # Partial credit maybe? For now, all or nothing for this part.
+        score += max_top_3_id * (correct_population_count / len(candidate_risks)) # Proportional score
+
+
+    # 3. Evaluate Response Quality for Candidate's Top Risks
+    resp_type_points = 0
+    resp_desc_points = 0
+    owner_points = 0
+    top_risks_evaluated_count = 0
+
+    for cr_id in top_risk_ids_candidate:
+        # Find the candidate risk object
+        cr = next((r for r in candidate_risks if r.get('risk_id') == cr_id), None)
+        if not cr: continue # Should not happen if logic is correct
+
+        top_risks_evaluated_count += 1
+
+        # Check Response Type Logic (compare to key if matched)
+        cr_resp_type = cr.get('response_strategy_type')
+        valid_resp_type, msg_resp_type = validate_string_enum(cr_resp_type, VALID_RESPONSE_TYPES, 'response_strategy_type', cr_id)
+        if not valid_resp_type:
+            feedback.append(msg_resp_type)
+        else:
+            # Compare to key if possible
+            if cr_id in matched_pairs:
+                kr_id = matched_pairs[cr_id]
+                key_risk = get_key_risk_by_id(key_risks_data, kr_id)
+                # Check if the key risk *should* have a response (i.e., is top in the key)
+                key_top_scores = sorted(list(set(r.get('risk_score', 0) for r in key_risks_data)), reverse=True)
+                key_min_top_score = min(key_top_scores[:3]) if len(key_top_scores) >=3 else (key_top_scores[-1] if key_top_scores else 0)
+
+                if key_risk and key_risk.get('risk_score', 0) >= key_min_top_score:
+                    kr_resp_type = key_risk.get('response_strategy_type')
+                    if cr_resp_type == kr_resp_type:
+                        resp_type_points += 1
+                    else:
+                        # Allow some flexibility? e.g. Mitigate vs Avoid might be debatable
+                        # For now, strict match
+                        feedback.append(f""Prioritization/Response: Risk {cr_id} (Key {kr_id}): Response type '{cr_resp_type}' differs from key '{kr_resp_type}'."")
+                else:
+                    # Candidate provided response for a risk that wasn't top in the key (or wasn't matched)
+                    # Or key risk didn't have response. If type is valid, give partial credit?
+                    resp_type_points += 0.5 # Give half point for valid type even if not matching key's top
+            elif cr_resp_type: # Unmatched risk, but valid response type provided
+                 resp_type_points += 0.5 # Give half point for valid type
+
+        # Check Response Description Relevance (non-empty check)
+        cr_resp_desc = cr.get('response_strategy_description')
+        if isinstance(cr_resp_desc, str) and len(cr_resp_desc.strip()) > 10: # Require more than just a few chars
+            resp_desc_points += 1
+        else:
+            feedback.append(f""Prioritization/Response: Risk {cr_id}: Response description is missing or too brief."")
+
+        # Check Owner Role Plausibility (non-empty check, maybe check against scenario roles later)
+        cr_owner = cr.get('potential_owner_role')
+        if isinstance(cr_owner, str) and len(cr_owner.strip()) > 2:
+            owner_points += 1
+            # Future enhancement: Check if role exists in scenario
+        else:
+            feedback.append(f""Prioritization/Response: Risk {cr_id}: Potential owner role is missing or invalid."")
+
+
+    # Normalize scores
+    final_resp_type_points = (resp_type_points / top_risks_evaluated_count * max_resp_type) if top_risks_evaluated_count > 0 else 0
+    final_resp_desc_points = (resp_desc_points / top_risks_evaluated_count * max_resp_desc) if top_risks_evaluated_count > 0 else 0
+    final_owner_points = (owner_points / top_risks_evaluated_count * max_owner) if top_risks_evaluated_count > 0 else 0
+
+    score += round(final_resp_type_points + final_resp_desc_points + final_owner_points)
+
+    return min(score, max_points), feedback, max_points
+
+
+# --- Main Execution ---
+
+def main():
+    parser = argparse.ArgumentParser(description=""Evaluate IT Project Manager Basic Risk Assessment Exam Submission."")
+    parser.add_argument(""submission_file"", help=""Path to the candidate's submission JSON file."")
+    parser.add_argument(""key_file"", help=""Path to the answer key JSON file."")
+    args = parser.parse_args()
+
+    submission_path = Path(args.submission_file)
+    key_path = Path(args.key_file)
+    results_path = Path(""test_results.json"")
+
+    # Load data
+    submission_data = load_json(submission_path)
+    key_data = load_json(key_path)
+
+    # Initialize results structure
+    results = {
+        ""candidate_file"": str(submission_path.name),
+        ""key_file"": str(key_path.name),
+        ""overall_score"": 0,
+        ""scores_by_category"": {},
+        ""feedback"": [],
+        ""risk_matching"": {}
+    }
+
+    # Handle JSON loading errors
+    if submission_data.get(""error"") == ""Invalid JSON"":
+        results[""feedback""].append(f""Fatal Error: Could not parse submission file {submission_path.name}. Evaluation halted."")
+        results[""scores_by_category""][""formatting""] = {""score"": 0, ""max_points"": POINTS_CONFIG[""formatting""][""total""], ""feedback"": [submission_data.get(""details"", ""Unknown JSON error"")]}
+        # Write results and exit
+        with open(results_path, 'w', encoding='utf-8') as f:
+            json.dump(results, f, indent=2)
+        print(f""Evaluation results saved to {results_path}"")
+        sys.exit(1) # Indicate failure
+
+    if key_data.get(""error"") == ""Invalid JSON"":
+        print(f""Fatal Error: Could not parse key file {key_path.name}. Evaluation halted."", file=sys.stderr)
+        sys.exit(1)
+
+
+    # --- Start Evaluation ---
+    total_score = 0
+    total_max_points = 0
+
+    # 1. Formatting Evaluation
+    fmt_score, fmt_feedback, fmt_max = evaluate_formatting(submission_data)
+    results[""scores_by_category""][""formatting""] = {""score"": fmt_score, ""max_points"": fmt_max, ""feedback"": fmt_feedback}
+    results[""feedback""].extend(fmt_feedback)
+    total_score += fmt_score
+    total_max_points += fmt_max
+
+    # Proceed only if basic structure is somewhat okay
+    candidate_risks = submission_data.get(""risk_register"", [])
+    key_risks = key_data.get(""risk_register"", [])
+
+    if not isinstance(candidate_risks, list):
+         results[""feedback""].append(""Fatal Error: 'risk_register' is not a list in submission. Cannot evaluate further."")
+         candidate_risks = [] # Prevent errors later
+
+    # Match risks between submission and key
+    matched_pairs, reverse_matched_pairs = match_risks(candidate_risks, key_risks)
+    results[""risk_matching""] = {
+        ""candidate_to_key"": matched_pairs,
+        ""key_to_candidate"": reverse_matched_pairs,
+        ""unmatched_candidate_ids"": [r['risk_id'] for r in candidate_risks if r['risk_id'] not in matched_pairs],
+        ""unmatched_key_ids"": [r['risk_id'] for r in key_risks if r['risk_id'] not in reverse_matched_pairs]
+        }
+
+
+    # 2. Identification Evaluation
+    id_score, id_feedback, id_max = evaluate_identification(candidate_risks, key_risks, matched_pairs)
+    results[""scores_by_category""][""identification""] = {""score"": id_score, ""max_points"": id_max, ""feedback"": id_feedback}
+    results[""feedback""].extend(id_feedback)
+    total_score += id_score
+    total_max_points += id_max
+
+    # 3. Analysis Evaluation
+    an_score, an_feedback, an_max = evaluate_analysis(candidate_risks, key_risks, matched_pairs)
+    results[""scores_by_category""][""analysis""] = {""score"": an_score, ""max_points"": an_max, ""feedback"": an_feedback}
+    results[""feedback""].extend(an_feedback)
+    total_score += an_score
+    total_max_points += an_max
+
+    # 4. Prioritization & Response Evaluation
+    pr_score, pr_feedback, pr_max = evaluate_prioritization_response(candidate_risks, key_risks, matched_pairs, reverse_matched_pairs)
+    results[""scores_by_category""][""prioritization_response""] = {""score"": pr_score, ""max_points"": pr_max, ""feedback"": pr_feedback}
+    results[""feedback""].extend(pr_feedback)
+    total_score += pr_score
+    total_max_points += pr_max
+
+    # Calculate Overall Score
+    if total_max_points > 0:
+        results[""overall_score""] = round((total_score / total_max_points) * 100, 2)
+    else:
+        results[""overall_score""] = 0
+
+    # Save results
+    try:
+        with open(results_path, 'w', encoding='utf-8') as f:
+            json.dump(results, f, indent=2, ensure_ascii=False)
+        print(f""Evaluation results saved to {results_path}"")
+    except Exception as e:
+        print(f""Error: Could not write results to {results_path}: {e}"", file=sys.stderr)
+        sys.exit(1)
+
+if __name__ == ""__main__"":
+    main()
+```
+
+**Explanation:**
+
+1.  **Configuration:** Sets up constants like L/I mappings, valid categories/responses, required JSON keys, keyword sets for matching key risks, and scoring weights.
+2.  **Helper Functions:**
+    *   `load_json`: Safely loads JSON files, handling errors like file not found or invalid format.
+    *   `validate_string_enum`: Checks if a value is one of the allowed strings for fields like `category`, `likelihood`, `impact`, `response_strategy_type`.
+    *   `calculate_expected_score`: Computes the score based on L/I strings.
+    *   `match_risks`: Implements the keyword-based matching logic to associate candidate risks with key risks. It returns dictionaries mapping candidate IDs to key IDs and vice-versa. This is crucial for comparing analysis and response details.
+    *   `get_key_risk_by_id`: Simple utility to retrieve a key risk object using its ID.
+3.  **Evaluation Functions:** Each function corresponds to a major evaluation criterion:
+    *   `evaluate_formatting`: Checks JSON validity, presence of required keys, and basic data types (spot-checked on the first risk).
+    *   `evaluate_identification`: Checks if the minimum number of risks were identified and if at least two high-priority key risks (defined by a score threshold in the key, e.g., >=6) were covered (based on the matching results).
+    *   `evaluate_analysis`: Iterates through candidate risks.
+        *   Checks if the `risk_score` is calculated correctly based on the *candidate's* L/I values.
+        *   For *matched* risks, compares the candidate's L/I assessment and category against the key, allowing some tolerance for L/I.
+        *   Scores are normalized based on the number of risks evaluated/matched.
+    *   `evaluate_prioritization_response`:
+        *   Determines the candidate's top risks based on *their* scores (handling ties correctly according to the ""Top 3"" rule).
+        *   Checks if response fields (`response_strategy_type`, etc.) are correctly populated (non-`null` for top risks, `null` otherwise).
+        *   For the candidate's identified top risks, it evaluates the logic of the `response_strategy_type` (comparing to the key for matched risks), the relevance of the description (non-empty check), and the plausibility of the owner role (non-empty check).
+        *   Scores are normalized based on the number of top risks evaluated.
+4.  **Main Execution (`main` function):**
+    *   Uses `argparse` to get the submission and key file paths from the command line.
+    *   Loads the JSON data using `load_json`.
+    *   Initializes the `results` dictionary.
+    *   Calls each evaluation function in sequence.
+    *   Aggregates scores and feedback.
+    *   Calculates the `overall_score` as a percentage.
+    *   Saves the detailed `results` dictionary to `test_results.json`.
+    *   Includes error handling for file operations and JSON parsing.
+
+**To Run the Script:**
+
+1.  Save the code as `task_evaluation.py`.
+2.  Make sure you have the candidate's submission file (e.g., `test_submission.json`) and the answer key file (you'll need to create this based on the `<evaluation_information>` section, naming it e.g., `answer_key.json`) in the same directory.
+3.  Run from your terminal:
+    ```bash
+    python task_evaluation.py test_submission.json answer_key.json
+    ```
+4.  A `test_results.json` file will be created in the same directory with the detailed evaluation.","{'exam_candidate_id': 'EVALUATOR_KEY', 'exam_level': 'Basic', 'risk_register': [{'risk_id': 1, 'description': ""Delay in server provisioning or technical task completion due to Technical Lead's limited availability (50% allocation)."", 'category': 'Resource', 'likelihood': 'High', 'impact': 'Medium', 'risk_score': 6, 'response_strategy_type': 'Mitigate', 'response_strategy_description': 'Confirm project task priorities with Tech Lead and their manager; identify critical path tasks requiring Tech Lead input early; explore delegation options.', 'potential_owner_role': 'Project Manager'}, {'risk_id': 2, 'description': 'Project cost exceeds the fixed $5,000 budget due to unforeseen technical issues, scope changes, or resource time.', 'category': 'Budget', 'likelihood': 'Medium', 'impact': 'High', 'risk_score': 6, 'response_strategy_type': 'Mitigate', 'response_strategy_description': 'Implement strict change control; track expenses meticulously against budget; report budget status regularly to Project Sponsor; identify potential cost-saving measures proactively.', 'potential_owner_role': 'Project Manager'}, {'risk_id': 3, 'description': ""The provided 'EmpDir' application contains significant bugs requiring unplanned fixes, delaying deployment."", 'category': 'Technical', 'likelihood': 'Medium', 'impact': 'High', 'risk_score': 6, 'response_strategy_type': 'Mitigate', 'response_strategy_description': 'Allocate sufficient time for thorough testing early in the schedule; ensure Technical Lead performs code review/deployment dry-run if possible; document all bugs found.', 'potential_owner_role': 'Technical Lead'}, {'risk_id': 4, 'description': 'Inability to resolve application-specific bugs or deployment issues quickly due to limited availability and minimal documentation from the original development team.', 'category': 'External', 'likelihood': 'High', 'impact': 'Medium', 'risk_score': 6, 'response_strategy_type': 'Mitigate', 'response_strategy_description': 'Proactively request any available documentation or contact points from the development team lead; allocate contingency time in the schedule for potential troubleshooting.', 'potential_owner_role': 'Project Manager'}, {'risk_id': 5, 'description': ""Delay in obtaining necessary database connectivity or support due to the DBA team's backlog."", 'category': 'External', 'likelihood': 'Medium', 'impact': 'Medium', 'risk_score': 4, 'response_strategy_type': None, 'response_strategy_description': None, 'potential_owner_role': None}, {'risk_id': 6, 'description': 'Deployment activities are delayed or cause disruption because coordination for deployment outside core business hours fails.', 'category': 'Schedule', 'likelihood': 'Low', 'impact': 'Medium', 'risk_score': 2, 'response_strategy_type': None, 'response_strategy_description': None, 'potential_owner_role': None}, {'risk_id': 7, 'description': 'End-user acceptance testing is delayed or ineffective due to lack of engagement or availability of the End-User Representative.', 'category': 'Resource', 'likelihood': 'Low', 'impact': 'Medium', 'risk_score': 2, 'response_strategy_type': None, 'response_strategy_description': None, 'potential_owner_role': None}]}",[],True,True,0.0,99.0,89.0,4.0,True,,"{'overview': prompt_token_count: 237
+candidates_token_count: 1532
+total_token_count: 3471
+, 'instructions': prompt_token_count: 1975
+candidates_token_count: 1218
+total_token_count: 4886
+, 'materials': prompt_token_count: 3398
+candidates_token_count: 3614
+total_token_count: 7931
+, 'check_materials': prompt_token_count: 4936
+candidates_token_count: 1
+total_token_count: 5420
+, 'check_website': prompt_token_count: 4969
+candidates_token_count: 1
+total_token_count: 5542
+, 'submission': prompt_token_count: 6796
+candidates_token_count: 1348
+total_token_count: 8836
+, 'evaluation': prompt_token_count: 8065
+candidates_token_count: 3165
+total_token_count: 13250
+, 'grading': prompt_token_count: 11419
+candidates_token_count: 8836
+total_token_count: 22656
+}"
+Computer Systems Analysts,3476.0,Define the goals of the system and devise flow charts and diagrams describing logical operational steps of programs.,gemini-2.5-pro-preview-03-25,,,,,,,,,,,,,['cannot unpack non-iterable NoneType object'],,,,,,,,,

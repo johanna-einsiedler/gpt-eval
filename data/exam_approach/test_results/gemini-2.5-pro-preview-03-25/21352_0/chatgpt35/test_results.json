@@ -1,0 +1,15 @@
+{
+    "submission_file": "test_submission.json",
+    "key_file": "answer_key.json",
+    "structure_valid": false,
+    "format_valid": false,
+    "structure_checks": [],
+    "format_checks": [],
+    "value_comparison": {
+        "status": "SKIPPED",
+        "detail": "Skipped due to structure or format errors."
+    },
+    "correct_count": 0,
+    "total_possible": 0,
+    "overall_score": 0.0
+}

@@ -1,0 +1,35 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "exam_version": "Basic_DataPrep_v1",
+    "submission_timestamp": "2024-07-27T15:30:00Z",
+    "results": {
+        "task_1_load_combine": {
+            "merged_rows": 18,
+            "merged_columns": 6
+        },
+        "task_2_identify_issues": {
+            "missing_age_count": 2,
+            "missing_score_count": 2,
+            "unique_gender_values": [
+                "",
+                "F",
+                "M",
+                "Male",
+                "N/A",
+                "Other",
+                "female"
+            ],
+            "high_age_rows_count": 2,
+            "duplicate_rows_count": 2
+        },
+        "task_3_clean_adjust": {
+            "final_rows_count": 16,
+            "median_age_cleaned": 47.0,
+            "mean_score_cleaned": 77.19,
+            "date_conversion_failures": 2
+        },
+        "task_4_apply_weights": {
+            "mean_weighted_score": 78.91
+        }
+    }
+}

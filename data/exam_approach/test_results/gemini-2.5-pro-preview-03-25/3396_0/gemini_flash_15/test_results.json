@@ -1,0 +1,204 @@
+{
+  "submission_file": "test_submission.json",
+  "answer_key_file": "answer_key.json",
+  "overall_score": 84.0,
+  "total_possible_points": 100,
+  "evaluation_details": {
+    "json_structure": {
+      "keys_found": [
+        "analysis_summary",
+        "proposed_adjustments",
+        "budget_constraint_check",
+        "calculation_notes"
+      ],
+      "keys_missing": [],
+      "type_errors": [],
+      "valid": true,
+      "errors": [],
+      "points": 5
+    },
+    "budget_constraint": {
+      "original_total_correct": true,
+      "adjusted_total_correct": true,
+      "constraint_met_check": true,
+      "internal_consistency_check": true,
+      "candidate_value": 205000,
+      "key_value": 205000,
+      "candidate_constraint_met": true,
+      "calculated_sum_adjustments": "N/A",
+      "errors": [],
+      "points": 35
+    },
+    "analysis_summary": {
+      "correct_impacts": 4,
+      "total_impacts_in_key": 4,
+      "details": [
+        {
+          "program_change_ref": "Shift to Online Workshops",
+          "matches": [
+            {
+              "category_name": "Online Marketing",
+              "key_impact": 2500,
+              "candidate_impact": 2500,
+              "match": true
+            },
+            {
+              "category_name": "Local Events",
+              "key_impact": -12000,
+              "candidate_impact": -12000,
+              "match": true
+            }
+          ],
+          "mismatches": []
+        },
+        {
+          "program_change_ref": "Pilot Mentorship Program",
+          "matches": [
+            {
+              "category_name": "Supplies",
+              "key_impact": 1500,
+              "candidate_impact": 1500,
+              "match": true
+            },
+            {
+              "category_name": "Printing & Mail",
+              "key_impact": 500,
+              "candidate_impact": 500,
+              "match": true
+            }
+          ],
+          "mismatches": []
+        }
+      ],
+      "errors": [],
+      "points": 20
+    },
+    "proposed_adjustments": {
+      "travel_reallocation_correct": false,
+      "correct_other_adjustments": 4,
+      "correct_adjusted_budgets": 4,
+      "correct_original_budgets": 5,
+      "includes_only_adjusted_categories": true,
+      "details": [
+        {
+          "category_name": "Travel",
+          "match_status": {
+            "original_budget": {
+              "match": true,
+              "candidate": 15000,
+              "key": 15000
+            },
+            "adjustment": {
+              "match": false,
+              "candidate": 1000,
+              "key": 7500
+            },
+            "adjusted_budget": {
+              "match": false,
+              "candidate": 16000,
+              "key": 22500
+            },
+            "internal_line_consistency": true
+          }
+        },
+        {
+          "category_name": "Supplies",
+          "match_status": {
+            "original_budget": {
+              "match": true,
+              "candidate": 8000,
+              "key": 8000
+            },
+            "adjustment": {
+              "match": true,
+              "candidate": 1500,
+              "key": 1500
+            },
+            "adjusted_budget": {
+              "match": true,
+              "candidate": 9500,
+              "key": 9500
+            },
+            "internal_line_consistency": true
+          }
+        },
+        {
+          "category_name": "Local Events",
+          "match_status": {
+            "original_budget": {
+              "match": true,
+              "candidate": 20000,
+              "key": 20000
+            },
+            "adjustment": {
+              "match": true,
+              "candidate": -12000,
+              "key": -12000
+            },
+            "adjusted_budget": {
+              "match": true,
+              "candidate": 8000,
+              "key": 8000
+            },
+            "internal_line_consistency": true
+          }
+        },
+        {
+          "category_name": "Online Marketing",
+          "match_status": {
+            "original_budget": {
+              "match": true,
+              "candidate": 7000,
+              "key": 7000
+            },
+            "adjustment": {
+              "match": true,
+              "candidate": 2500,
+              "key": 2500
+            },
+            "adjusted_budget": {
+              "match": true,
+              "candidate": 9500,
+              "key": 9500
+            },
+            "internal_line_consistency": true
+          }
+        },
+        {
+          "category_name": "Printing & Mail",
+          "match_status": {
+            "original_budget": {
+              "match": true,
+              "candidate": 5000,
+              "key": 5000
+            },
+            "adjustment": {
+              "match": true,
+              "candidate": 500,
+              "key": 500
+            },
+            "adjusted_budget": {
+              "match": true,
+              "candidate": 5500,
+              "key": 5500
+            },
+            "internal_line_consistency": true
+          }
+        }
+      ],
+      "errors": [],
+      "points": 24
+    },
+    "calculation_notes": {
+      "present_and_list": true,
+      "is_list_of_strings": true,
+      "notes_content": [
+        "Calculated 'Local Events' reduction as 60% of original $20,000 budget = -$12,000.",
+        "Net savings from program changes: (-12000 + 2500 + 1500 + 500) = -7500. This was allocated to 'Travel' budget."
+      ],
+      "errors": [],
+      "points": 0
+    }
+  },
+  "total_achieved_points": 84
+}

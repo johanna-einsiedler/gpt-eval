@@ -1,0 +1,43 @@
+{
+    "exam_part": "basic_negotiation",
+    "candidate_id": "GPT-4",
+    "scenario_analysis": {
+        "client_needs_summary": "Beta Corp requires a 2-day \"Effective Communication Skills\" training program for 18 junior managers, ideally in the first half of September 2024, with a budget of $4,500.  Key areas of focus include improving written and verbal communication, active listening, and constructive conflict resolution.",
+        "potential_issues_or_deviations": [
+            "Client budget ($4,500) is significantly below the calculated minimum fee based on standard rates for 18 participants.  The standard maximum participant number is 15, and exceeding this triggers a surcharge.",
+            "Client preferred dates (sometime in the first half of September 2024) conflict with trainer unavailability (Section 4 of provider_info.txt).",
+            "Requested participant number (18) exceeds the standard maximum (15) and triggers a 15% large group surcharge (Section 2 of provider_info.txt)."
+        ]
+    },
+    "negotiation_points": [
+        {
+            "point": "Fee/Budget",
+            "details": "Client budget is insufficient to cover the standard fee for 18 participants, including the large group surcharge."
+        },
+        {
+            "point": "Training Dates",
+            "details": "Client's preferred dates in early September conflict with trainer unavailability."
+        },
+        {
+            "point": "Participant Number",
+            "details": "Client's requested participant number exceeds the standard maximum, necessitating a surcharge."
+        }
+    ],
+    "proposed_terms": [
+        {
+            "point": "Fee/Budget",
+            "proposal": "Propose total training fee of $7302.50 (includes base fee + surcharge). Separately state travel cost of $400.",
+            "supporting_data_reference": "Based on Section 2: Facilitator Daily Rate ($2500/day) * 2 days = $5000.  Digital Materials Fee ($75/participant) * 18 participants = $1350. Subtotal: $6350. Large Group Surcharge (15% of subtotal): $6350 * 0.15 = $952.50. Total: $5000 + $1350 + $952.50 = $7302.50. Travel cost based on Section 3: Standard Travel Cost Estimate (TechCity) $400."
+        },
+        {
+            "point": "Training Dates",
+            "proposal": "Proposed dates: 2024-09-16 to 2024-09-17 or 2024-09-23 to 2024-09-24.",
+            "supporting_data_reference": "Based on Section 4: Trainer Availability for Dr. Alex Reed shows unavailability Sep 9-13 but availability on the proposed dates."
+        },
+        {
+            "point": "Participant Number",
+            "proposal": "Accept 18 participants, acknowledging the large group surcharge as detailed in the Fee/Budget proposal.",
+            "supporting_data_reference": "While the standard maximum is 15 (Section 2),  the provider information allows for groups up to 20 with a surcharge.  The surcharge is already included in the proposed fee."
+        }
+    ]
+}

@@ -1,0 +1,123 @@
+{
+    "exam_type": "basic_logistics_pm_tools",
+    "candidate_id": "GPT-4o",
+    "project_schedule": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout and Requirements",
+            "duration_days": 1,
+            "predecessors": "",
+            "start_day": 1,
+            "end_day": 1
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order Shelving Units and Tables",
+            "duration_days": 2,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 3
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Arrange Transport of Shelving and Tables",
+            "duration_days": 1,
+            "predecessors": "T02",
+            "start_day": 4,
+            "end_day": 4
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Install Shelving Units and Set Up Tables",
+            "duration_days": 3,
+            "predecessors": "T03",
+            "start_day": 5,
+            "end_day": 7
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Set Up Receiving Area and Signage",
+            "duration_days": 1,
+            "predecessors": "T04",
+            "start_day": 8,
+            "end_day": 8
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Final Warehouse Inspection and Readiness Check",
+            "duration_days": 2,
+            "predecessors": "T05",
+            "start_day": 9,
+            "end_day": 10
+        }
+    ],
+    "responsibility_matrix": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout and Requirements",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Approved Layout Diagram"
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order Shelving Units and Tables",
+            "Logistics_Manager": "I",
+            "Procurement_Specialist": "A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "N/A",
+            "compliance_check_method": "Purchase Order Confirmation"
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Arrange Transport of Shelving and Tables",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "R",
+            "Volunteer_Team_Lead": "N/A",
+            "compliance_check_method": "Signed Delivery Note"
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Install Shelving Units and Set Up Tables",
+            "Logistics_Manager": "I",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "A",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Photos of Setup"
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Set Up Receiving Area and Signage",
+            "Logistics_Manager": "I",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "A",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Manager Walkthrough Checklist"
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Final Warehouse Inspection and Readiness Check",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Email Confirmation"
+        }
+    ],
+    "assumptions_made": [
+        "Assumed standard 5-day work week",
+        "Assumed immediate availability of volunteers",
+        "Assumed shelving units and tables are in stock and readily available for delivery.",
+        "Assumed no significant delays in transport due to weather or other unforeseen circumstances.",
+        "Assumed site coordinator has the necessary skills and experience to oversee the physical setup."
+    ]
+}

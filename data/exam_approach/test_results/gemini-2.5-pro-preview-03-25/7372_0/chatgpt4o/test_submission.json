@@ -1,0 +1,48 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "assumption_sets": [
+        {
+            "set_id": "Set 1",
+            "assumptions_in_set": [
+                "A1",
+                "A3"
+            ],
+            "derived_consequences": [
+                {
+                    "consequence_id": "C1",
+                    "minimal_required_assumptions": [
+                        "A3"
+                    ]
+                },
+                {
+                    "consequence_id": "C3",
+                    "minimal_required_assumptions": [
+                        "A3"
+                    ]
+                }
+            ]
+        },
+        {
+            "set_id": "Set 2",
+            "assumptions_in_set": [
+                "A1",
+                "A2",
+                "A4"
+            ],
+            "derived_consequences": [
+                {
+                    "consequence_id": "C2",
+                    "minimal_required_assumptions": [
+                        "A4"
+                    ]
+                },
+                {
+                    "consequence_id": "C4",
+                    "minimal_required_assumptions": [
+                        "A4"
+                    ]
+                }
+            ]
+        }
+    ]
+}

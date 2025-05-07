@@ -1,0 +1,85 @@
+{
+    "candidate_name": "Fitness Expert",
+    "candidate_id": "GPT-4o",
+    "submission_date": "2024-07-28",
+    "exam_version": "Basic_FWC_NeedsAssessment_v1",
+    "task_1_interest_survey_design": {
+        "survey_title": "Innovatech Solutions: Mid-day Mindfulness & Stretching Break Survey",
+        "target_audience_description": "All employees of Innovatech Solutions",
+        "survey_introduction_text": "Innovatech Solutions is exploring the possibility of offering a mid-day Mindfulness & Stretching Break program. This short survey will help us gauge employee interest and preferences to ensure the program meets your needs. Your feedback is valuable and will help us shape the program effectively.",
+        "survey_questions": [
+            {
+                "question_text": "How interested are you in participating in a 15-20 minute guided Mindfulness & Stretching Break during the workday?",
+                "question_type": "Likert Scale (1-5)",
+                "options": [
+                    "1 - Not at all interested",
+                    "2 - Slightly interested",
+                    "3 - Moderately interested",
+                    "4 - Very interested",
+                    "5 - Extremely interested"
+                ]
+            },
+            {
+                "question_text": "What time of day would be most convenient for you to participate in a Mindfulness & Stretching Break?",
+                "question_type": "Multiple Choice - Single Answer",
+                "options": [
+                    "11:00 AM - 11:20 AM",
+                    "12:00 PM - 12:20 PM",
+                    "1:00 PM - 1:20 PM",
+                    "2:00 PM - 2:20 PM"
+                ]
+            },
+            {
+                "question_text": "What is your preferred method of delivery for the Mindfulness & Stretching Break?",
+                "question_type": "Multiple Choice - Single Answer",
+                "options": [
+                    "In-person session",
+                    "Virtual session via video conference",
+                    "Pre-recorded video"
+                ]
+            },
+            {
+                "question_text": "What type of mindfulness and stretching exercises are you most interested in?",
+                "question_type": "Multiple Choice - Multiple Answers",
+                "options": [
+                    "Breathing exercises",
+                    "Gentle stretching",
+                    "Guided meditation",
+                    "Desk yoga"
+                ]
+            },
+            {
+                "question_text": "Do you have any physical limitations or concerns that we should be aware of when designing the program?",
+                "question_type": "Open-ended Text",
+                "options": []
+            },
+            {
+                "question_text": "Would you prefer the sessions to be led by an internal employee or an external instructor?",
+                "question_type": "Multiple Choice - Single Answer",
+                "options": [
+                    "Internal Employee",
+                    "External Instructor",
+                    "No Preference"
+                ]
+            }
+        ]
+    },
+    "task_2_satisfaction_data_analysis": {
+        "satisfaction_rating_summary": {
+            "1": 1,
+            "2": 1,
+            "3": 3,
+            "4": 5,
+            "5": 5
+        },
+        "top_enjoyed_aspects": [
+            "Team competition",
+            "Tracking daily progress"
+        ],
+        "top_improvement_suggestions": [
+            "More prize categories",
+            "Better mobile app"
+        ],
+        "recommendation_for_next_year": "To improve participant satisfaction, Innovatech Solutions should focus on increasing the number of prize categories and enhancing the functionality of the mobile app for the Step Challenge."
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "identified_issues": [
+        {
+            "issue_id": "ISSUE_01",
+            "source_description": "Protocol Section 4.2 Exclusion Criteria",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "Exclusion criterion prohibits any anti-hypertensive medication, but pseudoephedrine's impact on BP is unclear.",
+            "potential_impact": "Inconsistent subject screening.",
+            "recommended_next_step": "Inform PI and request clarification on pseudoephedrine's impact.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_02",
+            "source_description": "Scenario 2",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "Patient forgot to fill out diary for three days, affecting data collection.",
+            "potential_impact": "Incomplete data collection.",
+            "recommended_next_step": "Notify PI and discuss how to handle missing data.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_03",
+            "source_description": "Scenario 3",
+            "protocol_reference": "Scenario Context",
+            "problem_summary": "ECG shows borderline QT interval; protocol requires reporting clinically significant findings.",
+            "potential_impact": "Subject safety risk if not addressed.",
+            "recommended_next_step": "Inform PI immediately for clinical correlation.",
+            "communication_point_person": "Principal Investigator"
+        }
+    ]
+}

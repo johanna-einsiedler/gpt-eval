@@ -1,0 +1,59 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "identified_issues": [
+        {
+            "issue_id": "ISSUE_01",
+            "source_description": "Protocol Section 4.1 Inclusion Criteria",
+            "protocol_reference": "Section 4.1.3",
+            "problem_summary": "Inclusion criterion 4.1.3 requires 'prior history of treatment for hypertension' but doesn't specify a timeframe or type of treatment.",
+            "potential_impact": "Inconsistent subject inclusion due to varying interpretations of 'prior history'.",
+            "recommended_next_step": "Request clarification from sponsor on specific requirements for prior hypertension treatment.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_02",
+            "source_description": "Protocol Section 4.2 Exclusion Criteria",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "Exclusion criterion 4.2.2 prohibits 'anti-hypertensive medication' but doesn't provide a list or clear definition of what qualifies.",
+            "potential_impact": "Risk of inconsistent subject exclusion due to unclear definition of anti-hypertensive medications.",
+            "recommended_next_step": "Request a comprehensive list or clear definition of prohibited anti-hypertensive medications from sponsor.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_03",
+            "source_description": "Protocol Section 6.2 Schedule of Assessments",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "The Schedule of Assessments doesn't specify when the study drug (Drug X) should be initiated relative to Visit 1 (Day 1).",
+            "potential_impact": "Inconsistent treatment initiation across subjects, potentially affecting efficacy assessments.",
+            "recommended_next_step": "Seek clarification from sponsor on the exact timing for initiating Drug X treatment.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_04",
+            "source_description": "Scenario 1",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "Potential subject took pseudoephedrine-containing medication, which may affect blood pressure, within 14 days of screening.",
+            "potential_impact": "Risk of including a subject who doesn't meet exclusion criteria, potentially affecting study data.",
+            "recommended_next_step": "Consult PI immediately regarding the impact of pseudoephedrine on eligibility and potential need for re-screening.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_05",
+            "source_description": "Scenario 2",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "Patient 002 failed to complete patient diary for 3 days prior to Visit 2, which was supposed to be reviewed at that visit.",
+            "potential_impact": "Incomplete data collection and potential protocol deviation.",
+            "recommended_next_step": "Notify PI of the missed diary entries and potential protocol deviation.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_06",
+            "source_description": "Scenario 3",
+            "protocol_reference": "Scenario Context",
+            "problem_summary": "ECG at Visit 3 shows 'Borderline QT interval' requiring clinical correlation, but patient reports feeling normal.",
+            "potential_impact": "Potential safety concern that may require further evaluation or reporting.",
+            "recommended_next_step": "Immediately inform PI of the ECG finding for clinical assessment and determination of significance.",
+            "communication_point_person": "Principal Investigator"
+        }
+    ]
+}

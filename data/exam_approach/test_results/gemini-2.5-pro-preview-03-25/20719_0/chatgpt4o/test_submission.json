@@ -1,0 +1,34 @@
+{
+    "candidate_id": "YOUR_ID_HERE",
+    "case_reference": "EO-BASIC-001",
+    "complaint_summary": {
+        "complainant_name": "Sarah Chen",
+        "respondent_name": "David Miller",
+        "allegation_basis": "Age",
+        "brief_description": "Ms. Chen alleges she was unfairly denied selection for the internal 'Future Leaders Program' due to her age, citing comments made by Mr. Miller and the selection of a significantly younger colleague."
+    },
+    "key_statements": {
+        "complainant": [
+            "Ms. Chen confirmed she applied for the 'Future Leaders Program' via the internal portal on 2024-02-10, well before the deadline.",
+            "She stated she meets all the published eligibility criteria for the program, including minimum 5 years tenure and a 'Meets Expectations' or higher performance rating.",
+            "Ms. Chen reported that Mr. Miller commented the program was intended to identify and groom 'younger employees who have a long runway ahead of them in the company.'",
+            "She noted that Ben Carter, a younger colleague, was selected for the program despite her stronger experience and performance record.",
+            "Ms. Chen mentioned she sent Mr. Miller a follow-up email asking for clarification on the selection criteria and his comment but did not receive a written response."
+        ],
+        "respondent": [
+            "Mr. Miller confirmed Ms. Chen applied for the 'Future Leaders Program' and acknowledged she met the basic eligibility requirements.",
+            "He stated the selection process involved identifying individuals demonstrating high potential for rapid advancement and innovation.",
+            "Mr. Miller denied saying the program was for 'younger employees' and mentioned discussing the program's focus on 'long-term potential impact.'",
+            "He explained that Ben Carter was selected based on his recent lead role on the successful 'Project Innovate' campaign.",
+            "Mr. Miller claimed he spoke with Ms. Chen after the selections were announced and explained the decision was based on specific project contributions."
+        ]
+    },
+    "relevant_policy": {
+        "policy_name": "Employee Development and Advancement Policy",
+        "relevant_section_summary": "Selection for development programs is based on factors including performance history, potential, skills alignment, and business needs, and must be made in a non-discriminatory manner."
+    },
+    "identified_inconsistencies_or_missing_info": [
+        "Ms. Chen mentioned sending a follow-up email to Mr. Miller, but Mr. Miller did not recall receiving it.",
+        "None identified based on provided materials."
+    ]
+}

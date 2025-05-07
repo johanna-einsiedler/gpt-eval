@@ -1,0 +1,53 @@
+{
+    "exam_part": "basic_negotiation",
+    "candidate_id": "GPT-4o",
+    "scenario_analysis": {
+        "client_needs_summary": "Beta Corp requests a 2-day Effective Communication Skills training for 18 junior managers, to be conducted on-site at their offices in TechCity during first half of September 2024 (preferred dates Sep 9-10 or Sep 11-12). Their budget is approximately $4,500. Training should cover email/report writing, active listening, and constructive disagreement management.",
+        "potential_issues_or_deviations": [
+            "Client budget ($4,500) is below the calculated minimum fee ($7,302.50) based on standard rates for 18 participants including large group surcharge.",
+            "Client preferred dates (Sep 9-10 or Sep 11-12) conflict with trainer unavailability (Section 4: Sep 9-13 booked).",
+            "Requested participant number (18) exceeds standard maximum (15) and triggers Large Group Surcharge of 15% (Section 2).",
+            "On-site location (TechCity) requires additional travel cost of $400 (Section 3)."
+        ]
+    },
+    "negotiation_points": [
+        {
+            "point": "Fee/Budget",
+            "details": "Client budget ($4,500) vs. Calculated standard fee ($7,302.50 including surcharge) plus travel costs ($400)."
+        },
+        {
+            "point": "Training Dates",
+            "details": "Client preferred dates (Sep 9-12) unavailable due to trainer schedule."
+        },
+        {
+            "point": "Participant Number",
+            "details": "Client request (18 participants) exceeds standard maximum (15) requiring surcharge."
+        },
+        {
+            "point": "Travel Costs",
+            "details": "On-site training in TechCity requires additional travel expenses."
+        }
+    ],
+    "proposed_terms": [
+        {
+            "point": "Fee/Budget",
+            "proposal": "Propose total training fee of $7,302.50 (includes base fee + 15% surcharge). Separately state travel cost of $400. Total package: $7,702.50.",
+            "supporting_data_reference": "Based on Section 2: Facilitator Daily Rate ($2500/day) * 2 days = $5000 + Digital Materials Fee ($75/participant) * 18 participants = $1350. Subtotal: $6350. Large Group Surcharge (15% of $6350) = $952.50. Total training fee: $7302.50. Travel cost based on Section 3: Standard Travel Cost Estimate (TechCity) $400."
+        },
+        {
+            "point": "Training Dates",
+            "proposal": "Proposed alternative dates: 2024-09-16 to 2024-09-17 or 2024-09-23 to 2024-09-24.",
+            "supporting_data_reference": "Based on Section 4: Trainer Availability shows Dr. Alex Reed is available on Sep 16-17 and Sep 23-24."
+        },
+        {
+            "point": "Participant Number",
+            "proposal": "Accept 18 participants with 15% surcharge applied to standard fee.",
+            "supporting_data_reference": "Based on Section 2: Large Group Surcharge applies for groups between 16-20 participants (15% of total standard fee)."
+        },
+        {
+            "point": "Travel Costs",
+            "proposal": "Include $400 travel cost as separate line item.",
+            "supporting_data_reference": "Based on Section 3: Standard Travel Cost Estimate for TechCity is $400 covering travel time, mileage/flight, and 1 night accommodation."
+        }
+    ]
+}

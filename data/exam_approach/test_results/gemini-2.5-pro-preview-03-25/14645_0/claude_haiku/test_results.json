@@ -1,0 +1,60 @@
+{
+  "evaluation_details": {
+    "json_validity_structure": {
+      "score": 15,
+      "max_score": 15,
+      "details": [
+        "PASS: Basic JSON structure and types appear correct (15/15 points)."
+      ]
+    },
+    "scope": {
+      "score": 19,
+      "max_score": 25,
+      "details": [
+        "PASS (In-Scope): All 6 required RG IDs found.",
+        "INFO (In-Scope): Found 0/3 expected keywords (e.g., browsers, usability).",
+        "PASS (Out-Scope): Found 4 relevant out-of-scope items (e.g., mobile, auth, perf).",
+        "Scope Score: 19/25 points."
+      ]
+    },
+    "approach": {
+      "score": 10,
+      "max_score": 10,
+      "details": [
+        "INFO (Approach Focus): Found 2/2 expected focus areas.",
+        "PASS (Approach Methodology): Plausible methodology described.",
+        "Approach Score: 10/10 points."
+      ]
+    },
+    "prioritization": {
+      "score": 8,
+      "max_score": 15,
+      "details": [
+        "PASS (Prioritization): All 6 expected requirements listed.",
+        "FAIL (Prioritization): Top priority requirement does not match key.",
+        "Prioritization Score: 8/15 points."
+      ]
+    },
+    "schedule": {
+      "score": 25,
+      "max_score": 25,
+      "details": [
+        "PASS (Schedule Dates): All dates have correct format, fall within QA window, and start <= end (10/10 points).",
+        "INFO (Schedule Activities): Found 6 types of expected activities mentioned (e.g., design, execution, browser, regression, buffer, report).",
+        "Schedule Activity Score: 15/15 points."
+      ]
+    },
+    "risks_assumptions": {
+      "score": 10,
+      "max_score": 10,
+      "details": [
+        "PASS (Assumptions): Found 3 valid assumptions (minimum 2 required).",
+        "PASS (Risks): Found 3 valid risks (minimum 2 required).",
+        "Risks & Assumptions Score: 10/10 points."
+      ]
+    }
+  },
+  "overall_score": 87.0,
+  "total_score_achieved": 87,
+  "total_score_possible": 100
+}

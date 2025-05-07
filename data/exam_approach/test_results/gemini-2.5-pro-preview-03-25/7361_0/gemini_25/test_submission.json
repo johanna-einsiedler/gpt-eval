@@ -1,0 +1,84 @@
+{
+    "candidate_id": "Claude-3-Opus",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "The official Form W-2 is required for accurate reporting of wages, federal and state income tax withheld, and details of retirement plan contributions (e.g., Box 12 codes).",
+            "question_text": "Sarah, could you please provide the complete, official Form W-2 from DesignCorp for the tax year? We need this to accurately report your wages, taxes withheld, and details of your retirement plan contributions from Box 12."
+        },
+        {
+            "id": 2,
+            "category": "Income - Self-Employment",
+            "reasoning": "The precise total self-employment income is needed for accurate reporting on Schedule C or Schedule 1.",
+            "question_text": "Regarding your tutoring income, you mentioned it was 'around $2,500, maybe a bit more.' Could you please consult your payment log and provide the exact total amount you received from tutoring during the tax year?"
+        },
+        {
+            "id": 3,
+            "category": "Income - Self-Employment",
+            "reasoning": "To determine if there are deductible business expenses that can reduce your taxable self-employment income.",
+            "question_text": "For your tutoring work, did you incur any expenses directly related to this activity, such as art supplies, books, advertising, or mileage if you traveled to your students?"
+        },
+        {
+            "id": 4,
+            "category": "Income - Self-Employment",
+            "reasoning": "To report any estimated tax payments made, which can reduce tax liability or increase a refund.",
+            "question_text": "Did you make any federal or state estimated tax payments during the tax year specifically for your tutoring income?"
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Education",
+            "reasoning": "Form 1098-E is needed to confirm the exact amount of student loan interest paid, which is potentially deductible.",
+            "question_text": "You mentioned paying student loan interest. Could you please provide the Form 1098-E (Student Loan Interest Statement) from your loan servicer? This form will show the exact amount of interest paid, which may be deductible."
+        },
+        {
+            "id": 6,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Form 1098 is essential for claiming deductions for mortgage interest and real estate taxes paid via escrow.",
+            "question_text": "For your new condo, could you please provide the Form 1098 (Mortgage Interest Statement) from your lender? This document reports the mortgage interest and any real estate taxes you paid through your escrow account."
+        },
+        {
+            "id": 7,
+            "category": "Deductions - Homeowner",
+            "reasoning": "The closing statement may list additional deductible homeowner expenses like points or prorated property taxes not on Form 1098.",
+            "question_text": "Could you also provide the closing statement (often called a Closing Disclosure or HUD-1) from your condo purchase in March? This document can help identify other potentially deductible items paid at closing, such as points or prorated property taxes."
+        },
+        {
+            "id": 8,
+            "category": "Deductions - Homeowner",
+            "reasoning": "To ensure all deductible property taxes are captured, whether paid via escrow or directly by the client.",
+            "question_text": "Apart from any property taxes reported on your Form 1098 (paid through escrow), did you pay any additional property taxes directly to the city or county for your condo during the tax year?"
+        },
+        {
+            "id": 9,
+            "category": "Deductions - Charitable",
+            "reasoning": "For non-cash charitable contributions, the taxpayer must determine and document the Fair Market Value (FMV) of the donated items to claim a deduction.",
+            "question_text": "Regarding your donation of clothing and household items to Goodwill, the drop-off receipt acknowledges the donation. We also need your best estimate of the fair market value of these items at the time of donation. Do you have a list of the items and their estimated values?"
+        },
+        {
+            "id": 10,
+            "category": "Deductions - Charitable",
+            "reasoning": "Cash contributions require specific forms of documentation (like bank records or a statement from the charity) to be deductible.",
+            "question_text": "For the $100 in cash donations made to your church's collection plate, do you have any supporting documentation, such as bank records (e.g., ATM withdrawals around service times if consistent) or a written acknowledgement from the church?"
+        },
+        {
+            "id": 11,
+            "category": "Deductions - Medical",
+            "reasoning": "The exact total of qualifying medical expenses is needed to determine if they meet the Adjusted Gross Income (AGI) threshold for deductibility.",
+            "question_text": "You mentioned out-of-pocket medical expenses of 'maybe $300.' Could you please gather your records for these expenses (e.g., receipts for doctor's visits, co-pays, prescriptions) and provide the exact total amount you paid during the tax year?"
+        },
+        {
+            "id": 12,
+            "category": "Income - Other",
+            "reasoning": "Form 1099-INT is required to accurately report taxable interest income received from financial institutions.",
+            "question_text": "You mentioned receiving a tax form from your bank for savings interest. Could you please locate and provide this form, which is typically a Form 1099-INT? It will state the exact amount of interest income to report."
+        },
+        {
+            "id": 13,
+            "category": "General/Missing Forms",
+            "reasoning": "To proactively identify any other potential sources of income, deductions, or credits not initially mentioned by the client, ensuring a comprehensive tax return.",
+            "question_text": "Sarah, to make sure we cover everything for your tax return, was there any other type of income you received during the tax year that we haven't discussed (e.g., dividends, stock sales, unemployment benefits, cryptocurrency transactions)? Also, were there any other significant expenses you believe might be deductible (e.g., contributions to a traditional IRA outside of work, educator expenses, health savings account contributions)?"
+        }
+    ]
+}

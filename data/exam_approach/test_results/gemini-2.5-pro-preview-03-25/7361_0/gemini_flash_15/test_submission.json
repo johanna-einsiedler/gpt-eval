@@ -1,0 +1,54 @@
+{
+    "candidate_id": "GPT-4",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "Need the complete W-2 form to accurately report wages, withholdings, and retirement contributions.",
+            "question_text": "Could you please provide your complete W-2 form from DesignCorp?  I need the information from all boxes to accurately complete your tax return."
+        },
+        {
+            "id": 2,
+            "category": "Income - Self-Employment",
+            "reasoning": "Need precise income amount and details on expenses to calculate net self-employment income.",
+            "question_text": "You mentioned earning approximately $2500 from tutoring.  What was the exact total amount you received, and do you have records to support this amount?  Did you incur any expenses related to your tutoring business, such as supplies or mileage? If so, please provide details."
+        },
+        {
+            "id": 3,
+            "category": "Deductions - Education",
+            "reasoning": "Need details on student loan interest payments to claim the student loan interest deduction.",
+            "question_text": "You mentioned paying approximately $500 in student loan interest.  What was the exact amount paid, and can you provide documentation from your loan provider confirming the interest paid during the tax year?"
+        },
+        {
+            "id": 4,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Need details on mortgage interest and property taxes paid to claim these deductions.",
+            "question_text": "Regarding your condo purchase, can you provide me with your mortgage interest statement and property tax statement showing the amounts paid from March 15th to the end of the tax year?"
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Charitable",
+            "reasoning": "Need documentation to support charitable contributions for accurate deduction calculation.",
+            "question_text": "You mentioned donating clothing and household items to Goodwill and cash to your church. Can you please provide any receipts or documentation you have for these donations?  For the cash donation to the church, did you receive a contribution statement?"
+        },
+        {
+            "id": 6,
+            "category": "Deductions - Medical",
+            "reasoning": "Need details on medical expenses to determine if they exceed the threshold for deduction.",
+            "question_text": "You mentioned approximately $300 in medical expenses.  What was the exact amount, and can you provide documentation such as receipts or explanation of benefits (EOB) statements from your healthcare providers?"
+        },
+        {
+            "id": 7,
+            "category": "Income - Other",
+            "reasoning": "Need details on the bank form to determine if it reports taxable interest income.",
+            "question_text": "You mentioned receiving a tax form from your bank regarding savings interest. Could you please provide a copy of this form so I can determine if it needs to be included in your tax return?"
+        },
+        {
+            "id": 8,
+            "category": "General/Missing Forms",
+            "reasoning": "To ensure all necessary income and deduction information is included in the tax return.",
+            "question_text": "Are there any other forms or documents related to your income or expenses that you haven't yet provided?  For example, any 1099 forms, receipts for business expenses, or other relevant tax documents."
+        }
+    ]
+}

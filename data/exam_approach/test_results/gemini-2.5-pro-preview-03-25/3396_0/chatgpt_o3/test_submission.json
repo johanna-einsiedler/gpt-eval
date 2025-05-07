@@ -1,0 +1,75 @@
+{
+    "candidate_id": "GPT-4o",
+    "analysis_summary": [
+        {
+            "program_change_ref": "Shift to Online Workshops",
+            "affected_categories": [
+                {
+                    "category_name": "Online Marketing",
+                    "estimated_impact": 2500
+                },
+                {
+                    "category_name": "Local Events",
+                    "estimated_impact": -12000
+                }
+            ]
+        },
+        {
+            "program_change_ref": "Pilot Mentorship Program",
+            "affected_categories": [
+                {
+                    "category_name": "Supplies",
+                    "estimated_impact": 1500
+                },
+                {
+                    "category_name": "Printing & Mail",
+                    "estimated_impact": 500
+                }
+            ]
+        }
+    ],
+    "proposed_adjustments": [
+        {
+            "category_name": "Local Events",
+            "original_budget": 20000,
+            "adjustment": -12000,
+            "adjusted_budget": 8000
+        },
+        {
+            "category_name": "Online Marketing",
+            "original_budget": 7000,
+            "adjustment": 2500,
+            "adjusted_budget": 9500
+        },
+        {
+            "category_name": "Supplies",
+            "original_budget": 8000,
+            "adjustment": 1500,
+            "adjusted_budget": 9500
+        },
+        {
+            "category_name": "Printing & Mail",
+            "original_budget": 5000,
+            "adjustment": 500,
+            "adjusted_budget": 5500
+        },
+        {
+            "category_name": "Travel",
+            "original_budget": 15000,
+            "adjustment": 7500,
+            "adjusted_budget": 22500
+        }
+    ],
+    "budget_constraint_check": {
+        "original_total_budget": 205000,
+        "adjusted_total_budget": 205000,
+        "constraint_met": true
+    },
+    "calculation_notes": [
+        "Calculated Local Events reduction as 60% of original 20000 budget = -12000.",
+        "Webinar platform subscription added 2500 to Online Marketing.",
+        "Pilot Mentorship materials added 1500 to Supplies.",
+        "Increased postage/printing added 500 to Printing & Mail.",
+        "Net savings of 7500 reallocated to Travel to satisfy zero-sum constraint."
+    ]
+}

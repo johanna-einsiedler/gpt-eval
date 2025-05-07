@@ -1,0 +1,102 @@
+{
+    "exam_type": "basic",
+    "candidate_id": "GPT-4o",
+    "project_feature": "Reading Goals Tracker",
+    "testing_scope": {
+        "in_scope": [
+            "RG-01: Navigate to 'My Reading Goals' page from user dashboard",
+            "RG-02: Create/set annual reading goal (positive integer) and save",
+            "RG-03: Display saved goal number and current progress count",
+            "RG-04: Increment progress when a book is marked as 'read'",
+            "RG-05: Auto or refresh-based update of progress display after marking a book as read",
+            "RG-06: Edit or change the saved goal for the current year"
+        ],
+        "out_of_scope": [
+            "Mobile app testing",
+            "Testing on browsers other than latest Chrome and Firefox (e.g., Safari, Edge, IE)",
+            "User authentication and registration flows",
+            "Performance or load testing",
+            "Extensive UI/UX redesign or research",
+            "Data migration or schema change testing"
+        ]
+    },
+    "test_approach_summary": {
+        "primary_focus": [
+            "Functional Testing",
+            "Browser Compatibility Testing (Chrome, Firefox)",
+            "Regression Testing",
+            "Basic Usability Validation"
+        ],
+        "methodology": "Manual scripted test case execution complemented by exploratory testing, using requirement-based test design and risk-based prioritization"
+    },
+    "prioritized_requirements": [
+        {
+            "requirement_id": "RG-01",
+            "priority": 1
+        },
+        {
+            "requirement_id": "RG-02",
+            "priority": 2
+        },
+        {
+            "requirement_id": "RG-03",
+            "priority": 3
+        },
+        {
+            "requirement_id": "RG-04",
+            "priority": 4
+        },
+        {
+            "requirement_id": "RG-05",
+            "priority": 5
+        },
+        {
+            "requirement_id": "RG-06",
+            "priority": 6
+        }
+    ],
+    "test_schedule": [
+        {
+            "activity": "Test Planning & Environment Setup",
+            "start": "2024-07-30",
+            "end": "2024-07-30"
+        },
+        {
+            "activity": "Test Case Design",
+            "start": "2024-07-30",
+            "end": "2024-07-31"
+        },
+        {
+            "activity": "Functional Execution - Priority 1 to 3",
+            "start": "2024-08-01",
+            "end": "2024-08-05"
+        },
+        {
+            "activity": "Browser Compatibility Checks (Chrome & Firefox)",
+            "start": "2024-08-06",
+            "end": "2024-08-06"
+        },
+        {
+            "activity": "Functional Execution - Priority 4 to 6 & Regression",
+            "start": "2024-08-07",
+            "end": "2024-08-08"
+        },
+        {
+            "activity": "Final Report & Sign-off Preparation",
+            "start": "2024-08-09",
+            "end": "2024-08-09"
+        }
+    ],
+    "risks_and_assumptions": {
+        "assumptions": [
+            "Stable QA environment (mirroring production) will be available from 2024-07-30.",
+            "Feature build is code-complete and delivered to QA by end of day 2024-07-29.",
+            "Existing 'mark as read' functionality is already stable and only needs integration verification."
+        ],
+        "risks": [
+            "Delay in build delivery or environment setup could compress the execution window.",
+            "Critical integration defects with the existing 'mark as read' flow may require major rework and re-testing.",
+            "Unforeseen UI inconsistencies may generate additional defects, extending execution and fix cycles."
+        ]
+    }
+}

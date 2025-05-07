@@ -1,0 +1,16 @@
+{
+    "candidate_id": "GPT-4o",
+    "total_exposure": 31.51,
+    "total_deaths": 8,
+    "crude_mortality_rate": 0.253889,
+    "age_band_40_59": {
+        "exposure": 13.67,
+        "deaths": 2,
+        "mortality_rate": 0.146306
+    },
+    "age_band_60_79": {
+        "exposure": 15.84,
+        "deaths": 5,
+        "mortality_rate": 0.315657
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "candidate_id": "LoanOfficerExpert2022",
+    "exam_version": "Basic_PaymentSchedule_v1.0",
+    "loan_scenarios": [
+        {
+            "loan_id": "LOAN_BASIC_001",
+            "monthly_payment": 0.0,
+            "total_interest_paid": 0.0,
+            "schedule_points": [
+                {
+                    "payment_number": 1,
+                    "interest_paid": 0.0,
+                    "principal_paid": 0.0,
+                    "remaining_balance": 0.0
+                },
+                {
+                    "payment_number": 12,
+                    "interest_paid": 0.0,
+                    "principal_paid": 0.0,
+                    "remaining_balance": 0.0
+                },
+                {
+                    "payment_number": 360,
+                    "interest_paid": 0.0,
+                    "principal_paid": 0.0,
+                    "remaining_balance": 0.0
+                }
+            ]
+        },
+        {
+            "loan_id": "LOAN_BASIC_002",
+            "monthly_payment": 0.0,
+            "total_interest_paid": 0.0,
+            "schedule_points": [
+                {
+                    "payment_number": 1,
+                    "interest_paid": 0.0,
+                    "principal_paid": 0.0,
+                    "remaining_balance": 0.0
+                },
+                {
+                    "payment_number": 12,
+                    "interest_paid": 0.0,
+                    "principal_paid": 0.0,
+                    "remaining_balance": 0.0
+                },
+                {
+                    "payment_number": 84,
+                    "interest_paid": 0.0,
+                    "principal_paid": 0.0,
+                    "remaining_balance": 0.0
+                }
+            ]
+        }
+    ]
+}

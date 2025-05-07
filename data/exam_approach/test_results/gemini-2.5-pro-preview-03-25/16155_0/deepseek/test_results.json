@@ -1,0 +1,298 @@
+{
+    "overall_structure": {
+        "required_top_level_keys_present": {
+            "achieved": 1,
+            "max": 1,
+            "passed": true,
+            "comment": "All required keys present."
+        },
+        "candidate_id_valid": {
+            "achieved": 1,
+            "max": 1,
+            "passed": true,
+            "comment": "Candidate ID is a non-empty string."
+        },
+        "assessment_area_correct": {
+            "achieved": 1,
+            "max": 1,
+            "passed": true,
+            "comment": "Assessment area matches 'Customer Needs Assessment - Basic'."
+        }
+    },
+    "task_1_evaluation": {
+        "checks": {
+            "themes_list_is_list": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "'identified_themes' is a list of objects."
+            },
+            "min_themes_identified": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "Identified 5 themes (>= 3)."
+            },
+            "min_valid_themes": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "Found 5 valid themes (>= 3)."
+            }
+        },
+        "theme_details": [
+            {
+                "index": 0,
+                "checks": {
+                    "is_object": true,
+                    "theme_name_valid": true,
+                    "snippets_valid": true,
+                    "need_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 1,
+                "checks": {
+                    "is_object": true,
+                    "theme_name_valid": true,
+                    "snippets_valid": true,
+                    "need_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 2,
+                "checks": {
+                    "is_object": true,
+                    "theme_name_valid": true,
+                    "snippets_valid": true,
+                    "need_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 3,
+                "checks": {
+                    "is_object": true,
+                    "theme_name_valid": true,
+                    "snippets_valid": true,
+                    "need_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 4,
+                "checks": {
+                    "is_object": true,
+                    "theme_name_valid": true,
+                    "snippets_valid": true,
+                    "need_valid": true
+                },
+                "is_valid": true
+            }
+        ],
+        "score": 3,
+        "max_score": 3
+    },
+    "task_2_evaluation": {
+        "checks": {
+            "survey_goal_valid": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "Survey goal is present and non-empty."
+            },
+            "questions_list_is_list": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "'survey_questions' is a list of objects."
+            },
+            "question_count_valid": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "Number of questions is 7 (between 5-7)."
+            },
+            "min_valid_questions": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "Found 7 valid questions (>= 4)."
+            }
+        },
+        "question_details": [
+            {
+                "index": 0,
+                "checks": {
+                    "is_object": true,
+                    "question_number_valid": true,
+                    "question_text_valid": true,
+                    "question_type_valid": true,
+                    "options_valid": true,
+                    "purpose_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 1,
+                "checks": {
+                    "is_object": true,
+                    "question_number_valid": true,
+                    "question_text_valid": true,
+                    "question_type_valid": true,
+                    "options_valid": true,
+                    "purpose_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 2,
+                "checks": {
+                    "is_object": true,
+                    "question_number_valid": true,
+                    "question_text_valid": true,
+                    "question_type_valid": true,
+                    "options_valid": true,
+                    "purpose_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 3,
+                "checks": {
+                    "is_object": true,
+                    "question_number_valid": true,
+                    "question_text_valid": true,
+                    "question_type_valid": true,
+                    "options_valid": true,
+                    "purpose_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 4,
+                "checks": {
+                    "is_object": true,
+                    "question_number_valid": true,
+                    "question_text_valid": true,
+                    "question_type_valid": true,
+                    "options_valid": true,
+                    "purpose_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 5,
+                "checks": {
+                    "is_object": true,
+                    "question_number_valid": true,
+                    "question_text_valid": true,
+                    "question_type_valid": true,
+                    "options_valid": true,
+                    "purpose_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 6,
+                "checks": {
+                    "is_object": true,
+                    "question_number_valid": true,
+                    "question_text_valid": true,
+                    "question_type_valid": true,
+                    "options_valid": true,
+                    "purpose_valid": true
+                },
+                "is_valid": true
+            }
+        ],
+        "score": 4,
+        "max_score": 4
+    },
+    "task_3_evaluation": {
+        "checks": {
+            "items_list_is_list": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "'prioritized_list' is a list of objects."
+            },
+            "item_count_valid": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "Number of items is 5 (between 3-5)."
+            },
+            "min_valid_items": {
+                "achieved": 1,
+                "max": 1,
+                "passed": true,
+                "comment": "Found 5 valid items (>= 3)."
+            }
+        },
+        "item_details": [
+            {
+                "index": 0,
+                "checks": {
+                    "is_object": true,
+                    "item_id_valid": true,
+                    "req_area_valid": true,
+                    "priority_valid": true,
+                    "evidence_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 1,
+                "checks": {
+                    "is_object": true,
+                    "item_id_valid": true,
+                    "req_area_valid": true,
+                    "priority_valid": true,
+                    "evidence_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 2,
+                "checks": {
+                    "is_object": true,
+                    "item_id_valid": true,
+                    "req_area_valid": true,
+                    "priority_valid": true,
+                    "evidence_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 3,
+                "checks": {
+                    "is_object": true,
+                    "item_id_valid": true,
+                    "req_area_valid": true,
+                    "priority_valid": true,
+                    "evidence_valid": true
+                },
+                "is_valid": true
+            },
+            {
+                "index": 4,
+                "checks": {
+                    "is_object": true,
+                    "item_id_valid": true,
+                    "req_area_valid": true,
+                    "priority_valid": true,
+                    "evidence_valid": true
+                },
+                "is_valid": true
+            }
+        ],
+        "score": 3,
+        "max_score": 3
+    },
+    "overall_score": 100.0,
+    "total_achieved_points": 13,
+    "total_possible_points": 13
+}

@@ -1,0 +1,34 @@
+{
+    "candidate_id": "CANDIDATE_ID_HERE",
+    "case_reference": "EO-BASIC-001",
+    "complaint_summary": {
+        "complainant_name": "Sarah Chen",
+        "respondent_name": "David Miller",
+        "allegation_basis": "Age",
+        "brief_description": "Ms. Chen alleges she was unfairly denied selection for the internal 'Future Leaders Program' due to her age (52), citing comments made by Mr. Miller and the selection of a significantly younger colleague."
+    },
+    "key_statements": {
+        "complainant": [
+            "Applied for 'Future Leaders Program' on 2024-02-10, meeting all eligibility criteria.",
+            "Mr. Miller commented the program was intended to identify 'younger employees who have a long runway ahead of them in the company.'",
+            "Ben Carter (age 28, 3 years tenure) was selected despite Ms. Chen believing her experience and performance were stronger.",
+            "Sent a follow-up email to Mr. Miller asking for clarification on selection criteria, but received no written response."
+        ],
+        "respondent": [
+            "Confirmed Ms. Chen applied and met basic eligibility requirements.",
+            "Stated selection process focused on identifying individuals with high potential for rapid advancement and innovation.",
+            "Denied specifically saying the program was for 'younger employees' or mentioning a 'long runway.'",
+            "Explained Ben Carter was selected based on his recent lead role on 'Project Innovate,' demonstrating relevant leadership competencies.",
+            "Claimed he verbally explained the decision to Ms. Chen, focusing on Mr. Carter's specific achievements."
+        ]
+    },
+    "relevant_policy": {
+        "policy_name": "Employee Development and Advancement Policy",
+        "relevant_section_summary": "Selection for development programs is based on various factors including performance, potential, and skills alignment, and must be made in a non-discriminatory manner without regard to protected characteristics including age."
+    },
+    "identified_inconsistencies_or_missing_info": [
+        "Inconsistency in recollection of Mr. Miller's comments about the program's intended participants.",
+        "Ms. Chen mentioned sending a follow-up email, which Mr. Miller does not recall receiving.",
+        "The email Ms. Chen claims to have sent was not immediately available for review."
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "exam_type": "basic_maintenance",
+    "candidate_id": "REPLACE_WITH_YOUR_ID",
+    "task_1_scheduling": {
+        "conflict_identified": true,
+        "conflict_description": "Requested 'Gentle Stretching' on Thursday 10:00 in Studio B conflicts with existing 'Pilates Core' at the same time and location.",
+        "updated_schedule": [
+            {
+                "class_name": "Morning Yoga",
+                "instructor": "Anya Sharma",
+                "day": "Monday",
+                "time": "09:00",
+                "room": "Studio A"
+            },
+            {
+                "class_name": "Cycle Fit",
+                "instructor": "Ben Carter",
+                "day": "Tuesday",
+                "time": "17:30",
+                "room": "Cycle Studio"
+            },
+            {
+                "class_name": "Pilates Core",
+                "instructor": "Anya Sharma",
+                "day": "Thursday",
+                "time": "10:00",
+                "room": "Studio B"
+            },
+            {
+                "class_name": "Aqua Aerobics",
+                "instructor": "Chloe Davis",
+                "day": "Friday",
+                "time": "11:00",
+                "room": "Pool"
+            },
+            {
+                "class_name": "Strength Circuit",
+                "instructor": "Ben Carter",
+                "day": "Thursday",
+                "time": "18:00",
+                "room": "Gym Floor"
+            }
+        ]
+    },
+    "task_2_record_keeping": {
+        "attendance_records": [
+            {
+                "class_name": "Cycle Fit",
+                "date": "2024-08-06",
+                "attendees": [
+                    "John Smith",
+                    "Emily White",
+                    "Omar Khan"
+                ]
+            },
+            {
+                "class_name": "Aqua Aerobics",
+                "date": "2024-08-09",
+                "attendees": [
+                    "Sarah Jones",
+                    "David Chen"
+                ]
+            },
+            {
+                "class_name": "Morning Yoga",
+                "date": "2024-08-05",
+                "attendees": [
+                    "Lisa Green",
+                    "Mike Brown",
+                    "Emily White",
+                    "Anna Bell"
+                ]
+            }
+        ]
+    },
+    "task_3_reporting": {
+        "attendance_summary": [
+            {
+                "class_name": "Cycle Fit",
+                "total_attendees": 3
+            },
+            {
+                "class_name": "Aqua Aerobics",
+                "total_attendees": 2
+            },
+            {
+                "class_name": "Morning Yoga",
+                "total_attendees": 4
+            }
+        ]
+    }
+}

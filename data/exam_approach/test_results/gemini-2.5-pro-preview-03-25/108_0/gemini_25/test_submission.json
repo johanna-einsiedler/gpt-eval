@@ -1,0 +1,43 @@
+{
+    "exam_part": "basic_negotiation",
+    "candidate_id": "Claude-3-Opus",
+    "scenario_analysis": {
+        "client_needs_summary": "Beta Corp requires a 2-day on-site training program on 'Effective Communication Skills' for 18 junior managers at their TechCity office. Key outcomes include improved written/email clarity, active listening, and constructive disagreement management. Their preferred timeframe is the first half of September 2024, with an indicated budget of approximately $4,500. They also requested a pre-training consultation call.",
+        "potential_issues_or_deviations": [
+            "Client's indicated budget of approximately $4,500 is significantly below LearnWell's calculated total cost of $7,702.50 (which includes training fee, large group surcharge for 18 participants, and trainer travel to TechCity).",
+            "Client's preferred training dates in the first half of September 2024 (e.g., Sep 9-10, Sep 11-12) conflict with the unavailability of Dr. Alex Reed, the Lead ECS Facilitator, as per Section 4 of provider_info.txt (unavailable Sep 2-6 and Sep 9-13).",
+            "Client's requested participant number of 18 exceeds LearnWell's standard maximum group size of 15 (Section 2, provider_info.txt), thereby triggering a 15% Large Group Surcharge on the total standard fee."
+        ]
+    },
+    "negotiation_points": [
+        {
+            "point": "Fee/Budget",
+            "details": "Client's stated budget (approx. $4,500) versus LearnWell's calculated total cost ($7,702.50), which includes the standard fee, a large group surcharge, and travel expenses."
+        },
+        {
+            "point": "Training Dates",
+            "details": "Client's preferred dates in the first half of September 2024 are unavailable due to trainer's prior commitments (Section 4, provider_info.txt)."
+        },
+        {
+            "point": "Participant Number & Surcharge Impact",
+            "details": "Client's request for 18 participants exceeds the standard maximum of 15, invoking a 15% Large Group Surcharge as per LearnWell's policy (Section 2, provider_info.txt)."
+        }
+    ],
+    "proposed_terms": [
+        {
+            "point": "Fee/Budget",
+            "proposal": "Proposed total training fee of $7,302.50 for 18 participants. This fee covers the 2-day LW-ECS-STD program, digital course materials for each participant, and includes a 15% large group surcharge. An additional, separate travel cost of $400.00 for on-site training in TechCity will apply. The total cost to Beta Corp would be $7,702.50.",
+            "supporting_data_reference": "Calculation based on Section 2 (provider_info.txt): Facilitator Daily Rate ($2,500.00/day) * 2 days = $5,000.00. Digital Materials Fee ($75.00/participant) * 18 participants = $1,350.00. Subtotal Standard Fee = $5,000.00 + $1,350.00 = $6,350.00. Large Group Surcharge (for 16-20 participants, as per Section 2) = 15% of $6,350.00 = $952.50. Total Training Fee = $6,350.00 + $952.50 = $7,302.50. Travel cost based on Section 3 (provider_info.txt): Standard Travel Cost Estimate (TechCity) = $400.00."
+        },
+        {
+            "point": "Training Dates",
+            "proposal": "Proposed alternative 2-day training slots in September 2024: 2024-09-16 to 2024-09-17, or 2024-09-18 to 2024-09-19, or 2024-09-23 to 2024-09-24, or 2024-09-25 to 2024-09-26.",
+            "supporting_data_reference": "Based on Section 4: Trainer Availability - Dr. Alex Reed (provider_info.txt). Client's preferred dates in the first half of September (e.g., Sep 9-10, Sep 11-12) are listed as 'UNAVAILABLE'. The proposed dates are listed as 'AVAILABLE' for Dr. Reed and meet the 'two consecutive weekdays' requirement."
+        },
+        {
+            "point": "Participant Number & Surcharge Impact",
+            "proposal": "LearnWell confirms its capacity to train the requested 18 participants for the LW-ECS-STD program. As this number is between 16 and 20 participants, it falls under our Large Group Surcharge policy, which adds 15% to the total standard fee. This surcharge is included in the proposed total training fee of $7,302.50.",
+            "supporting_data_reference": "Based on Section 2 (provider_info.txt): 'Standard Maximum Group Size: 15 participants.' Client requested 18 participants. 'Large Group Surcharge: For groups between 16 and 20 participants (inclusive), a surcharge of 15% is added to the total standard fee ([Daily Rate * Days] + [Materials Fee * Participants]).' This policy is applied directly to the client's request."
+        }
+    ]
+}

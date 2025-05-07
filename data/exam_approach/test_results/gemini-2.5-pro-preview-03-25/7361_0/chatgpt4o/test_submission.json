@@ -1,0 +1,48 @@
+{
+    "candidate_id": "GPT-4o",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "Need specific box details from the official W-2 form for accurate wage and withholding reporting.",
+            "question_text": "Could you please provide the complete W-2 form from DesignCorp? I specifically need the amounts listed in Box 1 (Wages), Box 2 (Federal tax withheld), Box 17 (State tax withheld), and details from Box 12 (Codes and amounts)."
+        },
+        {
+            "id": 2,
+            "category": "Income - Self-Employment",
+            "reasoning": "Require the precise total tutoring income and information on any related deductible expenses.",
+            "question_text": "Regarding the tutoring income, what was the exact total amount you received during the tax year? Also, did you incur any expenses directly related to this tutoring work, such as supplies or mileage?"
+        },
+        {
+            "id": 3,
+            "category": "Deductions - Education",
+            "reasoning": "Need the exact amount of student loan interest paid to determine eligibility for the student loan interest deduction.",
+            "question_text": "Could you provide the exact amount of student loan interest you paid during the year? A statement from your loan servicer would be helpful."
+        },
+        {
+            "id": 4,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Require details on mortgage interest and property taxes paid for potential deductions.",
+            "question_text": "Can you provide the mortgage interest statement (Form 1098) and the total property taxes paid for your condo since the purchase?"
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Charitable",
+            "reasoning": "Need documentation of charitable contributions to determine deductible amounts.",
+            "question_text": "Do you have any receipts or documentation for the charitable donations you made, such as the Goodwill drop-off receipt and any acknowledgment from your church?"
+        },
+        {
+            "id": 6,
+            "category": "Deductions - Medical",
+            "reasoning": "Need detailed records of medical expenses to determine if they exceed the threshold for deduction.",
+            "question_text": "Could you provide a detailed list or receipts of your medical expenses, including doctor's visits and prescriptions, to verify the total out-of-pocket amount?"
+        },
+        {
+            "id": 7,
+            "category": "General/Missing Forms",
+            "reasoning": "Need the specific tax form from the bank to report any interest income accurately.",
+            "question_text": "Could you provide the tax form you received from your bank regarding savings interest, such as Form 1099-INT?"
+        }
+    ]
+}

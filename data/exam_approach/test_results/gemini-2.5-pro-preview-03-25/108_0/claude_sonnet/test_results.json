@@ -1,0 +1,94 @@
+{
+    "overall_score": 100.0,
+    "pass_status": "Pass",
+    "pass_fail_reason": "Candidate met minimum requirements for critical items.",
+    "score_details": {
+        "structure": 10,
+        "issues_identified": 20,
+        "fee_proposal": 25,
+        "date_proposal": 20,
+        "travel_cost_proposal": 15,
+        "surcharge_handling": 10
+    },
+    "evaluation_details": {
+        "structure": {
+            "structure_check": "All main sections present and have correct basic types."
+        },
+        "issues": {
+            "identified_issues": {
+                "budget_fee": "Correctly identified (Client budget ($4,500) is significantly below the ...)",
+                "date_conflict": "Correctly identified (Client preferred dates (first half of September 20...)",
+                "surcharge_trigger": "Correctly identified (Requested participant number (18) exceeds standard...)",
+                "travel_costs": "Correctly identified (Travel costs to TechCity ($400) are not included i...)"
+            },
+            "issues_summary": "Identified 4 out of 4 core issues."
+        },
+        "fee": {
+            "fee_amount": "Correct fee amount proposed ($7302.50).",
+            "fee_reference": "Supporting reference includes relevant keywords (rates, surcharge, etc.)."
+        },
+        "date": {
+            "date_proposal": "Valid date pair proposed: ('2024-09-16', '2024-09-17').",
+            "date_reference": "Supporting reference includes relevant keywords (Section 4, availability, etc.)."
+        },
+        "travel": {
+            "travel_amount": "Correct travel amount ($400) mentioned.",
+            "travel_reference": "Supporting reference includes relevant keywords (Section 3, travel, etc.)."
+        },
+        "surcharge": {
+            "surcharge_issue": "Surcharge trigger correctly identified as an issue.",
+            "surcharge_proposal": "Surcharge correctly mentioned/referenced in proposed terms."
+        }
+    },
+    "submission_data_preview": {
+        "scenario_analysis": {
+            "client_needs_summary": "Beta Corp requests Effective Communication Skills training for 18 junior managers, focusing on written communication, active listening, and conflict management. They want on-site training at their TechCity office over two consecutive weekdays in the first half of September 2024 (e.g., Sep 9-10 or Sep 11-12). Their allocated budget is $4,500.",
+            "potential_issues_or_deviations": [
+                "Client budget ($4,500) is significantly below the calculated minimum fee ($7,302.50) based on standard rates for 18 participants plus large group surcharge.",
+                "Client preferred dates (first half of September 2024, specifically Sep 9-10 or Sep 11-12) conflict with trainer unavailability (Section 4 shows trainer is unavailable Sep 2-6 and Sep 9-13).",
+                "Requested participant number (18) exceeds standard maximum (15) and triggers the Large Group Surcharge of 15% (Section 2).",
+                "Travel costs to TechCity ($400) are not included in client's budget but are billable to client according to Section 3."
+            ]
+        },
+        "negotiation_points": [
+            {
+                "point": "Fee/Budget",
+                "details": "Client budget of $4,500 vs. calculated standard fee of $7,302.50 (including 15% large group surcharge) plus $400 travel costs."
+            },
+            {
+                "point": "Training Dates",
+                "details": "Client preferred dates in first half of September (Sep 9-10 or Sep 11-12) conflict with trainer unavailability (Sep 2-6 and Sep 9-13)."
+            },
+            {
+                "point": "Participant Numbers",
+                "details": "Client's 18 participants exceeds standard maximum of 15, triggering 15% large group surcharge."
+            },
+            {
+                "point": "Travel Costs",
+                "details": "Standard travel costs to TechCity ($400) need to be added to the total fee."
+            }
+        ],
+        "proposed_terms": [
+            {
+                "point": "Fee/Budget",
+                "proposal": "Propose total training fee of $7,302.50 (includes base fee plus large group surcharge). Travel costs of $400 would be billed separately, bringing total to $7,702.50.",
+                "supporting_data_reference": "Based on Section 2: Facilitator Daily Rate ($2,500/day) \u00d7 2 days = $5,000 base fee + Digital Materials Fee ($75/participant) \u00d7 18 participants = $1,350 for materials. Subtotal: $6,350. Large Group Surcharge (15% of subtotal per Section 2) = $952.50. Total fee: $6,350 + $952.50 = $7,302.50. Plus travel costs of $400 (Section 3: Standard Travel Cost Estimate for TechCity)."
+            },
+            {
+                "point": "Training Dates",
+                "proposal": "Proposed dates: 2024-09-16 to 2024-09-17 or 2024-09-18 to 2024-09-19 as alternative options.",
+                "supporting_data_reference": "Based on Section 4: Trainer Availability shows Dr. Alex Reed (Lead ECS Facilitator) is unavailable Sep 2-6 and Sep 9-13, but available Sep 16-17 and Sep 18-20. These are the earliest available dates that align with client's request for weekdays in September."
+            },
+            {
+                "point": "Participant Numbers",
+                "proposal": "Accept 18 participants with application of 15% large group surcharge as per standard policy.",
+                "supporting_data_reference": "Based on Section 2: Standard Maximum Group Size is 15 participants, but groups between 16-20 can be accommodated with a 15% surcharge on the total standard fee. Client's request of 18 participants falls within this range (16-20)."
+            },
+            {
+                "point": "Travel Costs",
+                "proposal": "Include standard travel cost of $400 as a separate line item in the proposal.",
+                "supporting_data_reference": "Based on Section 3: For on-site training outside LearnWell's home city, travel costs are billed to the client. The Standard Travel Cost Estimate for TechCity is $400, which covers typical travel time, mileage/flight, and 1 night accommodation for a 2-day training."
+            }
+        ]
+    }
+}

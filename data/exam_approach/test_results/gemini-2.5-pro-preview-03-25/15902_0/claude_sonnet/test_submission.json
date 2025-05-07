@@ -1,0 +1,7 @@
+{
+    "candidate_id": "GPT-4o",
+    "on_time_delivery_rate_percentage": 84.0,
+    "order_fulfillment_rate_percentage": 85.0,
+    "average_inventory_value": 200000.0,
+    "inventory_turns": 4.3
+}

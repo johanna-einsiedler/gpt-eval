@@ -1,0 +1,11 @@
+,task_id,occupation,task_description,score_gemini_flash,score_claude_haiku,score_gemini_25,score_claude_sonnet,score_chatgpt_o3,score_sonnet30,score_sonnet_35,score_chatgpt4o,score_deepseek,score_gemini_flash_15,score_chatgpt35,score_empty_submission,score_claude_sonnet_35
+0,20316.0,Fitness and Wellness Coordinators,Track cost-containment strategies and programs to evaluate effectiveness.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+1,7199.0,Gambling Managers,"Review operational expenses, budget estimates, betting accounts, or collection reports for accuracy.",,,,,,,,,,,,,
+2,15603.0,Clinical Research Coordinators,"Identify protocol problems, inform investigators of problems, or assist in problem resolution efforts, such as protocol revisions.",50.0,0.0,83.33,83.33,83.33,33.33,16.67,33.33,66.67,50.0,,,
+3,15548.0,Fitness and Wellness Coordinators,"Conduct needs assessments or surveys to determine interest in, or satisfaction with, wellness and fitness programs, events, or services.",99.0,88.0,100.0,99.14,100.0,98.0,0.0,97.6,90.29,90.0,0.0,0.0,0.0
+4,15558.0,Fitness and Wellness Coordinators,"Maintain wellness- and fitness-related schedules, records, or reports.",100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,92.31,,,
+5,18027.0,Regulatory Affairs Managers,Establish regulatory priorities or budgets and allocate resources and workloads.,58.0,,100.0,100.0,92.0,100.0,68.0,14.0,58.0,65.0,,,
+6,21.0,Administrative Services Managers,Prepare and review operational reports and schedules to ensure accuracy and efficiency.,28.57,0.0,14.29,0.0,0.0,0.0,0.0,0.0,28.57,14.29,0.0,0.0,0.0
+7,21352.0,"Transportation, Storage, and Distribution Managers",Prepare and manage departmental budgets.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+8,15445.0,Geothermal Production Managers,Develop or manage budgets for geothermal operations.,,,,,,,,,,,,,
+9,4.0,Sales Managers,Determine price schedules and discount rates.,100.0,95.45,100.0,100.0,100.0,100.0,100.0,100.0,100.0,95.45,,,

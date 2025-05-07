@@ -1,0 +1,116 @@
+{
+  "submission_file": "test_submission.json",
+  "answer_key_file": "answer_key.json",
+  "overall_score": 0.0,
+  "total_possible_points": 100,
+  "evaluation_details": {
+    "json_structure": {
+      "error": "Root element is not a JSON object.",
+      "points": 0
+    },
+    "error": "Submission failed basic structure check. Further evaluation may be inaccurate.",
+    "budget_constraint": {
+      "original_total_correct": false,
+      "adjusted_total_correct": false,
+      "constraint_met_check": false,
+      "internal_consistency_check": "N/A (constraint_met is not true)",
+      "candidate_value": "N/A",
+      "key_value": 205000,
+      "candidate_constraint_met": "N/A",
+      "calculated_sum_adjustments": "N/A",
+      "errors": [
+        "Original total budget mismatch (Candidate: None, Key: 205000)",
+        "Adjusted total budget mismatch (Candidate: None, Key: 205000)",
+        "Candidate 'constraint_met' is not true (Value: None)"
+      ],
+      "points": 0
+    },
+    "analysis_summary": {
+      "correct_impacts": 0,
+      "total_impacts_in_key": 4,
+      "details": [
+        {
+          "program_change_ref": "Shift to Online Workshops",
+          "matches": [],
+          "mismatches": [
+            {
+              "category_name": "Online Marketing",
+              "key_impact": 2500,
+              "candidate_impact": "Missing",
+              "match": false
+            },
+            {
+              "category_name": "Local Events",
+              "key_impact": -12000,
+              "candidate_impact": "Missing",
+              "match": false
+            }
+          ]
+        },
+        {
+          "program_change_ref": "Pilot Mentorship Program",
+          "matches": [],
+          "mismatches": [
+            {
+              "category_name": "Supplies",
+              "key_impact": 1500,
+              "candidate_impact": "Missing",
+              "match": false
+            },
+            {
+              "category_name": "Printing & Mail",
+              "key_impact": 500,
+              "candidate_impact": "Missing",
+              "match": false
+            }
+          ]
+        }
+      ],
+      "errors": [],
+      "points": 0
+    },
+    "proposed_adjustments": {
+      "travel_reallocation_correct": false,
+      "correct_other_adjustments": 0,
+      "correct_adjusted_budgets": 0,
+      "correct_original_budgets": 0,
+      "includes_only_adjusted_categories": false,
+      "details": [
+        {
+          "category_name": "Travel",
+          "match_status": "Category missing in submission"
+        },
+        {
+          "category_name": "Supplies",
+          "match_status": "Category missing in submission"
+        },
+        {
+          "category_name": "Local Events",
+          "match_status": "Category missing in submission"
+        },
+        {
+          "category_name": "Online Marketing",
+          "match_status": "Category missing in submission"
+        },
+        {
+          "category_name": "Printing & Mail",
+          "match_status": "Category missing in submission"
+        }
+      ],
+      "errors": [
+        "Missing expected adjusted categories: ['Local Events', 'Online Marketing', 'Travel', 'Printing & Mail', 'Supplies']"
+      ],
+      "points": 0
+    },
+    "calculation_notes": {
+      "present_and_list": false,
+      "is_list_of_strings": false,
+      "notes_content": null,
+      "errors": [
+        "calculation_notes key is missing."
+      ],
+      "points": 0
+    }
+  },
+  "total_achieved_points": 0
+}

@@ -1,0 +1,89 @@
+{
+    "candidate_name": "Official Answer Key",
+    "candidate_id": "Official_Answer_Key_v1.0",
+    "submission_date": "2024-07-29",
+    "exam_version": "Basic_FWC_NeedsAssessment_v1",
+    "task_1_interest_survey_design": {
+        "survey_title": "Interest in Mid-day Mindfulness & Stretching Breaks at Innovatech",
+        "target_audience_description": "All employees of Innovatech Solutions.",
+        "survey_introduction_text": "Innovatech Solutions is exploring a new 'Mid-day Mindfulness & Stretching Break' program to support employee well-being. These 15-20 minute guided sessions would be offered twice a week. Your anonymous feedback is valuable in helping us understand interest and preferences. Please take a few minutes to complete this short survey.",
+        "survey_questions": [
+            {
+                "question_text": "How interested are you in participating in a 15-20 minute guided 'Mid-day Mindfulness & Stretching Break' offered twice a week at Innovatech Solutions?",
+                "question_type": "Likert Scale (1-5)",
+                "options": [
+                    "1 - Not at all interested",
+                    "2 - Slightly interested",
+                    "3 - Moderately interested",
+                    "4 - Very interested",
+                    "5 - Extremely interested"
+                ]
+            },
+            {
+                "question_text": "Which days of the week would you most likely be able to attend such a session? (Select all that apply)",
+                "question_type": "Multiple Choice - Multiple Answers",
+                "options": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ]
+            },
+            {
+                "question_text": "What time slot(s) during the mid-day (approx. 11 AM - 2 PM) would best suit you for these sessions? (Select all that apply)",
+                "question_type": "Multiple Choice - Multiple Answers",
+                "options": [
+                    "11:30 AM - 11:50 AM",
+                    "12:30 PM - 12:50 PM",
+                    "1:30 PM - 1:50 PM",
+                    "Other (please specify if different)"
+                ]
+            },
+            {
+                "question_text": "To what extent do you feel a mid-day break for mindfulness and stretching would help improve your personal well-being or productivity?",
+                "question_type": "Likert Scale (1-5)",
+                "options": [
+                    "1 - Not at all helpful",
+                    "2 - Slightly helpful",
+                    "3 - Moderately helpful",
+                    "4 - Very helpful",
+                    "5 - Extremely helpful"
+                ]
+            },
+            {
+                "question_text": "What, if any, are your primary concerns or potential barriers to participating in such a program? (e.g., workload, meeting schedules, not interested, physical limitations)",
+                "question_type": "Open-ended Text",
+                "options": []
+            },
+            {
+                "question_text": "If such sessions were offered, would you prefer more emphasis on mindfulness, stretching, or an equal balance of both?",
+                "question_type": "Multiple Choice - Single Answer",
+                "options": [
+                    "Primarily Mindfulness",
+                    "Primarily Stretching",
+                    "Equal Balance of Both",
+                    "Unsure"
+                ]
+            }
+        ]
+    },
+    "task_2_satisfaction_data_analysis": {
+        "satisfaction_rating_summary": {
+            "1": 1,
+            "2": 1,
+            "3": 3,
+            "4": 5,
+            "5": 5
+        },
+        "top_enjoyed_aspects": [
+            "Team competition",
+            "Tracking daily progress"
+        ],
+        "top_improvement_suggestions": [
+            "More prize categories",
+            "Better mobile app"
+        ],
+        "recommendation_for_next_year": "For next year's Step Challenge, Innovatech Solutions should consider increasing the number or variety of prize categories, as this was a prominent suggestion. Additionally, exploring improvements to the mobile app or offering a shorter challenge duration could enhance participant satisfaction and address other common feedback points."
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "candidate_id": "GPT-4o",
+    "case_reference": "EO-BASIC-001",
+    "complaint_summary": {
+        "complainant_name": "Sarah Chen",
+        "respondent_name": "David Miller",
+        "allegation_basis": "Age",
+        "brief_description": "Sarah Chen alleges she was denied selection for the internal “Future Leaders Program” because of her age after her manager, David Miller, indicated the program was intended for younger employees."
+    },
+    "key_statements": {
+        "complainant": [
+            "Applied to the Future Leaders Program on 2024-02-10, prior to the deadline.",
+            "Meets all published eligibility criteria, including 15 years tenure and an 'Exceeds Expectations' performance rating.",
+            "Recalls Mr. Miller stating the program was for 'younger employees who have a long runway ahead of them.'",
+            "Notes that 28-year-old Ben Carter was selected instead, despite her stronger tenure and performance.",
+            "Sent Mr. Miller a follow-up email requesting clarification but received no written response and cannot currently locate the email."
+        ],
+        "respondent": [
+            "Acknowledges Ms. Chen applied and met basic eligibility requirements.",
+            "States selection focused on candidates with high potential for rapid advancement and innovation, not age.",
+            "Denies saying the program was for younger employees or mentioning a long runway, claiming he discussed long-term potential impact instead.",
+            "Explains Ben Carter was chosen due to leading the successful 'Project Innovate' campaign, demonstrating relevant leadership competencies.",
+            "Recalls verbally explaining the decision to Ms. Chen and does not recall receiving any follow-up email from her."
+        ]
+    },
+    "relevant_policy": {
+        "policy_name": "Employee Development and Advancement Policy",
+        "relevant_section_summary": "Section 4.B states that selection for company development programs must rely on performance, potential, skills alignment, and business needs, and must be made without discrimination based on protected characteristics, including age."
+    },
+    "identified_inconsistencies_or_missing_info": [
+        "Ms. Chen claims Mr. Miller referenced 'younger employees,' whereas Mr. Miller denies making that statement.",
+        "Ms. Chen says she sent a follow-up email that Mr. Miller states he did not receive, and the email has not been produced.",
+        "The detailed selection criteria or scoring documentation for the Future Leaders Program referenced by both parties is not included in the provided materials."
+    ]
+}

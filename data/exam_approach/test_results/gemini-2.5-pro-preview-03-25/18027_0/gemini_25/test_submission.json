@@ -1,0 +1,98 @@
+{
+    "exam_level": "basic",
+    "candidate_id": "Claude-3-Opus",
+    "planning_period_weeks": 4,
+    "prioritized_allocation": [
+        {
+            "task_id": "T01",
+            "assigned_priority": 1,
+            "assigned_resource_id": "R01",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T07",
+            "assigned_priority": 2,
+            "assigned_resource_id": "R02",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T04",
+            "assigned_priority": 3,
+            "assigned_resource_id": "R02",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T03",
+            "assigned_priority": 5,
+            "assigned_resource_id": "R03",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T12",
+            "assigned_priority": 6,
+            "assigned_resource_id": "R03",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T06",
+            "assigned_priority": 10,
+            "assigned_resource_id": "R03",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T08",
+            "assigned_priority": 11,
+            "assigned_resource_id": "R01",
+            "status": "Allocated"
+        },
+        {
+            "task_id": "T09",
+            "assigned_priority": 12,
+            "assigned_resource_id": "R01",
+            "status": "Allocated"
+        }
+    ],
+    "unallocated_tasks": [
+        {
+            "task_id": "T11",
+            "assigned_priority": 4,
+            "reason": "NO_MATCHING_EXPERTISE"
+        },
+        {
+            "task_id": "T02",
+            "assigned_priority": 7,
+            "reason": "RESOURCE_OVERLOADED"
+        },
+        {
+            "task_id": "T05",
+            "assigned_priority": 8,
+            "reason": "RESOURCE_OVERLOADED"
+        },
+        {
+            "task_id": "T10",
+            "assigned_priority": 9,
+            "reason": "RESOURCE_OVERLOADED"
+        }
+    ],
+    "resource_summary": [
+        {
+            "resource_id": "R01",
+            "total_available_days": 20,
+            "total_allocated_days": 15,
+            "workload_status": "Under-allocated"
+        },
+        {
+            "resource_id": "R02",
+            "total_available_days": 18,
+            "total_allocated_days": 16,
+            "workload_status": "Within Capacity"
+        },
+        {
+            "resource_id": "R03",
+            "total_available_days": 15,
+            "total_allocated_days": 15,
+            "workload_status": "Within Capacity"
+        }
+    ],
+    "overall_comments": "Key high-impact/urgent tasks (T02, T05, T10) could not be allocated due to capacity limits for specialized US CMC and EU Submissions roles. Task T11 (APAC region) requires expertise not available in the current team. Resource R01 is under-allocated, while R02 and R03 are within capacity."
+}

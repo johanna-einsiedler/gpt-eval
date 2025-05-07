@@ -1,0 +1,140 @@
+{
+    "exam_type": "basic_logistics_pm_tools",
+    "candidate_id": "GPT-4",
+    "project_schedule": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout",
+            "duration_days": 1,
+            "predecessors": "",
+            "start_day": 1,
+            "end_day": 1
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order Shelving Units",
+            "duration_days": 2,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 3
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Order Tables & Signage",
+            "duration_days": 1,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 2
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Shelving Unit Delivery & Installation",
+            "duration_days": 3,
+            "predecessors": "T02",
+            "start_day": 4,
+            "end_day": 6
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Tables & Signage Delivery & Setup",
+            "duration_days": 2,
+            "predecessors": "T03",
+            "start_day": 3,
+            "end_day": 4
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Warehouse Cleaning & Preparation",
+            "duration_days": 1,
+            "predecessors": "",
+            "start_day": 1,
+            "end_day": 1
+        },
+        {
+            "task_id": "T07",
+            "task_name": "Final Warehouse Check & Readiness",
+            "duration_days": 1,
+            "predecessors": "T04,T05,T06",
+            "start_day": 7,
+            "end_day": 7
+        }
+    ],
+    "responsibility_matrix": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Approved Layout Diagram"
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order Shelving Units",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "R",
+            "Site_Coordinator": "I",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "N/A",
+            "compliance_check_method": "Purchase Order Confirmation"
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Order Tables & Signage",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "R",
+            "Site_Coordinator": "I",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "N/A",
+            "compliance_check_method": "Purchase Order Confirmation"
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Shelving Unit Delivery & Installation",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "R",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Photos of Installed Shelving"
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Tables & Signage Delivery & Setup",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "R",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Photos of Setup"
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Warehouse Cleaning & Preparation",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Site Coordinator Report"
+        },
+        {
+            "task_id": "T07",
+            "task_name": "Final Warehouse Check & Readiness",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Manager Walkthrough Checklist"
+        }
+    ],
+    "assumptions_made": [
+        "Assumed a standard 5-day work week.",
+        "Assumed immediate availability of volunteers for tasks T04, T05, and T06.",
+        "Assumed timely delivery of ordered materials.",
+        "Assumed no unforeseen delays or complications."
+    ]
+}

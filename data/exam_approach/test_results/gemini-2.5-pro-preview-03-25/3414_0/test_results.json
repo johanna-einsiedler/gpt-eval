@@ -1,0 +1,192 @@
+{
+  "overall_score_percentage": 100.0,
+  "achieved_points": 22,
+  "total_possible_points": 22,
+  "pass_status": "PASS",
+  "critical_monthly_payment_check": {
+    "LOAN_BASIC_001": "PASS",
+    "LOAN_BASIC_002": "PASS"
+  },
+  "evaluation_details": [
+    {
+      "loan_id": "LOAN_BASIC_001",
+      "monthly_payment": {
+        "submitted": 1606.17,
+        "expected": 1606.17,
+        "correct": true,
+        "points": 1
+      },
+      "total_interest_paid": {
+        "submitted": 303221.15,
+        "expected": 303221.15,
+        "correct": true,
+        "points": 1
+      },
+      "schedule_points_evaluation": [
+        {
+          "payment_number_submitted": 1,
+          "payment_number_expected": 1,
+          "points_sum": 3,
+          "payment_number_match": true,
+          "interest_paid": {
+            "submitted": 1317.71,
+            "expected": 1317.71,
+            "correct": true,
+            "points": 1
+          },
+          "principal_paid": {
+            "submitted": 288.46,
+            "expected": 288.46,
+            "correct": true,
+            "points": 1
+          },
+          "remaining_balance": {
+            "submitted": 274711.54,
+            "expected": 274711.54,
+            "correct": true,
+            "points": 1
+          }
+        },
+        {
+          "payment_number_submitted": 12,
+          "payment_number_expected": 12,
+          "points_sum": 3,
+          "payment_number_match": true,
+          "interest_paid": {
+            "submitted": 1302.1,
+            "expected": 1302.1,
+            "correct": true,
+            "points": 1
+          },
+          "principal_paid": {
+            "submitted": 304.07,
+            "expected": 304.07,
+            "correct": true,
+            "points": 1
+          },
+          "remaining_balance": {
+            "submitted": 271498.94,
+            "expected": 271498.94,
+            "correct": true,
+            "points": 1
+          }
+        },
+        {
+          "payment_number_submitted": 360,
+          "payment_number_expected": 360,
+          "points_sum": 3,
+          "payment_number_match": true,
+          "interest_paid": {
+            "submitted": 7.66,
+            "expected": 7.66,
+            "correct": true,
+            "points": 1
+          },
+          "principal_paid": {
+            "submitted": 1598.51,
+            "expected": 1598.51,
+            "correct": true,
+            "points": 1
+          },
+          "remaining_balance": {
+            "submitted": 0.0,
+            "expected": 0.0,
+            "correct": true,
+            "points": 1
+          }
+        }
+      ]
+    },
+    {
+      "loan_id": "LOAN_BASIC_002",
+      "monthly_payment": {
+        "submitted": 683.78,
+        "expected": 683.78,
+        "correct": true,
+        "points": 1
+      },
+      "total_interest_paid": {
+        "submitted": 12437.55,
+        "expected": 12437.55,
+        "correct": true,
+        "points": 1
+      },
+      "schedule_points_evaluation": [
+        {
+          "payment_number_submitted": 1,
+          "payment_number_expected": 1,
+          "points_sum": 3,
+          "payment_number_match": true,
+          "interest_paid": {
+            "submitted": 270.0,
+            "expected": 270.0,
+            "correct": true,
+            "points": 1
+          },
+          "principal_paid": {
+            "submitted": 413.78,
+            "expected": 413.78,
+            "correct": true,
+            "points": 1
+          },
+          "remaining_balance": {
+            "submitted": 44586.22,
+            "expected": 44586.22,
+            "correct": true,
+            "points": 1
+          }
+        },
+        {
+          "payment_number_submitted": 12,
+          "payment_number_expected": 12,
+          "points_sum": 3,
+          "payment_number_match": true,
+          "interest_paid": {
+            "submitted": 241.05,
+            "expected": 241.05,
+            "correct": true,
+            "points": 1
+          },
+          "principal_paid": {
+            "submitted": 442.73,
+            "expected": 442.73,
+            "correct": true,
+            "points": 1
+          },
+          "remaining_balance": {
+            "submitted": 39731.78,
+            "expected": 39731.78,
+            "correct": true,
+            "points": 1
+          }
+        },
+        {
+          "payment_number_submitted": 84,
+          "payment_number_expected": 84,
+          "points_sum": 3,
+          "payment_number_match": true,
+          "interest_paid": {
+            "submitted": 4.08,
+            "expected": 4.08,
+            "correct": true,
+            "points": 1
+          },
+          "principal_paid": {
+            "submitted": 679.7,
+            "expected": 679.7,
+            "correct": true,
+            "points": 1
+          },
+          "remaining_balance": {
+            "submitted": 0.0,
+            "expected": 0.0,
+            "correct": true,
+            "points": 1
+          }
+        }
+      ]
+    }
+  ],
+  "structural_warnings": [],
+  "overall_score": 100.0
+}

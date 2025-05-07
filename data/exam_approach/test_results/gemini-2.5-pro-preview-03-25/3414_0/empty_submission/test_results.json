@@ -1,0 +1,11 @@
+{
+  "overall_score_percentage": 0.0,
+  "achieved_points": 0,
+  "total_possible_points": 22,
+  "pass_status": "FAIL",
+  "critical_monthly_payment_check": {},
+  "evaluation_details": [],
+  "structural_warnings": [
+    "Submission is not a valid JSON object."
+  ]
+}

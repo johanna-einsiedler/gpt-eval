@@ -1,0 +1,35 @@
+{
+    "candidate_id": "Claude-3.5-Sonnet",
+    "exam_version": "Basic_DataPrep_v1",
+    "submission_timestamp": "2024-07-27T18:15:30Z",
+    "results": {
+        "task_1_load_combine": {
+            "merged_rows": 20,
+            "merged_columns": 7
+        },
+        "task_2_identify_issues": {
+            "missing_age_count": 2,
+            "missing_score_count": 3,
+            "unique_gender_values": [
+                "F",
+                "M",
+                "Male",
+                "N/A",
+                "Other",
+                "female",
+                "nan"
+            ],
+            "high_age_rows_count": 2,
+            "duplicate_rows_count": 2
+        },
+        "task_3_clean_adjust": {
+            "final_rows_count": 18,
+            "median_age_cleaned": 43.3,
+            "mean_score_cleaned": 61.5,
+            "date_conversion_failures": 2
+        },
+        "task_4_apply_weights": {
+            "mean_weighted_score": 61.28
+        }
+    }
+}

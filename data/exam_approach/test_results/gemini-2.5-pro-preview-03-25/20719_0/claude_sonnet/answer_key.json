@@ -1,0 +1,36 @@
+{
+    "candidate_id": "EVALUATION_KEY",
+    "case_reference": "EO-BASIC-001",
+    "complaint_summary": {
+        "complainant_name": "Sarah Chen",
+        "respondent_name": "David Miller",
+        "allegation_basis": "Age",
+        "brief_description": "Ms. Chen alleges non-selection for the 'Future Leaders Program' was due to her age (52), citing comments allegedly made by Mr. Miller and the selection of a younger colleague."
+    },
+    "key_statements": {
+        "complainant": [
+            "Applied for 'Future Leaders Program' on 2024-02-10 and met eligibility criteria (15 years tenure, 'Exceeds Expectations' rating).",
+            "Alleges Mr. Miller commented around 2024-03-05 that the program was for 'younger employees' with a 'long runway'.",
+            "Notes Ben Carter (age 28, 3 years tenure) was selected, believing her own record is stronger.",
+            "States she sent a follow-up email to Mr. Miller regarding his comment and selection criteria but received no response.",
+            "Mentioned she could not immediately locate the follow-up email when asked."
+        ],
+        "respondent": [
+            "Confirmed Ms. Chen applied and met basic eligibility requirements.",
+            "Stated selection criteria included identifying potential for 'rapid' advancement and innovation, often seen earlier in careers.",
+            "Denied making the specific 'younger employees / long runway' comment; recalled discussing 'long-term potential impact'.",
+            "Explained Ben Carter was selected due to specific leadership/innovation demonstrated in 'Project Innovate'.",
+            "Claimed he verbally explained the selection rationale to Ms. Chen, focusing on Carter's specific achievements.",
+            "Stated he did not recall receiving a follow-up email from Ms. Chen on the topic."
+        ]
+    },
+    "relevant_policy": {
+        "policy_name": "Employee Development and Advancement Policy",
+        "relevant_section_summary": "Selection for development programs is based on performance, potential, skills alignment, and business needs, and must be non-discriminatory regarding age and other protected characteristics."
+    },
+    "identified_inconsistencies_or_missing_info": [
+        "Direct contradiction between Ms. Chen's report and Mr. Miller's denial of the alleged 'younger employees / long runway' comment.",
+        "Disagreement on whether Ms. Chen sent and Mr. Miller received/recalled receiving a follow-up email.",
+        "The follow-up email Ms. Chen claims to have sent was not provided as evidence."
+    ]
+}

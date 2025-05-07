@@ -1,0 +1,138 @@
+{
+    "candidate_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "overall_score": 14.0,
+    "total_score": 14,
+    "max_total_points": 100,
+    "scoring_details": {
+        "formatting": {
+            "total_score": 7,
+            "max_points": 10,
+            "details": {
+                "valid_json_structure": {
+                    "score": 3,
+                    "max": 3,
+                    "comment": "JSON loaded successfully."
+                },
+                "basic_structure_compliance": {
+                    "score": 3,
+                    "max": 3,
+                    "comment": "All required top-level keys present with correct types and basic values."
+                },
+                "array_ordering": {
+                    "score": 0,
+                    "max": 3,
+                    "comment": "prioritized_allocation not correctly ordered by assigned_priority. unallocated_tasks not correctly ordered by assigned_priority. resource_summary not correctly ordered by resource_id."
+                },
+                "file_naming": {
+                    "score": 1,
+                    "max": 1,
+                    "comment": "Assumed correct filename used based on script execution."
+                }
+            }
+        },
+        "prioritization": {
+            "total_score": 3,
+            "max_points": 35,
+            "details": {
+                "correctly_prioritized": [
+                    "T01 (Prio: 1)"
+                ],
+                "incorrectly_prioritized": [
+                    "T07 (Expected Prio: 2, Got: None)",
+                    "T04 (Expected Prio: 3, Got: None)",
+                    "T03 (Expected Prio: 5, Got: None)",
+                    "T12 (Expected Prio: 6, Got: None)",
+                    "T06 (Expected Prio: 10, Got: None)",
+                    "T08 (Expected Prio: 11, Got: None)",
+                    "T09 (Expected Prio: 12, Got: None)",
+                    "T11 (Expected Prio: 4, Got: None)",
+                    "T02 (Expected Prio: 7, Got: None)",
+                    "T05 (Expected Prio: 8, Got: 6)",
+                    "T10 (Expected Prio: 9, Got: None)"
+                ],
+                "summary": "Correctly prioritized 1 out of 12 tasks."
+            }
+        },
+        "allocation": {
+            "total_score": 4,
+            "max_points": 40,
+            "details": {
+                "resource_assignment": {
+                    "score": 2,
+                    "max": 20,
+                    "details": {
+                        "correct": [
+                            "T01 -> R01"
+                        ],
+                        "incorrect": [
+                            "T07 (Expected: R02, Got: Not Allocated/Missing)",
+                            "T04 (Expected: R02, Got: Not Allocated/Missing)",
+                            "T03 (Expected: R03, Got: Not Allocated/Missing)",
+                            "T12 (Expected: R03, Got: Not Allocated/Missing)",
+                            "T06 (Expected: R03, Got: Not Allocated/Missing)",
+                            "T08 (Expected: R01, Got: Not Allocated/Missing)",
+                            "T09 (Expected: R01, Got: Not Allocated/Missing)"
+                        ]
+                    }
+                },
+                "unallocated_identification": {
+                    "score": 2,
+                    "max": 10,
+                    "details": {
+                        "correct": [
+                            "T05"
+                        ],
+                        "incorrect": [],
+                        "missed": [
+                            "T11",
+                            "T10",
+                            "T02"
+                        ],
+                        "wrongly_marked": []
+                    }
+                },
+                "unallocated_reason": {
+                    "score": 0,
+                    "max": 10,
+                    "details": {
+                        "correct": [],
+                        "incorrect": [
+                            "T05 (Expected Reason: RESOURCE_OVERLOADED, Got: INSUFFICIENT_CAPACITY)"
+                        ]
+                    }
+                }
+            }
+        },
+        "resource_summary": {
+            "total_score": 0,
+            "max_points": 15,
+            "details": {
+                "total_allocated_days": {
+                    "score": 0,
+                    "max": 9,
+                    "details": {
+                        "correct": [],
+                        "incorrect": [
+                            "R01 (Expected Days: 15, Got: 18)",
+                            "R02 (Resource summary missing)",
+                            "R03 (Resource summary missing)"
+                        ]
+                    }
+                },
+                "workload_status": {
+                    "score": 0,
+                    "max": 6,
+                    "details": {
+                        "correct": [],
+                        "incorrect": [
+                            "R01 (Expected Status: Under-allocated, Got: Within Capacity)",
+                            "R02 (Resource summary missing)",
+                            "R03 (Resource summary missing)"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

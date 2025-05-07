@@ -1,0 +1,177 @@
+{
+  "candidate_name": "Fitness and Wellness AI Coordinator",
+  "candidate_id": "claude-3-opus-20240229",
+  "overall_score": 100.0,
+  "task_1_scores": {
+    "total_task_1_score": 40.0,
+    "max_score": 40.0,
+    "survey_title": {
+      "score": 2.0,
+      "max_score": 2.0,
+      "comment": "Title: Relevant and clear title."
+    },
+    "target_audience_description": {
+      "score": 2.0,
+      "max_score": 2.0,
+      "comment": "Target Audience: Accurate description."
+    },
+    "survey_introduction_text": {
+      "score": 6.0,
+      "max_score": 6.0,
+      "comment": "Introduction: Clear purpose. Good tone and encouragement."
+    },
+    "survey_questions": {
+      "score": 30.0,
+      "max_score": 30.0,
+      "comment": "Correct number of questions (7). Score scaled to fit 30.0 points.",
+      "num_questions_provided": 7,
+      "num_questions_expected": "5-7",
+      "question_details": [
+        {
+          "question_index": 1,
+          "text": "How interested are you in participating in a 15-20 minute guided 'Mid-day Mindfulness & Stretching Break' offered twice a week?",
+          "relevance_score": 2.0,
+          "relevance_max": 2.0,
+          "relevance_comment": "Relevant.",
+          "type_options_score": 2.0,
+          "type_options_max": 2.0,
+          "type_options_comment": "Correct Likert scale format.",
+          "clarity_score": 1.0,
+          "clarity_max": 1.0,
+          "clarity_comment": "Clear."
+        },
+        {
+          "question_index": 2,
+          "text": "Which days of the week would you most likely be able to attend such a session? (Select all that apply)",
+          "relevance_score": 2.0,
+          "relevance_max": 2.0,
+          "relevance_comment": "Relevant.",
+          "type_options_score": 2.0,
+          "type_options_max": 2.0,
+          "type_options_comment": "Correct Multiple Choice format.",
+          "clarity_score": 1.0,
+          "clarity_max": 1.0,
+          "clarity_comment": "Clear."
+        },
+        {
+          "question_index": 3,
+          "text": "What time of day would be most convenient for you to participate in a 15-20 minute session? (Select all that apply)",
+          "relevance_score": 2.0,
+          "relevance_max": 2.0,
+          "relevance_comment": "Relevant.",
+          "type_options_score": 2.0,
+          "type_options_max": 2.0,
+          "type_options_comment": "Correct Multiple Choice format.",
+          "clarity_score": 1.0,
+          "clarity_max": 1.0,
+          "clarity_comment": "Clear."
+        },
+        {
+          "question_index": 4,
+          "text": "What aspect of the 'Mid-day Mindfulness & Stretching Break' are you most interested in?",
+          "relevance_score": 2.0,
+          "relevance_max": 2.0,
+          "relevance_comment": "Relevant.",
+          "type_options_score": 2.0,
+          "type_options_max": 2.0,
+          "type_options_comment": "Correct Multiple Choice format.",
+          "clarity_score": 1.0,
+          "clarity_max": 1.0,
+          "clarity_comment": "Clear."
+        },
+        {
+          "question_index": 5,
+          "text": "What, if any, are your primary concerns or potential barriers to participating in such a program? (Select all that apply)",
+          "relevance_score": 2.0,
+          "relevance_max": 2.0,
+          "relevance_comment": "Relevant.",
+          "type_options_score": 2.0,
+          "type_options_max": 2.0,
+          "type_options_comment": "Correct Multiple Choice format.",
+          "clarity_score": 1.0,
+          "clarity_max": 1.0,
+          "clarity_comment": "Clear."
+        },
+        {
+          "question_index": 6,
+          "text": "If you selected 'Other' for potential barriers in the previous question, please specify:",
+          "relevance_score": 2.0,
+          "relevance_max": 2.0,
+          "relevance_comment": "Relevant.",
+          "type_options_score": 2.0,
+          "type_options_max": 2.0,
+          "type_options_comment": "Correct Open-ended format.",
+          "clarity_score": 1.0,
+          "clarity_max": 1.0,
+          "clarity_comment": "Clear."
+        },
+        {
+          "question_index": 7,
+          "text": "Do you have any other suggestions or comments regarding the proposed 'Mid-day Mindfulness & Stretching Break' program?",
+          "relevance_score": 2.0,
+          "relevance_max": 2.0,
+          "relevance_comment": "Relevant.",
+          "type_options_score": 2.0,
+          "type_options_max": 2.0,
+          "type_options_comment": "Correct Open-ended format.",
+          "clarity_score": 1.0,
+          "clarity_max": 1.0,
+          "clarity_comment": "Clear."
+        }
+      ]
+    }
+  },
+  "task_2_scores": {
+    "total_task_2_score": 60.0,
+    "max_score": 60.0,
+    "satisfaction_rating_summary": {
+      "score": 20.0,
+      "max_score": 20.0,
+      "comment": "Satisfaction Summary: Rating '1': Correct count (1). Rating '2': Correct count (1). Rating '3': Correct count (3). Rating '4': Correct count (5). Rating '5': Correct count (5).",
+      "details": {
+        "rating_1": {
+          "candidate": 1,
+          "key": 1,
+          "score": 4.0
+        },
+        "rating_2": {
+          "candidate": 1,
+          "key": 1,
+          "score": 4.0
+        },
+        "rating_3": {
+          "candidate": 3,
+          "key": 3,
+          "score": 4.0
+        },
+        "rating_4": {
+          "candidate": 5,
+          "key": 5,
+          "score": 4.0
+        },
+        "rating_5": {
+          "candidate": 5,
+          "key": 5,
+          "score": 4.0
+        }
+      }
+    },
+    "top_enjoyed_aspects": {
+      "score": 15.0,
+      "max_score": 15.0,
+      "comment": "Top Enjoyed Aspects: Correctly identified top 2 items."
+    },
+    "top_improvement_suggestions": {
+      "score": 15.0,
+      "max_score": 15.0,
+      "comment": "Top Improvement Suggestions: Correctly identified top 2 items."
+    },
+    "recommendation_for_next_year": {
+      "score": 10.0,
+      "max_score": 10.0,
+      "comment": "Recommendation: Data-driven aspects identified (Score: 5.0/5). Appropriate length (34 words). Contains actionable language."
+    }
+  },
+  "total_exam_score": 100.0,
+  "max_exam_score": 100.0
+}

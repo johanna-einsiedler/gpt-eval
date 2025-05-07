@@ -1,0 +1,157 @@
+{
+    "exam_candidate_id": "ANSWER_KEY_V1.0",
+    "assessment_area": "Customer Needs Assessment - Basic",
+    "task_1_feedback_analysis": {
+        "identified_themes": [
+            {
+                "theme_name": "Inefficient Time Logging Process",
+                "supporting_feedback_snippets": [
+                    "[FDBK_01]: \"Logging my time at the end of the day takes way too long. I have to click through so many screens just to add time for one project task. It's easily 10-15 minutes wasted.\"",
+                    "[FDBK_09]: \"Honestly, the biggest issue is remembering to do it. Because it's such a hassle, I often put it off until Friday afternoon...\""
+                ],
+                "inferred_need_or_pain_point": "Users need a faster, simpler way to log their time entries to reduce daily overhead and encourage timely submission."
+            },
+            {
+                "theme_name": "Difficulty with Project Code Selection",
+                "supporting_feedback_snippets": [
+                    "[FDBK_08]: \"The dropdown list for project codes is massive and in a random order. Finding the right code takes ages, and I've picked the wrong one by mistake more than once...\""
+                ],
+                "inferred_need_or_pain_point": "Users need an easier and more accurate method to find and select the correct project codes, potentially impacting data accuracy."
+            },
+            {
+                "theme_name": "Lack of Mobile Accessibility",
+                "supporting_feedback_snippets": [
+                    "[FDBK_03]: \"It's impossible to log time easily when I'm not at my desk. I wish I could just quickly add entries from my phone right after a meeting.\""
+                ],
+                "inferred_need_or_pain_point": "Users, particularly those who travel, require the ability to log time via mobile devices."
+            },
+            {
+                "theme_name": "Complex Correction Process",
+                "supporting_feedback_snippets": [
+                    "[FDBK_07]: \"Making corrections is a nightmare. If I accidentally submit my timesheet before it's complete, getting it back, editing it, and resubmitting involves way too many steps and approvals.\""
+                ],
+                "inferred_need_or_pain_point": "Users need a simpler, less cumbersome process for editing or correcting submitted timesheets."
+            },
+            {
+                "theme_name": "System Performance Issues",
+                "supporting_feedback_snippets": [
+                    "[FDBK_04]: \"The system becomes incredibly slow, almost unusable, late in the afternoon, especially on Thursdays and Fridays.\""
+                ],
+                "inferred_need_or_pain_point": "The system suffers from performance degradation during peak usage times, causing user frustration."
+            },
+            {
+                "theme_name": "Absence of User-Friendly Reporting",
+                "supporting_feedback_snippets": [
+                    "[FDBK_05]: \"Why can't I easily see a summary of my hours for the week broken down by project? ...the portal doesn't offer a simple view like that.\""
+                ],
+                "inferred_need_or_pain_point": "Users lack basic reporting capabilities within the portal to view their own time summaries."
+            }
+        ]
+    },
+    "task_2_survey_design": {
+        "survey_goal": "To quantify the severity of known pain points (efficiency, usability, performance), gauge demand for potential new features (mobile, reporting), and identify user priorities for improving the NovaTime portal.",
+        "survey_questions": [
+            {
+                "question_number": 1,
+                "question_text": "On average, how long does it take you to log your time for a typical day using NovaTime?",
+                "question_type": "Multiple Choice (Single Select)",
+                "options": [
+                    "Less than 5 minutes",
+                    "5-10 minutes",
+                    "11-15 minutes",
+                    "More than 15 minutes"
+                ],
+                "purpose": "Quantify the time spent on the core task, relating to efficiency concerns from FDBK_01."
+            },
+            {
+                "question_number": 2,
+                "question_text": "On a scale of 1 (Very Difficult) to 5 (Very Easy), how easy is it to find the correct project code when logging time?",
+                "question_type": "Rating Scale (1-5)",
+                "options": null,
+                "purpose": "Assess the difficulty level of project code selection identified in FDBK_08."
+            },
+            {
+                "question_number": 3,
+                "question_text": "How important would it be for you to be able to log time using a mobile device (smartphone/tablet)? (1=Not Important, 5=Very Important)",
+                "question_type": "Rating Scale (1-5)",
+                "options": null,
+                "purpose": "Gauge the demand for mobile access mentioned in FDBK_03 across the wider user base."
+            },
+            {
+                "question_number": 4,
+                "question_text": "How often do you need to correct an already submitted timesheet?",
+                "question_type": "Multiple Choice (Single Select)",
+                "options": [
+                    "Never or Rarely",
+                    "A few times a year",
+                    "About once a month",
+                    "Multiple times a month"
+                ],
+                "purpose": "Understand the frequency of encountering the difficult correction process mentioned in FDBK_07."
+            },
+            {
+                "question_number": 5,
+                "question_text": "How often do you experience significant slowness or unresponsiveness when using NovaTime, particularly on Thursday/Friday afternoons? (1=Never, 5=Very Often)",
+                "question_type": "Rating Scale (1-5)",
+                "options": null,
+                "purpose": "Quantify the prevalence and perceived severity of the performance issues noted in FDBK_04."
+            },
+            {
+                "question_number": 6,
+                "question_text": "What is the SINGLE most frustrating aspect of using the current NovaTime portal?",
+                "question_type": "Open Text",
+                "purpose": "Identify the highest priority pain point directly from the user's perspective, potentially confirming or revealing key issues."
+            }
+        ]
+    },
+    "task_3_preliminary_prioritization": {
+        "prioritized_list": [
+            {
+                "item_id": 1,
+                "requirement_or_focus_area": "Improve Time Entry Efficiency",
+                "priority": "High",
+                "supporting_evidence": [
+                    "Reference to initial_feedback.txt [FDBK_01]: Explicitly states logging time takes too long.",
+                    "Reference to initial_feedback.txt [FDBK_09]: Hassle leads to procrastination and potential inaccuracy.",
+                    "Reference to scenario_description.txt: Aligns directly with goals of enhancing user experience and increasing efficiency."
+                ]
+            },
+            {
+                "item_id": 2,
+                "requirement_or_focus_area": "Enhance Project Code Selection",
+                "priority": "High",
+                "supporting_evidence": [
+                    "Reference to initial_feedback.txt [FDBK_08]: Describes difficulty and errors in selection.",
+                    "Reference to scenario_description.txt: Directly impacts data accuracy goal, as wrong codes lead to bad data."
+                ]
+            },
+            {
+                "item_id": 3,
+                "requirement_or_focus_area": "Simplify Timesheet Correction Process",
+                "priority": "Medium",
+                "supporting_evidence": [
+                    "Reference to initial_feedback.txt [FDBK_07]: Describes process as a 'nightmare'.",
+                    "Reference to scenario_description.txt: Impacts user experience and efficiency, but frequency needs confirmation via survey (hence Medium)."
+                ]
+            },
+            {
+                "item_id": 4,
+                "requirement_or_focus_area": "Investigate and Address Performance Issues",
+                "priority": "Medium",
+                "supporting_evidence": [
+                    "Reference to initial_feedback.txt [FDBK_04]: Reports system is 'incredibly slow' at peak times.",
+                    "Reference to scenario_description.txt: Impacts user experience and efficiency, but may require technical investigation before solutioning."
+                ]
+            },
+            {
+                "item_id": 5,
+                "requirement_or_focus_area": "Evaluate Feasibility of Mobile Access",
+                "priority": "Medium",
+                "supporting_evidence": [
+                    "Reference to initial_feedback.txt [FDBK_03]: Clear user request.",
+                    "Reference to scenario_description.txt: Potentially enhances user experience and efficiency for some users, but overall demand needs survey validation."
+                ]
+            }
+        ]
+    }
+}

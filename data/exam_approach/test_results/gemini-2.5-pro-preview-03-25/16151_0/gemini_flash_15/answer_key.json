@@ -1,0 +1,83 @@
+{
+    "exam_candidate_id": "EVALUATOR_KEY",
+    "exam_level": "Basic",
+    "risk_register": [
+        {
+            "risk_id": 1,
+            "description": "Delay in server provisioning or technical task completion due to Technical Lead's limited availability (50% allocation).",
+            "category": "Resource",
+            "likelihood": "High",
+            "impact": "Medium",
+            "risk_score": 6,
+            "response_strategy_type": "Mitigate",
+            "response_strategy_description": "Confirm project task priorities with Tech Lead and their manager; identify critical path tasks requiring Tech Lead input early; explore delegation options.",
+            "potential_owner_role": "Project Manager"
+        },
+        {
+            "risk_id": 2,
+            "description": "Project cost exceeds the fixed $5,000 budget due to unforeseen technical issues, scope changes, or resource time.",
+            "category": "Budget",
+            "likelihood": "Medium",
+            "impact": "High",
+            "risk_score": 6,
+            "response_strategy_type": "Mitigate",
+            "response_strategy_description": "Implement strict change control; track expenses meticulously against budget; report budget status regularly to Project Sponsor; identify potential cost-saving measures proactively.",
+            "potential_owner_role": "Project Manager"
+        },
+        {
+            "risk_id": 3,
+            "description": "The provided 'EmpDir' application contains significant bugs requiring unplanned fixes, delaying deployment.",
+            "category": "Technical",
+            "likelihood": "Medium",
+            "impact": "High",
+            "risk_score": 6,
+            "response_strategy_type": "Mitigate",
+            "response_strategy_description": "Allocate sufficient time for thorough testing early in the schedule; ensure Technical Lead performs code review/deployment dry-run if possible; document all bugs found.",
+            "potential_owner_role": "Technical Lead"
+        },
+        {
+            "risk_id": 4,
+            "description": "Inability to resolve application-specific bugs or deployment issues quickly due to limited availability and minimal documentation from the original development team.",
+            "category": "External",
+            "likelihood": "High",
+            "impact": "Medium",
+            "risk_score": 6,
+            "response_strategy_type": "Mitigate",
+            "response_strategy_description": "Proactively request any available documentation or contact points from the development team lead; allocate contingency time in the schedule for potential troubleshooting.",
+            "potential_owner_role": "Project Manager"
+        },
+        {
+            "risk_id": 5,
+            "description": "Delay in obtaining necessary database connectivity or support due to the DBA team's backlog.",
+            "category": "External",
+            "likelihood": "Medium",
+            "impact": "Medium",
+            "risk_score": 4,
+            "response_strategy_type": null,
+            "response_strategy_description": null,
+            "potential_owner_role": null
+        },
+        {
+            "risk_id": 6,
+            "description": "Deployment activities are delayed or cause disruption because coordination for deployment outside core business hours fails.",
+            "category": "Schedule",
+            "likelihood": "Low",
+            "impact": "Medium",
+            "risk_score": 2,
+            "response_strategy_type": null,
+            "response_strategy_description": null,
+            "potential_owner_role": null
+        },
+        {
+            "risk_id": 7,
+            "description": "End-user acceptance testing is delayed or ineffective due to lack of engagement or availability of the End-User Representative.",
+            "category": "Resource",
+            "likelihood": "Low",
+            "impact": "Medium",
+            "risk_score": 2,
+            "response_strategy_type": null,
+            "response_strategy_description": null,
+            "potential_owner_role": null
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "candidate_id": "CANDIDATE_ID_AS_PROVIDED_OR_EXPECTED",
+    "exam_part": "basic_budget_management",
+    "task_1_initial_calculations": {
+        "original_total_q1_opex": 115000.0,
+        "original_q1_net_operating_income": 135000.0
+    },
+    "task_2_budget_adjustments": {
+        "well_maintenance": {
+            "original_budget": 35000.0,
+            "adjusted_budget": 42500.0,
+            "variance": 7500.0
+        },
+        "electricity_sales_revenue": {
+            "original_budget": 250000.0,
+            "adjusted_budget": 255000.0,
+            "variance": 5000.0
+        },
+        "plant_consumables": {
+            "original_budget": 15000.0,
+            "adjusted_budget": 17000.0,
+            "variance": 2000.0
+        },
+        "revised_total_q1_opex": 124500.0,
+        "revised_q1_net_operating_income": 130500.0
+    }
+}

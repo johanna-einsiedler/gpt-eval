@@ -1,0 +1,14 @@
+{
+    "overall_structure": {
+        "required_top_level_keys_present": {
+            "achieved": 0,
+            "max": 1,
+            "passed": false,
+            "comment": "Missing keys: exam_candidate_id, assessment_area, task_1_feedback_analysis, task_2_survey_design, task_3_preliminary_prioritization"
+        }
+    },
+    "error": "Missing required top-level keys.",
+    "overall_score": 0.0,
+    "total_achieved_points": 0,
+    "total_possible_points": 1
+}

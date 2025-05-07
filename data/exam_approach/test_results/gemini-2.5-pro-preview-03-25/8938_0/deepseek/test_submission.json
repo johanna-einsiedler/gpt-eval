@@ -1,0 +1,105 @@
+{
+    "exam_type": "basic_logistics_pm_tools",
+    "candidate_id": "GPT-4",
+    "project_schedule": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout",
+            "duration_days": 1,
+            "predecessors": "",
+            "start_day": 1,
+            "end_day": 1
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order Shelving Units and Equipment",
+            "duration_days": 2,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 3
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Deliver and Install Shelving Units",
+            "duration_days": 3,
+            "predecessors": "T02",
+            "start_day": 4,
+            "end_day": 6
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Set Up Receiving/Sorting Area",
+            "duration_days": 2,
+            "predecessors": "T03",
+            "start_day": 7,
+            "end_day": 8
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Final Inspection and Readiness Check",
+            "duration_days": 2,
+            "predecessors": "T04",
+            "start_day": 9,
+            "end_day": 10
+        }
+    ],
+    "responsibility_matrix": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Approved Layout Diagram"
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order Shelving Units and Equipment",
+            "Logistics_Manager": "C",
+            "Procurement_Specialist": "A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "N/A",
+            "compliance_check_method": "Purchase Order Confirmation"
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Deliver and Install Shelving Units",
+            "Logistics_Manager": "C",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "A",
+            "Transport_Partner": "R",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Installation Completion Report"
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Set Up Receiving/Sorting Area",
+            "Logistics_Manager": "C",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "A",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Photos of Setup Completion"
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Final Inspection and Readiness Check",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Manager Walkthrough Checklist"
+        }
+    ],
+    "assumptions_made": [
+        "Assumed standard 5-day work week with no holidays",
+        "Assumed immediate availability of volunteers when needed",
+        "Assumed all ordered equipment can be delivered within 2 days",
+        "Assumed site utilities are fully functional and require no additional setup",
+        "Assumed transport partner has capacity to deliver on schedule"
+    ]
+}

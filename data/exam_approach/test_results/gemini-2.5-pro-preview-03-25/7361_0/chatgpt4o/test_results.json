@@ -1,0 +1,66 @@
+{
+    "submission_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "GPT-4o",
+    "exam_version_submitted": "BASIC_INTERVIEW_V1.0",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 6,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Could you please provide the complete W-2 form from DesignCorp? I specifically need the amounts listed in Box 1 (Wages), Box 2 (Federal tax withheld), Box 17 (State tax withheld), and details from Box 12 (Codes and amounts)."
+            },
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "matched_submission_question_id": 2,
+                "matched_submission_question_text": "Regarding the tutoring income, what was the exact total amount you received during the tax year? Also, did you incur any expenses directly related to this tutoring work, such as supplies or mileage?"
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 3,
+                "matched_submission_question_text": "Could you provide the exact amount of student loan interest you paid during the year? A statement from your loan servicer would be helpful."
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "matched_submission_question_id": 4,
+                "matched_submission_question_text": "Can you provide the mortgage interest statement (Form 1098) and the total property taxes paid for your condo since the purchase?"
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 5,
+                "matched_submission_question_text": "Do you have any receipts or documentation for the charitable donations you made, such as the Goodwill drop-off receipt and any acknowledgment from your church?"
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "matched_submission_question_id": 6,
+                "matched_submission_question_text": "Could you provide a detailed list or receipts of your medical expenses, including doctor's visits and prescriptions, to verify the total out-of-pocket amount?"
+            }
+        ],
+        "missed_areas": [
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "reasoning": "Cash donations require specific proof (bank record or written acknowledgement from the charity) for deductibility, especially if undocumented (like collection plate). Need to confirm if such proof exists."
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "reasoning": "Client mentioned a 'tax form' from the bank for savings interest but provided no details. Need to identify the form (likely 1099-INT) and the amount of interest received for reporting."
+            }
+        ]
+    },
+    "overall_score": 75.0
+}

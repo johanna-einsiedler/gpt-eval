@@ -1,0 +1,54 @@
+{
+    "candidate_id": "EVALUATOR_REFERENCE_KEY",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "The W-2 summary is insufficient. Need complete W-2 details for accurate wage reporting, federal/state withholdings, and retirement contributions (Box 12).",
+            "question_text": "Could you please provide the full details from your DesignCorp W-2 form? Specifically, I need the amounts for Box 1 (Wages), Box 2 (Federal income tax withheld), Box 17 (State income tax withheld), and any codes and amounts listed in Box 12."
+        },
+        {
+            "id": 2,
+            "category": "Income - Self-Employment",
+            "reasoning": "The tutoring income amount is vague ('around $2,500, maybe more'). Need the exact total received for accurate reporting. Also need to inquire about potential deductible business expenses related to this income.",
+            "question_text": "Regarding the cash payments for tutoring: Could you please confirm the exact total amount you received during the tax year based on your log? Also, did you have any expenses directly related to this tutoring work, such as supplies, software, or mileage driven for tutoring sessions?"
+        },
+        {
+            "id": 3,
+            "category": "Deductions - Education",
+            "reasoning": "The student loan interest amount is uncertain ('about $500'). Need the precise amount paid, typically found on Form 1098-E, to determine the deductible amount.",
+            "question_text": "You mentioned paying student loan interest. Did you receive a Form 1098-E (Student Loan Interest Statement) from your loan provider? If so, could you provide the exact amount of interest reported on that form?"
+        },
+        {
+            "id": 4,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Client mentioned paying mortgage interest and property taxes after buying the condo, but amounts are missing. Need specific amounts for potential itemized deductions.",
+            "question_text": "For your condo purchased in March: Could you please provide the amount of mortgage interest paid, which is usually reported on Form 1098 from your lender? Also, what was the exact amount of property taxes you paid during the tax year?"
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Charitable",
+            "reasoning": "For the Goodwill donation, the value of non-cash items is needed for the deduction, even with a receipt. The receipt confirms the donation, but not the value.",
+            "question_text": "Regarding the clothing and items donated to Goodwill: You mentioned having the receipt, which is great. Could you please provide your estimate of the fair market value of those items at the time you donated them?"
+        },
+        {
+            "id": 6,
+            "category": "Deductions - Charitable",
+            "reasoning": "Cash donations require specific proof (bank record or written acknowledgement from the charity) for deductibility, especially if undocumented (like collection plate). Need to confirm if such proof exists.",
+            "question_text": "For the $100 cash donation to your church: Do you have bank records (like cancelled checks or bank statements showing the donations) or a written acknowledgement from the church confirming these contributions?"
+        },
+        {
+            "id": 7,
+            "category": "Deductions - Medical",
+            "reasoning": "The mentioned '$300' is likely below the deduction threshold, but other expenses might exist. Need a comprehensive list of all potential medical expenses to determine if the AGI threshold for deductibility could be met.",
+            "question_text": "You mentioned about $300 in out-of-pocket medical costs. To see if you might qualify for a medical expense deduction, could you provide a list of *all* your unreimbursed medical, dental, and vision expenses for the year? This includes co-pays, prescriptions, payments for doctor/dentist visits, and potentially health insurance premiums if paid with after-tax money, or mileage for medical travel."
+        },
+        {
+            "id": 8,
+            "category": "Income - Other",
+            "reasoning": "Client mentioned a 'tax form' from the bank for savings interest but provided no details. Need to identify the form (likely 1099-INT) and the amount of interest received for reporting.",
+            "question_text": "You mentioned receiving a tax form from your bank for savings interest. Was this a Form 1099-INT? Could you please provide the amount of interest income reported on that form?"
+        }
+    ]
+}

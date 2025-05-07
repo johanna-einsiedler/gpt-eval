@@ -1,0 +1,33 @@
+{
+    "candidate_id": "GPT-4o",
+    "case_reference": "EO-BASIC-001",
+    "complaint_summary": {
+        "complainant_name": "Sarah Chen",
+        "respondent_name": "David Miller",
+        "allegation_basis": "Age",
+        "brief_description": "Ms. Chen alleges she was unfairly denied selection for the 'Future Leaders Program' due to her age (52), citing comments made by Mr. Miller and the selection of a significantly younger colleague."
+    },
+    "key_statements": {
+        "complainant": [
+            "Ms. Chen applied for the 'Future Leaders Program' on 2024-02-10 and meets all published eligibility criteria.",
+            "Mr. Miller commented that the program was intended for 'younger employees who have a long runway ahead of them in the company.'",
+            "Ben Carter (age 28, 3 years tenure) was selected for the program, and Ms. Chen believes her experience and performance record are stronger.",
+            "Ms. Chen sent a follow-up email to Mr. Miller asking for clarification on the selection criteria and his comment but did not receive a written response."
+        ],
+        "respondent": [
+            "Mr. Miller confirmed Ms. Chen applied for the program and met the basic eligibility requirements.",
+            "He stated the selection process focused on identifying individuals demonstrating high potential for rapid advancement and innovation, often aligning with individuals earlier in their career path.",
+            "Mr. Miller denied saying the program was for 'younger employees' or mentioning a 'long runway,' recalling instead discussing 'long-term potential impact.'",
+            "Ben Carter was selected based on his lead role in the successful 'Project Innovate' campaign, demonstrating leadership and innovation relevant to the program's objectives.",
+            "Mr. Miller claimed he verbally explained the decision to Ms. Chen, focusing on Mr. Carter's specific achievements, and did not recall receiving a follow-up email from her."
+        ]
+    },
+    "relevant_policy": {
+        "policy_name": "Employee Development and Advancement Policy",
+        "relevant_section_summary": "Selection for development programs must be non-discriminatory, based on factors like performance history, demonstrated potential, skills alignment, and business needs, without regard to protected characteristics such as age."
+    },
+    "identified_inconsistencies_or_missing_info": [
+        "Ms. Chen mentioned sending a follow-up email to Mr. Miller, which she could not locate, and Mr. Miller did not recall receiving it.",
+        "None identified based on provided materials."
+    ]
+}

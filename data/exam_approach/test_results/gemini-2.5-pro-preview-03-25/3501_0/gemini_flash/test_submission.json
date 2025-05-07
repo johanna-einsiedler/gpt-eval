@@ -1,0 +1,16 @@
+{
+    "candidate_id": "ActuaryGPT",
+    "total_exposure": 4.0,
+    "total_deaths": 5,
+    "crude_mortality_rate": 1.25,
+    "age_band_40_59": {
+        "exposure": 1.33,
+        "deaths": 1,
+        "mortality_rate": 0.7519
+    },
+    "age_band_60_79": {
+        "exposure": 1.33,
+        "deaths": 3,
+        "mortality_rate": 2.255639
+    }
+}

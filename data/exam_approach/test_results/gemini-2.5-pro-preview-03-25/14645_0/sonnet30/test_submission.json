@@ -1,0 +1,108 @@
+{
+    "exam_type": "basic",
+    "candidate_id": "GPT-4",
+    "project_feature": "Reading Goals Tracker",
+    "testing_scope": {
+        "in_scope": [
+            "RG-01: Navigate to 'My Reading Goals' page",
+            "RG-02: Set annual reading goal",
+            "RG-03: Display goal and progress count",
+            "RG-04: Increment progress when book marked as read",
+            "RG-05: Progress display updates automatically",
+            "RG-06: Edit/change saved goal for current year"
+        ],
+        "out_of_scope": [
+            "Mobile app testing",
+            "User authentication flow",
+            "Performance testing",
+            "Extensive usability testing",
+            "Data migration testing"
+        ]
+    },
+    "test_approach_summary": {
+        "primary_focus": [
+            "Functional Testing",
+            "Browser Compatibility Testing",
+            "Usability Testing"
+        ],
+        "methodology": "Manual testing based on requirements with some exploratory testing"
+    },
+    "prioritized_requirements": [
+        {
+            "requirement_id": "RG-02",
+            "priority": 1
+        },
+        {
+            "requirement_id": "RG-03",
+            "priority": 2
+        },
+        {
+            "requirement_id": "RG-04",
+            "priority": 3
+        },
+        {
+            "requirement_id": "RG-01",
+            "priority": 4
+        },
+        {
+            "requirement_id": "RG-05",
+            "priority": 5
+        },
+        {
+            "requirement_id": "RG-06",
+            "priority": 6
+        }
+    ],
+    "test_schedule": [
+        {
+            "activity": "Test Planning & Strategy",
+            "start": "2024-07-30",
+            "end": "2024-07-31"
+        },
+        {
+            "activity": "Test Case Design",
+            "start": "2024-08-01",
+            "end": "2024-08-02"
+        },
+        {
+            "activity": "Test Environment Setup",
+            "start": "2024-08-03",
+            "end": "2024-08-03"
+        },
+        {
+            "activity": "Functional Execution - Priority 1&2",
+            "start": "2024-08-04",
+            "end": "2024-08-05"
+        },
+        {
+            "activity": "Browser Compatibility Checks",
+            "start": "2024-08-06",
+            "end": "2024-08-06"
+        },
+        {
+            "activity": "Functional Execution - Remaining",
+            "start": "2024-08-07",
+            "end": "2024-08-07"
+        },
+        {
+            "activity": "Usability Review",
+            "start": "2024-08-08",
+            "end": "2024-08-08"
+        },
+        {
+            "activity": "Regression Testing",
+            "start": "2024-08-09",
+            "end": "2024-08-09"
+        }
+    ],
+    "risks_and_assumptions": {
+        "assumptions": [
+            "Test environment will be available and configured as per production by 2024-08-03",
+            "Requirements provided are complete and final for this release"
+        ],
+        "risks": [
+            "Delay in receiving the final build from development impacting testing start",
+            "Significant defects found late in the cycle requiring re-testing and schedule adjustment"
+        ]
+    }
+}

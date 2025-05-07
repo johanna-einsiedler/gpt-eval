@@ -1,0 +1,66 @@
+{
+    "candidate_id": "GPT-4o",
+    "exam_version": "BASIC_INTERVIEW_V1.0",
+    "interview_questions": [
+        {
+            "id": 1,
+            "category": "Income - W2/Employment",
+            "reasoning": "Need the complete W-2 form to accurately report wages, federal and state taxes withheld, and any retirement contributions.",
+            "question_text": "Could you please provide the complete W-2 form from DesignCorp? This will allow me to accurately report your income and withholdings."
+        },
+        {
+            "id": 2,
+            "category": "Income - Self-Employment",
+            "reasoning": "Need the exact amount of self-employment income to accurately calculate self-employment tax and potential deductions.",
+            "question_text": "To clarify your tutoring income, can you provide the exact total amount you earned from tutoring during the tax year? Please also provide the log of payments you mentioned."
+        },
+        {
+            "id": 3,
+            "category": "Income - Self-Employment",
+            "reasoning": "Need to determine if there are any deductible expenses related to the self-employment income.",
+            "question_text": "Did you have any expenses related to your tutoring, such as supplies, transportation, or advertising?"
+        },
+        {
+            "id": 4,
+            "category": "Income - Other",
+            "reasoning": "Need to determine the exact amount of interest income and the payer to properly report it on Schedule B.",
+            "question_text": "You mentioned receiving a tax form from your bank related to savings interest. Can you please provide that form (likely a 1099-INT) so I can accurately report the interest income?"
+        },
+        {
+            "id": 5,
+            "category": "Deductions - Education",
+            "reasoning": "Need the 1098-E form to determine the deductible amount of student loan interest.",
+            "question_text": "Can you please provide the 1098-E form from your student loan provider? This form will show the exact amount of student loan interest you paid during the year."
+        },
+        {
+            "id": 6,
+            "category": "Deductions - Homeowner",
+            "reasoning": "Need the closing documents and mortgage statement to determine deductible mortgage interest and property taxes.",
+            "question_text": "Could you please provide the closing documents from the condo purchase and your most recent mortgage statement? I need these to determine the deductible amounts for mortgage interest and property taxes."
+        },
+        {
+            "id": 7,
+            "category": "Deductions - Charitable",
+            "reasoning": "Need documentation for the Goodwill donation to determine its fair market value and if it exceeds $500, requiring Form 8283.",
+            "question_text": "Can you provide more details about the items you donated to Goodwill? A more detailed list will help determine the fair market value of the donation. Also, please provide the donation receipt."
+        },
+        {
+            "id": 8,
+            "category": "Deductions - Charitable",
+            "reasoning": "Cash contributions to a church require either a bank record or written communication from the church to be deductible.",
+            "question_text": "For the $100 cash donations to your church, do you have any documentation, such as bank statements showing the withdrawals or a written acknowledgement from the church?"
+        },
+        {
+            "id": 9,
+            "category": "Deductions - Medical",
+            "reasoning": "Need to determine if the medical expenses exceed 7.5% of AGI to be deductible.",
+            "question_text": "Can you provide a detailed list or receipts for your medical expenses, including dates of service and amounts paid, so we can determine if they exceed the 7.5% AGI threshold for deductibility?"
+        },
+        {
+            "id": 10,
+            "category": "General/Missing Forms",
+            "reasoning": "Need to confirm if there are any other sources of income or deductible expenses not yet mentioned.",
+            "question_text": "Are there any other sources of income you received during the year, such as unemployment benefits, investment income (other than the savings interest), or distributions from retirement accounts? Also, are there any other deductible expenses we haven't discussed, such as health insurance premiums or contributions to a retirement account outside of your workplace plan?"
+        }
+    ]
+}

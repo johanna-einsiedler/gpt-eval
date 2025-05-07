@@ -1,0 +1,67 @@
+{
+    "submission_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "Claude-3-Opus",
+    "exam_version_submitted": "BASIC_INTERVIEW_V1.0",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 8,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Sarah, could you please provide the complete, official Form W-2 from DesignCorp for the tax year? We need this to accurately report your wages, taxes withheld, and details of your retirement plan contributions from Box 12."
+            },
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "matched_submission_question_id": 2,
+                "matched_submission_question_text": "Regarding your tutoring income, you mentioned it was 'around $2,500, maybe a bit more.' Could you please consult your payment log and provide the exact total amount you received from tutoring during the tax year?"
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 5,
+                "matched_submission_question_text": "You mentioned paying student loan interest. Could you please provide the Form 1098-E (Student Loan Interest Statement) from your loan servicer? This form will show the exact amount of interest paid, which may be deductible."
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "matched_submission_question_id": 6,
+                "matched_submission_question_text": "For your new condo, could you please provide the Form 1098 (Mortgage Interest Statement) from your lender? This document reports the mortgage interest and any real estate taxes you paid through your escrow account."
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 9,
+                "matched_submission_question_text": "Regarding your donation of clothing and household items to Goodwill, the drop-off receipt acknowledges the donation. We also need your best estimate of the fair market value of these items at the time of donation. Do you have a list of the items and their estimated values?"
+            },
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 10,
+                "matched_submission_question_text": "For the $100 in cash donations made to your church's collection plate, do you have any supporting documentation, such as bank records (e.g., ATM withdrawals around service times if consistent) or a written acknowledgement from the church?"
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "matched_submission_question_id": 11,
+                "matched_submission_question_text": "You mentioned out-of-pocket medical expenses of 'maybe $300.' Could you please gather your records for these expenses (e.g., receipts for doctor's visits, co-pays, prescriptions) and provide the exact total amount you paid during the tax year?"
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "matched_submission_question_id": 12,
+                "matched_submission_question_text": "You mentioned receiving a tax form from your bank for savings interest. Could you please locate and provide this form, which is typically a Form 1099-INT? It will state the exact amount of interest income to report."
+            }
+        ],
+        "missed_areas": []
+    },
+    "overall_score": 100.0
+}

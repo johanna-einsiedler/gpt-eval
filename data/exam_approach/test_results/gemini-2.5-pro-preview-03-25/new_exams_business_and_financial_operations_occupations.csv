@@ -1,0 +1,1349 @@
+occupation,task_id,task_description,exam_author_model,tools,materials,level,exam,system_prompt,overview,instructions,materials_all,materials_candidate,submission,evaluation,grading,answer_key,errors,check_real_materials,check_no_internet,failed_candidate_materials,key_grade_threshold,key_grade,answer_key_count,check_overall_makes_sense,explanation_overall_makes_sense,metadata
+Loan Officers,3414.0,Compute payment schedules.,gemini-2.5-pro-preview-03-25,['Spreadsheets'],"['Text', 'Data']",basic,"Okay, here are the clear, concise instructions for the candidate for the Basic Loan Payment Schedule Computation Exam.
+
+---
+
+## Loan Officer Practical Exam: Basic Payment Schedule Computation
+
+**Instructions for the Candidate**
+
+**1. Your Objective:**
+Your task is to accurately calculate loan payment schedules for two different loan scenarios. From these schedules, you will extract specific financial data points and report them.
+
+**2. Tools & Provided Materials:**
+*   **Required Tool:** You must use spreadsheet software (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc) to perform all your calculations.
+*   **Provided Materials (within these instructions):**
+    *   Detailed parameters for two distinct loan scenarios.
+    *   A specific JSON structure template for submitting your answers.
+
+**3. Time Limit:**
+You have a maximum of **90 minutes** to complete this exam and prepare your submission file.
+
+**4. Calculation Guidelines:**
+*   Assume all loans are standard fixed-rate, fully amortizing loans.
+*   Payments are made at the end of each period.
+*   Round all monetary values to two decimal places (e.g., $123.45 should be reported as 123.45).
+
+**5. Deliverable & Submission Format:**
+*   You must submit your answers in a single JSON file named `test_submission.json`.
+*   The exact structure for this JSON file is provided below. Please ensure your submission strictly adheres to this format, including all specified field names.
+
+---
+
+**The Test: Loan Scenarios & Required Data**
+
+You will work with the following two loan scenarios:
+
+**Scenario 1:**
+*   **Loan ID:** `LOAN_BASIC_001`
+*   **Principal Loan Amount:** $275,000.00
+*   **Annual Interest Rate:** 5.75%
+*   **Loan Term:** 30 years
+*   **Payment Frequency:** Monthly
+
+**Scenario 2:**
+*   **Loan ID:** `LOAN_BASIC_002`
+*   **Principal Loan Amount:** $45,000.00
+*   **Annual Interest Rate:** 7.20%
+*   **Loan Term:** 7 years
+*   **Payment Frequency:** Monthly
+
+---
+
+**Required Output Data Points for Your JSON Submission:**
+
+For each loan scenario, you need to calculate and provide the following information in your `test_submission.json` file:
+
+1.  `loan_id`: The Loan ID as provided in the scenario.
+2.  `monthly_payment`: The calculated fixed monthly payment amount.
+3.  `total_interest_paid`: The total sum of all interest paid over the entire life of the loan.
+4.  `schedule_points`: An array containing data for specific payment numbers as detailed below:
+    *   **For Payment #1:**
+        *   `payment_number`: 1
+        *   `interest_paid`: The interest portion of the 1st payment.
+        *   `principal_paid`: The principal portion of the 1st payment.
+        *   `remaining_balance`: The loan balance after the 1st payment has been made.
+    *   **For Payment #12:**
+        *   `payment_number`: 12
+        *   `interest_paid`: The interest portion of the 12th payment.
+        *   `principal_paid`: The principal portion of the 12th payment.
+        *   `remaining_balance`: The loan balance after the 12th payment has been made.
+    *   **For the Last Payment:**
+        *   `payment_number`: The actual number of the final payment for the loan (e.g., for a 30-year monthly loan, this would be 360).
+        *   `interest_paid`: The interest portion of the last payment.
+        *   `principal_paid`: The principal portion of the last payment.
+        *   `remaining_balance`: The loan balance after the last payment (this should be 0.00 or very close to it, accounting for minor rounding).
+
+---
+
+**JSON Submission Format (`test_submission.json`):**
+
+Please create a file named `test_submission.json` with the following structure. Replace the `YOUR_CANDIDATE_ID_HERE` placeholder with your assigned Candidate ID and fill in the `0.00` placeholders with your calculated values.
+
+```json
+{
+  ""candidate_id"": ""YOUR_CANDIDATE_ID_HERE"",
+  ""exam_version"": ""Basic_PaymentSchedule_v1.0"",
+  ""loan_scenarios"": [
+    {
+      ""loan_id"": ""LOAN_BASIC_001"",
+      ""monthly_payment"": 0.00,
+      ""total_interest_paid"": 0.00,
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 360, // This is for a 30-year loan (30 * 12)
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        }
+      ]
+    },
+    {
+      ""loan_id"": ""LOAN_BASIC_002"",
+      ""monthly_payment"": 0.00,
+      ""total_interest_paid"": 0.00,
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 84, // This is for a 7-year loan (7 * 12)
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Important:**
+*   Ensure all monetary values are numbers, rounded to two decimal places (e.g., `1604.10`, not `""1604.10""` or `1604.1`).
+*   The `payment_number` for the ""Last Payment"" must correctly reflect the total number of payments for that specific loan's term.
+
+Good luck!
+
+---
+The following data is provided in a CSV (Comma Separated Values) format. You can copy and paste this data into your spreadsheet software or treat it as the content of a file named `loan_parameters.csv`.
+
+```csv
+Loan ID,Principal Loan Amount,Annual Interest Rate,Loan Term (Years),Payment Frequency
+LOAN_BASIC_001,""275,000.00"",""5.75%"",30,Monthly
+LOAN_BASIC_002,""45,000.00"",""7.20%"",7,Monthly
+```
+**Note to Candidate:**
+*   The ""Principal Loan Amount"" is provided with a comma as a thousands separator and two decimal places, formatted as a string in the CSV to preserve this. Ensure you parse this as a numerical value (e.g., 275000.00).
+*   The ""Annual Interest Rate"" is provided as a string (e.g., ""5.75%""). You will need to convert this to a decimal for calculations (e.g., 5.75% becomes 0.0575).
+
+Okay, here is the specification for the candidate's answer format for the Basic Loan Payment Schedule Computation Exam.
+
+---
+
+**Answer Submission Format Specification**
+
+**1. File for Submission:**
+*   You must submit a single file named `test_submission.json`.
+
+**2. General JSON Structure:**
+*   The content of `test_submission.json` must be a valid JSON object.
+*   All text values (strings) must be enclosed in double quotes (e.g., `""LOAN_BASIC_001""`).
+*   All numerical values representing monetary amounts must be numbers, not strings, and rounded to **two (2) decimal places** (e.g., `1604.10`, not `""1604.10""` or `1604.1`).
+*   Payment numbers must be integers (e.g., `1`, `12`, `360`).
+
+**3. Top-Level JSON Object Fields:**
+
+The root JSON object must contain the following fields:
+
+*   `candidate_id` (String):
+    *   **Format:** Replace the placeholder `""YOUR_ID_HERE""` with the specific model version identifier of the AI model you are using to complete this exam. For example, if you are ""GPT-4o"", this value should be `""GPT-4o""`. Other examples include `""Claude-3_7-Sonnet""`, `""DeepSeekR1""`, `""Gemini-Flash-2""`, etc.
+*   `exam_version` (String):
+    *   **Format:** This field must have the exact string value `""Basic_PaymentSchedule_v1.0""`.
+*   `loan_scenarios` (Array):
+    *   **Format:** An array containing two JSON objects, one for each loan scenario detailed in the exam instructions. The order of these objects in the array should correspond to the order in which the scenarios were presented (Scenario 1 first, then Scenario 2).
+
+**4. Structure of Each Object within `loan_scenarios` Array:**
+
+Each object within the `loan_scenarios` array represents the results for one loan and must contain the following fields (these field names act as the ""question IDs""):
+
+*   `loan_id` (String):
+    *   **Format:** The exact Loan ID string as provided in the exam materials for the respective scenario (e.g., `""LOAN_BASIC_001""` or `""LOAN_BASIC_002""`).
+*   `monthly_payment` (Number):
+    *   **Format:** The calculated fixed monthly payment amount. Must be a number rounded to 2 decimal places.
+    *   **Example:** `1604.10`
+*   `total_interest_paid` (Number):
+    *   **Format:** The total sum of all interest paid over the entire life of the loan. Must be a number rounded to 2 decimal places.
+    *   **Example:** `302475.89`
+*   `schedule_points` (Array):
+    *   **Format:** An array containing exactly three (3) JSON objects, each detailing a specific payment instance (Payment #1, Payment #12, and the Last Payment).
+
+**5. Structure of Each Object within `schedule_points` Array:**
+
+Each object within the `schedule_points` array must contain the following fields:
+
+*   `payment_number` (Integer):
+    *   **Format:** The specific payment number being reported. This must be an integer.
+    *   **Example:** `1`, `12`, `360` (for a 30-year loan), `84` (for a 7-year loan). Ensure this accurately reflects the last payment number for the ""Last Payment"" entry based on the loan term.
+*   `interest_paid` (Number):
+    *   **Format:** The interest portion of this specific payment. Must be a number rounded to 2 decimal places.
+    *   **Example:** `1317.71`
+*   `principal_paid` (Number):
+    *   **Format:** The principal portion of this specific payment. Must be a number rounded to 2 decimal places.
+    *   **Example:** `286.39`
+*   `remaining_balance` (Number):
+    *   **Format:** The loan balance outstanding after this specific payment has been made. Must be a number rounded to 2 decimal places. For the last payment, this value should be `0.00` or extremely close to it (e.g., `0.01`, `-0.01`) due to rounding.
+    *   **Example:** `274713.61`
+
+**6. Example `test_submission.json` Structure (with placeholders for your values):**
+
+```json
+{
+  ""candidate_id"": ""YOUR_MODEL_VERSION_HERE"",
+  ""exam_version"": ""Basic_PaymentSchedule_v1.0"",
+  ""loan_scenarios"": [
+    {
+      ""loan_id"": ""LOAN_BASIC_001"",
+      ""monthly_payment"": 0.00, // Replace with your calculated value, e.g., 1604.10
+      ""total_interest_paid"": 0.00, // Replace with your calculated value
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace
+        },
+        {
+          ""payment_number"": 360, // Ensure this is correct for LOAN_BASIC_001 (30 years * 12)
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace (should be 0.00 or very close)
+        }
+      ]
+    },
+    {
+      ""loan_id"": ""LOAN_BASIC_002"",
+      ""monthly_payment"": 0.00, // Replace with your calculated value
+      ""total_interest_paid"": 0.00, // Replace with your calculated value
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace
+        },
+        {
+          ""payment_number"": 84, // Ensure this is correct for LOAN_BASIC_002 (7 years * 12)
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace (should be 0.00 or very close)
+        }
+      ]
+    }
+  ]
+}
+```
+
+**7. Supplementary Files:**
+*   No supplementary files are required or permitted. Your entire submission must be contained within the `test_submission.json` file.
+
+---","You are an excellent examiner of Loan Officers capabilities. Design a remote, **practical** exam to verify whether a Loan Officers can Compute payment schedules..
+    This exam will have two parts (basic and advanced). Your current task is **only** to design the basic exam.
+
+    ### Context
+    - The candidate has access to a computer with the following tools: Spreadsheets
+    - The candidate can also be given digital materials such as Text or Data that must be used for the test.
+    - Design a **practical** exam that can be completed remotely using only these tools. A practical exam is an exam actually testing whether the described task can be performed successfully. An exam testing knowledge about the task is NOT a practical exam.
+    - To simplify evaluation, the candidate should submit answers in a structured JSON format. Name the file ""test_submission.json"".
+    - The candidate should be able to complete the exam in maximum 90 minutes.
+    ","Okay, here's the design for the **Basic Exam** on computing payment schedules, along with the explanation for the evaluator.
+
+---
+
+## Basic Loan Payment Schedule Computation Exam: Explanation for Evaluator
+
+**Exam Purpose:**
+This practical exam is designed to assess a Loan Officer candidate's fundamental ability to accurately compute standard, fixed-rate loan amortization schedules using spreadsheet software. It verifies their understanding of basic loan mechanics, including the calculation of periodic payments, the allocation of payments towards principal and interest, and the tracking of the outstanding loan balance over time. The exam focuses on practical application rather than theoretical knowledge.
+
+**Exam Structure:**
+The exam consists of two distinct loan scenarios. For each scenario, the candidate will be provided with:
+1.  Principal Loan Amount
+2.  Annual Interest Rate
+3.  Loan Term (in years)
+4.  Payment Frequency (which will be monthly for this basic exam)
+
+The candidate's task is to:
+1.  Use spreadsheet software (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc) to create a full amortization schedule for each loan.
+2.  From their generated schedules, extract specific data points as requested.
+3.  Compile these extracted data points into a structured JSON file named `test_submission.json` for submission.
+
+**Skills Assessed:**
+*   Ability to correctly interpret loan parameters.
+*   Proficiency in using spreadsheet software for financial calculations, specifically:
+    *   Calculating the correct periodic (monthly) payment amount (e.g., using a PMT function or equivalent formula).
+    *   Accurately calculating the interest portion of each payment.
+    *   Accurately calculating the principal portion of each payment.
+    *   Correctly tracking the remaining loan balance after each payment.
+*   Ability to calculate the total interest paid over the life of the loan.
+*   Attention to detail in extracting specific data points from a larger schedule.
+*   Ability to structure data into the specified JSON format.
+
+**Evaluation:**
+*   The submitted `test_submission.json` file will be parsed and its values compared against pre-calculated correct answers.
+*   Minor rounding differences (e.g., +/- $0.01) are typically acceptable due to variations in how different spreadsheet programs or manual calculations handle intermediate rounding. A clear tolerance should be defined.
+*   The primary focus is on the accuracy of the key financial figures (monthly payment, interest/principal components for specific periods, total interest, and final balances).
+
+**Time Allotment:**
+Maximum 90 minutes. This should be ample time for a candidate familiar with basic loan calculations and spreadsheet software to complete both scenarios and format the JSON output.
+
+---
+
+## Candidate Exam Materials & Instructions
+
+**(This section would be provided to the candidate)**
+
+**Loan Officer Practical Exam: Basic Payment Schedule Computation**
+
+**Instructions:**
+
+1.  **Objective:** Your task is to calculate loan payment schedules for two different loan scenarios and report specific values from these schedules.
+2.  **Tools:** You must use spreadsheet software (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc) to perform your calculations.
+3.  **Provided Data:** You will be given two loan scenarios with specific parameters.
+4.  **Deliverable:** You must submit your answers in a single JSON file named `test_submission.json`. The structure for this JSON file is provided below. Ensure your submission strictly adheres to this format.
+5.  **Time Limit:** You have **90 minutes** to complete this exam.
+6.  **Calculations:**
+    *   All loans are standard fixed-rate, fully amortizing loans.
+    *   Payments are made at the end of each period.
+    *   Round all monetary values to two decimal places (e.g., 123.45).
+
+---
+
+**Loan Scenarios:**
+
+**Scenario 1:**
+*   **Loan ID:** `LOAN_BASIC_001`
+*   **Principal Loan Amount:** $275,000.00
+*   **Annual Interest Rate:** 5.75%
+*   **Loan Term:** 30 years
+*   **Payment Frequency:** Monthly
+
+**Scenario 2:**
+*   **Loan ID:** `LOAN_BASIC_002`
+*   **Principal Loan Amount:** $45,000.00
+*   **Annual Interest Rate:** 7.20%
+*   **Loan Term:** 7 years
+*   **Payment Frequency:** Monthly
+
+---
+
+**Required Output Data Points for JSON Submission:**
+
+For each loan scenario, you need to provide:
+1.  `loan_id`: The Loan ID as provided.
+2.  `monthly_payment`: The calculated fixed monthly payment amount.
+3.  `total_interest_paid`: The total sum of all interest paid over the entire life of the loan.
+4.  `schedule_points`: An array containing data for specific payment numbers:
+    *   **Payment #1:**
+        *   `payment_number`: 1
+        *   `interest_paid`: Interest portion of the 1st payment.
+        *   `principal_paid`: Principal portion of the 1st payment.
+        *   `remaining_balance`: Loan balance after the 1st payment.
+    *   **Payment #12:**
+        *   `payment_number`: 12
+        *   `interest_paid`: Interest portion of the 12th payment.
+        *   `principal_paid`: Principal portion of the 12th payment.
+        *   `remaining_balance`: Loan balance after the 12th payment.
+    *   **Last Payment:** (e.g., payment #360 for a 30-year loan, payment #84 for a 7-year loan)
+        *   `payment_number`: The number of the final payment.
+        *   `interest_paid`: Interest portion of the last payment.
+        *   `principal_paid`: Principal portion of the last payment.
+        *   `remaining_balance`: Loan balance after the last payment (should be 0.00 or very close due to rounding).
+
+---
+
+**JSON Submission Format (`test_submission.json`):**
+
+```json
+{
+  ""candidate_id"": ""YOUR_CANDIDATE_ID_HERE"", // Replace with your assigned ID
+  ""exam_version"": ""Basic_PaymentSchedule_v1.0"",
+  ""loan_scenarios"": [
+    {
+      ""loan_id"": ""LOAN_BASIC_001"",
+      ""monthly_payment"": 0.00,
+      ""total_interest_paid"": 0.00,
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 360, // Adjust if term is different
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        }
+      ]
+    },
+    {
+      ""loan_id"": ""LOAN_BASIC_002"",
+      ""monthly_payment"": 0.00,
+      ""total_interest_paid"": 0.00,
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 84, // Adjust if term is different
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Note:** Replace `0.00` placeholders with your calculated values. Ensure the `payment_number` for the ""Last Payment"" correctly reflects the total number of payments for that loan term (e.g., Term in Years * 12).
+
+---","Okay, here are the clear, concise instructions for the candidate for the Basic Loan Payment Schedule Computation Exam.
+
+---
+
+## Loan Officer Practical Exam: Basic Payment Schedule Computation
+
+**Instructions for the Candidate**
+
+**1. Your Objective:**
+Your task is to accurately calculate loan payment schedules for two different loan scenarios. From these schedules, you will extract specific financial data points and report them.
+
+**2. Tools & Provided Materials:**
+*   **Required Tool:** You must use spreadsheet software (e.g., Microsoft Excel, Google Sheets, LibreOffice Calc) to perform all your calculations.
+*   **Provided Materials (within these instructions):**
+    *   Detailed parameters for two distinct loan scenarios.
+    *   A specific JSON structure template for submitting your answers.
+
+**3. Time Limit:**
+You have a maximum of **90 minutes** to complete this exam and prepare your submission file.
+
+**4. Calculation Guidelines:**
+*   Assume all loans are standard fixed-rate, fully amortizing loans.
+*   Payments are made at the end of each period.
+*   Round all monetary values to two decimal places (e.g., $123.45 should be reported as 123.45).
+
+**5. Deliverable & Submission Format:**
+*   You must submit your answers in a single JSON file named `test_submission.json`.
+*   The exact structure for this JSON file is provided below. Please ensure your submission strictly adheres to this format, including all specified field names.
+
+---
+
+**The Test: Loan Scenarios & Required Data**
+
+You will work with the following two loan scenarios:
+
+**Scenario 1:**
+*   **Loan ID:** `LOAN_BASIC_001`
+*   **Principal Loan Amount:** $275,000.00
+*   **Annual Interest Rate:** 5.75%
+*   **Loan Term:** 30 years
+*   **Payment Frequency:** Monthly
+
+**Scenario 2:**
+*   **Loan ID:** `LOAN_BASIC_002`
+*   **Principal Loan Amount:** $45,000.00
+*   **Annual Interest Rate:** 7.20%
+*   **Loan Term:** 7 years
+*   **Payment Frequency:** Monthly
+
+---
+
+**Required Output Data Points for Your JSON Submission:**
+
+For each loan scenario, you need to calculate and provide the following information in your `test_submission.json` file:
+
+1.  `loan_id`: The Loan ID as provided in the scenario.
+2.  `monthly_payment`: The calculated fixed monthly payment amount.
+3.  `total_interest_paid`: The total sum of all interest paid over the entire life of the loan.
+4.  `schedule_points`: An array containing data for specific payment numbers as detailed below:
+    *   **For Payment #1:**
+        *   `payment_number`: 1
+        *   `interest_paid`: The interest portion of the 1st payment.
+        *   `principal_paid`: The principal portion of the 1st payment.
+        *   `remaining_balance`: The loan balance after the 1st payment has been made.
+    *   **For Payment #12:**
+        *   `payment_number`: 12
+        *   `interest_paid`: The interest portion of the 12th payment.
+        *   `principal_paid`: The principal portion of the 12th payment.
+        *   `remaining_balance`: The loan balance after the 12th payment has been made.
+    *   **For the Last Payment:**
+        *   `payment_number`: The actual number of the final payment for the loan (e.g., for a 30-year monthly loan, this would be 360).
+        *   `interest_paid`: The interest portion of the last payment.
+        *   `principal_paid`: The principal portion of the last payment.
+        *   `remaining_balance`: The loan balance after the last payment (this should be 0.00 or very close to it, accounting for minor rounding).
+
+---
+
+**JSON Submission Format (`test_submission.json`):**
+
+Please create a file named `test_submission.json` with the following structure. Replace the `YOUR_CANDIDATE_ID_HERE` placeholder with your assigned Candidate ID and fill in the `0.00` placeholders with your calculated values.
+
+```json
+{
+  ""candidate_id"": ""YOUR_CANDIDATE_ID_HERE"",
+  ""exam_version"": ""Basic_PaymentSchedule_v1.0"",
+  ""loan_scenarios"": [
+    {
+      ""loan_id"": ""LOAN_BASIC_001"",
+      ""monthly_payment"": 0.00,
+      ""total_interest_paid"": 0.00,
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 360, // This is for a 30-year loan (30 * 12)
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        }
+      ]
+    },
+    {
+      ""loan_id"": ""LOAN_BASIC_002"",
+      ""monthly_payment"": 0.00,
+      ""total_interest_paid"": 0.00,
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        },
+        {
+          ""payment_number"": 84, // This is for a 7-year loan (7 * 12)
+          ""interest_paid"": 0.00,
+          ""principal_paid"": 0.00,
+          ""remaining_balance"": 0.00
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Important:**
+*   Ensure all monetary values are numbers, rounded to two decimal places (e.g., `1604.10`, not `""1604.10""` or `1604.1`).
+*   The `payment_number` for the ""Last Payment"" must correctly reflect the total number of payments for that specific loan's term.
+
+Good luck!
+
+---","The basic exam, as described in the provided instructions for the candidate, includes all necessary loan parameters directly within the instruction text. However, to formally address the ""digital materials"" aspect and provide data in a structured format that a candidate might encounter, the following CSV content represents the ""synthetic test materials."" This CSV data is identical to the parameters listed in the candidate's instructions.
+
+<MATERIALS_FOR_CANDIDATE>
+The following data is provided in a CSV (Comma Separated Values) format. You can copy and paste this data into your spreadsheet software or treat it as the content of a file named `loan_parameters.csv`.
+
+```csv
+Loan ID,Principal Loan Amount,Annual Interest Rate,Loan Term (Years),Payment Frequency
+LOAN_BASIC_001,""275,000.00"",""5.75%"",30,Monthly
+LOAN_BASIC_002,""45,000.00"",""7.20%"",7,Monthly
+```
+**Note to Candidate:**
+*   The ""Principal Loan Amount"" is provided with a comma as a thousands separator and two decimal places, formatted as a string in the CSV to preserve this. Ensure you parse this as a numerical value (e.g., 275000.00).
+*   The ""Annual Interest Rate"" is provided as a string (e.g., ""5.75%""). You will need to convert this to a decimal for calculations (e.g., 5.75% becomes 0.0575).
+
+</MATERIALS_FOR_CANDIDATE>
+
+<MATERIALS_EXPLANATION_FOR_EVALUATOR>
+**1. How Materials Were Created:**
+The materials consist of two standard loan scenarios with clearly defined parameters. These parameters were chosen to be representative of common loan values but are synthetic and created specifically for this exam.
+*   **`LOAN_BASIC_001`**: A typical long-term mortgage scenario.
+*   **`LOAN_BASIC_002`**: A shorter-term, smaller loan, possibly representing a personal or auto loan, with a slightly higher interest rate.
+
+The data is presented in a CSV format:
+*   **`Loan ID`**: A unique identifier for each loan scenario. This ID must be used in the candidate's JSON submission.
+*   **`Principal Loan Amount`**: The initial amount borrowed. In the CSV, this is formatted as a string with a comma separator (e.g., ""275,000.00"") to mimic how such data might sometimes be presented. Candidates need to ensure this is treated as a numeric value (275000.00) in their spreadsheets.
+*   **`Annual Interest Rate`**: The nominal annual interest rate, presented as a string with a percentage sign (e.g., ""5.75%""). Candidates must correctly convert this string to a decimal (e.g., 0.0575) and then to a periodic (monthly) rate for their calculations (e.g., 0.0575 / 12).
+*   **`Loan Term (Years)`**: The duration of the loan in years. Candidates must convert this to the total number of payment periods (months) (e.g., 30 years * 12 months/year = 360 periods).
+*   **`Payment Frequency`**: Fixed as ""Monthly"" for this basic exam, indicating that payments are made 12 times per year.
+
+**2. Statistical Patterns or Other Relationships:**
+There are no statistical patterns or inter-dependencies between the two loan scenarios. They are independent calculation tasks.
+
+**3. Cross-References or Important Connections:**
+*   The `Loan ID` from the CSV data must directly map to the `loan_id` field in the candidate's `test_submission.json` for each respective scenario.
+*   All other parameters from the CSV are inputs for the amortization schedule calculations.
+
+**4. Tricky Elements or Common Pitfalls:**
+*   **Parsing `Principal Loan Amount`**: Candidates might mishandle the comma if they copy-paste directly without ensuring the spreadsheet interprets ""275,000.00"" as the number 275000.00. Most modern spreadsheet software handles this well, but it's a point of attention.
+*   **`Annual Interest Rate` Conversion**:
+    *   Failure to convert the percentage string (e.g., ""5.75%"") to its decimal equivalent (0.0575) before division by 12.
+    *   Using the annual rate directly in a PMT function that expects a periodic rate.
+*   **`Loan Term` Conversion**: Using the term in years instead of the total number of months in spreadsheet functions (e.g., for `NPER` in a PMT function).
+*   **Rounding**:
+    *   The instructions specify rounding final monetary values to two decimal places. Intermediate calculations within the spreadsheet should maintain sufficient precision.
+    *   The `remaining_balance` after the last payment should be very close to 0.00 (e.g., +/- $0.01, though a slightly larger tolerance like +/- $0.05 might be acceptable depending on the sum of many rounded intermediate steps if not using built-in functions like PMT). Evaluators should check if the final principal payment effectively clears the balance.
+*   **Data Extraction**: Ensuring the correct data is extracted for payment #1, payment #12, and the *correct* last payment number (e.g., 360 for LOAN_BASIC_001, 84 for LOAN_BASIC_002).
+
+**5. ""Hidden"" Information:**
+There is no intentionally hidden information. All parameters are explicitly provided. The main challenge lies in correctly applying standard financial formulas and using spreadsheet software accurately. The string formatting of the principal and interest rate in the CSV is a minor data manipulation step common in real-world data handling.
+
+**Correct Answers (for Evaluator's Reference - to be pre-calculated):**
+The evaluator should have a pre-calculated answer key for all requested JSON fields. For example:
+
+*   **For LOAN_BASIC_001 ($275,000.00 @ 5.75% for 30 years, monthly):**
+    *   Monthly Interest Rate = 0.0575 / 12 = 0.004791666...
+    *   Number of Payments = 30 * 12 = 360
+    *   `monthly_payment`: (Using PMT(0.0575/12, 360, 275000)) ≈ $1604.10
+    *   `schedule_points` for payment #1:
+        *   `interest_paid`: 275000 * (0.0575/12) ≈ $1317.71
+        *   `principal_paid`: 1604.10 - 1317.71 ≈ $286.39
+        *   `remaining_balance`: 275000 - 286.39 ≈ $274713.61
+    *   ...and so on for other required points and `total_interest_paid`.
+
+*   **For LOAN_BASIC_002 ($45,000.00 @ 7.20% for 7 years, monthly):**
+    *   Monthly Interest Rate = 0.0720 / 12 = 0.006
+    *   Number of Payments = 7 * 12 = 84
+    *   `monthly_payment`: (Using PMT(0.0720/12, 84, 45000)) ≈ $678.09
+    *   `schedule_points` for payment #1:
+        *   `interest_paid`: 45000 * (0.0720/12) = $270.00
+        *   `principal_paid`: 678.09 - 270.00 = $408.09
+        *   `remaining_balance`: 45000 - 408.09 = $44591.91
+    *   ...and so on.
+
+Exact values for the answer key should be computed using a reliable financial calculator or spreadsheet with high precision, then rounded to two decimal places for comparison, keeping rounding tolerance in mind.
+</MATERIALS_EXPLANATION_FOR_EVALUATOR>","
+The following data is provided in a CSV (Comma Separated Values) format. You can copy and paste this data into your spreadsheet software or treat it as the content of a file named `loan_parameters.csv`.
+
+```csv
+Loan ID,Principal Loan Amount,Annual Interest Rate,Loan Term (Years),Payment Frequency
+LOAN_BASIC_001,""275,000.00"",""5.75%"",30,Monthly
+LOAN_BASIC_002,""45,000.00"",""7.20%"",7,Monthly
+```
+**Note to Candidate:**
+*   The ""Principal Loan Amount"" is provided with a comma as a thousands separator and two decimal places, formatted as a string in the CSV to preserve this. Ensure you parse this as a numerical value (e.g., 275000.00).
+*   The ""Annual Interest Rate"" is provided as a string (e.g., ""5.75%""). You will need to convert this to a decimal for calculations (e.g., 5.75% becomes 0.0575).
+
+","Okay, here is the specification for the candidate's answer format for the Basic Loan Payment Schedule Computation Exam.
+
+---
+
+**Answer Submission Format Specification**
+
+**1. File for Submission:**
+*   You must submit a single file named `test_submission.json`.
+
+**2. General JSON Structure:**
+*   The content of `test_submission.json` must be a valid JSON object.
+*   All text values (strings) must be enclosed in double quotes (e.g., `""LOAN_BASIC_001""`).
+*   All numerical values representing monetary amounts must be numbers, not strings, and rounded to **two (2) decimal places** (e.g., `1604.10`, not `""1604.10""` or `1604.1`).
+*   Payment numbers must be integers (e.g., `1`, `12`, `360`).
+
+**3. Top-Level JSON Object Fields:**
+
+The root JSON object must contain the following fields:
+
+*   `candidate_id` (String):
+    *   **Format:** Replace the placeholder `""YOUR_ID_HERE""` with the specific model version identifier of the AI model you are using to complete this exam. For example, if you are ""GPT-4o"", this value should be `""GPT-4o""`. Other examples include `""Claude-3_7-Sonnet""`, `""DeepSeekR1""`, `""Gemini-Flash-2""`, etc.
+*   `exam_version` (String):
+    *   **Format:** This field must have the exact string value `""Basic_PaymentSchedule_v1.0""`.
+*   `loan_scenarios` (Array):
+    *   **Format:** An array containing two JSON objects, one for each loan scenario detailed in the exam instructions. The order of these objects in the array should correspond to the order in which the scenarios were presented (Scenario 1 first, then Scenario 2).
+
+**4. Structure of Each Object within `loan_scenarios` Array:**
+
+Each object within the `loan_scenarios` array represents the results for one loan and must contain the following fields (these field names act as the ""question IDs""):
+
+*   `loan_id` (String):
+    *   **Format:** The exact Loan ID string as provided in the exam materials for the respective scenario (e.g., `""LOAN_BASIC_001""` or `""LOAN_BASIC_002""`).
+*   `monthly_payment` (Number):
+    *   **Format:** The calculated fixed monthly payment amount. Must be a number rounded to 2 decimal places.
+    *   **Example:** `1604.10`
+*   `total_interest_paid` (Number):
+    *   **Format:** The total sum of all interest paid over the entire life of the loan. Must be a number rounded to 2 decimal places.
+    *   **Example:** `302475.89`
+*   `schedule_points` (Array):
+    *   **Format:** An array containing exactly three (3) JSON objects, each detailing a specific payment instance (Payment #1, Payment #12, and the Last Payment).
+
+**5. Structure of Each Object within `schedule_points` Array:**
+
+Each object within the `schedule_points` array must contain the following fields:
+
+*   `payment_number` (Integer):
+    *   **Format:** The specific payment number being reported. This must be an integer.
+    *   **Example:** `1`, `12`, `360` (for a 30-year loan), `84` (for a 7-year loan). Ensure this accurately reflects the last payment number for the ""Last Payment"" entry based on the loan term.
+*   `interest_paid` (Number):
+    *   **Format:** The interest portion of this specific payment. Must be a number rounded to 2 decimal places.
+    *   **Example:** `1317.71`
+*   `principal_paid` (Number):
+    *   **Format:** The principal portion of this specific payment. Must be a number rounded to 2 decimal places.
+    *   **Example:** `286.39`
+*   `remaining_balance` (Number):
+    *   **Format:** The loan balance outstanding after this specific payment has been made. Must be a number rounded to 2 decimal places. For the last payment, this value should be `0.00` or extremely close to it (e.g., `0.01`, `-0.01`) due to rounding.
+    *   **Example:** `274713.61`
+
+**6. Example `test_submission.json` Structure (with placeholders for your values):**
+
+```json
+{
+  ""candidate_id"": ""YOUR_MODEL_VERSION_HERE"",
+  ""exam_version"": ""Basic_PaymentSchedule_v1.0"",
+  ""loan_scenarios"": [
+    {
+      ""loan_id"": ""LOAN_BASIC_001"",
+      ""monthly_payment"": 0.00, // Replace with your calculated value, e.g., 1604.10
+      ""total_interest_paid"": 0.00, // Replace with your calculated value
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace
+        },
+        {
+          ""payment_number"": 360, // Ensure this is correct for LOAN_BASIC_001 (30 years * 12)
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace (should be 0.00 or very close)
+        }
+      ]
+    },
+    {
+      ""loan_id"": ""LOAN_BASIC_002"",
+      ""monthly_payment"": 0.00, // Replace with your calculated value
+      ""total_interest_paid"": 0.00, // Replace with your calculated value
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace
+        },
+        {
+          ""payment_number"": 84, // Ensure this is correct for LOAN_BASIC_002 (7 years * 12)
+          ""interest_paid"": 0.00, // Replace
+          ""principal_paid"": 0.00, // Replace
+          ""remaining_balance"": 0.00 // Replace (should be 0.00 or very close)
+        }
+      ]
+    }
+  ]
+}
+```
+
+**7. Supplementary Files:**
+*   No supplementary files are required or permitted. Your entire submission must be contained within the `test_submission.json` file.
+
+---","Okay, here are the requested materials for the evaluator: the complete answer key in JSON format, an explanation of how the correct answers were derived, and the passing criteria for the Basic Loan Payment Schedule Computation Exam.
+
+---
+
+## 1. Complete Answer Key (`answer_key.json`)
+
+```json
+{
+  ""candidate_id"": ""EVALUATOR_KEY"",
+  ""exam_version"": ""Basic_PaymentSchedule_v1.0"",
+  ""loan_scenarios"": [
+    {
+      ""loan_id"": ""LOAN_BASIC_001"",
+      ""monthly_payment"": 1606.17,
+      ""total_interest_paid"": 303221.15,
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 1317.71,
+          ""principal_paid"": 288.46,
+          ""remaining_balance"": 274711.54
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 1302.10,
+          ""principal_paid"": 304.07,
+          ""remaining_balance"": 271498.94
+        },
+        {
+          ""payment_number"": 360,
+          ""interest_paid"": 7.66,
+          ""principal_paid"": 1598.51,
+          ""remaining_balance"": 0.00
+        }
+      ]
+    },
+    {
+      ""loan_id"": ""LOAN_BASIC_002"",
+      ""monthly_payment"": 683.78,
+      ""total_interest_paid"": 12437.55,
+      ""schedule_points"": [
+        {
+          ""payment_number"": 1,
+          ""interest_paid"": 270.00,
+          ""principal_paid"": 413.78,
+          ""remaining_balance"": 44586.22
+        },
+        {
+          ""payment_number"": 12,
+          ""interest_paid"": 241.05,
+          ""principal_paid"": 442.73,
+          ""remaining_balance"": 39731.78
+        },
+        {
+          ""payment_number"": 84,
+          ""interest_paid"": 4.08,
+          ""principal_paid"": 679.70,
+          ""remaining_balance"": 0.00
+        }
+      ]
+    }
+  ]
+}
+```
+
+---
+
+## 2. Explanation of Correct Answers and How They Were Derived
+
+The following explains how each value in the `answer_key.json` was calculated. All calculations were performed using high precision, and the final monetary values were rounded to two decimal places as required for reporting. Spreadsheet software (like Excel or Google Sheets) with its built-in financial functions is the expected tool for candidates and was used to verify these answers.
+
+**General Formulas:**
+
+*   **P:** Principal Loan Amount
+*   **AIR:** Annual Interest Rate (as a decimal, e.g., 5.75% = 0.0575)
+*   **Term (Years):** Loan term in years
+*   **r (Periodic Interest Rate):** `AIR / 12` (for monthly payments)
+*   **N (Total Number of Payments):** `Term (Years) * 12` (for monthly payments)
+*   **M (Monthly Payment):** Calculated using the formula `P * [r * (1+r)^N] / [(1+r)^N - 1]`. In spreadsheets, this is `PMT(r, N, P)`. The result is typically negative, so its absolute value is used.
+
+**Scenario 1: LOAN_BASIC_001**
+*   P = $275,000.00
+*   AIR = 5.75% (0.0575)
+*   Term = 30 years
+*   r = 0.0575 / 12 = 0.004791666666666667
+*   N = 30 * 12 = 360
+
+1.  **`monthly_payment`**:
+    *   M_exact = PMT(0.0575/12, 360, 275000) = $1606.169873...
+    *   Rounded: **$1606.17**
+
+2.  **`schedule_points` for Payment #1:**
+    *   Beginning Balance = $275,000.00
+    *   `interest_paid`: $275,000.00 * (0.0575 / 12) = $1317.708333... -> **$1317.71**
+    *   `principal_paid`: $1606.169873... - $1317.708333... = $288.461539... -> **$288.46**
+    *   `remaining_balance`: $275,000.00 - $288.461539... = $274711.53846... -> **$274711.54**
+
+3.  **`schedule_points` for Payment #12:**
+    *   Beginning Balance (after 11 payments): Calculated using FV function or by summing principal payments. FV(0.0575/12, 11, 1606.169873..., -275000) = $271803.0105...
+    *   `interest_paid`: $271803.0105... * (0.0575 / 12) = $1302.097935... -> **$1302.10**
+    *   `principal_paid`: $1606.169873... - $1302.097935... = $304.071938... -> **$304.07**
+    *   `remaining_balance`: $271803.0105... - $304.071938... = $271498.93856... -> **$271498.94**
+
+4.  **`schedule_points` for Last Payment (#360):**
+    *   Beginning Balance (after 359 payments): FV(0.0575/12, 359, 1606.169873..., -275000) = $1598.506848...
+    *   `interest_paid`: $1598.506848... * (0.0575 / 12) = $7.663025... -> **$7.66**
+    *   `principal_paid`: This should be the beginning balance to ensure the loan is paid off. $1598.506848... -> **$1598.51**. (Alternatively, $1606.169873... - $7.663025... = $1598.506848...)
+    *   `remaining_balance`: $1598.506848... - $1598.506848... = $0.00 -> **$0.00**
+
+5.  **`total_interest_paid`**:
+    *   Sum of all interest portions over 360 payments. Using CUMIPMT(0.0575/12, 360, 275000, 1, 360, 0) = -$303221.15429...
+    *   Alternatively: (M_exact * N) - P = ($1606.169873... * 360) - $275,000.00 = $578221.15429... - $275,000.00 = $303221.15429...
+    *   Rounded: **$303221.15**
+
+---
+
+**Scenario 2: LOAN_BASIC_002**
+*   P = $45,000.00
+*   AIR = 7.20% (0.072)
+*   Term = 7 years
+*   r = 0.072 / 12 = 0.006
+*   N = 7 * 12 = 84
+
+1.  **`monthly_payment`**:
+    *   M_exact = PMT(0.006, 84, 45000) = $683.780391...
+    *   Rounded: **$683.78**
+
+2.  **`schedule_points` for Payment #1:**
+    *   Beginning Balance = $45,000.00
+    *   `interest_paid`: $45,000.00 * 0.006 = $270.00 -> **$270.00**
+    *   `principal_paid`: $683.780391... - $270.00 = $413.780391... -> **$413.78**
+    *   `remaining_balance`: $45,000.00 - $413.780391... = $44586.21960... -> **$44586.22**
+
+3.  **`schedule_points` for Payment #12:**
+    *   Beginning Balance (after 11 payments): FV(0.006, 11, 683.780391..., -45000) = $40174.51560...
+    *   `interest_paid`: $40174.51560... * 0.006 = $241.047093... -> **$241.05**
+    *   `principal_paid`: $683.780391... - $241.047093... = $442.733297... -> **$442.73**
+    *   `remaining_balance`: $40174.51560... - $442.733297... = $39731.78230... -> **$39731.78**
+
+4.  **`schedule_points` for Last Payment (#84):**
+    *   Beginning Balance (after 83 payments): FV(0.006, 83, 683.780391..., -45000) = $679.702191...
+    *   `interest_paid`: $679.702191... * 0.006 = $4.078213... -> **$4.08**
+    *   `principal_paid`: This should be the beginning balance. $679.702191... -> **$679.70**. (Alternatively, $683.780391... - $4.078213... = $679.702177...)
+    *   `remaining_balance`: $679.702191... - $679.702191... = $0.00 -> **$0.00**
+
+5.  **`total_interest_paid`**:
+    *   Sum of all interest portions over 84 payments. Using CUMIPMT(0.006, 84, 45000, 1, 84, 0) = -$12437.55284...
+    *   Alternatively: (M_exact * N) - P = ($683.780391... * 84) - $45,000.00 = $57437.55284... - $45,000.00 = $12437.55284...
+    *   Rounded: **$12437.55**
+
+**Important Note on Rounding for Evaluators:**
+Candidates are instructed to round final monetary values to two decimal places. The key uses values derived from calculations with higher precision for intermediate steps (e.g., using the exact monthly payment `M_exact` rather than the rounded one for calculating interest and principal components throughout the schedule). This ensures the schedule amortizes correctly to zero. If a candidate uses a rounded monthly payment for each step of a manually built schedule, their intermediate and final values might differ slightly due to cumulative rounding errors. The defined tolerances in the passing criteria account for this.
+
+---
+
+## 3. Passing Criteria
+
+**A. JSON Format and Structure:**
+*   The submission *must* be a valid JSON file named `test_submission.json`.
+*   The JSON structure (field names, nesting, data types for `loan_id`, `payment_number`, `exam_version`, `candidate_id`) must exactly match the provided template.
+*   Monetary values must be numbers, not strings.
+*   Failure to meet basic structural requirements may result in a failing grade or significant penalty, at the evaluator's discretion, as it impedes automated checking.
+
+**B. Scoring Individual Data Points:**
+There are a total of 22 numerical data points to be evaluated (11 for each loan scenario):
+*   `monthly_payment` (1 per loan)
+*   `total_interest_paid` (1 per loan)
+*   For each of the 3 `schedule_points` (Payment #1, #12, Last):
+    *   `interest_paid` (1 per point)
+    *   `principal_paid` (1 per point)
+    *   `remaining_balance` (1 per point)
+
+Each numerical data point is awarded 1 point if it falls within the acceptable tolerance.
+
+**C. Tolerances for Numerical Values:**
+*   **`monthly_payment`**: +/- $0.01 from the answer key value.
+*   **`total_interest_paid`**: +/- $0.05 from the answer key value (this allows for slight variations if the candidate calculates it as `Rounded_Monthly_Payment * N - P` versus summing precise interest components).
+*   **`interest_paid` (for specific payments)**: +/- $0.01 from the answer key value.
+*   **`principal_paid` (for specific payments)**: +/- $0.01 from the answer key value.
+*   **`remaining_balance` (for Payment #1 and Payment #12)**: +/- $0.02 from the answer key value.
+*   **`remaining_balance` (for Last Payment)**: Must be between -$0.05 and +$0.05 (the key shows $0.00). A value of exactly $0.00 is ideal.
+
+**D. Passing Threshold:**
+*   A candidate **passes** the exam if they achieve **at least 19 out of 22 possible points**, based on the tolerances above. This is approximately 86%.
+*   **Critical Requirement:** Both `monthly_payment` values (for LOAN_BASIC_001 and LOAN_BASIC_002) *must* be correct within their +/- $0.01 tolerance to pass. If either `monthly_payment` is outside this tolerance, the candidate fails that loan scenario's calculations, and it should be considered a critical error, potentially leading to a failing grade for the entire exam even if the point threshold is met by chance on other values. (Evaluator discretion: if one monthly payment is off, they cannot achieve the 19 points if all dependent values are also marked incorrect).
+
+**E. Evaluation Notes:**
+*   The `payment_number` for the ""Last Payment"" schedule point must be correct (360 for LOAN_BASIC_001, 84 for LOAN_BASIC_002). An incorrect payment number here means the data reported for that point is for the wrong period and should not receive points.
+*   The primary goal is to assess practical ability. If a candidate makes a single type of error (e.g., consistently misinterprets the annual interest rate conversion) that propagates, this should be noted, but the point system will naturally reflect the impact.
+*   Significant deviation in the `remaining_balance` for the last payment (e.g., more than a few cents) indicates a fundamental misunderstanding or error in the amortization process.","```python
+import json
+import argparse
+import math
+
+# Tolerances from evaluation criteria
+TOLERANCE_MONTHLY_PAYMENT = 0.01
+TOLERANCE_TOTAL_INTEREST = 0.05
+TOLERANCE_SCHEDULE_INTEREST_PRINCIPAL = 0.01
+TOLERANCE_SCHEDULE_BALANCE_REGULAR = 0.02
+TOLERANCE_SCHEDULE_BALANCE_LAST_MIN = -0.05
+TOLERANCE_SCHEDULE_BALANCE_LAST_MAX = 0.05
+
+TOTAL_POSSIBLE_POINTS = 22
+PASSING_THRESHOLD_POINTS = 19
+
+def is_close_custom(val1, val2, tolerance):
+    """"""Checks if val1 is within val2 +/- tolerance. Handles None and type issues.""""""
+    if val1 is None or val2 is None:
+        return False
+    if not (isinstance(val1, (int, float)) and isinstance(val2, (int, float))):
+        return False
+    return abs(val1 - val2) <= tolerance
+
+def check_last_balance(val, min_val, max_val):
+    """"""Checks if val is within [min_val, max_val]. Handles None and type issues.""""""
+    if val is None:
+        return False
+    if not isinstance(val, (int, float)):
+        return False
+    return min_val <= val <= max_val
+
+def evaluate_submission(submission_data, answer_key_data):
+    results = {
+        ""overall_score_percentage"": 0.0,
+        ""achieved_points"": 0,
+        ""total_possible_points"": TOTAL_POSSIBLE_POINTS,
+        ""pass_status"": ""FAIL"", # Default, will be updated
+        ""critical_monthly_payment_check"": {},
+        ""evaluation_details"": [],
+        ""structural_warnings"": []
+    }
+    
+    achieved_points = 0
+    all_critical_monthly_payments_correct = True # Assume true until a failure
+
+    # --- Top-level structural checks on submission ---
+    if not isinstance(submission_data, dict):
+        results[""structural_warnings""].append(""Submission is not a valid JSON object."")
+        # Cannot proceed if the root is not a dict
+        return results # Return early with structural error
+
+    # Check for candidate_id and exam_version (as per submission format)
+    if ""candidate_id"" not in submission_data:
+        results[""structural_warnings""].append(""Submission missing 'candidate_id' field."")
+    if submission_data.get(""exam_version"") != answer_key_data.get(""exam_version""): # Compare with key's version
+        results[""structural_warnings""].append(
+            f""Submission 'exam_version' ('{submission_data.get('exam_version')}') ""
+            f""does not match expected ('{answer_key_data.get('exam_version')}').""
+        )
+
+    if not isinstance(submission_data.get(""loan_scenarios""), list):
+        results[""structural_warnings""].append(""Submission 'loan_scenarios' is not a list or is missing."")
+        # If loan_scenarios is fundamentally broken, further evaluation is difficult.
+        # All points effectively lost for loan data.
+        all_critical_monthly_payments_correct = False # No scenarios means no correct monthly payments
+        # Add placeholders for expected scenarios to show what was missed
+        for key_scenario_placeholder in answer_key_data.get(""loan_scenarios"", []):
+            placeholder_loan_id = key_scenario_placeholder.get(""loan_id"", ""UNKNOWN_LOAN_ID"")
+            results[""critical_monthly_payment_check""][placeholder_loan_id] = ""FAIL""
+            results[""evaluation_details""].append({
+                ""loan_id"": placeholder_loan_id,
+                ""error"": ""Loan scenario data missing or 'loan_scenarios' is not a list in submission.""
+            })
+        # Update pass status based on current (likely zero) points and critical check
+        if achieved_points >= PASSING_THRESHOLD_POINTS and all_critical_monthly_payments_correct:
+            results[""pass_status""] = ""PASS""
+        else:
+            results[""pass_status""] = ""FAIL"" # Already default, but explicit
+            if achieved_points < PASSING_THRESHOLD_POINTS:
+                 results[""fail_reason_points""] = f""Achieved {achieved_points} points, required {PASSING_THRESHOLD_POINTS}.""
+            if not all_critical_monthly_payments_correct:
+                 results[""fail_reason_critical""] = ""Critical monthly payments were incorrect or missing due to structural issues.""
+        return results
+    
+    # --- Iterate through answer key scenarios to ensure all expected items are checked ---
+    for key_scenario in answer_key_data[""loan_scenarios""]:
+        key_loan_id = key_scenario[""loan_id""]
+        results[""critical_monthly_payment_check""][key_loan_id] = ""FAIL"" # Default to fail for this loan's critical check
+
+        # Find corresponding submission scenario by loan_id
+        sub_scenario = None
+        for s_scen in submission_data.get(""loan_scenarios"", []): # Default to empty list if key missing
+            if isinstance(s_scen, dict) and s_scen.get(""loan_id"") == key_loan_id:
+                sub_scenario = s_scen
+                break
+        
+        loan_eval_details = {""loan_id"": key_loan_id}
+        results[""evaluation_details""].append(loan_eval_details)
+
+        if sub_scenario is None:
+            results[""structural_warnings""].append(f""Loan scenario '{key_loan_id}' missing in submission."")
+            all_critical_monthly_payments_correct = False # Missing scenario means its monthly payment is not correct
+            loan_eval_details[""error""] = ""Loan scenario missing in submission.""
+            # All points for this scenario are lost
+            continue # Move to the next key_scenario
+
+        # --- Monthly Payment (Critical) ---
+        sub_mp = sub_scenario.get(""monthly_payment"")
+        key_mp = key_scenario[""monthly_payment""]
+        mp_correct = is_close_custom(sub_mp, key_mp, TOLERANCE_MONTHLY_PAYMENT)
+        loan_eval_details[""monthly_payment""] = {
+            ""submitted"": sub_mp, ""expected"": key_mp, ""correct"": mp_correct, ""points"": 0
+        }
+        if not isinstance(sub_mp, (int, float)):
+             loan_eval_details[""monthly_payment""][""error""] = ""Invalid data type for monthly_payment.""
+             mp_correct = False # Override if type is wrong
+             loan_eval_details[""monthly_payment""][""correct""] = False
+        
+        if mp_correct:
+            loan_eval_details[""monthly_payment""][""points""] = 1
+            achieved_points += 1
+            results[""critical_monthly_payment_check""][key_loan_id] = ""PASS""
+        else:
+            all_critical_monthly_payments_correct = False
+            if ""error"" not in loan_eval_details[""monthly_payment""] and sub_mp is not None:
+                 loan_eval_details[""monthly_payment""][""difference""] = round(sub_mp - key_mp, 4) if isinstance(sub_mp, (int,float)) else ""N/A""
+
+        # --- Total Interest Paid ---
+        sub_tip = sub_scenario.get(""total_interest_paid"")
+        key_tip = key_scenario[""total_interest_paid""]
+        tip_correct = is_close_custom(sub_tip, key_tip, TOLERANCE_TOTAL_INTEREST)
+        loan_eval_details[""total_interest_paid""] = {
+            ""submitted"": sub_tip, ""expected"": key_tip, ""correct"": tip_correct, ""points"": 0
+        }
+        if not isinstance(sub_tip, (int, float)):
+             loan_eval_details[""total_interest_paid""][""error""] = ""Invalid data type for total_interest_paid.""
+             tip_correct = False
+             loan_eval_details[""total_interest_paid""][""correct""] = False
+
+        if tip_correct:
+            loan_eval_details[""total_interest_paid""][""points""] = 1
+            achieved_points += 1
+        elif ""error"" not in loan_eval_details[""total_interest_paid""] and sub_tip is not None:
+            loan_eval_details[""total_interest_paid""][""difference""] = round(sub_tip - key_tip, 4) if isinstance(sub_tip, (int,float)) else ""N/A""
+
+        # --- Schedule Points ---
+        loan_eval_details[""schedule_points_evaluation""] = []
+        key_schedule_points = key_scenario.get(""schedule_points"", [])
+        sub_schedule_points = sub_scenario.get(""schedule_points"", [])
+
+        if not isinstance(sub_schedule_points, list) or len(sub_schedule_points) != len(key_schedule_points):
+            results[""structural_warnings""].append(
+                f""Schedule points for '{key_loan_id}' has incorrect structure or count. ""
+                f""Expected {len(key_schedule_points)}, got {len(sub_schedule_points) if isinstance(sub_schedule_points, list) else 'not a list'}.""
+            )
+            for k_sp_idx_warn, k_sp_warn in enumerate(key_schedule_points):
+                sp_eval_warn = {
+                    ""payment_number_expected"": k_sp_warn.get(""payment_number""),
+                    ""error"": ""Missing or malformed schedule point data in submission."",
+                    ""points_sum"": 0
+                }
+                # Add expected values for clarity on what was missed
+                for field_key_warn in [""interest_paid"", ""principal_paid"", ""remaining_balance""]:
+                    sp_eval_warn[field_key_warn] = {""submitted"": None, ""expected"": k_sp_warn.get(field_key_warn), ""correct"": False, ""points"": 0}
+                loan_eval_details[""schedule_points_evaluation""].append(sp_eval_warn)
+        else:
+            for sp_idx, key_sp in enumerate(key_schedule_points):
+                # sub_sp should exist due to len check, but good to be safe with .get() for its fields
+                sub_sp = sub_schedule_points[sp_idx] if isinstance(sub_schedule_points[sp_idx], dict) else {}
+                
+                sp_eval = {
+                    ""payment_number_submitted"": sub_sp.get(""payment_number""),
+                    ""payment_number_expected"": key_sp[""payment_number""],
+                    ""points_sum"": 0
+                }
+                loan_eval_details[""schedule_points_evaluation""].append(sp_eval)
+
+                pn_match = (isinstance(sub_sp.get(""payment_number""), int) and 
+                            sub_sp.get(""payment_number"") == key_sp[""payment_number""])
+                sp_eval[""payment_number_match""] = pn_match
+
+                if not pn_match:
+                    sp_eval[""error""] = (f""Payment number mismatch or invalid type. ""
+                                        f""Expected {key_sp['payment_number']} (int), Got {sub_sp.get('payment_number')}"")
+                    for field_key_err in [""interest_paid"", ""principal_paid"", ""remaining_balance""]:
+                        sp_eval[field_key_err] = {""submitted"": sub_sp.get(field_key_err), ""expected"": key_sp[field_key_err], ""correct"": False, ""points"": 0}
+                    continue 
+
+                # Interest Paid
+                sub_val_ip = sub_sp.get(""interest_paid"")
+                key_val_ip = key_sp[""interest_paid""]
+                ip_correct = is_close_custom(sub_val_ip, key_val_ip, TOLERANCE_SCHEDULE_INTEREST_PRINCIPAL)
+                sp_eval[""interest_paid""] = {""submitted"": sub_val_ip, ""expected"": key_val_ip, ""correct"": ip_correct, ""points"": 0}
+                if not isinstance(sub_val_ip, (int, float)): 
+                    sp_eval[""interest_paid""][""error""] = ""Invalid data type""; ip_correct = False; sp_eval[""interest_paid""][""correct""] = False
+                if ip_correct: sp_eval[""interest_paid""][""points""] = 1; sp_eval[""points_sum""] += 1
+                elif ""error"" not in sp_eval[""interest_paid""] and sub_val_ip is not None: sp_eval[""interest_paid""][""difference""] = round(sub_val_ip - key_val_ip, 4) if isinstance(sub_val_ip, (int,float)) else ""N/A""
+
+                # Principal Paid
+                sub_val_pp = sub_sp.get(""principal_paid"")
+                key_val_pp = key_sp[""principal_paid""]
+                pp_correct = is_close_custom(sub_val_pp, key_val_pp, TOLERANCE_SCHEDULE_INTEREST_PRINCIPAL)
+                sp_eval[""principal_paid""] = {""submitted"": sub_val_pp, ""expected"": key_val_pp, ""correct"": pp_correct, ""points"": 0}
+                if not isinstance(sub_val_pp, (int, float)): 
+                    sp_eval[""principal_paid""][""error""] = ""Invalid data type""; pp_correct = False; sp_eval[""principal_paid""][""correct""] = False
+                if pp_correct: sp_eval[""principal_paid""][""points""] = 1; sp_eval[""points_sum""] += 1
+                elif ""error"" not in sp_eval[""principal_paid""] and sub_val_pp is not None: sp_eval[""principal_paid""][""difference""] = round(sub_val_pp - key_val_pp, 4) if isinstance(sub_val_pp, (int,float)) else ""N/A""
+
+                # Remaining Balance
+                sub_val_rb = sub_sp.get(""remaining_balance"")
+                key_val_rb = key_sp[""remaining_balance""]
+                # Check if this key_sp is the last one in the key_scenario's schedule_points list
+                is_last_payment_point = (key_sp == key_schedule_points[-1])
+
+                rb_correct = False
+                if is_last_payment_point:
+                    rb_correct = check_last_balance(sub_val_rb, TOLERANCE_SCHEDULE_BALANCE_LAST_MIN, TOLERANCE_SCHEDULE_BALANCE_LAST_MAX)
+                else:
+                    rb_correct = is_close_custom(sub_val_rb, key_val_rb, TOLERANCE_SCHEDULE_BALANCE_REGULAR)
+                
+                sp_eval[""remaining_balance""] = {""submitted"": sub_val_rb, ""expected"": key_val_rb, ""correct"": rb_correct, ""points"": 0}
+                if not isinstance(sub_val_rb, (int, float)): 
+                    sp_eval[""remaining_balance""][""error""] = ""Invalid data type""; rb_correct = False; sp_eval[""remaining_balance""][""correct""] = False
+                if rb_correct: sp_eval[""remaining_balance""][""points""] = 1; sp_eval[""points_sum""] += 1
+                elif ""error"" not in sp_eval[""remaining_balance""] and sub_val_rb is not None: 
+                    sp_eval[""remaining_balance""][""difference""] = round(sub_val_rb - key_val_rb, 4) if isinstance(sub_val_rb, (int,float)) else ""N/A""
+                
+                achieved_points += sp_eval[""points_sum""]
+
+    results[""achieved_points""] = achieved_points
+    if TOTAL_POSSIBLE_POINTS > 0:
+        results[""overall_score_percentage""] = round((achieved_points / TOTAL_POSSIBLE_POINTS) * 100, 2)
+    else: # Avoid division by zero if somehow TOTAL_POSSIBLE_POINTS is 0
+        results[""overall_score_percentage""] = 0.0 if achieved_points == 0 else 100.0
+
+
+    # Determine final pass status
+    if achieved_points >= PASSING_THRESHOLD_POINTS and all_critical_monthly_payments_correct:
+        results[""pass_status""] = ""PASS""
+    else:
+        results[""pass_status""] = ""FAIL""
+        # Add reasons for failure
+        if achieved_points < PASSING_THRESHOLD_POINTS:
+             results[""fail_reason_points""] = f""Achieved {achieved_points} points, required {PASSING_THRESHOLD_POINTS}.""
+        if not all_critical_monthly_payments_correct:
+             results[""fail_reason_critical""] = ""One or more critical monthly payments were incorrect, missing, or part of a missing loan scenario.""
+    
+    # Ensure overall_score key is present as per prompt
+    results[""overall_score""] = results[""overall_score_percentage""]
+
+
+    return results
+
+def main():
+    parser = argparse.ArgumentParser(description=""Evaluate loan officer exam submission."")
+    parser.add_argument(""submission_file"", help=""Path to the candidate's submission JSON file."")
+    parser.add_argument(""answer_key_file"", help=""Path to the answer key JSON file."")
+    args = parser.parse_args()
+
+    output_filename = ""test_results.json""
+
+    try:
+        with open(args.submission_file, 'r') as f:
+            submission_data = json.load(f)
+    except FileNotFoundError:
+        error_msg = f""Error: Submission file '{args.submission_file}' not found.""
+        print(error_msg)
+        error_result = {""error"": error_msg, ""overall_score"": 0.0, ""pass_status"": ""FAIL"", ""achieved_points"":0, ""total_possible_points"":TOTAL_POSSIBLE_POINTS}
+        with open(output_filename, 'w') as f_out:
+            json.dump(error_result, f_out, indent=2)
+        return
+    except json.JSONDecodeError as e:
+        error_msg = f""Error: Could not decode JSON from submission file '{args.submission_file}'. Details: {e}""
+        print(error_msg)
+        error_result = {""error"": error_msg, ""overall_score"": 0.0, ""pass_status"": ""FAIL"", ""achieved_points"":0, ""total_possible_points"":TOTAL_POSSIBLE_POINTS}
+        with open(output_filename, 'w') as f_out:
+            json.dump(error_result, f_out, indent=2)
+        return
+
+    try:
+        with open(args.answer_key_file, 'r') as f:
+            answer_key_data = json.load(f)
+    except FileNotFoundError:
+        error_msg = f""Error: Answer key file '{args.answer_key_file}' not found. Evaluation cannot proceed.""
+        print(error_msg)
+        # This is a setup error, but we should still output a result file.
+        error_result = {""error"": error_msg, ""overall_score"": 0.0, ""pass_status"": ""FAIL"", ""achieved_points"":0, ""total_possible_points"":TOTAL_POSSIBLE_POINTS}
+        with open(output_filename, 'w') as f_out:
+            json.dump(error_result, f_out, indent=2)
+        return
+    except json.JSONDecodeError as e:
+        error_msg = f""Error: Could not decode JSON from answer key file '{args.answer_key_file}'. Details: {e}. Evaluation cannot proceed.""
+        print(error_msg)
+        error_result = {""error"": error_msg, ""overall_score"": 0.0, ""pass_status"": ""FAIL"", ""achieved_points"":0, ""total_possible_points"":TOTAL_POSSIBLE_POINTS}
+        with open(output_filename, 'w') as f_out:
+            json.dump(error_result, f_out, indent=2)
+        return
+
+    evaluation_results = evaluate_submission(submission_data, answer_key_data)
+
+    with open(output_filename, 'w') as f_out:
+        json.dump(evaluation_results, f_out, indent=2)
+    
+    print(f""Evaluation complete. Results saved to {output_filename}"")
+    print(f""Overall Score: {evaluation_results.get('overall_score', 0.0)}%"") # Use .get for safety
+    print(f""Achieved Points: {evaluation_results.get('achieved_points',0)} / {evaluation_results.get('total_possible_points',TOTAL_POSSIBLE_POINTS)}"")
+    print(f""Pass Status: {evaluation_results.get('pass_status', 'FAIL')}"")
+    if ""structural_warnings"" in evaluation_results and evaluation_results[""structural_warnings""]:
+        print(""\nStructural Warnings:"")
+        for warning in evaluation_results[""structural_warnings""]:
+            print(f""- {warning}"")
+
+if __name__ == ""__main__"":
+    main()
+```","{'candidate_id': 'EVALUATOR_KEY', 'exam_version': 'Basic_PaymentSchedule_v1.0', 'loan_scenarios': [{'loan_id': 'LOAN_BASIC_001', 'monthly_payment': 1606.17, 'total_interest_paid': 303221.15, 'schedule_points': [{'payment_number': 1, 'interest_paid': 1317.71, 'principal_paid': 288.46, 'remaining_balance': 274711.54}, {'payment_number': 12, 'interest_paid': 1302.1, 'principal_paid': 304.07, 'remaining_balance': 271498.94}, {'payment_number': 360, 'interest_paid': 7.66, 'principal_paid': 1598.51, 'remaining_balance': 0.0}]}, {'loan_id': 'LOAN_BASIC_002', 'monthly_payment': 683.78, 'total_interest_paid': 12437.55, 'schedule_points': [{'payment_number': 1, 'interest_paid': 270.0, 'principal_paid': 413.78, 'remaining_balance': 44586.22}, {'payment_number': 12, 'interest_paid': 241.05, 'principal_paid': 442.73, 'remaining_balance': 39731.78}, {'payment_number': 84, 'interest_paid': 4.08, 'principal_paid': 679.7, 'remaining_balance': 0.0}]}]}","[[None, 'loop of ufunc does not support argument 0 of type NoneType which has no callable rint method']]",True,True,0,99.0,100.0,2,True,"The exam is practical, testing real job tasks for a Loan Officer (amortization schedule computation using spreadsheets) and is realistic for 2025. Instructions, materials, and submission requirements are largely unambiguous. The grading script and answer key correctly reflect the exam's requirements, including critical failure conditions (incorrect monthly payment leads to failure regardless of total points), and the answer key would score 100% with the script.
+
+Potential Weaknesses/Ambiguities:
+1.  **`candidate_id` Instruction:** The instruction for the `candidate_id` field in the 'Submission Format (Candidate Sees)' section specifies it should be an AI model identifier (e.g., 'GPT-4o'). This is inconsistent with an exam for a human Loan Officer and conflicts with another part of the candidate materials ('Candidate Exam Materials & Instructions') which suggests a generic 'YOUR_CANDIDATE_ID_HERE'. This needs to be harmonized to clearly instruct human candidates to use an assigned ID.
+2.  **Evaluator Documentation Discrepancy:** The 'Materials Explanation for Evaluator' section provides example calculations for `monthly_payment` (e.g., $1604.10 for LOAN_BASIC_001, $678.09 for LOAN_BASIC_002) and derived first payment details that *do not match* the values in the official `answer_key.json` (which are $1606.17 and $683.78 respectively). The `answer_key.json` values are correct. This discrepancy is only in the evaluator's explanatory documentation and does not affect the candidate or the automated grading (which uses the correct `answer_key.json`), but it could confuse an evaluator reviewing the materials.
+3.  **Rounding Guidance:** While instructions to round final monetary values to two decimal places are clear, the 'Explanation of Correct Answers' correctly notes that using a rounded monthly payment for each step of a manually built schedule can lead to slight differences. The tolerances in the grading script account for this, which is good. This is more of a complexity to be aware of than a weakness.","{'overview': prompt_token_count: 223
+candidates_token_count: 1938
+total_token_count: 3929
+, 'instructions': prompt_token_count: 2367
+candidates_token_count: 1608
+total_token_count: 5881
+, 'materials': prompt_token_count: 4181
+candidates_token_count: 1920
+total_token_count: 11651
+, 'check_materials': prompt_token_count: 3632
+candidates_token_count: 1
+total_token_count: 4415
+, 'check_website': prompt_token_count: 3665
+candidates_token_count: 1
+total_token_count: 4392
+, 'submission': prompt_token_count: 5885
+candidates_token_count: 1746
+total_token_count: 9432
+, 'evaluation': prompt_token_count: 7552
+candidates_token_count: 4008
+total_token_count: 21476
+, 'grading': prompt_token_count: 11749
+candidates_token_count: 4953
+total_token_count: 24423
+, 'check_sense': prompt_token_count: 17041
+candidates_token_count: 481
+total_token_count: 23614
+}"

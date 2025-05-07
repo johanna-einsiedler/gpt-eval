@@ -1,0 +1,85 @@
+{
+    "candidate_id": "GPT-4o",
+    "base_prices": [
+        {
+            "product_id": "P001",
+            "base_price": 150.0
+        },
+        {
+            "product_id": "P002",
+            "base_price": 225.5
+        },
+        {
+            "product_id": "P003",
+            "base_price": 113.25
+        },
+        {
+            "product_id": "P004",
+            "base_price": 330.0
+        },
+        {
+            "product_id": "P005",
+            "base_price": 502.01
+        },
+        {
+            "product_id": "P006",
+            "base_price": 75.0
+        },
+        {
+            "product_id": "P007",
+            "base_price": 95.0
+        },
+        {
+            "product_id": "P008",
+            "base_price": 180.0
+        },
+        {
+            "product_id": "P009",
+            "base_price": 676.2
+        },
+        {
+            "product_id": "P010",
+            "base_price": 132.38
+        }
+    ],
+    "volume_discount_scenarios": [
+        {
+            "order_id": "V1",
+            "product_id": "P002",
+            "quantity": 25,
+            "final_unit_price_volume_discount": 214.23
+        },
+        {
+            "order_id": "V2",
+            "product_id": "P005",
+            "quantity": 60,
+            "final_unit_price_volume_discount": 451.81
+        },
+        {
+            "order_id": "V3",
+            "product_id": "P008",
+            "quantity": 5,
+            "final_unit_price_volume_discount": 180.0
+        }
+    ],
+    "customer_discount_scenarios": [
+        {
+            "order_id": "C1",
+            "product_id": "P001",
+            "customer_type": "Reseller",
+            "final_unit_price_customer_discount": 127.5
+        },
+        {
+            "order_id": "C2",
+            "product_id": "P004",
+            "customer_type": "Education",
+            "final_unit_price_customer_discount": 297.0
+        },
+        {
+            "order_id": "C3",
+            "product_id": "P007",
+            "customer_type": "Standard",
+            "final_unit_price_customer_discount": 95.0
+        }
+    ]
+}

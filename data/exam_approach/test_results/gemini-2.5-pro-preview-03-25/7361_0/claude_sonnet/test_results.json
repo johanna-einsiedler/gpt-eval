@@ -1,0 +1,67 @@
+{
+    "submission_file": "test_submission.json",
+    "answer_key_file": "answer_key.json",
+    "candidate_id": "Claude-3-Opus",
+    "exam_version_submitted": "BASIC_INTERVIEW_V1.0",
+    "exam_version_expected": "BASIC_INTERVIEW_V1.0",
+    "format_validation": {
+        "passed": true,
+        "errors": []
+    },
+    "scoring": {
+        "score": 8,
+        "max_score": 8,
+        "matched_areas": [
+            {
+                "key_question_id": 1,
+                "key_category": "Income - W2/Employment",
+                "matched_submission_question_id": 1,
+                "matched_submission_question_text": "Could you please provide your complete W-2 form from DesignCorp? I need all the information from the official form, including gross wages, all tax withholdings, and retirement plan contribution details."
+            },
+            {
+                "key_question_id": 2,
+                "key_category": "Income - Self-Employment",
+                "matched_submission_question_id": 2,
+                "matched_submission_question_text": "For your tutoring income, could you provide your complete payment log showing the exact total amount earned during the tax year? This will be reported as self-employment income."
+            },
+            {
+                "key_question_id": 3,
+                "key_category": "Deductions - Education",
+                "matched_submission_question_id": 5,
+                "matched_submission_question_text": "Please provide your Form 1098-E showing the exact amount of student loan interest you paid during the tax year. This is needed to claim the student loan interest deduction."
+            },
+            {
+                "key_question_id": 4,
+                "key_category": "Deductions - Homeowner",
+                "matched_submission_question_id": 6,
+                "matched_submission_question_text": "Since you purchased your condo in March, please provide your Form 1098 Mortgage Interest Statement showing the amount of mortgage interest you paid during the tax year."
+            },
+            {
+                "key_question_id": 5,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 9,
+                "matched_submission_question_text": "For your Goodwill donation, could you provide the receipt and a detailed list of the donated items with their estimated fair market values? For donations exceeding $250 in value, additional documentation is required."
+            },
+            {
+                "key_question_id": 6,
+                "key_category": "Deductions - Charitable",
+                "matched_submission_question_id": 10,
+                "matched_submission_question_text": "Do you have any documentation, such as a year-end statement or acknowledgment letter from your church, for the $100 in cash donations you made during services?"
+            },
+            {
+                "key_question_id": 7,
+                "key_category": "Deductions - Medical",
+                "matched_submission_question_id": 11,
+                "matched_submission_question_text": "Please provide an itemized list of all your medical expenses, including doctor visits and prescriptions, along with receipts or statements showing the exact amounts you paid out-of-pocket after any insurance reimbursements."
+            },
+            {
+                "key_question_id": 8,
+                "key_category": "Income - Other",
+                "matched_submission_question_id": 4,
+                "matched_submission_question_text": "You mentioned receiving a tax form from your bank. Could you please provide the Form 1099-INT showing your interest income for the year?"
+            }
+        ],
+        "missed_areas": []
+    },
+    "overall_score": 100.0
+}

@@ -1,0 +1,16 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "total_exposure": 33.92,
+    "total_deaths": 6,
+    "crude_mortality_rate": 0.176888,
+    "age_band_40_59": {
+        "exposure": 10.92,
+        "deaths": 2,
+        "mortality_rate": 0.18315
+    },
+    "age_band_60_79": {
+        "exposure": 19.84,
+        "deaths": 3,
+        "mortality_rate": 0.15121
+    }
+}

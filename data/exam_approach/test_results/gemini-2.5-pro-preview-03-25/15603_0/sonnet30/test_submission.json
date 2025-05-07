@@ -1,0 +1,50 @@
+{
+    "candidate_id": "Claude-3_7-Sonnet",
+    "identified_issues": [
+        {
+            "issue_id": "ISSUE_01",
+            "source_description": "Protocol Section 4.2 Exclusion Criteria",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "Exclusion criterion 4.2.2 prohibits use of 'any prescription or over-the-counter anti-hypertensive medication' within 14 days prior to screening, but does not clearly define what constitutes an 'anti-hypertensive medication'.",
+            "potential_impact": "Inconsistent subject exclusion based on differing interpretations of this criterion.",
+            "recommended_next_step": "Inform PI and request clarification on whether medications like pseudoephedrine (a decongestant that can raise blood pressure) should be considered 'anti-hypertensive' for this exclusion.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_02",
+            "source_description": "Scenario 1",
+            "protocol_reference": "Section 4.2.2",
+            "problem_summary": "The scenario indicates the subject took an over-the-counter medication containing pseudoephedrine within the 14-day window prior to screening, which may be considered an 'anti-hypertensive medication' based on its blood pressure effects, but the protocol definition is unclear.",
+            "potential_impact": "Risk of inconsistent application of the exclusion criterion, potentially allowing ineligible subjects.",
+            "recommended_next_step": "Notify PI immediately regarding this specific screening case to determine subject eligibility based on clarification of the 'anti-hypertensive medication' definition.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_03",
+            "source_description": "Scenario 2",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "The subject forgot to complete their patient diary for 3 days prior to the scheduled Visit 2 diary review. The protocol does not provide guidance on how to handle missed diary entries or allow for retrospective completion.",
+            "potential_impact": "Risk of incomplete diary data collection, which may impact study endpoints or analysis.",
+            "recommended_next_step": "Inform PI of the situation and request guidance on whether the subject should retrospectively complete the missed diary days based on recall, or if the missed entries should be documented as missed data.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_04",
+            "source_description": "Scenario 3",
+            "protocol_reference": "Scenario Context",
+            "problem_summary": "During an ECG at Visit 3, the machine interpreted a 'Borderline QT interval' but the protocol section describing ECG findings requiring reporting is not provided. There is a lack of clear criteria for determining if this is a 'clinically significant' finding per protocol definitions.",
+            "potential_impact": "Potential missed reporting of an ECG abnormality relevant to subject safety.",
+            "recommended_next_step": "Flag this ECG finding for prompt review and determination by the PI on whether it represents a 'clinically significant' abnormality requiring reporting per protocol.",
+            "communication_point_person": "Principal Investigator"
+        },
+        {
+            "issue_id": "ISSUE_05",
+            "source_description": "Schedule of Assessments Table",
+            "protocol_reference": "Section 6.2 Table 1",
+            "problem_summary": "The visit window for Visit 3 is defined as 'Day 28 +/- 3 days', but there is no guidance provided on how to handle cases where the subject is unable to attend the visit within this window (e.g., due to scheduling conflicts).",
+            "potential_impact": "Risk of protocol deviations related to missed or out-of-window visit procedures.",
+            "recommended_next_step": "Inform PI and request prospective guidance on how to handle situations where a subject cannot attend Visit 3 within the specified +/- 3 day window around the target day.",
+            "communication_point_person": "Principal Investigator"
+        }
+    ]
+}

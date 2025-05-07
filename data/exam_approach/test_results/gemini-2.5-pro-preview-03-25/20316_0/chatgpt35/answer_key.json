@@ -1,0 +1,20 @@
+{
+    "program_name": "Mindfulness Moments",
+    "analysis_period": "Year 1 vs Year 2",
+    "year_1_metrics": {
+        "total_cost": 2730.0,
+        "total_attendance": 260,
+        "cost_per_attendance": 10.5
+    },
+    "year_2_metrics": {
+        "total_cost": 3250.0,
+        "total_attendance": 410,
+        "cost_per_attendance": 7.93
+    },
+    "year_over_year_change_percent": {
+        "total_cost_change_percent": 19.05,
+        "total_attendance_change_percent": 57.69,
+        "cost_per_attendance_change_percent": -24.48
+    },
+    "evaluation_summary": "Program costs increased by 19.05% in Year 2, however, participant attendance grew substantially by 57.69%. This resulted in a 24.48% decrease in the average cost per attendance, indicating improved cost-effectiveness."
+}

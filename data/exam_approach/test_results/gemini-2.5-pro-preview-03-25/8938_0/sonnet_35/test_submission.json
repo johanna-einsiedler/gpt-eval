@@ -1,0 +1,141 @@
+{
+    "exam_type": "basic_logistics_pm_tools",
+    "candidate_id": "Claude-3-Sonnet",
+    "project_schedule": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout",
+            "duration_days": 1,
+            "predecessors": "",
+            "start_day": 1,
+            "end_day": 1
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order Shelving Units and Tables",
+            "duration_days": 1,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 2
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Prepare Site (Clean and Mark Areas)",
+            "duration_days": 2,
+            "predecessors": "T01",
+            "start_day": 2,
+            "end_day": 3
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Receive and Install Shelving Units",
+            "duration_days": 3,
+            "predecessors": "T02,T03",
+            "start_day": 4,
+            "end_day": 6
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Set Up Sorting Tables and Signage",
+            "duration_days": 2,
+            "predecessors": "T04",
+            "start_day": 7,
+            "end_day": 8
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Train Volunteers on Warehouse Operations",
+            "duration_days": 1,
+            "predecessors": "T05",
+            "start_day": 9,
+            "end_day": 9
+        },
+        {
+            "task_id": "T07",
+            "task_name": "Conduct Final Inspection and Readiness Check",
+            "duration_days": 1,
+            "predecessors": "T06",
+            "start_day": 10,
+            "end_day": 10
+        }
+    ],
+    "responsibility_matrix": [
+        {
+            "task_id": "T01",
+            "task_name": "Define Warehouse Layout",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "I",
+            "compliance_check_method": "Approved Layout Diagram"
+        },
+        {
+            "task_id": "T02",
+            "task_name": "Order Shelving Units and Tables",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "R",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "N/A",
+            "compliance_check_method": "Purchase Order Confirmation"
+        },
+        {
+            "task_id": "T03",
+            "task_name": "Prepare Site (Clean and Mark Areas)",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Site Preparation Checklist"
+        },
+        {
+            "task_id": "T04",
+            "task_name": "Receive and Install Shelving Units",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "I",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "C",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Installation Completion Report"
+        },
+        {
+            "task_id": "T05",
+            "task_name": "Set Up Sorting Tables and Signage",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "R",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Photos of Setup"
+        },
+        {
+            "task_id": "T06",
+            "task_name": "Train Volunteers on Warehouse Operations",
+            "Logistics_Manager": "A",
+            "Procurement_Specialist": "N/A",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "N/A",
+            "Volunteer_Team_Lead": "R",
+            "compliance_check_method": "Training Attendance Sheet"
+        },
+        {
+            "task_id": "T07",
+            "task_name": "Conduct Final Inspection and Readiness Check",
+            "Logistics_Manager": "R",
+            "Procurement_Specialist": "C",
+            "Site_Coordinator": "C",
+            "Transport_Partner": "I",
+            "Volunteer_Team_Lead": "C",
+            "compliance_check_method": "Signed Readiness Checklist"
+        }
+    ],
+    "assumptions_made": [
+        "All tasks can be completed within standard 8-hour working days",
+        "Required materials and equipment are available for immediate ordering",
+        "Volunteers are available as needed for setup and training",
+        "No major delays in delivery or installation of shelving units",
+        "Weather conditions allow for continuous work without interruptions"
+    ]
+}

@@ -1,0 +1,101 @@
+{
+  "overall_score": 28.57,
+  "pass_status": false,
+  "criteria_met": {
+    "valid_json_structure": true,
+    "report_findings_quantity_correct": true,
+    "report_findings_accuracy_met": false,
+    "schedule_meeting_count_correct": true,
+    "schedule_unscheduled_requests_match": true
+  },
+  "details": {
+    "report_review": {
+      "submitted_findings_count": 5,
+      "correct_findings_count": 0,
+      "max_correct_findings": 5,
+      "matched_findings": [],
+      "missed_findings": [
+        {
+          "location": "D4",
+          "error_type": "Missing Data",
+          "description": "Quantity value is missing for Client Lunch."
+        },
+        {
+          "location": "A6",
+          "error_type": "Typographical Error",
+          "description": "Department name 'Financee' is misspelled."
+        },
+        {
+          "location": "Column F",
+          "error_type": "Inconsistent Format",
+          "description": "Date format differs between entries."
+        },
+        {
+          "location": "F9",
+          "error_type": "Logical Error",
+          "description": "Expense date is in the future."
+        },
+        {
+          "location": "F11",
+          "error_type": "Calculation Error",
+          "description": "Grand Total sum is incorrect."
+        }
+      ],
+      "extra_findings": [
+        {
+          "location": "E10",
+          "error_type": "Calculation Error",
+          "description": "Grand Total calculation is incorrect. The sum of the Total Cost column is not equal to the value in E10."
+        },
+        {
+          "location": "C3",
+          "error_type": "Missing Data",
+          "description": "Quantity value is missing for the 'Client Lunch' item."
+        },
+        {
+          "location": "A5",
+          "error_type": "Typographical Error",
+          "description": "Department name 'Financee' is misspelled. It should be 'Finance'."
+        },
+        {
+          "location": "F4",
+          "error_type": "Inconsistent Format",
+          "description": "Date format in F4 (15-Oct-2023) differs from other date entries (mm/dd/yyyy)."
+        },
+        {
+          "location": "F8",
+          "error_type": "Logical Error",
+          "description": "Expense date in F8 (11/05/2024) is in the future."
+        }
+      ]
+    },
+    "schedule_preparation": {
+      "submitted_total_meetings": 6,
+      "key_total_meetings": 6,
+      "meeting_count_match": true,
+      "submitted_unscheduled_count": 1,
+      "key_unscheduled_count": 1,
+      "unscheduled_list_match": true,
+      "submitted_unscheduled_list": [
+        {
+          "request": "Weekly Sales Sync Mon 11:00 AM",
+          "reason": "Conflict with Project Phoenix - Kick-off for Conference Room A"
+        }
+      ],
+      "key_unscheduled_list": [
+        {
+          "request": "Weekly Sales Sync Mon 11:00 AM",
+          "reason": "Conflict with Project Phoenix - Kick-off for Conference Room A"
+        }
+      ]
+    }
+  },
+  "scoring": {
+    "report_findings_points": 0,
+    "schedule_meeting_count_points": 1,
+    "schedule_unscheduled_match_points": 1,
+    "total_achieved_points": 2,
+    "max_possible_points": 7
+  },
+  "errors": []
+}

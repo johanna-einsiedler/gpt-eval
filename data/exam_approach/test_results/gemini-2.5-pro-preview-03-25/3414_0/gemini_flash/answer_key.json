@@ -1,0 +1,56 @@
+{
+    "candidate_id": "EVALUATOR_KEY",
+    "exam_version": "Basic_PaymentSchedule_v1.0",
+    "loan_scenarios": [
+        {
+            "loan_id": "LOAN_BASIC_001",
+            "monthly_payment": 1606.17,
+            "total_interest_paid": 303221.15,
+            "schedule_points": [
+                {
+                    "payment_number": 1,
+                    "interest_paid": 1317.71,
+                    "principal_paid": 288.46,
+                    "remaining_balance": 274711.54
+                },
+                {
+                    "payment_number": 12,
+                    "interest_paid": 1302.1,
+                    "principal_paid": 304.07,
+                    "remaining_balance": 271498.94
+                },
+                {
+                    "payment_number": 360,
+                    "interest_paid": 7.66,
+                    "principal_paid": 1598.51,
+                    "remaining_balance": 0.0
+                }
+            ]
+        },
+        {
+            "loan_id": "LOAN_BASIC_002",
+            "monthly_payment": 683.78,
+            "total_interest_paid": 12437.55,
+            "schedule_points": [
+                {
+                    "payment_number": 1,
+                    "interest_paid": 270.0,
+                    "principal_paid": 413.78,
+                    "remaining_balance": 44586.22
+                },
+                {
+                    "payment_number": 12,
+                    "interest_paid": 241.05,
+                    "principal_paid": 442.73,
+                    "remaining_balance": 39731.78
+                },
+                {
+                    "payment_number": 84,
+                    "interest_paid": 4.08,
+                    "principal_paid": 679.7,
+                    "remaining_balance": 0.0
+                }
+            ]
+        }
+    ]
+}
