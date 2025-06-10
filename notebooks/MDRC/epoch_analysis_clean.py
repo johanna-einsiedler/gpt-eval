@@ -1196,6 +1196,54 @@ def main():
     print("Correlation Analysis Results:")
     print(results_df)
     
+
+    # Define the two groups of columns
+    group_1 = ["avg_all_tasks_score", "avg_score_business_and_financial_operations_occupations", 
+            "avg_score_computer_and_mathematical_occupations", "avg_score_management_occupations"]
+    group_2 = ["MATH level 5", "GPQA diamond", "OTIS Mock AIME 2024-2025", "FrontierMath-2025-02-28-Private"]
+
+    # Filter the DataFrame to include only the columns of interest
+    df_filtered = df_model_bench[group_1 + group_2]
+
+    # Compute the correlation matrix
+    correlation_matrix = df_filtered.corr()
+
+    correlation_matrix
+
+    y_labels = ["All tasks", "Business and Finance tasks", "Computer and Mathematical tasks", "Management tasks"]
+    x_labels = ["Math level 5", "GPQA diamond\n(PhD level science)", "OTIS\n(Math Olympiad)", "Frontier Math"]
+
+    # Select only the correlations between group_1 and group_2
+    correlation_subset = correlation_matrix.loc[group_1, group_2]
+
+    # Plot the heatmap
+    plt.figure(figsize=(10, 8))
+    heatmap = sns.heatmap(
+        correlation_subset, 
+        annot=True, 
+        cmap="seismic_r",  # Red for negative, blue for positive, white for zero
+        fmt=".2f", 
+        cbar=True, 
+        center=0,  # Center the colormap at zero
+        linewidths=0.5,  # Add gridlines for better readability
+        annot_kws={"fontsize": 20},
+        cbar_kws={"label": "Correlation"}
+    )
+    colorbar = heatmap.collections[0].colorbar
+    colorbar.ax.yaxis.label.set_size(16)
+    colorbar.ax.tick_params(labelsize=16)
+
+    plt.xticks(ticks=range(len(x_labels)), labels=x_labels, fontsize=16, rotation=45, ha="center")
+    # Adjust the y-axis tick positions to move them down
+    ax = heatmap
+    y_ticks = ax.get_yticks()  # Get current y-tick positions
+    ax.set_yticks([tick + 0.05 for tick in y_ticks])  # Shift ticks down by 0.5
+    ax.set_yticklabels(y_labels, fontsize=16, va="center")  # Set labels with vertical alignment
+
+    plt.title("Correlation Between Task Exam Performance and Previous Benchmarks\n", fontsize=16)
+    plt.savefig('../../results/figures/correlation_task_benchmarks_na0.png',bbox_inches='tight')
+    plt.show()
+
     # Create alluvial plots for each model family
     for family_name, model_family in [
         ("Claude", MODEL_FAMILIES["claude"]), 
