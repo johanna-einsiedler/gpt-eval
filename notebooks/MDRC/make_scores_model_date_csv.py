@@ -3,6 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 path_test_data = '../../data/exam_approach/test_results/claude-3-7-sonnet-20250219/'
+
 path_epoch = '../../data/external/epoch_ai/'
 
 files_score = {
@@ -10,6 +11,17 @@ files_score = {
     "computer_and_mathematical": "scores_only_computer_and_mathematical_occupations.csv",
     "management": "scores_only_management_occupations.csv"
 }
+
+file_full_exams = {
+    "business_and_financial_operations": 'test_answers_business_and_financial_operations_occupations.csv',
+    "computer_and_mathematical": 'test_answers_computer_and_mathematical_occupations.csv',
+    "management": 'test_answers_management_occupations.csv'
+}
+
+df_test = pd.read_csv(path_test_data + file_full_exams['business_and_financial_operations'])
+df_test.columns
+df_test[['task_id', 'task_description', 'exam', 'instructions']].iloc[2]
+
 # Initialize an empty list to store DataFrames
 df_exams = []
 # Loop through the dictionary to process each file
@@ -21,8 +33,14 @@ for category, file_name in files_score.items():
     df['occupation_category'] = category
     # Fill since the begingin NA with 0
     # df = df.fillna(0)
-    # Append the processed DataFrame to the list
+    # Now read the exam to get exam length
+    df_full = pd.read_csv(path_test_data + file_full_exams[category])
+    df_full['exam_length'] = df_full['exam'].apply(lambda x: len(x) if isinstance(x, str) else 0)
+    dict_task_examlength = dict(zip(df_full['task_id'], df_full['exam_length']))
+    df['exam_length'] = df['task_id'].map(dict_task_examlength)
+     # Append the processed DataFrame to the list
     df_exams.append(df)
+
 
 df_exams[0].head()
 
